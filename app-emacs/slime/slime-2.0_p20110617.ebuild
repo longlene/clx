@@ -62,6 +62,7 @@ src_install() {
 	elisp-site-file-install "${T}"/${SITEFILE} || die
 	cp "${FILESDIR}"/${PV}/swank.asd "${S}"
 	# remove upstream swank-loader, since it won't be used
+	# for slimv using swank-loader.lisp, don't delete
 	#rm "${S}"/swank-loader.lisp
 	common-lisp-install-sources *.lisp
 	common-lisp-install-asdf swank.asd
