@@ -22,8 +22,7 @@ CLSYSTEMS="cl-opengl cl-glu cl-glut cl-glut-examples"
 
 src_unpack() {
 	unpack ${A}
-	cd ${WORKDIR}/${PN}-*-git
-	S="$(pwd)"
+	mv ${PN}-*-git "${S}"
 }
 
 src_compile() { true; }
