@@ -1,0 +1,11 @@
+--- a/src/xsplash.c	2009-10-22 21:54:02.000000000 +0300
++++ b/src/xsplash.c	2010-08-02 17:33:58.000000000 +0300
+@@ -468,7 +468,7 @@
+ 
+   is_composited = gdk_screen_is_composited (screen);
+ 
+-  if (GTK_WIDGET_REALIZED (priv->window))
++  if (gtk_widget_get_realized (priv->window))
+     {
+       if (is_composited)
+         {

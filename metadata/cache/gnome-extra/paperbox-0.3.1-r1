@@ -1,0 +1,22 @@
+sys-devel/gettext >=dev-util/intltool-0.35.0 >=app-misc/tracker-0.6 >=app-text/scrollkeeper-0.3.5 >=dev-cpp/glibmm-2.16.0 >=dev-cpp/gtkmm-2.12.0 >=dev-cpp/gtkmm-utils-0.3.1 >=dev-cpp/libglademm-2.6.0 dev-libs/boost >=dev-libs/dbus-glib-0.50 >=gnome-base/libgnomeui-2.16.0 >=x11-libs/goocanvas-0.9 >=sys-apps/sed-4
+>=app-misc/tracker-0.6 >=app-text/scrollkeeper-0.3.5 >=dev-cpp/glibmm-2.16.0 >=dev-cpp/gtkmm-2.12.0 >=dev-cpp/gtkmm-utils-0.3.1 >=dev-cpp/libglademm-2.6.0 dev-libs/boost >=dev-libs/dbus-glib-0.50 >=gnome-base/libgnomeui-2.16.0 >=x11-libs/goocanvas-0.9
+0
+mirror://gnome/sources/paperbox/0.3/paperbox-0.3.1.tar.bz2
+
+http://live.gnome.org/PaperBox
+GPL-2
+Browse your documents, ebooks and magazines and organize them with tags using Tracker
+~x86
+eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability toolchain-funcs user versionator
+debug debug
+
+
+
+
+
+compile install postinst postrm preinst unpack
+
+
+
+
+

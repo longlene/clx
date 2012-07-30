@@ -1,0 +1,28 @@
+--- src/png.c.orig	2009-02-05 13:39:16.000000000 +0300
++++ src/png.c	2010-08-25 18:51:26.413189646 +0400
+@@ -539,7 +539,11 @@
+ 	if (settings->bpp == 3)
+ 	{
+ 		png_set_strip_16(png_ptr);
+-		png_set_gray_1_2_4_to_8(png_ptr);
++		#if PNG_LIBPNG_VER < 10400
++			png_set_gray_1_2_4_to_8 (png_ptr);
++		#else
++			png_set_expand_gray_1_2_4_to_8(png_ptr);
++		#endif
+ 		png_set_palette_to_rgb(png_ptr);
+ 		png_set_gray_to_rgb(png_ptr);
+ 
+@@ -644,7 +648,11 @@
+ 		png_set_strip_alpha(png_ptr);
+ 		png_set_packing(png_ptr);
+ 		if ((color_type == PNG_COLOR_TYPE_GRAY) && (bit_depth < 8))
+-			png_set_gray_1_2_4_to_8(png_ptr);
++		#if PNG_LIBPNG_VER < 10400
++			png_set_gray_1_2_4_to_8 (png_ptr);
++		#else
++			png_set_expand_gray_1_2_4_to_8(png_ptr);
++		#endif
+ 		for (i = 0; i < height; i++)
+ 		{
+ 			row_pointers[i] = settings->img[CHN_IMAGE] + i * width;

@@ -1,0 +1,75 @@
+--- src/main/display.hh~	2010-10-15 22:32:53.000000000 +0100
++++ src/main/display.hh	2011-09-03 10:56:17.000000000 +0100
+@@ -27,8 +27,6 @@
+ #include <stdint.h>
+ 
+ #ifdef __cplusplus
+-extern "C" {
+-
+ #include <gtk/gtk.h>
+ #include <swmgr.h>
+ #include <swdisp.h>
+@@ -152,6 +150,7 @@
+ 	MOD_FONT *mf;
+ };
+ 
++extern "C" {
+ #endif /* __cplusplus */
+ 
+ void marked_cache_fill(gchar *modname, gchar *key);
+--- src/main/modulecache.hh~	2010-10-15 22:32:53.000000000 +0100
++++ src/main/modulecache.hh	2011-09-03 10:59:11.000000000 +0100
+@@ -45,8 +45,6 @@
+ #include <map>
+ #include <string>
+ 
+-extern "C" {
+-
+ namespace ModuleCache {
+ 
+ 	// bitwise cache type indicators:
+@@ -296,6 +294,7 @@
+ 	_header = NULL;
+ }
+ 
++extern "C" {
+ #endif	/* __cplusplus */
+ 
+ // namespace-free routines.
+--- src/main/xml.h~	2010-10-15 22:32:53.000000000 +0100
++++ src/main/xml.h	2011-09-03 10:46:52.000000000 +0100
+@@ -22,10 +22,11 @@
+ #ifndef __XML_H__
+ #define __XML_H__
+ 
++#include <libxml/parser.h>
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+-#include <libxml/parser.h>
+ 
+ void xml_add_new_section_to_settings_doc(char * section);
+ void xml_new_bookmark_file(void);
+--- src/gui/utilities.h~	2010-10-15 22:32:43.000000000 +0100
++++ src/gui/utilities.h	2011-09-03 10:45:11.000000000 +0100
+@@ -22,15 +22,15 @@
+ #ifndef GS_UTILITIES_H
+ #define GS_UTILITIES_H
+ 
+-#ifdef __cplusplus
+-extern "C" {
+-#endif
+-
+ #include <libxml/parser.h>
+ #include "main/configs.h"
+ #include "main/module_dialogs.h"
+ #include <gsf/gsf-outfile.h>
+ 
++#ifdef __cplusplus
++extern "C" {
++#endif
++
+ extern gint stop_window_sync;
+ void sync_windows(void);
+ 

@@ -1,0 +1,22 @@
+
+
+0
+mirror://nongnu/lzip/lzlib-1.0-rc1.tar.gz
+
+http://lzip.nongnu.org/lzlib.html
+GPL-3
+LZMA compression and decompression functions library using lzip format
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+3
+
+compile configure install
+
+
+
+
+

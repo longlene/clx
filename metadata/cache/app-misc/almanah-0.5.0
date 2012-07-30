@@ -1,0 +1,22 @@
+>=dev-libs/glib-2.16 >=dev-db/sqlite-3.0 >=gnome-base/gconf-2 >=x11-libs/gtk+-2.14 crypt? ( >=app-crypt/gpgme-1.0 >=app-crypt/seahorse-2 ) spell? ( >=app-text/gtkspell-2 ) >=dev-util/pkgconfig-0.20 >=dev-util/intltool-0.35.0 sys-devel/gettext >=sys-apps/sed-4
+>=dev-libs/glib-2.16 >=dev-db/sqlite-3.0 >=gnome-base/gconf-2 >=x11-libs/gtk+-2.14 crypt? ( >=app-crypt/gpgme-1.0 >=app-crypt/seahorse-2 ) spell? ( >=app-text/gtkspell-2 )
+0
+http://tecnocode.co.uk/downloads/almanah-0.5.0.tar.gz
+
+http://tecnocode.co.uk/projects/almanah/
+GPL-3
+A small GTK+ application to allow you to keep a diary of your life
+~amd64 ~x86
+eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability toolchain-funcs user versionator
+crypt spell debug
+
+
+
+
+
+compile install postinst postrm preinst setup unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+dev-lang/mono dev-dotnet/gtk-sharp >=dev-vcs/git-1.6
+dev-lang/mono dev-dotnet/gtk-sharp
+0
+
+
+http://pinta-project.com
+MIT
+Simple Painting for Gtk
+
+eutils git mono multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile install prepare unpack
+
+
+
+
+

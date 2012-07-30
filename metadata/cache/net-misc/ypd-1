@@ -1,0 +1,22 @@
+dev-util/cmake
+
+0
+mirror://berlios/ypd/ypd-1.tar.gz
+
+http://ypd.berlios.de
+GPL-2
+split tcp requests of different type to different servers
+~amd64 ~x86
+
+
+
+
+
+
+
+compile install
+
+
+
+
+

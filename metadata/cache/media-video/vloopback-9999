@@ -1,0 +1,22 @@
+kernel_linux? ( sys-apps/module-init-tools ) sys-apps/sed kernel_linux? ( virtual/linux-sources ) dev-vcs/subversion net-misc/rsync
+kernel_linux? ( sys-apps/module-init-tools )
+0
+
+
+http://www.lavrsen.dk/twiki/bin/view/Motion/VideoFourLinuxLoopbackDevice
+GPL-2
+vloopback allow to create pipe of videos devices
+~x86 ~amd64
+eutils linux-info linux-mod multilib portability subversion toolchain-funcs user versionator
+kernel_linux
+
+
+
+
+
+compile install postinst postrm preinst setup unpack
+
+
+
+
+

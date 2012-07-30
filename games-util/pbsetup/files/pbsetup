@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ ! -d "$HOME/.pbsetup" ]; then
+	mkdir -p "${HOME}/.pbsetup"
+fi
+
+cd "${HOME}/.pbsetup"
+exec /usr/share/pbsetup/pbsetup.run $@

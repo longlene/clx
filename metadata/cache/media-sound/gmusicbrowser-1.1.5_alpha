@@ -1,0 +1,22 @@
+
+>=dev-lang/perl-5.8 dev-perl/gtk2-perl dev-perl/gtk2-trayicon dbus? ( dev-perl/Net-DBus ) gstreamer? ( dev-perl/GStreamer dev-perl/GStreamer-Interfaces media-libs/gst-plugins-good ) mplayer? ( media-video/mplayer ) !gstreamer? ( !mplayer? ( media-sound/mpg123 media-sound/mpg321 media-sound/vorbis-tools media-sound/flac123 media-sound/alsa-utils ) ) mozilla? ( dev-perl/Gtk2-MozEmbed ) webkit? ( dev-perl/Gtk2-WebKit )
+0
+http://gmusicbrowser.org/download/gmusicbrowser-1.1.5.tar.gz
+
+http://gmusicbrowser.org/
+GPL-2
+An open-source jukebox for large collections of mp3/ogg/flac files
+~amd64 ~sparc ~x86
+fdo-mime
+dbus gstreamer mplayer mozilla webkit
+
+
+
+
+
+install postinst postrm unpack
+
+
+
+
+

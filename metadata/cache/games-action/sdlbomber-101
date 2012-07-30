@@ -1,0 +1,22 @@
+media-libs/sdl-sound
+media-libs/sdl-sound
+0
+http://www.linuxmotors.com/SDL_bomber/downloads/sdlbomber-101.tgz
+
+http://www.linuxmotors.com/SDL_bomber/
+GPL-2
+Bomberman clone w/multiplayer support
+amd64 ~ppc x86
+base eutils games multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

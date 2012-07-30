@@ -1,0 +1,22 @@
+dev-lang/python >=dev-libs/glib-2.6 dev-libs/libxml2 gnome-base/gail gnome-extra/at-spi gnome-extra/libgail-gnome sys-devel/gettext
+dev-lang/python >=dev-libs/glib-2.6 dev-libs/libxml2 gnome-base/gail gnome-extra/at-spi gnome-extra/libgail-gnome sys-devel/gettext java? ( app-accessibility/java-access-bridge ) python? ( dev-python/pystatgrab dev-python/imaging )
+0
+http://download.freedesktop.org/ldtp/1.x/1.6.x/ldtp-1.6.0.tar.gz
+
+http://ldtp.freedesktop.org
+LGPL-2.1
+A high quality test automation framework for desktop applications.
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user versionator
+java newroles +nls python
+
+
+
+2
+
+configure install
+
+
+
+
+

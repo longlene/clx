@@ -1,0 +1,22 @@
+dev-python/pygtk >=sys-apps/sed-4 >=app-admin/eselect-python-20091230 dev-lang/python
+dev-python/pygtk >=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://savannah.nongnu.org/download/gnomolicious/gnomolicious-0.5.0.tar.gz
+
+http://www.nongnu.org/gnomolicious/
+GPL-2
+GNOME way to post at del.icio.us
+~x86
+distutils eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability python toolchain-funcs user versionator
+debug
+
+
+
+
+
+compile install postinst postrm preinst unpack
+
+
+
+
+

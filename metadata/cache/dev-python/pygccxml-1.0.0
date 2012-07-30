@@ -1,0 +1,22 @@
+doc? ( >=dev-python/epydoc-3 ) app-arch/unzip >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+>=dev-cpp/gccxml-0.6 >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+0
+mirror://sourceforge/pygccxml/pygccxml-1.0.0.zip
+
+http://www.language-binding.net/
+freedist Boost-1.0
+Generate an XML description of a C++ program from GCC's internal representation
+~amd64 ~x86
+distutils multilib python toolchain-funcs
+doc examples
+
+
+
+2
+
+compile install postinst postrm prepare test
+
+
+
+
+

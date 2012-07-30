@@ -1,0 +1,22 @@
+audacious? ( media-sound/audacious ) dga? ( x11-libs/libXxf86dga ) opengl? ( virtual/opengl ) !opengl? ( !sdl? ( !dedicated? ( virtual/opengl ) ) ) sdl? ( media-libs/libsdl x11-libs/libXxf86vm )
+audacious? ( media-sound/audacious ) dga? ( x11-libs/libXxf86dga ) opengl? ( virtual/opengl ) !opengl? ( !sdl? ( !dedicated? ( virtual/opengl ) ) ) sdl? ( media-libs/libsdl x11-libs/libXxf86vm ) demo? ( games-fps/quake2-demodata ) !demo? ( games-fps/quake2-data ) textures? ( games-fps/quake2-textures )
+0
+http://qudos.quakedev.com/linux/quake2/engines/egl/EGL-SDL-source-0.3.2_beta1.tar.bz2 http://svn.quakedev.com/viewvc.cgi/egl/trunk/assets.tar.gz
+
+http://egl.quakedev.com/ http://qudos.quakedev.com/linux/quake2/engines/egl/
+GPL-2
+Enhanced Quake 2 engine with Gloom effects
+~x86
+base eutils flag-o-matic games multilib portability toolchain-funcs user
+audacious dedicated demo dga opengl optimize-cflags sdl textures
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

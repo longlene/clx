@@ -1,0 +1,9 @@
+# Copyright 1999-2005 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+# Config file for /etc/init.d/dhcp-helper
+
+# See the dhcp-helper(8) man page for possible options to put here.
+# DHCPHELPER_OPTS="-s dhcp-server -b interface -i listen-interface -e nolisten-interface"
+DHCPHELPER_OPTS=""

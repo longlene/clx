@@ -1,0 +1,21 @@
+--- ../../../layman/sunrise/app-misc/rbutil/rbutil-1.2.8.ebuild	2010-11-05 18:21:48.000000000 +0100
++++ rbutil-1.2.8.ebuild	2011-01-06 08:46:29.350683416 +0100
+@@ -26,9 +26,18 @@
+ 
+ S=${WORKDIR}/${MY_P}/${PN}/${PN}qt
+ 
++src_prepare() {
++	epatch "${FILESDIR}/${P}"-fix-parallel-make.patch
++
++	cp "${FILESDIR}"/rockbox-3.7.1-version.sh "${S}"/../../tools/version.sh
++	chmod +x "${S}"/../../tools/version.sh
++}
++
+ src_configure() {
+ 	# generate binary translations
++	ebegin "Running lrelease"
+ 	lrelease ${PN}qt.pro || die
++	eend $?
+ 
+ 	# noccache is required in order to call the correct compiler
+ 	eqmake4 CONFIG+=noccache

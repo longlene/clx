@@ -1,0 +1,4 @@
+Section "Device"
+Identifier "NVIDIA_Device"
+Driver "nvidia"
+EndSection

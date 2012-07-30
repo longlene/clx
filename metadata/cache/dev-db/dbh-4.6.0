@@ -1,0 +1,22 @@
+
+
+0
+http://svn.foo-projects.org/svn/xffm/RELEASES/tarballs/dbh-4.6.0.tar.gz
+
+http://dbh.sourceforge.net
+LGPL-3
+Library to create and manage 64-bit disk based hash tables
+x86 amd64
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+-
+
+
+
+
+

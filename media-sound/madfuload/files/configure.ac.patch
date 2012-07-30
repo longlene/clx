@@ -1,0 +1,13 @@
+Description: Minimal patch to configure.ac so that it calls
+'udevadm --version' to obtain the version number. Upstream is out of date.
+--- a/configure.ac
++++ b/configure.ac
+@@ -7,7 +7,7 @@
+ AC_PROG_CC
+ 
+ AC_MSG_CHECKING([for udev version])
+-udev_ver=`udevinfo -V | awk '{ print $3 }'`
++udev_ver=`udevadm --version`
+ if test -n "$udev_ver"; then
+   AC_MSG_RESULT([$udev_ver])
+ else

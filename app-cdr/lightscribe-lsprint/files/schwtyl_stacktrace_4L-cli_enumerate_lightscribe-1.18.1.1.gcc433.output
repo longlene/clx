@@ -1,0 +1,241 @@
+execve("/opt/bin/4L-cli", ["4L-cli", "enumerate", "2"], [/* 52 vars */]) = 0
+brk(0)                                  = 0x95a7000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=108810, ...}) = 0
+mmap2(NULL, 108810, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7fae000
+close(3)                                = 0
+open("/lib/libncurses.so.5", O_RDONLY)  = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\200\347\0\0004\0\0\0@"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=270376, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fad000
+mmap2(NULL, 270052, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7f6b000
+mmap2(0xb7fa4000, 36864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x38) = 0xb7fa4000
+close(3)                                = 0
+open("/lib/libdl.so.2", O_RDONLY)       = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0 \f\0\0004\0\0\0$"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=9564, ...}) = 0
+mmap2(NULL, 12408, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7f67000
+mmap2(0xb7f69000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1) = 0xb7f69000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY)        = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0Pa\1\0004\0\0\0\370"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=1270464, ...}) = 0
+mmap2(NULL, 1275432, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7e2f000
+mmap2(0xb7f61000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x132) = 0xb7f61000
+mmap2(0xb7f64000, 9768, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xb7f64000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7e2e000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb7e2e6c0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0xb7f61000, 4096, PROT_READ)   = 0
+munmap(0xb7fae000, 108810)              = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+open("/dev/tty", O_RDWR|O_NONBLOCK|O_LARGEFILE) = 3
+close(3)                                = 0
+brk(0)                                  = 0x95a7000
+brk(0x95c8000)                          = 0x95c8000
+getuid32()                              = 1000
+getgid32()                              = 1000
+geteuid32()                             = 1000
+getegid32()                             = 1000
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+time(NULL)                              = 1237610642
+open("/proc/meminfo", O_RDONLY)         = 3
+fstat64(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fc8000
+read(3, "MemTotal:       901476 kB\nMemFree"..., 1024) = 924
+close(3)                                = 0
+munmap(0xb7fc8000, 4096)                = 0
+rt_sigaction(SIGCHLD, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGCHLD, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigaction(SIGQUIT, {0x1, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+uname({sys="Linux", node="laptop", ...}) = 0
+stat64("/home/schwtyl", {st_mode=S_IFDIR|0755, st_size=10024, ...}) = 0
+stat64(".", {st_mode=S_IFDIR|0755, st_size=10024, ...}) = 0
+getpid()                                = 13597
+getppid()                               = 13596
+getpgrp()                               = 13596
+rt_sigaction(SIGCHLD, {0x80793d0, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+getrlimit(RLIMIT_NPROC, {rlim_cur=7159, rlim_max=7159}) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+open("/opt/bin/4L-cli", O_RDONLY|O_LARGEFILE) = 3
+ioctl(3, SNDCTL_TMR_TIMEBASE or TCGETS, 0xbfae3798) = -1 ENOTTY (Inappropriate ioctl for device)
+_llseek(3, 0, [0], SEEK_CUR)            = 0
+read(3, "#!/bin/sh\ncd \"/opt/lightscribe/4L"..., 80) = 80
+_llseek(3, 0, [0], SEEK_SET)            = 0
+getrlimit(RLIMIT_NOFILE, {rlim_cur=1024, rlim_max=1024}) = 0
+dup2(3, 255)                            = 255
+close(3)                                = 0
+fcntl64(255, F_SETFD, FD_CLOEXEC)       = 0
+fcntl64(255, F_GETFL)                   = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+fstat64(255, {st_mode=S_IFREG|0755, st_size=273, ...}) = 0
+_llseek(255, 0, [0], SEEK_CUR)          = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+read(255, "#!/bin/sh\ncd \"/opt/lightscribe/4L"..., 273) = 273
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+stat64("/opt", {st_mode=S_IFDIR|0755, st_size=664, ...}) = 0
+stat64("/opt/lightscribe", {st_mode=S_IFDIR|0755, st_size=128, ...}) = 0
+stat64("/opt/lightscribe/4L", {st_mode=S_IFDIR|0755, st_size=160, ...}) = 0
+chdir("/opt/lightscribe/4L")            = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], 0}, {0x1, [], 0}, 8) = 0
+rt_sigaction(SIGCHLD, {SIG_DFL, [], 0}, {0x80793d0, [], 0}, 8) = 0
+execve("/opt/lightscribe/4L/4L-cli", ["./4L-cli", "enumerate", "2"], [/* 52 vars */]) = 0
+brk(0)                                  = 0x99b3000
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7f07000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/usr/lib/libstdc++-v3/tls/i686/sse2/liblightscribe.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat64("/usr/lib/libstdc++-v3/tls/i686/sse2", 0xbfd23eb8) = -1 ENOENT (No such file or directory)
+open("/usr/lib/libstdc++-v3/tls/i686/liblightscribe.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat64("/usr/lib/libstdc++-v3/tls/i686", 0xbfd23eb8) = -1 ENOENT (No such file or directory)
+open("/usr/lib/libstdc++-v3/tls/sse2/liblightscribe.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat64("/usr/lib/libstdc++-v3/tls/sse2", 0xbfd23eb8) = -1 ENOENT (No such file or directory)
+open("/usr/lib/libstdc++-v3/tls/liblightscribe.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat64("/usr/lib/libstdc++-v3/tls", 0xbfd23eb8) = -1 ENOENT (No such file or directory)
+open("/usr/lib/libstdc++-v3/i686/sse2/liblightscribe.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat64("/usr/lib/libstdc++-v3/i686/sse2", 0xbfd23eb8) = -1 ENOENT (No such file or directory)
+open("/usr/lib/libstdc++-v3/i686/liblightscribe.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat64("/usr/lib/libstdc++-v3/i686", 0xbfd23eb8) = -1 ENOENT (No such file or directory)
+open("/usr/lib/libstdc++-v3/sse2/liblightscribe.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat64("/usr/lib/libstdc++-v3/sse2", 0xbfd23eb8) = -1 ENOENT (No such file or directory)
+open("/usr/lib/libstdc++-v3/liblightscribe.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+stat64("/usr/lib/libstdc++-v3", {st_mode=S_IFDIR|0755, st_size=120, ...}) = 0
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=108810, ...}) = 0
+mmap2(NULL, 108810, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7eec000
+close(3)                                = 0
+open("/opt/lightscribe/lib/liblightscribe.so.1", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0 \242\0\0004\0\0\0\264"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=2303172, ...}) = 0
+mmap2(NULL, 2376364, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7ca7000
+mmap2(0xb7e97000, 270336, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ef) = 0xb7e97000
+mmap2(0xb7ed9000, 74412, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xb7ed9000
+close(3)                                = 0
+open("/usr/lib/libstdc++-v3/libpthread.so.0", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/lib/libpthread.so.0", O_RDONLY)  = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0000L\0\0004\0\0\0T"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=114083, ...}) = 0
+mmap2(NULL, 90592, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7c90000
+mmap2(0xb7ca3000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x12) = 0xb7ca3000
+mmap2(0xb7ca5000, 4576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xb7ca5000
+close(3)                                = 0
+open("/usr/lib/libstdc++-v3/libstdc++.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/lib/gcc/i686-pc-linux-gnu/4.3.3/libstdc++.so.6", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\20\360\3\0004\0\0\0\274"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=929820, ...}) = 0
+mmap2(NULL, 952556, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7ba7000
+mmap2(0xb7c85000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xde) = 0xb7c85000
+mmap2(0xb7c8a000, 22764, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xb7c8a000
+close(3)                                = 0
+open("/usr/lib/libstdc++-v3/libm.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/lib/libm.so.6", O_RDONLY)        = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\3203\0\0004\0\0\0,"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=145116, ...}) = 0
+mmap2(NULL, 147584, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7b82000
+mmap2(0xb7ba5000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x22) = 0xb7ba5000
+close(3)                                = 0
+open("/usr/lib/libstdc++-v3/libgcc_s.so.1", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/lib/gcc/i686-pc-linux-gnu/4.3.3/libgcc_s.so.1", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0`\32\0\0004\0\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0644, st_size=49640, ...}) = 0
+mmap2(NULL, 52872, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7b75000
+mmap2(0xb7b81000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb) = 0xb7b81000
+close(3)                                = 0
+open("/usr/lib/libstdc++-v3/libc.so.6", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/lib/libc.so.6", O_RDONLY)        = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0Pa\1\0004\0\0\0\370"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=1270464, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7b74000
+mmap2(NULL, 1275432, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7a3c000
+mmap2(0xb7b6e000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x132) = 0xb7b6e000
+mmap2(0xb7b71000, 9768, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xb7b71000
+close(3)                                = 0
+open("/usr/lib/libstdc++-v3/libstdc++.so.5", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0p\260\3\0004\0\0\0\340"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=736320, ...}) = 0
+mmap2(NULL, 754560, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7983000
+mmap2(0xb7a32000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xaf) = 0xb7a32000
+mmap2(0xb7a37000, 17280, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xb7a37000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7982000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb79828e0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0xb7b6e000, 4096, PROT_READ)   = 0
+mprotect(0xb7c85000, 12288, PROT_READ)  = 0
+munmap(0xb7eec000, 108810)              = 0
+set_tid_address(0xb7982928)             = 13597
+set_robust_list(0xb7982930, 0xc)        = 0
+futex(0xbfd24544, FUTEX_WAKE_PRIVATE, 1) = 0
+rt_sigaction(SIGRTMIN, {0xb7c946d0, [], SA_SIGINFO}, NULL, 8) = 0
+rt_sigaction(SIGRT_1, {0xb7c94750, [], SA_RESTART|SA_SIGINFO}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+getrlimit(RLIMIT_STACK, {rlim_cur=8192*1024, rlim_max=RLIM_INFINITY}) = 0
+uname({sys="Linux", node="laptop", ...}) = 0
+brk(0)                                  = 0x99b3000
+brk(0x99d4000)                          = 0x99d4000
+getcwd("/opt/lightscribe/4L"..., 4096)  = 20
+open("/etc/lightscribe.rc", O_RDONLY)   = 3
+write(2, "Using /etc/lightscribe.rc\n"..., 26Using /etc/lightscribe.rc
+) = 26
+ioctl(3, SNDCTL_TMR_TIMEBASE or TCGETS, 0xbfd23c08) = -1 ENOTTY (Inappropriate ioctl for device)
+fstat64(3, {st_mode=S_IFREG|0644, st_size=107, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7f06000
+read(3, "ResourceDir=/opt/lightscribe/lib/"..., 8192) = 107
+read(3, ""..., 4096)                    = 0
+read(3, ""..., 8192)                    = 0
+ioctl(3, SNDCTL_TMR_TIMEBASE or TCGETS, 0xbfd23be8) = -1 ENOTTY (Inappropriate ioctl for device)
+close(3)                                = 0
+munmap(0xb7f06000, 4096)                = 0
+umask(0)                                = 022
+mkdir("/tmp/.lightscribe", 0777)        = -1 EEXIST (File exists)
+umask(022)                              = 0
+umask(0)                                = 022
+open("/tmp/.lightscribe/AtomicIncDecLock", O_RDONLY|O_CREAT, 0444) = 3
+umask(022)                              = 0
+close(3)                                = 0
+stat64("/tmp/.lightscribe/AtomicIncDecLock", {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+semget(0x3880f, 0, 0666)                = 98305
+futex(0xb7c8a73c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+rt_sigaction(SIGHUP, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGINT, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGPIPE, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGTERM, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGIO, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGPROF, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGIO, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGPWR, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGILL, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGABRT, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGFPE, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGSEGV, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGBUS, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGSYS, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGTRAP, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGXCPU, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGXFSZ, {0x804a7d0, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGALRM, {0x1, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGUSR1, {0x1, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGUSR2, {0x1, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+rt_sigaction(SIGVTALRM, {0x1, ~[RTMIN RT_1], 0}, NULL, 8) = 0
+open("/proc/sys/dev/cdrom/info", O_RDONLY) = 3
+fstat64(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7f06000
+read(3, "CD-ROM information, Id: cdrom.c 3"..., 8192) = 433
+read(3, ""..., 7168)                    = 0
+read(3, ""..., 8192)                    = 0
+close(3)                                = 0
+munmap(0xb7f06000, 4096)                = 0
+--- SIGSEGV (Segmentation fault) @ 0 (0) ---
+--- SIGSEGV (Segmentation fault) @ 0 (0) ---
++++ killed by SIGSEGV +++

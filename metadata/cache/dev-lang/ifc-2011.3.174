@@ -1,0 +1,22 @@
+>=app-arch/rpm2targz-9.0.0.3g
+~virtual/libstdc++-3.3 amd64? ( app-emulation/emul-linux-x86-compat )
+0
+http://registrationcenter-download.intel.com/irc_nas/2096/l_fcompxe_intel64_2011.3.174.tgz
+mirror
+http://www.intel.com/software/products/compilers/clin/
+Intel-SDP
+Intel FORTRAN compiler suite for Linux
+~amd64 ~x86 ~amd64-linux ~x86-linux
+check-reqs eutils multilib portability rpm toolchain-funcs user versionator
+idb +mkl
+
+
+
+3
+
+install postinst prepare setup unpack
+
+
+
+
+

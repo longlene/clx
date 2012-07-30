@@ -1,0 +1,22 @@
+>=x11-libs/gtk+-2.16.5 >=media-libs/audiofile-0.2.1 media-libs/libsndfile esd? ( media-sound/esound ) jack? ( media-sound/jack-audio-connection-kit ) sdl? ( >=media-libs/libsdl-1.2 ) nls? ( virtual/libintl ) nls? ( sys-devel/gettext ) dev-util/pkgconfig
+>=x11-libs/gtk+-2.16.5 >=media-libs/audiofile-0.2.1 media-libs/libsndfile esd? ( media-sound/esound ) jack? ( media-sound/jack-audio-connection-kit ) sdl? ( >=media-libs/libsdl-1.2 ) nls? ( virtual/libintl )
+0
+http://www.soundtracker.org/dl/v0.6/soundtracker-0.6.8.tar.gz
+
+http://www.soundtracker.org
+GPL-2
+SoundTracker is a music tracking tool for UNIX/X11 (MOD tracker)
+~alpha amd64 ~ppc sparc x86
+eutils libtool multilib portability toolchain-funcs user
+gnome esd jack nls oss sdl
+
+
+
+
+
+compile install unpack
+
+
+
+
+

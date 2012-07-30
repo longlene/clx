@@ -1,0 +1,16 @@
+--- taoframework-2.2_pre237/tests/Ode/Matrix3Marshalling.cs.orig	2010-09-19 17:44:28.579573073 +0200
++++ taoframework-2.2_pre237/tests/Ode/Matrix3Marshalling.cs	2010-09-19 17:44:57.920684460 +0200
+@@ -24,7 +24,7 @@
+ SOFTWARE.
+ */
+ #endregion License
+-
++/*
+ using NUnit.Framework;
+ using System;
+ using Tao.Ode;
+@@ -153,3 +153,4 @@
+ 		
+ 	}
+ }
++*/

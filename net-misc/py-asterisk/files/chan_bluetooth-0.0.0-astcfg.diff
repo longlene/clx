@@ -1,0 +1,46 @@
+--- chan_bluetooth/Makefile.orig	2005-01-26 19:15:55.917041040 +0000
++++ chan_bluetooth/Makefile	2005-01-26 19:21:53.654656656 +0000
+@@ -1,17 +1,32 @@
+-BLT_DIR  = $(shell dirname $(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST)))
+-BLT_OBJS = $(BLT_DIR)/.tmp/chan_bluetooth.o
++BLT_OBJS = .tmp/chan_bluetooth.o
+ 
+-ifeq ($(strip ${MAKEFILE_LIST}), Makefile)
+-thisshouldnotberun:
+-	@echo " --- Please read the README and INSTALL file!"
+-endif
+ 
+-$(BLT_DIR)/.tmp/chan_bluetooth.o: $(BLT_DIR)/chan_bluetooth.c
+-	$(CC) -c -I$(BLT_DIR) $(CFLAGS) -o $@ $<
++CC=gcc
++SOLINK=$(shell /usr/bin/asterisk-config --solink)
++CFLAGS=$(shell /usr/bin/asterisk-config --cflags) -fPIC -DPIC
+ 
+-chan_bluetooth.so: $(BLT_DIR)/.tmp $(BLT_OBJS)
++ASTETCDIR=$(shell /usr/bin/asterisk-config --configdir)
++ASTMODDIR=$(shell /usr/bin/asterisk-config --modulesdir)
++
++all: .depend chan_bluetooth.so
++
++.tmp/chan_bluetooth.o: chan_bluetooth.c
++	$(CC) -c -I. $(CFLAGS) -o $@ $<
++
++chan_bluetooth.so: .tmp $(BLT_OBJS)
+ 	$(CC) $(SOLINK) -o $@ $(BLT_OBJS) -lbluetooth
+ 
+-$(BLT_DIR)/.tmp:
+-	mkdir -p $(BLT_DIR)/.tmp
++.tmp:
++	mkdir -p .tmp
++
++.depend:
++	@if [ ! -x /usr/bin/asterisk-config ]; then \
++		echo "/usr/bin/asterisk-config not found!"; \
++		exit 255; \
++	fi
+ 
++install:
++	if [ ! -d $(DESTDIR)$(ASTETCDIR) ]; then mkdir -p $(DESTDIR)$(ASTETCDIR); fi
++	install -m600 conf/bluetooth.conf $(DESTDIR)$(ASTETCDIR)
++	if [ ! -d $(DESTDIR)$(ASTMODDIR) ]; then mkdir -p $(DESTDIR)$(ASTMODDIR); fi
++	install -m755 chan_bluetooth.so $(DESTDIR)$(ASTMODDIR)

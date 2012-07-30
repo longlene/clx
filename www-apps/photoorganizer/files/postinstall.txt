@@ -1,0 +1,14 @@
+To complete the installation the following steps are necessary.
+
+1. Create the database user and database (new install only)
+2. Create the image repository (new install only)
+3. Modify default configuration (new install or upgrade from v2.31b or older)
+5. Run the web installer tool to set up database tables and complete
+   installation
+
+See the Photo Organizer website (po.shaftnet.org) for the latest instructions
+on how to perform these steps.
+
+(The bundled documentation might be a bit out of date but can be found in
+/usr/share/doc/${PF}/html/doc)
+

@@ -1,0 +1,22 @@
+>=net-libs/libsoup-2.26 >=dev-libs/glib-2.14 x11-libs/gtk+ x11-libs/gtkglext dev-util/gtk-doc-am doc? ( dev-util/gtk-doc ) || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool >=sys-apps/sed-4 >=dev-vcs/git-1.6
+>=net-libs/libsoup-2.26 >=dev-libs/glib-2.14 x11-libs/gtk+ x11-libs/gtkglext
+0
+
+
+http://lug.rose-hulman.edu/wiki/Libgis
+GPL-3
+Virtual Globe library
+
+autotools eutils fdo-mime git gnome.org gnome2 gnome2-utils libtool multilib portability toolchain-funcs user versionator
+doc debug
+
+
+
+
+
+compile install postinst postrm preinst unpack
+
+
+
+
+

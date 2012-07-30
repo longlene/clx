@@ -1,0 +1,22 @@
+sci-biology/staden dev-lang/tcl || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+sci-biology/staden dev-lang/tcl
+0
+ftp://ftp.sanger.ac.uk/pub/PRODUCTION_SOFTWARE/src/gap2caf-2.1.0.tar.gz
+
+http://www.sanger.ac.uk/resources/software/caf/
+as-is
+GAP4 file format to CAF v2 format converter for genomic assembly data
+~amd64 ~x86
+autotools eutils libtool multilib portability toolchain-funcs user
+
+
+
+
+3
+
+configure install
+
+
+
+
+

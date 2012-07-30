@@ -1,0 +1,22 @@
+media-video/ffmpeg x11-libs/vte media-video/mplayer >=x11-libs/gtk+-2 media-video/vobcopy dvd? ( media-libs/libdvdnav ) dvd? ( media-libs/libdvdread ) dvd? ( media-libs/libdvdcss )
+
+0
+mirror://sourceforge/vive/vive-2.0.0.tar.gz
+
+http://vive.sourceforge.net/
+GPL-2
+a GTK fronted to ffmpeg (with iPod presets)
+~x86 ~amd64
+eutils multilib portability toolchain-funcs user versionator
+dvd
+
+
+
+
+
+compile install unpack
+
+
+
+
+

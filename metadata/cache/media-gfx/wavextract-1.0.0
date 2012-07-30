@@ -1,0 +1,22 @@
+dev-python/imaging
+dev-python/imaging
+0
+http://download.berlios.de/wavextract/wavextract-1.0.0.tar.gz
+
+http://developer.berlios.de/projects/wavextract/
+GPL-2
+Program for extracting embedded audio data from JPEG images (written in Python).
+amd64
+
+
+
+
+
+
+
+install
+
+
+
+
+

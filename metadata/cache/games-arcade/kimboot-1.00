@@ -1,0 +1,22 @@
+app-arch/unzip
+>=dev-python/pyode-1.1 >=dev-python/pygame-1.6 dev-python/pyopengl >=virtual/python-2.3
+0
+mirror://sourceforge/kimboot/kimboot-1.00-src.tar.bz2
+
+http://kimboot.sourceforge.net/
+as-is
+Sick and addictive, squash the bodies with a ball on a rope
+~x86
+base eutils games multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

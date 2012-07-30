@@ -1,0 +1,22 @@
+>=dev-lang/lua-5.1 dev-libs/zeromq dev-util/pkgconfig >=dev-vcs/git-1.6
+>=dev-lang/lua-5.1 dev-libs/zeromq
+0
+
+
+http://www.zeromq.org/bindings:lua
+BSD
+Lua bindings for zeromq.
+~amd64 ~x86
+eutils flag-o-matic git multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile install prepare unpack
+
+
+
+
+

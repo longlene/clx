@@ -1,0 +1,72 @@
+--- /dev/null	2010-04-14 06:02:39.315473932 -0400
++++ compiz-manager.desktop	2010-04-14 18:46:36.642077128 -0400
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Type=Application
++Encoding=UTF-8
++Name=Compiz
++Exec=compiz-manager
++NoDisplay=true
++# name we put on the WM spec check window
++X-GNOME-WMName=Compiz
++X-GNOME-Autostart-Phase=WindowManager
++X-GNOME-Provides=windowmanager
++X-GNOME-Autostart-Notify=true
+--- desktop-effects.c.old	2010-04-06 14:09:32.000000000 -0400
++++ desktop-effects.c	2010-04-14 18:46:36.643171343 -0400
+@@ -115,7 +115,7 @@
+ 	return METACITY;
+     }
+     
+-    if (str && strcmp (str, "compiz-gtk") == 0)
++    if (str && strcmp (str, "compiz-manager") == 0)
+     {
+ 	return COMPIZ;
+     }
+@@ -274,7 +274,7 @@
+ static gboolean
+ start_compiz (App *app, GError **err)
+ {
+-    if (!g_spawn_command_line_async ("compiz-gtk --replace", err))
++    if (!g_spawn_command_line_async ("compiz-manager --replace", err))
+ 	return FALSE;
+ 
+     return TRUE;
+@@ -338,7 +338,7 @@
+         str = "metacity";
+         break;
+     case COMPIZ:
+-        str = "compiz-gtk";
++        str = "compiz-manager";
+         break;
+     case GNOME_SHELL:
+         str = "gnome-shell";
+@@ -879,7 +879,7 @@
+ static gboolean
+ compiz_installed (void)
+ {
+-    return is_in_path ("compiz-gtk");
++    return is_in_path ("compiz-manager");
+ }
+ 
+ static gboolean
+--- Makefile.am.old	2010-04-06 14:09:32.000000000 -0400
++++ Makefile.am	2010-04-14 18:46:36.643171343 -0400
+@@ -36,7 +36,7 @@
+ 
+ 
+ desktop_in_files = desktop-effects.desktop.in
+-desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
++desktop_DATA = $(desktop_in_files:.desktop.in=.desktop) compiz-manager.desktop
+ @INTLTOOL_DESKTOP_RULE@
+ 
+ install-data-local:
+@@ -58,7 +58,7 @@
+ 	desktop-effects32.png					\
+ 	desktop-effects48.png					\
+ 	desktop-effects96.png					\
+-								\
++	compiz-manager.desktop							\
+ 	intltool-extract.in					\
+ 	intltool-merge.in					\
+ 	intltool-update.in

@@ -1,0 +1,22 @@
+virtual/opengl sys-libs/zlib dev-libs/zziplib media-libs/libsdl[joystick] x11-libs/agg nls? ( virtual/libintl sys-devel/gettext ) openal? ( media-libs/openal ) gtk? ( >=x11-libs/gtk+-2.8.0 x11-libs/gtkglext ) glade? ( gnome-base/libglade x11-libs/gtkglext ) osmesa? ( media-libs/mesa[osmesa] ) wifi? ( net-libs/libpcap ) wxwidgets? ( x11-libs/wxGTK )
+virtual/opengl sys-libs/zlib dev-libs/zziplib media-libs/libsdl[joystick] x11-libs/agg nls? ( virtual/libintl sys-devel/gettext ) openal? ( media-libs/openal ) gtk? ( >=x11-libs/gtk+-2.8.0 x11-libs/gtkglext ) glade? ( gnome-base/libglade x11-libs/gtkglext ) osmesa? ( media-libs/mesa[osmesa] ) wifi? ( net-libs/libpcap ) wxwidgets? ( x11-libs/wxGTK )
+0
+mirror://sourceforge/desmume/desmume-0.9.6-1.tar.gz
+
+http://desmume.org/
+GPL-2
+Nintendo DS emulator
+~amd64 ~ppc ~x86
+base eutils games multilib portability toolchain-funcs user
+openal gtk glade osmesa nls wifi wxwidgets
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

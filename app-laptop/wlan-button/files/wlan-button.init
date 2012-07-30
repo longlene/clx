@@ -1,0 +1,41 @@
+#!/sbin/runscript
+# Copyright 1999-2005 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+#
+# $Id: wlan-button.init 7 2005-04-27 17:13:40Z croessner $
+#
+# $Header: $
+
+depend() {
+	use net
+}
+
+get_event() {
+	DEVNODE=`grep -si keyboard /sys/class/input/event*/device/driver/description | grep -o 'event[0-9]\+'`
+	if test $? -eq 0; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+start() {
+	NETSTARTSTOP=
+	
+	ebegin "Starting wlan-button"
+
+	if get_event; then
+		start-stop-daemon --start --quiet --exec /usr/sbin/wlan-button -- \
+		-e /dev/input/$DEVNODE
+	else
+		eerror "Could not gather event interface. Please check your config file"
+	fi
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping wlan-button"
+	start-stop-daemon --stop --quiet --exec /usr/sbin/wlan-button
+	eend $?
+}
+

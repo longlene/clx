@@ -1,0 +1,10 @@
+--- pthreads-w32-2-8-0-release/ptw32_callUserDestroyRoutines.c.orig	2011-08-15 23:21:14.211000123 +0200
++++ pthreads-w32-2-8-0-release/ptw32_callUserDestroyRoutines.c	2011-08-15 23:21:27.712000121 +0200
+@@ -40,6 +40,7 @@
+ 
+ #ifdef __cplusplus
+ # if ! defined (_MSC_VER) && ! (defined(__GNUC__) && __GNUC__ < 3) && ! defined(__WATCOMC__)
++#include <stdexcept>
+ using
+   std::terminate;
+ # endif

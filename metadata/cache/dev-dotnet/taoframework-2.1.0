@@ -1,0 +1,22 @@
+cg? ( >=media-gfx/nvidia-cg-toolkit-1.4.1 ) devil? ( >=media-libs/devil-1.6.8_rc2 ) ffmpeg? ( >=media-video/ffmpeg-0.4.9 ) freeglut? ( >=media-libs/freeglut-2.4.0 ) freetype? ( >=media-libs/freetype-2 ) glfw? ( >=media-libs/glfw-2.5.0 ) lua? ( >=dev-lang/lua-5.1.1 ) ode? ( >=dev-games/ode-0.6 ) openal? ( media-libs/openal ) opengl? ( virtual/opengl ) physfs? ( >=dev-games/physfs-1.0.1 ) sdl? ( >=media-libs/libsdl-1.2.11 ) X? ( x11-libs/libX11 ) dev-dotnet/nant sys-apps/sed dev-vcs/subversion net-misc/rsync
+cg? ( >=media-gfx/nvidia-cg-toolkit-1.4.1 ) devil? ( >=media-libs/devil-1.6.8_rc2 ) ffmpeg? ( >=media-video/ffmpeg-0.4.9 ) freeglut? ( >=media-libs/freeglut-2.4.0 ) freetype? ( >=media-libs/freetype-2 ) glfw? ( >=media-libs/glfw-2.5.0 ) lua? ( >=dev-lang/lua-5.1.1 ) ode? ( >=dev-games/ode-0.6 ) openal? ( media-libs/openal ) opengl? ( virtual/opengl ) physfs? ( >=dev-games/physfs-1.0.1 ) sdl? ( >=media-libs/libsdl-1.2.11 ) X? ( x11-libs/libX11 )
+0
+
+
+http://www.taoframework.com/
+MIT
+Various .NET and Mono Bindings
+~x86 ~amd64
+eutils mono multilib portability subversion toolchain-funcs user
+cg devil ffmpeg freeglut freetype glfw lua ode openal opengl physfs sdl X
+
+
+
+
+
+compile install preinst unpack
+
+
+
+
+

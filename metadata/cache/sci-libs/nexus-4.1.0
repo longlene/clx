@@ -1,0 +1,22 @@
+>=dev-java/java-config-2.1.9-r1
+virtual/jdk python? ( dev-lang/swig ) hdf? ( sci-libs/hdf ) hdf5? ( sci-libs/hdf5 ) xml? ( >=dev-libs/mini-xml-2.2.2 ) >=dev-java/java-config-2.1.9-r1
+0
+http://download.nexusformat.org/kits/nexus-4.1.0.tar.gz
+
+http://www.nexusformat.org/Main_Page
+LGPL
+Scientific algorithms library for Python
+~x86 ~amd64
+eutils java-pkg-2 java-utils-2 multilib portability toolchain-funcs user versionator
+debug hdf hdf5 python xml elibc_FreeBSD
+
+
+
+
+
+compile install preinst setup unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+
+>=x11-libs/qt-3.3.3:3 >=media-libs/alsa-lib-1.0.15
+0
+http://www3.firstclass.com/ClientDownloads/FC83ClientDownloadFiles/fcc-8.315-2-Linux.i686.tar.bz2
+
+http://www.firstclass.com/index.shtml
+
+FirstClass Client for Linux
+~x86
+eutils multilib portability toolchain-funcs user versionator
+
+
+
+
+
+
+compile install
+
+
+
+
+

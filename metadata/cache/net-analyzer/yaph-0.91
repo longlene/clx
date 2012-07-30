@@ -1,0 +1,22 @@
+
+
+0
+mirror://sourceforge/yaph/yaph-0.91.tar.gz
+
+http://yaph.sourceforge.net
+GPL-2
+Yet Another Proxy Hunter: Uses nmap to find proxies
+~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+install postinst unpack
+
+
+
+
+

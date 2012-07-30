@@ -1,0 +1,22 @@
+X? ( x11-apps/mkfontdir media-fonts/encodings ) >=media-libs/fontconfig-2.4.0
+
+0
+http://www.cdacmumbai.in/projects/indix/new-dw/IndiXRaghuFonts.tbz
+
+http://www.cdacmumbai.in/projects/indix/n_download.shtml
+GPL-2
+Raghu family of OpenType fonts for Indian scripts
+~x86
+eutils font multilib portability toolchain-funcs user
+X
+
+
+
+
+
+install postinst postrm setup unpack
+
+
+
+
+

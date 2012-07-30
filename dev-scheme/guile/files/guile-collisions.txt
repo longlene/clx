@@ -1,0 +1,16 @@
+ * 	/usr/bin/guile-config
+ * 	/usr/bin/guile-tools
+ * 	/usr/bin/guile
+ * 	/usr/bin/guile-snarf
+ * 	/usr/share/aclocal/guile.m4
+ * 	/usr/share/info/guile.info-2.bz2
+ * 	/usr/share/info/guile.info-3.bz2
+ * 	/usr/share/info/guile.info-4.bz2
+ * 	/usr/share/info/guile.info-5.bz2
+ * 	/usr/share/info/guile.info-6.bz2
+ * 	/usr/share/info/r5rs.info.bz2
+ * 	/usr/share/info/guile.info.bz2
+ * 	/usr/share/info/guile.info-1.bz2
+ * 	/usr/share/info/guile.info-7.bz2
+ * 	/usr/share/man/man1/guile.1.bz2
+ * 	/usr/lib/debug/usr/bin/guile.debug

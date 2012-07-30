@@ -1,0 +1,22 @@
+x11-libs/gtk+ media-libs/libsdl music? ( media-libs/sdl-mixer[timidity] ) !music? ( media-libs/sdl-mixer ) media-libs/libvorbis app-arch/unzip
+x11-libs/gtk+ media-libs/libsdl music? ( media-libs/sdl-mixer[timidity] ) !music? ( media-libs/sdl-mixer ) media-libs/libvorbis
+0
+http://dukeworld.duke4.net/eduke32/synthesis/20100625-1661/eduke32_src_20100625-1661.tar.bz2 textures? ( http://www.duke4.org/files/hrp/dn3d_hrp-4.0%28321%29.zip -> dn3d_hrp-4.0-321.zip ) music? ( http://www.duke4.org/files/nightfright/eduke32_mus.zip )
+
+http://www.eduke32.com/ http://hrp.duke4.net/
+as-is
+Port of Duke Nukem 3D for SDL
+amd64 ~x86
+base eutils games multilib portability toolchain-funcs user
+editor textures music
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

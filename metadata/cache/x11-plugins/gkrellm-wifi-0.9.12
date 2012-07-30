@@ -1,0 +1,22 @@
+>=app-admin/gkrellm-2.1.12 >=net-wireless/wireless-tools-22 >=x11-libs/gtk+-2 dev-util/pkgconfig
+>=app-admin/gkrellm-2.1.12 >=net-wireless/wireless-tools-22
+0
+http://github.com/downloads/tecknicaltom/gkrellm-wifi/gkrellm-wifi-0.9.12.tar.gz
+
+http://github.com/tecknicaltom/gkrellm-wifi
+GPL-2
+A GKrellM2 plug-in for monitoring the link quality of your wireless LAN cards
+x86 ppc amd64
+multilib toolchain-funcs
+
+
+
+
+
+
+compile install
+
+
+
+
+

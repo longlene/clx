@@ -1,0 +1,12 @@
+--- libblkid/blkid.h.old	2005-09-23 20:08:15.000000000 +0200
++++ libblkid/blkid.h	2005-09-23 20:08:30.000000000 +0200
+@@ -59,9 +59,6 @@
+ extern int blkid_dev_next(blkid_dev_iterate iterate, blkid_dev *dev);
+ extern void blkid_dev_iterate_end(blkid_dev_iterate iterate);
+ 
+-/* devno.c */
+-extern char *blkid_devno_to_devname(dev_t devno);
+-
+ /* devname.c */
+ extern int blkid_probe_all(blkid_cache cache);
+ extern int blkid_probe_all_new(blkid_cache cache);

@@ -1,0 +1,27 @@
+#!/sbin/runscript
+# Copyright 1999-2005 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+	need net
+}
+
+checkconfig() {
+	if [ ! -e /etc/kissd.conf ] ; then
+		eerror "You need an /etc/kissd.conf file to run kissd"
+		return 1
+	fi
+}
+
+start() {
+	checkconfig || return 1
+	ebegin "Starting kissd"
+	start-stop-daemon --start --background --quiet --exec /usr/sbin/kissd -- -k
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping kissd"
+	start-stop-daemon --stop --quiet --exec /usr/sbin/kissd
+	eend $?
+}

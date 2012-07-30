@@ -1,0 +1,22 @@
+virtual/libiconv gnutls? ( >=net-libs/gnutls-1.2.0 ) sasl? ( || ( net-libs/libgsasl net-misc/gsasl ) ) sendmail? ( mail-mta/ssmtp ) doc? ( app-doc/doxygen )
+virtual/libiconv gnutls? ( >=net-libs/gnutls-1.2.0 ) sasl? ( || ( net-libs/libgsasl net-misc/gsasl ) ) sendmail? ( mail-mta/ssmtp ) doc? ( app-doc/doxygen )
+0
+mirror://sourceforge/vmime/libvmime-0.9.0.tar.bz2
+
+http://www.vmime.org
+GPL-2
+Library for working with MIME messages and Internet messaging services like IMAP, POP or SMTP
+~amd64 ~ia64 ~ppc ~ppc64 ~x86
+eutils multilib portability toolchain-funcs user
+debug doc examples +gnutls +imap +maildir +pop +sasl +sendmail +smtp
+
+
+
+1
+
+compile install unpack
+
+
+
+
+

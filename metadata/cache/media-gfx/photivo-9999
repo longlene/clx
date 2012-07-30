@@ -1,0 +1,22 @@
+x11-libs/qt-gui:4 || ( media-libs/jpeg:62 media-libs/libjpeg-turbo ) media-gfx/exiv2 media-libs/lcms:2 media-libs/lensfun sci-libs/fftw:3.0 media-libs/libpng:1.2 >=media-libs/tiff-4.0.0_beta6 media-libs/liblqr media-gfx/graphicsmagick[q16,-lcms] gimp? ( media-gfx/gimp ) dev-vcs/mercurial
+x11-libs/qt-gui:4 || ( media-libs/jpeg:62 media-libs/libjpeg-turbo ) media-gfx/exiv2 media-libs/lcms:2 media-libs/lensfun sci-libs/fftw:3.0 media-libs/libpng:1.2 >=media-libs/tiff-4.0.0_beta6 media-libs/liblqr media-gfx/graphicsmagick[q16,-lcms] gimp? ( media-gfx/gimp )
+0
+
+
+http://www.photivo.org
+GPL-3
+Photo processor for RAW and Bitmap images
+~amd64
+base eutils mercurial multilib portability qt4-r2 toolchain-funcs user
+gimp
+
+
+
+2
+
+compile configure install prepare unpack
+
+
+
+
+

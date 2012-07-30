@@ -1,0 +1,22 @@
+--- dnprogs-2.39/scripts/check_kernel.sh	2003-04-25 03:19:22.000000000 -0400
++++ check_kernel.sh	2007-07-05 18:01:36.000000000 -0400
+@@ -29,14 +29,14 @@
+   fi
+ fi
+ 
+-if [ -f /usr/src/linux/include/linux/dn.h ]
+-then
++#if [ -f /usr/src/linux/include/linux/dn.h ]
++#then
+   #
+   # Steve's kernel
+   #
+-  echo Using dn.h from Steve\'s kernel
+-  cp  /usr/src/linux/include/linux/dn.h include/netdnet
+-fi
++#  echo Using dn.h from Steve\'s kernel
++#  cp  /usr/src/linux/include/linux/dn.h include/netdnet
++#fi
+ 
+ if [ ! -f include/netdnet/dn.h ]
+ then

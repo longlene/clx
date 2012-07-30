@@ -1,0 +1,19 @@
+*** pipslite-1.3.0/src/wrapper.c	2008-12-17 10:12:36.000000000 +0100
+--- pipslite-1.3.0-fix/src/wrapper.c	2009-01-29 07:46:55.000000000 +0100
+***************
+*** 287,293 ****
+  	option_p = NULL;
+  	opt_num = cupsParseOptions (opt_str, opt_num, &option_p);
+  
+! 	for (i = 0; media_names[i] != '\0'; i ++)
+  	{
+  		opt = cupsGetOption (media_names[i], opt_num, option_p);
+  		if (opt)
+--- 287,293 ----
+  	option_p = NULL;
+  	opt_num = cupsParseOptions (opt_str, opt_num, &option_p);
+  
+! 	for (i = 0; media_names[i] != ""; i ++)
+  	{
+  		opt = cupsGetOption (media_names[i], opt_num, option_p);
+  		if (opt)

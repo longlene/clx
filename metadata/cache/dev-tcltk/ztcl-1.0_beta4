@@ -1,0 +1,22 @@
+dev-lang/tcl dev-tcltk/tclmore sys-libs/zlib sys-libs/glibc
+dev-lang/tcl dev-tcltk/tclmore sys-libs/zlib
+0
+http://download.gna.org/ztcl/1.0/ztcl_1.0b4_src.tar.gz
+
+http://gna.org/projects/ztcl
+BSD
+ZTCL is an extension library for TCL that implements an interface to the ZLIB compression and decompression library
+~x86
+eutils multilib portability toolchain-funcs user
+doc
+
+
+
+
+
+install unpack
+
+
+
+
+

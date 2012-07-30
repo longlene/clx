@@ -1,0 +1,24 @@
+diff -ur /root/orig-crawl-source/acr.cc ./acr.cc
+--- /root/orig-crawl-source/acr.cc	2005-07-20 17:21:45.000000000 +0100
++++ ./acr.cc	2005-07-20 18:05:37.092534880 +0100
+@@ -1394,7 +1394,7 @@
+         break;
+ 
+     case CONTROL('O'):
+-    case '0':
++//    case '0':
+     case CMD_EXPLORE:
+         if (you.level_type == LEVEL_LABYRINTH || you.level_type == LEVEL_ABYSS)
+         {
+diff -ur /root/orig-crawl-source/liblinux.cc ./liblinux.cc
+--- /root/orig-crawl-source/liblinux.cc	2005-07-20 17:21:45.000000000 +0100
++++ ./liblinux.cc	2005-07-20 18:05:25.833246552 +0100
+@@ -362,7 +362,7 @@
+     key_to_command_table['\''] = CMD_WEAPON_SWAP;
+ 
+     // digits
+-    key_to_command_table['0'] = CMD_EXPLORE;
++    // key_to_command_table['0'] = CMD_EXPLORE;
+     key_to_command_table['1'] = CMD_MOVE_DOWN_LEFT;
+     key_to_command_table['2'] = CMD_MOVE_DOWN;
+     key_to_command_table['3'] = CMD_MOVE_DOWN_RIGHT;

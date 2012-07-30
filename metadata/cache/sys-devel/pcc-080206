@@ -1,0 +1,22 @@
+sys-devel/flex sys-devel/bison
+sys-devel/flex sys-devel/bison
+0
+http://pcc.ludd.ltu.se/ftp/pub/pcc/pcc-080206.tgz
+
+http://pcc.ludd.ltu.se/
+BSD
+Portable C compiler
+~x86
+
+
+
+
+
+
+
+compile install
+
+
+
+
+

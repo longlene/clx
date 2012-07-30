@@ -1,0 +1,22 @@
+app-arch/unzip
+games-fps/quake2-data games-fps/kmquake2-mods
+0
+http://www.markshan.com/maps/paximperia.zip http://www.markshan.com/engine/pax_101_patch.zip http://www.markshan.com/thesinraven/maps/the_sin_net_multiplayer_map_pack.tar.gz http://www.markshan.com/thesinraven/mods/1492.tar.gz http://www.markshan.com/thesinraven/mods/forever.tar.gz http://www.markshan.com/thesinraven/mods/genome.tar.gz http://www.markshan.com/thesinraven/mods/gladiator.tar.gz http://www.markshan.com/thesinraven/mods/lamber.tar.gz http://www.markshan.com/thesinraven/mods/return.tar.gz http://www.markshan.com/thesinraven/mods/xxx.tar.gz
+
+http://www.markshan.com/thesinraven/
+as-is
+High-quality Quake 2 map packs for use with kmquake2
+~x86
+base eutils games multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

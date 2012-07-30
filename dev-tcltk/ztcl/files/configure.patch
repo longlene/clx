@@ -1,0 +1,11 @@
+--- configure.orig	2006-10-05 19:50:32.000000000 +0400
++++ configure	2006-10-05 19:50:44.000000000 +0400
+@@ -6748,7 +6748,7 @@
+ 	    # results, and the version is kept in special file).
+ 
+ 	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
++		system=MP-RAS-`awk '{print }' /etc/.relid`
+ 	    fi
+ 	    if test "`uname -s`" = "AIX" ; then
+ 		system=AIX-`uname -v`.`uname -r`

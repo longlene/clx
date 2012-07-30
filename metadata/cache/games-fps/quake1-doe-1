@@ -1,0 +1,22 @@
+
+games-fps/quake1-data X? ( || ( games-fps/darkplaces games-fps/joequake games-fps/tenebrae games-fps/ezquake-bin games-fps/fuhquake-bin ) )
+0
+
+
+http://www.idsoftware.com/games/quake/quake-mp1/
+as-is
+Dissolution of Eternity mission pack for Quake 1
+~x86 ~amd64
+base eutils games multilib portability toolchain-funcs user
+X
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

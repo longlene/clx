@@ -1,0 +1,22 @@
+gnutls? ( net-libs/gnutls ) idn? ( net-dns/libidn ) dev-libs/libtasn1 dev-libs/libgcrypt virtual/libiconv virtual/libintl
+gnutls? ( net-libs/gnutls ) idn? ( net-dns/libidn ) dev-libs/libtasn1 dev-libs/libgcrypt virtual/libiconv virtual/libintl
+0
+ftp://alpha.gnu.org/pub/gnu/shishi/shishi-0.0.37.tar.gz
+
+http://www.gnu.org/software/shishi
+GPL-3
+GNU Shishi, a Kerberos 5 Implementation
+~x86
+
+gnutls idn ipv6 nls pam +des +des3 +aes +md +null +arcfour
+
+
+
+1
+
+compile install
+
+
+
+
+

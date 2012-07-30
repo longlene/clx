@@ -1,0 +1,11 @@
+--- med-2.3.5.old/config/med_check_hdf5.m4	2009-09-13 17:05:38.000000000 +0200
++++ med-2.3.5/config/med_check_hdf5.m4	2009-09-13 17:06:22.000000000 +0200
+@@ -20,7 +20,7 @@
+     if test -n "$hdf5home" && test -d "$hdf5home" ; then
+    
+       LDFLAGS="-L$hdf5home/lib $LDFLAGS"
+-      CPPFLAGS="$CPPFLAGS -I$hdf5home/include"
++      CPPFLAGS="$CPPFLAGS -I$hdf5home/include -DH5_USE_16_API"
+     
+       AC_CHECK_LIB([hdf5],[H5open],[],AC_MSG_ERROR([either use HDF5HOME env. var. or --with-hdf5=<path>]),[])
+       AC_CHECK_PROG([H5DUMP],[h5dump],[$hdf5home/bin/h5dump],[no],[$hdf5home/bin],[])

@@ -1,0 +1,22 @@
+media-libs/libsdl media-libs/libpng dev-vcs/subversion net-misc/rsync
+media-libs/libsdl media-libs/libpng
+0
+
+
+http://code.google.com/p/nesemu/
+GPL-2
+A cross-platform Nintendo NES emulator targeting PCs and Consoles
+
+base eutils games multilib portability subversion toolchain-funcs user
+
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

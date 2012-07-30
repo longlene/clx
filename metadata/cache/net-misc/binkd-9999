@@ -1,0 +1,22 @@
+perl? ( >=dev-lang/perl-5.8.3 ) bzip2? ( >=app-arch/bzip2-1.0.3 ) zlib? ( >=sys-libs/zlib-1.2.3 ) dev-vcs/cvs
+perl? ( >=dev-lang/perl-5.8.3 ) bzip2? ( >=app-arch/bzip2-1.0.3 ) zlib? ( >=sys-libs/zlib-1.2.3 )
+0
+
+
+ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
+GPL-2
+Binkd - the binkp daemon for FTN communications
+
+cvs eutils multilib portability toolchain-funcs user
+perl bzip2 zlib https bwlim
+
+
+
+
+
+compile install unpack
+
+
+
+
+

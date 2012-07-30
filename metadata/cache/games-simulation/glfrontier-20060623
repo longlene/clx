@@ -1,0 +1,22 @@
+virtual/glut media-libs/libsdl media-libs/libogg
+virtual/glut media-libs/libsdl media-libs/libogg
+0
+http://tom.noflag.org.uk/glfrontier/frontvm3-20060623.tar.bz2 http://tom.noflag.org.uk/misc/frontvm-audio-20060222.tar.bz2
+
+http://tom.noflag.org.uk/glfrontier.html
+GPL
+Frontier: Elite 2 with OpenGL support
+~x86
+base eutils games multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

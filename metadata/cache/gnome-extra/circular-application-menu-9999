@@ -1,0 +1,22 @@
+gnome-base/gnome dev-vcs/subversion net-misc/rsync
+gnome-base/gnome
+0
+
+
+http://code.google.com/p/circular-application-menu/
+LGPL-2
+A circular-application-menu (C-A-M) representation for the GNOME desktop.
+~x86
+eutils multilib portability subversion toolchain-funcs user
+
+
+
+
+
+
+compile install preinst unpack
+
+
+
+
+

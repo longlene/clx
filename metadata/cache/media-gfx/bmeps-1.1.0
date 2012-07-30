@@ -1,0 +1,22 @@
+sys-libs/zlib media-libs/libpng jpeg? ( media-libs/jpeg )
+sys-libs/zlib media-libs/libpng jpeg? ( media-libs/jpeg )
+0
+mirror://sourceforge/bmeps/bmeps-1.1.0-a.tar.gz
+
+http://bmeps.sourceforge.net/
+GPL-2
+Convert PNG/JPEG/NetPBM to EPS
+~x86
+
+jpeg
+
+
+
+
+
+compile install
+
+
+
+
+

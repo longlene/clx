@@ -1,0 +1,582 @@
+--- bulk.c.orig	2011-02-23 10:41:43.000000000 -0800
++++ bulk.c	2011-02-23 10:43:32.000000000 -0800
+@@ -34,6 +34,9 @@
+ #include <linux/usb.h>
+ #include <linux/delay.h>
+ #include <linux/version.h>	/* For LINUX_VERSION_CODE */
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++#include <linux/slab.h>
++#endif
+ #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,24) )
+ #include <sound/driver.h>
+ #endif
+@@ -461,8 +464,13 @@
+ 				(void *)chip);
+ 
+ 	chip->ctrl_urb->setup_dma = chip->ctl_req_dma;
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	/* NOTE: transfer_dma setup above in call to usb_alloc_coherent() */
++	chip->ctrl_urb->transfer_flags = URB_NO_TRANSFER_DMA_MAP;
++#else
+ 	/* NOTE: transfer_dma setup above in call to usb_buffer_alloc() */
+ 	chip->ctrl_urb->transfer_flags = URB_NO_SETUP_DMA_MAP | URB_NO_TRANSFER_DMA_MAP;
++#endif
+ 
+ 	ret = hdjbulk_submit_urb(chip, chip->ctrl_urb, GFP_KERNEL);
+ 	if (ret!=0) {
+@@ -553,7 +561,11 @@
+ 				output_control_callback,
+ 				&ubulk->output_control_completion);
+ 	ubulk->output_control_urb->setup_dma = ubulk->output_control_dma;
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	ubulk->output_control_urb->transfer_flags = URB_NO_TRANSFER_DMA_MAP;
++#else
+ 	ubulk->output_control_urb->transfer_flags = URB_NO_SETUP_DMA_MAP | URB_NO_TRANSFER_DMA_MAP;
++#endif
+ 	if ((rc =  hdjbulk_submit_urb(ubulk->chip,ubulk->output_control_urb, GFP_KERNEL))!=0) {
+ 		printk(KERN_WARNING"%s hdjbulk_submit_urb() failed, rc:%d\n",__FUNCTION__,rc);
+ 	} else {
+@@ -2675,7 +2687,11 @@
+ {
+ 	if (ubulk->chip->product_code!=DJCONTROLSTEEL_PRODUCT_CODE) {
+ 		if (ubulk->output_control_ctl_req!=NULL && ubulk->control_interface!=NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			usb_free_coherent(interface_to_usbdev(ubulk->control_interface),
++#else
+ 			usb_buffer_free(interface_to_usbdev(ubulk->control_interface),
++#endif
+ 					sizeof(*(ubulk->output_control_ctl_req)),
+ 					ubulk->output_control_ctl_req,
+ 					ubulk->output_control_dma);
+@@ -2684,7 +2700,11 @@
+ 
+ 		if (ubulk->output_control_buffer!=NULL && ubulk->control_interface!=NULL &&
+ 		    ubulk->output_control_urb!=NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			usb_free_coherent(interface_to_usbdev(ubulk->control_interface),
++#else
+ 			usb_buffer_free(interface_to_usbdev(ubulk->control_interface),
++#endif
+ 					ubulk->output_control_urb->transfer_buffer_length,
+ 					ubulk->output_control_buffer,
+ 					ubulk->output_control_urb->transfer_dma);
+@@ -2712,7 +2732,11 @@
+ 		usb_kill_urb(ubulk->bulk_out_urb);
+ 		if (free_urbs!=0) {
+ 			if (ubulk->bulk_out_buffer!=NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++				usb_free_coherent(ubulk->chip->dev, ubulk->bulk_out_size,
++#else
+ 				usb_buffer_free(ubulk->chip->dev, ubulk->bulk_out_size,
++#endif
+ 						ubulk->bulk_out_urb->transfer_buffer,
+ 						ubulk->bulk_out_urb->transfer_dma);
+ 				ubulk->bulk_out_buffer = NULL;
+@@ -3065,11 +3089,19 @@
+ 	init_MUTEX(&ubulk->bulk_out_buffer_mutex);
+ 	
+ 	ubulk->bulk_out_buffer =
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		usb_alloc_coherent(ubulk->chip->dev, ubulk->bulk_out_size,
++#else
+ 		usb_buffer_alloc(ubulk->chip->dev, ubulk->bulk_out_size,
++#endif
+ 			GFP_KERNEL, &ubulk->bulk_out_urb->transfer_dma);
+ 
+ 	if (ubulk->bulk_out_buffer==NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		printk(KERN_WARNING"%s() usb_alloc_coherent() failed\n",__FUNCTION__);
++#else
+ 		printk(KERN_WARNING"%s() usb_buffer_alloc() failed\n",__FUNCTION__);
++#endif
+ 
+ 		retval = -ENOMEM;
+ 		goto hdj_create_bulk_interface_error;
+@@ -3609,12 +3641,20 @@
+ 	 *  control state */
+ 	if (ubulk->chip->product_code != DJCONTROLSTEEL_PRODUCT_CODE) {	
+ 		/* allocate memory for setup packet for our control requests */
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		ubulk->output_control_ctl_req = usb_alloc_coherent(interface_to_usbdev(ubulk->control_interface), 
++#else
+ 		ubulk->output_control_ctl_req = usb_buffer_alloc(interface_to_usbdev(ubulk->control_interface), 
++#endif
+ 						 		sizeof(*(ubulk->output_control_ctl_req)),
+ 						 		GFP_KERNEL, 
+ 								 &ubulk->output_control_dma);
+ 		if (ubulk->output_control_ctl_req==NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			printk(KERN_WARNING"%s() usb_alloc_coherent failed (ctl req)\n",__FUNCTION__);
++#else
+ 			printk(KERN_WARNING"%s() usb_buffer_alloc failed (ctl req)\n",__FUNCTION__);
++#endif
+ 			ret = -ENOMEM;
+ 			goto hdjbulk_init_output_control_state_error;
+ 		} else {
+@@ -3628,7 +3668,11 @@
+ 			goto hdjbulk_init_output_control_state_error;
+ 		}
+ 
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		ubulk->output_control_buffer = usb_alloc_coherent(interface_to_usbdev(ubulk->control_interface),
++#else
+ 		ubulk->output_control_buffer = usb_buffer_alloc(interface_to_usbdev(ubulk->control_interface),
++#endif
+ 								ubulk->output_control_buffer_size, 
+ 								GFP_KERNEL,
+ 								&ubulk->output_control_urb->transfer_dma);
+@@ -3773,10 +3817,18 @@
+ 		}
+ 
+ 		ep[i]->max_transfer = ubulk->continuous_reader_packet_size;
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		buffer = usb_alloc_coherent(ubulk->chip->dev, ep[i]->max_transfer,
++#else
+ 		buffer = usb_buffer_alloc(ubulk->chip->dev, ep[i]->max_transfer,
++#endif
+ 					GFP_KERNEL, &ep[i]->urb->transfer_dma);
+ 		if (!buffer) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			printk(KERN_WARNING"%s() usb_alloc_coherent() failed\n",__FUNCTION__);
++#else
+ 			printk(KERN_WARNING"%s() usb_buffer_alloc() failed\n",__FUNCTION__);
++#endif
+ 			
+ 			ret = -ENOMEM;
+ 			goto init_continuous_reader_error;
+@@ -4250,7 +4302,11 @@
+ {
+ 	if (ep->urb) {
+ 		if (ep->urb->transfer_buffer) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			usb_free_coherent(ep->ubulk->chip->dev, ep->max_transfer,
++#else
+ 			usb_buffer_free(ep->ubulk->chip->dev, ep->max_transfer,
++#endif
+ 					ep->urb->transfer_buffer,
+ 					ep->urb->transfer_dma);
+ 		}
+--- configuration_manager.c.orig	2011-02-23 10:42:03.000000000 -0800
++++ configuration_manager.c	2011-02-23 10:43:32.000000000 -0800
+@@ -26,6 +26,9 @@
+ #include <linux/usb.h>
+ #include <linux/version.h>	/* For LINUX_VERSION_CODE */
+ #include <asm/atomic.h>
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++#include <linux/slab.h>
++#endif
+ #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,24) )
+ #include <sound/driver.h>
+ #endif
+--- device.c.orig	2011-02-23 10:42:11.000000000 -0800
++++ device.c	2011-02-23 10:43:32.000000000 -0800
+@@ -1559,7 +1559,11 @@
+ 
+ 	if(chip->ctrl_req_buffer != NULL)
+ 	{
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		usb_free_coherent(chip->dev,
++#else
+ 		usb_buffer_free(chip->dev,
++#endif
+ 				chip->ctrl_urb->transfer_buffer_length,
+ 				chip->ctrl_req_buffer,
+ 				chip->ctrl_urb->transfer_dma);
+@@ -1575,7 +1579,11 @@
+ 	
+ 	if(chip->ctl_req != NULL)
+ 	{
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		usb_free_coherent(chip->dev,
++#else
+ 		usb_buffer_free(chip->dev,
++#endif
+ 			sizeof(*(chip->ctl_req)),
+ 			chip->ctl_req,
+ 			chip->ctl_req_dma);
+@@ -1736,12 +1744,20 @@
+ 	}
+ 
+ 	/* allocate memory for setup packet for our control requests */
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	chip->ctl_req = usb_alloc_coherent(chip->dev, 
++#else
+ 	chip->ctl_req = usb_buffer_alloc(chip->dev, 
++#endif
+ 					 sizeof(*(chip->ctl_req)),
+ 					 GFP_KERNEL, 
+ 					 &chip->ctl_req_dma);
+ 	if(chip->ctl_req == NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		printk(KERN_WARNING"snd_hdj_chip_create(): usb_alloc_coherent() failed for setup DMA\n");
++#else
+ 		printk(KERN_WARNING"snd_hdj_chip_create(): usb_buffer_alloc() failed for setup DMA\n");
++#endif
+ 		return err;
+ 	}
+ 	
+@@ -1751,12 +1767,20 @@
+ 
+ 	chip->ctrl_req_buffer_len =  sizeof(u16);
+ 	chip->ctrl_urb->transfer_buffer_length = chip->ctrl_req_buffer_len;
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	chip->ctrl_req_buffer = usb_alloc_coherent(chip->dev, 
++#else
+ 	chip->ctrl_req_buffer = usb_buffer_alloc(chip->dev, 
++#endif
+ 						 chip->ctrl_urb->transfer_buffer_length,
+ 						 GFP_KERNEL, 
+ 						 &chip->ctrl_urb->transfer_dma);
+ 	if (chip->ctrl_req_buffer == NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		printk(KERN_WARNING"snd_hdj_chip_create(): usb_alloc_coherent() failed\n");
++#else
+ 		printk(KERN_WARNING"snd_hdj_chip_create(): usb_buffer_alloc() failed\n");
++#endif
+ 		return err;
+ 	}
+ 
+--- midi.c.orig	2011-02-23 10:42:25.000000000 -0800
++++ midi.c	2011-02-23 10:43:32.000000000 -0800
+@@ -34,6 +34,9 @@
+ #include <linux/module.h>
+ #include <linux/usb.h>
+ #include <linux/kthread.h>
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++#include <linux/slab.h>
++#endif
+ #include <asm/byteorder.h>
+ #include <asm/atomic.h>
+ #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,24) )
+@@ -367,7 +370,11 @@
+ {
+ 	if (ep->urb) {
+ 		if (ep->urb->transfer_buffer) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			usb_free_coherent(ep->umidi->chip->dev,
++#else
+ 			usb_buffer_free(ep->umidi->chip->dev,
++#endif
+ 					ep->urb->transfer_buffer_length,
+ 					ep->urb->transfer_buffer,
+ 					ep->urb->transfer_dma);
+@@ -503,10 +510,18 @@
+ 		pipe = usb_rcvbulkpipe(umidi->chip->dev, ep_info->in_ep);
+ 	}
+ 	length = usb_maxpacket(umidi->chip->dev, pipe, 0);
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	buffer = usb_alloc_coherent(umidi->chip->dev, length, GFP_KERNEL,
++#else
+ 	buffer = usb_buffer_alloc(umidi->chip->dev, length, GFP_KERNEL,
++#endif
+ 				  &ep->urb->transfer_dma);
+ 	if (!buffer) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		snd_printk(KERN_WARNING"%s() usb_alloc_coherent failed\n",__FUNCTION__);
++#else
+ 		snd_printk(KERN_WARNING"%s() usb_buffer_alloc failed\n",__FUNCTION__);
++#endif
+ 		snd_hdjmidi_in_endpoint_delete(ep);
+ 		return -ENOMEM;
+ 	}
+@@ -536,7 +551,11 @@
+ #endif
+ 	if (ep->urb) {
+ 		if (ep->urb->transfer_buffer) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			usb_free_coherent(ep->umidi->chip->dev, ep->max_transfer,
++#else
+ 			usb_buffer_free(ep->umidi->chip->dev, ep->max_transfer,
++#endif
+ 					ep->urb->transfer_buffer,
+ 					ep->urb->transfer_dma);
+ 		}
+@@ -544,27 +563,43 @@
+ 	}
+ 	if (ep->urb_led) {
+ 		if (ep->urb_led->transfer_buffer) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			usb_free_coherent(ep->umidi->chip->dev, ep->max_transfer,
++#else
+ 			usb_buffer_free(ep->umidi->chip->dev, ep->max_transfer,
++#endif
+ 					ep->urb_led->transfer_buffer,
+ 					ep->urb_led->transfer_dma);
+ 		}
+ 		usb_free_urb(ep->urb_led);	
+ 	}
+ 	if (ep->ctrl_req_led) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		usb_free_coherent(ep->umidi->chip->dev, sizeof(*(ep->ctrl_req_led)),
++#else
+ 		usb_buffer_free(ep->umidi->chip->dev, sizeof(*(ep->ctrl_req_led)),
++#endif
+ 						ep->ctrl_req_led, ep->ctrl_req_led_dma);
+ 	}
+ 	if (ep->controller_state) {
+ 		if (ep->controller_state->output_control_ctl_urb &&
+ 			 ep->controller_state->output_control_ctl_urb->transfer_buffer &&
+ 			 ep->controller_state->output_control_ctl_urb->transfer_dma) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			usb_free_coherent(ep->umidi->chip->dev, ep->max_transfer,
++#else
+ 			usb_buffer_free(ep->umidi->chip->dev, ep->max_transfer,
++#endif
+ 					ep->controller_state->output_control_ctl_urb->transfer_buffer,
+ 					ep->controller_state->output_control_ctl_urb->transfer_dma);
+ 		}
+ 		if (ep->controller_state->output_control_ctl_req &&
+ 			 ep->controller_state->output_control_ctl_dma) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			usb_free_coherent(ep->umidi->chip->dev, 
++#else
+ 			usb_buffer_free(ep->umidi->chip->dev, 
++#endif
+ 					sizeof(*(ep->controller_state->output_control_ctl_req)),
+ 					ep->controller_state->output_control_ctl_req,
+ 					ep->controller_state->output_control_ctl_dma);
+@@ -573,7 +608,11 @@
+ 			usb_free_urb(ep->controller_state->output_control_ctl_urb);
+ 		}
+ 		if (ep->controller_state->ctl_req) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			usb_free_coherent(ep->umidi->chip->dev, 
++#else
+ 			usb_buffer_free(ep->umidi->chip->dev, 
++#endif
+ 					sizeof(*(ep->controller_state->ctl_req)),
+ 					ep->controller_state->ctl_req,
+ 					ep->controller_state->ctl_req_dma);
+@@ -584,14 +623,22 @@
+ 		}
+ 		if (ep->controller_state->urb_kt) {
+ 			if (ep->controller_state->urb_kt->transfer_buffer) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++				usb_free_coherent(ep->umidi->chip->dev, ep->max_transfer,
++#else
+ 				usb_buffer_free(ep->umidi->chip->dev, ep->max_transfer,
++#endif
+ 						ep->controller_state->urb_kt->transfer_buffer,
+ 						ep->controller_state->urb_kt->transfer_dma);
+ 			}
+ 			usb_free_urb(ep->controller_state->urb_kt);
+ 		}
+ 		if (ep->controller_state->ctl_req_kt) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			usb_free_coherent(ep->umidi->chip->dev, 
++#else
+ 			usb_buffer_free(ep->umidi->chip->dev, 
++#endif
+ 					sizeof(*(ep->controller_state->ctl_req_kt)),
+ 					ep->controller_state->ctl_req_kt,
+ 					ep->controller_state->ctl_req_dma_kt);
+@@ -666,12 +713,20 @@
+ 		controller_state->is_weltrend = is_mp3_weltrend(ep->umidi->chip->usb_id);
+ 	}
+ 	
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	controller_state->ctl_req = usb_alloc_coherent(ep->umidi->chip->dev, 
++#else
+ 	controller_state->ctl_req = usb_buffer_alloc(ep->umidi->chip->dev, 
++#endif
+ 							sizeof(*(controller_state->ctl_req)),
+ 							GFP_KERNEL, 
+ 							&controller_state->ctl_req_dma);
+ 	if (controller_state->ctl_req==NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		snd_printk(KERN_WARNING"%s() usb_alloc_coherent() failed for setup DMA\n",__FUNCTION__);
++#else
+ 		snd_printk(KERN_WARNING"%s() usb_buffer_alloc() failed for setup DMA\n",__FUNCTION__);
++#endif
+ 		return -ENOMEM;
+ 	}
+ 	
+@@ -679,12 +734,20 @@
+ 	 *  mouse setting or setting LEDs */
+ 	init_MUTEX(&controller_state->output_control_ctl_mutex);
+ 	init_completion(&controller_state->output_control_ctl_completion);
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	controller_state->output_control_ctl_req = usb_alloc_coherent(ep->umidi->chip->dev, 
++#else
+ 	controller_state->output_control_ctl_req = usb_buffer_alloc(ep->umidi->chip->dev, 
++#endif
+ 							sizeof(*(controller_state->output_control_ctl_req)),
+ 							GFP_KERNEL, 
+ 							&controller_state->output_control_ctl_dma);
+ 	if (controller_state->output_control_ctl_req==NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		snd_printk(KERN_WARNING"%s() usb_alloc_coherent() failed for general setup DMA\n",
++#else
+ 		snd_printk(KERN_WARNING"%s() usb_buffer_alloc() failed for general setup DMA\n",
++#endif
+ 				__FUNCTION__);
+ 		return -ENOMEM;
+ 	}
+@@ -700,10 +763,18 @@
+ 	max_transfer = usb_maxpacket(ep->umidi->chip->dev, 
+ 					controller_state->output_control_ctl_pipe, 1);
+ 	
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	buffer = usb_alloc_coherent(ep->umidi->chip->dev, max_transfer,
++#else
+ 	buffer = usb_buffer_alloc(ep->umidi->chip->dev, max_transfer,
++#endif
+ 				  GFP_KERNEL, &controller_state->output_control_ctl_urb->transfer_dma);
+ 	if (buffer==NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		snd_printk(KERN_WARNING"%s() usb_alloc_coherent failed (general URB buffer)\n",
++#else
+ 		snd_printk(KERN_WARNING"%s() usb_buffer_alloc failed (general URB buffer)\n",
++#endif
+ 					__FUNCTION__);
+ 		return -ENOMEM;	
+ 	}
+@@ -726,8 +797,13 @@
+ 	controller_state->output_control_ctl_req->wIndex = cpu_to_le16(ep->umidi->iface->cur_altsetting->desc.bInterfaceNumber);
+ 	controller_state->output_control_ctl_req->wLength = cpu_to_le16(DJ_MP3_HID_OUTPUT_REPORT_LEN);
+ 	controller_state->output_control_ctl_urb->setup_dma = controller_state->output_control_ctl_dma;
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	/* NOTE: transfer_dma setup above in call to usb_alloc_coherent() */
++	controller_state->output_control_ctl_urb->transfer_flags = URB_NO_TRANSFER_DMA_MAP;
++#else
+ 	/* NOTE: transfer_dma setup above in call to usb_buffer_alloc() */
+ 	controller_state->output_control_ctl_urb->transfer_flags = URB_NO_SETUP_DMA_MAP | URB_NO_TRANSFER_DMA_MAP;
++#endif
+ 	
+ 	return 0;
+ }
+@@ -772,12 +848,20 @@
+ 	}
+ 	
+ 	if (ep->umidi->chip->caps.leds_hid_controlled) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		ep->ctrl_req_led = usb_alloc_coherent(ep->umidi->chip->dev, 
++#else
+ 		ep->ctrl_req_led = usb_buffer_alloc(ep->umidi->chip->dev, 
++#endif
+ 								sizeof(*(ep->ctrl_req_led)),
+ 								GFP_KERNEL, 
+ 								&ep->ctrl_req_led_dma);
+ 		if (ep->ctrl_req_led==NULL) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			snd_printk(KERN_WARNING"%s() usb_alloc_coherent() failed for setup DMA\n",__FUNCTION__);
++#else
+ 			snd_printk(KERN_WARNING"%s() usb_buffer_alloc() failed for setup DMA\n",__FUNCTION__);
++#endif
+ 			return -ENOMEM;
+ 		}
+ 	}
+@@ -806,18 +890,34 @@
+ 		pipe = usb_sndctrlpipe(umidi->chip->dev, 0);
+ 	}
+ 	ep->max_transfer = usb_maxpacket(umidi->chip->dev, pipe, 1);
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	buffer = usb_alloc_coherent(umidi->chip->dev, ep->max_transfer,
++#else
+ 	buffer = usb_buffer_alloc(umidi->chip->dev, ep->max_transfer,
++#endif
+ 				  GFP_KERNEL, &ep->urb->transfer_dma);
+ 	if (!buffer) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		snd_printk(KERN_WARNING"%s() usb_alloc_coherent() failed\n",__FUNCTION__);
++#else
+ 		snd_printk(KERN_WARNING"%s() usb_buffer_alloc() failed\n",__FUNCTION__);
++#endif
+ 		snd_hdjmidi_out_endpoint_delete(ep);
+ 		return -ENOMEM;
+ 	}
+ 	
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++	buffer_led = usb_alloc_coherent(umidi->chip->dev, ep->max_transfer,
++#else
+ 	buffer_led = usb_buffer_alloc(umidi->chip->dev, ep->max_transfer,
++#endif
+ 				  GFP_KERNEL, &ep->urb_led->transfer_dma);
+ 	if (!buffer_led) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		snd_printk(KERN_WARNING"%s() usb_alloc_coherent() failed for LED buffer\n",
++#else
+ 		snd_printk(KERN_WARNING"%s() usb_buffer_alloc() failed for LED buffer\n",
++#endif
+ 					__FUNCTION__);
+ 		snd_hdjmidi_out_endpoint_delete(ep);
+ 		return -ENOMEM;
+@@ -853,8 +953,13 @@
+ 		ep->controller_state->ctl_req->wIndex = cpu_to_le16(umidi->iface->cur_altsetting->desc.bInterfaceNumber);
+ 		ep->controller_state->ctl_req->wLength = cpu_to_le16(DJ_MP3_HID_OUTPUT_REPORT_LEN);
+ 		ep->urb->setup_dma = ep->controller_state->ctl_req_dma;
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		/* NOTE: transfer_dma setup above in call to usb_alloc_coherent() */
++		ep->urb->transfer_flags = URB_NO_TRANSFER_DMA_MAP;
++#else
+ 		/* NOTE: transfer_dma setup above in call to usb_buffer_alloc() */
+ 		ep->urb->transfer_flags = URB_NO_SETUP_DMA_MAP | URB_NO_TRANSFER_DMA_MAP;
++#endif
+ 	}
+ 	
+ 	if (ep->umidi->chip->caps.leds_hid_controlled) {
+@@ -874,8 +979,13 @@
+ 		ep->ctrl_req_led->wIndex = cpu_to_le16(umidi->iface->cur_altsetting->desc.bInterfaceNumber);
+ 		ep->ctrl_req_led->wLength = cpu_to_le16(DJ_MP3_HID_OUTPUT_REPORT_LEN);
+ 		ep->urb_led->setup_dma = ep->ctrl_req_led_dma;
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		/* NOTE: transfer_dma setup above in call to usb_alloc_coherent() */
++		ep->urb_led->transfer_flags = URB_NO_TRANSFER_DMA_MAP;
++#else
+ 		/* NOTE: transfer_dma setup above in call to usb_buffer_alloc() */
+ 		ep->urb_led->transfer_flags = URB_NO_SETUP_DMA_MAP | URB_NO_TRANSFER_DMA_MAP;
++#endif
+ 	}
+ 	
+ 	if (ep->umidi->chip->caps.leds_bulk_controlled) {
+@@ -913,20 +1023,36 @@
+ 			return -ENOMEM;
+ 		}
+ 
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		buffer = usb_alloc_coherent(umidi->chip->dev, ep->max_transfer,
++#else
+ 		buffer = usb_buffer_alloc(umidi->chip->dev, ep->max_transfer,
++#endif
+ 				  GFP_KERNEL, &ep->controller_state->urb_kt->transfer_dma);
+ 		if (!buffer) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			snd_printk(KERN_WARNING"%s() usb_alloc_coherent() for wq failed\n",__FUNCTION__);
++#else
+ 			snd_printk(KERN_WARNING"%s() usb_buffer_alloc() for wq failed\n",__FUNCTION__);
++#endif
+ 			snd_hdjmidi_out_endpoint_delete(ep);
+ 			return -ENOMEM;
+ 		}
+ 
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		ep->controller_state->ctl_req_kt = usb_alloc_coherent(umidi->chip->dev, 
++#else
+ 		ep->controller_state->ctl_req_kt = usb_buffer_alloc(umidi->chip->dev, 
++#endif
+ 							sizeof(*(ep->controller_state->ctl_req_kt)),
+ 							GFP_KERNEL, 
+ 							&ep->controller_state->ctl_req_dma_kt);
+ 		if (!ep->controller_state->ctl_req_kt) {
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++			snd_printk(KERN_WARNING"%s() usb_alloc_coherent() failed for setup DMA for wq\n",__FUNCTION__);
++#else
+ 			snd_printk(KERN_WARNING"%s() usb_buffer_alloc() failed for setup DMA for wq\n",__FUNCTION__);
++#endif
+ 			snd_hdjmidi_out_endpoint_delete(ep);
+ 			return -ENOMEM;
+ 		}
+@@ -946,8 +1072,13 @@
+ 		ep->controller_state->ctl_req_kt->wIndex = cpu_to_le16(umidi->iface->cur_altsetting->desc.bInterfaceNumber);
+ 		ep->controller_state->ctl_req_kt->wLength = cpu_to_le16(DJ_MP3_HID_OUTPUT_REPORT_LEN);
+ 		ep->controller_state->urb_kt->setup_dma = ep->controller_state->ctl_req_dma_kt;
++#if ( LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35) )
++		/* NOTE: transfer_dma setup above in call to usb_alloc_coherent() */
++		ep->controller_state->urb_kt->transfer_flags = URB_NO_TRANSFER_DMA_MAP;
++#else
+ 		/* NOTE: transfer_dma setup above in call to usb_buffer_alloc() */
+ 		ep->controller_state->urb_kt->transfer_flags = URB_NO_SETUP_DMA_MAP | URB_NO_TRANSFER_DMA_MAP;
++#endif
+ 	
+ 		init_completion(&ep->controller_state->ctl_req_completion_kt);
+ 		init_completion(&ep->controller_state->mp3w_kthread_started);

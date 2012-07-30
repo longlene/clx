@@ -1,0 +1,22 @@
+media-fonts/gnu-gs-fonts-std virtual/jdk
+|| ( www-servers/tomcat net-www/apache )
+0
+http://download.openlaszlo.org/4.0b1/openlaszlo-4.0b1-unix.tar.gz
+
+http://www.openlaszlo.org
+CPL
+OpenLaszlo is an open source platform for creating zero-install web applications with the user interface capabilities of desktop client software. OpenLaszlo programs are written in XML and JavaScript and transparently compiled to Flash and, with OpenLaszlo 4, DHTML. OpenLaszlo is 'write once, run everywhere'. An OpenLaszlo application developed on one machine will run on all leading Web browsers on all leading desktop operating systems.
+~x86 ~amd64
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+install
+
+
+
+
+

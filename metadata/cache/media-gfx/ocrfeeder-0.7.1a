@@ -1,0 +1,22 @@
+dev-python/libgnome-python >=dev-python/pygtk-2.13 >=dev-python/imaging-1.1 >=dev-python/pygoocanvas-0.12 >=app-text/ghostscript-gpl-8.63 >=app-text/unpaper-0.3 >=dev-python/odfpy-0.7 cuneiform? ( app-text/cuneiform ) gocr? ( app-text/gocr ) ocrad? ( app-text/ocrad ) tesseract? ( app-text/tesseract ) dev-python/setuptools dev-util/intltool >=app-admin/eselect-python-20091230 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* ) >=sys-apps/sed-4
+dev-python/libgnome-python >=dev-python/pygtk-2.13 >=dev-python/imaging-1.1 >=dev-python/pygoocanvas-0.12 >=app-text/ghostscript-gpl-8.63 >=app-text/unpaper-0.3 >=dev-python/odfpy-0.7 cuneiform? ( app-text/cuneiform ) gocr? ( app-text/gocr ) ocrad? ( app-text/ocrad ) tesseract? ( app-text/tesseract ) >=app-admin/eselect-python-20091230 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* )
+0
+mirror://gnome/sources/ocrfeeder/0.7/ocrfeeder-0.7.1a.tar.bz2
+
+http://live.gnome.org/OCRFeeder
+GPL-3
+OCRFeeder is a document layout analysis and optical character recognition system.
+~amd64 ~x86
+distutils eutils gnome.org gnome2-utils multilib portability python toolchain-funcs user versionator
+cuneiform gocr +ocrad tesseract linguas_cs linguas_da linguas_de linguas_en_GB linguas_es linguas_fr linguas_gl linguas_it linguas_nb linguas_pt linguas_sl linguas_sv linguas_zh_CN linguas_zh_HK linguas_zh_TW
+
+
+
+2
+
+compile install postinst postrm preinst prepare
+
+
+
+
+

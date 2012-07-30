@@ -1,0 +1,22 @@
+
+dev-perl/libwww-perl
+0
+http://savannah.nongnu.org/download/websec/websec-1.9.0.tar.gz
+
+http://baruch.ev-en.org/proj/websec/
+GPL-2
+A Web Secretary monitoring web pages for changes
+~x86
+
+
+
+
+
+
+
+install postinst
+
+
+
+
+

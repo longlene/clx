@@ -1,0 +1,12 @@
+diff -Naur compcache-0.6.2.orig/compat.h compcache-0.6.2/compat.h
+--- compcache-0.6.2.orig/compat.h	2010-01-23 14:06:40.000000000 +0200
++++ compcache-0.6.2/compat.h	2010-07-21 23:06:41.562166352 +0300
+@@ -2,7 +2,7 @@
+ #define _RAMZSWAP_COMPAT_H_
+ 
+ /* Uncomment this if you are using swap free notify patch */
+-//#define CONFIG_SWAP_FREE_NOTIFY
++#define CONFIG_SWAP_FREE_NOTIFY
+ 
+ #if (LINUX_VERSION_CODE < KERNEL_VERSION(2,6,31))
+ #define blk_queue_physical_block_size(q, size) \

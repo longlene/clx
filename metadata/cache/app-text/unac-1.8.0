@@ -1,0 +1,22 @@
+virtual/libiconv dev-lang/perl || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+virtual/libiconv
+0
+mirror://debian/pool/main/u/unac/unac_1.8.0.orig.tar.gz
+
+http://www.senga.org/
+GPL-2
+unac is a C library and a command line tool that removes accents from characters.
+~amd64 ~x86
+autotools eutils libtool multilib portability toolchain-funcs user
+
+
+
+
+
+
+install postinst unpack
+
+
+
+
+

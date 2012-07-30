@@ -1,0 +1,22 @@
+
+>=net-firewall/iptables-1.2.5 >=sys-apps/iproute2-2.6.35-r2
+0
+http://rocky.eld.leidenuniv.nl/arno-iptables-firewall/arno-iptables-firewall_2.0.0b.tar.gz
+
+http://rocky.eld.leidenuniv.nl/joomla/
+GPL-2
+Based on the eutils eclass
+~amd64 ~x86
+eutils linux-info multilib portability toolchain-funcs user versionator
++plugins
+
+
+
+4
+
+install postinst pretend setup
+
+
+
+
+

@@ -1,0 +1,18 @@
+--- dnprogs-2.39/Makefile.common	2007-02-16 04:33:10.000000000 -0500
++++ Makefile.common	2007-07-06 15:37:16.000000000 -0400
+@@ -66,12 +66,12 @@
+ ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ -e s/arm.*/arm/ -e s/sa110/arm/)
+ 
+ #
+-# For RPM & DEB builds
++# For RPM & DEB builds and gentoo ebuilds
+ #
+ ifdef DESTDIR
+-prefix=$(DESTDIR)/usr
++prefix=$(DESTDIR)/usr/local
+ libprefix=$(DESTDIR)/usr
+-manprefix=$(DESTDIR)/usr/share
++manprefix=$(DESTDIR)/usr/local/share
+ sysconfprefix=$(DESTDIR)
+ endif
+ 

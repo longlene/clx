@@ -1,0 +1,20 @@
+--- original/plotdrop-0.5.3/Makefile	2009-12-04 22:16:59.000000000 -0600
++++ plotdrop-0.5.3/Makefile	2011-01-31 21:46:29.968000200 -0600
+@@ -9,7 +9,7 @@
+ OBJECTS=main.o gnuplot.o droplist.o
+ 
+ LIBS = `pkg-config --libs gtk+-2.0 gio-2.0 glib-2.0 libglade-2.0`
+-CFLAGS = -g -Wall -pedantic -std=c99 `pkg-config --cflags gtk+-2.0 gio-2.0 glib-2.0 libglade-2.0` -DDATADIR="\"$(DATADIR)\"" -DVERSION="\"$(VERSION)\""
++CFLAGS = -Wall -pedantic -std=c99 `pkg-config --cflags gtk+-2.0 gio-2.0 glib-2.0 libglade-2.0` -DDATADIR="\"$(DATADIR)\"" -DVERSION="\"$(VERSION)\""
+ 
+ all: $(TARGET)
+ 
+@@ -21,7 +21,7 @@
+ 
+ install: all
+ 	install -d $(DESTDIR)$(BINDIR) $(DESTDIR)$(DATADIR)
+-	install -s $(TARGET) $(DESTDIR)$(BINDIR)
++	install  $(TARGET) $(DESTDIR)$(BINDIR)
+ 	install -m 0644 droplist.glade $(DESTDIR)$(DATADIR)
+ 	install -d $(DESTDIR)$(PREFIX)/share/applications
+ 	install -m 0644 plotdrop.desktop $(DESTDIR)$(PREFIX)/share/applications

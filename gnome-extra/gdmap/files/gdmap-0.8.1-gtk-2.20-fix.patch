@@ -1,0 +1,39 @@
+Index: src/gui_support.c
+===================================================================
+RCS file: /cvsroot/gdmap/gdmap/src/gui_support.c,v
+retrieving revision 1.2
+diff -u -5 -r1.2 gui_support.c
+--- src/gui_support.c	23 May 2008 14:54:28 -0000	1.2
++++ src/gui_support.c	1 Dec 2010 06:00:24 -0000
+@@ -83,11 +83,15 @@
+ on_ebox_enter(GtkWidget* box, GdkEventCrossing* event, GtkLabel* label) {
+   static GdkCursor* Cursor = NULL;
+   const char* text;
+ 
+   (void)event;
++#if GTK_CHECK_VERSION(2, 20, 0)
++  if (gtk_widget_get_sensitive(label)) {
++#else
+   if (GTK_WIDGET_SENSITIVE(label)) {
++#endif
+     char* temp;
+ 
+     text = g_object_get_data(G_OBJECT(label), "label");
+     temp = g_strdup_printf(EVENT_HFMT, text);
+     gtk_label_set_markup(label, temp);
+@@ -127,11 +131,15 @@
+  * @param set TRUE to set sensitive, FALSE to disable
+  */
+ void ui_event_label_set_sensitive(GtkWidget* ebox, gboolean set) {
+   gpointer callback = g_object_get_data(G_OBJECT(ebox), "callback");
+   GtkWidget* child = GTK_BIN(ebox)->child;
++#if GTK_CHECK_VERSION(2, 20, 0)
++  if (gtk_widget_get_sensitive(child) == set) return;
++#else
+   if (GTK_WIDGET_SENSITIVE(child) == set) return;
++#endif
+ 
+   if (set && !callback) return;
+   gtk_widget_set_sensitive(child, set);
+ 
+   if (!set) {

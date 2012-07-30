@@ -1,0 +1,39 @@
+--- libquantum-1.1.0.ebuild_first	2008-12-22 12:09:25.667010266 +0100
++++ libquantum-1.1.0.ebuild	2008-12-22 12:05:17.047034330 +0100
+@@ -10,7 +10,7 @@
+ LICENSE="GNU General Public License"
+ SLOT="0"
+ KEYWORDS="~x86"
+-IUSE=""
++IUSE="demo quobtools"
+ 
+ DEPEND=">=sys-devel/gcc-2.95"
+ RDEPEND="${DEPEND}"
+@@ -22,12 +22,22 @@
+ 
+ src_compile(){
+ 	econf || die "econf failed"
+-	emake 	demos \
+-	quobtools	|| die "emake failed"
++
++	emake || die "emake failed"
++	
++	if  use demo ; then
++		emake demos || die "emake failes"
++	fi
++	
++	if use quobtools ; then
++		emake quobtools	|| die "emake failed"
++	fi
+ }
+ 
+ src_install(){
+-	emake DESTDIR="${D}" install \
+-	quobtools_install || die "emake install failed"
+-}
++	emake DESTDIR="${D}" install 
+ 
++	if use quobtools ; then
++		emake DESTDIR="${D}" quobtools_install || die "emake install failed"
++	fi
++}

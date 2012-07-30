@@ -1,0 +1,22 @@
+nls? ( sys-devel/gettext ) dev-vcs/cvs
+nls? ( virtual/libintl )
+0
+
+
+http://abook.sourceforge.net/
+GPL-2
+Abook is a text-based addressbook program designed to use with mutt mail client.
+
+cvs eutils multilib portability toolchain-funcs user
+nls vcard
+
+
+
+
+
+compile install unpack
+
+
+
+
+

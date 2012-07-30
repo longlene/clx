@@ -1,0 +1,22 @@
+>=x11-libs/qt-gui-4.5:4 >=x11-libs/qt-xmlpatterns-4.5:4 >=kde-base/kdelibs-4 >=x11-libs/qt-webkit-4.5:4
+>=x11-libs/qt-gui-4.5:4 >=x11-libs/qt-xmlpatterns-4.5:4 >=kde-base/kdelibs-4 >=x11-libs/qt-webkit-4.5:4 app-dicts/orayta-books
+0
+https://launchpad.net/~moshe-wagner/+archive/orayta/+files/orayta_0.03ubuntu2.tar.gz
+
+http://orayta.googlecode.com/
+GPL-2
+Reader for Orayta Jewish Book Collection
+~x86 ~amd64
+base eutils multilib portability qt4-r2 toolchain-funcs user
+
+
+
+
+3
+
+compile configure install prepare unpack
+
+
+
+
+

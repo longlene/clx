@@ -1,0 +1,18 @@
+--- lib/Ocsinventory/Agent/Backend/OS/Generic/Packaging/Gentoo.pm	2011-09-08 17:54:06.000000000 +0300
++++ lib/Ocsinventory/Agent/Backend/OS/Generic/Packaging/_Gentoo.pm	2011-10-11 14:50:49.000000000 +0300
+@@ -12,8 +12,7 @@
+-# TODO: This had been rewrite from the Linux agent _WITHOUT_ being checked!
+-  foreach (`equery list -i`){
+-    if (/^([a-z]\w+-\w+\/\.*)-([0-9]+.*)/) {
+-      $common->addSoftware({
+-	  'NAME'          => $1,
+-	  'VERSION'       => $2,
+-	  });
+-    }
++  foreach (`equery list -F '\$cp \$version \$repo' '*'`){
++    /^(\S+) (\S+) (\S+)/;
++    $common->addSoftware({
++	'NAME'          => $1,
++	'VERSION'       => $2,
++	'FROM'          => $3
++	});

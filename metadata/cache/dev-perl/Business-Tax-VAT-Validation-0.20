@@ -1,0 +1,22 @@
+dev-perl/libwww-perl dev-lang/perl[-build]
+dev-perl/libwww-perl dev-lang/perl[-build]
+0
+mirror://cpan/authors/id/B/BP/BPGN/Business-Tax-VAT-Validation-0.20.tar.gz
+
+http://search.cpan.org/dist/Business-Tax-VAT-Validation/
+|| ( Artistic GPL-1 GPL-2 GPL-3 )
+A class for european VAT numbers validation
+~amd64 ~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

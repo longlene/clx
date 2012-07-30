@@ -1,0 +1,22 @@
+blas? ( virtual/blas virtual/cblas virtual/lapack ) fortran? ( dev-lang/f2c ) python? ( dev-python/numeric )
+blas? ( virtual/blas virtual/cblas virtual/lapack ) fortran? ( dev-lang/f2c ) python? ( dev-python/numeric )
+0
+mirror://sourceforge/cantera/cantera-1.7.0.tar.gz
+
+http://www.cantera.org/
+BSD
+An Object-Oriented Software for Reacting Flows.
+~amd64 ~x86
+eutils flag-o-matic multilib portability toolchain-funcs user
+blas fortran python
+
+
+
+
+
+compile install
+
+
+
+
+

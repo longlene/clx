@@ -1,0 +1,22 @@
+>=sys-libs/zlib-1.1.4 app-text/ghostscript-gpl =media-libs/tiff-4.0*[jbig?] virtual/jpeg jbig? ( media-libs/jbigkit ) sys-apps/gawk pam? ( virtual/pam ) mgetty? ( net-dialup/mgetty[-fax] )
+>=sys-libs/zlib-1.1.4 app-text/ghostscript-gpl =media-libs/tiff-4.0*[jbig?] virtual/jpeg jbig? ( media-libs/jbigkit ) sys-apps/gawk pam? ( virtual/pam ) mgetty? ( net-dialup/mgetty[-fax] ) net-mail/metamail !net-dialup/sendpage
+0
+ftp://ftp.hylafax.org/source/hylafax-6.0.5.tar.gz
+
+http://www.hylafax.org
+hylafax
+Enterprise client-server fax package for class 1 and 2 fax modems.
+~amd64 ~x86
+eutils flag-o-matic multilib pam portability toolchain-funcs user
+jbig pam mgetty html
+
+
+
+2
+
+compile configure install postinst prepare
+
+
+
+
+

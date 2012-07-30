@@ -1,0 +1,22 @@
+>=media-libs/libsdl-1.2.3 dev-lang/perl >=dev-lang/nasm-0.98.33
+>=media-libs/libsdl-1.2.3
+0
+http://www.whimsey.com/z26/z26v213.tar.gz
+
+http://www.whimsey.com/z26/
+GPL-2
+Atari 2600 emulator
+~x86
+base eutils games multilib portability toolchain-funcs user versionator
+
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

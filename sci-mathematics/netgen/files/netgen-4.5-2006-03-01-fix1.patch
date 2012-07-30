@@ -1,0 +1,55 @@
+diff -Naur netgen.orig/Makefile netgen/Makefile
+--- netgen.orig/Makefile	2008-05-11 01:14:15.000000000 +0100
++++ netgen/Makefile	2008-05-11 01:14:53.000000000 +0100
+@@ -49,13 +49,14 @@
+ # OCCINC_DIR=$(OCC_DIR)/inc
+ # OCCLIB_DIR=$(OCC_DIR)/lib
+ 
+-OCC_DIR=/opt/OpenCASCADE5.2
++OCC_DIR=/opt/opencascade-6.2
+ OCCINC_DIR=$(OCC_DIR)/ros/inc
+ OCCLIB_DIR=$(OCC_DIR)/ros/lin/lib
+ 
+ # occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP -lTKSTL 
+ #-lTKVRML
+ 
++occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP -lTKSTL -lTKTopAlgo -lTKG3d -lTKG2d -lTKXSBase -lTKOffset -lTKFillet -lTKGeomBase -lTKGeomAlgo -lTKShHealing -lTKBO -lTKPrim -lTKernel -lTKMath -lTKBool -lXxf86vm
+ 
+ 
+ # occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP 
+@@ -72,7 +73,7 @@
+ #
+ #CPLUSPLUSFLAGS1 = -c -I$(LIBSRC_DIR)/include  -DOPENGL
+ 
+-CPLUSPLUSFLAGS1 = -c -m64 -I$(LIBSRC_DIR)/include -I$(OCCINC_DIR)  -I./ngsolve/include -Ilibsrc/interface -I$(METISINC)
++CPLUSPLUSFLAGS1 = -c -m64 -I$(LIBSRC_DIR)/include -I$(OCCINC_DIR)  -I./ngsolve/include -Ilibsrc/interface -DOCCGEOMETRY -DOCC52 -DHAVE_IOSTREAM -DHAVE_LIMITS_H
+ 
+ LINKFLAGS1 =   -lGL -lGLU -lX11 -lXext -lXmu 
+ #
+diff -Naur netgen.orig/libsrc/interface/Makefile netgen/libsrc/interface/Makefile
+--- netgen.orig/libsrc/interface/Makefile	2008-05-11 01:14:15.000000000 +0100
++++ netgen/libsrc/interface/Makefile	2008-05-11 01:14:50.000000000 +0100
+@@ -1,5 +1,6 @@
+ #src = nginterface.cpp writeuser.cpp writediffpack.cpp writeabaqus.cpp writefluent.cpp writepermas.cpp writetochnog.cpp writetecplot.cpp wuchemnitz.cpp writetochnog.cpp writefeap.cpp writeelmer.cpp  writegmsh.cpp writejcm.cpp readuser.cpp importsolution.cpp
+-src = writeuser.cpp writediffpack.cpp writeabaqus.cpp writefluent.cpp writepermas.cpp writetochnog.cpp writetecplot.cpp wuchemnitz.cpp writetochnog.cpp writefeap.cpp writeelmer.cpp  writegmsh.cpp writejcm.cpp readuser.cpp nglib.cpp ngnewdelete.cpp
++#src = writeuser.cpp writediffpack.cpp writeabaqus.cpp writefluent.cpp writepermas.cpp writetochnog.cpp writetecplot.cpp wuchemnitz.cpp writetochnog.cpp writefeap.cpp writeelmer.cpp  writegmsh.cpp writejcm.cpp readuser.cpp nglib.cpp ngnewdelete.cpp
++src = nginterface.cpp writeuser.cpp writediffpack.cpp writeabaqus.cpp writefluent.cpp writepermas.cpp writetochnog.cpp writetecplot.cpp wuchemnitz.cpp writetochnog.cpp writefeap.cpp writeelmer.cpp  writegmsh.cpp writejcm.cpp readuser.cpp nglib.cpp ngnewdelete.cpp importsolution.cpp
+ #
+ lib = nginterface
+ libpath = libsrc/interface
+diff -Naur netgen.orig/libsrc/makefile.inc netgen/libsrc/makefile.inc
+--- netgen.orig/libsrc/makefile.inc	2008-05-11 01:14:15.000000000 +0100
++++ netgen/libsrc/makefile.inc	2008-05-11 01:14:47.000000000 +0100
+@@ -8,9 +8,9 @@
+ LIBSRC_DIR=$(CPP_DIR)/libsrc
+ LIB_DIR=$(CPP_DIR)/lib/$(MACHINE)
+ 
+-OCC_DIR=$(CASROOT)
+-OCCINC_DIR=$(OCC_DIR)/inc
+-OCCLIB_DIR=$(OCC_DIR)/Linux/lib
++OCC_DIR=/opt/opencascade-6.2
++OCCINC_DIR=$(OCC_DIR)/ros/inc
++OCCLIB_DIR=$(OCC_DIR)/ros/lin/lib
+ #
+ include $(LIBSRC_DIR)/makefile.mach.$(MACHINE)
+ #

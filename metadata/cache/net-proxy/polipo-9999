@@ -1,0 +1,22 @@
+sys-apps/texinfo >=dev-vcs/git-1.6
+sys-apps/texinfo
+0
+
+
+http://www.pps.jussieu.fr/~jch/software/polipo/
+MIT
+A caching web proxy
+amd64 x86
+eutils git multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst setup unpack
+
+
+
+
+

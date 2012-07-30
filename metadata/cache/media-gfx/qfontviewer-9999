@@ -1,0 +1,22 @@
+>=x11-libs/qt-gui-4.5.0 >=dev-vcs/git-1.6
+
+0
+
+
+http://qfontviewer.sourceforge.net
+GPL-3
+Based on the eutils eclass
+~amd64 ~x86
+eutils git multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+|| ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+
+0
+http://www.triplespark.net/elec/periph/USB-FX2/software/cycfx2prog-0.47.tar.gz
+
+http://www.triplespark.net/elec/periph/USB-FX2/software/
+GPL-2
+FX2 Programming Tool
+~amd64 ~x86
+autotools eutils libtool multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install setup
+
+
+
+
+

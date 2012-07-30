@@ -1,0 +1,22 @@
+net-misc/rdist sys-devel/m4 dev-util/mkcmd dev-util/msrc0
+net-misc/rdist sys-devel/m4
+0
+http://www.npcguild.org/software/pundits/msrc-4.20.tgz
+
+http://www.npcguild.org/software/pundits/
+as-is
+Front-end for rdist(1) that preprocesses files with m4
+~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

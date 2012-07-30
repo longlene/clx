@@ -1,0 +1,59 @@
+diff -Naur mysdl_1.0/src/audio/music.h mysdl_1.0-p/src/audio/music.h
+--- mysdl_1.0/src/audio/music.h	2006-08-18 02:46:18.000000000 +0200
++++ mysdl_1.0-p/src/audio/music.h	2009-09-28 14:45:17.000000000 +0200
+@@ -79,7 +79,7 @@
+ 
+ 				MusicStream *currentStream,*nextStream;
+ 
+-				void MusicManager::stream();
++				void stream();
+ 
+ 			public:
+ 				MusicManager();
+diff -Naur mysdl_1.0/src/audio/sources.h mysdl_1.0-p/src/audio/sources.h
+--- mysdl_1.0/src/audio/sources.h	2006-08-18 02:46:12.000000000 +0200
++++ mysdl_1.0-p/src/audio/sources.h	2009-09-28 14:45:01.000000000 +0200
+@@ -81,7 +81,7 @@
+ 				~Source();
+ 
+ 				bool operator<(const Source &source) const;
+-				void Source::dropSound();
++				void dropSound();
+ 		};
+ 
+ 		class Sound
+diff -Naur mysdl_1.0/src/gui/core.h mysdl_1.0-p/src/gui/core.h
+--- mysdl_1.0/src/gui/core.h	2006-08-18 02:48:51.000000000 +0200
++++ mysdl_1.0-p/src/gui/core.h	2009-09-28 14:46:08.000000000 +0200
+@@ -524,7 +524,7 @@
+ 				 *         found there, or 0 if the coordinate lies outside the component's client
+ 				 *         rectangle.
+ 				 */
+-				Component *Component::find(const Vector2D pos);
++				Component *find(const Vector2D pos);
+ 
+ 				/**
+ 				 * Determines whether the component is enabled <b>and</b> visible.
+diff -Naur mysdl_1.0/src/mysdl.cpp mysdl_1.0-p/src/mysdl.cpp
+--- mysdl_1.0/src/mysdl.cpp	2006-08-20 00:16:03.000000000 +0200
++++ mysdl_1.0-p/src/mysdl.cpp	2009-09-28 14:49:29.000000000 +0200
+@@ -21,6 +21,7 @@
+ #include <signal.h>
+ #include <stdlib.h>
+ #include <iostream>
++#include <assert.h>
+ 
+ #include "SDL/SDL_image.h"
+ #include "SDL/SDL_opengl.h"
+diff -Naur mysdl_1.0/src/resources.h mysdl_1.0-p/src/resources.h
+--- mysdl_1.0/src/resources.h	2006-08-19 04:18:48.000000000 +0200
++++ mysdl_1.0-p/src/resources.h	2009-09-28 14:31:42.000000000 +0200
+@@ -523,7 +523,7 @@
+ 			}
+ 
+ 			void getFromNode(const xml::Node *root,const std::string &baseDir="");
+-			virtual BasicResourceBank* ResourceManager::createResourceBank(const std::string &name);
++			virtual BasicResourceBank* createResourceBank(const std::string &name);
+ 	};
+ 
+ 	class RefreshingBankHandler

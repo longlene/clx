@@ -1,0 +1,22 @@
+media-libs/libmimic mimicdecoder? ( media-video/transcode dev-python/PyQt )
+media-libs/libmimic mimicdecoder? ( media-video/transcode dev-python/PyQt )
+0
+http://thegraveyard.org/files/mimictools-1.0.1.tar.gz mimicdecoder? ( http://thegraveyard.org/files/mimicdecoder-1.0.1.1.tar.gz )
+
+http://www.thegraveyard.org
+GPL-2
+Video decoding/converting tools for the codec used by msn
+~amd64
+
++mimicdecoder
+
+
+
+
+
+install postinst
+
+
+
+
+

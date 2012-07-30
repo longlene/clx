@@ -1,0 +1,128 @@
+--- clanlib-0.8.1.ebuild
++++ clanlib-2.3.4.ebuild
+@@ -2,77 +2,83 @@
+ # Distributed under the terms of the GNU General Public License v2
+ # $Header: /var/cvsroot/gentoo-x86/dev-games/clanlib/clanlib-0.8.1.ebuild,v 1.9 2011/09/15 02:31:01 ssuominen Exp $
+ 
+-EAPI=2
+-inherit flag-o-matic eutils
++EAPI=4
+ 
++inherit autotools eutils toolchain-funcs versionator
++
++MY_MAJORV=$(get_major_version).0
++MY_PN=ClanLib-${PV}
+ DESCRIPTION="multi-platform game development library"
+ HOMEPAGE="http://www.clanlib.org/"
+-SRC_URI="http://clanlib.org/download/releases-${PV:0:3}/ClanLib-${PV}.tgz"
++SRC_URI="http://clanlib.org/download/releases-${MY_MAJORV}/${MY_PN}.tgz"
+ 
+ LICENSE="ZLIB"
+-SLOT="0.8"
+-KEYWORDS="amd64 x86" #not big endian safe #82779
+-IUSE="doc ipv6 mikmod opengl sdl static-libs vorbis"
+-
+-# opengl keyword does not drop the GL/GLU requirement.
+-# Autoconf files need to be fixed
+-RDEPEND="media-libs/libpng
++SLOT="2.3"
++KEYWORDS="~amd64 ~x86" #not big endian safe #82779
++IUSE="doc ipv6 opengl pcre sound static-libs sqlite test"
++
++RDEPEND="
++	media-libs/freetype
++	media-libs/fontconfig
++	media-libs/libpng
++	sys-libs/zlib
+ 	virtual/jpeg
+-	virtual/opengl
+-	sdl? (
+-		media-libs/libsdl
+-		media-libs/sdl-gfx
++	x11-libs/libX11
++	opengl? ( virtual/opengl x11-libs/libXrender )
++	pcre? ( dev-libs/libpcre )
++	sound? (
++		media-libs/alsa-lib
++		media-libs/libmikmod
++		media-libs/libogg
++		media-libs/libvorbis
+ 	)
+-	x11-libs/libXt
+-	x11-libs/libXmu
+-	x11-libs/libXxf86vm
+-	media-libs/alsa-lib
+-	mikmod? ( media-libs/libmikmod )
+-	vorbis? ( media-libs/libvorbis )"
++	sqlite? ( dev-db/sqlite )"
++
+ DEPEND="${RDEPEND}
+-	x11-proto/xf86vidmodeproto"
++	dev-util/pkgconfig
++	doc? ( app-doc/doxygen dev-lang/perl )
++	test? ( x11-libs/libXxf86vm x11-libs/libXi )"
+ 
+-S=${WORKDIR}/ClanLib-${PV}
++S=${WORKDIR}/${MY_PN}
+ 
+ src_prepare() {
+-	epatch \
+-		"${FILESDIR}"/${P}-ndebug.patch \
+-		"${FILESDIR}"/${P}-gcc43.patch \
+-		"${FILESDIR}"/${P}-gcc44.patch \
+-		"${FILESDIR}"/${P}-libpng15.patch
++	epatch "${FILESDIR}"/${P}-autotools.patch
++	eautoreconf
+ }
+ 
+ src_configure() {
+-	#clanSound only controls mikmod/vorbis so there's
+-	# no need to pass --{en,dis}able-clanSound ...
+ 	#clanDisplay only controls X, SDL, OpenGL plugins
+ 	# so no need to pass --{en,dis}able-clanDisplay
+ 	# also same reason why we don't have to use clanGUI
+ 	econf \
+-		--enable-dyn \
+-		--enable-clanNetwork \
+ 		--disable-dependency-tracking \
+-		$(use_enable x86 asm386) \
+ 		$(use_enable doc docs) \
+-		$(use_enable opengl clanGL) \
+-		$(use_enable sdl clanSDL) \
+-		$(use_enable vorbis clanVorbis) \
+-		$(use_enable mikmod clanMikMod) \
+ 		$(use_enable ipv6 getaddr) \
+-		$(use_enable static-libs static)
++		$(use_enable pcre clanRegExp) \
++		$(use_enable opengl clanGL) \
++		$(use_enable opengl clanGL1) \
++		$(use_enable sound clanSound) \
++		$(use_enable static-libs static) \
++		$(use_enable sqlite clanSqlite)
++}
++
++src_compile() {
++	default
++	if use doc ; then
++		tc-export CXX
++		emake html
++	fi
+ }
+ 
+ src_install() {
+-	emake DESTDIR="${D}" install || die "emake install failed"
++	emake DESTDIR="${D}" install
+ 	if use doc ; then
+-		dodir /usr/share/doc/${PF}/html
+-		mv "${D}"/usr/share/doc/clanlib/* "${D}"/usr/share/doc/${PF}/html/ || die
+-		rm -rf "${D}"/usr/share/doc/clanlib
++		emake DESTDIR="${D}" install-html
+ 		cp -r Examples Resources "${D}"/usr/share/doc/${PF}/ || die
+ 	fi
+ 	if ! use static-libs ; then
+ 		find "${D}" -type f -name '*.la' -exec rm {} + \
+ 			|| die "la removal failed"
+ 	fi
+-	dodoc CODING_STYLE CREDITS NEWS PATCHES README* INSTALL.linux
++	dodoc CODING_STYLE CREDITS PATCHES README*
+ }

@@ -1,0 +1,22 @@
+>=media-libs/freetype-2.2.1 >=media-libs/fontconfig-2.2 media-libs/libpng virtual/libiconv amd64? ( sse2? ( dev-lang/yasm ) ) x86? ( sse2? ( || ( dev-lang/yasm dev-lang/nasm ) ) ) nls? ( >=sys-devel/gettext-0.14.5 ) app-arch/unzip || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+>=media-libs/freetype-2.2.1 >=media-libs/fontconfig-2.2 media-libs/libpng virtual/libiconv nls? ( virtual/libintl )
+0
+http://asa.diac24.net/snapshots/asa-20070222-054023.zip
+
+http://asa.diac24.net/
+GPL-2
+portable ASS/SSA renderer
+~x86 ~amd64
+autotools eutils libtool multilib portability toolchain-funcs user
+sse2 nls
+
+
+
+
+
+compile install
+
+
+
+
+

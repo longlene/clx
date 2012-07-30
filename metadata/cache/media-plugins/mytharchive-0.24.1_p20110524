@@ -1,0 +1,22 @@
+=media-tv/mythtv-0.24.1* >=sys-apps/sed-4
+=media-tv/mythtv-0.24.1*
+0
+https://github.com/MythTV/mythtv/tarball/347cd2477ad82a7aa75ebe7c686db77465f415dc -> mythtv-0.24.1_p20110524.tar.gz
+
+http://www.mythtv.org
+GPL-2
+Module for MythTV.
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user versionator
+profile debug
+
+
+
+2
+
+compile configure install prepare setup
+
+
+
+
+

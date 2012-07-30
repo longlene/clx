@@ -1,0 +1,20 @@
+--- configure.orig	2011-10-16 17:19:46.000000000 +0400
++++ configure	2011-10-16 17:20:33.000000000 +0400
+@@ -3919,7 +3919,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltclmorestub0.7g -ltclstub8.4g $LIBS"
++LIBS="-ltclmorestub0.7g -ltclstub8.5g $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -3986,7 +3986,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltclmorestub0.7 -ltclstub8.4 $LIBS"
++LIBS="-ltclmorestub0.7 -ltclstub8.5 $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */

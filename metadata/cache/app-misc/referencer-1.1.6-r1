@@ -1,0 +1,22 @@
+>=virtual/poppler-0.5.0 >=dev-cpp/gtkmm-2.8 >=dev-cpp/libgnomeuimm-2.14.0 >=dev-cpp/gnome-vfsmm-2.14.0 >=dev-cpp/libglademm-2.6.0 >=dev-cpp/gconfmm-2.14.0 virtual/poppler-glib dev-libs/boost dev-lang/python >=app-text/gnome-doc-utils-0.3.2 dev-util/pkgconfig dev-util/intltool app-text/rarian || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+>=virtual/poppler-0.5.0 >=dev-cpp/gtkmm-2.8 >=dev-cpp/libgnomeuimm-2.14.0 >=dev-cpp/gnome-vfsmm-2.14.0 >=dev-cpp/libglademm-2.6.0 >=dev-cpp/gconfmm-2.14.0 virtual/poppler-glib dev-libs/boost dev-lang/python
+0
+http://icculus.org/referencer/downloads/referencer-1.1.6.tar.gz
+
+http://icculus.org/referencer/
+GPL-2
+Gnome application to organise documents or references, and to generate BibTeX bibliography files.
+~amd64 ~x86
+autotools eutils fdo-mime libtool multilib portability toolchain-funcs user
+
+
+
+
+2
+
+configure install postinst postrm
+
+
+
+
+

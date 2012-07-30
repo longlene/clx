@@ -1,0 +1,22 @@
+dev-python/setuptools test? ( dev-python/nose ) >=app-admin/eselect-python-20091230 dev-lang/python
+>=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://cheeseshop.python.org/packages/source/F/FormBuild/FormBuild-2.2.0.tar.gz
+
+http://formbuild.org/ http://pypi.python.org/pypi/FormBuild
+GPL3
+Build forms quickly and easily using groups of simple helper functions.
+amd64 ~ia64 ppc ~sparc x86 ~amd64-linux ~x86-linux ~x86-macos
+distutils multilib python toolchain-funcs
+doc test
+
+
+
+2
+
+compile install postinst postrm prepare test
+
+
+
+
+

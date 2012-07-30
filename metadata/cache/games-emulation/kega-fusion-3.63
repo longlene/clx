@@ -1,0 +1,22 @@
+virtual/opengl x86? ( x11-libs/gtk+:2 x11-libs/libXinerama media-libs/alsa-lib mp3? ( media-sound/mpg123 ) ) amd64? ( app-emulation/emul-linux-x86-gtklibs app-emulation/emul-linux-x86-soundlibs[alsa] )
+virtual/opengl x86? ( x11-libs/gtk+:2 x11-libs/libXinerama media-libs/alsa-lib mp3? ( media-sound/mpg123 ) ) amd64? ( app-emulation/emul-linux-x86-gtklibs app-emulation/emul-linux-x86-soundlibs[alsa] )
+0
+http://www.eidolons-inn.net/tiki-download_file.php?fileId=572 -> kega-fusion-3.63.tar.gz
+
+http://www.eidolons-inn.net/tiki-index.php?page=Kega
+freedist
+Sega SG1000/SC3000/Master System/Game Gear/Genesis/Megadrive/SVP/Pico/SegaCD/MegaCD/32X emulator
+~amd64 ~x86
+base eutils games multilib portability toolchain-funcs user
+mp3
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

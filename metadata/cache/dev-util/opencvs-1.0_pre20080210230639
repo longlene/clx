@@ -1,0 +1,22 @@
+|| ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+
+0
+http://chl.be/opencvs/opencvs-20080210230639.tar.gz
+
+http://www.opencvs.org/
+BSD-2
+Port of OpenBSD's free CVS release
+~ppc-macos ~x86-macos
+autotools eutils libtool multilib portability toolchain-funcs user
+
+
+
+
+
+
+install unpack
+
+
+
+
+

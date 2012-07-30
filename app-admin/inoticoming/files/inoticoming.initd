@@ -1,0 +1,47 @@
+#!/sbin/runscript
+
+DAEMON=/usr/bin/inoticoming
+PIDFILE=/var/run/inoticoming.pid
+
+depend() {
+	use net
+	after logger
+}
+
+checkconfig() {
+    if [ ! -d "$DIR" ] ; then
+	eerror "Incoming $DIR has not been configured."
+	eend 1
+	return 1
+    fi
+}
+
+start() {
+	checkconfig || return 1
+	ebegin "Starting incoming queue monitor"
+	# make sure inoticoming can write the PID to $PIDFILE
+	[ -f $PIDFILE ] || touch $PIDFILE
+	chown $USER $PIDFILE
+	OPTIONS="--pid-file $PIDFILE"
+
+	# make sure inoticoming can write to $LOGFILE
+	if [ -n $LOGFILE ] ; then
+		[ -f $LOGFILE ] || touch $LOGFILE
+		chown $USER $LOGFILE
+		OPTIONS="$OPTIONS --logfile $LOGFILE"
+	fi
+
+	# should we do an initial search of the directory?
+	[ "$INITIALSEARCH" != "0" ] && OPTIONS="$OPTIONS --initialsearch"
+
+	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --chuid $USER -- \
+		$OPTIONS $DIR $ACTIONS
+	eend $?
+}
+
+stop() {
+	checkconfig || return 1
+	ebegin "Stopping incoming queue monitor"
+	start-stop-daemon --stop --quiet --pidfile $PIDFILE
+	eend $?
+}

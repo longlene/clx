@@ -1,0 +1,21 @@
+--- gnome-pulse-applet-0.3.ebuild	2011-06-19 10:25:43.768117825 +0100
++++ gnome-pulse-applet-0.3_fixed-depends.ebuild	2011-06-19 10:26:17.793692444 +0100
+@@ -1,4 +1,4 @@
+-# Copyright 1999-2005 Gentoo Foundation
++# Copyright 1999-2011 Gentoo Foundation
+ # Distributed under the terms of the GNU General Public License v2
+ # $Header: $
+ 
+@@ -14,7 +14,11 @@
+ 	|| ( >=dev-lang/python-2.5 dev-python/ctypes )
+ 	dev-python/pygtk
+ 	media-sound/pulseaudio
+-	dev-python/egg-python"
++	dev-python/egg-python
++	dev-python/gnome-applets-python"
++
++RDEPEND="
++	${RDEPEND}"
+ 
+ src_unpack() {
+ 	unpack ${A}

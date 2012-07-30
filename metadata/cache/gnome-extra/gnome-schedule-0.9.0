@@ -1,0 +1,22 @@
+virtual/python >=dev-libs/glib-2 >=dev-python/gnome-python-2 sys-process/at dev-util/pkgconfig >=sys-apps/sed-4
+virtual/python >=dev-libs/glib-2 >=dev-python/gnome-python-2 sys-process/at virtual/cron
+0
+mirror://sourceforge/gnome-schedule/gnome-schedule-0.9.0.tar.bz2
+
+http://gnome-schedule.sourceforge.net
+GPL-2
+A GNOME GUI for configuring a users crontab
+~x86
+eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability toolchain-funcs user versionator
+debug
+
+
+
+
+
+compile install postinst postrm preinst unpack
+
+
+
+
+

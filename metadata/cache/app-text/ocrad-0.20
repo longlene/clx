@@ -1,0 +1,22 @@
+
+
+0
+http://ftp.gnu.org/gnu/ocrad/ocrad-0.20.tar.gz
+
+
+GPL-3
+GNU Ocrad is an OCR (Optical Character Recognition) program based on a feature extraction method.
+~amd64
+
+
+
+
+
+3
+
+compile configure install
+
+
+
+
+

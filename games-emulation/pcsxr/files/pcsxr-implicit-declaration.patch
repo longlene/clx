@@ -1,0 +1,12 @@
+diff --git a/plugins/peopsxgl/gpucfg/callbacks.c b/plugins/peopsxgl/gpucfg/callbacks.c
+index 1f43818..59bb6d6 100644
+--- a/plugins/peopsxgl/gpucfg/callbacks.c
++++ b/plugins/peopsxgl/gpucfg/callbacks.c
+@@ -6,6 +6,7 @@
+ #include "interface.h"
+ #include "support.h"
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ void SaveConfig(void);
+ 

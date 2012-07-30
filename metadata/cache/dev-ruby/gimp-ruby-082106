@@ -1,0 +1,22 @@
+>=dev-lang/ruby-1.8 >=media-gfx/gimp-2.3
+>=dev-lang/ruby-1.8 >=media-gfx/gimp-2.3
+0
+http://files.slembcke.net/gimp-ruby/gimp-ruby.tgz
+
+http://wiki.slembcke.net/main/published/Gimp-Ruby
+GPL
+Ruby extension to write Gimp plug-ins and procedures using Ruby-Fu
+~x86
+
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+dev-vcs/subversion net-misc/rsync
+
+0
+
+
+http://www.mactel-linux.org/
+GPL-2.0
+Backlight control for MacBookPro
+x86
+eutils multilib portability subversion toolchain-funcs user
+
+
+
+
+
+
+install preinst unpack
+
+
+
+
+

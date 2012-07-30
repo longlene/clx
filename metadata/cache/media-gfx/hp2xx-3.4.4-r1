@@ -1,0 +1,22 @@
+media-libs/libpng media-libs/tiff media-libs/pdflib sys-libs/zlib
+media-libs/libpng media-libs/tiff media-libs/pdflib sys-libs/zlib
+0
+ftp://ftp.gnu.org/pub/gnu/hp2xx/hp2xx-3.4.4.tar.gz
+
+http://www.gnu.org/software/hp2xx/
+GPL-2
+Versatile tool to convert vector-oriented graphics data given in Hewlett-Packard's HP-GL plotter language into a variety of popular graphics formats.
+x86 ~sparc ~ppc amd64 ~alpha ~ia64 ~mips
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+dev-libs/libpcre sys-libs/zlib media-libs/libpng dev-libs/openssl =www-servers/apache-2* || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+dev-libs/libpcre sys-libs/zlib media-libs/libpng dev-libs/openssl =www-servers/apache-2*
+0
+mirror://sourceforge/mod-qos/mod_qos-9.54.tar.gz
+
+http://mod-qos.sourceforge.net
+GPL-2
+A QOS module for the apache webserver
+~amd64 ~x86
+apache-module autotools depend.apache eutils libtool multilib portability toolchain-funcs user
+doc
+
+
+
+3
+
+compile configure install postinst prepare setup
+
+
+
+
+

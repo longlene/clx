@@ -1,0 +1,24 @@
+--- chan_capi-0.3.5/Makefile.orig	2005-01-30 00:02:33.258038984 +0000
++++ chan_capi-0.3.5/Makefile	2005-01-30 00:08:34.078185984 +0000
+@@ -24,9 +24,7 @@
+ 
+ DEBUG=-g #-pg
+ INCLUDE=-I$(ASTERISK_HEADER_DIR)
+-CFLAGS=-pipe -Wall -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE
+-CFLAGS+=-O6
+-CFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
++CFLAGS+=-fPIC -DPIC -pipe -Wall -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE
+ CFLAGS+=$(shell if uname -m | grep -q ppc; then echo "-fsigned-char"; fi)
+ 
+ # uncomment the following line if you really never ever want early b3 connects,
+@@ -78,8 +76,10 @@
+ 	$(CC) -shared -Xlinker -x -o $@ chan_capi.o -lcapi20
+ 
+ install: all
++	if [ ! -d $(MODULES_DIR) ]; then mkdir -p $(MODULES_DIR); fi
+ 	for x in $(SHAREDOS); do $(INSTALL) -m 755 $$x $(MODULES_DIR) ; done
+ 
+ config: all
++	if [ ! -d $(INSTALL_PREFIX)/etc/asterisk ]; then mkdir -p $(INSTALL_PREFIX)/etc/asterisk; fi
+ 	cp capi.conf $(INSTALL_PREFIX)/etc/asterisk/
+ 

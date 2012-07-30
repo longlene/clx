@@ -1,0 +1,22 @@
+x11-libs/gtk+:2 media-libs/libsdl media-libs/sdl-image virtual/opengl virtual/glu amd64? ( app-emulation/emul-linux-x86-sdl >=app-emulation/emul-linux-x86-baselibs-20081109 app-emulation/emul-linux-x86-xlibs app-emulation/emul-linux-x86-gtklibs ) dfg? ( app-arch/unzip app-text/dos2unix )
+x11-libs/gtk+:2 media-libs/libsdl media-libs/sdl-image virtual/opengl virtual/glu amd64? ( app-emulation/emul-linux-x86-sdl >=app-emulation/emul-linux-x86-baselibs-20081109 app-emulation/emul-linux-x86-xlibs app-emulation/emul-linux-x86-gtklibs )
+0
+http://www.bay12games.com/dwarves/df_28_181_40d16_linux.tar.bz2 http://brage.info/~svein/df-40d16-head.tar.bz2 dfg? ( http://mayday.w.staszic.waw.pl/~mayday/upload/DFG21.zip )
+nomirror
+http://www.bay12games.com/dwarves
+
+Dwarf Fortress is a single-player fantasy game. You can control a dwarven outpost or an adventurer in a randomly generated, persistent world.
+~x86 ~amd64
+base eutils games multilib portability toolchain-funcs user
+dfg
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

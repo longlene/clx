@@ -1,0 +1,47 @@
+=== modified file 'build_paths.h.cmake'
+--- build_paths.h.cmake	2010-10-18 22:01:06 +0000
++++ build_paths.h.cmake	2011-04-15 11:23:50 +0000
+@@ -40,6 +40,7 @@
+ 
+ //	set game directory (normal $(datadir)/s25rttr/S2)
+ //#define GAMEDIR DATADIR"/S2"
++#cmakedefine GAMEDIR "${GAMEDIR}"
+ 
+ //	set driver directory (normal $(libdir)/driver)
+ //#define DRIVERDIR LIBDIR"/driver"
+=== modified file 'libutil/src/files.h'
+--- libutil/src/files.h	2010-07-16 22:00:53 +0000
++++ libutil/src/files.h	2011-04-15 10:11:09 +0000
+@@ -138,7 +138,7 @@
+ 	/* 54 */RTTRDIR "",                               // unbenutzt
+ 	/* 55 */SETTINGSDIR "/LSTS/SOUND.LST",            // Die konvertierte sound.lst
+ 	/* 56 */RTTRDIR "/sound.scs",                     // Das konvertier-script
+-	/* 57 */RTTRDIR "",                               // Basispfad fürn Soundconverter
++	/* 57 */DRIVERDIR "",                             // Basispfad fürn Soundconverter
+ 	/* 58 */GAMEDIR "/DATA/MIS0BOBS.LST",
+ 	/* 59 */GAMEDIR "/DATA/MIS1BOBS.LST",
+ 	/* 60 */GAMEDIR "/DATA/MIS2BOBS.LST",
+
+=== modified file 's-c/src/main.cpp'
+--- s-c/src/main.cpp	2010-07-16 22:00:53 +0000
++++ s-c/src/main.cpp	2011-04-15 10:19:50 +0000
+@@ -39,6 +39,7 @@
+ #include "tokenizer.hpp"
+ 
+ #include "../libsiedler2/src/libsiedler2.h"
++#include "../libutil/src/files.h"
+ 
+ int usage(int argc, char *argv[])
+ {
+@@ -199,9 +200,7 @@
+ 		fclose(tmp);
+ 
+ 		std::stringstream cmd;
+-		std::string path = argv[0];
+-		size_t pos = path.find_last_of("/\\");
+-		cmd << path.substr(0, pos);
++		cmd << DRIVERDIR;
+ 
+ #ifdef _WIN32
+ 		cmd << "\\s-c_resample.exe ";
+

@@ -1,0 +1,73 @@
+diff --git a/g_src/SConscript b/g_src/SConscript
+index b0e6bd1..edfc04b 100644
+--- a/g_src/SConscript
++++ b/g_src/SConscript
+@@ -1,6 +1,7 @@
+ # -*- mode: python -*-
+ from sys import platform
+ import os
++import SCons.Util
+ 
+ src_dll = ["basics.cpp","command_line.cpp","enabler_sdl.cpp","files.cpp",
+            "find_files_posix.cpp","graphics.cpp","init.cpp","interface.cpp",
+@@ -17,42 +18,41 @@ profile = False
+ # Propagate PATH. We'll just take our chances with non-repeatable builds.
+ env = Environment(ENV = {'PATH' : os.environ['PATH']})
+ 
++if optimize:
++   env["CCFLAGS"]+=["-O3"]
++
++if os.environ.has_key('CC'):
++	env['CC'] = os.environ['CC']
++if os.environ.has_key('CFLAGS'):
++	env['CCFLAGS'] += SCons.Util.CLVar(os.environ['CFLAGS'])
++if os.environ.has_key('CXX'):
++	env['CXX'] = os.environ['CXX']
++if os.environ.has_key('CXXFLAGS'):
++	env['CXXFLAGS'] += SCons.Util.CLVar(os.environ['CXXFLAGS'])
++if os.environ.has_key('LDFLAGS'):
++	env['LINKFLAGS'] += SCons.Util.CLVar(os.environ['LDFLAGS'])
++
+ # Init variables, and make sure they're around for appending to
+ # These variables are the ones used by the actual compilation. We construct
+ # them from ccflags/libs in varying ways depending on which compiler is used,
+ # below.
+-env['CPPPATH']=["#g_src/fmodexinclude"]
+ env['CCFLAGS']=["-Dunix"]
+-env['LIBS']=["ncursesw", "SDL_image", "boost_regex"]
++env['LIBS']=["ncursesw", "SDL_image"]
+ # If there's a library in the libs folder it will get linked over a system one.
+-env['LIBPATH']=["#libs"]
+-env['LINKFLAGS']=["-Wl,--as-needed",'-Wl,-rpath=\$$ORIGIN/libs','-Wl,-static','-lSDL','-lSDL_image','-lsndfile','-Wl,-Bdynamic']
+-
+-# GLEW
+-env["CPPPATH"].append('#g_src/glext')
+-env["CCFLAGS"].append('-DGLEW_STATIC') # Should only be needed on windows, but can't hurt.
++env['LINKFLAGS']=["-Wl,--as-needed",'-Wl,-rpath=\$$ORIGIN/libs','-lSDL','-lSDL_image','-lsndfile','-lz']
+ 
+ # Generic unix, including Linux
+-env['ASFLAGS']="--32"
+-env['LINKFLAGS'].append("-m32")
+-env["CCFLAGS"].append("-m32")
+ env.ParseConfig('pkg-config gtk+-2.0 --cflags --libs')
+ env.ParseConfig('pkg-config openal --cflags --libs')
+-env.ParseConfig('pkg-config sndfile --static --cflags')
+-env.ParseConfig('pkg-config sdl --static --cflags')
+-env.ParseConfig('pkg-config zlib --cflags --libs')
++env.ParseConfig('pkg-config sndfile --cflags')
++env.ParseConfig('pkg-config sdl --cflags')
+ env.ParseConfig('pkg-config glu --cflags --libs')
+ 
+-
+ if profile:
+    env["CCFLAGS"].append("-pg")
+    env['LINKFLAGS'].append("-pg")
+ 
+-if optimize:
+-   env["CCFLAGS"]+=["-O3","-march=pentium3","-mfpmath=sse"]
+-
+ if debug:
+-   env["CCFLAGS"].append("-ggdb")
+    env["CCFLAGS"].append("-DDEBUG")
+    
+ # Finally, do the build

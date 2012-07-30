@@ -1,0 +1,34 @@
+--- configure.in.orig	2008-11-17 13:00:07.000000000 +0100
++++ configure.in	2008-11-17 13:01:02.839212938 +0100
+@@ -344,8 +344,6 @@
+ AC_AGI_COMPILE([PortAudio], [portaudio], [$CFLAGS $PTHREAD_CFLAGS], [$LDFLAGS $PORTAUDIO_LDFLAGS],[
+ #include <portaudio.h>
+ int main(void) {
+-  PaError err = Pa_Initialize();
+-  if (err != paNoError) return 1;
+-  return 0;
++  return 1;
+ }])
+ 
+@@ -375,8 +373,6 @@
+ AC_AGI_COMPILE([PuleseAudio], [pulseaudio], [$LIBPULSE_CFLAGS], [$LIBPULSE_LIBS],[
+ #include <pulse/pulseaudio.h>
+ int main(void) {
+-  pa_threaded_mainloop *mainloop = pa_threaded_mainloop_new();
+-  if (!mainloop) return 1;
+-  return 0;
++  return 1;
+ }])
+ 
+@@ -408,10 +404,6 @@
+ #include <AL/alc.h>
+ #endif
+ int main(void) {
+-  ALCdevice *device = alcOpenDevice(0);
+-  if (!device) return 1;
+-  ALCcontext *context = alcCreateContext(device, 0);
+-  if (!context) return 1;
+-  return 0;
++  return 1;
+ }])
+ 

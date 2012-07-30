@@ -1,0 +1,22 @@
+>=sys-devel/gcc-3
+
+0
+http://www.rudeserver.com/database/download/rudedatabase-4.1.0.tar.gz
+
+http://rudeserver.com/config/index.html
+GPL
+Use MySQL servers
+~alpha ~amd64 ~hppa ~mips ~ppc ~sparc ~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+2
+
+install
+
+
+
+
+

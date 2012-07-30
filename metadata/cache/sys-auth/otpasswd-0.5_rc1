@@ -1,0 +1,22 @@
+virtual/pam dev-libs/gmp dev-util/cmake >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+virtual/pam dev-libs/gmp
+0
+http://thera.be/my_public/my_projects/otpasswd/otpasswd-0.5_rc1.tar.bz2
+test
+http://savannah.nongnu.org/projects/otpasswd
+GPL-3
+One-Time Passwords auth module for PAM
+~amd64 ~x86
+base cmake-utils eutils flag-o-matic multilib pam portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst setup test unpack
+
+
+
+
+

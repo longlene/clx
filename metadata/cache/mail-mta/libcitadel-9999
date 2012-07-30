@@ -1,0 +1,22 @@
+dev-libs/expat >=dev-libs/libical-0.43 net-misc/curl mail-filter/libsieve >=sys-libs/db-4.1.25_p1 >=sys-devel/autoconf-2.52 >=sys-devel/libtool-1.4 || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool >=dev-vcs/git-1.6
+dev-libs/expat >=dev-libs/libical-0.43 net-misc/curl mail-filter/libsieve >=sys-libs/db-4.1.25_p1
+0
+
+
+http://citadel.org
+GPL-3
+Git master version of the whole citadel suit
+~amd64 ~x86
+autotools base eutils git libtool multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare unpack
+
+
+
+
+

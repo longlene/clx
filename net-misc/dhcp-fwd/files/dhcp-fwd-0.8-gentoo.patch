@@ -1,0 +1,24 @@
+--- dhcp-fwd-0.8-orig/contrib/dhcp-fwd.conf	2008-12-30 04:26:22.000000000 -0600
++++ dhcp-fwd-0.8/contrib/dhcp-fwd.conf		2009-05-14 23:51:27.000000000 -0500
+@@ -29,18 +29,18 @@
+ group		dhcp-fwd
+ 
+ ## chroot() path
+-chroot		/var/lib/dhcp-fwd
++chroot		/chroot/dhcp-fwd
+ 
+ ## Logfile and loglevel. The logfile-location is relatively to the
+ ## directory where dhcp-fwd was started and not to the chroot-directory.
+ ##
+ ## The loglevel option is not supported yet.
+ logfile		/var/log/dhcp-fwd.log
+-loglevel	1
++#loglevel	1
+ 
+ ## SysV pidfile; contains the PID of the daemon-process and will be
+ ## written with root-privileges
+-pidfile		/var/run/dhcp-fwd.pid
++pidfile		$PIDFILE
+ 
+ 
+ ## Set limit for resources. When using much interfaces or servers

@@ -1,0 +1,22 @@
+media-libs/tiff doc? ( app-doc/doxygen dev-libs/libxslt )
+media-libs/tiff
+0
+http://www.soft-switch.org/downloads/spandsp/spandsp-0.0.6pre17.tgz
+
+http://www.soft-switch.org/
+LGPL-2.1
+SpanDSP is a library of DSP functions for telephony.
+~amd64 ~ppc ~x86
+eutils multilib portability toolchain-funcs user versionator
+doc fixed-point mmx sse sse2 sse3 sse4 sse5 static-libs
+
+
+
+2
+
+configure install
+
+
+
+
+

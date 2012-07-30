@@ -1,0 +1,22 @@
+media-libs/coin >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+media-libs/coin
+0
+http://www.tecn.upf.es/openMOIV/download/1.0.3/OpenMOIV.src.1.0.3a.tar.bz2
+
+http://www.tecn.upf.es/openMOIV/
+LGPL-2.1
+Object-oriented 3D toolkit that facilitates the rendering and interaction of chemical systems.
+~x86 ~amd64
+base cmake-utils eutils flag-o-matic multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

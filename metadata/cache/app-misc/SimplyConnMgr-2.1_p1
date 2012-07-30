@@ -1,0 +1,22 @@
+>=app-arch/rpm2targz-9.0.0.3g
+net-fs/samba =dev-db/myodbc-3.51* >=dev-lang/mono-2.0
+0
+http://simplydownload.accpac.com/downloads/simplyaccounting/install/SimplyConnMgr-2.1-1.i386.rpm
+mirror test
+http://http://www.simplyaccounting.com/install/default.asp
+SAGE_SA_License_Ref
+Simply Accounting Connection Manager for Linux (Canada)
+~amd64 ~x86
+eutils multilib portability rpm toolchain-funcs user
+
+
+
+
+1
+
+install setup unpack
+
+
+
+
+

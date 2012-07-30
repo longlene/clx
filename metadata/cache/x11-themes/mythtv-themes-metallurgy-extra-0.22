@@ -1,0 +1,22 @@
+>=media-tv/mythtv-themes-0.22 dev-vcs/subversion net-misc/rsync
+>=media-tv/mythtv-themes-0.22
+0
+http://miffteevee.co.uk/themes/metallurgy/metallurgy_1.0_red.tar.gz http://miffteevee.co.uk/themes/metallurgy/metallurgy_1.0_green.tar.gz http://miffteevee.co.uk/themes/metallurgy/metallurgy_1.0_purple.tar.gz
+nomirror
+http://miffteevee.co.uk/themes/metallurgy.html
+CCPL-Attribution-NonCommercial-NoDerivs-2.5
+Metallurgy theme for MythTV 0.22
+x86
+eutils multilib portability subversion toolchain-funcs user
+
+
+
+
+
+
+install preinst unpack
+
+
+
+
+

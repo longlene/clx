@@ -1,0 +1,22 @@
+>=dev-vcs/git-1.6
+git? ( dev-util/git ) darcs? ( dev-util/darcs ) mercurial? ( dev-util/mercurial ) trac? ( www-apps/trac )
+0
+
+
+http://software.complete.org/software/projects/show/commithooks
+GPL-2
+Commit hooks for version control systems to inject the result into bugtrackers
+~sparc
+eutils git multilib portability toolchain-funcs user
+git darcs mercurial trac
+
+
+
+2
+
+install prepare unpack
+
+
+
+
+

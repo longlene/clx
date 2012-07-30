@@ -1,0 +1,30 @@
+--- makefile.old	2008-11-02 14:43:33.000000000 +0100
++++ makefile	2008-11-02 14:44:50.000000000 +0100
+@@ -25,8 +25,8 @@
+ #
+ BINDIR=/usr/bin/
+ # note the terminal / in the above line is needed
+-CC=gcc
+-CFLAGS=-ansi -Wall -m32 -ggdb -DBINDIR=\"$(BINDIR)\"
++#CC=gcc
++MY_CFLAGS=$(CFLAGS) -ansi -Wall -DBINDIR=\"$(BINDIR)\"
+ 
+ # on PC add:
+ #	-DPC
+@@ -66,13 +66,13 @@ sharing:
+ 		uno_generic.c uno_intervals.c uno_lts.c
+ 
+ uno:	uno.c
+-	$(CC) $(CFLAGS) -o uno uno.c
++	$(CC) $(MY_CFLAGS) -o uno uno.c
+ 
+ uno_local:	c_gram.h $(OFILES) 
+-	$(CC) $(CFLAGS) -o uno_local $(OFILES)
++	$(CC) $(MY_CFLAGS) -o uno_local $(OFILES)
+ 
+ uno_global:	uno_global.o uno_fcts.o
+-	$(CC) $(CFLAGS) -o uno_global uno_global.o uno_fcts.o
++	$(CC) $(MY_CFLAGS) -o uno_global uno_global.o uno_fcts.o
+ 
+ c_gram.c c_gram.h:	c_gram.y tree.h symtab.h globals.h
+ 	bison -v -d -o c_gram.c c_gram.y	# expect 6 shift/reduce 23 reduce/reduce conflicts

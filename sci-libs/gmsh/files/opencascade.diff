@@ -1,0 +1,32 @@
+--- gmsh-2.2.2.ebuild	2008-08-19 19:24:29.000000000 +0200
++++ gmsh-2.2.3.ebuild	2008-08-07 19:26:10.000000000 +0200
+@@ -11,12 +11,13 @@
+ LICENSE="GPL-2"
+ SLOT="0"
+ KEYWORDS="~amd64 ~x86"
+-IUSE="cgns doc examples jpeg metis png zlib X"
++IUSE="cgns doc examples jpeg metis opencascade png zlib X"
+ 
+ RDEPEND="sci-libs/gsl
+ 	x11-libs/fltk
+ 	cgns? ( sci-libs/cgnslib )
+ 	jpeg? ( media-libs/jpeg )
++	opencascade? ( sci-libs/opencascade )
+ 	png? ( media-libs/libpng )
+ 	zlib? ( sys-libs/zlib )"
+ 
+@@ -32,12 +33,14 @@
+ 
+ src_compile() {
+ 	local myconf=""
++	use opencascade && myconf="${myconf} --with-occ-prefix=$CASROOT/lin"
+ 
+ 	econf ${myconf} \
+ 		$(use_enable X gui) \
+ 		$(use_enable cgns) \
+ 		$(use_enable jpeg) \
+ 		$(use_enable metis) \
++		$(use_enable opencascade occ) \
+ 		$(use_enable png) \
+ 		$(use_enable zlib)
+ 

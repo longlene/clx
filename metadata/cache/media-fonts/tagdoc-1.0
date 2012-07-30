@@ -1,0 +1,22 @@
+app-arch/unzip X? ( x11-apps/mkfontdir media-fonts/encodings ) >=media-libs/fontconfig-2.4.0
+
+0
+http://www.mts.net/~pmorrow/tagdoc93.zip
+
+http://www.mts.net/~pmorrow/fonts.htm
+as-is
+Tagalog Doctrina 1593 is based on the typeface used in one of the very first books printed in the Philippines, the Doctrina Christiana of 1593.
+~amd64 ~x86
+eutils font multilib portability toolchain-funcs user
+X
+
+
+
+
+
+install postinst postrm setup
+
+
+
+
+

@@ -1,0 +1,8 @@
+--- lt_hotswap-0.3.6-origonal/lt_hotswap.c      2007-05-22 17:56:06.000000000 -0400
++++ lt_hotswap-0.3.6/lt_hotswap.c       2007-05-22 17:57:19.000000000 -0400
+@@ -1,4 +1,4 @@
+-#include <linux/config.h>
++#include <linux/autoconf.h>
+ #include <linux/module.h>
+ #include <linux/kernel.h>
+ #include <linux/device.h>

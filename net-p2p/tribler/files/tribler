@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd /usr/share/tribler
+PYTHONPATH="$PYTHONPATH:." exec python Tribler/Main/tribler.py "$@"
+

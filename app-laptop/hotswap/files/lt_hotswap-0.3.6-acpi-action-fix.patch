@@ -1,0 +1,7 @@
+--- config/lths
++++ config/lths
+@@ -1,3 +1,3 @@
+ # Call the LTHS script
+ event=lths.*
++action=/etc/acpi/actions/lths.sh %e
+-action=/usr/local/sbin/lths.sh %e

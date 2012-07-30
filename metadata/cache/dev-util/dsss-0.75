@@ -1,0 +1,22 @@
+!dev-libs/phobos !dev-libs/tango
+
+0
+http://svn.dsource.org/projects/dsss/downloads/0.75/dsss-0.75.tar.bz2
+
+http://www.dsource.org/projects/dsss
+MIT
+the D Shared Software System
+x86 ~amd64
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install setup
+
+
+
+
+

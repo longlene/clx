@@ -1,0 +1,22 @@
+dev-perl/Mail-IMAPClient
+dev-perl/Mail-IMAPClient
+0
+http://www.joeshmoe.com/imapautoarchive/imapautoarchive-1.0b.tar.gz
+
+http://www.joeshmoe.com/imapautoarchive/
+GPL-2
+automatically move, copy, or delete mail on an imap server based on when it was received
+~alpha ~amd64 hppa ia64 ~ppc ~sparc ~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+install unpack
+
+
+
+
+

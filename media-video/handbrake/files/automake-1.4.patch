@@ -1,0 +1,19 @@
+--- handbrake-9999.ebuild.orig	2010-10-15 13:18:19.573278064 +0200
++++ handbrake-9999.ebuild	2010-10-15 13:33:17.264706715 +0200
+@@ -6,7 +6,7 @@
+ 
+ ESVN_REPO_URI="svn://svn.handbrake.fr/HandBrake/trunk"
+ 
+-inherit subversion gnome2-utils
++inherit autotools subversion gnome2-utils
+ 
+ DESCRIPTION="Open-source DVD to MPEG-4 converter."
+ HOMEPAGE="http://handbrake.fr/"
+@@ -25,6 +25,7 @@
+ 			x11-libs/libnotify
+ 			media-libs/gstreamer
+ 			media-libs/gst-plugins-base
++			=sys-devel/automake-1.4*
+ 			>=sys-fs/udev-147[extras]
+ 	)"
+ DEPEND="sys-libs/zlib

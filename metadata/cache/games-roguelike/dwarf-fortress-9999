@@ -1,0 +1,22 @@
+amd64? ( media-libs/fmod[multilib] app-emulation/emul-linux-x86-soundlibs app-emulation/emul-linux-x86-sdl app-emulation/emul-linux-x86-baselibs app-emulation/emul-linux-x86-xlibs ) !amd64? ( media-libs/fmod ) media-libs/libsndfile media-libs/openal virtual/glu dev-libs/boost media-libs/sdl-image media-libs/libsdl sys-libs/zlib sys-libs/ncurses dev-util/scons >=dev-vcs/git-1.6
+amd64? ( media-libs/fmod[multilib] app-emulation/emul-linux-x86-soundlibs app-emulation/emul-linux-x86-sdl app-emulation/emul-linux-x86-baselibs app-emulation/emul-linux-x86-xlibs ) !amd64? ( media-libs/fmod ) media-libs/libsndfile media-libs/openal virtual/glu dev-libs/boost media-libs/sdl-image media-libs/libsdl sys-libs/zlib sys-libs/ncurses dev-util/scons sys-libs/glibc amd64? ( app-emulation/emul-linux-x86-gtklibs ) !amd64? ( x11-libs/gtk+:2 dev-libs/atk x11-libs/pango dev-libs/glib x11-libs/cairo media-libs/freetype virtual/opengl x11-libs/libXinerama x11-libs/libXi x11-libs/libXrandr x11-libs/libXcursor x11-libs/libXcomposite x11-libs/libXext x11-libs/libXdamage x11-libs/libXfixes x11-libs/pixman media-libs/libpng x11-libs/libXrender x11-libs/libX11 x11-libs/libxcb x11-libs/libXau x11-libs/libXdmcp dev-libs/expat x11-libs/libXxf86vm x11-libs/libdrm )
+0
+
+
+http://www.bay12games.com/dwarves
+
+Dwarf Fortress is a single-player fantasy game. You can control a dwarven outpost or an adventurer in a randomly generated, persistent world.
+~amd64
+base eutils games git multilib portability toolchain-funcs user
+doc
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+dev-libs/libxml2 sys-fs/udisks sys-apps/dbus sys-libs/pam sys-apps/pmount dev-python/celementtree dev-python/dbus-python dev-python/pygobject
+dev-libs/libxml2 sys-fs/udisks sys-apps/dbus sys-libs/pam sys-apps/pmount dev-python/celementtree dev-python/dbus-python dev-python/pygobject
+0
+http://sourceforge.net/projects/pamusb/files/pam_usb/pam_usb-0.5.0/pam_usb-0.5.0.tar.gz
+
+http://www.pamusb.org/
+GPL-2
+A PAM module that enables authentication using an USB-Storage device (such as an USB Pen) through DSA private/public keys.
+x86 amd64
+eutils flag-o-matic multilib pam portability toolchain-funcs user
+
+
+
+
+
+
+compile install
+
+
+
+
+

@@ -1,0 +1,10 @@
+diff -Naur sshmenu-3.15-orig/Makefile sshmenu-3.15/Makefile
+--- sshmenu-3.15-orig/Makefile	2007-10-15 05:20:19.000000000 -0400
++++ sshmenu-3.15/Makefile	2008-03-28 09:18:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ BIN   = $(DESTDIR)/usr/bin
+-LIB   = $(DESTDIR)/usr/lib
++LIB   = $(DESTDIR)/usr/$(LIBDIR)
+ MAN   = $(DESTDIR)/usr/share/man
+ SHARE = $(DESTDIR)/usr/share
+ 

@@ -1,0 +1,22 @@
+dev-libs/libusb:1 sys-libs/readline >=dev-vcs/git-1.6
+dev-libs/libusb:1 sys-libs/readline
+0
+
+
+http://github.com/chronicdev/libirecovery.git
+GPL-3
+iRecovery is a libusb-based commandline utility to talk to iBoot/iBSS in Apple's iPhone/iPod touch via USB
+
+eutils git multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile install unpack
+
+
+
+
+

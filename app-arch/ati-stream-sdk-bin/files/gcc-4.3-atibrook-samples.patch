@@ -1,0 +1,10 @@
+diff -rup atibrook/samples/CPP/common/util.cpp amdbrook.new/samples/CPP/common/util.cpp
+--- atibrook/samples/CPP/common/util.cpp	2008-12-03 01:12:53.000000000 +0100
++++ atibrook.new/samples/CPP/common/util.cpp	2009-02-03 19:54:12.000000000 +0100
+@@ -2,6 +2,7 @@
+ #include <ctime>
+ #include <iostream>
+ #include <iomanip>
++#include <limits.h>
+ 
+ #include "util.h"

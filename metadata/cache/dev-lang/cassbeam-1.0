@@ -1,0 +1,22 @@
+virtual/x11 virtual/tetex >=dev-libs/glib-1.2 sci-libs/fftw
+virtual/x11 virtual/tetex >=dev-libs/glib-1.2 sci-libs/fftw
+0
+http://www.aoc.nrao.edu/~wbrisken/src/cassbeam-1.0.tar.gz
+
+http://www.aoc.nrao.edu/~wbrisken/src/
+GPL-2
+cassbeam is a Cassegrain antenna simulator.
+~x86
+
+
+
+
+
+
+
+install
+
+
+
+
+

@@ -1,0 +1,19 @@
+#!/sbin/runscript
+
+depend() {
+	need net
+}
+
+start() {
+        ebegin "Starting ipfm"
+        start-stop-daemon --start --quiet --exec /usr/sbin/ipfm \
+	    -- -p /var/run/ipfm.pid
+        eend ${?}
+}
+
+stop() {
+        ebegin "Stopping ipfm"
+        start-stop-daemon --stop --quiet --pidfile /var/run/ipfm.pid
+        eend ${?}
+}
+

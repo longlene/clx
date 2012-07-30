@@ -1,0 +1,22 @@
+
+
+0
+http://cims.nyu.edu/~openfst/twiki/pub/FST/FstDownload/OpenFst-beta-20080422.tgz
+
+http://www.openfst.org/
+Apache-2.0
+OpenFst is a library for constructing, combining, optimizing, and searching weighted finite-state transducers (FSTs).
+~x86
+multilib toolchain-funcs
+
+
+
+
+
+
+compile install
+
+
+
+
+

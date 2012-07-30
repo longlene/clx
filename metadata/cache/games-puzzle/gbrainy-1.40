@@ -1,0 +1,22 @@
+>=dev-util/intltool-0.35 >=dev-lang/mono-1.1.7 >=dev-dotnet/gtk-sharp-2.10 >=dev-dotnet/gnome-sharp-2.10 >=x11-libs/gtk+-2.8 >=gnome-base/librsvg-2.2 >=x11-libs/cairo-1.2 >=dev-dotnet/mono-addins-0.3
+>=dev-util/intltool-0.35 >=dev-lang/mono-1.1.7 >=dev-dotnet/gtk-sharp-2.10 >=dev-dotnet/gnome-sharp-2.10 >=x11-libs/gtk+-2.8 >=gnome-base/librsvg-2.2 >=x11-libs/cairo-1.2 >=dev-dotnet/mono-addins-0.3
+0
+http://gent.softcatala.org/jmas/gbrainy/gbrainy-1.40.tar.gz
+
+http://live.gnome.org/gbrainy
+GPL-2
+gbrainy is a brain teaser game and trainer to have fun and to keep your brain trained.
+~amd64 ~x86 ~ppc
+base eutils games multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

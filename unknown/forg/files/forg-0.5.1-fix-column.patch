@@ -1,0 +1,329 @@
+=== modified file 'AssociationsEditor.py'
+--- AssociationsEditor.py	2008-01-21 20:27:36 +0000
++++ AssociationsEditor.py	2008-01-21 20:28:21 +0000
+@@ -48,19 +48,19 @@
+ 
+         # Left side widgets
+         inputbox = Frame(self.left_side)
+-        inputbox.grid(row=0, col=0, columnspan=2, rowspan=2, sticky=W)
++        inputbox.grid(row=0, column=0, columnspan=2, rowspan=2, sticky=W)
+ 
+         # File extension entry box and label.
+         ftlabel = Label(inputbox, text='File extension:')
+         self.ftEntry = Entry(inputbox, width=6)
+-        ftlabel.grid(row=0, col=0, sticky=W)
+-        self.ftEntry.grid(row=0, col=1, sticky=W)
++        ftlabel.grid(row=0, column=0, sticky=W)
++        self.ftEntry.grid(row=0, column=1, sticky=W)
+ 
+         # Application entry box and label
+         applabel = Label(inputbox, text='Application:')
+         self.appEntry = Entry(inputbox, width=30)
+-        applabel.grid(row=1, col=0, sticky=W)
+-        self.appEntry.grid(row=1, col=1, sticky=W)
++        applabel.grid(row=1, column=0, sticky=W)
++        self.appEntry.grid(row=1, column=1, sticky=W)
+ 
+         # Instruction group box.
+         group = Pmw.Group(self.left_side, tag_text='Instructions:')
+@@ -99,9 +99,9 @@
+                                               command=self.resetAssociations)
+         # self.addAssociationButton.pack(side='top', expand=1, fill='both')
+         # self.removeAssociationButton.pack(side='bottom', expand=1, fill='both')
+-        self.addAssociationButton.grid(row=0, col=0, sticky='NEW')
+-        self.removeAssociationButton.grid(row=1, col=0, sticky='NEW')
+-        self.setDefaultsButton.grid(row=2, col=0, sticky='NEW')
++        self.addAssociationButton.grid(row=0, column=0, sticky='NEW')
++        self.removeAssociationButton.grid(row=1, column=0, sticky='NEW')
++        self.setDefaultsButton.grid(row=2, column=0, sticky='NEW')
+         
+         # Right side widgets
+         self.associationList = Pmw.ScrolledListBox(self.right_side,
+
+=== modified file 'BookmarkEditor.py'
+--- BookmarkEditor.py	2008-01-21 20:27:36 +0000
++++ BookmarkEditor.py	2008-01-21 20:28:21 +0000
+@@ -86,7 +86,7 @@
+         
+         self.tree = Tree.Tree(self.mainBox, bmtree,
+                               rootlabel="Bookmarks", lineflag=0)
+-        self.tree.grid(row=0, col=0, sticky='NSEW')
++        self.tree.grid(row=0, column=0, sticky='NSEW')
+ 
+         # Make expandable
+         self.mainBox.grid_rowconfigure(0, weight=1)
+
+=== modified file 'Cache.py'
+--- Cache.py	2008-01-21 20:27:36 +0000
++++ Cache.py	2008-01-21 20:28:21 +0000
+@@ -87,12 +87,12 @@
+         lab5 = Label(fr, text=" ")
+         lab6 = Label(fr, text="Continue?")
+ 
+-        lab1.grid(row=1, col=0, columnspan=5)
+-        lab2.grid(row=2, col=0, columnspan=5)
+-        lab3.grid(row=3, col=0, columnspan=5)
+-        lab4.grid(row=4, col=0, columnspan=5)
+-        lab5.grid(row=5, col=0, columnspan=5)
+-        lab6.grid(row=6, col=0, columnspan=5)
++        lab1.grid(row=1, column=0, columnspan=5)
++        lab2.grid(row=2, column=0, columnspan=5)
++        lab3.grid(row=3, column=0, columnspan=5)
++        lab4.grid(row=4, column=0, columnspan=5)
++        lab5.grid(row=5, column=0, columnspan=5)
++        lab6.grid(row=6, column=0, columnspan=5)
+                                                 
+         # self.dialog.activate()
+ 
+
+=== modified file 'Dialogs.py'
+--- Dialogs.py	2008-01-21 20:27:36 +0000
++++ Dialogs.py	2008-01-21 20:28:22 +0000
+@@ -38,12 +38,12 @@
+         self.frame = Frame(self.dialog.interior())
+         self.frame.pack(expand=1, fill='both')
+ 
+-        Label(self.frame, text="Find a term...").grid(row=0, col=0,
++        Label(self.frame, text="Find a term...").grid(row=0, column=0,
+                                                       columnspan=5)
+-        Label(self.frame, text="Term: ").grid(row=1, col=0)
++        Label(self.frame, text="Term: ").grid(row=1, column=0)
+ 
+         self.searchEntry = Entry(self.frame, text="")
+-        self.searchEntry.grid(row=1, col=1, columnspan=4)
++        self.searchEntry.grid(row=1, column=1, columnspan=4)
+ 
+         self.css = IntVar()
+         
+@@ -51,7 +51,7 @@
+                                                  text="Case-sensitive search",
+                                                  variable = self.css,
+                                                  command  = self.cb)
+-        self.caseSensitiveCheckBox.grid(row=2, col=0, columnspan=4)
++        self.caseSensitiveCheckBox.grid(row=2, column=0, columnspan=4)
+         
+         self.lastMatch = None
+         # self.dialog.activate()
+@@ -161,10 +161,10 @@
+                                  buttons=self.buttons)
+ 
+         i = self.dialog.interior()
+-        Label(i, text="New Folder Title:").grid(row=0, col=0,
++        Label(i, text="New Folder Title:").grid(row=0, column=0,
+                                                sticky='EW')
+         self.__entry = Entry(i)        
+-        self.__entry.grid(row=1, col=0, sticky='EW')
++        self.__entry.grid(row=1, column=0, sticky='EW')
+         
+         if folderName:
+             self.__entry.insert('end', folderName)
+
+=== modified file 'GUIAskForm.py'
+--- GUIAskForm.py	2008-01-21 20:27:36 +0000
++++ GUIAskForm.py	2008-01-21 20:28:22 +0000
+@@ -65,7 +65,7 @@
+                 print "Couldn't make wid: %s" % errstr
+                 continue
+ 
+-            wid.grid(row=x, col=0, sticky=W)
++            wid.grid(row=x, column=0, sticky=W)
+             self.question_widgets.append(wid)
+ 
+         self.submit = Button(self,
+
+=== modified file 'GUIDirectory.py'
+--- GUIDirectory.py	2008-01-21 20:27:36 +0000
++++ GUIDirectory.py	2008-01-21 20:28:22 +0000
+@@ -144,7 +144,7 @@
+                 blurb_label = Label(self.sbox, foreground=self.DEFAULT_COLOR,
+                                     text=rname)
+                 blurb_label.grid(row=x, columnspan=self.BLURB_SPAN,
+-                                 col=self.BLURB_COLUMN, sticky=W)
++                                 column=self.BLURB_COLUMN, sticky=W)
+                 self.searchlist.append([rname, blurb_label,
+                                         self.DEFAULT_COLOR])
+                 
+@@ -167,7 +167,7 @@
+                     resource.__blurb__ = Label(box,
+                                                text=resource.toURL())
+                     resource.__blurb__.grid(row=rowno,
+-                                            col=p.HOSTPORT_COLUMN,
++                                            column=p.HOSTPORT_COLUMN,
+                                             columnspan=p.HOSTPORT_SPAN,
+                                             sticky=E)
+ 
+@@ -207,11 +207,11 @@
+                 self.searchlist.append([rname, b, default_color])
+                 
+                 l.grid(row=x,
+-                       col=self.TYPE_COLUMN,
++                       column=self.TYPE_COLUMN,
+                        columnspan=self.TYPE_SPAN,
+                        sticky=W)
+                 b.grid(row=x,
+-                       col=self.NAME_COLUMN,
++                       column=self.NAME_COLUMN,
+                        columnspan=self.NAME_SPAN,
+                        sticky=W)
+ 
+@@ -226,16 +226,16 @@
+                             t = t[0:40]
+                             Label(self.sbox,
+                                   text=t).grid(row=x,
+-                                               col=self.INFO_COLUMN,
++                                               column=self.INFO_COLUMN,
+                                                columnspan=self.INFO_SPAN)
+                         else:
+                             Label(self.sbox,
+                                   text=t).grid(row=x,
+-                                               col=self.INFO_COLUMN,
++                                               column=self.INFO_COLUMN,
+                                                columnspan=self.INFO_SPAN)
+                     else:
+                         Label(self.sbox, text="  ").grid(row=x,
+-                                                    col=self.INFO_COLUMN,
++                                                    column=self.INFO_COLUMN,
+                                                     columnspan=self.INFO_SPAN)
+ 
+                 # Possibly report to the user whether or not a given file is
+@@ -245,12 +245,12 @@
+                     if cacheobj.isInCache(r):
+                         Label(self.sbox,
+                               text="Cached").grid(row=x,
+-                                                  col=self.CACHE_COLUMN,
++                                                  column=self.CACHE_COLUMN,
+                                                   columnspan=self.CACHE_SPAN)
+                     else:
+                         Label(self.sbox,
+                               text=" ").grid(row=x,
+-                                             col=self.CACHE_COLUMN,
++                                             column=self.CACHE_COLUMN,
+                                              columnspan=self.CACHE_SPAN)
+ 
+         self.scrolled_window.resizescrollregion()
+
+=== modified file 'GUIQuestion.py'
+--- GUIQuestion.py	2008-01-21 20:27:36 +0000
++++ GUIQuestion.py	2008-01-21 20:28:22 +0000
+@@ -48,7 +48,7 @@
+         promptString = self.question.getPromptString()
+         defaultValue = self.question.getDefault()
+ 
+-        Label(self, text=promptString).grid(row=0, col=0, sticky=W)        
++        Label(self, text=promptString).grid(row=0, column=0, sticky=W)        
+ 
+         if self.type == QUESTION_NOTE:
+             # Prompt string is all we need for this one.
+@@ -58,30 +58,30 @@
+             self.entry = Entry(self)
+             if len(defaultValue) > 0:
+                 self.entry.insert('end', defaultValue)
+-            self.entry.grid(row=0, col=1, columnspan=4, sticky=W)
++            self.entry.grid(row=0, column=1, columnspan=4, sticky=W)
+             return None
+         if self.type == QUESTION_ASKF or self.type == QUESTION_CHOOSEF:
+             self.entry = Entry(self)
+             if len(defaultValue) > 0:
+                 self.entry.insert('end', defaultValue)
+-            self.entry.grid(row=0, col=1, columnspan=4, sticky=W)
++            self.entry.grid(row=0, column=1, columnspan=4, sticky=W)
+ 
+             # Browse buttons for file selection.
+             self.browse = Button(text="Browse", command=self.browse)
+-            self.browse.grid(row=0, col=5, sticky=W)
++            self.browse.grid(row=0, column=5, sticky=W)
+             return None
+         if self.type == QUESTION_ASKP:
+             self.entry = Entry(self, show="*")
+ 
+             if len(defaultValue) > 0:
+                 self.entry.insert('end', defaultValue)
+-            self.entry.grid(row=0, col=1, columnspan=4, sticky=W)
++            self.entry.grid(row=0, column=1, columnspan=4, sticky=W)
+             return None
+         if self.type == QUESTION_ASKL:
+             self.entry = Pmw.ScrolledText(self, hscrollmode='dynamic',
+                                           text_width=80, text_height=6,
+                                           vscrollmode='dynamic')
+-            self.entry.grid(row=1, col=0, columnspan=2, rowspan=2,
++            self.entry.grid(row=1, column=0, columnspan=2, rowspan=2,
+                             sticky='N')
+             return None
+         if self.type == QUESTION_SELECT:
+@@ -95,7 +95,7 @@
+                 print "Invoking defalut %s" % defaultValue
+                 self.entry.invoke(defaultValue)
+ 
+-            self.entry.grid(row=1, col=0, columnspan=4, rowspan=4,
++            self.entry.grid(row=1, column=0, columnspan=4, rowspan=4,
+                             sticky='NSEW')
+             print 'Returning SELECT GUIQuestion'
+             return None
+@@ -108,7 +108,7 @@
+                 print "Invoking defalut %s" % defaultValue
+                 self.entry.invoke(defaultValue)
+                 
+-            self.entry.grid(row=1, col=0, columnspan=4, rowspan=4,
++            self.entry.grid(row=1, column=0, columnspan=4, rowspan=4,
+                             sticky='NSEW')
+             print "Returning CHOOSE GUIQuestion"
+             return None
+
+=== modified file 'GUISearch.py'
+--- GUISearch.py	2008-01-21 20:27:36 +0000
++++ GUISearch.py	2008-01-21 20:28:22 +0000
+@@ -48,11 +48,11 @@
+         for x in range(0, len(labels)):
+             last = x
+             label = labels[x]
+-            Label(self, text=label, foreground='#000000').grid(row=x, col=0,
++            Label(self, text=label, foreground='#000000').grid(row=x, column=0,
+                                                                columnspan=2)
+ 
+         self.entryArea = Frame(self)
+-        self.entryArea.grid(row=(x+1), col=0, columnspan=5, sticky='EW')
++        self.entryArea.grid(row=(x+1), column=0, columnspan=5, sticky='EW')
+         self.entryBox = Entry(self.entryArea, text='')
+         self.entryBox.pack(side='left', expand=1, fill='x')
+         self.entryBox.bind("<Return>", self.submit)
+@@ -74,7 +74,7 @@
+         if self.bottom_label:
+             self.bottom_label.destroy()
+             self.bottom_label = Label(self, "Searching for \"%s\"" % terms)
+-            self.bottom_label.grid(row=10, col=0, columnspan=2,
++            self.bottom_label.grid(row=10, column=0, columnspan=2,
+                                    sticky=W)
+ 
+         # Copy the data from the current resource.
+
+=== modified file 'TkGui.py'
+--- TkGui.py	2008-01-21 20:27:36 +0000
++++ TkGui.py	2008-01-21 20:28:22 +0000
+@@ -141,19 +141,19 @@
+             self.portEntry = Entry(self.navBox, width=5)
+ 
+             self.portEntry.insert('end', '70')
+-            self.hostLabel.grid(row=0, col=0, sticky=W)
+-            self.hostEntry.grid(row=0, col=1, columnspan=2, sticky=W)
+-            self.resourceLabel.grid(row=0, col=3, sticky=W)
+-            self.resourceEntry.grid(row=0, col=4, columnspan=2, sticky=W)
+-            self.portLabel.grid(row=0, col=6, sticky=W)
+-            self.portEntry.grid(row=0, col=7, sticky=W) # No colspan: short box
++            self.hostLabel.grid(row=0, column=0, sticky=W)
++            self.hostEntry.grid(row=0, column=1, columnspan=2, sticky=W)
++            self.resourceLabel.grid(row=0, column=3, sticky=W)
++            self.resourceEntry.grid(row=0, column=4, columnspan=2, sticky=W)
++            self.portLabel.grid(row=0, column=6, sticky=W)
++            self.portEntry.grid(row=0, column=7, sticky=W) # No colspan: short box
+ 
+         self.gobutton = Button(self.navBox, text='Go', command=self.go)
+ 
+         if Options.program_options.getOption('use_url_format'):
+             self.gobutton.pack(side='right')
+         else:
+-            self.gobutton.grid(row=0, col=8, sticky=W)
++            self.gobutton.grid(row=0, column=8, sticky=W)
+ 
+         if URL != None:
+             resource = GopherResource.GopherResource()
+

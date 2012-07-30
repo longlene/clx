@@ -1,0 +1,238 @@
+[32;01m * [39;49;00mPackage:    media-libs/portmidi-217
+[32;01m * [39;49;00mRepository: sunrise
+[32;01m * [39;49;00mMaintainer: maintainer-wanted@gentoo.org
+[32;01m * [39;49;00mUSE:        amd64 elibc_glibc java kernel_linux multilib userland_GNU
+[32;01m * [39;49;00mFEATURES:   sandbox
+ [32;01m*[0m Using: icedtea6-bin
+>>> Unpacking source...
+>>> Unpacking portmidi-src-217.zip to /var/tmp/portage/media-libs/portmidi-217/work
+>>> Source unpacked in /var/tmp/portage/media-libs/portmidi-217/work
+>>> Preparing source in /var/tmp/portage/media-libs/portmidi-217/work/portmidi ...
+ [32;01m*[0m Applying portmidi-217-cmake-libdir-java-opts.patch ...
+[A[162C [34;01m[ [32;01mok[34;01m ][0m
+ [32;01m*[0m Applying portmidi-217-python-setup.py.patch ...
+[A[162C [34;01m[ [32;01mok[34;01m ][0m
+/var/tmp/portage/media-libs/portmidi-217/temp/environment: line 7684: [: -neq: binary operator expected
+>>> Source prepared.
+>>> Configuring source in /var/tmp/portage/media-libs/portmidi-217/work/portmidi ...
+>>> Working in BUILD_DIR: "/var/tmp/portage/media-libs/portmidi-217/work/portmidi"
+cmake --no-warn-unused-cli -C /var/tmp/portage/media-libs/portmidi-217/temp/gentoo_common_config.cmake -DCMAKE_INSTALL_PREFIX=/usr -DPORTMIDI_ENABLE_JAVA=ON -DCMAKE_CACHEFILE_DIR=/var/tmp/portage/media-libs/portmidi-217/work/portmidi/build -DJAVA_JVM_LIBRARY=/opt/icedtea6-bin-1.10.3/jre/lib/amd64/server/libjvm.so -DJAR_INSTALL_DIR=/usr/share/portmidi/lib -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_DO_STRIP=OFF -DCMAKE_USER_MAKE_RULES_OVERRIDE=/var/tmp/portage/media-libs/portmidi-217/temp/gentoo_rules.cmake  /var/tmp/portage/media-libs/portmidi-217/work/portmidi
+Not searching for unused variables given on the command line.
+loading initial cache file /var/tmp/portage/media-libs/portmidi-217/temp/gentoo_common_config.cmake
+-- The C compiler identification is GNU
+-- The CXX compiler identification is GNU
+-- Check for working C compiler: /usr/bin/x86_64-pc-linux-gnu-gcc
+-- Check for working C compiler: /usr/bin/x86_64-pc-linux-gnu-gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/x86_64-pc-linux-gnu-g++
+-- Check for working CXX compiler: /usr/bin/x86_64-pc-linux-gnu-g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Found JNI: /opt/icedtea6-bin-1.10.3/jre/lib/amd64/libjawt.so 
+-- JAVA_JVM_LIB_PATH is 
+-- JAVA_INCLUDE_PATH is /opt/icedtea6-bin-1.10.3/include
+-- JAVA_INCLUDE_PATH2 is /opt/icedtea6-bin-1.10.3/include/linux
+-- JAVA_JVM_LIBRARY is /opt/icedtea6-bin-1.10.3/jre/lib/amd64/server/libjvm.so
+-- <<< Gentoo configuration >>>
+Build type      Release
+Install path    /usr
+Compiler flags:
+C               -march=native -O3 -pipe -ggdb 
+C++             -march=native -O3 -pipe -ggdb 
+Linker flags:
+Executable       -Wl,-O1 -Wl,--as-needed
+Module           -Wl,-O1 -Wl,--as-needed
+Shared           -Wl,-O1 -Wl,--as-needed
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /var/tmp/portage/media-libs/portmidi-217/work/portmidi
+>>> Source configured.
+>>> Compiling source in /var/tmp/portage/media-libs/portmidi-217/work/portmidi ...
+>>> Working in BUILD_DIR: "/var/tmp/portage/media-libs/portmidi-217/work/portmidi"
+make -j7 -j1 
+[35m[1mScanning dependencies of target pmjni
+[0m[  3%] [32mBuilding C object pm_common/CMakeFiles/pmjni.dir/__/pm_linux/pmlinuxalsa.c.o
+[0m/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'alsa_out_open':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:151:20: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:152:18: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'alsa_in_open':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:293:20: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:294:18: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'alsa_write_flush':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:436:52: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'pm_linuxalsa_init':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:750:31: warning: cast to pointer from integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:760:31: warning: cast to pointer from integer of different size
+[  6%] [32mBuilding C object pm_common/CMakeFiles/pmjni.dir/__/pm_linux/pmlinux.c.o
+[0m[ 10%] [32mBuilding C object pm_common/CMakeFiles/pmjni.dir/__/pm_linux/finddefault.c.o
+[0m[ 13%] [32mBuilding C object pm_common/CMakeFiles/pmjni.dir/__/porttime/ptlinux.c.o
+[0m[ 16%] [32mBuilding C object pm_common/CMakeFiles/pmjni.dir/pmutil.c.o
+[0m[ 20%] [32mBuilding C object pm_common/CMakeFiles/pmjni.dir/portmidi.c.o
+[0m[ 23%] [32mBuilding C object pm_common/CMakeFiles/pmjni.dir/__/pm_java/pmjni/pmjni.c.o
+[0m[31m[1mLinking C shared library ../build/Release/libpmjni.so
+[0m[ 23%] Built target pmjni
+[35m[1mScanning dependencies of target portmidi-static
+[0m[ 26%] [32mBuilding C object pm_common/CMakeFiles/portmidi-static.dir/__/pm_linux/pmlinuxalsa.c.o
+[0m/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'alsa_out_open':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:151:20: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:152:18: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'alsa_in_open':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:293:20: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:294:18: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'alsa_write_flush':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:436:52: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'pm_linuxalsa_init':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:750:31: warning: cast to pointer from integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:760:31: warning: cast to pointer from integer of different size
+[ 30%] [32mBuilding C object pm_common/CMakeFiles/portmidi-static.dir/__/pm_linux/pmlinux.c.o
+[0m[ 33%] [32mBuilding C object pm_common/CMakeFiles/portmidi-static.dir/__/pm_linux/finddefault.c.o
+[0m[ 36%] [32mBuilding C object pm_common/CMakeFiles/portmidi-static.dir/__/porttime/ptlinux.c.o
+[0m[ 40%] [32mBuilding C object pm_common/CMakeFiles/portmidi-static.dir/pmutil.c.o
+[0m[ 43%] [32mBuilding C object pm_common/CMakeFiles/portmidi-static.dir/portmidi.c.o
+[0m[31m[1mLinking C static library ../build/Release/libportmidi.a
+[0m[ 43%] Built target portmidi-static
+[35m[1mScanning dependencies of target latency
+[0m[ 46%] [32mBuilding C object pm_test/CMakeFiles/latency.dir/latency.c.o
+[0m/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/latency.c: In function 'get_number':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/latency.c:283:5: warning: format not a string literal and no format arguments
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/latency.c:286:14: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/latency.c: In function 'main':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/latency.c:237:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/latency.c:263:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+[31m[1mLinking C executable ../build/Release/latency
+[0m[ 46%] Built target latency
+[35m[1mScanning dependencies of target midiclock
+[0m[ 50%] [32mBuilding C object pm_test/CMakeFiles/midiclock.dir/midiclock.c.o
+[0m/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midiclock.c: In function 'get_number':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midiclock.c:170:5: warning: format not a string literal and no format arguments
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midiclock.c: In function 'main':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midiclock.c:259:9: warning: format not a string literal and no format arguments
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midiclock.c: In function 'get_number':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midiclock.c:173:14: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+[31m[1mLinking C executable ../build/Release/midiclock
+[0m[ 50%] Built target midiclock
+[35m[1mScanning dependencies of target midithread
+[0m[ 53%] [32mBuilding C object pm_test/CMakeFiles/midithread.dir/midithread.c.o
+[0m/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midithread.c: In function 'main':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midithread.c:269:14: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midithread.c:327:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midithread.c: In function 'exit_with_message':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midithread.c:169:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+[31m[1mLinking C executable ../build/Release/midithread
+[0m[ 53%] Built target midithread
+[35m[1mScanning dependencies of target midithru
+[0m[ 56%] [32mBuilding C object pm_test/CMakeFiles/midithru.dir/midithru.c.o
+[0m/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midithru.c: In function 'exit_with_message':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/midithru.c:227:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+[31m[1mLinking C executable ../build/Release/midithru
+[0m[ 56%] Built target midithru
+[35m[1mScanning dependencies of target mm
+[0m[ 60%] [32mBuilding C object pm_test/CMakeFiles/mm.dir/mm.c.o
+[0m/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/mm.c: In function 'get_number':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/mm.c:122:5: warning: format not a string literal and no format arguments
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/mm.c: In function 'receive_poll':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/mm.c:139:9: warning: format not a string literal and no format arguments
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/mm.c: In function 'main':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/mm.c:171:9: warning: format not a string literal and no format arguments
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/mm.c: In function 'put_pitch':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/mm.c:487:5: warning: format not a string literal and no format arguments
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/mm.c: In function 'get_number':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/mm.c:125:14: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+[31m[1mLinking C executable ../build/Release/mm
+[0m[ 60%] Built target mm
+[35m[1mScanning dependencies of target qtest
+[0m[ 63%] [32mBuilding C object pm_test/CMakeFiles/qtest.dir/qtest.c.o
+[0m[31m[1mLinking C executable ../build/Release/qtest
+[0m[ 63%] Built target qtest
+[35m[1mScanning dependencies of target sysex
+[0m[ 66%] [32mBuilding C object pm_test/CMakeFiles/sysex.dir/sysex.c.o
+[0m/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c: In function 'get_number':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c:42:5: warning: format not a string literal and no format arguments
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c: In function 'loopback_test':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c:174:6: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c: In function 'main':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c:504:14: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c: In function 'send_sysex':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c:446:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c: In function 'receive_sysex':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c:381:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c: In function 'loopback_test':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c:104:18: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c: In function 'get_number':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/sysex.c:45:14: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+[31m[1mLinking C executable ../build/Release/sysex
+[0m[ 66%] Built target sysex
+[35m[1mScanning dependencies of target test
+[0m[ 70%] [32mBuilding C object pm_test/CMakeFiles/test.dir/test.c.o
+[0m/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c: In function 'get_number':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:40:5: warning: format not a string literal and no format arguments
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c: In function 'main':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:426:14: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:487:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c: In function 'main_test_stream':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:308:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:365:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c: In function 'main_test_output':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:146:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:160:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:165:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:172:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:176:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:184:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:203:10: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c: In function 'get_number':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_test/test.c:43:14: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+[31m[1mLinking C executable ../build/Release/test
+[0m[ 70%] Built target test
+[35m[1mScanning dependencies of target portmidi-dynamic
+[0m[ 73%] [32mBuilding C object pm_dylib/CMakeFiles/portmidi-dynamic.dir/__/pm_linux/pmlinuxalsa.c.o
+[0m/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'alsa_out_open':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:151:20: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:152:18: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'alsa_in_open':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:293:20: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:294:18: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'alsa_write_flush':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:436:52: warning: cast from pointer to integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c: In function 'pm_linuxalsa_init':
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:750:31: warning: cast to pointer from integer of different size
+/var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_linux/pmlinuxalsa.c:760:31: warning: cast to pointer from integer of different size
+[ 76%] [32mBuilding C object pm_dylib/CMakeFiles/portmidi-dynamic.dir/__/pm_linux/pmlinux.c.o
+[0m[ 80%] [32mBuilding C object pm_dylib/CMakeFiles/portmidi-dynamic.dir/__/pm_linux/finddefault.c.o
+[0m[ 83%] [32mBuilding C object pm_dylib/CMakeFiles/portmidi-dynamic.dir/__/porttime/ptlinux.c.o
+[0m[ 86%] [32mBuilding C object pm_dylib/CMakeFiles/portmidi-dynamic.dir/__/pm_common/pmutil.c.o
+[0m[ 90%] [32mBuilding C object pm_dylib/CMakeFiles/portmidi-dynamic.dir/__/pm_common/portmidi.c.o
+[0m[31m[1mLinking C shared library ../build/Release/libportmidi.so
+[0m[ 90%] Built target portmidi-dynamic
+[35m[1mScanning dependencies of target pmdefaults_target
+[0m[ 90%] [34m[1mGenerating pmdefaults/PmDefaults.class
+[0m/bin/sh: line 0: cd: /var/tmp/portage/media-libs/portmidi-217/work/portmidi/pm_java/pm_java: No such file or directory
+make[2]: *** [pm_java/pmdefaults/PmDefaults.class] Error 1
+make[1]: *** [pm_java/CMakeFiles/pmdefaults_target.dir/all] Error 2
+make: *** [all] Error 2
+emake failed
+ [31;01m*[0m ERROR: media-libs/portmidi-217 failed (compile phase):
+ [31;01m*[0m   Make failed!
+ [31;01m*[0m 
+ [31;01m*[0m Call stack:
+ [31;01m*[0m     ebuild.sh, line   91:  Called src_compile
+ [31;01m*[0m   environment, line 7642:  Called cmake-utils_src_compile '-j1'
+ [31;01m*[0m   environment, line 1667:  Called _execute_optionaly 'src_compile' '-j1'
+ [31;01m*[0m   environment, line  661:  Called enable_cmake-utils_src_compile '-j1'
+ [31;01m*[0m   environment, line 2356:  Called cmake-utils_src_make '-j1'
+ [31;01m*[0m   environment, line 1686:  Called die
+ [31;01m*[0m The specific snippet of code:
+ [31;01m*[0m           emake "$@" || die "Make failed!";
+ [31;01m*[0m 
+ [31;01m*[0m If you need support, post the output of 'emerge --info =media-libs/portmidi-217',
+ [31;01m*[0m the complete build log and the output of 'emerge -pqv =media-libs/portmidi-217'.
+ [31;01m*[0m This ebuild is from an overlay named 'sunrise': '/var/lib/layman/sunrise/'
+!!! When you file a bug report, please include the following information:
+GENTOO_VM=icedtea6-bin  CLASSPATH="" JAVA_HOME="/opt/icedtea6-bin-1.10.3"
+JAVACFLAGS="-source 1.6 -target 1.6" COMPILER=""
+and of course, the output of emerge --info
+ [31;01m*[0m The complete build log is located at '/var/tmp/portage/media-libs/portmidi-217/temp/build.log'.
+ [31;01m*[0m The ebuild environment file is located at '/var/tmp/portage/media-libs/portmidi-217/temp/environment'.
+ [31;01m*[0m S: '/var/tmp/portage/media-libs/portmidi-217/work/portmidi'

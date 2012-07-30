@@ -1,0 +1,22 @@
+--- src/Makefile.am	2011-11-20 22:19:34.000000000 +0100
++++ src/Makefile.am	2011-11-20 22:20:08.000000000 +0100
+@@ -297,7 +297,8 @@
+ 	$(MAKE) -C tools genlinetoscr
+ 
+ cpudefs.c:	tools/build68k @top_srcdir@/src/table68k
+-		./tools/build68k <@top_srcdir@/src/table68k >cpudefs.c
++	sleep 1s
++	./tools/build68k <@top_srcdir@/src/table68k >cpudefs.c
+ 
+ machdep/libmachdep.a:
+ 	$(MAKE) -C @MACHDEP@ libmachdep.a
+--- src/tools/Makefile.in	2011-11-20 22:19:45.000000000 +0100
++++ src/tools/Makefile.in	2011-11-20 22:20:26.000000000 +0100
+@@ -54,6 +54,7 @@
+ drawing.o: linetoscr.c
+ 
+ cpudefs.c: build68k @top_srcdir@/../table68k
++	sleep 1s
+ 	./build68k <@top_srcdir@/../table68k >cpudefs.c
+ 
+ .c.o:

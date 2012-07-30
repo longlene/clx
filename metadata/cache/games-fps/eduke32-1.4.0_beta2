@@ -1,0 +1,22 @@
+>=media-libs/libsdl-1.2.9 virtual/libstdc++ >=x11-libs/gtk+-2.4.0 dev-lang/nasm app-arch/unzip
+>=media-libs/libsdl-1.2.9 virtual/libstdc++ >=x11-libs/gtk+-2.4.0
+0
+demo? ( ftp://ftp.3drealms.com/share/3dduke13.zip ftp://ftp.planetmirror.com/pub/gameworld/downloads/3dduke13.zip ) mirror://sourceforge/eduke32/eduke32_src_20060718.zip mirror://sourceforge/eduke32/txbuild_src_20060718.zip http://polymer.plagman.net/hrp_xtr10.zip http://moreplease.free.fr/HRP/hrp_xtr10.zip
+
+http://www.eduke32.com/ http://hrp.duke4.net/
+as-is
+Port of Duke Nukem 3D for SDL
+~x86
+base eutils games multilib portability toolchain-funcs user
+demo editor
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

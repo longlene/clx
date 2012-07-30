@@ -1,0 +1,22 @@
+>=x11-libs/gtk+-2.0 ace? ( app-arch/unace ) rar? ( app-arch/rar )
+>=x11-libs/gtk+-2.0 ace? ( app-arch/unace ) rar? ( app-arch/rar )
+0
+mirror://sourceforge/xarchive/xarchive-0.2.6-3.tar.gz
+
+http://xarchive.sourceforge.net/
+GPL-2
+A GNU/Linux gtk2.0 front-end for various command line archiving tools.
+~x86 ~amd64
+eutils multilib portability toolchain-funcs user
+ace rar
+
+
+
+
+
+install unpack
+
+
+
+
+

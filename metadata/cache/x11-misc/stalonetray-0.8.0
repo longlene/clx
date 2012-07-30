@@ -1,0 +1,22 @@
+x11-libs/libX11 x11-libs/libICE x11-libs/libSM x11-libs/libXpm x11-proto/xproto
+x11-libs/libX11 x11-libs/libICE x11-libs/libSM x11-libs/libXpm
+0
+mirror://sourceforge/stalonetray/stalonetray-0.8.0.tar.bz2
+
+http://stalonetray.sourceforge.net/
+GPL-2
+System tray utility including support for KDE system tray icons
+amd64 x86
+eutils multilib portability toolchain-funcs user
+debug kde
+
+
+
+3
+
+compile configure install prepare
+
+
+
+
+

@@ -1,0 +1,22 @@
+dev-perl/DBD-Pg virtual/perl-Getopt-Long dev-perl/TermReadKey dev-perl/Term-ANSIColor virtual/perl-Time-HiRes >=sys-apps/sed-4
+dev-perl/DBD-Pg virtual/perl-Getopt-Long dev-perl/TermReadKey dev-perl/Term-ANSIColor virtual/perl-Time-HiRes >=sys-apps/sed-4
+0
+http://search.cpan.org/CPAN/authors/id/C/CO/COSIMO/pgtop-0.04.tar.gz
+
+http://search.cpan.org/~cosimo/pgtop-0.04/
+GPL-2
+pgtop - a top clone for postgresql
+alpha amd64 ppc sparc x86
+base eutils multilib perl-app perl-module portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst postrm preinst prerm setup test unpack
+
+
+
+
+

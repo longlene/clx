@@ -1,0 +1,240 @@
+>>> Emerging (1 of 7) media-libs/ARToolKit-2.72.1-r3
+>>> Failed to emerge media-libs/ARToolKit-2.72.1-r3, Log file:
+>>>  '/var/log/portage/media-libs:ARToolKit-2.72.1-r3:20090317-131225.log'
+>>> Jobs: 0 of 7 complete, 1 failed                 Load avg: 1.63, 0.69, 0.40
+ * Determining the location of the kernel source code
+ * Found kernel source directory:
+ *     /usr/src/linux
+ * Found kernel object directory:
+ *     /lib/modules/2.6.25-gentoo-r9/build
+ * Found sources for kernel version:
+ *     2.6.25-gentoo-r9
+ * Checking for V4L kernel Support ...                                    [ ok ]
+ * Installing with Video4Linux + JPEG support, ignoring dv flag.
+Select a video capture driver.
+  1: Video4Linux
+  2: Video4Linux+JPEG Decompression (EyeToy)
+  3: Digital Video Camcoder through IEEE 1394 (DV Format)
+  4: Digital Video Camera through IEEE 1394 (VGA NONCOMPRESSED Image Format)
+  5: GStreamer Media Framework
+Enter :
+Color conversion should use x86 assembly (not working for 64bit)?
+Enter : Do you want to create debug symbols? (y or n)
+Enter : Build gsub libraries with texture rectangle support? (y or n)
+GL_NV_texture_rectangle is supported on most NVidia graphics cards
+and on ATi Radeon and better graphics cards
+Enter :   create ./Makefile
+  create lib/SRC/Makefile
+  create lib/SRC/AR/Makefile
+  create lib/SRC/ARMulti/Makefile
+  create lib/SRC/Gl/Makefile
+  create lib/SRC/VideoLinux1394Cam/Makefile
+  create lib/SRC/VideoLinuxDV/Makefile
+  create lib/SRC/VideoLinuxV4L/Makefile
+  create lib/SRC/VideoSGI/Makefile
+  create lib/SRC/VideoMacOSX/Makefile
+  create lib/SRC/VideoGStreamer/Makefile
+  create lib/SRC/ARvrml/Makefile
+  create util/Makefile
+  create util/calib_camera2/Makefile
+  create util/calib_cparam/Makefile
+  create util/calib_distortion/Makefile
+  create util/mk_patt/Makefile
+  create util/graphicsTest/Makefile
+  create util/videoTest/Makefile
+  create examples/Makefile
+  create examples/collide/Makefile
+  create examples/exview/Makefile
+  create examples/loadMultiple/Makefile
+  create examples/modeTest/Makefile
+  create examples/multi/Makefile
+  create examples/optical/Makefile
+  create examples/paddle/Makefile
+  create examples/paddleDemo/Makefile
+  create examples/paddleInteraction/Makefile
+  create examples/range/Makefile
+  create examples/relation/Makefile
+  create examples/simple/Makefile
+  create examples/simple2/Makefile
+  create examples/simpleLite/Makefile
+  create examples/twoView/Makefile
+  create examples/simpleVRML/Makefile
+  create include/AR/config.h
+Done.
+(cd lib/SRC;    make -f Makefile)
+make[1]: Entering directory `/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/work/ARToolKit-2.72.1/lib/SRC'
+(cd AR;         make -f Makefile)
+make[2]: Entering directory `/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/work/ARToolKit-2.72.1/lib/SRC/AR'
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mAlloc.c
+ar rs ../../libAR.a mAlloc.o
+ar: creating ../../libAR.a
+rm -f mAlloc.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mFree.c
+ar rs ../../libAR.a mFree.o
+rm -f mFree.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mAllocDup.c
+ar rs ../../libAR.a mAllocDup.o
+rm -f mAllocDup.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mDup.c
+ar rs ../../libAR.a mDup.o
+rm -f mDup.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mAllocTrans.c
+ar rs ../../libAR.a mAllocTrans.o
+rm -f mAllocTrans.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mTrans.c
+ar rs ../../libAR.a mTrans.o
+rm -f mTrans.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mAllocMul.c
+ar rs ../../libAR.a mAllocMul.o
+rm -f mAllocMul.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mMul.c
+ar rs ../../libAR.a mMul.o
+rm -f mMul.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mAllocInv.c
+ar rs ../../libAR.a mAllocInv.o
+rm -f mAllocInv.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mInv.c
+ar rs ../../libAR.a mInv.o
+rm -f mInv.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mSelfInv.c
+ar rs ../../libAR.a mSelfInv.o
+rm -f mSelfInv.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mAllocUnit.c
+ar rs ../../libAR.a mAllocUnit.o
+rm -f mAllocUnit.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mUnit.c
+ar rs ../../libAR.a mUnit.o
+rm -f mUnit.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mDisp.c
+ar rs ../../libAR.a mDisp.o
+rm -f mDisp.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mDet.c
+ar rs ../../libAR.a mDet.o
+rm -f mDet.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include mPCA.c
+ar rs ../../libAR.a mPCA.o
+rm -f mPCA.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include vAlloc.c
+ar rs ../../libAR.a vAlloc.o
+rm -f vAlloc.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include vDisp.c
+ar rs ../../libAR.a vDisp.o
+rm -f vDisp.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include vFree.c
+ar rs ../../libAR.a vFree.o
+rm -f vFree.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include vHouse.c
+ar rs ../../libAR.a vHouse.o
+rm -f vHouse.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include vInnerP.c
+ar rs ../../libAR.a vInnerP.o
+rm -f vInnerP.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include vTridiag.c
+ar rs ../../libAR.a vTridiag.o
+rm -f vTridiag.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include paramGet.c
+ar rs ../../libAR.a paramGet.o
+rm -f paramGet.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include paramDecomp.c
+ar rs ../../libAR.a paramDecomp.o
+rm -f paramDecomp.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include paramDistortion.c
+ar rs ../../libAR.a paramDistortion.o
+rm -f paramDistortion.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include paramChangeSize.c
+ar rs ../../libAR.a paramChangeSize.o
+rm -f paramChangeSize.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include paramFile.c
+ar rs ../../libAR.a paramFile.o
+rm -f paramFile.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include paramDisp.c
+ar rs ../../libAR.a paramDisp.o
+rm -f paramDisp.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arDetectMarker.c
+ar rs ../../libAR.a arDetectMarker.o
+rm -f arDetectMarker.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arGetTransMat.c
+ar rs ../../libAR.a arGetTransMat.o
+rm -f arGetTransMat.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arGetTransMat2.c
+ar rs ../../libAR.a arGetTransMat2.o
+rm -f arGetTransMat2.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arGetTransMat3.c
+ar rs ../../libAR.a arGetTransMat3.o
+rm -f arGetTransMat3.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arGetTransMatCont.c
+ar rs ../../libAR.a arGetTransMatCont.o
+rm -f arGetTransMatCont.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arLabeling.c
+ar rs ../../libAR.a arLabeling.o
+rm -f arLabeling.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arDetectMarker2.c
+ar rs ../../libAR.a arDetectMarker2.o
+rm -f arDetectMarker2.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arGetMarkerInfo.c
+ar rs ../../libAR.a arGetMarkerInfo.o
+rm -f arGetMarkerInfo.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arGetCode.c
+ar rs ../../libAR.a arGetCode.o
+rm -f arGetCode.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arUtil.c
+arUtil.c: In function 'arGetVersion':
+arUtil.c:46: warning: incompatible implicit declaration of built-in function 'exit'
+ar rs ../../libAR.a arUtil.o
+rm -f arUtil.o
+make[2]: Leaving directory `/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/work/ARToolKit-2.72.1/lib/SRC/AR'
+(cd ARMulti;    make -f Makefile)
+make[2]: Entering directory `/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/work/ARToolKit-2.72.1/lib/SRC/ARMulti'
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arMultiReadConfigFile.c
+ar rs ../../libARMulti.a arMultiReadConfigFile.o
+ar: creating ../../libARMulti.a
+rm -f arMultiReadConfigFile.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arMultiGetTransMat.c
+ar rs ../../libARMulti.a arMultiGetTransMat.o
+rm -f arMultiGetTransMat.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include arMultiActivate.c
+ar rs ../../libARMulti.a arMultiActivate.o
+rm -f arMultiActivate.o
+make[2]: Leaving directory `/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/work/ARToolKit-2.72.1/lib/SRC/ARMulti'
+(cd Gl;         make -f Makefile)
+make[2]: Entering directory `/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/work/ARToolKit-2.72.1/lib/SRC/Gl'
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include gsub.c
+ar rs ../../libARgsub.a gsub.o
+ar: creating ../../libARgsub.a
+rm -f gsub.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include gsubUtil.c
+ar rs ../../libARgsubUtil.a gsubUtil.o
+ar: creating ../../libARgsubUtil.a
+rm -f gsubUtil.o
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include gsub_lite.c
+gsub_lite.c: In function 'arglCameraFrustum':
+gsub_lite.c:659: warning: passing argument 1 of 'arParamDecompMat' from incompatible pointer type
+gsub_lite.c: In function 'arglCameraFrustumRH':
+gsub_lite.c:718: warning: passing argument 1 of 'arParamDecompMat' from incompatible pointer type
+ar rs ../../libARgsub_lite.a gsub_lite.o
+ar: creating ../../libARgsub_lite.a
+rm -f gsub_lite.o
+make[2]: Leaving directory `/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/work/ARToolKit-2.72.1/lib/SRC/Gl'
+(cd VideoLinuxV4L; make -f Makefile)
+make[2]: Entering directory `/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/work/ARToolKit-2.72.1/lib/SRC/VideoLinuxV4L'
+cc -c -O -I/usr/X11R6/include -DUSE_EYETOY -I../../../include ccvt_i386.S
+ccvt_i386.S:32:27: error: linux/linkage.h: No such file or directory
+make[2]: *** [../../libARvideo.a(ccvt_i386.o)] Error 1
+make[2]: Leaving directory `/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/work/ARToolKit-2.72.1/lib/SRC/VideoLinuxV4L'
+make[1]: *** [all] Error 2
+make[1]: Leaving directory `/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/work/ARToolKit-2.72.1/lib/SRC'
+make: *** [all] Error 2
+ *
+ * ERROR: media-libs/ARToolKit-2.72.1-r3 failed.
+ * Call stack:
+ *               ebuild.sh, line   49:  Called src_compile
+ *             environment, line 3315:  Called die
+ * The specific snippet of code:
+ *       emake || die "make failed"
+ *  The die message:
+ *   make failed
+ *
+ * If you need support, post the topmost build error, and the call stack if relevant.
+ * A complete build log is located at '/var/log/portage/media-libs:ARToolKit-2.72.1-r3:20090317-131225.log'.
+ * The ebuild environment file is located at '/var/tmp/portage/media-libs/ARToolKit-2.72.1-r3/temp/environment'.
+ *

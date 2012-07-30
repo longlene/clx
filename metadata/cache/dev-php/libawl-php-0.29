@@ -1,0 +1,22 @@
+doc? ( dev-php/PEAR-PhpDocumentor ) =dev-lang/php-5* dev-lang/php
+doc? ( dev-php/PEAR-PhpDocumentor ) =dev-lang/php-5* dev-lang/php
+0
+mirror://sourceforge/rscds/libawl-php-0.29.tar.gz
+
+http://rscds.sourceforge.net/
+GPL-2
+Andrew McMillan's web libraries: A collection of generic classes and functions used by the davical calendar server
+~amd64 ~x86
+depend.php eutils multilib php-lib-r1 phpconfutils portability toolchain-funcs user
+doc
+
+
+
+
+
+compile install setup
+
+
+
+
+

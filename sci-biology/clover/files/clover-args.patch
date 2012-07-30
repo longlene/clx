@@ -1,0 +1,79 @@
+--- args.cpp.new	2006-06-15 15:09:53.000000000 +0200
++++ args.cpp	2006-06-15 15:10:11.000000000 +0200
+@@ -5,7 +5,6 @@
+ 
+ #include <ostream>
+ #include <unistd.h>  // getopt
+-#include <stdlib.h> // getenv
+ #include "MCFgen.hpp"  // die, tostring
+ #include "MCFbio.hpp"  // count_residues
+ #include "args.hpp"
+@@ -58,7 +57,7 @@
+ of sequence motifs in a FASTA-like format described below. Any non-alphabetic\n\
+ characters in the sequences are ignored, and any alphabetic characters except A,\n\
+ C, G, T (uppercase or lowercase) are converted to 'n' and excluded from matching\n\
+-motifs. The motif file, specified either in the CLOVER_MOTIF_FILE variable or as clover option, should look like this:\n\
++motifs. The motif file should look like this:\n\
+ \n\
+ >TATA\n\
+ 0 0 0 10\n\
+@@ -130,7 +129,6 @@
+ In addition to the two required inputs, there several options for modifying\n\
+ Clover's behavior:\n\
+  -h  Help: print documentation. You already know this one.\n\
+- -f  alternative motif file (overrides CLOVER_MOTIF_FILE variable)\n\
+  -r  Number of randomized/control raw scores to calculate for comparison with\n\
+      each target raw score.\n\
+  -t  P-value threshold: only print results for motifs whose P-values don't\n\
+@@ -162,12 +160,9 @@
+ ";
+ 
+   const string usage =
+-    "Usage summary: clover [options] myseqs.fa [BGfiles]\n"
+-    "\nYou should set the CLOVER_MOTIF_FILE environmental variable\n"
+-    "or specify the path to a motif file as clover option\n\n"
++    "Usage summary: clover [options] mymotifs myseqs.fa [BGfiles]\n"
+     "Options:\n"
+     "-h  help: print documentation\n"
+-    "-f  alternative motif file (overrides CLOVER_MOTIF_FILE variable)\n"
+     "-r  number of randomizations (" + tostring(shuffles) + ")\n"
+     "-t  P-value threshold (" + tostring(pthresh) + ")\n"
+     "-u  motif score threshold (" + tostring(hit_thresh) + ")\n"
+@@ -180,20 +175,13 @@
+     "-s  seed for random number generator (" + tostring(random_seed) + ")\n"
+     ;
+ 
+-  char *cptr;
+-  if ((cptr = getenv( "CLOVER_MOTIF_FILE" )) != NULL ) {
+-     mat_file = cptr;
+-  }
+   int c;
+ 
+-  while ((c = getopt(argc, argv, "hf:r:t:u:ndmlvp:s:")) != -1)
++  while ((c = getopt(argc, argv, "hr:t:u:ndmlvp:s:")) != -1)
+     switch (c) {
+     case 'h':
+       cout << doc << endl;
+       exit(0);
+-    case 'f':
+-      	mat_file = optarg;
+-	break;
+     case 'r':
+       shuffles = atoi(optarg);
+       break;
+@@ -228,12 +216,10 @@
+       mcf::die("\n" + usage);  // "invalid option" message is printed by getopt
+     }
+ 
+-  if (mat_file.empty())
+-    mcf::die("*** Error: Motif file not specified\n\n" + usage);
+-
+-  if (optind + 1 > argc)  // there should be 2 more non-option arguments
+-    mcf::die("*** Error: sequence file required\n\n" + usage);
++  if (optind + 2 > argc)  // there should be 2 more non-option arguments
++    mcf::die("Error: motif and sequence files required\n\n" + usage);
+ 
++  mat_file = argv[optind++];
+   seq_file = argv[optind++];
+ 
+   while (optind < argc)

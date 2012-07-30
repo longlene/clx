@@ -1,0 +1,107 @@
+./waf run
+** Message: MAINTAINER_MODE
+** Message: Using ui/languages (usually OK)
+** Message: /var/tmp/portage/apps-text/xiphos-3.1.4/work/xiphos-3.1.4/ui/languages
+** Message: create main_mgr time is 1.865533
+Number of Text modules = 98
+Number of Commentary modules = 20
+Number of Dict/lex modules = 22
+Number of Book modules = 8
+Number of Percomm modules = 1
+Number of Devotion modules = 2
+Number of Prayer modules = 0
+
+
+First Run: need to create settings!
+Gtk-Message: Failed to load module "gnomebreakpad": libgnomebreakpad.so: cannot open shared object file: No such file or directory
+** Message: var fontname Sans 10
+** Message: fixed fontname Monospace 10
+Starting xiphos-3.1.4
+Building Xiphos interface
+
+** Message: MAINTAINER_MODE
+** Message: Using ui/xi-menus.glade (usually OK)
+** Message: MAINTAINER_MODE
+** Message: Using ui/navbar_versekey.glade (usually OK)
+** Message: /var/tmp/portage/apps-text/xiphos-3.1.4/work/xiphos-3.1.4/ui/navbar_versekey.glade
+** Message: context_id: 1
+message: Welcome to Xiphos
+** Message: create main_mgr time is 0.030787
+Starting sword-1.6.1
+Initiating SWORD
+path to sword: /usr/share/sword/
+SWORD locale is en
+Checking for SWORD Modules
+Number of Text modules = 98
+Number of Commentary modules = 20
+Number of Dict/lex modules = 22
+Number of Book modules = 8
+Number of Percomm modules = 1
+Number of Devotion modules = 2
+Number of Prayer modules = 0
+
+Initiating Xiphos
+** Message: create SWMgr time is 0.029919
+** Message: create main_mgr time is 0.032158
+Displaying Xiphos
+** Message: Creating new tabs directory
+
+** Message: main_url_handler => sword://ABS_Essay_GoodSam_SWB/0
+** Message: url_clean = sword://ABS_Essay_GoodSam_SWB/0
+** Message: work_buf: ABS_Essay_GoodSam_SWB, 0
+** Message: main_url_handler => sword://ABS_Essay_GoodSam_SWB/0
+** Message: url_clean = sword://ABS_Essay_GoodSam_SWB/0
+** Message: main_display_book
+mod_name: ABS_Essay_GoodSam_SWB
+key: 0
+** Message: offset: 4
+
+** (xiphos:14586): CRITICAL **: clearlooks_style_draw_box_gap: assertion `height >= -1' failed
+** Message: on_notebook_main_switch_page
+** Message: main_display_book
+mod_name: ABS_Essay_GoodSam_SWB
+key: 0
+** Message: offset: 4
+** Message: mod_name = AB
+** Message: main_display_dictionary
+mod_name: AmTract
+key: Grace
+** Message: dict_key_entry_changed: GRACE
+** Message: main_display_dictionary
+mod_name: AmTract
+key: GRACE
+done
+
+total time is 34.131718
+** Message: main_display_dictionary
+mod_name: Daily
+key: GRACE
+** Message: dict_key_entry_changed: 12.09
+** Message: main_display_dictionary
+mod_name: Daily
+key: 12.09
+** Message: main_display_dictionary
+mod_name: Daily
+key: 12.09
+** Message: main_display_dictionary
+mod_name: Daily
+key: 12.09
+** Message: html_link_message: url = sword:///Genesis 1:4
+** Message: 
+url:        sword:///Genesis 1:4
+url_clean: sword:///Genesis 1:4
+** Message: main_url_handler => sword:///Genesis 1:4
+** Message: url_clean = sword:///Genesis 1:4
+** Message: context_id: 2
+message: sword:///Genesis 1:4
+** Message: html_link_message: url = 
+** Message: context_id: 3
+message: 
+** Message: gecko shutdown
+
+** (xiphos:14586): WARNING **: items = 0
+
+Xiphos is shutdown
+SWORD is shutdown
+'run' finished successfully (1m35.620s)
+

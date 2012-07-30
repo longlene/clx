@@ -1,0 +1,68 @@
+#!/sbin/runscript
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need localmount
+	after bootmisc modules
+}
+
+start() {
+	if [ "${LOAD_ON_START}" = "yes" ] ; then
+		if ! grep zram /proc/devices >/dev/null ; then
+			einfo "Loading zram module..."
+			modprobe zram num_devices=${NUM_DEVICES}
+			eend $?
+		fi
+	fi
+	# exit if the driver is not yet installed
+	grep zram /proc/devices >/dev/null || exit 1
+
+	for I in `seq 0 \`expr ${NUM_DEVICES} - 1\`` ; do
+		eval _a=\${ZRAM_SIZE_${I}}
+		einfo "Enabling swap /dev/zram${I}..."
+		if test ! -z ${_a} && test -f /sys/block/zram${I}/disksize ; then
+			echo $(($_a*1024)) > "/sys/block/zram${I}/disksize"
+			mkswap -L zram${I} /dev/zram${I} ${_a}
+		fi
+		if test -b "/dev/zram${I}" ; then
+			swapon ${SWAPON_OPTS} "/dev/zram${I}"
+		fi
+		eend $?
+	done
+}
+
+stop() {
+	for I in `seq 0 \`expr ${NUM_DEVICES} - 1\`` ; do
+		einfo "Disabling swap /dev/zram${I}..."
+		swapoff "/dev/zram${I}" && \
+		echo 1 > "/sys/block/zram${I}/reset"
+		eend $?
+	done
+
+	if [ "${UNLOAD_ON_STOP}" = "yes" ] && grep zram /proc/modules >/dev/null  ; then
+		einfo "Unloading zram module..."
+		rmmod zram
+		eend $?
+	fi
+}
+
+info() {
+	for I in `seq 0 \`expr ${NUM_DEVICES} - 1\`` ; do
+		zram_stats "/dev/zram${I}"
+	done
+}
+
+reload() {
+	for I in `seq 0 \`expr ${NUM_DEVICES} - 1\`` ; do
+		swapoff "/dev/zram${I}" && \
+		echo 1 > "/sys/block/zram${I}/reset"
+		swapon ${SWAPON_OPTS} "/dev/zram${I}"
+	done
+}
+
+restart() {
+	stop
+	start
+}

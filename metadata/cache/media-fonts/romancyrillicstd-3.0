@@ -1,0 +1,22 @@
+app-arch/unzip X? ( x11-apps/mkfontdir media-fonts/encodings ) >=media-libs/fontconfig-2.4.0
+
+0
+http://kodeks.uni-bamberg.de/AKSL/media/RomanCyrillicStd.zip
+
+http://kodeks.uni-bamberg.de/AKSL/Schrift/RomanCyrillicStd.htm
+as-is
+Supports Unicode 5.1 in all relevant areas (Latin, Cyrillic, Phonetics, Diacritics).
+~amd64 ~x86
+eutils font multilib portability toolchain-funcs user
+doc X
+
+
+
+
+
+install postinst postrm setup
+
+
+
+
+

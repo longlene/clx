@@ -1,0 +1,22 @@
+>=app-admin/webapp-config-1.50.15
+lamdaemon? ( dev-lang/perl net-libs/libssh2 ) virtual/httpd-php net-www/apache >=app-admin/webapp-config-1.50.15
+1.2.0
+mirror://sourceforge/lam/ldap-account-manager-1.2.0.tar.gz
+
+http://lam.sourceforge.net/
+GPL-2+
+PHP based tool for managing various account types (Unix, Samba, Kolab, ...) in an LDAP directory.
+~x86 ~amd64 ~ppc ~sparc
+depend.php eutils multilib phpconfutils portability toolchain-funcs user webapp
+lamdaemon vhosts
+
+
+
+
+
+install postinst prerm setup unpack
+
+
+
+
+

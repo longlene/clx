@@ -1,0 +1,22 @@
+# /etc/conf.d/inoticoming
+#
+# for an explanation of options and actions, see inoticoming(1)
+
+# user to run inoticoming as
+USER=inoticoming
+
+# log to some file instead of syslog
+# required if you want to use --stdout-to-log or --stderr-to-log in actions
+LOGFILE="/var/log/inoticoming.log"
+
+# first search the directory for files already existing
+# 0 for false, 1 for true
+INITIALSEARCH=0
+
+# directory to monitor
+DIR=/var/spool/incoming
+
+# actions 
+BASEDIR=/var/cache/reprepro/local
+RULENAME=incoming
+ACTIONS="--suffix .changes --stderr-to-log reprepro -s -b $BASEDIR --waitforlock 1000 processincoming $RULENAME {} ;"

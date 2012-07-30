@@ -1,0 +1,110 @@
+diff -Naur gmediaserver-0.11.0/m4/ac_lib_upnp.m4 gmediaserver-0.11.0_patched/m4/ac_lib_upnp.m4
+--- gmediaserver-0.11.0/m4/ac_lib_upnp.m4	2006-01-22 11:52:04.000000000 +0000
++++ gmediaserver-0.11.0_patched/m4/ac_lib_upnp.m4	2006-04-20 09:53:38.000000000 +0000
+@@ -61,14 +61,14 @@
+     foundupnp=
+     for prefixupnp in $ac_upnp_path; do
+       saved_CPPFLAGS="$CPPFLAGS"
+-      CPPFLAGS="$CPPFLAGS -I$prefixupnp/include/upnp"
++      CPPFLAGS="$CPPFLAGS -I$prefixupnp/include"
+       saved_CFLAGS="$CFLAGS"
+       CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+-      AC_CHECK_HEADER([upnp.h], [
++      AC_CHECK_HEADER([upnp/upnp.h], [
+         saved_LIBS="$LIBS"
+         LIBS="$LIBS $PTHREAD_LIBS -L$prefixupnp/lib"
+         AC_CHECK_LIB(upnp, UpnpInit, [
+-          AC_SUBST(UPNP_CFLAGS, ["$PTHREAD_CFLAGS -I$prefixupnp/include/upnp"])
++          AC_SUBST(UPNP_CFLAGS, ["$PTHREAD_CFLAGS -I$prefixupnp/include"])
+           AC_SUBST(UPNP_LIBS, ["$PTHREAD_LIBS -L$prefixupnp/lib -lupnp"])
+ 	  AC_DEFINE([HAVE_LIBUPNP])
+ 	  foundupnp=1
+diff -Naur gmediaserver-0.11.0/src/connectmgr.c gmediaserver-0.11.0_patched/src/connectmgr.c
+--- gmediaserver-0.11.0/src/connectmgr.c	2005-09-15 14:32:24.000000000 +0000
++++ gmediaserver-0.11.0_patched/src/connectmgr.c	2006-04-20 09:57:23.000000000 +0000
+@@ -20,8 +20,8 @@
+ 
+ #include <config.h>
+ #include <stdbool.h>		/* Gnulib/C99 */
+-#include <upnp.h>		/* libupnp */
+-#include <upnptools.h>		/* libupnp */
++#include <upnp/upnp.h>		/* libupnp */
++#include <upnp/upnptools.h>		/* libupnp */
+ #include "gmediaserver.h"
+ 
+ static bool
+diff -Naur gmediaserver-0.11.0/src/gmediaserver.h gmediaserver-0.11.0_patched/src/gmediaserver.h
+--- gmediaserver-0.11.0/src/gmediaserver.h	2006-03-04 09:26:15.000000000 +0000
++++ gmediaserver-0.11.0_patched/src/gmediaserver.h	2006-04-20 09:59:38.000000000 +0000
+@@ -27,7 +27,7 @@
+ #include <string.h>		/* C89 */
+ #include <stdbool.h>		/* Gnulib, C99; bool */
+ #include <sys/types.h>		/* POSIX: time_t */
+-#include <upnp.h>		/* libupnp */
++#include <upnp/upnp.h>		/* libupnp */
+ #include "hmap.h"
+ #include "strbuf.h"
+ 
+diff -Naur gmediaserver-0.11.0/src/main.c gmediaserver-0.11.0_patched/src/main.c
+--- gmediaserver-0.11.0/src/main.c	2006-03-08 19:59:12.000000000 +0000
++++ gmediaserver-0.11.0_patched/src/main.c	2006-04-20 10:00:46.000000000 +0000
+@@ -19,8 +19,8 @@
+  */
+ 
+ #include <config.h>
+-#include <upnp.h>		/* libupnp */
+-#include <upnptools.h>		/* libupnp */
++#include <upnp/upnp.h>		/* libupnp */
++#include <upnp/upnptools.h>		/* libupnp */
+ #include <unistd.h>		/* POSIX */
+ #include <fcntl.h>		/* ? */
+ #include <getopt.h>		/* Gnulib, GNU */
+diff -Naur gmediaserver-0.11.0/src/metadata.c gmediaserver-0.11.0_patched/src/metadata.c
+--- gmediaserver-0.11.0/src/metadata.c	2006-03-13 13:16:10.000000000 +0000
++++ gmediaserver-0.11.0_patched/src/metadata.c	2006-04-20 09:59:11.000000000 +0000
+@@ -38,6 +38,7 @@
+ #include <ctype.h>		/* C89 */
+ #include <inttypes.h>		/* ? */
+ #include <iconv.h>		/* POSIX */
++#include <upnp/ithread.h>       /* libupnp */
+ #include "iconvme.h"		/* Gnulib */
+ #include "gettext.h"		/* Gnulib/gettext */
+ #define _(s) gettext(s)
+diff -Naur gmediaserver-0.11.0/src/upnp.c gmediaserver-0.11.0_patched/src/upnp.c
+--- gmediaserver-0.11.0/src/upnp.c	2006-04-06 08:45:57.000000000 +0000
++++ gmediaserver-0.11.0_patched/src/upnp.c	2006-04-20 09:56:50.000000000 +0000
+@@ -20,8 +20,8 @@
+ 
+ #include <config.h>
+ #include <stdbool.h>		/* Gnulib, C99 */
+-#include <upnp.h>		/* libupnp */
+-#include <upnptools.h>		/* libupnp */
++#include <upnp/upnp.h>		/* libupnp */
++#include <upnp/upnptools.h>		/* libupnp */
+ #include <assert.h>		/* C89 */
+ #include <netinet/in.h>		/* ?; inet_ntoa */
+ #include <arpa/inet.h>		/* ?; inet_ntoa */
+diff -Naur gmediaserver-0.11.0/src/webclient.c gmediaserver-0.11.0_patched/src/webclient.c
+--- gmediaserver-0.11.0/src/webclient.c	2005-09-16 14:31:12.000000000 +0000
++++ gmediaserver-0.11.0_patched/src/webclient.c	2006-04-20 09:56:16.000000000 +0000
+@@ -23,6 +23,8 @@
+ #include <netinet/in.h>		/* POSIX */
+ #include <netdb.h>		/* POSIX */
+ #include <inttypes.h>		/* POSIX */
++#include <unistd.h>             /* POSIX */
++#include <time.h>               /* POSIX */
+ #include <stdio.h>		/* C89 */
+ #include "gettext.h"            /* Gnulib/gettext */
+ #define _(s) gettext(s)
+diff -Naur gmediaserver-0.11.0/src/webserver.c gmediaserver-0.11.0_patched/src/webserver.c
+--- gmediaserver-0.11.0/src/webserver.c	2006-03-04 18:58:47.000000000 +0000
++++ gmediaserver-0.11.0_patched/src/webserver.c	2006-04-20 09:55:33.000000000 +0000
+@@ -282,7 +282,7 @@
+ 	len = read(file->detail.local.fd, buf, buflen);
+ 	break;
+     case FILE_MEMORY:
+-	len = min(buflen, file->detail.memory.len - file->pos);
++	len = MIN(buflen, file->detail.memory.len - file->pos);
+ 	memcpy(buf, file->detail.memory.contents + file->pos, len);
+ 	break;
+     case FILE_URL:

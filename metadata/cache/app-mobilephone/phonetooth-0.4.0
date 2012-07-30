@@ -1,0 +1,22 @@
+dev-python/pygtk dev-python/pybluez app-mobilephone/obexftp dev-python/python-gammu dev-python/pyserial >=app-admin/eselect-python-20091230
+dev-python/pygtk dev-python/pybluez app-mobilephone/obexftp dev-python/python-gammu dev-python/pyserial >=app-admin/eselect-python-20091230
+0
+http://phonetooth.googlecode.com/files/phonetooth-0.4.0.tar.gz
+
+http://code.google.com/p/phonetooth
+GPL-2
+Sends SMS messagges from your phone through your PC
+alpha amd64 arm hppa ia64 ppc ppc64 sparc x86
+eutils multilib portability python toolchain-funcs user
+
+
+
+
+
+
+install postinst postrm setup unpack
+
+
+
+
+

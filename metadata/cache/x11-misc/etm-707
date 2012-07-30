@@ -1,0 +1,22 @@
+dev-python/wxpython:2.8 dev-python/python-dateutil ical? ( dev-python/icalendar ) >=app-admin/eselect-python-20091230 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* )
+dev-python/wxpython:2.8 dev-python/python-dateutil ical? ( dev-python/icalendar ) >=app-admin/eselect-python-20091230 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* )
+0
+http://www.duke.edu/~dgraham/ETM/etm-707.tar.gz
+
+http://www.duke.edu/~dgraham/ETM/
+GPL-3
+Event and Task Manager, an intuitive time management application
+~x86 ~amd64
+distutils eutils multilib portability python toolchain-funcs user
+ical
+
+
+
+3
+
+compile install postinst postrm prepare
+
+
+
+
+

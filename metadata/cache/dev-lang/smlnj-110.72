@@ -1,0 +1,22 @@
+
+
+0
+amd64? ( http://smlnj.cs.uchicago.edu/dist/working/110.72/boot.x86-unix.tgz -> smlnj-110.72-boot.x86-unix.tgz ) ppc? ( http://smlnj.cs.uchicago.edu/dist/working/110.72/boot.ppc-unix.tgz -> smlnj-110.72-boot.ppc-unix.tgz ) sparc? ( http://smlnj.cs.uchicago.edu/dist/working/110.72/boot.sparc-unix.tgz -> smlnj-110.72-boot.sparc-unix.tgz ) x86? ( http://smlnj.cs.uchicago.edu/dist/working/110.72/boot.x86-unix.tgz -> smlnj-110.72-boot.x86-unix.tgz ) http://smlnj.cs.uchicago.edu/dist/working/110.72/config.tgz -> smlnj-110.72-config.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/cm.tgz -> smlnj-110.72-cm.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/compiler.tgz -> smlnj-110.72-compiler.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/runtime.tgz -> smlnj-110.72-runtime.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/system.tgz -> smlnj-110.72-system.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/MLRISC.tgz -> smlnj-110.72-MLRISC.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/smlnj-lib.tgz -> smlnj-110.72-smlnj-lib.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/ckit.tgz -> smlnj-110.72-ckit.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/nlffi.tgz -> smlnj-110.72-nlffi.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/cml.tgz -> smlnj-110.72-cml.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/eXene.tgz -> smlnj-110.72-eXene.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/ml-lex.tgz -> smlnj-110.72-ml-lex.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/ml-yacc.tgz -> smlnj-110.72-ml-yacc.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/ml-burg.tgz -> smlnj-110.72-ml-burg.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/ml-lpt.tgz -> smlnj-110.72-ml-lpt.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/pgraph.tgz -> smlnj-110.72-pgraph.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/trace-debug-profile.tgz -> smlnj-110.72-trace-debug-profile.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/heap2asm.tgz -> smlnj-110.72-heap2asm.tgz http://smlnj.cs.uchicago.edu/dist/working/110.72/smlnj-c.tgz -> smlnj-110.72-smlnj-c.tgz
+
+http://www.smlnj.org
+BSD
+Standard ML of New Jersey compiler and libraries
+-* ~amd64 ~ppc ~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile install unpack
+
+
+
+
+

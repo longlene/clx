@@ -1,0 +1,378 @@
+execve("/usr/bin/komodo-edit-bin", ["komodo-edit-bin"], [/* 61 vars */]) = 0
+brk(0)                                  = 0x9173000
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7796000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=139301, ...}) = 0
+mmap2(NULL, 139301, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7773000
+close(3)                                = 0
+open("/lib/libncurses.so.5", O_RDONLY)  = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\220\303\0\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=261496, ...}) = 0
+mmap2(NULL, 265764, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb7732000
+mprotect(0xb776f000, 4096, PROT_NONE)   = 0
+mmap2(0xb7770000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3d) = 0xb7770000
+close(3)                                = 0
+open("/lib/libdl.so.2", O_RDONLY)       = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0000\n\0\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=9604, ...}) = 0
+mmap2(NULL, 12408, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb772e000
+mmap2(0xb7730000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1) = 0xb7730000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY)        = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\311m\1\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=1372572, ...}) = 0
+mmap2(NULL, 1382792, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb75dc000
+mprotect(0xb7727000, 4096, PROT_NONE)   = 0
+mmap2(0xb7728000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x14b) = 0xb7728000
+mmap2(0xb772b000, 10632, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xb772b000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb75db000
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb75da000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb75dbb30, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0xb7728000, 8192, PROT_READ)   = 0
+mprotect(0xb7730000, 4096, PROT_READ)   = 0
+mprotect(0xb7770000, 8192, PROT_READ)   = 0
+mprotect(0x80f9000, 4096, PROT_READ)    = 0
+mprotect(0xb77b4000, 4096, PROT_READ)   = 0
+munmap(0xb7773000, 139301)              = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+open("/dev/tty", O_RDWR|O_NONBLOCK|O_LARGEFILE) = 3
+close(3)                                = 0
+brk(0)                                  = 0x9173000
+brk(0x9194000)                          = 0x9194000
+open("/usr/lib/locale/locale-archive", O_RDONLY|O_LARGEFILE) = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=3952192, ...}) = 0
+mmap2(NULL, 2097152, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb73da000
+close(3)                                = 0
+getuid32()                              = 1001
+getgid32()                              = 100
+geteuid32()                             = 1001
+getegid32()                             = 100
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+time(NULL)                              = 1310841965
+open("/proc/meminfo", O_RDONLY)         = 3
+fstat64(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7795000
+read(3, "MemTotal:        3111888 kB\nMemF"..., 1024) = 1024
+close(3)                                = 0
+munmap(0xb7795000, 4096)                = 0
+rt_sigaction(SIGCHLD, {SIG_DFL, [], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGCHLD, {SIG_DFL, [], SA_RESTART}, {SIG_DFL, [], SA_RESTART}, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigaction(SIGQUIT, {SIG_IGN, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+uname({sys="Linux", node="compaq", ...}) = 0
+stat64("/home/suzy", {st_mode=S_IFDIR|0750, st_size=5280, ...}) = 0
+stat64(".", {st_mode=S_IFDIR|0750, st_size=5280, ...}) = 0
+getpid()                                = 15714
+getppid()                               = 15713
+gettimeofday({1310841965, 457673}, NULL) = 0
+getpgrp()                               = 15713
+rt_sigaction(SIGCHLD, {0x8082f36, [], SA_RESTART}, {SIG_DFL, [], SA_RESTART}, 8) = 0
+getrlimit(RLIMIT_NPROC, {rlim_cur=24308, rlim_max=24308}) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+open("/usr/bin/komodo-edit-bin", O_RDONLY|O_LARGEFILE) = 3
+ioctl(3, SNDCTL_TMR_TIMEBASE or TCGETS, 0xbff0dba8) = -1 ENOTTY (Inappropriate ioctl for device)
+_llseek(3, 0, [0], SEEK_CUR)            = 0
+read(3, "#!/bin/sh\n# Stub to call main Ko"..., 80) = 80
+_llseek(3, 0, [0], SEEK_SET)            = 0
+getrlimit(RLIMIT_NOFILE, {rlim_cur=1024, rlim_max=1024}) = 0
+fcntl64(255, F_GETFD)                   = -1 EBADF (Bad file descriptor)
+dup2(3, 255)                            = 255
+close(3)                                = 0
+fcntl64(255, F_SETFD, FD_CLOEXEC)       = 0
+fcntl64(255, F_GETFL)                   = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+fstat64(255, {st_mode=S_IFREG|0755, st_size=590, ...}) = 0
+_llseek(255, 0, [0], SEEK_CUR)          = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+read(255, "#!/bin/sh\n# Stub to call main Ko"..., 590) = 590
+open("/usr/lib/gconv/gconv-modules.cache", O_RDONLY) = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=26048, ...}) = 0
+mmap2(NULL, 26048, PROT_READ, MAP_SHARED, 3, 0) = 0xb778f000
+close(3)                                = 0
+open("/usr/lib/gconv/ISO8859-15.so", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0p\3\0\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=9400, ...}) = 0
+mmap2(NULL, 12316, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0xb778b000
+mmap2(0xb778d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1) = 0xb778d000
+close(3)                                = 0
+mprotect(0xb778d000, 4096, PROT_READ)   = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+lstat64("/usr/bin/komodo-edit-bin", {st_mode=S_IFLNK|0777, st_size=23, ...}) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+pipe([3, 4])                            = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+_llseek(255, -281, [309], SEEK_CUR)     = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb75dbb98) = 15715
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGCHLD, {0x8082f36, [], SA_RESTART}, {0x8082f36, [], SA_RESTART}, 8) = 0
+close(4)                                = 0
+read(3, "lrwxrwxrwx 1 root root 23 Jul 16"..., 128) = 91
+read(3, "", 128)                        = 0
+close(3)                                = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGINT, {0x8080f74, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+waitpid(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0) = 15715
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD (Child exited) @ 0 (0) ---
+waitpid(-1, 0xbff0cefc, WNOHANG)        = -1 ECHILD (No child processes)
+sigreturn()                             = ? (mask now [])
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {0x8080f74, [], 0}, 8) = 0
+pipe([3, 4])                            = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb75dbb98) = 15716
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGCHLD, {0x8082f36, [], SA_RESTART}, {0x8082f36, [], SA_RESTART}, 8) = 0
+close(4)                                = 0
+read(3, "./komodo-edit-bin-6.1.2\n", 128) = 24
+read(3, "", 128)                        = 0
+--- SIGCHLD (Child exited) @ 0 (0) ---
+waitpid(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG) = 15716
+waitpid(-1, 0xbff0d0cc, WNOHANG)        = -1 ECHILD (No child processes)
+sigreturn()                             = ? (mask now [])
+close(3)                                = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGINT, {0x8080f74, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {0x8080f74, [], 0}, 8) = 0
+stat64(".", {st_mode=S_IFDIR|0750, st_size=5280, ...}) = 0
+stat64("/usr/local/bin/expr", 0xbff0d810) = -1 ENOENT (No such file or directory)
+stat64("/usr/bin/expr", {st_mode=S_IFREG|0755, st_size=30160, ...}) = 0
+stat64("/usr/bin/expr", {st_mode=S_IFREG|0755, st_size=30160, ...}) = 0
+geteuid32()                             = 1001
+getegid32()                             = 100
+getuid32()                              = 1001
+getgid32()                              = 100
+access("/usr/bin/expr", X_OK)           = 0
+stat64("/usr/bin/expr", {st_mode=S_IFREG|0755, st_size=30160, ...}) = 0
+geteuid32()                             = 1001
+getegid32()                             = 100
+getuid32()                              = 1001
+getgid32()                              = 100
+access("/usr/bin/expr", R_OK)           = 0
+stat64("/usr/bin/expr", {st_mode=S_IFREG|0755, st_size=30160, ...}) = 0
+stat64("/usr/bin/expr", {st_mode=S_IFREG|0755, st_size=30160, ...}) = 0
+geteuid32()                             = 1001
+getegid32()                             = 100
+getuid32()                              = 1001
+getgid32()                              = 100
+access("/usr/bin/expr", X_OK)           = 0
+stat64("/usr/bin/expr", {st_mode=S_IFREG|0755, st_size=30160, ...}) = 0
+geteuid32()                             = 1001
+getegid32()                             = 100
+getuid32()                              = 1001
+getgid32()                              = 100
+access("/usr/bin/expr", R_OK)           = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [INT CHLD], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [INT CHLD], NULL, 8) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb75dbb98) = 15717
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGINT, {0x8080f74, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+waitpid(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 1}], 0) = 15717
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD (Child exited) @ 0 (0) ---
+waitpid(-1, 0xbff0d29c, WNOHANG)        = -1 ECHILD (No child processes)
+sigreturn()                             = ? (mask now [])
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {0x8080f74, [], 0}, 8) = 0
+pipe([3, 4])                            = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb75dbb98) = 15718
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGCHLD, {0x8082f36, [], SA_RESTART}, {0x8082f36, [], SA_RESTART}, 8) = 0
+close(4)                                = 0
+read(3, "/usr/bin\n", 128)              = 9
+--- SIGCHLD (Child exited) @ 0 (0) ---
+waitpid(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG) = 15718
+waitpid(-1, 0xbff0cfdc, WNOHANG)        = -1 ECHILD (No child processes)
+sigreturn()                             = ? (mask now [])
+read(3, "", 128)                        = 0
+close(3)                                = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGINT, {0x8080f74, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {0x8080f74, [], 0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+lstat64("/usr/bin/./komodo-edit-bin-6.1.2", {st_mode=S_IFLNK|0777, st_size=37, ...}) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+pipe([3, 4])                            = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb75dbb98) = 15719
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGCHLD, {0x8082f36, [], SA_RESTART}, {0x8082f36, [], SA_RESTART}, 8) = 0
+close(4)                                = 0
+read(3, "lrwxrwxrwx 1 root root 37 Jul 16"..., 128) = 113
+--- SIGCHLD (Child exited) @ 0 (0) ---
+waitpid(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG) = 15719
+waitpid(-1, 0xbff0d09c, WNOHANG)        = -1 ECHILD (No child processes)
+sigreturn()                             = ? (mask now [])
+read(3, "", 128)                        = 0
+close(3)                                = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGINT, {0x8080f74, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {0x8080f74, [], 0}, 8) = 0
+pipe([3, 4])                            = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb75dbb98) = 15720
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGCHLD, {0x8082f36, [], SA_RESTART}, {0x8082f36, [], SA_RESTART}, 8) = 0
+close(4)                                = 0
+read(3, "/opt/komodo-edit-bin-6.1.2/bin/k"..., 128) = 38
+--- SIGCHLD (Child exited) @ 0 (0) ---
+waitpid(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG) = 15720
+waitpid(-1, 0xbff0d0cc, WNOHANG)        = -1 ECHILD (No child processes)
+sigreturn()                             = ? (mask now [])
+read(3, "", 128)                        = 0
+close(3)                                = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGINT, {0x8080f74, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {0x8080f74, [], 0}, 8) = 0
+stat64("/usr/bin/expr", {st_mode=S_IFREG|0755, st_size=30160, ...}) = 0
+stat64("/usr/bin/expr", {st_mode=S_IFREG|0755, st_size=30160, ...}) = 0
+geteuid32()                             = 1001
+getegid32()                             = 100
+getuid32()                              = 1001
+getgid32()                              = 100
+access("/usr/bin/expr", X_OK)           = 0
+stat64("/usr/bin/expr", {st_mode=S_IFREG|0755, st_size=30160, ...}) = 0
+geteuid32()                             = 1001
+getegid32()                             = 100
+getuid32()                              = 1001
+getgid32()                              = 100
+access("/usr/bin/expr", R_OK)           = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [INT CHLD], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [INT CHLD], NULL, 8) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb75dbb98) = 15721
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGINT, {0x8080f74, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+waitpid(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0) = 15721
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD (Child exited) @ 0 (0) ---
+waitpid(-1, 0xbff0d29c, WNOHANG)        = -1 ECHILD (No child processes)
+sigreturn()                             = ? (mask now [])
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {0x8080f74, [], 0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+lstat64("/opt/komodo-edit-bin-6.1.2/bin/komodo", {st_mode=S_IFREG|0755, st_size=590, ...}) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+read(255, "\nINSTALLDIR=\"/opt/komodo-edit-bi"..., 590) = 281
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+stat64("/opt/komodo-edit-bin-6.1.2/../bin/is_dev_tree.txt", 0xbff0d9c8) = -1 ENOENT (No such file or directory)
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+_llseek(255, -66, [524], SEEK_CUR)      = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb75dbb98) = 15722
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [CHLD], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [CHLD], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [CHLD], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+read(255, "if test `uname` = \"SunOS\"; then\n"..., 590) = 66
+pipe([3, 4])                            = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb75dbb98) = 15723
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGCHLD, {0x8082f36, [], SA_RESTART}, {0x8082f36, [], SA_RESTART}, 8) = 0
+close(4)                                = 0
+read(3, "Linux\n", 128)                 = 6
+read(3, "", 128)                        = 0
+close(3)                                = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGINT, {0x8080f74, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+waitpid(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0) = 15723
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD (Child exited) @ 0 (0) ---
+waitpid(-1, 0xbff0d16c, WNOHANG)        = 0
+sigreturn()                             = ? (mask now [])
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {0x8080f74, [], 0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+stat64(".", {st_mode=S_IFDIR|0750, st_size=5280, ...}) = 0
+stat64("/usr/local/bin/sleep", 0xbff0d970) = -1 ENOENT (No such file or directory)
+stat64("/usr/bin/sleep", {st_mode=S_IFREG|0755, st_size=21888, ...}) = 0
+stat64("/usr/bin/sleep", {st_mode=S_IFREG|0755, st_size=21888, ...}) = 0
+geteuid32()                             = 1001
+getegid32()                             = 100
+getuid32()                              = 1001
+getgid32()                              = 100
+access("/usr/bin/sleep", X_OK)          = 0
+stat64("/usr/bin/sleep", {st_mode=S_IFREG|0755, st_size=21888, ...}) = 0
+geteuid32()                             = 1001
+getegid32()                             = 100
+getuid32()                              = 1001
+getgid32()                              = 100
+access("/usr/bin/sleep", R_OK)          = 0
+stat64("/usr/bin/sleep", {st_mode=S_IFREG|0755, st_size=21888, ...}) = 0
+stat64("/usr/bin/sleep", {st_mode=S_IFREG|0755, st_size=21888, ...}) = 0
+geteuid32()                             = 1001
+getegid32()                             = 100
+getuid32()                              = 1001
+getgid32()                              = 100
+access("/usr/bin/sleep", X_OK)          = 0
+stat64("/usr/bin/sleep", {st_mode=S_IFREG|0755, st_size=21888, ...}) = 0
+geteuid32()                             = 1001
+getegid32()                             = 100
+getuid32()                              = 1001
+getgid32()                              = 100
+access("/usr/bin/sleep", R_OK)          = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [INT CHLD], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [INT CHLD], NULL, 8) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb75dbb98) = 15725
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGINT, {0x8080f74, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+waitpid(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0) = 15725
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD (Child exited) @ 0 (0) ---
+waitpid(-1, 0xbff0d3fc, WNOHANG)        = 0
+sigreturn()                             = ? (mask now [])
+rt_sigaction(SIGINT, {SIG_DFL, [], 0}, {0x8080f74, [], 0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+read(255, "", 590)                      = 0
+exit_group(0)                           = ?

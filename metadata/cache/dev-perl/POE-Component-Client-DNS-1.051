@@ -1,0 +1,22 @@
+>=dev-perl/POE-1.280 >=dev-perl/Net-DNS-0.59 dev-lang/perl[-build]
+>=dev-perl/POE-1.280 >=dev-perl/Net-DNS-0.59 dev-lang/perl[-build]
+0
+mirror://cpan/authors/id/R/RC/RCAPUTO/POE-Component-Client-DNS-1.051.tar.gz
+
+http://search.cpan.org/dist/POE-Component-Client-DNS/
+|| ( Artistic GPL-1 GPL-2 GPL-3 )
+Non-blocking, concurrent DNS requests
+~amd64 ~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

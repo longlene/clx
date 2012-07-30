@@ -1,0 +1,22 @@
+dev-lang/perl
+dev-lang/perl
+0
+mirror://cpan/authors/id/S/SA/SAMV/Set-Object-1.27.tar.gz
+
+http://search.cpan.org/search?query=Set-Object&mode=dist
+|| ( Artistic GPL-2 )
+Set of Objects (smalltalkish: IdentitySet)
+~amd64
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst postrm preinst prerm setup test unpack
+
+
+
+
+

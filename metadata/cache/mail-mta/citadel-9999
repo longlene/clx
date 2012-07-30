@@ -1,0 +1,22 @@
+!mail-mta/ssmtp >=dev-libs/libcitadel-9999 net-mail/mailbase ldap? ( >=net-nds/openldap-2.0.27 ) pam? ( sys-libs/pam ) postfix? ( mail-mta/postfix ) ssl? ( >=dev-libs/openssl-0.9.6 ) !postfix? ( !virtual/mta ) !net-mail/mailwrapper >=sys-devel/autoconf-2.52 >=sys-devel/libtool-1.4 >=dev-vcs/git-1.6 || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+!mail-mta/ssmtp >=dev-libs/libcitadel-9999 net-mail/mailbase ldap? ( >=net-nds/openldap-2.0.27 ) pam? ( sys-libs/pam ) postfix? ( mail-mta/postfix ) ssl? ( >=dev-libs/openssl-0.9.6 ) !postfix? ( !virtual/mta ) !net-mail/mailwrapper
+0
+
+
+http://citadel.org
+GPL-3
+Git master version of the whole citadel suit
+~amd64 ~x86
+autotools eutils git libtool multilib portability toolchain-funcs user
+ldap pam pic postfix ssl threads
+
+
+!postfix? ( virtual/mta ) virtual/mda virtual/imapd
+2
+
+config configure install postinst prepare setup unpack
+
+
+
+
+

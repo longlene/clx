@@ -1,0 +1,22 @@
+
+games-misc/fortune-mod
+0
+http://jack.kiev.ua/filez/fortune-mod-ru-1.52.tar.bz2
+
+http://jack.kiev.ua/content/view/8/9/lang,ru/
+GPL-2
+Russian fortunes
+alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd
+
+
+
+
+
+
+
+install unpack
+
+
+
+
+

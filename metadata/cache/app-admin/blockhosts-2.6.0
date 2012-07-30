@@ -1,0 +1,22 @@
+dev-python/pyxml >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+dev-python/pyxml logrotate? ( app-admin/logrotate ) >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+0
+http://www.aczoom.com/tools/blockhosts/BlockHosts-2.6.0.tar.gz
+
+http://www.aczoom.com/blockhosts/
+public-domain
+Blocks abusive IP hosts which probe your services (such as sshd, proftpd)
+~amd64 ~x86
+distutils multilib python toolchain-funcs
+logrotate logwatch test
+
+
+
+3
+
+compile install postinst postrm prepare setup test
+
+
+
+
+

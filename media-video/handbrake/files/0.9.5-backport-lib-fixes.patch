@@ -1,0 +1,37 @@
+--- a/gtk/configure.ac	2011-03-28 07:30:30.363071931 -0700
++++ b/gtk/configure.ac	2011-03-28 07:30:34.043314605 -0700
+@@ -94,7 +94,7 @@
+ 	mingw_flag=yes
+     ;;
+   *)
+-	GHB_PACKAGES="gtk+-2.0 >= 2.10 gthread-2.0 gstreamer-0.10 gstreamer-interfaces-0.10 gstreamer-video-0.10 gstreamer-pbutils-0.10 gio-2.0 libnotify gudev-1.0"
++	GHB_PACKAGES="gtk+-2.0 >= 2.10 gthread-2.0 gstreamer-0.10 gstreamer-interfaces-0.10 gstreamer-video-0.10 gstreamer-pbutils-0.10 gio-2.0 libnotify dbus-glib-1 gudev-1.0"
+ 	mingw_flag=no
+     ;;
+ esac
+--- a/gtk/src/callbacks.c
++++ b/gtk/src/callbacks.c
+@@ -40,4 +40,8 @@
+ 
+ #include <libnotify/notify.h>
++#ifndef NOTIFY_CHECK_VERSION
++#define NOTIFY_CHECK_VERSION(x,y,z) 0
++#endif
++
+ #include <gdk/gdkx.h>
+ #else
+@@ -4894,8 +4894,12 @@
+ 		"Encode Complete",
+ 		"Put down that cocktail, Your HandBrake queue is done!",
+-		"hb-icon",
+-		NULL);
++		"hb-icon"
++#if NOTIFY_CHECK_VERSION (0, 7, 0)
++		);
++#else
++		,NULL);
+ 	notify_notification_attach_to_status_icon(notification, si);
++#endif
+ 	g_signal_connect(notification, "closed", (GCallback)notify_closed_cb, ud);
+ 	notify_notification_show(notification, NULL);
+ #endif

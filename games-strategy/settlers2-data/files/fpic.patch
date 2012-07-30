@@ -1,0 +1,92 @@
+=== modified file 'CMakeLists.txt'
+--- CMakeLists.txt	2010-12-24 23:02:15 +0000
++++ CMakeLists.txt	2011-04-15 21:51:41 +0000
+@@ -86,15 +86,6 @@
+ 	ENDIF (NOT "${COMPILEFOR}" STREQUAL "windows" )
+ ENDIF (WERROR_FLAGS)
+ 
+-IF ("${COMPILEFOR}" STREQUAL "linux")
+-	CHECK_CXX_COMPILER_FLAG("-fPIC" FPIC_FLAGS)
+-	IF (FPIC_FLAGS)
+-		IF ("${COMPILEARCH}" STREQUAL "x86_64" )
+-			ADD_DEFINITIONS(-fPIC)
+-		ENDIF ("${COMPILEARCH}" STREQUAL "x86_64" )
+-	ENDIF (FPIC_FLAGS)
+-ENDIF ("${COMPILEFOR}" STREQUAL "linux")
+-
+ # avoid lhs-path bug in windows
+ IF ("${COMPILEFOR}" STREQUAL "windows")
+ 	SET(BINDIR "." CACHE STRING "" FORCE)
+
+=== modified file 'driver/src/CMakeLists.txt'
+--- driver/src/CMakeLists.txt	2010-05-31 22:01:00 +0000
++++ driver/src/CMakeLists.txt	2011-04-15 21:50:29 +0000
+@@ -3,9 +3,7 @@
+ ################################################################################
+ 
+ IF ( NOT "${COMPILEFOR}" STREQUAL "windows" )
+-	IF ("${CROSSCOMPILE}" STREQUAL "1" OR "${COMPILEARCH}" STREQUAL "x86_64" )
+-		ADD_DEFINITIONS(-fPIC)
+-	ENDIF ("${CROSSCOMPILE}" STREQUAL "1" OR "${COMPILEARCH}" STREQUAL "x86_64" )
++	ADD_DEFINITIONS(-fPIC)
+ ENDIF ( NOT "${COMPILEFOR}" STREQUAL "windows" )
+ 
+ ################################################################################
+
+=== modified file 'libendian/src/CMakeLists.txt'
+--- libendian/src/CMakeLists.txt	2010-05-31 22:01:00 +0000
++++ libendian/src/CMakeLists.txt	2011-04-15 21:50:51 +0000
+@@ -2,14 +2,6 @@
+ ### $Id: CMakeLists.txt 6459 2010-05-31 11:41:44Z FloSoft $
+ #################################################################################
+ 
+-IF ( NOT "${COMPILEFOR}" STREQUAL "windows" )
+-	IF ("${CROSSCOMPILE}" STREQUAL "1" OR "${COMPILEARCH}" STREQUAL "x86_64" )
+-		ADD_DEFINITIONS(-fPIC)
+-	ENDIF ("${CROSSCOMPILE}" STREQUAL "1" OR "${COMPILEARCH}" STREQUAL "x86_64" )
+-ENDIF ( NOT "${COMPILEFOR}" STREQUAL "windows" )
+-
+-#################################################################################
+-
+ ADD_LIBRARY(endian STATIC libendian.cpp read_char.cpp read_int.cpp
+             read_short.cpp swap.cpp write_char.cpp write_int.cpp
+             write_short.cpp)
+
+=== modified file 'liblobby/src/CMakeLists.txt'
+--- liblobby/src/CMakeLists.txt	2010-12-24 23:02:15 +0000
++++ liblobby/src/CMakeLists.txt	2011-04-15 21:51:59 +0000
+@@ -2,14 +2,6 @@
+ ### $Id: CMakeLists.txt 6942 2010-12-24 07:50:41Z FloSoft $
+ ################################################################################
+ 
+-IF ( NOT "${COMPILEFOR}" STREQUAL "windows" )
+-	IF ("${CROSSCOMPILE}" STREQUAL "1" OR "${COMPILEARCH}" STREQUAL "x86_64" )
+-		ADD_DEFINITIONS(-fPIC)
+-	ENDIF ("${CROSSCOMPILE}" STREQUAL "1" OR "${COMPILEARCH}" STREQUAL "x86_64" )
+-ENDIF ( NOT "${COMPILEFOR}" STREQUAL "windows" )
+-
+-################################################################################
+-
+ SET(SOURCES_LOBBY LobbyMessage.cpp          LobbyMessage.h
+                   LobbyMessages.cpp         LobbyMessages.h
+                   LobbyMessageInterface.cpp LobbyMessageInterface.h
+
+=== modified file 'libutil/src/CMakeLists.txt'
+--- libutil/src/CMakeLists.txt	2011-03-27 22:03:21 +0000
++++ libutil/src/CMakeLists.txt	2011-04-15 21:51:04 +0000
+@@ -2,14 +2,6 @@
+ ### $Id: CMakeLists.txt 7095 2011-03-27 20:15:08Z OLiver $
+ #################################################################################
+ 
+-IF ( NOT "${COMPILEFOR}" STREQUAL "windows" )
+-	IF ("${CROSSCOMPILE}" STREQUAL "1" OR "${COMPILEARCH}" STREQUAL "x86_64" )
+-		ADD_DEFINITIONS(-fPIC)
+-	ENDIF ("${CROSSCOMPILE}" STREQUAL "1" OR "${COMPILEARCH}" STREQUAL "x86_64" )
+-ENDIF ( NOT "${COMPILEFOR}" STREQUAL "windows" )
+-
+-#################################################################################
+-
+ INCLUDE_DIRECTORIES("../../" "../../libendian/src/")
+ LINK_DIRECTORIES("../../libendian/src")
+ 
+

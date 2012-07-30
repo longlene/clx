@@ -1,0 +1,22 @@
+dev-libs/boost expat? ( dev-libs/expat ) !expat? ( dev-libs/libxml2 ) ssl? ( dev-libs/openssl ) zeroconf? ( avahi? ( net-dns/avahi ) !avahi? ( net-misc/mDNSResponder ) ) net-dns/libidn sys-libs/zlib x11-libs/libXScrnSaver x11-libs/qt-gui x11-libs/qt-webkit doc? ( >=app-text/docbook-xsl-stylesheets-1.75 >=app-text/docbook-xml-dtd-4.5 dev-libs/libxslt ) dev-util/scons
+dev-libs/boost expat? ( dev-libs/expat ) !expat? ( dev-libs/libxml2 ) ssl? ( dev-libs/openssl ) zeroconf? ( avahi? ( net-dns/avahi ) !avahi? ( net-misc/mDNSResponder ) ) net-dns/libidn sys-libs/zlib x11-libs/libXScrnSaver x11-libs/qt-gui x11-libs/qt-webkit
+0
+http://swift.im/downloads/releases/swift-1.0/swift-1.0.tar.gz
+
+http://swift.im/
+GPL-3
+Your friendly chat client
+~amd64 ~x86
+base eutils linux-info multilib portability qt4-r2 scons-utils toolchain-funcs user versionator
+avahi debug doc examples +expat ssl static-libs zeroconf linguas_ca linguas_de linguas_es linguas_fr linguas_hu linguas_nl linguas_pl linguas_ru linguas_se linguas_sk
+
+
+
+4
+
+compile configure install prepare setup test unpack
+
+
+
+
+

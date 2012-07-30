@@ -1,0 +1,22 @@
+virtual/python dev-libs/libusb >=app-admin/eselect-python-20091230 dev-lang/python
+virtual/python dev-libs/libusb >=app-admin/eselect-python-20091230 dev-lang/python
+0
+mirror://sourceforge/pyusb/pyusb-0.4.0.tar.gz
+
+http://pyusb.sourceforge.net/
+BSD
+Python bindings for libusb
+~x86
+distutils multilib python toolchain-funcs
+
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

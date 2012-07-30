@@ -1,0 +1,24 @@
+--- qmc2/Makefile.orig	2009-01-30 18:22:40.000000000 +0000
++++ qmc2/Makefile	2009-01-30 18:27:21.000000000 +0000
+@@ -272,7 +272,7 @@ endif
+ 
+ install: bin
+ 	@echo "Installing QMC2 v$(VERSION)"
+-	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)
++	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(DATADIR)/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)
+ 	@$(RM) -f $(DESTDIR)/$(PREFIX)/bin/$(PROJECT)
+ 	@$(RSYNC) --exclude '*svn*' ./$(TARGET_NAME) $(DESTDIR)/$(PREFIX)/bin
+ 	@(cd $(DESTDIR)/$(PREFIX)/bin/ && $(LN) -s $(TARGET_NAME) $(PROJECT))
+@@ -285,10 +285,10 @@ install: bin
+ 	@if [ -f $(GLOBAL_QMC2_INI) ] ; then \
+ 	  echo "Preserving system-wide configuration in $(GLOBAL_QMC2_INI)" ; \
+ 	  echo "Installing new system-wide configuration as $(GLOBAL_QMC2_INI).new" ; \
+-	  $(SED) -e "s_DATADIR_$(DATADIR)_g" < ./inst/$(PROJECT).ini.template > $(GLOBAL_QMC2_INI).new ; \
++	  $(SED) -e "s:DATADIR:$(DATADIR):g" < ./inst/$(PROJECT).ini.template > $(GLOBAL_QMC2_INI).new ; \
+ 	else \
+ 	  echo "Installing system-wide configuration as $(GLOBAL_QMC2_INI)" ; \
+-	  $(SED) -e "s_DATADIR_$(DATADIR)_g" < ./inst/$(PROJECT).ini.template > $(GLOBAL_QMC2_INI) ; \
++	  $(SED) -e "s:DATADIR:$(DATADIR):g" < ./inst/$(PROJECT).ini.template > $(GLOBAL_QMC2_INI) ; \
+ 	fi
+ 	@echo "Installation complete"
+ 

@@ -1,0 +1,12 @@
+diff -ur opalang.orig//qml2ocaml/qml2ocamlOptions.ml opalang.new//qml2ocaml/qml2ocamlOptions.ml
+--- opalang.orig//qml2ocaml/qml2ocamlOptions.ml	2011-07-17 02:02:00.000000000 +0200
++++ opalang//qml2ocaml/qml2ocamlOptions.ml	2011-07-17 14:38:56.000000000 +0200
+@@ -52,7 +52,7 @@
+      Absolute path for include directory, will be passed with the option -I to the ocaml compiler.
+   *)
+   let server_include_dir = [
+-    "+zip" ; "+site-lib/zip" ; "+site-lib/camlzip" ;
++    "+zip" ; "+site-lib/zip" ; "+camlzip" ; "+site-lib/camlzip" ;
+     "+ssl" ; "+site-lib/ssl" ;
+     "+cryptokit"; "+site-lib/cryptokit" ;
+     "+ulex" ; "+site-lib/ulex" ;

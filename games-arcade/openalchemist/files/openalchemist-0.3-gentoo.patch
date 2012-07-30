@@ -1,0 +1,19 @@
+--- src/misc.cpp.orig	2008-10-13 23:27:29.000000000 +0200
++++ src/misc.cpp	2008-10-13 23:29:09.000000000 +0200
+@@ -61,6 +61,7 @@
+ {
+ #ifdef DATA_DIR
+   std::string dir = DATA_DIR;
++  dir += "/skins/";
+ #else
+   std::string dir = CL_System::get_exe_path() + get_path_separator() + "skins";
+ #endif
+@@ -75,7 +76,7 @@
+ #else
+ #ifdef DATA_DIR
+   std::string file_path = DATA_DIR;
+-  file_path += "/";
++  file_path += "/data/";
+ #else
+   std::string file_path = CL_System::get_exe_path() + "/data";
+ #endif

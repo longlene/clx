@@ -1,0 +1,28 @@
+1. Create a MySQL database
+
+    # mysql -u root -p
+
+    mysql> CREATE DATABASE ocsweb;
+    mysql> GRANT ALL ON ocsweb.* TO 'ocs'@'localhost' IDENTIFIED BY 'password';
+	mysql> USE ocsweb;
+	mysql> SOURCE ${MY_SQLSCRIPTSDIR}/mysql/${PVR}_create.sql
+    mysql> quit
+
+2. Edit user and password in
+
+    ${MY_INSTALLDIR}/dbconfig.inc.php
+
+If you want a different name than 'ocsweb' for database, modify
+
+    ${MY_INSTALLDIR}/preferences.php
+
+3. Edit the configuration file
+
+    /etc/apache2/vhosts.d/ocsinventory.include
+
+and set database settings.
+Then add the file to your apache configuration using the statement
+
+    Include /etc/apache2/vhosts.d/ocsinventory.include
+
+4. Restart your webserver, login with admin:admin and change the password.

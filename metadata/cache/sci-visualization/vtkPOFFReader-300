@@ -1,0 +1,22 @@
+>=sci-visualization/paraview-3.8.1 >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+>=sci-visualization/paraview-3.8.1
+0
+http://of-interfaces.svn.sourceforge.net/viewvc/of-interfaces/trunk/vtkPOFFReader/?view=tar&pathrev=300 -> vtkPOFFReader-300.tar.gz
+
+http://of-interfaces.sourceforge.net
+paraview GPL-2
+Parallelized reader for OpenFOAM(R) file format for use with ParaView/VTK
+~amd64 ~x86
+base cmake-utils eutils flag-o-matic multilib portability toolchain-funcs user versionator
+
+
+
+
+3
+
+compile configure install prepare setup test unpack
+
+
+
+
+

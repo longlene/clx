@@ -1,0 +1,226 @@
+diff -r e6f386c027f2 -r dbf8cafd045a DH1080.c
+--- a/DH1080.c	Sat Mar 24 13:55:40 2007 +0100
++++ b/DH1080.c	Tue Mar 27 18:40:36 2007 +0200
+@@ -13,11 +13,12 @@ to base64 for final use with blowfish. *
+ 
+ #include <stdio.h>
+ #include <time.h>
++#include <string.h>
+ #include "DH1080.h"
+ 
+ // ### new sophie-germain 1080bit prime number ###
+-char *prime1080="++ECLiPSE+is+proud+to+present+latest+FiSH+release+featuring+even+more+security+for+you+++shouts+go+out+to+TMG+for+helping+to+generate+this+cool+sophie+germain+prime+number++++/C32L";
+-// Base16: FBE1022E23D213E8ACFA9AE8B9DFADA3EA6B7AC7A7B7E95AB5EB2DF858921FEADE95E6AC7BE7DE6ADBAB8A783E7AF7A7FA6A2B7BEB1E72EAE2B72F9FA2BFB2A2EFBEFAC868BADB3E828FA8BADFADA3E4CC1BE7E8AFE85E9698A783EB68FA07A77AB6AD7BEB618ACF9CA2897EB28A6189EFA07AB99A8A7FA9AE299EFA7BA66DEAFEFBEFBF0B7D8B
++//char *prime1080="++ECLiPSE+is+proud+to+present+latest+FiSH+release+featuring+even+more+security+for+you+++shouts+go+out+to+TMG+for+helping+to+generate+this+cool+sophie+germain+prime+number++++/C32L";
++char *prime1080 = "FBE1022E23D213E8ACFA9AE8B9DFADA3EA6B7AC7A7B7E95AB5EB2DF858921FEADE95E6AC7BE7DE6ADBAB8A783E7AF7A7FA6A2B7BEB1E72EAE2B72F9FA2BFB2A2EFBEFAC868BADB3E828FA8BADFADA3E4CC1BE7E8AFE85E9698A783EB68FA07A77AB6AD7BEB618ACF9CA2897EB28A6189EFA07AB99A8A7FA9AE299EFA7BA66DEAFEFBEFBF0B7D8B";
+ // Base10: 12745216229761186769575009943944198619149164746831579719941140425076456621824834322853258804883232842877311723249782818608677050956745409379781245497526069657222703636504651898833151008222772087491045206203033063108075098874712912417029101508315117935752962862335062591404043092163187352352197487303798807791605274487594646923
+ 
+ 
+@@ -27,78 +28,47 @@ char *prime1080="++ECLiPSE+is+proud+to+p
+ //         pub_key  = Your public key
+ int DH1080_gen(char *priv_key, char *pub_key)
+ {
+-	unsigned char raw_buf[160], iniHash[33];
++	unsigned char raw_buf[160];
+ 	unsigned long seed;
+ 	int len;
+ 
+-	big b_privkey, b_prime, b_pubkey;
+-	csprng myRNG;
+-	miracl *mip;
+-
+-	FILE *hRnd;
++	mpz_t mpz_privkey, mpz_prime, mpz_pubkey, mpz_base;
++	gmp_randstate_t randstate;
+ 
+ 	priv_key[0]='0';
+ 	priv_key[1]='\0';
+ 	pub_key[0]='0';
+ 	pub_key[1]='\0';
+-	hRnd = fopen("/dev/urandom", "r");	// don't use /dev/random, it's a blocking device
+-	if(!hRnd) return 0;
+ 
+ 	initb64();
+-	mip=mirsys(500, 16);
+ 
+-	b_privkey=mirvar(0);
+-	b_pubkey=mirvar(0);
+-	b_prime=mirvar(0);
+-
+-	len=b64toh(prime1080, raw_buf);
+-	bytes_to_big(len, raw_buf, b_prime);
++	mpz_init(mpz_privkey);
++	mpz_init(mpz_pubkey);
++	mpz_init_set_ui(mpz_base, 2);
++	mpz_init_set_str(mpz_prime, prime1080, 16);
+ 
+ 	// #*#*#*#*#* RNG START #*#*#*#*#*
+ 	time((time_t *)&seed);
+ 
+-	seed ^= (long)hRnd << 16;
+-	if(fread(raw_buf, 1, sizeof(raw_buf), hRnd) < 32)
+-	{
+-		ZeroMemory(raw_buf, sizeof(raw_buf));
+-		fclose(hRnd);
+-		mirkill(b_privkey);
+-		mirkill(b_pubkey);
+-		mirkill(b_prime);
+-		mirexit();
+-		return 0;
+-	}
+-	fclose(hRnd);
+-
+-	sha_file(iniPath, iniHash);
+-	memXOR(raw_buf+128, iniHash, 32);
+-	sha_file((unsigned char *)get_irssi_config(), iniHash);
+-	memXOR(raw_buf+128, iniHash, 32);
+-	ZeroMemory(iniHash, sizeof(iniHash));
+-	// first 128 byte in raw_buf: output from /dev/urandom
+-	// last 32 byte in raw_buf: SHA-256 digest from blow.ini and irssi.conf
+-
+-	seed *= (unsigned long)mip;
+-	strong_init(&myRNG, sizeof(raw_buf), raw_buf, (unsigned int)seed);
+-	strong_rng(&myRNG);
+-	strong_bigdig(&myRNG, 1080, 2, b_privkey);
+-	strong_kill(&myRNG);
++	gmp_randinit_default(randstate);
++	gmp_randseed_ui(randstate, seed);
++	mpz_urandomb(mpz_privkey, randstate, 1080);
++	gmp_randclear(randstate);
+ 	seed=0;
+ 	// #*#*#*#*#* RNG END #*#*#*#*#*
+ 
+-	powltr(2, b_privkey, b_prime, b_pubkey);
++	mpz_powm(mpz_pubkey, mpz_base, mpz_privkey, mpz_prime);
+ 
+-	len=big_to_bytes(sizeof(raw_buf), b_privkey, raw_buf, FALSE);
+-	mirkill(b_privkey);
++	mpz_export((void*)raw_buf, &len, 1, 1, 1, 0, mpz_privkey);
++	mpz_clear(mpz_privkey);
+ 	htob64(raw_buf, priv_key, len);
+ 
+-	len=big_to_bytes(sizeof(raw_buf), b_pubkey, raw_buf, FALSE);
++	mpz_export((void*)raw_buf, &len, 1, 1, 1, 0, mpz_pubkey);
+ 	htob64(raw_buf, pub_key, len);
+ 	ZeroMemory(raw_buf, sizeof(raw_buf));
+ 
+-	mirkill(b_pubkey);
+-	mirkill(b_prime);
+-	mirexit();
++	mpz_clear(mpz_pubkey);
++	mpz_clear(mpz_prime);
+ 
+ 	return 1;
+ }
+@@ -113,8 +83,7 @@ int DH1080_comp(char *MyPrivKey, char *H
+ {
+ 	int i=0, len;
+ 	unsigned char SHA256digest[35], base64_tmp[160];
+-	big b_myPrivkey, b_HisPubkey, b_prime, b_theKey;
+-	miracl *mip;
++	mpz_t mpz_myPrivkey, mpz_hisPubkey, mpz_prime, mpz_theKey;
+ 
+ 	// Verify base64 strings
+ 	if((strspn(MyPrivKey, B64ABC) != strlen(MyPrivKey)) || (strspn(HisPubKey, B64ABC) != strlen(HisPubKey)))
+@@ -124,41 +93,29 @@ int DH1080_comp(char *MyPrivKey, char *H
+ 		return 0;
+ 	}
+ 
+-	mip=mirsys(500, 16);
+-
+-	b_myPrivkey=mirvar(0);
+-	b_HisPubkey=mirvar(0);
+-	b_theKey=mirvar(0);
+-	b_prime=mirvar(0);
+-
+-	len=b64toh(prime1080, base64_tmp);
+-	bytes_to_big(len, base64_tmp, b_prime);
++	mpz_init(mpz_myPrivkey);
++	mpz_init(mpz_hisPubkey);
++	mpz_init(mpz_theKey);
++	mpz_init_set_str(mpz_prime, prime1080, 16);
+ 
+ 	len=b64toh(MyPrivKey, base64_tmp);
+-	bytes_to_big(len, base64_tmp, b_myPrivkey);
++	mpz_import(mpz_myPrivkey, len, 1, 1, 1, 0, base64_tmp);
+ 	memset(MyPrivKey, 0x20, strlen(MyPrivKey));
+ 
+ 	len=b64toh(HisPubKey, base64_tmp);
+-	bytes_to_big(len, base64_tmp, b_HisPubkey);
++	mpz_import(mpz_hisPubkey, len, 1, 1, 1, 0, base64_tmp);
+ 
+-	powmod(b_HisPubkey, b_myPrivkey, b_prime, b_theKey);
+-	mirkill(b_myPrivkey);
++	mpz_powm(mpz_theKey, mpz_hisPubkey, mpz_myPrivkey, mpz_prime);
++	mpz_clear(mpz_myPrivkey);
+ 
+-	len=big_to_bytes(sizeof(base64_tmp), b_theKey, base64_tmp, FALSE);
+-	mirkill(b_theKey);
++	mpz_export((void*)base64_tmp, &len, 1, 1, 1, 0, mpz_theKey);
++	mpz_clear(mpz_theKey);
+ 	SHA256_memory(base64_tmp, len, SHA256digest);
+ 	htob64(SHA256digest, HisPubKey, 32);
+ 	ZeroMemory(base64_tmp, sizeof(base64_tmp));
+ 	ZeroMemory(SHA256digest, sizeof(SHA256digest));
+ 
+-	mirkill(b_HisPubkey);
+-	mirkill(b_prime);
+-	mirexit();
++	mpz_clear(mpz_hisPubkey);
++	mpz_clear(mpz_prime);
+ 	return 1;
+ }
+-
+-
+-
+-
+-
+-
+diff -r e6f386c027f2 -r dbf8cafd045a DH1080.h
+--- a/DH1080.h	Sat Mar 24 13:55:40 2007 +0100
++++ b/DH1080.h	Tue Mar 27 18:40:36 2007 +0200
+@@ -1,4 +1,4 @@
+-#include "miracl.h"
++#include <gmp.h>
+ 
+ 
+ // Input:  priv_key = buffer of 200 bytes
+diff -r e6f386c027f2 -r dbf8cafd045a FiSH.h
+--- a/FiSH.h	Sat Mar 24 13:55:40 2007 +0100
++++ b/FiSH.h	Tue Mar 27 18:40:36 2007 +0200
+@@ -29,6 +29,6 @@ unsigned char iniKey[100], blow_ini[]="/
+ unsigned char iniKey[100], blow_ini[]="/blow.ini", iniPath[255], tempPath[255];
+ char g_myPrivKey[300], g_myPubKey[300];
+ 
+-BOOL unsetiniFlag=0, keyx_query_created=0;
++unsigned short int unsetiniFlag=0, keyx_query_created=0;
+ 
+ char *strfcpy(unsigned char *dest, char *buffer);	// removes leading and trailing blanks from string
+diff -r e6f386c027f2 -r dbf8cafd045a SHA-256.c
+--- a/SHA-256.c	Sat Mar 24 13:55:40 2007 +0100
++++ b/SHA-256.c	Tue Mar 27 18:40:36 2007 +0200
+@@ -12,6 +12,7 @@
+  * */
+ 
+ #include <stdio.h>
++#include <string.h>
+ 
+ typedef struct {
+     unsigned int state[8], length, curlen;
+diff -r e6f386c027f2 -r dbf8cafd045a base64.c
+--- a/base64.c	Sat Mar 24 13:55:40 2007 +0100
++++ b/base64.c	Tue Mar 27 18:40:36 2007 +0200
+@@ -1,3 +1,4 @@
++#include <string.h>
+ /*
+     Public Base64 conversion tables
+ */
+diff -r e6f386c027f2 -r dbf8cafd045a blowfish.c
+--- a/blowfish.c	Sat Mar 24 13:55:40 2007 +0100
++++ b/blowfish.c	Tue Mar 27 18:40:36 2007 +0200
+@@ -1,3 +1,5 @@
++#include <stdlib.h>
++#include <string.h>
+ #include "blowfish.h"
+ 
+ /* #define S(x,i) (bf_S[i][x.w.byte##i]) */

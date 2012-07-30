@@ -1,0 +1,22 @@
+dev-libs/openssl dev-vcs/subversion net-misc/rsync || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+dev-libs/openssl
+0
+
+
+http://sourceforge.net/projects/freeme2
+GPL-3
+A utility that strips WM-DRM protection from wmv/asf/wma files as well as video/audio streams.
+~amd64 ~x86
+autotools eutils libtool multilib portability subversion toolchain-funcs user
+
+
+
+
+
+
+install preinst unpack
+
+
+
+
+

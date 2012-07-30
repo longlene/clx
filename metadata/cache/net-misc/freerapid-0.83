@@ -1,0 +1,22 @@
+>=virtual/jdk-1.6
+>=virtual/jre-1.6 app-misc/realpath
+0
+http://wordrider.net/download.php?file=FreeRapiD-0.83.zip
+nomirror
+http://wordrider.net/freerapid/
+GPL
+FreeRapid is a simple Java downloader that supports downloading from Rapidshare and other file-sharing services.
+x86 amd64
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install setup unpack
+
+
+
+
+

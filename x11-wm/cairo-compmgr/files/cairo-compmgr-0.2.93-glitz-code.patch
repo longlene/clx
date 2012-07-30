@@ -1,0 +1,31 @@
+--- cairo-compmgr-0.2.93/src/ccm-window-glitz.c	2009-03-04 16:31:26.000000000 -0500
++++ cairo-compmgr-0.2.93.new/src/ccm-window-glitz.c	2009-05-29 13:53:37.000000000 -0400
+@@ -278,13 +278,13 @@
+ 						 GLITZ_FORMAT_RED_SIZE_MASK |
+ 						 GLITZ_FORMAT_GREEN_SIZE_MASK |
+ 						 GLITZ_FORMAT_BLUE_SIZE_MASK |
+-						 GLITZ_FORMAT_DEPTH_MASK;
++						 GLITZ_FORMAT_DEPTH_SIZE_MASK;
+ 	
+ 	templ.doublebuffer = 0;
+ 	templ.color.red_size = 8;
+ 	templ.color.green_size = 8;
+ 	templ.color.blue_size = 8;
+-	templ.depth = depth;
++	templ.depth_size = depth;
+ 	
+ 	g_object_get(G_OBJECT(screen), "indirect_rendering", &indirect, NULL);
+ #ifdef ENABLE_GLITZ_TFP_BACKEND
+--- cairo-compmgr-0.2.93/src/ccm-pixmap-glitz.c	2009-03-05 03:36:51.000000000 -0500
++++ cairo-compmgr-0.2.93.new/src/ccm-pixmap-glitz.c	2009-05-29 13:52:22.000000000 -0400
+@@ -126,8 +126,8 @@
+ 		tmp.color.alpha_size = 8;
+ 		if (ccm_drawable_get_format(CCM_DRAWABLE(self)) == CAIRO_FORMAT_ARGB32)
+ 		{
+-			tmp.depth = 32;
+-			mask |= GLITZ_FORMAT_DEPTH_MASK;
++			tmp.depth_size = 32;
++			mask |= GLITZ_FORMAT_DEPTH_SIZE_MASK;
+ 		}
+ 		
+ 		format = glitz_glx_find_window_format (

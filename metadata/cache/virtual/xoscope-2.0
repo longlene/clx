@@ -1,0 +1,22 @@
+>=x11-libs/gtk+-2.0 esd? ( media-sound/esound )
+>=x11-libs/gtk+-2.0 esd? ( media-sound/esound )
+0
+mirror://sourceforge/xoscope/xoscope-2.0.tgz
+
+http://xoscope.sourceforge.net
+GPL-2
+Soundcard Oscilloscope for X
+~x86 ~amd64
+eutils multilib portability toolchain-funcs user
+esd
+
+
+
+
+
+compile install unpack
+
+
+
+
+

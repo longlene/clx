@@ -1,0 +1,22 @@
+nls? ( sys-devel/gettext )
+
+0
+mirror://sourceforge/dc3dd/dc3dd-7.0.0.tar.bz2
+
+http://dc3dd.sourceforge.net/
+GPL-3
+patched version of GNU dd to include a number of features useful for computer forensics
+~x86
+
+nls
+
+
+
+2
+
+configure install
+
+
+
+
+

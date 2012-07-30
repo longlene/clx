@@ -1,0 +1,75 @@
+--- rsl-v1.40/wsr88d_m31.c	2008-10-08 23:43:03.000000000 +0000
++++ rsl-mine/wsr88d_m31.c	2009-05-10 12:58:17.000000000 +0000
+@@ -546,6 +548,7 @@
+     Range (*invf)(float x);
+     float (*f)(Range x);
+     int vol_index, waveform;
++    char *type_str;
+ 
+     enum waveforms {surveillance=1, doppler_ambres, doppler_no_ambres, batch};
+ 
+@@ -572,10 +575,10 @@
+     if (wsr88d_ray.ray_hdr.dbptr_ref > 0) {
+ 	vol_index = wsr88d_get_vol_index(wsr88d_ray.ref->data_hdr.dataname);
+ 	switch (vol_index) {
+-	    case DZ_INDEX: f = DZ_F; invf = DZ_INVF; break;
+-	    case VR_INDEX: f = VR_F; invf = VR_INVF; break;
+-	    case SW_INDEX: f = SW_F; invf = SW_INVF; break;
+-	    default: f = DZ_F; invf = DZ_INVF; break;
++	    case DZ_INDEX: f = DZ_F; invf = DZ_INVF; type_str = "Reflectivity";   break;
++	    case VR_INDEX: f = VR_F; invf = VR_INVF; type_str = "Velocity";       break;
++	    case SW_INDEX: f = SW_F; invf = SW_INVF; type_str = "Spectrum width"; break;
++	    default:       f = DZ_F; invf = DZ_INVF; type_str = "Unknown";        break;
+ 	}
+ 	/* If this is reflectivity, check the waveform type to make sure
+ 	 * it isn't from a Doppler split cut.
+@@ -591,6 +594,7 @@
+ 		radar->v[vol_index] = RSL_new_volume(MAXSWEEPS);
+ 		radar->v[vol_index]->h.f = f;
+ 		radar->v[vol_index]->h.invf = invf;
++		    radar->v[vol_index]->h.type_str = type_str;
+ 	    }
+ 	    if (radar->v[vol_index]->sweep[isweep] == NULL) {
+ 		radar->v[vol_index]->sweep[isweep] = RSL_new_sweep(MAXRAYS_M31);
+@@ -608,15 +612,16 @@
+     if (wsr88d_ray.ray_hdr.dbptr_vel > 0) {
+ 	vol_index = wsr88d_get_vol_index(wsr88d_ray.vel->data_hdr.dataname);
+ 	switch (vol_index) {
+-	    case DZ_INDEX: f = DZ_F; invf = DZ_INVF; break;
+-	    case VR_INDEX: f = VR_F; invf = VR_INVF; break;
+-	    case SW_INDEX: f = SW_F; invf = SW_INVF; break;
+-	    default: f = DZ_F; invf = DZ_INVF; break;
++	    case DZ_INDEX: f = DZ_F; invf = DZ_INVF; type_str = "Reflectivity";   break;
++	    case VR_INDEX: f = VR_F; invf = VR_INVF; type_str = "Velocity";       break;
++	    case SW_INDEX: f = SW_F; invf = SW_INVF; type_str = "Spectrum width"; break;
++	    default:       f = DZ_F; invf = DZ_INVF; type_str = "Unknown";        break;
+ 	}
+ 	if (radar->v[vol_index] == NULL) {
+ 	    radar->v[vol_index] = RSL_new_volume(MAXSWEEPS);
+ 	    radar->v[vol_index]->h.f = f;
+ 	    radar->v[vol_index]->h.invf = invf;
++	    radar->v[vol_index]->h.type_str = type_str;
+ 	}
+ 	if (radar->v[vol_index]->sweep[isweep] == NULL) {
+ 	    radar->v[vol_index]->sweep[isweep] = RSL_new_sweep(MAXRAYS_M31);
+@@ -633,15 +638,16 @@
+     if (wsr88d_ray.ray_hdr.dbptr_sw > 0) {
+ 	vol_index = wsr88d_get_vol_index(wsr88d_ray.sw->data_hdr.dataname);
+ 	switch (vol_index) {
+-	    case DZ_INDEX: f = DZ_F; invf = DZ_INVF; break;
+-	    case VR_INDEX: f = VR_F; invf = VR_INVF; break;
+-	    case SW_INDEX: f = SW_F; invf = SW_INVF; break;
+-	    default: f = DZ_F; invf = DZ_INVF; break;
++	    case DZ_INDEX: f = DZ_F; invf = DZ_INVF; type_str = "Reflectivity";   break;
++	    case VR_INDEX: f = VR_F; invf = VR_INVF; type_str = "Velocity";       break;
++	    case SW_INDEX: f = SW_F; invf = SW_INVF; type_str = "Spectrum width"; break;
++	    default:       f = DZ_F; invf = DZ_INVF; type_str = "Unknown";        break;
+ 	}
+ 	if (radar->v[vol_index] == NULL) {
+ 	    radar->v[vol_index] = RSL_new_volume(MAXSWEEPS);
+ 	    radar->v[vol_index]->h.f = f;
+ 	    radar->v[vol_index]->h.invf = invf;
++	    radar->v[vol_index]->h.type_str = type_str;
+ 	}
+ 	if (radar->v[vol_index]->sweep[isweep] == NULL) {
+ 	    radar->v[vol_index]->sweep[isweep] = RSL_new_sweep(MAXRAYS_M31);

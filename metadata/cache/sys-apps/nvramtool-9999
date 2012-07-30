@@ -1,0 +1,22 @@
+dev-vcs/subversion net-misc/rsync
+
+0
+
+
+http://www.coreboot.org/Nvramtool
+GPL-2
+Nvramtool(previously known as lxbios) is a utility for reading/writing/displaying LinuxBIOS parameters.
+~amd64 ~x86
+eutils multilib portability subversion toolchain-funcs user
+
+
+
+
+
+
+compile install postinst preinst unpack
+
+
+
+
+

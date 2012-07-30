@@ -1,0 +1,22 @@
+dev-vcs/subversion net-misc/rsync
+
+0
+
+
+http://libgarmin.sourceforge.net/
+GPL-2
+Experimental driver for Garmin IMG maps
+~x86
+eutils multilib portability subversion toolchain-funcs user
+
+
+
+
+
+
+compile install postinst preinst unpack
+
+
+
+
+

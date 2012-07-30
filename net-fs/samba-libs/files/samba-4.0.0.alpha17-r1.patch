@@ -1,0 +1,29 @@
+--- samba-4.0.0_alpha17.ebuild	2011-11-01 20:23:53.000000000 +0100
++++ samba-4.0.0_alpha17-r1.ebuild	2011-11-02 15:11:44.027591008 +0100
+@@ -4,7 +4,7 @@
+ 
+ EAPI=4
+ 
+-inherit eutils confutils python waf-utils versionator
++inherit eutils confutils python waf-utils versionator multilib
+ 
+ MY_PV="${PV/_alpha/alpha}"
+ MY_P="${PN}-${MY_PV}"
+@@ -74,6 +74,7 @@
+                 --enable-fhs \
+                 --sysconfdir=/etc \
+                 --localstatedir=/var \
++                --with-modulesdir=/usr/lib/$(get_libdir)/ \
+                 --disable-rpath \
+                 --disable-rpath-install \
+                 --nopyc \
+@@ -103,6 +104,9 @@
+ src_install() {
+         waf-utils_src_install
+ 
++        # Make all .so files executable
++        find "${D}" -type f -name "*.so" -exec chmod +x {} +
++
+         newinitd "${CONFDIR}/samba4.initd" samba || die "newinitd failed"
+ 
+         #remove conflicting file for tevent profided by sys-libs/tevent

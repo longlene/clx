@@ -1,0 +1,22 @@
+>=dev-embedded/cdk4msp-0.2 !dev-embedded/cdk-msp-gdb >=app-arch/rpm2targz-9.0.0.3g
+>=dev-embedded/cdk4msp-0.2 !dev-embedded/cdk-msp-gdb
+0
+mirror://sourceforge/cdk4msp/cdk-msp-insight-5.1.1-20031102.i386.rpm
+
+http://cdk4msp.sourceforge.net/
+GPL-2
+MSP430 Cross Development Kit - Insight
+-* ~x86
+eutils multilib portability rpm toolchain-funcs user
+
+
+
+
+
+
+install unpack
+
+
+
+
+

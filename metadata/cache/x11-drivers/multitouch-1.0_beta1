@@ -1,0 +1,22 @@
+x11-base/xorg-server x11-proto/inputproto
+x11-base/xorg-server
+0
+http://github.com/rydberg/Multitouch-X-Driver/tarball/v1.0-beta1 -> multitouch-1.0_beta1.tar.gz
+
+http://bitmath.org/code/multitouch/
+GPL-2
+Multitouch-X-Driver for MT-Touchpads
+~amd64 ~x86
+
+
+
+
+
+3
+
+install postinst
+
+
+
+
+

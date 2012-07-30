@@ -1,0 +1,61 @@
+diff -urNb cdpr-2.2.1.orig/cdpr.8 cdpr-2.2.1/cdpr.8
+--- cdpr.8	1969-12-31 16:00:00.000000000 -0800
++++ cdpr.8	2007-04-30 16:39:31.000000000 -0700
+@@ -0,0 +1,57 @@
++.\" Process this file with
++.\" groff -man -Tascii foo.1
++.\"
++.TH CDPR 8 "OCTOBER 2006" "User Manuals"
++.SH NAME
++cdpr \- Cisco Discovery Protocol Reporter
++.SH SYNOPSIS
++.B cdpr [-h] [-t
++.I seconds
++.B ]
++.B [-d
++.I device
++.B ]
++.B [-u
++.I server-config-file
++.B ]
++.B [-l
++.I location
++.B ]
++.B [-n
++.I hostname
++.B ]
++.B [-s
++.I server
++.B ]
++.B [-p
++.I script-path
++.B ]
++.SH DESCRIPTION
++.B cdpr
++listens on specified network interfaces for Cisco Discovery Protocol packets. It then
++decodes those packets and outputs the information, optionally sending the information
++to a server for processing.
++.SH OPTIONS
++.IP "-d device"
++Specify device to use (eth0, hme0, etc.)
++.IP "-h, -?, --help"
++Print the usage.
++.IP "-t seconds"
++Time in seconds to abort waiting for a packet (should be > 60)
++.IP -v[vv]
++Set verbose mode.
++.IP "-u server-config-file"
++Send cdpr information to a cdpr server. See /usr/share/doc/cdpr/README.cdprs for details and /usr/share/doc/cdpr/cdpr.conf.sample for a sample configuration.
++.IP "-l location"
++Location/description of this port; for use with -u or -s and -p.
++.IP "-n hostname"
++Override the hostname reported to the server; for use with -u or -s and -p.
++.IP "-s server"
++Server to send information to, specify port with a: after server/IP.
++Example: 192.168.1.20:88 (default: 80) requires -p (overridden by -u)
++.IP "-p script-path"
++Path of server script to send data to; requires -s (overridden by -u)
++.SH AUTHOR
++Lance O'Connor <lance at ronnoco dot net>
++
++This manual page was written by Matt Zagrabelny <mzagrabe at d dot umn dot edu>, for the Debian system (but may be used by others).

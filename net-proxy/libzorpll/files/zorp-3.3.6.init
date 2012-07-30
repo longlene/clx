@@ -1,0 +1,47 @@
+#!/sbin/runscript
+# This file was created by Balazs Nemeth (balage@balabit.com) Mon,  21 March 2011 16:11:00 +0100
+# Copyright (c) 2000-2011 BalaBit IT Ltd, Budapest, Hungary
+# Distributed under the terms of the GNU General Public License v2
+
+opts="checkconfig reload"
+
+zorpctl="/usr/sbin/zorpctl"
+pidfile="/var/run/zorp.pid"
+
+depend() {
+    need net
+    use logger dns
+}
+
+checkconfig() {
+    if [ ! -e /etc/zorp/instances.conf ] ; then                                                                                                                                                                                     
+        eerror "You need to create /etc/zorp/instances.conf first."                                                                                                                                                             
+        eerror "An example can be found in /etc/zorp/instances.conf.sample"                                                                                                                                                     
+        return 1                                                                                                                                                                                                                     
+    fi
+}
+
+start() {
+    ebegin "Starting Zorp"
+    checkconfig || return 1
+    start-stop-daemon --start --exec ${zorpctl} --pidfile ${pidfile}
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping Zorp"
+    start-stop-daemon --stop --pidfile ${pidfile}
+    eend $? "Failed to stop Zorp"
+}
+
+reload() {
+    if [ ! -f ${pidfile} ]; then
+            eerror "Zorp isn't running"
+            return 1
+    fi
+    checkconfig || return 1
+    ebegin "Reloading configuration files"
+    start-stop-daemon --exec ${zorpctl} --pidfile ${pidfile}
+#    start-stop-daemon --stop --oknodo --signal HUP --pidfile ${pidfile}
+    eend $?
+}

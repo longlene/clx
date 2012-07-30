@@ -1,0 +1,22 @@
+app-arch/unzip virtual/latex-base >=sys-apps/texinfo-4.2-r5
+latex2html? ( dev-tex/latex2html ) virtual/latex-base
+0
+ftp://ftp.dante.de/tex-archive/macros/latex/contrib/glossary.zip
+
+http://theoval.cmp.uea.ac.uk/~nlct/
+LPPL-1.2
+LaTeX package for assisting generating a glossary
+~x86
+base eutils latex-package multilib portability toolchain-funcs user
+latex2html
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

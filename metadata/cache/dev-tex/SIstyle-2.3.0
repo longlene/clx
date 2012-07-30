@@ -1,0 +1,22 @@
+app-arch/unzip virtual/latex-base >=sys-apps/texinfo-4.2-r5
+virtual/latex-base
+0
+http://www.rennings.net/gentoo/distfiles/SIstyle-2.3.0.zip
+
+http://www.ctan.org/tex-archive/macros/latex/contrib/SIstyle/
+LPPL-1.3b
+Package to typeset SI units, numbers and angles.
+~x86
+base eutils latex-package multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

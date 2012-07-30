@@ -1,0 +1,39 @@
+#!/sbin/runscript
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+	need net
+}
+
+start() {
+	if [ ! -f "${GNUNET_CONF}" ]; then
+		eerror "You must create the config file first."
+		return 1
+	fi
+
+	ebegin "Starting GNUnet"
+	start-stop-daemon --exec /usr/bin/gnunet-arm \
+	                  --user=${GNUNET_USER} \
+					  --group=${GNUNET_GROUP} \
+					  -- -q -c ${GNUNET_CONF} -s
+	eend $? "Failed to start GNUnet"
+}
+
+stop() {
+	ebegin "Stopping GNUnet"
+	start-stop-daemon --exec /usr/bin/gnunet-arm \
+	                  --user=${GNUNET_USER} \
+					  --group=${GNUNET_GROUP} \
+					  -- -q -c ${GNUNET_CONF} -e
+	eend $? "Failed to stop GNUnet"
+}
+
+restart() {
+	ebegin "Restarting GNUnet"
+	start-stop-daemon --exec /usr/bin/gnunet-arm \
+	                  --user=${GNUNET_USER} \
+					  --group=${GNUNET_GROUP} \
+					  -- -q -c ${GNUNET_CONF} -r
+	eend $? "Failed to restart GNUnet"
+}

@@ -1,0 +1,22 @@
+media-gfx/imagemagick media-gfx/graphicsmagick media-video/ffmpeg media-libs/libsdl dev-libs/libxml2 x11-libs/pango ieee1394? ( =media-libs/libdc1394-1* ) dev-libs/boost >=app-admin/eselect-python-20091230
+media-gfx/imagemagick media-gfx/graphicsmagick media-video/ffmpeg media-libs/libsdl dev-libs/libxml2 x11-libs/pango ieee1394? ( =media-libs/libdc1394-1* ) dev-libs/boost >=app-admin/eselect-python-20091230
+0
+http://www.libavg.de/libavg-1.5.0.tar.gz
+test
+www.libavg.de
+LGPL-2.1
+libavg is an engine for media installations
+~x86
+eutils flag-o-matic multilib portability python toolchain-funcs user
+ieee1394
+
+
+
+
+
+compile install setup
+
+
+
+
+

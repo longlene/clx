@@ -1,0 +1,22 @@
+app-arch/unzip X? ( x11-apps/mkfontdir media-fonts/encodings ) >=media-libs/fontconfig-2.4.0
+
+0
+mirror://sourceforge/manchufont/Manchu_Font_2005_2.006.zip
+
+http://sourceforge.net/projects/manchufont/
+GPL-2
+A Free Manchu OpenType font
+~x86
+eutils font multilib portability toolchain-funcs user
+X
+
+
+
+
+
+install postinst postrm setup
+
+
+
+
+

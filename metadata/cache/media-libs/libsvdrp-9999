@@ -1,0 +1,22 @@
+sys-libs/glibc doc? ( app-doc/doxygen ) dev-vcs/mercurial
+sys-libs/glibc
+0
+
+
+http://libsvdrp.geexbox.org/
+LGPL-2.1
+libsvdrp - interface library to allow C programs to interact with a running VDR, via SVDRP protocol.
+
+eutils mercurial multilib portability toolchain-funcs user
+doc
+
+
+
+2
+
+configure install unpack
+
+
+
+
+

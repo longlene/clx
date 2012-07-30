@@ -1,0 +1,22 @@
+>=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+app-dicts/dacco x11-libs/qt-core x11-libs/qt-gui
+0
+mirror://sourceforge/dacco/qdacco-0.8.0.tar.gz
+
+http://dacco.sourceforge.net
+GPL-2
+Catalan - English dictionary
+~x86
+base cmake-utils eutils flag-o-matic multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

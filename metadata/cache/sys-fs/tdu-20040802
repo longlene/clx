@@ -1,0 +1,22 @@
+>=sys-libs/ncurses-5
+>=sys-libs/ncurses-5
+0
+http://dse.webonastick.com/tdu/tdu-2004-08-02.tar.gz
+
+http://dse.webonastick.com/tdu/
+GPL-2
+a text-mode disk usage visualization utility
+~x86
+
+
+
+
+
+
+
+compile install
+
+
+
+
+

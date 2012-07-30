@@ -1,0 +1,22 @@
+
+media-video/ffmpeg media-video/mplayer media-video/transcode !=media-libs/faac-1.26-r1
+0
+http://software.kallenberg.dk/rip-dvd/rip-dvd-0.10.tar.bz2
+
+http://software.kallenberg.dk/rip-dvd/
+GPL
+Rip and encode DVD's or video
+~x86 ~amd64
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install
+
+
+
+
+

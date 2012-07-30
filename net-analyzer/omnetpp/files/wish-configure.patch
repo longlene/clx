@@ -1,0 +1,25 @@
+--- configure.in	2010-06-12 04:57:29.000000000 +1200
++++ configure.in.new	2010-07-14 21:24:27.088935367 +1200
+@@ -839,15 +839,15 @@
+     if test "$WISH" = nope; then
+        AC_MSG_ERROR([Cannot find wish, part of Tcl/Tk -- maybe it is not in the PATH or has some exotic name (tested names were: wish wish86 wish8.6 wish85 wish8.5 wish84 wish8.4 cygwish cygwish86 cygwish85 cygwish84)])
+     fi
+-    if echo 'puts OK; exit' | $WISH | grep OK >/dev/null; then :; else
+-        AC_MSG_ERROR([Cannot run wish (wish command "puts OK; exit" failed): maybe you are not running X or DISPLAY environment variable not set?])
+-    fi
+-    if echo 'catch {package require Tk 8.4; puts OK}; exit' | $WISH | grep OK >/dev/null; then :; else
+-        AC_MSG_ERROR([wish command "package require Tk 8.4" failed: probably old Tcl/Tk version, version 8.4.0+ required])
+-    fi
++#    if echo 'puts OK; exit' | $WISH | grep OK >/dev/null; then :; else
++#        AC_MSG_WARN([Cannot run wish (wish command "puts OK; exit" failed): maybe you are not running X or DISPLAY environment variable not set?])
++#    fi
++#    if echo 'catch {package require Tk 8.4; puts OK}; exit' | $WISH | grep OK >/dev/null; then :; else
++#        AC_MSG_WARN([wish command "package require Tk 8.4" failed: probably old Tcl/Tk version, version 8.4.0+ required])
++#    fi
+
+     # note: square brackets necessary otherwise M4 messes up the Tcl command
+-    [tcl_library=`echo 'puts [info library]; exit' | $WISH`]
++    [tcl_library=`whereis tcl | awk '{print $2}'`]
+
+
+     #----------------------

@@ -1,0 +1,135 @@
+diff -w -ru rsl-v1.40/wsr88d_m31.c rsl-v1.40.test/wsr88d_m31.c
+--- rsl-v1.40/wsr88d_m31.c	2008-10-08 23:43:03.000000000 +0000
++++ rsl-v1.40.test/wsr88d_m31.c	2009-05-14 10:06:23.000000000 +0000
+@@ -515,6 +515,7 @@
+     m1_ray.vol_cpat = vcp_data.vcp;
+     m1_ray.elev_num = ray_hdr.elev_num;
+     m1_ray.unam_rng = wsr88d_ray.unamb_rng;
++    m1_ray.nyq_vel  = wsr88d_ray.nyq_vel; // TODO: is this correct?
+     if (ray_hdr.azm_res != 1)
+ 	ray->h.beam_width = 1.0;
+     else ray->h.beam_width = 0.5;
+@@ -603,6 +604,8 @@
+ 	    radar->v[vol_index]->sweep[isweep]->ray[iray] = ray;
+ 	    radar->v[vol_index]->sweep[isweep]->h.nrays = iray+1;
+ 	}
++	free(wsr88d_ray.ref->data);
++	free(wsr88d_ray.ref);
+     }
+ 
+     if (wsr88d_ray.ray_hdr.dbptr_vel > 0) {
+@@ -628,6 +631,8 @@
+ 	wsr88d_load_ray_hdr(wsr88d_ray, ray);
+ 	radar->v[vol_index]->sweep[isweep]->ray[iray] = ray;
+ 	radar->v[vol_index]->sweep[isweep]->h.nrays = iray+1;
++	free(wsr88d_ray.vel->data);
++	free(wsr88d_ray.vel);
+     }
+ 
+     if (wsr88d_ray.ray_hdr.dbptr_sw > 0) {
+@@ -653,6 +658,8 @@
+ 	wsr88d_load_ray_hdr(wsr88d_ray, ray);
+ 	radar->v[vol_index]->sweep[isweep]->ray[iray] = ray;
+ 	radar->v[vol_index]->sweep[isweep]->h.nrays = iray+1;
++	free(wsr88d_ray.sw->data);
++	free(wsr88d_ray.sw);
+     }
+ 
+ }
+@@ -706,15 +713,27 @@
+  * at the WSR-88D Radar Operations Center web site.
+  */
+ 
+-    n = fread(&msghdr, sizeof(Wsr88d_msg_hdr), 1, wf->fptr);
+-
+-    /* printf("msgtype = %d\n", msghdr.msg_type); */
+-    msg_hdr_size = sizeof(Wsr88d_msg_hdr) - sizeof(msghdr.rpg);
+ 
+ 
+     radar = RSL_new_radar(MAX_RADAR_VOLUMES);
+     
+     while (! end_of_vos) {
++	/* Read current header */
++	n = fread(&msghdr, sizeof(Wsr88d_msg_hdr), 1, wf->fptr);
++	if (n < 1) {
++	    fprintf(stderr,"Warning: load_wsr88d_m31_into_radar: ");
++	    if (feof(wf->fptr) != 0) fprintf(stderr,
++		    "Unexpected end of file.\n");
++	    else fprintf(stderr,"Failed reading msghdr.\n");
++	    fprintf(stderr,"Current sweep number: %d\n"
++		    "Last ray read: %d\n", isweep+1, iray);
++	    wsr88d_load_sweep_header(radar, isweep, wsr88d_ray);
++	    return radar;
++	}
++
++	/* printf("msgtype = %d\n", msghdr.msg_type); */
++	msg_hdr_size = sizeof(Wsr88d_msg_hdr) - sizeof(msghdr.rpg);
++
+ 	if (msghdr.msg_type == 31) {
+ 	    if (little_endian()) wsr88d_swap_m31_hdr(&msghdr);
+ 
+@@ -729,6 +748,18 @@
+ 	    /* Load this ray into radar structure ray. */
+ 	    wsr88d_load_ray_into_radar(wsr88d_ray, isweep, iray, radar);
+ 	    iray++;
++
++	    /* Check for end of sweep */
++	    if (wsr88d_ray.ray_hdr.radial_status == END_OF_ELEV) {
++		wsr88d_load_sweep_header(radar, isweep, wsr88d_ray);
++		isweep++;
++		iray = 0;
++	    }
++
++	    if (wsr88d_ray.ray_hdr.radial_status == END_VOS) {
++		//wsr88d_load_sweep_header(radar, isweep, wsr88d_ray);
++		end_of_vos = 1;
++	    }
+ 	}
+ 	else { /* msg_type not 31 */
+ 	    n = fread(&non31_seg_remainder, sizeof(non31_seg_remainder), 1,
+@@ -748,33 +779,11 @@
+ 		radar->h.vcp = vcp_data.vcp;
+ 		/* printf("VCP = %d\n", vcp_data.vcp); */
+ 	    }
++	    /* TODO: check for end of sweep/volume */
+ 	}
+ 
+-	/* Check for end of sweep */
+-	if (wsr88d_ray.ray_hdr.radial_status == END_OF_ELEV) {
+-	    wsr88d_load_sweep_header(radar, isweep, wsr88d_ray);
+-	    isweep++;
+-	    iray = 0;
+-	}
+-
+-	if (wsr88d_ray.ray_hdr.radial_status != END_VOS) {
+-	    n = fread(&msghdr, sizeof(Wsr88d_msg_hdr), 1, wf->fptr);
+-	    if (n < 1) {
+-		fprintf(stderr,"Warning: load_wsr88d_m31_into_radar: ");
+-		if (feof(wf->fptr) != 0) fprintf(stderr,
+-			"Unexpected end of file.\n");
+-		else fprintf(stderr,"Failed reading msghdr.\n");
+-		fprintf(stderr,"Current sweep number: %d\n"
+-			"Last ray read: %d\n", isweep+1, iray);
+-		wsr88d_load_sweep_header(radar, isweep, wsr88d_ray);
+-		return radar;
+-	    }
+-	}
+-	else {
++	if (feof(wf->fptr) != 0)
+ 	    end_of_vos = 1;
+-	    wsr88d_load_sweep_header(radar, isweep, wsr88d_ray);
+-	}
+-	if (feof(wf->fptr) != 0) end_of_vos = 1;
+     }
+ 
+     return radar;
+diff -w -ru rsl-v1.40/wsr88d_to_radar.c rsl-v1.40.test/wsr88d_to_radar.c
+--- rsl-v1.40/wsr88d_to_radar.c	2008-07-30 22:41:20.000000000 +0000
++++ rsl-v1.40.test/wsr88d_to_radar.c	2009-05-14 10:07:09.000000000 +0000
+@@ -429,5 +429,6 @@
+ 	radar->h.lpulse = sitep->lpulse;
+ 		
+   radar = RSL_prune_radar(radar);
++  free(sitep);
+   return radar;
+ }

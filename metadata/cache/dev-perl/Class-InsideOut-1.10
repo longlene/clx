@@ -1,0 +1,22 @@
+perl-core/Scalar-List-Utils perl-core/Class-ISA dev-lang/perl[-build]
+perl-core/Scalar-List-Utils perl-core/Class-ISA dev-lang/perl[-build]
+0
+mirror://cpan/authors/id/D/DA/DAGOLDEN/Class-InsideOut-1.10.tar.gz
+
+http://search.cpan.org/dist/Class-InsideOut/
+|| ( Artistic GPL-1 GPL-2 GPL-3 )
+A safe, simple inside-out object construction kit
+~amd64 ~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

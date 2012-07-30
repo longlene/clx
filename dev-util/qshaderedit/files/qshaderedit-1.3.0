@@ -1,0 +1,59 @@
+--- /var/lib/layman/sunrise/dev-util/qshaderedit/qshaderedit-0.1.3.ebuild       2011-08-15 18:59:49.000000000 +0400
++++ /var/lib/layman/local/dev-util/qshaderedit/qshaderedit-0.1.3.ebuild 2011-09-22 15:13:20.000000000 +0400
+@@ -1,21 +1,44 @@
+-# Copyright 1999-2010 Gentoo Foundation
++# Copyright 1999-2011 Gentoo Foundation
+ # Distributed under the terms of the GNU General Public License v2
+ # $Header: $
+ 
+-inherit cmake-utils
++EAPI=4
+ 
+-DESCRIPTION="A simple multiplatform shader editor inspired by Apple's OpenGL Shader Builder"
+-HOMEPAGE="http://code.google.com/p/qshaderedit/"
+-SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
++inherit eutils cmake-utils
+ 
++DESCRIPTION="QShaderEdit allows you to edit shaders and tweak shader parameters while previewing the results in real-time"
++HOMEPAGE="http://code.google.com/p/qshaderedit"
++SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
+ LICENSE="GPL-2"
+ SLOT="0"
+-KEYWORDS="~x86"
+-IUSE=""
++KEYWORDS="~amd64 ~x86"
++IUSE="cg-toolkit debug examples"
++DEPEND=">=dev-util/cmake-2.4.0
++    >=x11-libs/qt-core-4.2.0
++    >=x11-libs/qt-gui-4.2.0
++    >=x11-libs/qt-opengl-4.2.0
++    >=media-libs/glew-1.3.0
++    cg-toolkit? ( >=media-gfx/nvidia-cg-toolkit-1.4.0 )"
++RDEPEND="${DEPEND}"
++S="${WORKDIR}/${PN}"
++
++src_configure() {
++    if use debug ; then
++       econf --debug
++    else
++       econf --release
++    fi
++}
++
++src_install() {
++    dodoc AUTHORS ChangeLog README
++    make_desktop_entry ${EPREFIX}/usr/bin/${PN} QShaderEdit application-x-executable "Qt;KDE;Graphics"
+ 
+-DEPEND="x11-libs/qt-gui
+-       x11-libs/qt-opengl
+-        media-libs/glew"
+-RDEPEND=${DEPEND}
++    emake DESTDIR=${D} install
+ 
+-S=${WORKDIR}/${PN}
++    if use examples ; then
++       docinto examples
++       dodoc -r ${S}/meshes ${S}/shaders ${S}/textures
++       elog "Examples has been installed in /usr/share/doc/${P} directory"
++    fi
++}

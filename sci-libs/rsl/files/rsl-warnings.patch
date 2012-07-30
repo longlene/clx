@@ -1,0 +1,205 @@
+diff -ru rsl-v1.40/africa.c warnings/africa.c
+--- rsl-v1.40/africa.c	1999-12-01 03:48:29.000000000 +0000
++++ warnings/africa.c	2008-12-27 11:53:44.000000000 +0000
+@@ -22,6 +22,7 @@
+ */
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include "africa.h"
+ 
+ int africa_read_buffer(FILE *fp, Africa_buffer *buffer)
+diff -ru rsl-v1.40/dorade_to_radar.c warnings/dorade_to_radar.c
+--- rsl-v1.40/dorade_to_radar.c	1999-12-01 03:48:29.000000000 +0000
++++ warnings/dorade_to_radar.c	2008-12-27 11:53:44.000000000 +0000
+@@ -24,7 +24,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+-#include <strings.h>
++#include <string.h>
+ #define USE_RSL_VARS
+ #include "rsl.h"
+ #include "dorade.h"
+diff -ru rsl-v1.40/examples/any_to_gif.c warnings/examples/any_to_gif.c
+--- rsl-v1.40/examples/any_to_gif.c	1999-01-26 16:20:25.000000000 +0000
++++ warnings/examples/any_to_gif.c	2008-12-27 11:53:44.000000000 +0000
+@@ -73,7 +73,7 @@
+ }
+ 
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+   Radar *radar;
+   Sweep *sweep;
+diff -ru rsl-v1.40/examples/any_to_ppm.c warnings/examples/any_to_ppm.c
+--- rsl-v1.40/examples/any_to_ppm.c	1998-09-16 18:35:56.000000000 +0000
++++ warnings/examples/any_to_ppm.c	2008-12-27 11:53:44.000000000 +0000
+@@ -9,11 +9,12 @@
+  * the RSL.
+  *
+  */
++#include <stdlib.h>
+ 
+ #define USE_RSL_VARS
+ #include "rsl.h"
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+   Radar *radar;
+   Sweep *sweep;
+diff -ru rsl-v1.40/examples/cappi_image.c warnings/examples/cappi_image.c
+--- rsl-v1.40/examples/cappi_image.c	1998-09-16 18:35:56.000000000 +0000
++++ warnings/examples/cappi_image.c	2008-12-27 11:53:44.000000000 +0000
+@@ -7,6 +7,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include "rsl.h"
+ 
+diff -ru rsl-v1.40/examples/dorade_main.c warnings/examples/dorade_main.c
+--- rsl-v1.40/examples/dorade_main.c	1999-08-12 20:44:30.000000000 +0000
++++ warnings/examples/dorade_main.c	2008-12-27 11:53:44.000000000 +0000
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "rsl.h"
+ 
+ int main(int argc, char **argv)
+diff -ru rsl-v1.40/examples/killer_sweep.c warnings/examples/killer_sweep.c
+--- rsl-v1.40/examples/killer_sweep.c	1998-09-16 18:35:56.000000000 +0000
++++ warnings/examples/killer_sweep.c	2008-12-27 11:53:44.000000000 +0000
+@@ -146,7 +146,7 @@
+   }
+ }
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+   Radar *radar;
+   Sweep *sweep;
+diff -ru rsl-v1.40/examples/kwaj_subtract_one_day.c warnings/examples/kwaj_subtract_one_day.c
+--- rsl-v1.40/examples/kwaj_subtract_one_day.c	1999-08-13 14:26:40.000000000 +0000
++++ warnings/examples/kwaj_subtract_one_day.c	2008-12-27 11:53:44.000000000 +0000
+@@ -1,3 +1,4 @@
++#include <stdlib.h>
+ #include "rsl.h"
+ 
+ /**********************************************************************/
+diff -ru rsl-v1.40/examples/lassen_to_gif.c warnings/examples/lassen_to_gif.c
+--- rsl-v1.40/examples/lassen_to_gif.c	1998-09-16 18:35:56.000000000 +0000
++++ warnings/examples/lassen_to_gif.c	2008-12-27 11:53:44.000000000 +0000
+@@ -4,9 +4,10 @@
+  * This program can read the file from stdin.
+  */
+ 
++#include <stdlib.h>
+ #include "rsl.h"
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+   Radar *radar;
+ 
+diff -ru rsl-v1.40/examples/print_hash_table.c warnings/examples/print_hash_table.c
+--- rsl-v1.40/examples/print_hash_table.c	1998-09-16 18:35:56.000000000 +0000
++++ warnings/examples/print_hash_table.c	2008-12-27 11:53:44.000000000 +0000
+@@ -9,6 +9,7 @@
+  *
+  */
+ 
++#include <stdlib.h>
+ #include "rsl.h"
+ 
+ void print_link_list(Azimuth_hash *list)
+@@ -87,7 +88,7 @@
+ }
+ 
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+   Radar *radar;
+   Sweep *sweep;
+diff -ru rsl-v1.40/examples/sector.c warnings/examples/sector.c
+--- rsl-v1.40/examples/sector.c	1998-09-16 18:35:57.000000000 +0000
++++ warnings/examples/sector.c	2008-12-27 11:53:44.000000000 +0000
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "rsl.h"
+ 
+ /*
+@@ -84,7 +85,7 @@
+ }
+ 
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+   Radar *radar;
+   Sweep *sector;
+diff -ru rsl-v1.40/examples/wsr88d_to_gif.c warnings/examples/wsr88d_to_gif.c
+--- rsl-v1.40/examples/wsr88d_to_gif.c	1998-09-16 18:35:57.000000000 +0000
++++ warnings/examples/wsr88d_to_gif.c	2008-12-27 11:53:44.000000000 +0000
+@@ -14,9 +14,10 @@
+  * wsr88d_to_gif file [tape_header_file]
+  */
+ 
++#include <stdlib.h>
+ #include "rsl.h"
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+   Radar *radar;
+ 
+diff -ru rsl-v1.40/lassen_to_radar.c warnings/lassen_to_radar.c
+--- rsl-v1.40/lassen_to_radar.c	2008-07-24 13:40:50.000000000 +0000
++++ warnings/lassen_to_radar.c	2008-12-27 11:53:44.000000000 +0000
+@@ -31,6 +31,7 @@
+ 
+ */
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <math.h>
+diff -ru rsl-v1.40/rainbow.c warnings/rainbow.c
+--- rsl-v1.40/rainbow.c	2004-02-10 17:10:28.000000000 +0000
++++ warnings/rainbow.c	2008-12-27 11:53:44.000000000 +0000
+@@ -22,6 +22,7 @@
+ */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include "rsl.h"
+ #include "rainbow.h"
+diff -ru rsl-v1.40/rainbow_to_radar.c warnings/rainbow_to_radar.c
+--- rsl-v1.40/rainbow_to_radar.c	2004-02-11 16:54:37.000000000 +0000
++++ warnings/rainbow_to_radar.c	2008-12-27 11:53:44.000000000 +0000
+@@ -22,6 +22,7 @@
+ */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include "rsl.h"
+ #include "rainbow.h"
+diff -ru rsl-v1.40/wsr88d_m31.c warnings/wsr88d_m31.c
+--- rsl-v1.40/wsr88d_m31.c	2008-10-08 23:43:03.000000000 +0000
++++ warnings/wsr88d_m31.c	2008-12-27 11:53:44.000000000 +0000
+@@ -25,6 +25,8 @@
+  * This file contains routines for processing Message Type 31, the digital
+  * radar message type introduced in WSR-88D Level II Build 10.
+  */
++#include <stdlib.h>
++#include <string.h>
+ 
+ #include "rsl.h"
+ #include "wsr88d.h"

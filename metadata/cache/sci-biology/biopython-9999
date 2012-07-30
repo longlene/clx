@@ -1,0 +1,22 @@
+dev-python/numpy >=dev-python/reportlab-2.0 mysql? ( dev-python/mysql-python ) postgres? ( dev-python/psycopg ) sys-devel/flex >=app-admin/eselect-python-20091230 dev-lang/python >=dev-vcs/git-1.6
+dev-python/numpy >=dev-python/reportlab-2.0 mysql? ( dev-python/mysql-python ) postgres? ( dev-python/psycopg ) >=app-admin/eselect-python-20091230 dev-lang/python
+0
+
+
+http://www.biopython.org http://pypi.python.org/pypi/biopython
+as-is
+Biopython - Python modules for computational molecular biology
+alpha amd64 ppc sparc x86
+base distutils eutils git multilib portability python toolchain-funcs user
+mysql postgres
+
+
+
+2
+
+compile configure install postinst postrm prepare test unpack
+
+
+
+
+

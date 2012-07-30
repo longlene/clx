@@ -1,0 +1,21 @@
+--- distrib-4.22.orig/local/lib/distrib/local.defs	2000-07-30 17:27:01.000000000 -0500
++++ distrib-4.22/local/lib/distrib/local.defs	2004-10-11 09:53:02.087170297 -0500
+@@ -1,12 +1,14 @@
+ # $Id: local.defs,v 4.2 1997/07/14 21:56:18 ksb Exp $
+-#
++
++. /etc/profile			# takes care of everything below on Gentoo
++
+ # We set umask because not all sites set one on inetd (you should).
+-umask 022
++#umask 022
+ #
+ # In PATH we might have to include "/usr/ccs/bin" or "/opt/gnu/bin" to
+ # find a C compiler.
+-PATH=/usr/local/bin:/usr/local/etc:$PATH:/opt/fedex/support/bin:/opt/fedex/support/etc
+-export PATH
++#PATH=/usr/local/bin:/usr/local/etc:$PATH:/opt/fedex/support/bin:/opt/fedex/support/etc
++# export PATH
+ #
+ # We might have to set SHELL to /bin/sh or /sbin/sh or some such to
+ # get make to work if root hass a shell of /bin/csh or some other broken

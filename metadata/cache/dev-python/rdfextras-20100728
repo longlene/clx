@@ -1,0 +1,22 @@
+app-arch/unzip >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+dev-python/rdflib dev-python/pyparsing >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+0
+http://rdfextras.googlecode.com/files/rdfextras-hgsnapshot-20100728.zip
+test
+http://code.google.com/p/rdfextras/
+BSD
+A collection of extra utilities based on RDFLib, including support for SPARQL
+~amd64
+distutils multilib python toolchain-funcs
+
+
+
+
+3
+
+compile install postinst postrm prepare
+
+
+
+
+

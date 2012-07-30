@@ -1,0 +1,22 @@
+>=dev-java/java-config-2.1.9-r1
+>=dev-java/jaxb-tools-2.1.10 >=dev-java/java-config-2.1.9-r1
+2
+https://jaxb.dev.java.net/2.1.10/JAXB2_20090206.jar https://jaxb.dev.java.net/2.1.10/jaxb-ri-2_1_10.src.zip
+
+http://jaxb.dev.java.net/
+CDDL
+Placeholder package, dev-java/jaxb now includes tools
+~amd64 ~x86 ~ppc ~x86-fbsd
+eutils java-pkg-2 java-utils-2 multilib portability toolchain-funcs user versionator
+elibc_FreeBSD
+
+
+
+
+
+compile install preinst setup
+
+
+
+
+

@@ -1,0 +1,10 @@
+# /etc/conf.d/gnunet: config file for /etc/init.d/gnunet
+
+# GNUnet user
+GNUNET_USER="gnunet"
+
+# GNUnet group
+GNUNET_GROUP="gnunet"
+
+# GNUnet config file
+GNUNET_CONF="/etc/gnunet.conf"

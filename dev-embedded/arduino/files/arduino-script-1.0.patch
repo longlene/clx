@@ -1,0 +1,20 @@
+diff --git a/build/linux/dist/arduino b/build/linux/dist/arduino
+index d371e76..b2fe01a 100644
+--- a/build/linux/dist/arduino
++++ b/build/linux/dist/arduino
+@@ -10,11 +10,13 @@ for LIB in \
+     lib/*.jar \
+     ;
+ do
+-    CLASSPATH="${CLASSPATH}:${LIB}"
++    CLASSPATH="${CLASSPATH+$CLASSPATH:}${APPDIR}/${LIB}"
+ done
++    CLASSPATH="${CLASSPATH+$CLASSPATH:}$(java-config -dp antlr)"
++    CLASSPATH="${CLASSPATH+$CLASSPATH:}$(java-config -dp rxtx-2)"
+ export CLASSPATH
+ 
+-LD_LIBRARY_PATH=`pwd`/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
++LD_LIBRARY_PATH="$(java-config -di rxtx-2)${LD_LIBRARY_PATH+:$LD_LIBRATY_PATH}"
+ export LD_LIBRARY_PATH
+ 
+ export PATH="${APPDIR}/java/bin:${PATH}"

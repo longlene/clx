@@ -1,0 +1,22 @@
+sys-devel/flex dev-libs/libedit >=sys-devel/bison-2.3 >=dev-libs/openssl-0.9 ldap? ( >=net-nds/openldap-2.0 ) qt4? ( >=x11-libs/qt-core-4.2 >=x11-libs/qt-gui-4.2 ) >=sys-kernel/linux-headers-2.6.19 >=dev-util/cmake-2.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+sys-devel/flex dev-libs/libedit >=sys-devel/bison-2.3 >=dev-libs/openssl-0.9 ldap? ( >=net-nds/openldap-2.0 ) qt4? ( >=x11-libs/qt-core-4.2 >=x11-libs/qt-gui-4.2 )
+0
+http://www.shrew.net/download/ike/ike-2.2.0-alpha-9.tbz2
+
+http://www.shrew.net/
+shrew
+Internet Key exchange daemon and IPsec VPN client
+~amd64
+base cmake-utils eutils flag-o-matic linux-info multilib portability toolchain-funcs user versionator
+qt4 +nat ldap
+
+
+
+2
+
+compile configure install preinst prepare setup test unpack
+
+
+
+
+

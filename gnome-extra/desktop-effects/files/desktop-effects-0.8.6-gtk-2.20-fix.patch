@@ -1,0 +1,21 @@
+--- desktop-effects.c.orig	2010-04-07 21:46:46.000000000 +0000
++++ desktop-effects.c	2010-04-07 21:48:05.000000000 +0000
+@@ -145,7 +145,7 @@ show_error (const GError *err)
+ 	NULL,
+ 	GTK_DIALOG_DESTROY_WITH_PARENT,
+ 	GTK_MESSAGE_WARNING,
+-	GTK_BUTTONS_OK, err->message);
++	GTK_BUTTONS_OK, "%s", err->message);
+     
+     gtk_window_set_title (GTK_WINDOW (dialog), "");
+     
+@@ -617,7 +617,7 @@ start_wm_timeout (gpointer data)
+             (GtkWindow *)info->app->dialog,
+             GTK_DIALOG_DESTROY_WITH_PARENT,
+             message_type,
+-            GTK_BUTTONS_OK, message);
++            GTK_BUTTONS_OK, "%s", message);
+ 
+         gtk_window_set_title (GTK_WINDOW (dialog), "");
+         dialog_timeout_id = g_timeout_add (DIALOG_TIMEOUT_MILLISECONDS, time_out_dialog, dialog);
+

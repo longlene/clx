@@ -1,0 +1,37 @@
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: 
+
+inherit eutils
+
+IUSE=""
+
+DESCRIPTION="hardware detection tool to be used with Gnome Hardware Browser - GHB"
+HOMEPAGE="http://www.xline.fr/index2.php?lang=eng"
+SRC_URI="ftp://194.143.150.149/${P}.tar.bz2"
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~x86"
+
+RDEPEND=">=sys-libs/glibc-2.3"
+
+DEPEND="${RDEPEND}"
+
+S=${WORKDIR}/${PN}
+
+src_compile() {
+        cd "${S}"
+        econf || die "econf failed"
+        emake || die "emake failed"
+}
+
+src_install() {
+        "${S}"
+        einstall || die "einstall failed"
+}
+
+
+
+
+

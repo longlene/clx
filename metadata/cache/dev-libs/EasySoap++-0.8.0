@@ -1,0 +1,22 @@
+dev-libs/expat sys-devel/libtool
+dev-libs/expat
+0
+mirror://sourceforge/easysoap/EasySoap++-0.8.0.tar.gz
+
+http://easysoap.sourceforge.net/
+LGPL-2.1
+a C++ library for SOAP, the Simple Object Access Protocol
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install
+
+
+
+
+

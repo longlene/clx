@@ -1,0 +1,18 @@
+*** genAM.py	Mon Aug 17 15:58:45 2009
+--- genAM.py	Mon Aug 17 15:59:44 2009
+***************
+*** 11,23 ****
+  # only add these files if tesseract is enabled
+  tess = """
+      ocr-tesseract/tesseract.cc
+-     ocr-autoclean/ocr-orientation.cc
+-     ocr-autoclean/ocr-thresholding.cc
+  """.split()
+  
+  tessmains = """
+-     ocr-autoclean/main-ocr-orientation.cc
+-     ocr-autoclean/main-ocr-thresholding.cc
+  """.split()
+  
+  # extra files which should not go to libocropus
+--- 11,19 ----

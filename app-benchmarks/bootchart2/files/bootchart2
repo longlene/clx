@@ -1,0 +1,37 @@
+#!/sbin/runscript
+
+depend()
+{
+	# Mostly to get a somewhat sane env and not break dependecy chains
+	after localmount
+}
+
+start()
+{
+	# Only do anything if bootchart was started in ramdisk
+	if /bin/grep -q "rdinit=/sbin/bootchartd" /proc/cmdline
+	then
+		ebegin "Scheduling termination of Bootchart"
+		if /bin/pidof bootchart-collector > /dev/null 2>&1
+		then
+			# We want the script to keep running in background
+			# while the init script ends to not block baselayout
+			(
+			/sbin/bootchartd wait
+			/sbin/bootchartd stop
+			) &
+			eend 0
+		else
+			eerror "No bootchart process found, no bootchart in ramdisk?"
+			eend 1
+		fi
+	else
+		ewarn "No bootchart process found!"
+		eindent
+		ewarn "This script does not start bootchart, but only schedules its termination."
+		ewarn "Bootchart should be started from the kernel command line out of the ramdisk."
+		ewarn "Please check the README on how to do that."
+		eoutdent
+		eend 0
+	fi
+}

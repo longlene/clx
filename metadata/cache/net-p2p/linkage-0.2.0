@@ -1,0 +1,22 @@
+~net-libs/rb_libtorrent-0.13 gnome-base/libgtop >=dev-cpp/gtkmm-2.10 >=dev-cpp/gconfmm-2.6 >=dev-cpp/libglademm-2.6 >=x11-libs/libnotify-0.4.4 dev-libs/dbus-c++ gnome? ( >=dev-cpp/libgnomemm-2.16 >=dev-cpp/gnome-vfsmm-2.16 >=dev-cpp/libgnomeuimm-2.16 ) xfce? ( >=xfce-extra/exo-0.3 ) dev-util/pkgconfig sys-devel/gettext >=sys-apps/sed-4
+~net-libs/rb_libtorrent-0.13 gnome-base/libgtop >=dev-cpp/gtkmm-2.10 >=dev-cpp/gconfmm-2.6 >=dev-cpp/libglademm-2.6 >=x11-libs/libnotify-0.4.4 dev-libs/dbus-c++ gnome? ( >=dev-cpp/libgnomemm-2.16 >=dev-cpp/gnome-vfsmm-2.16 >=dev-cpp/libgnomeuimm-2.16 ) xfce? ( >=xfce-extra/exo-0.3 )
+0
+http://linkage.googlecode.com/files/linkage-0.2.0.tar.gz
+
+http://code.google.com/p/linkage
+GPL-2
+BitTorrent client written in C++ using gtkmm and libtorrent.
+~amd64 ~x86
+eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability toolchain-funcs user versionator
+gnome xfce
+
+
+
+
+
+compile install postinst postrm preinst setup unpack
+
+
+
+
+

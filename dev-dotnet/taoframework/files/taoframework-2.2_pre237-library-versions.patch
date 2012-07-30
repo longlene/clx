@@ -1,0 +1,44 @@
+Index: src/Tao.FFmpeg/Tao.FFmpeg.dll.config
+===================================================================
+--- src/Tao.FFmpeg/Tao.FFmpeg.dll.config	(revision 237)
++++ src/Tao.FFmpeg/Tao.FFmpeg.dll.config	(working copy)
+@@ -1,7 +1,7 @@
+ <configuration>
+     <dllmap dll="avcodec-51.dll" os="windows" target="avcodec-51.dll" />
+     <dllmap dll="avcodec-51.dll" os="osx" target="libavcodec.so.51" />
+-    <dllmap dll="avcodec-51.dll" os="!windows,osx" target="libavcodec.so.51" />
++    <dllmap dll="avcodec-51.dll" os="!windows,osx" target="libavcodec.so.52" />
+ 
+     <dllmap dll="avformat-52.dll" os="windows" target="avformat-52.dll" />
+     <dllmap dll="avformat-52.dll" os="osx" target="libavformat.so.52" />
+@@ -9,7 +9,7 @@
+ 
+     <dllmap dll="avutil-49.dll" os="windows" target="avutil-49.dll" />
+     <dllmap dll="avutil-49.dll" os="osx" target="libavutil.so.49" />
+-    <dllmap dll="avutil-49.dll" os="!windows,osx" target="libavutil.so.49" />
++    <dllmap dll="avutil-49.dll" os="!windows,osx" target="libavutil.so.50" />
+ 
+     <dllmap dll="swscale-0.dll" os="windows" target="swscale-0.dll" />
+     <dllmap dll="swscale-0.dll" os="osx" target="libswscale.so.0" />
+Index: src/Tao.Ode/Tao.Ode.dll.config
+===================================================================
+--- src/Tao.Ode/Tao.Ode.dll.config	(revision 237)
++++ src/Tao.Ode/Tao.Ode.dll.config	(working copy)
+@@ -1,5 +1,5 @@
+ <configuration>
+     <dllmap dll="ode.dll" os="windows" target="ode.dll" />
+     <dllmap dll="ode.dll" os="osx" target="libode.so.0debian1" />
+-    <dllmap dll="ode.dll" os="!windows,osx" target="libode.so.0debian1" />
++    <dllmap dll="ode.dll" os="!windows,osx" target="libode.so.1" />
+ </configuration>
+Index: src/Tao.Lua/Tao.Lua.dll.config
+===================================================================
+--- src/Tao.Lua/Tao.Lua.dll.config	(revision 237)
++++ src/Tao.Lua/Tao.Lua.dll.config	(working copy)
+@@ -1,5 +1,5 @@
+ <configuration>
+     <dllmap dll="lua5.1.dll" os="windows" target="lua5.1.dll" />
+     <dllmap dll="lua5.1.dll" os="osx" target="liblua5.1.so.0" />
+-    <dllmap dll="lua5.1.dll" os="!windows,osx" target="liblua5.1.so.0" />
++    <dllmap dll="lua5.1.dll" os="!windows,osx" target="liblua.so.5" />
+ </configuration>

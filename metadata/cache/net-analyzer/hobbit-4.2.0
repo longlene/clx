@@ -1,0 +1,22 @@
+sys-devel/gcc sys-devel/make net-www/apache dev-libs/libpcre net-analyzer/rrdtool media-libs/libpng ssl? ( dev-libs/openssl ) ldap? ( net-nds/openldap ) fping? ( net-analyzer/fping ) || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+
+0
+mirror://sourceforge/hobbitmon/hobbit-4.2.0.tar.gz
+
+http://hobbitmon.sourceforge.net/
+GPL-2
+Tool for monitoring servers, applications and networks.
+~x86
+autotools eutils flag-o-matic libtool multilib portability toolchain-funcs user
+ssl ldap fping
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

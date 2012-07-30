@@ -1,0 +1,22 @@
+dev-embedded/avrdude sys-devel/crossdev java? ( virtual/jre dev-embedded/uisp dev-java/jikes >dev-java/rxtx-2.1 dev-java/antlr )
+dev-embedded/avrdude sys-devel/crossdev
+0
+http://arduino.googlecode.com/files/arduino-1.0-src.tar.gz
+strip binchecks
+http://arduino.cc/
+GPL-2 LGPL-2 CCPL-Attribution-ShareAlike-3.0
+Arduino is an open-source AVR electronics prototyping platform
+~x86 ~amd64
+eutils multilib portability toolchain-funcs user
+java
+
+
+
+4
+
+compile install postinst prepare setup
+
+
+
+
+

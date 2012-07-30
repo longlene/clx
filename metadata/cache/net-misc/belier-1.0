@@ -1,0 +1,22 @@
+>=app-admin/eselect-python-20091230 dev-lang/python
+dev-lang/python dev-tcltk/expect >=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://www.ohmytux.com/belier/belier-1.0.tar.gz
+
+http://www.ohmytux.com/belier/
+GPL-3
+Ssh connection generation tool
+~amd64 ~x86
+distutils multilib python toolchain-funcs
+
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

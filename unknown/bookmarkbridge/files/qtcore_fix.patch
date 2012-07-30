@@ -1,0 +1,214 @@
+--- bookmarkbridge/bkexcept.h	2006-03-29 05:42:37.000000000 +0200
++++ bookmarkbridge.patched/bkexcept.h	2006-10-30 01:44:39.000000000 +0100
+@@ -28,7 +28,7 @@
+ #ifndef BKEXCEPT_H
+ #define BKEXCEPT_H
+ 
+-#include <QString>
++#include <QtCore/QString>
+ 
+ #define BKEXCEPT(em) throw(BkException(em, __FILE__, __LINE__))
+ 
+--- bookmarkbridge/bknode.h	2005-09-21 02:21:48.000000000 +0200
++++ bookmarkbridge.patched/bknode.h	2006-10-30 01:21:13.000000000 +0100
+@@ -28,7 +28,6 @@
+ #ifndef BKNODE_H
+ #define BKNODE_H
+ 
+-#include <QString>
+ #include <assert.h>
+ 
+ #include <vector>
+--- bookmarkbridge/bridgecfg.cpp	2005-12-23 03:10:16.000000000 +0100
++++ bookmarkbridge.patched/bridgecfg.cpp	2006-10-30 03:18:52.000000000 +0100
+@@ -32,7 +32,7 @@
+ #include "xbelwrite.h"
+ #include "xbelread.h"
+ 
+-#include <QDir>
++#include <QtCore/QDir>
+ #include <QMessageBox>
+ #include <QApplication>
+ 
+--- bookmarkbridge/bridgecfg.h	2005-09-21 02:21:48.000000000 +0200
++++ bookmarkbridge.patched/bridgecfg.h	2006-10-30 01:46:44.000000000 +0100
+@@ -32,7 +32,7 @@
+ #include "bkexcept.h"
+ 
+ #include <vector>
+-#include <qstring.h>
++#include <QtCore/QString>
+ 
+ /***************************************************************************
+  *                                                                         *
+--- bookmarkbridge/browserbk.cpp	2006-03-29 05:46:09.000000000 +0200
++++ bookmarkbridge.patched/browserbk.cpp	2006-10-30 03:06:56.000000000 +0100
+@@ -30,7 +30,7 @@
+ 
+ #include <algorithm>
+ 
+-#include <QDir>
++#include <QtCore/QDir>
+ 
+ using namespace std;
+ 
+--- bookmarkbridge/browserbk.h	2005-09-21 02:21:48.000000000 +0200
++++ bookmarkbridge.patched/browserbk.h	2006-10-30 01:01:18.000000000 +0100
+@@ -41,6 +41,7 @@
+ #include "bridgecfg.h"
+ 
+ #include <QWidget>
++#include <QtCore/QString>
+ 
+ class BrowserBk
+ {
+--- bookmarkbridge/dlgexcept.cpp	2006-03-29 05:44:14.000000000 +0200
++++ bookmarkbridge.patched/dlgexcept.cpp	2006-11-01 18:15:33.000000000 +0100
+@@ -28,7 +28,7 @@
+ #include "dlgexcept.h"
+ 
+ #include <QLabel>
+-#include <QString>
++#include <QtCore/QString>
+ #include <QPixmap>
+ #include <QMessageBox>
+ 
+--- bookmarkbridge/dlgmain.cpp	2005-11-27 16:56:49.000000000 +0100
++++ bookmarkbridge.patched/dlgmain.cpp	2006-11-01 18:21:27.000000000 +0100
+@@ -38,7 +38,7 @@
+ #include "bkutil.h"
+ 
+ #include <QMessageBox>
+-#include <QFile>
++#include <QtCore/QFile>
+ 
+ #include <algorithm>
+ #include <vector>
+--- bookmarkbridge/iexplore.cpp	2006-03-29 05:47:36.000000000 +0200
++++ bookmarkbridge.patched/iexplore.cpp	2006-10-30 03:03:43.000000000 +0100
+@@ -29,7 +29,7 @@
+ #include "browserlist.h"
+ 
+ #include <QFileDialog>
+-#include <QTextStream>
++#include <QtCore/QTextStream>
+ 
+ #ifdef Q_WS_WIN
+ #include <shlobj.h>
+--- bookmarkbridge/iexplore.h	2005-09-21 02:21:48.000000000 +0200
++++ bookmarkbridge.patched/iexplore.h	2006-10-30 03:05:18.000000000 +0100
+@@ -37,7 +37,7 @@
+ 
+ #include "browserbk.h"
+ 
+-#include <QDir>
++#include <QtCore/QDir>
+ 
+ class IExplore : public BrowserBk
+ {
+--- bookmarkbridge/konqueror.cpp	2005-10-22 14:07:33.000000000 +0200
++++ bookmarkbridge.patched/konqueror.cpp	2006-11-01 18:19:15.000000000 +0100
+@@ -29,8 +29,8 @@
+ #include <stdlib.h>
+ #include <stack>
+ 
+-#include <QFile>
+-#include <QDir>
++#include <QtCore/QFile>
++#include <QtCore/QDir>
+ #include <QFileDialog>
+ 
+ #include "konqueror.h"
+--- bookmarkbridge/konqueror.h	2005-09-21 02:21:48.000000000 +0200
++++ bookmarkbridge.patched/konqueror.h	2006-10-30 03:15:38.000000000 +0100
+@@ -38,7 +38,7 @@
+ #include "bknode.h"
+ #include "browserbk.h"
+ 
+-#include <QTextStream>
++#include <QtCore/QTextStream>
+ 
+ class Konqueror : public BrowserBk
+ {
+--- bookmarkbridge/mozilla.cpp	2005-11-05 16:00:45.000000000 +0100
++++ bookmarkbridge.patched/mozilla.cpp	2006-10-30 02:59:07.000000000 +0100
+@@ -34,9 +34,9 @@
+ #include "browserlist.h"
+ #include "xmlparser.h"
+ 
+-#include <QFile>
++#include <QtCore/QFile>
+ #include <QFileDialog>
+-#include <QDir>
++#include <QtCore/QDir>
+ 
+ #ifdef _WIN32
+ #include <shlobj.h>
+--- bookmarkbridge/mozilla.h	2005-09-21 02:21:48.000000000 +0200
++++ bookmarkbridge.patched/mozilla.h	2006-10-30 03:01:37.000000000 +0100
+@@ -38,7 +38,7 @@
+ #include "bknode.h"
+ #include "browserbk.h"
+ 
+-#include <QTextStream>
++#include <QtCore/QTextStream>
+ 
+ class Mozilla : public BrowserBk
+ {
+--- bookmarkbridge/opera.cpp	2005-10-22 14:07:33.000000000 +0200
++++ bookmarkbridge.patched/opera.cpp	2006-10-30 02:56:08.000000000 +0100
+@@ -27,7 +27,7 @@
+ 
+ #include "opera.h"
+ 
+-#include <QFile>
++#include <QtCore/QFile>
+ #include <QFileDialog>
+ 
+ #ifdef Q_WS_WIN
+--- bookmarkbridge/opera.h	2005-09-21 02:21:48.000000000 +0200
++++ bookmarkbridge.patched/opera.h	2006-10-30 01:18:18.000000000 +0100
+@@ -30,7 +30,6 @@
+ 
+ #include "browserbk.h"
+ 
+-#include <QDir>
+-#include <QTextStream>
++#include <QtCore/QTextStream>
+ 
+ class Opera : public BrowserBk
+--- bookmarkbridge/xbelwrite.cpp	2005-09-21 02:21:48.000000000 +0200
++++ bookmarkbridge.patched/xbelwrite.cpp	2006-10-30 03:11:47.000000000 +0100
+@@ -25,7 +25,7 @@
+  *                                                                         *
+  ***************************************************************************/
+ 
+-#include <QFile>
++#include <QtCore/QFile>
+ 
+ #include "xbelwrite.h"
+ #include "xmlparser.h"
+--- bookmarkbridge/xbelwrite.h	2005-09-21 02:21:48.000000000 +0200
++++ bookmarkbridge.patched/xbelwrite.h	2006-10-30 03:09:46.000000000 +0100
+@@ -38,7 +38,7 @@
+ #include "bridgecfg.h"
+ #include "bkexcept.h"
+ 
+-#include <QTextStream>
++#include <QtCore/QTextStream>
+ #include <time.h>
+ 
+ void	WriteDate(QTextStream &stream, time_t t);
+--- bookmarkbridge/xmlparser.cpp	2005-09-21 02:21:48.000000000 +0200
++++ bookmarkbridge.patched/xmlparser.cpp	2006-10-30 03:13:35.000000000 +0100
+@@ -32,8 +32,8 @@
+ 
+ #include <ctype.h>
+ 
+-#include <QFile>
+-#include <QDir>
++#include <QtCore/QFile>
++#include <QtCore/QDir>
+ 
+ /***************************************************************************
+  *                                                                         *

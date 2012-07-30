@@ -1,0 +1,11 @@
+--- any2dvd-0.36_beta-r2.sh	2008-07-07 21:53:12.000000000 +0200
++++ any2dvd-0.36_beta-r2_gs	2008-07-07 21:54:03.000000000 +0200
+@@ -435,7 +435,7 @@ check_tools () {
+ 
+ fontpath () {
+ 	GS_XML=`convert -list font | grep Path: | grep ghostscript | awk '{print $2}'`
+-	if [ ! -f "$GS_XML" ] || [ ! -f "`cat $GS_XML | grep glyphs | tail -n1 | cut -d= -f2 | sed 's/\"//g'`" ]; then
++	if [ ! -f "$GS_XML" ] || [ ! -f "`cat $GS_XML | grep glyphs | tail -n1 | sed -n 's/^.*glyphs="\([0-9a-zA-Z./]*\)".*$/\1/p'`" ]; then
+ 		errmsg Error: "GNU-Ghostscript fonts were not found"
+ 		echo " Please install GNU-Ghostscript fonts package found here ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/"
+ 		echo -e "  Then re-install Imagemagick with Ghostscript support\n"

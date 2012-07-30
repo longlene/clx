@@ -1,0 +1,23 @@
+# CompCache settings...
+
+# load ramzswap kernel module on start?
+LOAD_ON_START="yes"
+
+# unload ramzswap kernel module on stop?
+UNLOAD_ON_STOP="yes"
+
+# number of device
+NUM_DEVICES="4"
+
+# uncompressed size in Kilobytes of each compressed ram swap disk 
+# (numbered from 0 to $NUM_DEVICES-1)
+# only allocated / used / non-zeroed memory is actually used and will be less than this figure
+# example 32 MB
+ZRAM_SIZE_0="32768"
+ZRAM_SIZE_1="32768"
+ZRAM_SIZE_2="32768"
+ZRAM_SIZE_3="32768"
+
+# options for swapon
+# (if this number is higher than your disk swap drive zram will be used for swap)
+SWAPON_OPTS="-p 666"

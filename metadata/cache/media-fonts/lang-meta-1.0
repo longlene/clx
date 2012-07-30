@@ -1,0 +1,22 @@
+
+media-fonts/dejavu media-fonts/arphicfonts media-fonts/baekmuk-fonts media-fonts/font-misc-meltho media-fonts/free-bangla-font media-fonts/ja-ipafonts media-fonts/khmer media-fonts/kochi-substitute media-fonts/lklug media-fonts/lohit-fonts media-fonts/manchu-font media-fonts/romancyrillicstd media-fonts/saweri media-fonts/sil-nubian media-fonts/sil-nuosu media-fonts/sil-padauk media-fonts/tagdoc media-fonts/thanaunicode media-fonts/tibetan-machine-font media-fonts/vulcanius
+0
+
+
+http://www.gentoo.org
+GPL-3
+Meta ebuild to pull in fonts for many languages
+amd64 x86
+
+
+
+
+
+
+
+-
+
+
+
+
+

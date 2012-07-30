@@ -1,0 +1,22 @@
+--- bsod-0.1/Makefile
++++ bsod-0.1/Makefile
+@@ -1,5 +1,6 @@
+ VERSION=0.1
+ 
++PREFIX=/usr/local
+ DEBUG=-g -pedantic #-pg #-fprofile-arcs
+ LDFLAGS=-lncurses $(DEBUG)
+ CFLAGS+=-O2 -Wall -DVERSION=\"$(VERSION)\" $(DEBUG)
+@@ -12,10 +13,10 @@
+ 	$(CC) -Wall $(OBJS) $(LDFLAGS) -o bsod
+ 
+ install: bsod
+-	cp bsod $(DESTDIR)/usr/local/bin
++	install -D bsod $(DESTDIR)$(PREFIX)/bin/bsod
+ 
+ uninstall: clean
+-	rm -f $(DESTDIR)/usr/local/bin/bsod
++	rm -f $(DESTDIR)$(PREFIX)/bin/bsod
+ 
+ clean:
+ 	rm -f $(OBJS) bsod core gmon.out *.da

@@ -1,0 +1,22 @@
+
+
+0
+mirror://sourceforge/sudosh/sudosh-1.3.0.tar.gz
+
+http://sourceforge.net/projects/sudosh
+OpenSoftware
+Allows the execution of a root shell with logging
+~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install
+
+
+
+
+

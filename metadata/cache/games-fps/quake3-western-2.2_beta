@@ -1,0 +1,22 @@
+
+
+
+http://www.westernquake3.net/~wq3public/downloads/mod/wq3_b22_full.zip
+
+http://www.westernquake3.net/
+Q3AEULA
+Based on the games eclass
+
+base eutils games games-q3mod multilib portability toolchain-funcs
+
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

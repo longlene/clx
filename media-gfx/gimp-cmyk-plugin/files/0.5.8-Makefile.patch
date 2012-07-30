@@ -1,0 +1,10 @@
+--- separate+-0.5.8/Makefile	2010-08-17 05:14:32.000000000 +0200
++++ separate+-0.5.8.new/Makefile	2011-01-14 13:20:54.974000004 +0100
+@@ -93,6 +93,7 @@
+ 	cd po && $(MAKE) install
+ 
+ install-plugins: $(TARGETS)
++	mkdir -p "$(INSTALLDIR)"
+ 	install -d "$(INSTALLDIR)"
+ 	install -c -s $^ "$(INSTALLDIR)"
+ 

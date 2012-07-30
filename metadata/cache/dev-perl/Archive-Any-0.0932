@@ -1,0 +1,22 @@
+virtual/perl-Archive-Tar dev-perl/Archive-Zip dev-perl/Module-Find dev-perl/MIME-Types dev-perl/File-MMagic virtual/perl-File-Spec dev-perl/Test-Warn dev-lang/perl[-build]
+virtual/perl-Archive-Tar dev-perl/Archive-Zip dev-perl/Module-Find dev-perl/MIME-Types dev-perl/File-MMagic virtual/perl-File-Spec dev-perl/Test-Warn dev-lang/perl[-build]
+0
+mirror://cpan/authors/id/C/CM/CMOORE/Archive-Any-0.0932.tar.gz
+
+http://search.cpan.org/dist/Archive-Any/
+|| ( Artistic GPL-1 GPL-2 GPL-3 )
+Single interface to deal with file archives
+~amd64 ~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

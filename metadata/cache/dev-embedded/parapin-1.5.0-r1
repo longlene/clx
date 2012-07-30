@@ -1,0 +1,22 @@
+doc? ( dev-tex/latex2html )
+
+0
+mirror://sourceforge/sourceforge/parapin/parapin-1.5.0.tgz
+
+http://parapin.sourceforge.net/
+LGPL-2.1
+A parallel port pin programming library
+~x86
+eutils multilib portability toolchain-funcs user versionator
+doc
+
+
+
+
+
+compile install unpack
+
+
+
+
+

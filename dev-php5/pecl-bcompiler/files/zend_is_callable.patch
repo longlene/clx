@@ -1,0 +1,11 @@
+--- bcompiler.c	2010-02-07 00:31:52.000000000 +0300
++++ bcompiler.c.mod	2010-10-23 20:14:58.900710492 +0400
+@@ -1492,7 +1492,7 @@
+ 		}
+ 	}
+ #else
+-	if (!zend_is_callable(func, 0, &name TSRMLS_CC)) {
++	if (!zend_is_callable(func, 0, &name)) {
+ 		if (name && *name == 0) {
+ 			func = NULL;
+ 		} else {

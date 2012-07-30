@@ -1,0 +1,22 @@
+sys-fs/sysfsutils =dev-libs/libxml2-2*
+acerhk? ( app-laptop/acerhk )
+0
+http://www.roessner-net.com/wlan-button/wlan-button-2.24.tar.bz2
+
+http://www.roessner-net.com/wlan-button/
+GPL-2
+Hotkey driver for some Acer and Acer-like laptops
+~x86
+
+acerhk debug
+
+
+
+
+
+compile install postinst unpack
+
+
+
+
+

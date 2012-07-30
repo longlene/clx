@@ -1,0 +1,12 @@
+--- aegisub-2.1.8.ebuild.bak	2010-11-10 18:02:54.708959003 +0100
++++ aegisub-2.1.8.ebuild	2010-11-10 17:55:12.678959001 +0100
+@@ -52,7 +52,8 @@
+ }
+ 
+ src_configure() {
+-	econf $(use_with alsa) \
++	econf CXXFLAGS="$CXXFLAGS -D__STDC_CONSTANT_MACROS" \
++		$(use_with alsa) \
+ 		$(use_with oss) \
+ 		$(use_with portaudio) \
+ 		$(use_with pulseaudio) \

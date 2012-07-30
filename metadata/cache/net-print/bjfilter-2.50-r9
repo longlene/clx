@@ -1,0 +1,22 @@
+app-text/ghostscript-gpl >=net-print/cups-1.1.14 !amd64? ( sys-libs/glibc >=dev-libs/popt-1.6 >=media-libs/tiff-3.4 >=media-libs/libpng-1.4.0 ) amd64? ( >=app-emulation/emul-linux-x86-bjdeps-0.1 app-emulation/emul-linux-x86-compat app-emulation/emul-linux-x86-baselibs ) servicetools? ( !amd64? ( >=gnome-base/libglade-0.6 >=dev-libs/libxml-1.8 =x11-libs/gtk+-1.2* ) amd64? ( >=app-emulation/emul-linux-x86-bjdeps-0.1 app-emulation/emul-linux-x86-gtklibs ) ) >=app-arch/rpm2targz-9.0.0.3g
+app-text/ghostscript-gpl >=net-print/cups-1.1.14 !amd64? ( sys-libs/glibc >=dev-libs/popt-1.6 >=media-libs/tiff-3.4 >=media-libs/libpng-1.4.0 ) amd64? ( >=app-emulation/emul-linux-x86-bjdeps-0.1 app-emulation/emul-linux-x86-compat app-emulation/emul-linux-x86-baselibs ) servicetools? ( !amd64? ( >=gnome-base/libglade-0.6 >=dev-libs/libxml-1.8 =x11-libs/gtk+-1.2* ) amd64? ( >=app-emulation/emul-linux-x86-bjdeps-0.1 app-emulation/emul-linux-x86-gtklibs ) )
+0
+ftp://download.canon.jp/pub/driver/bj/linux/bjfilter-common-2.50-3.src.rpm
+nomirror confcache
+ftp://download.canon.jp/pub/driver/bj/linux/
+UNKNOWN
+Canon Bubble Jet Printer Driver for Linux (Pixus/Pixma-Series).
+~x86 ~amd64
+eutils flag-o-matic multilib portability rpm toolchain-funcs user
+amd64 servicetools nocupsdetection ip1000 ip1500 ip3100 ip4100 ip8600
+
+
+
+
+
+compile install postinst setup unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+( net-misc/curl ) python? ( virtual/python ) java? ( virtual/jdk ) swig? ( dev-lang/swig ) || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool >=app-admin/eselect-python-20091230 dev-lang/python
+( net-misc/curl ) python? ( virtual/python ) java? ( virtual/jdk ) swig? ( dev-lang/swig ) >=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://libkml.googlecode.com/files/libkml-0.4.0.tar.gz
+
+http://code.google.com/p/libkml/
+Google
+libkml is a KML library written in C++ with bindings to other languages
+~amd64 ~ppc ~ppc64 ~sparc ~x86
+autotools base distutils eutils libtool multilib perl-module portability python toolchain-funcs user
+curl java python swig
+
+
+
+
+
+compile install postinst postrm preinst prerm setup test unpack
+
+
+
+
+

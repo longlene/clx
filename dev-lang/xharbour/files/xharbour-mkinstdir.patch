@@ -1,0 +1,12 @@
+--- xharbour-1.0.0-beta1/config/linux/install.cf.orig	2003-12-13 20:55:11.000000000 +0300
++++ xharbour-1.0.0-beta1/config/linux/install.cf	2009-03-04 17:48:05.000000000 +0300
+@@ -3,7 +3,8 @@
+ #
+ 
+ INSTALL_RULE =\
+-	@if [ ! -d $(INSTALL_DIR) ]; \
++	@$(MDP) $(INSTALL_DIR); \
++	if [ ! -d $(INSTALL_DIR) ]; \
+ 	then \
+ 	  echo "! Can't install, path not found:" $(INSTALL_DIR); \
+ 	else \

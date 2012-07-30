@@ -1,0 +1,22 @@
+>=dev-perl/gtk2-perl-1.040 media-sound/normalize media-sound/cdparanoia media-sound/lame dev-perl/MP3-Info media-sound/cdcd aac? ( media-libs/faac media-libs/faad2 ) musepack? ( media-sound/musepack-tools ) flac? ( >=media-libs/flac-1.1.1 ) oggvorbis? ( media-sound/vorbis-tools ) cddb? ( dev-perl/CDDB_get )
+>=dev-perl/gtk2-perl-1.040 media-sound/normalize media-sound/cdparanoia media-sound/lame dev-perl/MP3-Info media-sound/cdcd aac? ( media-libs/faac media-libs/faad2 ) musepack? ( media-sound/musepack-tools ) flac? ( >=media-libs/flac-1.1.1 ) oggvorbis? ( media-sound/vorbis-tools ) cddb? ( dev-perl/CDDB_get )
+0
+mirror://sourceforge/gnormalize/gnormalize-0.47.tar.gz
+
+http://gnormalize.sourceforge.net/
+GPL-2
+GTK-2-perl based ripper/encoder/normalize gui
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user
+aac cddb flac musepack oggvorbis
+
+
+
+
+
+install
+
+
+
+
+

@@ -1,0 +1,22 @@
+>=dev-vcs/git-1.6
+
+0
+
+
+http://david.hardeman.nu/software.php
+GPL-2
+Tool to store the metadata of files,directories,links in a file tree
+~x86
+eutils git multilib portability toolchain-funcs user
+
+
+
+
+
+
+install unpack
+
+
+
+
+

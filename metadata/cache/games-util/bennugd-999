@@ -1,0 +1,22 @@
+media-libs/libsdl media-libs/sdl-mixer media-libs/libpng media-libs/smpeg media-libs/libogg dev-vcs/subversion net-misc/rsync
+media-libs/libsdl media-libs/sdl-mixer media-libs/libpng media-libs/smpeg media-libs/libogg
+0
+
+
+http://www.bennugd.org/
+GPL-2
+The game programming language
+amd64 x86
+eutils multilib portability subversion toolchain-funcs user
+debug
+
+
+
+
+
+compile install preinst unpack
+
+
+
+
+

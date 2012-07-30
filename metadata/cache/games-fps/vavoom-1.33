@@ -1,0 +1,22 @@
+media-libs/libpng virtual/jpeg sdl? ( || ( >=media-libs/libsdl-1.2[alsa,X,opengl] >=media-libs/libsdl-1.2[oss,X,opengl] ) music? ( media-libs/sdl-mixer ) !music? ( media-libs/sdl-mixer[timidity] ) ) !sdl? ( allegro? ( || ( >=media-libs/allegro-4.0[alsa,X,opengl] >=media-libs/allegro-4.0[oss,X,opengl] ) ) ) vorbis? ( media-libs/libvorbis ) flac? ( media-libs/flac ) mad? ( media-libs/libmad ) mikmod? ( media-libs/libmikmod ) openal? ( media-libs/openal ) wxwidgets? ( x11-libs/wxGTK:2.8 ) >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+media-libs/libpng virtual/jpeg sdl? ( || ( >=media-libs/libsdl-1.2[alsa,X,opengl] >=media-libs/libsdl-1.2[oss,X,opengl] ) music? ( media-libs/sdl-mixer ) !music? ( media-libs/sdl-mixer[timidity] ) ) !sdl? ( allegro? ( || ( >=media-libs/allegro-4.0[alsa,X,opengl] >=media-libs/allegro-4.0[oss,X,opengl] ) ) ) vorbis? ( media-libs/libvorbis ) flac? ( media-libs/flac ) mad? ( media-libs/libmad ) mikmod? ( media-libs/libmikmod ) openal? ( media-libs/openal ) wxwidgets? ( x11-libs/wxGTK:2.8 ) allegro? ( media-sound/timidity++ )
+0
+mirror://sourceforge/vavoom/vavoom-1.33.tar.bz2
+
+http://www.vavoom-engine.com/
+GPL-2
+Advanced source port for Doom/Heretic/Hexen/Strife
+amd64 ~x86
+base cmake-utils eutils flag-o-matic games multilib portability toolchain-funcs user wxwidgets
+allegro asm debug dedicated flac mad mikmod models music openal +sdl textures tools vorbis wxwidgets
+
+models? ( >=games-fps/vavoom-models-1.4.3 ) music? ( games-fps/vavoom-music ) textures? ( games-fps/vavoom-textures )
+
+2
+
+compile configure install postinst preinst prepare setup test unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+media-libs/glew
+media-libs/glew
+0
+http://www.opencsg.org/OpenCSG-1.2.0.tar.gz
+
+http://www.opencsg.org/
+GPL-2
+The Constructive Solid Geometry rendering library
+~x86 ~amd64
+base eutils multilib portability qt4-r2 toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare unpack
+
+
+
+
+

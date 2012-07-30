@@ -1,0 +1,22 @@
+>=sys-devel/libtool-1.3.5 >=dev-cpp/gtkmm-2.4.0 >=dev-libs/libsigc++-2.0 >=dev-cpp/ETL-0.04.13 >=media-gfx/synfig-0.62.00
+>=sys-devel/libtool-1.3.5 >=dev-cpp/gtkmm-2.4.0 >=dev-libs/libsigc++-2.0 >=dev-cpp/ETL-0.04.13 >=media-gfx/synfig-0.62.00
+0
+mirror://sourceforge/synfig/synfigstudio-0.62.00.tar.gz
+
+http://www.synfig.com/
+GPL-2
+Synfig: Film-Quality Vector Animation (main UI)
+~amd64 ~x86
+
+
+
+
+
+
+
+compile install
+
+
+
+
+

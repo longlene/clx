@@ -1,0 +1,22 @@
+gif? ( media-libs/giflib ) jpeg? ( >=media-libs/jpeg-6b ) png? ( media-libs/libpng ) tiff? ( media-libs/tiff ) postscript? ( virtual/ghostscript media-libs/tiff ) screen? ( app-misc/screen ) sys-libs/readline sys-devel/flex sys-devel/bison || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+gif? ( media-libs/giflib ) jpeg? ( >=media-libs/jpeg-6b ) png? ( media-libs/libpng ) tiff? ( media-libs/tiff ) postscript? ( virtual/ghostscript media-libs/tiff ) screen? ( app-misc/screen ) sys-libs/readline
+0
+http://download.savannah.nongnu.org/releases/fbi-improved/fim-0.1-alpha.tar.gz
+
+http://savannah.nongnu.org/projects/fbi-improved
+GPL-2
+Fbi IMproved is a framebuffer image viewer based on Fbi and inspired from Vim
+~x86
+autotools eutils libtool multilib portability toolchain-funcs user
+debug gif jpeg png tiff postscript screen
+
+
+
+
+
+compile install unpack
+
+
+
+
+

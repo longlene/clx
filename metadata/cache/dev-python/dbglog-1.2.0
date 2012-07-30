@@ -1,0 +1,22 @@
+dev-python/setuptools ( >=dev-libs/libdbglog-1.5.0 ) >=app-admin/eselect-python-20091230 >=dev-lang/python-2.4 dev-lang/python
+dev-python/setuptools ( >=dev-libs/libdbglog-1.5.0 ) >=app-admin/eselect-python-20091230 >=dev-lang/python-2.4 dev-lang/python
+0
+http://switch.dl.sourceforge.net/sourceforge/dbglog/python2.4-dbglog-1.2.0.tar.bz2
+
+http://dbglog.sourceforge.net/
+LGPL-3
+C++ library for debugging purposes and runtime logging to file - python extension
+~x86 ~amd64
+distutils multilib python toolchain-funcs
+
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+>=sys-libs/pam-0.99.8 x11-libs/libX11 >=media-libs/opencv-1.0.0 dev-vcs/subversion net-misc/rsync
+>=sys-libs/pam-0.99.8 x11-libs/libX11 >=media-libs/opencv-1.0.0
+0
+
+
+http://code.google.com/p/pam-face-authentication/
+GPL-2
+Based on the subversion eclass
+~x86 ~amd64
+eutils multilib portability subversion toolchain-funcs user
+
+
+
+
+
+
+compile install preinst unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+>=media-video/mplayer-1.0_rc2[enca?] >=dev-util/gambas-2.6 flac? ( media-sound/audiotag ) global-hotkeys? ( x11-misc/xbindkeys )
+>=media-video/mplayer-1.0_rc2[enca?] >=dev-util/gambas-2.6 flac? ( media-sound/audiotag ) global-hotkeys? ( x11-misc/xbindkeys )
+0
+http://wpage.unina.it/aorefice/xt7player_dist/xt7-player-src-0.9.183.tar.gz
+
+http://xt7player.altervista.org/xt7forum/
+GPL-2
+Yet another gui for mplayer.
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user
+enca flac global-hotkeys
+
+
+
+2
+
+install unpack
+
+
+
+
+

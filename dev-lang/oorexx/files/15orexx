@@ -1,0 +1,4 @@
+LD_LIBRARY_PATH="/usr/lib/ooRexx"
+PATH="/usr/bin"        
+ROOTPATH="/usr/bin"        
+NLSPATH="/usr/bin/%N"

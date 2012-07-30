@@ -1,0 +1,34 @@
+diff -u idea-2253.orig/bin/idea.sh idea-2253/bin/idea.sh
+--- idea-2253.orig/bin/idea.sh	2005-06-23 12:28:06.168002000 +0200
++++ idea-2253/bin/idea.sh	2005-06-23 13:08:14.315907888 +0200
+@@ -46,6 +46,7 @@
+ CLASSPATH=$CLASSPATH:../lib/openapi.jar
+ CLASSPATH=$CLASSPATH:../lib/jdom.jar
+ CLASSPATH=$CLASSPATH:../lib/log4j.jar
++CLASSPATH=$CLASSPATH:$JAVA_HOME/lib/tools.jar
+ 
+ # Append old classpath to current classpath
+ if [ ! -z "$oldcp" ]; then
+@@ -72,4 +73,4 @@
+ 
+ export CLASSPATH
+ cd $IDEA_BIN_HOME
+-exec $IDEA_JRE/java -Didea.plugins.path=$IDEA_PLUGINS_PATH -Didea.system.path=$IDEA_SYSTEM_PATH -Didea.config.path=$IDEA_CONFIG_PATH -Didea.popup.weight=$IDEA_POPUP_WEIGHT $JVM_ARGS $MAIN_CLASS_NAME $args
++exec java -Didea.no.jdk.check=true -Didea.plugins.path=$IDEA_PLUGINS_PATH -Didea.system.path=$IDEA_SYSTEM_PATH -Didea.config.path=$IDEA_CONFIG_PATH -Didea.popup.weight=$IDEA_POPUP_WEIGHT $JVM_ARGS $MAIN_CLASS_NAME $args
+diff -u idea-2253.orig/bin/inspect.sh idea-2253/bin/inspect.sh
+--- idea-2253.orig/bin/inspect.sh	2005-06-23 12:28:06.165002000 +0200
++++ idea-2253/bin/inspect.sh	2005-06-23 14:32:58.696964480 +0200
+@@ -42,6 +42,7 @@
+ CLASSPATH=../lib/openapi.jar:../lib/idea.jar
+ CLASSPATH=$CLASSPATH:../lib/jdom.jar
+ CLASSPATH=$CLASSPATH:../lib/log4j.jar
++CLASSPATH=$CLASSPATH:$JAVA_HOME/lib/tools.jar
+ 
+ # Append old classpath to current classpath
+ if [ ! -z "$oldcp" ]; then
+@@ -56,4 +57,4 @@
+ 
+ export CLASSPATH
+ cd $IDEA_BIN_HOME
+-exec $IDEA_JRE/java -Didea.system.path=~/.IntelliJIdea/system -Didea.config.path=~/.IntelliJIdea/config -Didea.popup.weight=$IDEA_POPUP_WEIGHT $JVM_ARGS $MAIN_CLASS_NAME $args
++exec java -Didea.no.jdk.check=true -Didea.system.path=~/.IntelliJIdea/system -Didea.config.path=~/.IntelliJIdea/config -Didea.popup.weight=$IDEA_POPUP_WEIGHT $JVM_ARGS $MAIN_CLASS_NAME $args

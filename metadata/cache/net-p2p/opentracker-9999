@@ -1,0 +1,22 @@
+dev-libs/dietlibc >=dev-libs/libowfat-0.27 dev-vcs/cvs
+
+0
+
+
+http://erdgeist.org/arts/software/opentracker/
+BEER-WARE
+An open and free bittorrent tracker
+
+cvs eutils multilib portability toolchain-funcs user
+blacklist debug gzip ipv6 live-sync log-network restrict-stats syslog whitelist
+
+
+
+4
+
+compile install postinst unpack
+
+
+
+
+

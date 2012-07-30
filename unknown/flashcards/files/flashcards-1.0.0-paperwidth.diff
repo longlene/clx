@@ -1,0 +1,21 @@
+--- flashcards.dtx.old	2006-08-05 16:24:09.000000000 +0200
++++ flashcards.dtx	2006-08-05 16:27:26.000000000 +0200
+@@ -47,7 +47,7 @@
+ %<avery5371>\ProvidesFile{avery5371.cfg}
+ %<avery5388>\ProvidesFile{avery5388.cfg}
+ %<flashcards>\RequirePackage{ifthen}
+-%<flashcards>\RequirePackage{geometry}
++%<flashcards>\RequirePackage[paper=letterpaper]{geometry}
+ %<flashcards>\LoadClass{article}
+ %
+ %<*driver>
+@@ -426,7 +426,8 @@
+ \addtolength{\oddevenshift}{-\evenoffset}
+ \addtolength{\oddoffset}{-\oddevenshift}
+ \addtolength{\evenoffset}{\oddevenshift}
+-\geometry{\cardpapermode,
++\geometry{compat2,
++          \cardpapermode,
+           \cardpaper,
+           top=\topoffset,
+           left=\oddoffset,

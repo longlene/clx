@@ -1,0 +1,47 @@
+diff -uNr qavimator/src/animation.h qavimator_patched/src/animation.h
+--- qavimator/src/animation.h	2007-04-13 03:01:01.000000000 -0400
++++ qavimator_patched/src/animation.h	2007-07-06 17:15:40.000000000 -0400
+@@ -27,9 +27,9 @@
+ #include "iktree.h"
+ #include "rotation.h"
+ 
+-#define DEFAULT_POSE "data/TPose.avm"
++#define DEFAULT_POSE "../lib/qavimator/data/TPose.avm"
+ // #define DEFAULT_POSE "data/Relaxed.bvh"
+-#define LIMITS_FILE "data/SL.lim"
++#define LIMITS_FILE "../lib/qavimator/data/SL.lim"
+ 
+ class BVH;
+ 
+diff -uNr qavimator/src/animationview.h qavimator_patched/src/animationview.h
+--- qavimator/src/animationview.h	2007-04-24 10:36:46.000000000 -0400
++++ qavimator_patched/src/animationview.h	2007-07-06 17:15:14.000000000 -0400
+@@ -41,8 +41,8 @@
+ #include "prop.h"
+ #include "bvh.h"
+ 
+-#define MALE_BVH   "data/SLMale.bvh"
+-#define FEMALE_BVH "data/SLFemale.bvh"
++#define MALE_BVH   "../lib/qavimator/data/SLMale.bvh"
++#define FEMALE_BVH "../lib/qavimator/data/SLFemale.bvh"
+ 
+ // defines where we start counting opengl ids for parts with multiple animations
+ // first animation counts 0-ANIMATION_INCREMENT-1, next ANIMATION_INCREMENT++
+diff -uNr qavimator/src/qavimator.h qavimator_patched/src/qavimator.h
+--- qavimator/src/qavimator.h	2007-04-24 10:36:46.000000000 -0400
++++ qavimator_patched/src/qavimator.h	2007-07-06 17:14:47.000000000 -0400
+@@ -28,10 +28,10 @@
+ #include <qtimer.h>
+ 
+ #define UNTITLED_NAME "Untitled.avm"
+-#define PLAY_IMAGE "data/play.png"
+-#define PAUSE_IMAGE "data/pause.png"
+-#define KEY_IMAGE "data/key.png"
+-#define NOKEY_IMAGE "data/nokey.png"
++#define PLAY_IMAGE "../lib/qavimator/data/play.png"
++#define PAUSE_IMAGE "../lib/qavimator/data/pause.png"
++#define KEY_IMAGE "../lib/qavimator/data/key.png"
++#define NOKEY_IMAGE "../lib/qavimator/data/nokey.png"
+ 
+ #include "mainapplicationform.h"
+ #include "rotation.h"

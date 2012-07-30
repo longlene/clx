@@ -1,0 +1,22 @@
+test? ( )
+app-crypt/gnupg dev-perl/Crypt-OpenSSL-Bignum dev-perl/Crypt-OpenSSL-RSA virtual/perl-Digest-SHA virtual/perl-MIME-Base64 net-misc/openssh net-misc/socat || ( app-misc/lockfile-progs mail-filter/procmail )
+0
+http://archive.monkeysphere.info/debian/pool/monkeysphere/m/monkeysphere/monkeysphere_0.32.orig.tar.gz
+test
+http://web.monkeysphere.info/
+GPL-3
+use the OpenPGP web of trust to verify ssh connections
+~amd64 ~x86
+
+test
+
+
+
+3
+
+install postinst
+
+
+
+
+

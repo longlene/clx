@@ -1,0 +1,22 @@
+virtual/libc dev-libs/libproccpuinfo
+virtual/libc dev-libs/libproccpuinfo
+0
+http://mattst88.com/programming/cleanbench/cleanbench-1.0.tar.bz2
+
+http://mattst88.com/programming/cleanbench/
+freedist
+clean nbench Benchmark utility for Linux/UNIX
+~alpha ~amd64 ~hppa ~mips ~ppc ~ppc64 ~sh ~sparc ~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install
+
+
+
+
+

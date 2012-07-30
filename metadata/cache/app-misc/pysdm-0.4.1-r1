@@ -1,0 +1,22 @@
+dev-python/pygtk >=dev-lang/python-2.4 >=app-admin/eselect-python-20091230
+dev-python/pygtk >=dev-lang/python-2.4 >=app-admin/eselect-python-20091230
+0
+mirror://sourceforge/pysdm/pysdm-0.4.1.tar.gz
+
+http://pysdm.sourceforge.net
+
+A PyGTK program for editing fstab
+~x86 ~amd64
+eutils multilib portability python toolchain-funcs user
+doc
+
+
+
+
+
+compile install postinst postrm setup unpack
+
+
+
+
+

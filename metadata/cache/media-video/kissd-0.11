@@ -1,0 +1,22 @@
+
+
+0
+http://popies.net/kissd/kissd-0.11.tar.bz2
+
+http://popies.net/kissd/
+GPL-2
+KiSS PC-Link Daemon
+~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+>=sys-libs/zlib-1.1 aio? ( dev-libs/libaio ) bzip2? ( app-arch/bzip2 ) fam? ( virtual/fam ) gdbm? ( sys-libs/gdbm ) ldap? ( >=net-nds/openldap-2.1.26 ) lua? ( >=dev-lang/lua-5.1 ) memcache? ( dev-libs/libmemcache ) mysql? ( >=virtual/mysql-4.0 ) postgres? ( >=dev-db/libpq-8.0 ) pcre? ( >=dev-libs/libpcre-3.1 ) php? ( virtual/httpd-php !net-www/spawn-fcgi ) rrdtool? ( net-analyzer/rrdtool ) ssl? ( >=dev-libs/openssl-0.9.7 ) webdav? ( dev-libs/libxml2 >=dev-db/sqlite-3 sys-fs/e2fsprogs ) xattr? ( kernel_linux? ( sys-apps/attr ) ) doc? ( dev-python/docutils ) test? ( virtual/perl-Test-Harness dev-libs/fcgi ) || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+>=sys-libs/zlib-1.1 aio? ( dev-libs/libaio ) bzip2? ( app-arch/bzip2 ) fam? ( virtual/fam ) gdbm? ( sys-libs/gdbm ) ldap? ( >=net-nds/openldap-2.1.26 ) lua? ( >=dev-lang/lua-5.1 ) memcache? ( dev-libs/libmemcache ) mysql? ( >=virtual/mysql-4.0 ) postgres? ( >=dev-db/libpq-8.0 ) pcre? ( >=dev-libs/libpcre-3.1 ) php? ( virtual/httpd-php !net-www/spawn-fcgi ) rrdtool? ( net-analyzer/rrdtool ) ssl? ( >=dev-libs/openssl-0.9.7 ) webdav? ( dev-libs/libxml2 >=dev-db/sqlite-3 sys-fs/e2fsprogs ) xattr? ( kernel_linux? ( sys-apps/attr ) )
+0
+http://www.lighttpd.net/download/lighttpd-1.5.0-r1857.tar.gz
+
+http://www.lighttpd.net/
+BSD
+Lightweight high-performance web server
+~amd64 ~hppa ~ppc ~ppc64 ~sparc ~sparc-fbsd ~x86 ~x86-fbsd
+autotools depend.php eutils libtool multilib phpconfutils portability toolchain-funcs user
+aio bzip2 doc fam fastcgi gdbm ipv6 ldap lua minimal memcache mysql pcre php postgres rrdtool ssl test webdav xattr
+
+
+
+
+
+compile install postinst setup unpack
+
+
+
+
+

@@ -1,0 +1,31 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need net
+}
+
+checkconfig() {
+        if [ ! -e $CONF ] ; then
+                eerror "You need a configuration file to run Honeytrap."
+                eerror "The example config is /etc/honeytrap/honeytrap.conf."
+                return 1
+        fi
+}
+
+start() {
+	checkconfig || return 1
+	ebegin "Starting Honeytrap"
+	start-stop-daemon --start --exec /usr/sbin/honeytrap \
+		--pidfile ${PIDFILE} \
+		-- ${HONEYTRAP_OPTS} >/dev/null 2>&1
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping Honeytrap"
+        start-stop-daemon --stop --quiet --pidfile ${PIDFILE}
+	eend $?
+}

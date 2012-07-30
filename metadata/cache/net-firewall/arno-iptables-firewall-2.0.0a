@@ -1,0 +1,22 @@
+>=net-firewall/iptables-1.2.5 >=sys-apps/iproute2-2.6.35-r2
+>=net-firewall/iptables-1.2.5 >=sys-apps/iproute2-2.6.35-r2
+0
+http://rocky.eld.leidenuniv.nl/arno-iptables-firewall/arno-iptables-firewall_2.0.0a.tar.gz
+
+http://rocky.eld.leidenuniv.nl/
+GPL-2
+Arno's iptables firewall script
+~amd64 ~x86
+
++plugins
+
+
+
+1
+
+install postinst
+
+
+
+
+

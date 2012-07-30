@@ -1,0 +1,44 @@
+diff -Naur ficl4.0.31/ficl.h ficl4.0.31.patch/ficl.h
+--- ficl4.0.31/ficl.h	2003-06-18 17:14:06.000000000 +0000
++++ ficl4.0.31.patch/ficl.h	2008-05-12 17:50:25.000000000 +0000
+@@ -149,27 +149,22 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-/*
+-** Put all your local defines in ficllocal.h,
+-** rather than editing the makefile/project/etc.
+-** ficllocal.h will always ship as an inert file.
+-*/
+-#include "ficllocal.h"
+-
+-
+-
++typedef char ficlInteger8;
++typedef unsigned char ficlUnsigned8;
++typedef short ficlInteger16;
++typedef unsigned short ficlUnsigned16;
++typedef long ficlInteger32;
++typedef unsigned long ficlUnsigned32;
+ 
+-#if defined(FICL_ANSI)
+-	#include "ficlplatform/ansi.h"
+-#elif defined(_WIN32)
+-	#include "ficlplatform/win32.h"
+-#elif defined (FREEBSD_ALPHA)
+-	#include "ficlplatform/alpha.h"
+-#elif defined(linux)
+-	#include "ficlplatform/unix.h"
+-#endif /* platform */
++typedef ficlInteger32 ficlInteger;
++typedef ficlUnsigned32 ficlUnsigned;
++typedef float ficlFloat;
+ 
++#define FICL_PLATFORM_BASIC_TYPES   (1)
++#define FICL_PLATFORM_HAS_2INTEGER  (0)
++#define FICL_PLATFORM_HAS_FTRUNCATE (0)
+ 
++#define FICL_PLATFORM_OS            "ansi"
+ 
+ /*
+ **

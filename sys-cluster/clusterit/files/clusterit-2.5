@@ -1,0 +1,18 @@
+--- clusterit-2.4.ebuild	2010-03-02 18:19:34.000000000 +0300
++++ clusterit-2.5.ebuild	2011-12-24 23:44:00.000000000 +0400
+@@ -8,12 +8,13 @@
+ 
+ LICENSE="BSD"
+ SLOT="0"
+-KEYWORDS="~x86"
++KEYWORDS="~amd64 ~x86"
+ IUSE="X"
+ 
+ DEPEND="X? ( x11-libs/libX11 )"
+ RDEPEND="${DEPEND}
+-	!app-shells/dsh"
++	!app-shells/dsh
++	!app-shells/pdsh"
+ 
+ src_unpack() {
+ 	unpack ${A}

@@ -1,0 +1,22 @@
+dev-lang/python >=app-admin/eselect-python-20091230
+dev-lang/python >=app-admin/eselect-python-20091230
+0
+http://ppa.launchpad.net/disper-dev/ppa/ubuntu/pool/main/d/disper/disper_0.3.0.tar.gz
+
+http://willem.engen.nl/projects/disper/
+GPL-3
+Disper is an on-the-fly display switch utility
+~x86 ~amd64
+eutils multilib portability python toolchain-funcs user
+
+
+
+
+3
+
+install
+
+
+
+
+

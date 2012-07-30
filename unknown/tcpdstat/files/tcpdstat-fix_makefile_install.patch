@@ -1,0 +1,14 @@
+--- tcpdstat-uw/Makefile	2003-01-08 22:30:56.000000000 +0100
++++ tcpdstat-uw-new/Makefile	2007-10-07 22:02:17.000000000 +0200
+@@ -15,9 +15,8 @@
+ all: $(PROGS)
+ 
+ install: $(PROGS)
+-	# $(INSTALL) $(COPY) -m 0755 $(PROGS) $(PREFIX)/bin
+-	cp tcpdstat $(PREFIX)/bin
+-	chmod 0755 $(PREFIX)/bin/tcpdstat 
++	$(INSTALL) -d -o root -g wheel $(PREFIX)/usr/bin
++	$(INSTALL) -o root -g wheel -m 0755 $(PROGS) $(PREFIX)/usr/bin
+ 
+ tar:
+ 	(cd ..; tar -cvf tcpdstat-uw.tar $(PWD); \

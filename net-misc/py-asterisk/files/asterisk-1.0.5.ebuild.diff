@@ -1,0 +1,189 @@
+--- /usr/portage/net-misc/asterisk/asterisk-1.0.3.ebuild	2004-12-27 19:06:10.000000000 +0000
++++ asterisk/asterisk-1.0.5.ebuild	2005-01-26 18:45:08.000000000 +0000
+@@ -2,19 +2,23 @@
+ # Distributed under the terms of the GNU General Public License v2
+ # $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/asterisk-1.0.3.ebuild,v 1.2 2004/12/27 18:52:50 gustavoz Exp $
+ 
+-IUSE="alsa doc gtk mmx mysql pri zaptel uclibc resperl"
++IUSE="alsa doc gtk mmx pri zaptel uclibc resperl mysql postgres vmdbmysql vmdbpostgres"
+ 
+ inherit eutils
+ 
++ADDONS_VERSION="1.0.4"
++SOUNDS_VERSION="1.0.1"
++ASTCFG_VERSION="0.0.2"
++
+ DESCRIPTION="Asterisk: A Modular Open Source PBX System"
+ HOMEPAGE="http://www.asterisk.org/"
+ SRC_URI="ftp://ftp.asterisk.org/pub/telephony/asterisk/${P}.tar.gz
+-	 ftp://ftp.asterisk.org/pub/telephony/asterisk/${PN}-addons-1.0.1.tar.gz
+-	 ftp://ftp.asterisk.org/pub/telephony/asterisk/${PN}-sounds-1.0.1.tar.gz"
++	 ftp://ftp.asterisk.org/pub/telephony/asterisk/${PN}-addons-${ADDONS_VERSION}.tar.gz
++	 ftp://ftp.asterisk.org/pub/telephony/asterisk/${PN}-sounds-${SOUNDS_VERSION}.tar.gz"
+ 
+-S=${WORKDIR}/${P}
+-S_ADDONS=${WORKDIR}/${PN}-addons-1.0.1
+-S_SOUNDS=${WORKDIR}/${PN}-sounds-1.0.1
++S="${WORKDIR}/${P}"
++S_ADDONS="${WORKDIR}/${PN}-addons-${ADDONS_VERSION}"
++S_SOUNDS="${WORKDIR}/${PN}-sounds-${SOUNDS_VERSION}"
+ 
+ SLOT="0"
+ LICENSE="GPL-2"
+@@ -27,42 +31,44 @@
+ 	pri? ( >=net-libs/libpri-1.0.3 )
+ 	alsa? ( media-libs/alsa-lib )
+ 	mysql? ( dev-db/mysql )
+-	uclibc? ( dev-libs/uclibc )
++	uclibc? ( sys-libs/uclibc )
+ 	zaptel? ( >=net-misc/zaptel-1.0.3 )
+ 	resperl? ( dev-lang/perl
+-		   >=net-misc/zaptel-1.0.3 )"
++		   >=net-misc/zaptel-1.0.3 )
++        postgres? ( dev-db/postgresql )
++        vmdbmysql? ( dev-db/mysql )
++        vmdbpostgres? ( dev-db/postgresql )"
++
+ 
+ 
+ changes_message() {
+-	ewarn "Important changes since 1.0.0:"
+-	ewarn ""
+-	ewarn "- Voicemail Webapp has been removed!"
+-	ewarn "  (files are in /usr/share/doc/${PF}/cgi/ if you really need them)"
+-	ewarn ""
+-	ewarn "- Zaptel and PRI support are now disabled by default (see emerge -pv asterisk)"
+-	ewarn ""
+-	ewarn "- Support for embedded perl in the extensions file has been added"
+-	ewarn "  (res_perl from asterisk-addons; \"resperl\" use-flag)"
+-	ewarn ""
+-	ewarn "- Should build with uclibc now (untested / experimental)"
+-	ewarn ""
++	einfo "Changes since 1.0.3:"
++	einfo ""
++	einfo "* Added support for MySQL / Postgresql Voicemail database backends"
++	einfo "  (vmdbmysql / vmdbpostgres useflags, see"
++	einfo "   http://www.voip-info.org/wiki-Asterisk+voicemail+database for more information)"
++	einfo ""
++	einfo "* Added Postgres support"
++	einfo "  (postgres useflag)"
+ }
+ 
+ pkg_setup() {
+-	changes_message
+-	ebeep
+-	epause 10
+-
+ 	einfo "Running some pre-flight checks..."
+ 	if use resperl; then
+ 		# res_perl pre-flight check...
+ 		if ! $(perl -V | grep -q "usemultiplicity=define"); then
+ 			eerror "Embedded perl add-on needs Perl with built-in threads support"
+-			eerror "(rebuild perl with ithreads use-flag enabled)"
++			eerror "(rebuild perl and libperl with ithreads use-flag enabled)"
+ 			die "Perl w/o threads support..."
+ 		fi
+ 		einfo "Perl with ithreads support found"
+ 	fi
++
++        # mysql and postgres voicemail support are mutually exclusive..
++        if use vmdbmysql && use vmdbpostgres; then
++                eerror "MySQL and PostgreSQL Voicemail support are mutually exclusive... choose one!"
++                die "Conflicting use-flags"
++        fi
+ }
+ 
+ src_unpack() {
+@@ -70,7 +76,7 @@
+ 	cd ${S}
+ 
+ 	# set cflags & mmx optimization
+-	sed -i -e "s:^\(OPTIMIZE=\).*:\1 ${CFLAGS}:" Makefile
++	sed -i -e "s:^\(OPTIMIZE\).*:\1=${CFLAGS}:" Makefile
+ 
+ 	if use mmx; then
+ 		einfo "enabling mmx optimization"
+@@ -96,13 +102,6 @@
+ 		sed -i -e "s:^ASTSRC.*:ASTSRC = ${S}:" \
+ 			-e "s:\$(ASTLIBDIR)/modules/\(res_musiconhold.so\):${S}/res/\1:" \
+ 			${S_ADDONS}/res_perl/Makefile
+-
+-## needs more testing...
+-#		# move perl stuff into /usr/lib/asterisk and symlink it
+-#		# with /etc/asterisk/perl (solves config protection trouble)
+-#		sed -i -e "s:\$(ASTETCDIR)/perl:\$(ASTLIBDIR)/perl:g" \
+-#			-e "s:\(mkdir \$(ASTLIBDIR)/perl \):\1; ln -s \$(subst \$(INSTALL_PREFIX),,\$(ASTLIBDIR))/perl \$(ASTETCDIR)/perl :" \
+-#			${S_ADDONS}/res_perl/Makefile
+ 	fi
+ 
+ 	#
+@@ -117,6 +116,9 @@
+ 	# other patches
+ 	#
+ 
++	# experimental asterisk-config patch, eases building of external modules
++	epatch ${FILESDIR}/1.0.0/${PN}-1.0.2-astconfig-${ASTCFG_VERSION}.diff
++
+ 	#
+ 	# asterisk add-ons
+ 	#
+@@ -125,6 +127,34 @@
+ 	sed -i  -e "s:-I../asterisk:-I${S} -I${S}/include:" Makefile
+ 	sed -i  -e "s:^\(CFLAGS=\)\(.*\):\1-I${S}/include \2:" \
+ 		format_mp3/Makefile
++
++	#
++	# database voicemail support
++	#
++        if use postgres; then
++                sed -i  -e "s:^#\(APPS+=app_sql_postgres.so\):\1:" \
++                        -e "s:/usr/local/pgsql/include:/usr/include/postgresql/pgsql:" \
++                        -e "s:/usr/local/pgsql/lib:/usr/lib/postgresql:" \
++                        apps/Makefile
++        fi
++
++        if use vmdbpostgres; then
++                einfo "Enabling PostgreSQL voicemail support"
++                sed -i  -e "s:^\(USE_POSTGRES_VM_INTERFACE\).*:\1=1:" \
++                        -e "s:/usr/local/pgsql/include:/usr/include/postgresql/pgsql:" \
++                        -e "s:/usr/local/pgsql/lib:/usr/lib/postgresql:" \
++                        apps/Makefile
++
++                # patch app_voicemail.c
++                sed -i -e "s:^#include <postgresql/libpq-fe\.h>:#include \"libpq-fe\.h\":" \
++                        apps/app_voicemail.c
++
++        elif use vmdbmysql; then
++                einfo "Enabling MySQL voicemail support"
++                sed -i  -e "s:^\(USE_MYSQL_VM_INTERFACE\).*:\1=1:" \
++                        -e "s:^\(CFLAGS+=-DUSEMYSQLVM\):\1 -I${S_ADDONS}:" \
++                        apps/Makefile
++        fi
+ }
+ 
+ src_compile() {
+@@ -159,8 +189,9 @@
+ 		emake -j1 DESTDIR=${D} progdocs
+ 
+ 	# install necessary files
+-	dodir /etc/env.d
+-	echo "LD_LIBRARY_PATH=\"/usr/lib/asterisk\"" > ${D}/etc/env.d/25asterisk
++## scheduled for removal
++#	dodir /etc/env.d
++#	echo "LD_LIBRARY_PATH=\"/usr/lib/asterisk\"" > ${D}/etc/env.d/25asterisk
+ 
+ 	exeinto /etc/init.d
+ 	newexe  ${FILESDIR}/1.0.0/asterisk.rc6 asterisk
+@@ -211,11 +242,8 @@
+ 	einfo ""
+ 	einfo "to add new Mailboxes use: /usr/sbin/addmailbox"
+ 	einfo ""
+-	einfo "If you want to know more about asterisk, visit these sites:"
+-	einfo "http://www.automated.it/guidetoasterisk.htm"
+-	einfo "http://asterisk.xvoip.com/"
++	einfo "Useful site(s):"
+ 	einfo "http://www.voip-info.org/wiki-Asterisk"
+-	einfo "http://ns1.jnetdns.de/jn/relaunch/asterisk/"
+ 	echo
+ 
+ 	changes_message

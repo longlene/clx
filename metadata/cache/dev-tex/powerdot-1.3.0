@@ -1,0 +1,22 @@
+virtual/tetex app-arch/unzip >=app-text/tetex-3 virtual/latex-base >=sys-apps/texinfo-4.2-r5
+virtual/tetex app-arch/unzip >=app-text/tetex-3 virtual/latex-base
+0
+ftp://ftp.dante.de/tex-archive/macros/latex/contrib/powerdot.zip
+
+http://stuwww.uvt.nl/~hendri/Downloads/powerdot.html
+LPPL-1.2
+powerdot is a presentation class for LaTeX
+x86
+base eutils latex-package multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

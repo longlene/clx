@@ -1,0 +1,216 @@
+diff -Nau asterisk-1.0.2-orig/Makefile asterisk-1.0.2/Makefile
+--- asterisk-1.0.2-orig/Makefile	2004-10-03 20:37:37.000000000 +0200
++++ asterisk-1.0.2/Makefile	2004-11-21 23:09:08.969201360 +0100
+@@ -221,6 +221,7 @@
+ 
+ CC=gcc
+ INSTALL=install
++SED=sed
+ 
+ _all: all
+ 	@echo " +--------- Asterisk Build Complete ---------+"  
+@@ -231,7 +232,7 @@
+ 	@echo " +               $(MAKE) install                +"  
+ 	@echo " +-------------------------------------------+"  
+ 
+-all: depend asterisk subdirs 
++all: depend asterisk asterisk-config subdirs 
+ 
+ editline/config.h:
+ 	cd editline && unset CFLAGS LIBS && ./configure ; \
+@@ -295,6 +296,20 @@
+ asterisk: editline/libedit.a db1-ast/libdb1.a stdtime/libtime.a $(OBJS)
+ 	$(CC) $(DEBUG) -o asterisk $(ASTLINK) $(OBJS) $(LIBEDIT) db1-ast/libdb1.a stdtime/libtime.a $(LIBS)
+ 
++asterisk-config: asterisk-config.in
++	$(SED) \
++	    -e "s:@SOLINK@:$(SOLINK):"    -e "s:@VERSION@:$(ASTERISKVERSION):" \
++	    -e "s:@ETCDIR@:$(ASTETCDIR):" -e "s:@LIBDIR@:$(ASTLIBDIR):" \
++	    -e "s:@CFLAGS@:$(CFLAGS):"    -e "s:@VARRUNDIR@:$(ASTVARRUNDIR):" \
++	    -e "s:@LIBS@:$(LIBS):"        -e "s:@VARLIBDIR@:$(ASTVARLIBDIR):" \
++	    -e "s:@LOGDIR@:$(ASTLOGDIR):" -e "s:@SPOOLDIR@:$(ASTSPOOLDIR):" \
++	    -e "s:@AGIDIR@:$(AGI_DIR):"   -e "s:@MODDIR@:$(MODULES_DIR):" \
++	    -e "s:@BINDIR@:$(ASTBINDIR):" -e "s:@SBINDIR@:$(ASTSBINDIR):" \
++	    -e "s:@MANDIR@:$(ASTMANDIR):" \
++	    -e "s:@INCDIR@:$(ASTHEADERDIR):" \
++	    -e "s:@PREFIX@:$(INSTALL_PREFIX):" \
++	    asterisk-config.in > $@
++
+ muted: muted.o
+ 	$(CC) -o muted muted.o
+ 
+@@ -303,7 +318,7 @@
+ 
+ clean:
+ 	for x in $(SUBDIRS); do $(MAKE) -C $$x clean || exit 1 ; done
+-	rm -f *.o *.so asterisk .depend
++	rm -f *.o *.so asterisk .depend asterisk-config
+ 	rm -f build.h 
+ 	rm -f ast_expr.c
+ 	@if [ -e editline/Makefile ]; then $(MAKE) -C editline distclean ; fi
+@@ -373,6 +388,7 @@
+ 	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/voicemail
+ 	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/tmp
+ 	install -m 755 asterisk $(DESTDIR)$(ASTSBINDIR)/
++	install -m 755 asterisk-config $(DESTDIR)$(ASTBINDIR)/
+ 	install -m 755 contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
+ 	if [ ! -f $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ]; then \
+ 		install -m 755 contrib/scripts/safe_asterisk $(DESTDIR)$(ASTSBINDIR)/ ;\
+Common subdirectories: asterisk-1.0.2-orig/agi and asterisk-1.0.2/agi
+Common subdirectories: asterisk-1.0.2-orig/apps and asterisk-1.0.2/apps
+diff -Nau asterisk-1.0.2-orig/asterisk-config.in asterisk-1.0.2/asterisk-config.in
+--- asterisk-1.0.2-orig/asterisk-config.in	1970-01-01 01:00:00.000000000 +0100
++++ asterisk-1.0.2/asterisk-config.in	2004-11-21 23:11:29.129893696 +0100
+@@ -0,0 +1,152 @@
++#!/bin/sh
++#
++# asterisk-config
++#
++# Copyright (C) 2004 Stefan Knoblich <stkn@gentoo.org>
++#
++
++# /*
++# Changes:
++#
++# 0.0.2 (stkn: 20041121)
++#	Clean-ups, renamed some options (more configure alike)
++#
++# 0.0.1 (stkn: 20041114)
++#	Yeah it's ugly as hell, but it does it's job
++# */
++
++##
++# These get replaced by sed...
++#
++
++SOLINK='@SOLINK@'
++CFLAGS='@CFLAGS@'
++LIBS='@LIBS@'
++
++AST_PREFIX=@PREFIX@
++AST_LIBDIR=@LIBDIR@
++AST_ETCDIR=@ETCDIR@
++AST_MODDIR=@MODDIR@
++AST_AGIDIR=@AGIDIR@
++AST_INCDIR=@INCDIR@
++AST_MANDIR=@MANDIR@
++AST_LOGDIR=@LOGDIR@
++AST_VARLIBDIR=@VARLIBDIR@
++AST_VARRUNDIR=@VARRUNDIR@
++AST_SPOOLDIR=@SPOOLDIR@
++AST_CONFPATH=@CFGPATH@
++AST_VERSION=@VERSION@
++
++##
++# Don't even think about touching anything below...
++#
++
++usage() {
++	echo "asterisk-config <options>"
++	echo ""
++	echo "* About asterisk (outputs first option only)"
++	echo ""
++	echo "  --version      | -v             Asterisk version"
++	echo ""
++	echo "* Build time stuff"
++	echo ""
++	echo "  --libs                          Libraries used by asterisk"
++	echo "  --cflags                        Cflags used during building"
++	echo "  --solink                        Option for linking modules"
++	echo ""
++	echo "* Paths"
++	echo ""
++	echo "  --prefix                        Installation prefix"
++	echo "  --bindir                        Location of user-accessible binaries"
++	echo "  --sbindir                       Location of system binaries"
++	echo "  --sysconfdir                    Directory for config files"
++	echo "  --mandir                        Place for man-pages"
++	echo "  --libdir                        Libraries are put there"
++	echo "  --modulesdir                    Asterisk keeps it's modules here"
++	echo "  --agidir                        AGI files belong there"
++	echo "  --logdir                        The place for logfiles"
++	echo "  --spooldir                      Asterisk's spool directory"
++	echo "  --includesdir                   Include files"
++	echo ""
++}
++
++
++if [ $# -lt 1 ]; then
++	usage
++	exit 0
++fi
++
++#
++# single-use options
++#
++while [ $# -gt 0 ]; do
++	case $1 in
++    	--help|-h)
++		usage
++		;;
++	--version|-v)
++		echo ${AST_VERSION}
++		;;
++    	# paths
++	--prefix)
++		echo -n ${AST_PREFIX}
++		;;
++	--sysconfdir)
++		echo -n ${AST_ETCDIR}
++		;;
++	--libexecdir|--sbindir)
++		echo -n ${AST_SBINDIR}
++		;;
++	--bindir)
++		echo -n ${AST_BINDIR}
++		;;
++	--modulesdir)
++		echo -n ${AST_MODDIR}
++		;;
++	--agidir)
++		echo -n ${AST_AGIDIR}
++		;;
++	--mandir)
++		echo -n ${AST_MANDIR}
++		;;
++	--logdir)
++		echo -n ${AST_LOGDIR}
++		;;
++	--includedir)
++		echo -n ${AST_INCDIR}
++		;;
++	--spooldir)
++		echo -n ${AST_SPOOLDIR}
++		;;
++	--libdir)
++		echo -n ${AST_LIBDIR}
++		;;
++	--varrundir)
++		echo -n ${AST_VARRUNDIR}
++		;;
++	--varlibdir)
++		echo -n ${AST_VARLIBDIR}
++		;;
++	# flags and stuff
++	--solink)
++		echo -n ${SOLINK}
++		;;
++	--cflags)
++		echo -n ${CFLAGS}
++		# skip if asterisk includes are inside default include path
++		# (/usr/include/asterisk...)
++		if [ `dirname ${AST_INCDIR}` != "/usr/include" ]; then
++		    echo -n " -I${AST_INCDIR}"
++		fi
++		;;
++	--libs)
++		echo -n ${LIBS}
++		;;
++	esac
++	shift
++done
++exit 0
++
++##
++# The End
++#

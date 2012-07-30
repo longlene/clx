@@ -1,0 +1,22 @@
+
+dev-lang/perl gs? ( virtual/ghostscript )
+0
+http://syracuse.eu.org/syracuse/bbgraf/archives/jps2ps.tgz
+
+http://syracuse.eu.org/syracuse/bbgraf/
+GPL-2
+A small perl script for the creation of mathematic images in PostScript.
+~x86
+multilib toolchain-funcs
+
+
+
+
+
+
+install
+
+
+
+
+

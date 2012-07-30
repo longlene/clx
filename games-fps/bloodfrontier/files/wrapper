@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+mkdir -p ~/.bloodfrontier
+cd ~/.bloodfrontier
+for l in data ; do
+	rm -f ${l}
+	ln -s "@GENTOO_GAMESDIR@"/${l} ${l}
+done
+exec "@GENTOO_EXEC@" "$@"

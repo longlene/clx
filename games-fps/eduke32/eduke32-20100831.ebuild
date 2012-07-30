@@ -1,0 +1,75 @@
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+EAPI="2"
+inherit base eutils games
+
+MY_BUILD="1705"
+MY_HRP="4.0"
+MY_HRP_BUILD="321"
+
+DESCRIPTION="Port of Duke Nukem 3D for SDL"
+HOMEPAGE="http://www.eduke32.com/
+	http://hrp.duke4.net/"
+SRC_URI="http://dukeworld.duke4.net/eduke32/synthesis/${PV}-${MY_BUILD}/${PN}_src_${PV}-${MY_BUILD}.tar.bz2
+	textures? ( http://www.duke4.org/files/hrp/dn3d_hrp-${MY_HRP}%28${MY_HRP_BUILD}%29.zip -> dn3d_hrp-${MY_HRP}-${MY_HRP_BUILD}.zip )
+	music? ( http://www.duke4.org/files/nightfright/eduke32_mus.zip )"
+
+LICENSE="as-is"
+SLOT="0"
+KEYWORDS="amd64 ~x86"
+IUSE="editor textures music"
+
+RDEPEND="x11-libs/gtk+
+	media-libs/libsdl
+	music? ( media-libs/sdl-mixer[timidity] )
+	!music? ( media-libs/sdl-mixer )
+	media-libs/libvorbis"
+DEPEND="${RDEPEND}
+	app-arch/unzip"
+
+S="${WORKDIR}/${PN}_${PV}-${MY_BUILD}"
+
+src_unpack() {
+	unpack "${PN}_src_${PV}-${MY_BUILD}.tar.bz2"
+	use textures && unpack "dn3d_hrp-${MY_HRP}-${MY_HRP_BUILD}.zip"
+}
+
+src_compile() {
+	# http://sourceforge.net/tracker/?func=detail&aid=3059356&group_id=126745&atid=706724
+	base_src_compile ARCH= STRIP=touch
+}
+
+src_install() {
+	local ARGS=""
+	insinto "${GAMES_DATADIR}/${PN}"
+
+	if use textures; then
+		doins "${WORKDIR}"/autoload/duke3d.grp/{duke3d_hrp,maphacks}.zip || die
+		dodoc "${WORKDIR}"/hrp_{art_license,readme}.txt || die
+		ARGS="${ARGS} -g duke3d_hrp.zip -g maphacks.zip"
+	fi
+
+	if use music; then
+		doins "${DISTDIR}/eduke32_mus.zip" || die
+		ARGS="${ARGS} -g eduke32_mus.zip"
+	fi
+
+	if use editor; then
+		newgamesbin "mapster32" "mapster32.bin" || die
+		games_make_wrapper "mapster32" "${GAMES_BINDIR}/mapster32.bin ${ARGS}"
+		doins "m32help.hlp" || die
+	fi
+
+	newgamesbin "${PN}" "${PN}.bin" || die
+	games_make_wrapper "${PN}" "${GAMES_BINDIR}/${PN}.bin ${ARGS}"
+	make_desktop_entry "${PN}" "EDuke32"
+
+	prepgamesdirs
+}
+
+pkg_postinst() {
+	games_pkg_postinst
+	ewarn "Note: You must also install games-fps/duke3d-data before playing this game."
+}

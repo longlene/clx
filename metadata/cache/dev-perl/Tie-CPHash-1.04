@@ -1,0 +1,22 @@
+perl-core/File-Spec dev-lang/perl[-build]
+perl-core/File-Spec dev-lang/perl[-build]
+0
+mirror://cpan/authors/id/C/CJ/CJM/Tie-CPHash-1.04.tar.gz
+
+http://search.cpan.org/dist/Tie-CPHash/
+|| ( Artistic GPL-1 GPL-2 GPL-3 )
+Case preserving but case insensitive hash table
+~amd64 ~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

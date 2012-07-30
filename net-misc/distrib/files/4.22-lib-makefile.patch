@@ -1,0 +1,11 @@
+--- msrc-4.20.orig/local/lib/distrib/Make.host	2000-07-30 17:27:01.000000000 -0500
++++ msrc-4.20/local/lib/distrib/Make.host	2004-10-10 20:27:09.649933282 -0500
+@@ -6,7 +6,7 @@
+ SHELL=/bin/sh
+ PROG=	distrib
+ LIB=	${DESTDIR}'ifdef(`DSPD_SUPPORT',
+-`/opt/fedex/support/lib/distrib',`/usr/local/lib/distrib')`
++`/opt/fedex/support/lib/distrib',`/etc/distrib')`
+ DOC=	${DESTDIR}/usr/man
+ 
+ SRCl=	distrib.cf local.defs

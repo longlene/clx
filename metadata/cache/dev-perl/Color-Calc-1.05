@@ -1,0 +1,22 @@
+dev-perl/Graphics-ColorNames dev-perl/Graphics-ColorNames-WWW dev-perl/Params-Validate dev-lang/perl[-build]
+dev-perl/Graphics-ColorNames dev-perl/Graphics-ColorNames-WWW dev-perl/Params-Validate dev-lang/perl[-build]
+0
+mirror://cpan/authors/id/C/CF/CFAERBER/Color-Calc-1.05.tar.gz
+
+http://search.cpan.org/dist/Color-Calc/
+|| ( Artistic GPL-1 GPL-2 GPL-3 )
+Simple calculations with RGB colors
+~amd64 ~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+virtual/libc
+virtual/libc
+0
+http://www.fourmilab.ch/random/random.zip
+
+http://www.fourmilab.ch/random/
+public-domain
+A pseudorandom number sequence test program
+~amd64
+
+doc
+
+
+
+
+
+compile install test
+
+
+
+
+

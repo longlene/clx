@@ -1,0 +1,22 @@
+test? ( ruby_targets_ruby18? ( gnome? ( dev-ruby/ruby-gconf2[ruby_targets_ruby18] dev-ruby/ruby-panel-applet2[ruby_targets_ruby18] ) ) ruby_targets_ruby19? ( gnome? ( dev-ruby/ruby-gconf2[ruby_targets_ruby19] dev-ruby/ruby-panel-applet2[ruby_targets_ruby19] ) ) ) test? ( ruby_targets_ruby18? ( >=dev-ruby/ruby-gtk2-0.19.3[ruby_targets_ruby18] ) ruby_targets_ruby19? ( >=dev-ruby/ruby-gtk2-0.19.3[ruby_targets_ruby19] ) ) ruby_targets_ruby18? ( dev-lang/ruby:1.8 ) ruby_targets_ruby19? ( dev-lang/ruby:1.9 )
+!gnome? ( net-misc/x11-ssh-askpass ) ruby_targets_ruby18? ( gnome? ( dev-ruby/ruby-gconf2[ruby_targets_ruby18] dev-ruby/ruby-panel-applet2[ruby_targets_ruby18] ) ) ruby_targets_ruby19? ( gnome? ( dev-ruby/ruby-gconf2[ruby_targets_ruby19] dev-ruby/ruby-panel-applet2[ruby_targets_ruby19] ) ) ruby_targets_ruby18? ( >=dev-ruby/ruby-gtk2-0.19.3[ruby_targets_ruby18] ) ruby_targets_ruby19? ( >=dev-ruby/ruby-gtk2-0.19.3[ruby_targets_ruby19] ) ruby_targets_ruby18? ( dev-lang/ruby:1.8 ) ruby_targets_ruby19? ( dev-lang/ruby:1.9 )
+0
+mirror://sourceforge/sshmenu/sshmenu-3.18.tar.gz
+
+http://sshmenu.sourceforge.net
+BSD
+A gnome applet interface to SSH
+~x86
+eutils java-utils-2 multilib portability ruby-ng toolchain-funcs user versionator
+gnome test test elibc_FreeBSD ruby_targets_ruby18 ruby_targets_ruby19
+
+
+
+2
+
+compile configure install prepare setup test unpack
+
+
+
+
+

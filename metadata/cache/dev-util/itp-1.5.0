@@ -1,0 +1,22 @@
+>=virtual/jdk-1.4 >=dev-java/java-config-2.1.9-r1 source? ( app-arch/zip )
+>=virtual/jre-1.4 >=dev-java/java-config-2.1.9-r1 source? ( app-arch/zip )
+0
+mirror://sourceforge/infonode/itp-gpl-1.5.0-src.zip
+
+http://infonode.net/index.html?itp
+GPL-2
+InfoNode Tabbed Panel is a highly flexible and customizable replacement for the Swing JTabbedPane component.
+~x86
+eutils java-pkg-2 java-utils-2 multilib portability toolchain-funcs user versionator
+elibc_FreeBSD doc source
+
+
+
+
+
+compile install preinst setup
+
+
+
+
+

@@ -1,0 +1,22 @@
+x11-libs/qt-core dev-lang/python >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+x11-libs/qt-core dev-lang/python
+0
+http://bu3sch.de/razercfg/razercfg-0.05.tar.bz2
+mirror
+http://bu3sch.de/joomla/index.php/razer-nextgen-config-tool
+GPL
+Utility to for advanced configuration of Razer mice (DeathAdder, Krait, Lachesis)
+-amd64
+base cmake-utils eutils flag-o-matic multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install test unpack
+
+
+
+
+

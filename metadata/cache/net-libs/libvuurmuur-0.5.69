@@ -1,0 +1,22 @@
+
+net-firewall/iptables
+0
+mirror://sourceforge/vuurmuur/Vuurmuur-0.5.69.tar.gz
+
+http://vuurmuur.sourceforge.net
+GPL-2
+iptables frontend. Common library and plugins.
+~x86 ~ppc
+
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

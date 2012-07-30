@@ -1,0 +1,22 @@
+alsa? ( media-libs/alsa-lib ) guile? ( dev-scheme/guile )
+alsa? ( media-libs/alsa-lib ) guile? ( dev-scheme/guile )
+0
+http://www.volny.cz/smilauer/rumor/src/rumor-1.0.3b.tar.bz2
+
+http://www.volny.cz/smilauer/rumor/
+GPL-2
+a realtime monophonic (with chords) MIDI keyboard to Lilypond converter
+~x86
+
+alsa guile
+
+
+
+2
+
+install
+
+
+
+
+

@@ -1,0 +1,16 @@
+diff -dupr trickle-old/Makefile.am trickle-1.06/Makefile.am
+--- trickle-old/Makefile.am	2008-11-12 16:42:13.389129342 +0100
++++ trickle-1.06/Makefile.am	2008-11-12 16:42:39.628131902 +0100
+@@ -30,12 +30,6 @@ tricklectl_LDADD = @ERRO@ @LIBOBJS@
+ 
+ AM_CFLAGS += -Wall -Icompat @EVENTINC@
+ 
+-overloaddir = $(libdir)
+-overload_DATA = libtrickle.so
+-
+-libtrickle.so: trickle-overload.c atomicio.c
+-$(overload_DATA):
+-
+ CLEANFILES = *.so
+ 
+ EXTRA_DIST = LICENSE README strlcat.c strlcpy.c err.c Makefile.am.inc	\

@@ -1,0 +1,29 @@
+diff --git a/status-monitor/support.c b/status-monitor/support.c
+index e1d0fff..61ac08b 100644
+--- a/status-monitor/support.c
++++ b/status-monitor/support.c
+@@ -121,7 +121,7 @@ create_pixmap                          (GtkWidget       *widget,
+ #ifdef HAVE_GTK_2
+ 
+ typedef struct stm_pixbuf_t {
+-  char **xpm_ptr;		/* pixmap ptr */
++  const char **xpm_ptr;		/* pixmap ptr */
+   GdkPixbuf *pixbuf;		/* pixbuf */
+   struct stm_pixbuf_t *next;
+ } stm_pixbuf;
+@@ -141,13 +141,13 @@ create_pixbuf_from_xpm_data (const char **xpm_ptr)
+   }
+ 
+   for ( pixbuf_list = &Stm_pixbuf_top; NULL != pixbuf_list; pixbuf_list = pixbuf_list->next ) {
+-    if ( ( NULL != pixbuf_list->xpm_ptr ) && ( pixbuf_list->xpm_ptr == (char **)xpm_ptr ) ) {
++    if ( ( NULL != pixbuf_list->xpm_ptr ) && ( pixbuf_list->xpm_ptr == xpm_ptr ) ) {
+       return pixbuf_list->pixbuf;
+     }
+   }
+ 
+ /*   pixbuf = gdk_pixbuf_new_from_file (pathname, &error); */
+-  pixbuf = gdk_pixbuf_new_from_xpm_data((const char**)xpm_ptr);
++  pixbuf = gdk_pixbuf_new_from_xpm_data(xpm_ptr);
+ 
+   if (!pixbuf)
+   {

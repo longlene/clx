@@ -1,0 +1,9 @@
+find_file_in_path() {
+	local file="$1" path="$2"
+	echo "${path}" | while IFS=: read d ; do
+		if [ -e "${d}/${file}" ] ; then
+			echo "${d}/${file}"
+			break
+		fi
+	done
+}

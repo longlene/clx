@@ -1,0 +1,22 @@
+sys-devel/libtool >=sys-libs/db-4.3.29-r2
+>=sys-libs/libstdc++-v3-3.3.4 >=sys-libs/zlib-1.2.3
+0
+mirror://sourceforge/linux-diag/libvpd-1.5.0.tar.gz
+
+http://linux-diag.sourceforge.net/Lsvpd.html
+LGPL-2.1
+A C++ library for accessing VPD stored by sys-apps/lsvpd.
+~x86 ~ppc ~ppc64
+
+
+
+
+
+
+
+compile install
+
+
+
+
+

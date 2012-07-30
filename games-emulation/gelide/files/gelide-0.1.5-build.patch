@@ -1,0 +1,123 @@
+diff -ru gelide-0.1.5.orig/Makefile.am gelide-0.1.5/Makefile.am
+--- gelide-0.1.5.orig/Makefile.am	2010-10-19 05:04:35.000000000 -0400
++++ gelide-0.1.5/Makefile.am	2011-03-28 00:25:05.422235755 -0400
+@@ -5,27 +5,14 @@
+ # Indicamos los subdirectorios a procesar
+ SUBDIRS = \
+ 	data \
+-	doc \
+ 	help \
+ 	pixmap \
+ 	po \
+ 	src \
+ 	ui 
+ 
+-# Lugar de instalación de la documentación estandar
+-gelidedocdir = ${prefix}/doc/gelide
+-# Archivos de documentación estandar a instalar
+-gelidedoc_DATA = \
+-	AUTHORS \
+-	ChangeLog \
+-	COPYING \
+-	INSTALL \
+-	NEWS \
+-	README
+-
+ # Incluir los archivos de datos estandar en la distribución
+ EXTRA_DIST = \
+-	$(gelidedoc_DATA) \
+ 	gnome-doc-utils.make \
+ 	po/gelide.pot \
+ 	m4
+diff -ru gelide-0.1.5.orig/data/Makefile.am gelide-0.1.5/data/Makefile.am
+--- gelide-0.1.5.orig/data/Makefile.am	2010-10-19 04:57:00.000000000 -0400
++++ gelide-0.1.5/data/Makefile.am	2011-03-28 00:25:05.422235755 -0400
+@@ -1,7 +1,7 @@
+ ## File created by the gnome-build tools
+ 
+ # Reglas para el icono del programa
+-gelide_icondir = $(datadir)/icons/hicolor/scalable/apps
++gelide_icondir = /usr/share/icons/hicolor/scalable/apps
+ gelide_icon_DATA = gelide.svg
+ 
+ # Lugar de instalación de la configuración por defecto
+@@ -10,7 +10,7 @@
+ 	defaultcfg.xml
+ 
+ # Reglas para el fichero .desktop
+-desktopdir = $(datadir)/applications
++desktopdir = /usr/share/applications
+ desktop_in_files = gelide.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ @INTLTOOL_DESKTOP_RULE@
+diff -ru gelide-0.1.5.orig/data/gelide.desktop.in gelide-0.1.5/data/gelide.desktop.in
+--- gelide-0.1.5.orig/data/gelide.desktop.in	2009-05-03 14:20:37.000000000 -0400
++++ gelide-0.1.5/data/gelide.desktop.in	2011-03-28 00:25:05.422235755 -0400
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+-Version=
+-Encoding=UTF-8
++Version=1.0
+ Name=Gelide
+ _Comment=Manage and play your roms
+ Exec=gelide
+diff -ru gelide-0.1.5.orig/po/Makefile.in.in gelide-0.1.5/po/Makefile.in.in
+--- gelide-0.1.5.orig/po/Makefile.in.in	2011-03-26 07:35:59.000000000 -0400
++++ gelide-0.1.5/po/Makefile.in.in	2011-03-28 00:25:05.423235542 -0400
+@@ -34,7 +34,7 @@
+ datarootdir = @datarootdir@
+ libdir = @libdir@
+ DATADIRNAME = @DATADIRNAME@
+-itlocaledir = $(prefix)/$(DATADIRNAME)/locale
++localedir = @localedir@
+ subdir = po
+ install_sh = @install_sh@
+ # Automake >= 1.8 provides @mkdir_p@.
+@@ -103,7 +103,7 @@
+ install-data-yes: all
+ 	linguas="$(USE_LINGUAS)"; \
+ 	for lang in $$linguas; do \
+-	  dir=$(DESTDIR)$(itlocaledir)/$$lang/LC_MESSAGES; \
++	  dir=$(DESTDIR)$(localedir)/$$lang/LC_MESSAGES; \
+ 	  $(mkdir_p) $$dir; \
+ 	  if test -r $$lang.gmo; then \
+ 	    $(INSTALL_DATA) $$lang.gmo $$dir/$(GETTEXT_PACKAGE).mo; \
+@@ -137,8 +137,8 @@
+ uninstall:
+ 	linguas="$(USE_LINGUAS)"; \
+ 	for lang in $$linguas; do \
+-	  rm -f $(DESTDIR)$(itlocaledir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE).mo; \
+-	  rm -f $(DESTDIR)$(itlocaledir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE).mo.m; \
++	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE).mo; \
++	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE).mo.m; \
+ 	done
+ 
+ check: all $(GETTEXT_PACKAGE).pot
+diff -ru gelide-0.1.5.orig/src/Makefile.am gelide-0.1.5/src/Makefile.am
+--- gelide-0.1.5.orig/src/Makefile.am	2011-03-15 12:24:23.000000000 -0400
++++ gelide-0.1.5/src/Makefile.am	2011-03-28 00:25:05.423235542 -0400
+@@ -1,10 +1,10 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+ AM_CPPFLAGS = \
+-	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
++	-DPACKAGE_LOCALE_DIR=\""$(localedir)"\" \
+ 	-DPACKAGE_SRC_DIR=\""$(srcdir)"\" \
+ 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
+-	-DPACKAGE_DOC_DIR=\""$(prefix)/doc"\" \
++	-DPACKAGE_DOC_DIR=\""$(docdir)"\" \
+ 	$(GELIDE_CFLAGS)
+ 
+ AM_CFLAGS =\
+diff -ru gelide-0.1.5.orig/src/gelide.hpp gelide-0.1.5/src/gelide.hpp
+--- gelide-0.1.5.orig/src/gelide.hpp	2011-03-25 14:50:54.000000000 -0400
++++ gelide-0.1.5/src/gelide.hpp	2011-03-28 00:25:33.191328314 -0400
+@@ -60,7 +60,7 @@
+ 	#define GELIDE_PIXMAPS			PACKAGE_DATA_DIR"/gelide/pixmaps/"
+ 	#define GELIDE_UI_ICONS			PACKAGE_DATA_DIR"/gelide/ui/icons/"
+ 	#define GELIDE_CFG_DEFAULT		PACKAGE_DATA_DIR"/gelide/defaultcfg.xml"
+-	#define GELIDE_DOCS				PACKAGE_DOC_DIR"/gelide/"
++	#define GELIDE_DOCS				PACKAGE_DATA_DIR"/gelide/"
+ #else
+ 	#define GELIDE_ICON				"../data/gelide.svg"
+ 	#define GELIDE_PIXMAPS			"../pixmap/"

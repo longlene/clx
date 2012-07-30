@@ -1,0 +1,22 @@
+
+
+0
+mirror://cpan/authors/id/D/DC/DCONWAY/Class-Multimethods-1.70.tar.gz
+
+http://search.cpan.org/~dconway/Class-Multimethods-1.70/
+
+Support multimethods and function overloading in Perl
+x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst postrm preinst prerm setup test unpack
+
+
+
+
+

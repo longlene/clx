@@ -1,0 +1,22 @@
+mail-mta/courier dev-lang/python >=app-admin/eselect-python-20091230 dev-lang/python
+mail-mta/courier dev-lang/python >=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://phantom.dragonsdawn.net/~gordon/courier-patches/courier-pythonfilter/courier-pythonfilter-0.20.tar.gz
+
+http://phantom.dragonsdawn.net/~gordon/courier-patches/courier-pythonfilter/
+GPL-2
+Python-framework for Courier-MTA's courierfilter
+~x86 ~amd64
+distutils multilib python toolchain-funcs
+
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

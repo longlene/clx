@@ -1,0 +1,13 @@
+diff -ubBr tcpdstat-uw/net_read.c tcpdstat-uw-new/net_read.c
+--- tcpdstat-uw/net_read.c	2002-05-22 02:39:20.000000000 +0200
++++ tcpdstat-uw-new/net_read.c	2007-10-07 21:31:02.000000000 +0200
+@@ -146,7 +146,7 @@
+ pcap_t *pd;
+ int pcapfd;
+ 
+-static int packet_length;		/* length of current packet */
++int packet_length;		/* length of current packet */
+ 
+ #define STAT_ADD(name) \
+     { tcpdstat[(name)].packets++; tcpdstat[(name)].bytes += packet_length; }
+

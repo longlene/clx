@@ -1,0 +1,22 @@
+
+app-shells/bash
+0
+http://w3.cs.upt.ro/~gseba/dev/txtfmt-1.1.2.tar.bz2
+primaryuri
+http://w3.cs.upt.ro/~gseba
+GPL-2
+Plain text formatting tools
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+install test
+
+
+
+
+

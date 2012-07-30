@@ -1,0 +1,22 @@
+>=x11-libs/qt-4.3 >=dev-libs/libserial-0.5.2
+>=x11-libs/qt-4.3 >=dev-libs/libserial-0.5.2
+0
+mirror://sourceforge/lvprog/LVProg-0.1.1_beta.tar.bz2
+
+http://www.sourceforge.net/projects/lvprog/
+GPL2
+LVProg - Linux Vinculum (USB host controller) Programmer
+~x86
+
+
+
+
+
+
+
+compile install
+
+
+
+
+

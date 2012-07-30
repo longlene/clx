@@ -1,0 +1,22 @@
+dev-lang/perl[-build]
+dev-perl/DBI dev-perl/OpenCA-REQ dev-perl/OpenCA-X509 dev-perl/OpenCA-CRL dev-perl/OpenCA-OpenSSL dev-perl/OpenCA-Tools dev-perl/libintl-perl dev-lang/perl[-build]
+0
+mirror://sourceforge/openca/openca-base-1.1.1.tar.gz
+
+http://search.cpan.org/dist/OpenCA-DBI/
+|| ( Artistic GPL-1 GPL-2 GPL-3 )
+Open-CA Perl module for DBI Extension
+~amd64 ~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

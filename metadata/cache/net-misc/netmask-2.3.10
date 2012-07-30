@@ -1,0 +1,22 @@
+
+
+0
+http://ftp.de.debian.org/debian/pool/main/n/netmask/netmask_2.3.10.tar.gz
+
+http://packages.debian.org/sid/netmask
+GPL-2
+calculates netmask masks and subnet ranges
+~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~s390 ~sparc ~x86 ~x86-fbsd
+
+
+
+
+
+
+
+compile install
+
+
+
+
+

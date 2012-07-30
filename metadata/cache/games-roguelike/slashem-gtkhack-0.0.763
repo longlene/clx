@@ -1,0 +1,22 @@
+>=sys-apps/sed-4 dev-util/yacc
+>=sys-apps/sed-4 dev-util/yacc
+0
+mirror://sourceforge/slashem/se007e6f3.tar.gz http://www.juiblex.co.uk/nethack/config/conf12s.tar.gz
+
+http://www.slashem.org/
+nethack
+GTK+ interface for Slash'EM
+~x86
+base eutils flag-o-matic games multilib portability toolchain-funcs user
+X gtk
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

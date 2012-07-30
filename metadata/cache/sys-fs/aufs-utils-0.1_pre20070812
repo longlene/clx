@@ -1,0 +1,22 @@
+
+
+0
+http://www.rit.edu/~reh5586/gentoo/distfiles/aufs-utils-0.1_pre20070812.tar.gz
+
+http://aufs.sourceforge.net/
+GPL-2
+Userspace utilities for aufs.
+~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install
+
+
+
+
+

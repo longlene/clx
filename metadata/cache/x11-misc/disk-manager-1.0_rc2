@@ -1,0 +1,22 @@
+>=sys-apps/hal-0.5.9-r1 >=sys-fs/udev-60 >=dev-python/pygtk-2.10.4 >=dev-lang/python-2.4 libnotify? ( dev-python/notify-python ) dev-util/intltool >=app-admin/eselect-python-20091230 >=sys-apps/sed-4
+>=sys-apps/hal-0.5.9-r1 >=sys-fs/udev-60 >=dev-python/pygtk-2.10.4 >=dev-lang/python-2.4 libnotify? ( dev-python/notify-python ) >=app-admin/eselect-python-20091230
+0
+http://flomertens.free.fr/disk-manager/download/source/disk-manager-1.0-RC2.tar.gz
+
+http://flomertens.free.fr/disk-manager/index.html
+GPL-2
+Disk manager is a simple filesystem configurator
+~x86
+eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability python toolchain-funcs user versionator
+libnotify debug
+
+
+
+
+
+compile install postinst postrm preinst unpack
+
+
+
+
+

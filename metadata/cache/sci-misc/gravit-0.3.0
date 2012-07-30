@@ -1,0 +1,22 @@
+>=media-libs/libsdl-1.2
+>=media-libs/libsdl-1.2
+0
+http://gravit.slowchop.com/dist/gravit-0.3.0-src.tgz
+
+http://gravit.slowchop.com/
+GPL-2
+A gravity simulator using the Barnes-Hut N-Body algorithm.
+x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

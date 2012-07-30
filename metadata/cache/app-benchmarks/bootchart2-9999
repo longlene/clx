@@ -1,0 +1,22 @@
+dev-lang/python !app-benchmarks/bootchart systemd? ( sys-apps/systemd ) dev-python/pycairo[svg=] >=app-admin/eselect-python-20091230 >=dev-vcs/git-1.6
+dev-lang/python !app-benchmarks/bootchart systemd? ( sys-apps/systemd ) dev-python/pycairo[svg=] >=app-admin/eselect-python-20091230
+0
+
+
+https://github.com/mmeeks/bootchart
+GPL-2
+Performance analysis and visualization of the system boot process
+
+eutils git linux-info multilib portability python toolchain-funcs user versionator
+svg systemd
+
+
+
+3
+
+compile install postinst prepare setup unpack
+
+
+
+
+

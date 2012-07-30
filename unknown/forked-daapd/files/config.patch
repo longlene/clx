@@ -1,0 +1,56 @@
+--- configure.in.orig	2010-05-02 11:21:07.000000000 +0200
++++ configure.in	2010-08-09 23:19:31.000000000 +0200
+@@ -45,21 +45,15 @@
+ AC_SYS_LARGEFILE
+ AC_TYPE_OFF_T
+ 
+-AC_ARG_ENABLE(flac, AC_HELP_STRING([--enable-flac], [Enable FLAC support]),
+-                      use_flac=true;
+-                      CPPFLAGS="${CPPFLAGS} -DFLAC")
+-
+-AC_ARG_ENABLE(musepack, AC_HELP_STRING([--enable-musepack], [Enable Musepack support]),
+-                      use_musepack=true;
+-                      CPPFLAGS="${CPPFLAGS} -DMUSEPACK")
+-
+-AC_ARG_ENABLE(itunes, AC_HELP_STRING([--enable-itunes], [Enable iTunes library support]),
+-                      use_itunes=true;
+-                      CPPFLAGS="${CPPFLAGS} -DITUNES")
+-
+-AM_CONDITIONAL(COND_FLAC, test x$use_flac = xtrue)
+-AM_CONDITIONAL(COND_MUSEPACK, test x$use_musepack = xtrue)
+-AM_CONDITIONAL(COND_ITUNES, test x$use_itunes = xtrue)
++AC_ARG_ENABLE(flac, AC_HELP_STRING([--enable-flac], [Enable FLAC support]))
++
++AC_ARG_ENABLE(musepack, AC_HELP_STRING([--enable-musepack], [Enable Musepack support]))
++
++AC_ARG_ENABLE(itunes, AC_HELP_STRING([--enable-itunes], [Enable iTunes library support]))
++
++AM_CONDITIONAL(COND_FLAC, test x$enable_flac = xtrue)
++AM_CONDITIONAL(COND_MUSEPACK, test x$enable_musepack = xtrue)
++AM_CONDITIONAL(COND_ITUNES, test x$enable_itunes = xtrue)
+ 
+ dnl Checks for libraries.
+ PKG_CHECK_MODULES(CONFUSE, [ libconfuse ])
+@@ -108,16 +102,19 @@
+ 
+ AM_PATH_LIBGCRYPT([], , AC_MSG_ERROR([libgcrypt not found]))
+ 
+-if test x$use_flac = xtrue; then
++if test x$enable_flac = xtrue; then
+ 	PKG_CHECK_MODULES(FLAC, [ flac ])
++	CPPFLAGS="${CPPFLAGS} -DFLAC" 
+ fi
+ 
+-if test x$use_musepack = xtrue; then
++if test x$enable_musepack = xtrue; then
+ 	PKG_CHECK_MODULES(TAGLIB, [ taglib_c ])
++	CPPFLAGS="${CPPFLAGS} -DMUSEPACK"
+ fi
+ 
+-if test x$use_itunes = xtrue; then
++if test x$enable_itunes = xtrue; then
+ 	PKG_CHECK_MODULES(LIBPLIST, [ libplist >= 0.16 ])
++	CPPFLAGS="${CPPFLAGS} -DITUNES"
+ fi
+ 
+ case "$host" in

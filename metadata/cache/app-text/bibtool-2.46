@@ -1,0 +1,22 @@
+virtual/libc doc? ( virtual/tetex )
+
+0
+http://www.gerd-neugebauer.de/software/TeX/BibTool/BibTool-2.46.tar.gz
+
+http://www.gerd-neugebauer.de/software/TeX/BibTool.en.html
+GPL-1
+BibTool is a powerful command-line tool to manipulate BibTeX databases.
+~x86
+eutils flag-o-matic multilib portability toolchain-funcs user
+doc
+
+
+
+
+
+compile install unpack
+
+
+
+
+

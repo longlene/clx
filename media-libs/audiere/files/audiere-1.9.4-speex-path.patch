@@ -1,0 +1,32 @@
+Index: src/speexfile/speexfile.cpp
+===================================================================
+--- src/speexfile/speexfile.cpp	(revisión: 683)
++++ src/speexfile/speexfile.cpp	(copia de trabajo)
+@@ -889,7 +889,7 @@
+     modeID = header->mode;
+     if ( forceMode != -1 )
+         modeID = forceMode;
+-    mode = speex_mode_list[modeID];
++    mode = (SpeexMode*) speex_mode_list[modeID];
+ 
+     if ( mode->bitstream_version < header->mode_bitstream_version ) {
+         strcpy ( speex_last_error, "The file was encoded with a newer version of Speex.\nYou need to upgrade in order to play it." );
+Index: src/speexfile/speexfile.h
+===================================================================
+--- src/speexfile/speexfile.h	(revisión: 683)
++++ src/speexfile/speexfile.h	(copia de trabajo)
+@@ -13,10 +13,10 @@
+ //#define SL_READER   // uncomment to provide own reader
+ 
+ extern "C" {
+-#include <speex.h>
+-#include <speex_header.h>
+-#include <speex_stereo.h>
+-#include <speex_callbacks.h>
++#include <speex/speex.h>
++#include <speex/speex_header.h>
++#include <speex/speex_stereo.h>
++#include <speex/speex_callbacks.h>
+ //#include <misc.h>
+ #include <ogg/ogg.h>
+ }

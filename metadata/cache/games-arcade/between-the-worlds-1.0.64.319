@@ -1,0 +1,22 @@
+
+x86? ( sound? ( media-libs/sdl-mixer[vorbis] ) media-libs/sdl-image[jpeg,png] media-libs/libsdl[X,opengl] sys-libs/zlib ) amd64? ( app-emulation/emul-linux-x86-sdl app-emulation/emul-linux-x86-xlibs app-emulation/emul-linux-x86-baselibs )
+0
+http://www.wegroup.org/downloads/between-the-worlds-1.0.64.319.tar.bz2
+strip
+http://www.wegroup.org/games/hidden-object/between-the-worlds.html
+as-is
+Decode the secrets within as you discover a true sense
+~amd64 ~x86
+base eutils games multilib portability toolchain-funcs user
+sound
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

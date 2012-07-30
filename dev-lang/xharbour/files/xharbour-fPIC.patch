@@ -1,0 +1,27 @@
+--- xharbour-1.0.0-beta1/config/linux/gcc.cf.orig	2006-07-16 23:48:56.000000000 +0400
++++ xharbour-1.0.0-beta1/config/linux/gcc.cf	2009-03-05 10:38:53.000000000 +0300
+@@ -22,9 +22,6 @@
+ # We are under linux
+ #CFLAGS = -DHB_OS_LINUX -Wall -std=gnu99
+ CFLAGS = -DHB_OS_LINUX -Wall -W -fsigned-char
+-# uncomment this if you want to force relocateable code for .so libs
+-# it's necessary on some platforms but can reduce performance
+-#CFLAGS += -fPIC
+ 
+ ifeq ($(HB_LEX),SIMPLEX)
+ CFLAGS += -DSIMPLEX
+@@ -36,6 +33,14 @@
+ CFLAGS+= -DHB_THREAD_SUPPORT -D_THREAD_SAFE
+ endif
+ else
++# force relocateable code for .so libs
++# it's necessary on some platforms but can reduce performance
++ifeq ($(shell sh -c 'uname -m 2>/dev/null'),x86_64)
++USE_FPIC = yes
++endif
++ifeq ($(USE_FPIC),yes)
++CFLAGS += -fPIC
++endif
+ #Add thread support to lib compilation only if compiling a _mt lib
+ ifeq ($(HB_LIBCOMP_MT),YES)
+ CFLAGS+= -DHB_THREAD_SUPPORT -D_THREAD_SAFE

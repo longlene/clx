@@ -1,0 +1,63 @@
+--- etckeeper.conf	2009-01-31 23:32:44.000000000 +0100
++++ etckeeper.conf	2009-01-31 23:13:45.000000000 +0100
+@@ -17,8 +17,14 @@
+ # so you can commit the changes by hand.
+ #AVOID_COMMIT_BEFORE_INSTALL=1
+ 
+-# The high-level package manager that's being used.
+-HIGHLEVEL_PACKAGE_MANAGER=apt
++# The high-level package manager that's being used. 
++# For gentoo this is emerge
++#HIGHLEVEL_PACKAGE_MANAGER=apt
++
++HIGHLEVEL_PACKAGE_MANAGER=emerge
+ 
+ # The low-level package manager that's being used.
+-LOWLEVEL_PACKAGE_MANAGER=dpkg
++# For gentoo this is equery
++#LOWLEVEL_PACKAGE_MANAGER=dpkg
++
++LOWLEVEL_PACKAGE_MANAGER=equery
+--- init.d/50vcs-ignore	2009-01-31 23:32:44.000000000 +0100
++++ init.d/50vcs-ignore	2009-01-31 14:38:48.000000000 +0100
+@@ -57,6 +57,10 @@
+ 	ignore "*.pacorig"
+ 	ignore "*.pacsave"
+ 	nl
++elif [ "$LOWLEVEL_PACKAGE_MANAGER" = "equery" ]; then
++	comment "new and old versions of conffiles, stored by emerge"
++	ignore "*.ebuild*"
++	nl
+ fi
+ 
+ ignore "*~"
+--- list-installed.d/50list-installed	2009-01-31 23:32:44.000000000 +0100
++++ list-installed.d/50list-installed	2009-01-31 13:54:01.000000000 +0100
+@@ -6,3 +6,8 @@
+ 	dpkg-query -W -f '${Status}\t${Package} ${Version}\n' | \
+ 		egrep '(ok installed|ok config-files)' | cut -f2,3
+ fi
++
++if [ "$LOWLEVEL_PACKAGE_MANAGER" = equery ]; then
++	equery list | cut -f1
++fi
++
+--- Makefile	2009-01-31 23:32:44.000000000 +0100
++++ Makefile	2009-02-01 00:54:55.000000000 +0100
+@@ -23,14 +23,14 @@
+ 	$(INSTALL_DATA) $(CONFFILE) $(DESTDIR)$(etcdir)/etckeeper/etckeeper.conf
+ 	$(INSTALL_EXE) etckeeper $(DESTDIR)$(sbindir)/etckeeper
+ 	$(INSTALL_DATA) etckeeper.8 $(DESTDIR)$(mandir)/man8/etckeeper.8
+-	$(INSTALL_DATA) bash_completion $(DESTDIR)$(etcdir)/bash_completion.d/etckeeper
+ ifeq ($(HIGHLEVEL_PACKAGE_MANAGER),apt)
+ 	$(INSTALL_DATA) apt.conf $(DESTDIR)$(etcdir)/apt/apt.conf.d/05etckeeper
+ endif
++
+ ifeq ($(LOWLEVEL_PACKAGE_MANAGER),pacman-g2)
+ 	$(INSTALL_DATA) pacman-g2.hook $(DESTDIR)$(etcdir)/pacman-g2/hooks/etckeeper
+ endif
+-	-./etckeeper-bzr/__init__.py install --root=$(DESTDIR) || echo "** bzr support not installed"
++
+ 	echo "** installation successful"
+ 
+ clean:

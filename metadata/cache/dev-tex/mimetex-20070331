@@ -1,0 +1,22 @@
+app-arch/unzip
+
+0
+http://www.forkosh.com/mimetex.zip
+
+http://www.forkosh.dreamhost.com/mimetex.html
+GPL
+mimetex lets you easily embed LaTeX math in your html and dynamic web pages
+~x86
+multilib toolchain-funcs
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

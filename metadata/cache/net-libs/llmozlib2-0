@@ -1,0 +1,22 @@
+
+dev-libs/atk dev-libs/glib media-libs/fontconfig media-libs/jpeg sys-libs/zlib x11-libs/gtk+:2 x11-libs/pango || ( www-client/mozilla-firefox-bin net-libs/xulrunner-bin )
+2
+x86? ( http://s3.amazonaws.com/viewer-source-downloads/install_pkgs/llmozlib-linux-20090304prfhk.tar.bz2 ) amd64? ( http://s3.amazonaws.com/viewer-source-downloads/install_pkgs/llmozlib-linux64-20080909.tar.bz2 )
+
+http://ubrowser.com/
+MPL-1.1
+LLMozLib library let embed the Mozilla Gecko rendering engine into your application.
+~x86
+multilib toolchain-funcs
+examples
+
+
+
+2
+
+install
+
+
+
+
+

@@ -1,0 +1,22 @@
+dev-libs/openssl gtk? ( x11-libs/wxGTK:2.8 media-libs/libpng media-libs/jpeg media-libs/tiff ) !gtk? ( sys-libs/readline )
+
+0
+mirror://sourceforge/offsystem/OFFSystem-0.19.24-src.tar.gz
+
+http://offsystem.sourceforge.net/
+GPL-3
+a distributed filesystem in which everything is stored in reference to randomized data blocks
+~amd64
+eutils multilib portability toolchain-funcs user wxwidgets
+debug gtk
+
+
+
+1
+
+compile install setup
+
+
+
+
+

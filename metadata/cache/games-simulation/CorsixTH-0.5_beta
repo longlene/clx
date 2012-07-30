@@ -1,0 +1,22 @@
+audio? ( >=media-libs/libsdl-1.2.0 ) >=dev-lang/lua-5.1.0 opengl? ( virtual/opengl ) luajit? ( dev-lang/luajit ) >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+audio? ( >=media-libs/libsdl-1.2.0 ) >=dev-lang/lua-5.1.0 opengl? ( virtual/opengl ) luajit? ( dev-lang/luajit )
+0
+http://corsix-th.googlecode.com/files/CorsixTH-Beta5-Source.tar.gz
+
+https://code.google.com/p/corsix-th/
+
+An open-source clone of Theme Hospital
+~amd64 ~x86
+base cmake-utils eutils flag-o-matic games multilib portability toolchain-funcs user
+opengl audio luajit
+
+
+
+2
+
+compile configure install postinst preinst setup test unpack
+
+
+
+
+

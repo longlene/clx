@@ -1,0 +1,16 @@
+*** utils/dgraphics_nosdl.cc	Mon Aug 17 16:41:28 2009
+--- utils/dgraphics_nosdl.cc	Mon Aug 17 16:41:36 2009
+***************
+*** 35,38 ****
+--- 35,45 ----
+      param_bool dgraphics_enabled("dgraphics",true,"debugging graphics");
+  
++     bool dactive() {
++         return false;
++     }
++     const char *dsection_set(const char *section) {
++         const char *last = "none";
++         return last;
++     }
+      void dinit(int w,int h, bool force) {
+          if(force || dgraphics_enabled) {

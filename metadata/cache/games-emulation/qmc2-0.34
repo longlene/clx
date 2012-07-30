@@ -1,0 +1,22 @@
+>=x11-libs/qt-gui-4.5:4[accessibility] >=x11-libs/qt-webkit-4.5:4 phonon? ( || ( media-libs/phonon >=x11-libs/qt-phonon-4.5 ) ) joystick? ( media-libs/libsdl[joystick] ) opengl? ( >=x11-libs/qt-opengl-4.5:4 )
+>=x11-libs/qt-gui-4.5:4[accessibility] >=x11-libs/qt-webkit-4.5:4 phonon? ( || ( media-libs/phonon >=x11-libs/qt-phonon-4.5 ) ) joystick? ( media-libs/libsdl[joystick] ) opengl? ( >=x11-libs/qt-opengl-4.5:4 ) sdlmame? ( =games-emulation/sdlmame-0.144 ) sdlmess? ( =games-emulation/sdlmess-0.144 ) x11-apps/xwininfo
+0
+mirror://sourceforge/qmc2/qmc2-0.34.tar.bz2
+
+http://qmc2.arcadehits.net/wordpress/
+GPL-2
+An MAME frontend for SDLMAME/SDLMESS
+amd64 ~x86
+base confutils eutils games multilib portability toolchain-funcs user
+debug joystick opengl phonon +sdlmame sdlmess youtube
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

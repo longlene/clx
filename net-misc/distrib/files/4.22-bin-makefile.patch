@@ -1,0 +1,24 @@
+--- msrc-4.20.orig/local/etc/distrib/Make.host	2000-07-30 17:27:01.000000000 -0500
++++ msrc-4.20/local/etc/distrib/Make.host	2004-10-10 20:24:32.552718363 -0500
+@@ -11,17 +11,17 @@
+ 
+ SHELL=/bin/sh
+ ETC=${DESTDIR}'ifdef(`DSPD_SUPPORT',
+-`/opt/fedex/support/bin',`/usr/local/etc')`
++`/opt/fedex/support/bin',`/usr/bin')`
+ LIB=${DESTDIR}'ifdef(`DSPD_SUPPORT',
+-`/opt/fedex/support/lib/distrib',`/usr/local/lib/distrib')`
++`/opt/fedex/support/lib/distrib',`/etc/distrib')`
+ 
+ L=/usr/local/include
+ P=
+ 
+ INCLUDE= -I$L
+-DEBUG=	'ifelse(HOSTTYPE,`V386',`',`-O')`
++DEBUG=	'ifelse(HOSTTYPE,`V386',`',`')`
+ CDEFS=	-D'HOSTTYPE` -DALT_CONFIG_PATH=\"${LIB}\"
+-CFLAGS= ${DEBUG} ${CDEFS} ${INCLUDE}
++CFLAGS+= ${DEBUG} ${CDEFS} ${INCLUDE}
+ 
+ HDR=	'ifelse(MKCMD,`no',`main.h ')`distrib.h envlist.h
+ SRC=	'ifelse(MKCMD,`no',`main.c ')`distrib.c envlist.c

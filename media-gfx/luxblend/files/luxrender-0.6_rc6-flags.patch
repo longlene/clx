@@ -1,0 +1,11 @@
+--- lux-52b36551c296/CMakeLists.txt	2009-09-14 19:22:18.492238492 +0200
++++ lux-52b36551c296/CMakeLists.txt	2009-09-14 19:23:31.769236797 +0200
+@@ -263,7 +263,7 @@
+ #############################################################################
+ #############################################################################
+ # Dade - default compiler options
+-ADD_DEFINITIONS(-O3 -msse2 -mfpmath=sse -ftree-vectorize -funroll-loops -Wall -DLUX_USE_OPENGL -DHAVE_PTHREAD_H)
++ADD_DEFINITIONS(-ftree-vectorize -DLUX_USE_OPENGL -DHAVE_PTHREAD_H)
+ 
+ 
+ #############################################################################

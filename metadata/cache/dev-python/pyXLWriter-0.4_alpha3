@@ -1,0 +1,22 @@
+>=dev-lang/python-2.3 >=app-admin/eselect-python-20091230 dev-lang/python
+>=dev-lang/python-2.3 >=app-admin/eselect-python-20091230 dev-lang/python
+0
+mirror://sourceforge/pyxlwriter/pyXLWriter-0.4a3.zip
+
+http://pyxlwriter.sourceforge.net
+LGPL-2
+A set of python classes that make it possible to produce excel workbooks from python programs.
+~x86 ~amd64
+distutils multilib python toolchain-funcs
+
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

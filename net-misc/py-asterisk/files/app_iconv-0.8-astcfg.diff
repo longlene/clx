@@ -1,0 +1,29 @@
+--- Makefile.orig	1970-01-01 00:00:00.000000000 +0000
++++ Makefile	2005-01-26 20:30:27.009331696 +0000
+@@ -0,0 +1,26 @@
++
++CC=gcc
++CFLAGS=$(shell /usr/bin/asterisk-config --cflags) -fPIC -DPIC
++SOLINK=$(shell /usr/bin/asterisk-config --solink)
++LIBS=
++
++ASTMODDIR=$(shell /usr/bin/asterisk-config --modulesdir)
++
++all: .depend app_iconv.so
++
++.depend:
++	@if [ ! -x /usr/bin/asterisk-config ]; then \
++		echo "/usr/bin/asterisk-config not found!"; \
++		exit 255; \
++	fi
++
++.c.o:
++	$(CC) -c $(CFLAGS) -o $@ $<
++
++app_iconv.so: app_iconv.o
++	$(CC) $(SOLINK) $(LIBS) -o $@
++
++install:
++	if [ ! -d $(DESTDIR)$(ASTMODDIR) ]; then mkdir -p $(DESTDIR)$(ASTMODDIR); fi
++	install -m755 app_iconv.so $(DESTDIR)$(ASTMODDIR)
++

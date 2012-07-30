@@ -1,0 +1,22 @@
+x11-libs/qt-gui:4 app-cdr/liblightscribe amd64? ( app-emulation/emul-linux-x86-baselibs ) dev-util/cmake[qt4] >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+x11-libs/qt-gui:4 app-cdr/liblightscribe amd64? ( app-emulation/emul-linux-x86-baselibs )
+0
+mirror://sourceforge/qlscribe/qlscribe-0.14.tar.gz
+
+http://sourceforge.net/projects/qlscribe/
+GPL-2
+Qt lightScribe - OS labeler for Linux
+~amd64 ~x86
+base cmake-utils eutils flag-o-matic multilib portability qt4 toolchain-funcs user versionator
+debug multilib
+
+
+
+2
+
+compile configure install prepare setup test unpack
+
+
+
+
+

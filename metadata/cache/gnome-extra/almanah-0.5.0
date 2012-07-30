@@ -1,0 +1,22 @@
+>=x11-libs/gtk+-2.14 >=gnome-base/gconf-2 spell? ( >=app-text/gtkspell-2 ) crypt? ( >=app-crypt/gpgme-1 ) >=dev-db/sqlite-3.0 >=dev-util/intltool-0.35 >=dev-util/pkgconfig-0.9 >=sys-apps/sed-4
+>=x11-libs/gtk+-2.14 >=gnome-base/gconf-2 spell? ( >=app-text/gtkspell-2 ) crypt? ( >=app-crypt/gpgme-1 ) >=dev-db/sqlite-3.0
+0
+http://tecnocode.co.uk/downloads/almanah-0.5.0.tar.gz
+
+http://tecnocode.co.uk/projects/almanah/
+LGPL-2.1
+A personal diary for GNOME
+~amd64 ~x86
+eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability toolchain-funcs user versionator
+spell crypt debug
+
+
+
+
+
+compile install postinst postrm preinst setup unpack
+
+
+
+
+

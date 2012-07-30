@@ -1,0 +1,22 @@
+>=gnome-base/gconf-2.10.1 >=dev-libs/atk-1.20.0 >=dev-libs/glib-2.16.0 >=x11-libs/gtk+-2.13.3 >=x11-libs/pango-1.21.3 >=gnome-base/libbonoboui-2.15.1 >=x11-libs/liblunar-1.0.0 >=sys-apps/sed-4
+>=gnome-base/gconf-2.10.1 >=dev-libs/atk-1.20.0 >=dev-libs/glib-2.16.0 >=x11-libs/gtk+-2.13.3 >=x11-libs/pango-1.21.3 >=gnome-base/libbonoboui-2.15.1 >=x11-libs/liblunar-1.0.0
+0
+http://archive.ubuntu.com/ubuntu/pool/universe/l/lunar-applet/lunar-applet_2.0.orig.tar.gz
+
+http://packages.ubuntu.com/intrepid/lunar-applet
+GPL-2
+GNOME Clock applet with added Chinese lunar calendar support
+~x86 ~amd64
+eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability toolchain-funcs user versionator
+debug
+
+
+
+
+
+compile install postinst postrm preinst unpack
+
+
+
+
+

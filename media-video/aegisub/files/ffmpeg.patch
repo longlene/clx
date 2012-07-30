@@ -1,0 +1,54 @@
+--- aegisub-9999/aegisub/lavc_file.h~	2008-07-20 14:42:48.000000000 +0400
++++ aegisub-9999/aegisub/lavc_file.h	2008-07-20 14:45:50.000000000 +0400
+@@ -41,8 +41,8 @@
+ #endif
+ #include <wx/filename.h>
+ extern "C" {
+-#include <ffmpeg/avcodec.h>
+-#include <ffmpeg/avformat.h>
++#include <libavcodec/avcodec.h>
++#include <libavformat/avformat.h>
+ }
+ #include "include/aegisub/aegisub.h"
+ 
+--- aegisub-9999/aegisub/video_provider_lavc.h~	2008-07-20 14:44:26.000000000 +0400
++++ aegisub-9999/aegisub/video_provider_lavc.h	2008-07-20 14:45:57.000000000 +0400
+@@ -44,9 +44,9 @@
+ #endif
+ #include <vector>
+ extern "C" {
+-#include <ffmpeg/avcodec.h>
+-#include <ffmpeg/avformat.h>
+-#include <ffmpeg/swscale.h>
++#include <libavcodec/avcodec.h>
++#include <libavformat/avformat.h>
++#include <libswscale/swscale.h>
+ }
+ #include "include/aegisub/video_provider.h"
+ #include "include/aegisub/aegisub.h"
+--- aegisub-9999/aegisub/audio_provider_lavc.h~	2008-07-20 14:48:04.000000000 +0400
++++ aegisub-9999/aegisub/audio_provider_lavc.h	2008-07-20 14:48:29.000000000 +0400
+@@ -52,8 +52,8 @@
+  */
+ 
+ extern "C" {
+-#include <ffmpeg/avcodec.h>
+-#include <ffmpeg/avformat.h>
++#include <libavcodec/avcodec.h>
++#include <libavformat/avformat.h>
+ }
+ #include "mkv_wrap.h"
+ #include "lavc_file.h"
+--- aegisub-9999/aegisub/audio_provider_lavc.cpp~	2008-07-20 14:48:01.000000000 +0400
++++ aegisub-9999/aegisub/audio_provider_lavc.cpp	2008-07-20 14:48:17.000000000 +0400
+@@ -58,8 +58,8 @@
+ 
+ 
+ extern "C" {
+-#include <ffmpeg/avcodec.h>
+-#include <ffmpeg/avformat.h>
++#include <libavcodec/avcodec.h>
++#include <libavformat/avformat.h>
+ }
+ #include "mkv_wrap.h"
+ #include "lavc_file.h"

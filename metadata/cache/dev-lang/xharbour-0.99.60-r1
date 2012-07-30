@@ -1,0 +1,22 @@
+virtual/libc sys-libs/ncurses allegro? ( media-libs/allegro ) gpm? ( sys-libs/gpm ) odbc? ( dev-db/unixODBC ) slang? ( sys-libs/slang ) X? ( x11-libs/libX11 x11-libs/libXmu x11-libs/libXext x11-libs/libXt x11-libs/libXpm media-libs/freetype ) sys-devel/bison
+virtual/libc sys-libs/ncurses allegro? ( media-libs/allegro ) gpm? ( sys-libs/gpm ) odbc? ( dev-db/unixODBC ) slang? ( sys-libs/slang ) X? ( x11-libs/libX11 x11-libs/libXmu x11-libs/libXext x11-libs/libXt x11-libs/libXpm media-libs/freetype )
+0
+mirror://sourceforge/xharbour/xharbour-0.99.60.src.tar.gz
+
+http://www.xharbour.org/
+harbour
+An extended implementation of the Clipper dialect of the xBase language family
+~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~ppc-macos ~s390 ~sparc ~x86
+
+allegro gpm odbc slang X
+
+
+
+
+
+compile install test
+
+
+
+
+

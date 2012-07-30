@@ -1,0 +1,13 @@
+diff -u be/Makefile be-patched/Makefile
+--- be/Makefile     2009-11-24 13:11:42.000000000 -0500
++++ be-patched/Makefile     2009-11-30 20:32:38.000000000 -0500
+@@ -38,8 +38,7 @@
+
+ RM = rm
+
+-#PREFIX = /usr/local
+-PREFIX = ${HOME}
++PREFIX = ${DESTDIR}/usr
+ INSTALL_OPTIONS = "--prefix=${PREFIX}"
+
+

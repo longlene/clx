@@ -1,0 +1,21 @@
+# Config file for /etc/init.d/honeytrap
+
+# Set the listening interface (note: defaults to "any" when not set).
+# This is only available when run with pcap; append to HONEYTRAP_OPTS with hyphen -i if needed.
+# IFACE="eth0"
+
+# Drop priviliges and run as the following user/group. This is strongly recommended!
+USER="honeytrap"
+GROUP="honeytrap"
+
+# You probably do not have the need to change this.
+CONF="/etc/honeytrap/honeytrap.conf"
+
+# Ditto.
+PIDFILE=/var/run/honeytrap.pid
+
+# Log level: 0-6 (defaults to 3, LOG_NOTICE).
+LOGLEVEL=3
+
+# Pull these together.
+HONEYTRAP_OPTS="-u $USER -g $GROUP -t $LOGLEVEL -C $CONF"

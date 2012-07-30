@@ -1,0 +1,19 @@
+*** original/dfu-programmer-0.5.4/configure	Mon Jan 17 06:59:13 2011
+--- configure	Sun Jun 12 20:53:29 2011
+***************
+*** 3782,3788 ****
+  fi
+    if test "$have_libusb_1_0" = "yes"; then
+      CFLAGS="$CFLAGS $LIBUSB_1_0_CFLAGS"
+!     LDFLAGS="$LDFLAGS $LIBUSB_1_0_LIBS"
+      HAVE_USB=yes
+    fi
+  fi
+--- 3782,3788 ----
+  fi
+    if test "$have_libusb_1_0" = "yes"; then
+      CFLAGS="$CFLAGS $LIBUSB_1_0_CFLAGS"
+!     LIBS="$LIBS $LIBUSB_1_0_LIBS"
+      HAVE_USB=yes
+    fi
+  fi

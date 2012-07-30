@@ -1,0 +1,22 @@
+app-arch/unzip X? ( x11-apps/mkfontdir media-fonts/encodings ) >=media-libs/fontconfig-2.4.0
+
+0
+http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=SN1.0.zip&filename=SN1.0.zip -> SN1.0.zip
+
+http://scripts.sil.org/SophiaNubian
+OFL
+SIL Gentium Unicode font for Nubian languages which use the Coptic Unicode character set.
+~amd64 ~x86
+eutils font multilib portability toolchain-funcs user
+doc X
+
+
+
+2
+
+install postinst postrm setup
+
+
+
+
+

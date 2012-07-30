@@ -1,0 +1,22 @@
+gsm? ( media-sound/gsm )
+gsm? ( media-sound/gsm )
+0
+mirror://sourceforge/gnutelephony/ccaudio2-0.7.10.tar.gz
+
+http://www.gnu.org/software/bayonne/bayonne.html
+GPL2
+a C++ class framework for processing audio files.
+~x86
+
+gsm
+
+
+
+
+
+install
+
+
+
+
+

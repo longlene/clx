@@ -1,0 +1,22 @@
+x11-libs/qt-core x11-libs/qt-gui x11-libs/qt-webkit doc? ( app-doc/doxygen )
+x11-libs/qt-core x11-libs/qt-gui x11-libs/qt-webkit doc? ( app-doc/doxygen )
+0
+http://dev.openbossa.org/qedje/downloads/source/qzion/qzion-0.3.0.tar.gz
+
+http://dev.openbossa.org/trac/qedje
+GPL-3
+QZion is an canvas abstraction used by and made for QEdje.
+~x86
+base eutils multilib portability qt4 toolchain-funcs user versionator
+doc
+
+
+
+
+
+compile install setup unpack
+
+
+
+
+

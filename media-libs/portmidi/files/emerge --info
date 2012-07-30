@@ -1,0 +1,47 @@
+Portage 2.1.10.27 (default/linux/amd64/10.0/desktop/gnome, gcc-4.5.3, glibc-2.13-r4, 3.0.4-pf-arrow x86_64)
+=================================================================
+System uname: Linux-3.0.4-pf-arrow-x86_64-AMD_Phenom-tm-_II_X6_1055T_Processor-with-gentoo-2.1
+Timestamp of tree: Sun, 16 Oct 2011 01:00:01 +0000
+app-shells/bash:          4.2_p10
+dev-java/java-config:     2.1.11-r3
+dev-lang/python:          2.7.2-r3, 3.1.4-r3, 3.2.2
+dev-util/cmake:           2.8.6-r1
+dev-util/pkgconfig:       0.26
+sys-apps/baselayout:      2.1
+sys-apps/openrc:          0.9.3-r1
+sys-apps/sandbox:         2.5
+sys-devel/autoconf:       2.13, 2.68
+sys-devel/automake:       1.9.6-r3, 1.10.3, 1.11.1-r1
+sys-devel/binutils:       2.21.1-r1
+sys-devel/gcc:            4.5.3-r1
+sys-devel/gcc-config:     1.4.1-r1
+sys-devel/libtool:        2.4-r3
+sys-devel/make:           3.82-r3
+sys-kernel/linux-headers: 2.6.39 (virtual/os-headers)
+sys-libs/glibc:           2.13-r4
+Repositories: gentoo sunrise hwoarang x-portage
+ACCEPT_KEYWORDS="amd64 ~amd64"
+ACCEPT_LICENSE="*"
+CBUILD="x86_64-pc-linux-gnu"
+CFLAGS="-march=native -O3 -pipe -ggdb"
+CHOST="x86_64-pc-linux-gnu"
+CONFIG_PROTECT="/etc /usr/share/gnupg/qualified.txt"
+CONFIG_PROTECT_MASK="/etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/env.d/java/ /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/php/apache2-php5.3/ext-active/ /etc/php/cgi-php5.3/ext-active/ /etc/php/cli-php5.3/ext-active/ /etc/revdep-rebuild /etc/sandbox.d /etc/terminfo /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/texmf/web2c"
+CXXFLAGS="-march=native -O3 -pipe -ggdb"
+DISTDIR="/usr/distfiles"
+FEATURES="assume-digests binpkg-logs distlocks ebuild-locks fixlafiles news parallel-fetch protect-owned sandbox sfperms strict unknown-features-warn unmerge-logs unmerge-orphans userfetch"
+FFLAGS=""
+GENTOO_MIRRORS="http://ftp.ntua.gr/pub/linux/gentoo  http://ftp.cc.uoc.gr/mirrors/linux/gentoo  http://files.gentoo.gr"
+LANG="C"
+LDFLAGS="-Wl,-O1 -Wl,--as-needed"
+MAKEOPTS="-j7"
+PKGDIR="/usr/portage/packages"
+PORTAGE_CONFIGROOT="/"
+PORTAGE_RSYNC_OPTS="--recursive --links --safe-links --perms --times --compress --force --whole-file --delete --stats --timeout=180 --exclude=/distfiles --exclude=/local --exclude=/packages"
+PORTAGE_TMPDIR="/var/tmp"
+PORTDIR="/usr/portage"
+PORTDIR_OVERLAY="/var/lib/layman/sunrise /var/lib/layman/hwoarang /usr/local/portage"
+SYNC="rsync://rsync.gentoo.org/gentoo-portage"
+USE="X a52 aac acl acpi alsa amd64 berkdb bluetooth branding bzip2 cairo cdda cdr cli consolekit cracklib crypt cups cxx dbus dri dts dvd dvdr eds emboss encode evo exif fam firefox flac fortran gdbm gdu gif gnome gnome-keyring gpm graphite gstreamer gtk iconv ipv6 java jpeg lcms libnotify mad mmx mng modules mp3 mp4 mpeg mudflap multilib nautilus ncurses nls nptl nptlonly ogg opengl openmp pam pango pcre pdf png policykit ppds pppd qt3support qt4 readline sdl session spell sse sse2 ssl startup-notification svg sysfs tcpd threads tiff truetype udev unicode usb v4l v4l2 vorbis x264 xcb xml xorg xulrunner xv xvid zlib" ALSA_CARDS="ali5451 als4000 atiixp atiixp-modem bt87x ca0106 cmipci emu10k1x ens1370 ens1371 es1938 es1968 fm801 hda-intel intel8x0 intel8x0m maestro3 trident usb-audio via82xx via82xx-modem ymfpci" ALSA_PCM_PLUGINS="adpcm alaw asym copy dmix dshare dsnoop empty extplug file hooks iec958 ioplug ladspa lfloat linear meter mmap_emul mulaw multi null plug rate route share shm softvol" APACHE2_MODULES="actions alias auth_basic authn_alias authn_anon authn_dbm authn_default authn_file authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache cgi cgid dav dav_fs dav_lock deflate dir disk_cache env expires ext_filter file_cache filter headers include info log_config logio mem_cache mime mime_magic negotiation rewrite setenvif speling status unique_id userdir usertrack vhost_alias" CALLIGRA_FEATURES="kexi words flow plan stage tables krita karbon braindump" CAMERAS="ptp2" COLLECTD_PLUGINS="df interface irq load memory rrdtool swap syslog" ELIBC="glibc" GPSD_PROTOCOLS="ashtech aivdm earthmate evermore fv18 garmin garmintxt gpsclock itrax mtk3301 nmea ntrip navcom oceanserver oldstyle oncore rtcm104v2 rtcm104v3 sirf superstar2 timing tsip tripmate tnt ubx" INPUT_DEVICES="evdev" KERNEL="linux" LCD_DEVICES="bayrad cfontz cfontz633 glk hd44780 lb216 lcdm001 mtxorb ncurses text" PHP_TARGETS="php5-3" RUBY_TARGETS="ruby18" USERLAND="GNU" VIDEO_CARDS="nvidia" XTABLES_ADDONS="quota2 psd pknock lscan length2 ipv4options ipset ipp2p iface geoip fuzzy condition tee tarpit sysrq steal rawnat logmark ipmark dhcpmac delude chaos account"
+Unset:  CPPFLAGS, CTARGET, EMERGE_DEFAULT_OPTS, INSTALL_MASK, LC_ALL, LINGUAS, PORTAGE_BUNZIP2_COMMAND, PORTAGE_COMPRESS, PORTAGE_COMPRESS_FLAGS, PORTAGE_RSYNC_EXTRA_OPTS
+

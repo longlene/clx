@@ -1,0 +1,28 @@
+diff -Naur elmerfem-5.4.1.orig/fem/src/Makefile.am elmerfem-5.4.1/fem/src/Makefile.am
+--- elmerfem-5.4.1.orig/fem/src/Makefile.am	2008-02-29 08:10:40.000000000 +0000
++++ elmerfem-5.4.1/fem/src/Makefile.am	2008-04-27 02:15:18.000000000 +0100
+@@ -180,15 +180,16 @@
+ 
+ 
+ install-exec-local:
+-	@echo "Installing stuff to ${prefix}/bin"
+-	$(MKDIR) $(prefix)/bin
+-	$(CP) ElmerSolver$(EXEEXT) $(prefix)/bin
+-	$(CP) ViewFactors$(EXEEXT) $(prefix)/bin
+-	$(CP) GebhardtFactors$(EXEEXT) $(prefix)/bin
+-	$(CP) libelmersolver$(SHL_EXT) $(prefix)/lib
+-	$(CP) elmerf90 elmerf90-nosh elmerld $(prefix)/bin
++	@echo "Installing stuff to ${DESTDIR}${prefix}/bin"
++	$(MKDIR) ${DESTDIR}$(prefix)/bin
++	$(MKDIR) ${DESTDIR}$(prefix)/lib
++	$(CP) ElmerSolver$(EXEEXT) ${DESTDIR}$(prefix)/bin
++	$(CP) ViewFactors$(EXEEXT) ${DESTDIR}$(prefix)/bin
++	$(CP) GebhardtFactors$(EXEEXT) ${DESTDIR}$(prefix)/bin
++	$(CP) libelmersolver$(SHL_EXT) ${DESTDIR}$(prefix)/lib
++	$(CP) elmerf90 elmerf90-nosh elmerld ${DESTDIR}$(prefix)/bin
+ if USE_MPI
+-	$(CP) ElmerSolver_mpi$(EXEEXT) $(prefix)/bin
++	$(CP) ElmerSolver_mpi$(EXEEXT) ${DESTDIR}$(prefix)/bin
+ endif
+ 
+ clean-local:

@@ -1,0 +1,22 @@
+dev-lang/python sys-libs/ncurses >=app-admin/eselect-python-20091230 >=dev-lang/python-2.3 dev-lang/python
+dev-lang/python sys-libs/ncurses >=app-admin/eselect-python-20091230 >=dev-lang/python-2.3 dev-lang/python
+0
+http://www.terra.es/personal7/inigoserna/lfm/lfm-2.0.tar.gz
+
+http://www.terra.es/personal7/inigoserna/lfm
+GPL-3
+lfm - Last File Manager
+amd64 ~ppc64 x86
+distutils multilib python toolchain-funcs
+
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

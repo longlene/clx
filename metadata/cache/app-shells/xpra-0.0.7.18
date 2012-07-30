@@ -1,0 +1,22 @@
+dev-python/pycrypto dev-python/pygtk dev-python/imaging ssh? ( net-misc/openssh ) server? ( x11-base/xorg-server[-minimal] ) server? ( dev-python/cython ) server? ( x11-libs/libXtst ) >=app-admin/eselect-python-20091230 dev-lang/python
+dev-python/pycrypto dev-python/pygtk dev-python/imaging ssh? ( net-misc/openssh ) server? ( x11-base/xorg-server[-minimal] ) server? ( dev-python/cython ) server? ( x11-libs/libXtst ) >=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://windowswitch.org/src/xpra-0.0.7.18.tar.bz2
+
+http://code.google.com/p/partiwm/wiki/xpra
+GPL-3
+screen for X - this is the modified version designed to work with Window-Switch
+amd64 ppc x86
+distutils eutils multilib portability python toolchain-funcs user
++server +ssh
+
+
+
+2
+
+compile install postinst postrm unpack
+
+
+
+
+

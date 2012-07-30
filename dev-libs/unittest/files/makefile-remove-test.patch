@@ -1,0 +1,20 @@
+--- Makefile.in.old	2009-06-08 12:52:03.000000000 +0200
++++ Makefile.in	2009-06-08 13:54:28.000000000 +0200
+@@ -11,7 +11,7 @@
+ TARNAME = $(TARDIR).tar.gz
+ TMPTARDIR = /tmp/$(TARDIR)
+ 
+-all: test
++all: lib
+ 
+ Makefile: @srcdir@/Makefile.in
+ 	@abs_top_builddir@/config.status
+@@ -27,7 +27,7 @@
+ 	$(MAKE) -C lib clean
+ 	$(MAKE) -C test clean
+ 
+-install: test
++install:
+ 	mkdir -p $(HTMLDIR)
+ 	if [ -d @srcdir@/html ]; then \
+ 	  install -m 644 @srcdir@/html/docs/*.html $(HTMLDIR); \

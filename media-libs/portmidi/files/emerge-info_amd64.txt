@@ -1,0 +1,45 @@
+Portage 2.1.7.17 (default/linux/amd64/10.0, gcc-4.4.2, glibc-2.11-r1, 2.6.33-rc7 x86_64)
+=================================================================
+System uname: Linux-2.6.33-rc7-x86_64-Intel-R-_Core-TM-2_Duo_CPU_P8700_@_2.53GHz-with-gentoo-2.0.1
+Timestamp of tree: Mon, 08 Feb 2010 14:15:01 +0000
+distcc 3.1 x86_64-pc-linux-gnu [disabled]
+app-shells/bash:     4.0_p37
+dev-java/java-config: 2.1.10
+dev-lang/python:     2.6.4-r1, 3.1.1-r1
+dev-python/pycrypto: 2.1.0
+dev-util/cmake:      2.8.0-r2
+sys-apps/baselayout: 2.0.1
+sys-apps/openrc:     0.6.0-r1
+sys-apps/sandbox:    2.2
+sys-devel/autoconf:  2.13, 2.65
+sys-devel/automake:  1.8.5-r3, 1.9.6-r3, 1.10.3, 1.11.1
+sys-devel/binutils:  2.20
+sys-devel/gcc:       4.3.4, 4.4.2
+sys-devel/gcc-config: 1.4.1
+sys-devel/libtool:   2.2.6b
+virtual/os-headers:  2.6.30-r1
+ACCEPT_KEYWORDS="amd64 ~amd64"
+ACCEPT_LICENSE="* -@EULA PUEL dlj-1.1 sun-bcla-java-vm skype-eula"
+CBUILD="x86_64-pc-linux-gnu"
+CFLAGS="-march=nocona -O2 -pipe"
+CHOST="x86_64-pc-linux-gnu"
+CONFIG_PROTECT="/etc /usr/share/X11/xkb /usr/share/config /var/lib/hsqldb"
+CONFIG_PROTECT_MASK="/etc/ca-certificates.conf /etc/env.d /etc/env.d/java/ /etc/eselect/postgresql /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/php/apache2-php5/ext-active/ /etc/php/cgi-php5/ext-active/ /etc/php/cli-php5/ext-active/ /etc/revdep-rebuild /etc/sandbox.d /etc/terminfo /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/texmf/web2c"
+CXXFLAGS="-march=nocona -O2 -pipe"
+DISTDIR="/usr/portage/distfiles"
+FEATURES="assume-digests distlocks fixpackages news parallel-fetch protect-owned sandbox sfperms strict unmerge-logs unmerge-orphans userfetch"
+GENTOO_MIRRORS="http://de-mirror.org/distro/gentoo/ http://gentoo.tiscali.nl/ http://gentoo.mirror.pw.edu.pl/"
+LANG="en_US.UTF-8"
+LDFLAGS="-Wl,-O1"
+LINGUAS="en de"
+MAKEOPTS="-j3"
+PKGDIR="/usr/portage/packages"
+PORTAGE_CONFIGROOT="/"
+PORTAGE_RSYNC_OPTS="--recursive --links --safe-links --perms --times --compress --force --whole-file --delete --stats --timeout=180 --exclude=/distfiles --exclude=/local --exclude=/packages"
+PORTAGE_TMPDIR="/var/tmp"
+PORTDIR="/usr/portage"
+PORTDIR_OVERLAY="/var/lib/layman/gnome /var/lib/layman/jokey /var/lib/layman/mozilla /var/lib/layman/pro-audio /var/lib/layman/rbu /var/lib/layman/roslin /var/lib/layman/suka /var/lib/layman/sunrise /var/lib/layman/x11 /var/lib/layman/flokli /usr/local/portage"
+SYNC="rsync://rsync.de.gentoo.org/gentoo-portage"
+USE="3dnow X a52 acl acpi alsa amd64 amr avahi beagle berkdb bluetooth bzip2 cairo cdda cdr cleartype cli consolekit cracklib crypt cups cxx dbus devhelp doc dri dvb dvd dvdr eds exif faac faad ffmpeg flac fortran fuse gdbm gif gnome gphoto2 gpm gstreamer gtk hal iconv ieee1394 ipv6 jack java jpeg jpeg2k ladspa lame laptop lib32 libnotify libsamplerate lirc mad mmx modules mp3 mpeg mudflap multilib multislot ncurses network networkmanager nls nptl nptlonly ogg openal opengl openmp pam pcre pdf perl php png policykit postscript pppd pulseaudio python qt3support readline reflection samba schroedinger sdl session speex spl sse sse2 ssl ssse3 startup-notification svg sysfs tcpd theora threads tiff truetype unicode v4l v4l2 vorbis webkit x264 xorg xv xvid zeroconf zlib" ALSA_CARDS="ali5451 als4000 atiixp atiixp-modem bt87x ca0106 cmipci emu10k1x ens1370 ens1371 es1938 es1968 fm801 hda-intel intel8x0 intel8x0m maestro3 trident usb-audio via82xx via82xx-modem ymfpci" ALSA_PCM_PLUGINS="adpcm alaw asym copy dmix dshare dsnoop empty extplug file hooks iec958 ioplug ladspa lfloat linear meter mmap_emul mulaw multi null plug rate route share shm softvol" APACHE2_MODULES="actions alias auth_basic authn_alias authn_anon authn_dbm authn_default authn_file authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache dav dav_fs dav_lock deflate dir disk_cache env expires ext_filter file_cache filter headers include info log_config logio mem_cache mime mime_magic negotiation rewrite setenvif speling status unique_id userdir usertrack vhost_alias" ELIBC="glibc" INPUT_DEVICES="evdev keyboard mouse synaptics" KERNEL="linux" LCD_DEVICES="bayrad cfontz cfontz633 glk hd44780 lb216 lcdm001 mtxorb ncurses text" LINGUAS="en de" RUBY_TARGETS="ruby18" USERLAND="GNU" VIDEO_CARDS="fbdev radeon radeonhd vesa vga" 
+Unset:  CPPFLAGS, CTARGET, EMERGE_DEFAULT_OPTS, FFLAGS, INSTALL_MASK, LC_ALL, PORTAGE_COMPRESS, PORTAGE_COMPRESS_FLAGS, PORTAGE_RSYNC_EXTRA_OPTS
+

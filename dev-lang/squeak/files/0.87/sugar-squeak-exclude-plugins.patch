@@ -1,0 +1,17 @@
+--- squeak-vm-sugar-3.10.3/platforms/unix/config/configure.orig	2008-05-15 00:19:25.000000000 +0700
++++ squeak-vm-sugar-3.10.3/platforms/unix/config/configure	2008-11-16 01:44:12.000000000 +0600
+@@ -29554,7 +29554,7 @@
+ # -*- sh -*-
+ 
+ 
+-for ac_header in linux/fb.h
++for ac_header in remove_fb_support
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
+--- squeak-vm-sugar-3.10.3/platforms/unix/src/plugins.ext.orig	2008-05-14 17:19:25.000000000 +0000
++++ squeak-vm-sugar-3.10.3/platforms/unix/src/plugins.ext	2009-01-12 10:18:26.000000000 +0000
+@@ -1,2 +1,2 @@
+ # Automatically generated makefile include for external plugins
+-EXTERNAL_PLUGINS = B3DAcceleratorPlugin Squeak3D ClipboardExtendedPlugin DBusPlugin SqueakFFIPrims FileCopyPlugin GStreamerPlugin ImmX11Plugin KedamaPlugin KedamaPlugin2 MIDIPlugin OggPlugin PseudoTTYPlugin RomePlugin UUIDPlugin AioPlugin UnixOSProcessPlugin XDisplayControlPlugin
++EXTERNAL_PLUGINS = Squeak3D ClipboardExtendedPlugin DBusPlugin GStreamerPlugin ImmX11Plugin KedamaPlugin KedamaPlugin2 MIDIPlugin OggPlugin RomePlugin UUIDPlugin AioPlugin

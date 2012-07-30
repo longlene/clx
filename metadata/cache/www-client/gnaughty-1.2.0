@@ -1,0 +1,22 @@
+>=net-misc/curl-7.10 x11-libs/gtk+:2 dev-libs/glib:2 gnome-base/gconf:2 gnome-base/libglade:2.0 dev-libs/libpcre sys-devel/gettext dev-util/pkgconfig >=sys-apps/sed-4
+>=net-misc/curl-7.10 x11-libs/gtk+:2 dev-libs/glib:2 gnome-base/gconf:2 gnome-base/libglade:2.0 dev-libs/libpcre
+0
+mirror://sourceforge/gnaughty/gnaughty-1.2.0.tar.gz
+
+http://gnaughty.sourceforge.net/
+GPL-2
+Gnaughty is a frontend to the movies section of sublimedirectory.com (aka porn downloader)
+~x86 ~amd64
+eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability toolchain-funcs user versionator
+debug
+
+
+
+
+
+compile install postinst postrm preinst unpack
+
+
+
+
+

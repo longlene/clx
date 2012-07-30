@@ -1,0 +1,22 @@
+dev-perl/XML-DOM dev-perl/XML-RegExp dev-lang/perl[-build]
+dev-perl/XML-DOM dev-perl/XML-RegExp dev-lang/perl[-build]
+0
+http://umph.googlecode.com/files/umph-0.2.0.tar.gz http://umph.googlecode.com/files/Umph-Prompt-0.1.0.tar.gz
+
+http://code.google.com/p/umph/
+GPL-3
+parses Youtube feeds (playlists, favorite lists, user upload lists)
+~amd64 ~x86
+base eutils multilib perl-app perl-module portability toolchain-funcs user
+
+
+
+
+3
+
+compile configure install prepare test unpack
+
+
+
+
+

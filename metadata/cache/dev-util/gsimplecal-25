@@ -1,0 +1,22 @@
+dev-libs/libunique x11-libs/gtk+:2 dev-util/pkgconfig
+dev-libs/libunique x11-libs/gtk+:2
+0
+http://gsimplecal.googlecode.com/files/gsimplecal-25.tar.gz
+
+http://code.google.com/p/gsimplecal/
+GPL-2
+A lightweight calendar designed for tint2
+~amd64 ~x86
+multilib toolchain-funcs
+
+
+
+
+2
+
+compile install prepare
+
+
+
+
+

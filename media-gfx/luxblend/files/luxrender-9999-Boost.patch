@@ -1,0 +1,93 @@
+--- ./console/luxconsole.cpp	Thu Apr 28 23:22:00 2011 +0200
++++ b/console/luxconsole.cpp	Mon May 02 07:20:06 2011 +0200
+@@ -29,6 +29,10 @@
+ #include <exception>
+ #include <iostream>
+ 
++#include "api.h"
++#include "error.h"
++#include "server/renderserver.h"
++
+ #include <boost/program_options.hpp>
+ #include <boost/thread.hpp>
+ #include <boost/thread/xtime.hpp>
+@@ -36,10 +40,6 @@
+ #include <boost/filesystem/path.hpp>
+ #include <boost/filesystem/operations.hpp>
+ 
+-#include "api.h"
+-#include "error.h"
+-#include "server/renderserver.h"
+-
+ #if defined(WIN32) && !defined(__CYGWIN__) /* We need the following two to set stdout to binary */
+ #include <io.h>
+ #include <fcntl.h>
+
+--- ./core/lux.h	Thu Apr 28 23:22:00 2011 +0200
++++ b/core/lux.h	Mon May 02 07:20:06 2011 +0200
+@@ -42,6 +42,7 @@
+ using std::swap;
+ using std::sort;
+ 
++#define BOOST_FILESYSTEM_VERSION 2
+ 
+ #include <boost/shared_ptr.hpp>
+ #include <boost/enable_shared_from_this.hpp>
+
+--- ./tools/luxcomp.cpp	Thu Apr 28 23:22:00 2011 +0200
++++ b/tools/luxcomp.cpp	Mon May 02 07:20:06 2011 +0200
+@@ -27,6 +27,9 @@
+ #include <exception>
+ #include <iostream>
+ 
++#include "api.h"
++#include "film/fleximage.h"
++
+ #include <boost/program_options.hpp>
+ #include <boost/thread.hpp>
+ #include <boost/thread/xtime.hpp>
+@@ -35,9 +38,6 @@
+ #include <boost/filesystem/operations.hpp>
+ #include <boost/scoped_ptr.hpp>
+ 
+-#include "api.h"
+-#include "film/fleximage.h"
+-
+ #if defined(WIN32) && !defined(__CYGWIN__) /* We need the following two to set stdout to binary */
+ #include <io.h>
+ #include <fcntl.h>
+
+--- ./tools/luxmerger.cpp	Thu Apr 28 23:22:00 2011 +0200
++++ b/tools/luxmerger.cpp	Mon May 02 07:20:06 2011 +0200
+@@ -29,6 +29,9 @@
+ #include <exception>
+ #include <iostream>
+ 
++#include "api.h"
++#include "film/fleximage.h"
++
+ #include <boost/program_options.hpp>
+ #include <boost/thread.hpp>
+ #include <boost/thread/xtime.hpp>
+@@ -37,9 +40,6 @@
+ #include <boost/filesystem/operations.hpp>
+ #include <boost/scoped_ptr.hpp>
+ 
+-#include "api.h"
+-#include "film/fleximage.h"
+-
+ #if defined(WIN32) && !defined(__CYGWIN__) /* We need the following two to set stdout to binary */
+ #include <io.h>
+ #include <fcntl.h>
+--- ./qtgui/mainwindow.cpp	2011-05-03 21:07:38.942478105 +0200
++++ b/qtgui/mainwindow.cpp	2011-05-03 21:06:03.803478125 +0200
+@@ -19,6 +19,8 @@
+  *   This project is based on PBRT ; see http://www.pbrt.org               *
+  *   Lux Renderer website : http://www.luxrender.net                       *
+  ***************************************************************************/
++
++#define BOOST_FILESYSTEM_VERSION 2
+ 
+ #include <boost/bind.hpp>
+ #include <boost/filesystem.hpp>
+ //#include <boost/filesystem/path.hpp>

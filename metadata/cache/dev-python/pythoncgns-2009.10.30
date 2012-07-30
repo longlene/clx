@@ -1,0 +1,22 @@
+sci-libs/cgnslib dev-lang/swig >=app-admin/eselect-python-20091230 dev-lang/python
+sci-libs/cgnslib >=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://pypi.python.org/packages/source/C/CGNS/CGNS-2009.10.30.tar.gz
+
+http://pypi.python.org/pypi/CGNS
+GPL-3
+Python language bindings for the CGNS library
+~amd64 ~x86
+distutils multilib python toolchain-funcs
+
+
+
+
+2
+
+compile install postinst postrm prepare
+
+
+
+
+

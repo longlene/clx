@@ -1,0 +1,22 @@
+>=dev-libs/boost-1.33.1 bzip2? ( app-arch/bzip2 ) lzma? ( >=app-arch/lzma-utils-4.999 ) lzo? ( >=dev-libs/lzo-2 ) zlib? ( sys-libs/zlib ) >=dev-vcs/git-1.6
+>=dev-libs/boost-1.33.1 bzip2? ( app-arch/bzip2 ) lzma? ( >=app-arch/lzma-utils-4.999 ) lzo? ( >=dev-libs/lzo-2 ) zlib? ( sys-libs/zlib )
+0
+
+
+http://www.miio.net/fusecompress/
+GPL-2
+Comressed FUSE implementation
+~amd64 ~x86
+eutils git multilib portability toolchain-funcs user
+bzip2 lzma lzo zlib
+
+
+
+
+
+compile install unpack
+
+
+
+
+

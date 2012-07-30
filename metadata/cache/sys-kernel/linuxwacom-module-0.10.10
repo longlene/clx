@@ -1,0 +1,22 @@
+dev-util/pkgconfig sys-fs/udev usb? ( >=sys-kernel/linux-headers-2.6 ) || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool kernel_linux? ( sys-apps/module-init-tools ) sys-apps/sed kernel_linux? ( virtual/linux-sources )
+sys-fs/udev kernel_linux? ( sys-apps/module-init-tools )
+0
+mirror://sourceforge/linuxwacom/xf86-input-wacom/input-wacom/input-wacom-0.10.10.tar.bz2
+
+http://linuxwacom.sourceforge.net/
+GPL-2
+Kernel driver for Wacom tablets and drawing devices
+~amd64 ~hppa ~ppc ~ppc64 ~x86
+autotools eutils libtool linux-info linux-mod multilib portability toolchain-funcs user versionator
+usb kernel_linux
+
+
+
+2
+
+compile configure install postinst postrm preinst prepare setup
+
+
+
+
+

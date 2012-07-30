@@ -1,0 +1,22 @@
+dev-lang/python
+
+0
+mirror://sourceforge/pyst/pyst-0.0.4rc12.tar.gz
+
+http://sourceforge.net/projects/pyst/
+LGPL-2
+Asterisk related utility modules for the Python programming language
+~x86
+eutils multilib portability toolchain-funcs user versionator
+
+
+
+
+
+
+compile install
+
+
+
+
+

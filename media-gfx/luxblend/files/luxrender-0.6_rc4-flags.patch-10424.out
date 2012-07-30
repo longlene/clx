@@ -1,0 +1,69 @@
+***** luxrender-0.6_rc4-flags.patch *****
+
+=========================================
+
+PATCH COMMAND:	 patch -p0 -g0 -E --no-backup-if-mismatch < /usr/local/portage/media-gfx/luxrender/files/luxrender-0.6_rc4-flags.patch
+
+=========================================
+can't find file to patch at input line 3
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|--- lux/CMakeLists.txt.orig	2009-07-13 13:33:06.411079974 +0200
+|+++ lux/CMakeLists.txt	2009-07-13 13:33:50.414430820 +0200
+--------------------------
+No file to patch.  Skipping patch.
+1 out of 1 hunk ignored
+=========================================
+
+PATCH COMMAND:	 patch -p1 -g0 -E --no-backup-if-mismatch < /usr/local/portage/media-gfx/luxrender/files/luxrender-0.6_rc4-flags.patch
+
+=========================================
+patching file CMakeLists.txt
+Hunk #1 FAILED at 262.
+1 out of 1 hunk FAILED -- saving rejects to file CMakeLists.txt.rej
+=========================================
+
+PATCH COMMAND:	 patch -p2 -g0 -E --no-backup-if-mismatch < /usr/local/portage/media-gfx/luxrender/files/luxrender-0.6_rc4-flags.patch
+
+=========================================
+missing header for unified diff at line 3 of patch
+can't find file to patch at input line 3
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|--- lux/CMakeLists.txt.orig	2009-07-13 13:33:06.411079974 +0200
+|+++ lux/CMakeLists.txt	2009-07-13 13:33:50.414430820 +0200
+--------------------------
+No file to patch.  Skipping patch.
+1 out of 1 hunk ignored
+=========================================
+
+PATCH COMMAND:	 patch -p3 -g0 -E --no-backup-if-mismatch < /usr/local/portage/media-gfx/luxrender/files/luxrender-0.6_rc4-flags.patch
+
+=========================================
+missing header for unified diff at line 3 of patch
+can't find file to patch at input line 3
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|--- lux/CMakeLists.txt.orig	2009-07-13 13:33:06.411079974 +0200
+|+++ lux/CMakeLists.txt	2009-07-13 13:33:50.414430820 +0200
+--------------------------
+No file to patch.  Skipping patch.
+1 out of 1 hunk ignored
+=========================================
+
+PATCH COMMAND:	 patch -p4 -g0 -E --no-backup-if-mismatch < /usr/local/portage/media-gfx/luxrender/files/luxrender-0.6_rc4-flags.patch
+
+=========================================
+missing header for unified diff at line 3 of patch
+can't find file to patch at input line 3
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|--- lux/CMakeLists.txt.orig	2009-07-13 13:33:06.411079974 +0200
+|+++ lux/CMakeLists.txt	2009-07-13 13:33:50.414430820 +0200
+--------------------------
+No file to patch.  Skipping patch.
+1 out of 1 hunk ignored

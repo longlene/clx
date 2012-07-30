@@ -1,0 +1,22 @@
+app-arch/unzip
+games-fps/doom3 dedicated? ( games-fps/doom3 ) opengl? ( games-fps/doom3 ) !dedicated? ( !opengl? ( games-fps/doom3 ) )
+0
+http://www.quaddicted.com/stuff/hosted/quakemod.zip http://www.monster-clip.com/maps/castle/quakemod.zip http://www.doomwadstation.com/doom3tc/quakemod/quakemod.zip
+mirror strip
+http://www.monster-clip.com/maps/castle/castle.htm
+as-is
+Doom 3 Shambler's Castle - Quake 1 conversion map for Doom 3
+-* amd64 x86
+base eutils games games-mods multilib portability toolchain-funcs user
+dedicated opengl
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

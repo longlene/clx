@@ -1,0 +1,22 @@
+x11-libs/wxGTK:2.8[X]
+x11-libs/wxGTK:2.8[X]
+0
+http://downloads.sourceforge.net/project/pdp1spacewar/spacewar.tar.gz
+
+http://sourceforge.net/projects/pdp1spacewar/
+GPL-2
+The first computer video game as created at MIT for the DEC PDP-1
+~x86
+base eutils games multilib portability toolchain-funcs user wxwidgets
+
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

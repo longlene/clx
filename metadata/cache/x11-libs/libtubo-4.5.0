@@ -1,0 +1,22 @@
+>=dev-libs/glib-2.6.0
+
+0
+http://downloads.sourceforge.net/xffm/libtubo-4.5.0.tar.gz
+
+http://xffm.sourceforge.net/libtubo.html
+GPL-2
+A small and simple interprocess communication library
+~amd64
+
+
+
+
+
+
+
+install
+
+
+
+
+

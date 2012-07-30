@@ -1,0 +1,22 @@
+dev-libs/libxml2
+dev-libs/libxml2
+0
+http://www.w3.org/Math/DTD/mathml2.tgz
+
+http://www.w3.org/1998/Math/MathML
+GPL-2
+MathML DTD and entity files
+~x86
+eutils multilib portability toolchain-funcs user versionator
+
+
+
+
+
+
+install postinst postrm
+
+
+
+
+

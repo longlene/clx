@@ -1,0 +1,22 @@
+
+
+0
+http://heanet.dl.sourceforge.net/sourceforge/divfixpp/DivFix++_v0.29-Linux-x86_64.tar.bz2
+
+http://divfixpp.sourceforge.net/
+GPL-2
+Free AVI repair & preview program. Precompiled version is ony available for x86_64
+amd64
+eutils multilib portability toolchain-funcs user
+linguas_hu linguas_tr
+
+
+
+
+
+install setup unpack
+
+
+
+
+

@@ -1,0 +1,106 @@
+AdWords API Perl Client Library
+===============================
+
+Google's AdWords API service lets developers design computer programs that
+interact directly with the AdWords platform. With these applications,
+advertisers and third parties can more efficiently--and creatively--manage
+their large or complex AdWords accounts and campaigns.
+
+The AdWords API Perl Client Library makes it easier to write Perl clients to
+programmatically access AdWords accounts. One of the main features of this
+client library is that it hides SOAP layer from end user, which makes it
+much more easier to interact with API. The outgoing and incoming SOAP messages
+can be monitored and logged on demand.
+
+The backbone of the client library is a modified version of SOAP::WSDL. It
+handles the serialization/deserialization, transport, and creating classes
+for the objects defined in the AdWords API WSDLs. SOAP::WSDL, in turn, uses
+SOAP::Lite under the hood for some operations.
+
+The AdWords API Perl Client Library currently supports v200906 and a subset of
+v200909 of the AdWords API, and can be used in the Production or Sandbox
+environments. Only the core campaign management ('cm') services are currently
+supported for v200909. If you need to make use of functionality found in v13 of
+the AdWords API, such as the ReportService, you can make use of a legacy library
+developed by Rohan Almeida. It is available from CPAN at
+
+  http://search.cpan.org/perldoc?Google::Adwords
+
+Demo scripts, located in "example/", demonstrate some examples of using client
+library. For additional examples, take a look at unit tests in "t/".
+
+Documentation is provided in POD format inline in each of the modules. HTML
+versions of the POD are also available in the 'docs/' directory.
+
+The client library includes a set of unit tests located in "t/". All unit tests
+are (and should be) executed against Sandbox environment. Whenever changes
+are made to the client library, the appropriate unit test should be executed to
+make sure that everything is working as intended and no new bugs were
+introduced.
+
+
+Step-by-step guide for getting started:
+---------------------------------------
+
+1) Make sure you have Perl 5.6 or later installed. More information on Perl can
+   be found at http://www.perl.org/
+
+2) From this directory, run
+
+     perl Build.PL
+
+   to generate your Build file. This relies on having Module::Build installed.
+
+3) The client library has a number of dependencies which are defined in the
+   Build.PL script. If you are missing any modules, you'll receive a warning in
+   step 2. You can install any dependencies using CPAN, either manually from the
+   web (http://www.cpan.org/) or automatically using the CPAN shell
+   (http://search.cpan.org/~andk/CPAN-1.9304/lib/CPAN.pm).
+
+4) This client library relies on a development version of the SOAP::WSDL module,
+   and also relies on patches to that module. You download the version of
+   SOAP::WSDL available at
+   http://soap-wsdl.svn.sourceforge.net/viewvc/soap-wsdl/SOAP-WSDL/branches/Typemap.tar.gz?view=tar&pathrev=846
+   and expand the gzip and tar archive. Once that's done, run the
+   soap_wsdl_patches.pl script on the expanded Typemap directory like so:
+
+     bin/soap_wsdl_patches.pl /path/to/downloaded/Typemap
+
+5) Install the patched SOAP::WSDL following the directions in its README.
+
+6) Install this module, making use of the Build script generated in step 2:
+
+     perl Build
+     perl Build test
+     (sudo) perl Build install
+
+7) Sign up for a Google Account, if you don't already have one, at
+   https://www.google.com/accounts/NewAccount
+
+8) Copy the sample 'adwords.properties' file to your home directory, and edit it
+   to reflect the credentials for your Google Account.
+
+9) Try running the sample code in the 'examples' directory.
+
+10) Read over the documentation in 'docs/' to familiarize yourself with
+    the various classes and methods in the client library.
+
+
+Where do I submit bug reports and/or feature requests?
+---------------------------------------------------
+
+Use the issue tracker at
+
+  http://code.google.com/p/google-api-adwords-perl/issues/list
+
+
+External Dependencies:
+----------------------
+
+Full dependency list is maintained in Build.PL. This module also depends on a
+patched development version of SOAP::WSDL. Please see step 4 of the getting
+started guide above for more details.
+
+
+Author:
+    api.jeffy@gmail.com (Jeff Posnick)

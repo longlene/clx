@@ -1,0 +1,22 @@
+virtual/glut || ( x11-drivers/nvidia-drivers x11-drivers/xf86-video-intel x11-drivers/ati-drivers x11-drivers/xf86-video-radeonhd x11-drivers/xf86-video-ati ) jpeg? ( media-libs/jpeg ) gstreamer? ( jpeg? ( media-plugins/gst-plugins-jpeg ) dv? ( media-plugins/gst-plugins-dv media-plugins/gst-plugins-raw1394 ) ieee1394? ( media-plugins/gst-plugins-raw1394 ) !ieee1394? ( media-plugins/gst-plugins-v4l media-plugins/gst-plugins-v4l2 ) >media-libs/gstreamer-0.8 >media-libs/gst-plugins-base-0.8 ) kernel_linux? ( sys-apps/module-init-tools ) sys-apps/sed kernel_linux? ( virtual/linux-sources )
+kernel_linux? ( sys-apps/module-init-tools )
+0
+mirror://sourceforge/artoolkit/ARToolKit-2.72.1.tgz
+
+http://www.hitl.washington.edu/artoolkit/
+GPL-2
+The ARToolKit library
+amd64 x86
+eutils linux-info linux-mod multilib portability toolchain-funcs user versionator
+debug jpeg gstreamer dv ieee1394 doc examples utils kernel_linux
+
+
+
+
+
+compile install postinst postrm preinst setup unpack
+
+
+
+
+

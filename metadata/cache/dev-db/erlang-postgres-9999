@@ -1,0 +1,22 @@
+>=dev-lang/erlang-13.2.1 dev-vcs/subversion net-misc/rsync
+>=dev-lang/erlang-13.2.1
+0
+
+
+http://process-one.net
+
+Native Postgres driver for erlang
+~x86 ~amd64
+eutils multilib portability subversion toolchain-funcs user
+
+
+
+
+
+
+compile install preinst unpack
+
+
+
+
+

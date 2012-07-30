@@ -1,0 +1,22 @@
+sys-libs/readline sys-libs/ncurses
+sys-libs/readline sys-libs/ncurses
+0
+mirror://sourceforge/osh/osh-0.2-pre7.tar.bz2
+
+http://osh.sf.net/
+GPL-2
+Ole's Shell, a lightweight shell
+~x86
+multilib toolchain-funcs
+debug
+
+
+
+
+
+compile install postinst unpack
+
+
+
+
+

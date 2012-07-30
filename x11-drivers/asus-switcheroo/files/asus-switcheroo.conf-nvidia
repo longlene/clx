@@ -1,0 +1,6 @@
+options asus-switcheroo dummy-client=1 
+blacklist nvidia
+
+install nvidia /sbin/modprobe asus-switcheroo ; /bin/echo DIS > /sys/kernel/debug/vgaswitcheroo/switch   ; /sbin/modprobe --ignore-install nvidia
+install i915 /sbin/modprobe i915-jprobe; /sbin/modprobe --ignore-install i915
+

@@ -1,0 +1,22 @@
+>=media-libs/libsdl-1.1.3 media-libs/sdl-mixer media-libs/sdl-net || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool dev-vcs/subversion net-misc/rsync
+>=media-libs/libsdl-1.1.3 media-libs/sdl-mixer media-libs/sdl-net
+0
+
+
+http://www.chocolate-doom.org/
+GPL-2
+Doom port designed to act identically to the original game
+~amd64 ~x86
+autotools base eutils games libtool multilib portability subversion toolchain-funcs user
+server
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+
+
+0
+mirror://sourceforge/undernet-ircu/ircu2.10.12.12.tar.gz
+
+http://coder-com.undernet.org/
+GPL-1
+Undernet IRC Server Development
+~x86 ~amd64
+eutils flag-o-matic multilib portability toolchain-funcs user
+debug
+
+
+
+
+
+compile install postinst
+
+
+
+
+

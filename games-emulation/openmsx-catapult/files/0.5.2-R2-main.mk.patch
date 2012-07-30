@@ -1,0 +1,24 @@
+--- build/main.mk.orig	2005-12-13 23:19:25.000000000 +0100
++++ build/main.mk	2005-12-13 23:31:40.243552368 +0100
+@@ -328,7 +328,7 @@
+ INSTALL_BINARY_DIR?=$(CATAPULT_INSTALL)/bin
+ INSTALL_SHARE_DIR?=$(CATAPULT_INSTALL)
+ INSTALL_DOC_DIR?=$(CATAPULT_INSTALL)/doc
+-
++DESKTOP_HOOKS_DIR?=/usr/share/applications
+ 
+ ifeq ($(CATAPULT_PREBUILT),true)
+ # TODO: Prebuilt is used only on win32, but using this is not clean.
+@@ -362,10 +362,10 @@
+ 	@echo "  Desktop hooks..."
+ 	@mkdir -p $(INSTALL_SHARE_DIR)/resources/icons
+ 	@cp -rf src/catapult.xpm $(INSTALL_SHARE_DIR)/resources/icons
+-	@if [ -d /usr/share/applications -a -w /usr/share/applications ]; \
++	@if [ -d $(DESKTOP_HOOKS_DIR) -a -w $(DESKTOP_HOOKS_DIR) ]; \
+ 		then sed -e "s|%INSTALL_BASE%|$(INSTALL_SHARE_DIR)|" \
+ 			desktop/openMSX-Catapult.desktop \
+-			> /usr/share/applications/openMSX-Catapult.desktop; \
++			> $(DESKTOP_HOOKS_DIR)/openMSX-Catapult.desktop; \
+ 		else mkdir -p ~/.local/share/applications && \
+ 			sed -e "s|%INSTALL_BASE%|$(INSTALL_SHARE_DIR)|" \
+ 			desktop/openMSX-Catapult.desktop \

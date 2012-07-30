@@ -1,0 +1,17 @@
+#!/sbin/runscript
+
+depend() {
+	use net
+}
+
+start() {
+	ebegin "Starting lldpd"
+	start-stop-daemon --start --quiet --exec /usr/sbin/lldpd ${LLDPD_OPTS} &
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping lldpd"
+	start-stop-daemon --stop --quiet --exec /usr/bin/lldpd ${LLDPD_OPTS} &
+	eend $?
+}

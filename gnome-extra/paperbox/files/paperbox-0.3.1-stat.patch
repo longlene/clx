@@ -1,0 +1,10 @@
+--- paperbox-0.3.1/src/config.cc	2008-06-19 11:49:06.000000000 +0200
++++ paperbox-0.3.1-r1/src/config.cc	2009-09-08 12:00:09.000000000 +0200
+@@ -21,6 +21,7 @@
+  */
+ 
+ #include <errno.h>
++#include <sys/stat.h>
+ #include <glibmm/fileutils.h>
+ #include <glibmm-utils/log-stream-utils.h>
+ #include <giomm/error.h>

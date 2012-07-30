@@ -1,0 +1,25 @@
+test-flag-LD() {
+	local flags="$1"
+
+	[[ -z ${flags} ]] && \
+		return 1
+
+	local PROG=$(tc-getCC)
+	local tmpfile=$(mktemp tmp.test-flag-LD.XXXXXX)
+	echo 'int main(void){}' \
+		| ${PROG} ${flags} -o "${tmpfile}" -xc - \
+		> /dev/null 2&>1
+	local ret=$?
+	rm -f "${tmpfile}" > /dev/null 2&>1
+	return $ret
+}
+ 
+test-flags-LD() { test-flags-PROG "LD" "$@"; }
+
+strip-unsupported-flags() {
+	export CFLAGS=$(test-flags-CC ${CFLAGS})
+	export CXXFLAGS=$(test-flags-CXX ${CXXFLAGS})
+	export FFLAGS=$(test-flags-F77 ${FFLAGS})
+	export FCFLAGS=$(test-flags-FC ${FCFLAGS})
+	export LDFLAGS=$(test-flags-LD ${LDFLAGS})
+}

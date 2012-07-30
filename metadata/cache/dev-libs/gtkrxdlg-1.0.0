@@ -1,0 +1,22 @@
+>=dev-lang/ooRexx-3 >=x11-libs/gtk+-2
+>=dev-lang/ooRexx-3 >=x11-libs/gtk+-2
+0
+mirror://sourceforge/gtkrxdlg/gtkrxdlg-1.0.0.tar.gz
+
+https://sourceforge.net/project/showfiles.php?group_id=106456
+CPL-1.0
+Object REXX GTK+ Project
+~x86
+
+doc
+
+
+
+
+
+compile install
+
+
+
+
+

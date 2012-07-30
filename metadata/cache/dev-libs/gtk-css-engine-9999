@@ -1,0 +1,22 @@
+>=x11-libs/gtk+-2.12 dev-libs/libccss >=dev-util/intltool-0.31 >=dev-util/pkgconfig-0.9 >=dev-vcs/git-1.6
+>=x11-libs/gtk+-2.12
+0
+
+
+http://git.gnome.org/cgit/gtk-css-engine/
+LGPL-2.1
+Theme engine with CSS support for the Gtk+ toolkit
+~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd
+eutils git multilib portability toolchain-funcs user
+
+
+
+
+2
+
+configure install prepare unpack
+
+
+
+
+

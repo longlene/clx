@@ -1,0 +1,22 @@
+
+
+0
+http://unittest.red-bean.com/tar/unittest-0.50-62.tar.gz
+
+http://unittest.red-bean.com
+BSD
+C++ unit test framework
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user versionator
+
+
+
+
+2
+
+install prepare test
+
+
+
+
+

@@ -1,0 +1,22 @@
+net-misc/curl || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool >=dev-vcs/git-1.6
+net-misc/curl
+0
+
+
+http://liblastfm.sourceforge.net
+GPL-3
+C-API for the Last.fm web service written with libcurl
+arm ~amd64 ~x86
+autotools base eutils git libtool multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare unpack
+
+
+
+
+

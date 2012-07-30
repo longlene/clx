@@ -1,0 +1,22 @@
+>=app-admin/eselect-python-20091230 dev-lang/python
+dev-python/django[mysql?] dev-python/django[postgres?] dev-python/django[sqlite?] dev-python/django-evolution >=dev-python/djblets-0.6.2 dev-python/flup dev-python/imaging dev-python/paramiko dev-python/pygments dev-python/python-memcached dev-python/pytz dev-python/recaptcha-client net-misc/memcached apache? ( www-servers/apache || ( www-apache/mod_fastcgi www-apache/mod_python ) ) cvs? ( dev-util/cvs ) git? ( dev-python/git-python ) ldap? ( dev-python/python-ldap ) lighttpd? ( www-servers/lighttpd ) mercurial? ( dev-vcs/mercurial ) subversion? ( dev-python/pysvn ) >=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://downloads.reviewboard.org/releases/ReviewBoard/1.5/ReviewBoard-1.5beta2.tar.gz
+
+http://www.reviewboard.org/
+MIT
+A web-based tool designed to track of pending code changes and make code reviews much less painful
+~amd64
+distutils eutils multilib portability python toolchain-funcs user versionator
++apache cvs git ldap lighttpd mercurial +mysql postgres sqlite +subversion
+
+
+
+2
+
+compile install postinst postrm prepare setup
+
+
+
+
+

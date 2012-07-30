@@ -1,0 +1,22 @@
+media-tv/xmltv dev-perl/gtk2-perl dev-perl/gtk2-gladexml dev-perl/gnome2-perl gnome-base/libgnomeui
+media-tv/xmltv dev-perl/gtk2-perl dev-perl/gtk2-gladexml dev-perl/gnome2-perl gnome-base/libgnomeui
+0
+mirror://sourceforge/gshowtv/xmltv-druid-0.3.0.tar.gz
+
+http://gshowtv.sourceforge.net/xmltv-druid.html
+GPL-2
+Very simple Gnome druid for selecting, configuring and scheduling s tv_grab task for XMLTV.
+~x86 ~amd64
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install
+
+
+
+
+

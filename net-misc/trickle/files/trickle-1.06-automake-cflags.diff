@@ -1,0 +1,11 @@
+--- trickle-old/Makefile.am	2004-07-07 09:57:37.000000000 +0200
++++ trickle-1.07/Makefile.am	2008-11-12 15:50:21.753130443 +0100
+@@ -28,7 +28,7 @@ trickled_LDADD = @EVENTLIB@ @LIBOBJS@
+ tricklectl_SOURCES = tricklectl.c trickledu.c atomicio.c xdr.c
+ tricklectl_LDADD = @ERRO@ @LIBOBJS@
+ 
+-AM_CFLAGS += -Wall -Icompat @EVENTINC@
++AM_CFLAGS = -Wall -Icompat @EVENTINC@
+ 
+ overloaddir = $(libdir)
+ overload_DATA = libtrickle.so

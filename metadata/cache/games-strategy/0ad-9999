@@ -1,0 +1,22 @@
+virtual/opengl dev-lang/spidermonkey[threadsafe] media-libs/openal dev-libs/crypto++ media-libs/libsdl dev-libs/boost sys-libs/zlib || ( dev-libs/libgamin app-admin/fam ) dev-libs/xerces-c editor? ( x11-libs/wxGTK:2.8 ) media-libs/devil net-libs/enet media-video/ffmpeg media-libs/jpeg media-libs/libpng dev-libs/libxml2 media-libs/libvorbis media-libs/libogg dev-util/valgrind dev-lang/nasm dev-vcs/subversion net-misc/rsync
+virtual/opengl dev-lang/spidermonkey[threadsafe] media-libs/openal dev-libs/crypto++ media-libs/libsdl dev-libs/boost sys-libs/zlib || ( dev-libs/libgamin app-admin/fam ) dev-libs/xerces-c editor? ( x11-libs/wxGTK:2.8 ) media-libs/devil net-libs/enet media-video/ffmpeg media-libs/jpeg media-libs/libpng dev-libs/libxml2 media-libs/libvorbis media-libs/libogg dev-util/valgrind
+0
+
+strip
+http://wildfiregames.com/0ad/
+GPL-2 CCPL-Attribution-ShareAlike-3.0
+0 A.D. is a free, real-time strategy game currently under development by Wildfire Games.
+~x86 ~amd64
+base eutils flag-o-matic games multilib portability subversion toolchain-funcs user wxwidgets
+editor
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

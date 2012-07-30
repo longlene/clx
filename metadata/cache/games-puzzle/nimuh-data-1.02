@@ -1,0 +1,22 @@
+media-libs/libsdl media-libs/sdl-mixer media-libs/sdl-image dev-libs/expat
+media-libs/libsdl media-libs/sdl-mixer media-libs/sdl-image dev-libs/expat
+0
+http://surfnet.dl.sourceforge.net/sourceforge/nimuh/nimuh-data-1.02.tar.gz
+
+http://www.nimuh.com/
+Creative commons
+Nimuh is a game about Andalucía.
+~amd64 ~x86
+base eutils games multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

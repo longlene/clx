@@ -1,0 +1,22 @@
+
+app-emulation/virtualbox-bin >=virtual/jre-1.5
+3.0.5
+http://cdn.downloads.palm.com/sdkdownloads/3.0.5.676/sdkBinaries/palm-sdk_3.0.5-svn528736-pho676_i386.deb
+
+http://developer.palm.com/
+PalmSDK
+Palm WebOS SDK with Mojo and Enyo Application Framework and emulator to develop HP Pre and Touchpad applications
+~amd64 ~x86 -*
+eutils multilib portability toolchain-funcs user versionator
+linguas_de linguas_it linguas_pt_BR linguas_ru linguas_sv
+
+
+
+4
+
+install postinst prepare unpack
+
+
+
+
+

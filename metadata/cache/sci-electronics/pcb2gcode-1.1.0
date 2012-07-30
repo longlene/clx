@@ -1,0 +1,22 @@
+sci-electronics/gerbv
+sci-electronics/gerbv
+0
+mirror://sourceforge/pcb2gcode/pcb2gcode-1.1.0.tar.gz
+nomirror
+http://sourceforge.net/apps/mediawiki/pcb2gcode/
+GPL-2
+Calculate GCode from given PCB layouts
+~amd64 ~x86
+multilib toolchain-funcs
+
+
+
+
+3
+
+install
+
+
+
+
+

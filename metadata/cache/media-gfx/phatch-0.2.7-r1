@@ -1,0 +1,22 @@
+dev-lang/python dev-python/wxpython dev-python/imaging sys-apps/mlocate >=app-admin/eselect-python-20091230 dev-lang/python
+dev-lang/python dev-python/wxpython dev-python/imaging sys-apps/mlocate >=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://photobatch.stani.be/download/package/phatch-0.2.7.1.tar.gz
+
+http://photobatch.stani.be/
+GPL-3
+Phatch is a simple to use cross-platform GUI Photo Batch Processor
+~amd64 ~x86
+distutils fdo-mime multilib python toolchain-funcs
+
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

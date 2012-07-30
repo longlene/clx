@@ -1,0 +1,22 @@
+net-print/foomatic net-print/cups
+
+0
+http://switch.dl.sourceforge.net/sourceforge/m2300w/m2300w-0.51.tar.gz
+
+http://sourceforge.net/projects/m2300w/
+GPL-2
+The m2300w driver is an open source Linux driver for the Konica Minolta magicolor 2300W and 2400W color laser printers.
+x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install
+
+
+
+
+

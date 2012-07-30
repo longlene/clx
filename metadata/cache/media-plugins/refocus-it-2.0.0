@@ -1,0 +1,22 @@
+>=media-gfx/gimp-2.0.0 >=x11-libs/gtk+-2.2.2
+>=media-gfx/gimp-2.0.0 >=x11-libs/gtk+-2.2.2
+0
+mirror://sourceforge/refocus-it/refocus-it-2.0.0.tar.gz
+
+http://refocus-it.sf.net/
+GPL
+Refocus-It plugin for The Gimp
+~x86
+
+
+
+
+
+
+
+compile install
+
+
+
+
+

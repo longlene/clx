@@ -1,0 +1,22 @@
+dev-python/imaging[tk] >=media-libs/lcms-1.15[python] >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+dev-python/imaging[tk] >=media-libs/lcms-1.15[python] >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+0
+http://sk1project.org/downloads/sk1/0.9.1pre_rev905/sk1libs-0.9.1pre_rev905.tar.gz
+
+http://www.sk1project.org
+LGPL-2
+set of python non-GUI extensions for sK1 Project
+~amd64 ~x86
+distutils multilib python toolchain-funcs
+
+
+
+
+2
+
+compile install postinst postrm prepare setup
+
+
+
+
+

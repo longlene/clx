@@ -1,0 +1,22 @@
+>=dev-lang/python-2.3 || ( >=dev-lang/python-2.5 >=dev-python/ctypes-0.9 ) >=media-libs/mutagen-1.12 >=app-admin/eselect-python-20091230 dev-lang/python
+>=dev-lang/python-2.3 || ( >=dev-lang/python-2.5 >=dev-python/ctypes-0.9 ) >=media-libs/mutagen-1.12 >=app-admin/eselect-python-20091230 dev-lang/python
+0
+mirror://sourceforge/musync/musync-0.4.0_alpha.tar.gz
+
+http://sourceforge.net/projects/musync
+GPL-3
+A sleek music synchronizer written in python
+~amd64 ~x86
+distutils eutils multilib portability python toolchain-funcs user
+bash-completion
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

@@ -1,0 +1,54 @@
+--- configure.ac.orig	2006-08-12 10:48:37.000000000 +0200
++++ configure.ac	2006-08-12 10:49:05.000000000 +0200
+@@ -6,8 +6,7 @@
+ 
+ dnl ---------------------- check for C compiler -----------------
+ dnl Checks for one of the C compilers below - change if yours not there.
+-CC_LIST="gcc acc cc c89"
+-MH_PROG_CC
++AC_PROG_CC
+ AC_ISC_POSIX
+ 
+ AC_CONFIG_HEADER(config.h)
+@@ -131,7 +130,7 @@
+ 	if test "$with_debug" = yes; then
+ 		CFLAGS="${CFLAGS} -Wall"
+ 	else
+-		CFLAGS="-O2 -Wall -fomit-frame-pointer"
++		CFLAGS="${CFLAGS}"
+ 	fi
+ fi
+ if test "$on_qnx" = yes; then
+@@ -150,7 +149,7 @@
+ 	[with_latin1=no],
+ )
+ if test "$with_latin1" = yes; then
+-	AC_DEFINE(INCLUDE_LATIN1)
++	AC_DEFINE([INCLUDE_LATIN1], [1], [Define if --with-latin1 is set])
+ fi
+ 
+ dnl ----------------- check for Purify support -----------------------
+@@ -175,7 +174,7 @@
+ 	[with_xaw3d=no],
+ )
+ if test "$with_xaw3d" = yes; then
+-	AC_DEFINE(USE_XAW3D)
++	AC_DEFINE([USE_XAW3D], [1], [Use Xaw3d])
+ fi
+ 
+ dnl ---------------------- check for neXtaw library -------------------
+@@ -186,7 +185,7 @@
+ 	[with_nextaw=no],
+ )
+ if test "$with_nextaw" = yes; then
+-	AC_DEFINE(USE_NEXTAW)
++	AC_DEFINE([USE_NEXTAW], [1], [Use neXtaw])
+ fi
+ 
+ dnl --------------- Check how to make shared libraries -------------------
+@@ -204,3 +203,5 @@
+         *)
+                 ;;
+ esac
++
++AC_DEFINE([PDC_MAX_SIGNALS], [], [PDC_MAX_SIGNALS])

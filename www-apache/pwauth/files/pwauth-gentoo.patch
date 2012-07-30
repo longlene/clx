@@ -1,0 +1,78 @@
+diff -Nurp pwauth-2.3.8.orig/config.h pwauth-2.3.8/config.h
+--- pwauth-2.3.8.orig/config.h	2009-04-03 07:35:00.000000000 -0700
++++ pwauth-2.3.8/config.h	2010-12-22 12:46:50.000000000 -0800
+@@ -112,7 +112,7 @@
+ 
+ /* #define SHADOW_NONE		/**/
+ /* #define SHADOW_BSD		/* FreeBSD, NetBSD, OpenBSD, BSDI, OS X */
+-#define SHADOW_SUN		/* Linux, Solaris, IRIX */
++/* #define SHADOW_SUN		/* Linux, Solaris, IRIX */
+ /* #define SHADOW_JFH		/**/
+ /* #define SHADOW_MDW		/**/
+ /* #define SHADOW_AIX		/* AIX */
+@@ -264,7 +264,7 @@
+  * to change the uid list.
+  */
+ 
+-#define SERVER_UIDS 72		/* user "nobody" */
++/* #define SERVER_UIDS 81		/* user "apache" */
+ 
+ 
+ /* If MIN_UNIX_UID is defined to an integer, logins with uid numbers less than
+@@ -276,7 +276,7 @@
+  * given value will be accepted).
+  */
+ 
+-#define MIN_UNIX_UID 500	/**/
++/* #define MIN_UNIX_UID 500	/**/
+ 
+ 
+ /* If IGNORE_CASE is defined, the login given is checked in two different
+@@ -304,7 +304,7 @@
+  * SLEEP_LOCK.  SLEEP_TIME defaults to 2 seconds if not defined.
+  */
+ 
+-#define SLEEP_LOCK "/var/run/pwauth.lock"
++#define SLEEP_LOCK "/var/lock/pwauth"
+ 
+ 
+ /* If ENV_METHOD is defined, pwauth expects mod_auth_external to be configured
+diff -Nurp pwauth-2.3.8.orig/Makefile pwauth-2.3.8/Makefile
+--- pwauth-2.3.8.orig/Makefile	2009-02-03 08:45:40.000000000 -0800
++++ pwauth-2.3.8/Makefile	2010-12-22 12:52:26.000000000 -0800
+@@ -2,32 +2,18 @@
+ # system.  Most of the configurable stuff is in config.h
+ #
+ #   CC=       an ansi-C compiler.  If "cc" doesn't work, try "gcc".
+-#   LIB=      libraries to link in.  -lcrypt, -lshadow, -lpam sometimes needed.
+-#   LOCALFLAGS=   compiler flags.  Usually -g, -O, and stuff like that.
+-
+-# Settings for author's system (Redhat 6.1)
+-CC=gcc
+-LIB= -lcrypt
+-LOCALFLAGS= -g 
+-
+-# For PAM on Redhat Linux
+-# LIB=-lpam -ldl
+-
+-# For PAM on Solaris or OS X
+-# LIB=-lpam
++#   LDFLAGS=  libraries to link in.  -lcrypt, -lshadow, -lpam sometimes needed.
+ 
+ # -------------------- No User Servicable Parts Below -----------------------
+ 
+-CFLAGS= $(LOCALFLAGS)
+-
+ pwauth: main.o auth_aix.o auth_bsd.o auth_hpux.o auth_mdw.o auth_openbsd.o \
+ 	auth_pam.o auth_sun.o fail_log.o lastlog.o nologin.o snooze.o
+ 	$(CC) -o pwauth $(CFLAGS) main.o auth_aix.o auth_bsd.o auth_hpux.o \
+ 		auth_mdw.o auth_openbsd.o auth_pam.o auth_sun.o fail_log.o \
+-		lastlog.o nologin.o snooze.o $(LIB)
++		lastlog.o nologin.o snooze.o $(LDFLAGS)
+ 
+ checkfaillog: checkfaillog.o fail_check.o
+-	$(CC) -o checkfaillog $(CFLAGS) checkfaillog.o fail_check.o $(LIB)
++	$(CC) -o checkfaillog $(CFLAGS) checkfaillog.o fail_check.o $(LDFLAGS)
+ 
+ main.o: main.c config.h pwauth.h fail_log.h
+ auth_aix.o: auth_aix.c config.h pwauth.h

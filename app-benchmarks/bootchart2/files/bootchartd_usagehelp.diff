@@ -1,0 +1,12 @@
+diff -Naur bootchart_orig/bootchartd.in bootchart/bootchartd.in
+--- bootchart_orig/bootchartd.in	2011-03-02 02:16:12.000000000 +0100
++++ bootchart/bootchartd.in	2011-03-02 02:18:37.426546001 +0100
+@@ -200,7 +200,7 @@
+ 		stop
+ 		;;
+ 	*)
+-		echo "Usage: $0 {init|start|stop}"
++		echo "Usage: $0 {start|wait|stop}"
+ 		;;
+ esac
+ 

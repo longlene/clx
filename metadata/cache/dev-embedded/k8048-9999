@@ -1,0 +1,22 @@
+dev-embedded/gputils sys-libs/readline sys-libs/ncurses
+dev-embedded/gputils sys-libs/readline sys-libs/ncurses
+0
+http://dev.kewl.org/k8048/k8048.tar.gz
+nomirror
+http://dev.kewl.org/k8048
+BSD
+Velleman K8048 kit programmer for UNIX
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst unpack
+
+
+
+
+

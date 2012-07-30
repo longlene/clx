@@ -1,0 +1,22 @@
+>=media-sound/mp3gain-1.5.2 media-sound/phonon x11-libs/qt-assistant:4 x11-libs/qt-core:4 x11-libs/qt-gui:4 x11-libs/qt-gui:4 x11-libs/qt-webkit:4 x11-libs/qt-sql:4 x11-libs/qt-xmlpatterns:4
+>=media-sound/mp3gain-1.5.2 media-sound/phonon x11-libs/qt-assistant:4 x11-libs/qt-core:4 x11-libs/qt-gui:4 x11-libs/qt-gui:4 x11-libs/qt-webkit:4 x11-libs/qt-sql:4 x11-libs/qt-xmlpatterns:4
+0
+mirror://sourceforge/qmp3gain/qmp3gain/0.9.0/qmp3gain-0.9.0.tar.gz
+
+http://qmp3gain.sourceforge.net/
+GPLv2
+Graphical user interface front end supporting MP3Gain engine
+~x86 ~amd64
+base eutils multilib portability qt4-r2 toolchain-funcs user
+
+
+
+
+3
+
+compile configure install prepare unpack
+
+
+
+
+

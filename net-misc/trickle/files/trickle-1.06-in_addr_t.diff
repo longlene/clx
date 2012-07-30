@@ -1,0 +1,8 @@
+--- trickle-old/configure.in	2008-11-12 15:37:18.511129031 +0100
++++ trickle-1.07/configure.in	2008-11-12 15:36:48.398129944 +0100
+@@ -70 +70,4 @@ AC_CHECK_TYPE(u_int8_t, unsigned char)
+-AC_CHECK_TYPE(in_addr_t, unsigned long)
++AC_CHECK_TYPE(in_addr_t, [], [
++	AC_DEFINE([in_addr_t], [unsigned long], [Define to 'unsigned long' if not provided])
++], [#include <sys/types.h>
++#include <netinet/in.h>])

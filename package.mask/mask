@@ -1,0 +1,6 @@
+=app-text/stardict-3.0.3-r1
+=sys-apps/portage-2.3.3-r3
+=app-office/libreoffice-3.5.3.2
+=app-text/libwps-0.2.7
+=www-client/firefox-13.0
+x11-libs/qt-core

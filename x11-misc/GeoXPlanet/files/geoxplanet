@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [[ $@ =~ (-h)|(--help)|(\?) ]]; then
+	echo "Usage: ${0##*/} [-n] [-C]"
+	echo "  or: ${0##*/} -k"
+	echo "Start/stop GeoXPlanet."
+	echo
+	echo "  -n		run in foreground (useful to see what's happening)"
+	echo "  -k		stop any running GeoXPlanet instances"
+	echo "  -C		launch configuration interface"
+	exit
+fi
+
+if [[ $@ =~ -k ]]; then
+	if [[ `ps a | grep GeoXPlanet` ]]; then
+		kill `ps a | grep GeoXPlanet | sed 's|\([0-9]*\).*|\1|'`
+		exit
+	else
+		echo 'GeoXPlanet is not running'
+		exit
+	fi
+fi
+
+if [[ $@ =~ -C ]]
+then CMD="/usr/share/geoxplanet/src/configGUI.py"
+else CMD="/usr/share/geoxplanet/src/GeoXPlanet.py"
+fi
+
+if [[ ! $@ =~ -n ]]
+then nohup $CMD > /dev/null 2>&1 &
+else $CMD
+fi
+

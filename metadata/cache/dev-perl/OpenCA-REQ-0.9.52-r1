@@ -1,0 +1,22 @@
+dev-lang/perl[-build]
+dev-perl/X500-DN dev-lang/perl[-build]
+0
+mirror://cpan/authors/id/M/MS/MSCHOUT/OpenCA-REQ-0.9.52.tar.gz
+
+http://search.cpan.org/~madwolf/OpenCA-REQ-0.9.52/
+Artistic
+Perl extension to easily manage Cert REQUESTs
+~amd64 ~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

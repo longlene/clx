@@ -1,0 +1,22 @@
+dev-libs/libxml2 doc? ( app-doc/doxygen ) dev-vcs/mercurial
+dev-libs/libxml2
+0
+
+
+http://libnfo.geexbox.org/
+LGPL-2.1
+Small library used to parse and write NFO files.
+
+eutils mercurial multilib portability toolchain-funcs user
+debug doc
+
+
+
+2
+
+configure install unpack
+
+
+
+
+

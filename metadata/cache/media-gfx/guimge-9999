@@ -1,0 +1,22 @@
+media-gfx/uimge dev-python/pygtk dev-python/setuptools >=app-admin/eselect-python-20091230 dev-lang/python >=dev-vcs/git-1.6
+media-gfx/uimge dev-python/pygtk >=app-admin/eselect-python-20091230 dev-lang/python
+0
+
+
+http://code.google.com/p/uimge
+GPL-3
+Python picture uploader to different imagehostings
+~x86 ~amd64
+distutils eutils git multilib portability python toolchain-funcs user
+
+
+
+
+2
+
+compile install postinst postrm prepare unpack
+
+
+
+
+

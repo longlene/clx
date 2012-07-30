@@ -1,0 +1,22 @@
+virtual/fortran X? ( x11-libs/fltk:1 ) blas? ( virtual/blas virtual/lapack sci-libs/fftw:3.0 ) cgns? ( sci-libs/cgnslib ) jpeg? ( virtual/jpeg ) lua? ( dev-lang/lua ) med? ( >=sci-libs/med-2.3.4 ) opencascade? ( sci-libs/opencascade ) png? ( media-libs/libpng ) petsc? ( sci-mathematics/petsc ) zlib? ( sys-libs/zlib ) mpi? ( virtual/mpi[cxx] ) taucs? ( sci-libs/taucs ) dev-util/cmake doc? ( virtual/latex-base ) >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+virtual/fortran X? ( x11-libs/fltk:1 ) blas? ( virtual/blas virtual/lapack sci-libs/fftw:3.0 ) cgns? ( sci-libs/cgnslib ) jpeg? ( virtual/jpeg ) lua? ( dev-lang/lua ) med? ( >=sci-libs/med-2.3.4 ) opencascade? ( sci-libs/opencascade ) png? ( media-libs/libpng ) petsc? ( sci-mathematics/petsc ) zlib? ( sys-libs/zlib ) mpi? ( virtual/mpi[cxx] ) taucs? ( sci-libs/taucs )
+0
+http://www.geuz.org/gmsh/src/gmsh-2.5.0-source.tgz
+
+http://www.geuz.org/gmsh/
+GPL-3 free-noncomm
+A three-dimensional finite element mesh generator with built-in pre- and post-processing facilities
+~amd64 ~x86
+base cmake-utils eutils flag-o-matic fortran-2 multilib portability toolchain-funcs user
+blas cgns chaco doc examples jpeg lua med metis mpi netgen opencascade petsc png taucs tetgen X zlib
+
+
+
+3
+
+compile configure install prepare setup test unpack
+
+
+
+
+

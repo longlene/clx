@@ -1,0 +1,14 @@
+# move dev-lisp/cl-asdf dev-lisp/asdf
+dev-lisp/asdf
+#required by app-vim/vimacs (argument)
+=app-vim/vimacs-9999 **
+#required by dev-lisp/cmucl (argument)
+=dev-lisp/cmucl-20c **
+#required by dev-lang/gwydion-dylan-bin (argument)
+=dev-lang/gwydion-dylan-bin-2.4.0-r1 **
+#required by virtual/os-headers-0, required by net-firewall/iptables-1.4.13, required by sys-apps/iproute2-3.3.0[iptables], required by @system, required by @world (argument)
+=sys-kernel/linux-headers-3.2-r1 **
+#required by dev-util/ald (argument)
+=dev-util/ald-0.1.7 **
+#required by dev-scheme/kawa (argument)
+=dev-scheme/kawa-1.10 **

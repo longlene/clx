@@ -1,0 +1,22 @@
+
+media-libs/alsa-lib sys-libs/glibc amd64? ( app-emulation/emul-linux-x86-gtklibs app-emulation/emul-linux-x86-sdl ) x86? ( media-libs/openal media-libs/libsdl sys-libs/zlib x11-libs/gtk+ x11-libs/libX11 x11-libs/libXau x11-libs/libXdmcp x11-libs/libXext x11-libs/libXi ) xtm? ( app-arch/p7zip linguas_de? ( app-arch/unzip ) linguas_fr? ( app-arch/unrar ) )
+0
+http://updatefiles.linuxgamepublishing.com/x3/x3-2.5-2.5.01-x86.run http://updatefiles.linuxgamepublishing.com/x3/x3-2.5.01-2.5.02-x86.run http://updatefiles.linuxgamepublishing.com/x3/x3-2.5.02-2.5.03-x86.run xtm? ( http://downloads.thexuniverse.us/downloads/XTM_0.7.5_Full.exe linguas_de? ( http://downloads.thexuniverse.us/downloads/german_TFiles_0.75b.zip ) linguas_fr? ( http://downloads.thexuniverse.us/downloads/XTM7.5_French_Finale.rar ) )
+strip
+http://www.linuxgamepublishing.com/info.php?id=x3
+as-is
+Open-ended space opera with trading, building & fighting
+~amd64 ~x86
+base eutils games multilib portability toolchain-funcs user
+bonuspack cockpit linguas_de linguas_fr linguas_it modkit xtm
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

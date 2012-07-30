@@ -1,0 +1,22 @@
+x11-libs/libX11 motif? ( virtual/motif ) !motif? ( x11-libs/libXaw ) >=dev-libs/glib-2.6.0 >=app-emulation/libdsk-1.1.5
+x11-libs/libX11 motif? ( virtual/motif ) !motif? ( x11-libs/libXaw ) >=dev-libs/glib-2.6.0 >=app-emulation/libdsk-1.1.5
+0
+mirror://sourceforge/xcpc/xcpc-20070122.tar.gz
+
+http://xcpc.emuunlim.com/
+
+Xcpc - Amstrad CPC Emulator
+x86
+eutils multilib portability toolchain-funcs user
+motif
+
+
+
+
+
+compile install
+
+
+
+
+

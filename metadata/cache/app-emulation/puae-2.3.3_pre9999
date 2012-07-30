@@ -1,0 +1,22 @@
+alsa? ( !sdl-sound? ( media-libs/alsa-lib ) ) gtk? ( >=x11-libs/gtk+-2 ) ncurses? ( !qt? ( !sdl-gfx? ( sys-libs/ncurses ) ) ) qt? ( !gtk? ( x11-libs/qt-gui ) ) sdl? ( media-libs/libsdl ) sdl-gfx? ( !qt? ( media-libs/sdl-gfx ) ) sdl-sound? ( media-libs/sdl-sound ) sdl-gl? ( !qt? ( virtual/opengl ) ) X? ( x11-libs/libX11 dga? ( x11-libs/libXxf86dga ) ) X? ( dga? ( x11-proto/xf86dgaproto ) vidmode? ( x11-proto/xf86vidmodeproto ) ) || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool dev-vcs/git
+alsa? ( !sdl-sound? ( media-libs/alsa-lib ) ) gtk? ( >=x11-libs/gtk+-2 ) ncurses? ( !qt? ( !sdl-gfx? ( sys-libs/ncurses ) ) ) qt? ( !gtk? ( x11-libs/qt-gui ) ) sdl? ( media-libs/libsdl ) sdl-gfx? ( !qt? ( media-libs/sdl-gfx ) ) sdl-sound? ( media-libs/sdl-sound ) sdl-gl? ( !qt? ( virtual/opengl ) ) X? ( x11-libs/libX11 dga? ( x11-libs/libXxf86dga ) )
+0
+
+
+https://github.com/GnoStiC/PUAE
+GPL-2
+PUAE tries to continue where E-UAE left off.
+~x86 ~amd64
+autotools eutils flag-o-matic git-2 libtool multilib portability toolchain-funcs user
+a2065 a2091 +alsa amax +audio cdtv cd32 +debugger dga drvsnd enforcer +fpu gayle +gtk jit ncr +natmem noflags ncurses profiling qt +save-state scsi-device +sdl +sdl-gfx sdl-gl sdl-sound threads +ui vidmode +xarcade X
+
+
+
+2
+
+compile configure install prepare unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+media-libs/ladspa-sdk
+media-libs/ladspa-sdk
+0
+http://artemiolabs.com/software/wasp/wasp-0.1.3.tar.bz2 doc? ( http://artemiolabs.com/software/wasp/wasp-docs-0.1.3.tar.bz2 )
+
+http://artemiolabs.com/software/wasp/
+GPL-2
+Wave Sculpting LADSPA audio plugins/effects
+~x86
+
+doc
+
+
+
+
+
+install
+
+
+
+
+

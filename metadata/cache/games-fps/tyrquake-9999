@@ -1,0 +1,22 @@
+media-libs/alsa-lib media-libs/jpeg media-libs/libogg media-libs/libpng media-libs/libvorbis net-libs/gnutls virtual/opengl media-libs/libsdl x11-libs/libX11 x11-libs/libXext x11-libs/libXxf86vm dev-util/pkgconfig x11-proto/xextproto x11-proto/xf86dgaproto x11-proto/xf86vidmodeproto x11-proto/xproto >=dev-vcs/git-1.6
+media-libs/alsa-lib media-libs/jpeg media-libs/libogg media-libs/libpng media-libs/libvorbis net-libs/gnutls virtual/opengl media-libs/libsdl x11-libs/libX11 x11-libs/libXext x11-libs/libXxf86vm cdinstall? ( games-fps/quake1-data )
+0
+
+
+http://disenchant.net/engine.html
+GPL-2
+Conservative Quake 1 engine
+~x86
+base eutils games git multilib portability toolchain-funcs user
+cdinstall debug dedicated opengl X
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

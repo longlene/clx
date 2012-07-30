@@ -1,0 +1,22 @@
+>=x11-libs/wxGTK-2.6.1 >=x11-base/xorg-x11-6.8.2-r7
+>=x11-libs/wxGTK-2.6.1 >=x11-base/xorg-x11-6.8.2-r7
+0
+mirror://sourceforge/xorg-edit/xorg-edit-src.tar.gz
+
+http://www.cyskat.de/dee/progxorg.htm
+GPL-2
+xorg-edit is a graphical interface for editing xorg configuration files the easy way. Most features and options understood by the Xserver can be modified or created
+~x86 ~amd64
+eutils flag-o-matic multilib portability toolchain-funcs user
+xorg
+
+
+
+
+
+compile install
+
+
+
+
+

@@ -1,0 +1,22 @@
+dev-lang/perl
+dev-lang/perl dev-perl/Test-Exception
+0
+mirror://cpan/authors/id/I/IB/IBB/Acme-Damn-0.04.tar.gz
+
+http://search.cpan.org/dist/Acme-Damn/
+|| ( Artistic GPL-1 GPL-2 GPL-3 )
+'Unbless' Perl objects
+~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst postrm preinst prerm setup test unpack
+
+
+
+
+

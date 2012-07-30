@@ -1,0 +1,22 @@
+
+>=virtual/jre-1.6 sys-cluster/apache-hadoop-common
+0
+mirror://apache/hadoop/pig/pig-0.6.0/pig-0.6.0.tar.gz
+mirror binchecks
+http://hadoop.apache.org/
+Apache-2.0
+High-level language and platform for analyzing large data sets
+~amd64
+eutils java-utils-2 multilib portability toolchain-funcs user versionator
+elibc_FreeBSD
+
+
+
+2
+
+install postinst postrm
+
+
+
+
+

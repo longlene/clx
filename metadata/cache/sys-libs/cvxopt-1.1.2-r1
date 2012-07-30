@@ -1,0 +1,22 @@
+virtual/blas virtual/lapack virtual/cblas fftw? ( sci-libs/fftw ) glpk? ( sci-mathematics/glpk ) gsl? ( sci-libs/gsl ) >=app-admin/eselect-python-20091230 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* )
+virtual/blas virtual/lapack virtual/cblas fftw? ( sci-libs/fftw ) glpk? ( sci-mathematics/glpk ) gsl? ( sci-libs/gsl ) >=app-admin/eselect-python-20091230 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* )
+0
+http://abel.ee.ucla.edu/src/cvxopt-1.1.2.tar.gz
+
+http://abel.ee.ucla.edu/cvxopt
+GPL-3
+A Python Package for Convex Optimization
+~amd64
+distutils multilib python toolchain-funcs
+fftw glpk gsl
+
+
+
+2
+
+compile install postinst postrm prepare
+
+
+
+
+

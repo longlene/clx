@@ -1,0 +1,30 @@
+--- configure.in.orig	2008-06-12 21:47:51.000000000 +0200
++++ configure.in	2008-06-12 21:51:14.000000000 +0200
+@@ -69,11 +69,11 @@
+ tcllib=none
+ for ac_dir in $with_tcl_lib /usr/local/lib /usr/local/lib/tcl* /usr/lib/
+ do
+-	for file in `ls $ac_dir/libtcl*.a 2>/dev/null`
++	for file in `ls $ac_dir/libtcl*.so 2>/dev/null`
+ 	do
+ 		if test -f $file
+ 		then
+-			tcllib=`basename $file .a | sed -e 's/lib//'`
++			tcllib=`basename $file .so | sed -e 's/lib//'`
+ 			tcllibdir=`dirname $file`
+ 			break
+ 		fi
+@@ -90,11 +90,11 @@
+ tklib=none
+ for ac_dir in $with_tk_lib /usr/local/lib /usr/local/lib/tcl* /usr/lib/
+ do
+-	for file in `ls $ac_dir/libtk*.a 2>/dev/null`
++	for file in `ls $ac_dir/libtk*.so 2>/dev/null`
+ 	do
+ 		if test -f $file
+ 		then
+-			tklib=`basename $file .a | sed -e 's/lib//'`
++			tklib=`basename $file .so | sed -e 's/lib//'`
+ 			tklibdir=`dirname $file`
+ 			break
+ 		fi

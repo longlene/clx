@@ -1,0 +1,22 @@
+app-arch/unzip
+virtual/libstdc++ x11-base/xorg-x11
+0
+http://gridwars.marune.de/bin/gridwars_lin.zip
+
+http://gridwars.marune.de/
+public-domain
+Your small ship sits in a one-screen grid and vectorized enemies spawn to attack.
+~x86 ~amd64
+base eutils games multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

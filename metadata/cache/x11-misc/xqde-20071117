@@ -1,0 +1,22 @@
+>=x11-libs/qt-4.2.0 >=x11-libs/libXcomposite-0.4.0
+>=x11-libs/qt-4.2.0 >=x11-libs/libXcomposite-0.4.0
+0
+http://xqde.xiaprojects.com/?downloadfile=downloads/Sources/xqde-20071117.tar.bz2
+
+http://xqde.xiaprojects.com/
+GPL-2
+A KXDocker replacement that works together with a compositing window manager.
+~x86 ~amd64
+base eutils multilib portability qt4 toolchain-funcs user versionator
+debug
+
+
+
+
+
+compile install setup unpack
+
+
+
+
+

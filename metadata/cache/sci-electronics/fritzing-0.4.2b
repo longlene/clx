@@ -1,0 +1,22 @@
+x11-libs/qt-gui:4 x11-libs/qt-sql:4 x11-libs/qt-svg:4 x11-libs/qt-webkit:4
+x11-libs/qt-gui:4 x11-libs/qt-sql:4 x11-libs/qt-svg:4 x11-libs/qt-webkit:4
+0
+http://fritzing.org/download/0.4.2b/source-tarball/fritzing.2010.08.06.source.tar.bz2
+
+http://fritzing.org/
+GPL-3 CCPL-Attribution-ShareAlike-3.0
+breadboard and arduino prototyping
+~amd64
+base eutils multilib portability qt4 toolchain-funcs user versionator
+
+
+
+
+2
+
+compile configure install prepare setup unpack
+
+
+
+
+

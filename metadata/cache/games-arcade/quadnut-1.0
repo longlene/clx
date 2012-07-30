@@ -1,0 +1,22 @@
+media-libs/sdl-mixer media-libs/sdl-ttf
+media-libs/sdl-mixer media-libs/sdl-ttf
+0
+http://luke.no-ip.org/code/downloads/quadnut.tar.gz
+
+http://luke.no-ip.org/code
+LGPL
+A OpenGL/SDL clone of Quadnet, a very addictive Asteroids-like game.
+~x86
+base eutils games multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

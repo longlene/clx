@@ -1,0 +1,22 @@
+>=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+dev-embedded/libftdi gpsd? ( sci-geosciences/gpsd ) gui? ( <x11-libs/fltk-2 ) bluez? ( net-wireless/bluez )
+0
+http://icculus.org/obdgpslogger/downloads/obdgpslogger-0.15.tar.gz
+
+http://icculus.org/obdgpslogger/
+GPL-2
+Logs OBDII and GPS data
+~x86 ~amd64 ~ppc
+base cmake-utils eutils flag-o-matic multilib portability toolchain-funcs user
+bluez configtest dbus gpsd gui
+
+
+
+3
+
+compile configure install prepare test unpack
+
+
+
+
+

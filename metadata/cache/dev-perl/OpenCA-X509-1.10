@@ -1,0 +1,22 @@
+dev-perl/X500-DN virtual/perl-Digest-MD5 dev-lang/perl[-build]
+dev-perl/X500-DN virtual/perl-Digest-MD5 dev-lang/perl[-build]
+0
+mirror://sourceforge/openca/openca-base-1.1.1.tar.gz
+
+http://search.cpan.org/dist/OpenCA-X509/
+Artistic
+Perl extension to easily manage X509 Cert
+~amd64 ~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

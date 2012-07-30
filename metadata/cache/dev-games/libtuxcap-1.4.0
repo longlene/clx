@@ -1,0 +1,22 @@
+virtual/opengl x11-libs/libX11 x11-libs/libXext media-libs/libsdl virtual/glu media-gfx/imagemagick media-libs/sdl-mixer dev-util/cmake >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+virtual/opengl x11-libs/libX11 x11-libs/libXext media-libs/libsdl virtual/glu media-gfx/imagemagick media-libs/sdl-mixer
+0
+mirror://sourceforge/tuxcap/libtuxcap-1.4.0.tar.gz
+
+http://sourceforge.net/projects/tuxcap
+TUXCAP
+2D game development framework
+~x86
+base cmake-utils eutils flag-o-matic multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

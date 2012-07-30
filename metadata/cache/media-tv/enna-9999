@@ -1,0 +1,22 @@
+>=x11-libs/elementary-9999 >=x11-libs/e_dbus-9999 !vdr? ( >=media-libs/libplayer-2.0.0 ) vdr? ( >=media-libs/libplayer-2.0.0[xine] media-libs/xine-lib[vdr] ) >=media-libs/libvalhalla-2.0.0 upnp? ( net-libs/gupnp-av ) cddb? ( media-libs/libcddb ) udev? ( sys-fs/udev ) xrandr? ( x11-libs/libXrandr ) lirc? ( app-misc/lirc ) vdr? ( media-libs/libsvdrp libxdg-basedir? ( dev-libs/libxdg-basedir ) ) dev-vcs/mercurial
+>=x11-libs/elementary-9999 >=x11-libs/e_dbus-9999 !vdr? ( >=media-libs/libplayer-2.0.0 ) vdr? ( >=media-libs/libplayer-2.0.0[xine] media-libs/xine-lib[vdr] ) >=media-libs/libvalhalla-2.0.0 upnp? ( net-libs/gupnp-av ) cddb? ( media-libs/libcddb ) udev? ( sys-fs/udev ) xrandr? ( x11-libs/libXrandr ) lirc? ( app-misc/lirc ) vdr? ( media-libs/libsvdrp libxdg-basedir? ( dev-libs/libxdg-basedir ) )
+0
+
+
+http://enna.geexbox.org/
+LGPL-2.1
+Media Center app using (EFL) for the GUI and GeeXboX libs for playback and information retrieval
+
+eutils mercurial multilib portability toolchain-funcs user
++theme +bookstore +configuration +games +music +photo +vdr +video +weather +cdda +dvd +netstreams +podcast +shoutcast +upnp +keyboard +hal +mtab +udev +cddb +xrandr +lirc +ecore-x +libxdg-basedir
+
+
+
+2
+
+configure install unpack
+
+
+
+
+

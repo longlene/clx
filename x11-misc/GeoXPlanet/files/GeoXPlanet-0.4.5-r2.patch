@@ -1,0 +1,114 @@
+diff -uw src_bak/GeoXPlanet.py src/GeoXPlanet.py
+--- src_bak/GeoXPlanet.py	2008-04-13 03:32:27.000000000 +0600
++++ src/GeoXPlanet.py	2008-08-30 17:58:13.722833279 +0600
+@@ -91,9 +91,9 @@
+ 			raise Exception # the current config file isn't compatible with this version of GeoXPlanet...let's kick off the configGUI
+ except Exception, inst:
+ 	if not os.path.exists(os.path.join(os.environ["HOME"], ".geoxplanet")) or not os.path.isdir(os.path.join(os.environ["HOME"], ".geoxplanet")):
+-		print "Moving temp files (images, config files, etc...) from "
++		print "Copying temp files (images, config files, etc...) from "
+ 		print "the GeoXPlanet directory to %s" % os.path.join(os.environ["HOME"],".geoxplanet")
+-		shutil.move(os.path.join(sys.path[0][:-4],"temp"), os.path.join(os.environ["HOME"],".geoxplanet"))
++		shutil.copytree(os.path.join(sys.path[0][:-4],"temp"), os.path.join(os.environ["HOME"],".geoxplanet"))
+ 	from configGUI import configGUI
+ 	config = configGUI()
+ 	config.show()
+@@ -102,4 +102,3 @@
+ if __name__ == '__main__':
+ 	program = GeoXPlanet(configFile)
+ 	program.run(GUI)
+-	
+\ No newline at end of file
+diff -uw src_bak/clouds.py src/clouds.py
+--- src_bak/clouds.py	2008-04-13 06:21:54.000000000 +0600
++++ src/clouds.py	2008-08-30 19:09:52.375831564 +0600
+@@ -32,18 +32,11 @@
+ 	maxRetries = 3
+ 	imageDir = "%s%s" % (os.path.join(os.environ["HOME"],".geoxplanet","images"), os.sep)
+ 	defaultOutputFile = "clouds_2048.jpg"
+-	mirrors = [    "http://www.ruwenzori.net/earth/clouds_2048.jpg",
+-			       "http://xplanet.arculeo.com/clouds_2048.jpg",
+-			       "http://xplanet.dyndns.org/clouds/clouds_2048.jpg",
+-			       "http://userpage.fu-berlin.de/~jml/clouds_2048.jpg",
+-			       "http://rcswww.urz.tu-dresden.de/~es179238/clouds_2048.jpg",
++	mirrors = [  "http://xplanet.dyndns.org/clouds/clouds_2048.jpg",
+ 			       "http://home.megapass.co.kr/~ysy00/cloud_data/clouds_2048.jpg",
+ 			       "http://home.megapass.co.kr/~holywatr/cloud_data/clouds_2048.jpg",
+-			       "http://user.chol.com/~winxplanet/cloud_data/clouds_2048.jpg",
+ 			       "http://home.megapass.co.kr/~gitto88/cloud_data/clouds_2048.jpg",
+-			       "http://giga.colozone.nl/clouds_2048.jpg",
+ 			       "http://www.wizabit.eclipse.co.uk/xplanet/files/mirror/clouds_2048.jpg",
+-			       "http://www.wizabit.eclipse.co.uk/xplanet/files/local/clouds_2048.jpg",
+ 			       "http://xplanet.explore-the-world.net/clouds_2048.jpg" ]
+ 	platform = sys.platform[:3]
+ 
+diff -uw src_bak/controller.py src/controller.py
+--- src_bak/controller.py	2008-04-13 06:23:26.000000000 +0600
++++ src/controller.py	2008-08-30 18:40:20.781831769 +0600
+@@ -184,6 +184,8 @@
+ 		config.readfp(fname)
+ 		fname.close()
+ 		
++		self.tmpDir = os.path.join(os.environ["HOME"],".geoxplanet")
++
+ 		self.xplanetExe = config.get("General", "xplanetExe")
+ 		print "Location of xplanet executable: %s" % self.xplanetExe
+ 		
+@@ -313,7 +315,7 @@
+ 			self.displayDict["Monitor_%i_stateColor" % index] = config.get("Display", "Monitor_%i_stateColor" % index)
+ 			self.displayDict["Monitor_%i_latitude" % index] = config.get("Display", "Monitor_%i_latitude" % index)
+ 			self.displayDict["Monitor_%i_longitude" % index] = config.get("Display", "Monitor_%i_longitude" % index)
+-			self.displayDict["Monitor_%i_xplanetConfig" % index] = "%s%sMonitor_%i_xplanet.conf" % (self.GeoXPlanetDir, os.sep, index)
++			self.displayDict["Monitor_%i_xplanetConfig" % index] = "%s%sMonitor_%i_xplanet.conf" % (self.tmpDir, os.sep, index)
+ 			conf = open(self.displayDict["Monitor_%i_xplanetConfig" % index], 'w')
+ 			self.displayDict["Monitor_%i_markerFile" % index] = "Monitor_%i_markerFile.txt" % index
+ 			self.displayDict["Monitor_%i_arcFile" % index]  = "Monitor_%i_arcFile.txt" % index
+@@ -685,7 +687,6 @@
+ 	def runXPlanet(self):
+ 		# generate the image
+ 		self.suffix = (self.suffix + 1) % 2
+-		tmpDir = os.path.join(os.environ["HOME"],".geoxplanet")			
+ 
+ 		if self.platform == 'win' or self.platform == 'Mic':
+ 			extension = 'bmp'
+@@ -696,7 +697,7 @@
+ 			imageFile = "%s%s.%s" % (os.path.join(os.environ["HOME"],".geoxplanet","images",("Monitor_%i_Output" % index)), self.suffix, extension)
+ 			print "Generating image file: %s" % imageFile
+ 
+-			xplanetCommand = "%s -num_times 1 -searchdir %s -tmpdir %s -marker_file %s " % (self.xplanetExe, tmpDir, tmpDir, self.displayDict["Monitor_%i_markerFile" % index])
++			xplanetCommand = "%s -num_times 1 -searchdir %s -tmpdir %s -marker_file %s " % (self.xplanetExe, self.tmpDir, self.tmpDir, self.displayDict["Monitor_%i_markerFile" % index])
+ 
+ 			if self.displayDict["Monitor_%i_projection" % index] != 'None':
+ 				xplanetCommand = xplanetCommand + "-projection %s " % self.displayDict["Monitor_%i_projection" % index]
+@@ -722,13 +723,13 @@
+ 		if self.platform != 'win' and self.platform != 'Mic':
+ 			if self.xinerama:
+ 				os.popen("convert %s%s.%s %s%s.%s +append %s%s.%s" % (
+-				(os.path.join(tmpDir,"images","Monitor_0_Output")), self.suffix, extension, 
+-				(os.path.join(tmpDir,"images","Monitor_1_Output")), self.suffix, extension, 
+-				(os.path.join(tmpDir,"images","Output")), self.suffix, extension))
++				(os.path.join(self.tmpDir,"images","Monitor_0_Output")), self.suffix, extension,
++				(os.path.join(self.tmpDir,"images","Monitor_1_Output")), self.suffix, extension,
++				(os.path.join(self.tmpDir,"images","Output")), self.suffix, extension))
+ 			else:
+ 				os.popen("mv %s%s.%s %s%s.%s" % (
+-				(os.path.join(tmpDir,"images","Monitor_0_Output")), self.suffix, extension, 
+-				(os.path.join(tmpDir,"images","Output")), self.suffix, extension))
++				(os.path.join(self.tmpDir,"images","Monitor_0_Output")), self.suffix, extension,
++				(os.path.join(self.tmpDir,"images","Output")), self.suffix, extension))
+ 			command = ""
+ 			if self.displayDict["DESKTOP"] == 'gnome':
+ 				command = "gconftool-2 -t str -s /desktop/gnome/background/picture_filename"
+@@ -742,10 +743,10 @@
+ 				command = "echo -e \"# xfce backdrop list\n%s\">$HOME/.config/xfce4/desktop/backdrops.list && xfdesktop --reload"
+ 			
+ 			#print "%s %s%stemp%simages%s%s%s.png" % (command, self.GeoXPlanetDir, os.sep, os.sep,os.sep,("Monitor_%i_Output" % index), self.suffix)
+-			(stdin, stdout, stderr) = os.popen3("%s %s%s.%s" % (command, os.path.join(tmpDir,"images","Output"), self.suffix, extension))
++			(stdin, stdout, stderr) = os.popen3("%s %s%s.%s" % (command, os.path.join(self.tmpDir,"images","Output"), self.suffix, extension))
+ 		
+ 		else: # this is a windows system!
+-			bmp = ctypes.c_char_p( "%s%s.%s" % (os.path.join(tmpDir,"images","Monitor_0_Output"), self.suffix, extension))
++			bmp = ctypes.c_char_p( "%s%s.%s" % (os.path.join(self.tmpDir,"images","Monitor_0_Output"), self.suffix, extension))
+ 			ctypes.windll.user32.SystemParametersInfoA( 20, 0, bmp, 3 )
+ 			
+ 	def run(self, GUI):

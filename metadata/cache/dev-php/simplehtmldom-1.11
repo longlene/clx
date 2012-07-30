@@ -1,0 +1,22 @@
+dev-lang/php
+dev-lang/php
+0
+mirror://sourceforge/simplehtmldom/simplehtmldom_1_11.zip
+
+http://simplehtmldom.sourceforge.net/
+MIT
+PHP Simple HTML DOM Parser
+~amd64
+depend.php eutils multilib php-lib-r1 phpconfutils portability toolchain-funcs user
+
+
+
+
+3
+
+install
+
+
+
+
+

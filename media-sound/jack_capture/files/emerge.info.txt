@@ -1,0 +1,48 @@
+emerge -p --info media-sound/jack_capture
+Portage 2.1.1-r2 (default-linux/x86/2006.1, gcc-4.1.1, glibc-2.4-r4, 2.6.19-rc3 i686)
+=================================================================
+                        System Settings
+=================================================================
+System uname: 2.6.19-rc3 i686 Intel(R) Pentium(R) 4 CPU 1.70GHz
+Gentoo Base System version 1.12.6
+Last Sync: Fri, 24 Nov 2006 09:30:01 +0000
+ccache version 2.3 [enabled]
+app-admin/eselect-compiler: [Not Present]
+dev-java/java-config: [Not Present]
+dev-lang/python:     2.4.3-r4
+dev-python/pycrypto: 2.0.1-r5
+dev-util/ccache:     2.3
+dev-util/confcache:  [Not Present]
+sys-apps/sandbox:    1.2.17
+sys-devel/autoconf:  2.13, 2.60
+sys-devel/automake:  1.4_p6, 1.5, 1.6.3, 1.7.9-r1, 1.8.5-r3, 1.9.6-r2
+sys-devel/binutils:  2.16.1-r3
+sys-devel/gcc-config: 1.3.13-r4
+sys-devel/libtool:   1.5.22
+virtual/os-headers:  2.6.17-r1
+ACCEPT_KEYWORDS="x86"
+AUTOCLEAN="yes"
+CBUILD="i686-pc-linux-gnu"
+CFLAGS="-march=pentium4 -O3 -fomit-frame-pointer -ffast-math -mmmx -msse -msse2 -mfpmath=sse,387 -pipe -funsafe-math-optimizations"
+CHOST="i686-pc-linux-gnu"
+CONFIG_PROTECT="/etc /usr/share/X11/xkb"
+CONFIG_PROTECT_MASK="/etc/env.d /etc/gconf /etc/terminfo"
+CXXFLAGS="-O2 -mcpu=i686 -pipe"
+DISTDIR="/usr/portage/distfiles"
+FEATURES="autoconfig ccache distlocks metadata-transfer sandbox sfperms strict"
+GENTOO_MIRRORS="http://distfiles.gentoo.org http://distro.ibiblio.org/pub/linux/distributions/gentoo"
+MAKEOPTS="-j2"
+PKGDIR="/usr/portage/packages"
+PORTAGE_RSYNC_OPTS="--recursive --links --safe-links --perms --times --compress --force --whole-file --delete --delete-after --stats --timeout=180 --exclude='/distfiles' --exclude='/local' --exclude='/packages'"
+PORTAGE_TMPDIR="/var/tmp"
+PORTDIR="/usr/portage"
+PORTDIR_OVERLAY="/home/kruhft/www/portage"
+SYNC="rsync://rsync.gentoo.org/gentoo-portage"
+USE="x86 X aac aalib alsa bash-completion berkdb bitmap-fonts bzip2 cairo caps cli cpudetection cracklib crypt curl custom-cflags directfb dlloader dri dvd dvdread elibc_glibc emacs encode fbcon fbdev ffmpeg fftw firefox flac fortran fuse gdbm gif glib glibc-omitfp glitz gmp gnutls gpm gs gsl gtk guile iconv imagemagick imlib input_devices_evdev input_devices_keyboard input_devices_mouse ipv6 isdnlog jack jack-tmpfs jpeg jpeg2k kernel_linux ladspa lame libcaca libg++ libsamplerate linuxkeys linuxthreads-tls lua lzo mad mjpeg mmap mmx mng mozdevelop moznocompose moznoirc moznomail moznoroaming mp3 mp4 mpeg mpeg2 mpi mplayer multi-tty ncurses nntp nptl nptlonly nsplugin nvidia openal opengl oss pam pcap pcre pdf perl png ppds pppd psyco python quicktime readline real reflection rtc sbcl sdl session sndfile sox spell spl sqlite sse sse2 ssl svg sysfs tcpd tga threads tiff truetype truetype-fonts type1-fonts udev unicode userland_GNU v4l v4l2 video_cards_apm video_cards_ark video_cards_ati video_cards_chips video_cards_cirrus video_cards_cyrix video_cards_dummy video_cards_fbdev video_cards_glint video_cards_i128 video_cards_i740 video_cards_i810 video_cards_imstt video_cards_mga video_cards_neomagic video_cards_nsc video_cards_nv video_cards_rendition video_cards_s3 video_cards_s3virge video_cards_savage video_cards_siliconmotion video_cards_sis video_cards_sisusb video_cards_tdfx video_cards_tga video_cards_trident video_cards_tseng video_cards_v4l video_cards_vesa video_cards_vga video_cards_via video_cards_vmware video_cards_voodoo vorbis win32codecs xanim xinerama xml xorg xslt xv xvid xvmc zlib"
+Unset:  CTARGET, EMERGE_DEFAULT_OPTS, INSTALL_MASK, LANG, LC_ALL, LDFLAGS, LINGUAS, PORTAGE_RSYNC_EXTRA_OPTS
+
+=================================================================
+                        Package Settings
+=================================================================
+media-sound/jack_capture-0.9.2 was built with the following:
+CFLAGS="-O3 -ffast-math -fomit-frame-pointer -funsafe-math-optimizations -march=pentium4 -mfpmath=387,sse -mmmx -msse -pipe"

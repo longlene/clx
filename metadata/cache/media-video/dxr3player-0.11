@@ -1,0 +1,22 @@
+>=media-libs/libmad-0.15.1b lirc? ( app-misc/lirc ) dxr3? ( media-video/em8300-libraries ) sdl? ( media-libs/libsdl media-libs/libmpeg2 )
+>=media-libs/libmad-0.15.1b lirc? ( app-misc/lirc ) dxr3? ( media-video/em8300-libraries ) sdl? ( media-libs/libsdl media-libs/libmpeg2 )
+0
+http://mesh.dl.sourceforge.net/sourceforge/dxr3player/dxr3player-0.11.tar.gz
+
+http://dxr3player.sourceforge.net
+GPL-2
+A DVD player for Linux, supports the DXR3 (aka Hollywood+) board.
+~x86
+
+lirc sdl mmx sse 3dnow dxr3
+
+
+
+
+
+compile install
+
+
+
+
+

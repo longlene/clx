@@ -1,0 +1,12 @@
+--- main.c	2009-12-04 22:16:59.000000000 -0600
++++ main.c	2011-01-31 21:12:36.157000184 -0600
+@@ -27,7 +27,8 @@
+ 	droplist_init_gui ();
+ 
+ 	if (argc > 1) {
+-		gchar *pwd = getcwd (NULL, 0); // g_get_current_dir?
++		//gchar *pwd = getcwd (NULL, 0); // g_get_current_dir?
++		gchar *pwd = g_get_current_dir();
+ 
+ 		for (int i = 1; i < argc; ++i) {
+ 			if (argv[i][0] == '/'/*g_path_is_absolute (argv[i])*/) {

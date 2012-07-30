@@ -1,0 +1,22 @@
+>=media-libs/libsdl-1.2.10[audio,joystick,opengl?,video] media-libs/sdl-ttf dev-libs/expat debug? ( x11-libs/gtk+:2 gnome-base/gconf x11-libs/libXinerama ) app-arch/unzip debug? ( x11-proto/xineramaproto )
+>=media-libs/libsdl-1.2.10[audio,joystick,opengl?,video] media-libs/sdl-ttf dev-libs/expat debug? ( x11-libs/gtk+:2 gnome-base/gconf x11-libs/libXinerama )
+0
+http://www.mess.org/files/mess0141s.zip http://www.mame.org/files/mame0141s.zip http://www.netswarm.net/misc/sdlmame-ui.bdf.gz
+
+http://www.mess.org/
+XMAME
+Multiple Emulator Super System (SDL)
+~amd64 ~ppc ~x86
+base eutils flag-o-matic games multilib portability toolchain-funcs user
+debug opengl
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

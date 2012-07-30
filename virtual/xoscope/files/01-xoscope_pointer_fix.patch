@@ -1,0 +1,667 @@
+diff -Nru xoscope-1.12.orig/com_gtk.c xoscope-1.12/com_gtk.c
+--- xoscope-1.12.orig/com_gtk.c	2003-06-30 07:54:10.000000000 +0200
++++ xoscope-1.12/com_gtk.c	2007-01-14 16:20:15.000000000 +0100
+@@ -160,8 +160,8 @@
+ 
+ /* simple evnet callback that emulates the user hitting the given key */
+ void
+-hit_key(GtkWidget *w, gpointer data)
++hit_key(GtkWidget *w, guint data)
+ {
+   if (fixing_widgets) return;
+-  handle_key(((char *)data)[0]);
++  handle_key(data);
+ }
+diff -Nru xoscope-1.12.orig/display.c xoscope-1.12/display.c
+--- xoscope-1.12.orig/display.c	2005-06-28 23:34:50.000000000 +0200
++++ xoscope-1.12/display.c	2007-01-14 17:50:06.000000000 +0100
+@@ -162,7 +162,7 @@
+ 
+     if (scope.trige) {
+       Signal *trigsig = datasrc->chan(scope.trigch);
+-
++	printf("trigsig %d\n",scope.trig);
+       if (trigsig->volts > 0) {
+ 	char minibuf[256];
+ 	format(minibuf, "%g %sV",
+@@ -355,7 +355,7 @@
+       /* sprintf(string, "%d Samples", p->signal->num); */
+       /* sprintf(string, "%d Samples", samples(p->signal->rate)); */
+       sprintf(string, "%d Samples/frame", p->signal->width);
+-      text_write(string, 40, 27, 14, p->color, TEXT_BG, ALIGN_CENTER);
++      text_write(string, 40, 27, 0, p->color, TEXT_BG, ALIGN_CENTER);
+ 
+       if (p->signal->rate > 0) {
+ 
+diff -Nru xoscope-1.12.orig/gr_gtk.c xoscope-1.12/gr_gtk.c
+--- xoscope-1.12.orig/gr_gtk.c	2007-01-14 17:20:55.000000000 +0100
++++ xoscope-1.12/gr_gtk.c	2007-01-14 17:51:47.000000000 +0100
+@@ -299,7 +299,7 @@
+   }
+ 
+   if ((y < 0) || (y >= 30) || (x < 0) || (start_x+fieldsize >= 80)) {
+-    printf("Text overflow in text_write()!\n");
++    printf("Text overflow in text_write(%s)!\n",str);
+     return;
+   }
+ 
+@@ -413,34 +413,34 @@
+ }
+ 
+ void
+-option_dialog(GtkWidget *w, gpointer data)
++option_dialog(GtkWidget *w, guint data)
+ {
+   if (fixing_widgets) return;
+   if (datasrc && datasrc->gtk_options) datasrc->gtk_options();
+ }
+ 
+ void
+-plotmode(GtkWidget *w, gpointer data)
++plotmode(GtkWidget *w, guint data)
+ {
+   if (fixing_widgets) return;
+-  scope.mode = ((char *)data)[0] - '0';
++  scope.mode = data - '0';
+   clear();
+ }
+ 
+ void
+-runmode(GtkWidget *w, gpointer data)
++runmode(GtkWidget *w, guint data)
+ {
+-  scope.run = ((char *)data)[0] - '0';
++  scope.run = data - '0';
+   clear();
+ }
+ 
+ void
+-graticule(GtkWidget *w, gpointer data)
++graticule(GtkWidget *w, guint data)
+ {
+   int i;
+ 
+   if (fixing_widgets) return;
+-  i = ((char *)data)[0] - '0';
++  i = data - '0';
+   if (i < 2)
+     scope.behind = i;
+   else
+@@ -449,9 +449,9 @@
+ }
+ 
+ void
+-setcolor(GtkWidget *w, gpointer data)
++setcolor(GtkWidget *w, guint data)
+ {
+-  scope.color = ((char *)data)[0] - 'a';
++  scope.color = data - 'a';
+   draw_text(1);
+ }
+ 
+@@ -479,18 +479,15 @@
+ }
+ 
+ void
+-trigger(GtkWidget *w, gpointer data)
++trigger(GtkWidget *w, guint data)
+ {
+-  char c = ((char *)data)[0];
+-
+   if (fixing_widgets) return;
+-
+-  if (c >= 'a' && c <= 'c') {
+-    change_trigger(scope.trigch, scope.trig, c - 'a');
++  if (data >= 'a' && data <= 'c') {
++    change_trigger(scope.trigch, scope.trig, data - 'a');
+   }
+ 
+-  if (c >= '1' && c <= '8') {
+-    change_trigger(c - '1', scope.trig, scope.trige);
++  if (data >= '1' && data <= '8') {
++    change_trigger(data - '1', scope.trig, scope.trige);
+   }
+ 
+   clear();
+@@ -500,17 +497,17 @@
+    Selecting a built-in after external causes an extraneous command
+    dialog but I can't figure out how to get rid of it.  */
+ void
+-mathselect(GtkWidget *w, gpointer data)
++mathselect(GtkWidget *w, guint data)
+ {
+   if (fixing_widgets) return;
+   if (scope.select > 1) {
+-    if (((char *)data)[0] == '$') {
++    if (data == '$') {
+ /*        if (GTK_CHECK_MENU_ITEM */
+ /*  	 (gtk_item_factory_get_item */
+ /*  	  (factory, "/Channel/Math/External Command..."))->active) */
+ 	handle_key('$');
+     } else {
+-      function_bynum_on_channel(((char *)data)[0] - '0', &ch[scope.select]);
++      function_bynum_on_channel(data - '0', &ch[scope.select]);
+       ch[scope.select].show = 1;
+     }
+     clear();
+@@ -518,36 +515,33 @@
+ }
+ 
+ void
+-setbits(GtkWidget *w, gpointer data)
++setbits(GtkWidget *w, guint data)
+ {
+   if (fixing_widgets) return;
+-  ch[scope.select].bits = (int)data;
++  ch[scope.select].bits = data;
+   clear();
+ }
+ 
+ void
+-setscale(GtkWidget *w, gpointer data)
++setscale(GtkWidget *w, guint data)
+ {
+-  int scale[] = {0, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000};
++  int mul[] = {50, 20, 10, 5, 2, 1, 1, 1,  1,  1,  1};
++  int div[] = {1,   1,  1, 1, 1, 1, 2, 5, 10, 20, 50};
+ 
+-  ch[scope.select].target_mult = scale[((char *)data)[0] - '0'];
+-  ch[scope.select].target_div = scale[((char *)data)[1] - '0'];
++  ch[scope.select].target_mult = mul[data];
++  ch[scope.select].target_div = div[data];
+   clear();
+ }
+ 
+ void
+-setposition(GtkWidget *w, gpointer data)
++setposition(GtkWidget *w, int c)
+ {
+-  char c0 = ((char *)data)[0];
+-  char c1 = ((char *)data)[1];
+-
+-  if (c0 == 'T') {
+-    change_trigger(scope.trigch, 256 - (c1 - 'a') * 8, scope.trige);
+-  } else if (c0 == 't') {
+-    change_trigger(scope.trigch, (c1 - 'a') * 8, scope.trige);
++  if ( c >= 100) {
++    change_trigger(scope.trigch, (c -100) * 8, scope.trige);
++  } else if (c <= -100) {
++    change_trigger(scope.trigch, (c + 100) * 8, scope.trige);
+   } else {
+-    ch[scope.select].pos = (((char *)data)[0] == '-' ? 1 : -1)
+-      * (((char *)data)[1] - 'a') * 16;
++    ch[scope.select].pos = c * 16;
+   }
+   clear();
+ }
+@@ -667,71 +661,71 @@
+   {"/File", NULL, NULL, 0, "<Branch>"},
+   {"/File/tear", NULL, NULL, 0, "<Tearoff>"},
+   /*     {"/File/New", "<control>N", print_hello, NULL, NULL}, */
+-  {"/File/Open...", NULL, hit_key, (int)"@", NULL},
+-  {"/File/Save...", NULL, hit_key, (int)"#", NULL},
++  {"/File/Open...", NULL, hit_key, (guint)'@', NULL},
++  {"/File/Save...", NULL, hit_key, (int)'#', NULL},
+   /*     {"/File/Save as", NULL, NULL, 0, NULL}, */
+   {"/File/Device/tear", NULL, NULL, 0, "<Tearoff>"},
+   {"/File/Device Options...", NULL, option_dialog, 0, NULL},
+   {"/File/sep", NULL, NULL, 0, "<Separator>"},
+-  {"/File/Quit", NULL, hit_key, (int)"\e", NULL},
++  {"/File/Quit", NULL, hit_key, (int)'\e', NULL},
+ 
+   {"/Channel", NULL, NULL, 0, "<Branch>"},
+   {"/Channel/tear", NULL, NULL, 0, "<Tearoff>"},
+-  {"/Channel/Channel 1", NULL, hit_key, (int)"1", "<RadioItem>"},
+-  {"/Channel/Channel 2", NULL, hit_key, (int)"2", "/Channel/Channel 1"},
+-  {"/Channel/Channel 3", NULL, hit_key, (int)"3", "/Channel/Channel 2"},
+-  {"/Channel/Channel 4", NULL, hit_key, (int)"4", "/Channel/Channel 3"},
+-  {"/Channel/Channel 5", NULL, hit_key, (int)"5", "/Channel/Channel 4"},
+-  {"/Channel/Channel 6", NULL, hit_key, (int)"6", "/Channel/Channel 5"},
+-  {"/Channel/Channel 7", NULL, hit_key, (int)"7", "/Channel/Channel 6"},
+-  {"/Channel/Channel 8", NULL, hit_key, (int)"8", "/Channel/Channel 7"},
++  {"/Channel/Channel 1", NULL, hit_key, (int)'1', "<RadioItem>"},
++  {"/Channel/Channel 2", NULL, hit_key, (int)'2', "/Channel/Channel 1"},
++  {"/Channel/Channel 3", NULL, hit_key, (int)'3', "/Channel/Channel 2"},
++  {"/Channel/Channel 4", NULL, hit_key, (int)'4', "/Channel/Channel 3"},
++  {"/Channel/Channel 5", NULL, hit_key, (int)'5', "/Channel/Channel 4"},
++  {"/Channel/Channel 6", NULL, hit_key, (int)'6', "/Channel/Channel 5"},
++  {"/Channel/Channel 7", NULL, hit_key, (int)'7', "/Channel/Channel 6"},
++  {"/Channel/Channel 8", NULL, hit_key, (int)'8', "/Channel/Channel 7"},
+   {"/Channel/sep", NULL, NULL, 0, "<Separator>"},
+-  {"/Channel/Show", NULL, hit_key, (int)"\t", "<CheckItem>"},
++  {"/Channel/Show", NULL, hit_key, (int)'\t', "<CheckItem>"},
+ 
+   {"/Channel/Scale", NULL, NULL, 0, "<Branch>"},
+   {"/Channel/Scale/tear", NULL, NULL, 0, "<Tearoff>"},
+-  {"/Channel/Scale/up", NULL, hit_key, (int)"}", NULL},
+-  {"/Channel/Scale/down", NULL, hit_key, (int)"{", NULL},
++  {"/Channel/Scale/up", NULL, hit_key, (int)'}', NULL},
++  {"/Channel/Scale/down", NULL, hit_key, (int)'{', NULL},
+   {"/Channel/Scale/sep", NULL, NULL, 0, "<Separator>"},
+-  {"/Channel/Scale/50", NULL, setscale, (int)"61", NULL},
+-  {"/Channel/Scale/20", NULL, setscale, (int)"51", NULL},
+-  {"/Channel/Scale/10", NULL, setscale, (int)"41", NULL},
+-  {"/Channel/Scale/5", NULL, setscale, (int)"31", NULL},
+-  {"/Channel/Scale/2", NULL, setscale, (int)"21", NULL},
+-  {"/Channel/Scale/1", NULL, setscale, (int)"11", NULL},
++  {"/Channel/Scale/50", NULL, setscale, 0, NULL},
++  {"/Channel/Scale/20", NULL, setscale, 1, NULL},
++  {"/Channel/Scale/10", NULL, setscale, 2, NULL},
++  {"/Channel/Scale/5", NULL, setscale, 3, NULL},
++  {"/Channel/Scale/2", NULL, setscale, 4, NULL},
++  {"/Channel/Scale/1", NULL, setscale, 5, NULL},
+   /* How the ? do you put a / in a menu ? Just use \ until I figure it out. */
+-  {"/Channel/Scale/1\\2", NULL, setscale, (int)"12", NULL},
+-  {"/Channel/Scale/1\\5", NULL, setscale, (int)"13", NULL},
+-  {"/Channel/Scale/1\\10", NULL, setscale, (int)"14", NULL},
+-  {"/Channel/Scale/1\\20", NULL, setscale, (int)"15", NULL},
+-  {"/Channel/Scale/1\\50", NULL, setscale, (int)"16", NULL},
++  {"/Channel/Scale/1\\2", NULL, setscale, 6, NULL},
++  {"/Channel/Scale/1\\5", NULL, setscale, 7, NULL},
++  {"/Channel/Scale/1\\10", NULL, setscale, 8, NULL},
++  {"/Channel/Scale/1\\20", NULL, setscale, 9, NULL},
++  {"/Channel/Scale/1\\50", NULL, setscale, 10, NULL},
+ 
+   {"/Channel/Position", NULL, NULL, 0, "<Branch>"},
+   {"/Channel/Position/tear", NULL, NULL, 0, "<Tearoff>"},
+-  {"/Channel/Position/up", "]", hit_key, (int)"]", NULL},
+-  {"/Channel/Position/down", "[", hit_key, (int)"[", NULL},
++  {"/Channel/Position/up", "]", hit_key, (int)']', NULL},
++  {"/Channel/Position/down", "[", hit_key, (int)'[', NULL},
+   {"/Channel/Position/sep", NULL, NULL, 0, "<Separator>"},
+-  {"/Channel/Position/160", NULL, setposition, (int)" k", NULL},
+-  {"/Channel/Position/144", NULL, setposition, (int)" j", NULL},
+-  {"/Channel/Position/128", NULL, setposition, (int)" i", NULL},
+-  {"/Channel/Position/112", NULL, setposition, (int)" h", NULL},
+-  {"/Channel/Position/96", NULL, setposition, (int)" g", NULL},
+-  {"/Channel/Position/80", NULL, setposition, (int)" f", NULL},
+-  {"/Channel/Position/64", NULL, setposition, (int)" e", NULL},
+-  {"/Channel/Position/48", NULL, setposition, (int)" d", NULL},
+-  {"/Channel/Position/32", NULL, setposition, (int)" c", NULL},
+-  {"/Channel/Position/16", NULL, setposition, (int)" b", NULL},
+-  {"/Channel/Position/0", NULL, setposition, (int)" a", NULL},
+-  {"/Channel/Position/-16", NULL, setposition, (int)"-b", NULL},
+-  {"/Channel/Position/-32", NULL, setposition, (int)"-c", NULL},
+-  {"/Channel/Position/-48", NULL, setposition, (int)"-d", NULL},
+-  {"/Channel/Position/-64", NULL, setposition, (int)"-e", NULL},
+-  {"/Channel/Position/-80", NULL, setposition, (int)"-f", NULL},
+-  {"/Channel/Position/-96", NULL, setposition, (int)"-g", NULL},
+-  {"/Channel/Position/-112", NULL, setposition, (int)"-h", NULL},
+-  {"/Channel/Position/-128", NULL, setposition, (int)"-i", NULL},
+-  {"/Channel/Position/-144", NULL, setposition, (int)"-j", NULL},
+-  {"/Channel/Position/-160", NULL, setposition, (int)"-k", NULL},
++  {"/Channel/Position/160", NULL, setposition, 10, NULL},
++  {"/Channel/Position/144", NULL, setposition, 9, NULL},
++  {"/Channel/Position/128", NULL, setposition, 8, NULL},
++  {"/Channel/Position/112", NULL, setposition, 7, NULL},
++  {"/Channel/Position/96", NULL, setposition, 6, NULL},
++  {"/Channel/Position/80", NULL, setposition, 5, NULL},
++  {"/Channel/Position/64", NULL, setposition, 4, NULL},
++  {"/Channel/Position/48", NULL, setposition, 3, NULL},
++  {"/Channel/Position/32", NULL, setposition, 2, NULL},
++  {"/Channel/Position/16", NULL, setposition, 1, NULL},
++  {"/Channel/Position/0", NULL, setposition, 0, NULL},
++  {"/Channel/Position/-16", NULL, setposition, -1, NULL},
++  {"/Channel/Position/-32", NULL, setposition, -2, NULL},
++  {"/Channel/Position/-48", NULL, setposition, -3, NULL},
++  {"/Channel/Position/-64", NULL, setposition, -4, NULL},
++  {"/Channel/Position/-80", NULL, setposition, -5, NULL},
++  {"/Channel/Position/-96", NULL, setposition, -6, NULL},
++  {"/Channel/Position/-112", NULL, setposition, -7, NULL},
++  {"/Channel/Position/-128", NULL, setposition, -8, NULL},
++  {"/Channel/Position/-144", NULL, setposition, -9, NULL},
++  {"/Channel/Position/-160", NULL, setposition, -10, NULL},
+ 
+   {"/Channel/Bits", NULL, NULL, 0, "<Branch>"},
+   {"/Channel/Bits/tear", NULL, NULL, 0, "<Tearoff>"},
+@@ -748,181 +742,181 @@
+   {"/Channel/sep", NULL, NULL, 0, "<Separator>"},
+   {"/Channel/Math", NULL, NULL, 0, "<Branch>"},
+   {"/Channel/Math/tear", NULL, NULL, 0, "<Tearoff>"},
+-  {"/Channel/Math/Prev Function", ":", hit_key, (int)":", NULL},
+-  {"/Channel/Math/Next Function", ";", hit_key, (int)";", NULL},
++  {"/Channel/Math/Prev Function", ":", hit_key, (int)':', NULL},
++  {"/Channel/Math/Next Function", ";", hit_key, (int)';', NULL},
+   {"/Channel/Math/sep", NULL, NULL, 0, "<Separator>"},
+ 
+   /* this will need hacked if functions are added / changed in func.c */
+   {"/Channel/Math/Other", NULL, NULL, 0, "<RadioItem>"},
+-  {"/Channel/Math/External Command...", "$", mathselect, (int)"$", "/Channel/Math/Other"},
+-  {"/Channel/Math/Inv. 1", NULL, mathselect, (int)"0", "/Channel/Math/External Command..."},
+-  {"/Channel/Math/Inv. 2", NULL, mathselect, (int)"1", "/Channel/Math/Inv. 1"},
+-  {"/Channel/Math/Sum  1+2", NULL, mathselect, (int)"2", "/Channel/Math/Inv. 2"},
+-  {"/Channel/Math/Diff 1-2", NULL, mathselect, (int)"3", "/Channel/Math/Sum  1+2"},
+-  {"/Channel/Math/Avg. 1,2", NULL, mathselect, (int)"4", "/Channel/Math/Diff 1-2"},
+-  {"/Channel/Math/FFT. 1", NULL, mathselect, (int)"5", "/Channel/Math/Avg. 1,2"},
+-  {"/Channel/Math/FFT. 2", NULL, mathselect, (int)"6", "/Channel/Math/FFT. 1"},
++  {"/Channel/Math/External Command...", "$", mathselect, (int)'$', "/Channel/Math/Other"},
++  {"/Channel/Math/Inv. 1", NULL, mathselect, (int)'0', "/Channel/Math/External Command..."},
++  {"/Channel/Math/Inv. 2", NULL, mathselect, (int)'1', "/Channel/Math/Inv. 1"},
++  {"/Channel/Math/Sum  1+2", NULL, mathselect, (int)'2', "/Channel/Math/Inv. 2"},
++  {"/Channel/Math/Diff 1-2", NULL, mathselect, (int)'3', "/Channel/Math/Sum  1+2"},
++  {"/Channel/Math/Avg. 1,2", NULL, mathselect, (int)'4', "/Channel/Math/Diff 1-2"},
++  {"/Channel/Math/FFT. 1", NULL, mathselect, (int)'5', "/Channel/Math/Avg. 1,2"},
++  {"/Channel/Math/FFT. 2", NULL, mathselect, (int)'6', "/Channel/Math/FFT. 1"},
+ 
+   {"/Channel/Store", NULL, NULL, 0, "<Branch>"},
+   {"/Channel/Store/tear", NULL, NULL, 0, "<Tearoff>"},
+-  {"/Channel/Store/Mem A", "A", hit_key, (int)"A", "<CheckItem>"},
+-  {"/Channel/Store/Mem B", "B", hit_key, (int)"B", "<CheckItem>"},
+-  {"/Channel/Store/Mem C", "C", hit_key, (int)"C", "<CheckItem>"},
+-  {"/Channel/Store/Mem D", "D", hit_key, (int)"D", "<CheckItem>"},
+-  {"/Channel/Store/Mem E", "E", hit_key, (int)"E", "<CheckItem>"},
+-  {"/Channel/Store/Mem F", "F", hit_key, (int)"F", "<CheckItem>"},
+-  {"/Channel/Store/Mem G", "G", hit_key, (int)"G", "<CheckItem>"},
+-  {"/Channel/Store/Mem H", "H", hit_key, (int)"H", "<CheckItem>"},
+-  {"/Channel/Store/Mem I", "I", hit_key, (int)"I", "<CheckItem>"},
+-  {"/Channel/Store/Mem J", "J", hit_key, (int)"J", "<CheckItem>"},
+-  {"/Channel/Store/Mem K", "K", hit_key, (int)"K", "<CheckItem>"},
+-  {"/Channel/Store/Mem L", "L", hit_key, (int)"L", "<CheckItem>"},
+-  {"/Channel/Store/Mem M", "M", hit_key, (int)"M", "<CheckItem>"},
+-  {"/Channel/Store/Mem N", "N", hit_key, (int)"N", "<CheckItem>"},
+-  {"/Channel/Store/Mem O", "O", hit_key, (int)"O", "<CheckItem>"},
+-  {"/Channel/Store/Mem P", "P", hit_key, (int)"P", "<CheckItem>"},
+-  {"/Channel/Store/Mem Q", "Q", hit_key, (int)"Q", "<CheckItem>"},
+-  {"/Channel/Store/Mem R", "R", hit_key, (int)"R", "<CheckItem>"},
+-  {"/Channel/Store/Mem S", "S", hit_key, (int)"S", "<CheckItem>"},
+-  {"/Channel/Store/Mem T", "T", hit_key, (int)"T", "<CheckItem>"},
+-  {"/Channel/Store/Mem U", "U", hit_key, (int)"U", "<CheckItem>"},
+-  {"/Channel/Store/Mem V", "V", hit_key, (int)"V", "<CheckItem>"},
+-  {"/Channel/Store/Mem W", "W", hit_key, (int)"W", "<CheckItem>"},
+-  {"/Channel/Store/Mem X", "W", hit_key, (int)"X", "<CheckItem>"},
+-  {"/Channel/Store/Mem Y", "W", hit_key, (int)"Y", "<CheckItem>"},
+-  {"/Channel/Store/Mem Z", "W", hit_key, (int)"Z", "<CheckItem>"},
++  {"/Channel/Store/Mem A", "A", hit_key, (int)'A', "<CheckItem>"},
++  {"/Channel/Store/Mem B", "B", hit_key, (int)'B', "<CheckItem>"},
++  {"/Channel/Store/Mem C", "C", hit_key, (int)'C', "<CheckItem>"},
++  {"/Channel/Store/Mem D", "D", hit_key, (int)'D', "<CheckItem>"},
++  {"/Channel/Store/Mem E", "E", hit_key, (int)'E', "<CheckItem>"},
++  {"/Channel/Store/Mem F", "F", hit_key, (int)'F', "<CheckItem>"},
++  {"/Channel/Store/Mem G", "G", hit_key, (int)'G', "<CheckItem>"},
++  {"/Channel/Store/Mem H", "H", hit_key, (int)'H', "<CheckItem>"},
++  {"/Channel/Store/Mem I", "I", hit_key, (int)'I', "<CheckItem>"},
++  {"/Channel/Store/Mem J", "J", hit_key, (int)'J', "<CheckItem>"},
++  {"/Channel/Store/Mem K", "K", hit_key, (int)'K', "<CheckItem>"},
++  {"/Channel/Store/Mem L", "L", hit_key, (int)'L', "<CheckItem>"},
++  {"/Channel/Store/Mem M", "M", hit_key, (int)'M', "<CheckItem>"},
++  {"/Channel/Store/Mem N", "N", hit_key, (int)'N', "<CheckItem>"},
++  {"/Channel/Store/Mem O", "O", hit_key, (int)'O', "<CheckItem>"},
++  {"/Channel/Store/Mem P", "P", hit_key, (int)'P', "<CheckItem>"},
++  {"/Channel/Store/Mem Q", "Q", hit_key, (int)'Q', "<CheckItem>"},
++  {"/Channel/Store/Mem R", "R", hit_key, (int)'R', "<CheckItem>"},
++  {"/Channel/Store/Mem S", "S", hit_key, (int)'S', "<CheckItem>"},
++  {"/Channel/Store/Mem T", "T", hit_key, (int)'T', "<CheckItem>"},
++  {"/Channel/Store/Mem U", "U", hit_key, (int)'U', "<CheckItem>"},
++  {"/Channel/Store/Mem V", "V", hit_key, (int)'V', "<CheckItem>"},
++  {"/Channel/Store/Mem W", "W", hit_key, (int)'W', "<CheckItem>"},
++  {"/Channel/Store/Mem X", "W", hit_key, (int)'X', "<CheckItem>"},
++  {"/Channel/Store/Mem Y", "W", hit_key, (int)'Y', "<CheckItem>"},
++  {"/Channel/Store/Mem Z", "W", hit_key, (int)'Z', "<CheckItem>"},
+ 
+   {"/Channel/Recall", NULL, NULL, 0, "<Branch>"},
+   {"/Channel/Recall/tear", NULL, NULL, 0, "<Tearoff>"},
+   //  {"/Channel/Recall/sep", NULL, NULL, 0, "<Separator>"},
+-  {"/Channel/Recall/Mem A", "a", hit_key, (int)"a", NULL},
+-  {"/Channel/Recall/Mem B", "b", hit_key, (int)"b", NULL},
+-  {"/Channel/Recall/Mem C", "c", hit_key, (int)"c", NULL},
+-  {"/Channel/Recall/Mem D", "d", hit_key, (int)"d", NULL},
+-  {"/Channel/Recall/Mem E", "e", hit_key, (int)"e", NULL},
+-  {"/Channel/Recall/Mem F", "f", hit_key, (int)"f", NULL},
+-  {"/Channel/Recall/Mem G", "g", hit_key, (int)"g", NULL},
+-  {"/Channel/Recall/Mem H", "h", hit_key, (int)"h", NULL},
+-  {"/Channel/Recall/Mem I", "i", hit_key, (int)"i", NULL},
+-  {"/Channel/Recall/Mem J", "j", hit_key, (int)"j", NULL},
+-  {"/Channel/Recall/Mem K", "k", hit_key, (int)"k", NULL},
+-  {"/Channel/Recall/Mem L", "l", hit_key, (int)"l", NULL},
+-  {"/Channel/Recall/Mem M", "m", hit_key, (int)"m", NULL},
+-  {"/Channel/Recall/Mem N", "n", hit_key, (int)"n", NULL},
+-  {"/Channel/Recall/Mem O", "o", hit_key, (int)"o", NULL},
+-  {"/Channel/Recall/Mem P", "p", hit_key, (int)"p", NULL},
+-  {"/Channel/Recall/Mem Q", "q", hit_key, (int)"q", NULL},
+-  {"/Channel/Recall/Mem R", "r", hit_key, (int)"r", NULL},
+-  {"/Channel/Recall/Mem S", "s", hit_key, (int)"s", NULL},
+-  {"/Channel/Recall/Mem T", "t", hit_key, (int)"t", NULL},
+-  {"/Channel/Recall/Mem U", "u", hit_key, (int)"u", NULL},
+-  {"/Channel/Recall/Mem V", "v", hit_key, (int)"v", NULL},
+-  {"/Channel/Recall/Mem W", "w", hit_key, (int)"w", NULL},
+-  {"/Channel/Recall/Mem X", "x", hit_key, (int)"x", NULL},
+-  {"/Channel/Recall/Mem Y", "y", hit_key, (int)"y", NULL},
+-  {"/Channel/Recall/Mem Z", "z", hit_key, (int)"z", NULL},
++  {"/Channel/Recall/Mem A", "a", hit_key, (int)'a', NULL},
++  {"/Channel/Recall/Mem B", "b", hit_key, (int)'b', NULL},
++  {"/Channel/Recall/Mem C", "c", hit_key, (int)'c', NULL},
++  {"/Channel/Recall/Mem D", "d", hit_key, (int)'d', NULL},
++  {"/Channel/Recall/Mem E", "e", hit_key, (int)'e', NULL},
++  {"/Channel/Recall/Mem F", "f", hit_key, (int)'f', NULL},
++  {"/Channel/Recall/Mem G", "g", hit_key, (int)'g', NULL},
++  {"/Channel/Recall/Mem H", "h", hit_key, (int)'h', NULL},
++  {"/Channel/Recall/Mem I", "i", hit_key, (int)'i', NULL},
++  {"/Channel/Recall/Mem J", "j", hit_key, (int)'j', NULL},
++  {"/Channel/Recall/Mem K", "k", hit_key, (int)'k', NULL},
++  {"/Channel/Recall/Mem L", "l", hit_key, (int)'l', NULL},
++  {"/Channel/Recall/Mem M", "m", hit_key, (int)'m', NULL},
++  {"/Channel/Recall/Mem N", "n", hit_key, (int)'n', NULL},
++  {"/Channel/Recall/Mem O", "o", hit_key, (int)'o', NULL},
++  {"/Channel/Recall/Mem P", "p", hit_key, (int)'p', NULL},
++  {"/Channel/Recall/Mem Q", "q", hit_key, (int)'q', NULL},
++  {"/Channel/Recall/Mem R", "r", hit_key, (int)'r', NULL},
++  {"/Channel/Recall/Mem S", "s", hit_key, (int)'s', NULL},
++  {"/Channel/Recall/Mem T", "t", hit_key, (int)'t', NULL},
++  {"/Channel/Recall/Mem U", "u", hit_key, (int)'u', NULL},
++  {"/Channel/Recall/Mem V", "v", hit_key, (int)'v', NULL},
++  {"/Channel/Recall/Mem W", "w", hit_key, (int)'w', NULL},
++  {"/Channel/Recall/Mem X", "x", hit_key, (int)'x', NULL},
++  {"/Channel/Recall/Mem Y", "y", hit_key, (int)'y', NULL},
++  {"/Channel/Recall/Mem Z", "z", hit_key, (int)'z', NULL},
+ 
+   {"/Trigger", NULL, NULL, 0, "<Branch>"},
+   {"/Trigger/tear", NULL, NULL, 0, "<Tearoff>"},
+-  {"/Trigger/Off", NULL, trigger, (int)"a", "<RadioItem>"},
+-  {"/Trigger/Rising", NULL, trigger, (int)"b", "/Trigger/Off"},
+-  {"/Trigger/Falling", NULL, trigger, (int)"c", "/Trigger/Rising"},
++  {"/Trigger/Off", NULL, trigger, (int)'a', "<RadioItem>"},
++  {"/Trigger/Rising", NULL, trigger, (int)'b', "/Trigger/Off"},
++  {"/Trigger/Falling", NULL, trigger, (int)'c', "/Trigger/Rising"},
+   {"/Trigger/sep", NULL, NULL, 0, "<Separator>"},
+-  {"/Trigger/Channel 1", NULL, trigger, (int)"1", "<RadioItem>"},
+-  {"/Trigger/Channel 2", NULL, trigger, (int)"2", "/Trigger/Channel 1"},
+-  {"/Trigger/Channel 3", NULL, trigger, (int)"3", "/Trigger/Channel 1"},
+-  {"/Trigger/Channel 4", NULL, trigger, (int)"4", "/Trigger/Channel 1"},
+-  {"/Trigger/Channel 5", NULL, trigger, (int)"5", "/Trigger/Channel 1"},
+-  {"/Trigger/Channel 6", NULL, trigger, (int)"6", "/Trigger/Channel 1"},
+-  {"/Trigger/Channel 7", NULL, trigger, (int)"7", "/Trigger/Channel 1"},
+-  {"/Trigger/Channel 8", NULL, trigger, (int)"8", "/Trigger/Channel 1"},
++  {"/Trigger/Channel 1", NULL, trigger, (int)'1', "<RadioItem>"},
++  {"/Trigger/Channel 2", NULL, trigger, (int)'2', "/Trigger/Channel 1"},
++  {"/Trigger/Channel 3", NULL, trigger, (int)'3', "/Trigger/Channel 1"},
++  {"/Trigger/Channel 4", NULL, trigger, (int)'4', "/Trigger/Channel 1"},
++  {"/Trigger/Channel 5", NULL, trigger, (int)'5', "/Trigger/Channel 1"},
++  {"/Trigger/Channel 6", NULL, trigger, (int)'6', "/Trigger/Channel 1"},
++  {"/Trigger/Channel 7", NULL, trigger, (int)'7', "/Trigger/Channel 1"},
++  {"/Trigger/Channel 8", NULL, trigger, (int)'8', "/Trigger/Channel 1"},
+   {"/Trigger/sep", NULL, NULL, 0, "<Separator>"},
+-  {"/Trigger/Position up", "=", hit_key, (int)"=", NULL},
+-  {"/Trigger/Position down", "-", hit_key, (int)"-", NULL},
++  {"/Trigger/Position up", "=", hit_key, (int)'=', NULL},
++  {"/Trigger/Position down", "-", hit_key, (int)'-', NULL},
+   {"/Trigger/Position Positive", NULL, NULL, 0, "<Branch>"},
+-  {"/Trigger/Position Positive/120", NULL, setposition, (int)"Tb", NULL},
+-  {"/Trigger/Position Positive/112", NULL, setposition, (int)"Tc", NULL},
+-  {"/Trigger/Position Positive/104", NULL, setposition, (int)"Td", NULL},
+-  {"/Trigger/Position Positive/96", NULL, setposition, (int)"Te", NULL},
+-  {"/Trigger/Position Positive/88", NULL, setposition, (int)"Tf", NULL},
+-  {"/Trigger/Position Positive/80", NULL, setposition, (int)"Tg", NULL},
+-  {"/Trigger/Position Positive/72", NULL, setposition, (int)"Th", NULL},
+-  {"/Trigger/Position Positive/64", NULL, setposition, (int)"Ti", NULL},
+-  {"/Trigger/Position Positive/56", NULL, setposition, (int)"Tj", NULL},
+-  {"/Trigger/Position Positive/48", NULL, setposition, (int)"Tk", NULL},
+-  {"/Trigger/Position Positive/40", NULL, setposition, (int)"Tl", NULL},
+-  {"/Trigger/Position Positive/32", NULL, setposition, (int)"Tm", NULL},
+-  {"/Trigger/Position Positive/24", NULL, setposition, (int)"Tn", NULL},
+-  {"/Trigger/Position Positive/16", NULL, setposition, (int)"To", NULL},
+-  {"/Trigger/Position Positive/8", NULL, setposition, (int)"Tp", NULL},
+-  {"/Trigger/Position Positive/0", NULL, setposition, (int)"Tq", NULL},
++  {"/Trigger/Position Positive/120", NULL, setposition, 115, NULL},
++  {"/Trigger/Position Positive/112", NULL, setposition, 114, NULL},
++  {"/Trigger/Position Positive/104", NULL, setposition, 113, NULL},
++  {"/Trigger/Position Positive/96", NULL, setposition, 112, NULL},
++  {"/Trigger/Position Positive/88", NULL, setposition, 111, NULL},
++  {"/Trigger/Position Positive/80", NULL, setposition, 110, NULL},
++  {"/Trigger/Position Positive/72", NULL, setposition, 109, NULL},
++  {"/Trigger/Position Positive/64", NULL, setposition, 108, NULL},
++  {"/Trigger/Position Positive/56", NULL, setposition, 107, NULL},
++  {"/Trigger/Position Positive/48", NULL, setposition, 106, NULL},
++  {"/Trigger/Position Positive/40", NULL, setposition, 105, NULL},
++  {"/Trigger/Position Positive/32", NULL, setposition, 104, NULL},
++  {"/Trigger/Position Positive/24", NULL, setposition, 103, NULL},
++  {"/Trigger/Position Positive/16", NULL, setposition, 102, NULL},
++  {"/Trigger/Position Positive/8", NULL, setposition, 101, NULL},
++  {"/Trigger/Position Positive/0", NULL, setposition, 100, NULL},
+   {"/Trigger/Position Negative", NULL, NULL, 0, "<Branch>"},
+-  {"/Trigger/Position Negative/0", NULL, setposition, (int)"tq", NULL},
+-  {"/Trigger/Position Negative/-8", NULL, setposition, (int)"tp", NULL},
+-  {"/Trigger/Position Negative/-16", NULL, setposition, (int)"to", NULL},
+-  {"/Trigger/Position Negative/-24", NULL, setposition, (int)"tn", NULL},
+-  {"/Trigger/Position Negative/-32", NULL, setposition, (int)"tm", NULL},
+-  {"/Trigger/Position Negative/-40", NULL, setposition, (int)"tl", NULL},
+-  {"/Trigger/Position Negative/-48", NULL, setposition, (int)"tk", NULL},
+-  {"/Trigger/Position Negative/-56", NULL, setposition, (int)"tj", NULL},
+-  {"/Trigger/Position Negative/-64", NULL, setposition, (int)"ti", NULL},
+-  {"/Trigger/Position Negative/-72", NULL, setposition, (int)"th", NULL},
+-  {"/Trigger/Position Negative/-80", NULL, setposition, (int)"tg", NULL},
+-  {"/Trigger/Position Negative/-88", NULL, setposition, (int)"tf", NULL},
+-  {"/Trigger/Position Negative/-96", NULL, setposition, (int)"te", NULL},
+-  {"/Trigger/Position Negative/-104", NULL, setposition, (int)"td", NULL},
+-  {"/Trigger/Position Negative/-112", NULL, setposition, (int)"tc", NULL},
+-  {"/Trigger/Position Negative/-120", NULL, setposition, (int)"tb", NULL},
+-  {"/Trigger/Position Negative/-128", NULL, setposition, (int)"ta", NULL},
++  {"/Trigger/Position Negative/0", NULL, setposition, -100, NULL},
++  {"/Trigger/Position Negative/-8", NULL, setposition, -101, NULL},
++  {"/Trigger/Position Negative/-16", NULL, setposition, -102, NULL},
++  {"/Trigger/Position Negative/-24", NULL, setposition, -103, NULL},
++  {"/Trigger/Position Negative/-32", NULL, setposition, -104, NULL},
++  {"/Trigger/Position Negative/-40", NULL, setposition, -105, NULL},
++  {"/Trigger/Position Negative/-48", NULL, setposition, -106, NULL},
++  {"/Trigger/Position Negative/-56", NULL, setposition, -107, NULL},
++  {"/Trigger/Position Negative/-64", NULL, setposition, -108, NULL},
++  {"/Trigger/Position Negative/-72", NULL, setposition, -109, NULL},
++  {"/Trigger/Position Negative/-80", NULL, setposition, -110, NULL},
++  {"/Trigger/Position Negative/-88", NULL, setposition, -111, NULL},
++  {"/Trigger/Position Negative/-96", NULL, setposition, -112, NULL},
++  {"/Trigger/Position Negative/-104", NULL, setposition, -113, NULL},
++  {"/Trigger/Position Negative/-112", NULL, setposition, -114, NULL},
++  {"/Trigger/Position Negative/-120", NULL, setposition, -115, NULL},
++  {"/Trigger/Position Negative/-128", NULL, setposition, -116, NULL},
+ 
+   {"/Scope", NULL, NULL, 0, "<Branch>"},
+   {"/Scope/tear", NULL, NULL, 0, "<Tearoff>"},
+-  {"/Scope/Refresh", NULL, hit_key, (int)"\n", NULL},
++  {"/Scope/Refresh", NULL, hit_key, (int)'\n', NULL},
+   {"/Scope/Plot Mode/tear", NULL, NULL, 0, "<Tearoff>"},
+-  {"/Scope/Plot Mode/Point", NULL, plotmode, (int)"0", "<RadioItem>"},
+-  {"/Scope/Plot Mode/Point Accumulate", NULL, plotmode, (int)"1", "/Scope/Plot Mode/Point"},
+-  {"/Scope/Plot Mode/Line", NULL, plotmode, (int)"2", "/Scope/Plot Mode/Point Accumulate"},
+-  {"/Scope/Plot Mode/Line Accumulate", NULL, plotmode, (int)"3", "/Scope/Plot Mode/Line"},
+-  {"/Scope/Plot Mode/Step", NULL, plotmode, (int)"4", "/Scope/Plot Mode/Line Accumulate"},
+-  {"/Scope/Plot Mode/Step Accumulate", NULL, plotmode, (int)"5", "/Scope/Plot Mode/Step"},
++  {"/Scope/Plot Mode/Point", NULL, plotmode, (int)'0', "<RadioItem>"},
++  {"/Scope/Plot Mode/Point Accumulate", NULL, plotmode, (int)'1', "/Scope/Plot Mode/Point"},
++  {"/Scope/Plot Mode/Line", NULL, plotmode, (int)'2', "/Scope/Plot Mode/Point Accumulate"},
++  {"/Scope/Plot Mode/Line Accumulate", NULL, plotmode, (int)'3', "/Scope/Plot Mode/Line"},
++  {"/Scope/Plot Mode/Step", NULL, plotmode, (int)'4', "/Scope/Plot Mode/Line Accumulate"},
++  {"/Scope/Plot Mode/Step Accumulate", NULL, plotmode, (int)'5', "/Scope/Plot Mode/Step"},
+   {"/Scope/Graticule/tear", NULL, NULL, 0, "<Tearoff>"},
+   {"/Scope/Graticule/Color/tear", NULL, NULL, 0, "<Tearoff>"},
+-  {"/Scope/Graticule/Color/black", NULL, setcolor, (int)"a", NULL},
+-  {"/Scope/Graticule/Color/blue", NULL, setcolor, (int)"b", NULL},
+-  {"/Scope/Graticule/Color/green", NULL, setcolor, (int)"c", NULL},
+-  {"/Scope/Graticule/Color/cyan", NULL, setcolor, (int)"d", NULL},
+-  {"/Scope/Graticule/Color/red", NULL, setcolor, (int)"e", NULL},
+-  {"/Scope/Graticule/Color/magenta", NULL, setcolor, (int)"f", NULL},
+-  {"/Scope/Graticule/Color/orange", NULL, setcolor, (int)"g", NULL},
+-  {"/Scope/Graticule/Color/gray66", NULL, setcolor, (int)"h", NULL},
+-  {"/Scope/Graticule/Color/gray33", NULL, setcolor, (int)"i", NULL},
+-  {"/Scope/Graticule/Color/blue4", NULL, setcolor, (int)"j", NULL},
+-  {"/Scope/Graticule/Color/green4", NULL, setcolor, (int)"k", NULL},
+-  {"/Scope/Graticule/Color/cyan4", NULL, setcolor, (int)"l", NULL},
+-  {"/Scope/Graticule/Color/red4", NULL, setcolor, (int)"m", NULL},
+-  {"/Scope/Graticule/Color/magenta4", NULL, setcolor, (int)"n", NULL},
+-  {"/Scope/Graticule/Color/yellow", NULL, setcolor, (int)"o", NULL},
+-  {"/Scope/Graticule/Color/white", NULL, setcolor, (int)"p", NULL},
++  {"/Scope/Graticule/Color/black", NULL, setcolor, (int)'a', NULL},
++  {"/Scope/Graticule/Color/blue", NULL, setcolor, (int)'b', NULL},
++  {"/Scope/Graticule/Color/green", NULL, setcolor, (int)'c', NULL},
++  {"/Scope/Graticule/Color/cyan", NULL, setcolor, (int)'d', NULL},
++  {"/Scope/Graticule/Color/red", NULL, setcolor, (int)'e', NULL},
++  {"/Scope/Graticule/Color/magenta", NULL, setcolor, (int)'f', NULL},
++  {"/Scope/Graticule/Color/orange", NULL, setcolor, (int)'g', NULL},
++  {"/Scope/Graticule/Color/gray66", NULL, setcolor, (int)'h', NULL},
++  {"/Scope/Graticule/Color/gray33", NULL, setcolor, (int)'i', NULL},
++  {"/Scope/Graticule/Color/blue4", NULL, setcolor, (int)'j', NULL},
++  {"/Scope/Graticule/Color/green4", NULL, setcolor, (int)'k', NULL},
++  {"/Scope/Graticule/Color/cyan4", NULL, setcolor, (int)'l', NULL},
++  {"/Scope/Graticule/Color/red4", NULL, setcolor, (int)'m', NULL},
++  {"/Scope/Graticule/Color/magenta4", NULL, setcolor, (int)'n', NULL},
++  {"/Scope/Graticule/Color/yellow", NULL, setcolor, (int)'o', NULL},
++  {"/Scope/Graticule/Color/white", NULL, setcolor, (int)'p', NULL},
+   {"/Scope/Graticule/sep", NULL, NULL, 0, "<Separator>"},
+-  {"/Scope/Graticule/In Front", NULL, graticule, (int)"0", "<RadioItem>"},
+-  {"/Scope/Graticule/Behind", NULL, graticule, (int)"1", "/Scope/Graticule/In Front"},
++  {"/Scope/Graticule/In Front", NULL, graticule, (int)'0', "<RadioItem>"},
++  {"/Scope/Graticule/Behind", NULL, graticule, (int)'1', "/Scope/Graticule/In Front"},
+   {"/Scope/Graticule/sep", NULL, NULL, 0, "<Separator>"},
+-  {"/Scope/Graticule/None", NULL, graticule, (int)"2", "<RadioItem>"},
+-  {"/Scope/Graticule/Minor Divisions", NULL, graticule, (int)"3", "/Scope/Graticule/None"},
+-  {"/Scope/Graticule/Minor & Major", NULL, graticule, (int)"4", "/Scope/Graticule/Minor Divisions"},
+-  {"/Scope/Cursors", NULL, hit_key, (int)"'", "<CheckItem>"},
+-
+-  {"/<<", NULL, hit_key, (int)"9", NULL},
+-  {"/<", NULL, hit_key, (int)"(", NULL},
+-  {"/>", NULL, hit_key, (int)")", NULL},
+-  {"/>> ", NULL, hit_key, (int)"0", NULL},
+-
+-  {"/Run", NULL, runmode, (int)"1", NULL},
+-  {"/Wait", NULL, runmode, (int)"2", NULL},
+-  {"/Stop", NULL, runmode, (int)"0", NULL},
++  {"/Scope/Graticule/None", NULL, graticule, (int)'2', "<RadioItem>"},
++  {"/Scope/Graticule/Minor Divisions", NULL, graticule, (int)'3', "/Scope/Graticule/None"},
++  {"/Scope/Graticule/Minor & Major", NULL, graticule, (int)'4', "/Scope/Graticule/Minor Divisions"},
++  {"/Scope/Cursors", NULL, hit_key, (int)'\'', "<CheckItem>"},
++
++  {"/<<", NULL, hit_key, (int)'9', NULL},
++  {"/<", NULL, hit_key, (int)'(', NULL},
++  {"/>", NULL, hit_key, (int)')', NULL},
++  {"/>> ", NULL, hit_key, (int)'0', NULL},
++
++  {"/Run", NULL, runmode, (int)'1', NULL},
++  {"/Wait", NULL, runmode, (int)'2', NULL},
++  {"/Stop", NULL, runmode, (int)'0', NULL},
+ 
+   {"/Help", NULL, NULL, 0, "<LastBranch>"},
+-  {"/Help/Keys&Info", NULL, hit_key, (int)"?", "<CheckItem>"},
++  {"/Help/Keys&Info", NULL, hit_key, (int)'?', "<CheckItem>"},
+   {"/Help/Manual", NULL, help, 0, NULL},
+ 
+ };
+diff -Nru xoscope-1.12.orig/xy_gtk.c xoscope-1.12/xy_gtk.c
+--- xoscope-1.12.orig/xy_gtk.c	2003-06-30 07:56:10.000000000 +0200
++++ xoscope-1.12/xy_gtk.c	2007-01-14 13:49:47.000000000 +0100
+@@ -55,13 +55,13 @@
+ {
+   static GtkItemFactoryEntry menu_items[] =
+   {
+-    {"/Close", NULL, hit_key, (int)"\e", NULL},
++    {"/Close", NULL, hit_key, (int)'\e', NULL},
+     {"/Plot Mode", NULL, NULL, 0, "<Branch>"},
+     {"/Plot Mode/tear", NULL, NULL, 0, "<Tearoff>"},
+-    {"/Plot Mode/Point", NULL, plotmode, (int)"0", NULL},
+-    {"/Plot Mode/Point Accumulate", NULL, plotmode, (int)"1", NULL},
+-    {"/Plot Mode/Line", NULL, plotmode, (int)"2", NULL},
+-    {"/Plot Mode/Line Accumulate", NULL, plotmode, (int)"3", NULL},
++    {"/Plot Mode/Point", NULL, plotmode, (int)'0', NULL},
++    {"/Plot Mode/Point Accumulate", NULL, plotmode, (int)'1', NULL},
++    {"/Plot Mode/Line", NULL, plotmode, (int)'2', NULL},
++    {"/Plot Mode/Line Accumulate", NULL, plotmode, (int)'3', NULL},
+   };
+   gint nmenu_items = sizeof(menu_items) / sizeof(menu_items[0]);
+ 

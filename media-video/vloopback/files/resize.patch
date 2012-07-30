@@ -1,0 +1,46 @@
+diff -ru ./vloopback-1.2/example/Makefile ./vloopback-1.2.my/example/Makefile
+--- ./vloopback-1.2/example/Makefile	2009-01-20 13:27:50.000000000 +0100
++++ ./vloopback-1.2.my/example/Makefile	2009-02-08 14:08:20.000000000 +0100
+@@ -1,13 +1,13 @@
+ CFLAGS=-g -Wall
+ 
+-all:	invert resize feed dummy
++all:	invert vresize feed dummy
+ 
+ clean:
+-	rm -f dummy resize invert feed *o *~
++	rm -f dummy vresize invert feed *o *~
+ 
+ invert:	invert.c
+ 
+-resize:	resize.c
++vresize:	vresize.c
+ 
+ feed: feed.c
+ 
+diff -ru ./vloopback-1.2/example/resize.c ./vloopback-1.2.my/example/resize.c
+--- ./vloopback-1.2/example/resize.c	2009-01-20 13:27:50.000000000 +0100
++++ ./vloopback-1.2.my/example/resize.c	2009-02-08 14:09:05.000000000 +0100
+@@ -192,8 +192,8 @@
+ 	
+ 	if (argc != 6) {
+ 		printf("Usage:\n\n");
+-		printf("resize input output widthxheight(in) widthxheight(out) rgb24|yuv420p\n\n");
+-		printf("example: resize /dev/video0 /dev/video1 352x288 176x144 yuv420p\n\n");
++		printf("vresize input output widthxheight(in) widthxheight(out) rgb24|yuv420p\n\n");
++		printf("example: vresize /dev/video0 /dev/video1 352x288 176x144 yuv420p\n\n");
+ 		exit(1);
+ 	}
+ 	
+diff -ru ./vloopback-1.2/Makefile ./vloopback-1.2.my/Makefile
+--- ./vloopback-1.2/Makefile	2009-01-20 13:27:50.000000000 +0100
++++ ./vloopback-1.2.my/Makefile	2009-02-08 14:08:00.000000000 +0100
+@@ -49,7 +49,7 @@
+ clean:
+ 	rm -f .*.cmd *.o *.mod.c *.ko .v* *~ core Modules.symvers Module.symvers modules.order
+ 	rm -rf .tmp_versions/
+-	rm -f example/dummy example/feed example/resize example/invert
++	rm -f example/dummy example/feed example/vresize example/invert
+ 
+ dist: clean
+ 	cd .. ; tar cfvz $(MODULENAME)-$(VERSION).tar.gz  --exclude='.svn' $(VERSION)/ 

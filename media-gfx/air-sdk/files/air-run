@@ -1,0 +1,6 @@
+#!/bin/bash
+
+AIRDIR=$(mktemp -d /tmp/air-run.XXXXXX)
+unzip "${1}" -d "${AIRDIR}"
+adl -nodebug "${AIRDIR}/META-INF/AIR/application.xml" "${AIRDIR}"
+rm -fr "${AIRDIR}"

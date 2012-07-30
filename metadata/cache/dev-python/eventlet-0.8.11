@@ -1,0 +1,22 @@
+dev-python/setuptools >=app-admin/eselect-python-20091230 dev-lang/python
+dev-lang/python dev-python/greenlet ssl? ( dev-python/pyopenssl ) >=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://pypi.python.org/packages/source/e/eventlet/eventlet-0.8.11.tar.gz
+
+http://wiki.secondlife.com/wiki/Eventlet
+MIT
+A networking library that achieves high scalability by using non-blocking io
+~amd64 ~x86
+distutils multilib python toolchain-funcs
+examples ssl
+
+
+
+
+
+compile install postinst postrm unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+>=x11-libs/gtk+-2.6 >=dev-python/pygtk-2.6 >=dev-python/pygobject-2.6 >=dev-python/gnome-python-2.10 >=dev-python/gnome-python-desktop-2.10 dev-python/gnome-python-extras net-libs/libgmail >=net-print/libgnomecups-0.2.2 dev-vcs/subversion net-misc/rsync >=sys-apps/sed-4
+>=x11-libs/gtk+-2.6 >=dev-python/pygtk-2.6 >=dev-python/pygobject-2.6 >=dev-python/gnome-python-2.10 >=dev-python/gnome-python-desktop-2.10 dev-python/gnome-python-extras net-libs/libgmail >=net-print/libgnomecups-0.2.2
+0
+
+
+http://beatnik.infogami.com/Gimmie
+LGPL
+Alternative menu applet for the GNOME panel
+-*
+eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability subversion toolchain-funcs user versionator
+debug
+
+
+
+
+
+compile install postinst postrm preinst unpack
+
+
+
+
+

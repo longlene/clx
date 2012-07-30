@@ -1,0 +1,22 @@
+dev-lang/php[json,mysql,session,posix] || ( <dev-lang/php-5.3[spl,pcre] >=dev-lang/php-5.3 ) dev-perl/DBI dev-perl/DBD-mysql dev-perl/Net-UPnP app-arch/unzip || ( virtual/httpd-cgi virtual/httpd-fastcgi ) =virtual/httpd-php-5* >=app-admin/webapp-config-1.50.15
+dev-lang/php[json,mysql,session,posix] || ( <dev-lang/php-5.3[spl,pcre] >=dev-lang/php-5.3 ) dev-perl/DBI dev-perl/DBD-mysql dev-perl/Net-UPnP =virtual/httpd-php-5* >=app-admin/webapp-config-1.50.15
+0.24_p20110310-r1
+https://github.com/MythTV/mythweb/tarball/d0f3ba16ab2de06b5339f11f07d05f2cc21f74b0 -> mythweb-0.24_p20110310.tar.gz
+
+http://www.mythtv.org
+GPL-2
+PHP scripts intended to manage MythTV from a web browser.
+amd64 ppc x86
+depend.php eutils multilib phpconfutils portability toolchain-funcs user versionator webapp
+vhosts
+
+
+
+2
+
+compile configure install postinst prerm setup
+
+
+
+
+

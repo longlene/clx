@@ -1,0 +1,22 @@
+>=net-misc/upnp-1.2.1 id3lib? ( >=media-libs/id3lib-3.8 ) taglib? ( >=media-libs/taglib-1.4 ) >=dev-lang/perl-5.6 sys-devel/flex dev-util/yacc nls? ( sys-devel/gettext )
+>=net-misc/upnp-1.2.1 id3lib? ( >=media-libs/id3lib-3.8 ) taglib? ( >=media-libs/taglib-1.4 )
+0
+http://download.savannah.gnu.org/releases/gmediaserver/gmediaserver-0.11.0.tar.gz
+
+http://www.gnu.org/software/gmediaserver/
+GPL-2
+a UPnP compatible media server
+~x86
+eutils multilib portability toolchain-funcs user
+id3lib taglib nls
+
+
+
+
+
+compile install postinst unpack
+
+
+
+
+

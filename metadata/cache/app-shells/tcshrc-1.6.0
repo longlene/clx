@@ -1,0 +1,22 @@
+app-shells/tcsh
+app-shells/tcsh
+0
+mirror://sourceforge/tcshrc/tcshrc-1.6.0.tar.gz
+
+http://tcshrc.sourceforge.net
+GPL-2
+Package of tcsh login scripts supplying advanced command-line completion and aliases.
+~x86 ~amd64
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst
+
+
+
+
+

@@ -1,0 +1,310 @@
+diff -ur aegisub-2.1-dev-r2425/aegisub/Makefile.am aegisub-2.1-dev-r2425.patched/aegisub/Makefile.am
+--- aegisub-2.1-dev-r2425/aegisub/Makefile.am	2008-10-28 02:26:07.000000000 +0100
++++ aegisub-2.1-dev-r2425.patched/aegisub/Makefile.am	2008-11-27 19:28:50.000000000 +0100
+@@ -7,9 +7,9 @@
+ AM_CXXFLAGS = -DAEGISUB -Iposix -include posix/defines.h -Iinclude @WX_CPPFLAGS@ @OPENMP_CXXFLAGS@
+ 
+ bin_PROGRAMS = aegisub
+-aegisub_LDADD = posix/libposix.a
++aegisub_LDADD = posix/libposix.a @GL_LIBS@ @PTHREAD_LIBS@ @WX_LIBS@ @ICONV_LIBS@
+ aegisub_CPPFLAGS = @FREETYPE_CFLAGS@
+-aegisub_LDFLAGS = @GL_LIBS@ @PTHREAD_LIBS@ @WX_LIBS@ @ICONV_LDFLAGS@
++aegisub_LDFLAGS =
+ LIBS += @FREETYPE_LIBS@ @FONTCONFIG_LIBS@
+ 
+ if BUILD_DARWIN
+@@ -19,45 +18,39 @@
+ if HAVE_ALSA
+ noinst_LIBRARIES += libaudio_alsa.a
+ libaudio_alsa_a_SOURCES = audio_player_alsa.cpp
+-aegisub_LDFLAGS += @ALSA_LDFLAGS@
+-aegisub_LDADD += libaudio_alsa.a
++aegisub_LDADD += libaudio_alsa.a @ALSA_LIBS@
+ endif
+ 
+ if HAVE_PORTAUDIO
+ noinst_LIBRARIES += libaudio_portaudio.a
+ libaudio_portaudio_a_SOURCES = audio_player_portaudio.cpp
+-aegisub_LDFLAGS += @PORTAUDIO_LDFLAGS@
+-aegisub_LDADD += libaudio_portaudio.a
++aegisub_LDADD += libaudio_portaudio.a @PORTAUDIO_LIBS@
+ endif
+ 
+ if HAVE_PULSEAUDIO
+ noinst_LIBRARIES += libaudio_pulseaudio.a
+ libaudio_pulseaudio_a_SOURCES = audio_player_pulse.cpp
+ libaudio_pulseaudio_a_CPPFLAGS = @LIBPULSE_CFLAGS@
+-aegisub_LDFLAGS += @LIBPULSE_LIBS@
+-aegisub_LDADD += libaudio_pulseaudio.a
++aegisub_LDADD += libaudio_pulseaudio.a @LIBPULSE_LIBS@
+ endif
+ 
+ if HAVE_OPENAL
+ noinst_LIBRARIES += libaudio_openal.a
+ libaudio_openal_a_SOURCES = audio_player_openal.cpp
+ libaudio_openal_a_CPPFLAGS = @OPENAL_CFLAGS@
+-aegisub_LDFLAGS += @OPENAL_LIBS@
+-aegisub_LDADD += libaudio_openal.a
++aegisub_LDADD += libaudio_openal.a @OPENAL_LIBS@
+ endif
+ 
+ if HAVE_FFMPEG
+ noinst_LIBRARIES += libaudiovideo_ffmpeg.a
+ libaudiovideo_ffmpeg_a_SOURCES = audio_provider_lavc.cpp lavc_file.cpp video_provider_lavc.cpp lavc_keyframes.cpp
+-aegisub_LDFLAGS += @AVFORMAT_LDFLAGS@ @AVCODEC_LDFLAGS@ @SWSCALE_LDFLAGS@
+-aegisub_LDADD += libaudiovideo_ffmpeg.a
++aegisub_LDADD += libaudiovideo_ffmpeg.a @AVFORMAT_LIBS@ @AVCODEC_LIBS@ @SWSCALE_LIBS@
+ endif
+ 
+ if HAVE_FFMPEGSOURCE
+ noinst_LIBRARIES += libaudiovideo_ffmpegsource.a
+ libaudiovideo_ffmpegsource_a_SOURCES = audio_provider_ffmpegsource.cpp video_provider_ffmpegsource.cpp ffmpegsource_common.cpp
+-aegisub_LDFLAGS += @AVFORMAT_LDFLAGS@ @AVCODEC_LDFLAGS@ @SWSCALE_LDFLAGS@ @POSTPROC_LDFLAGS@
+-aegisub_LDADD += libaudiovideo_ffmpegsource.a ../FFmpegSource2/libffmpegsource2_aegisub.a
++aegisub_LDADD += libaudiovideo_ffmpegsource.a ../FFmpegSource2/libffmpegsource2_aegisub.a @AVFORMAT_LIBS@ @AVCODEC_LIBS@ @SWSCALE_LIBS@ @POSTPROC_LIBS@
+ endif
+ 
+ noinst_LIBRARIES += libsubtitle_provider.a
+@@ -70,8 +63,7 @@
+ libsubtitle_ass_a_SOURCES = subtitles_provider_libass.cpp
+ libsubtitle_ass_a_CPPFLAGS = @LIBASS_CFLAGS@ @ICONV_CFLAGS@
+ LIBS += @LIBASS_LIBS@
+-aegisub_LDADD += libsubtitle_ass.a
+-aegisub_LDFLAGS += @FONTCONFIG_LIBS@
++aegisub_LDADD += libsubtitle_ass.a @FONTCONFIG_LIBS@
+ endif
+ 
+ if WITH_CSRI
+@@ -79,8 +71,7 @@
+ libsubtitle_csri_a_SOURCES = subtitles_provider_csri.cpp
+ libsubtitle_csri_a_CPPFLAGS = @ICONV_CFLAGS@ @CSRI_CFLAGS@
+ LIBS += @CSRI_LIBS@
+-aegisub_LDADD += libsubtitle_csri.a
+-aegisub_LDFLAGS += @FONTCONFIG_LIBS@
++aegisub_LDADD += libsubtitle_csri.a @FONTCONFIG_LIBS@
+ endif
+ 
+ if HAVE_AUTO4_LUA
+@@ -95,7 +86,7 @@
+ noinst_LIBRARIES += libauto4_perl.a
+ libauto4_perl_a_SOURCES = auto4_perl.cpp auto4_perl_script.cpp auto4_perl_dialogs.cpp auto4_perl_ass.cpp auto4_perl_console.cpp auto4_perl.h auto4_perl_console.h
+ libauto4_perl_a_CPPFLAGS = @PERL_CFLAGS@
+-LIBS += @PERL_LDFLAGS@
++LIBS += @PERL_LIBS@
+ aegisub_LDADD += libauto4_perl.a
+ endif
+ 
+@@ -103,8 +94,7 @@
+ noinst_LIBRARIES += libauto4_ruby.a
+ libauto4_ruby_a_SOURCES = auto4_ruby_assfile.cpp auto4_ruby.cpp auto4_ruby_dialog.cpp
+ libauto4_ruby_a_CPPFLAGS = @RUBY_CFLAGS@
+-aegisub_LDFLAGS += @RUBY_LDFLAGS@
+-aegisub_LDADD += libauto4_ruby.a
++aegisub_LDADD += libauto4_ruby.a @RUBY_LIBS@
+ endif
+ 
+ if HAVE_AUTO3_LUA
+@@ -115,8 +105,7 @@
+ if HAVE_HUNSPELL
+ noinst_LIBRARIES += libmisc_hunspell.a
+ libmisc_hunspell_a_SOURCES = spellchecker_hunspell.cpp
+-aegisub_LDFLAGS += @HUNSPELL_LIBS@
+-aegisub_LDADD += libmisc_hunspell.a
++aegisub_LDADD += libmisc_hunspell.a @HUNSPELL_LIBS@
+ endif
+ 
+ if HAVE_UNIVCHARDET
+diff -ur aegisub-2.1-dev-r2425/configure.in aegisub-2.1-dev-r2425.patched/configure.in
+--- aegisub-2.1-dev-r2425/configure.in	2008-10-28 01:41:57.000000000 +0100
++++ aegisub-2.1-dev-r2425.patched/configure.in	2008-11-27 19:28:10.000000000 +0100
+@@ -276,13 +276,13 @@
+ ## iconv
+ ########
+ AC_ARG_VAR([ICONV_CFLAGS], [CFLAGS to use for iconv (default: CPPFLAGS)])
+-AC_ARG_VAR([ICONV_LDFLAGS], [LDFLAGS to use for iconv (default: LDFLAGS -liconv)])
++AC_ARG_VAR([ICONV_LIBS], [LDADD to use for iconv (default: LDADD -liconv)])
+ 
+-if test -z "$ICONV_LDFLAGS"; then
++if test -z "$ICONV_LDADD"; then
+   if test "$build_linux" = "yes"; then
+-    ICONV_LDFLAGS="$LDFLAGS"
++    ICONV_LIBS=""
+   else
+-    ICONV_LDFLAGS="$LDFLAGS -liconv";
++    ICONV_LIBS="-liconv";
+   fi
+ fi
+ 
+@@ -290,7 +290,7 @@
+   ICONV_CFLAGS="$CPPFLAGS";
+ fi
+ 
+-  AC_AGI_COMPILE([iconv], [iconv], [$ICONV_CFLAGS], [$ICONV_LDFLAGS],[
++  AC_AGI_COMPILE([iconv], [iconv], [$ICONV_CFLAGS], [$ICONV_LIBS],[
+ #include <iconv.h>
+ int main(void) {
+   iconv_t ic;
+@@ -299,7 +299,7 @@
+   return 0;
+ } ])
+ 
+-AC_SUBST(ICONV_LDFLAGS)
++AC_SUBST(ICONV_LIBS)
+ AC_SUBST(ICONV_CFLAGS)
+ 
+ 
+@@ -312,13 +312,13 @@
+ #######
+ AC_ARG_WITH(alsa, [  --without-alsa          build without ALSA audio provider. (default: auto)], alsa_disabled="(disabled)")
+ if test "x$with_alsa" != xno; then
+-  AC_CHECK_LIB([asound], [snd_pcm_open], [ALSA_LDFLAGS="-lasound"; found_audio=yes; with_alsa=yes], [with_alsa=no])
++  AC_CHECK_LIB([asound], [snd_pcm_open], [ALSA_LIBS="-lasound"; found_audio=yes; with_alsa=yes], [with_alsa=no])
+ fi
+ if test "$with_alsa" = "yes"; then
+   AC_DEFINE(WITH_ALSA, 1, [Enable ALSA Support])
+ fi
+ 
+-AC_SUBST(ALSA_LDFLAGS)
++AC_SUBST(ALSA_LIBS)
+ AM_CONDITIONAL([HAVE_ALSA], [test "$with_alsa" != "no"])
+ 
+ ############
+@@ -330,7 +330,7 @@
+ if test "x$with_portaudio" != xno; then
+   aegisub_save_CPPFLAGS="$CPPFLAGS"
+   CPPFLAGS="$CPPFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
+-  AC_CHECK_LIB([portaudio], [Pa_Initialize], [PORTAUDIO_LDFLAGS="-lportaudio"; found_audio=yes; with_portaudio=yes], [with_portaudio=no])
++  AC_CHECK_LIB([portaudio], [Pa_Initialize], [PORTAUDIO_LIBS="-lportaudio"; found_audio=yes; with_portaudio=yes], [with_portaudio=no])
+ fi
+ 
+ if test "x$with_portaudio" != xno; then
+@@ -341,7 +341,7 @@
+ CPPFLAGS="$aegisub_save_CPPFLAGS"
+ fi
+ 
+-AC_AGI_COMPILE([PortAudio], [portaudio], [$CFLAGS $PTHREAD_CFLAGS], [$LDFLAGS $PORTAUDIO_LDFLAGS],[
++AC_AGI_COMPILE([PortAudio], [portaudio], [$CFLAGS $PTHREAD_CFLAGS], [$LDFLAGS $PORTAUDIO_LIBS],[
+ #include <portaudio.h>
+ int main(void) {
+   PaError err = Pa_Initialize();
+@@ -358,7 +358,7 @@
+   AC_DEFINE(WITH_PORTAUDIO, 1, [Enable PortAudio Audio Provider])
+ fi
+ 
+-AC_SUBST(PORTAUDIO_LDFLAGS)
++AC_SUBST(PORTAUDIO_LIBS)
+ AM_CONDITIONAL([HAVE_PORTAUDIO], [test "$with_portaudio" != "no"])
+ 
+ 
+@@ -434,16 +434,16 @@
+ AC_ARG_WITH(ffmpeg, [  --without-ffmpeg        build without FFMPEG video provider. (default: auto)], ffmpeg_disabled="(disabled)")
+ 
+ if test "$with_ffmpeg" != "no"; then
+-  AC_CHECK_LIB([avcodec], [avcodec_init],[AVCODEC_LDFLAGS="-lavcodec"; with_ffmpeg="yes"], [with_ffmpeg="no"])
+-  AC_CHECK_LIB([avformat], [av_read_frame],[AVFORMAT_LDFLAGS="-lavformat"; with_ffmpeg="yes"], [with_ffmpeg="no"])
++  AC_CHECK_LIB([avcodec], [avcodec_init],[AVCODEC_LIBS="-lavcodec"; with_ffmpeg="yes"], [with_ffmpeg="no"])
++  AC_CHECK_LIB([avformat], [av_read_frame],[AVFORMAT_LIBS="-lavformat"; with_ffmpeg="yes"], [with_ffmpeg="no"])
+ 
+   if test "$build_darwin" = "yes"; then
+-    AC_CHECK_LIB([avutil], [av_free],[AVUTIL_LDFLAGS="-lavutil"; with_ffmpeg="yes"], [with_ffmpeg="no"])
++    AC_CHECK_LIB([avutil], [av_free],[AVUTIL_LIBS="-lavutil"; with_ffmpeg="yes"], [with_ffmpeg="no"])
+   fi
+ 
+   AC_CHECK_LIB([avformat], [sws_scale],[with_swscale="yes"], [with_swscale="no"])
+   if test "$with_swscale" = "no"; then
+-    AC_CHECK_LIB([swscale], [sws_scale],[SWSCALE_LDFLAGS="-lswscale"; with_swscale_lib="yes"], [with_swscale_lib="no"])
++    AC_CHECK_LIB([swscale], [sws_scale],[SWSCALE_LIBS="-lswscale"; with_swscale_lib="yes"], [with_swscale_lib="no"])
+   fi
+ 
+   if test "$with_swscale" = "no" && test "$with_swscale_lib" = "no"; then
+@@ -456,10 +456,10 @@
+   fi
+ fi
+ 
+-AC_SUBST(SWSCALE_LDFLAGS)
+-AC_SUBST(AVCODEC_LDFLAGS)
+-AC_SUBST(AVFORMAT_LDFLAGS)
+-AC_SUBST(AVUTIL_LDFLAGS)
++AC_SUBST(SWSCALE_LIBS)
++AC_SUBST(AVCODEC_LIBS)
++AC_SUBST(AVFORMAT_LIBS)
++AC_SUBST(AVUTIL_LIBS)
+ 
+ AM_CONDITIONAL([HAVE_FFMPEG], [test "$with_ffmpeg" = "yes"])
+ 
+@@ -467,7 +467,7 @@
+ AC_ARG_WITH(ffmpegsource, [  --without-ffmpegsource        build without FFmpegSource video provider. (default: auto)], ffmpegsource_disabled="(disabled)")
+ 
+ if test "$with_ffmpegsource" != "no"; then
+-  AC_CHECK_LIB([postproc], [pp_postprocess],[POSTPROC_LDFLAGS="-lpostproc"; with_postproc="yes"], [with_postproc="no"])
++  AC_CHECK_LIB([postproc], [pp_postprocess],[POSTPROC_LIBS="-lpostproc"; with_postproc="yes"], [with_postproc="no"])
+ 
+   if test "$with_postproc" = "yes"; then
+     found_video_provider="yes"
+@@ -476,7 +476,7 @@
+   fi
+ fi
+ 
+-AC_SUBST(POSTPROC_LDFLAGS)
++AC_SUBST(POSTPROC_LIBS)
+ 
+ AM_CONDITIONAL([HAVE_FFMPEGSOURCE], [test "$with_ffmpegsource" = "yes"])
+ 
+@@ -707,11 +707,11 @@
+ 
+       AC_MSG_CHECKING([$PERL_BIN libs])
+       if test -z "$PERL_LDFLAGS"; then
+-        PERL_LDFLAGS=`$PERL_BIN -MExtUtils::Embed -eldopts`
++        PERL_LIBS=`$PERL_BIN -MExtUtils::Embed -eldopts`
+       fi
+       AC_MSG_RESULT([$PERL_LDFLAGS])
+ 
+-      AC_AGI_COMPILE([Perl], [perl], [$PERL_CFLAGS], [$PERL_LDFLAGS],[
++      AC_AGI_COMPILE([Perl], [perl], [$PERL_CFLAGS], [$PERL_LIBS],[
+ #include <EXTERN.h>
+ #include <perl.h>
+ int main(int argc, char **argv) {
+@@ -736,7 +736,7 @@
+ fi
+ 
+ AC_SUBST(PERL_CFLAGS)
+-AC_SUBST(PERL_LDFLAGS)
++AC_SUBST(PERL_LIBS)
+ 
+ AM_CONDITIONAL([HAVE_AUTO4_PERL], [test "$with_perl" != "no"])
+ 
+@@ -749,7 +749,7 @@
+ AC_ARG_WITH(ruby-bin, [  --with-ruby-bin=PATH    location of RUBY binary. (default: $PATH)], [WITH_RUBY_BIN="$withval"])
+ 
+ AC_ARG_VAR([RUBY_CFLAGS], [CFLAGS to use for Ruby (default: Config::CONFIG archdir + CFLAGS)])
+-AC_ARG_VAR([RUBY_LDFLAGS], [LDFLAGS to use for Ruby (default: Cofig::CONFIG LIBRUBYARG)])
++AC_ARG_VAR([RUBY_LIBS], [LIBS to use for Ruby (default: Cofig::CONFIG LIBRUBYARG)])
+ 
+ if test -z "$ruby_disabled"; then
+   if test -z "$WITH_RUBY_BIN"; then
+@@ -773,12 +773,12 @@
+       AC_MSG_RESULT([$RUBY_CFLAGS])
+ 
+       AC_MSG_CHECKING([checking $RUBY_BIN rbconfig libs])
+-      if test -z "$RUBY_LDFLAGS"; then
+-        RUBY_LDFLAGS=`$RUBY_BIN -r rbconfig -e "print Config::CONFIG@<:@'LIBRUBYARG'@:>@"`
++      if test -z "$RUBY_LIBS"; then
++        RUBY_LIBS=`$RUBY_BIN -r rbconfig -e "print Config::CONFIG@<:@'LIBRUBYARG'@:>@"`
+       fi
+-      AC_MSG_RESULT([$RUBY_LDFLAGS])
++      AC_MSG_RESULT([$RUBY_LIBS])
+ 
+-      AC_AGI_COMPILE([Ruby], [ruby], [$RUBY_CFLAGS], [$RUBY_LDFLAGS],[
++      AC_AGI_COMPILE([Ruby], [ruby], [$RUBY_CFLAGS], [$RUBY_LIBS],[
+ #include <ruby.h>
+ int main(void) {
+   /* These supposidly call exit if they fail. */   
+@@ -801,7 +801,7 @@
+ fi
+ 
+ AC_SUBST(RUBY_CFLAGS)
+-AC_SUBST(RUBY_LDFLAGS)
++AC_SUBST(RUBY_LIBS)
+ AM_CONDITIONAL([HAVE_AUTO4_RUBY], [test "$with_ruby" != "no"])
+ 
+ 

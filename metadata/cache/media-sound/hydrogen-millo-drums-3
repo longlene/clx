@@ -1,0 +1,22 @@
+
+media-sound/hydrogen
+0
+mirror://sourceforge/hydrogen/MilloDrums-3.zip
+
+http://www.hydrogen-music.org/?p=drumkits
+freedist
+Hydrogen multi-layer drumkit, based on a Ludwig drum
+~x86
+
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

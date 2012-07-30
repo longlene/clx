@@ -1,0 +1,22 @@
+
+
+0
+http://www.helch.ch/gentoo/distfiles/awib-1.0_rc4.tar.gz
+
+http://www.nada.kth.se/~matslina/awib/
+GPL-2
+Optimizing brainfuck compiler written in brainfuck for Linux on i386.
+~x86 ~amd64
+multilib toolchain-funcs
+
+
+
+
+
+
+compile install
+
+
+
+
+

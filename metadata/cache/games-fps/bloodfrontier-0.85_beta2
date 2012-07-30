@@ -1,0 +1,22 @@
+media-libs/libpng media-libs/libsdl[opengl] media-libs/sdl-mixer media-libs/sdl-image[png]
+media-libs/libpng media-libs/libsdl[opengl] media-libs/sdl-mixer media-libs/sdl-image[png]
+0
+mirror://sourceforge/bloodfrontier/bloodfrontier-B2-linux.tar.bz2
+
+http://www.bloodfrontier.com
+ZLIB
+free single/multi-player shooter game, built as a total conversion of Cube Engine 2
+~amd64 ~x86
+base eutils flag-o-matic games multilib portability toolchain-funcs user
+server
+
+
+
+2
+
+compile configure install postinst preinst prepare setup unpack
+
+
+
+
+

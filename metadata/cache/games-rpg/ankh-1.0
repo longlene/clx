@@ -1,0 +1,22 @@
+app-arch/bzip2 app-arch/tar app-arch/unzip
+sys-libs/glibc virtual/opengl x11-libs/libXext x11-libs/libX11 x11-libs/libXau x11-libs/libXdmc amd64? ( app-emulation/emul-linux-x86-xlibs app-emulation/emul-linux-x86-soundlibs || ( >=app-emulation/emul-linux-x86-xlibs-7.0 x11-drivers/nvidia-drivers x11-drivers/nvidia-legacy-drivers >=x11-drivers/ati-drivers-8.8.25-r1 ) )
+0
+
+strip
+http://www.ankh-game.de/ankh.html
+Runesoft
+Ankh a Adventure like Monkey Island
+-* amd64 x86
+base eutils games multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+sys-fs/fuse app-arch/bzip2 app-arch/gzip sys-libs/zlib dev-libs/lzo >=dev-libs/rlog-1.3
+sys-fs/fuse app-arch/bzip2 app-arch/gzip sys-libs/zlib dev-libs/lzo >=dev-libs/rlog-1.3
+0
+http://miio.net/files/fusecompress-1.99.15.tar.gz
+
+http://www.miio.net/fusecompress/
+GPL-2
+Based on the eutils eclass
+~amd64 ~x86
+eutils flag-o-matic multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile unpack
+
+
+
+
+

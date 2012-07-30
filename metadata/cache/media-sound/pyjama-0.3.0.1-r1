@@ -1,0 +1,22 @@
+
+dev-python/pygtk dev-python/simplejson || ( dev-python/lxml dev-python/pyxml ) || ( dev-lang/python:2.6[sqlite] dev-python/pysqlite ) dev-lang/python:2.6 >=dev-python/gst-python-0.10 >=media-plugins/gst-plugins-soup-0.10 gnome? ( dev-python/gnome-python-extras )
+0
+http://launchpad.net/pyjama/trunk/0.3/+download/pyjama-0.3.0.1_all.tar.gz -> pyjama-0.3.0.1.tar.gz
+
+https://launchpad.net/pyjama
+GPL-3
+A Python/GTK application to play free music from Jamendo
+~x86 ~amd64
+
+gnome
+
+
+
+2
+
+compile install postinst
+
+
+
+
+

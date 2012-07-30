@@ -1,0 +1,22 @@
+app-arch/unzip
+games-fps/quake1-data games-fps/darkplaces
+0
+http://www.quaketerminus.com/mods/czg07.zip http://www.quaddicted.com/filebase/czg07.zip
+
+http://retroquake.planetquake.gamespy.com/blog/?p=72
+as-is
+Classic Quake 1 mod with huge levels
+~x86
+base eutils games multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+>=dev-lang/mono-1.2.4 >=dev-dotnet/mono-addins-0.3 >=dev-dotnet/gtk-sharp-2.10.2 webkit? ( >=dev-dotnet/webkit-sharp-0.2 ) gecko? ( dev-dotnet/gecko-sharp ) dev-dotnet/libanculus-sharp || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+>=dev-lang/mono-1.2.4 >=dev-dotnet/mono-addins-0.3 >=dev-dotnet/gtk-sharp-2.10.2 webkit? ( >=dev-dotnet/webkit-sharp-0.2 ) gecko? ( dev-dotnet/gecko-sharp ) dev-dotnet/libanculus-sharp media-libs/gstreamer x86? ( media-libs/swfdec )
+0
+http://galaxium.googlecode.com/files/galaxium_0.7.3.1.tar.gz
+
+http://code.google.com/p/galaxium/
+GPL-2
+Multi-Protocol Instant Messenger
+~amd64
+autotools eutils libtool mono multilib portability toolchain-funcs user
+adium gecko msn webkit
+
+
+
+
+
+compile install unpack
+
+
+
+
+

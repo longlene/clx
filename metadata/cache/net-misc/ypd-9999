@@ -1,0 +1,22 @@
+>=dev-vcs/git-1.6
+
+0
+
+
+http://ypd.berlios.de
+GPL-2
+split tcp requests of different type to different servers
+~amd64 ~x86
+eutils git multilib portability toolchain-funcs user
+
+
+
+
+
+
+install unpack
+
+
+
+
+

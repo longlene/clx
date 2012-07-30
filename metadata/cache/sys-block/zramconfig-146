@@ -1,0 +1,22 @@
+dev-vcs/mercurial
+
+0
+
+
+http://compcache.googlecode.com/
+GPL-2 LGPL-2.1
+Compressed RAM based block devices
+~amd64 ~x86
+eutils mercurial multilib portability toolchain-funcs user
+
+
+
+
+3
+
+compile install prepare unpack
+
+
+
+
+

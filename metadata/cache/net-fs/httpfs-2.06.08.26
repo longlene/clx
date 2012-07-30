@@ -1,0 +1,22 @@
+
+sys-fs/fuse
+0
+mirror://sourceforge/httpfs/httpfs_with_static_binaries_2.06.08.26.tar.gz
+
+http://httpfs.sourceforge.net/
+GPL-2
+Fuse-based httpfs file system
+~x86
+
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

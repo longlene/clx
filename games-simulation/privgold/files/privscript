@@ -1,0 +1,10 @@
+#!/bin/sh
+GAMESDIR="/usr/share/games"
+PRIVDIR="$GAMESDIR/privateergold"
+
+VERSION=`head -1 $PRIVDIR/Version.txt`
+if [ \! -e ~/$VERSION ]; then
+  cd $PRIVDIR/bin && ./vsinstall.sh
+else
+  cd $PRIVDIR/bin && ./privgold
+fi

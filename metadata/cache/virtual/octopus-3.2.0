@@ -1,0 +1,22 @@
+sci-libs/fftw virtual/lapack virtual/blas sci-libs/gsl dev-lang/perl mpi? ( virtual/mpi ) netcdf? ( sci-libs/netcdf )
+sci-libs/fftw virtual/lapack virtual/blas sci-libs/gsl dev-lang/perl mpi? ( virtual/mpi ) netcdf? ( sci-libs/netcdf )
+0
+http://www.tddft.org/programs/octopus/download/3.2.0/octopus-3.2.0.tar.gz
+
+http://www.tddft.org/programs/octopus/wiki/index.php/Main_Page
+GPL-2
+Scientific program aimed at the ab initio virtual experimentation on a hopefully ever-increasing range of system types.
+amd64
+eutils flag-o-matic multilib portability toolchain-funcs user
+mpi netcdf static
+
+
+
+2
+
+configure install test
+
+
+
+
+

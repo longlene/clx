@@ -1,0 +1,62 @@
+SPACECHEM - LICENSE
+
+1.  You may install and use copies of SPACECHEM on any computer you own, as many times as you wish, for personal use only.
+2a. Demo copies of SPACECHEM may be redistributed, so long as they are not modified in any way.
+2b. Registered copies of SPACECHEM and/or registration keys may NOT be sold or redistributed to anyone.
+3.  SPACECHEM comes with no warranty and is provided "AS-IS".
+4.  ZACHTRONICS INDUSTRIES shall have no liability for any damages as a result of installing and/or using SPACECHEM.
+
+Copyright (c) 2011, Zachtronics Industries
+All rights reserved.
+
+--------
+
+The following libraries are used by SPACECHEM
+Questions about licensing should be directed to <zach@zachtronicsindustries.com>.
+
+The Mono runtime is released under the GNU Library GPL 2.0 (LGPL 2.0).
+The Mono class libraries are released under the MIT X11 license.
+<http://www.mono-project.com>
+<http://www.mono-project.com/Licensing>
+
+The Debian package scripts used by the Linux distribution of SpaceChem are based on the Chromium package scripts, which are released under a BSD-style license.
+<http://www.chromium.org>
+
+SQLite is released into the public domain.
+<http://www.sqlite.org>
+<http://www.sqlite.org/copyright.html>
+
+System.Data.SQLite, the managed wrapper for SQLite, is released into the public domain.
+<http://sqlite.phxsoftware.com>
+
+Json.NET is released under the MIT license.
+<http://json.codeplex.com/>
+<http://json.codeplex.com/license>
+
+DotNetZip is released under the Ms-PL.
+<http://dotnetzip.codeplex.com>
+<http://dotnetzip.codeplex.com/license>
+
+The Tao Framework is released under the MIT license.
+<http://www.taoframework.com>
+<http://www.opensource.org/licenses/mit-license.php>
+
+SDL is released under the LGPL 2.1 or newer. 
+<http://www.libsdl.org>
+<http://www.libsdl.org/license.php>
+
+The Ogg Vorbis libraries (libogg, libvorbis, and libvorbis-file) are licensed under the 3-clause BSD license by the Xiph.org Foundation.
+<http://www.vorbis.com>
+<http://www.vorbis.com/faq/#slic>
+
+The Ogg Theora reference implementation is released under a BSD-style license.
+<http://www.theora.org>
+<http://www.theora.org/faq/>
+
+The libpng library is released under a custom license.
+<http://www.libpng.org/pub/png/libpng.html>
+<http://www.libpng.org/pub/png/src/libpng-LICENSE.txt>
+
+The zlib library is released under a custom license.
+<http://www.zlib.net>
+<http://www.zlib.net/zlib_license.html>

@@ -1,0 +1,22 @@
+ssl? ( >=dev-libs/openssl-0.9.6d ) userland_GNU? ( sys-process/procps ) >=sys-apps/sed-4 >=sys-apps/texinfo-4.7-r1 >=sys-libs/readline-4.1 >=sys-libs/zlib-1.2.3 !dev-db/mysql !dev-db/mysql-community !dev-db/mysql-cluster !dev-db/mariadb >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 ) sys-devel/gnuconfig || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+ssl? ( >=dev-libs/openssl-0.9.6d ) userland_GNU? ( sys-process/procps ) >=sys-apps/sed-4 >=sys-apps/texinfo-4.7-r1 >=sys-libs/readline-4.1 >=sys-libs/zlib-1.2.3 !dev-db/mysql !dev-db/mysql-community !dev-db/mysql-cluster !dev-db/mariadb !no-configs? ( dev-db/mysql-init-scripts ) =virtual/mysql-5.5
+0
+http://www.percona.com/redir/downloads/Percona-Server-5.5/Percona-Server-5.5.15-21.0/source/Percona-Server-5.5.15-rel21.0.tar.gz
+
+http://www.percona.com/
+GPL-2
+A fast, multi-threaded, multi-user SQL database server.
+~amd64 ~x86
+autotools base cmake-utils eutils flag-o-matic gnuconfig libtool multilib portability toolchain-funcs user versionator
+ssl static latin1 no-configs archive blackhole
+
+
+
+2
+
+compile configure install postinst prepare setup test unpack
+
+
+
+
+

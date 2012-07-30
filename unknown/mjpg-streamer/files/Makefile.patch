@@ -1,0 +1,14 @@
+diff -ru mjpg-streamer-r9999.old/Makefile mjpg-streamer-r9999/Makefile
+--- mjpg-streamer-r9999.old/Makefile	2010-12-07 13:59:07.000000000 +0100
++++ mjpg-streamer-r9999/Makefile	2010-12-07 14:00:34.000000000 +0100
+@@ -40,8 +40,8 @@
+ PLUGINS += output_autofocus.so
+ PLUGINS += input_file.so
+ # PLUGINS += output_mars2020.so
+-# PLUGINS += output_rtsp.so
+-# PLUGINS += output_ptp2.so # commented out because it depends on libgphoto
++PLUGINS += output_rtsp.so
++PLUGINS += output_ptp2.so # commented out because it depends on libgphoto
+ # PLUGINS += input_http.so 
+ # PLUGINS += output_viewer.so # commented out because it depends on SDL
+ 

@@ -1,0 +1,50 @@
+diff -uprN portmidi-original/pm_common/CMakeLists.txt portmidi/pm_common/CMakeLists.txt
+--- portmidi-original/pm_common/CMakeLists.txt	2009-11-20 07:18:06.000000000 +0100
++++ portmidi/pm_common/CMakeLists.txt	2009-12-24 20:22:37.000000000 +0100
+@@ -125,8 +125,8 @@ set_target_properties(pmjni PROPERTIES E
+ # install the libraries (Linux and Mac OS X command line)
+ if(UNIX)
+   INSTALL(TARGETS portmidi-static pmjni
+-    LIBRARY DESTINATION /usr/local/lib
+-    ARCHIVE DESTINATION /usr/local/lib)
++    LIBRARY DESTINATION /usr/lib
++    ARCHIVE DESTINATION /usr/lib)
+ # .h files installed by pm_dylib/CMakeLists.txt, so don't need them here
+ #  INSTALL(FILES portmidi.h ../porttime/porttime.h
+ #    DESTINATION /usr/local/include)
+diff -uprN portmidi-original/pm_dylib/CMakeLists.txt portmidi/pm_dylib/CMakeLists.txt
+--- portmidi-original/pm_dylib/CMakeLists.txt	2009-11-20 06:41:09.000000000 +0100
++++ portmidi/pm_dylib/CMakeLists.txt	2009-12-24 20:23:34.000000000 +0100
+@@ -59,7 +59,7 @@ if(UNIX)
+ 
+     set(JAVAVM_LIB "${FRAMEWORK_PATH}/JavaVM.framework")
+     set(JAVA_INCLUDE_PATHS ${JAVAVM_LIB}/Headers)
+-    set(INSTALL_NAME_DIR "/usr/local/lib")
++    set(INSTALL_NAME_DIR "/usr/lib")
+     message(STATUS "SYSROOT: " ${CMAKE_OSX_SYSROOT})
+   else(APPLE)
+     # LINUX settings...
+@@ -120,8 +120,8 @@ target_link_libraries(portmidi-dynamic $
+ # install the libraries (Linux and Mac OS X command line)
+ if(UNIX)
+   INSTALL(TARGETS portmidi-dynamic
+-    LIBRARY DESTINATION /usr/local/lib
+-    ARCHIVE DESTINATION /usr/local/lib)
++    LIBRARY DESTINATION /usr/lib
++    ARCHIVE DESTINATION /usr/lib)
+   INSTALL(FILES ../pm_common/portmidi.h ../porttime/porttime.h
+-    DESTINATION /usr/local/include)
++    DESTINATION /usr/include)
+ endif(UNIX)
+diff -uprN portmidi-original/pm_linux/Makefile portmidi/pm_linux/Makefile
+--- portmidi-original/pm_linux/Makefile	2009-01-20 05:01:54.000000000 +0100
++++ portmidi/pm_linux/Makefile	2009-12-24 20:42:00.000000000 +0100
+@@ -147,7 +147,7 @@ pm_java/pmdefaults/pmdefaults.jar: $(DEF
+ 	cd pm_java; chmod +x pmdefaults/pmdefaults
+ 
+ install:
+-	cp pm_java/pmjni/libpmjni.so /usr/local/lib
++	cp pm_java/pmjni/libpmjni.so /usr/lib
+ 	cp pm_java/pmdefaults.jar /usr/share/java
+ 	# do not chmod +x here since we are probably root
+ 	cp pm_java/pmdefaults/pmdefaults /usr/local/bin

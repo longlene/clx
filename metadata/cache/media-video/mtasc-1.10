@@ -1,0 +1,22 @@
+dev-lang/ocaml sys-libs/zlib
+dev-lang/ocaml sys-libs/zlib
+0
+http://www.mtasc.org/doc/mtasc/install.ml
+
+http://www.mtasc.org/
+GPL-2
+open source swf compiler
+~amd64 ~x86
+
+
+
+
+
+
+
+compile install postinst unpack
+
+
+
+
+

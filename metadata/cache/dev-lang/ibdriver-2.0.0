@@ -1,0 +1,22 @@
+!net-wireless/iburst-driver kernel_linux? ( sys-apps/module-init-tools ) sys-apps/sed kernel_linux? ( virtual/linux-sources )
+!net-wireless/iburst-driver kernel_linux? ( sys-apps/module-init-tools )
+0
+mirror://sourceforge/ibdriver/ibdriver-2.0.0.tar.gz
+
+
+GPL
+Linux driver for the ArrayComm(TM) "iBurst(TM)" wireless broadband devices.
+~x86
+eutils linux-info linux-mod multilib portability toolchain-funcs user versionator
+pcmcia usb kernel_linux
+
+
+
+
+
+compile install postinst postrm preinst setup unpack
+
+
+
+
+

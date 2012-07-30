@@ -1,0 +1,22 @@
+
+>=net-zope/plone-2.0.3 net-zope/zope app-admin/zprod-manager
+0
+mirror://sourceforge/quintagroup/qPloneGoogleSitemaps-0.3.0.tar.gz
+
+http://quintagroup.com/services/plone-development/products/google-sitemaps
+ZPL
+Make Plone websites parseable by Google sitemaps.
+~x86
+zproduct
+
+
+
+
+
+
+config install postinst prerm
+
+
+
+
+

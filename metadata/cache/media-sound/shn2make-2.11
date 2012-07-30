@@ -1,0 +1,22 @@
+sys-devel/make
+media-sound/vorbis-tools dev-lang/perl sys-devel/make media-sound/shntool app-cdr/cdrtools media-libs/flac media-sound/lame media-sound/bladeenc
+0
+ftp://ftp.freeengineer.org/pub/shn2make/shn2make-2.11.tar.gz
+
+http://freeengineer.org/shn2make.html
+GPL-2
+A tool for working with sets of shn and flac audio files
+~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+install
+
+
+
+
+

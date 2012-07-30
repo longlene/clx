@@ -1,0 +1,24 @@
+--- msrc-4.20.orig/local/etc/distrib/distrib.man	2000-07-30 17:27:01.000000000 -0500
++++ msrc-4.20/local/etc/distrib/distrib.man	2004-10-10 20:26:06.839243057 -0500
+@@ -137,7 +137,7 @@
+ instead of the default configuration file.  If \fIconfigfile\fP
+ cannot be found, and \fIconfigfile\fP is not an absolute path,
+ then \fIdistrib\fP will search for \fIconfigfile\fP in the directory
+-/usr/local/lib.
++/etc/distrib.
+ If the
+ .IR configfile 's
+ name ends in ``.mcf'' then it is run though \fIm4\fP
+@@ -323,9 +323,9 @@
+ .SH FILES
+ .TS
+ l l.
+-/usr/local/lib/distrib/distrib.cf	default configuration file
+-/usr/local/lib/distrib/clients.cf	usually a configuration for local clients
+-/usr/local/lib/distrib.defs	macro include file (antiquated)
++/etc/distrib/distrib.cf	default configuration file
++/etc/distrib/clients.cf	usually a configuration for local clients
++/etc/distrib/distrib.defs	macro include file (antiquated)
+ Distfile	default distfile
+ distfile	alternate default distfile
+ /tmp/fdist$$	directory for cache of \fIm4\fP processed files

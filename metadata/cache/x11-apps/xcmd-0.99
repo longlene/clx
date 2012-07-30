@@ -1,0 +1,22 @@
+>=x11-libs/wxGTK-2.6
+>=x11-libs/wxGTK-2.6
+0
+http://www.pgpnet.dk/downloads/xcmd-0.99.tar.gz
+
+http://www.pgpnet.dk/
+GPL-2
+A simple one-line command tool for X
+~x86 ~amd64
+
+
+
+
+
+
+
+compile install
+
+
+
+
+

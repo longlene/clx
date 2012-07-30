@@ -1,0 +1,22 @@
+app-arch/par2cmdline dev-lang/python dev-python/gnome-python dev-python/pyxml x11-libs/vte
+app-arch/par2cmdline dev-lang/python dev-python/gnome-python dev-python/pyxml x11-libs/vte
+0
+http://pypar2.silent-blade.org/uploads/Main/PyPar2-0.07.tar.bz2
+
+http://pypar2.silent-blade.org
+GPL-2
+PyPar2 is a graphical frontend for the Linux par2 command line, written in Python.
+~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+install setup
+
+
+
+
+

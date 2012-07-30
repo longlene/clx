@@ -1,0 +1,22 @@
+
+!app-admin/apg
+0
+http://www.coasttocoastresearch.com/apg-6.0/apg-6.0.tar.bz2
+
+http://www.coasttocoastresearch.com/
+GPL-2 GPL-3
+ABNF Parser Generator
+~x86
+base eutils multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare unpack
+
+
+
+
+

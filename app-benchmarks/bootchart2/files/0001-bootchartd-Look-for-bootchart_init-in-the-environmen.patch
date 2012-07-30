@@ -1,0 +1,28 @@
+From 5ed1882fe71cc3b808a0c5222c0ee9cc716719b8 Mon Sep 17 00:00:00 2001
+From: Henry Gebhardt <hsggebhardt@googlemail.com>
+Date: Sat, 28 May 2011 01:10:57 +0200
+Subject: [PATCH] bootchartd: Look for bootchart_init in the environment
+
+According to bootparam(7) kernel parameters of the form "foo=bar" are
+passed as environment variables, which is also what I observe on Linux
+2.6.39. This patch fixes bootchartd to look for bootchart_init there,
+too.
+---
+ bootchartd.in |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/bootchartd.in b/bootchartd.in
+index ebe9d8b..173b473 100755
+--- a/bootchartd.in
++++ b/bootchartd.in
+@@ -172,6 +172,7 @@ if [ $$ -eq 1 ]; then
+ 
+ 	# Optionally, an alternative init(1) process may be specified using
+ 	# the kernel command line (e.g. "bootchart_init=/sbin/initng")
++	[ -n "$bootchart_init" ] && init="$bootchart_init"
+ 	for i in $@; do
+ 		if [ "${i%%=*}" = "bootchart_init" ]; then
+ 			init="${i#*=}"
+-- 
+1.7.5.rc3
+

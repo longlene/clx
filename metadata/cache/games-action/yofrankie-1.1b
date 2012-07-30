@@ -1,0 +1,22 @@
+dev-lang/python media-gfx/blender[blender-game,ffmpeg,openal] media-libs/jpeg:62 media-libs/libsdl[aalib] sys-libs/slang virtual/opengl x11-libs/libX11[xcb] app-arch/unzip >=app-admin/eselect-python-20091230
+dev-lang/python media-gfx/blender[blender-game,ffmpeg,openal] media-libs/jpeg:62 media-libs/libsdl[aalib] sys-libs/slang virtual/opengl x11-libs/libX11[xcb] >=app-admin/eselect-python-20091230
+0
+http://download.blender.org/apricot/yofrankie_1_1b_bge.zip http://www.graphicall.org/ftp/ideasman42/yofrankie_1_1b_bge.zip
+
+http://www.yofrankie.org/
+CCPL-Attribution-ShareAlike-NonCommercial-3.0
+Open video game made by the Blender Institute
+~amd64 ~x86
+base eutils games multilib portability python toolchain-funcs user
+
+
+
+
+2
+
+compile configure install postinst postrm preinst prepare setup unpack
+
+
+
+
+

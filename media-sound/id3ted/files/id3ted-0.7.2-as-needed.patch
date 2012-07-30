@@ -1,0 +1,20 @@
+diff --git a/Makefile b/Makefile
+--- a/Makefile
++++ b/Makefile
+@@ -4,13 +4,14 @@
+ PREFIX?=/usr/local
+ # see INSTALL for available preprocessor variables
+ CFLAGS+= -I$(PREFIX)/include -Wall -pedantic
+-LDFLAGS+= -L$(PREFIX)/lib -ltag -lmagic
++LDFLAGS+= -L$(PREFIX)/lib
++LIBS+= -ltag -lmagic
+ 
+ CPPFILES=$(wildcard *.cpp)
+ OBJFILES=$(CPPFILES:.cpp=.o)
+ 
+ id3ted:	$(OBJFILES)
+-	$(CC) $(LDFLAGS) -o $@ $^
++	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+ 
+ %.o: %.cpp Makefile
+ 	$(CC) $(CFLAGS) -c -o $@ $<

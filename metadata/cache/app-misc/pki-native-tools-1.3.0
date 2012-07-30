@@ -1,0 +1,22 @@
+dev-libs/cyrus-sasl dev-libs/mozldap[sasl] dev-libs/nspr dev-libs/nss[utils] dev-libs/svrcore sys-devel/libtool:1.5 =sys-devel/automake-1.10* >=sys-devel/autoconf-2.68 sys-devel/libtool
+dev-libs/cyrus-sasl dev-libs/mozldap[sasl] dev-libs/nspr dev-libs/nss[utils] dev-libs/svrcore
+0
+http://pki.fedoraproject.org/pki/sources/pki-native-tools/pki-native-tools-1.3.0.tar.gz
+
+http://pki.fedoraproject.org
+GPL-2-with-exceptions
+Dogtag Certificate System - Native Tools
+~amd64 ~x86
+autotools eutils libtool multilib portability toolchain-funcs user
+debug
+
+
+
+2
+
+configure install prepare
+
+
+
+
+

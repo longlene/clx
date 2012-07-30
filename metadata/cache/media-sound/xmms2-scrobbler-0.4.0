@@ -1,0 +1,22 @@
+>=media-sound/xmms2-0.6 net-misc/curl
+>=media-sound/xmms2-0.6 net-misc/curl
+0
+ftp://ftp.code-monkey.de/pub/xmms2-scrobbler/xmms2-scrobbler-0.4.0.tar.gz
+
+http://code-monkey.de/pages/xmms2-scrobbler
+as-is
+XMMS2 AudioScrobbler client
+~amd64 ~x86
+base eutils flag-o-matic multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install postinst setup unpack
+
+
+
+
+

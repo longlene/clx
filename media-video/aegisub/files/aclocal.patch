@@ -1,0 +1,18 @@
+--- configure.in	2009-09-28 11:43:33.000000000 +1000
++++ configure.in.new	2009-09-28 11:45:14.000000000 +1000
+@@ -41,7 +41,6 @@
+ AC_CONFIG_HEADER([acconf.h])
+ AC_GNU_SOURCE
+ AC_CANONICAL_HOST
+-AM_PROG_CC_C_O
+ 
+ ###########################
+ # Check target architecture
+@@ -188,6 +187,7 @@
+ define([AC_LIBTOOL_LANG_F77_CONFIG], [:])
+ AC_PROG_LIBTOOL
+ AC_PROG_INSTALL
++AM_PROG_CC_C_O
+ PKG_PROG_PKG_CONFIG([pkgconfig_required_version])
+ 
+ 

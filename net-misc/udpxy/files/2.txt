@@ -1,0 +1,56 @@
+[32;01m * [39;49;00mPackage:    net-misc/udpxy-1.0-r16
+[32;01m * [39;49;00mUSE:        amd64 elibc_glibc kernel_linux userland_GNU
+[32;01m * [39;49;00mFEATURES:   sandbox
+>>> Unpacking source...
+>>> Unpacking udpxy.1.0-Chipmunk-16.tgz to /var/tmp/portage/net-misc/udpxy-1.0-r16/work
+>>> Source unpacked in /var/tmp/portage/net-misc/udpxy-1.0-r16/work
+>>> Compiling source in /var/tmp/portage/net-misc/udpxy-1.0-r16/work/udpxy-1.0-Chipmunk-16 ...
+make -j5 -j1 
+cc -o util/mkdep util/mkdep.c
+-rwxr-xr-x 1 root root 22447 Май  2 15:37 util/mkdep
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -M udpxy.c rparse.c util.c prbuf.c ifaddr.c ctx.c mkpg.c rtp.c uopt.c dpkt.c netop.c extrn.c udpxrec.c main.c > udpxy.dep
+
+Making a [release] version (use 'debug' target as an alternative)
+
+make[1]: Entering directory `/var/tmp/portage/net-misc/udpxy-1.0-r16/work/udpxy-1.0-Chipmunk-16'
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c udpxy.c -o udpxy.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c rparse.c -o rparse.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c util.c -o util.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c prbuf.c -o prbuf.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c ifaddr.c -o ifaddr.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c ctx.c -o ctx.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c mkpg.c -o mkpg.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c rtp.c -o rtp.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c uopt.c -o uopt.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c dpkt.c -o dpkt.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c netop.c -o netop.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c extrn.c -o extrn.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c udpxrec.c -o udpxrec.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic  -DNDEBUG -DTRACE_MODULE -c main.c -o main.o
+cc -O2 -march=native -pipe -W -Wall -Werror --pedantic -W -Wall -Werror --pedantic -DNDEBUG -DTRACE_MODULE -o udpxy udpxy.o rparse.o util.o prbuf.o ifaddr.o ctx.o mkpg.o rtp.o uopt.o dpkt.o netop.o extrn.o udpxrec.o main.o
+-rwxr-xr-x 1 root root 88579 Май  2 15:37 udpxy
+ln -s udpxy udpxrec
+make[1]: Leaving directory `/var/tmp/portage/net-misc/udpxy-1.0-r16/work/udpxy-1.0-Chipmunk-16'
+>>> Source compiled.
+>>> Test phase [not enabled]: net-misc/udpxy-1.0-r16
+
+>>> Install udpxy-1.0-r16 into /var/tmp/portage/net-misc/udpxy-1.0-r16/image/ category net-misc
+!!! newinitd: /usr/local/overlay/my/net-misc/udpxy/files/udpxy-init.d does not exist
+ [31;01m*[0m ERROR: net-misc/udpxy-1.0-r16 failed (install phase):
+ [31;01m*[0m   (no error message)
+ [31;01m*[0m 
+ [31;01m*[0m Call stack:
+ [31;01m*[0m     ebuild.sh, line  56:  Called src_install
+ [31;01m*[0m   environment, line 2175:  Called die
+ [31;01m*[0m The specific snippet of code:
+ [31;01m*[0m       newinitd "${FILESDIR}"/udpxy-init.d udpxy || die;
+ [31;01m*[0m 
+ [31;01m*[0m If you need support, post the output of 'emerge --info =net-misc/udpxy-1.0-r16',
+ [31;01m*[0m the complete build log and the output of 'emerge -pqv =net-misc/udpxy-1.0-r16'.
+ [31;01m*[0m This ebuild is from an overlay: '/usr/local/overlay/my/'
+ [31;01m*[0m The complete build log is located at '/var/tmp/portage/net-misc/udpxy-1.0-r16/temp/build.log'.
+ [31;01m*[0m The ebuild environment file is located at '/var/tmp/portage/net-misc/udpxy-1.0-r16/temp/environment'.
+ [31;01m*[0m S: '/var/tmp/portage/net-misc/udpxy-1.0-r16/work/udpxy-1.0-Chipmunk-16'
+[33;01m * [39;49;00mQA Notice: file does not exist:
+[33;01m * [39;49;00m
+[33;01m * [39;49;00m	newinitd: /usr/local/overlay/my/net-misc/udpxy/files/udpxy-init.d does not exist

@@ -1,0 +1,22 @@
+sys-devel/bison sys-devel/flex dev-util/pkgconfig dev-libs/nss[revocator] dev-libs/nspr net-nds/openldap www-apache/mod_nss =www-servers/apache-2.2* || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+dev-libs/nss[revocator] dev-libs/nspr net-nds/openldap www-apache/mod_nss =www-servers/apache-2.2*
+0
+http://directory.fedoraproject.org/sources/mod_revocator-1.0.3.tar.gz
+
+http://directory.fedoraproject.org/wiki/Mod_revocator
+Apache-2.0
+Apache 2 module that lets the user configure remote CRL
+~amd64
+apache-module autotools depend.apache eutils libtool multilib portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install postinst prepare setup
+
+
+
+
+

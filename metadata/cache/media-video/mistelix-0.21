@@ -1,0 +1,22 @@
+dev-lang/mono >=media-libs/gst-plugins-base-0.10.6 >=dev-dotnet/gtk-sharp-2.0.0 dev-dotnet/gnome-sharp dev-dotnet/mono-addins || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+dev-lang/mono >=media-libs/gst-plugins-base-0.10.6 >=dev-dotnet/gtk-sharp-2.0.0 dev-dotnet/gnome-sharp dev-dotnet/mono-addins
+0
+http://mistelix.org/files/mistelix-0.21.tar.gz
+
+http://mistelix.org/
+as-is
+Mono based DVD authoring application with Theora slideshow creation capabilities.
+amd64 x86
+autotools eutils libtool mono multilib portability toolchain-funcs user
+
+
+
+
+2
+
+install unpack
+
+
+
+
+

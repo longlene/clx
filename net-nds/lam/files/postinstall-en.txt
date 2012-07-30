@@ -1,0 +1,11 @@
+1. Configure ${PN}:
+
+   Configure config.cfg and create a configuration profile.
+   Copy config.cfg_sample to config.cfg and set the master password and default profile.
+
+   Open the index.html in your web browser:
+   - Follow the link "Configuration Login" from the start page.
+     (The default password to edit the options is "lam")
+   - Select the default lam profile or create a new profile.
+   - Change the settings to fit your environment.
+

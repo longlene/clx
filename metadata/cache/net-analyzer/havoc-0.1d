@@ -1,0 +1,22 @@
+>=net-libs/libpcap-0.9.4
+>=net-libs/libpcap-0.9.4
+0
+http://www.0xdeadbeef.info/code/havoc-0.1d.tgz
+
+http://www.0xdeadbeef.info/
+GPL-2
+Random ARP traffic generator, BOFH style.
+x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

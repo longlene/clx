@@ -1,0 +1,22 @@
+x11-misc/imake
+x11-misc/imake
+0
+http://www.cs.indiana.edu/~kinzler/xtitle/xtitle-1.0.0.tgz
+
+http://www.cs.indiana.edu/~kinzler/xtitle/
+GPL-2
+A shell script to set xterm-like window- and icon-name
+~alpha ~amd64 ~x86
+
+
+
+
+
+2
+
+compile install
+
+
+
+
+

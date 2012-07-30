@@ -1,0 +1,22 @@
+
+
+0
+http://mesh.dl.sourceforge.net/sourceforge/ophcrack/samdump2-1.1.0.tar.gz
+
+http://ophcrack.sourceforge.net/bkhive.php
+GPL-2
+Decrypt and extract passwords from windows registry
+~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install
+
+
+
+
+

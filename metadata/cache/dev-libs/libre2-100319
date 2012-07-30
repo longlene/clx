@@ -1,0 +1,22 @@
+dev-vcs/mercurial
+
+0
+
+
+http://code.google.com/p/re2/
+BSD
+an efficient, principled regular expression library
+~x86
+eutils flag-o-matic multilib portability toolchain-funcs user
+
+
+
+
+
+
+install unpack
+
+
+
+
+

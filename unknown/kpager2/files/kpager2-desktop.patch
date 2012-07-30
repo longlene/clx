@@ -1,0 +1,19 @@
+--- kpager2-0.6.0-orig/src/kpager2.desktop	2005-03-30 08:21:09.000000000 +0000
++++ kpager2-0.6.0/src/kpager2.desktop	2005-10-16 01:25:08.000000000 +0000
+@@ -1,12 +1,14 @@
+ [Desktop Entry]
+ X-KDE-Library=libkpager2
+ X-KDE-UniqueApplet=true
++Type=Plugin
+ Icon=kpager
+ Encoding=UTF-8
+ DocPath=kpager2/index.html
++Categories=KDE;System;
+ 
+ Name=KPager2
+-Name[xx]=xxKPager2xx
+ 
+ Comment=A desktop switcher and control station
+-Comment[xx]=xxA desktop switcher and control stationxx
++Comment[pl]=Przełącznik i przeglądarka pulpitów
++

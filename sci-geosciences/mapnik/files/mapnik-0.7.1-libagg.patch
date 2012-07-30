@@ -1,0 +1,35 @@
+--- SConstruct	2010-03-24 13:47:52.000000000 +0100
++++ SConstruct	2010-03-24 13:50:29.000000000 +0100
+@@ -260,10 +260,12 @@
+     PathVariable('TIFF_LIBS', 'Search path for libtiff library files', '/usr/' + LIBDIR_SCHEMA, PathVariable.PathAccept),
+     PathVariable('PROJ_INCLUDES', 'Search path for PROJ.4 include files', '/usr/include', PathVariable.PathAccept),
+     PathVariable('PROJ_LIBS', 'Search path for PROJ.4 library files', '/usr/' + LIBDIR_SCHEMA, PathVariable.PathAccept),
++    PathVariable('AGG_INCLUDES', 'Search path for AGG include files', '/usr/include/agg2', PathVariable.PathAccept),
++    PathVariable('AGG_LIBS', 'Search path for AGG library files', '/usr/' + LIBDIR_SCHEMA, PathVariable.PathAccept),
+     ('PKG_CONFIG_PATH', 'Use this path to point pkg-config to .pc files instead of the PKG_CONFIG_PATH environment setting',''),
+     
+     # Variables affecting rendering back-ends
+-    BoolVariable('INTERNAL_LIBAGG', 'Use provided libagg', 'True'),
++    BoolVariable('INTERNAL_LIBAGG', 'Use provided libagg', 'False'),
+     
+     # Variables for optional dependencies
+     # Note: cairo, cairomm, and pycairo all optional but configured automatically through pkg-config
+@@ -799,6 +801,7 @@
+         ['jpeg', ['stdio.h', 'jpeglib.h'], True,'C'],
+         ['proj', 'proj_api.h', True,'C'],
+         [env['ICU_LIB_NAME'],'unicode/unistr.h',True,'C++'],
++        ['agg','agg2/agg_config.h' , True,'C++'],
+     ]
+ 
+ 
+--- src/SConscript	2010-03-24 13:51:08.000000000 +0100
++++ src/SConscript	2010-03-24 13:52:17.000000000 +0100
+@@ -36,7 +36,7 @@
+ filesystem = 'boost_filesystem%s' % env['BOOST_APPEND']
+ regex = 'boost_regex%s' % env['BOOST_APPEND']
+ 
+-libraries = ['freetype','ltdl','png','tiff','z','jpeg','proj',env['ICU_LIB_NAME'],filesystem,regex]
++libraries = ['freetype','ltdl','png','tiff','z','jpeg','proj',env['ICU_LIB_NAME'],'agg',filesystem,regex]
+ 
+ if '-DHAVE_CAIRO' in env['CXXFLAGS']:
+     # add cairo and cairomm-1.0 to libs

@@ -1,0 +1,43 @@
+diff -Nur ./3party/jrtplib/rtprandom.cpp ../jabbin-2.0beta/3party/jrtplib/rtprandom.cpp
+--- ./3party/jrtplib/rtprandom.cpp	2006-10-25 13:44:06.000000000 +0200
++++ ../jabbin-2.0beta/3party/jrtplib/rtprandom.cpp	2006-07-12 00:21:01.000000000 +0200
+@@ -53,7 +53,7 @@
+ 	x = (u_int32_t)getpid();
+ 	x += (u_int32_t)time(0);
+ 	x -= (u_int32_t)clock();
+-	x ^= (u_int64_t)(this);
++	x ^= (u_int32_t)(this);
+ 
+ #ifdef RTP_SUPPORT_GNUDRAND
+ 	srand48_r(x,&drandbuffer);
+diff -Nur ./src/libpsi/psiwidgets/iconaction.cpp ../jabbin-2.0beta/src/libpsi/psiwidgets/iconaction.cpp
+--- ./src/libpsi/psiwidgets/iconaction.cpp	2006-10-25 13:52:54.000000000 +0200
++++ ../jabbin-2.0beta/src/libpsi/psiwidgets/iconaction.cpp	2006-07-12 00:21:49.000000000 +0200
+@@ -72,7 +72,7 @@
+ 
+ 			QMap<QPopupMenu *, int>::Iterator it = popups.begin();
+ 			for ( ; it != popups.end(); ++it ) {
+-				if ( (int64_t)it.key() == (int64_t)obj ) {
++				if ( (int)it.key() == (int)obj ) {
+ 					dirty = true;
+ 					popups.remove( it );
+ 					break;
+diff -Nur ./voip/stun.cpp ../jabbin-2.0beta/voip/stun.cpp
+--- ./voip/stun.cpp	2006-10-25 13:49:46.000000000 +0200
++++ ../jabbin-2.0beta/voip/stun.cpp	2006-07-12 00:22:17.000000000 +0200
+@@ -673,12 +673,12 @@
+       asm("rdtsc" : "=A" (tick));
+ #elif defined (__SUNPRO_CC) || defined( __sparc__ )	
+       tick = gethrtime();
+-#else /* #elif defined(__MACH__) */
++#elif defined(__MACH__) 
+       int fd=open("/dev/random",O_RDONLY);
+       read(fd,&tick,sizeof(tick));
+       closesocket(fd);
+-//#else
+-//#     error Need some way to seed the random number generator 
++#else
++#     error Need some way to seed the random number generator 
+ #endif 
+       int seed = int(tick);
+ #ifdef WIN32

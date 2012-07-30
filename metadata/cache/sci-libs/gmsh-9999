@@ -1,0 +1,22 @@
+X? ( x11-libs/fltk:1.1 ) blas? ( virtual/blas virtual/lapack sci-libs/fftw:3.0 ) cgns? ( sci-libs/cgnslib ) jpeg? ( media-libs/jpeg ) med? ( >=sci-libs/med-2.3.4 ) mpi? ( sys-cluster/openmpi[cxx] ) opencascade? ( sci-libs/opencascade ) png? ( media-libs/libpng ) zlib? ( sys-libs/zlib ) taucs? ( sci-libs/taucs ) dev-util/cmake dev-util/subversion doc? ( virtual/latex-base ) >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 ) dev-vcs/subversion net-misc/rsync
+X? ( x11-libs/fltk:1.1 ) blas? ( virtual/blas virtual/lapack sci-libs/fftw:3.0 ) cgns? ( sci-libs/cgnslib ) jpeg? ( media-libs/jpeg ) med? ( >=sci-libs/med-2.3.4 ) mpi? ( sys-cluster/openmpi[cxx] ) opencascade? ( sci-libs/opencascade ) png? ( media-libs/libpng ) zlib? ( sys-libs/zlib ) taucs? ( sci-libs/taucs )
+0
+
+
+http://www.geuz.org/gmsh/
+GPL-2
+A three-dimensional finite element mesh generator with built-in pre- and post-processing facilities.
+
+base cmake-utils eutils flag-o-matic multilib portability subversion toolchain-funcs user
+blas chaco cgns doc examples jpeg med metis mpi opencascade png taucs zlib X
+
+
+
+2
+
+compile configure install preinst prepare setup test unpack
+
+
+
+
+

@@ -1,0 +1,22 @@
+dev-cpp/gtkmm:2.4 dev-cpp/cairomm >=dev-cpp/glibmm-2.16 >=net-libs/rb_libtorrent-0.14.1 dev-libs/libxml2 sys-devel/gettext dbus? ( dev-libs/dbus-glib ) libnotify? ( x11-libs/libnotify ) dev-util/intltool dev-vcs/subversion net-misc/rsync
+dev-cpp/gtkmm:2.4 dev-cpp/cairomm >=dev-cpp/glibmm-2.16 >=net-libs/rb_libtorrent-0.14.1 dev-libs/libxml2 sys-devel/gettext dbus? ( dev-libs/dbus-glib ) libnotify? ( x11-libs/libnotify )
+0
+
+
+http://lincetorrent.sourceforge.net
+GPL-3
+a light, powerfull and full feature gtkmm bittorrent client
+~amd64 ~ppc ~ppc64 ~x86
+eutils multilib portability subversion toolchain-funcs user
+dbus libnotify
+
+
+
+1
+
+compile install preinst unpack
+
+
+
+
+

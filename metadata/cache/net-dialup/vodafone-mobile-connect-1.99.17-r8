@@ -1,0 +1,22 @@
+
+dev-lang/python:2.5 dev-python/twisted dev-python/twisted-conch dev-python/pyserial dev-python/pytz net-dialup/wvdial sys-apps/usb_modeswitch
+0
+https://forge.betavine.net/frs/download.php/421/vodafone-mobile-connect_1.99.17-8_all.deb
+
+https://forge.betavine.net/projects/vodafonemobilec/
+GPL
+Vodafone Mobile Connect Card driver for Linux
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+install unpack
+
+
+
+
+

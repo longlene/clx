@@ -1,0 +1,22 @@
+dev-libs/boost dev-libs/icu dev-libs/libxml2 media-fonts/dejavu media-libs/freetype:2 media-libs/jpeg media-libs/libpng media-libs/tiff sci-libs/proj x11-libs/agg[truetype] cairo? ( x11-libs/cairo dev-cpp/cairomm ) curl? ( net-misc/curl ) gdal? ( sci-libs/gdal ) postgres? ( >=dev-db/postgresql-base-8.0 >=dev-db/postgis-1.1.2 ) python? ( dev-libs/boost[python] ) sqlite? ( dev-db/sqlite:3 ) >=dev-util/scons-1.0.0 >=app-admin/eselect-python-20091230 python? ( =dev-lang/python-2* )
+dev-libs/boost dev-libs/icu dev-libs/libxml2 media-fonts/dejavu media-libs/freetype:2 media-libs/jpeg media-libs/libpng media-libs/tiff sci-libs/proj x11-libs/agg[truetype] cairo? ( x11-libs/cairo dev-cpp/cairomm ) curl? ( net-misc/curl ) gdal? ( sci-libs/gdal ) postgres? ( >=dev-db/postgresql-base-8.0 >=dev-db/postgis-1.1.2 ) python? ( dev-libs/boost[python] ) sqlite? ( dev-db/sqlite:3 ) >=app-admin/eselect-python-20091230 python? ( =dev-lang/python-2* )
+0
+mirror://berlios/mapnik/mapnik-0.7.1.tar.bz2
+
+http://www.mapnik.org/
+LGPL-2.1
+A Free Toolkit for developing mapping applications.
+~amd64 ~ppc ~x86
+distutils eutils multilib portability python toolchain-funcs user versionator
+cairo curl debug doc +gdal postgres python sqlite
+
+
+
+2
+
+compile configure install postinst postrm prepare
+
+
+
+
+

@@ -1,0 +1,22 @@
+dev-python/virtualenv dev-python/setuptools >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+dev-python/virtualenv dev-python/setuptools >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+0
+mirror://pypi/v/virtualenvwrapper/virtualenvwrapper-2.10.tar.gz
+
+http://www.doughellmann.com/projects/virtualenvwrapper/
+MIT
+Extensions to virtualenv for creating isolated Python development environments
+~amd64 ~x86
+distutils multilib python toolchain-funcs
+
+
+
+
+4
+
+compile install postinst postrm prepare setup
+
+
+
+
+

@@ -1,0 +1,16 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+start () {
+	ebegin "Starting ekpd"
+	start-stop-daemon --quiet --start --exec /usr/bin/ekpd
+	eend $?
+}
+
+stop () {
+	ebegin "Stopping ekpd"
+	start-stop-daemon --quiet --stop --exec /usr/bin/ekpd
+	rm $(grep DummyDevicePath /etc/pipslite/ekpdrc | sed -e "s/.*=//")
+	eend $?
+}

@@ -1,0 +1,22 @@
+>=dev-libs/glib-2.26 >=gnome-base/gnome-desktop-3:3 sys-devel/gettext >=dev-util/pkgconfig-0.22 >=dev-util/intltool-0.26 gnome-base/gnome-common dev-vcs/git >=sys-apps/sed-4
+>=dev-libs/glib-2.26 >=gnome-base/gnome-desktop-3:3 gnome-base/gnome-desktop:3[introspection] media-libs/clutter:1.0[introspection] net-libs/telepathy-glib[introspection] x11-libs/gtk+:3[introspection] x11-libs/pango[introspection]
+0
+
+
+https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet
+GPL-2
+System monitor extension for GNOME Shell
+~amd64 ~x86
+git-2 gnome2-utils
+
+
+
+
+4
+
+postinst postrm preinst unpack
+
+
+
+
+

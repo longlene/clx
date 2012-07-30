@@ -1,0 +1,31 @@
+--- any2voborig	2006-03-20 11:29:54.000000000 -0800
++++ any2vob	2006-03-20 11:41:30.000000000 -0800
+@@ -247,7 +247,7 @@
+ 	ARRAY_NUM="${#TOOLKIT[@]}"
+ 	ARRAY="1"
+ 	while [ "$ARRAY" -le "$ARRAY_NUM" ]; do
+-		testprog ${TOOLKIT["$ARRAY"]} || exit 0;
++		testprog ${TOOLKIT[$ARRAY]} || exit 0;
+ 		let ARRAY=$ARRAY+1
+ 	done
+ 	TOOLMSG=([1]=)	# Reset
+--- any2dvdorig	2006-03-20 11:29:48.000000000 -0800
++++ any2dvd	2006-03-20 11:40:28.000000000 -0800
+@@ -232,7 +232,7 @@
+ return 0
+ fi
+ done
+-errmsg Error: "Program '"$1"' is missing, please install it first ->  "${TOOLURL["$ARRAY"]}""
++errmsg Error: "Program '"$1"' is missing, please install it first ->  "${TOOLURL[$ARRAY]}""
+ echo -e "	${TOOLMSG["$ARRAY"]}"
+ return 1
+ }
+@@ -241,7 +241,7 @@
+ ARRAY_NUM="${#TOOLKIT[@]}"
+ ARRAY="1"
+ while [ "$ARRAY" -le "$ARRAY_NUM" ]; do
+-testprog ${TOOLKIT["$ARRAY"]} || exit 0;
++testprog ${TOOLKIT[$ARRAY]} || exit 0;
+ let ARRAY=$ARRAY+1
+ done
+ }

@@ -1,0 +1,22 @@
+media-video/ffmpeg dev-vcs/subversion net-misc/rsync
+media-video/ffmpeg
+0
+
+
+http://svn.assembla.com/svn/legend/segmenter
+GPL-2
+Open Source version of the Apple Segmenter.
+~x86 ~amd64
+eutils multilib portability subversion toolchain-funcs user
+
+
+
+
+1
+
+install preinst unpack
+
+
+
+
+

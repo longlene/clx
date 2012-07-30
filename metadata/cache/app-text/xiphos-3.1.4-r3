@@ -1,0 +1,22 @@
+dev-libs/glib:2 >=x11-libs/gtk+-2.14:2 dev-libs/libxml2:2 >=gnome-base/libglade-2:2.0 >=gnome-extra/gtkhtml-3.23:3.14 >=app-text/sword-1.6.1 dev-libs/dbus-glib gnome-extra/libgsf dev-util/pkgconfig dev-util/intltool sys-devel/gettext app-text/rarian >=app-text/gnome-doc-utils-0.3.2 dev-libs/nspr >=sys-apps/sed-4
+dev-libs/glib:2 >=x11-libs/gtk+-2.14:2 dev-libs/libxml2:2 >=gnome-base/libglade-2:2.0 >=gnome-extra/gtkhtml-3.23:3.14 >=app-text/sword-1.6.1 dev-libs/dbus-glib gnome-extra/libgsf
+0
+mirror://sourceforge/gnomesword/xiphos-3.1.4.tar.gz
+
+http://xiphos.org/
+GPL-2 FDL-1.1
+GTK+ based Bible study software, formerly gnomesword
+~amd64 ~ppc ~x86
+eutils fdo-mime flag-o-matic gnome.org gnome2 gnome2-utils libtool multilib portability toolchain-funcs user versionator
+
+
+
+
+2
+
+compile configure install postinst postrm preinst prepare setup unpack
+
+
+
+
+

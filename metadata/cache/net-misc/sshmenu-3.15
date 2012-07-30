@@ -1,0 +1,22 @@
+
+=dev-lang/ruby-1.8* dev-ruby/ruby-gtk2 dev-ruby/ruby-gconf2 dev-ruby/ruby-panel-applet2 || ( net-misc/x11-ssh-askpass net-misc/getk2-ssh-askpass )
+0
+mirror://sourceforge/sshmenu/sshmenu-3.15.tar.gz
+
+http://sshmenu.sourceforge.net
+BSD
+A gnome applet for connecing to hosts using SSH. Works without gnome as well.
+~x86
+
+gnome
+
+
+
+
+
+install postinst unpack
+
+
+
+
+

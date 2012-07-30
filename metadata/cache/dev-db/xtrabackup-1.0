@@ -1,0 +1,22 @@
+>=app-arch/rpm2targz-9.0.0.3g virtual/mysql
+>=app-arch/rpm2targz-9.0.0.3g virtual/mysql
+
+http://www.percona.com/mysql/xtrabackup/1.0/source/xtrabackup-1.0-56.rhel5.src.rpm
+
+http://www.percona.com/docs/wiki/percona-xtrabackup:start
+
+Percona XtraBackup is OpenSource online (non-blockable) backup solution for InnoDB and XtraDB engines
+x86 amd64
+eutils multilib portability toolchain-funcs user versionator
+
+
+
+
+
+
+compile install unpack
+
+
+
+
+

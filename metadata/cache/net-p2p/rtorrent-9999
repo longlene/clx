@@ -1,0 +1,22 @@
+>=net-libs/libtorrent-0.12.3-r2 >=dev-libs/libsigc++-2.2.2 >=net-misc/curl-7.19.1 sys-libs/ncurses xmlrpc? ( dev-libs/xmlrpc-c ) dev-vcs/subversion net-misc/rsync
+>=net-libs/libtorrent-0.12.3-r2 >=dev-libs/libsigc++-2.2.2 >=net-misc/curl-7.19.1 sys-libs/ncurses xmlrpc? ( dev-libs/xmlrpc-c ) daemon? ( app-misc/screen )
+0
+
+
+http://libtorrent.rakshasa.no
+GPL-2
+
+~x86 ~amd64
+eutils multilib portability subversion toolchain-funcs user
+daemon debug ipv6 xmlrpc
+
+
+
+2
+
+configure install preinst prepare unpack
+
+
+
+
+

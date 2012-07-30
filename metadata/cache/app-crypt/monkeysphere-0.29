@@ -1,0 +1,22 @@
+app-crypt/gnupg net-misc/openssh dev-perl/Crypt-OpenSSL-RSA dev-perl/Crypt-OpenSSL-Bignum perl-core/Digest-SHA
+app-crypt/gnupg net-misc/openssh dev-perl/Crypt-OpenSSL-RSA dev-perl/Crypt-OpenSSL-Bignum perl-core/Digest-SHA
+0
+http://archive.monkeysphere.info/debian/pool/monkeysphere/m/monkeysphere/monkeysphere_0.29.orig.tar.gz
+
+http://web.monkeysphere.info/
+GPL-3
+Monkeysphere allows you to use the OpenPGP Web of Trust to identify the servers you connect to and to prove your own identity to them
+~x86 ~amd64
+
+debug
+
+
+
+2
+
+install
+
+
+
+
+

@@ -1,0 +1,22 @@
+
+
+0
+http://downloads.sourceforge.net/ficl/ficl4.0.31.tar.gz
+
+http://ficl.sourceforge.net/
+freedist
+Ficl is a programming language interpreter designed to be embedded into other systems as a command, macro, and development prototyping language.
+~x86 ~amd64
+eutils multilib portability toolchain-funcs user
+doc
+
+
+
+
+
+compile install
+
+
+
+
+

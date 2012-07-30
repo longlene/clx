@@ -1,0 +1,19 @@
+--- compcache-0.5_pre1.ebuild
++++ home/gentoo/various/portage/sys-fs/compcache/compcache-0.5_pre1.ebuild
+@@ -24,6 +24,16 @@
+ 	lzo1x_decompress(compcache:${S}:${S}/sub-projects/compression/lzo-kmod)
+ 	xvmalloc(:${S}:${S}/sub-projects/allocators/xvmalloc-kmod)"
+ 
++BUILD_PARAMS='KV_OUT_DIR="${KV_OUT_DIR}"'
++
++src_unpack() {
++	unpack $A
++	sed -i -e 's#/lib/modules/$(shell uname -r)/build#"$(KV_OUT_DIR)"#' \
++		"${S}/Makefile" \
++		"${S}/sub-projects/compression/lzo-kmod/Makefile" \
++		"${S}/sub-projects/allocators/xvmalloc-kmod/Makefile"
++}
++
+ src_install(){
+ 	linux-mod_src_install
+ 

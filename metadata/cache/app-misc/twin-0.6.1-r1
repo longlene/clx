@@ -1,0 +1,22 @@
+X? ( x11-libs/libX11 oldgtk? ( x11-libx/gtk+:1 ) ) ncurses? ( sys-libs/ncurses ) sys-libs/gpm
+X? ( x11-libs/libX11 oldgtk? ( x11-libx/gtk+:1 ) ) ncurses? ( sys-libs/ncurses ) sys-libs/gpm
+0
+mirror://sourceforge/twin/twin-0.6.1.tar.gz
+
+http://sourceforge.net/projects/twin/
+|| ( GPL-2 LGPL-2 )
+Twin is a text-mode window system similar to the old Borland Turbo IDE environment
+~amd64 ~arm ~x86
+
+ncurses oldgtk unicode X xml
+
+
+
+2
+
+compile configure install
+
+
+
+
+

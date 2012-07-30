@@ -1,0 +1,22 @@
+portage? ( sys-apps/sed ) dev-vcs/git
+!portage? ( app-portage/gentoolkit ) portage? ( sys-apps/portage ) mercurial? ( dev-vcs/mercurial ) bzr? ( dev-util/bzr )
+0
+
+
+http://kitenet.net/~joey/code/etckeeper/
+GPL-2
+Etckeeper is a collection of tools to let /etc be stored in a git, mercurial, or bzr repository.
+~x86 ~amd64 ~arm ~hppa ~ppc ~sparc
+bash-completion-r1 eutils git-2 multilib portability toolchain-funcs user
+bash-completion bzr mercurial portage
+
+
+
+4
+
+compile install postinst postrm prepare unpack
+
+
+
+
+

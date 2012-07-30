@@ -1,0 +1,22 @@
+X? ( x11-apps/mkfontdir media-fonts/encodings ) >=media-libs/fontconfig-2.4.0
+
+0
+mirror://sourceforge/junicode/junicode-0.6.15.zip
+
+http://junicode.sourceforge.net/
+GPL-2
+A Unicode font for medievalists
+~x86
+eutils font multilib portability toolchain-funcs user
+X
+
+
+
+
+
+install postinst postrm setup
+
+
+
+
+

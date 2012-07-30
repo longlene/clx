@@ -1,0 +1,22 @@
+ncurses? ( sys-libs/ncurses ) slang? ( sys-libs/slang ) iconv? ( virtual/libiconv ) libcaca? ( media-libs/libcaca )
+ncurses? ( sys-libs/ncurses ) slang? ( sys-libs/slang ) iconv? ( virtual/libiconv ) libcaca? ( media-libs/libcaca )
+0
+mirror://sourceforge/myman/myman-0.7.0.tar.gz
+
+http://myman.sourceforge.net/
+BSD
+Text-based pacman clone with many variants, sizes and other features
+~x86 ~amd64
+base eutils games multilib portability toolchain-funcs user
++iconv libcaca +ncurses slang +unicode
+
+
+
+1
+
+compile install postinst preinst setup unpack
+
+
+
+
+

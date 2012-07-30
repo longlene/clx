@@ -1,0 +1,71 @@
+Index: server/dns2tcpdrc
+===================================================================
+--- server/dns2tcpdrc
++++ server/dns2tcpdrc	2008-08-10 23:45:34.000000000 +0200
+@@ -1,5 +1,6 @@
+  # config file
+
++pid_file = /var/run/dns2tcp.pid
+ listen = 127.0.0.1
+ port = 53
+ user=nobody
+Index: server/main.c
+===================================================================
+--- server/main.c
++++ server/main.c	2008-08-10 23:43:44.000000000 +0200
+@@ -84,7 +84,8 @@
+ int			jail(t_conf *conf)
+ {
+   struct passwd		*pwd = 0;
+-
++  FILE *pid_file;
++
+   if (!conf->foreground)
+     detach_process();
+   if ((conf->user) && (!(pwd = getpwnam(conf->user))))
+@@ -92,6 +93,20 @@
+       LOG("User unknown %s", conf->user);
+       return (-1);
+     }
++  if (conf->pid_file)
++    {
++      pid_file = fopen(conf->pid_file, "w");
++      if (pid_file)
++        {
++          fprintf(pid_file, "%d\n", getpid());
++          fclose(pid_file);
++        }
++      else
++        {
++	      LOG("Failed to write pidfile");
++	      return (-1);
++        }
++    }
+   if (conf->chroot)
+     {
+       DPRINTF(1, "Chroot to %s\n", conf->chroot);
+Index: server/options.c
+===================================================================
+--- server/options.c
++++ server/options.c	2008-08-10 23:17:31.000000000 +0200
+@@ -104,6 +104,8 @@
+ 	return ((int) (conf->user = buffer));
+       if (!strcmp(token, "domain"))
+ 	return ((int) (conf->my_domain = buffer));
++      if (!strcmp(token, "pid_file"))
++	return ((int) (conf->pid_file = buffer));
+       if (!strcmp(token, "listen"))
+ 	return ((int) (conf->my_ip ? 0 : (conf->my_ip = buffer)));
+       if (!strcmp(token, "ressources"))
+Index: server/includes/server.h
+===================================================================
+--- server/includes/server.h
++++ server/includes/server.h	2008-08-10 23:19:16.000000000 +0200
+@@ -40,6 +40,7 @@
+   int			sd_udp;
+   char			*my_domain;
+   char			*chroot;
++  char			*pid_file;
+   char			*user;
+   char			*my_ip;
+   uint16_t		port;

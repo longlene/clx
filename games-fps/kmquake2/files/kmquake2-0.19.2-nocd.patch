@@ -1,0 +1,32 @@
+--- unix/cd_unix.c.old	2008-03-24 09:24:10.608415156 +0500
++++ unix/cd_unix.c	2008-03-24 09:26:17.379664946 +0500
+@@ -52,7 +52,7 @@ static byte		maxTrack;
+ 
+ static int cdfile = -1;
+ 
+-//static char cd_dev[64] = "/dev/cdrom";
++//static char cd_dev[64] = "/dev/null";
+ 
+ cvar_t	*cd_volume;
+ cvar_t *cd_nocd;
+@@ -505,17 +505,17 @@ int CDAudio_Init(void)
+ 	cvar_t			*cv;
+ 	extern uid_t saved_euid;
+ 
+-	cv = Cvar_Get ("nocdaudio", "0", CVAR_NOSET);
++	cv = Cvar_Get ("nocdaudio", "1", CVAR_NOSET);
+ 	if (cv->value)
+ 		return -1;
+ 
+-	cd_nocd = Cvar_Get ("cd_nocd", "0", CVAR_ARCHIVE );
++	cd_nocd = Cvar_Get ("cd_nocd", "1", CVAR_ARCHIVE );
+ 	if ( cd_nocd->value)
+ 		return -1;
+ 
+ 	cd_volume = Cvar_Get ("cd_volume", "1", CVAR_ARCHIVE);
+ 
+-	cd_dev = Cvar_Get("cd_dev", "/dev/cdrom", CVAR_ARCHIVE);
++	cd_dev = Cvar_Get("cd_dev", "/dev/null", CVAR_ARCHIVE);
+ 
+ 	seteuid(saved_euid);
+ 

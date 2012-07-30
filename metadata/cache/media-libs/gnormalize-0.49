@@ -1,0 +1,22 @@
+
+dev-perl/gtk2-perl aac? ( media-libs/faac media-libs/faad2 ) cddb? ( dev-perl/CDDB_get media-sound/cdcd || ( media-sound/cdparanoia virtual/cdrtools ) ) flac? ( media-libs/flac !vorbis? ( media-sound/flac123 ) ) mp3? ( media-sound/lame dev-perl/MP3-Info || ( media-sound/madplay media-sound/mpg321 media-sound/mpg123 ) ) musepack? ( media-sound/musepack-tools ) normalize? ( media-sound/normalize ) vorbis? ( media-sound/vorbis-tools )
+0
+mirror://sourceforge/gnormalize/gnormalize-0.49.tar.gz
+
+http://gnormalize.sourceforge.net/
+GPL-2
+Gtk2-Perl front-end to various audio utilities
+~amd64 ~x86
+eutils multilib portability toolchain-funcs user
+aac cddb flac mp3 musepack normalize vorbis
+
+
+
+
+
+install unpack
+
+
+
+
+

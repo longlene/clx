@@ -1,0 +1,22 @@
+media-libs/jpeg media-libs/libpng virtual/opengl x11-libs/libX11 x11-libs/libXau x11-libs/libXdmcp x11-libs/libXext x11-libs/libXxf86dga x11-libs/libXxf86vm lights? ( || ( app-arch/unrar app-arch/rar ) ) app-arch/unzip
+media-libs/jpeg media-libs/libpng virtual/opengl x11-libs/libX11 x11-libs/libXau x11-libs/libXdmcp x11-libs/libXext x11-libs/libXxf86dga x11-libs/libXxf86vm cdinstall? ( games-fps/quake1-data ) doe? ( games-fps/quake1-doe ) skins? ( games-fps/quake1-skins ) soa? ( games-fps/quake1-soa ) textures? ( >=games-fps/quake1-textures-20050820 )
+0
+http://runecentral.com/joequake/joequake-v0.15b1862-source.zip http://runecentral.com/joequake/joequake_wad.zip http://runecentral.com/joequake/joequake-v0.15b1862-win32.zip soa? ( http://runecentral.com/joequake/hipnotic_wad.zip ) lights? ( http://www.fuhquake.net/files/extras/fuhquake-lits.rar )
+
+http://www.runecentral.com/joequake/
+GPL-2
+Improved Quake 1 engine with ZQuake and FuhQuake graphical effects
+-* ~x86
+base eutils flag-o-matic games multilib portability toolchain-funcs user
+cdinstall cdsound doe lights skins soa textures
+
+
+
+
+
+compile install postinst preinst setup unpack
+
+
+
+
+

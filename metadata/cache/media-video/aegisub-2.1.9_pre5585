@@ -1,0 +1,22 @@
+x11-libs/wxGTK:2.8[X,opengl,debug?] virtual/opengl virtual/glu >=media-libs/libass-0.9.11[fontconfig] virtual/libiconv >=media-libs/fontconfig-2.4.2 media-libs/freetype:2 alsa? ( media-libs/alsa-lib ) portaudio? ( =media-libs/portaudio-19* ) pulseaudio? ( media-sound/pulseaudio ) openal? ( media-libs/openal ) lua? ( >=dev-lang/lua-5.1.1 ) spell? ( >=app-text/hunspell-1.2 ) ffmpeg? ( >=media-libs/ffmpegsource-2.13.1 ) dev-util/intltool dev-util/pkgconfig media-gfx/imagemagick || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+x11-libs/wxGTK:2.8[X,opengl,debug?] virtual/opengl virtual/glu >=media-libs/libass-0.9.11[fontconfig] virtual/libiconv >=media-libs/fontconfig-2.4.2 media-libs/freetype:2 alsa? ( media-libs/alsa-lib ) portaudio? ( =media-libs/portaudio-19* ) pulseaudio? ( media-sound/pulseaudio ) openal? ( media-libs/openal ) lua? ( >=dev-lang/lua-5.1.1 ) spell? ( >=app-text/hunspell-1.2 ) ffmpeg? ( >=media-libs/ffmpegsource-2.13.1 )
+0
+http://rion-overlay.googlecode.com/files/aegisub-2.1.9_pre5585.tar.xz
+
+http://www.aegisub.net/
+GPL-2
+Advanced SSA/ASS subtitle editor
+~amd64 ~x86
+autotools eutils libtool multilib portability toolchain-funcs user wxwidgets
+alsa debug +ffmpeg lua nls openal oss portaudio pulseaudio spell
+
+
+
+4
+
+configure prepare
+
+
+
+
+

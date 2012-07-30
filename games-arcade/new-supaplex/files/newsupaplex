@@ -1,0 +1,4 @@
+#!/bin/sh
+cd /usr/share/new-supaplex
+export LD_LIBRARY_PATH=./Lib:/usr/local/lib:$LD_LIBRARY_PATH
+exec ./NewSupaplexX $*

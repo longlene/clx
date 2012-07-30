@@ -1,0 +1,13 @@
+--- build_old.xml	2006-08-21 19:43:35.000000000 +0200
++++ build.xml	2006-08-21 19:59:27.000000000 +0200
+@@ -200,10 +200,6 @@
+     </copy> 
+ 
+     <jar jarfile="${lib}/${client_sound_data}" basedir="${build_client_sound_data}"/>
+-  	
+-  	<jar jarfile="${lib}/${client_prefilled_cache}" basedir="${user.home}/stendhal">
+-  		<include name="cache/**" />
+-	</jar>
+  
+   </target>
+   

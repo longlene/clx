@@ -1,0 +1,22 @@
+>=virtual/jdk-1.4 =www-servers/apache-2* >=dev-java/java-config-2.1.9-r1
+=www-servers/apache-2* >=dev-java/java-config-2.1.9-r1
+0
+mirror://apache/tomcat/tomcat-connectors/jk/source/jk-1.2.31/tomcat-connectors-1.2.31-src.tar.gz
+
+http://tomcat.apache.org/connectors-doc/
+Apache-2.0
+JK module for connecting Tomcat and Apache using the ajp13 protocol.
+amd64 ppc x86
+apache-module depend.apache eutils java-pkg-2 java-utils-2 multilib portability toolchain-funcs user versionator
+elibc_FreeBSD
+
+
+
+2
+
+compile configure install postinst preinst prepare setup
+
+
+
+
+

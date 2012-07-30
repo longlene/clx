@@ -1,0 +1,22 @@
+media-libs/jpeg app-doc/doxygen sys-devel/autoconf png? ( media-libs/libpng ) ssl? ( dev-libs/openssl ) tcpd? ( sys-apps/tcp-wrappers ) tiff? ( media-libs/tiff ) xml2? ( dev-libs/libxml2 ) zlib? ( sys-libs/zlib ) >=app-admin/eselect-python-20091230 dev-lang/python
+media-libs/jpeg app-doc/doxygen sys-devel/autoconf png? ( media-libs/libpng ) ssl? ( dev-libs/openssl ) tcpd? ( sys-apps/tcp-wrappers ) tiff? ( media-libs/tiff ) xml2? ( dev-libs/libxml2 ) zlib? ( sys-libs/zlib ) >=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://dicom.offis.de/download/dcmtk/snapshot/dcmtk-3.5.5_20101130.tar.gz mirror://debian/pool/main/d/dcmtk/dcmtk_3.5.4-4.diff.gz
+
+http://dicom.offis.de/dcmtk.php.en
+BSD
+The DICOM Toolkit
+~x86 ~amd64
+distutils eutils multilib portability python toolchain-funcs user
+png ssl tcpd tiff xml2 zlib
+
+
+
+
+
+compile install postinst postrm test unpack
+
+
+
+
+

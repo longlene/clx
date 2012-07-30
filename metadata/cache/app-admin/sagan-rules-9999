@@ -1,0 +1,22 @@
+dev-vcs/subversion net-misc/rsync
+
+0
+
+
+http://sagan.softwink.com/
+BSD
+Rules for Sagan log analyzer
+
+eutils multilib portability subversion toolchain-funcs user
+
+
+app-admin/sagan
+
+3
+
+install preinst prepare unpack
+
+
+
+
+

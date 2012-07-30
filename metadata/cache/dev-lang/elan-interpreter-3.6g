@@ -1,0 +1,22 @@
+virtual/libc sys-devel/gcc sys-devel/bison sys-devel/flex
+virtual/libc sys-devel/gcc
+0
+http://elan.loria.fr/Soft/elan-interpreter-3.6g.tar.gz
+
+http://elan.loria.fr/
+GPL-2
+This is an interpreter for the rule-based programming language ELAN.
+~x86 ~amd64
+eutils multilib portability toolchain-funcs user
+
+
+
+
+
+
+compile install
+
+
+
+
+

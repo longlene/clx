@@ -1,0 +1,16 @@
+--- src/CMakeLists.txt	2008-05-16 21:02:56.000000000 -0600
++++ CMakeLists.txt	2008-08-05 15:06:45.000000000 -0600
+@@ -130,6 +130,13 @@ ENDIF(APPLE)
+ 
+ IF (UNIX AND NOT APPLE)
+ 	SET(POSTERAZOR_EXECUTABLE ${POSTERAZOR_SOURCES})
++	SET(POSTERAZOR_INCLUDEDIRECTORIES
++		thirdparty/Fl_Native_File_Chooser
++		/usr/include/fltk-1.1
++	)
++	SET(POSTERAZOR_LINKDIRECTORIES
++		/usr/lib/fltk-1.1
++	)
+ 	SET(POSTERAZOR_LINKLIBRARIES
+ 		fltk
+ 		fltk_images

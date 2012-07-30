@@ -1,0 +1,22 @@
+>=media-libs/libsdl-1.2.8-r1 asm? ( || ( >=dev-lang/nasm-0.98.39-r3 >=dev-lang/yasm-0.7.1 ) ) gtk? ( >=x11-libs/gtk+-2.0 ) >=media-libs/fmod-4.14 >=media-libs/flac-1.1.2-r7 media-libs/jpeg >=dev-util/cmake-2.8.4 userland_GNU? ( >=sys-apps/findutils-4.4.0 ) dev-vcs/subversion net-misc/rsync
+>=media-libs/libsdl-1.2.8-r1 asm? ( || ( >=dev-lang/nasm-0.98.39-r3 >=dev-lang/yasm-0.7.1 ) ) gtk? ( >=x11-libs/gtk+-2.0 ) >=media-libs/fmod-4.14 >=media-libs/flac-1.1.2-r7 media-libs/jpeg
+0
+
+
+http://www.zdoom.org
+|| ( DOOMLIC BUILDLIC )
+Enhanced port of the official DOOM source code,that also support Heretic,Hexen and Strife
+~amd64 ~x86
+base cmake-utils eutils flag-o-matic games multilib portability subversion toolchain-funcs user
+asm debug gtk
+
+
+
+
+
+compile install postinst preinst setup test unpack
+
+
+
+
+

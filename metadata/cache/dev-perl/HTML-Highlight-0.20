@@ -1,0 +1,22 @@
+dev-lang/perl[-build]
+dev-lang/perl[-build]
+0
+mirror://cpan/authors/id/T/TR/TRIPIE/HTML-Highlight-0.20.tar.gz
+
+http://search.cpan.org/dist/HTML-Highlight/
+|| ( Artistic GPL-1 GPL-2 GPL-3 )
+A module to highlight words or patterns in HTML documents
+~amd64 ~x86
+base eutils multilib perl-module portability toolchain-funcs user
+
+
+
+
+2
+
+compile configure install prepare test unpack
+
+
+
+
+

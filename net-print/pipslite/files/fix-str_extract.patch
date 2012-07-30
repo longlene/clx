@@ -1,0 +1,13 @@
+diff --git a/src/getstat.c b/src/getstat.c
+index c93b965..f3ef521 100644
+--- a/src/getstat.c
++++ b/src/getstat.c
+@@ -85,7 +85,7 @@ char* str_extract(const char* src, const char* start_tag, const char* end_tag, c
+ 		p_end = strstr(p_start, end_tag);
+ 		if (p_end)
+ 		{
+-			len = (int)p_end - (int)p_start;
++			len = p_end - p_start;
+ 			memcpy(result, p_start, len);
+ 			result[len] = '\0';
+ 		}

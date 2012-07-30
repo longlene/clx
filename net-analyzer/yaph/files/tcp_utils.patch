@@ -1,0 +1,11 @@
+--- yaph/tcp_utils.c	2003-02-08 21:54:38.000000000 -0800
++++ yaph/tcp_utils.c	2008-10-03 21:56:26.000000000 -0700
+@@ -27,7 +27,7 @@
+     goto error;
+   return sock;
+ error:
+-  return -1;
++close(sock);  return -1;
+ }
+ 
+ int read_line(int fd, char *buff, size_t size)

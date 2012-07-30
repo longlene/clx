@@ -1,0 +1,22 @@
+dev-python/setuptools >=app-admin/eselect-python-20091230 dev-lang/python
+>=app-admin/eselect-python-20091230 dev-lang/python
+0
+http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/pygopherd_2.0.16.tar.gz
+
+http://gopher.quux.org:70/devel/gopher/pygopherd
+GPL-2
+PyGopherd: Advanced, multi-protocol Gopher server
+~amd64 ~x86
+distutils eutils multilib portability python toolchain-funcs user
+
+
+
+
+2
+
+compile install postinst postrm prepare setup
+
+
+
+
+

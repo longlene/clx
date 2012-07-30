@@ -1,0 +1,26 @@
+--- Makefile.orig	2005-08-27 02:15:31.831193888 +0300
++++ Makefile	2005-08-27 03:07:47.228541040 +0300
+@@ -54,21 +54,15 @@
+ 	install -d $(bindir)
+ 	install -m 555 -s idle-halt $(bindir)
+ 	install -m 4555 -s tcrontab $(bindir)
+-	install -d $(sysconfdir)/init.d
++	install -d $(sysconfdir)
+ 	install -m 644 tcrontab.conf $(sysconfdir)/tcrontab
+ 	install -d $(TCRONTAB_AP_LIB)
+ 	install -m 4755 tcrontab-ap $(TCRONTAB_AP_LIB)
+-	install tcrond.init $(sysconfdir)/init.d/tcrond
+ 	install -m 755 libtcrontab-api.so $(TCRONTAB_AP_LIB)
+ 	install -m 644 libtcrontab-api.a $(TCRONTAB_AP_LIB)
+ 	install -d $(includedir)
+ 	install -m 644 tcron.h $(includedir)
+-	if [ $(prefix) = /usr/local ]; then \
+-	  chkconfig --add tcrond; \
+-	  if [ ! -d $(SYS_CRON_SPOOL) ]; then  mkdir $(SYS_CRON_SPOOL); fi; \
+-	  ldconfig; \
+-	  service tcrond restart; \
+-	fi
++	
+ SRCDIR = tcron-$(VERSION)
+ 
+ clean:
