@@ -1,0 +1,19 @@
+# ChangeLog for dev-lang/brainwash
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added USE flag description wrt GLEP 56
+
+  08 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
+  brainwash-0.3.ebuild:
+  Added ~amd64. Thanks helch.
+
+  08 Sep 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
+  brainwash-0.3.ebuild:
+  Using sed to make package respect $CFLAGS.
+
+  10 Aug 2006; Aggelos Orfanakos (agorf) <agorf@void.gr>
+  +brainwash-0.3.ebuild, +metadata.xml:
+  New ebuild for bug 143223. Thanks genstef.
+

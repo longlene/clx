@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<catmetadata>
+	<longdescription lang="en">
+		The js-libs category contains javascript libraries.
+	</longdescription>
+	<longdescription lang="de">
+		Die Kategorie js-libs enthält Javascript Bibliotheken.
+</catmetadata>
+

@@ -1,0 +1,11 @@
+--- plugins/org.eclipse.jdt.junit.core/src/org/eclipse/jdt/internal/junit/buildpath/BuildPathSupport.java~	2011-03-09 16:38:30.000000000 +0000
++++ plugins/org.eclipse.jdt.junit.core/src/org/eclipse/jdt/internal/junit/buildpath/BuildPathSupport.java	2011-06-15 18:07:35.272733911 +0000
+@@ -161,7 +161,7 @@
+ 			"org.junit", new VersionRange("[4.7.0,5.0.0)"), "junit.jar", "junit.jar", "org.junit.source", "source-bundle/", JUnitPreferencesConstants.JUNIT4_JAVADOC); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
+ 	
+ 	private static final JUnitPluginDescription HAMCREST_CORE_PLUGIN= new JUnitPluginDescription(
+-			"org.hamcrest.core", new VersionRange("[1.1.0,2.0.0)"), null, "org.hamcrest.core_1.*.jar", "org.hamcrest.core.source", "source-bundle/", JUnitPreferencesConstants.HAMCREST_CORE_JAVADOC); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
++			"org.hamcrest.core", new VersionRange("[1.1.0,2.0.0)"), "hamcrest-core.jar", "org.hamcrest.core_1.*.jar", "org.hamcrest.core.source", "source-bundle/", JUnitPreferencesConstants.HAMCREST_CORE_JAVADOC); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+ 
+ 	/**
+ 	 * @return the JUnit3 classpath container

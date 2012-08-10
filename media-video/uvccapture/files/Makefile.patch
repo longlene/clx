@@ -1,0 +1,22 @@
+--- Makefile.old	2012-07-10 22:33:25.895441752 +0200
++++ Makefile	2012-07-10 22:34:02.186438477 +0200
+@@ -3,11 +3,9 @@
+ APP_BINARY=uvccapture
+ VERSION = 0.4
+ PREFIX=/usr/local/bin
++LDFLAGS=
+ 
+-WARNINGS = -Wall
+-
+-
+-CFLAGS = -std=gnu99 -O2 -DLINUX -DVERSION=\"$(VERSION)\" $(WARNINGS)
++CFLAGS = -std=gnu99 -O2 -DLINUX -DVERSION=\"$(VERSION)\"
+ CPPFLAGS = $(CFLAGS)
+ 
+ OBJECTS= uvccapture.o v4l2uvc.o
+@@ -24,4 +22,4 @@
+ 
+ # Applications:
+ uvccapture: $(OBJECTS)
+-	$(CC)   $(OBJECTS) $(XPM_LIB) $(MATH_LIB) -ljpeg -o $(APP_BINARY)
++	$(CC)  $(LDFLAGS) $(OBJECTS) $(XPM_LIB) $(MATH_LIB) -ljpeg -o $(APP_BINARY)

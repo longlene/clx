@@ -1,0 +1,33 @@
+commit 02e4696c94ae6896e2d0e882409feb39a63503c8
+Author: Ingo Bormuth <ibormuth@efil.de>
+Date:   Wed Jun 25 00:13:46 2008 +0200
+
+    Quick fix for what I thought was a cells bug.
+    
+    In widgets.lisp defmodel introduces a slot called container that creates an
+    accessor also called 'container' which apparently overwrites the generic
+    function container defined in fm-utilities.lisp.
+    It seems cells:container-typed calles the accessor (cells-gtk:container)
+    instead of cells-container defined just above it. Upper uses container-typed.
+    
+    Simply renaming container's accessor to container-of in widgets.lisp
+    resolved the problem so far. Currently I don't have the time to test or
+    investigate the issue properly, though.
+    
+    Sorry for suspecting cells of being the evil.
+    
+    /Ingo
+
+diff --git a/cells-gtk/widgets.lisp b/cells-gtk/widgets.lisp
+index 5c1540b..872746e 100644
+--- a/cells-gtk/widgets.lisp
++++ b/cells-gtk/widgets.lisp
+@@ -20,7 +20,7 @@
+ 
+ 
+ (defmodel gtk-object (family)
+-  ((container :cell nil :initarg :container :accessor container :initform nil)
++  ((gtk-container :cell nil :initarg :container :accessor gtk-container :initform nil)
+    (def-gtk-class-name :accessor def-gtk-class-name :initarg :def-gtk-class-name :initform nil)
+    (new-function-name :accessor new-function-name :initarg :new-function-name 
+ 		      :initform (c_1 (intern (format nil "GTK-~a-NEW~a"

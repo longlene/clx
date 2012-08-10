@@ -1,0 +1,11 @@
+# ChangeLog for dev-lua/luarocks
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*luarocks-9999 (23 Apr 2012)
+*luarocks-2.0.4.1 (23 Apr 2012)
+
+  23 Apr 2012; Vadim A. Misbakh-Soloviov <mva@mva.name>
+  +luarocks-2.0.4.1.ebuild, +luarocks-9999.ebuild, +metadata.xml:
+  bump!
+

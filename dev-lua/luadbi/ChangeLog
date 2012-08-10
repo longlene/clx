@@ -1,0 +1,17 @@
+# ChangeLog for dev-lua/luadbi
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 May 2012; Vadim A. Misbakh-Soloviov <mva@mva.name>
+  files/9999-Makefile.patch:
+  wsapi fixes and wsapi-related packages + luasignal fixes
+
+  Signed-off-by: Vadim A. Misbakh-Soloviov <mva@mva.name>
+
+*luadbi-9999 (23 Apr 2012)
+
+  23 Apr 2012; Vadim A. Misbakh-Soloviov <mva@mva.name>
+  +files/9999-Makefile.patch, +files/9999-postgres-path.patch,
+  +luadbi-9999.ebuild, +metadata.xml:
+  bump!
+

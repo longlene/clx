@@ -1,0 +1,121 @@
+>From 470540bcb3bf06bb12cc603fa4751290d222ae13 Mon Sep 17 00:00:00 2001
+From: Ingo Bormuth <ibormuth@efil.de>
+Date: Mon, 23 Jun 2008 22:04:00 +0200
+Subject: [PATCH] Upgrade CFFI to current darcs (0.9.2+)
+
+Get rid of gtk-ffi-impl.lisp (cffi now depends on babel).
+---
+ gtk-ffi/gtk-ffi-impl.lisp  |   40 ----------------------------------------
+ gtk-ffi/gtk-ffi.asd        |    3 +--
+ gtk-ffi/gtk-ffi.lisp       |   11 ++++-------
+ gtk-ffi/gtk-utilities.lisp |    2 +-
+ 4 files changed, 6 insertions(+), 50 deletions(-)
+ delete mode 100644 gtk-ffi/gtk-ffi-impl.lisp
+
+diff --git a/gtk-ffi/gtk-ffi-impl.lisp b/gtk-ffi/gtk-ffi-impl.lisp
+deleted file mode 100644
+index 8096d6d..0000000
+--- a/gtk-ffi/gtk-ffi-impl.lisp
++++ /dev/null
+@@ -1,40 +0,0 @@
+-
+-#|
+-
+-Implementation dependent stuff goes here
+-
+-Currently supported
+-
+- -- sbcl: utf-8 string handling
+- -- clisp: utf-8 string handling (thanks to Ingo Bormuth)
+-
+-|#
+-
+-(in-package :gtk-ffi)
+-
+-
+-;;;
+-;;; UTF-8 string handling
+-;;;
+-
+-(defun lisp-to-utf-8 (str)
+-  #-(or clisp sbcl) (return-from lisp-to-utf-8 str)
+-  (when str
+-    #+clisp (ext:convert-string-to-bytes str charset:utf-8)
+-    #+sbcl (sb-ext:string-to-octets str :external-format :utf-8)))
+-
+-(defun utf-8-to-lisp (str)
+-  #-(or clisp sbcl) (return-from utf-8-to-lisp str)
+-  (when str
+-    (let* ((nat (lisp-to-utf-8 str))
+-           (oct (coerce (loop for i from 0 below (length nat)
+-                           for b = (aref nat i)
+-                           collect b
+-                           ;; ph: gtk gives us 4 bytes per char ; why ?
+-                           if (= b 195) do (incf i 2))
+-                        '(vector (unsigned-byte 8)))))
+-      #+clisp (ext:convert-string-from-bytes oct charset:utf-8)
+-      #+sbcl  (sb-ext:octets-to-string oct :external-format :utf-8))))
+-
+-
+-
+diff --git a/gtk-ffi/gtk-ffi.asd b/gtk-ffi/gtk-ffi.asd
+index 4c507fa..2cf9389 100644
+--- a/gtk-ffi/gtk-ffi.asd
++++ b/gtk-ffi/gtk-ffi.asd
+@@ -22,9 +22,8 @@
+ 	       )
+   :components
+   ((:file "package")
+-   (:file "gtk-ffi-impl" :depends-on ("package"))
+    (:file "gtk-threads" :depends-on ("package"))
+-   (:file "gtk-ffi" :depends-on ("gtk-threads" "gtk-ffi-impl"))
++   (:file "gtk-ffi" :depends-on ("gtk-threads"))
+    #+cells-gtk-opengl (:file "gtk-gl-ext" :depends-on ("package"))
+    (:file "gtk-core" :depends-on ("gtk-ffi"))
+    (:file "gtk-other" :depends-on ("gtk-ffi"))
+diff --git a/gtk-ffi/gtk-ffi.lisp b/gtk-ffi/gtk-ffi.lisp
+index e7f583d..2f279ec 100644
+--- a/gtk-ffi/gtk-ffi.lisp
++++ b/gtk-ffi/gtk-ffi.lisp
+@@ -86,10 +86,10 @@
+ 
+ (defmethod cffi:translate-to-foreign (value (type gtk-string-type))
+   (when (null value) (setf value "")) ; pod ??? 
+-  (cffi:foreign-string-alloc value))
++  (cffi:foreign-string-alloc value :encoding :utf-8))
+ 
+-(defmethod cffi:translate-from-foreign (value (type gtk-string-type))
+-  (utf-8-to-lisp (cffi:foreign-string-to-lisp value)))
++(defmethod cffi:translate-from-foreign (ptr (type gtk-string-type))
++  (cffi:foreign-string-to-lisp ptr :encoding :utf-8))
+ 
+ 
+ 
+@@ -218,10 +218,7 @@
+ 	   ,(when (with-debug-p name)
+ 		  `(format *trace-output* "~%Calling (~A ~{~A~^ ~})" 
+ 			   ,(string-downcase (string name)) (list ,@(mapcar 'car arguments)))))
+-	 (let ((result ,(let ((fn `(,gtk-name ,@(mapcar #'(lambda (arg) (if (eql (cadr arg) 'gtk-string)
+-									    `(lisp-to-utf-8 ,(car arg))
+-									    (car arg)))
+-							arguments))))
++	 (let ((result ,(let ((fn `(,gtk-name ,@(mapcar 'car arguments))))
+ 			     #+cells-gtk-threads (if (with-gdk-threads-p name) `(with-gdk-threads ,fn) fn)
+ 			     #-cells-gtk-threads fn)))
+ 	   (when *gtk-debug*
+diff --git a/gtk-ffi/gtk-utilities.lisp b/gtk-ffi/gtk-utilities.lisp
+index 0b41dff..f826b80 100644
+--- a/gtk-ffi/gtk-utilities.lisp
++++ b/gtk-ffi/gtk-utilities.lisp
+@@ -213,7 +213,7 @@
+ 		   returned-value)))
+       (prog1
+ 	  (cond 
+-	    (ret$ (utf-8-to-lisp (uffi:convert-from-cstring ret$))) ; ph 01/2008: here we need to convert back from gtk utf-8 to lisp
++	    (ret$ (cffi:foreign-string-to-lisp ret$ :encoding :utf-8))
+ 	    ((eq col-type :boolean)
+ 	     (not (zerop returned-value)))
+ 	    (t returned-value))
+-- 
+1.5.5.4
+

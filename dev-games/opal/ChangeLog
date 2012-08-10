@@ -1,0 +1,18 @@
+# ChangeLog for dev-games/opal
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Aug 2008; Thomas Beierlein (TomJBE) <tb@forth-ev.de> metadata.xml:
+  Added local USE flag description wrt GLEP 56
+
+  20 Jun 2007; Jakub Moc <jakub@gentoo.org> opal-0.4.0.ebuild:
+  Fix dependencies
+
+  07 Apr 2007; Ali Polatel (hawking) <polatel@gmail.com> opal-0.4.0.ebuild:
+  Added app-arch/unzip to DEPEND
+
+  06 Mar 2007; Patrick Zimmermann (moHiJ) <patrick@zakweb.de>
+  +opal-0.4.0.ebuild, +files/opal.pc, +metadata.xml:
+  New ebuild for bug 114969 thanks to Christoph Brill, all the nice people on
+  #gentoo-sunrise
+

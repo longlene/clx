@@ -1,0 +1,8 @@
+# ChangeLog for gnome-extra/screenruler
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 Dec 2009; Hans de Graaff <graaff@gentoo.org> -screenruler-0.85.ebuild,
+  screenruler-0.89.1.ebuild, +metadata.xml:
+  Fix QA issues by m oving to EAPI=2.
+

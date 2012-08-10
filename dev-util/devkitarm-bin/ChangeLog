@@ -1,0 +1,40 @@
+# ChangeLog for dev-util/devkitarm-bin
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*devkitarm-bin-30 (03 Jul 2010)
+
+  03 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -devkitarm-bin-23b.ebuild, +devkitarm-bin-30.ebuild:
+  Version bump, cleanup.
+
+  26 Jun 2008; Mounir Lamouri (volkmar) <mounir.lamouri@gmail.com>
+  -devkitarm-bin-22.ebuild, +devkitarm-bin-23b.ebuild:
+  Update 22 -> 23b
+
+  11 Jun 2008; Thomas Anderson (gentoofan23) <gentoofan23@gmail.com>
+  devkitarm-bin-22.ebuild:
+  Whitespace
+
+  26 Apr 2008; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> Manifest:
+  Fix digest
+
+  25 Apr 2008; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
+  -devkitarm-bin-21.ebuild, +devkitarm-bin-22.ebuild:
+  Updated Ebuild or bug 179209.
+
+  06 Jan 2008; (Tommy[D]) tommy100@gmx.de devkitarm-bin-21.ebuild:
+  whitey
+
+  27 Dec 2007; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
+  -devkitarm-bin-20.ebuild, +devkitarm-bin-21.ebuild:
+  Updated Ebuild for bug 179209.
+
+  21 May 2007; Christian Faulhammer <opfer@gentoo.org>
+  devkitarm-bin-20.ebuild:
+  add quotes for a variable
+
+  20 May 2007; Mounir Lamouri (Volkmar) <mounir.lamouri@gmail.com>
+  +files/99devkitpro, +devkitarm-bin-20.ebuild, +metadata.xml:
+  New ebuild for bug 179209. Thanks to helch, jakub and armin76 for there help.
+

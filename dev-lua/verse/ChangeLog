@@ -1,0 +1,10 @@
+# ChangeLog for dev-lua/verse
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*verse-9999 (23 Apr 2012)
+
+  23 Apr 2012; Vadim A. Misbakh-Soloviov <mva@mva.name> +metadata.xml,
+  +verse-9999.ebuild:
+  bump!
+

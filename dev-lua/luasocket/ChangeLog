@@ -1,0 +1,10 @@
+# ChangeLog for dev-lua/luasocket
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*luasocket-9999 (23 Apr 2012)
+
+  23 Apr 2012; Vadim A. Misbakh-Soloviov <mva@mva.name>
+  +luasocket-9999.ebuild, +metadata.xml:
+  bump!
+

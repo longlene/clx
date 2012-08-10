@@ -1,0 +1,14 @@
+diff --git a/Makefile b/Makefile
+index 7468de3..05c147b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -184,6 +184,9 @@ show-ssa: plugin
+ html: docs/tables-of-passes.rst docs/passes.svg
+ 	cd docs && $(MAKE) html
+ 
++man: plugin
++	cd docs && $(MAKE) man
++
+ # We commit this generated file to SCM to allow the docs to be built without
+ # needing to build the plugin:
+ docs/tables-of-passes.rst: plugin generate-tables-of-passes-rst.py

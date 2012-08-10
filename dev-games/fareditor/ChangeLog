@@ -1,0 +1,8 @@
+# ChangeLog for dev-games/fareditor
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  03 Mar 2010; Angelo D'Autilia (sYdRo) <sydro@salug.it>
+  +fareditor-1.2.ebuild, +metadata.xml:
+  New ebuild for bug 197291
+

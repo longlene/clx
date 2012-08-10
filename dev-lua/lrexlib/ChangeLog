@@ -1,0 +1,12 @@
+# ChangeLog for dev-lua/lrexlib
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Aug 2008; Ali Polatel <hawking@gentoo.org> lrexlib-2.4.0.ebuild:
+  Use lua.eclass
+
+*lrexlib-2.4.0 (21 Aug 2008)
+
+  21 Aug 2008; Ali Polatel <hawking@gentoo.org> +lrexlib-2.4.0.ebuild:
+  Initial ebuild
+

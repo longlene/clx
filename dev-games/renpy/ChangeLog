@@ -1,0 +1,93 @@
+# ChangeLog for dev-games/renpy
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  19 Mar 2012; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  -renpy-6.13.8.ebuild, +renpy-6.13.9.ebuild,
+  +files/renpy-jedit-path-6.13.9.patch:
+  Version bump
+
+  28 Jan 2012; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  +renpy-6.9.3-r1.ebuild, +renpy-6.11.2.ebuild, +renpy-6.12.2.ebuild:
+  Re-adding removed ebuilds
+
+  25 Jan 2012; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  -renpy-6.13.7.ebuild, +renpy-6.13.8.ebuild:
+  Version bump
+
+*renpy-6.10.2-r3 (22 Jan 2012)
+
+  22 Jan 2012; Mike Gilbert <floppym@gentoo.org> +renpy-6.10.2-r3.ebuild:
+  Restore renpy:6.10 to satisfy dependency in games-rpg/digital
+
+  17 Jan 2012; Michael Palimaka (kensington) <kensington@astralcloak.net>
+  -renpy-6.9.3-r1.ebuild, -renpy-6.10.2-r3.ebuild, -renpy-6.11.2.ebuild,
+  -renpy-6.12.2.ebuild:
+  Remove old.
+
+  21 Oct 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  +renpy-6.13.7.ebuild:
+  Bump to latest, no ebuild change
+
+  14 Aug 2011; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  renpy-6.9.3-r1.ebuild, renpy-6.10.2-r3.ebuild, renpy-6.11.2.ebuild,
+  renpy-6.12.2.ebuild:
+  EAPI bump
+
+  13 Aug 2011; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  -renpy-6.12.1.ebuild, +renpy-6.12.2.ebuild:
+  Bump. Thanks hwoarang
+
+  08 Aug 2011; Markos Chandras <hwoarang@gentoo.org> Manifest:
+  Remanifest per bug #301324
+
+  27 May 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  renpy-6.12.1.ebuild:
+  Re-add removed die
+
+  25 May 2011; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  -renpy-6.12.0.ebuild, +renpy-6.12.1.ebuild:
+  Version bump
+
+  08 Feb 2011; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  renpy-6.11.2.ebuild, +renpy-6.12.0.ebuild:
+  New version. Removed development part from 6.11.2 ebuild.
+
+  03 Nov 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  -renpy-6.11.1.ebuild, +renpy-6.11.2.ebuild:
+  Version bump
+
+  26 Oct 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  renpy-6.9.3-r1.ebuild, -renpy-6.10.2-r2.ebuild, +renpy-6.10.2-r3.ebuild,
+  +renpy-6.11.1.ebuild, +files/renpy.sh:
+  New version. Should work if python-3 is set as default.
+  Other minor changes. Thanks to Tommy[D], _AxS_, Mr_Bones_.
+
+  01 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  renpy-6.9.3-r1.ebuild, renpy-6.10.2-r2.ebuild:
+  Adjust 'find' calls to be POSIX-compliant.
+
+  16 May 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  -renpy-6.9.3.ebuild, +renpy-6.9.3-r1.ebuild:
+  Added ~amd64 keyword (take2)
+
+  16 May 2010; James Broadhead (hangfire) <jamesbroadhead@gmail.com>
+  renpy-6.9.3.ebuild, -renpy-6.10.2-r1.ebuild, +renpy-6.10.2-r2.ebuild:
+  Added ~amd64 keyword
+
+  28 Feb 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  renpy-6.9.3.ebuild, renpy-6.10.2-r1.ebuild:
+  Removed development part from 6.9.3 ebuild. Some other minor fixes.
+
+  27 Feb 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  +renpy-6.9.3.ebuild, -renpy-6.10.2.ebuild, +renpy-6.10.2-r1.ebuild:
+  Revision bump. The package now supports SLOTs. Added 6.9.3 version. This
+  ebuilds is the result of splitting dev-games/renpy into two parts.
+
+  04 Feb 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com> metadata.xml:
+  Added information about upstream
+
+  03 Feb 2010; Nao Nakashima (nao) <nao.nakashima@gmail.com>
+  +renpy-6.10.2.ebuild, +files/renpy-jedit-path.patch, +metadata.xml:
+  New ebuild for bug 301324
+

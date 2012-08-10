@@ -1,0 +1,12 @@
+--- a/launcher/jEdit.edit.py	2012-03-11 03:19:50.000000000 +0600
++++ b/launcher/jEdit.edit.py	2012-03-19 09:05:17.000000000 +0600
+@@ -8,8 +8,7 @@
+         
+         args = [ ]
+         
+-        mydir = os.path.dirname(__file__)
+-        jar = os.path.join(mydir, "../jedit/jedit.jar")
++        jar = "/usr/share/jedit/jedit.jar"
+         
+         # My Java does not like having non-ASCII characters in jar paths. 
+         # Using relpath won't guarantee those characters won't exist - but it 

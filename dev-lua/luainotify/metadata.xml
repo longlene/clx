@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>ThyArmageddon+Gentoo@Gmail.com</email>
+		<name>Elijah El Lazkani</name>
+	</maintainer>
+	<longdescription lang="en">A Lua interface to the Linux inotify subsystem</longdescription>
+	<use>
+		<flag name='valgrind'>USes valgrind to debug the compilation</flag>
+	</use>
+</pkgmetadata>

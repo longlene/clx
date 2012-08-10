@@ -1,0 +1,21 @@
+# ChangeLog for dev-lang/syx
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 Apr 2011; Justin Lecher <jlec@gentoo.org> syx-0.1.7.ebuild:
+  Fix deps for gnome3
+
+*syx-0.1.7 (03 Jul 2010)
+
+  03 Jul 2010; Michał Górny (sedzimir) <mgorny.3ehbo@mailnull.com>
+  -syx-0.1.6.ebuild, +syx-0.1.7.ebuild:
+  Version bump, cleanup, added missing DEPEND.
+
+  13 Jan 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com>
+  syx-0.1.6.ebuild:
+  Bug 205584 remove iprofile USE flag
+
+  10 Jan 2008; Luca Bruno (Lethalman) <lethalman88@gmail.com> +metadata.xml,
+  +syx-0.1.6.ebuild:
+  New EBuild
+

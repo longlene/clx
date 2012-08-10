@@ -1,0 +1,39 @@
+diff -ur cells.orig/cells.asd cells/cells.asd
+--- cells.orig/cells.asd	2004-12-06 14:26:06.000000000 -0600
++++ cells/cells.asd	2005-05-11 06:11:51.000000000 -0500
+@@ -13,7 +13,7 @@
+   :licence "MIT Style"
+   :description "Cells"
+   :long-description "The Cells dataflow extension to CLOS."
+-  :depends-on (:utils-kt)
++  :depends-on (:utils-kt :cl-plus)
+   :components (;;(lpr-project-file "cells")
+                (:file "defpackage")
+                (:file "cells" :depends-on ("defpackage"))
+Only in cells: cells.asd~
+diff -ur cells.orig/integrity.lisp cells/integrity.lisp
+--- cells.orig/integrity.lisp	2005-04-08 04:11:12.000000000 -0500
++++ cells/integrity.lisp	2005-05-11 06:12:15.000000000 -0500
+@@ -61,7 +61,7 @@
+ (defun ufb-add (opcode continuation)
+   (fifo-add (ufb-queue opcode) continuation))
+ 
+-(defconstant *ufb-opcodes* '(:user-notify :output :setf :makunbound :finalize))
++(cl+:defconst *ufb-opcodes* '(:user-notify :output :setf :makunbound :finalize))
+ 
+ (define-condition c-opcode-deferred (c-enabling)
+    ((defer-info :initarg :defer-info :reader defer-info))
+Only in cells: integrity.lisp~
+diff -ur cells.orig/profile.lisp cells/profile.lisp
+--- cells.orig/profile.lisp	2004-06-26 13:38:36.000000000 -0500
++++ cells/profile.lisp	2005-05-11 06:12:24.000000000 -0500
+@@ -10,7 +10,7 @@
+ (defvar *c-using*)
+ (defvar *c-defining*)
+ 
+-(defconstant *src-extension* "cl")
++(cl+:defconst *src-extension* "cl")
+ 
+ #+test
+ (dolist (f (directory (make-pathname :device "c"
+Only in cells: profile.lisp~

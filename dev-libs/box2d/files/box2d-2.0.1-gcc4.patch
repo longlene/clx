@@ -1,0 +1,25 @@
+diff -Naur Box2D/Source/Common/b2BlockAllocator.cpp Box2D/Source/Common/b2BlockAllocator.cpp
+--- Box2D/Source/Common/b2BlockAllocator.cpp	2007-11-24 11:25:02.000000000 +0100
++++ Box2D/Source/Common/b2BlockAllocator.cpp	2009-10-12 15:56:39.000000000 +0200
+@@ -20,6 +20,7 @@
+ #include <cstdlib>
+ #include <memory>
+ #include <climits>
++#include <cstring>
+ 
+ int32 b2BlockAllocator::s_blockSizes[b2_blockSizes] = 
+ {
+diff -Naur Box2D/Source/Common/b2Math.h Box2D/Source/Common/b2Math.h
+--- Box2D/Source/Common/b2Math.h	2008-04-07 23:35:04.000000000 +0200
++++ Box2D/Source/Common/b2Math.h	2009-10-12 15:55:44.000000000 +0200
+@@ -23,8 +23,8 @@
+ #include <cmath>
+ #include <cfloat>
+ #include <cstdlib>
+-
+-#include <stdio.h>
++#include <cstring>
++#include <cstdio>
+ 
+ #ifdef TARGET_FLOAT32_IS_FIXED
+ 

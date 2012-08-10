@@ -1,0 +1,11 @@
+--- a/launcher/jEdit.editor.py	2009-07-05 23:42:37.000000000 +0600
++++ b/launcher/jEdit.editor.py	2010-01-18 21:46:37.453619044 +0500
+@@ -6,7 +6,7 @@
+ import os.path
+ import sys
+ 
+-editor = os.path.normpath(base + "/../jedit/jedit.jar")
++editor = os.path.normpath("/usr/share/jedit/jedit.jar")
+ editor = renpy.shell_escape(editor)
+ 
+ if sys.platform == 'win32':

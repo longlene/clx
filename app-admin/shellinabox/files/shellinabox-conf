@@ -1,0 +1,13 @@
+# /etc/conf.d/shellinabox
+
+# Which port we should listen on
+SHELLINABOXD_PORT="4200"
+
+# Additional parameters for shellinabox daemon
+SHELLINABOXD_OPTS=""
+
+# Example additional configuration
+# SHELLINABOXD_OPTS="--no-beep --disable-ssl --localhost-only"
+
+# vim: ft=gentoo-conf-d
+
