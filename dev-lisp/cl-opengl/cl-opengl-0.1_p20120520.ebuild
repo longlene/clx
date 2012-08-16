@@ -16,14 +16,14 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 RDEPEND="dev-lisp/cffi
-		 media-libs/freeglut"
+		media-libs/freeglut"
 
 CLSYSTEMS="cl-opengl cl-glu cl-glut cl-glut-examples"
 
-src_unpack() {
-	unpack ${A}
-	mv ${PN}-*-git "${S}"
-}
+#src_unpack() {
+#	unpack ${A}
+#	mv ${PN}-*-git "${S}"
+#}
 
 src_compile() { true; }
 
