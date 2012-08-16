@@ -8,7 +8,7 @@ inherit common-lisp-2
 
 DESCRIPTION="A set of CFFI bindings to the OpenGL, GLU and GLUT APIs."
 HOMEPAGE="http://common-lisp.net/project/cl-opengl/"
-SRC_URI="http://beta.quicklisp.org/archive/cl-opengl/2012-05-20/cl-opengl-20120520-git.tgz"
+SRC_URI="http://beta.quicklisp.org/archive/cl-opengl/2012-05-20/cl-opengl-20120520-git.tgz -> ${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
