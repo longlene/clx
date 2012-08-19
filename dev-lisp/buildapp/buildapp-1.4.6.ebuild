@@ -28,6 +28,7 @@ src_install() {
 	common-lisp-symlink-asdf
 	dobin buildapp
 	dodoc README
-	dohtml doc/{LICENSE,index.html,style.css}
+	dodoc doc/LICENSE
+	dohtml doc/{index.html,style.css}
 }
 
