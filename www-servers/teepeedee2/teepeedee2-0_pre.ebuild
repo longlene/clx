@@ -21,6 +21,7 @@ RDEPEND="dev-lisp/trivial-garbage
 		dev-lisp/cl-cont
 		dev-lisp/cffi
 		dev-lisp/iterate
+		dev-lisp/cl-fad
 		dev-lisp/alexandria
 		dev-lisp/cl-irregsexp
 		dev-lisp/trivial-backtrace
