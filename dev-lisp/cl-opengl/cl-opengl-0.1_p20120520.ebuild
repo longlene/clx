@@ -20,10 +20,10 @@ RDEPEND="dev-lisp/cffi
 
 CLSYSTEMS="cl-opengl cl-glu cl-glut cl-glut-examples"
 
-#src_unpack() {
-#	unpack ${A}
-#	mv ${PN}-*-git "${S}"
-#}
+src_unpack() {
+	unpack ${A}
+	mv ${PN}-*-git "${S}"
+}
 
 src_compile() { true; }
 

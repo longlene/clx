@@ -8,7 +8,7 @@ inherit common-lisp-2
 
 DESCRIPTION="BLOCKY is a visual programming language for Common Lisp."
 HOMEPAGE="http://blocky.io/"
-SRC_URI="https://github.com/dto/blocky/tarball/master -> ${P}.tar.gz"
+SRC_URI="http://github.com/dto/blocky/tarball/master -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
