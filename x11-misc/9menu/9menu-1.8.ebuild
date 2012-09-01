@@ -9,7 +9,7 @@ DESCRIPTION="Create X menus from the shell"
 HOMEPAGE="http://packages.debian.org/source/sid/9menu"
 SRC_URI="mirror://debian/pool/main/9/${PN}/${PN}_${PV}.orig.tar.gz"
 
-LICENSE="Unknown"
+LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

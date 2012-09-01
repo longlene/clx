@@ -9,13 +9,14 @@ DESCRIPTION="A window manager emulation of the Plan 9 window manager 8-1/2."
 HOMEPAGE="http://unauthorised.org/dhog/9wm.html"
 SRC_URI="http://unauthorised.org/dhog/9wm/9wm-1.1.tar.gz"
 
-LICENSE="Free"
+LICENSE="9wm"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="x11-libs/libX11
-		x11-libs/libXext"
+		x11-libs/libXext
+		x11-terms/xterm"
 
 
 src_compile() {
@@ -26,5 +27,5 @@ src_install() {
 	dobin "${PN}"
 	mv "${PN}.man" "${PN}.1"
 	doman "${PN}.1"
-	dodoc README "${FILESDIR}"/LICENCE
+	dodoc README
 }
