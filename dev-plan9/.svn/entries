@@ -1,0 +1,110 @@
+10
+
+dir
+9
+svn://overlays.gentoo.org/dev/anant/plan9/dev-plan9
+svn://overlays.gentoo.org/dev/anant
+
+
+
+2007-04-02T21:28:21.459884Z
+6
+anant
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+94c51416-ff2c-0410-9dba-a78018592e09
+
+digest
+file
+
+
+
+
+2012-06-22T10:17:50.000000Z
+5f91619731edf4ca2181c2a4e231c48e
+2007-04-02T21:28:21.459884Z
+6
+anant
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+65
+
+libregexp
+dir
+
+libframe
+dir
+
+libmemdraw
+dir
+
+libdraw
+dir
+
+plan9port
+dir
+
+devdraw
+dir
+
+libthread
+dir
+
+libcomplete
+dir
+
+lib9
+dir
+
+libmux
+dir
+
+libbio
+dir
+
+libmemlayer
+dir
+
+acme
+dir
+
+libplumb
+dir
+
+mk
+dir
+
+lib9pclient
+dir
+

@@ -18,7 +18,7 @@ CLPACKAGE="dswm"
 
 DEPEND="dev-lisp/common-lisp-controller
 	>=dev-lisp/sbcl-1.0.36-r1
-	dev-lisp/clx
+	dev-lisp/cl-clx
 	dev-lisp/cl-ppcre
 	doc? ( sys-apps/texinfo )"
 

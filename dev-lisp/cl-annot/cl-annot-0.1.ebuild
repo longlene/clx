@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit common-lisp-2
+inherit common-lisp-2 vcs-snapshot
 MY_USER="arielnetworks"
 
 DESCRIPTION="Python-like Annotation Syntax for Common Lisp."
@@ -17,10 +17,10 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 RDEPEND="dev-lisp/alexandria"
-src_unpack() {
-	unpack ${A}
-	mv *-${PN}-* "${S}"
-}
+#src_unpack() {
+#	unpack ${A}
+#	mv *-${PN}-* "${S}"
+#}
 
 src_install() {
 	common-lisp-install ${PN}.asd src misc t
