@@ -1,0 +1,24 @@
+commit 8c84cf11660322489f839bc29db79bad31b4ecde
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Tue Jan 24 20:42:40 2012 +0300
+
+    ./configure: export xfs config via --{enable, disable}-xfsctl
+    
+    Signed-off-by: Sergei Trofimovich <slyfox@gentoo.org>
+    Signed-off-by: Stefan Hajnoczi <stefanha@linux.vnet.ibm.com>
+
+diff --git a/configure b/configure
+index 9d5175b..69fb239 100755
+--- a/configure
++++ b/configure
+@@ -766,6 +766,10 @@ for opt do
+   ;;
+   --enable-rbd) rbd="yes"
+   ;;
++  --disable-xfsctl) xfs="no"
++  ;;
++  --enable-xfsctl) xfs="yes"
++  ;;
+   --disable-smartcard) smartcard="no"
+   ;;
+   --enable-smartcard) smartcard="yes"

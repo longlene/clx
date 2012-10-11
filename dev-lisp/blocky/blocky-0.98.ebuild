@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit common-lisp-2
+inherit common-lisp-2 vcs-snapshot
 
 DESCRIPTION="BLOCKY is a visual programming language for Common Lisp."
 HOMEPAGE="http://blocky.io/"
@@ -26,10 +26,10 @@ RDEPEND="${DEPEND}
 		dev-lisp/cl-opengl"
 
 #CLSYSTEMS=""
-src_unpack() {
-	unpack ${A}
-	mv *-${PN}-* "${S}"
-}
+#src_unpack() {
+#	unpack ${A}
+#	mv *-${PN}-* "${S}"
+#}
 
 src_install() {
 	common-lisp-install ${PN}.asd *.lisp standard testing turtle vomac
