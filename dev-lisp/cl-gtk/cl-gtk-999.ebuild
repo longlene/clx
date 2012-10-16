@@ -29,6 +29,7 @@ x11-libs/cairo"
 
 src_install() {
 	rm -rf lisp-utils
+	rm -rf tutorial/figures/*.pdf
 	common-lisp-3_src_install
 
 	dodir /usr/share/${PN}/{tutorial,demo,tests}
