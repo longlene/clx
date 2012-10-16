@@ -1,0 +1,19 @@
+commit ec30712c0334b1f4dfd9514bde3c628420b4ff99
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 11:51:29 2011 -0400
+
+    tsk, tsk, on use of reserved keywords for variable names
+
+diff --git a/libc/include/unistd.h b/libc/include/unistd.h
+index 8ae938b..b54f74f 100644
+--- a/libc/include/unistd.h
++++ b/libc/include/unistd.h
+@@ -186,7 +186,7 @@ extern int cacheflush(long start, long end, long flags);
+ extern pid_t tcgetpgrp(int fd);
+ extern int   tcsetpgrp(int fd, pid_t _pid);
+ 
+-extern char * mkdtemp(char *template);
++extern char * mkdtemp(char *tmplt);
+ 
+ #if 0 /* MISSING FROM BIONIC */
+ extern int execvpe(const char *, char * const *, char * const *);

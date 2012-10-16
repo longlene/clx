@@ -1,0 +1,32 @@
+commit 1d04b35977c18e74f9e4dd980a46933a1ff66e46
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu Apr 28 08:29:41 2011 -0400
+
+    fixed getlogin_r and getsid stub prototypes
+
+diff --git a/libc/include/unistd.h b/libc/include/unistd.h
+index 75d0b5e..c469f35 100644
+--- a/libc/include/unistd.h
++++ b/libc/include/unistd.h
+@@ -189,17 +189,19 @@ extern int   tcsetpgrp(int fd, pid_t _pid);
+ extern char * mkdtemp(char *template);
+ 
+ #if 0 /* MISSING FROM BIONIC */
+-extern pid_t  getsid(pid_t);
+ extern int execvpe(const char *, char * const *, char * const *);
+ extern int execlpe(const char *, const char *, ...);
+ extern int getfsuid(uid_t);
+ extern int setfsuid(uid_t);
+-extern int getlogin_r(char* name, size_t namesize);
+ extern int sethostname(const char *, size_t);
+ extern int getdomainname(char *, size_t);
+ extern int setdomainname(const char *, size_t);
+ #endif /* MISSING */
+ 
++// FIXME: stubs
++extern pid_t  getsid(pid_t);
++extern int getlogin_r(char* name, size_t namesize);
++
+ /* Used to retry syscalls that can return EINTR. */
+ #define TEMP_FAILURE_RETRY(exp) ({         \
+     typeof (exp) _rc;                      \

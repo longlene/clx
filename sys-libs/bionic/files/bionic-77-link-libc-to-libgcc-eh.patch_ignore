@@ -1,0 +1,20 @@
+commit 3f3bf42427b4740a2b3f2220d714146c350a9aaf
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu Jan 12 09:57:35 2012 -0500
+
+    added libgcc_eh.a to resolve __aeabi_unwind_cppp_pr{0,1,2}
+
+diff --git a/libc/Android.mk b/libc/Android.mk
+index 1ef34a4..c79b59b 100644
+--- a/libc/Android.mk
++++ b/libc/Android.mk
+@@ -716,6 +716,9 @@ LOCAL_SHARED_LIBRARIES := libdl
+ LOCAL_WHOLE_STATIC_LIBRARIES := libc_common
+ LOCAL_SYSTEM_SHARED_LIBRARIES :=
+ LOCAL_LDFLAGS := -lgcc
++ifeq ($(TARGET_ARCH),arm)
++LOCAL_LDFLAGS += -lgcc_eh
++endif
+ 
+ include $(BUILD_SHARED_LIBRARY)
+ 

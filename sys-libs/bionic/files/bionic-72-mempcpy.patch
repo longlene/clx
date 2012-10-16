@@ -1,0 +1,74 @@
+diff --git a/libc/Android.mk b/libc/Android.mk
+index cca820d..ccd20a0 100644
+--- a/libc/Android.mk
++++ b/libc/Android.mk
+@@ -178,6 +178,7 @@ libc_common_src_files := \
+ 	stdlib/wchar.c \
+ 	string/index.c \
+ 	string/memccpy.c \
++	string/mempcpy.c \
+ 	string/memchr.c \
+ 	string/memmem.c \
+ 	string/memrchr.c \
+diff --git a/libc/bionic/stubs.c b/libc/bionic/stubs.c
+index 1e4d73a..4de105b 100644
+--- a/libc/bionic/stubs.c
++++ b/libc/bionic/stubs.c
+@@ -514,13 +514,6 @@ int tcdrain(int fd)
+     return -1;
+ }
+ 
+-void *mempcpy(void *dest, const void *src, size_t n)
+-{
+-    fprintf(stderr, "FIX ME! implement %s() %s:%d\n", __FUNCTION__, __FILE__, __LINE__);
+-    errno = ENOSYS;
+-    return NULL;
+-}
+-
+ struct ether_addr *ether_aton_r(const char *asc,
+                                        struct ether_addr *addr)
+ {
+diff --git a/libc/string/mempcpy.c b/libc/string/mempcpy.c
+new file mode 100644
+index 0000000..efb3181
+--- /dev/null
++++ b/libc/string/mempcpy.c
+@@ -0,0 +1,38 @@
++/*
++ * Copyright (C) 2008 The Android Open Source Project
++ * All rights reserved.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ *  * Redistributions of source code must retain the above copyright
++ *    notice, this list of conditions and the following disclaimer.
++ *  * Redistributions in binary form must reproduce the above copyright
++ *    notice, this list of conditions and the following disclaimer in
++ *    the documentation and/or other materials provided with the
++ *    distribution.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
++ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
++ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
++ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
++ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
++ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
++ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
++ * OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
++ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
++ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
++ * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
++ * SUCH DAMAGE.
++ */
++#define MEMPCOPY
++
++#include <sys/types.h>
++
++void *mempcpy(void *dest, const void *src, size_t n) {
++	unsigned i = 0;
++	for( ; i<n; i++) {
++		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
++	}
++	return (void *)&(((unsigned char *)dest)[i+1]);
++}

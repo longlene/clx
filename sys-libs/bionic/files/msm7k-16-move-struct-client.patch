@@ -1,0 +1,85 @@
+commit d8375de7c0d0ae5065f9fc6d1b5b87f77e32a00c
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 1 06:49:21 2011 -0400
+
+    declared CLIENT in rpc/clnt.h rather than clnt.c
+
+diff --git a/librpc/clnt.c b/librpc/clnt.c
+index aeca005..24fb643 100644
+--- a/librpc/clnt.c
++++ b/librpc/clnt.c
+@@ -21,34 +21,6 @@ void
+ releaseWakeLock() {
+ }
+ 
+-struct CLIENT {
+-    xdr_s_type *xdr;
+-    struct CLIENT *next;
+-    /* common attribute struct for setting up recursive mutexes */
+-    pthread_mutexattr_t lock_attr;
+-
+-    /* We insist that there is only one outstanding call for a client at any
+-       time, and we use this mutex to enforce the rule.  When we start
+-       supporting multiple outstanding RPCs on a client, we will have to
+-       maintain a queue of them, and match incoming replies (by the XID of the
+-       incoming packet).  For now, we just block until we get that reply.
+-    */
+-    pthread_mutex_t lock;
+-
+-    pthread_mutex_t wait_reply_lock;
+-    pthread_cond_t wait_reply;
+-
+-    pthread_mutex_t input_xdr_lock;
+-    pthread_cond_t input_xdr_wait;
+-    volatile int input_xdr_busy;
+-
+-    pthread_mutex_t wait_cb_lock;
+-    pthread_cond_t wait_cb;
+-    pthread_t cb_thread;
+-    volatile int got_cb;
+-    volatile int cb_stop;
+-};
+-
+ extern void* svc_find(void *xprt, rpcprog_t prog, rpcvers_t vers);
+ extern void svc_dispatch(void *svc, void *xprt);
+ extern int  r_open();
+diff --git a/librpc/rpc/clnt.h b/librpc/rpc/clnt.h
+index 348850a..d47a4d3 100644
+--- a/librpc/rpc/clnt.h
++++ b/librpc/rpc/clnt.h
+@@ -119,8 +119,34 @@ struct rpc_err {
+ #define re_lb           ru.RE_lb
+ };
+ 
+-struct CLIENT;
+ typedef struct CLIENT CLIENT;
++struct CLIENT {
++    xdr_s_type *xdr;
++    struct CLIENT *next;
++    /* common attribute struct for setting up recursive mutexes */
++    pthread_mutexattr_t lock_attr;
++
++    /* We insist that there is only one outstanding call for a client at any
++       time, and we use this mutex to enforce the rule.  When we start
++       supporting multiple outstanding RPCs on a client, we will have to
++       maintain a queue of them, and match incoming replies (by the XID of the
++       incoming packet).  For now, we just block until we get that reply.
++    */
++    pthread_mutex_t lock;
++
++    pthread_mutex_t wait_reply_lock;
++    pthread_cond_t wait_reply;
++
++    pthread_mutex_t input_xdr_lock;
++    pthread_cond_t input_xdr_wait;
++    volatile int input_xdr_busy;
++
++    pthread_mutex_t wait_cb_lock;
++    pthread_cond_t wait_cb;
++    pthread_t cb_thread;
++    volatile int got_cb;
++    volatile int cb_stop;
++};
+ 
+ /* client call callback. 
+  * Callback called when the reply is recieved or there is an error in

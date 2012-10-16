@@ -1,0 +1,17 @@
+commit f030ee7cf11c220317839f767bda1eff31a89414
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu Apr 28 06:41:52 2011 -0400
+
+    added sys/timex.h
+
+--- /dev/null
++++ b/libc/include/sys/timex.h
+@@ -0,0 +1,8 @@
++#ifndef _SYS_TIMEX_H_
++#define _SYS_TIMEX_H_
++
++#include <linux/timex.h>
++
++int adjtimex(struct timex *buf);
++
++#endif /* _SYS_TIMEX_H_ */

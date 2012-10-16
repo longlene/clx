@@ -1,0 +1,38 @@
+commit e2b7931def558696fc0406be94e1d2babfaabeb4
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri May 13 02:01:31 2011 -0400
+
+    added setpwent
+
+diff --git a/libc/bionic/stubs.c b/libc/bionic/stubs.c
+index a93ae81..1e4d73a 100644
+--- a/libc/bionic/stubs.c
++++ b/libc/bionic/stubs.c
+@@ -321,6 +321,11 @@ getpwent(void) {
+ }
+ 
+ void
++setpwent(void) {
++    fprintf(stderr, "FIX ME! implement %s() %s:%d\n", __FUNCTION__, __FILE__, __LINE__);
++}
++
++void
+ setgrent(void) {
+     fprintf(stderr, "FIX ME! implement %s() %s:%d\n", __FUNCTION__, __FILE__, __LINE__);
+ }
+diff --git a/libc/include/pwd.h b/libc/include/pwd.h
+index c33f407..81a433e 100644
+--- a/libc/include/pwd.h
++++ b/libc/include/pwd.h
+@@ -117,9 +117,9 @@ struct passwd* getpwuid(uid_t);
+ int getpwnam_r(const char*, struct passwd*, char*, size_t, struct passwd**);
+ int getpwuid_r(uid_t, struct passwd*, char*, size_t, struct passwd**);
+ 
+-void endpwent(void);
+ struct passwd* getpwent(void);
+-int setpwent(void);
++void setpwent(void);
++void endpwent(void);
+ 
+ __END_DECLS
+ 

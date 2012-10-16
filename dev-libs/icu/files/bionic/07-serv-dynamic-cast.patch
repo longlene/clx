@@ -1,0 +1,19 @@
+commit 1697d40f1438b1ebf361920fa564a30e2df0e8c8
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 23:40:52 2011 -0400
+
+    remove dynamic cast from serv.cpp
+
+diff --git a/common/serv.cpp b/common/serv.cpp
+index 4f1da5b..20a1452 100644
+--- a/common/serv.cpp
++++ b/common/serv.cpp
+@@ -948,7 +948,7 @@ ICUService::clearServiceCache()
+ UBool 
+ ICUService::acceptsListener(const EventListener& l) const 
+ {
+-    return dynamic_cast<const ServiceListener*>(&l) != NULL;
++    return (const ServiceListener*)(&l) != NULL;
+ }
+ 
+ void 

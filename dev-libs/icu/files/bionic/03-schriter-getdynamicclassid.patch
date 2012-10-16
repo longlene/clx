@@ -1,0 +1,19 @@
+commit 66e9cf2de6c09ff09baa207772d888ea04833dd7
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 22:44:19 2011 -0400
+
+    use getDynamicClassID instead of typeid
+
+diff --git a/common/schriter.cpp b/common/schriter.cpp
+index b226339..ba9c188 100644
+--- a/common/schriter.cpp
++++ b/common/schriter.cpp
+@@ -87,7 +87,7 @@ StringCharacterIterator::operator==(const ForwardCharacterIterator& that) const
+     // because that checks for array pointer equality
+     // while we compare UnicodeString objects
+ 
+-    if (typeid(*this) != typeid(that)) {
++    if ( getDynamicClassID() != that.getDynamicClassID() ) {
+         return FALSE;
+     }
+ 

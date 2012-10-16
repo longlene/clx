@@ -1,0 +1,30 @@
+commit 95c76b49cea9a2cc75170039b67588f749f30d96
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu May 5 18:15:08 2011 -0400
+
+    remove list.h from bionic kernel headers to avoid warning about using kernel headers in userspace
+
+diff --git a/libc/kernel/common/linux/lockdep.h b/libc/kernel/common/linux/lockdep.h
+index f5e8634..e3e64f5 100644
+--- a/libc/kernel/common/linux/lockdep.h
++++ b/libc/kernel/common/linux/lockdep.h
+@@ -13,7 +13,6 @@
+ #define __LINUX_LOCKDEP_H
+ 
+ #include <linux/linkage.h>
+-#include <linux/list.h>
+ #include <linux/debug_locks.h>
+ #include <linux/stacktrace.h>
+ 
+diff --git a/libc/kernel/common/linux/swap.h b/libc/kernel/common/linux/swap.h
+index 63ba556..27c7443 100644
+--- a/libc/kernel/common/linux/swap.h
++++ b/libc/kernel/common/linux/swap.h
+@@ -15,7 +15,6 @@
+ #include <linux/spinlock.h>
+ #include <linux/linkage.h>
+ #include <linux/mmzone.h>
+-#include <linux/list.h>
+ #include <linux/sched.h>
+ 
+ #include <asm/atomic.h>

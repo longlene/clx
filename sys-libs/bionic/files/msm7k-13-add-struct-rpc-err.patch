@@ -1,0 +1,45 @@
+commit bffdd0c3760efdb33d9eaeb0d60ffcceac793c62
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sat Apr 30 11:58:20 2011 -0400
+
+    added struct rpc_err
+
+diff --git a/librpc/rpc/clnt.h b/librpc/rpc/clnt.h
+index d9be441..446d112 100644
+--- a/librpc/rpc/clnt.h
++++ b/librpc/rpc/clnt.h
+@@ -41,6 +41,7 @@ extern "C" {
+ #endif
+ 
+ #include <sys/time.h>
++#include <linux/in.h>
+ #include <rpc/auth.h>
+ 
+ /*
+@@ -97,6 +98,26 @@ enum clnt_stat {
+   RPC_STALERACHANDLE = 25
+ };
+ 
++struct rpc_err {
++  enum clnt_stat re_status;
++  union {
++    int RE_errno;               /* related system error */
++    enum auth_stat RE_why;      /* why the auth error occurred */
++    struct {
++      u_long low;               /* lowest verion supported */
++      u_long high;              /* highest verion supported */
++    } RE_vers;
++    struct {                    /* maybe meaningful if RPC_FAILED */
++      long s1;
++      long s2;
++    } RE_lb;                    /* life boot & debugging only */
++  } ru;
++#define re_errno        ru.RE_errno
++#define re_why          ru.RE_why
++#define re_vers         ru.RE_vers
++#define re_lb           ru.RE_lb
++};
++
+ struct CLIENT;
+ typedef struct CLIENT CLIENT;
+ struct CLIENT {

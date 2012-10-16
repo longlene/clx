@@ -1,0 +1,41 @@
+commit 46af07072669ce32a9d98f6b18ab69c2ce94a33e
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri Apr 29 07:59:24 2011 -0400
+
+    added sem syscalls
+
+diff --git a/libc/SYSCALLS.TXT b/libc/SYSCALLS.TXT
+index 16b7b65..e6e4ebc 100644
+--- a/libc/SYSCALLS.TXT
++++ b/libc/SYSCALLS.TXT
+@@ -132,6 +132,9 @@ int         fchownat(int dirfd, const char *path, uid_t owner, gid_t group, int
+ int         fchmodat(int dirfd, const char *path, mode_t mode, int flags)  333,306
+ int         renameat(int olddirfd, const char *oldpath, int newdirfd, const char *newpath)  329,302
+ ssize_t     readahead(int, off64_t, size_t) 225
++int         semget(key_t, int, int) 190,299,238
++int         semctl(int, int, int, ...) 191,300,239
++int         semop(int, struct sembuf *, unsigned) 193,298,237
+ int         shmget(key_t, size_t, int) 194,307,246
+ int         shmctl(int, int, struct shmid_ds *) 195,308,247
+ void*       shmatcall:shmat(int, const void *, int) 196,305,244
+diff --git a/libc/include/sys/sem.h b/libc/include/sys/sem.h
+new file mode 100644
+index 0000000..7777f4b
+--- /dev/null
++++ b/libc/include/sys/sem.h
+@@ -0,0 +1,15 @@
++#ifndef _HAVE_SYS_SEM_H_
++#define _HAVE_SYS_SEM_H_
++
++#include <linux/sem.h>
++
++__BEGIN_DECL
++
++extern int semctl(int semid, int semnum, int cmd, ...);
++extern int semget(key_t key, int nsems, int semflg);
++extern int semop(int semid, struct sembuf *sops, size_t nsops);
++
++__END_DECL
++
++#endif /* _HAVE_SYS_SEM_H_ */
++

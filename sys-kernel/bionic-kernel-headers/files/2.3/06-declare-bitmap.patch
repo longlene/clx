@@ -1,0 +1,19 @@
+commit 859b333fae845f612bd90ebe668c31766c6193c2
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu May 5 18:25:20 2011 -0400
+
+    factored-out DECLARE_BITMAP macro... should be fine for 32-bit machines & probably also 64-bit machines
+
+diff --git a/libc/kernel/common/linux/cpumask.h b/libc/kernel/common/linux/cpumask.h
+index 541940a..d1d72f8 100644
+--- a/libc/kernel/common/linux/cpumask.h
++++ b/libc/kernel/common/linux/cpumask.h
+@@ -16,7 +16,7 @@
+ #include <linux/threads.h>
+ #include <linux/bitmap.h>
+ 
+-typedef struct { DECLARE_BITMAP(bits, NR_CPUS); } cpumask_t;
++typedef struct { unsigned long bits[NR_CPUS]; } cpumask_t;
+ 
+ #define cpu_set(cpu, dst) __cpu_set((cpu), &(dst))
+ #define cpu_clear(cpu, dst) __cpu_clear((cpu), &(dst))

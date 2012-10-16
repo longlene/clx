@@ -1,0 +1,126 @@
+
+--- a/libiberty/configure	2011-05-06 05:50:57.816995323 -0400
++++ b/libiberty/configure	2011-05-06 06:14:54.280005225 -0400
+@@ -1842,8 +1842,8 @@
+   $as_echo_n "(cached) " >&6
+ else
+   if test x$gcc_no_link = xyes; then
+-  as_fn_error "Link tests are not allowed after GCC_NO_EXECUTABLES." "$LINENO" 5
+-fi
++  ac_res=yes
++else
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ /* Define $2 to an innocuous variant, in case <limits.h> declares $2.
+@@ -1893,6 +1893,7 @@
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ fi
++fi
+ eval ac_res=\$$3
+ 	       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+ $as_echo "$ac_res" >&6; }
+@@ -5888,6 +5889,11 @@
+ 
+   # We haven't set the list of objects yet.  Use the standard autoconf
+   # tests.  This will only work if the compiler works.
++  if test x$gcc_no_link = xyes; then
++    ac_res="none required"
++    ac_cv_search_strerror_set=yes
++    ac_cv_search_strerror=no
++  fi
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing strerror" >&5
+ $as_echo_n "checking for library containing strerror... " >&6; }
+ if test "${ac_cv_search_strerror+set}" = set; then :
+@@ -5919,9 +5925,6 @@
+     ac_res=-l$ac_lib
+     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
+   fi
+-  if test x$gcc_no_link = xyes; then
+-  as_fn_error "Link tests are not allowed after GCC_NO_EXECUTABLES." "$LINENO" 5
+-fi
+ if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_strerror=$ac_res
+ fi
+@@ -6267,7 +6270,7 @@
+ 
+ fi
+ 
+-  if test $ac_cv_func_vfork_works = no; then
++  if test x$ac_cv_func_vfork_works = xno; then
+     case " $LIBOBJS " in
+   *" vfork.$ac_objext "* ) ;;
+   *) LIBOBJS="$LIBOBJS vfork.$ac_objext"
+@@ -6276,9 +6279,9 @@
+ 
+   fi
+   # We only need _doprnt if we might use it to implement v*printf.
+-  if test $ac_cv_func_vprintf != yes \
+-     || test $ac_cv_func_vfprintf != yes \
+-     || test $ac_cv_func_vsprintf != yes; then
++  if test x$ac_cv_func_vprintf != xyes \
++     || test x$ac_cv_func_vfprintf != xyes \
++     || test x$ac_cv_func_vsprintf != xyes; then
+     for ac_func in _doprnt
+ do :
+   ac_fn_c_check_func "$LINENO" "_doprnt" "ac_cv_func__doprnt"
+@@ -6320,8 +6323,8 @@
+   $as_echo_n "(cached) " >&6
+ else
+   if test x$gcc_no_link = xyes; then
+-  as_fn_error "Link tests are not allowed after GCC_NO_EXECUTABLES." "$LINENO" 5
+-fi
++    eval "libiberty_cv_var_$v=yes"
++  else
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ int *p;
+@@ -6341,6 +6344,7 @@
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ fi
++fi
+ 
+     else
+       eval "libiberty_cv_var_$v=yes"
+--- a/libquadmath/configure	2011-05-06 08:24:39.468994958 -0400
++++ b/libquadmath/configure	2011-05-06 08:24:48.024994952 -0400
+@@ -9814,6 +9814,11 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   shlibpath_overrides_runpath=no
+ 
++  if test x$gcc_no_link = xyes; then :
++    lt_cv_shlibpath_overrides_runpath=yes
++    shlibpath_overrides_runpath=yes
++  fi
++
+   # Some binutils ld are patched to set DT_RUNPATH
+   if test "${lt_cv_shlibpath_overrides_runpath+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+@@ -9823,9 +9828,6 @@
+     save_libdir=$libdir
+     eval "libdir=/foo; wl=\"$lt_prog_compiler_wl\"; \
+ 	 LDFLAGS=\"\$LDFLAGS $hardcode_libdir_flag_spec\""
+-    if test x$gcc_no_link = xyes; then
+-  as_fn_error "Link tests are not allowed after GCC_NO_EXECUTABLES." "$LINENO" 5
+-fi
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -11891,8 +11893,6 @@
+ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+-fi
+-
+ # Calculate toolexeclibdir
+ # Also toolexecdir, though it's only used in toolexeclibdir
+ case ${version_specific_libs} in
+@@ -12336,7 +12336,6 @@
+ 
+ fi
+ CFLAGS="$saved_CFLAGS"
+-fi
+ 
+ # Check for symbol versioning (copied from libssp).
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether symbol versioning is supported" >&5

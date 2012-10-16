@@ -1,0 +1,41 @@
+commit df18867fc1a1861ae181cc32b2b455f7f7545629
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Tue May 10 02:55:48 2011 -0400
+
+    add  UOBJECT_DEFINE_RTTI_IMPLEMENTATION to normalizers
+
+diff --git a/common/filterednormalizer2.cpp b/common/filterednormalizer2.cpp
+index a23a459..3c979bb 100644
+--- a/common/filterednormalizer2.cpp
++++ b/common/filterednormalizer2.cpp
+@@ -26,6 +26,8 @@
+ 
+ U_NAMESPACE_BEGIN
+ 
++UOBJECT_DEFINE_RTTI_IMPLEMENTATION(FilteredNormalizer2)
++
+ UnicodeString &
+ FilteredNormalizer2::normalize(const UnicodeString &src,
+                                UnicodeString &dest,
+diff --git a/common/normalizer2.cpp b/common/normalizer2.cpp
+index 0ddcc9a..41c5c86 100644
+--- a/common/normalizer2.cpp
++++ b/common/normalizer2.cpp
+@@ -98,6 +98,8 @@ class NoopNormalizer2 : public Normalizer2 {
+     virtual UClassID getDynamicClassID() const;
+ };
+ 
++UOBJECT_DEFINE_RTTI_IMPLEMENTATION(NoopNormalizer2)
++
+ // Intermediate class:
+ // Has Normalizer2Impl and does boilerplate argument checking and setup.
+ class Normalizer2WithImpl : public Normalizer2 {
+@@ -226,6 +228,8 @@ public:
+     const Normalizer2Impl &impl;
+ };
+ 
++UOBJECT_DEFINE_RTTI_IMPLEMENTATION(Normalizer2WithImpl)
++
+ class DecomposeNormalizer2 : public Normalizer2WithImpl {
+ public:
+     DecomposeNormalizer2(const Normalizer2Impl &ni) : Normalizer2WithImpl(ni) {}

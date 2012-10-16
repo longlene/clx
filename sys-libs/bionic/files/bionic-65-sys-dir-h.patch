@@ -1,0 +1,18 @@
+commit e0ae210ffc950092592f3f5c956e180958536717
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Tue May 10 13:09:43 2011 -0400
+
+    add sys/dir.h
+
+diff --git a/libc/include/sys/dir.h b/libc/include/sys/dir.h
+new file mode 100644
+index 0000000..de9ed94
+--- /dev/null
++++ b/libc/include/sys/dir.h
+@@ -0,0 +1,6 @@
++#ifndef _SYS_DIR_H_
++#define _SYS_DIR_H_
++
++#include <dirent.h>
++
++#endif /* _SYS_DIR_H_ */

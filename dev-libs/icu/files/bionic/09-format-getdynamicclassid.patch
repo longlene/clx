@@ -1,0 +1,19 @@
+commit 7ae06220ed6af84f91bee2c9a6b26bb801f0e3e2
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 23:44:18 2011 -0400
+
+    use getDynamicClassID() instead of typeid
+
+diff --git a/i18n/format.cpp b/i18n/format.cpp
+index 701b489..f26a062 100644
+--- a/i18n/format.cpp
++++ b/i18n/format.cpp
+@@ -153,7 +153,7 @@ UBool
+ Format::operator==(const Format& that) const
+ {
+     // Subclasses: Call this method and then add more specific checks.
+-    return typeid(*this) == typeid(that);
++    return getDynamicClassID() == that.getDynamicClassID();
+ }
+ //---------------------------------------
+ 

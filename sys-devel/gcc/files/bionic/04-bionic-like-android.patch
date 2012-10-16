@@ -1,0 +1,19 @@
+commit 973f142c1e0daaaade287c172d400b91c665f487
+Author: root <root@localhost.(none)>
+Date:   Sat Apr 16 20:56:30 2011 -0400
+
+    add ANDROID_DEFAULT for (*bionic*)
+
+diff --git a/gcc/config.gcc b/gcc/config.gcc
+index f48b957..b779932 100644
+--- a/gcc/config.gcc
++++ b/gcc/config.gcc
+@@ -611,7 +611,7 @@ case ${target} in
+   esac
+   # Enable compilation for Android by default for *android* targets.
+   case $target in
+-    *-*-*android*)
++    *-*-*android*|*-*-*bionic*)
+       tm_defines="$tm_defines ANDROID_DEFAULT=1"
+       ;;
+     *)

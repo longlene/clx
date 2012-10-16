@@ -1,0 +1,19 @@
+commit ba032f217e03c7cc4ac3ce69e658c892ca6272e2
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 23:42:28 2011 -0400
+
+    remove dynamic cast from fmtable.cpp
+
+diff --git a/i18n/fmtable.cpp b/i18n/fmtable.cpp
+index 4c755bf..91b1fcf 100644
+--- a/i18n/fmtable.cpp
++++ b/i18n/fmtable.cpp
+@@ -59,7 +59,7 @@ static inline UObject* objectClone(const UObject* a) {
+ 
+ // Return TRUE if *a is an instance of Measure.
+ static inline UBool instanceOfMeasure(const UObject* a) {
+-    return dynamic_cast<const Measure*>(a) != NULL;
++    return (const Measure*)(a) != NULL;
+ }
+ 
+ /**

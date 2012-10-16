@@ -1,0 +1,167 @@
+commit ca88fbbd1cb14145c861d16321e59d1bddca4ad2
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 23:51:37 2011 -0400
+
+    remove dynamic_cast
+
+diff --git a/i18n/unum.cpp b/i18n/unum.cpp
+index 4e01677..5deb6cd 100644
+--- a/i18n/unum.cpp
++++ b/i18n/unum.cpp
+@@ -168,11 +168,11 @@ unum_clone(const UNumberFormat *fmt,
+     
+     Format *res = 0;
+     const NumberFormat* nf = reinterpret_cast<const NumberFormat*>(fmt);
+-    const DecimalFormat* df = dynamic_cast<const DecimalFormat*>(nf);
++    const DecimalFormat* df = (const DecimalFormat*)(nf);
+     if (df != NULL) {
+         res = df->clone();
+     } else {
+-        const RuleBasedNumberFormat* rbnf = dynamic_cast<const RuleBasedNumberFormat*>(nf);
++        const RuleBasedNumberFormat* rbnf = (const RuleBasedNumberFormat*)(nf);
+         U_ASSERT(rbnf != NULL);
+         res = rbnf->clone();
+     }
+@@ -460,7 +460,7 @@ unum_parseDoubleCurrency(const UNumberFormat* fmt,
+     currency[0] = 0;
+     const CurrencyAmount* c;
+     if (res.getType() == Formattable::kObject &&
+-        (c = dynamic_cast<const CurrencyAmount*>(res.getObject())) != NULL) {
++        (c = (const CurrencyAmount*)(res.getObject())) != NULL) {
+         u_strcpy(currency, c->getISOCurrency());
+     }
+     return res.getDouble(*status);
+@@ -483,7 +483,7 @@ unum_getAttribute(const UNumberFormat*          fmt,
+           UNumberFormatAttribute  attr)
+ {
+   const NumberFormat* nf = reinterpret_cast<const NumberFormat*>(fmt);
+-  const DecimalFormat* df = dynamic_cast<const DecimalFormat*>(nf);
++  const DecimalFormat* df = (const DecimalFormat*)(nf);
+   if (df != NULL) {
+     switch(attr) {
+     case UNUM_PARSE_INT_ONLY:
+@@ -547,7 +547,7 @@ unum_getAttribute(const UNumberFormat*          fmt,
+         break;
+     }
+   } else {
+-    const RuleBasedNumberFormat* rbnf = dynamic_cast<const RuleBasedNumberFormat*>(nf);
++    const RuleBasedNumberFormat* rbnf = (const RuleBasedNumberFormat*)(nf);
+     U_ASSERT(rbnf != NULL);
+     if (attr == UNUM_LENIENT_PARSE) {
+ #if !UCONFIG_NO_COLLATION
+@@ -565,7 +565,7 @@ unum_setAttribute(    UNumberFormat*          fmt,
+             int32_t                 newValue)
+ {
+   NumberFormat* nf = reinterpret_cast<NumberFormat*>(fmt);
+-  DecimalFormat* df = dynamic_cast<DecimalFormat*>(nf);
++  DecimalFormat* df = (DecimalFormat*)(nf);
+   if (df != NULL) {
+     switch(attr) {
+     case UNUM_PARSE_INT_ONLY:
+@@ -648,7 +648,7 @@ unum_setAttribute(    UNumberFormat*          fmt,
+         break;
+     }
+   } else {
+-    RuleBasedNumberFormat* rbnf = dynamic_cast<RuleBasedNumberFormat*>(nf);
++    RuleBasedNumberFormat* rbnf = (RuleBasedNumberFormat*)(nf);
+     U_ASSERT(rbnf != NULL);
+     if (attr == UNUM_LENIENT_PARSE) {
+ #if !UCONFIG_NO_COLLATION
+@@ -663,7 +663,7 @@ unum_getDoubleAttribute(const UNumberFormat*          fmt,
+           UNumberFormatAttribute  attr)
+ {
+     const NumberFormat* nf = reinterpret_cast<const NumberFormat*>(fmt);
+-    const DecimalFormat* df = dynamic_cast<const DecimalFormat*>(nf);
++    const DecimalFormat* df = (const DecimalFormat*)(nf);
+     if (df != NULL &&  attr == UNUM_ROUNDING_INCREMENT) {
+         return df->getRoundingIncrement();
+     } else {
+@@ -677,7 +677,7 @@ unum_setDoubleAttribute(    UNumberFormat*          fmt,
+             double                 newValue)
+ {
+     NumberFormat* nf = reinterpret_cast<NumberFormat*>(fmt);
+-    DecimalFormat* df = dynamic_cast<DecimalFormat*>(nf);
++    DecimalFormat* df = (DecimalFormat*)(nf);
+     if (df != NULL && attr == UNUM_ROUNDING_INCREMENT) {   
+         df->setRoundingIncrement(newValue);
+     }
+@@ -701,7 +701,7 @@ unum_getTextAttribute(const UNumberFormat*  fmt,
+     }
+ 
+     const NumberFormat* nf = reinterpret_cast<const NumberFormat*>(fmt);
+-    const DecimalFormat* df = dynamic_cast<const DecimalFormat*>(nf);
++    const DecimalFormat* df = (const DecimalFormat*)(nf);
+     if (df != NULL) {
+         switch(tag) {
+         case UNUM_POSITIVE_PREFIX:
+@@ -733,7 +733,7 @@ unum_getTextAttribute(const UNumberFormat*  fmt,
+             return -1;
+         }
+     } else {
+-        const RuleBasedNumberFormat* rbnf = dynamic_cast<const RuleBasedNumberFormat*>(nf);
++        const RuleBasedNumberFormat* rbnf = (const RuleBasedNumberFormat*)(nf);
+         U_ASSERT(rbnf != NULL);
+         if (tag == UNUM_DEFAULT_RULESET) {
+             res = rbnf->getDefaultRuleSetName();
+@@ -765,7 +765,7 @@ unum_setTextAttribute(    UNumberFormat*                    fmt,
+     int32_t len = (newValueLength == -1 ? u_strlen(newValue) : newValueLength);
+     const UnicodeString val((UChar*)newValue, len, len);
+     NumberFormat* nf = reinterpret_cast<NumberFormat*>(fmt);
+-    DecimalFormat* df = dynamic_cast<DecimalFormat*>(nf);
++    DecimalFormat* df = (DecimalFormat*)(nf);
+     if (df != NULL) {
+       switch(tag) {
+       case UNUM_POSITIVE_PREFIX:
+@@ -797,7 +797,7 @@ unum_setTextAttribute(    UNumberFormat*                    fmt,
+         break;
+       }
+     } else {
+-      RuleBasedNumberFormat* rbnf = dynamic_cast<RuleBasedNumberFormat*>(nf);
++      RuleBasedNumberFormat* rbnf = (RuleBasedNumberFormat*)(nf);
+       U_ASSERT(rbnf != NULL);
+       if (tag == UNUM_DEFAULT_RULESET) {
+         rbnf->setDefaultRuleSet(newValue, *status);
+@@ -825,14 +825,14 @@ unum_toPattern(    const    UNumberFormat*          fmt,
+     }
+ 
+     const NumberFormat* nf = reinterpret_cast<const NumberFormat*>(fmt);
+-    const DecimalFormat* df = dynamic_cast<const DecimalFormat*>(nf);
++    const DecimalFormat* df = (const DecimalFormat*)(nf);
+     if (df != NULL) {
+       if(isPatternLocalized)
+         df->toLocalizedPattern(pat);
+       else
+         df->toPattern(pat);
+     } else {
+-      const RuleBasedNumberFormat* rbnf = dynamic_cast<const RuleBasedNumberFormat*>(nf);
++      const RuleBasedNumberFormat* rbnf = (const RuleBasedNumberFormat*)(nf);
+       U_ASSERT(rbnf != NULL);
+       pat = rbnf->getRules();
+     }
+@@ -854,7 +854,7 @@ unum_getSymbol(const UNumberFormat *fmt,
+         return 0;
+     }
+     const NumberFormat *nf = reinterpret_cast<const NumberFormat *>(fmt);
+-    const DecimalFormat *dcf = dynamic_cast<const DecimalFormat *>(nf);
++    const DecimalFormat *dcf = (const DecimalFormat *)(nf);
+     if (dcf == NULL) {
+       *status = U_UNSUPPORTED_ERROR;
+       return 0;
+@@ -881,7 +881,7 @@ unum_setSymbol(UNumberFormat *fmt,
+         return;
+     }
+     NumberFormat *nf = reinterpret_cast<NumberFormat *>(fmt);
+-    DecimalFormat *dcf = dynamic_cast<DecimalFormat *>(nf);
++    DecimalFormat *dcf = (DecimalFormat *)(nf);
+     if (dcf == NULL) {
+       *status = U_UNSUPPORTED_ERROR;
+       return;
+@@ -917,7 +917,7 @@ unum_applyPattern(  UNumberFormat  *fmt,
+ 
+     // Verify if the object passed is a DecimalFormat object
+     NumberFormat* nf = reinterpret_cast<NumberFormat*>(fmt);
+-    DecimalFormat* df = dynamic_cast<DecimalFormat*>(nf);
++    DecimalFormat* df = (DecimalFormat*)(nf);
+     if (df != NULL) {
+       if(localized) {
+         df->applyLocalizedPattern(pat,*parseError, *status);

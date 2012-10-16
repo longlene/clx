@@ -1,0 +1,29 @@
+commit a8bc484480d4227f13b983216a6fa7d77d60e26b
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri Apr 29 16:36:07 2011 -0400
+
+    remove wakelock-related symbols
+
+diff --git a/librpc/clnt.c b/librpc/clnt.c
+index ad7926a..8452b9f 100644
+--- a/librpc/clnt.c
++++ b/librpc/clnt.c
+@@ -11,18 +11,14 @@
+ #include <errno.h>
+ #include <stdlib.h>
+ 
+-#include <hardware_legacy/power.h>
+-
+ #define ANDROID_WAKE_LOCK_NAME "rpc-interface"
+ 
+ void
+ grabPartialWakeLock() {
+-    acquire_wake_lock(PARTIAL_WAKE_LOCK, ANDROID_WAKE_LOCK_NAME);
+ }
+ 
+ void
+ releaseWakeLock() {
+-    release_wake_lock(ANDROID_WAKE_LOCK_NAME);
+ }
+ 
+ struct CLIENT {

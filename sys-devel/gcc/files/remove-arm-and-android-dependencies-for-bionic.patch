@@ -1,0 +1,23 @@
+--- gcc/config.gcc_orig	2011-04-12 09:39:34.425000002 -0400
++++ gcc/config.gcc	2011-04-12 09:42:50.915000002 -0400
+@@ -610,6 +610,11 @@
+   case $target in
+     *-*-*android*)
+       tm_defines="$tm_defines ANDROID_DEFAULT=1"
++      tm_files="$tm_files linux-android.h"
++      ;;
++    *-*-*bionic*)
++      tm_defines="$tm_defines ANDROID_DEFAULT=0"
++      tm_files="$tm_files linux-android.h"
+       ;;
+     *)
+       tm_defines="$tm_defines ANDROID_DEFAULT=0"
+@@ -814,7 +819,7 @@
+ 	use_collect2=yes
+ 	;;
+ arm*-*-linux*)			# ARM GNU/Linux with ELF
+-	tm_file="dbxelf.h elfos.h gnu-user.h linux.h linux-android.h glibc-stdint.h arm/elf.h arm/linux-gas.h arm/linux-elf.h"
++	tm_file="dbxelf.h elfos.h gnu-user.h linux.h glibc-stdint.h arm/elf.h arm/linux-gas.h arm/linux-elf.h"
+ 	case $target in
+ 	arm*b-*)
+ 		tm_defines="${tm_defines} TARGET_BIG_ENDIAN_DEFAULT=1"

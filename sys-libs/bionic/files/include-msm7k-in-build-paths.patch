@@ -1,0 +1,20 @@
+commit 33cc98d0ef56e0d6ed3f61ef0ab0a476e3b72d46
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri Apr 29 15:55:22 2011 -0400
+
+    added msm7k to searched subdirs
+
+diff --git a/core/main.mk b/core/main.mk
+index 3ec3189..3ba062e 100644
+--- a/core/main.mk
++++ b/core/main.mk
+@@ -457,7 +457,8 @@ subdirs := \
+ 	external/elfcopy \
+ 	external/elfutils \
+ 	external/yaffs2 \
+-	external/zlib
++	external/zlib \
++	msm7k
+ else	# !BUILD_TINY_ANDROID
+ 
+ #

@@ -1,0 +1,19 @@
+commit 8f5493e31aaf76364c1e48e7ddcd8cb9e5568365
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Tue May 10 13:09:10 2011 -0400
+
+    make debugger use SIGUSR2 instead of SIGUSR1
+
+diff --git a/linker/debugger.c b/linker/debugger.c
+index abb383c..abe83d6 100644
+--- a/linker/debugger.c
++++ b/linker/debugger.c
+@@ -93,7 +93,7 @@ void debugger_signal_handler(int n)
+     int s;
+ 
+     /* avoid picking up GC interrupts */
+-    signal(SIGUSR1, SIG_IGN);
++    signal(SIGUSR2, SIG_IGN);
+ 
+     tid = gettid();
+     s = socket_abstract_client("android:debuggerd", SOCK_STREAM);

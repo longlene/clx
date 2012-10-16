@@ -1,0 +1,157 @@
+commit 54064834d14a1358f3be626f59f442a91ab1d0d5
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri Jan 13 15:21:59 2012 -0500
+
+    added ether_aton(3) and ether_ntoa(3) and some related function definitions in <netinet/ether.h>
+
+diff --git a/libc/include/netinet/ether.h b/libc/include/netinet/ether.h
+index a1c9cbb..37d382d 100644
+--- a/libc/include/netinet/ether.h
++++ b/libc/include/netinet/ether.h
+@@ -25,4 +25,23 @@
+  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  */
++
++#ifndef _NETINET_ETHER_H
++#define _NETINET_ETHER_H
++
+ #include <net/if_ether.h>
++
++__BEGIN_DECLS
++
++extern char *ether_ntoa(const struct ether_addr *addr);
++extern struct ether_addr *ether_aton(const char *asc);
++extern int ether_ntohost(char *hostname, const struct ether_addr *addr);
++extern int ether_hostton(const char *hostname, struct ether_addr *addr);
++extern int ether_line(const char *line, struct ether_addr *addr, char *hostname);
++
++extern char *ether_ntoa_r(const struct ether_addr *addr, char *buf);
++extern struct ether_addr *ether_aton_r(const char *asc, struct ether_addr *addr);
++
++__END_DECLS
++
++#endif /* _NETINET_ETHER_H */
+diff --git a/libc/netinet/ether_aton.c b/libc/netinet/ether_aton.c
+new file mode 100644
+index 0000000..104571f
+--- /dev/null
++++ b/libc/netinet/ether_aton.c
+@@ -0,0 +1,72 @@
++#include <netinet/ether.h>
++
++struct ether_addr *ether_aton(const char *asc);
++
++/**************************************************/
++
++#include <netinet/if_ether.h> // ETH_ALEN
++
++#ifndef ETHADDR_STRLEN
++#define ETHADDR_STRLEN (2*ETH_ALEN + ETH_ALEN - 1)
++#endif
++
++#define INVALID_HEX 0xff
++
++static inline char _hexstr_to_char(const char *s);
++
++static struct ether_addr _addr;
++
++struct ether_addr *ether_aton(const char *asc) {
++
++	uint8_t *x, i;
++
++	if ( !asc || strlen(asc) <  ETHADDR_STRLEN )
++		return NULL;
++
++	x = _addr.ether_addr_octet;
++
++	for(i=0; i<ETH_ALEN; i++) {
++		x[i] = _hexstr_to_char( &asc[3*i] );
++		if ( x[i] == INVALID_HEX )
++			return NULL;
++	}
++
++	return (struct ether_addr *) &_addr;
++}
++
++
++
++static inline char _hexstr_to_char(const char *s) {
++	char r, t, i;
++
++	if ( !(s && strlen(s) >= 2) ) {
++		r = INVALID_HEX;
++		goto out;
++	}
++
++	for( r=0, i=0; i<2; i++ ) {
++		t = s[i];
++		if ( t >= '0' && t <= '9' ) {
++			t -= '0';
++			goto nextch;
++		}
++		if ( t >= 'a' && t <= 'f' ) {
++			t -= 'a';
++			t += 10;
++			goto nextch;
++		}
++		if ( t >= 'A' && t <= 'F' ) {
++			t -= 'A';
++			t += 10;
++			goto nextch;
++		}
++		r = INVALID_HEX;
++		goto out;
++nextch:
++		r |= i ? t : t << 4;
++	}
++
++out:
++	return r;
++}
++
+diff --git a/libc/netinet/ether_ntoa.c b/libc/netinet/ether_ntoa.c
+new file mode 100644
+index 0000000..cd2338c
+--- /dev/null
++++ b/libc/netinet/ether_ntoa.c
+@@ -0,0 +1,39 @@
++#include <netinet/ether.h>
++
++char *ether_ntoa(const struct ether_addr *addr);
++
++/************************************************/
++
++#include <stdio.h>
++#include <string.h>
++
++#include <netinet/if_ether.h> // ETH_ALEN
++
++static char _buf[2*ETH_ALEN + ETH_ALEN -1 + 1];
++
++static inline char toasc(char x) {
++	return ( x >= 0xa ) ? ('a' + x - 0xa) : ('0' + x);
++}
++
++char *ether_ntoa(const struct ether_addr *addr) {
++	char i, x, y;
++
++	if ( !addr ) {
++		printf("addr is null");
++		return NULL;
++	}
++	
++	for(i=0; i<ETH_ALEN; i++) {
++
++		y = addr->ether_addr_octet[i];
++
++		_buf[3*i  ] = toasc((y >> 4) & 0xf);
++		_buf[3*i+1] = toasc( y       & 0xf);
++		_buf[3*i+2] = ':';
++	}
++
++	_buf[2*ETH_ALEN + ETH_ALEN -1] = '\0';
++
++	return (char *)_buf;
++}
++

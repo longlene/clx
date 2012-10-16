@@ -1,0 +1,203 @@
+commit cbd485c61101ff9df98d9897249c36a90939ce7b
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 8 19:14:06 2011 -0400
+
+    more blah blah
+
+diff --git a/libc/netbsd/resolv/__dn_comp.c b/libc/netbsd/resolv/__dn_comp.c
+index 93d3f19..4be71e2 100644
+--- a/libc/netbsd/resolv/__dn_comp.c
++++ b/libc/netbsd/resolv/__dn_comp.c
+@@ -16,11 +16,7 @@ __indr_reference(__dn_comp,dn_comp)
+ 
+ #include <sys/types.h>
+ #include <netinet/in.h>
+-#ifdef ANDROID_CHANGES
+ #include "resolv_private.h"
+-#else
+-#include <resolv.h>
+-#endif
+ 
+ /* XXX THIS IS A MESS!  SEE <resolv.h> XXX */
+ 
+
+commit f878332edbb8952d39108a2c898fdb5dba253128
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 8 19:05:58 2011 -0400
+
+    more blah
+
+diff --git a/libc/netbsd/nameser/ns_print.c b/libc/netbsd/nameser/ns_print.c
+index 7465e62..97b45d2 100644
+--- a/libc/netbsd/nameser/ns_print.c
++++ b/libc/netbsd/nameser/ns_print.c
+@@ -38,11 +38,7 @@ __RCSID("$NetBSD: ns_print.c,v 1.5 2004/11/07 02:19:49 christos Exp $");
+ #include <isc/assertions.h>
+ #include <isc/dst.h>
+ #include <errno.h>
+-#ifdef ANDROID_CHANGES
+ #include "resolv_private.h"
+-#else
+-#include <resolv.h>
+-#endif
+ #include <string.h>
+ #include <ctype.h>
+ #include <assert.h>
+
+commit 436a57b599f2dce3360c9fa04b485993862486ca
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 8 18:56:00 2011 -0400
+
+    more ANDROID_CHANGES refactorizations
+
+diff --git a/libc/netbsd/resolv/res_mkquery.c b/libc/netbsd/resolv/res_mkquery.c
+index fb4de7f..7e843a9 100644
+--- a/libc/netbsd/resolv/res_mkquery.c
++++ b/libc/netbsd/resolv/res_mkquery.c
+@@ -88,11 +88,7 @@ __RCSID("$NetBSD: res_mkquery.c,v 1.6 2006/01/24 17:40:32 christos Exp $");
+ #include <netinet/in.h>
+ #include "arpa_nameser.h"
+ #include <netdb.h>
+-#ifdef ANDROID_CHANGES
+ #include "resolv_private.h"
+-#else
+-#include <resolv.h>
+-#endif
+ #include <stdio.h>
+ #include <string.h>
+ 
+diff --git a/libc/netbsd/resolv/res_query.c b/libc/netbsd/resolv/res_query.c
+index 8e1321e..0dfe93d 100644
+--- a/libc/netbsd/resolv/res_query.c
++++ b/libc/netbsd/resolv/res_query.c
+@@ -90,11 +90,7 @@ __RCSID("$NetBSD: res_query.c,v 1.7 2006/01/24 17:41:25 christos Exp $");
+ #include <ctype.h>
+ #include <errno.h>
+ #include <netdb.h>
+-#ifdef ANDROID_CHANGES
+ #include "resolv_private.h"
+-#else
+-#include <resolv.h>
+-#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+
+commit 03eca020f3aa73642369b55a79ee27e8d8a21201
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 8 18:52:32 2011 -0400
+
+    res_private should include resolv_private
+
+diff --git a/libc/netbsd/resolv/res_private.h b/libc/netbsd/resolv/res_private.h
+index 3cfd637..6c42b40 100644
+--- a/libc/netbsd/resolv/res_private.h
++++ b/libc/netbsd/resolv/res_private.h
+@@ -11,6 +11,8 @@
+ #define MAXRESOLVSORT 10
+ #endif
+ 
++#include <private/resolv_private.h>
++
+ struct __res_state_ext {
+ 	union res_sockaddr_union nsaddrs[MAXNS];
+ 	struct sort_list {
+
+commit a7dd62ed7af4667dc67a46d0fe1ebfd7cdaeb6ae
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 8 18:43:49 2011 -0400
+
+    added MAXNS and MAXRESOLVSORT in res_private.h
+
+diff --git a/libc/netbsd/resolv/res_private.h b/libc/netbsd/resolv/res_private.h
+index 8341913..3cfd637 100644
+--- a/libc/netbsd/resolv/res_private.h
++++ b/libc/netbsd/resolv/res_private.h
+@@ -3,6 +3,14 @@
+ #ifndef res_private_h
+ #define res_private_h
+ 
++#ifndef MAXNS
++#define MAXNS 3
++#endif
++
++#ifndef MAXRESOLVSORT
++#define MAXRESOLVSORT 10
++#endif
++
+ struct __res_state_ext {
+ 	union res_sockaddr_union nsaddrs[MAXNS];
+ 	struct sort_list {
+
+commit 5c89a42e1807a8a040c6055726840debca9da29f
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 8 18:37:08 2011 -0400
+
+    factored out ANDROID_CHANGES from strtod.c
+
+diff --git a/libc/stdlib/strtod.c b/libc/stdlib/strtod.c
+index 9d599b0..b1d9d39 100644
+--- a/libc/stdlib/strtod.c
++++ b/libc/stdlib/strtod.c
+@@ -91,11 +91,9 @@
+  *	directly -- and assumed always to succeed.
+  */
+ 
+-#ifdef ANDROID_CHANGES
+ #include <pthread.h>
+ #define mutex_lock(x) pthread_mutex_lock(x)
+ #define mutex_unlock(x) pthread_mutex_unlock(x)
+-#endif
+ 
+ #include <sys/cdefs.h>
+ #if defined(LIBC_SCCS) && !defined(lint)
+@@ -151,18 +149,11 @@ __RCSID("$NetBSD: strtod.c,v 1.45.2.1 2005/04/19 13:35:54 tron Exp $");
+ #ifndef KR_headers
+ #include "stdlib.h"
+ #include "string.h"
+-#ifndef ANDROID_CHANGES
+-#include "locale.h"
+-#endif /* ANDROID_CHANGES */
+ #else
+ #include "malloc.h"
+ #include "memory.h"
+ #endif
+ #endif
+-#ifndef ANDROID_CHANGES
+-#include "extern.h"
+-#include "reentrant.h"
+-#endif /* ANDROID_CHANGES */
+ 
+ #ifdef MALLOC
+ #ifdef KR_headers
+@@ -370,13 +361,7 @@ Bigint {
+ 
+  static Bigint *freelist[Kmax+1];
+ 
+-#ifdef ANDROID_CHANGES
+  static pthread_mutex_t freelist_mutex = PTHREAD_MUTEX_INITIALIZER;
+-#else
+-#ifdef _REENTRANT
+- static mutex_t freelist_mutex = MUTEX_INITIALIZER;
+-#endif
+-#endif
+ 
+ /* Special value used to indicate an invalid Bigint value,
+  * e.g. when a memory allocation fails. The idea is that we
+@@ -1341,16 +1326,7 @@ strtod
+ 	Bigint *bb1, *bd0;
+ 	Bigint *bb = NULL, *bd = NULL, *bs = NULL, *delta = NULL;/* pacify gcc */
+ 
+-#ifdef ANDROID_CHANGES
+ 	CONST char decimal_point = '.';
+-#else /* ANDROID_CHANGES */
+-#ifndef KR_headers
+-	CONST char decimal_point = localeconv()->decimal_point[0];
+-#else
+-	CONST char decimal_point = '.';
+-#endif
+-
+-#endif /* ANDROID_CHANGES */
+ 
+ 	sign = nz0 = nz = 0;
+ 	value(rv) = 0.;

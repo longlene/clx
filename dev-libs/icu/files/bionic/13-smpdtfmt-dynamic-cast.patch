@@ -1,0 +1,61 @@
+commit 2a5acfa555c341b6f3233e8c06e7791fba9c3c3c
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 23:54:10 2011 -0400
+
+    remove dynamic_cast
+
+diff --git a/i18n/smpdtfmt.cpp b/i18n/smpdtfmt.cpp
+index 86e98cb..2878458 100644
+--- a/i18n/smpdtfmt.cpp
++++ b/i18n/smpdtfmt.cpp
+@@ -685,7 +685,7 @@ SimpleDateFormat::initialize(const Locale& locale,
+         // show the decimal point, and recognizes integers only when parsing
+ 
+         fNumberFormat->setGroupingUsed(FALSE);
+-        DecimalFormat* decfmt = dynamic_cast<DecimalFormat*>(fNumberFormat);
++        DecimalFormat* decfmt = (DecimalFormat*)(fNumberFormat);
+         if (decfmt != NULL) {
+             decfmt->setDecimalSeparatorAlwaysShown(FALSE);
+         }
+@@ -1365,7 +1365,7 @@ SimpleDateFormat::processOverrideString(const Locale &locale, const UnicodeStrin
+ 
+                if (U_SUCCESS(status)) {
+                    nf->setGroupingUsed(FALSE);
+-                   DecimalFormat* decfmt = dynamic_cast<DecimalFormat*>(nf);
++                   DecimalFormat* decfmt = (DecimalFormat*)(nf);
+                    if (decfmt != NULL) {
+                        decfmt->setDecimalSeparatorAlwaysShown(FALSE);
+                    }
+@@ -2047,10 +2047,10 @@ SimpleDateFormat::parse(const UnicodeString& text, Calendar& cal, ParsePosition&
+             const TimeZone & tz = cal.getTimeZone();
+             BasicTimeZone *btz = NULL;
+ 
+-            if (dynamic_cast<const OlsonTimeZone *>(&tz) != NULL
+-                || dynamic_cast<const SimpleTimeZone *>(&tz) != NULL
+-                || dynamic_cast<const RuleBasedTimeZone *>(&tz) != NULL
+-                || dynamic_cast<const VTimeZone *>(&tz) != NULL) {
++            if ((const OlsonTimeZone *)(&tz) != NULL
++                || (const SimpleTimeZone *)(&tz) != NULL
++                || (const RuleBasedTimeZone *)(&tz) != NULL
++                || (const VTimeZone *)(&tz) != NULL) {
+                 btz = (BasicTimeZone*)&tz;
+             }
+ 
+@@ -2933,7 +2933,7 @@ void SimpleDateFormat::parseInt(const UnicodeString& text,
+                                 NumberFormat *fmt) const {
+     UnicodeString oldPrefix;
+     DecimalFormat* df = NULL;
+-    if (!allowNegative && (df = dynamic_cast<DecimalFormat*>(fmt)) != NULL) {
++    if (!allowNegative && (df = (DecimalFormat*)(fmt)) != NULL) {
+         df->getNegativePrefix(oldPrefix);
+         df->setNegativePrefix(SUPPRESS_NEGATIVE_PREFIX);
+     }
+@@ -3162,7 +3162,7 @@ SimpleDateFormat::checkIntSuffix(const UnicodeString& text, int32_t start,
+     }
+ 
+     // get the suffix
+-    DecimalFormat* decfmt = dynamic_cast<DecimalFormat*>(fNumberFormat);
++    DecimalFormat* decfmt = (DecimalFormat*)(fNumberFormat);
+     if (decfmt != NULL) {
+         if (isNegative) {
+             suf = decfmt->getNegativeSuffix(suf);

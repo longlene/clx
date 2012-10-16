@@ -1,0 +1,19 @@
+commit c4b615469957d9c40fe89a4aee56680054c988ab
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 15:26:41 2011 -0400
+
+    added sys/user.h
+
+diff --git a/libc/include/sys/user.h b/libc/include/sys/user.h
+new file mode 100644
+index 0000000..7a9f587
+--- /dev/null
++++ b/libc/include/sys/user.h
+@@ -0,0 +1,7 @@
++#ifndef _SYS_USER_H_
++#define _SYS_USER_H_
++
++#include <asm/page.h>
++#include <asm/user.h>
++
++#endif /* _SYS_USER_H_ */

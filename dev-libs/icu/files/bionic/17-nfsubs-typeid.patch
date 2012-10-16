@@ -1,0 +1,41 @@
+commit 8cd22e0899cb658ecf621f5a8e8765d1e369c88d
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Tue May 10 00:00:17 2011 -0400
+
+    typeid -> getDynamicClassID()
+
+diff --git a/i18n/dtptngen.cpp b/i18n/dtptngen.cpp
+index bb4dd27..5780af3 100644
+--- a/i18n/dtptngen.cpp
++++ b/i18n/dtptngen.cpp
+@@ -414,7 +414,7 @@ DateTimePatternGenerator::addICUPatterns(const Locale& locale, UErrorCode& statu
+         DateFormat::EStyle style = (DateFormat::EStyle)i;
+         df = DateFormat::createDateInstance(style, locale);
+         SimpleDateFormat* sdf;
+-        if (df != NULL && (sdf = dynamic_cast<SimpleDateFormat*>(df)) != NULL) {
++        if (df != NULL && (sdf = (SimpleDateFormat*)(df)) != NULL) {
+             conflictingStatus = addPattern(sdf->toPattern(dfPattern), FALSE, conflictingString, status);
+         }
+         // TODO Maybe we should return an error when the date format isn't simple.
+@@ -424,7 +424,7 @@ DateTimePatternGenerator::addICUPatterns(const Locale& locale, UErrorCode& statu
+         }
+ 
+         df = DateFormat::createTimeInstance(style, locale);
+-        if (df != NULL && (sdf = dynamic_cast<SimpleDateFormat*>(df)) != NULL) {
++        if (df != NULL && (sdf = (SimpleDateFormat*)(df)) != NULL) {
+             conflictingStatus = addPattern(sdf->toPattern(dfPattern), FALSE, conflictingString, status);
+             // HACK for hh:ss
+             if ( i==DateFormat::kMedium ) {
+diff --git a/i18n/nfsubs.cpp b/i18n/nfsubs.cpp
+index 4348f5d..6490348 100644
+--- a/i18n/nfsubs.cpp
++++ b/i18n/nfsubs.cpp
+@@ -526,7 +526,7 @@ NFSubstitution::operator==(const NFSubstitution& rhs) const
+   // compare class and all of the fields all substitutions have
+   // in common
+   // this should be called by subclasses before their own equality tests
+-  return typeid(*this) == typeid(rhs)
++  return getDynamicClassID() == rhs.getDynamicClassID()
+   && pos == rhs.pos
+   && (ruleSet == NULL) == (rhs.ruleSet == NULL)
+   // && ruleSet == rhs.ruleSet causes circularity, other checks to make instead?

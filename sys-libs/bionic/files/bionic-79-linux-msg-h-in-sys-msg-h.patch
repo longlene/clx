@@ -1,0 +1,18 @@
+commit c330fffb9d803b363295c3eca1536c2145ed080d
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri Jan 13 10:26:36 2012 -0500
+
+    included linux/msg.h in sys/msg.h
+
+diff --git a/libc/include/sys/msg.h b/libc/include/sys/msg.h
+index ba3df0e..0605d70 100644
+--- a/libc/include/sys/msg.h
++++ b/libc/include/sys/msg.h
+@@ -31,6 +31,7 @@
+ #include <sys/cdefs.h>
+ #include <sys/types.h>
+ #include <linux/ipc.h>
++#include <linux/msg.h>
+ 
+ __BEGIN_DECLS
+ 

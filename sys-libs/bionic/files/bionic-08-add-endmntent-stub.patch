@@ -1,0 +1,35 @@
+commit a82ff79d840506cbb3110b3297deb6cb723a7199
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu Apr 28 01:17:19 2011 -0400
+
+    added endmntent as a stub
+
+diff --git a/libc/bionic/stubs.c b/libc/bionic/stubs.c
+index 710f2bd..0c7016d 100644
+--- a/libc/bionic/stubs.c
++++ b/libc/bionic/stubs.c
+@@ -360,6 +360,12 @@ FILE *setmntent(const char *filename, const char *type) {
+     return NULL;
+ }
+ 
++int endmntent(FILE *fp) {
++    fprintf(stderr, "FIX ME! implement endmntent() %s:%d\n", __FILE__, __LINE__);
++    errno = ENOSYS;
++    return -ENOSYS;
++}
++
+ char* ttyname(int fd)
+ {
+     fprintf(stderr, "FIX ME! implement ttyname() %s:%d\n", __FILE__, __LINE__);
+diff --git a/libc/include/mntent.h b/libc/include/mntent.h
+index 292cfc2..21c439d 100644
+--- a/libc/include/mntent.h
++++ b/libc/include/mntent.h
+@@ -48,6 +48,7 @@ __BEGIN_DECLS
+ 
+ struct mntent* getmntent(FILE*);
+ FILE *setmntent(const char *filename, const char *type);
++int endmntent(FILE *fp);
+ 
+ __END_DECLS
+ 

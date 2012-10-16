@@ -1,0 +1,21 @@
+commit c9ea34caa88dd9824d71d973e4b3bbd33df2f8cc
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu May 5 19:44:39 2011 -0400
+
+    res_get_state
+
+diff --git a/libc/private/resolv_private.h b/libc/private/resolv_private.h
+index 7cd2d1d..7e83824 100644
+--- a/libc/private/resolv_private.h
++++ b/libc/private/resolv_private.h
+@@ -284,8 +284,8 @@ extern void __res_put_state(struct __res_state *);
+  * Source and Binary compatibility; _res will not work properly
+  * with multi-threaded programs.
+  */
+-extern struct __res_state *__res_state(void);
+-#define _res (*__res_state())
++extern struct __res_state *__res_get_state(void);
++#define _res (*__res_get_state())
+ #endif
+ 
+ __END_DECLS

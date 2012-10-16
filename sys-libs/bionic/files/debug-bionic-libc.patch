@@ -1,0 +1,19 @@
+commit f5edfcd48815e008f3f5f78d5e6a02bd815977de
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu May 12 23:24:08 2011 -0400
+
+    patch to ensure DEBUG_BIONIC_LIBC is set
+
+diff --git a/libc/Android.mk b/libc/Android.mk
+index 3934776..cca820d 100644
+--- a/libc/Android.mk
++++ b/libc/Android.mk
+@@ -482,6 +482,8 @@ libc_common_cflags += \
+ 
+ ifeq ($(strip $(DEBUG_BIONIC_LIBC)),true)
+   libc_common_cflags += -DDEBUG
++else
++  $(error DEBUG_BIONIC_LIBC should be true)
+ endif
+ 
+ ifeq ($(TARGET_ARCH),arm)

@@ -1,0 +1,338 @@
+commit 09b410724efe262194744ff469467a46a0df421c
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Tue May 10 02:43:59 2011 -0400
+
+    typeid
+
+diff --git a/i18n/currfmt.cpp b/i18n/currfmt.cpp
+index 1334971..b395d51 100644
+--- a/i18n/currfmt.cpp
++++ b/i18n/currfmt.cpp
+@@ -39,7 +39,7 @@ UBool CurrencyFormat::operator==(const Format& other) const {
+     if (this == &other) {
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(other)) {
++    if (getDynamicClassID() != other.getDynamicClassID()) {
+         return FALSE;
+     }
+     const CurrencyFormat* c = (const CurrencyFormat*) &other;
+diff --git a/i18n/currunit.cpp b/i18n/currunit.cpp
+index 47cba62..cac3177 100644
+--- a/i18n/currunit.cpp
++++ b/i18n/currunit.cpp
+@@ -51,7 +51,7 @@ CurrencyUnit::~CurrencyUnit() {
+     
+ UBool CurrencyUnit::operator==(const UObject& other) const {
+     const CurrencyUnit& c = (const CurrencyUnit&) other;
+-    return typeid(*this) == typeid(other) &&
++    return getDynamicClassID() == other.getDynamicClassID() &&
+         u_strcmp(isoCode, c.isoCode) == 0;    
+ }
+ 
+diff --git a/i18n/dtitvfmt.cpp b/i18n/dtitvfmt.cpp
+index bf93758..fc73184 100644
+--- a/i18n/dtitvfmt.cpp
++++ b/i18n/dtitvfmt.cpp
+@@ -190,7 +190,7 @@ DateIntervalFormat::clone(void) const {
+ 
+ UBool
+ DateIntervalFormat::operator==(const Format& other) const {
+-    if (typeid(*this) == typeid(other)) {
++    if (getDynamicClassID() == other.getDynamicClassID()) {
+         const DateIntervalFormat* fmt = (DateIntervalFormat*)&other;
+ #ifdef DTITVFMT_DEBUG
+     UBool equal;
+diff --git a/i18n/dtrule.cpp b/i18n/dtrule.cpp
+index c2eeb05..6a28cd5 100644
+--- a/i18n/dtrule.cpp
++++ b/i18n/dtrule.cpp
+@@ -82,7 +82,7 @@ DateTimeRule::operator=(const DateTimeRule& right) {
+ UBool
+ DateTimeRule::operator==(const DateTimeRule& that) const {
+     return ((this == &that) ||
+-            (typeid(*this) == typeid(that) &&
++            (getDynamicClassID() == that.getDynamicClassID() &&
+             fMonth == that.fMonth &&
+             fDayOfMonth == that.fDayOfMonth &&
+             fDayOfWeek == that.fDayOfWeek &&
+diff --git a/i18n/measure.cpp b/i18n/measure.cpp
+index 7b91677..5cb4ac5 100644
+--- a/i18n/measure.cpp
++++ b/i18n/measure.cpp
+@@ -50,7 +50,7 @@ Measure::~Measure() {
+ 
+ UBool Measure::operator==(const UObject& other) const {
+     const Measure* m = (const Measure*) &other;
+-    return typeid(*this) == typeid(other) &&
++    return getDynamicClassID() == other.getDynamicClassID() &&
+         number == m->getNumber() && 
+         (unit != NULL && *unit == m->getUnit());
+ }
+diff --git a/i18n/olsontz.cpp b/i18n/olsontz.cpp
+index dea8543..bec0a0d 100644
+--- a/i18n/olsontz.cpp
++++ b/i18n/olsontz.cpp
+@@ -301,7 +301,7 @@ OlsonTimeZone::~OlsonTimeZone() {
+  */
+ UBool OlsonTimeZone::operator==(const TimeZone& other) const {
+     return ((this == &other) ||
+-            (typeid(*this) == typeid(other) &&
++            (getDynamicClassID() == other.getDynamicClassID() &&
+             TimeZone::operator==(other) &&
+             hasSameRules(other)));
+ }
+diff --git a/i18n/rbtz.cpp b/i18n/rbtz.cpp
+index 0944028..7d66c50 100644
+--- a/i18n/rbtz.cpp
++++ b/i18n/rbtz.cpp
+@@ -90,7 +90,7 @@ RuleBasedTimeZone::operator==(const TimeZone& that) const {
+     if (this == &that) {
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(that)
++    if (getDynamicClassID() != that.getDynamicClassID()
+         || BasicTimeZone::operator==(that) == FALSE) {
+         return FALSE;
+     }
+@@ -508,7 +508,7 @@ RuleBasedTimeZone::hasSameRules(const TimeZone& other) const {
+     if (this == &other) {
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(other)) {
++    if (getDynamicClassID() != other.getDynamicClassID()) {
+         return FALSE;
+     }
+     const RuleBasedTimeZone& that = (const RuleBasedTimeZone&)other;
+diff --git a/i18n/selfmt.cpp b/i18n/selfmt.cpp
+index 090b643..04974aa 100755
+--- a/i18n/selfmt.cpp
++++ b/i18n/selfmt.cpp
+@@ -378,7 +378,7 @@ SelectFormat::operator==(const Format& other) const {
+     if( this == &other){
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(other)) {
++    if (getDynamicClassID() != other.getDynamicClassID()) {
+         return  FALSE;
+     }
+     SelectFormat* fmt = (SelectFormat*)&other;
+diff --git a/i18n/tblcoll.cpp b/i18n/tblcoll.cpp
+index 15f5c49..a39c80f 100644
+--- a/i18n/tblcoll.cpp
++++ b/i18n/tblcoll.cpp
+@@ -195,7 +195,7 @@ UBool RuleBasedCollator::operator==(const Collator& that) const
+   if (Collator::operator==(that))
+     return TRUE;
+ 
+-  if (typeid(*this) != typeid(that))
++  if (getDynamicClassID() != that.getDynamicClassID())
+     return FALSE;  /* not the same class */
+ 
+   RuleBasedCollator& thatAlias = (RuleBasedCollator&)that;
+diff --git a/i18n/tmunit.cpp b/i18n/tmunit.cpp
+index fb31e25..9198e8b 100644
+--- a/i18n/tmunit.cpp
++++ b/i18n/tmunit.cpp
+@@ -97,7 +97,7 @@ TimeUnit::operator=(const TimeUnit& other) {
+ 
+ UBool 
+ TimeUnit::operator==(const UObject& other) const {
+-    return (typeid(*this) == typeid(other)
++    return (getDynamicClassID() == other.getDynamicClassID()
+             && fTimeUnitField == ((TimeUnit*)&other)->fTimeUnitField);
+ }
+ 
+diff --git a/i18n/tmutfmt.cpp b/i18n/tmutfmt.cpp
+index b364bfa..b497aaf 100644
+--- a/i18n/tmutfmt.cpp
++++ b/i18n/tmutfmt.cpp
+@@ -173,7 +173,7 @@ TimeUnitFormat::operator=(const TimeUnitFormat& other) {
+ 
+ UBool 
+ TimeUnitFormat::operator==(const Format& other) const {
+-    if (typeid(*this) == typeid(other)) {
++    if (getDynamicClassID() == other.getDynamicClassID()) {
+         TimeUnitFormat* fmt = (TimeUnitFormat*)&other;
+         UBool ret =  ( ((fNumberFormat && fmt->fNumberFormat && *fNumberFormat == *fmt->fNumberFormat)
+                             || fNumberFormat == fmt->fNumberFormat ) 
+diff --git a/i18n/translit.cpp b/i18n/translit.cpp
+index 651db9c..825ec35 100644
+--- a/i18n/translit.cpp
++++ b/i18n/translit.cpp
+@@ -1102,7 +1102,7 @@ Transliterator::createFromRules(const UnicodeString& ID,
+                 UnicodeString* idBlock = (UnicodeString*)parser.idBlockVector.elementAt(i);
+                 if (!idBlock->isEmpty()) {
+                     Transliterator* temp = createInstance(*idBlock, UTRANS_FORWARD, parseError, status);
+-                    if (temp != NULL && typeid(*temp) != typeid(NullTransliterator))
++                    if (temp != NULL && temp->getDynamicClassID() != NullTransliterator::getStaticClassID())
+                         transliterators.addElement(temp, status);
+                     else
+                         delete temp;
+diff --git a/i18n/tzrule.cpp b/i18n/tzrule.cpp
+index e54b9b8..d661144 100644
+--- a/i18n/tzrule.cpp
++++ b/i18n/tzrule.cpp
+@@ -54,7 +54,7 @@ TimeZoneRule::operator=(const TimeZoneRule& right) {
+ UBool
+ TimeZoneRule::operator==(const TimeZoneRule& that) const {
+     return ((this == &that) ||
+-            (typeid(*this) == typeid(that) &&
++            (getDynamicClassID() == that.getDynamicClassID() &&
+             fName == that.fName &&
+             fRawOffset == that.fRawOffset &&
+             fDSTSavings == that.fDSTSavings));
+@@ -84,7 +84,7 @@ TimeZoneRule::getDSTSavings(void) const {
+ UBool
+ TimeZoneRule::isEquivalentTo(const TimeZoneRule& other) const {
+     return ((this == &other) ||
+-            (typeid(*this) == typeid(other) &&
++            (getDynamicClassID() == other.getDynamicClassID() &&
+             fRawOffset == other.fRawOffset &&
+             fDSTSavings == other.fDSTSavings));
+ }
+@@ -121,7 +121,7 @@ InitialTimeZoneRule::operator=(const InitialTimeZoneRule& right) {
+ UBool
+ InitialTimeZoneRule::operator==(const TimeZoneRule& that) const {
+     return ((this == &that) ||
+-            (typeid(*this) == typeid(that) &&
++            (getDynamicClassID() == that.getDynamicClassID() &&
+             TimeZoneRule::operator==(that)));
+ }
+ 
+@@ -135,7 +135,7 @@ InitialTimeZoneRule::isEquivalentTo(const TimeZoneRule& other) const {
+     if (this == &other) {
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(other) || TimeZoneRule::isEquivalentTo(other) == FALSE) {
++    if (getDynamicClassID() != other.getDynamicClassID() || TimeZoneRule::isEquivalentTo(other) == FALSE) {
+         return FALSE;
+     }
+     return TRUE;
+@@ -229,7 +229,7 @@ AnnualTimeZoneRule::operator==(const TimeZoneRule& that) const {
+     if (this == &that) {
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(that)) {
++    if (getDynamicClassID() != that.getDynamicClassID()) {
+         return FALSE;
+     }
+     AnnualTimeZoneRule *atzr = (AnnualTimeZoneRule*)&that;
+@@ -321,7 +321,7 @@ AnnualTimeZoneRule::isEquivalentTo(const TimeZoneRule& other) const {
+     if (this == &other) {
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(other) || TimeZoneRule::isEquivalentTo(other) == FALSE) {
++    if (getDynamicClassID() != other.getDynamicClassID() || TimeZoneRule::isEquivalentTo(other) == FALSE) {
+         return FALSE;
+     }
+     AnnualTimeZoneRule* that = (AnnualTimeZoneRule*)&other;
+@@ -448,7 +448,7 @@ TimeArrayTimeZoneRule::operator==(const TimeZoneRule& that) const {
+     if (this == &that) {
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(that) || TimeZoneRule::operator==(that) == FALSE) {
++    if (getDynamicClassID() != that.getDynamicClassID() || TimeZoneRule::operator==(that) == FALSE) {
+         return FALSE;
+     }
+     TimeArrayTimeZoneRule *tatzr = (TimeArrayTimeZoneRule*)&that;
+@@ -496,7 +496,7 @@ TimeArrayTimeZoneRule::isEquivalentTo(const TimeZoneRule& other) const {
+     if (this == &other) {
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(other) || TimeZoneRule::isEquivalentTo(other) == FALSE) {
++    if (getDynamicClassID() != other.getDynamicClassID() || TimeZoneRule::isEquivalentTo(other) == FALSE) {
+         return FALSE;
+     }
+     TimeArrayTimeZoneRule* that = (TimeArrayTimeZoneRule*)&other;
+diff --git a/i18n/tztrans.cpp b/i18n/tztrans.cpp
+index f795e40..473b470 100644
+--- a/i18n/tztrans.cpp
++++ b/i18n/tztrans.cpp
+@@ -66,7 +66,7 @@ TimeZoneTransition::operator==(const TimeZoneTransition& that) const {
+     if (this == &that) {
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(that)) {
++    if (getDynamicClassID() != that.getDynamicClassID()) {
+         return FALSE;
+     }
+     if (fTime != that.fTime) {
+diff --git a/i18n/vtzone.cpp b/i18n/vtzone.cpp
+index fc366ff..0129b82 100644
+--- a/i18n/vtzone.cpp
++++ b/i18n/vtzone.cpp
+@@ -1035,7 +1035,7 @@ VTimeZone::operator==(const TimeZone& that) const {
+     if (this == &that) {
+         return TRUE;
+     }
+-    if (typeid(*this) != typeid(that) || !BasicTimeZone::operator==(that)) {
++    if (getDynamicClassID() != that.getDynamicClassID() || !BasicTimeZone::operator==(that)) {
+         return FALSE;
+     }
+     VTimeZone *vtz = (VTimeZone*)&that;
+diff --git a/test/intltest/citrtest.cpp b/test/intltest/citrtest.cpp
+index 8f2059f..d542b13 100644
+--- a/test/intltest/citrtest.cpp
++++ b/test/intltest/citrtest.cpp
+@@ -1083,7 +1083,7 @@ public:
+     virtual UBool operator==(const ForwardCharacterIterator &that) const {
+         return
+             this==&that ||
+-            (typeid(*this)==typeid(that) && pos==((SubCharIter &)that).pos);
++            (getDynamicClassID()==that.getDynamicClassID() && pos==((SubCharIter &)that).pos);
+     }
+ 
+     virtual int32_t hashCode() const {
+diff --git a/test/intltest/icusvtst.cpp b/test/intltest/icusvtst.cpp
+index 3e8725e..1eb6e14 100644
+--- a/test/intltest/icusvtst.cpp
++++ b/test/intltest/icusvtst.cpp
+@@ -85,7 +85,7 @@ class Integer : public UObject {
+ 
+     virtual UBool operator==(const UObject& other) const 
+     {
+-        return typeid(*this) == typeid(other) &&
++        return getDynamicClassID() == other.getDynamicClassID() &&
+             _val == ((Integer&)other)._val;
+     }
+ 
+diff --git a/test/intltest/rbbitst.cpp b/test/intltest/rbbitst.cpp
+index faa4c0a..43f5bf5 100644
+--- a/test/intltest/rbbitst.cpp
++++ b/test/intltest/rbbitst.cpp
+@@ -755,7 +755,7 @@ void RBBITest::TestTrieDict() {
+         goto cleanup;
+     }
+ 
+-    if (typeid(*enumer1) == typeid(*enumer2)) {
++    if (enumer1.getDynamicClassID() == enumer2.getDynamicClassID()) {
+         errln("CompactTrieEnumeration and MutableTrieEnumeration typeids are the same");
+     }
+     delete enumer1;
+diff --git a/test/intltest/uobjtest.cpp b/test/intltest/uobjtest.cpp
+index f836057..fd57cd8 100644
+--- a/test/intltest/uobjtest.cpp
++++ b/test/intltest/uobjtest.cpp
+@@ -568,15 +568,15 @@ void UObjectTest::TestCompilerRTTI() {
+         dataerrln("NumberFormat::createInstance(de) failed - %s", u_errorName(errorCode));
+         return;
+     }
+-    if ((DecimalFormat *>(nf) == NULL || dynamic_cast<ChoiceFormat *)(nf) != NULL) {
+-        errln("()(NumberFormat) failed");
++    if ((DecimalFormat *)(nf) == NULL || (ChoiceFormat *)(nf) != NULL) {
++        errln("(cast)(NumberFormat) failed");
+     }
+     UnicodeSet emptySet;
+-    if (&typeid(*nf) == NULL || typeid(*nf) == typeid(UObject) || typeid(*nf) == typeid(Format) ||
+-        typeid(*nf) != typeid(DecimalFormat) || typeid(*nf) == typeid(ChoiceFormat) ||
+-        typeid(*nf) == typeid(emptySet)
++    if (nf == NULL || nf.getDynamicClassID() == UObject::getStaticClassID() || nf.getDynamicClassID() == Format::getStaticClassID() ||
++        nf.getDynamicClassID() != DecimalFormat::getStaticClassID() || nf.getDynamicClassID() == ChoiceFormat::getStaticClassID() ||
++        nf.getDynamicClassID() == emptySet.getDynamicClassID()
+     ) {
+-        errln("typeid(NumberFormat) failed");
++        errln("getClassID(NumberFormat) failed");
+     }
+     delete nf;
+ }

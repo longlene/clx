@@ -1,0 +1,22 @@
+commit 45d9d36dedffb106f920a81e1ab369bb897bce9e
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Tue May 10 12:51:42 2011 -0400
+
+    get_nprocs isnt availble for bionic (yet)
+
+diff --git a/src/os/linux/os.c b/src/os/linux/os.c
+index 70529b2..f8115f9 100644
+--- a/src/os/linux/os.c
++++ b/src/os/linux/os.c
+@@ -46,11 +46,7 @@ void *nativeStackBase() {
+ }
+ 
+ int nativeAvailableProcessors() {
+-#ifdef __UCLIBC__
+     return 1;
+-#else
+-    return get_nprocs();
+-#endif
+ }
+ 
+ char *nativeLibError() {

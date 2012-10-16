@@ -1,0 +1,48 @@
+diff --git a/libc/kernel/arch-arm/asm/signal.h b/libc/kernel/arch-arm/asm/signal.h
+index 212d9f1..363af2c 100644
+--- a/libc/kernel/arch-arm/asm/signal.h
++++ b/libc/kernel/arch-arm/asm/signal.h
+@@ -58,6 +58,11 @@ typedef unsigned long sigset_t;
+ #define SIGRTMIN 32
+ #define SIGRTMAX _NSIG
+ 
++#ifndef __SIGRTMIN
++/* XXX: temporary fix for gcc builds */
++#define __SIGRTMIN SIGRTMIN
++#endif
++
+ #define SIGSWI 32
+ 
+ #define SA_NOCLDSTOP 0x00000001
+diff --git a/libc/kernel/arch-sh/asm/signal.h b/libc/kernel/arch-sh/asm/signal.h
+index 5edf0d2..1bb93c0 100644
+--- a/libc/kernel/arch-sh/asm/signal.h
++++ b/libc/kernel/arch-sh/asm/signal.h
+@@ -59,6 +59,11 @@ typedef unsigned long sigset_t;
+ #define SIGRTMIN 32
+ #define SIGRTMAX _NSIG
+ 
++#ifndef __SIGRTMIN
++/* XXX: temporary fix for gcc builds */
++#define __SIGRTMIN SIGRTMIN
++#endif
++
+ #define SA_NOCLDSTOP 0x00000001
+ #define SA_NOCLDWAIT 0x00000002
+ #define SA_SIGINFO 0x00000004
+diff --git a/libc/kernel/arch-x86/asm/signal.h b/libc/kernel/arch-x86/asm/signal.h
+index 6d84eab..772ff8c 100644
+--- a/libc/kernel/arch-x86/asm/signal.h
++++ b/libc/kernel/arch-x86/asm/signal.h
+@@ -63,6 +63,11 @@ typedef unsigned long sigset_t;
+ #define SIGRTMIN 32
+ #define SIGRTMAX _NSIG
+ 
++#ifndef __SIGRTMIN
++/* XXX: temporary fix for gcc builds */
++#define __SIGRTMIN SIGRTMIN
++#endif
++
+ #define SA_NOCLDSTOP 0x00000001u
+ #define SA_NOCLDWAIT 0x00000002u
+ #define SA_SIGINFO 0x00000004u

@@ -1,0 +1,47 @@
+commit 0f784ea2170fec102f45b3338240cd74d17beb86
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu May 5 18:21:31 2011 -0400
+
+    various
+
+diff --git a/libc/include/mntent.h b/libc/include/mntent.h
+index 598a932..67f3f83 100644
+--- a/libc/include/mntent.h
++++ b/libc/include/mntent.h
+@@ -30,8 +30,11 @@
+ 
+ #include <stdio.h>
+ 
++#define MNTTYPE_SWAP "swap"
+ #define MNTTYPE_IGNORE "ignore"
+ 
++#define MNTOPT_NOAUTO "noauto"
++
+ struct mntent
+ {
+     char* mnt_fsname;
+diff --git a/libc/include/net/if_ether.h b/libc/include/net/if_ether.h
+index fa3f1a8..f61864f 100644
+--- a/libc/include/net/if_ether.h
++++ b/libc/include/net/if_ether.h
+@@ -34,6 +34,8 @@
+ #ifndef _NET_IF_ETHER_H_
+ #define _NET_IF_ETHER_H_
+ 
++#include <linux/if_ether.h>Ã
++
+ #ifdef _KERNEL
+ #ifdef _KERNEL_OPT
+ #include "opt_mbuftrace.h"
+diff --git a/libc/private/resolv_private.h b/libc/private/resolv_private.h
+index d2ec76a..7cd2d1d 100644
+--- a/libc/private/resolv_private.h
++++ b/libc/private/resolv_private.h
+@@ -54,6 +54,7 @@
+ #ifndef _RESOLV_PRIVATE_H_
+ #define	_RESOLV_PRIVATE_H_
+ 
++#include <netinet/in.h>
+ #include <resolv.h>
+ #include "resolv_static.h"
+ #include "arpa_nameser.h"

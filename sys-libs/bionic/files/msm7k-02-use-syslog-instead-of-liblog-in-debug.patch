@@ -1,0 +1,64 @@
+commit 4782d223e75e8c880de371dfe8c11a222c25969b
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri Apr 29 16:32:25 2011 -0400
+
+    removed LOG{E,I} and used syslog instead
+
+diff --git a/librpc/debug.h b/librpc/debug.h
+index 4910e28..02761d6 100644
+--- a/librpc/debug.h
++++ b/librpc/debug.h
+@@ -20,7 +20,7 @@
+ #include <stdio.h>
+ 
+ #define LOG_TAG "RPC"
+-#include <utils/Log.h>
++#include <syslog.h>
+ 
+ #ifdef RPC_LOG_TO_STDOUT_ONLY
+ #define PRINT(x...) do {                                    \
+@@ -29,12 +29,17 @@
+     } while(0)
+ #elif defined(RPC_LOG_TO_STDOUT_AND_LOG)
+ #define PRINT(x...) do {                                    \
+-        fprintf(stdout, "%s(%d) ", __FUNCTION__, __LINE__); \
+-        fprintf(stdout, ##x);                               \
+-        LOGI(x);                               \
++	openlog(LOG_TAG, LOG_CONS, LOG_USER);               \
++	syslog(LOG_INFO, ##x);                              \
++	closelog();                                         \
+     } while(0)
+ #else
+-#define PRINT(x...) LOGI(x)
++#define PRINT(x...) \
++	do { \
++		openlog(LOG_TAG, LOG_CONS, LOG_USER); \
++	    	syslog(LOG_INFO, ##x);                \
++	    	closelog();                           \
++	} while(0)
+ #endif
+ 
+ #ifdef DEBUG
+@@ -50,16 +55,16 @@
+ #endif
+ 
+ #define E(x...) do {                                        \
+-        fprintf(stderr, "%s(%d) ", __FUNCTION__, __LINE__); \
+-        fprintf(stderr, ##x);                               \
+-        LOGE(x);                                            \
++	openlog(LOG_TAG, LOG_CONS|LOG_PERROR, LOG_USER);    \
++	syslog(LOG_ERR, ##x);                               \
++	closelog();                                         \
+     } while(0)
+ 
+ #define FAILIF(cond, msg...) do {                                              \
+         if (__builtin_expect (cond, 0)) {                                      \
+-            fprintf(stderr, "%s:%s:(%d): ", __FILE__, __FUNCTION__, __LINE__); \
+-            fprintf(stderr, ##msg);                                            \
+-            LOGE(msg);                                                         \
++	    openlog(LOG_TAG, LOG_CONS|LOG_PERROR, LOG_USER);                   \
++	    syslog(LOG_ERR, ##x);                                              \
++	    closelog();                                                        \
+         }                                                                      \
+     } while(0)
+ 

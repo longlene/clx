@@ -1,0 +1,50 @@
+commit d87f86291ee745d7dd0acdeb62f2eb65b2953539
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 20:24:38 2011 -0400
+
+    removed -ansi from configure tests
+
+diff --git a/aclocal.m4 b/aclocal.m4
+index 78ddc14..75ae4e6 100644
+--- a/aclocal.m4
++++ b/aclocal.m4
+@@ -451,7 +451,7 @@ AC_DEFUN(AC_CHECK_STRICT_COMPILE,
+     then
+         if test "$GCC" = yes
+         then
+-            CFLAGS="$CFLAGS -Wall -ansi -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -Wno-long-long"
++            CFLAGS="$CFLAGS -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -Wno-long-long"
+             case "${host}" in
+             *-*-solaris*)
+                 CFLAGS="$CFLAGS -D__STDC__=0";;
+@@ -467,7 +467,7 @@ AC_DEFUN(AC_CHECK_STRICT_COMPILE,
+         fi
+         if test "$GXX" = yes
+         then
+-            CXXFLAGS="$CXXFLAGS -W -Wall -ansi -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long"
++            CXXFLAGS="$CXXFLAGS -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long"
+             case "${host}" in
+             *-*-solaris*)
+                 CXXFLAGS="$CXXFLAGS -D__STDC__=0";;
+diff --git a/configure b/configure
+index b6bb303..cba564e 100755
+--- a/configure
++++ b/configure
+@@ -4296,7 +4296,7 @@ $as_echo "$ac_use_strict_options" >&6; }
+     then
+         if test "$GCC" = yes
+         then
+-            CFLAGS="$CFLAGS -Wall -ansi -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -Wno-long-long"
++            CFLAGS="$CFLAGS -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -Wno-long-long"
+             case "${host}" in
+             *-*-solaris*)
+                 CFLAGS="$CFLAGS -D__STDC__=0";;
+@@ -4312,7 +4312,7 @@ $as_echo "$ac_use_strict_options" >&6; }
+         fi
+         if test "$GXX" = yes
+         then
+-            CXXFLAGS="$CXXFLAGS -W -Wall -ansi -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long"
++            CXXFLAGS="$CXXFLAGS -W -Wall -pedantic -Wpointer-arith -Wwrite-strings -Wno-long-long"
+             case "${host}" in
+             *-*-solaris*)
+                 CXXFLAGS="$CXXFLAGS -D__STDC__=0";;

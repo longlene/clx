@@ -1,0 +1,18 @@
+commit 0e8ce814d8f4da7dd14393ee7bff8c8b3f5e8391
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sat Apr 30 11:43:24 2011 -0400
+
+    add clnt_sperror proto
+
+diff --git a/librpc/rpc/clnt.h b/librpc/rpc/clnt.h
+index f3c8cdd..fb7da91 100644
+--- a/librpc/rpc/clnt.h
++++ b/librpc/rpc/clnt.h
+@@ -218,6 +218,7 @@ extern CLIENT *clntudp_create (struct sockaddr_in *__raddr, u_long __program,
+                                u_long __version, struct timeval __wait_resend,
+                                int *__sockp);
+ extern char *clnt_spcreateerror(__const char *__msg);
++extern char *clnt_sperror (CLIENT *__clnt, __const char *__msg);
+ 
+ #ifdef __cplusplus
+ }

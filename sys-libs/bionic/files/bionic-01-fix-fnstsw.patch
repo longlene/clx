@@ -1,0 +1,43 @@
+diff --git a/libc/include/sys/types.h b/libc/include/sys/types.h
+index 33fe30e..a6caf0d 100644
+--- a/libc/include/sys/types.h
++++ b/libc/include/sys/types.h
+@@ -62,10 +62,7 @@ typedef __kernel_ino_t       ino_t;
+ typedef __kernel_key_t       key_t;
+ typedef __kernel_mode_t      mode_t;
+ typedef __kernel_nlink_t	 nlink_t;
+-#ifndef _OFF_T_DEFINED_
+-#define _OFF_T_DEFINED_
+ typedef __kernel_off_t       off_t;
+-#endif
+ typedef __kernel_loff_t      loff_t;
+ typedef loff_t               off64_t;  /* GLibc-specific */
+ 
+diff --git a/libm/i387/fenv.c b/libm/i387/fenv.c
+index 2794faf..aabe270 100644
+--- a/libm/i387/fenv.c
++++ b/libm/i387/fenv.c
+@@ -153,7 +153,8 @@ feholdexcept(fenv_t *envp)
+ int
+ feupdateenv(const fenv_t *envp)
+ {
+-	int mxcsr, status;
++	int mxcsr;
++	short status;
+ 
+ 	__fnstsw(&status);
+ 	if (__HAS_SSE())
+diff --git a/libm/i387/fenv.h b/libm/i387/fenv.h
+index b124366..f46ada2 100644
+--- a/libm/i387/fenv.h
++++ b/libm/i387/fenv.h
+@@ -148,7 +148,8 @@ int feraiseexcept(int __excepts);
+ static __inline int
+ fetestexcept(int __excepts)
+ {
+-	int __mxcsr, __status;
++	int __mxcsr;
++	short __status;
+ 
+ 	__fnstsw(&__status);
+ 	if (__HAS_SSE())

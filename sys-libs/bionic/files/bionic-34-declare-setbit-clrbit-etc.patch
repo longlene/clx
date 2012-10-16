@@ -1,0 +1,23 @@
+commit 7f048eeb1dff7da49fde41f587cc262b838d1524
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sat Apr 30 00:50:24 2011 -0400
+
+    added isclr, isset, etc
+
+diff --git a/libc/include/sys/param.h b/libc/include/sys/param.h
+index 3a815cb..814433b 100644
+--- a/libc/include/sys/param.h
++++ b/libc/include/sys/param.h
+@@ -34,6 +34,12 @@
+ #define MAXPATHLEN  PATH_MAX
+ #define MAXSYMLINKS 8
+ 
++#define NBBY 8
++#define	setbit(a,i) ((a)[(i)/NBBY] |= 1<<((i)%NBBY))
++#define	clrbit(a,i) ((a)[(i)/NBBY] &= ~(1<<((i)%NBBY)))
++#define	isset(a,i) ((a)[(i)/NBBY] & (1<<((i)%NBBY)))
++#define	isclr(a,i) (((a)[(i)/NBBY] & (1<<((i)%NBBY))) == 0)
++
+ #define ALIGNBYTES  3
+ #define ALIGN(p)    (((unsigned int)(p) + ALIGNBYTES) &~ ALIGNBYTES)
+ 

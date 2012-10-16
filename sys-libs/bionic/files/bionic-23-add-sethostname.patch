@@ -1,0 +1,18 @@
+commit ccf477e010005032a76aaab3db522ac99f0d5de9
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu Apr 28 19:18:04 2011 -0400
+
+    added sethostname system call, protected struct ether declarations to avoid glibc collision
+
+diff --git a/libc/SYSCALLS.TXT b/libc/SYSCALLS.TXT
+index e6749f2..a2029ae 100644
+--- a/libc/SYSCALLS.TXT
++++ b/libc/SYSCALLS.TXT
+@@ -82,6 +82,7 @@ int     capget(cap_user_header_t header, cap_user_data_t data) 184
+ int     capset(cap_user_header_t header, const cap_user_data_t data) 185
+ int     sigaltstack(const stack_t*, stack_t*) 186
+ int     acct(const char*  filepath)  51
++int     sethostname(const char *, size_t) 74
+ 
+ # file descriptors
+ ssize_t     read (int, void*, size_t)        3

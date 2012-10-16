@@ -1,0 +1,24 @@
+commit c8e4f58296f27b1993a88134c1ecc5ed3407a990
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sat Apr 30 11:37:27 2011 -0400
+
+    added netobj
+
+diff --git a/librpc/rpc/xdr.h b/librpc/rpc/xdr.h
+index 6f69381..63950ed 100644
+--- a/librpc/rpc/xdr.h
++++ b/librpc/rpc/xdr.h
+@@ -108,6 +108,13 @@ extern bool_t xdr_array (
+     u_int elsize,  /* size in bytes of each element */
+     xdrproc_t elproc); /* xdr routine to handle each element */
+ 
++struct netobj
++{
++  u_int n_len;
++  char *n_bytes;
++};
++typedef struct netobj netobj;
++
+ #ifdef __cplusplus
+ }
+ #endif

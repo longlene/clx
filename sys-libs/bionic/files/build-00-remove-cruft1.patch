@@ -1,0 +1,695 @@
+diff --git a/core/tasks/apicheck.mk b/core/tasks/apicheck.mk
+deleted file mode 100644
+index 740668c..0000000
+--- a/core/tasks/apicheck.mk
++++ /dev/null
+@@ -1,81 +0,0 @@
+-# Copyright (C) 2008 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-#
+-# Rules for running apicheck to confirm that you haven't broken
+-# api compatibility or added apis illegally.
+-#
+-
+-ifneq ($(BUILD_TINY_ANDROID), true)
+-
+-.PHONY: checkapi
+-
+-# eval this to define a rule that runs apicheck.
+-#
+-# Args:
+-#    $(1)  target
+-#    $(2)  stable api xml file
+-#    $(3)  api xml file to be tested
+-#    $(4)  arguments for apicheck
+-#    $(5)  command to run if apicheck failed
+-define check-api
+-$(TARGET_OUT_COMMON_INTERMEDIATES)/PACKAGING/$(strip $(1))-timestamp: $(2) $(3) $(APICHECK)
+-	@echo "Checking API:" $(1)
+-	$(hide) ( $(APICHECK) $(4) $(2) $(3) || ( $(5) ; exit 38 ) )
+-	$(hide) mkdir -p $$(dir $$@)
+-	$(hide) touch $$@
+-checkapi: $(TARGET_OUT_COMMON_INTERMEDIATES)/PACKAGING/$(strip $(1))-timestamp
+-endef
+-
+-# Run the checkapi rules by default.
+-droidcore: checkapi
+-
+-last_released_sdk_version := $(lastword $(call numerically_sort,\
+-    $(patsubst $(SRC_API_DIR)/%.xml,%, \
+-    $(filter-out $(SRC_API_DIR)/current.xml, \
+-    $(wildcard $(SRC_API_DIR)/*.xml)))))
+-
+-# INTERNAL_PLATFORM_API_FILE is the one build by droiddoc.
+-
+-# Check that the API we're building hasn't broken the last-released
+-# SDK version.
+-$(eval $(call check-api, \
+-	checkapi-last, \
+-	$(SRC_API_DIR)/$(last_released_sdk_version).xml, \
+-	$(INTERNAL_PLATFORM_API_FILE), \
+-	-hide 2 -hide 3 -hide 4 -hide 5 -hide 6 -hide 24 -hide 25 \
+-	-error 7 -error 8 -error 9 -error 10 -error 11 -error 12 -error 13 -error 14 -error 15 \
+-	-error 16 -error 17 -error 18 , \
+-	cat $(BUILD_SYSTEM)/apicheck_msg_last.txt \
+-	))
+-
+-# Check that the API we're building hasn't changed from the not-yet-released
+-# SDK version.
+-$(eval $(call check-api, \
+-	checkapi-current, \
+-	$(SRC_API_DIR)/current.xml, \
+-	$(INTERNAL_PLATFORM_API_FILE), \
+-	-error 2 -error 3 -error 4 -error 5 -error 6 \
+-	-error 7 -error 8 -error 9 -error 10 -error 11 -error 12 -error 13 -error 14 -error 15 \
+-	-error 16 -error 17 -error 18 -error 19 -error 20 -error 21 -error 23 -error 24 \
+-	-error 25 , \
+-	cat $(BUILD_SYSTEM)/apicheck_msg_current.txt \
+-	))
+-
+-.PHONY: update-api
+-update-api: $(INTERNAL_PLATFORM_API_FILE) | $(ACP)
+-	@echo Copying current.xml
+-	$(hide) $(ACP) $(INTERNAL_PLATFORM_API_FILE) $(SRC_API_DIR)/current.xml
+-
+-endif
+diff --git a/tools/apicheck/Android.mk b/tools/apicheck/Android.mk
+deleted file mode 100644
+index a2ff8a2..0000000
+--- a/tools/apicheck/Android.mk
++++ /dev/null
+@@ -1,44 +0,0 @@
+-# Copyright (C) 2007-2008 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-LOCAL_PATH := $(call my-dir)
+-
+-# We use copy-file-to-new-target so that the installed
+-# script file's timestamp is at least as new as the
+-# .jar file it wraps.
+-
+-#TODO(dbort): add a template to do this stuff; share with jx
+-
+-# the hat script
+-# ============================================================
+-include $(CLEAR_VARS)
+-LOCAL_IS_HOST_MODULE := true
+-LOCAL_MODULE_CLASS := EXECUTABLES
+-LOCAL_MODULE := apicheck
+-
+-include $(BUILD_SYSTEM)/base_rules.mk
+-
+-$(LOCAL_BUILT_MODULE): $(HOST_OUT_JAVA_LIBRARIES)/apicheck$(COMMON_JAVA_PACKAGE_SUFFIX)
+-$(LOCAL_BUILT_MODULE): $(LOCAL_PATH)/etc/apicheck | $(ACP)
+-	@echo "Copy: $(PRIVATE_MODULE) ($@)"
+-	$(copy-file-to-new-target)
+-	$(hide) chmod 755 $@
+-
+-# the other stuff
+-# ============================================================
+-subdirs := $(addprefix $(LOCAL_PATH)/,$(addsuffix /Android.mk, \
+-		src \
+-	))
+-
+-include $(subdirs)
+diff --git a/tools/apicheck/src/Android.mk b/tools/apicheck/src/Android.mk
+deleted file mode 100644
+index c4e7c6e..0000000
+--- a/tools/apicheck/src/Android.mk
++++ /dev/null
+@@ -1,28 +0,0 @@
+-# Copyright (C) 2008 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-LOCAL_PATH := $(call my-dir)
+-
+-
+-# apicheck java library
+-# ============================================================
+-include $(CLEAR_VARS)
+-
+-LOCAL_SRC_FILES := $(call all-subdir-java-files)
+-LOCAL_JAR_MANIFEST := MANIFEST.mf
+-
+-LOCAL_MODULE:= apicheck
+-
+-include $(BUILD_HOST_JAVA_LIBRARY)
+-
+diff --git a/tools/apriori/Android.mk b/tools/apriori/Android.mk
+deleted file mode 100644
+index 79ecf7f..0000000
+--- a/tools/apriori/Android.mk
++++ /dev/null
+@@ -1,61 +0,0 @@
+-# Copyright 2005 The Android Open Source Project
+-#
+-# Android.mk for apriori
+-#
+-
+-LOCAL_PATH:= $(call my-dir)
+-
+-ifneq ($(TARGET_SIMULATOR),true)
+-include $(CLEAR_VARS)
+-
+-LOCAL_LDLIBS += -ldl
+-LOCAL_CFLAGS += -O2 -g
+-LOCAL_CFLAGS += -fno-function-sections -fno-data-sections -fno-inline
+-LOCAL_CFLAGS += -Wall -Wno-unused-function #-Werror
+-LOCAL_CFLAGS += -DSUPPORT_ANDROID_PRELINK_TAGS
+-LOCAL_CFLAGS += -DDEBUG
+-LOCAL_CFLAGS += -DADJUST_ELF=1
+-
+-ifeq ($(TARGET_ARCH),arm)
+-LOCAL_CFLAGS += -DARM_SPECIFIC_HACKS
+-LOCAL_CFLAGS += -DBIG_ENDIAN=1
+-endif
+-
+-ifeq ($(HOST_OS),darwin)
+-LOCAL_CFLAGS += -DFSCANF_IS_BROKEN
+-endif
+-ifeq ($(HOST_OS),windows)
+-LOCAL_CFLAGS += -DFSCANF_IS_BROKEN
+-LOCAL_LDLIBS += -lintl
+-endif
+-
+-
+-
+-LOCAL_SRC_FILES := \
+-	apriori.c \
+-	cmdline.c \
+-	debug.c \
+-	hash.c \
+-	main.c \
+-	prelink_info.c \
+-	rangesort.c \
+-	source.c \
+-	prelinkmap.c
+-
+-LOCAL_C_INCLUDES:= \
+-	$(LOCAL_PATH)/ \
+-	external/elfutils/lib/ \
+-	external/elfutils/libelf/ \
+-	external/elfutils/libebl/ \
+-	external/elfcopy/
+-
+-LOCAL_STATIC_LIBRARIES := libelfcopy libelf libebl #dl
+-
+-ifeq ($(TARGET_ARCH),arm)
+-LOCAL_STATIC_LIBRARIES += libebl_arm
+-endif
+-
+-LOCAL_MODULE := apriori
+-
+-include $(BUILD_HOST_EXECUTABLE)
+-endif # TARGET_SIMULATOR != true
+diff --git a/tools/atree/Android.mk b/tools/atree/Android.mk
+deleted file mode 100644
+index d895810..0000000
+--- a/tools/atree/Android.mk
++++ /dev/null
+@@ -1,20 +0,0 @@
+-# Copyright 2007 The Android Open Source Project
+-#
+-# Copies files into the directory structure described by a manifest
+-
+-LOCAL_PATH:= $(call my-dir)
+-include $(CLEAR_VARS)
+-
+-LOCAL_SRC_FILES := \
+-	atree.cpp \
+-	files.cpp \
+-	fs.cpp
+-
+-LOCAL_STATIC_LIBRARIES := \
+-	libhost
+-LOCAL_C_INCLUDES := build/libs/host/include
+-
+-LOCAL_MODULE := atree
+-
+-include $(BUILD_HOST_EXECUTABLE)
+-
+diff --git a/tools/bin2asm/Android.mk b/tools/bin2asm/Android.mk
+deleted file mode 100644
+index 4522a20..0000000
+--- a/tools/bin2asm/Android.mk
++++ /dev/null
+@@ -1,24 +0,0 @@
+-# Copyright (C) 2008 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-LOCAL_PATH:= $(call my-dir)
+-include $(CLEAR_VARS)
+-
+-LOCAL_SRC_FILES := \
+-    icudata.c
+-
+-LOCAL_MODULE := icudata
+-
+-include $(BUILD_HOST_EXECUTABLE)
+-
+diff --git a/tools/check_prereq/Android.mk b/tools/check_prereq/Android.mk
+deleted file mode 100644
+index abedff6..0000000
+--- a/tools/check_prereq/Android.mk
++++ /dev/null
+@@ -1,30 +0,0 @@
+-# Copyright (C) 2009 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-LOCAL_PATH := $(call my-dir)
+-include $(CLEAR_VARS)
+-
+-ifneq ($(TARGET_SIMULATOR),true)
+-
+-LOCAL_SRC_FILES := check_prereq.c
+-LOCAL_MODULE := check_prereq
+-LOCAL_FORCE_STATIC_EXECUTABLE := true
+-LOCAL_MODULE_TAGS := eng
+-LOCAL_C_INCLUDES +=
+-LOCAL_STATIC_LIBRARIES += libcutils libc
+-
+-include $(BUILD_EXECUTABLE)
+-
+-endif  # !TARGET_SIMULATOR
+-
+diff --git a/tools/droiddoc/Android.mk b/tools/droiddoc/Android.mk
+deleted file mode 100644
+index d2d7a95..0000000
+--- a/tools/droiddoc/Android.mk
++++ /dev/null
+@@ -1,18 +0,0 @@
+-# Copyright (C) 2008 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-LOCAL_PATH := $(call my-dir)
+-
+-include $(LOCAL_PATH)/src/Android.mk
+-
+diff --git a/tools/droiddoc/src/Android.mk b/tools/droiddoc/src/Android.mk
+deleted file mode 100644
+index 30270b5..0000000
+--- a/tools/droiddoc/src/Android.mk
++++ /dev/null
+@@ -1,69 +0,0 @@
+-# Copyright (C) 2008 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-LOCAL_PATH:= $(call my-dir)
+-include $(CLEAR_VARS)
+-
+-LOCAL_SRC_FILES := \
+-    AnnotationInstanceInfo.java \
+-    AnnotationValueInfo.java \
+-	AttributeInfo.java \
+-	AttrTagInfo.java \
+-	ClassInfo.java \
+-	DroidDoc.java \
+-	ClearPage.java \
+-	Comment.java \
+-	ContainerInfo.java \
+-	Converter.java \
+-	DocFile.java \
+-	DocInfo.java \
+-	Errors.java \
+-	FieldInfo.java \
+-	Hierarchy.java \
+-	InheritedTags.java \
+-	KeywordEntry.java \
+-    LinkReference.java \
+-	LiteralTagInfo.java \
+-	MemberInfo.java \
+-	MethodInfo.java \
+-	NavTree.java \
+-	PackageInfo.java \
+-	ParamTagInfo.java \
+-	ParameterInfo.java \
+-	ParsedTagInfo.java \
+-	Proofread.java \
+-	SampleCode.java \
+-	SampleTagInfo.java \
+-    Scoped.java \
+-	SeeTagInfo.java \
+-	SinceTagger.java \
+-	Sorter.java \
+-	SourcePositionInfo.java \
+-    Stubs.java \
+-	TagInfo.java \
+-    TextTagInfo.java \
+-	ThrowsTagInfo.java \
+-	TodoFile.java \
+-	TypeInfo.java
+-
+-LOCAL_JAVA_LIBRARIES := \
+-	apicheck \
+-	clearsilver
+-
+-LOCAL_CLASSPATH := \
+-	$(HOST_JDK_TOOLS_JAR)
+-
+-LOCAL_MODULE:= droiddoc
+-
+-include $(BUILD_HOST_JAVA_LIBRARY)
+diff --git a/tools/droiddoc/test/generics/Android.mk b/tools/droiddoc/test/generics/Android.mk
+deleted file mode 100644
+index 0c808fd..0000000
+--- a/tools/droiddoc/test/generics/Android.mk
++++ /dev/null
+@@ -1,28 +0,0 @@
+-# Copyright (C) 2008 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-LOCAL_PATH:= $(call my-dir)
+-include $(CLEAR_VARS)
+-
+-LOCAL_SRC_FILES:=$(call all-subdir-java-files)
+-
+-LOCAL_MODULE:=test_generics
+-LOCAL_DROIDDOC_OPTIONS:=\
+-        -stubs __test_generics__
+-
+-LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:=tools/droiddoc/templates-google
+-LOCAL_DROIDDOC_CUSTOM_ASSET_DIR:=assets-google
+-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+-
+-include $(BUILD_DROIDDOC)
+diff --git a/tools/droiddoc/test/stubs/Android.mk b/tools/droiddoc/test/stubs/Android.mk
+deleted file mode 100644
+index fc971e1..0000000
+--- a/tools/droiddoc/test/stubs/Android.mk
++++ /dev/null
+@@ -1,29 +0,0 @@
+-# Copyright (C) 2008 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-LOCAL_PATH:= $(call my-dir)
+-include $(CLEAR_VARS)
+-
+-LOCAL_SRC_FILES:=$(call all-java-files-under,src)
+-
+-LOCAL_MODULE:=test_stubs
+-LOCAL_DROIDDOC_OPTIONS:=\
+-        -stubs $(OUT_DIR)/__test_stubs__
+-
+-LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:=tools/droiddoc/templates-google
+-LOCAL_DROIDDOC_CUSTOM_ASSET_DIR:=assets-google
+-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+-
+-include $(BUILD_DROIDDOC)
+-
+diff --git a/tools/fs_config/Android.mk b/tools/fs_config/Android.mk
+deleted file mode 100644
+index 3f2ed95..0000000
+--- a/tools/fs_config/Android.mk
++++ /dev/null
+@@ -1,27 +0,0 @@
+-# Copyright (C) 2008 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-LOCAL_PATH := $(call my-dir)
+-include $(CLEAR_VARS)
+-
+-ifneq ($(TARGET_SIMULATOR),true)
+-
+-LOCAL_SRC_FILES := fs_config.c
+-LOCAL_MODULE := fs_config
+-LOCAL_FORCE_STATIC_EXECUTABLE := true
+-LOCAL_MODULE_TAGS := eng
+-
+-include $(BUILD_HOST_EXECUTABLE)
+-
+-endif  # !TARGET_SIMULATOR
+diff --git a/tools/fs_get_stats/Android.mk b/tools/fs_get_stats/Android.mk
+deleted file mode 100644
+index c9b4a05..0000000
+--- a/tools/fs_get_stats/Android.mk
++++ /dev/null
+@@ -1,9 +0,0 @@
+-LOCAL_PATH:= $(call my-dir)
+-
+-include $(CLEAR_VARS)
+-
+-LOCAL_SRC_FILES := fs_get_stats.c
+-
+-LOCAL_MODULE := fs_get_stats
+-
+-include $(BUILD_HOST_EXECUTABLE)
+diff --git a/tools/iself/Android.mk b/tools/iself/Android.mk
+deleted file mode 100755
+index 49fabff..0000000
+--- a/tools/iself/Android.mk
++++ /dev/null
+@@ -1,23 +0,0 @@
+-# Copyright 2005 The Android Open Source Project
+-#
+-# Android.mk for iself
+-#
+-
+-LOCAL_PATH:= $(call my-dir)
+-
+-include $(CLEAR_VARS)
+-
+-LOCAL_CFLAGS += -O2 -g
+-LOCAL_CFLAGS += -fno-function-sections -fno-data-sections -fno-inline
+-LOCAL_CFLAGS += -Wall -Wno-unused-function #-Werror
+-LOCAL_CFLAGS += -DDEBUG
+-
+-LOCAL_C_INCLUDES:= \
+-	$(LOCAL_PATH)/
+-
+-LOCAL_SRC_FILES := \
+-	iself.c
+-
+-LOCAL_MODULE := iself
+-
+-include $(BUILD_HOST_EXECUTABLE)
+diff --git a/tools/kcm/Android.mk b/tools/kcm/Android.mk
+deleted file mode 100644
+index 130a13a..0000000
+--- a/tools/kcm/Android.mk
++++ /dev/null
+@@ -1,15 +0,0 @@
+-# Copyright 2007 The Android Open Source Project
+-#
+-# Copies files into the directory structure described by a manifest
+-
+-LOCAL_PATH:= $(call my-dir)
+-include $(CLEAR_VARS)
+-
+-LOCAL_SRC_FILES := \
+-	kcm.cpp
+-
+-LOCAL_MODULE := kcm
+-
+-include $(BUILD_HOST_EXECUTABLE)
+-
+-
+diff --git a/tools/rgb2565/Android.mk b/tools/rgb2565/Android.mk
+deleted file mode 100644
+index 189584d..0000000
+--- a/tools/rgb2565/Android.mk
++++ /dev/null
+@@ -1,17 +0,0 @@
+-# Copyright 2008 The Android Open Source Project
+-#
+-# Android.mk for rgb2565
+-#
+-
+-LOCAL_PATH:= $(call my-dir)
+-
+-# rgb2565 host tool
+-# =========================================================
+-include $(CLEAR_VARS)
+-
+-LOCAL_SRC_FILES := to565.c
+-
+-LOCAL_CFLAGS += -O2 -Wall -Wno-unused-parameter
+-LOCAL_MODULE := rgb2565
+-
+-include $(BUILD_HOST_EXECUTABLE)
+diff --git a/tools/signapk/Android.mk b/tools/signapk/Android.mk
+deleted file mode 100644
+index b2de21c..0000000
+--- a/tools/signapk/Android.mk
++++ /dev/null
+@@ -1,30 +0,0 @@
+-#
+-# Copyright (C) 2008 The Android Open Source Project
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-#
+-LOCAL_PATH := $(call my-dir)
+-
+-# the signapk tool (a .jar application used to sign packages)
+-# ============================================================
+-include $(CLEAR_VARS)
+-LOCAL_MODULE := signapk
+-LOCAL_SRC_FILES := SignApk.java
+-LOCAL_JAR_MANIFEST := SignApk.mf
+-include $(BUILD_HOST_JAVA_LIBRARY)
+-
+-ifeq ($(TARGET_BUILD_APPS),)
+-# The post-build signing tools need signapk.jar, but we don't
+-# need this if we're just doing unbundled apps.
+-$(call dist-for-goals,droidcore,$(LOCAL_INSTALLED_MODULE))
+-endif
+diff --git a/tools/zipalign/Android.mk b/tools/zipalign/Android.mk
+deleted file mode 100644
+index 9763bd2..0000000
+--- a/tools/zipalign/Android.mk
++++ /dev/null
+@@ -1,34 +0,0 @@
+-# 
+-# Copyright 2008 The Android Open Source Project
+-#
+-# Zip alignment tool
+-#
+-
+-LOCAL_PATH:= $(call my-dir)
+-include $(CLEAR_VARS)
+-
+-LOCAL_SRC_FILES := \
+-	ZipAlign.cpp \
+-	ZipEntry.cpp \
+-	ZipFile.cpp
+-
+-LOCAL_C_INCLUDES += external/zlib
+-
+-LOCAL_STATIC_LIBRARIES := \
+-	libutils \
+-	libcutils
+-
+-ifeq ($(HOST_OS),linux)
+-LOCAL_LDLIBS += -lrt
+-endif
+-
+-ifneq ($(strip $(USE_MINGW)),)
+-LOCAL_STATIC_LIBRARIES += libz
+-else
+-LOCAL_LDLIBS += -lz
+-endif
+-
+-LOCAL_MODULE := zipalign
+-
+-include $(BUILD_HOST_EXECUTABLE)
+-

@@ -1,0 +1,22 @@
+commit 63b86ca943f43ce2bb9c6d2e6ceb3b20908667b1
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu Apr 28 03:43:19 2011 -0400
+
+    added inline declaration of cfsetspeed, which sets both input and output speeds
+
+diff --git a/libc/include/termios.h b/libc/include/termios.h
+index ad19089..99276dd 100644
+--- a/libc/include/termios.h
++++ b/libc/include/termios.h
+@@ -99,6 +99,11 @@ static __inline__ int cfsetispeed(struct termios *s, speed_t  speed)
+   return 0;
+ }
+ 
++static __inline__ int cfsetspeed(struct termios *s, speed_t  speed)
++{
++    return cfsetospeed(s,speed) || cfsetispeed(s,speed);
++}
++
+ static __inline__ void cfmakeraw(struct termios *s)
+ {
+     s->c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL|IXON);

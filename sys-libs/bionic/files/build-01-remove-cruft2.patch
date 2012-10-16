@@ -1,0 +1,289 @@
+diff --git a/core/Makefile b/core/Makefile
+index 72d4ae7..c734aa6 100644
+--- a/core/Makefile
++++ b/core/Makefile
+@@ -51,10 +51,6 @@ $(INSTALLED_DEFAULT_PROP_TARGET):
+ 
+ # -----------------------------------------------------------------
+ # build.prop
+-INSTALLED_BUILD_PROP_TARGET := $(TARGET_OUT)/build.prop
+-ALL_DEFAULT_INSTALLED_MODULES += $(INSTALLED_BUILD_PROP_TARGET)
+-ADDITIONAL_BUILD_PROPERTIES := \
+-	$(call collapse-pairs, $(ADDITIONAL_BUILD_PROPERTIES))
+ 
+ # A list of arbitrary tags describing the build configuration.
+ # Force ":=" so we can use +=
+@@ -292,7 +288,6 @@ $(event_log_tags_file): $(event_log_tags_src) $(all_event_log_tags_file)
+ 
+ event-log-tags: $(event_log_tags_file)
+ 
+-ALL_DEFAULT_INSTALLED_MODULES += $(event_log_tags_file)
+ 
+ 
+ ifneq ($(TARGET_SIMULATOR),true)
+@@ -486,32 +481,11 @@ target_notice_file_html_gz := $(TARGET_OUT_INTERMEDIATES)/NOTICE.html.gz
+ tools_notice_file_txt := $(HOST_OUT_INTERMEDIATES)/NOTICE.txt
+ tools_notice_file_html := $(HOST_OUT_INTERMEDIATES)/NOTICE.html
+ 
+-kernel_notice_file := $(TARGET_OUT_NOTICE_FILES)/src/kernel.txt
+-
+-$(eval $(call combine-notice-files, \
+-			$(target_notice_file_txt), \
+-			$(target_notice_file_html), \
+-			"Notices for files contained in the filesystem images in this directory:", \
+-			$(TARGET_OUT_NOTICE_FILES), \
+-			$(ALL_DEFAULT_INSTALLED_MODULES) $(kernel_notice_file)))
+-
+-$(eval $(call combine-notice-files, \
+-			$(tools_notice_file_txt), \
+-			$(tools_notice_file_html), \
+-			"Notices for files contained in the tools directory:", \
+-			$(HOST_OUT_NOTICE_FILES), \
+-			$(ALL_DEFAULT_INSTALLED_MODULES)))
+-
+ # Install the html file at /system/etc/NOTICE.html.gz.
+ # This is not ideal, but this is very late in the game, after a lot of
+ # the module processing has already been done -- in fact, we used the
+ # fact that all that has been done to get the list of modules that we
+ # need notice files for.
+-$(target_notice_file_html_gz): $(target_notice_file_html) | $(MINIGZIP)
+-	$(hide) $(MINIGZIP) -9 < $< > $@
+-installed_notice_html_gz := $(TARGET_OUT)/etc/NOTICE.html.gz
+-$(installed_notice_html_gz): $(target_notice_file_html_gz) | $(ACP)
+-	$(copy-file-to-target)
+ 
+ # if we've been run my mm, mmm, etc, don't reinstall this every time
+ ifeq ($(ONE_SHOT_MAKEFILE),)
+@@ -521,12 +495,6 @@ endif
+ # The kernel isn't really a module, so to get its module file in there, we
+ # make the target NOTICE files depend on this particular file too, which will
+ # then be in the right directory for the find in combine-notice-files to work.
+-$(kernel_notice_file): \
+-	    prebuilt/$(TARGET_PREBUILT_TAG)/kernel/LINUX_KERNEL_COPYING \
+-	    | $(ACP)
+-	@echo Copying: $@
+-	$(hide) mkdir -p $(dir $@)
+-	$(hide) $(ACP) $< $@
+ 
+ 
+ # -----------------------------------------------------------------
+@@ -535,7 +503,6 @@ $(kernel_notice_file): \
+ #
+ # This rule adds to ALL_DEFAULT_INSTALLED_MODULES, so it needs to come
+ # before the rules that use that variable to build the image.
+-ALL_DEFAULT_INSTALLED_MODULES += $(TARGET_OUT_ETC)/security/otacerts.zip
+ $(TARGET_OUT_ETC)/security/otacerts.zip: KEY_CERT_PAIR := $(DEFAULT_KEY_CERT_PAIR)
+ $(TARGET_OUT_ETC)/security/otacerts.zip: $(addsuffix .x509.pem,$(DEFAULT_KEY_CERT_PAIR))
+ 	$(hide) rm -f $@
+diff --git a/core/clear_vars.mk b/core/clear_vars.mk
+index ee28f21..102bd80 100644
+--- a/core/clear_vars.mk
++++ b/core/clear_vars.mk
+@@ -74,7 +74,7 @@ LOCAL_COPY_HEADERS_TO:=
+ LOCAL_COPY_HEADERS:=
+ LOCAL_FORCE_STATIC_EXECUTABLE:=
+ LOCAL_ADDITIONAL_DEPENDENCIES:=
+-LOCAL_PRELINK_MODULE:=
++LOCAL_PRELINK_MODULE:=false
+ LOCAL_COMPRESS_MODULE_SYMBOLS:=
+ LOCAL_STRIP_MODULE:=
+ LOCAL_POST_PROCESS_COMMAND:=true
+diff --git a/core/config.mk b/core/config.mk
+index a3bcbf1..191599d 100644
+--- a/core/config.mk
++++ b/core/config.mk
+@@ -67,9 +67,7 @@ BUILD_MULTI_PREBUILT:= $(BUILD_SYSTEM)/multi_prebuilt.mk
+ BUILD_JAVA_LIBRARY:= $(BUILD_SYSTEM)/java_library.mk
+ BUILD_STATIC_JAVA_LIBRARY:= $(BUILD_SYSTEM)/static_java_library.mk
+ BUILD_HOST_JAVA_LIBRARY:= $(BUILD_SYSTEM)/host_java_library.mk
+-BUILD_DROIDDOC:= $(BUILD_SYSTEM)/droiddoc.mk
+ BUILD_COPY_HEADERS := $(BUILD_SYSTEM)/copy_headers.mk
+-BUILD_KEY_CHAR_MAP := $(BUILD_SYSTEM)/key_char_map.mk
+ 
+ # ###############################################################
+ # Parse out any modifier targets.
+@@ -152,7 +150,7 @@ TARGET_CPU_ABI2 := $(strip $(TARGET_CPU_ABI2))
+ 
+ # $(1): os/arch
+ define select-android-config-h
+-system/core/include/arch/$(1)/AndroidConfig.h
++bionic/libc/arch-$(TARGET_ARCH)/AndroidConfig.h
+ endef
+ 
+ combo_target := HOST_
+diff --git a/core/find-jdk-tools-jar.sh b/core/find-jdk-tools-jar.sh
+index e772a15..bde74e3 100755
+--- a/core/find-jdk-tools-jar.sh
++++ b/core/find-jdk-tools-jar.sh
+@@ -1,7 +1,7 @@
+ if [ "x$ANDROID_JAVA_HOME" != x ] && [ -e "$ANDROID_JAVA_HOME/lib/tools.jar" ] ; then
+     echo $ANDROID_JAVA_HOME/lib/tools.jar
+ else
+-    JAVAC=$(which javac)
++    JAVAC=javac
+     if [ -z "$JAVAC" ] ; then
+ 	echo "Please-install-JDK-6.0,-which-you-can-download-from-java.sun.com"
+ 	exit 1
+diff --git a/core/main.mk b/core/main.mk
+index 3ec3189..f8e9e78 100644
+--- a/core/main.mk
++++ b/core/main.mk
+@@ -70,17 +70,6 @@ ifneq ($(VERSION_CHECK_SEQUENCE_NUMBER),$(VERSIONS_CHECKED))
+ 
+ $(info Checking build tools versions...)
+ 
+-ifeq ($(BUILD_OS),linux)
+-build_arch := $(shell uname -m)
+-ifneq (64,$(findstring 64,$(build_arch)))
+-$(warning ************************************************************)
+-$(warning You are attempting to build on a 32-bit system.)
+-$(warning Only 64-bit build environments are supported beyond froyo/2.2.)
+-$(warning ************************************************************)
+-$(error stop)
+-endif
+-endif
+-
+ ifneq ($(HOST_OS),windows)
+ ifneq ($(HOST_OS)-$(HOST_ARCH),darwin-ppc)
+ # check for a case sensitive file system
+@@ -114,36 +103,10 @@ endif
+ 
+ 
+ # Check for the correct version of java
+-java_version := $(shell java -version 2>&1 | head -n 1 | grep '[ "]1\.6[\. "$$]')
+-ifeq ($(strip $(java_version)),)
+-$(info ************************************************************)
+-$(info You are attempting to build with the incorrect version)
+-$(info of java.)
+-$(info $(space))
+-$(info Your version is: $(shell java -version 2>&1 | head -n 1).)
+-$(info The correct version is: 1.6.)
+-$(info $(space))
+-$(info Please follow the machine setup instructions at)
+-$(info $(space)$(space)$(space)$(space)http://source.android.com/download)
+-$(info ************************************************************)
+-$(error stop)
+-endif
++java_version := java 1.6.0_20
+ 
+ # Check for the correct version of javac
+-javac_version := $(shell javac -version 2>&1 | head -n 1 | grep '[ "]1\.6[\. "$$]')
+-ifeq ($(strip $(javac_version)),)
+-$(info ************************************************************)
+-$(info You are attempting to build with the incorrect version)
+-$(info of javac.)
+-$(info $(space))
+-$(info Your version is: $(shell javac -version 2>&1 | head -n 1).)
+-$(info The correct version is: 1.6.)
+-$(info $(space))
+-$(info Please follow the machine setup instructions at)
+-$(info $(space)$(space)$(space)$(space)http://source.android.com/download)
+-$(info ************************************************************)
+-$(error stop)
+-endif
++javac_version := javac 1.6.0_20
+ 
+ $(shell echo 'VERSIONS_CHECKED := $(VERSION_CHECK_SEQUENCE_NUMBER)' \
+         > $(OUT_DIR)/versions_checked.mk)
+@@ -296,13 +259,6 @@ ifneq ($(filter dalvik.gc.type-precise,$(PRODUCT_TAGS)),)
+ endif
+ 
+ # Install an apns-conf.xml file if one's not already being installed.
+-ifeq (,$(filter %:system/etc/apns-conf.xml, $(PRODUCT_COPY_FILES)))
+-  PRODUCT_COPY_FILES += \
+-        development/data/etc/apns-conf_sdk.xml:system/etc/apns-conf.xml
+-  ifeq ($(filter eng tests,$(TARGET_BUILD_VARIANT)),)
+-    $(warning implicitly installing apns-conf_sdk.xml)
+-  endif
+-endif
+ # If we're on an eng or tests build, but not on the sdk, and we have
+ # a better one, use that instead.
+ ifneq ($(filter eng tests,$(TARGET_BUILD_VARIANT)),)
+@@ -410,7 +366,7 @@ subdirs := \
+ 
+ # The following can only be built if "javac" is available.
+ # This check is used when building parts of the SDK under Cygwin.
+-ifneq (,$(shell which javac 2>/dev/null))
++ifneq (,javac)
+ subdirs += \
+ 	build/tools/signapk \
+ 	dalvik/dx \
+diff --git a/core/notice_files.mk b/core/notice_files.mk
+index fd76d51..b6975de 100644
+--- a/core/notice_files.mk
++++ b/core/notice_files.mk
+@@ -55,7 +55,6 @@ ifdef LOCAL_INSTALLED_MODULE
+ # Make LOCAL_INSTALLED_MODULE depend on NOTICE files if they exist
+ # libraries so they get installed along with it.  Make it an order-only
+ # dependency so we don't re-install a module when the NOTICE changes.
+-$(LOCAL_INSTALLED_MODULE): | $(installed_notice_file)
+ endif
+ 
+ else
+@@ -69,4 +68,3 @@ endif
+ notice_target := NOTICE-$(if \
+     $(LOCAL_IS_HOST_MODULE),HOST,TARGET)-$(LOCAL_MODULE_CLASS)-$(LOCAL_MODULE)
+ .PHONY: $(notice_target)
+-$(notice_target): $(installed_notice_file)
+diff --git a/target/board/generic/AndroidBoard.mk b/target/board/generic/AndroidBoard.mk
+index 09badee..908babd 100644
+--- a/target/board/generic/AndroidBoard.mk
++++ b/target/board/generic/AndroidBoard.mk
+@@ -1,10 +1,2 @@
+ LOCAL_PATH := $(call my-dir)
+ 
+-file := $(TARGET_OUT_KEYLAYOUT)/tuttle2.kl
+-ALL_PREBUILT += $(file)
+-$(file) : $(LOCAL_PATH)/tuttle2.kl | $(ACP)
+-	$(transform-prebuilt-to-target)
+-
+-include $(CLEAR_VARS)
+-LOCAL_SRC_FILES := tuttle2.kcm
+-include $(BUILD_KEY_CHAR_MAP)
+diff --git a/target/product/full.mk b/target/product/full.mk
+index c204aad..bab5eea 100644
+--- a/target/product/full.mk
++++ b/target/product/full.mk
+@@ -41,14 +41,14 @@ PRODUCT_COPY_FILES := \
+ 
+ # Pick up some sounds - stick with the short list to save space
+ # on smaller devices.
+-$(call inherit-product, frameworks/base/data/sounds/OriginalAudio.mk)
++$(call inherit-product-if-exists, frameworks/base/data/sounds/OriginalAudio.mk)
+ 
+ # Get the TTS language packs
+ $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
+ 
+ # Get a list of languages. We use the small list to save space
+ # on smaller devices.
+-$(call inherit-product, build/target/product/languages_small.mk)
++$(call inherit-product-if-exists, build/target/product/languages_small.mk)
+ 
+ $(call inherit-product, build/target/product/generic.mk)
+ 
+@@ -56,4 +56,4 @@ $(call inherit-product, build/target/product/generic.mk)
+ PRODUCT_NAME := full
+ PRODUCT_BRAND := generic
+ PRODUCT_DEVICE := generic
+-PRODUCT_MODEL := Full Android
++PRODUCT_MODEL := Tiny Android
+diff --git a/target/product/sdk.mk b/target/product/sdk.mk
+index d73e702..3802d85 100644
+--- a/target/product/sdk.mk
++++ b/target/product/sdk.mk
+@@ -178,9 +178,9 @@ PRODUCT_LOCALES := \
+ 	zh_TW
+ 
+ # include available languages for TTS in the system image
+-include external/svox/pico/lang/PicoLangDeDeInSystem.mk
+-include external/svox/pico/lang/PicoLangEnGBInSystem.mk
+-include external/svox/pico/lang/PicoLangEnUsInSystem.mk
+-include external/svox/pico/lang/PicoLangEsEsInSystem.mk
+-include external/svox/pico/lang/PicoLangFrFrInSystem.mk
+-include external/svox/pico/lang/PicoLangItItInSystem.mk
++-include external/svox/pico/lang/PicoLangDeDeInSystem.mk
++-include external/svox/pico/lang/PicoLangEnGBInSystem.mk
++-include external/svox/pico/lang/PicoLangEnUsInSystem.mk
++-include external/svox/pico/lang/PicoLangEsEsInSystem.mk
++-include external/svox/pico/lang/PicoLangFrFrInSystem.mk
++-include external/svox/pico/lang/PicoLangItItInSystem.mk

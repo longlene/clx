@@ -1,0 +1,26 @@
+diff --git a/libc/netbsd/resolv/res_init.c b/libc/netbsd/resolv/res_init.c
+index 81e570f..3e95063 100644
+--- a/libc/netbsd/resolv/res_init.c
++++ b/libc/netbsd/resolv/res_init.c
+@@ -316,7 +316,7 @@ __res_vinit(res_state statp, int preinit) {
+ 	if (nserv > 0)
+ 		statp->nscount = nserv;
+ #endif
+-#ifdef ANDROID_CHANGES /* READ FROM SYSTEM PROPERTIES */
++#if 0 /* READ FROM SYSTEM PROPERTIES */
+ 	dns_last_change_counter = _get_dns_change_count();
+ 
+ 	nserv = 0;
+diff --git a/libc/private/resolv_private.h b/libc/private/resolv_private.h
+index 7e83824..d2febcd 100644
+--- a/libc/private/resolv_private.h
++++ b/libc/private/resolv_private.h
+@@ -98,7 +98,7 @@ struct __res_state; /* forward */
+  */
+ 
+ #ifndef _PATH_RESCONF
+-#ifdef ANDROID_CHANGES
++#if 0
+ #define _PATH_RESCONF        "/etc/ppp/resolv.conf"
+ #else
+ #define _PATH_RESCONF        "/etc/resolv.conf"

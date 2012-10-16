@@ -1,0 +1,65 @@
+commit 823b593acd6400af2ba0e0b1b2fa02aacdf5bd5d
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 8 16:55:01 2011 -0400
+
+    last few /system -> /
+
+diff --git a/libc/bionic/malloc_debug_common.c b/libc/bionic/malloc_debug_common.c
+index f05576c..f274ef0 100644
+--- a/libc/bionic/malloc_debug_common.c
++++ b/libc/bionic/malloc_debug_common.c
+@@ -331,7 +331,7 @@ static void malloc_init_impl(void)
+         case 1:
+         case 5:
+         case 10:
+-            so_name = "/system/lib/libc_malloc_debug_leak.so";
++            so_name = "/lib/libc_malloc_debug_leak.so";
+             break;
+         case 20:
+             // Quick check: debug level 20 can only be handled in emulator.
+@@ -346,7 +346,7 @@ static void malloc_init_impl(void)
+                           __progname);
+                 return;
+             }
+-            so_name = "/system/lib/libc_malloc_debug_qemu.so";
++            so_name = "/lib/libc_malloc_debug_qemu.so";
+             break;
+         default:
+             error_log("%s: Debug level %d is unknown\n",
+diff --git a/libc/tzcode/localtime.c b/libc/tzcode/localtime.c
+index 85a913e..c44a701 100644
+--- a/libc/tzcode/localtime.c
++++ b/libc/tzcode/localtime.c
+@@ -37,8 +37,8 @@ static char elsieid[] = "@(#)localtime.c    8.3";
+ #define TZ_ABBR_ERR_CHAR    '_'
+ #endif /* !defined TZ_ABBR_ERR_CHAR */
+ 
+-#define INDEXFILE "/system/usr/share/zoneinfo/zoneinfo.idx"
+-#define DATAFILE "/system/usr/share/zoneinfo/zoneinfo.dat"
++#define INDEXFILE "/usr/share/zoneinfo/zoneinfo.idx"
++#define DATAFILE "/usr/share/zoneinfo/zoneinfo.dat"
+ #define NAMELEN 40
+ #define INTLEN 4
+ #define READLEN (NAMELEN + 3 * INTLEN)
+diff --git a/linker/linker.c b/linker/linker.c
+index 42a5205..3a678f8 100644
+--- a/linker/linker.c
++++ b/linker/linker.c
+@@ -607,7 +607,7 @@ static void dump(soinfo *si)
+ 
+ static const char *sopaths[] = {
+     "/vendor/lib",
+-    "/system/lib",
++    "/lib",
+     0
+ };
+ 
+@@ -2176,7 +2176,7 @@ unsigned __linker_init(unsigned **elfdata)
+          * is.  Don't use alloc_info(), because the linker shouldn't
+          * be on the soinfo list.
+          */
+-    strcpy((char*) linker_soinfo.name, "/system/bin/linker");
++    strcpy((char*) linker_soinfo.name, "/bin/linker");
+     linker_soinfo.flags = 0;
+     linker_soinfo.base = 0;     // This is the important part; must be zero.
+     insert_soinfo_into_debug_map(&linker_soinfo);

@@ -1,0 +1,24 @@
+commit 604d55e3865f353dc88accf7734be5ac7ee5d76f
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sat Apr 30 10:52:06 2011 -0400
+
+    added protos in rpc/clnt.h
+
+diff --git a/librpc/rpc/clnt.h b/librpc/rpc/clnt.h
+index aa99976..8916474 100644
+--- a/librpc/rpc/clnt.h
++++ b/librpc/rpc/clnt.h
+@@ -210,6 +210,13 @@ extern bool_t clnt_freeres( CLIENT *xdr, xdrproc_t xdr_res, caddr_t res_ptr );
+ extern void clnt_destroy( CLIENT *xdr );
+ extern CLIENT * clnt_create ( char * host, uint32 prog, uint32 vers,
+                               char * proto);
++extern CLIENT *clnttcp_create (struct sockaddr_in *__raddr, u_long __prog,
++                               u_long __version, int *__sockp, u_int __sendsz,
++                               u_int __recvsz);
++extern CLIENT *clntudp_create (struct sockaddr_in *__raddr, u_long __program,
++                               u_long __version, struct timeval __wait_resend,
++                               int *__sockp);
++extern char *clnt_spcreateerror(__const char *__msg);
+ 
+ #ifdef __cplusplus
+ }

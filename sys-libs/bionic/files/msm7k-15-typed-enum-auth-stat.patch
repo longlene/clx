@@ -1,0 +1,27 @@
+commit a05f7639e3a488bce24a4b305bfb395c2edbf57a
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 1 01:59:50 2011 -0400
+
+    used typed enum for auth_stat
+
+diff --git a/librpc/rpc/clnt.h b/librpc/rpc/clnt.h
+index 416475c..348850a 100644
+--- a/librpc/rpc/clnt.h
++++ b/librpc/rpc/clnt.h
+@@ -42,6 +42,7 @@ extern "C" {
+ 
+ #include <sys/time.h>
+ #include <linux/in.h>
++#include <rpc/types.h>
+ #include <rpc/auth.h>
+ 
+ /*
+@@ -102,7 +103,7 @@ struct rpc_err {
+   enum clnt_stat re_status;
+   union {
+     int RE_errno;               /* related system error */
+-    enum auth_stat RE_why;      /* why the auth error occurred */
++    auth_stat RE_why;      /* why the auth error occurred */
+     struct {
+       u_long low;               /* lowest verion supported */
+       u_long high;              /* highest verion supported */

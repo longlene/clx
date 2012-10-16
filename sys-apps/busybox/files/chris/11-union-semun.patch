@@ -1,0 +1,32 @@
+commit 1d36aa4054f7b0acf80a2db7a7eef4b7fa583c6a
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu May 5 20:08:18 2011 -0400
+
+    union semun
+
+diff --git a/util-linux/ipcrm.c b/util-linux/ipcrm.c
+index e597ed6..443ac78 100644
+--- a/util-linux/ipcrm.c
++++ b/util-linux/ipcrm.c
+@@ -17,7 +17,7 @@
+ #include <sys/msg.h>
+ #include <sys/sem.h>
+ 
+-#if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
++#if 1
+ /* union semun is defined by including <sys/sem.h> */
+ #else
+ /* according to X/OPEN we have to define it ourselves */
+diff --git a/util-linux/ipcs.c b/util-linux/ipcs.c
+index 14df652..2626d59 100644
+--- a/util-linux/ipcs.c
++++ b/util-linux/ipcs.c
+@@ -61,7 +61,7 @@ struct shm_info {
+ /* The last arg of semctl is a union semun, but where is it defined?
+    X/OPEN tells us to define it ourselves, but until recently
+    Linux include files would also define it. */
+-#if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
++#if 1
+ /* union semun is defined by including <sys/sem.h> */
+ #else
+ /* according to X/OPEN we have to define it ourselves */

@@ -1,0 +1,102 @@
+commit 5c315dee22f4f9132fcd771e2d89996fa506bb0e
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 21:08:22 2011 -0400
+
+    removed dynamic cast and replaced with getDynamicClassID
+
+diff --git a/common/normalizer2.cpp b/common/normalizer2.cpp
+index fd0048c..4395736 100644
+--- a/common/normalizer2.cpp
++++ b/common/normalizer2.cpp
+@@ -93,6 +93,9 @@ class NoopNormalizer2 : public Normalizer2 {
+     virtual UBool hasBoundaryBefore(UChar32) const { return TRUE; }
+     virtual UBool hasBoundaryAfter(UChar32) const { return TRUE; }
+     virtual UBool isInert(UChar32) const { return TRUE; }
++
++    static UClassID U_EXPORT2 getStaticClassID();
++    virtual UClassID getDynamicClassID() const;
+ };
+ 
+ // Intermediate class:
+@@ -217,6 +220,9 @@ public:
+         return UNORM_YES;
+     }
+ 
++    static UClassID U_EXPORT2 getStaticClassID();
++    virtual UClassID getDynamicClassID() const;
++
+     const Normalizer2Impl &impl;
+ };
+ 
+@@ -660,9 +666,9 @@ unorm2_normalize(const UNormalizer2 *norm2,
+     // length==0: Nothing to do, and n2wi->normalize(NULL, NULL, buffer, ...) would crash.
+     if(length!=0) {
+         const Normalizer2 *n2=(const Normalizer2 *)norm2;
+-        const Normalizer2WithImpl *n2wi=dynamic_cast<const Normalizer2WithImpl *>(n2);
+-        if(n2wi!=NULL) {
++        if(n2->getDynamicClassID()==Normalizer2WithImpl::getStaticClassID()) {
+             // Avoid duplicate argument checking and support NUL-terminated src.
++            const Normalizer2WithImpl *n2wi=(const Normalizer2WithImpl *)n2;
+             ReorderingBuffer buffer(n2wi->impl, destString);
+             if(buffer.init(length, *pErrorCode)) {
+                 n2wi->normalize(src, length>=0 ? src+length : NULL, buffer, *pErrorCode);
+@@ -702,9 +702,9 @@ normalizeSecondAndAppend(const UNormalizer2 *norm2,
+     // secondLength==0: Nothing to do, and n2wi->normalizeAndAppend(NULL, NULL, buffer, ...) would crash.
+     if(secondLength!=0) {
+         const Normalizer2 *n2=(const Normalizer2 *)norm2;
+-        const Normalizer2WithImpl *n2wi=dynamic_cast<const Normalizer2WithImpl *>(n2);
+-        if(n2wi!=NULL) {
++        if(n2->getDynamicClassID()==Normalizer2WithImpl::getStaticClassID()) {
+             // Avoid duplicate argument checking and support NUL-terminated src.
++            const Normalizer2WithImpl *n2wi=(const Normalizer2WithImpl *)n2;
+             ReorderingBuffer buffer(n2wi->impl, firstString);
+             if(buffer.init(firstLength+secondLength+1, *pErrorCode)) {  // destCapacity>=-1
+                 n2wi->normalizeAndAppend(second, secondLength>=0 ? second+secondLength : NULL,
+diff --git a/common/normalizer2impl.h b/common/normalizer2impl.h
+index fd0048c..4395736 100644
+--- a/common/unicode/normalizer2.h
++++ b/common/unicode/normalizer2.h
+@@ -293,9 +293,19 @@ public:
+      */
+     virtual UBool isInert(UChar32 c) const = 0;
+ 
+-private:
+-    // No ICU "poor man's RTTI" for this class nor its subclasses.
+-    virtual UClassID getDynamicClassID() const;
++    /**
++     * ICU "poor man's RTTI", returns a UClassID for this class.
++     * @returns a UClassID for this class.
++     * @draft ICU 4.4
++     */
++    static UClassID U_EXPORT2 getStaticClassID();
++
++    /**
++     * ICU "poor man's RTTI", returns a UClassID for the actual class.
++     * @return a UClassID for the actual class.
++     * @draft ICU 4.4
++     */
++    virtual UClassID getDynamicClassID() const = 0;
+ };
+ 
+ /**
+@@ -459,6 +469,20 @@ public:
+      * @stable ICU 4.4
+      */
+     virtual UBool isInert(UChar32 c) const;
++
++    /**
++     * ICU "poor man's RTTI", returns a UClassID for this class.
++     * @returns a UClassID for this class.
++     * @draft ICU 4.4
++     */
++    static UClassID U_EXPORT2 getStaticClassID();
++
++    /**
++     * ICU "poor man's RTTI", returns a UClassID for the actual class.
++     * @return a UClassID for the actual class.
++     * @draft ICU 4.4
++     */
++    virtual UClassID getDynamicClassID() const;
+ private:
+     UnicodeString &
+     normalize(const UnicodeString &src,

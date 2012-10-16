@@ -1,0 +1,11 @@
+--- networking/ether-wake.c_orig	2011-05-01 17:55:44.635272616 -0400
++++ networking/ether-wake.c	2011-05-01 17:56:01.354283812 -0400
+@@ -66,7 +66,7 @@
+ 
+ 
+ #include <netpacket/packet.h>
+-#include <net/ethernet.h>
++#include <net/if_ether.h>
+ #include <netinet/ether.h>
+ #include <linux/if.h>
+ 

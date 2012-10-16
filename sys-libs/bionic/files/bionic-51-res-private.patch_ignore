@@ -1,0 +1,25 @@
+commit a7dd62ed7af4667dc67a46d0fe1ebfd7cdaeb6ae
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 8 18:43:49 2011 -0400
+
+    added MAXNS and MAXRESOLVSORT in res_private.h
+
+diff --git a/libc/netbsd/resolv/res_private.h b/libc/netbsd/resolv/res_private.h
+index 8341913..3cfd637 100644
+--- a/libc/netbsd/resolv/res_private.h
++++ b/libc/netbsd/resolv/res_private.h
+@@ -3,6 +3,14 @@
+ #ifndef res_private_h
+ #define res_private_h
+ 
++#ifndef MAXNS
++#define MAXNS 3
++#endif
++
++#ifndef MAXRESOLVSORT
++#define MAXRESOLVSORT 10
++#endif
++
+ struct __res_state_ext {
+ 	union res_sockaddr_union nsaddrs[MAXNS];
+ 	struct sort_list {

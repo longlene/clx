@@ -1,0 +1,18 @@
+commit 5fab52238a92819fa7b47c07239d8a0a11aad26a
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu May 5 19:51:03 2011 -0400
+
+    for sockaddr_in
+
+diff --git a/networking/nslookup.c b/networking/nslookup.c
+index 72ec42a..35e1e75 100644
+--- a/networking/nslookup.c
++++ b/networking/nslookup.c
+@@ -11,6 +11,7 @@
+  * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+  */
+ 
++#include <netinet/in.h>
+ #include <sys/socket.h>
+ #include <resolv.h>
+ #include "libbb.h"

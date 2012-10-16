@@ -1,0 +1,42 @@
+commit e441188b1f9028463198faab79b2dd70bac37435
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu May 5 19:12:43 2011 -0400
+
+    updated syscalls
+
+diff --git a/libc/SYSCALLS.TXT b/libc/SYSCALLS.TXT
+index e6e4ebc..09c3983 100644
+--- a/libc/SYSCALLS.TXT
++++ b/libc/SYSCALLS.TXT
+@@ -132,13 +132,6 @@ int         fchownat(int dirfd, const char *path, uid_t owner, gid_t group, int
+ int         fchmodat(int dirfd, const char *path, mode_t mode, int flags)  333,306
+ int         renameat(int olddirfd, const char *oldpath, int newdirfd, const char *newpath)  329,302
+ ssize_t     readahead(int, off64_t, size_t) 225
+-int         semget(key_t, int, int) 190,299,238
+-int         semctl(int, int, int, ...) 191,300,239
+-int         semop(int, struct sembuf *, unsigned) 193,298,237
+-int         shmget(key_t, size_t, int) 194,307,246
+-int         shmctl(int, int, struct shmid_ds *) 195,308,247
+-void*       shmatcall:shmat(int, const void *, int) 196,305,244
+-int         shmdt(const void *) 197,306,245
+ 
+ # file system
+ int     link (const char*, const char*)  9
+@@ -249,6 +242,17 @@ int sched_rr_get_interval(pid_t pid, struct timespec *interval)  161
+ int ioprio_set(int which, int who, int ioprio) 314,289,288
+ int ioprio_get(int which, int who) 315,290,289
+ 
++# ipc
++int   msgget (key_t, int) 186,303,242
++int   msgctl (int, int, struct msqid_ds *) 187,304,243
++int   semget(key_t, int, int) 190,299,238
++int   semctl(int, int, int, ...) 191,300,239
++int   semop(int, struct sembuf *, unsigned) 193,298,237
++int   shmget(key_t, size_t, int) 194,307,246
++int   shmctl(int, int, struct shmid_ds *) 195,308,247
++void* shmat(int, const void *, int) 196,305,244
++int   shmdt(const void *) 197,306,245
++
+ # other
+ int     uname(struct utsname *)  122
+ pid_t   __wait4:wait4(pid_t pid, int *status, int options, struct rusage *rusage)   114

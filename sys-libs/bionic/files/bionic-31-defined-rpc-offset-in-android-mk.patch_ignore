@@ -1,0 +1,20 @@
+commit 42365c885c10c91ce606aff4837a5b6be0c349b7
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri Apr 29 17:08:20 2011 -0400
+
+    added -DRPC_OFFSET=0
+
+diff --git a/libc/Android.mk b/libc/Android.mk
+index 83f29ca..f20176b 100644
+--- a/libc/Android.mk
++++ b/libc/Android.mk
+@@ -474,7 +474,8 @@ libc_common_cflags := \
+ 		-DINET6 \
+ 		-I$(LOCAL_PATH)/private \
+ 		-DUSE_DL_PREFIX \
+-		-DPOSIX_MISTAKE
++		-DPOSIX_MISTAKE \
++		-DRPC_OFFSET=0
+ 
+ # these macro definitions are required to implement the
+ # 'timezone' and 'daylight' global variables, as well as

@@ -1,0 +1,35 @@
+commit c83d169ee8a566fbe2c2b52810532becad37c383
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon Jan 9 14:24:23 2012 -0500
+
+    fixed ipc syscalls for x86_64
+
+diff --git a/libc/SYSCALLS.TXT b/libc/SYSCALLS.TXT
+index 3465943..de90e15 100644
+--- a/libc/SYSCALLS.TXT
++++ b/libc/SYSCALLS.TXT
+@@ -244,15 +244,15 @@ int ioprio_set(int which, int who, int ioprio) 314,289,288
+ int ioprio_get(int which, int who) 315,290,289
+ 
+ # ipc
+-int   msgget (key_t, int) 186,303,242
+-int   msgctl (int, int, struct msqid_ds *) 187,304,243
+-int   semget(key_t, int, int) 190,299,238
+-int   semctl(int, int, int, ...) 191,300,239
+-int   semop(int, struct sembuf *, unsigned) 193,298,237
+-int   shmget(key_t, size_t, int) 194,307,246
+-int   shmctl(int, int, struct shmid_ds *) 195,308,247
+-void* shmat(int, const void *, int) 196,305,244
+-int   shmdt(const void *) 197,306,245
++int   msgget (key_t, int) 186,68,242
++int   msgctl (int, int, struct msqid_ds *) 187,71,243
++int   semget(key_t, int, int) 190,64,238
++int   semctl(int, int, int, ...) 191,66,239
++int   semop(int, struct sembuf *, unsigned) 193,65,237
++int   shmget(key_t, size_t, int) 194,29,246
++int   shmctl(int, int, struct shmid_ds *) 195,31,247
++void* shmat(int, const void *, int) 196,30,244
++int   shmdt(const void *) 197,67,245
+ 
+ # other
+ int     uname(struct utsname *)  122

@@ -1,0 +1,43 @@
+commit 5b212d969b1d7083ffcf4ae0e15b1caf88af6be6
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri May 13 01:33:58 2011 -0400
+
+    added stubs for getgrent, setgrent, and endgrent
+
+diff --git a/libc/bionic/stubs.c b/libc/bionic/stubs.c
+index ff32f0e..a93ae81 100644
+--- a/libc/bionic/stubs.c
++++ b/libc/bionic/stubs.c
+@@ -291,7 +291,7 @@ getgrouplist (const char *user, gid_t group,
+         return -1;
+     }
+     groups[0] = group;
+-    return (*ngroups = 1);
++   return (*ngroups = 1);
+ }
+ 
+ char*
+@@ -320,6 +320,23 @@ getpwent(void) {
+     return NULL;
+ }
+ 
++void
++setgrent(void) {
++    fprintf(stderr, "FIX ME! implement %s() %s:%d\n", __FUNCTION__, __FILE__, __LINE__);
++}
++
++void
++endgrent(void) {
++    fprintf(stderr, "FIX ME! implement %s() %s:%d\n", __FUNCTION__, __FILE__, __LINE__);
++}
++
++struct group*
++getgrent(void) {
++    fprintf(stderr, "FIX ME! implement %s() %s:%d\n", __FUNCTION__, __FILE__, __LINE__);
++    errno = ENOSYS;
++    return NULL;
++}
++
+ struct group*
+ getgrgid(gid_t gid)
+ {

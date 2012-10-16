@@ -1,0 +1,18 @@
+commit 18e6abe4a06329497adc6b77d5ca51e6aec6474b
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu May 5 19:54:41 2011 -0400
+
+    for struct __res_state _res
+
+diff --git a/networking/nslookup.c b/networking/nslookup.c
+index 35e1e75..cf2e401 100644
+--- a/networking/nslookup.c
++++ b/networking/nslookup.c
+@@ -11,6 +11,7 @@
+  * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+  */
+ 
++#include <private/resolv_private.h>
+ #include <netinet/in.h>
+ #include <sys/socket.h>
+ #include <resolv.h>

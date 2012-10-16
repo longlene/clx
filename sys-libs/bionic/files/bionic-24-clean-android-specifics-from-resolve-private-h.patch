@@ -1,0 +1,45 @@
+commit 0cddfec2c8093c403999213539b097d15949664c
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri Apr 29 04:12:51 2011 -0400
+
+    cleaned android-specific code in resolve_private.h
+
+diff --git a/libc/private/resolv_private.h b/libc/private/resolv_private.h
+index 0f3c6c0..d2ec76a 100644
+--- a/libc/private/resolv_private.h
++++ b/libc/private/resolv_private.h
+@@ -56,6 +56,7 @@
+ 
+ #include <resolv.h>
+ #include "resolv_static.h"
++#include "arpa_nameser.h"
+ 
+ /*
+  * Revision information.  This is the release date in YYYYMMDD format.
+@@ -277,7 +278,7 @@ __BEGIN_DECLS
+ extern struct __res_state *__res_get_state(void);
+ extern void __res_put_state(struct __res_state *);
+ 
+-#ifndef ANDROID_CHANGES
++#if 1
+ /*
+  * Source and Binary compatibility; _res will not work properly
+  * with multi-threaded programs.
+@@ -341,7 +342,7 @@ extern const struct res_sym __p_type_syms[];
+ extern const struct res_sym __p_rcode_syms[];
+ #endif /* SHARED_LIBBIND */
+ 
+-#ifndef ADNROID_CHANGES
++#if 1
+ #define b64_ntop		__b64_ntop
+ #define b64_pton		__b64_pton
+ #endif
+@@ -415,7 +416,7 @@ int		res_dnok(const char *);
+ int		sym_ston(const struct res_sym *, const char *, int *);
+ const char *	sym_ntos(const struct res_sym *, int, int *);
+ const char *	sym_ntop(const struct res_sym *, int, int *);
+-#ifndef ANDROID_CHANGES
++#if 1
+ int		b64_ntop(u_char const *, size_t, char *, size_t);
+ int		b64_pton(char const *, u_char *, size_t);
+ #endif

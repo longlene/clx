@@ -1,0 +1,63 @@
+commit d45a6e73dbbc15c55aad3312605c817e6a0a0bb6
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Tue May 10 02:17:42 2011 -0400
+
+    use unsigned int instead of size_t in overloaded new operator
+
+diff --git a/common/unicode/localpointer.h b/common/unicode/localpointer.h
+index b76a1f8..eef6ff4 100644
+--- a/common/unicode/localpointer.h
++++ b/common/unicode/localpointer.h
+@@ -153,10 +153,10 @@ private:
+     LocalPointerBase(const LocalPointerBase &other);
+     void operator=(const LocalPointerBase &other);
+     // No heap allocation. Use only on the stack.
+-    static void * U_EXPORT2 operator new(size_t size);
+-    static void * U_EXPORT2 operator new[](size_t size);
++    static void * U_EXPORT2 operator new(unsigned int size);
++    static void * U_EXPORT2 operator new[](unsigned int size);
+ #if U_HAVE_PLACEMENT_NEW
+-    static void * U_EXPORT2 operator new(size_t, void *ptr);
++    static void * U_EXPORT2 operator new(unsigned int size, void *ptr);
+ #endif
+ };
+ 
+diff --git a/common/unicode/uobject.h b/common/unicode/uobject.h
+index 27d4c84..d9f63c0 100644
+--- a/common/unicode/uobject.h
++++ b/common/unicode/uobject.h
+@@ -117,14 +117,14 @@ public:
+      * for ICU4C C++ classes
+      * @stable ICU 2.4
+      */
+-    static void * U_EXPORT2 operator new(size_t size) U_NO_THROW;
++    static void * U_EXPORT2 operator new(unsigned int size) U_NO_THROW;
+ 
+     /**
+      * Override for ICU4C C++ memory management.
+      * See new().
+      * @stable ICU 2.4
+      */
+-    static void * U_EXPORT2 operator new[](size_t size) U_NO_THROW;
++    static void * U_EXPORT2 operator new[](unsigned int size) U_NO_THROW;
+ 
+     /**
+      * Override for ICU4C C++ memory management.
+@@ -149,7 +149,7 @@ public:
+      * See new().
+      * @stable ICU 2.6
+      */
+-    static inline void * U_EXPORT2 operator new(size_t, void *ptr) U_NO_THROW { return ptr; }
++    static inline void * U_EXPORT2 operator new(unsigned int size, void *ptr) U_NO_THROW { return ptr; }
+ 
+     /**
+      * Override for ICU4C C++ memory management for STL.
+@@ -166,7 +166,7 @@ public:
+       * @param file   The file where the allocation was requested
+       * @param line   The line where the allocation was requested 
+       */ 
+-    static void * U_EXPORT2 operator new(size_t size, const char* file, int line) U_NO_THROW;
++    static void * U_EXPORT2 operator new(unsigned int size, const char* file, int line) U_NO_THROW;
+     /**
+       * This method provides a matching delete for the MFC debug new
+       * 

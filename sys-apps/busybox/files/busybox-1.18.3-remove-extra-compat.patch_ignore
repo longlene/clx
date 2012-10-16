@@ -1,0 +1,17 @@
+--- include/autoconf.h_orig	2011-04-27 23:09:32.247037262 -0400
++++ include/autoconf.h	2011-04-27 23:17:13.973997886 -0400
+@@ -20,10 +20,10 @@
+ #define ENABLE_DESKTOP 1
+ #define IF_DESKTOP(...) __VA_ARGS__
+ #define IF_NOT_DESKTOP(...)
+-#define CONFIG_EXTRA_COMPAT 1
+-#define ENABLE_EXTRA_COMPAT 1
+-#define IF_EXTRA_COMPAT(...) __VA_ARGS__
+-#define IF_NOT_EXTRA_COMPAT(...)
++#define CONFIG_EXTRA_COMPAT 0
++#define ENABLE_EXTRA_COMPAT 0
++#define IF_EXTRA_COMPAT(...)
++#define IF_NOT_EXTRA_COMPAT(...) __VA_ARGS__
+ #define CONFIG_INCLUDE_SUSv2 1
+ #define ENABLE_INCLUDE_SUSv2 1
+ #define IF_INCLUDE_SUSv2(...) __VA_ARGS__

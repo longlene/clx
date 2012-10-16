@@ -1,0 +1,38 @@
+diff --git a/core/clear_vars.mk b/core/clear_vars.mk
+index ee28f21..02dfb2e 100644
+--- a/core/clear_vars.mk
++++ b/core/clear_vars.mk
+@@ -99,6 +99,7 @@ LOCAL_EMMA_COVERAGE_FILTER:=
+ LOCAL_MANIFEST_FILE:=
+ LOCAL_BUILD_HOST_DEX:=
+ LOCAL_DEX_PREOPT:=
++LOCAL_TAIL_MATTER:=
+ 
+ # Trim MAKEFILE_LIST so that $(call my-dir) doesn't need to
+ # iterate over thousands of entries every time.
+diff --git a/core/combo/TARGET_linux-x86.mk b/core/combo/TARGET_linux-x86.mk
+index 6629cbd..2063fa5 100644
+--- a/core/combo/TARGET_linux-x86.mk
++++ b/core/combo/TARGET_linux-x86.mk
+@@ -154,7 +154,8 @@ $(TARGET_CXX) \
+ 	$(call normalize-target-libraries,$(PRIVATE_ALL_STATIC_LIBRARIES)) \
+ 	$(TARGET_LIBGCC) \
+ 	-Wl,--end-group \
+-	$(TARGET_CRTEND_O)
++	$(TARGET_CRTEND_O) \
++	$(PRIVATE_TAIL_MATTER)
+ endef
+ 
+ TARGET_GLOBAL_CFLAGS += -m32
+diff --git a/core/binary.mk b/core/binary.mk
+index 5fb0e75..b92c107 100644
+--- a/core/binary.mk
++++ b/core/binary.mk
+@@ -487,6 +487,7 @@ $(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_DEBUG_CFLAGS := $(debug_cflags)
+ $(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_C_INCLUDES := $(LOCAL_C_INCLUDES)
+ $(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_LDFLAGS := $(LOCAL_LDFLAGS)
+ $(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_LDLIBS := $(LOCAL_LDLIBS)
++$(LOCAL_INTERMEDIATE_TARGETS): PRIVATE_TAIL_MATTER := $(LOCAL_TAIL_MATTER)
+ 
+ # this is really the way to get the files onto the command line instead
+ # of using $^, because then LOCAL_ADDITIONAL_DEPENDENCIES doesn't work

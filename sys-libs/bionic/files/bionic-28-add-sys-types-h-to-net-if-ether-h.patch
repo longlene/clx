@@ -1,0 +1,19 @@
+commit 5c52679cb4bf396ffaa1b71e52a36fa740992298
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri Apr 29 06:29:09 2011 -0400
+
+    add sys/types.h to net/if_ether.h
+
+diff --git a/libc/include/net/if_ether.h b/libc/include/net/if_ether.h
+index 0cd6d8d..fa3f1a8 100644
+--- a/libc/include/net/if_ether.h
++++ b/libc/include/net/if_ether.h
+@@ -41,6 +41,8 @@
+ #include <sys/mbuf.h>
+ #endif
+ 
++#include <sys/types.h>
++
+ /*
+  * Some basic Ethernet constants.
+  */

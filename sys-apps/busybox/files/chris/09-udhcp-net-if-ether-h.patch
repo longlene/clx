@@ -1,0 +1,19 @@
+commit 27a39a89d5c41779a7b39270e988cca7e5f0530a
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu May 5 20:00:10 2011 -0400
+
+    included net/if_ether.h in networking/udhcp/files.c
+
+diff --git a/networking/udhcp/files.c b/networking/udhcp/files.c
+index 3cd0630..a3090a7 100644
+--- a/networking/udhcp/files.c
++++ b/networking/udhcp/files.c
+@@ -7,7 +7,7 @@
+  * Licensed under GPLv2, see file LICENSE in this source tree.
+  */
+ #include <netinet/if_ether.h>
+-
++#include <net/if_ether.h>
+ #include "common.h"
+ #include "dhcpd.h"
+ 

@@ -1,0 +1,22 @@
+commit f878332edbb8952d39108a2c898fdb5dba253128
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Sun May 8 19:05:58 2011 -0400
+
+    more blah
+
+diff --git a/libc/netbsd/nameser/ns_print.c b/libc/netbsd/nameser/ns_print.c
+index 7465e62..97b45d2 100644
+--- a/libc/netbsd/nameser/ns_print.c
++++ b/libc/netbsd/nameser/ns_print.c
+@@ -38,11 +38,7 @@ __RCSID("$NetBSD: ns_print.c,v 1.5 2004/11/07 02:19:49 christos Exp $");
+ #include <isc/assertions.h>
+ #include <isc/dst.h>
+ #include <errno.h>
+-#ifdef ANDROID_CHANGES
+ #include "resolv_private.h"
+-#else
+-#include <resolv.h>
+-#endif
+ #include <string.h>
+ #include <ctype.h>
+ #include <assert.h>

@@ -1,0 +1,42 @@
+commit c39dc49e60d45067777dc52f8b3dfcd2f59a63ab
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Fri Apr 29 07:33:20 2011 -0400
+
+    blah
+
+diff --git a/libc/SYSCALLS.TXT b/libc/SYSCALLS.TXT
+index a2029ae..16b7b65 100644
+--- a/libc/SYSCALLS.TXT
++++ b/libc/SYSCALLS.TXT
+@@ -132,6 +132,10 @@ int         fchownat(int dirfd, const char *path, uid_t owner, gid_t group, int
+ int         fchmodat(int dirfd, const char *path, mode_t mode, int flags)  333,306
+ int         renameat(int olddirfd, const char *oldpath, int newdirfd, const char *newpath)  329,302
+ ssize_t     readahead(int, off64_t, size_t) 225
++int         shmget(key_t, size_t, int) 194,307,246
++int         shmctl(int, int, struct shmid_ds *) 195,308,247
++void*       shmatcall:shmat(int, const void *, int) 196,305,244
++int         shmdt(const void *) 197,306,245
+ 
+ # file system
+ int     link (const char*, const char*)  9
+diff --git a/libc/include/sys/shm.h b/libc/include/sys/shm.h
+index 1641450..36a9c0d 100644
+--- /dev/null
++++ b/libc/include/sys/shm.h
+@@ -0,0 +1,16 @@
++#ifndef _HAVE_SYS_SHM_H_
++#define _HAVE_SYS_SHM_H_
++
++ #include <linux/shm.h>
++ 
++__BEGIN_DECLS
++
++extern void *shmat(int, const void *, int);
++extern int   shmctl(int, int, struct shmid_ds *);
++extern int   shmdt(const void *);
++extern int   shmget(key_t, size_t, int);
++
++__END_DECLS
++
++#endif /* _HAVE_SYS_SHM_H_ */
++

@@ -1,0 +1,185 @@
+commit b800a34fba4bb5bf5ee18f903d97133d737d6880
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Thu Jan 12 16:53:11 2012 -0500
+
+    work, damn you!
+
+diff --git a/e2fsprogs/fsck.c b/e2fsprogs/fsck.c
+index a86a9d9..ba85073 100644
+--- a/e2fsprogs/fsck.c
++++ b/e2fsprogs/fsck.c
+@@ -298,6 +298,13 @@ static struct fs_info *create_fs_device(const char *device, const char *mntpnt,
+ 	return fs;
+ }
+ 
++static struct mntent *_getmntent_r(FILE* stream, struct mntent* result,
++                char* buffer UNUSED_PARAM, int bufsize UNUSED_PARAM)
++{
++        struct mntent* ment = getmntent(stream);
++        return memcpy(result, ment, sizeof(*ment));
++}
++
+ /* Load the filesystem database from /etc/fstab */
+ static void load_fs_info(const char *filename)
+ {
+@@ -312,7 +319,7 @@ static void load_fs_info(const char *filename)
+ 	}
+ 
+ 	// Loop through entries
+-	while (getmntent_r(fstab, &mte, bb_common_bufsiz1, COMMON_BUFSIZE)) {
++	while (_getmntent_r(fstab, &mte, bb_common_bufsiz1, COMMON_BUFSIZE)) {
+ 		//bb_info_msg("CREATE[%s][%s][%s][%s][%d]", mte.mnt_fsname, mte.mnt_dir,
+ 		//	mte.mnt_type, mte.mnt_opts,
+ 		//	mte.mnt_passno);
+diff --git a/libbb/xfuncs_printf.c b/libbb/xfuncs_printf.c
+index 56ee459..b4ed244 100644
+--- a/libbb/xfuncs_printf.c
++++ b/libbb/xfuncs_printf.c
+@@ -541,11 +541,12 @@ int FAST_FUNC bb_xioctl(int fd, unsigned request, void *argp)
+ char* FAST_FUNC xmalloc_ttyname(int fd)
+ {
+ 	char *buf = xzalloc(128);
+-	int r = ttyname_r(fd, buf, 127);
+-	if (r) {
++	char *x = ttyname(fd);
++	if (!x) {
+ 		free(buf);
+ 		buf = NULL;
+ 	}
++	memcpy(buf,x,strlen(x));
+ 	return buf;
+ }
+ 
+diff --git a/networking/arping.c b/networking/arping.c
+index ec81a0d..a547361 100644
+--- a/networking/arping.c
++++ b/networking/arping.c
+@@ -8,6 +8,8 @@
+ 
+ #include <arpa/inet.h>
+ #include <net/if.h>
++#include <net/if_ether.h>
++#include <netinet/ether.h>
+ #include <netinet/if_ether.h>
+ #include <netpacket/packet.h>
+ 
+diff --git a/networking/ether-wake.c b/networking/ether-wake.c
+index f440da3..3452e3a 100644
+--- a/networking/ether-wake.c
++++ b/networking/ether-wake.c
+@@ -111,8 +111,9 @@ static void get_dest_addr(const char *hostid, struct ether_addr *eaddr)
+ {
+ 	struct ether_addr *eap;
+ 
+-	eap = ether_aton_r(hostid, eaddr);
++	eap = ether_aton(hostid);
+ 	if (eap) {
++		memcpy(eaddr,eap,sizeof(struct ether_addr));
+ 		bb_debug_msg("The target station address is %s\n\n", ether_ntoa(eap));
+ #if !defined(__UCLIBC_MAJOR__) \
+  || __UCLIBC_MAJOR__ > 0 \
+diff --git a/networking/nameif.c b/networking/nameif.c
+index c4a0f13..2a80e99 100644
+--- a/networking/nameif.c
++++ b/networking/nameif.c
+@@ -90,7 +90,10 @@ static void nameif_parse_selector(ethtable_t *ch, char *selector)
+ 		} else {
+ #endif
+ 			lmac = xmalloc(ETH_ALEN);
+-			ch->mac = ether_aton_r(selector + (strncmp(selector, "mac=", 4) != 0 ? 0 : 4), lmac);
++			ch->mac = ether_aton(selector + (strncmp(selector, "mac=", 4) != 0 ? 0 : 4));
++			if (ch->mac) {
++				memcpy(lmac,ch->mac,ETH_ALEN);
++			}
+ 			if (ch->mac == NULL)
+ 				bb_error_msg_and_die("can't parse %s", selector);
+ #if  ENABLE_FEATURE_NAMEIF_EXTENDED
+diff --git a/networking/udhcp/files.c b/networking/udhcp/files.c
+index a3090a7..ee317ea 100644
+--- a/networking/udhcp/files.c
++++ b/networking/udhcp/files.c
+@@ -38,8 +38,10 @@ static int FAST_FUNC read_staticlease(const char *const_line, void *arg)
+ 	/* Read mac */
+ 	line = (char *) const_line;
+ 	mac_string = strtok_r(line, " \t", &line);
+-	if (!mac_string || !ether_aton_r(mac_string, &mac_bytes))
++	struct ether_addr *p = ether_aton(mac_string);
++	if (!mac_string || !p)
+ 		return 0;
++	memcpy(&mac_bytes,p,sizeof(struct ether_addr));
+ 
+ 	/* Read ip */
+ 	ip_string = strtok_r(NULL, " \t", &line);
+diff --git a/util-linux/mount.c b/util-linux/mount.c
+index 0f213bb..e8b6dca 100644
+--- a/util-linux/mount.c
++++ b/util-linux/mount.c
+@@ -78,16 +78,14 @@
+ #endif
+ 
+ 
+-#if defined(__dietlibc__)
+ // 16.12.2006, Sampo Kellomaki (sampo@iki.fi)
+ // dietlibc-0.30 does not have implementation of getmntent_r()
+-static struct mntent *getmntent_r(FILE* stream, struct mntent* result,
++static struct mntent *_getmntent_r(FILE* stream, struct mntent* result,
+ 		char* buffer UNUSED_PARAM, int bufsize UNUSED_PARAM)
+ {
+ 	struct mntent* ment = getmntent(stream);
+ 	return memcpy(result, ment, sizeof(*ment));
+ }
+-#endif
+ 
+ 
+ // Not real flags, but we want to be able to check for this.
+@@ -1850,7 +1848,7 @@ int mount_main(int argc UNUSED_PARAM, char **argv)
+ 			if (!mountTable)
+ 				bb_error_msg_and_die("no %s", bb_path_mtab_file);
+ 
+-			while (getmntent_r(mountTable, &mtpair[0], getmntent_buf,
++			while (_getmntent_r(mountTable, &mtpair[0], getmntent_buf,
+ 								GETMNTENT_BUFSIZE))
+ 			{
+ 				// Don't show rootfs. FIXME: why??
+@@ -1921,7 +1919,7 @@ int mount_main(int argc UNUSED_PARAM, char **argv)
+ 		struct mntent *mtother = (mtcur==mtpair ? mtpair+1 : mtpair);
+ 
+ 		// Get next fstab entry
+-		if (!getmntent_r(fstab, mtcur, getmntent_buf
++		if (!_getmntent_r(fstab, mtcur, getmntent_buf
+ 					+ (mtcur==mtpair ? GETMNTENT_BUFSIZE/2 : 0),
+ 				GETMNTENT_BUFSIZE/2)
+ 		) { // End of fstab/mtab is reached
+diff --git a/util-linux/umount.c b/util-linux/umount.c
+index 5597d9e..2ad8e7e 100644
+--- a/util-linux/umount.c
++++ b/util-linux/umount.c
+@@ -11,17 +11,15 @@
+ #include <sys/mount.h>
+ #include "libbb.h"
+ 
+-#if defined(__dietlibc__)
+ // TODO: This does not belong here.
+ /* 16.12.2006, Sampo Kellomaki (sampo@iki.fi)
+- * dietlibc-0.30 does not have implementation of getmntent_r() */
+-static struct mntent *getmntent_r(FILE* stream, struct mntent* result,
++ * dietlibc-0.30 does not have implementation of _getmntent_r() */
++static struct mntent *_getmntent_r(FILE* stream, struct mntent* result,
+ 		char* buffer UNUSED_PARAM, int bufsize UNUSED_PARAM)
+ {
+ 	struct mntent* ment = getmntent(stream);
+ 	return memcpy(result, ment, sizeof(*ment));
+ }
+-#endif
+ 
+ /* ignored: -v -d -t -i */
+ #define OPTION_STRING           "fldnra" "vdt:i"
+@@ -69,7 +67,7 @@ int umount_main(int argc UNUSED_PARAM, char **argv)
+ 		if (opt & OPT_ALL)
+ 			bb_error_msg_and_die("can't open '%s'", bb_path_mtab_file);
+ 	} else {
+-		while (getmntent_r(fp, &me, bb_common_bufsiz1, sizeof(bb_common_bufsiz1))) {
++		while (_getmntent_r(fp, &me, bb_common_bufsiz1, sizeof(bb_common_bufsiz1))) {
+ 			/* Match fstype if passed */
+ 			if (!match_fstype(&me, fstype))
+ 				continue;

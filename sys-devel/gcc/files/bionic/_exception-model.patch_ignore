@@ -1,0 +1,40 @@
+commit f1c6095f2e4ef3beea09fd799db57b3c5a83b683
+Author: Christopher Friedt <chrisfriedt@gmail.com>
+Date:   Mon May 9 12:55:13 2011 -0400
+
+    determining the exception model automatically does not work
+
+diff --git a/libstdc++-v3/acinclude.m4 b/libstdc++-v3/acinclude.m4
+index ed8b129..6f34575 100644
+--- a/libstdc++-v3/acinclude.m4
++++ b/libstdc++-v3/acinclude.m4
+@@ -2813,11 +2813,8 @@ EOF
+ 	[Define if the compiler is configured for setjmp/longjmp exceptions.])
+       ac_exception_model_name=sjlj
+       ;;
+-    no)
+-      ac_exception_model_name="call frame"
+-      ;;
+     *)
+-      AC_MSG_ERROR([unable to detect exception model])
++      ac_exception_model_name="call frame"
+       ;;
+   esac
+  AC_LANG_RESTORE
+diff --git a/libstdc++-v3/configure b/libstdc++-v3/configure
+index 755bae2..c155190 100755
+--- a/libstdc++-v3/configure
++++ b/libstdc++-v3/configure
+@@ -14989,11 +14989,8 @@ $as_echo "#define _GLIBCXX_SJLJ_EXCEPTIONS 1" >>confdefs.h
+ 
+       ac_exception_model_name=sjlj
+       ;;
+-    no)
+-      ac_exception_model_name="call frame"
+-      ;;
+     *)
+-      as_fn_error "unable to detect exception model" "$LINENO" 5
++      ac_exception_model_name="call frame"
+       ;;
+   esac
+  ac_ext=c
