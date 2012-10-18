@@ -26,7 +26,7 @@ src_compile() {
 }
 src_install() {
 	#emake install || die "Install failed"
-	dolib.so build/libcl-opencv-glue.so
+	dolib.so glue/libcl-opencv-glue.so
 	common-lisp-install *.lisp ${PN}.asd
 	common-lisp-symlink-asdf
 	dodoc README.md LICENSE
