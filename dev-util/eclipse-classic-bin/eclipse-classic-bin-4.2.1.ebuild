@@ -5,19 +5,17 @@ EAPI=4
 
 inherit eutils
 # like the classic version
-MY_VERSION="4.2.0"
+MY_VERSION="4.2.1"
 MY_P="eclipse-SDK-${MY_VERSION}-linux-gtk"
 MY_PN="eclipse-classic"
 
-#SRC_BASE="http://www.eclipse.org/downloads/download.php?file=/eclipse/downloads/drops4/R-${MY_VERSION}-201206081400/${MY_P}"
-# &r=1 #downloading speed too slow 
-SRC_BASE="http://developer.eclipsesource.com/technology/epp/juno4/${MY_P}"
+SRC_BASE="http://www.eclipse.org/downloads/download.php?file=/eclipse/downloads/drops4/R-${MY_VERSION}-201209141800/${MY_P}"
 
 DESCRIPTION="Eclipse SDK Classic"
 HOMEPAGE="http://www.eclipse.org"
 SRC_URI="
-	amd64? ( ${SRC_BASE}-x86_64.tar.gz -> ${MY_P}-x86_64.tar.gz )
-	x86? ( ${SRC_BASE}.tar.gz -> ${MY_P}.tar.gz )"
+	amd64? ( ${SRC_BASE}-x86_64.tar.gz&r=1 -> ${MY_P}-x86_64.tar.gz )
+	x86? ( ${SRC_BASE}.tar.gz&r=1 -> ${MY_P}.tar.gz )"
 
 LICENSE="EPL-1.0"
 SLOT="4.2"
