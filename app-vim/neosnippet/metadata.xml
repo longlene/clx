@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		This source analyzes snippet files for completion, offers functionality similar to snipMate.vim or snippetsEmu.vim. Since you can choose snippet with neocomplcache interface, you might have less trouble learning it.
+	</longdescription>
+</pkgmetadata>
