@@ -2147,4 +2147,4 @@ x11-wm/cairo-compmgr
 x11-wm/eaglemode
 x11-wm/libdrm
 
-=dev-lisp/cl-opencv-999
+=dev-lisp/cl-opencv-9999
