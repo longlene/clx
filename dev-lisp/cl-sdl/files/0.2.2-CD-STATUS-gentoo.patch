@@ -1,0 +1,13 @@
+diff -ur cl-sdl.orig/sdl/sdl.lisp cl-sdl/sdl/sdl.lisp
+--- cl-sdl.orig/sdl/sdl.lisp	2003-11-03 11:35:42.000000000 -0600
++++ cl-sdl/sdl/sdl.lisp	2005-07-20 16:26:40.000000000 -0500
+@@ -420,7 +420,7 @@
+   (track (:array cd-track #.(1+ +max-tracks+))))
+ 
+ (def-foreign-struct-accessors (cd)
+-    id status numtracks cur-track cur-frame)
++    id numtracks cur-track cur-frame)
+ 
+ (defun cd-track (cd track-num)
+   (deref-array (slot cd cd track)
+Only in cl-sdl/sdl: sdl.lisp.~1.17.~

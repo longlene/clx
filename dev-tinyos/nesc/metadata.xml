@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>dev-embedded</herd>
+<longdescription>
+NesC is a new language for programming structured component-based applications.
+This package provides a gcc frontend for this language. You need a gcc compiler
+or cross-compiler that can produce executables for your target platforms.
+</longdescription>
+</pkgmetadata>

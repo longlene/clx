@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+CL-MECHANIZE is a WWW::Mechanize work-alike for Common Lisp implemented as a thin wrapper on top of Drakma.
+	</longdescription>
+</pkgmetadata>

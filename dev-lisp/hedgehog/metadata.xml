@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>common-lisp</herd>
+<longdescription>
+Hedgehog is a very concise implementation of a Lisp-like language for low-end
+and embedded devices. It consists of a compiler and a byte code interpreter. The
+byte code interpreter is written in standard conforming C, is efficient and
+easily portable, and can be compiled to a very small executable of only some 20
+kilobytes in the smallest configuration for the Intel x86 architecture.
+
+The Hedgehog Lisp dialect has proper support for local and lambda functions,
+lexical scoping, variable argument functions, garbage collection, exceptions,
+macros, and over a hundred predefined functions or special forms. The built-in
+types are lists, symbols, strings, 32-bit integers, AVL-trees, and tuples up to
+16 elements wide. Proper 32-bit wide integers are necessary for various
+bit-level operations in embedded systems.
+</longdescription>
+</pkgmetadata>

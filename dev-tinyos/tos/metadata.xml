@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>dev-embedded</herd>
+<longdescription>
+	TinyOS is a small operating system written in NesC language for embedded system like wireless sensor.
+	This package provides the sources of the tos directory of the TinyOS distribution, which contains the core
+	system, and the doc directory with the TinyOS documentation.
+</longdescription>
+</pkgmetadata>
