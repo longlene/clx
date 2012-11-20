@@ -1,0 +1,44 @@
+--- clfswm-1106-2/configure.old	2011-06-17 20:55:15.000000000 +0200
++++ clfswm-1106-2/configure	2012-01-09 02:31:15.558044321 +0100
+@@ -3,6 +3,7 @@
+ CONFIGURE_VERSION=0.2
+ 
+ PREFIX="/usr/local"
++LIBDIR="lib"
+ lisp=clisp
+ lisp_opt=''
+ lisp_bin=''
+@@ -21,6 +22,7 @@
+   -h, --help                display this help and exit
+   -V, --version             display version information and exit
+   --prefix=PREFIX           install architecture-independent files in PREFIX [/usr/local]
++  --libdir=LIBDIR           libdir path
+   -l, --with-lisp           use <lisp> as the common lisp implementation type [$lisp]
+   -b, --lisp-bin            use <bin> as the common lisp program [$lisp_bin] (default: same as with-lisp type)
+   -o, --lisp-opt            use <opt> as lisp option [$lisp_opt]
+@@ -50,6 +52,9 @@
+ 	--prefix)
+ 	    shift
+ 	    PREFIX="$1" ;;
++	--libdir)
++	    shift
++	    LIBDIR="$1" ;;
+ 	-d|--dump-path)
+ 	    shift
+ 	    dump_path="$1" ;;
+@@ -98,6 +103,7 @@
+ 
+ 
+ echo "  prefix=$PREFIX
++  libdir=$LIBDIR
+   with-lisp=$lisp
+   lisp-bin=$lisp_bin
+   lisp-opt=$lisp_opt
+@@ -117,6 +123,7 @@
+ 
+ sed -e "s#+DESTDIR+#$DESTDIR#g" \
+     -e "s#+BUILD_PATH+#$(pwd)/#g" \
++    -e "s#+LIBDIR+#$LIBDIR#g" \
+     Makefile.template > Makefile
+ 
+ 

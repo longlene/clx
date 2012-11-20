@@ -8,7 +8,7 @@ SRC_URI="http://www.kix.in/plan9/plan9port-repack-${PV}.tar.bz2"
 
 LICENSE="PLAN9"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""

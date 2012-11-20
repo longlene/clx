@@ -481,7 +481,7 @@ dev-lang/awib
 dev-lang/cassbeam
 dev-lang/clips
 dev-lang/cobra
-dev-lang/dmd
+>=dev-lang/dmd-2.057
 dev-lang/dmd-bin
 dev-lang/dmd-bin
 dev-lang/elan-interpreter

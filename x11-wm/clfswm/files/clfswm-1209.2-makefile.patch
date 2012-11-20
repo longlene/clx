@@ -1,0 +1,38 @@
+--- clfswm-1106-2/Makefile.template.old	2011-06-17 20:55:15.000000000 +0200
++++ clfswm-1106-2/Makefile.template	2012-01-09 02:10:44.751959431 +0100
+@@ -1,6 +1,7 @@
+ # -*- makefile -*-
+ DESTDIR=+DESTDIR+
+ BUILD_PATH=+BUILD_PATH+
++LIBDIR=+LIBDIR+
+ 
+ build:
+ 	@echo "Building"
+@@ -11,13 +12,13 @@
+ 
+ install:
+ 	mkdir -p $(DESTDIR)/bin
+-	rm -rf $(DESTDIR)/lib/clfswm/
+-	mkdir -p $(DESTDIR)/lib/clfswm/src
++	rm -rf $(DESTDIR)/$(LIBDIR)/clfswm/
++	mkdir -p $(DESTDIR)/$(LIBDIR)/clfswm/src
+ 	mkdir -p $(DESTDIR)/share/doc/clfswm
+ 	cp $(BUILD_PATH)/clfswm $(DESTDIR)/bin
+-	cp $(BUILD_PATH)/clfswm.asd $(DESTDIR)/lib/clfswm/
+-	cp -R $(BUILD_PATH)/src/*.lisp $(DESTDIR)/lib/clfswm/src
+-	cp -R $(BUILD_PATH)/contrib $(DESTDIR)/lib/clfswm/
++	cp $(BUILD_PATH)/clfswm.asd $(DESTDIR)/$(LIBDIR)/clfswm/
++	cp -R $(BUILD_PATH)/src/*.lisp $(DESTDIR)/$(LIBDIR)/clfswm/src
++	cp -R $(BUILD_PATH)/contrib $(DESTDIR)/$(LIBDIR)/clfswm/
+ 	cp -R $(BUILD_PATH)/doc/* $(DESTDIR)/share/doc/clfswm/
+ 	cp -R $(BUILD_PATH)/AUTHORS $(DESTDIR)/share/doc/clfswm/
+ 	cp -R $(BUILD_PATH)/COPYING $(DESTDIR)/share/doc/clfswm/
+@@ -31,7 +32,7 @@
+ 
+ uninstall:
+ 	rm -rf $(DESTDIR)/bin/clfswm
+-	rm -rf $(DESTDIR)/lib/clfswm
++	rm -rf $(DESTDIR)/$(LIBDIR)/clfswm
+ 	rm -rf $(DESTDIR)/share/doc/clfswm
+ 
+ clean:

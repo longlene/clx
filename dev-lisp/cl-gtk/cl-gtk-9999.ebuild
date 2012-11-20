@@ -4,7 +4,7 @@ EAPI=4
 
 inherit common-lisp-3 git-2
 
-DESCRIPTION="Lisp binding to the GTK+"
+DESCRIPTION="Lisp binding to the GTK+-3"
 HOMEPAGE="http://gitorious.org/lisp-projects/cl-gtk"
 SRC_URI=""
 
