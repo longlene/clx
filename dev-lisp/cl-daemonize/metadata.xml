@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		A tool to daemonize a Lisp process without the need for screen/detachtty.
+
+All is SBCL-specific and Linux-only (should work on any POSIX in fact).
+
+* API - it exports two functions:
+** (daemonize &key out err stop pid)
+** (restart-process)
+	</longdescription>
+</pkgmetadata>
