@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+uri-template is an implementation of the URI Template proposed
+standard draft version 01
+(http://tools.ietf.org/html/draft-gregorio-uritemplate-01) as a reader
+macro, used for both creating and parsing URIs.
+	</longdescription>
+</pkgmetadata>

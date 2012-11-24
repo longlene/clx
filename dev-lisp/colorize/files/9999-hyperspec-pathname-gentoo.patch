@@ -1,0 +1,13 @@
+--- colorize.orig/clhs-lookup.lisp	2012-11-21 21:08:11.679552010 +0800
++++ colorize/clhs-lookup.lisp	2012-11-21 21:10:56.416561337 +0800
+@@ -4,9 +4,7 @@
+ (in-package :clhs-lookup)
+ 
+ (defparameter *hyperspec-pathname*
+-  (merge-pathnames
+-   (make-pathname :directory '(:relative "HyperSpec"))
+-   (user-homedir-pathname)))
++  #p"/usr/share/doc/hyperspec/HyperSpec/")
+ 
+ (defparameter *hyperspec-map-file*
+   (merge-pathnames "Data/Map_Sym.txt" *hyperspec-pathname*))
