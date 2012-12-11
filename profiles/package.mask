@@ -2148,3 +2148,4 @@ x11-wm/eaglemode
 x11-wm/libdrm
 
 =dev-lisp/cl-opencv-9999
+=app-i18n/fcitx-tsundere-9999
