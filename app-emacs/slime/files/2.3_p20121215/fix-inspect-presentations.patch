@@ -1,0 +1,47 @@
+Author: Stelian Ionescu <sionescu@cddr.org>
+Date: 2007-08-20
+Status: Rejected
+Description: Enables slime-inspect to work with presentations at point
+
+diff --git a/contrib/slime-presentations.el b/contrib/slime-presentations.el
+index a462669..fd18edd 100644
+--- a/contrib/slime-presentations.el
++++ b/contrib/slime-presentations.el
+@@ -57,6 +57,15 @@
+ (make-variable-buffer-local
+  (defvar slime-presentation-start-to-point (make-hash-table)))
+ 
++(setq slime-inspector-value-provider
++      (lambda ()
++        (multiple-value-bind (presentation start end)
++            (slime-presentation-around-point (point))
++          (when presentation
++            ;; Point is within a presentation, so don't prompt, just 
++            ;; inspect the presented object; don't play DWIM.
++            (slime-presentation-expression presentation)))))
++
+ (defun slime-mark-presentation-start (id &optional target)
+   "Mark the beginning of a presentation with the given ID.
+ TARGET can be nil (regular process output) or :repl-result."
+diff --git a/slime.el b/slime.el
+index a168c3f..2faaea9 100644
+--- a/slime.el
++++ b/slime.el
+@@ -6371,11 +6371,15 @@ was called originally."
+ (defvar slime-inspector-mark-stack '())
+ (defvar slime-saved-window-config)
+ 
++(defvar slime-inspector-value-provider nil)
++
+ (defun slime-inspect (string)
+   "Eval an expression and inspect the result."
+   (interactive 
+-   (list (slime-read-from-minibuffer "Inspect value (evaluated): "
+-				     (slime-sexp-at-point))))
++   (list (or (and slime-inspector-value-provider
++                  (funcall slime-inspector-value-provider))
++             (slime-read-from-minibuffer "Inspect value (evaluated): "
++                                         (slime-sexp-at-point)))))
+   (slime-eval-async `(swank:init-inspector ,string) 'slime-open-inspector))
+ 
+ (define-derived-mode slime-inspector-mode fundamental-mode

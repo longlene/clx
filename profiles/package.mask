@@ -2149,3 +2149,4 @@ x11-wm/libdrm
 
 =dev-lisp/cl-opencv-9999
 =app-i18n/fcitx-tsundere-9999
+=dev-lisp/cl-irregsexp-20120818_pre

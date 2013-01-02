@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		This CL library allows you to spawn local or remote processes and shell pipes.
+		It lets me use CL in many cases where I would previously write shell scripts.
+		The name is a pun, in that this library can both
+		let you spawn inferior (children processes) shells, and
+		serve itself as an inferior (not so featureful) shell.
+		Because so many features of a shell are missing,
+		inferior-shell only brings down the low-hanging fruits of shell scripting;
+		yet CL is such a better programming language than the shell
+		(or other "scripting" languages) that it is already a great pleasure
+		to be able to write things in CL rather than in these languages.
+		More features will come, and/or you can use other CL libraries as a complement.
+
+		Inferior-shell recognizes a small domain-specific language to describe
+		commands or pipelines of commands, and some functions to actually run
+		these pipelines either locally or remotely (via ssh).
+		It will implicitly invoke ssh when asked to run a command on a remote host;
+		for best results, be sure to have passphrase-less access to these hosts
+		via e.g. ssh-agent.
+	</longdescription>
+</pkgmetadata>

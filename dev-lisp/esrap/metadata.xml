@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		In addition to regular Packrat / Parsing Grammar / TDPL features ESRAP
+		supports:
+
+		- dynamic redefinition of nonterminals
+		- inline grammars
+		- semantic predicates
+		- introspective facilities (decribing grammars, tracing, setting breaks)
+	</longdescription>
+</pkgmetadata>
