@@ -26,6 +26,7 @@ dev-dotnet
 dev-embedded
 dev-games
 dev-haskell
+dev-inferno
 dev-lang
 dev-libs
 dev-lisp
