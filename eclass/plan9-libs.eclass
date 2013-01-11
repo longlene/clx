@@ -8,7 +8,8 @@
 
 DESCRIPTION="The ${PN} library in Plan9 from user space"
 HOMEPAGE="http://swtch.com/plan9port/"
-SRC_URI="http://wwww.kix.in/plan9/plan9port-repack-${PV}.tar.bz2"
+#SRC_URI="http://wwww.kix.in/plan9/plan9port-repack-${PV}.tar.bz2"
+SRC_URI="http://plan9port.googlecode.com/files/plan9port-${PV}.tgz"
 LICENSE="PLAN9"
 SLOT="0"
 
@@ -18,7 +19,7 @@ DEPEND="dev-plan9/mk ${DEPEND}"
 #	DEPEND="${DEPEND} !=$(get-parent-package ${CATEGORY}/${PN})-${SLOT}*"
 #	RDEPEND="${RDEPEND} !=$(get-parent-package ${CATEGORY}/${PN})-${SLOT}*"
 
-S="${WORKDIR}/plan9"
+S="${WORKDIR}/plan9port"
 
 function set_path() {
 PLAN9=`pwd` export PLAN9
