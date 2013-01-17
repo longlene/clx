@@ -1219,7 +1219,6 @@ media-fonts/lang-meta
 media-fonts/malayalam-fonts
 media-fonts/manchu-font
 media-fonts/manchufont
-media-fonts/monaco
 media-fonts/nanum-fonts
 media-fonts/paktype-fonts
 media-fonts/profont-x11
