@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		fare-mop is a small collection of utilities using the MOP.
+   6 It notably contains a method SIMPLE-PRINT-OBJECT, and
+   7 a mixin SIMPLE-PRINT-OBJECT-MIXIN that allow you to trivially define
+   8 PRINT-OBJECT methods that print the interesting slots in your objects,
+   9 which is great for REPL interaction and debugging.
+	</longdescription>
+</pkgmetadata>

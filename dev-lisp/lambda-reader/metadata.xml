@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		LAMBDA-READER is a library that lets you use unicode character λ for LAMBDA in reader and printer. It was written by Fare Rideau based on an original idea by Brian Mastenbrook.
+
+		It depends on named-readtables for managing the readtable. Maybe in the future that should be replaced by cl-syntax.
+	</longdescription>
+</pkgmetadata>

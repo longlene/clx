@@ -41,6 +41,7 @@ REQUIRED_USE="vorbis? ( ogg )"
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-gentoo-fixes.patch"
+	sed -i -e "2s/\"[0-9]*\"/\"`date +%Y%m%d`\"/" libs/iovm/source/IoVersion.h
 }
 
 src_configure() {

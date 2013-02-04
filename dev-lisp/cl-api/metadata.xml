@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Currently works only with SBCL to add support to other CL implementations modify LAMBDALIST function in src/generator.lisp file
+
+		USAGE:
+		Call api-gen function to generate HTML API.
+		Evenually redefine *api-css* before calling api-gen.
+
+		http://common-lisp.net/project/cl-api/index.shtml
+		To generate an API document, you simply call API-GEN function passing the symbol package you want to document and the destination path.
+		Optionally you might want to excplute some symbol to be documented for a specific section, this is what
+		:EXCLUDE-CONST :EXCLUDE-VAR :EXCLUDE-CLASS :EXCLUDE-COND :EXCLUDE-FUNC :EXCLUDE-MACRO
+		API-GEN keys are meant for.
+	</longdescription>
+</pkgmetadata>
