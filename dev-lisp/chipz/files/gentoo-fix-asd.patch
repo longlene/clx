@@ -1,0 +1,35 @@
+diff -Naur chipz-0.7.1.orig/chipz.asd chipz-0.7.1/chipz.asd
+--- chipz-0.7.1.orig/chipz.asd	2008-12-18 05:21:11.000000000 +0100
++++ chipz-0.7.1/chipz.asd	2008-12-19 03:34:47.000000000 +0100
+@@ -1,13 +1,4 @@
+ ; -*- mode: lisp -*-
+-(cl:defpackage :chipz-system
+-  (:use :cl :asdf))
+-(cl:in-package :chipz-system)
+-
+-(defclass txt-file (doc-file) ())
+-(defclass css-file (doc-file) ())
+-
+-(defmethod source-file-type ((c txt-file) (s module)) "txt")
+-(defmethod source-file-type ((c css-file) (s module)) "css")
+ 
+ (asdf:defsystem :chipz
+   :version "0.7.1"
+@@ -15,16 +6,7 @@
+   :maintainer "Nathan Froyd <froydnj@gmail.com>"
+   :description "A library for decompressing deflate, zlib, and gzip data"
+   :license "BSD style"
+-  :components ((:static-file "NEWS")
+-               (:static-file "LICENSE")
+-               (:static-file "TODO")
+-               (:file "package")
+-               (:module "doc"
+-                        :components
+-                        ((:html-file "chipz")
+-                         ;; XXX ASDF bogosity
+-                         (:txt-file "chipz-doc")
+-                         (:css-file "style")))
++  :components ((:file "package")
+                (:file "constants" :depends-on ("package"))
+                (:file "types-and-tables" :depends-on ("constants"))
+                (:file "crc32" :depends-on ("types-and-tables"))

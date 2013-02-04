@@ -1,0 +1,33 @@
+#!/sbin/runscript
+# -*- mode: sh -*-
+
+opts="nodaemon"
+
+LISP="/usr/share/common-lisp/source/restas/contrib/restas-daemon.lisp"
+
+NAME="${SVCNAME#*.}"
+CONF="/etc/restas/${NAME}.lisp"
+
+start () {
+	ebegin "Starting ${NAME}"
+
+    export LC_ALL="ru_RU.UTF-8"
+
+    sbcl --noinform --no-userinit --no-sysinit --load $LISP $CONF start
+    
+    eend "$?" "Failed"
+}
+
+stop () {
+	ebegin "Stopping ${NAME}"
+    
+    sbcl --noinform --no-userinit --no-sysinit --load $LISP $CONF stop
+
+    eend "$?" "Failed"
+}
+
+nodaemon () {
+    export LC_ALL="ru_RU.UTF-8"
+
+    sbcl --noinform --no-userinit --no-sysinit --load $LISP $CONF nodaemon
+}
