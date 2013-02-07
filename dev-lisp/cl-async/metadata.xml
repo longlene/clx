@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+Cl-async is a library for general purpose, non-blocking programming in Common Lisp. Cl-async uses Libevent2 as the backend, which is a fast, stable, portable library for asynchronous IO (see my notes on choosing Libevent).
+
+The main goal is to provide an experience that makes general asynchronous programming in lisp natural, and to also provide a number of drivers on top of cl-async.
+
+This library's current status is BETA. You will generally have a better experience by using the git version of this library and the git version of the libevent2 bindings.
+	</longdescription>
+</pkgmetadata>
