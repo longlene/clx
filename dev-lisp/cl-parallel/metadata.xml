@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		cl-parallel is an API for Common Lisp that's designed to make
+parallelism easy.  cl-parallel is based on [bordeaux-threads][bt], so
+it should work on most threaded Common Lisps.
+	</longdescription>
+</pkgmetadata>

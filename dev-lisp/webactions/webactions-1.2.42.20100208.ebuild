@@ -18,12 +18,12 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 DEPEND="=dev-lisp/acl-compat-${PV}*"
 
-CLPACKAGE=htmlgen
+CLPACKAGE=webactions
 
 #S=${WORKDIR}/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}.orig
 S=${WORKDIR}/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}-dfsg
 
 src_install() {
-	cd aserve/htmlgen
+	cd aserve/webactions
 	common-lisp-3_src_install
 }

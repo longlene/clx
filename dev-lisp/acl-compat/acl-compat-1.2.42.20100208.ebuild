@@ -10,7 +10,7 @@ CVS_PV=${PV:7:4}.${PV:11:2}.${PV:13}
 DESCRIPTION="Compatibility layer for Allegro Common Lisp"
 HOMEPAGE="http://portableaserve.sourceforge.net/
 	http://packages.debian.org/unstable/web/cl-acl-compat"
-SRC_URI="mirror://debian/pool/main/c/cl-portable-aserve/cl-portable-aserve_${MY_PV}+cvs.${CVS_PV}-dfsg.orig.tar.gz"
+SRC_URI="https://mydebian.googlecode.com/files/cl-portable-aserve_${MY_PV}+cvs.${CVS_PV}.orig.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
@@ -21,7 +21,7 @@ RDEPEND="!dev-lisp/cl-${PN}
 		dev-lisp/puri
 		dev-lisp/cl-ppcre"
 
-S="${WORKDIR}"/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}-dfsg.orig
+S="${WORKDIR}"/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}-dfsg
 
 src_install() {
 	cd ${PN}

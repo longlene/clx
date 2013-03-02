@@ -1,5 +1,7 @@
 # Distributed under the terms of the GNU General Public License v2 EAPI=4
-inherit common-lisp-3
+EAPI=4
+
+inherit common-lisp-3 eutils
 
 MY_PV=${PV:0:6}
 CVS_PV=${PV:7:4}.${PV:11:2}.${PV:13}
@@ -16,23 +18,28 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-=dev-lsip/htmlgen-${PV}
-=dev-lsip/acl-compat-${PV}"
+=dev-lisp/htmlgen-${PV}
+=dev-lisp/webactions-${PV}
+=dev-lisp/acl-compat-${PV}"
 
-S=${WORKDIR}/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}.orig
+S=${WORKDIR}/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}-dfsg/aserve
 #src_unpack() {
 #	unpack ${A}
 #	cd ${S}; epatch ${FILESDIR}/${PV}-clisp-gentoo.patch
 #}
 
 src_install() {
-	common-lisp-install aserve/*.cl aserve/*.asd
-	common-lisp-system-symlink
-	dodoc ChangeLog README README.cmucl INSTALL.lisp logical-hostnames.lisp
+	cd ${PN}
+	rm -rf htmlgen
+	rm -rf webactions
+	common-lisp-3_src_install
+	#common-lisp-install aserve/*.{cl,asd,system}
+	#common-lisp-system-symlink
+	dodoc ChangeLog ../README ../README.cmucl ../INSTALL.lisp ../logical-hostnames.lisp
 	insinto /usr/share/doc/${PF}/contrib
-	doins contrib/*.lisp
+	doins ../contrib/*.lisp
 	insinto /usr/share/doc/${PF}/examples
-	doins aserve/examples/*
+	doins examples/*
 	insinto /usr/share/doc/${PF}/doc
-	doins aserve/doc/*
+	dohtml doc/*.html
 }

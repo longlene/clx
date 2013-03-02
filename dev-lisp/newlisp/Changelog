@@ -1,0 +1,2 @@
+Sun Feb 17 12:58:21 CST 2013
+from the official newlisp ebuild, dos2unix and remove the sudo dependence.

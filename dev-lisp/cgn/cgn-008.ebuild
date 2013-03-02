@@ -15,7 +15,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/ltk"
+dev-lisp/ltk
+sci-visualization/gnuplot"
 
 src_install() {
 	common-lisp-3_src_install
