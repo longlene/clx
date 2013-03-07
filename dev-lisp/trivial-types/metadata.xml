@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		TRIVIAL-TYPES provides missing but important type definitions such as PROPER-LIST, ASSOCIATION-LIST, PROPERTY-LIST and TUPLE.
+	</longdescription>
+</pkgmetadata>

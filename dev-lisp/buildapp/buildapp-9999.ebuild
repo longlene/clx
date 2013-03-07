@@ -21,6 +21,8 @@ DEPEND=""
 RDEPEND="${DEPEND}
 		dev-lisp/sbcl"
 
+RESTRICT="strip"
+
 src_compile() {
 	emake || die "emake failed"
 }

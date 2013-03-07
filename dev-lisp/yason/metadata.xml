@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		YASON is a Common Lisp library for encoding and
+		decoding data in the JSON interchange format. JSON is used as a
+		lightweight alternative to XML. YASON has the sole purpose of
+		encoding and decoding data and does not impose any object model on
+		the Common Lisp application that uses it.
+	</longdescription>
+</pkgmetadata>
