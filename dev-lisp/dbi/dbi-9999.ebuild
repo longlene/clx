@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://github.com/fukamachi/cl-dbi.git"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=""

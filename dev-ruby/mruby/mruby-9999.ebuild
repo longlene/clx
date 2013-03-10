@@ -22,7 +22,7 @@ dev-lang/ruby"
 
 src_install() {
 	dobin bin/{mirb,mrbc,mruby}
-	dolib.a lib/{libmruby.a,libmruby_core.a}
+	dolib.a build/host/lib/{libmruby.a,libmruby_core.a}
 
 	insinto /usr/include/
 	doins -r include/{mrbconf.h,mruby,mruby.h}
