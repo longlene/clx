@@ -1,5 +1,21 @@
-**To make Funtoo Linux better for Lisp-developing and so on.**
+clx -- An Overlay For Funtoo/Gentoo-like Linux
+==============================================
 
-Some ebuilds from the Internet and some ebuilds about Lisp are created by myself.
+## DESCRIPTION
+This overlay stores some ebuilds for lisp developing and other interesting ebuilds.
 
+some ebuilds are collected from the Internet and others are wrote by myself.
+
+
+
+## INSTALLATION
+
+Add this overlay with your layman: 
+
+```bash
+layman -f -a clx -o http://raw.github.com/longlene/clx/master/repo.xml
+```
+
+
+Some of them may be on bleeing edge. Take care if you want to use them. Please mail me if you encounter a problem.
 

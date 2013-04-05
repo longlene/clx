@@ -1,0 +1,13 @@
+diff --git a/swank-sbcl.lisp b/swank-sbcl.lisp
+index d9e0d13..4f97f77 100644
+--- a/swank-sbcl.lisp
++++ b/swank-sbcl.lisp
+@@ -1600,7 +1600,7 @@ stack."
+                             item))
+              (when (minusp
+                     (sys-execv program a-args))
+-               (sb-posix:syscall-error)))
++               (error "execv(3) returned.")))
+         (sb-alien:free-alien a-args))))
+ 
+   (defun runtime-pathname ()

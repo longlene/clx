@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		ecl-readline provides top-level readline support for ECL (Embeddable Common-Lisp) as an ASDF package. It does this by creating a CLOS input-stream that wraps around the Readline library. 
+	</longdescription>
+</pkgmetadata>

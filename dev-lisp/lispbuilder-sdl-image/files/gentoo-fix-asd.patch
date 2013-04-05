@@ -1,0 +1,15 @@
+diff -ur lispbuilder-sdl-image.orig/lispbuilder-sdl-image.asd lispbuilder-sdl-image/lispbuilder-sdl-image.asd
+--- lispbuilder-sdl-image.orig/lispbuilder-sdl-image.asd	2008-07-20 10:20:45.000000000 +0200
++++ lispbuilder-sdl-image/lispbuilder-sdl-image.asd	2009-12-22 15:54:33.000000000 +0100
+@@ -21,10 +21,4 @@
+ 	    :components
+ 	    ((:file "package")
+ 	     (:file "generics" :depends-on ("package"))
+-	     (:file "sdl-image-util" :depends-on ("package" "generics"))))
+-   (:module "documentation"
+-	    :components
+-	    ((:html-file "header")
+-	     (:html-file "footer")
+-	     (:html-file "lispbuilder-sdl-image")
+-	     (:static-file "alien.png")))))
++	     (:file "sdl-image-util" :depends-on ("package" "generics"))))))

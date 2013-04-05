@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		ABLE is an open source Common Lisp editor for Mac, Linux and Windows. ABLE's features include a listener with command history, syntax colouring, symbol completion, jump to definition, parenthesis matching, configurable indentation, Hyperspec lookup and call-tips.
+	</longdescription>
+</pkgmetadata>

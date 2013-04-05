@@ -2,3 +2,5 @@
 =app-i18n/fcitx-tsundere-9999
 =dev-lisp/cl-irregsexp-20120818_pre
 =dev-lisp/xcvb-9999
+=dev-lisp/blocky-9999
+=dev-lisp/cl-openal-9999

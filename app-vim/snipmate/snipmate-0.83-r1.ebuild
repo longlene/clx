@@ -21,10 +21,15 @@ VIM_PLUGIN_MESSAGES="filetype"
 
 DEPEND="app-arch/unzip"
 RDEPEND=""
+
 src_install() {
 	#sed -i '3 s/int\ main/main/' snippets/c.snippets
 	#sed -i '3 s/const\ char/char/' snippets/c.snippets
 	# don't like the default c.snippets
+
+	echo -e 'snippet time\n\t`strftime("%H:%M:%S")`' >> snippets/_.snippets
+	echo -e 'snippet timestamp\n\t`strftime("%Y%m%d_%H%M%S")`' >> snippets/_.snippets
+
 	rm snippets/c.snippets
 	vim-plugin_src_install
 }

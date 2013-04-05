@@ -15,6 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+CLSYSTEMS="restas.file-publisher"
+
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/restas

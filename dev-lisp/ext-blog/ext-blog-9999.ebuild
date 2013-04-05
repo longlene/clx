@@ -12,11 +12,18 @@ EGIT_REPO_URI="https://github.com/kevinlynx/ext-blog.git"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/asdf
-"
+dev-lisp/restas
+dev-lisp/cl-store
+dev-lisp/cl-closure-template
+dev-lisp/local-time
+dev-lisp/kl-verify
+dev-lisp/image
+dev-lisp/file-publisher
+dev-lisp/s-xml-rpc
+dev-lisp/cl-fad"
 

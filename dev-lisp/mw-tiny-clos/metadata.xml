@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		ackage TINY-CLOS exports all Tiny-CLOS functionality. For convenience, package TINY-CLOS-LISP re-exports all but the CLOS-related Common Lisp vocabulary, and additionally the TINY-CLOS vocabulary. TINY-CLOS-USER is the equivalent of COMMON-LISP-USER.
+
+		Tiny-CLOS is meant as tool to study the implementation of MOPs, so the "code is the documentation." User documentation is sparse, potential users are expected to be familiar with CLOS and its MOP. Other sources of information are:
+
+		Andreas Paepcke, "User-Level Language Crafting (Introducing the CLOS Metaobject Protocol)"
+		Gregor Kiczales, Jim des Rivieres, Daniel G. Bobrow, "The Art of the Metaobject Protocol", MIT Press, 1991, ISBN 0-262-61074-4.
+		MOP Resources <http://wiki.alu.org/Metaobject_Protocol>
+		</longdescription>
+	</pkgmetadata>

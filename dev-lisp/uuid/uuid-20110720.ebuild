@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit common-lisp-2
+inherit common-lisp-2 vcs-snapshot
 
 DESCRIPTION="A Common Lisp library for generation of UUIDs as described by RFC 4122."
 HOMEPAGE="http://www.dardoria.net/software/uuid.html"
@@ -16,7 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
-RDEPEND="dev-lisp/ironclad"
+RDEPEND="dev-lisp/ironclad
+dev-lisp/trivial-utf8"
+
+S="${WORKDIR}/dardoria-uuid-883ca8a"
 
 src_install() {
 	common-lisp-install *.{lisp,asd}
