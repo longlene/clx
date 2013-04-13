@@ -18,3 +18,4 @@ RDEPEND="${DEPEND}
 dev-lisp/alexandria
 dev-lisp/bordeaux-threads"
 
+S="${WOKRDIR}/lparallel-lparallel-${PV}"

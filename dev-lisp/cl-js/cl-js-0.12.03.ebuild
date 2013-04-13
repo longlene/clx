@@ -17,3 +17,4 @@ DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/parse-js"
 
+S="${WORKDIR}/js-${PV}"

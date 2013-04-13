@@ -18,7 +18,7 @@ IUSE=""
 
 RDEPEND="dev-lisp/fiveam"
 
-S="${WORKDIR}"/${MY_P}
+#S="${WORKDIR}"/${MY_P}
 
 src_install() {
 	common-lisp-install src t ${PN}.asd

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Montezuma is a text search engine library for Lisp based on the Ferret
+		library[1] for Ruby, which is itself based on the Lucene library[2]
+		for Java.
+
+		[1] http://ferret.davebalmain.com/trac
+		[2] http://lucene.apache.org/
+	</longdescription>
+</pkgmetadata>
