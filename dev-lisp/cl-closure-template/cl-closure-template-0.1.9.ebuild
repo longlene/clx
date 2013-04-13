@@ -25,6 +25,8 @@ RDEPEND="dev-lisp/asdf-system-connections
 CLSYSTEMS="closure-template"
 SITEFILE="50${PN}-gentoo.el"
 
+S="${WORKDIR}/${PN}-version-${PV}"
+
 src_install() {
 	common-lisp-install-sources -t all src t
 	common-lisp-install-asdf ${CLSYSTEMS}

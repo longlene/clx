@@ -16,6 +16,10 @@ xft? ( virtual/xft )"
 
 S="${WORKDIR}/mz-${PV}/src"
 
+src_prepare() {
+	epatch "${FILESDIR}/${P}-funtoo-fixes.patch"
+}
+
 src_compile()
 {
 	append-flags -Wa,--noexecstack

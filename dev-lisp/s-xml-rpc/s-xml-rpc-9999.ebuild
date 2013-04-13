@@ -19,11 +19,9 @@ RDEPEND="dev-lisp/s-xml
 		dev-lisp/s-base64
 		dev-lisp/s-sysdeps"
 
-src_unpack() {
-	rm "${S}"/Makefile
-}
 
 src_install() {
+	rm Makefile
 	common-lisp-install src test ${PN}.asd
 	common-lisp-symlink-asdf
 	dohtml doc/{S-XML-RPC.html,index.html,style.css}

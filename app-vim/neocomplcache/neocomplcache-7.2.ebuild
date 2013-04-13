@@ -9,7 +9,7 @@ inherit vim-plugin vcs-snapshot
 DESCRIPTION="vim plugin: ultimate auto completion system"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=2620"
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 SRC_URI="https://github.com/Shougo/neocomplcache/archive/ver.${PV}.tar.gz -> ${P}.tar.gz"

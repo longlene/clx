@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-inherit common-lisp-3 elisp-common eutils
+inherit common-lisp-3 elisp-common eutils vcs-snapshot
 
 DESCRIPTION="Common Lisp implementation of Google's Closure Templates."
 HOMEPAGE="http://code.google.com/p/cl-closure-template/"

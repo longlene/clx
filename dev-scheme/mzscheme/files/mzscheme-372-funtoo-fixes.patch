@@ -1,0 +1,26 @@
+diff -Nurwp mz-372.orig/src/mzscheme/src/bool.c mz-372/src/mzscheme/src/bool.c
+--- mz-372.orig/src/mzscheme/src/bool.c	2007-04-11 01:59:38.000000000 +0800
++++ mz-372/src/mzscheme/src/bool.c	2013-04-13 14:38:03.985259526 +0800
+@@ -124,6 +124,11 @@ int scheme_eq (Scheme_Object *obj1, Sche
+   return SAME_OBJ(obj1, obj2);
+ }
+ 
++
++#ifdef MZ_XFORM
++START_XFORM_SKIP;
++#endif
++
+ XFORM_NONGCING static MZ_INLINE int double_eqv(double a, double b)
+ {
+ # ifndef NAN_EQUALS_ANYTHING
+@@ -199,6 +204,10 @@ int scheme_eqv (Scheme_Object *obj1, Sch
+     return 0;
+ }
+ 
++#ifdef MZ_XFORM
++END_XFORM_SKIP;
++#endif
++
+ static Scheme_Object *equal_k(void)
+ {
+   Scheme_Thread *p = scheme_current_thread;
