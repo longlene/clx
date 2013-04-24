@@ -11,6 +11,16 @@ some ebuilds are collected from the Internet and others are wrote by myself.
 
 ## INSTALLATION
 
+At first, install the layman
+```bash
+emerge -v layman
+```
+
+
+```bash
+echo 'source /var/lib/layman/make.conf' >> /etc/portage/make.conf
+```
+
 
 Add this overlay with your layman: 
 
