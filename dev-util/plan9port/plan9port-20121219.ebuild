@@ -8,7 +8,7 @@ inherit eutils
 
 DESCRIPTION="Plan 9 From User Space"
 HOMEPAGE="http://swtch.com/plan9port/"
-SRC_URI="http://plan9port.googlecode.com/files/plan9port-20121219.tgz"
+SRC_URI="https://plan9port.googlecode.com/files/plan9port-20121219.tgz"
 
 LICENSE="9base"
 SLOT="0"

@@ -1,4 +1,4 @@
-=dev-lisp/cl-opencv-9999
+#=dev-lisp/cl-opencv-9999
 =app-i18n/fcitx-tsundere-9999
 =dev-lisp/cl-irregsexp-20120818_pre
 =dev-lisp/xcvb-9999

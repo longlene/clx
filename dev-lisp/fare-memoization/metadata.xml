@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		This library builds on an age-old idea: dynamically memoizing Lisp functions.
+		A memoized function remembers results from previous computations, and
+		returns cached results when called with the same arguments again,
+		rather than re-do the computation. This library allows you
+		to focus on the computation logic and handles the caching part for you.
+		It also allows you to memoize a function after the fact when you need it.
+		Obviously, you should only use memoization for functions where it is meaningful:
+		pure functions that are expensive to compute,
+		non-deterministic functions for which it matters that choices be consistent,
+		hash-consing constructors that need return the same result when called with
+		the same arguments, user-visible constructors for singleton classes, etc.
+	</longdescription>
+</pkgmetadata>

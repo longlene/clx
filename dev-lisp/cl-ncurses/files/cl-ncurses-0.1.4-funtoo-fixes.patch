@@ -1,0 +1,22 @@
+diff -Nurwp cl-ncurses_0.1.4.orig/Makefile cl-ncurses_0.1.4/Makefile
+--- cl-ncurses_0.1.4.orig/Makefile	2007-05-20 07:48:10.000000000 +0800
++++ cl-ncurses_0.1.4/Makefile	2013-04-17 20:13:22.029154805 +0800
+@@ -1,7 +1,17 @@
+ NAME=cl-ncurses
+ SOURCES=ncurses.asd *.lisp glue.c README LICENSE Makefile
+ 
+-all: glue.o
++CFLAGS=-fPIC -DPIC
++LDFLAGS=-shared -L/lib -lncurses
++
++glue.so: glue.o
++	$(LD) $(LDFLAGS) $^ -o $@
++
++.PHONY: dist clean
++
++clean:
++	-rm -f glue.so glue.o *.fasl *.x86f *~
++
+ 
+ dist:
+ 	mkdir $(NAME)

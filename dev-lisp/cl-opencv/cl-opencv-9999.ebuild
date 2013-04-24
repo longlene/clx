@@ -29,7 +29,7 @@ src_install() {
 	dolib.so glue/libcl-opencv-glue.so
 	common-lisp-install *.lisp ${PN}.asd
 	common-lisp-symlink-asdf
-	dodoc REAEME.md LICENSE
+	dodoc README.md LICENSE
 }
 
 

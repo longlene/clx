@@ -1,5 +1,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=4
+
 inherit flag-o-matic
 
 DESCRIPTION="MzScheme scheme compiler"
@@ -13,6 +15,9 @@ IUSE="perl xft"
 
 DEPEND="perl? ( dev-lang/perl )
 xft? ( virtual/xft )"
+
+RDEPEND="${DEPEND}
+!dev-scheme/racket"
 
 S="${WORKDIR}/mz-${PV}/src"
 
