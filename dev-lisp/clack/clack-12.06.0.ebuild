@@ -20,7 +20,6 @@ dev-lisp/alexandria
 dev-lisp/anaphora
 dev-lisp/split-sequence
 dev-lisp/cl-syntax
-dev-lisp/cl-syntax-annot
 dev-lisp/cl-ppcre
 dev-lisp/cl-fad
 dev-lisp/ironclad

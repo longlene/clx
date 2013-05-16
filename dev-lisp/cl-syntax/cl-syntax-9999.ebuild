@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/m2ym/cl-syntax.git"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
@@ -20,6 +20,5 @@ RDEPEND="${DEPEND}
 dev-lisp/trivial-types
 dev-lisp/named-readtables
 dev-lisp/cl-annot
-dev-lisp/cl-anonfun
-"
+dev-lisp/cl-anonfun"
 

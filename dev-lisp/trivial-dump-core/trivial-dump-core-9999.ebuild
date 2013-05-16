@@ -1,0 +1,20 @@
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=4
+
+inherit common-lisp-3 git-2
+
+DESCRIPTION="save the current lisp image as a core or as an executable"
+HOMEPAGE="https://github.com/rolando2424/trivial-dump-core"
+SRC_URI=""
+
+EGIT_REPO_URI="https://github.com/rolando2424/trivial-dump-core.git"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+IUSE=""
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+

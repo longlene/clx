@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		This library aims to simplify working with csvs to the bare minimum of tedium
+
+		reads/writes csvs from/to strings, streams and files
+		support streaming reads (allowing processing very large csvs, through read-csv's row-fn paramter)
+		supports custom data formating
+		settable quote, separator and quote-escapes
+		supports multiline quoted data
+		A test suite
+
+	</longdescription>
+</pkgmetadata>

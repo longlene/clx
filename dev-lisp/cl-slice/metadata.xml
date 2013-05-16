@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		This library provides the following:
+
+		A user interface for taking slices (elements selected by the Cartesian product of vectors of subscripts for each axis) of array-like objects. The most important function is slice. Unless you want to define a method for this (besides what is already implemented), this is pretty much all you need from this library. See the next section for a tutorial.
+		An extensible DSL for selecting a subset of valid subscripts. This is useful if, for example, you want to resolve column names in a data frame in your implementation of slice.
+		A set of utility functions for traversing slices in array-like objects.
+
+	</longdescription>
+</pkgmetadata>

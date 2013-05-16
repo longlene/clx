@@ -17,7 +17,7 @@ SRC_URI="amd64? ( ${COMMON_URI}/${MY_P}%20x64.tar.bz2 )
 x86? ( ${COMMON_URI}/${MY_P}.tar.bz2 )"
 LICENSE="Sublime"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 #RDEPEND=">=media-libs/libpng-1.2.46

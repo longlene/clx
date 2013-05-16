@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		CLUnit is a Common Lisp unit testing framework. It is designed to be easy to use so that you can quickly start testing.
+	</longdescription>
+</pkgmetadata>
