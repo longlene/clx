@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit eutils
+inherit eutils user
 
 DESCRIPTION="a new Android development environment based on IntelliJ IDEA"
 HOMEPAGE="https://developer.android.com/sdk/installing/studio.html"
@@ -17,16 +17,14 @@ DEPEND=""
 RDEPEND="${DEPEND}
 virtual/jdk"
 
+RESTRICT="strip test"
+
 STUDIO_DIR="/opt/${PN}"
 
-QA_FLAGS_IGNORED_x86="
-${STUDIO_DIR/\/}/sdk/platform-tools/adb
-${STUDIO_DIR/\/}/sdk/platform-tools/fastboot
-${STUDIO_DIR/\/}/sdk/tools/sqlite3
-"
+QA_PREBUILT="*"
 
 
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${PN}"
 
 pkg_setup() {
 	enewgroup android
@@ -34,12 +32,14 @@ pkg_setup() {
 
 src_install() {
 	local dest=/opt/${PN}
+	rm bin/studio.sh
+	cp "${FILESDIR}"/studio.sh bin # remove the read command
 
-	insinto ${dest}
-	doins -r lib license plugins sdk bin
+	dodir "${STUDIO_DIR}"
+	cp -pPR ./* ${ED}/"${STUDIO_DIR}"
 
-	fowners root:android "${dest}"
-	fperms 0775 "${dest}"/{bin/*,sdk/platform-tools/*}
+	fperms 0775 "${STUDIO_DIR}"/{,bin,bin/studio.sh,lib,sdk}
+	fowners root:android "${dest}"/{,sdk,bin,lib,license,plugins}
 
 	make_desktop_entry "${dest}/bin/studio.sh" " Android Studio" "${dest}/bin/idea.png"
 }
