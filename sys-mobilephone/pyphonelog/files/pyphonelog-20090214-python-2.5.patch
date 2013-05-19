@@ -1,0 +1,11 @@
+--- src/phonelog.orig	2009-02-15 15:06:01.848841087 +0100
++++ src/phonelog	2009-02-15 15:06:18.706244205 +0100
+@@ -1,6 +1,8 @@
+ #!/usr/bin/python
+ # -*- coding: UTF-8 -*-
+ 
++from __future__ import with_statement
++
+ """
+ This is a phonelog GTK+ GUI, designed to use with a custom daemon,
+ the SHR daemon, and when ready, opimd.

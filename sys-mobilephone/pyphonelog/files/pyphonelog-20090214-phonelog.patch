@@ -1,0 +1,11 @@
+--- src/phonelog.orig	2009-02-15 11:17:17.823348233 +0100
++++ src/phonelog	2009-02-15 11:18:57.873159660 +0100
+@@ -36,7 +36,7 @@
+ CONFIGURATION_DIR = os.path.join(os.path.expanduser('~'), '.phonelog')
+ TIME_FILE = CONFIGURATION_DIR + "time.dat"
+ CONFIGURATION_FILE = os.path.join(CONFIGURATION_DIR,'phonelog.conf')
+-DEFAULT_CONFIG_PATH = "/usr/share/phonelog/skeleton/phonelog.conf"
++DEFAULT_CONFIG_PATH = "/etc/phonelog.conf"
+ ICONS_PATH = "/usr/share/phonelog/icons/"
+ 
+ #PAGES POSITIONS

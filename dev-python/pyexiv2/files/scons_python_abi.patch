@@ -1,0 +1,25 @@
+diff -r 5d04e1dda84a src/SConscript
+--- a/src/SConscript	Fri Apr 06 17:03:15 2012 +0200
++++ b/src/SConscript	Fri Apr 06 17:21:42 2012 +0200
+@@ -17,7 +17,9 @@
+     env['LINKFLAGS'] += SCons.Util.CLVar(os.environ['LDFLAGS'])
+ 
+ # Include directories to look for 'Python.h' in
+-env.Append(CPPPATH=[get_python_inc(plat_specific=True)])
++# Use the PYTHONINC argument if the python version targeted is not the one
++# used by Scons
++env.Append(CPPPATH=[ARGUMENTS.get('PYTHONINC', get_python_inc(plat_specific=True))])
+ 
+ # Libraries to link against
+ # On some systems, boost_python is actually called boost_python-mt.
+@@ -43,7 +45,9 @@
+     # See http://www.python.org/dev/peps/pep-0370/ for reference.
+     install_dir = site.USER_SITE
+ else:
+-    python_lib_path = get_python_lib(plat_specific=True)
++    # Use the PYTHONLIB argument if the python version targeted is not the one
++    # used by Scons
++    python_lib_path = ARGUMENTS.get('PYTHONLIB', get_python_lib(plat_specific=True))
+     # If DESTDIR is specified on the command line when invoking
+     # scons, its value will be prepended to each installed target file. See
+     # http://www.gnu.org/prep/standards/html_node/DESTDIR.html for reference.

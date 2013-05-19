@@ -2,17 +2,21 @@
 
 EAPI=4
 
-DESCRIPTION=""
-HOMEPAGE=""
+inherit common-lisp-3 git-2
+
+DESCRIPTION="An HTTP protocol parser in Common Lisp"
+HOMEPAGE="https://github.com/orthecreedence/http-parse"
 SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/orthecreedence/http-parse.git"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+dev-lisp/babel
+dev-lisp/cl-ppcre"
 

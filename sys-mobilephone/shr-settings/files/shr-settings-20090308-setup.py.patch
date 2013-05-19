@@ -1,0 +1,13 @@
+--- shr-settings-20090308/setup.py.old	2009-03-16 19:13:00.000000000 +0200
++++ shr-settings-20090308/setup.py	2009-03-16 19:14:20.000000000 +0200
+@@ -20,8 +20,8 @@
+     license='GNU GPL',
+     packages=['shr_settings_modules'],
+     scripts=['shr-settings'],
+-    data_files=[('applications', ['data/shr-settings.desktop']),
+-		('pixmaps' , glob("data/*.png")),
++    data_files=[('share/applications', ['data/shr-settings.desktop']),
++		('share/pixmaps' , glob("data/*.png")),
+                 ('locale/pl/LC_MESSAGES', ['data/po/pl/shr-settings.mo']),
+                 ('locale/it/LC_MESSAGES', ['data/po/it/shr-settings.mo'])
+         ]

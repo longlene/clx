@@ -1,0 +1,11 @@
+--- doc/SConscript.orig
++++ doc/SConscript
+@@ -20,7 +20,7 @@
+           for doc in sphinx.builder.get_outdated_docs()]
+ 
+ def build_doc(target, source, env):
+-    sphinx.build(all_files=False, filenames=[])
++    sphinx.build(False, filenames=[])
+     return sphinx.statuscode
+ 
+ env = Environment()

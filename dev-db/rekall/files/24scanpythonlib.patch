@@ -1,0 +1,20 @@
+--- rekall-2.4.6/scons/rkScan_Python.py	2006-11-08 07:59:35.000000000 +1100
++++ rekall-2.4.6-1/scons/rkScan_Python.py	2007-11-25 20:17:29.000000000 +1100
+@@ -33,7 +33,7 @@
+ 		  (
+ 			'with-python-includes',
+ 			[
+-				'/usr/local/include/python2.5[B',
++				'/usr/local/include/python2.5',
+ 				'/usr/local/include/python2.4',
+ 				'/usr/local/include/python2.3',
+ 				'/usr/local/include/python2.2',
+@@ -54,8 +54,6 @@
+ 		  (
+ 			'with-python-libraries',
+ 			[
+-				'/usr/local/lib',
+-				'/usr/lib',
+ 				'/usr/local/lib/python2.5/config',
+ 				'/usr/local/lib/python2.4/config',
+ 				'/usr/local/lib/python2.3/config',

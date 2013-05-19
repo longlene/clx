@@ -1,0 +1,5 @@
+#!/bin/sh
+
+
+
+CLASSPATH=`java-config --classpath=log4j,commons-cli-1,jgoodies-forms,nanoxml,squirrel-sql` java net.sourceforge.squirrel_sql.client.Main

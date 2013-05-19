@@ -1,0 +1,18 @@
+--- setup.py	2009-09-04 22:19:23.000000000 +0200
++++ setup.py.new	2009-09-04 22:22:06.000000000 +0200
+@@ -19,11 +19,11 @@
+             ],
+ 	scripts = ['src/phonelog'],
+ 	data_files= [
+-		('applications', ['data/applications/phonelog.desktop']),
+-		('pixmaps', ['data/pixmaps/phonelog.png']),
++		('share/applications', ['data/applications/phonelog.desktop']),
++		('share/pixmaps', ['data/pixmaps/phonelog.png']),
+ 		('locale/de/LC_MESSAGES', ['data/po/de/phonelog.mo']),
+-		('phonelog/skeleton', ['data/config/phonelog.conf']),
+-		('phonelog/icons', ['data/pixmaps/ui/missed.png',\
++		('../etc', ['data/config/phonelog.conf']),
++		('share/phonelog/icons', ['data/pixmaps/ui/missed.png',\
+ 				    'data/pixmaps/ui/received.png',\
+ 				    'data/pixmaps/ui/made.png',\
+ 				    'data/pixmaps/ui/general.png'])

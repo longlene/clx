@@ -1,0 +1,31 @@
+--- build.xml.orig	2009-09-28 06:24:43.000000000 -0500
++++ build.xml	2009-09-29 09:03:53.000000000 -0500
+@@ -70,28 +70,6 @@
+     <target name="library"
+             depends="core,generator"
+             description="Build library of matchers">
+-        <mkdir dir="build/temp/hamcrest-library/generated-code"/>
+-        <java-to-jar srcdir="hamcrest-library/src/main/java"
+-                     destjar="build/hamcrest-library-${version}.jar"
+-                     classpath="build/hamcrest-core-${version}.jar"/>
+-        <!-- Generate one class with all static imports -->
+-        <java classname="org.hamcrest.generator.config.XmlConfigurator"
+-              fork="yes"
+-              failonerror="yes"
+-              classpath="
+-                build/hamcrest-core-${version}.jar;
+-                build/hamcrest-generator-${version}.jar;
+-                build/hamcrest-library-${version}.jar;
+-              ">
+-            <arg value="matchers.xml"/>
+-            <arg value="hamcrest-core/src/main/java,hamcrest-library/src/main/java"/>
+-            <arg value="org.hamcrest.Matchers"/>
+-            <arg value="build/temp/hamcrest-library/generated-code"/>
+-        </java>
+-        <!-- Append to library jar -->
+-        <java-to-jar srcdir="build/temp/hamcrest-library/generated-code"
+-                     destjar="build/hamcrest-library-${version}.jar"
+-                     classpath="build/hamcrest-core-${version}.jar"/>
+     </target>
+ 
+     <target name="integration"

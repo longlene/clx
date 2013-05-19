@@ -1,0 +1,49 @@
+--- pytrainer-1.5.ebuild	2008-06-15 16:24:20.000000000 -0500
++++ pytrainer-1.5.0.ebuild	2008-06-18 18:13:50.000000000 -0500
+@@ -1,35 +1,31 @@
+-# Copyright 1999-2006 Gentoo Foundation
++# Copyright 1999-2008 Gentoo Foundation
+ # Distributed under the terms of the GNU General Public License v2
+ # $Header: $
+-
++ 
++NEED_PYTHON=2.4
++ 
+ inherit distutils
+-
+-DESCRIPTION="Pytrainer is a tool to log all your sport excursion."
++ 
++DESCRIPTION="Pytrainer is a tool to log all your sport excursions."
+ HOMEPAGE="http://pytrainer.e-oss.net"
+ SRC_URI="http://www.e-oss.net/descargas/pytrainer/${P}.tar.gz"
+-
++ 
+ LICENSE="GPL-2"
+ SLOT="0"
+-KEYWORDS="~x86 ~amd64"
++KEYWORDS="~amd64 ~x86"
+ IUSE="mysql"
+-
+-DEPEND="
++ 
++RDEPEND="
+ 	mysql? ( dev-python/mysql-python )
+ 	>=dev-python/pysqlite-2
+-	>=dev-lang/python-2.4
+ 	>=dev-util/glade-2
+ 	|| (
+-		<dev-python/matplotlib-0.87
++		( <dev-python/matplotlib-0.87 )
+ 		(
+ 			>=dev-python/matplotlib-0.87
+ 			sci-libs/scipy
+ 			dev-python/numpy
+ 		)
+ 	)
+-
+ 	dev-libs/libxml2
+ 	>=dev-python/pygtk-2.4"
+-
+-src_install() {
+-	distutils_src_install
+-}

@@ -1,0 +1,1 @@
+CONFIG_PROTECT="/opt/red5/conf /var/lib/red5-webapps"

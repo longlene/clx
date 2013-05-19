@@ -1,0 +1,11 @@
+--- a/orig/cassandra-0.7.4.ebuild	2011-04-16 09:50:00.383813846 -0700
++++ b/orig/cassandra-0.7.4.ebuild	2011-04-16 16:48:13.154547147 -0700
+@@ -66,7 +66,7 @@
+ 	dodoc CHANGES.txt LICENSE.txt NOTICE.txt NEWS.txt README.txt interface/cassandra.thrift || die "dodoc failed"
+ 	docinto licenses
+ 	dodoc lib/licenses/* || die "dodoc failed"
+-	use doc && (java-pkg_dojavadoc build/javadocs/ || die "dojavadoc failed")
++	use doc && (java-pkg_dojavadoc build/javadoc/ || die "dojavadoc failed")
+ 
+ }
+ 

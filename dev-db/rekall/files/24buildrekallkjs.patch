@@ -1,0 +1,15 @@
+--- rekall-2.4.6-1/kjs/kjs/SConscript	2007-11-24 02:42:51.000000000 +1100
++++ rekall-2.4.6/kjs/kjs/SConscript	2007-11-24 04:05:44.000000000 +1100
+@@ -4,9 +4,10 @@
+ import	rkWalker
+ import	os
+ 
+-rkMoc.generateMocFiles ('kjs/kjs')
+ 
+-if rkConfig.mode != 'kde' :
++if rkConfig.kjsBuild and rkConfig.mode != 'kde' :
++
++    rkMoc.generateMocFiles ('kjs/kjs')
+ 
+     rb	= rkBuilder.rkBuilder ('kjs')
+ 

@@ -1,0 +1,12 @@
+--- PyLucene-src-2.0.0-1.orig/Makefile	2006-06-26 12:47:33.000000000 +0200
++++ PyLucene-src-2.0.0-1/Makefile	2006-07-05 02:04:05.000000000 +0200
+@@ -703,9 +703,6 @@
+ else
+ 	$(CXX) -shared -o $@ $(LDFLAGS) $(JAVA_OBJS) $(CPP_OBJS) -L$(GCJ_LIBDIR) -lgcj
+ endif
+-ifneq ($(DEBUG),1)
+-	$(STRIP) $@
+-endif
+ else
+ 
+ ifeq ($(OS),FreeBSD)

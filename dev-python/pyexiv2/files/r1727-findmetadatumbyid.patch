@@ -1,0 +1,75 @@
+=== modified file 'src/libpyexiv2.cpp'
+--- src/libpyexiv2.cpp	2009-03-14 21:43:49 +0000
++++ src/libpyexiv2.cpp	2010-01-05 08:04:49 +0000
+@@ -33,6 +33,33 @@
+ #define THUMB_ACCESS 104
+ #define NO_THUMBNAIL 105
+ 
++
++// Copied from libexiv2's src/iptc.cpp.
++// Was previously called Exiv2::FindMetadatumById::FindMetadatumById but it was
++// renamed and moved in revision 1727. See http://dev.exiv2.org/issues/show/581.
++//! Unary predicate that matches an Iptcdatum with given record and dataset
++class FindIptcdatum {
++public:
++    //! Constructor, initializes the object with the record and dataset id
++    FindIptcdatum(uint16_t dataset, uint16_t record)
++        : dataset_(dataset), record_(record) {}
++    /*!
++      @brief Returns true if the record and dataset id of the argument
++            Iptcdatum is equal to that of the object.
++    */
++    bool operator()(const Exiv2::Iptcdatum& iptcdatum) const
++    {
++        return dataset_ == iptcdatum.tag() && record_ == iptcdatum.record();
++    }
++
++private:
++    // DATA
++    uint16_t dataset_;
++    uint16_t record_;
++
++}; // class FindIptcdatum
++
++
+ namespace LibPyExiv2
+ {
+ 
+@@ -228,7 +255,7 @@
+ 			while ((indexCounter > 0) && (dataIterator != _iptcData.end()))
+ 			{
+ 				dataIterator = std::find_if(++dataIterator, _iptcData.end(),
+-					Exiv2::FindMetadatumById::FindMetadatumById(iptcKey.tag(), iptcKey.record()));
++					FindIptcdatum(iptcKey.tag(), iptcKey.record()));
+ 				--indexCounter;
+ 			}
+ 			if (dataIterator != _iptcData.end())
+@@ -266,7 +293,7 @@
+ 			while ((indexCounter > 0) && (dataIterator != _iptcData.end()))
+ 			{
+ 				dataIterator = std::find_if(++dataIterator, _iptcData.end(),
+-					Exiv2::FindMetadatumById::FindMetadatumById(iptcKey.tag(), iptcKey.record()));
++					FindIptcdatum(iptcKey.tag(), iptcKey.record()));
+ 				--indexCounter;
+ 			}
+ 			if (dataIterator != _iptcData.end())
+
+=== modified file 'unittest/Bug183618_TestCase.py'
+--- unittest/Bug183618_TestCase.py	2008-02-09 01:13:28 +0000
++++ unittest/Bug183618_TestCase.py	2010-01-05 08:06:59 +0000
+@@ -71,12 +71,12 @@
+ 
+         # Exhaustive tests on the values of EXIF GPS metadata
+         gpsTags = [('Exif.Image.GPSTag', long, 1313L),
+-                   ('Exif.GPSInfo.GPSVersionID', str, '2 0 0 0 '),
++                   ('Exif.GPSInfo.GPSVersionID', str, '2 0 0 0'),
+                    ('Exif.GPSInfo.GPSLatitudeRef', str, 'N'),
+                    ('Exif.GPSInfo.GPSLatitude', tuple, (pyexiv2.Rational(47, 1), pyexiv2.Rational(3817443, 1000000), pyexiv2.Rational(0, 1))),
+                    ('Exif.GPSInfo.GPSLongitudeRef', str, 'E'),
+                    ('Exif.GPSInfo.GPSLongitude', tuple, (pyexiv2.Rational(8, 1), pyexiv2.Rational(41359940, 1000000), pyexiv2.Rational(0, 1))),
+-                   ('Exif.GPSInfo.GPSAltitudeRef', str, '0 '),
++                   ('Exif.GPSInfo.GPSAltitudeRef', str, '0'),
+                    ('Exif.GPSInfo.GPSAltitude', pyexiv2.Rational, pyexiv2.Rational(1908629, 1250)),
+                    ('Exif.GPSInfo.GPSMapDatum', str, 'WGS-84')]
+         self.assertEqual([tag for tag in image.exifKeys() if tag.find('GPS') != -1], [tag[0] for tag in gpsTags])
+

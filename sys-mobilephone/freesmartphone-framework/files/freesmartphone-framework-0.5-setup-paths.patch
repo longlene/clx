@@ -1,0 +1,36 @@
+--- setup.py.org	2009-02-01 16:27:55.099307822 +0000
++++ setup.py	2009-02-01 16:28:04.077308447 +0000
+@@ -24,19 +24,19 @@
+     packages = packages,
+     scripts = [ "framework/frameworkd", "tools/cli-framework" ],
+     data_files = [
+-        ("../../etc/dbus-1/system.d", ["etc/dbus-1/system.d/frameworkd.conf"] ),
+-        ("../../etc/freesmartphone/opreferences/schema/",         ["etc/freesmartphone/opreferences/schema/phone.yaml"]),
+-        ("../../etc/freesmartphone/opreferences/schema/",         ["etc/freesmartphone/opreferences/schema/profiles.yaml"]),
+-        ("../../etc/freesmartphone/opreferences/schema/",         ["etc/freesmartphone/opreferences/schema/rules.yaml"]),
+-        ("../../etc/freesmartphone/opreferences/conf/profiles/",  ["etc/freesmartphone/opreferences/conf/profiles/default.yaml"]),
+-        ("../../etc/freesmartphone/opreferences/conf/phone",      ["etc/freesmartphone/opreferences/conf/phone/default.yaml"]),
+-        ("../../etc/freesmartphone/opreferences/conf/phone",      ["etc/freesmartphone/opreferences/conf/phone/silent.yaml"]),
+-        ("../../etc/freesmartphone/opreferences/conf/rules",      ["etc/freesmartphone/opreferences/conf/rules/default.yaml"]),
+-        ("../../etc/freesmartphone/opreferences/conf/rules",      ["etc/freesmartphone/opreferences/conf/rules/silent.yaml"]),
+-        ("../../etc/freesmartphone/oevents",                      ["etc/freesmartphone/oevents/rules.yaml"]),
+-        ("../../etc/freesmartphone/persist",                      ["etc/freesmartphone/persist/README"]),
+-        ("../../etc/freesmartphone/ogsmd",                        ["etc/freesmartphone/ogsmd/networks.tab"]),
+-        ("../../etc/freesmartphone/opim",                         ["etc/freesmartphone/opim/csv-contacts.txt"]),
+-        ("freesmartphone/examples/", getDir( "examples" ) ),
++        ("../etc/dbus-1/system.d", ["etc/dbus-1/system.d/frameworkd.conf"] ),
++        ("../etc/freesmartphone/opreferences/schema/",         ["etc/freesmartphone/opreferences/schema/phone.yaml"]),
++        ("../etc/freesmartphone/opreferences/schema/",         ["etc/freesmartphone/opreferences/schema/profiles.yaml"]),
++        ("../etc/freesmartphone/opreferences/schema/",         ["etc/freesmartphone/opreferences/schema/rules.yaml"]),
++        ("../etc/freesmartphone/opreferences/conf/profiles/",  ["etc/freesmartphone/opreferences/conf/profiles/default.yaml"]),
++        ("../etc/freesmartphone/opreferences/conf/phone",      ["etc/freesmartphone/opreferences/conf/phone/default.yaml"]),
++        ("../etc/freesmartphone/opreferences/conf/phone",      ["etc/freesmartphone/opreferences/conf/phone/silent.yaml"]),
++        ("../etc/freesmartphone/opreferences/conf/rules",      ["etc/freesmartphone/opreferences/conf/rules/default.yaml"]),
++        ("../etc/freesmartphone/opreferences/conf/rules",      ["etc/freesmartphone/opreferences/conf/rules/silent.yaml"]),
++        ("../etc/freesmartphone/oevents",                      ["etc/freesmartphone/oevents/rules.yaml"]),
++        ("../etc/freesmartphone/persist",                      ["etc/freesmartphone/persist/README"]),
++        ("../etc/freesmartphone/ogsmd",                        ["etc/freesmartphone/ogsmd/networks.tab"]),
++        ("../etc/freesmartphone/opim",                         ["etc/freesmartphone/opim/csv-contacts.txt"]),
++        ("share/doc/freesmartphone/examples/", getDir( "examples" ) ),
+     ]
+ )

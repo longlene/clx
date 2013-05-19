@@ -1,0 +1,27 @@
+#!/sbin/runscript
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/web2py/files/web2py.initd,v 1.13 2011/01/12 20:59:34 eseifert Exp $
+
+depend() {
+	need net
+	use logger netmount dns
+	after famd
+	after sshd
+}
+
+start() {
+	ebegin "Starting web2py"
+	start-stop-daemon --start --background --quiet --exec /usr/bin/python \
+		--pidfile "${WEB2PY_PID}" -- /usr/lib/web2py/web2py.py -Q \
+		-f "/var/lib/web2py/" -a "${WEB2PY_PASSWORD:-<recycle>}" \
+		-d "${WEB2PY_PID:-/var/run/web2py.pid}" \
+		-i "${WEB2PY_IP:-127.0.0.1}" -p "${WEB2PY_PORT:-8000}"
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping web2py"
+	start-stop-daemon --stop --quiet --pidfile "${WEB2PY_PID}"
+	eend $?
+}

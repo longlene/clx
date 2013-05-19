@@ -1,0 +1,18 @@
+--- setup.py.old	2009-05-15 11:46:34.000000000 +0300
++++ setup.py	2009-05-15 11:47:16.000000000 +0300
+@@ -36,10 +36,10 @@
+                  'clean'    : my_clean  },
+     scripts = [ "src/zhone" ],
+     data_files = [
+-        ( "zhone", ["data/themes/zhone.edj"] ),
+-        ( "zhone/locale/ru/LC_MESSAGES", ["data/locale/ru/LC_MESSAGES/zhone.mo"] ),
+-        ( "zhone/locale/pl/LC_MESSAGES", ["data/locale/pl/LC_MESSAGES/zhone.mo"] ),
+-        ( "pixmaps", ["data/launcher/zhone.png"] ),
+-        ( "applications", ["data/launcher/zhone.desktop"] ),
++        ( "share/zhone", ["data/themes/zhone.edj"] ),
++        ( "share/zhone/locale/ru/LC_MESSAGES", ["data/locale/ru/LC_MESSAGES/zhone.mo"] ),
++        ( "share/zhone/locale/pl/LC_MESSAGES", ["data/locale/pl/LC_MESSAGES/zhone.mo"] ),
++        ( "share/pixmaps", ["data/launcher/zhone.png"] ),
++        ( "share/applications", ["data/launcher/zhone.desktop"] ),
+         ]
+ )

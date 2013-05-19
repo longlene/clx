@@ -1,0 +1,11 @@
+diff -Nru /tmp/apache-ivy-2.2.0.orig/build.xml ./build.xml
+--- /tmp/apache-ivy-2.2.0.orig/build.xml	2010-06-29 00:39:18.000000000 +0300
++++ ./build.xml	2012-09-22 17:23:14.659327303 +0300
+@@ -452,6 +452,7 @@
+        		</syspropertyset>
+             <jvmarg value="-Demma.coverage.out.file=${coverage.dir}/coverage.emma" />
+             <jvmarg value="-Demma.coverage.out.merge=true" />
++			<jvmarg value="-Divy.home=${ivy.home}" />
+             
+             <!-- Added this to test IVY-65 -->
+             <jvmarg value="-Duser.region=TR" />

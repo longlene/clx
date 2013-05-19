@@ -1,0 +1,29 @@
+--- setup.py.orig	2009-04-18 15:27:16.337451600 +0200
++++ setup.py	2009-04-18 15:28:19.341117754 +0200
+@@ -20,16 +20,16 @@
+     license='GNU GPL',
+     packages=['shr_settings_modules'],
+     scripts=['shr-settings'],
+-    data_files=[('applications', ['data/shr-settings.desktop']),
+-                ('applications/shr-settings-addons-illume', glob("data/shr-settings-addons-illume/*.desktop")),
+-		('pixmaps' , glob("data/*.png")),
+-                ('locale/ar/LC_MESSAGES', ['data/po/ar/shr-settings.mo']),
+-                ('locale/ca/LC_MESSAGES', ['data/po/ca/shr-settings.mo']),
+-                ('locale/de/LC_MESSAGES', ['data/po/de/shr-settings.mo']),
+-                ('locale/es/LC_MESSAGES', ['data/po/es/shr-settings.mo']),
+-                ('locale/it/LC_MESSAGES', ['data/po/it/shr-settings.mo']),
+-                ('locale/pl/LC_MESSAGES', ['data/po/pl/shr-settings.mo']),
+-                ('locale/ru/LC_MESSAGES', ['data/po/ru/shr-settings.mo'])
++    data_files=[('share/applications', ['data/shr-settings.desktop']),
++                ('share/applications/shr-settings-addons-illume', glob("data/shr-settings-addons-illume/*.desktop")),
++		('share/pixmaps' , glob("data/*.png")),
++                ('share/locale/ar/LC_MESSAGES', ['data/po/ar/shr-settings.mo']),
++                ('share/locale/ca/LC_MESSAGES', ['data/po/ca/shr-settings.mo']),
++                ('share/locale/de/LC_MESSAGES', ['data/po/de/shr-settings.mo']),
++                ('share/locale/es/LC_MESSAGES', ['data/po/es/shr-settings.mo']),
++                ('share/locale/it/LC_MESSAGES', ['data/po/it/shr-settings.mo']),
++                ('share/locale/pl/LC_MESSAGES', ['data/po/pl/shr-settings.mo']),
++                ('share/locale/ru/LC_MESSAGES', ['data/po/ru/shr-settings.mo'])
+         ]
+ )
+ 

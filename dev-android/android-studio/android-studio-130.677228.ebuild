@@ -4,7 +4,7 @@ EAPI=4
 
 inherit eutils user
 
-DESCRIPTION="a new Android development environment based on IntelliJ IDEA"
+DESCRIPTION="A new Android development environment based on IntelliJ IDEA"
 HOMEPAGE="https://developer.android.com/sdk/installing/studio.html"
 SRC_URI="http://dl.google.com/android/studio/android-studio-bundle-${PV}-linux.tgz -> ${P}.tgz"
 

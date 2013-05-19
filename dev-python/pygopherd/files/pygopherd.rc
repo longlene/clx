@@ -1,0 +1,33 @@
+#!/sbin/runscript
+#
+# Startup script for the PyGopherd Gopher Server (for Gentoo Linux)
+#
+##
+# use: rc-update add pygopherd default
+#
+
+PYGOPHERD_PIDFILE="/var/run/pygopherd.pid"
+PYGOPHERD_EXEC="/usr/bin/pygopherd"
+
+
+opts="start stop"
+
+depend() {
+	need net
+}
+
+
+start() {
+	ebegin "Starting PyGopherd "
+	start-stop-daemon --start --verbose --pidfile ${PYGOPHERD_PIDFILE}  \
+		--exec  ${PYGOPHERD_EXEC}
+	eend $?
+}
+
+
+stop() {
+	ebegin "Stopping PyGopherd "
+	start-stop-daemon --stop --quiet --pidfile  ${PYGOPHERD_PIDFILE}  \
+		--exec ${PYGOPHERD_EXEC}
+	eend $?
+}

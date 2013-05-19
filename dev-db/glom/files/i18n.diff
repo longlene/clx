@@ -1,0 +1,70 @@
+diff -Naur glom-0.8.8-clean/glom/data_structure/field.cc glom-0.8.8/glom/data_structure/field.cc
+--- glom-0.8.8-clean/glom/data_structure/field.cc	2004-07-30 11:52:04.000000000 +0200
++++ glom-0.8.8/glom/data_structure/field.cc	2004-09-12 22:35:56.687344456 +0200
+@@ -21,6 +21,7 @@
+ #include "field.h"
+ #include "../connectionpool.h"
+ #include "glomconversions.h"
++#include <libintl.h>
+ 
+ //Initialize static data:
+ Field::type_map_gda_type_to_glom_type Field::m_map_gda_type_to_glom_type;
+diff -Naur glom-0.8.8-clean/glom/main.cc glom-0.8.8/glom/main.cc
+--- glom-0.8.8-clean/glom/main.cc	2004-07-08 21:53:29.000000000 +0200
++++ glom-0.8.8/glom/main.cc	2004-09-12 22:47:08.053281320 +0200
+@@ -24,7 +24,7 @@
+ //#include <gnome.h>
+ #include <gtkmm/main.h>
+ #include <libgnome/gnome-init.h> // For gnome_program_init().
+-
++#include <libintl.h>
+ 
+ 
+ #include "config.h" //For VERSION.
+diff -Naur glom-0.8.8-clean/glom/mode_design/dialog_design.cc glom-0.8.8/glom/mode_design/dialog_design.cc
+--- glom-0.8.8-clean/glom/mode_design/dialog_design.cc	2004-06-11 01:33:59.000000000 +0200
++++ glom-0.8.8/glom/mode_design/dialog_design.cc	2004-09-12 22:40:31.877509192 +0200
+@@ -21,7 +21,7 @@
+ #include "dialog_design.h"
+ #include "../box_db_table.h"
+ //#include <libgnome/gnome-i18n.h>
+-
++#include <libintl.h>
+ 
+ Dialog_Design::Dialog_Design(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& refGlade)
+ : Gtk::Dialog(cobject),
+diff -Naur glom-0.8.8-clean/glom/mode_design/dialog_fields.cc glom-0.8.8/glom/mode_design/dialog_fields.cc
+--- glom-0.8.8-clean/glom/mode_design/dialog_fields.cc	2004-06-10 12:19:52.000000000 +0200
++++ glom-0.8.8/glom/mode_design/dialog_fields.cc	2004-09-12 22:35:34.022789992 +0200
+@@ -21,7 +21,7 @@
+ #include "dialog_fields.h"
+ #include "../box_db_table.h"
+ //#include <libgnome/gnome-i18n.h>
+-
++#include <libintl.h>
+ 
+ Dialog_Fields::Dialog_Fields(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& refGlade)
+ : Dialog_Design(cobject, refGlade),
+diff -Naur glom-0.8.8-clean/glom/mode_design/dialog_relationships.cc glom-0.8.8/glom/mode_design/dialog_relationships.cc
+--- glom-0.8.8-clean/glom/mode_design/dialog_relationships.cc	2004-06-19 23:59:28.000000000 +0200
++++ glom-0.8.8/glom/mode_design/dialog_relationships.cc	2004-09-12 22:41:44.391485392 +0200
+@@ -21,7 +21,7 @@
+ #include "dialog_relationships.h"
+ #include "../box_db_table.h"
+ //#include <libgnome/gnome-i18n.h>
+-
++#include <libintl.h>
+ 
+ Dialog_Relationships::Dialog_Relationships(BaseObjectType* cobject, const Glib::RefPtr<Gnome::Glade::Xml>& refGlade)
+ : Dialog_Design(cobject, refGlade),
+diff -Naur glom-0.8.8-clean/glom/mode_find/notebook_find.cc glom-0.8.8/glom/mode_find/notebook_find.cc
+--- glom-0.8.8-clean/glom/mode_find/notebook_find.cc	2004-07-02 11:52:27.000000000 +0200
++++ glom-0.8.8/glom/mode_find/notebook_find.cc	2004-09-12 22:43:28.071723600 +0200
+@@ -19,6 +19,7 @@
+  */
+ 
+ #include "notebook_find.h"
++#include <libintl.h>
+ 
+ Notebook_Find::Notebook_Find()
+ {

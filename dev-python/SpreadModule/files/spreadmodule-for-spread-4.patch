@@ -1,0 +1,333 @@
+diff -c SpreadModule-1.5/setup.py SpreadModule-1.5v4/setup.py
+*** SpreadModule-1.5/setup.py	Tue Jan 25 11:40:45 2005
+--- SpreadModule-1.5v4/setup.py	Tue Dec 19 13:41:06 2006
+***************
+*** 64,74 ****
+      ext = Extension('spread', ['spreadmodule.c'],
+                  include_dirs = [SPREAD_DIR + "/include"],
+                  library_dirs = [SPREAD_DIR + "/lib"],
+!                 libraries = ['tspread'],
+                  )
+  
+  setup(name = "SpreadModule",
+!       version = "1.5",
+        maintainer = "Zope Corporation",
+        maintainer_email = "zodb-dev@zope.org",
+        description = doclines[0],
+--- 64,74 ----
+      ext = Extension('spread', ['spreadmodule.c'],
+                  include_dirs = [SPREAD_DIR + "/include"],
+                  library_dirs = [SPREAD_DIR + "/lib"],
+!                 libraries = ['tspread-core'],
+                  )
+  
+  setup(name = "SpreadModule",
+!       version = "1.5v4",
+        maintainer = "Zope Corporation",
+        maintainer_email = "zodb-dev@zope.org",
+        description = doclines[0],
+diff -c SpreadModule-1.5/spreadmodule.c SpreadModule-1.5v4/spreadmodule.c
+*** SpreadModule-1.5/spreadmodule.c	Tue Jan 18 14:08:42 2005
+--- SpreadModule-1.5v4/spreadmodule.c	Mon Dec 18 13:43:40 2006
+***************
+*** 62,67 ****
+--- 62,70 ----
+  #define DEFAULT_GROUPS_SIZE 10
+  #define DEFAULT_BUFFER_SIZE 10000
+  
++ #define MAX_VSSETS      10
++ #define MAX_MEMBERS     100
++ 
+  typedef struct {
+  	PyObject_HEAD
+  	mailbox mbox;
+***************
+*** 89,95 ****
+  	PyObject *group;
+  	PyObject *group_id;
+  	PyObject *members;
+! 	PyObject *extra; /* that are still members */
+  } MembershipMsg;
+  
+  typedef struct {
+--- 92,98 ----
+  	PyObject *group;
+  	PyObject *group_id;
+  	PyObject *members;
+! 	PyObject *orig_members; /* the vs sets that came together in this vs */
+  } MembershipMsg;
+  
+  typedef struct {
+***************
+*** 193,206 ****
+  		   char (*members)[MAX_GROUP_NAME], char *buffer, int size)
+  {
+  	MembershipMsg *self;
+!         int32 num_extra_members;
+!         group_id grp_id;
+  	/* Although extra_members isn't referenced unless num_extra_members is
+  	 * greater than 0, gcc doesn't realize that, so force extra_members to
+  	 * be initialized (suppressing a nuisance complaint from the compiler).
+  	 */
+! 	char *extra_members = NULL;
+! 	int i;
+  
+  	assert(group != NULL);
+  	self = PyObject_New(MembershipMsg, &MembershipMsg_Type);
+--- 196,216 ----
+  		   char (*members)[MAX_GROUP_NAME], char *buffer, int size)
+  {
+  	MembershipMsg *self;
+! 	int32 num_extra_members;
+! 	group_id grp_id;
+  	/* Although extra_members isn't referenced unless num_extra_members is
+  	 * greater than 0, gcc doesn't realize that, so force extra_members to
+  	 * be initialized (suppressing a nuisance complaint from the compiler).
+  	 */
+! 	membership_info  memb_info;
+! 	int              max_num_vs_sets = MAX_VSSETS;
+! 	vs_set_info      vssets_buffer[MAX_VSSETS];
+! 	vs_set_info      *vssets = vssets_buffer;
+! 	unsigned int     my_vsset_index;
+! 	int              num_vs_sets, max_members;
+! 	char             vs_members_buffer[MAX_MEMBERS][MAX_GROUP_NAME];
+! 	char             (*vs_members)[MAX_GROUP_NAME] = vs_members_buffer;
+! 	int              i, j, ret;
+  
+  	assert(group != NULL);
+  	self = PyObject_New(MembershipMsg, &MembershipMsg_Type);
+***************
+*** 210,216 ****
+  	Py_INCREF(group);
+  	self->group = group;
+  	self->members = NULL;
+! 	self->extra = NULL;
+  	self->group_id = NULL;
+  	self->members = PyTuple_New(num_members);
+  	if (self->members == NULL) {
+--- 220,226 ----
+  	Py_INCREF(group);
+  	self->group = group;
+  	self->members = NULL;
+! 	self->orig_members = NULL;
+  	self->group_id = NULL;
+  	self->members = PyTuple_New(num_members);
+  	if (self->members == NULL) {
+***************
+*** 226,285 ****
+  		PyTuple_SET_ITEM(self->members, i, s);
+  	}
+  
+! 	num_extra_members = 0;
+! 	if (SP_get_vs_set_offset_memb_mess() <= size) {
+! 		/* Pick grp_id and num_extra_members out of the buffer.
+! 		 * This uses memcpy instead of casting tricks because there's
+! 		 * no guarantee that the offsets in buffer are properly
+! 		 * aligned for the type.  Even gcc's memcpy() can produce
+! 		 * segfaults then, unless the natural type is first cast
+! 		 * away to char*.
+! 		 */
+! 		memcpy((char *)&grp_id,
+! 		       buffer + SP_get_gid_offset_memb_mess(),
+! 		       sizeof(grp_id));
+!                 self->group_id = new_group_id(grp_id);
+  		if (self->group_id == NULL) {
+  			Py_DECREF(self);
+  			return NULL;
+  		}
+! 		memcpy((char *)&num_extra_members,
+! 		       buffer + SP_get_num_vs_offset_memb_mess(),
+! 		       sizeof(num_extra_members));
+!                 extra_members = buffer + SP_get_vs_set_offset_memb_mess();
+! 
+! 		if (size - SP_get_vs_set_offset_memb_mess() <
+! 		    num_extra_members * MAX_GROUP_NAME) {
+! 			/* SP_receive error (corrupted message). */
+! 			Py_DECREF(self);
+! 			PyErr_Format(PyExc_AssertionError,
+! 				"SP_receive:  a membership message said "
+! 				"there were %d extra members, but only %d "
+! 				"bytes remain in the buffer.  Corrupted "
+! 				"message?",
+! 			     	num_extra_members,
+! 			     	size - SP_get_vs_set_offset_memb_mess());
+! 			return NULL;
+  		}
+! 	}
+! 
+! 	self->extra = PyTuple_New(num_extra_members);
+! 	if (self->extra == NULL) {
+! 		Py_DECREF(self);
+! 		return NULL;
+! 	}
+! 	for (i = 0; i < num_extra_members; i++, extra_members+= MAX_GROUP_NAME) {
+! 		PyObject *s;
+! 		/* Spread promises this: */
+! 		assert(strlen(extra_members) < MAX_GROUP_NAME);
+! 		s = PyString_FromString(extra_members);
+! 		if (!s) {
+! 			Py_DECREF(self);
+! 			return NULL;
+  		}
+- 		PyTuple_SET_ITEM(self->extra, i, s);
+  	}
+  	return (PyObject *)self;
+  }
+  
+  static void
+--- 236,313 ----
+  		PyTuple_SET_ITEM(self->members, i, s);
+  	}
+  
+! 	ret = SP_get_memb_info( buffer, type, &memb_info );
+! 	if (ret < 0) {
+! 		Py_DECREF(self);   /* printf("BUG: membership message does not have valid body\n"); */
+! 		return NULL;
+! 	}
+! 		
+! 	if ( type & REG_MEMB_MESS ) {
+! 		self->group_id = new_group_id(memb_info.gid);
+  		if (self->group_id == NULL) {
+  			Py_DECREF(self);
+  			return NULL;
+  		}
+! 		if ( memb_info.num_vs_sets > max_num_vs_sets ) {
+! 			max_num_vs_sets = memb_info.num_vs_sets;
+! 			vssets = malloc(sizeof(vs_set_info) * max_num_vs_sets);
+! 			if (vssets == NULL) {
+! 				PyErr_NoMemory();
+! 				goto memb_error;
+! 			}
+  		}
+! 		num_vs_sets = SP_get_vs_sets_info( buffer, &vssets[0], max_num_vs_sets, &my_vsset_index );
+! 		if (num_vs_sets < 0) {
+! 			goto memb_error;   /* shouldn't happen */
+! 		}
+! 		self->orig_members = PyTuple_New(num_vs_sets);
+! 		if (self->orig_members == NULL) {
+! 			goto memb_error;
+! 		}
+! 		max_members = 0;
+! 		for ( i = 0; i < num_vs_sets; i++ ) {
+! 			if ( vssets[i].num_members > max_members ) { max_members = vssets[i].num_members; }
+! 		}
+! 		if ( max_members > MAX_MEMBERS ) {
+! 			vs_members = malloc( MAX_GROUP_NAME * max_members );
+! 			if (vs_members == NULL) {
+! 				PyErr_NoMemory();
+! 				goto memb_error;
+! 			}
+! 		}
+! 		for ( i = 0; i < num_vs_sets; i++ ) {
+! 			PyObject *t;
+! 			ret = SP_get_vs_set_members(buffer, &vssets[i], vs_members, max_members);
+! 			if (ret < 0) {
+! 				goto memb_error;   /* shouldn't happen */
+! 			}
+! 			t = PyTuple_New(vssets[i].num_members);
+! 			for ( j = 0; j < vssets[i].num_members; j++ ) {
+! 				PyObject *s;
+! 				/* Spread promises this: */
+! 				assert(strlen(vs_members[j]) < MAX_GROUP_NAME);
+! 				s = PyString_FromString(vs_members[j]);
+! 				if (!s) {
+! 					goto memb_error;
+! 				}
+! 				PyTuple_SET_ITEM(t, j, s);
+! 			}
+! 			PyTuple_SET_ITEM(self->orig_members, i, t);
+  		}
+  	}
++ 
++ 	if (vssets != vssets_buffer)
++ 		free(vssets);
++ 	if (vs_members != vs_members_buffer)
++ 		free(vs_members);
+  	return (PyObject *)self;
++ memb_error:
++ 	if (vssets != vssets_buffer)
++ 		free(vssets);
++ 	if (vs_members != vs_members_buffer)
++ 		free(vs_members);
++ 	Py_DECREF(self);
++ 	return NULL;
+  }
+  
+  static void
+***************
+*** 287,293 ****
+  {
+  	Py_XDECREF(self->group);
+  	Py_XDECREF(self->members);
+! 	Py_XDECREF(self->extra);
+  	Py_XDECREF(self->group_id);
+  	PyObject_Del(self);
+  }
+--- 315,321 ----
+  {
+  	Py_XDECREF(self->group);
+  	Py_XDECREF(self->members);
+! 	Py_XDECREF(self->orig_members);
+  	Py_XDECREF(self->group_id);
+  	PyObject_Del(self);
+  }
+***************
+*** 299,305 ****
+  	{"group",	T_OBJECT,	OFF(group)},
+  	{"group_id",	T_OBJECT,	OFF(group_id)},
+  	{"members",	T_OBJECT,	OFF(members)},
+! 	{"extra",	T_OBJECT,	OFF(extra)},
+  	{NULL}
+  };
+  
+--- 327,333 ----
+  	{"group",	T_OBJECT,	OFF(group)},
+  	{"group_id",	T_OBJECT,	OFF(group_id)},
+  	{"members",	T_OBJECT,	OFF(members)},
+! 	{"orig_members",	T_OBJECT,	OFF(orig_members)},
+  	{NULL}
+  };
+  
+diff -c SpreadModule-1.5/testspread.py SpreadModule-1.5v4/testspread.py
+*** SpreadModule-1.5/testspread.py	Tue Jan 18 14:08:42 2005
+--- SpreadModule-1.5v4/testspread.py	Mon Dec 18 13:58:21 2006
+***************
+*** 83,91 ****
+                           "expected group to have one member")
+          self.assertEqual(msg.members[0], mbox.private_group,
+                           "expected this mbox to be in group")
+!         self.assertEqual(len(msg.extra), 1,
+                           "expected one mbox to cause the join")
+!         self.assertEqual(msg.extra[0], mbox.private_group,
+                           "expected this mbox to cause the join")
+  
+          mbox.leave(group)
+--- 83,93 ----
+                           "expected group to have one member")
+          self.assertEqual(msg.members[0], mbox.private_group,
+                           "expected this mbox to be in group")
+!         self.assertEqual(len(msg.orig_members), 1,
+                           "expected one mbox to cause the join")
+!         self.assertEqual(len(msg.orig_members[0]), 1,
+!                          "expected one mbox to cause the join")
+!         self.assertEqual(msg.orig_members[0][0], mbox.private_group,
+                           "expected this mbox to cause the join")
+  
+          mbox.leave(group)
+***************
+*** 94,100 ****
+          self.assertEqual(msg.group, group)
+          self.assertEqual(msg.reason, spread.CAUSED_BY_LEAVE)
+          self.assertEqual(len(msg.members), 0)
+!         self.assertEqual(len(msg.extra), 0)
+  
+          mbox.disconnect()
+  
+--- 96,102 ----
+          self.assertEqual(msg.group, group)
+          self.assertEqual(msg.reason, spread.CAUSED_BY_LEAVE)
+          self.assertEqual(len(msg.members), 0)
+!         self.assertEqual(msg.orig_members, None)
+  
+          mbox.disconnect()
+  

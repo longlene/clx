@@ -1,0 +1,13 @@
+--- src/zhone	2009-01-15 22:40:09.000000000 +0000
++++ src/zhone	2009-01-15 23:04:25.435916778 +0000
+@@ -23,6 +23,10 @@
+ __version__ = "0.0.0"
+ MODULE_NAME = "zhone"
+ 
++import sys
++reload(sys)
++sys.setdefaultencoding("utf-8")
++
+ import logging
+ logger = logging.getLogger( MODULE_NAME )
+ logging.basicConfig( level    = logging.DEBUG,

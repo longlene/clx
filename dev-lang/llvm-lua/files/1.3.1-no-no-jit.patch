@@ -1,0 +1,35 @@
+--- llvm-lua/CMakeLists.txt	2010-11-02 14:08:01.000000000 +0300
++++ llvm-lua/CMakeLists.txt	2010-11-11 16:09:48.000000000 +0300
+@@ -90,13 +90,7 @@
+ target_link_libraries(llvm-lua_static ${LIBS} ${LLVM_ALL_LIBS})
+ set(LLVM_LUA_MAIN_LIB llvm-lua_static)
+ if(WANT_STATIC_LIBRARY)
+-	# lua static library without LLVM JIT support.
+-	add_library(lua_static STATIC ${NO_JIT_SRC})
+-	add_target_properties(lua_static COMPILE_FLAGS "${COMMON_CFLAGS}")
+-	add_target_properties(lua_static LINK_FLAGS "${LD_FLAGS} ${COMMON_LDFLAGS}")
+-	target_link_libraries(lua_static ${LIBS})
+-
+-	set(LLVM_LUA_LIBS llvm-lua_static lua_static)
++	set(LLVM_LUA_LIBS llvm-lua_static)
+ endif(WANT_STATIC_LIBRARY)
+ 
+ if(WANT_SHARED_LIBRARY)
+@@ -107,16 +101,9 @@
+ 	target_link_libraries(llvm-lua_dynamic ${LIBS} ${LLVM_ALL_LIBS})
+ 	set_target_properties(llvm-lua_dynamic PROPERTIES OUTPUT_NAME llvm-lua)
+ 
+-	# lua dynamic library without LLVM JIT support.
+-	add_library(lua_dynamic SHARED ${NO_JIT_SRC})
+-	add_target_properties(lua_dynamic COMPILE_FLAGS "${COMMON_CFLAGS}")
+-	add_target_properties(lua_dynamic LINK_FLAGS "${LD_FLAGS} ${COMMON_LDFLAGS}")
+-	target_link_libraries(lua_dynamic ${LIBS})
+-	set_target_properties(lua_dynamic PROPERTIES OUTPUT_NAME lua)
+-
+ 	# link lua interpreter with dynamic library
+ 	set(LLVM_LUA_MAIN_LIB llvm-lua_dynamic)
+-	set(LLVM_LUA_LIBS ${LLVM_LUA_LIBS} llvm-lua_dynamic lua_dynamic)
++	set(LLVM_LUA_LIBS ${LLVM_LUA_LIBS} llvm-lua_dynamic)
+ endif(WANT_SHARED_LIBRARY)
+ 
+ #

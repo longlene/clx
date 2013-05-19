@@ -8,7 +8,7 @@ DESCRIPTION="Emacs auto-complete plugin for Slime symbols"
 HOMEPAGE="https://github.com/purcell/ac-slime"
 SRC_URI="https://github.com/purcell/ac-slime/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

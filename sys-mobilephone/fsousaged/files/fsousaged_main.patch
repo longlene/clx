@@ -1,0 +1,19 @@
+--- src/bin/Makefile.am.old	2009-09-01 20:11:30.000000000 +0000
++++ src/bin/Makefile.am	2009-09-01 20:13:03.000000000 +0000
+@@ -3,6 +3,7 @@
+ NULL =
+ 
+ INCLUDES = \
++	-D_GNU_SOURCE \
+ 	$(FSO_CFLAGS) \
+ 	$(GLIB_CFLAGS) \
+ 	-include $(CONFIG_HEADER) \
+@@ -21,7 +22,7 @@
+ 	$(NULL)
+ 
+ $(BUILT_SOURCES): $(fsousaged_VALASOURCES)
+-	$(VALAC) -c --vapidir vapi \
++	$(VALAC) -C --vapidir vapi \
+ 				--pkg posix \
+ 				--pkg gio-2.0 \
+ 				--pkg dbus-glib-1 \

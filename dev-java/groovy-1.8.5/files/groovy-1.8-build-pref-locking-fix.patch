@@ -1,0 +1,18 @@
+diff -Nru /tmp/groovy-1.8.8/config/ant/build-setup.xml ./config/ant/build-setup.xml
+--- /tmp/groovy-1.8.8/config/ant/build-setup.xml	2012-09-10 13:54:08.000000000 +0300
++++ ./config/ant/build-setup.xml	2012-09-28 21:41:05.768532228 +0300
+@@ -73,11 +73,13 @@
+         <sequential>
+             <java classname="org.apache.tools.ant.launch.Launcher" fork="true" maxmemory="@{maxmemory}" failonerror="true">
+                 <classpath refid="@{classpathref}"/>
+-                <jvmarg value="-Duser.home=${user.home}" />
++                <jvmarg value="-Duser.home=${gentoo.user.home}" />
+                 <arg value="@{target}"/>
+                 <arg value="-DskipFetch=${skipFetch}"/>
+                 <arg value="-DruntimeLibDirectory=${runtimeLibDirectory}"/>
+                 <arg value="-DtoolsLibDirectory=${toolsLibDirectory}" />
++                <arg value="-Dgentoo.classpath=${gentoo.classpath}" />
++                <arg value="-Dgentoo.user.home=${gentoo.user.home}" />
+             </java>
+         </sequential>
+     </macrodef>

@@ -1,0 +1,57 @@
+diff -Naur rekall-2.4.6/libs/el32/hash.cpp rekall-2.4.6-1/libs/el32/hash.cpp
+--- rekall-2.4.6/libs/el32/hash.cpp	2006-08-11 01:29:36.000000000 +1000
++++ rekall-2.4.6-1/libs/el32/hash.cpp	2007-11-25 18:40:19.000000000 +1100
+@@ -145,7 +145,7 @@
+ 			/* otherwise use just the tag (pretty useless	*/
+ 			/* but so what, not a common case).		*/
+ 			if ((key.tag->flags & TF_SHARED) == 0)
+-				hval	= (int)key.val.shared ;
++				hval	= (long)key.val.shared ;
+ 			else	hval	= key.tag->tag ;
+ 			break	;
+ 	}
+diff -Naur rekall-2.4.6/libs/kbase/kb_configdlg.cpp rekall-2.4.6-1/libs/kbase/kb_configdlg.cpp
+--- rekall-2.4.6/libs/kbase/kb_configdlg.cpp	2006-08-11 01:29:37.000000000 +1000
++++ rekall-2.4.6-1/libs/kbase/kb_configdlg.cpp	2007-11-25 18:40:19.000000000 +1100
+@@ -312,7 +312,7 @@
+ 	old.clear () ;
+ 
+ 	QListViewItem	*item	= m_lvConfigs->firstChild() ;
+-	uint		ident	= 0x000ffffff & (uint)(void *)item ;
++	uint		ident	= 0x000ffffff & (ulong)(void *)item ;
+ 
+ 	while (item != 0)
+ 	{
+diff -Naur rekall-2.4.6/libs/kbase/kb_overridedlg.cpp rekall-2.4.6-1/libs/kbase/kb_overridedlg.cpp
+--- rekall-2.4.6/libs/kbase/kb_overridedlg.cpp	2006-08-11 01:29:39.000000000 +1000
++++ rekall-2.4.6-1/libs/kbase/kb_overridedlg.cpp	2007-11-25 18:40:19.000000000 +1100
+@@ -360,7 +360,7 @@
+ 	old.clear () ;
+ 
+ 	QListViewItem	*item	= m_lvOverride->firstChild() ;
+-	uint		ident	= 0x000ffffff & (uint)(void *)item ;
++	uint		ident	= 0x000ffffff & (ulong)(void *)item ;
+ 
+ 	while (item != 0)
+ 	{
+diff -Naur rekall-2.4.6/libs/kbase/kb_stack.cpp rekall-2.4.6-1/libs/kbase/kb_stack.cpp
+--- rekall-2.4.6/libs/kbase/kb_stack.cpp	2006-10-11 16:30:04.000000000 +1000
++++ rekall-2.4.6-1/libs/kbase/kb_stack.cpp	2007-11-25 18:40:19.000000000 +1100
+@@ -456,7 +456,7 @@
+ 				this,
+ 				SLOT	(setCurrentPage(int)),
+ 				0,
+-				(int)p
++				(long)p
+ 			)	;
+ 		else
+ 			raiser->insertItem
+@@ -464,7 +464,7 @@
+ 				this,
+ 				SLOT	(setCurrentPage(int)),
+ 				0,
+-				(int)p
++				(long)p
+ 			)	;
+ 
+ 	)

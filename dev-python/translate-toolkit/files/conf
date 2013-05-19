@@ -1,0 +1,6 @@
+# Config file for /etc/init.d/pootle
+
+# Run "PootleServer --help" for more information on Pootle
+# command-line options
+
+POOTLE_OPTS=""

@@ -1,0 +1,26 @@
+#!/sbin/runscript
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License, v2 or later
+
+depend() {
+	need dbus
+}
+
+start() {
+	ebegin "Starting frameworkd"
+
+	start-stop-daemon --start --pidfile /var/run/frameworkd.pid --make-pidfile --background --exec /usr/bin/frameworkd
+	eend $?
+}
+
+stop() {
+	local retval
+
+	ebegin "Stopping frameworkd"
+
+	start-stop-daemon --stop --pidfile /var/run/frameworkd.pid
+	retval=$?
+
+	eend ${retval}
+	return ${retval}
+}

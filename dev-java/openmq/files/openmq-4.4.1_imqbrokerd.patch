@@ -1,0 +1,141 @@
+--- a/src/solaris/bin/imqbrokerd.sh	2009-09-11 20:39:07.000000000 +0200
++++ b/src/solaris/bin/imqbrokerd.sh	2010-04-07 12:05:09.893301275 +0200
+@@ -57,26 +57,10 @@
+ }
+ 
+ _bin_home=`/usr/bin/dirname $0`
+-_init_file="imqinit"
+-
+-# Source initialization file. This intitializes the imq_* variables
+-if [ -f $_bin_home/../share/lib/imq/$_init_file ]; then
+-    # bundled location
+-    . $_bin_home/../share/lib/imq/$_init_file
+-elif [ -f $_bin_home/../lib/$_init_file ]; then
+-    # unbundled location
+-    . $_bin_home/../lib/$_init_file
+-elif [ -f $_bin_home/../private/share/lib/$_init_file ]; then
+-    # Linux "standard" location
+-    . $_bin_home/../private/share/lib/$_init_file
+-#####hpux-dev#####
+-elif [ -f $_bin_home/../private/share/lib/$_init_file ]; then
+-    # HP-UX "standard" location
+-    . $_bin_home/../private/share/lib/$_init_file
+-else
+-    echo "Error: Could not find required Message Queue initialization file '$_init_file'"
+-    exit 1
+-fi
++imq_home="/"
++imq_varhome="/var/openmq"
++imq_etchome="/etc/openmq"
++imq_sharelibimq_home="/usr/share/openmq"
+ 
+ # create $imq_varhome/instances directory if it does not exist
+ # and set permissions to 1777
+@@ -87,49 +71,12 @@
+ fi
+ 
+ # Specify default arguments to the JVM here
+-_def_jvm_args="-Xms192m -Xmx192m -Xss128k -XX:MaxGCPauseMillis=5000"
++_def_jvm_args="-Xms192m -Xmx192m -Xss256k -XX:MaxGCPauseMillis=5000"
+ 
+ _command=$0
+ 
+ # Classes need by the broker
+-_classpath=$imq_sharelibimq_home/imqbroker.jar:$imq_sharelibimq_home/imqutil.jar:$imq_sharelibimq_home/jsse.jar:$imq_sharelibimq_home/jnet.jar:$imq_sharelibimq_home/jcert.jar:/usr/lib/audit/Audit.jar
+-
+-#
+-# Jars needed by JES Monitoring Framework
+-#
+-jesmf_jars=""
+-if [ $imq_os = "SunOS" ]; then
+-    jesmf_jars=/opt/SUNWjdmk/5.1/lib/jdmkrt.jar:/opt/SUNWmfwk/lib/mfwk_instrum_tk.jar
+-elif [ "$imq_os" = "Linux" ]; then
+-    jesmf_jars=/opt/sun/mfwk/share/lib/jdmkrt.jar:/opt/sun/mfwk/share/lib/mfwk_instrum_tk.jar
+-else
+-    jesmf_jars=/opt/sun/mfwk/share/lib/jdmkrt.jar:/opt/sun/mfwk/share/lib/mfwk_instrum_tk.jar
+-fi
+-
+-_classpath=$_classpath:$jesmf_jars
+-
+-# Default external JARs
+-if [ ! -z "$imq_ext_jars" ]; then
+-    _classpath=$_classpath:$imq_ext_jars
+-fi
+-
+-# Additional classes possibly needed for JDBC provider, etc.
+-_classpath=$_classpath:$imq_sharelibimq_home/ext
+-# Put all jar files in $IMQ_SHARELIB_HOME/ext in our CLASSPATH
+-for _file in $imq_sharelibimq_home/ext/*.jar $imq_sharelibimq_home/ext/*.zip; do
+-    if [ -r "$_file" ]; then
+-        _classpath=$_classpath:$_file
+-    fi
+-done
+-
+-# On Linux they may be here (as of 3.6)
+-_classpath=$_classpath:$imq_sharelib_home/ext
+-# Put all jar files in $IMQ_SHARELIB_HOME/ext in our CLASSPATH
+-for _file in $imq_sharelib_home/ext/*.jar $imq_sharelib_home/ext/*.zip; do
+-    if [ -r "$_file" ]; then
+-        _classpath=$_classpath:$_file
+-    fi
+-done
++_classpath=$(java-config -p openmq)
+ 
+ # Broker's main class
+ _mainclass=com.sun.messaging.jmq.jmsserver.Broker;
+@@ -163,54 +110,13 @@
+ trap "shutdown_broker" TERM INT QUIT 
+ 
+ 
+-#####hpux-dev#####
+-PLATFORM=`uname`
+-
+-# Set LD_LIBRARY_PATH to locate libimq
+-# If the -d64 option was passed to the JVM and we are on Solaris
+-# then adjust the library path to find the 64 bit version of libimqutil first.
+-# Else use the 32bit version
+-_d64=`echo $_jvm_args $_def_jvm_args | grep "\-d64"`
+-if [ "$_d64" ]; then
+-  if [ $imq_os = "SunOS" ]; then
+-    if [ "$imq_proc" = "sparc" ]; then
+-        LD_LIBRARY_PATH=$imq_libhome/sparcv9:$LD_LIBRARY_PATH
+-        export LD_LIBRARY_PATH
+-    elif [ "$imq_proc" = "i386" ]; then
+-        LD_LIBRARY_PATH=$imq_libhome/amd64:$LD_LIBRARY_PATH
+-        export LD_LIBRARY_PATH
+-    fi
+-  fi
+-  # For the 64bit JVM we need a larger stack size
+-  _def_jvm_args="$_def_jvm_args -Xss256k"
+-else
+-    if [ "$PLATFORM" = HP-UX ] ; then
+-    SHLIB_PATH=$SHLIB_PATH:$imq_libhome
+-    export SHLIB_PATH
+-    _def_jvm_args="$_def_jvm_args -Xss256k"
+-    else
+-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$imq_libhome
+-    export LD_LIBRARY_PATH
+-    fi
+-fi
+-
+ # Setup arguments to the JVM
+ _jvm_args="$_def_jvm_args $_jvm_args -Dimq.home=$imq_home -Dimq.varhome=$imq_varhome -Dimq.etchome=$imq_etchome -Dimq.libhome=$imq_sharelibimq_home"
+ 
+ # The command we use to run the broker
+-_brokercmd="$imq_javahome/bin/java $imq_servervm -cp $_classpath $_jvm_args $_mainclass $_args"
++_brokercmd="java $imq_servervm -cp $_classpath $_jvm_args $_mainclass $_args"
+ 
+ 
+-if [ ! -z "$_verbose" ]; then
+-    if [ "$PLATFORM" = HP-UX ] ; then
+-    echo " SHLIB_PATH  : $SHLIB_PATH"
+-    else
+-    echo "  LD_LIBRARY_PATH  : $LD_LIBRARY_PATH"
+-    fi
+-    echo "Command:"
+-    echo "    $_brokercmd"
+-fi
+-
+ # Set umask so any files created by broker are only accessible
+ # by the user running broker
+ umask 077
