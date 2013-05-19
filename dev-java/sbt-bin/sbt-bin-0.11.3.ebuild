@@ -23,10 +23,10 @@ RDEPEND=">=virtual/jdk-1.6"
 S=${WORKDIR}
 
 src_unpack() {
-    cp "${DISTDIR}/${OUT_PN}.jar" "${WORKDIR}/${MY_PN}.jar"
+	cp "${DISTDIR}/${OUT_PN}.jar" "${WORKDIR}/${MY_PN}.jar"
 }
 
 src_install() {
-    java-pkg_dojar ${MY_PN}.jar
-    java-pkg_dolauncher sbt --main xsbt.boot.Boot --java_args "-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M"
+	java-pkg_dojar ${MY_PN}.jar
+	java-pkg_dolauncher sbt --main xsbt.boot.Boot --java_args "-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M"
 }

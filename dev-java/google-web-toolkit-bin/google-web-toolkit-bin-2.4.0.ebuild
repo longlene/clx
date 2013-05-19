@@ -6,7 +6,7 @@ EAPI="1"
 
 DESCRIPTION="Google Web Toolkit (precompiled)"
 HOMEPAGE="http://code.google.com/webtoolkit/"
-SRC_URI="http://google-web-toolkit.googlecode.com/files/gwt-${PV}.zip"
+SRC_URI="https://google-web-toolkit.googlecode.com/files/gwt-${PV}.zip"
 
 LICENSE="Apache-2.0"
 SLOT="${PV}"
