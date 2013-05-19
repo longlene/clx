@@ -22,8 +22,8 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86
 IUSE="vim zsh doc awesome tmux bash ipython test git"
 
 #if LIVE
-SRC_URI=
-KEYWORDS=
+#SRC_URI=
+#KEYWORDS=
 #endif
 
 S="${WORKDIR}/${PN}"
@@ -36,6 +36,7 @@ ${COMMON_DEPEND}
 vim? ( || ( app-editors/vim[python] app-editors/gvim[python] ) )
 awesome? ( >=x11-wm/awesome-3.5 )
 git? ( || ( >=dev-vcs/git-1.7.2 >=dev-python/pygit2-0.17 ) )
+!app-vim/powerline
 "
 DEPEND="
 ${COMMON_DEPEND}
