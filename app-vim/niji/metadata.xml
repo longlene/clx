@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Niji (Rainbow) is yet another rainbow parentheses plugin for Vim. It’s good for Common Lisp, Scheme and Clojure — with two colour schemes — out-of-the-box. Just install, and you’re good to go. The filetypes, matching characters and colours Niji uses are completely configurable. 
+	</longdescription>
+</pkgmetadata>
