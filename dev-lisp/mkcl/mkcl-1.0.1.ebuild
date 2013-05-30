@@ -14,3 +14,10 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
+src_configure() {
+	econf || die "econf failed"
+}
+
+src_install() {
+	emake
+}

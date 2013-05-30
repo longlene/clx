@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		This project is a fork of Pavel Kobyakov's excellent flymake.el to let me play around with some updates before contributing them upstream.
+
+		Features added so far:
+
+		Support for queuing up syntax checks once a certain number are in-progress.
+		Support for placing temporary files in the system temporary directory.
+		Spawns only one buffer-modification timer check rather than one per buffer.
+		Show multiple errors in tooltips.
+		Improved support for remote files over Tramp.
+		Improved error message classification. (err/warn/info, customizable regexp)
+		Support for new languages: Javascript and CSS.
+		Minor other bug fixes.
+	</longdescription>
+</pkgmetadata>
