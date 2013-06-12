@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		This is a simple linear algebra math library in Common-Lisp.
+		It contains datatypes for 2 and 3 dimensions.
+
+		It provides some simple algorithms commonly used for computer
+		graphics, like rotation, transformation, scaling and interpolation
+		of vectors. It also provides functions to convert between different
+		representations of rotations, namely matrices, quaternions, euler
+		angles (yaw, pitch, roll) and axis/angle.
+	</longdescription>
+</pkgmetadata>

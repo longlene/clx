@@ -14,7 +14,7 @@ S_PV="$(replace_version_separator 3 '_')"
 
 X86_AT="jdk-${MY_PV}-linux-i586.bin"
 
-DESCRIPTION="Oracle's Java SE Develop Kit (32bit)"
+DESCRIPTION="Oracle's Java SE Development Kit (32bit)"
 HOMEPAGE="http://www.oracle.com/technetwork/java/javase/"
 SRC_URI="${X86_AT}"
 
