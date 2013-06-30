@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		This is a dead-simple, non validating, inline CSS generator for Common Lisp. Its goals are axiomatic syntax, simple implementation to support portability, and boilerplate reduction in CSS. Execution efficiency, and CSS validation are non-goals at the moment.
+	</longdescription>
+</pkgmetadata>

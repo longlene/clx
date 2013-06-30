@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		BIG-STRING is a library for working with big strings. Despite the
+		name, BIG-STRING is also useful for general collections of strings. It
+		is very much like Java's StringBuilder class. Care has been taken to
+		make most operations linear in time at worst.
+	</longdescription>
+</pkgmetadata>

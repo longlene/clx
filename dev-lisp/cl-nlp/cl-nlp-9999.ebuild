@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/vseloved/cl-nlp.git"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
@@ -20,3 +20,8 @@ RDEPEND="${DEPEND}
 dev-lisp/rutils
 dev-lisp/cl-ppcre
 dev-lisp/cgn"
+
+src_install() {
+	common-lisp-install-sources -t all src nltk contrib data *.asd
+}
+
