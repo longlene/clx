@@ -10,7 +10,7 @@ SRC_URI="https://github.com/m2ym/optima/archive/v0.1.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND=""
