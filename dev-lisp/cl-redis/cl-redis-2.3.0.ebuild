@@ -5,7 +5,7 @@ EAPI=4
 inherit common-lisp-3
 
 DESCRIPTION="Redis client for Common Lisp"
-HOMEPAGE="https://github.com/vseloved/cl-redis https://github.com/vseloved/cl-redis"
+HOMEPAGE="https://github.com/vseloved/cl-redis"
 SRC_URI="https://github.com/vseloved/cl-redis/archive/${PV}.tar.gz"
 
 LICENSE="as-is"

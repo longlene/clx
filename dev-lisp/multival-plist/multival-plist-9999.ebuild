@@ -18,7 +18,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-annot
-dev-lisp/cl-syntax-annot
+dev-lisp/cl-syntax
 dev-lisp/trivial-types
 dev-lisp/alexandria"
 

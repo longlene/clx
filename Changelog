@@ -1,0 +1,9 @@
+20130924_192600
+from pentoo overlay
+dev-ruby/dm-core
+dev-ruby/dm-do-adapter
+dev-ruby/dm-migrations
+dev-ruby/dm-sqlite-adapter
+
+
+

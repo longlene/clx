@@ -18,6 +18,6 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/fare-utils
-dev-lisp/asdf-driver
+dev-lisp/uiop
 dev-lisp/closer-mop"
 

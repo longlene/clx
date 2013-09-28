@@ -18,5 +18,6 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/fare-mop
-dev-lisp/fare-memoization"
+dev-lisp/fare-memoization
+dev-lisp/uiop"
 

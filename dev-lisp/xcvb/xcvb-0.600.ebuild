@@ -17,5 +17,6 @@ DEPEND=""
 RDEPEND="${DEPEND}
 >= dev-lisp/asdf-2.016
 dev-lisp/fare-mop
-dev-lisp/fare-memoization"
+dev-lisp/fare-memoization
+dev-lisp/uiop"
 

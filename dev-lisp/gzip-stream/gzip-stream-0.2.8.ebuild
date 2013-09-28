@@ -2,6 +2,8 @@
 
 EAPI=4
 
+inherit common-lisp-3
+
 DESCRIPTION="GZIP-STREAM provides a few utilities for reading and writing streams in the gzip format"
 HOMEPAGE="http://common-lisp.net/project/gzip-stream/"
 SRC_URI="https://mydebian.googlecode.com/files/gzip-stream-0.2.8.tar.gz"

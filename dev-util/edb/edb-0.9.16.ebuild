@@ -14,8 +14,8 @@ IUSE=""
 RESTRICT="strip mirror"
 
 DEPEND="
-	>=x11-libs/qt-core-4.5.0
-	>=x11-libs/qt-gui-4.5.0
+	>=dev-qt/qtcore-4.5.0
+	>=dev-qt/qtgui-4.8.4-r1
 	>=dev-libs/boost-1.35.0"
 	
 RDEPEND="${DEPEND}"

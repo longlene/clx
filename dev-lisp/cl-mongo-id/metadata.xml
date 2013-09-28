@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		This is a simple library for creating/handling MongoDB's ObjectIDs. It works by grabbing key pieces of info (unix timestamp, hostname, process pid, global "inc" value) and creating a new ObjectID as a 12-byte array #(79 151 129 ...)
+	</longdescription>
+</pkgmetadata>

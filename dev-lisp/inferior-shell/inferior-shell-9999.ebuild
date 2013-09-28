@@ -19,6 +19,8 @@ DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/asdf
 dev-lisp/xcvb
-dev-lisp/fare-quasiquote-extras
-dev-lisp/fare-mop"
+dev-lisp/fare-quasiquote
+dev-lisp/fare-mop
+dev-lisp/fare-utils
+dev-lisp/optima"
 

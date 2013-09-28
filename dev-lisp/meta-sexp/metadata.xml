@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		meta-sexp is a META parser generator using LL(1) grammars with s-expressions. meta-sexp uses in-memory string vectors, instead of commonly used streams, for efficiently stepping backward and forward through the input.
+	</longdescription>
+</pkgmetadata>

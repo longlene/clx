@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		This implementation is a nice implementation:
+
+		It uses 30,000 cells.
+		If a program attempts to move beyond the bounds of those 30,000 cells, it will raise an error.
+		The cell values are of type '(unsigned-byte 8).
+		If a program attempts to increment the value of a cell above the maximum, or decrement a value below the minimum, it will wrap around.
+		If a program contains unbalanced brackets, an error will be raised.
+
+	</longdescription>
+</pkgmetadata>
