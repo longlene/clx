@@ -1,0 +1,7 @@
+;;; -*- Mode: Lisp; Syntax: ANSI-Common-Lisp; indent-tabs-mode: nil -*-
+;;;
+
+(in-package :common-lisp-user)
+
+;;; Setup ASDF3
+(load "/etc/common-lisp/gentoo-init.lisp")
