@@ -4,3 +4,4 @@
 =dev-lisp/xcvb-9999
 =dev-lisp/blocky-9999
 =dev-lisp/cl-openal-9999
+dev-lisp/blocky
