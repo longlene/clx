@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		cl-spark generates a sparkline string for a list of numbers. It is a common lisp implementation of Zach Holman's spark and Gil Gonçalves' vspark with little extension.
+	</longdescription>
+</pkgmetadata>
