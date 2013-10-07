@@ -13,8 +13,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="${DEPEND}
-!app-vim/snipmate
-app-vim/neocomplcache"
+app-vim/vital
+!app-vim/snipmate"
+#app-vim/neocomplcache"
 
 VIM_PLUGIN_HELPFILES="neocomplcache-snippets-complete"
 
+src_prepare() {
+	rm autoload/vital.vim # for file collision, already in vital
+}

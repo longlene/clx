@@ -14,4 +14,10 @@ IUSE=""
 
 SRC_URI="https://github.com/Shougo/neocomplcache/archive/ver.${PV}.tar.gz -> ${P}.tar.gz"
 
+RDEPEND="app-vim/vital"
+
 VIM_PLUGIN_HELPFILES="${PN}.txt"
+
+src_prepare() {
+	rm autoload/vital.vim # for file collision
+}
