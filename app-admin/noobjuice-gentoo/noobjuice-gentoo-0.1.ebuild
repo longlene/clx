@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit qt4
+inherit qt4-r2
 
 DESCRIPTION="The Gentoo base system plugins for the NoobJuice system administration GUI"
 HOMEPAGE="http://bobshaffer.net/?page=project_noobjuice_gentoo"
