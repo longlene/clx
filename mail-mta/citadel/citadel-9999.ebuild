@@ -5,7 +5,7 @@
 EAPI="2"
 
 EGIT_REPO_URI="git://git.citadel.org/appl/gitroot/citadel.git"
-inherit eutils git multilib autotools
+inherit eutils git-2 multilib autotools
 
 DESCRIPTION="Git master version of the whole citadel suit"
 HOMEPAGE="http://citadel.org"

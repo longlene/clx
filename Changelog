@@ -5,5 +5,8 @@ dev-ruby/dm-do-adapter
 dev-ruby/dm-migrations
 dev-ruby/dm-sqlite-adapter
 
+20131007_233235
+from overlay ruby
+dev-ruby/do_sqlite3
 
 
