@@ -18,8 +18,7 @@ SLOT="0"
 KEYWORDS="*"
 IUSE="doc examples"
 
-#DEPEND=">=dev-db/oracle-instantclient-basic-10.2.0.3"
-DEPEND=""
+DEPEND=">=dev-db/oracle-instantclient-basic-10.2.0.3"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
@@ -27,7 +26,7 @@ S=${WORKDIR}/${MY_P}
 DOCS="README.txt HISTORY.txt"
 
 set_global_options() {
-	export ORACLE_HOME="/opt/oracle/app/product/11.2.0/dbhome_1"
+	export ORACLE_HOME="/usr/lib64/oracle/11.2.0.3/client"
 }
 
 distutils_src_compile_pre_hook() {
