@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		RMMSeg is an implementation of MMSEG Chinese word segmentation algorithm. It is based on two variants of maximum matching algorithms. Two algorithms are available for using: * simple algorithm that uses only forward maximum matching. * complex algorithm that uses three-word chunk maximum matching and 3 additonal rules to solve ambiguities. For more information about the algorithm, please refer to the following essays: * http://technology.chtsai.org/mmseg/ * http://pluskid.lifegoo.com/?p=261
+	</longdescription>
+</pkgmetadata>
