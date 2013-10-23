@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="2"
-inherit qt4 cmake-utils multilib
+inherit qt4-r2 cmake-utils multilib
 
 DESCRIPTION="Qt lightScribe - OS labeler for Linux"
 HOMEPAGE="http://sourceforge.net/projects/qlscribe/"

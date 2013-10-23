@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit cmake-utils eutils qt4
+inherit cmake-utils eutils qt4-r2
 
 DESCRIPTION="Qt4-based download/upload manager"
 HOMEPAGE="http://fatrat.dolezel.info/"

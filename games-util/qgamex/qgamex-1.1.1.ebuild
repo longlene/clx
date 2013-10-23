@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit games qt4
+inherit games qt4-r2
 
 DESCRIPTION="Launch your games in a separate X11 session with many options"
 HOMEPAGE="http://www.dolezel.info/projects/qgamex"

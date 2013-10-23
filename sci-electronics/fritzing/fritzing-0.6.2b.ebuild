@@ -29,10 +29,10 @@ if [[ -z "${MY_P}" ]]; then
 fi
 
 if [[ ${PV} == "9999" ]]; then
-        inherit qt4 subversion
+        inherit qt4-r2 subversion
         ESVN_REPO_URI="http://fritzing.googlecode.com/svn/trunk/fritzing"
 else
-        inherit qt4
+        inherit qt4-r2
         SRC_URI="http://fritzing.org/download/${PV}/source-tarball/${MY_P}.tar.bz2"
         KEYWORDS="~amd64 ~x86"
 fi

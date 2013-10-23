@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-inherit eutils games qt4
+inherit eutils games qt4-r2
 
 DESCRIPTION="Dexterity game for 2-8 players on one computer"
 HOMEPAGE="http://openorbiter.sourceforge.net/"

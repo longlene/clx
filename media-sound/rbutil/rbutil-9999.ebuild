@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit qt4 subversion
+inherit qt4-r2 subversion
 
 ESVN_REPO_URI="svn://svn.rockbox.org/rockbox/trunk"
 

@@ -8,7 +8,7 @@ SUPPORT_PYTHON_ABIS="1"
 inherit base distutils eutils
 
 if [[ ${PV} == "9999" ]] ; then
-	inherit git
+	inherit git-2
 	EGIT_REPO_URI="git://github.com/biopython/biopython.git"
 	SRC_URI=""
 else

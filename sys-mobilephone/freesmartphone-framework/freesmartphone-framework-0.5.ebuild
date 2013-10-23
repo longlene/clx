@@ -3,7 +3,7 @@
 # $Header: $
 
 inherit distutils
-inherit git
+inherit git-2
 
 DESCRIPTION="The FreeSmartPhone.org framework APIs."
 HOMEPAGE="http://www.freesmartphone.org/"

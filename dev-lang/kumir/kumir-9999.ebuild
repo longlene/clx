@@ -4,7 +4,7 @@
 
 EAPI="1"
 
-inherit qt4 subversion
+inherit qt4-r2 subversion
 
 DESCRIPTION="Kumir is a simple programming language and IDE"
 HOMEPAGE="http://lpm.org.ru/kumir/"

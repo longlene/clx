@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils qt4
+inherit eutils qt4-r2
 
 DESCRIPTION="Video capture and playback software application compatible with all Blackmagic Design DeckLink, Multibridge and Intensity products."
 HOMEPAGE="http://www.blackmagic-design.com"

@@ -1,5 +1,5 @@
-inherit qt4
-inherit git
+inherit qt4-r2
+inherit git-2
 
 EAPI="2"
 DESCRIPTION="Simple Qt audio player."

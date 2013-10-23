@@ -1,4 +1,4 @@
-inherit qt4
+inherit qt4-r2
 
 EAPI="2"
 DESCRIPTION="Simple Qt audio player."

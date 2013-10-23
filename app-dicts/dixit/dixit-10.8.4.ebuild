@@ -5,7 +5,7 @@
 RESTRICT="primaryuri"
 
 EAPI="2"
-inherit eutils qt4
+inherit eutils qt4-r2
 
 DESCRIPTION="Romanian Definitions Dictionary"
 HOMEPAGE="http://dixit.sourceforge.net/"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit qt4
+inherit qt4-r2
 
 DESCRIPTION="A KXDocker replacement that works together with a compositing
 window manager."

@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit distutils git
+inherit distutils git-2
 
 DESCRIPTION="FUSE filesystem used to organize your documents using tags"
 HOMEPAGE="http://wiki.github.com/marook/tagfs"

@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit qt4
+inherit qt4-r2
 
 DESCRIPTION="NetEmul is a program for simulating computer networks"
 HOMEPAGE="http://netemul.sourceforge.net/"

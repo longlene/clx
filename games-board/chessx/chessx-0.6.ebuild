@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit base eutils games qt4 toolchain-funcs
+inherit base eutils games qt4-r2 toolchain-funcs
 
 DESCRIPTION="a Qt4 chess database application"
 HOMEPAGE="http://chessx.sourceforge.net/"
@@ -18,7 +18,7 @@ IUSE=""
 DEPEND=">=x11-libs/qt-core-4.2
 		>=x11-libs/qt-gui-4.2
 		>=x11-libs/qt-xmlpatterns-4.2"
-		
+
 src_configure(){
 	eqmake4 chessx.pro
 }

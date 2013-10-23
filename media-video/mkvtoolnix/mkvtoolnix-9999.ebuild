@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="1"
-inherit eutils wxwidgets flag-o-matic qt4 autotools git
+inherit eutils wxwidgets flag-o-matic qt4-r2 autotools git
 
 DESCRIPTION="Tools to create, alter, and inspect Matroska files"
 HOMEPAGE="http://www.bunkus.org/videotools/mkvtoolnix"

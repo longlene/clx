@@ -6,7 +6,7 @@ EAPI="2"
 
 MY_P="fritzing.2010.10.01.source"
 
-inherit qt4
+inherit qt4-r2
 
 DESCRIPTION="breadboard and arduino prototyping"
 HOMEPAGE="http://fritzing.org/"

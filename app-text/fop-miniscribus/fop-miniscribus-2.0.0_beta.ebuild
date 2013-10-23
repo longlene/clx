@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit subversion qt4 eutils
+inherit subversion qt4-r2 eutils
 
 MY_PV="${PV/_beta/}"
 ESVN_REPO_URI="http://${PN}.googlecode.com/svn/trunk/${PN/-/_}.${MY_PV}"
