@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit git autotools libtool
+inherit git-2 autotools libtool
 
 DESCRIPTION="Synfig: Film-Quality Vector Animation (core engine)"
 HOMEPAGE="http://www.synfig.com"

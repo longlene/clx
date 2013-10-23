@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit git python linux-info
+inherit git-2 python linux-info
 
 DESCRIPTION="A helper library to develop monitoring tools for Linux perf_events."
 LICENSE="GPL-2"

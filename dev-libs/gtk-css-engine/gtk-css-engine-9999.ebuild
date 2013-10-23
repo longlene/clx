@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit git eutils
+inherit git-2 eutils
 
 DESCRIPTION="Theme engine with CSS support for the Gtk+ toolkit"
 HOMEPAGE="http://git.gnome.org/cgit/gtk-css-engine/"

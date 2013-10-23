@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git distutils python
+inherit git-2 distutils python
 
 DESCRIPTION="shr pyphonelog-application"
 HOMEPAGE="http://trac.shr-project.org/trac"

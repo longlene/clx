@@ -11,7 +11,7 @@ EAPI="2"
 EGIT_REPO_URI="http://git.zfs-fuse.net/official"
 EGIT_BRANCH="maint"
 
-inherit git linux-mod autotools
+inherit git-2 linux-mod autotools
 
 SRC_URI=""
 

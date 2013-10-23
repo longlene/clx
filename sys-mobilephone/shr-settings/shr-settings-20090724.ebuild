@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git distutils
+inherit git-2 distutils
 
 DESCRIPTION="shr-settings; a gui for changing phone settings from the shr-project"
 HOMEPAGE="http://trac.shr-project.org/trac"

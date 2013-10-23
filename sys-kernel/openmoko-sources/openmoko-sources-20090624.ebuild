@@ -19,7 +19,7 @@ K_NOUSENAME="yes"
 K_NOSETEXTRAVERSION="yes"
 K_SECURITY_UNSUPPORTED="yes"
 
-inherit git kernel-2 toolchain-funcs
+inherit git-2 kernel-2 toolchain-funcs
 detect_version
 
 LICENSE="GPL-2"

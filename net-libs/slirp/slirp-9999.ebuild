@@ -4,7 +4,7 @@
 
 EAPI=3
 
-inherit git autotools
+inherit git-2 autotools
 
 DESCRIPTION="Library for  emulates a PPP or SLIP connection over a normal terminal."
 HOMEPAGE="http://cgit.freedesktop.org/spice/slir"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git autotools linux-info
+inherit git-2 autotools linux-info
 
 DESCRIPTION="iPhone USB Ethernet Driver for Linux pairing helper"
 HOMEPAGE="http://giagio.com/wiki/moin.cgi/iPhoneEthernetDriver"

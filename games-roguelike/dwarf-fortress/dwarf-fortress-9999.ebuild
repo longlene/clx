@@ -4,7 +4,7 @@
 
 EAPI=2
 EGIT_REPO_URI="git://github.com/Baughn/Dwarf-Fortress--libgraphics-.git"
-inherit games eutils git multilib
+inherit games eutils git-2 multilib
 
 DESCRIPTION="Dwarf Fortress is a single-player fantasy game. You can control a dwarven outpost or an adventurer in a randomly generated, persistent world."
 HOMEPAGE="http://www.bay12games.com/dwarves"
