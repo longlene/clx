@@ -14,7 +14,7 @@ DESCRIPTION="Easy custom autocompletion for irb"
 HOMEPAGE="https://github.com/cldwalker/bond/"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="test"
 SLOT="0"
 
