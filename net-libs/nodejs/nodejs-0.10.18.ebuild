@@ -14,7 +14,7 @@ SRC_URI="http://nodejs.org/dist/v${PV}/node-v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~*"
+KEYWORDS="*"
 IUSE=""
 
 DEPEND=">=dev-lang/v8-3.11.10

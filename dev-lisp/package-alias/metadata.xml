@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		The function PACKAGE-ALIAS:ALIAS provides a straightforward facility for renaming packages temporarily as if they were local to a system or package. Any nicknames except the standard package names can be chosen, as package name conflicts are handled by a ‘'hadowing’'mechanism.
+	</longdescription>
+</pkgmetadata>
