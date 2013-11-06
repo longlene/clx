@@ -6,4 +6,4 @@
 =dev-lisp/cl-openal-9999
 dev-lisp/blocky
 =dev-db/oracle-instantclient-basic-11.2.0.3-r4
-=dev-lisp/iolib-0.8.0
+#=dev-lisp/iolib-0.8.0

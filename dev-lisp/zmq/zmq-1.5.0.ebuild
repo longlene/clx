@@ -10,12 +10,12 @@ SRC_URI="https://github.com/galdor/lisp-zmq/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cffi
 dev-lisp/bordeaux-threads
-net-libs/zeromq"
+>=net-libs/zeromq-2.2.0"
 

@@ -5,7 +5,7 @@
 EAPI=3
 inherit common-lisp-3
 
-DESCRIPTION="A Comm Lisp I/O library."
+DESCRIPTION="A Common Lisp I/O library."
 HOMEPAGE="http://common-lisp.net/project/iolib/"
 SRC_URI="http://common-lisp.net/project/iolib/files/${P}.tar.gz"
 
