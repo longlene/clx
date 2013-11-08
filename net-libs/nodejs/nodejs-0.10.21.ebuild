@@ -1,74 +1,69 @@
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/nodejs/nodejs-0.10.21.ebuild,v 1.3 2013/10/21 17:49:08 ago Exp $
 
-EAPI=4-python
+EAPI=5
 
-PYTHON_DEPEND="<<2>>"
-
-inherit python eutils pax-utils
-
+# has known failures. sigh.
 RESTRICT="test"
+
+PYTHON_COMPAT=( python2_{6,7} )
+
+inherit python-any-r1 pax-utils
 
 DESCRIPTION="Evented IO for V8 Javascript"
 HOMEPAGE="http://nodejs.org/"
 SRC_URI="http://nodejs.org/dist/v${PV}/node-v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="Apache-1.1 Apache-2.0 BSD BSD-2 MIT"
 SLOT="0"
-KEYWORDS="~*"
-IUSE=""
+KEYWORDS="amd64 ~arm x86 ~x64-macos"
+IUSE="+npm +snapshot"
 
-DEPEND=">=dev-lang/v8-3.11.10
-	dev-libs/openssl"
-RDEPEND="${DEPEND}"
+RDEPEND="dev-libs/openssl"
+DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/node-v${PV}
-
-pkg_setup() {
-	python_set_active_version 2
-	python_pkg_setup
-}
 
 src_prepare() {
 	# fix compilation on Darwin
 	# http://code.google.com/p/gyp/issues/detail?id=260
 	sed -i -e "/append('-arch/d" tools/gyp/pylib/gyp/xcode_emulation.py || die
-	# Hardcoded braindamage extraction helper
-	sed -i -e 's:wafdir = join(prefix, "lib", "node"):wafdir = "/lib/node/":' tools/node-waf || die
 
-	cd ${S}
-	for x in $(grep -r "/usr/bin/env python" * | cut -f1 -d":" ); do
-		einfo "Tweaking $x for python2..."
-		sed -e "s:/usr/bin/env python:/usr/bin/env python2:g" -i $x || die
-        done
-        sed -e "s/python/python2/g" -i Makefile || die
+	# make sure we use python2.* while using gyp
+	sed -i -e  "s/python/python2/" deps/npm/node_modules/node-gyp/gyp/gyp || die
+
+	# less verbose install output (stating the same as portage, basically)
+	sed -i -e "/print/d" tools/install.py || die
 }
 
 src_configure() {
-	# this is an autotools lookalike confuserator
-	./configure --shared-v8 --prefix="${EPREFIX}"/usr --shared-v8-includes="${EPREFIX}"/usr/include --openssl-use-sys --shared-zlib || die
+	local myconf=""
+	! use npm && myconf="--without-npm"
+	! use snapshot && myconf="${myconf} --without-snapshot"
+
+	"${PYTHON}" configure --prefix="${EPREFIX}"/usr \
+		--openssl-use-sys --shared-zlib --without-dtrace ${myconf} || die
 }
 
 src_compile() {
-	emake || die
+	emake out/Makefile
+	emake -C out mksnapshot
+	pax-mark m out/Release/mksnapshot
+	emake
 }
 
 src_install() {
-	# Doesn't use make.
-	mkdir -p "${ED}"/usr/include/node
-	mkdir -p "${ED}"/usr/bin
-	mkdir -p "${ED}"/lib/node_modules/npm
-	mkdir -p "${ED}"/lib/node
-	cp 'src/node.h' 'src/node_buffer.h' 'src/node_object_wrap.h' 'src/node_version.h' "${ED}"/usr/include/node || die "Failed to copy stuff"
-	cp 'deps/uv/include/ares.h' 'deps/uv/include/ares_version.h' "${ED}"/usr/include/node || die "Failed to copy stuff"
-	cp 'out/Release/node' "${ED}"/usr/bin/node || die "Failed to copy stuff"
-	cp -R deps/npm/* "${ED}"/lib/node_modules/npm || die "Failed to copy stuff"
-	cp -R tools/wafadmin "${ED}"/lib/node/ || die "Failed to copy stuff"
-	cp 'tools/node-waf' "${ED}"/usr/bin/ || die "Failed to copy stuff"
+	"${PYTHON}" tools/install.py install "${D}"
 
-	# Has to be symlink
-	dosym /lib/node_modules/npm/bin/npm-cli.js /bin/npm
+	use npm && dohtml -r "${ED}"/usr/lib/node_modules/npm/html/*
+	rm -rf "${ED}"/usr/lib/node_modules/npm/doc "${ED}"/usr/lib/node_modules/npm/html
+	rm -rf "${ED}"/usr/lib/dtrace
+
+	pax-mark -m "${ED}"/usr/bin/node
 }
 
 src_test() {
-	emake test || die
+	"${PYTHON}" tools/test.py --mode=release simple message || die
 }
+
