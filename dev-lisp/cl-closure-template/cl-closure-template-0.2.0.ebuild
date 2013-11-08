@@ -15,12 +15,14 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="doc emacs"
 
 RDEPEND="dev-lisp/asdf-system-connections
-		dev-lisp/babel
-		dev-lisp/parenscript
-		dev-lisp/split-sequence
-		dev-lisp/wiki-parser
-		dev-lisp/lift
-		emacs? ( virtual/emacs )"
+dev-lisp/babel
+dev-lisp/parenscript
+dev-lisp/split-sequence
+dev-lisp/wiki-parser
+dev-lisp/lift
+dev-lisp/esrap
+dev-lisp/closer-mop
+emacs? ( virtual/emacs )"
 
 CLSYSTEMS="closure-template"
 SITEFILE="50${PN}-gentoo.el"

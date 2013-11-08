@@ -15,11 +15,12 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="doc"
 
 RDEPEND="!dev-lisp/cl-${PN}
-		!dev-lisp/cl-${PN}-darcs
-		!dev-lisp/${PN}-darcs
-		dev-lisp/anaphora
-		dev-lisp/cl-ppcre
-		dev-lisp/fiveam"
+!dev-lisp/cl-${PN}-darcs
+!dev-lisp/${PN}-darcs
+dev-lisp/anaphora
+dev-lisp/cl-ppcre
+dev-lisp/named-readtables
+dev-lisp/fiveam"
 
 CLSYSTEMS="parenscript parenscript.test"
 
