@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		cl-ev
+
+		cl-ev is an attempt at cffi bindings for libev.
+		API Support
+
+		We support the following watchers:
+		Periodic
+		IO
+		Timer
+		Idle
+
+	</longdescription>
+</pkgmetadata>

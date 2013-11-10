@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Akashic - Static Blog Generator
+
+		Akashic is a tool for generating the static blog based on GitHub Pages, written in Common Lisp.
+	</longdescription>
+</pkgmetadata>
