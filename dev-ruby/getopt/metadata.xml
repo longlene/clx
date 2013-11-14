@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		The getopt library provides two different command line option parsers. They are meant as easier and more convenient replacements for the command line parsers that ship as part of the Ruby standard library
+	</longdescription>
+</pkgmetadata>
