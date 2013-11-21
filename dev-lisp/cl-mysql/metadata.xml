@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		cl-mysql is a Common Lisp implementation of a MySQL wrapper. This functionality is largely a subset of what is already available in the CLSQL library. However, as already mentioned super APIs generally have the problem of hiding the light switches. So why should you choose cl-mysql over clsql?
+	</longdescription>
+</pkgmetadata>
