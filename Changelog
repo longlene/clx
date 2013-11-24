@@ -13,3 +13,5 @@ dev-ruby/do_sqlite3
 just test commit on vmware vFuntoo
 20131010_231700
 after setting up ntp-client
+20131124_205900
+get npm.eclass from https://github.com/neurogeek/gentoo-overlay
