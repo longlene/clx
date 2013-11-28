@@ -15,3 +15,5 @@ just test commit on vmware vFuntoo
 after setting up ntp-client
 20131124_205900
 get npm.eclass from https://github.com/neurogeek/gentoo-overlay
+20131128_093300
+virtual/{jdk,jre} get from java overlay
