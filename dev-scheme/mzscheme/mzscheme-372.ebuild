@@ -10,7 +10,7 @@ SRC_URI="http://download.plt-scheme.org/bundles/${PV}/mz/mz-${PV}-src-unix.tgz"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="x86 amd64"
 IUSE="perl xft"
 
 DEPEND="perl? ( dev-lang/perl )
