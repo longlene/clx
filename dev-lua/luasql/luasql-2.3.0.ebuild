@@ -11,7 +11,7 @@ EGIT_BRANCH="master"
 EGIT_HAS_SUBMODULES="true"
 EGIT_PROJECT=${P}
 if [ "${PV}" != "9999" ]; then
-  EGIT_COMMIT="v${PV}"
+	EGIT_COMMIT="v${PV}"
 fi
 
 LICENSE="Kepler"
