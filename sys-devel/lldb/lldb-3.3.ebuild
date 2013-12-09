@@ -25,7 +25,7 @@ RDEPEND="~sys-devel/llvm-${PV}[debug=]
 ~sys-devel/clang-${PV}[debug=]
 ${PYTHON_DEPS}"
 
-S="${WORKDIR}/lldb"
+S="${WORKDIR}/lldb-${PV}.src"
 
 src_prepare() {
 	sed -i "s/lib/$(get_libdir)/" scripts/lldb_python_module.cmake
