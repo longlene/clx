@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Doug Hoyte's Optimized Common Lisp version of Bob Jenkins' ISAAC-32 algorithm, a fast cryptographic random number generator
+	</longdescription>
+</pkgmetadata>
