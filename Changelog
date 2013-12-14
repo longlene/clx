@@ -17,3 +17,5 @@ after setting up ntp-client
 get npm.eclass from https://github.com/neurogeek/gentoo-overlay
 20131128_093300
 virtual/{jdk,jre} get from java overlay
+20131214_222600
+dev-cpp/litesql from neurogeek overlay
