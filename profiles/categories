@@ -27,6 +27,7 @@ dev-db
 dev-dotnet
 dev-embedded
 dev-games
+dev-go
 dev-haskell
 dev-inferno
 dev-java
