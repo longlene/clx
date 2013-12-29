@@ -1,0 +1,6 @@
+[Unit]
+Description=remote login server
+
+[Service]
+ExecStart=/usr/libexec/rlogind
+

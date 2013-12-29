@@ -19,3 +19,5 @@ get npm.eclass from https://github.com/neurogeek/gentoo-overlay
 virtual/{jdk,jre} get from java overlay
 20131214_222600
 dev-cpp/litesql,dev-nodejs/grunt from neurogeek overlay
+20131229_174000
+sys-apps/inetutils from overlay emery
