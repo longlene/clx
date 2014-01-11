@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/vseloved/nuts.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
@@ -20,6 +20,6 @@ RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre
 dev-lisp/closer-mop
 dev-lisp/rutils
-dev-lisp/clsql
-dev-lisp/nuts-trivial"
+dev-lisp/clsql"
+#dev-lisp/nuts-trivial"
 
