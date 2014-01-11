@@ -4,7 +4,7 @@
 
 DESCRIPTION="Make equivalent for the Plan9 System"
 HOMEPAGE="http://cm.bell-labs.com/magic/man2html/1/mk"
-SRC_URI="http://www.kix.in/plan9/plan9port-repack-${PV}.tar.bz2"
+SRC_URI="http://plan9port.googlecode.com/files/plan9port-${PV}.tgz"
 
 LICENSE="PLAN9"
 SLOT="0"
@@ -14,7 +14,7 @@ IUSE=""
 DEPEND=""
 RDEPEND=""
 
-S="${WORKDIR}/plan9"
+S="${WORKDIR}/plan9port"
 
 src_compile() {
 	PLAN9=`pwd` export PLAN9
@@ -25,6 +25,6 @@ src_compile() {
 }
 
 src_install() {
-	dobin ${S}/bin/mk
-	doman ${S}/man/man1/mk.1
+	dobin ${S}/bin/mk || die "dobin failed!"
+	doman ${S}/man/man1/mk.1 || die "dobin failed!"
 }
