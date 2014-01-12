@@ -1,0 +1,33 @@
+diff -Nurwp ch-image_0.4.1/ch-image.asd ch-image_0.4.1-new/ch-image.asd
+--- ch-image_0.4.1/ch-image.asd	2008-09-29 03:37:12.000000000 +0800
++++ ch-image_0.4.1-new/ch-image.asd	2014-01-11 20:34:59.766005979 +0800
+@@ -29,14 +29,11 @@
+   :name "ch-image"
+   :author "Cyrus Harmon <ch-lisp@bobobeach.com>"
+   :licence "BSD"
+-  :version #.(with-open-file
+-                 (vers (merge-pathnames "version.lisp-expr" *load-truename*))
+-               (read vers))
++  :version "0.4.1"
+   :description "image representation and processing"
+   :depends-on (ch-util clem zpng)
+   :components
+-  ((:static-file "version" :pathname #p"version.lisp-expr")
+-   (:module
++  ((:module
+     :src
+     :components
+     ((:cl-source-file "defpackage")
+@@ -65,11 +62,6 @@
+                                    "tiffimage"
+                                    #+ch-image-has-cl-jpeg
+                                    "jpegimage")))
+-    :depends-on (:src))
+-   (:static-file "README")
+-   (:static-file "LICENSE")
+-   (:static-file "NEWS")
+-   (:static-file "TODO")
+-   (:static-file "ChangeLog")))
++    :depends-on (:src))))
+ 
+ 

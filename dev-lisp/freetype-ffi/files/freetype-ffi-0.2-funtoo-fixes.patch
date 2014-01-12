@@ -1,0 +1,37 @@
+diff -Nurwp freetype-ffi_0.2/freetype-ffi-gen.asd freetype-ffi_0.2.new/freetype-ffi-gen.asd
+--- freetype-ffi_0.2/freetype-ffi-gen.asd	2007-03-26 09:42:18.000000000 +0800
++++ freetype-ffi_0.2.new/freetype-ffi-gen.asd	2014-01-11 18:50:21.116499900 +0800
+@@ -19,9 +19,7 @@
+ (defsystem :freetype-ffi-gen
+   :name "freetype-ffi-gen"
+   :author "Cyrus Harmon <ch-lisp@bobobeach.com>"
+-  :version #.(with-open-file
+-                 (vers (merge-pathnames "version.lisp-expr" *load-truename*))
+-               (read vers))
++  :version "0.2"
+   :licence "BSD"
+   :depends-on (:xmls :uffi :gcc-xml-ffi)
+   :components
+diff -Nurwp freetype-ffi_0.2/freetype-ffi.asd freetype-ffi_0.2.new/freetype-ffi.asd
+--- freetype-ffi_0.2/freetype-ffi.asd	2007-03-26 09:49:59.000000000 +0800
++++ freetype-ffi_0.2.new/freetype-ffi.asd	2014-01-11 18:45:41.142000062 +0800
+@@ -5,17 +5,11 @@
+ (defsystem :freetype-ffi
+   :name "freetype-ffi"
+   :author "Cyrus Harmon <ch-lisp@bobobeach.com>"
+-  :version #.(with-open-file
+-                 (vers (merge-pathnames "version.lisp-expr" *load-truename*))
+-               (read vers))
++  :version "0.2"
+   :licence "BSD"
+   :depends-on (:xmls :gcc-xml-ffi)
+   :components
+-  ((:static-file "version" :pathname #p"version.lisp-expr")
+-   (:static-file "COPYRIGHT")
+-   (:static-file "README")
+-   (:static-file "ChangeLog")
+-   (:module
++  ((:module
+     :src
+     :components
+     ((:cl-source-file "defpackage")
