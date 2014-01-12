@@ -1,7 +1,7 @@
 # Copyright 1999-2013 Gentoo Foundation
 
 EAPI=4
-USE_RUBY="ruby18 ruby19 ruby20 ruby21 ree18 jruby"
+USE_RUBY="ruby19 ruby20 ruby21"
 
 RUBY_FAKEGEM_TASK_DOC="rdoc"
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.rdoc README.rdoc"
@@ -10,15 +10,20 @@ RUBY_FAKEGEM_TASK_TEST=""
 
 inherit ruby-fakegem
 
-DESCRIPTION="Easy custom autocompletion for irb"
-HOMEPAGE="https://github.com/cldwalker/bond/"
+DESCRIPTION="ruby-opencv is a wrapper of OpenCV for Ruby"
+HOMEPAGE="https://github.com/ruby-opencv/ruby-opencv/"
 
-LICENSE="as-is"
+LICENSE="BSD"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="test"
 SLOT="0"
 
-RDEPEND="${RDEPEND}"
+RDEPEND="${RDEPEND}
+media-libs/opencv
+dev-ruby/hoe
+dev-ruby/hoe-gemspec
+dev-ruby/rake-compiler
+dev-ruby/rdoc"
 
 #all_ruby_prepare() {
 #	# Existing metadata causes a crash in jruby, so use our own.

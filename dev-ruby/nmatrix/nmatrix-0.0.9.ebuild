@@ -10,15 +10,17 @@ RUBY_FAKEGEM_TASK_TEST=""
 
 inherit ruby-fakegem
 
-DESCRIPTION="Easy custom autocompletion for irb"
-HOMEPAGE="https://github.com/cldwalker/bond/"
+DESCRIPTION="NMatrix is a linear algebra library for Ruby"
+HOMEPAGE="http://sciruby.com/"
 
-LICENSE="as-is"
+LICENSE="BSD-2"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="test"
 SLOT="0"
 
-RDEPEND="${RDEPEND}"
+RDEPEND="${RDEPEND}
+sci-libs/clapack
+dev-ruby/packable"
 
 #all_ruby_prepare() {
 #	# Existing metadata causes a crash in jruby, so use our own.

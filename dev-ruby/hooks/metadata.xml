@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Callbacks are executable things, like a Proc or methods in Ruby, whereas a hook is usually a spot in your code where you want to execute a certain subset of callbacks.
+	</longdescription>
+</pkgmetadata>

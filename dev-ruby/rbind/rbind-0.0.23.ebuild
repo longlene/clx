@@ -10,15 +10,17 @@ RUBY_FAKEGEM_TASK_TEST=""
 
 inherit ruby-fakegem
 
-DESCRIPTION="Easy custom autocompletion for irb"
-HOMEPAGE="https://github.com/cldwalker/bond/"
+DESCRIPTION="ruby library for automatically generating ruby ffi bindings for c/c++ libs"
+HOMEPAGE="http://github.com/D-Alex/rbind"
 
 LICENSE="as-is"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="test"
 SLOT="0"
 
-RDEPEND="${RDEPEND}"
+RDEPEND="${RDEPEND}
+>=dev-ruby/ffi-1.9.0
+>=dev-ruby/hooks-0.3.1"
 
 #all_ruby_prepare() {
 #	# Existing metadata causes a crash in jruby, so use our own.

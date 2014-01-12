@@ -10,10 +10,10 @@ RUBY_FAKEGEM_TASK_TEST=""
 
 inherit ruby-fakegem
 
-DESCRIPTION="Easy custom autocompletion for irb"
-HOMEPAGE="https://github.com/cldwalker/bond/"
+DESCRIPTION="Declaratively define hooks, add callbacks and run them with the options you like"
+HOMEPAGE="http://nicksda.apotomo.de/2010/09/hooks-and-callbacks-for-ruby-but-simple/"
 
-LICENSE="as-is"
+LICENSE="MIT"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="test"
 SLOT="0"

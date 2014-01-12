@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Rbind is developed to automatically generate ruby bindings for OpenCV but is not tight to this library. It allows to import already wrapped types from other gems/libraries using rbind to share the same types across multiple gems/libraries. For now rbind uses a copy of the OpenCV python hdr parser to parse c/c++ header files and looks for certain defines.
+	</longdescription>
+</pkgmetadata>
