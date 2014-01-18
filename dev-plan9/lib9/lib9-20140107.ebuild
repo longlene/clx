@@ -5,5 +5,5 @@
 PHEADERS="u libc lib9 fcall 9p utf"
 inherit plan9-libs
 
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 
