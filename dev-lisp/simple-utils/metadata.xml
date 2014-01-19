@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		usage:
+
+		#! reader macro
+
+		;;clojure style lambda.
+		(funcall #!(+ 10 %) 100) => 110
+		(funcall #!(- %2 %1) 10 100) => 90
+
+		->
+
+		(-> (+ 1 2) (* 3) (- 10) (print)) is exapnd to (PRINT (- (* (+ 1 2) 3) 10))
+
+		dup
+
+		(dup 10 4) => (10 10 10 10)
+		(dup #!(+ 100 %) 4) => (100 101 102 103)
+		(dup #!(+ 100 %) (list 72 75 79 83)) => (172 175 179 183)
+
+		full-pathname
+
+		;; returning absoulte full-pathname of path
+
+		mklist
+
+		;; If input is list, just return it. else (list input)
+		(mklist 1)  => (1)
+		(mklist (list 1 2 3))  => (1 2 3)
+		(mklist nil) => NIL
+
+		rename-package-nicknames
+		println
+		partition
+		cat
+		do-while
+	</longdescription>
+</pkgmetadata>
