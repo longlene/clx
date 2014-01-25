@@ -140,8 +140,8 @@ src_install() {
 	[[ -e ${ED}${oracle_home}/lib ]] ||
 	dosym $(get_libdir) "${oracle_home}"/lib
 
-	insinto "${oracle_home}"/lib
-	doins ${FILESDIR}/sysliblist
+	#insinto "${oracle_home}"/lib
+	#doins ${FILESDIR}/sysliblist
 
 	einfo "Installing SDK ..."
 	cd "${S}"/sdk || die
