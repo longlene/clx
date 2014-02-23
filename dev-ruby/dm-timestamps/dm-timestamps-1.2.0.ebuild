@@ -13,7 +13,7 @@ RUBY_FAKEGEM_EXTRADOC="README.rdoc"
 
 inherit ruby-fakegem versionator
 
-DESCRIPTION="DataMapper core library"
+DESCRIPTION="DataMapper plugin for magical timestamps"
 HOMEPAGE="http://datamapper.org/"
 
 LICENSE="MIT"
@@ -21,7 +21,14 @@ SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~amd64"
 IUSE=""
 
-ruby_add_bdepend "doc? ( >=dev-ruby/yard-0.8.7 )"
-ruby_add_bdepend "test? ( dev-ruby/rspec:0 )"
+ruby_add_bdepend "doc? ( dev-ruby/jeweler >=dev-ruby/yard-0.8.7 )"
+ruby_add_bdepend "test? (
+	dev-ruby/dm-migrations:1.2
+	dev-ruby/jeweler
+	dev-ruby/rspec:0 )"
 
-ruby_add_rdepend ">=dev-ruby/addressable-2.3"
+ruby_add_rdepend "dev-ruby/dm-core:1.2"
+
+all_ruby_prepare() {
+	sed -i -e "s/gem 'jeweler'/#gem 'jeweler'/g" Rakefile || die
+}

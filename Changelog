@@ -21,3 +21,12 @@ virtual/{jdk,jre} get from java overlay
 dev-cpp/litesql,dev-nodejs/grunt from neurogeek overlay
 20131229_174000
 sys-apps/inetutils from overlay emery
+20140223_173800
+dev-ruby/dm-aggregates/
+dev-ruby/dm-constraints/
+dev-ruby/dm-serializer/
+dev-ruby/dm-timestamps/
+dev-ruby/dm-transactions/
+dev-ruby/dm-types/
+dev-ruby/dm-validations/
+from ruby overlay
