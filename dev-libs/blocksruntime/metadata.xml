@@ -7,5 +7,16 @@
 	</maintainer>
 	<longdescription>
 		The libBlocksRuntime.a library from compiler-rt. 
+		Just clang works.
+
+		Usage:
+		// a.c
+		#include <Block.h>
+		int main(int argc, char *argv[])
+		{
+			^{ return 42; }();
+		}
+
+		clang -fblocks -lBlocksRuntime a.c -o a.out
 	</longdescription>
 </pkgmetadata>
