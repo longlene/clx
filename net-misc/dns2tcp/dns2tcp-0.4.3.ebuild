@@ -16,7 +16,7 @@ IUSE=""
 src_install() {
 	emake install DESTDIR="${D}" || die "make install failed"
 	dodoc README
-	
+
 	insinto /etc
 	doins server/dns2tcpdrc
 	doins client/dns2tcprc
