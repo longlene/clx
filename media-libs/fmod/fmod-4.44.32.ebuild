@@ -8,7 +8,7 @@ MY_P=fmodapi$(delete_all_version_separators)linux
 
 DESCRIPTION="music and sound effects library, and a sound processing system"
 HOMEPAGE="http://www.fmod.org"
-SRC_URI="http://www.fmod.org/index.php/release/version/${MY_P}.tar.gz"
+SRC_URI="http://www.fmod.org/download/fmodex/api/linux/${MY_P}.tar.gz"
 
 LICENSE="BSD BSD-2 fmod"
 SLOT="1"
