@@ -1,0 +1,81 @@
+diff -Nur poco-1.5.2-all.orig/Data/ODBC/ODBC.make poco-1.5.2-all/Data/ODBC/ODBC.make
+--- poco-1.5.2-all.orig/Data/ODBC/ODBC.make	2013-09-19 02:13:14.000000000 +0800
++++ poco-1.5.2-all/Data/ODBC/ODBC.make	2014-04-15 18:10:08.245563990 +0800
+@@ -14,9 +14,9 @@
+ ifeq (0, $(shell test -d /usr/lib/$(OSARCH)-linux-gnu; echo $$?))
+ POCO_ODBC_LIB = /usr/lib/$(OSARCH)-linux-gnu
+ else ifeq (0, $(shell test -d /usr/lib64; echo $$?))
+-POCO_ODBC_LIB = /usr/lib64
++POCO_ODBC_LIB = /usr/$(LIBDIR)
+ else 
+-POCO_ODBC_LIB = /usr/lib
++POCO_ODBC_LIB = /usr/$(LIBDIR)
+ endif
+ endif
+ 
+@@ -50,14 +50,14 @@
+ ##
+ ## unixODBC
+ ##
+-else ifeq (0, $(shell test -e $(POCO_ODBC_LIB)/libodbc$(LIBLINKEXT); echo $$?))
++else ifeq (unixodbc, $(GENTOO_ODBC))
+ SYSLIBS += -lodbc -lodbcinst
+ COMMONFLAGS += -DPOCO_UNIXODBC
+ 
+ ##
+ ## iODBC
+ ##
+-else ifeq (0, $(shell test -e $(POCO_ODBC_LIB)/libiodbc$(LIBLINKEXT); echo $$?))
++else ifeq (unixodbc, $(GENTOO_ODBC))
+ SYSLIBS += -liodbc -liodbcinst
+ COMMONFLAGS += -DPOCO_IODBC -I/usr/include/iodbc
+ 
+diff -Nur poco-1.5.2-all.orig/Makefile poco-1.5.2-all/Makefile
+--- poco-1.5.2-all.orig/Makefile	2013-09-19 02:13:17.000000000 +0800
++++ poco-1.5.2-all/Makefile	2014-04-15 18:13:47.417561800 +0800
+@@ -37,7 +37,7 @@
+ 
+ install: libexecs
+ 	mkdir -p $(INSTALLDIR)/include/Poco
+-	mkdir -p $(INSTALLDIR)/lib
++	mkdir -p $(INSTALLDIR)/$(LIBDIR)
+ 	mkdir -p $(INSTALLDIR)/bin
+ 	for comp in $(COMPONENTS) ; do \
+ 		if [ -d "$(POCO_BASE)/$$comp/include" ] ; then \
+@@ -47,11 +47,11 @@
+ 			find $(POCO_BUILD)/$$comp/bin -perm -700 -type f -exec cp -f {} $(INSTALLDIR)/bin \; ; \
+ 		fi ; \
+ 	done
+-	find $(POCO_BUILD)/lib -name "libPoco*" -type f -exec cp -f {} $(INSTALLDIR)/lib \;
+-	find $(POCO_BUILD)/lib -name "libPoco*" -type l -exec cp -Rf {} $(INSTALLDIR)/lib \;
++	find $(POCO_BUILD)/$(LIBDIR) -name "libPoco*" -type f -exec cp -f {} $(INSTALLDIR)/$(LIBDIR) \;
++	find $(POCO_BUILD)/$(LIBDIR) -name "libPoco*" -type l -exec cp -Rf {} $(INSTALLDIR)/$(LIBDIR) \;
+ 
+-libexecs =  Foundation-libexec XML-libexec JSON-libexec Util-libexec Net-libexec Crypto-libexec NetSSL_OpenSSL-libexec Data-libexec Data/SQLite-libexec Data/ODBC-libexec Data/MySQL-libexec MongoDB-libexec Zip-libexec PageCompiler-libexec PageCompiler/File2Page-libexec
+-tests    =  Foundation-tests XML-tests JSON-tests Util-tests Net-tests Crypto-tests NetSSL_OpenSSL-tests Data-tests Data/SQLite-tests Data/ODBC-tests Data/MySQL-tests MongoDB-tests Zip-tests
++libexecs =  Foundation-libexec XML-libexec JSON-libexec Util-libexec Net-libexec Data-libexec Zip-libexec PageCompiler-libexec PageCompiler/File2Page-libexec
++tests    =  Foundation-tests XML-tests JSON-tests Util-tests Net-tests Data-tests Zip-tests
+ samples  =  Foundation-samples XML-samples JSON-samples Util-samples Net-samples Crypto-samples NetSSL_OpenSSL-samples Data-samples MongoDB-samples Zip-samples PageCompiler-samples
+ cleans   =  Foundation-clean XML-clean JSON-clean Util-clean Net-clean Crypto-clean NetSSL_OpenSSL-clean Data-clean Data/SQLite-clean Data/ODBC-clean Data/MySQL-clean MongoDB-clean Zip-clean PageCompiler-clean PageCompiler/File2Page-clean
+ 
+diff -Nur poco-1.5.2-all.orig/components poco-1.5.2-all/components
+--- poco-1.5.2-all.orig/components	2013-09-19 02:13:16.000000000 +0800
++++ poco-1.5.2-all/components	2014-04-15 18:07:16.544565706 +0800
+@@ -1,17 +1,10 @@
+-CppUnit
+ CppUnit/WinTestRunner
+ Foundation
+ XML
+ JSON
+ Util
+ Net
+-Crypto
+-NetSSL_OpenSSL
+ Data
+-Data/SQLite
+-Data/ODBC
+-Data/MySQL
+-MongoDB
+ Zip
+ PageCompiler
+ PageCompiler/File2Page
