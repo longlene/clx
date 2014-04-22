@@ -10,3 +10,4 @@ dev-lisp/blocky
 sys-devel/lldb
 =dev-ruby/mruby-9999
 #=dev-libs/poco-1.5.2
+=app-vim/neocomplete-9999

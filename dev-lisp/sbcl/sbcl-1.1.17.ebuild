@@ -1,13 +1,13 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lisp/sbcl/sbcl-1.1.8.ebuild,v 1.1 2013/06/18 19:03:29 grozin Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lisp/sbcl/sbcl-1.1.17.ebuild,v 1.1 2014/04/19 9:53:29 grozin Exp $
 
 EAPI=5
 inherit multilib eutils flag-o-matic pax-utils
 
 #same order as http://www.sbcl.org/platform-table.html
 BV_X86=1.0.58
-BV_AMD64=1.1.8
+BV_AMD64=1.1.16
 BV_PPC=1.0.28
 BV_SPARC=1.0.28
 BV_ALPHA=1.0.28
@@ -81,6 +81,10 @@ src_unpack() {
 src_prepare() {
 	epatch "${FILESDIR}"/gentoo-fix_install_man.patch
 	epatch "${FILESDIR}"/gentoo-fix_linux-os-c.patch
+	# bug #468482
+	epatch "${FILESDIR}"/concurrency-test.patch
+	# bug #486552
+	epatch "${FILESDIR}"/bsd-sockets-test.patch
 
 	# To make the hardened compiler NOT compile with -fPIE -pie
 	if gcc-specs-pie ; then

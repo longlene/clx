@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		*vimshell* is an extreme shell that doesn't depend on external shells but is written completely in pure Vim script. To be honest the implementation is not as mature as eshell yet. The most important characteristic of vimshell is that it can collaborate with other Vim plugins. Additionally, for example, vimshell also works on Windows where there are no good shells at all; note that you cannot use full set of vimshell features on Windows though. Furthermore, vimshell borrowed handy functionalities from other shells. Vimshell has built-in functionalities that you had to set up to enable if it's on zsh.
+	</longdescription>
+</pkgmetadata>
