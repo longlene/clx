@@ -6,5 +6,5 @@ PHEADERS="thread"
 DEPEND="dev-plan9/lib9"
 inherit plan9-libs
 
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 
