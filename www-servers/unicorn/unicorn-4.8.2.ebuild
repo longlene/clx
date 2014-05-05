@@ -10,7 +10,7 @@ RUBY_FAKEGEM_TASK_TEST=""
 
 inherit ruby-fakegem
 
-DESCRIPTION="\Unicorn is an HTTP server for Rack application"
+DESCRIPTION="Unicorn is an HTTP server for Rack application"
 HOMEPAGE="http://unicorn.bogomips.org"
 
 LICENSE="GPL-2"
