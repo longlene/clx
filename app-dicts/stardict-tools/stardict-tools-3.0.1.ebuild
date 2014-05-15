@@ -9,7 +9,7 @@ inherit eutils autotools
 IUSE="+editor +tools"
 DESCRIPTION="Stardict tools"
 HOMEPAGE="http://stardict.sourceforge.net/"
-SRC_URI="mirror://sourceforge/stardict/${P}.tar.bz2"
+SRC_URI="https://stardictproject.googlecode.com/files/stardict-tools-${PV}.tar.bz2"
 
 RESTRICT="test"
 LICENSE="GPL-2"

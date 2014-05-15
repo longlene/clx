@@ -10,15 +10,16 @@ RUBY_FAKEGEM_TASK_TEST=""
 
 inherit ruby-fakegem
 
-DESCRIPTION="A library that can manipulate with stardict dictionaries"
-HOMEPAGE="http://rubyforge.org/projects/rbstardict"
+DESCRIPTION="Ruby/Graphviz provides an interface to layout and generate images of directed graphs in a variety of formats (PostScript, PNG, etc.) using GraphViz"
+HOMEPAGE="http://github.com/glejeune/Ruby-Graphviz"
 
-LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~x86"
+LICENSE="as-is"
+KEYWORDS="~amd64 ~x86"
 IUSE="test"
 SLOT="0"
 
-RDEPEND="${RDEPEND}"
+RDEPEND="${RDEPEND}
+media-gfx/graphviz"
 
 #all_ruby_prepare() {
 #	# Existing metadata causes a crash in jruby, so use our own.
