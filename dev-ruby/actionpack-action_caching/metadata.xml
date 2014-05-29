@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Action caching for Action Pack (removed from core in Rails 4.0).
+
+		NOTE: It will continue to be officially maintained until Rails 4.1.
+	</longdescription>
+</pkgmetadata>
