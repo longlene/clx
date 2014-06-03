@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer>
+<name>loong0</name>
+<email>longlene@gmail.com</email>
+<tool>gbuild.rb</tool>
+</maintainer>
+<longdescription>
+Releasy helps to make Ruby application releases simpler, by creating and archiving source folders, Windows folders,
+standalone executables, installers and OS X app bundles.
+
+</longdescription>
+</pkgmetadata>

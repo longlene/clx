@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer>
+<name>loong0</name>
+<email>longlene@gmail.com</email>
+<tool>gbuild.rb</tool>
+</maintainer>
+<longdescription>
+CocoaPods manages library dependencies for your Xcode project.
+
+You specify the dependencies for your project in one easy text file. CocoaPods resolves dependencies between libraries, fetches source code for the dependencies, and creates and maintains an Xcode workspace to build your project.
+
+Ultimately, the goal is to improve discoverability of, and engagement in, third party open-source libraries, by creating a more centralized ecosystem.
+</longdescription>
+</pkgmetadata>

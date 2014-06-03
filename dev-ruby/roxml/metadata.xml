@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer>
+<name>loong0</name>
+<email>longlene@gmail.com</email>
+<tool>gbuild.rb</tool>
+</maintainer>
+<longdescription>
+ROXML is a Ruby library designed to make it easier for Ruby developers to work with XML.
+Using simple annotations, it enables Ruby classes to be mapped to XML. ROXML takes care
+of the marshalling and unmarshalling of mapped attributes so that developers can focus on
+building first-class Ruby classes. As a result, ROXML simplifies the development of
+RESTful applications, Web Services, and XML-RPC.
+
+</longdescription>
+</pkgmetadata>
