@@ -3,9 +3,9 @@
 # $Header: $
 
 EAPI="2"
-USE_RUBY="ruby18 ree18 ruby19 jruby"
+USE_RUBY="ree18 ruby19 ruby20 ruby21 jruby"
 
-inherit ruby-ng git
+inherit ruby-ng git-2
 
 DESCRIPTION="Ruby FFI bindings for zeromq"
 HOMEPAGE="http://www.zeromq.org/bindings:ruby-ffi"
@@ -19,7 +19,7 @@ LICENSE="MIT"
 RDEPEND="${DEPEND}
 		>=dev-ruby/ffi-0.6.3"
 DEPEND=">=dev-ruby/bones-3.4.3
-		dev-libs/zeromq"
+		net-libs/zeromq"
 
 src_prepare() {
 	# Dirty, dirty hack until ruby-ng is hopefully working with git eclass.
