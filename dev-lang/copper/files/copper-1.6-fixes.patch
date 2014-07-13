@@ -1,0 +1,12 @@
+diff -Nurwp copper-1.6-orig/Makefile copper-1.6-new/Makefile
+--- copper-1.6-orig/Makefile	2012-09-21 00:54:16.000000000 +0800
++++ copper-1.6-new/Makefile	2014-06-29 09:09:43.662987308 +0800
+@@ -55,7 +55,7 @@ boot64: $(OUTDIR)/io.o
+ 	@echo Compiling obj...
+ 	llc -filetype=obj boot/copper-llvm-unix-64.bc -o $(OUTDIR)/copper-llvm.o
+ 	@echo Linking...
+-	g++ $(LFLAGS) $(OUTDIR)/copper-llvm.o $(OUTDIR)/io.o -lLLVMBitWriter -lLLVMCore -lLLVMSupport -lpthread -ldl -lm -o $(OUTDIR)/copper-llvm
++	g++ $(LFLAGS) $(OUTDIR)/copper-llvm.o $(OUTDIR)/io.o -lncurses -lLLVMBitWriter -lLLVMCore -lLLVMSupport -lpthread -ldl -lm -o $(OUTDIR)/copper-llvm
+ 	
+ $(OUTDIR)/copper-coff: $(OUTDIR)/copper-coff.o $(OUTDIR)/io.o
+ 	@echo Linking...

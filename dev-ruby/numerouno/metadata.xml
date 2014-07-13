@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer>
+<name>loong0</name>
+<email>longlene@gmail.com</email>
+<tool>gbuild.rb</tool>
+</maintainer>
+<longdescription>
+English natural language parser for numbers.
+
+* Parse 'five' to return 5
+* Parse 'seven hundred and fifty two billion, four hundred and twenty million, sixty thousand and forty two' to return 752,420,060,042
+* Parse 'siebenundzwanzig' to have it fail because it doesn't recognise German.
+
+Recognises numbers in the trillions.
+</longdescription>
+</pkgmetadata>

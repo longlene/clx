@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/sf-xpaint/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 RDEPEND=">=media-libs/tiff-3.2

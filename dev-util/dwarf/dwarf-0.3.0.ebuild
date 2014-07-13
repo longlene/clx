@@ -3,7 +3,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 # $Id: dwarf-0.3.0.ebuild 60 2011-01-24 10:33:01Z xnando $
-	
+
 # Please note that this file is still experimental !
 #
 # if you wonder how to use this ebuild :
@@ -43,44 +43,44 @@ KEYWORDS="x86 ppc ~ppc64 amd64 ~ia64"
 IUSE=""
 
 DEPEND="sys-libs/readline
-        sys-devel/flex
-        sys-devel/bison"
+sys-devel/flex
+sys-devel/bison"
 
 RDEPEND=""
 
 src_unpack() {
-        unpack ${A}
-        cd ${S}
+	unpack ${A}
+	cd ${S}
 }
 
 src_compile() {
-        # Let autoconf do its job and then fix things to build fbida
-        # according to our specifications
+	# Let autoconf do its job and then fix things to build fbida
+	# according to our specifications
 
-        CONFIGURE_FLAGS=
-	
+	CONFIGURE_FLAGS=
+
 	econf $CONFIGURE_FLAGS ||  die "econf failed for ${P}"
 	emake || die "emake failed for ${P}"
-	}
-	
-	src_install() {
+}
+
+src_install() {
 	# this is wrong : gonna discover why
 	#       make install || die
-	
+
 	# this is good : gonna discover why
-	        make \
-	                DESTDIR=${D} \
-	                prefix=/usr \
-	                install || die
-	
+	make \
+		DESTDIR=${D} \
+		prefix=/usr \
+		install || die
+
 	#       if ! use pdf; then
 	#               rm -f ${D}/usr/bin/fimgs ${D}/usr/share/man/man1/fimgs.1
 	#       fi
-	}
-	
-	# more docs for lamers :P :
-	# www.gentoo.org/devel/handbook.xml
-	# http://linuxreviews.org/gentoo/ebuilds
-	# man 5 ebuild
-	#
-	
+}
+
+# more docs for lamers :P :
+# www.gentoo.org/devel/handbook.xml
+# http://linuxreviews.org/gentoo/ebuilds
+# man 5 ebuild
+#
+

@@ -1,0 +1,155 @@
+--- a/deps/eleveldb/rebar.config	2013-01-30 01:06:04.000000000 +0100
++++ b/deps/eleveldb/rebar.config	2013-08-02 12:40:30.188055240 +0200
+@@ -5,9 +5,9 @@
+ 
+ {port_env, [
+ 	     %% Make sure to set -fPIC when compiling leveldb
+-             {"CFLAGS", "$CFLAGS -Wall -O3 -fPIC"},
+-             {"CXXFLAGS", "$CXXFLAGS -Wall -O3 -fPIC"},
+-             {"DRV_CFLAGS", "$DRV_CFLAGS -O3 -Wall -I c_src/leveldb/include"},
++             {"CFLAGS", "$CFLAGS -fPIC"},
++             {"CXXFLAGS", "$CXXFLAGS -fPIC"},
++             {"DRV_CFLAGS", "$DRV_CFLAGS -I c_src/leveldb/include"},
+              {"DRV_LDFLAGS", "$DRV_LDFLAGS c_src/leveldb/libleveldb.a c_src/system/lib/libsnappy.a -lstdc++"}
+              ]}.
+
+--- a/deps/eleveldb/c_src/leveldb/Makefile	2013-08-14 22:24:55.000000000 +0000
++++ b/deps/eleveldb/c_src/leveldb/Makefile	2013-08-19 14:35:42.850310464 +0000
+@@ -9,9 +9,10 @@
+ # Uncomment exactly one of the lines labelled (A), (B), and (C) below
+ # to switch between compilation modes.
+ 
+-OPT ?= -O2 -g -DNDEBUG    # (A) Production use (optimized mode)
++# OPT ?= -O2 -g -DNDEBUG    # (A) Production use (optimized mode)
+ # OPT ?= -g2              # (B) Debug mode, w/ full line-level debugging symbols
+ # OPT ?= -O2 -g2 -DNDEBUG # (C) Profiling mode: opt, but w/debugging symbols
++OPT ?=                    # (D) Honor system flags mode
+ #-----------------------------------------------
+ 
+ # detect what platform we're building on
+ 
+--- a/deps/eleveldb/c_src/snappy-1.0.4/configure	2011-09-15 21:29:20.000000000 +0200
++++ b/deps/eleveldb/c_src/snappy-1.0.4/configure	2013-08-08 12:10:58.335772573 +0200
+@@ -3930,13 +3930,13 @@
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS=
+   else
+     CFLAGS="-g"
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=
+   else
+     CFLAGS=
+   fi
+@@ -10934,13 +10934,13 @@
+   CXXFLAGS=$ac_save_CXXFLAGS
+ elif test $ac_cv_prog_cxx_g = yes; then
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
++    CXXFLAGS=
+   else
+     CXXFLAGS="-g"
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS=
+   else
+     CXXFLAGS=
+   fi
+@@ -11319,13 +11319,13 @@
+   CXXFLAGS=$ac_save_CXXFLAGS
+ elif test $ac_cv_prog_cxx_g = yes; then
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
++    CXXFLAGS=
+   else
+     CXXFLAGS="-g"
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS=
+   else
+     CXXFLAGS=
+   fi
+
+--- a/deps/eleveldb/c_src/build_deps.sh	2013-01-30 01:06:04.000000000 +0100
++++ b/deps/eleveldb/c_src/build_deps.sh	2013-08-08 12:26:50.878780564 +0200
+@@ -56,10 +56,9 @@
+     *)
+         if [ ! -d snappy-$SNAPPY_VSN ]; then
+             tar -xzf snappy-$SNAPPY_VSN.tar.gz
+-            (cd snappy-$SNAPPY_VSN && ./configure --prefix=$BASEDIR/system --with-pic)
+         fi
+ 
+-        (cd snappy-$SNAPPY_VSN && $MAKE && $MAKE install)
++        (cd snappy-$SNAPPY_VSN && ./configure --prefix=$BASEDIR/system --with-pic && $MAKE && $MAKE install)
+ 
+         export CFLAGS="$CFLAGS -I $BASEDIR/system/include"
+         export CXXFLAGS="$CXXFLAGS -I $BASEDIR/system/include"
+
+--- a/deps/erlang_js/c_src/Makefile	2013-01-29 21:13:01.000000000 +0100                
++++ b/deps/erlang_js/c_src/Makefile	2013-08-08 11:38:12.687204467 +0200
+@@ -25,20 +25,18 @@
+ js: $(LIB_DIR)/libjs.a
+ 
+ $(LIB_DIR)/libjs.a: $(LIB_DIR)/libnspr4.a
+-	$(GUNZIP) -c js-$(SMONKEY_VER).tar.gz | $(TAR) xf -
+ 	@for I in patches/js-*.patch; do \
+ 		($(PATCH) -p1 < $${I} || echo "Skipping patch"); \
+ 	done
+-	@$(MAKE) -C $(JS_DIR)/src BUILD_OPT=1 JS_DIST=$(SYSTEM_DIR) \
++	@$(MAKE) -C $(JS_DIR)/src JS_DIST=$(SYSTEM_DIR) \
+ 		JS_THREADSAFE=1 \
+ 		XCFLAGS="-DHAVE_VA_COPY -DVA_COPY=va_copy $(CFLAGS)" \
+-		XLDFLAGS="$(LDFLAGS)" \
+ 		-f Makefile.ref
+ 	@mkdir $(INC_DIR)/js
+ 	@cp $(JS_DIR)/src/*.h $(INC_DIR)/js
+ 	@cp $(JS_DIR)/src/*.tbl $(INC_DIR)/js
+-	@cp $(JS_DIR)/src/*_OPT.OBJ/*.h $(INC_DIR)/js
+-	@cp $(JS_DIR)/src/*_OPT.OBJ/libjs.a $(LIB_DIR)
++	@cp $(JS_DIR)/src/*_DBG.OBJ/*.h $(INC_DIR)/js
++	@cp $(JS_DIR)/src/*_DBG.OBJ/libjs.a $(LIB_DIR)
+ 
+ $(LIB_DIR)/libnspr4.a:
+ 	$(GUNZIP) -c nsprpub-$(NSPR_VER).tar.gz | $(TAR) xf -
+@@ -46,7 +44,7 @@
+ 		($(PATCH) -p1 < $${I} || echo "Skipping patch"); \
+ 	done
+ 	(cd $(NSPR_DIR) && \
+-	 ./configure --disable-debug --enable-optimize \
++	 ./configure --disable-debug \
+                      --prefix=$(SYSTEM_DIR) $(NSPR_SIXTYFOUR) && \
+          $(MAKE) all install)
+
+--- a/deps/erlang_js/c_src/js/src/config.mk	2008-03-12 15:36:06.000000000 +0100
++++ b/deps/erlang_js/c_src/js/src/config.mk	2013-08-08 11:27:26.308232045 +0200
+@@ -122,8 +122,8 @@
+ INTERP_OPTIMIZER = -O2 -GL
+ LDFLAGS    += -LTCG
+ else
+-OPTIMIZER  = -Os
+-INTERP_OPTIMIZER = -Os
++OPTIMIZER  =
++INTERP_OPTIMIZER =
+ endif
+ DEFINES    += -UDEBUG -DNDEBUG -UDEBUG_$(USER)
+ OBJDIR_TAG = _OPT
+@@ -132,8 +132,8 @@
+ OPTIMIZER  = -Zi
+ INTERP_OPTIMIZER = -Zi
+ else
+-OPTIMIZER  = -g3
+-INTERP_OPTIMIZER = -g3
++OPTIMIZER  =
++INTERP_OPTIMIZER =
+ endif
+ DEFINES    += -DDEBUG -DDEBUG_$(USER)
+ OBJDIR_TAG = _DB

@@ -4,7 +4,7 @@ EAPI=4
 
 DESCRIPTION="A micro web framework for Common Lisp based on Clack"
 HOMEPAGE="http://fukamachi.github.io/caveman/"
-SRC_URI="https://github.com/fukamachi/caveman/archive/${PV}.tar.gz -> ${P}"
+SRC_URI="https://github.com/fukamachi/caveman/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

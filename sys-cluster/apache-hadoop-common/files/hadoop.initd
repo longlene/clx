@@ -1,0 +1,75 @@
+#!/sbin/runscript
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+extra_commands="format"
+
+DAEMON=${SVCNAME/hadoop-}
+
+depend() {
+	use dns net
+}
+
+chk_initd() {
+	if [ "${DAEMON}" == "${SVCNAME}" ]; then
+		eerror "You should not run this init script, use the provided aliases"
+		eend 1
+		return 1
+	fi
+}
+
+init_env_vars() {
+	export HADOOP_PREFIX="/opt/hadoop"
+
+	# source hadoop-env.sh
+	if test -f /etc/hadoop/hadoop-env.sh; then
+		. /etc/hadoop/hadoop-env.sh
+	fi
+
+	# setup secure dn user for datanodes
+	if [ -n "$HADOOP_SECURE_DN_USER" ] && [ "${DAEMON}" == "datanode" ]; then
+		DN_USER="root"
+		IDENT_USER=${HADOOP_SECURE_DN_USER}
+	elif [ "${DAEMON}" == "jobtracker" ] || [ "${DAEMON}" == "tasktracker" ] || [ "${DAEMON}" == "historyserver" ]; then
+		DN_USER="mapred"
+		IDENT_USER=${DN_USER}
+	else
+		DN_USER="hdfs"
+		IDENT_USER=${DN_USER}
+	fi
+
+	# check for the required paths
+	checkpath -d -m 0770 -o root:hadoop "${HADOOP_PID_DIR}"
+}
+
+start() {
+	chk_initd || exit 1
+	ebegin "Starting Apache Hadoop ${DAEMON}"
+	init_env_vars
+	start-stop-daemon --start --quiet \
+		--pidfile ${HADOOP_PID_DIR}/hadoop-${IDENT_USER}-${DAEMON}.pid \
+		-u ${DN_USER} -x ${HADOOP_PREFIX}/sbin/hadoop-daemon.sh -- \
+		--config ${HADOOP_CONF_DIR} start ${DAEMON}
+	eend $?
+}
+
+stop() {
+	chk_initd || exit 1
+	ebegin "Stopping Apache Hadoop ${DAEMON}"
+	init_env_vars
+	start-stop-daemon --stop --quiet \
+		--pidfile ${HADOOP_PID_DIR}/hadoop-${IDENT_USER}-${DAEMON}.pid
+	eend $?
+}
+
+format() {
+	if [ "${DAEMON}" == "namenode" ]; then
+		ebegin "Formatting Apache Hadoop ${DAEMON}"
+		init_env_vars
+		su ${DN_USER} --preserve-environment -- ${HADOOP_PREFIX}/bin/hadoop --config ${HADOOP_CONF_DIR} namenode -format
+	else
+		eerror "The format command is only available for the namenode daemon"
+		eend 1
+	fi
+}

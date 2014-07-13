@@ -34,7 +34,7 @@ CLSYSTEMROOT="${ROOT%/}"/usr/share/common-lisp/systems
 # Default package name. To override, set these after inheriting this eclass.
 CLPACKAGE="${PN}"
 
-RDEPEND="virtual/commonlisp"
+#RDEPEND="virtual/commonlisp"
 
 EXPORT_FUNCTIONS src_compile src_install
 

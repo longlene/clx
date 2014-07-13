@@ -22,5 +22,4 @@ src_install() {
 
 	insinto /usr/include/
 	doins -r include/{mrbconf.h,mruby,mruby.h}
-	exeinto /usr/include
 }
