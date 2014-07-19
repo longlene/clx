@@ -7,6 +7,6 @@
 			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
-Textile parser for Ruby
+libsnappy binding for Ruby
 		</longdescription>
 	</pkgmetadata>

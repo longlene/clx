@@ -9,8 +9,8 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Textile parser for Ruby"
-HOMEPAGE="http://redcloth.org"
+DESCRIPTION="Ruby implementation for send/expect interaction"
+HOMEPAGE="https://github.com/abates/ruby_expect"
 
 LICENSE=""
 SLOT="0"
