@@ -4,19 +4,18 @@
 
 EAPI="5"
 
-EGIT_REPO_URI="https://github.com/gitlabhq/gitlab-shell.git"
-EGIT_COMMIT="v${PV}"
-USE_RUBY="ruby19 ruby20 ruby21"
+USE_RUBY="ruby20"
 
 inherit eutils git-2 ruby-ng user
 
 DESCRIPTION="GitLab Shell is a free SSH access and repository management application"
 HOMEPAGE="https://github.com/gitlabhq/gitlab-shell"
+SRC_URI="https://github.com/gitlabhq/gitlab-shell/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="$(ruby_implementation_depend ruby19 '=' -1.9.3*)[yaml]
+DEPEND="$(ruby_implementation_depend ruby20 '=' -2.0.0*)[yaml]
 	dev-vcs/git
 	virtual/ssh
 	dev-db/redis"
