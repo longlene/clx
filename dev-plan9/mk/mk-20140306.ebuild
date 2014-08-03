@@ -26,5 +26,5 @@ src_compile() {
 
 src_install() {
 	dobin ${S}/bin/mk || die "dobin failed!"
-	doman ${S}/man/man1/mk.1 || die "dobin failed!"
+	doman ${S}/man/man1/mk.1 || die "doman failed!"
 }

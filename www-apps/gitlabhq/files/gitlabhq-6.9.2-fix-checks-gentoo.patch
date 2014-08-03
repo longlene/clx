@@ -1,0 +1,11 @@
+--- lib/tasks/gitlab/check.rake.orig	2013-11-16 21:51:59.570000000 +0100
++++ lib/tasks/gitlab/check.rake	2013-11-16 21:52:40.900000000 +0100
+@@ -20,8 +20,6 @@
+       check_gitlab_config_not_outdated
+       check_log_writable
+       check_tmp_writable
+-      check_init_script_exists
+-      check_init_script_up_to_date
+       check_projects_have_namespace
+       check_satellites_exist
+       check_redis_version
