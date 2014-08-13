@@ -1,9 +1,9 @@
-clx -- An Overlay For Funtoo/Gentoo-like Linux
+clx -- Overlay For Funtoo/Gentoo Linux
 ==============================================
 
 ## DESCRIPTION
 
-This overlay stores some ebuilds for lisp developing and other interesting ebuilds.
+This overlay stores some ebuilds for Common Lisp and Ruby developer and other interesting ebuilds.
 
 some ebuilds are collected from the Internet and others are wrote by myself.
 
