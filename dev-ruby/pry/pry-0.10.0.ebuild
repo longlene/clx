@@ -47,7 +47,7 @@ all_ruby_prepare() {
 	sed -e 's#bundler/setup#bacon#' -e "1irequire 'mocha/api'\ " -e '/Bundler/d' -e "2irequire 'json/add/ostruct' " -i spec/helper.rb || die
 }
 
-#each_ruby_test() {
-#	${RUBY} -S bacon -Ispec -Ilib -q spec/*_spec.rb spec/*/*_spec.rb || die
-#}
+each_ruby_test() {
+	${RUBY} -S bacon -Ispec -Ilib -q spec/*_spec.rb spec/*/*_spec.rb || die
+}
 

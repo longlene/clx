@@ -1,8 +1,7 @@
 # Copyright 1999-2013 Gentoo Foundation
 
 EAPI=4
-#USE_RUBY="ruby19 ruby20 ree18 jruby"
-USE_RUBY="ruby19"
+USE_RUBY="ruby19 ruby20 ree18 jruby ruby21"
 
 RUBY_FAKEGEM_TASK_DOC="rdoc"
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.rdoc README.rdoc"
@@ -21,7 +20,7 @@ SLOT="0"
 
 RDEPEND="${RDEPEND}
 >=dev-ruby/columnize-0.3.1
->dev-ruby/debugger-linecache-1.2.0
+>=dev-ruby/debugger-linecache-1.2.0
 >dev-ruby/debugger-ruby_core_source-1.2.4"
 
 #all_ruby_prepare() {

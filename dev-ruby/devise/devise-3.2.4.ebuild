@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/bcrypt-3.0"
+ruby_add_rdepend ">=dev-ruby/bcrypt-ruby-3.0"
 ruby_add_rdepend ">=dev-ruby/orm_adapter-0.1"
 ruby_add_rdepend ">=dev-ruby/railties-3.2.6"
 ruby_add_rdepend ">=dev-ruby/thread_safe-0.1"

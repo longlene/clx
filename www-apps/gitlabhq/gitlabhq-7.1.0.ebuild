@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/gitlabhq/gitlabhq"
 SRC_URI="https://github.com/gitlabhq/gitlabhq/archive/v$PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
-SLOT=$(get_version_component_range 1-2)
+SLOT="7.1"
 KEYWORDS="~amd64 ~x86"
 IUSE="memcached mysql +postgres +unicorn"
 
@@ -32,14 +32,84 @@ GEMS_DEPEND="
 	dev-ruby/rails
 	dev-ruby/rails_autolink
 	dev-ruby/default_value_for
+	dev-ruby/devise
+	dev-ruby/devise-async
+	dev-ruby/omniauth
+	dev-ruby/omniauth-twitter
+	dev-ruby/omniauth-google-oauth2
+	dev-ruby/omniauth-github
+	dev-ruby/gitlab_git
+	dev-ruby/gitlab-grack
+	dev-ruby/gitlab_omniauth-ldap
+	dev-ruby/gollum-lib
+	dev-ruby/gitlab-linguist
+	dev-ruby/grape
+	dev-ruby/grape-entity
+	dev-ruby/rack-cors
+	dev-ruby/stamp
+	dev-ruby/enumerize
+	dev-ruby/kaminari
+	dev-ruby/haml-rails
+	dev-ruby/carrierwave
+	dev-ruby/dropzonejs-rails
+	dev-ruby/fog
+	dev-ruby/unf
+	dev-ruby/six
+	dev-ruby/seed-fu
+	dev-ruby/redcarpet
+	dev-ruby/github-markup
+	dev-ruby/org-ruby
+	dev-ruby/diffy
+	dev-ruby/asciidoctor
+	unicorn? ( dev-ruby/unicorn-worker-killer )
+	dev-ruby/state_machine
+	dev-ruby/acts-as-taggable-on
+	dev-ruby/slim
+	dev-ruby/sinatra
+	dev-ruby/sidekiq
+	dev-ruby/httparty
+	dev-ruby/colored
+	dev-ruby/settingslogic
+	dev-ruby/foreman
+	dev-ruby/version_sorter
+	dev-ruby/redis-rails
+	dev-ruby/tinder
+	dev-ruby/hipchat
+	dev-ruby/gitlab-flowdock-git-hook
+	dev-ruby/gemnasium-gitlab-service
+	dev-ruby/slack-notifier
+	dev-ruby/d3_rails
+	dev-ruby/underscore-rails
+	dev-ruby/sanitize
+	dev-ruby/rack-attack
+	dev-ruby/ace-rails-ap
+	dev-ruby/semantic-ui-sass
+	dev-ruby/sass-rails
+	dev-ruby/coffee-rails
+	dev-ruby/uglifier
+	dev-ruby/therubyracer
+	dev-ruby/turbolinks
+	dev-ruby/jquery-turbolinks
+	dev-ruby/select2-rails
+	dev-ruby/jquery-atwho-rails
+	dev-ruby/jquery-rails
+	dev-ruby/jquery-ui-rails
+	dev-ruby/jquery-scrollto-rails
+	dev-ruby/raphael-rails
+	dev-ruby/bootstrap-sass
+	dev-ruby/font-awesome-rails
+	dev-ruby/gitlab_emoji
+	dev-ruby/gon
+	dev-ruby/nprogress-rails
+	dev-ruby/request_store
 	dev-libs/icu
 	dev-libs/libxml2
 	dev-libs/libxslt
 	dev-util/ragel
 	dev-libs/yajl
 	net-libs/nodejs
-	postgres? ( dev-db/postgresql-base )
-	mysql? ( virtual/mysql )
+	postgres? ( dev-ruby/pg dev-db/postgresql-base )
+	mysql? ( dev-ruby/mysql2 virtual/mysql )
 	memcached? ( net-misc/memcached )"
 DEPEND="${GEMS_DEPEND}
 	$(ruby_implementation_depend ruby20 '=' -2.0.0*)[readline,ssl]
@@ -338,25 +408,25 @@ pkg_config() {
 		su -l ${GIT_USER} -s /bin/sh -c "
 		export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8
 		cd ${DEST_DIR}
-			${BUNDLE} exec rake cache:clear RAILS_ENV=production" \
-				|| die "failed to run cache:clear"
+		${BUNDLE} exec rake cache:clear RAILS_ENV=production" \
+			|| die "failed to run cache:clear"
 
-			einfo "Clear and precompile assets ..."
-			su -l ${GIT_USER} -s /bin/sh -c "
-			export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8
-			cd ${DEST_DIR}
-			${BUNDLE} exec rake assets:clean RAILS_ENV=production
-			${BUNDLE} exec rake assets:precompile RAILS_ENV=production" \
-				|| die "failed to run assets:precompile"
+		einfo "Clear and precompile assets ..."
+		su -l ${GIT_USER} -s /bin/sh -c "
+		export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8
+		cd ${DEST_DIR}
+		${BUNDLE} exec rake assets:clean RAILS_ENV=production
+		${BUNDLE} exec rake assets:precompile RAILS_ENV=production" \
+			|| die "failed to run assets:precompile"
 
 	else
 
 		einfo "Initializing database ..."
 		su -l ${GIT_USER} -s /bin/sh -c "
-			export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8
-			cd ${DEST_DIR}
-			${BUNDLE} exec rake gitlab:setup RAILS_ENV=${RAILS_ENV}" \
-				|| die "failed to run rake gitlab:setup"
+		export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8
+		cd ${DEST_DIR}
+		${BUNDLE} exec rake gitlab:setup RAILS_ENV=${RAILS_ENV}" \
+			|| die "failed to run rake gitlab:setup"
 	fi
 
 	einfo "You might want to run the following in order to check your application status:"

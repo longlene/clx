@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<name>loong0</name>
+			<email>longlene@gmail.com</email>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+Net::LDAP for Ruby (also called net-ldap) implements client access for the
+Lightweight Directory Access Protocol (LDAP), an IETF standard protocol for
+accessing distributed directory services
+		</longdescription>
+	</pkgmetadata>

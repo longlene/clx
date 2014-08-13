@@ -1,0 +1,47 @@
+--- a/configure
++++ b/configure
+@@ -149,7 +149,7 @@ createVariables()
+ 		configuration="Release_gcc_unicode"
+ 		ext=u
+ 		debug_flag=""
+-		optimization=" -O3 -DREGEXP_UNICODE "
++		optimization=" -DREGEXP_UNICODE ${CFLAGS} "
+         # In release builds, unless otherwise instructed, tell wx to disable asserts
+         asserts="-DNDEBUG"
+         if [ "$asserts_specified" = "on" ]; then
+@@ -353,7 +353,7 @@ createCodeLiteCppcheckMakefile ()
+ 	else
+ 		configuration="Release"
+ 		debug_flag=""
+-		optimization=" -O2 "
++		optimization="${CFLAGS}"
+         # In release builds, unless otherwise instructed, tell wx to disable asserts
+         asserts="-DNDEBUG"
+         if [ "$asserts_specified" = "on" ]; then
+@@ -448,7 +448,7 @@ createCodeLiteClangMakefile()
+ 	else
+ 		configuration="Release"
+ 		debug_flag=""
+-		optimization=" -O2 "
++		optimization="${CFLAGS}"
+         # In release builds, unless otherwise instructed, tell wx to disable asserts
+         asserts="-DNDEBUG"
+         if [ "$asserts_specified" = "on" ]; then
+@@ -559,7 +559,7 @@ createCodeLiteGCCMakefile ()
+ 	else
+ 		configuration="Release"
+ 		debug_flag=""
+-		optimization=" -O2 "
++		optimization="${CFLAGS}"
+         # In release builds, unless otherwise instructed, tell wx to disable asserts
+         asserts="-DNDEBUG"
+         if [ "$asserts_specified" = "on" ]; then
+@@ -672,7 +672,7 @@ createCodeLiteIndexerMakefile ()
+ 	else
+ 		configuration="Release"
+ 		debug_flag=""
+-		optimization=" -O2 "
++		optimization="${CFLAGS}"
+         # In release builds, unless otherwise instructed, tell wx to disable asserts
+         asserts="-DNDEBUG"
+         if [ "$asserts_specified" = "on" ]; then
