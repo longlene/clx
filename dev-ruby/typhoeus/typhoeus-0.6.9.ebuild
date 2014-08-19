@@ -19,3 +19,6 @@ IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/ethon-0.7.1"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

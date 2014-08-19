@@ -144,9 +144,9 @@ pkg_setup() {
 	enewuser ${GIT_USER} -1 -1 ${DEST_DIR} "$GIT_GROUP}"
 }
 
-all_ruby_unpack() {
-	git-2_src_unpack
-}
+#all_ruby_unpack() {
+#	git-2_src_unpack
+#}
 
 each_ruby_prepare() {
 
@@ -194,6 +194,9 @@ each_ruby_prepare() {
 		-e '/^gem "thin"/ s/$/, group: :thin/' \
 		-e '/^gem "unicorn"/ s/$/, group: :unicorn/' \
 		Gemfile || die "failed to modify Gemfile"
+	sed -i -e '/i18n/ s/(0.6.9)//' Gemfile.lock
+	sed -i -e '/tzinfo/ s/(1.2.1)//' Gemfile.lock
+	sed -i -e '/activesupport/ s/(4.1.1)//' Gemfile.lock
 
 	# change cache_store
 	if use memcached; then
@@ -266,18 +269,18 @@ each_ruby_install() {
 
 	cd "${D}/${dest}"
 
-	local without="development test thin"
-	local flag; for flag in memcached mysql postgres unicorn; do
-		without+="$(use $flag || echo ' '$flag)"
-	done
-	local bundle_args="--deployment ${without:+--without ${without}}"
+	#local without="development test thin"
+	#local flag; for flag in memcached mysql postgres unicorn; do
+	#	without+="$(use $flag || echo ' '$flag)"
+	#done
+	#local bundle_args="--deployment ${without:+--without ${without}}"
 
-	# Fix invalid ldflags for charlock_holmes, 
-	# see https://github.com/brianmario/charlock_holmes/issues/32
-	${RUBY} /usr/bin/bundle config build.charlock_holmes --with-ldflags='-L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined -lz -licuuc'
+	## Fix invalid ldflags for charlock_holmes, 
+	## see https://github.com/brianmario/charlock_holmes/issues/32
+	#${RUBY} /usr/bin/bundle config build.charlock_holmes --with-ldflags='-L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined -lz -licuuc'
 
-	einfo "Running bundle install ${bundle_args} ..."
-	${RUBY} /usr/bin/bundle install ${bundle_args} || die "bundler failed"
+	#einfo "Running bundle install ${bundle_args} ..."
+	#${RUBY} /usr/bin/bundle install ${bundle_args} || die "bundler failed"
 
 	## Clean ##
 
@@ -288,7 +291,7 @@ each_ruby_install() {
 
 	# fix permissions
 	fowners -R ${GIT_USER}:${GIT_GROUP} "${dest}" "${conf}" "${temp}" "${logs}"
-	fperms +x script/rails
+	#fperms +x script/rails
 	fperms o+Xr "${temp}" # Let nginx access the unicorn socket
 
 	## RC scripts ##
@@ -381,7 +384,7 @@ pkg_config() {
 
 	local RAILS_ENV=${RAILS_ENV:-production}
 	local RUBY=${RUBY:-ruby20}
-	local BUNDLE="${RUBY} /usr/bin/bundle"
+	#local BUNDLE="${RUBY} /usr/bin/bundle"
 
 	# Ask user whether this is the first installation
 	einfon "Do you want to upgrade an existing installation? [Y|n] "
@@ -400,23 +403,23 @@ pkg_config() {
 		su -l ${GIT_USER} -s /bin/sh -c "
 		export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8
 		cd ${DEST_DIR} 
-		${BUNDLE} exec rake db:migrate RAILS_ENV=production
-		${BUNDLE} exec rake gitlab:satellites:create RAILS_ENV=production" \
+		rake db:migrate RAILS_ENV=production
+		rake gitlab:satellites:create RAILS_ENV=production" \
 			|| die "failed to migrate database."
 
 		einfo "Clear redis cache ..."
 		su -l ${GIT_USER} -s /bin/sh -c "
 		export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8
 		cd ${DEST_DIR}
-		${BUNDLE} exec rake cache:clear RAILS_ENV=production" \
+		rake cache:clear RAILS_ENV=production" \
 			|| die "failed to run cache:clear"
 
 		einfo "Clear and precompile assets ..."
 		su -l ${GIT_USER} -s /bin/sh -c "
 		export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8
 		cd ${DEST_DIR}
-		${BUNDLE} exec rake assets:clean RAILS_ENV=production
-		${BUNDLE} exec rake assets:precompile RAILS_ENV=production" \
+		rake assets:clean RAILS_ENV=production
+		rake assets:precompile RAILS_ENV=production" \
 			|| die "failed to run assets:precompile"
 
 	else
@@ -425,13 +428,13 @@ pkg_config() {
 		su -l ${GIT_USER} -s /bin/sh -c "
 		export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8
 		cd ${DEST_DIR}
-		${BUNDLE} exec rake gitlab:setup RAILS_ENV=${RAILS_ENV}" \
+		rake gitlab:setup RAILS_ENV=${RAILS_ENV}" \
 			|| die "failed to run rake gitlab:setup"
 	fi
 
 	einfo "You might want to run the following in order to check your application status:"
 	einfo "# cd ${DEST_DIR}"
-	einfo "# ${BUNDLE} exec rake gitlab:check RAILS_ENV=production"
+	einfo "# rake gitlab:check RAILS_ENV=production"
 	einfo ""
 	einfo "GitLab is prepared, now you should configure your web server."
 }

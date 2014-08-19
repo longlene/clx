@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=4
+
 inherit eutils distutils
 
 DESCRIPTION="Collection of system administration tools for Linux/KDE systems"

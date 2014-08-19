@@ -29,3 +29,6 @@ ruby_add_rdepend ">=dev-ruby/actionpack-3.0"
 ruby_add_rdepend ">=dev-ruby/railties-3.0"
 ruby_add_rdepend ">=dev-ruby/slim-2.0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

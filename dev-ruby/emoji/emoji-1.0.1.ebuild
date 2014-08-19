@@ -23,3 +23,6 @@ ruby_add_rdepend ">=dev-ruby/debugger-0"
 ruby_add_rdepend ">=dev-ruby/rake-0"
 ruby_add_rdepend ">=dev-ruby/minitest-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

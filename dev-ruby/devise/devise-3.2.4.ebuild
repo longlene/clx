@@ -23,3 +23,6 @@ ruby_add_rdepend ">=dev-ruby/railties-3.2.6"
 ruby_add_rdepend ">=dev-ruby/thread_safe-0.1"
 ruby_add_rdepend ">=dev-ruby/warden-1.2.3"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

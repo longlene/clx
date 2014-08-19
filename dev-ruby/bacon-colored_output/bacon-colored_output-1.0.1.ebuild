@@ -9,7 +9,7 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Colored output for Bacon test framework! http://i"
+DESCRIPTION="Colored output for Bacon test framework"
 HOMEPAGE=""
 
 LICENSE=""
@@ -18,4 +18,8 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/bacon-0"
+
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}
 

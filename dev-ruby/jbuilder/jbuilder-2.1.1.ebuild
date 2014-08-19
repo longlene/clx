@@ -20,3 +20,6 @@ IUSE=""
 ruby_add_rdepend ">=dev-ruby/activesupport-3.0.0"
 ruby_add_rdepend ">=dev-ruby/multi_json-1.2"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

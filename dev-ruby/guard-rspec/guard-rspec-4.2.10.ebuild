@@ -20,3 +20,6 @@ IUSE=""
 ruby_add_rdepend ">=dev-ruby/guard-2.1"
 ruby_add_rdepend ">=dev-ruby/rspec-2.14"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

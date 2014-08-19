@@ -46,5 +46,5 @@ all_ruby_prepare() {
 	sed -i -e "s/'stringex',    '~> 1.4'/'stringex',    '>= 1.4'/g" \
 	dm-types.gemspec || die
 
-	sed -i -e '/fastercsv/d' dm-types.gemspec || die
+	sed -i -e '/fastercsv/d' -e '/git ls-files/d' dm-types.gemspec || die
 }

@@ -25,3 +25,6 @@ ruby_add_rdepend ">=dev-ruby/fast_xs-0"
 ruby_add_rdepend ">=dev-ruby/actionpack-0"
 ruby_add_rdepend ">=dev-ruby/url_escape-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

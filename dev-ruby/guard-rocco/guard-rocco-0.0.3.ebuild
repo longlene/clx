@@ -22,3 +22,6 @@ ruby_add_rdepend ">=dev-ruby/rocco-0"
 ruby_add_rdepend ">=dev-ruby/rspec-2.6.0"
 ruby_add_rdepend ">=dev-ruby/mocha-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

@@ -47,3 +47,6 @@ ruby_add_rdepend ">=dev-ruby/rdiscount-0"
 ruby_add_rdepend ">=dev-ruby/sqlite3-0"
 ruby_add_rdepend ">=dev-ruby/nagoro-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

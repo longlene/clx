@@ -27,6 +27,7 @@ RDEPEND="${RDEPEND}"
 
 ruby_add_bdepend "
 	dev-ruby/rake-compiler
+	dev-ruby/ruby-beautify
 	test? (
 		>=dev-ruby/builder-2.1.2
 		>=dev-util/cucumber-1.1.3

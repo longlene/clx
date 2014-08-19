@@ -32,3 +32,6 @@ ruby_add_rdepend ">=dev-ruby/cucumber-0.10"
 ruby_add_rdepend ">=dev-ruby/aruba-0.3"
 ruby_add_rdepend ">=dev-ruby/sqlite3-1"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

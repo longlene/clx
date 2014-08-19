@@ -22,6 +22,6 @@ KEYWORDS="~amd64"
 IUSE=""
 
 ruby_add_bdepend "doc? ( >=dev-ruby/yard-0.8.7 )"
-ruby_add_bdepend "test? ( dev-ruby/rspec:0 )"
+ruby_add_bdepend "test? ( dev-ruby/rspec:3 )"
 
 ruby_add_rdepend ">=dev-ruby/addressable-2.3"

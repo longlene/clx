@@ -8,7 +8,7 @@ USE_RUBY="ruby19 ruby20"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="README.markdown"
-RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
+RUBY_FAKEGEM_GEMSPEC=""
 
 inherit ruby-fakegem
 

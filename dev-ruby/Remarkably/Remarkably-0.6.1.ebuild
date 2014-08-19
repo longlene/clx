@@ -4,8 +4,8 @@ EAPI=5
 USE_RUBY="ruby19 ruby20 ruby21"
 
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_EXTRADOC="README.md"
-RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
+RUBY_FAKEGEM_EXTRADOC="README"
+RUBY_FAKEGEM_GEMSPEC=remarkably.gemspec
 
 inherit ruby-fakegem
 
@@ -21,3 +21,6 @@ ruby_add_rdepend ">=dev-ruby/bundler-1.0.0"
 ruby_add_rdepend ">=dev-ruby/rake-0.8.7"
 ruby_add_rdepend ">=dev-ruby/rspec-1.3.0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' remarkably.gemspec || die "sed failed"
+}

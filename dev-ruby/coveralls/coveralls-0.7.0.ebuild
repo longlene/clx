@@ -5,7 +5,7 @@ USE_RUBY="ruby19 ruby20 ruby21"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="README.md"
-RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
+RUBY_FAKEGEM_GEMSPEC=${PN}-ruby.gemspec
 
 inherit ruby-fakegem
 
@@ -23,3 +23,6 @@ ruby_add_rdepend ">=dev-ruby/simplecov-0.7"
 ruby_add_rdepend ">=dev-ruby/term-ansicolor-0"
 ruby_add_rdepend ">=dev-ruby/thor-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}-ruby.gemspec || die "sed failed"
+}

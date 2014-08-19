@@ -21,3 +21,6 @@ IUSE=""
 ruby_add_rdepend ">=dev-ruby/rspec-0"
 ruby_add_rdepend ">=dev-ruby/generator_spec-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

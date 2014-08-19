@@ -41,3 +41,6 @@ ruby_add_rdepend ">=dev-ruby/webrat-0.7.3"
 ruby_add_rdepend "<dev-ruby/mime-types-2.0"
 ruby_add_rdepend "<dev-ruby/rubyzip-1.0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

@@ -6,7 +6,7 @@ EAPI="5"
 
 USE_RUBY="ruby20"
 
-inherit eutils git-2 ruby-ng user
+inherit eutils ruby-ng user
 
 DESCRIPTION="GitLab Shell is a free SSH access and repository management application"
 HOMEPAGE="https://github.com/gitlabhq/gitlab-shell"
@@ -35,9 +35,7 @@ pkg_setup() {
 	enewuser ${GIT_USER} -1 -1 "${HOME}" ${GIT_GROUP}
 }
 
-all_ruby_unpack() {
-	git-2_src_unpack
-	cd ${P}
+all_ruby_prepare() {
 	sed -i \
 		-e "s|\(user:\).*|\1 ${GIT_USER}|" \
 		-e "s|\(repos_path:\).*|\1 \"${REPO_DIR}\"|" \
@@ -47,7 +45,7 @@ all_ruby_unpack() {
 
 all_ruby_install() {
 
-	rm -Rf .git .gitignore
+	rm -Rf .gitignore .rspec .travis.yml
 
 	insinto ${DEST_DIR}
 	touch gitlab-shell.log

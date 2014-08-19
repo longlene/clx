@@ -27,3 +27,6 @@ ruby_add_rdepend ">=dev-ruby/mime-types-1.25"
 ruby_add_rdepend ">=dev-ruby/yard-0"
 ruby_add_rdepend ">=dev-ruby/kramdown-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

@@ -22,3 +22,6 @@ ruby_add_rdepend ">=dev-ruby/ice_nine-0.11.0"
 ruby_add_rdepend ">=dev-ruby/thread_safe-0.3"
 ruby_add_rdepend ">=dev-ruby/bundler-1.5"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

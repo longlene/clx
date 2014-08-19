@@ -27,3 +27,6 @@ ruby_add_rdepend ">=dev-ruby/puma-0"
 ruby_add_rdepend ">=dev-ruby/rack-0"
 ruby_add_rdepend ">=dev-ruby/anticipate-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

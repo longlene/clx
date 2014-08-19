@@ -23,3 +23,6 @@ ruby_add_rdepend ">=dev-ruby/json-0"
 ruby_add_rdepend ">=dev-ruby/redis-3.0.6"
 ruby_add_rdepend ">=dev-ruby/redis-namespace-1.3.1"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

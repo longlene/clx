@@ -20,3 +20,6 @@ IUSE=""
 ruby_add_rdepend ">=dev-ruby/multi_json-1.3"
 ruby_add_rdepend ">=dev-ruby/omniauth-oauth-1.0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

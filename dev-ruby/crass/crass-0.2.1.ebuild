@@ -20,3 +20,11 @@ IUSE=""
 ruby_add_rdepend ">=dev-ruby/minitest-5.0.8"
 ruby_add_rdepend ">=dev-ruby/rake-10.1.0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}
+
+each_ruby_prepare() {
+	rm .gitignore .yardopts .travis.yml
+
+}

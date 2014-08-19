@@ -37,5 +37,5 @@ ruby_add_rdepend "
 all_ruby_prepare() {
 	sed -i -e "s/gem 'jeweler'/#gem 'jeweler'/g" Rakefile || die
 	sed -i -e '/fastercsv/d' dm-serializer.gemspec || die
-	sed -i -e '/json_pure/d' dm-serializer.gemspec || die
+	sed -i -e '/json_pure/d' -e '/git ls-files/d' dm-serializer.gemspec || die
 }

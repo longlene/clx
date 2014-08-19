@@ -22,3 +22,6 @@ ruby_add_rdepend ">=dev-ruby/activesupport-4.0.1"
 ruby_add_rdepend ">=dev-ruby/haml-3.1"
 ruby_add_rdepend ">=dev-ruby/railties-4.0.1"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

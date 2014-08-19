@@ -22,3 +22,6 @@ ruby_add_rdepend ">=dev-ruby/bundler-1.0"
 ruby_add_rdepend ">=dev-ruby/rails-3.0"
 ruby_add_rdepend ">=dev-ruby/httpclient-2.2"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

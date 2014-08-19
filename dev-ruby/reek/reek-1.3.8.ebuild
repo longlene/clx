@@ -29,3 +29,6 @@ ruby_add_rdepend ">=dev-ruby/rspec-2.12"
 ruby_add_rdepend ">=dev-ruby/flay-0"
 ruby_add_rdepend ">=dev-ruby/yard-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' -e '19 s/$/]/' ${PN}.gemspec || die "sed failed"
+}

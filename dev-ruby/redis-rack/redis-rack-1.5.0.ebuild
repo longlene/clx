@@ -24,3 +24,6 @@ ruby_add_rdepend ">=dev-ruby/bundler-1.3"
 ruby_add_rdepend ">=dev-ruby/mocha-0.14.0"
 ruby_add_rdepend ">=dev-ruby/minitest-5"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

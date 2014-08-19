@@ -21,3 +21,6 @@ ruby_add_rdepend ">=dev-ruby/redis-actionpack-4"
 ruby_add_rdepend ">=dev-ruby/redis-activesupport-4"
 ruby_add_rdepend ">=dev-ruby/redis-store-1.1.0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

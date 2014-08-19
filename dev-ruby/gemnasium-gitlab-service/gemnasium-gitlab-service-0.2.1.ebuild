@@ -19,3 +19,6 @@ IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rugged-0.19"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

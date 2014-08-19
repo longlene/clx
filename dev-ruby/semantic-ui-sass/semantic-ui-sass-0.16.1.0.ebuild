@@ -27,3 +27,6 @@ ruby_add_rdepend ">=dev-ruby/rspec-rails-0"
 ruby_add_rdepend ">=dev-ruby/rails-3.2.0"
 ruby_add_rdepend ">=dev-ruby/autoprefixer-rails-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

@@ -5,7 +5,7 @@ USE_RUBY="ruby19 ruby20 ruby21"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="README.md"
-RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
+RUBY_FAKEGEM_GEMSPEC=omniauth-contrib.gemspec
 
 inherit ruby-fakegem
 
@@ -20,3 +20,6 @@ IUSE=""
 ruby_add_rdepend ">dev-ruby/omniauth-1.0"
 ruby_add_rdepend ">=dev-ruby/omniauth-oauth2-1.1"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' omniauth-contrib.gemspec || die "sed failed"
+}

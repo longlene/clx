@@ -30,3 +30,6 @@ ruby_add_rdepend ">=dev-ruby/fission-0"
 ruby_add_rdepend ">=dev-ruby/pry-0"
 ruby_add_rdepend ">=dev-ruby/osrcry-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

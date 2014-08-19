@@ -27,3 +27,6 @@ ruby_add_rdepend ">=dev-ruby/rack-accept-0"
 ruby_add_rdepend ">=dev-ruby/rack-mount-0"
 ruby_add_rdepend ">=dev-ruby/virtus-1.0.0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

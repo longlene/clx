@@ -23,3 +23,6 @@ ruby_add_rdepend ">=dev-ruby/oauth2-1.0"
 ruby_add_rdepend ">=dev-ruby/omniauth-1.2"
 ruby_add_rdepend ">=dev-ruby/bundler-1.0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

@@ -28,3 +28,6 @@ ruby_add_rdepend ">=dev-ruby/tzinfo-0"
 ruby_add_rdepend ">=dev-ruby/mini_specunit-0"
 ruby_add_rdepend ">=dev-ruby/mini_backtrace-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

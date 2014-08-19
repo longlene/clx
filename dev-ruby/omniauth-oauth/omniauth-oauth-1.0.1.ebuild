@@ -24,3 +24,6 @@ ruby_add_rdepend ">=dev-ruby/webmock-0"
 ruby_add_rdepend ">=dev-ruby/simplecov-0"
 ruby_add_rdepend ">=dev-ruby/rack-test-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

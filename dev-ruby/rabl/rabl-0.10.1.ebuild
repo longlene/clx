@@ -27,3 +27,6 @@ ruby_add_rdepend ">=dev-ruby/msgpack-0.4.5"
 ruby_add_rdepend ">=dev-ruby/bson-1.7.0"
 ruby_add_rdepend ">=dev-ruby/plist-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}

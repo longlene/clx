@@ -24,3 +24,6 @@ ruby_add_rdepend ">=dev-ruby/fog-softlayer-0"
 ruby_add_rdepend ">=dev-ruby/ipaddress-0.5"
 ruby_add_rdepend ">=dev-ruby/nokogiri-1.5.11"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
+}
