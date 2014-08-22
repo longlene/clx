@@ -12,12 +12,12 @@ EGIT_REPO_URI="git://github.com/mruby/mruby.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
->=sys-libs/libtermcap-compat-2.0.8-r4
+sys-libs/libtermcap-compat
 sys-devel/bison
 dev-lang/ruby"
 
