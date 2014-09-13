@@ -3,29 +3,37 @@
 
 EAPI=5
 
-inherit git-2 cmake-utils
+inherit git-r3 cmake-utils
 
 DESCRIPTION="A general purpose library for the OpenWRT project."
 HOMEPAGE="http://wiki.openwrt.org/"
-EGIT_REPO_URI="git://nbd.name/${PN}.git"
+EGIT_REPO_URI="git://nbd.name/luci2/${PN}.git"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="lua"
+IUSE=""
 
+COMMON_DEPEND="
+	dev-libs/libubox[json]
+	sys-apps/ubus
+"
 DEPEND="
-dev-libs/libubox
+	${COMMON_DEPEND}
 "
 
 src_prepare() {
-	default
 	sed -i 's/-Werror //' CMakeLists.txt
+	sed -i 's|\<json/json.h\>|json-c/json.h|' service/validate.c plug/hotplug.c
+	sed -i 's/ -lgcc_pic//' upgrade/CMakeLists.txt
 }
 
 src_configure() {
-	local mycmakeargs=(
-	$(cmake-utils_use_build lua LUA)
-	)
-
 	cmake-utils_src_configure
+}
+
+src_install() {
+	cmake-utils_src_install
+
+	install -d "${D}/etc/config"
 }

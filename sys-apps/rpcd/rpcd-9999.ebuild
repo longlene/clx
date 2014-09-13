@@ -5,31 +5,35 @@ EAPI=5
 
 inherit git-2 cmake-utils
 
-DESCRIPTION="A general purpose library for the OpenWRT project."
+DESCRIPTION="OpenWrt ubus RPC backend server"
 HOMEPAGE="http://wiki.openwrt.org/"
 EGIT_REPO_URI="git://nbd.name/luci2/${PN}.git"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="lua systemd examples"
+IUSE="file iwinfo"
 
-DEPEND="
-systemd? ( sys-apps/systemd )
-lua? ( dev-lang/lua )
+COMMON_DEPEND="
 	dev-libs/libubox[json]
+	sys-apps/ubus
+	sys-apps/uci
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
 src_prepare() {
-	default
 	sed -i 's/-Werror //' CMakeLists.txt
+	#sed -i 's|\<json/json.h\>|json-c/json.h|' service/validate.c plug/hotplug.c
 }
 
 src_configure() {
 	local mycmakeargs=(
-	$(cmake-utils_use_build lua LUA)
-	$(cmake-utils_use_build examples EXAMPLES)
-	$(cmake-utils_use_enable systemd SYSTEMD)
+	$(cmake-utils_use file FILE_SUPPORT)
+	$(cmake-utils_use iwinfo IWINFO_SUPPORT)
 	)
-
 	cmake-utils_src_configure
 }
+
+#src_install # may need init.d

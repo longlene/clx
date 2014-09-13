@@ -5,27 +5,17 @@ EAPI=5
 
 inherit git-2 cmake-utils
 
-DESCRIPTION="A general purpose library for the OpenWRT project."
+DESCRIPTION="OpenWrt filesystem tools"
 HOMEPAGE="http://wiki.openwrt.org/"
 EGIT_REPO_URI="git://nbd.name/${PN}.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="lua"
+IUSE=""
 
-DEPEND="
-dev-libs/libubox
-"
+RDEPEND="sys-apps/uci"
 
 src_prepare() {
-	default
 	sed -i 's/-Werror //' CMakeLists.txt
 }
 
-src_configure() {
-	local mycmakeargs=(
-	$(cmake-utils_use_build lua LUA)
-	)
-
-	cmake-utils_src_configure
-}

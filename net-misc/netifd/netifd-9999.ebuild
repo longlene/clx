@@ -7,18 +7,21 @@ inherit git-2 cmake-utils
 
 DESCRIPTION="A general purpose library for the OpenWRT project."
 HOMEPAGE="http://wiki.openwrt.org/"
-EGIT_REPO_URI="git://nbd.name/${PN}.git"
+EGIT_REPO_URI="git://nbd.name/luci2/${PN}.git"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="lua"
 
 DEPEND="
-dev-libs/libubox
+dev-libs/libnl
+sys-apps/ubus
+sys-apps/uci
+lua? ( dev-lang/lua )
 "
 
 src_prepare() {
-	default
+	echo 'INCLUDE_DIRECTORIES(/usr/include/libnl3)' >> CMakeLists.txt
 	sed -i 's/-Werror //' CMakeLists.txt
 }
 
@@ -28,4 +31,12 @@ src_configure() {
 	)
 
 	cmake-utils_src_configure
+}
+
+src_install() {
+	cmake-utils_src_install
+
+	install -d "${D}/etc/config"
+	touch "${D}/etc/config/network"
+	touch "${D}/etc/config/wireless"
 }
