@@ -11,7 +11,7 @@ dwarven outpost or an adventurer in a randomly generated, persistent world."
 HOMEPAGE="http://www.bay12games.com/dwarves"
 
 MY_P="df"
-MY_PV="28_181_40d16"
+MY_PV="40_10"
 BINPATCH_URI="http://brage.info/~svein/df-40d16-head.tar.bz2"
 SRC_URI="http://www.bay12games.com/dwarves/${MY_P}_${MY_PV}_linux.tar.bz2 ${BINPATCH_URI}
 		dfg? ( http://mayday.w.staszic.waw.pl/~mayday/upload/DFG21.zip )"

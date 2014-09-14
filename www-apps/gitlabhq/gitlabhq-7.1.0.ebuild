@@ -87,7 +87,6 @@ GEMS_DEPEND="
 	dev-ruby/sass-rails
 	dev-ruby/coffee-rails
 	dev-ruby/uglifier
-	dev-ruby/therubyracer
 	dev-ruby/turbolinks
 	dev-ruby/jquery-turbolinks
 	dev-ruby/select2-rails

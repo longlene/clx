@@ -6,7 +6,7 @@ EAPI="5"
 
 inherit eutils toolchain-funcs
 
-IUSE="static"
+IUSE="static-libs"
 DESCRIPTION="A very small C compiler for ix86/amd64"
 HOMEPAGE="http://bellard.org/tcc/"
 SRC_URI="http://dev.gentoo.org/~patrick/${P}.tar.bz2"
@@ -42,7 +42,7 @@ src_configure() {
 	local myopts
 	use x86 && myopts="--cpu=x86"
 	use amd64 && myopts="--cpu=x86-64"
-	if use static ; then
+	if use static-libs ; then
 		econf ${myopts} --cc="$(tc-getCC)"
 	else
 		econf ${myopts} --cc="$(tc-getCC)" --disable-static
