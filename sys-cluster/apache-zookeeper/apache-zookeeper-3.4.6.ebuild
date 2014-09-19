@@ -12,7 +12,7 @@ MY_P="${MY_PN}-${PV}"
 DESCRIPTION="ZooKeeper is a high-performance coordination service for
 distributed applications."
 HOMEPAGE="http://hadoop.apache.org/"
-SRC_URI="mirror://apache/hadoop/${MY_PN}/${MY_P}/${MY_P}.tar.gz"
+SRC_URI="mirror://apache/${MY_PN}/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

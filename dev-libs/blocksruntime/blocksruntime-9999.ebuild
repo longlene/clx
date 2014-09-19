@@ -5,7 +5,7 @@ EAPI=4
 inherit git-2
 
 DESCRIPTION="the BlocksRuntime library"
-HOMEPAGE="://github.com/mackyle/blocksruntime"
+HOMEPAGE="https://github.com/mackyle/blocksruntime"
 SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/mackyle/blocksruntime.git"
@@ -19,7 +19,8 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	cd ${S} && ./buildlib > /dev/null
+	#cd ${S} && ./buildlib > /dev/null
+	./buildlib > /dev/null
 }
 
 src_install() {

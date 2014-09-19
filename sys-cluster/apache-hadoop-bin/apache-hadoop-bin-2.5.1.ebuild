@@ -2,14 +2,16 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
 inherit eutils java-utils-2
 
+MY_PN="hadoop"
+MY_P="${MY_PN}-${PV}"
+
 DESCRIPTION="Software framework for data intensive distributed applications"
 HOMEPAGE="http://hadoop.apache.org/"
-# SRC_URI="mirror://apache/hadoop/core/hadoop-${PV}-alpha/hadoop-${PV}-alpha.tar.gz"
-SRC_URI="http://www.us.apache.org/dist/hadoop/common/hadoop-${PV}/hadoop-${PV}.tar.gz"
+SRC_URI="mirror://apache/hadoop/common/${MY_P}/${MY_P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -22,12 +24,8 @@ RDEPEND=">=virtual/jre-1.6
 	net-misc/openssh
 	net-misc/rsync"
 
-MY_PN="hadoop"
-MY_P="${MY_PN}-${PV}"
-
-S=${WORKDIR}/hadoop-${PV}-alpha
+S=${WORKDIR}/${MY_P}
 INSTALL_DIR=/opt/hadoop
-export CONFIG_PROTECT="${CONFIG_PROTECT} ${INSTALL_DIR}/etc/hadoop"
 
 pkg_setup(){
 	enewgroup hadoop
@@ -36,6 +34,9 @@ pkg_setup(){
 }
 
 src_install() {
+	# remove the useless cmd bat file
+	find "${S}" -name '*.cmd' -exec rm {} \;
+
 	# The hadoop-env.sh file needs JAVA_HOME set explicitly
 	JAVA_HOME=$(java-config -g JAVA_HOME)
 	sed -e "2iexport JAVA_HOME=${JAVA_HOME}" -i etc/hadoop/hadoop-env.sh || die "sed failed"
