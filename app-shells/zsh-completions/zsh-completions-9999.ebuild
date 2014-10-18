@@ -10,7 +10,7 @@ SRC_URI=""
 
 LICENSE="ZSH"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="ack adb android attach bpython brew bundle cap colorex
 	cpanm debuild dhcpcd ditz emulator fab gas geany gem
 	git-flow github git-pulls heroku jmeter jmeter-plugins

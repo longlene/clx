@@ -14,15 +14,15 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="gif jpeg tiff"
 
 RDEPEND=">=media-libs/libpng-1.2.7
-	>=sys-devel/gettext-0.14.1
-	>=dev-libs/glib-2.6.4
-	>=x11-libs/gtk+-2.6.4
-	>=x11-libs/pango-1.9.0
-	>=dev-libs/atk-1.9.0
-	media-libs/freetype
-	gif? ( >=media-libs/giflib-4.1.4 )
-	jpeg? ( >=media-libs/jpeg-6b media-libs/openjpeg )
-	tiff? ( >=media-libs/tiff-3.6.1 )"
+>=sys-devel/gettext-0.14.1
+>=dev-libs/glib-2.6.4
+>=x11-libs/gtk+-2.6.4
+>=x11-libs/pango-1.9.0
+>=dev-libs/atk-1.9.0
+media-libs/freetype
+gif? ( >=media-libs/giflib-4.1.4 )
+jpeg? ( >=media-libs/jpeg-6b media-libs/openjpeg )
+tiff? ( >=media-libs/tiff-3.6.1 )"
 
 DEPEND="${RDEPEND} dev-util/pkgconfig"
 
