@@ -10,7 +10,7 @@ SRC_URI="https://github.com/sstephenson/rbenv/archive/v${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+#KEYWORDS=""
 IUSE="bash-completion zsh-completion"
 
 DEPEND=""
