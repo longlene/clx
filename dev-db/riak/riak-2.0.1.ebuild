@@ -9,7 +9,8 @@ inherit versionator eutils user multilib toolchain-funcs
 # build time dependency
 # fork of the google project with riak specific changes
 # is used to build the eleveldb lib and gets removed before install
-LEVELDB_PV="${PV}"
+#LEVELDB_PV="${PV}"
+LEVELDB_PV="2.0.0"
 LEVELDB_URI="https://github.com/basho/leveldb/archive/${LEVELDB_PV}.tar.gz"
 LEVELDB_P="leveldb-${LEVELDB_PV}.tar.gz"
 LEVELDB_WD="${WORKDIR}/leveldb-${LEVELDB_PV}"
@@ -57,8 +58,7 @@ RDEPEND="
 "
 # TODO test non smp install
 DEPEND="
-	<dev-lang/erlang-16
-	>=dev-lang/erlang-15.2.3.1[smp]
+	>=dev-lang/erlang-17
 	${RDEPEND}
 "
 
