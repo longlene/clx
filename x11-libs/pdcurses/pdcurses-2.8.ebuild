@@ -4,7 +4,7 @@
 
 inherit autotools eutils
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 MY_P=${P/pdc/PDC}
 
