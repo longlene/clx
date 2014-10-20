@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 PYTHON_DEPEND="python? *"
 SUPPORT_PYTHON_ABIS="1"
 JAVA_ANT_REWRITE_CLASSPATH="1"
