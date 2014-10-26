@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		lthread is a multicore/multithread coroutine library written in C. It uses Sam Rushing's _swap function to swap lthreads. What's special about lthread is that it allows you to make blocking calls and expensive computations, blocking IO inside a coroutine, providing you with the advantages of coroutines and pthreads. See the http server example below.
+	</longdescription>
+</pkgmetadata>

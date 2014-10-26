@@ -49,7 +49,7 @@ fi
 
 if [[ -n "$PHEADERS" ]]; then
 	insinto /usr/include/plan9
-	for i in $PHEADERS; do 
+	for i in $PHEADERS; do
 		doins ${S}/include/${i}.h
 	done
 fi

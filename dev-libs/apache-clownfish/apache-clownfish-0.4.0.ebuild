@@ -20,6 +20,8 @@ RDEPEND="${DEPEND}"
 
 MYMAJOR_VERSION="0.4"
 
+multilib_toolchain_setup
+
 src_configure() {
 	cd "${S}"/runtime/c && econf
 }
@@ -48,7 +50,7 @@ src_install() {
 	doman "${S}"/runtime/c/autogen/man/man3/*
 
 	dodir /usr/$(get_libdir)/pkgconfig
-	cat > "${D}"/usr/$(get_libdir)/pkgconfig/clownfish.pc <<EOF
+	cat > "${PKG_CONFIG_LIBDIR}"/clownfish.pc <<EOF
 Name: Clownfish
 Description: Symbitic object system
 Version: ${PV}

@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://github.com/stevedekorte/io.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="cgi clutter dbi doc editline emacs google gui http image jabber libffi libxml2 lzo md5sum ogg opengl postgres pcre python readline sha1 sndfile sockets sqlite3 syslog theora threads truetype twitter vim-syntax vorbis zlib"
 
 DEPEND="clutter? ( media-libs/clutter )
