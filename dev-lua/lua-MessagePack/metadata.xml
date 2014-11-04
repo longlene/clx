@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		MessagePack is an efficient binary serialization format.
+
+		It lets you exchange data among multiple languages like JSON but it's faster and smaller.
+
+		It's a pure Lua implementation, without dependency.
+
+		And it's really fast with LuaJIT.
+	</longdescription>
+</pkgmetadata>
