@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		D is a platform-independent graphics library. Its drivers are implemented in several platforms, some use portable code, others use native graphics libraries, such as Microsoft Windows (GDI and GDI+) and X-Windows (XLIB). 
+	</longdescription>
+</pkgmetadata>

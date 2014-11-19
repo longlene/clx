@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<name>loong0</name>
+			<email>longlene@gmail.com</email>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+  Fully functional, almost complete Ruby to Lua binding library that
+  features seamless translation of most Lua and Ruby objects and calling
+  code of each language from other one
+		</longdescription>
+	</pkgmetadata>

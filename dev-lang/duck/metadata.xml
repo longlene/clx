@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Duck Programming Language
+
+		A simple scripting language based on the idea of duck-typing (or dynamic typing).
+
+		“When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.” — James Whitcomb Riley
+
+		Language Features
+
+		The duck programming language supports first-class functions, integer and floating-point arithmetic, string manipulation, dynamically-sized arrays, dictionary types, and basic object oriented programming. The syntax is strongly reminiscent of BASIC, Lua, or Python. While indentation is not strictly specified, the language requires specific whitespace in required newlines at the end of certain statements. Duck is currently only implemented in the form of a slow, interpreted frontend, making it useful as a portable scripting language. This frontend has been developed entirely in C.
+	</longdescription>
+</pkgmetadata>

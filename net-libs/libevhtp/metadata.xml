@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Overview
+
+		Libevhtp was created as a replacement API for Libevent's current HTTP API. The reality of libevent's http interface is that it was created as a JIT server, meaning the developer never thought of it being used for creating a full-fledged HTTP service. Infact I am under the impression that the libevent http API was designed almost as an example of what you can do with libevent. It's not Apache in a box, but more and more developers are attempting to use it as so.
+		Libevent's HTTP pitfalls
+
+		It was not designed to be a fully functional HTTP server.
+		The code is messy, abstractions are almost non-existent, and feature-creep has made long-term maintainability very hard.
+		The parsing code is slow and requires data to be buffered before a full parse can be completed. This results in extranious memory usage and lots of string comparison functions.
+		There is no method for a user to access various parts of the request processing cycle. For example if the "Content-Length" header has a value of 50000, your callback is not executed until all 50000 bytes have been read.
+		Setting callback URI's do exact matches; meaning if you set a callback for "/foo/", requests for "/foo/bar/" are ignored.
+		Creating an HTTPS server is hard, it requires a bunch of work to be done on the underlying bufferevents.
+		As far as I know, streaming data back to a client is hard, if not impossible without messing with underlying bufferevents.
+		It's confusing to work with, this is probably due to the lack of proper documentation.
+
+		Libevhtp attempts to address these problems along with a wide variety of cool mechanisms allowing a developer to have complete control over your server operations. This is not to say the API cannot be used in a very simplistic manner - a developer can easily create a backwards compatible version of libevent's HTTP server to libevhtp.
+	</longdescription>
+</pkgmetadata>

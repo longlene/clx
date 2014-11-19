@@ -2,23 +2,17 @@
 
 EAPI="4"
 
-inherit multilib toolchain-funcs flag-o-matic eutils git-2
+inherit multilib toolchain-funcs flag-o-matic eutils
 
 DESCRIPTION="Database connectivity for the Lua programming language"
 HOMEPAGE="http://www.keplerproject.org/luasql/"
-EGIT_REPO_URI="git://github.com/keplerproject/luasql.git"
-EGIT_BRANCH="master"
-EGIT_HAS_SUBMODULES="true"
-EGIT_PROJECT=${P}
-if [ "${PV}" != "9999" ]; then
-	EGIT_COMMIT="v${PV}"
-fi
+SRC_URI="https://github.com/keplerproject/luasql/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Kepler"
 SLOT="0"
 KEYWORDS="x86 amd64"
 
-MODULES="sqlite sqlite3 mysql postgres odbc firebird"
+MODULES="sqlite sqlite3 mysql postgres odbc firebird oracle"
 IUSE="${MODULES}"
 
 RDEPEND=">=dev-lang/lua-5.1
@@ -27,11 +21,12 @@ RDEPEND=">=dev-lang/lua-5.1
 	mysql? ( virtual/mysql )
 	odbc? ( dev-db/unixODBC )
 	firebird? ( dev-db/firebird )
+	oracle? ( dev-db/oracle-instantclient-basic )
 	postgres? ( virtual/postgresql-base )"
 DEPEND="${RDEPEND}
         virtual/pkgconfig"
 
-src_compile(){
+src_compile() {
 	local libs
 	local incs=""
 	local no_driver=1
@@ -67,7 +62,7 @@ src_compile(){
 	fi
 }
 
-src_install(){
+src_install() {
 	for mod in ${MODULES}; do
 		if use ${mod}; then
 			einfo "install ${mod} module"

@@ -17,6 +17,7 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	sed -i "s|\$(PREFIX)/lib|\$(PREFIX)/$(get_libdir)|" Makefile
+	rm src/chan_test.c
 }
 
 src_compile() {

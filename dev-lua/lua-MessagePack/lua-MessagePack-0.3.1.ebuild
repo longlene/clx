@@ -4,6 +4,9 @@
 
 EAPI=5
 
+NEED_LUA=5.1
+inherit lua
+
 DESCRIPTION="lua-MessagePack : a pure Lua implementation"
 HOMEPAGE="http://fperrad.github.io/lua-MessagePack/"
 SRC_URI="https://github.com/fperrad/lua-MessagePack/archive/${PV}.tar.gz -> ${P}.tar.gz"
@@ -13,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="|| ( =dev-lang/lua-5.1 dev-lang/luajit )"
+DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
