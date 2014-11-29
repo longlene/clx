@@ -6,5 +6,5 @@ PHEADERS="bio"
 DEPEND="dev-plan9/lib9"
 inherit plan9-libs
 
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 

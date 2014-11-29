@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<name>loong0</name>
+			<email>longlene@gmail.com</email>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+This library provides you with all of the essentials for 
+  doing graphics programming in Ruby including windowing, context management, 
+  1:1 mapping of OpenGL calls, and input handling
+		</longdescription>
+	</pkgmetadata>

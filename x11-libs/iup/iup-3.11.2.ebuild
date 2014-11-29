@@ -6,7 +6,7 @@ EAPI=5
 
 inherit multilib lua
 
-DESCRIPTION=""
+DESCRIPTION="IUP is a multi-platform toolkit for building graphical user interfaces"
 HOMEPAGE=""
 SRC_URI="mirror://sourceforge/${PN}/${P}_Sources.tar.gz"
 

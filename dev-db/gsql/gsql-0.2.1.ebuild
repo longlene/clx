@@ -2,12 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 #
+EAPI=4
 
 inherit eutils gnome2
 
 DESCRIPTION="Integrated database development tool for GNOME"
 HOMEPAGE="http://gsql.org/"
-SRC_URI="http://gsql.googlecode.com/files/${PN}-${PV}.tar.bz2"
+SRC_URI="http://gsql.googlecode.com/files/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
