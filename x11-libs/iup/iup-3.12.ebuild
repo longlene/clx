@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}_Sources.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="webkit static-libs lua opengl lua motif"
+IUSE="webkit static-libs lua opengl lua motif led"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -73,4 +73,8 @@ src_install() {
 
 	insinto /usr/include/iup
 	doins include/*.h
+
+	if use led; then
+		dobin bin/*/ledc
+	fi
 }
