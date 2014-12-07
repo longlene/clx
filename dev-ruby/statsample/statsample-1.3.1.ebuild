@@ -31,7 +31,7 @@ ruby_add_rdepend ">=dev-ruby/rdoc-4.0"
 ruby_add_rdepend ">=dev-ruby/hoe-0"
 ruby_add_rdepend ">=dev-ruby/shoulda-3.1.1"
 ruby_add_rdepend ">=dev-ruby/minitest-2.0"
-ruby_add_rdepend ">=dev-ruby/gettext-0"
+ruby_add_rdepend ">=dev-ruby/ruby-gettext-0"
 ruby_add_rdepend ">=dev-ruby/mocha-0"
 ruby_add_rdepend ">=dev-ruby/hoe-git-0"
 

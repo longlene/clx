@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<name>loong0</name>
+			<email>longlene@gmail.com</email>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+    Allows to publish messages to a faye server, the main difference with the default faye client
+    is that it does not need to run inside a EventMachine loop as it only opens a http connection
+    with the server to send the event
+		</longdescription>
+	</pkgmetadata>

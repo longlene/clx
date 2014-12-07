@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<name>loong0</name>
+			<email>longlene@gmail.com</email>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+  Jekyll plugin, that allows you to write javascript/css assets in
+  other languages such as CoffeeScript, Sass, Less and ERB, concatenate
+  them, respecting dependencies, minify and many more
+		</longdescription>
+	</pkgmetadata>

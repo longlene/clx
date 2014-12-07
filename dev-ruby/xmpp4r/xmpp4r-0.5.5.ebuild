@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="4"
-USE_RUBY="ruby18 ruby19 ruby20 ree18 jruby"
+USE_RUBY="ruby19 ruby20 ree18 jruby ruby21"
 
 RUBY_FAKEGEM_EXTRADOC="README.rdoc CHANGELOG"
 

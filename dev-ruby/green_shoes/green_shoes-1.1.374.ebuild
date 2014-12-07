@@ -17,5 +17,5 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/gtk2-0"
+ruby_add_rdepend ">=dev-ruby/ruby-gtk2-0"
 

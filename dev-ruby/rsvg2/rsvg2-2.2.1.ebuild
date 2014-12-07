@@ -18,5 +18,5 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/cairo-1.12.8"
-ruby_add_rdepend "=dev-ruby/gdk_pixbuf2-2.2.1"
+ruby_add_rdepend ">=dev-ruby/ruby-gdkpixbuf2-2.2.1"
 
