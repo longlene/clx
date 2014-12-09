@@ -17,9 +17,11 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-cffi-gtk
-dev-lisp/cl-webkit
+dev-lisp/cl-webkit2
 dev-lisp/purl
 dev-lisp/cl-xkeysym
+dev-lisp/djula
+dev-lisp/parenscript
 dev-lisp/split-sequence
 test? ( dev-lisp/lisp-unit dev-lisp/alexandria )"
 
