@@ -18,8 +18,8 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/guard-2.1"
-ruby_add_rdepend "<dev-ruby/rspec-4.0, >= 2.14"
-ruby_add_rdepend "<dev-ruby/bundler-2.0, >= 1.3.5"
+ruby_add_rdepend ">=dev-ruby/rspec-2.14"
+ruby_add_rdepend ">=dev-ruby/bundler-1.3.5"
 ruby_add_rdepend ">=dev-ruby/rake-10.1"
 ruby_add_rdepend ">=dev-ruby/launchy-2.4"
 
