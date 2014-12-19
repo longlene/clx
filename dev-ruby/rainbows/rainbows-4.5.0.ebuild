@@ -1,7 +1,7 @@
 # Copyright 1999-2013 Gentoo Foundation
 
 EAPI=4
-USE_RUBY="ruby18 ruby19 ruby20 ree18 jruby"
+USE_RUBY="ruby19 ruby20 ruby21 ree18 jruby"
 
 RUBY_FAKEGEM_TASK_DOC="rdoc"
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.rdoc README.rdoc"
@@ -21,7 +21,7 @@ SLOT="0"
 RDEPEND="${RDEPEND}
 >=dev-ruby/kgio-2.5
 >=dev-ruby/rack-1.1
->=www-servers/unicorn-4.6"
+>=dev-ruby/unicorn-4.6"
 
 #all_ruby_prepare() {
 #	# Existing metadata causes a crash in jruby, so use our own.

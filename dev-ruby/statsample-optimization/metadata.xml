@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<name>loong0</name>
+			<email>longlene@gmail.com</email>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+Install gsl, statistics2 and provides a C extension to optimize the following methods
+
+* Vector#frecuencies
+* Vector#set_valid_data
+* Vector#check_type
+* Dataset#case_as_hash
+* Dataset#case_as_array
+* Bivariate::Tetrachoric
+		</longdescription>
+	</pkgmetadata>
