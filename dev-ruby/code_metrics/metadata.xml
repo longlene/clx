@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<name>loong0</name>
+			<email>longlene@gmail.com</email>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+rake stats is great for looking at statistics on your code, displaying things like KLOCs (thousands of lines of code) and your code to test ratio
+		</longdescription>
+	</pkgmetadata>

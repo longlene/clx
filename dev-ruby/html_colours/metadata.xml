@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<name>loong0</name>
+			<email>longlene@gmail.com</email>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+
+    This small module bundles the HTML Colours together,
+    and provides one method to convert those colours to
+    the R,G,B values
+		</longdescription>
+	</pkgmetadata>
