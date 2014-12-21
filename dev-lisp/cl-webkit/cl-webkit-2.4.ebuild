@@ -2,17 +2,15 @@
 
 EAPI=4
 
-inherit git-2 common-lisp-3
+inherit common-lisp-3
 
 DESCRIPTION="a binding to WebKitGtk+ for Common Lisp"
 HOMEPAGE="https://github.com/AeroNotix/cl-webkit"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/AeroNotix/cl-webkit.git"
+SRC_URI="https://github.com/joachifm/cl-webkit/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""

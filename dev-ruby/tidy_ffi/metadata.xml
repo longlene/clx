@@ -7,6 +7,6 @@
 			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
-Contributed Rack Middleware and Utilities
+Tidy library interface via FFI
 		</longdescription>
 	</pkgmetadata>

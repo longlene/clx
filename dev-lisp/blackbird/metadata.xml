@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		A standalone promise implementation for Common Lisp. This is the successor to the now-deprecated cl-async-future project.
+
+		Its goal is to provide an abstraction around synchronous and asynchronous code in a way that's natural to regular lisp programming. This is ideal for both writing drivers that can handle both blocking and non-blocking sockets, as well as various threading operations that have the concept of a delayed result.
+	</longdescription>
+</pkgmetadata>
