@@ -4,7 +4,7 @@
   <repo quality="experimental" status="unofficial">
     <name>clx</name>
     <description>overlay for Funtoo Linux</description>
-    <homepage>http://github.com/longlene</homepage>
+    <homepage>http://github.com/longlene/clx</homepage>
     <owner type="person">
       <email>longlene@gmail.com</email>
       <name>clx</name>
