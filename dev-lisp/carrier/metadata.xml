@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Carrier is a lightweight, async HTTP client built on top of cl-async and fast-http.
+
+		Its goal is to allow easy and efficient streaming of data over HTTP. It is the lightweight cousin to drakma-async.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		Vom - A tiny logging library for Common Lisp
+
+		Vom is a logging library for lisp. It's goal is to be useful and small. It does not provide a lot of features as other loggers do, but has a small codebase that's easy to understand and use.
+	</longdescription>
+</pkgmetadata>

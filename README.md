@@ -3,10 +3,11 @@ clx -- Overlay For Funtoo/Gentoo Linux
 
 ## DESCRIPTION
 
-This overlay stores some ebuilds for Common Lisp and Ruby developer and other interesting ebuilds.
+Goal: make funtoo/gentoo Linux a more developer-friendly platform
+
+This overlay stores some ebuilds for Common Lisp, Ruby and Lua developer and other interesting ebuilds.
 
 some ebuilds are collected from the Internet and others are wrote by myself.
-
 
 
 ## INSTALLATION
@@ -16,11 +17,9 @@ At first, install the layman
 emerge -v layman
 ```
 
-
 ```bash
 echo 'source /var/lib/layman/make.conf' >> /etc/portage/make.conf
 ```
-
 
 Add this overlay with your layman: 
 
@@ -28,7 +27,6 @@ Add this overlay with your layman:
 layman -f -a clx -o https://raw.github.com/longlene/clx/master/repo.xml
 ```
 
-
-Some of them may be on bleeing edge. Take care if you want to use them.
-Please mail me if you encounter a problem.
+Some ebuilds may be on bleeing edge. Take care if you wanna to use them.
+Please issue or mail me if you encounter a problem.
 

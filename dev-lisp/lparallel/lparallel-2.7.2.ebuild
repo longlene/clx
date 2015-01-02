@@ -11,11 +11,17 @@ SRC_URI="https://github.com/lmj/lparallel/archive/lparallel-${PV}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="benchmark"
 
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/alexandria
 dev-lisp/bordeaux-threads"
 
-S="${WORKDIR}/lparallel-lparallel-${PV}"
+S="${WORKDIR}"/lparallel-lparallel-${PV}
+
+src_prepare() {
+	if ! use benchmark; then
+		rm -rf lparallel-bench.asd bench
+	fi
+}

@@ -20,6 +20,7 @@ RDEPEND="${DEPEND}
 dev-lisp/alexandria
 dev-lisp/cl-utilities
 dev-lisp/babel
+dev-lisp/xsubseq
 dev-lisp/log4cl"
 
 # TODO

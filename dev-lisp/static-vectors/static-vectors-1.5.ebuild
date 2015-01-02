@@ -18,3 +18,7 @@ RDEPEND="${DEPEND}
 dev-lisp/alexandria
 dev-lisp/cffi"
 
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all version.lisp-expr
+}
