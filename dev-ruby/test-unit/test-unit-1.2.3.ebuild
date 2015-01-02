@@ -6,7 +6,7 @@ EAPI=2
 
 # This is only useful for Ruby 1.9 for testsuites using the old
 # test/unit
-USE_RUBY="ruby19 ruby20 ruby21"
+USE_RUBY="ruby19 ruby20 ruby21 ruby22"
 
 RUBY_FAKEGEM_TASK_DOC="docs"
 RUBY_FAKEGEM_DOCDIR="doc"

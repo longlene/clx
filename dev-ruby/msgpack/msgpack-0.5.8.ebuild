@@ -5,7 +5,7 @@
 EAPI=5
 
 # jruby → uses a binary extension
-USE_RUBY="ruby19 ruby20 ruby21"
+USE_RUBY="ruby19 ruby20 ruby21 ruby22"
 
 RUBY_FAKEGEM_TASK_DOC="doc"
 RUBY_FAKEGEM_RECIPE_TEST="rspec"
