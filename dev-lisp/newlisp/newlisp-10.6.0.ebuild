@@ -31,43 +31,71 @@ DESCRIPTION="newLISP - a new generation of Lisp!"
 HOMEPAGE="http://www.newlisp.org/"
 SRC_URI="http://www.newlisp.org/downloads/${P}.tgz"
 LICENSE="GPL-3"
-IUSE="libffi unicode"
+IUSE="libffi unicode vim-syntax doc"
 SLOT="0"
 KEYWORDS="x86 amd64"
-RDEPEND="sys-libs/readline
+DEPEND="sys-libs/readline
 libffi? ( dev-libs/libffi )"
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
+
+src_prepare() {
+	sed -i '/strip/d' makefile*
+}
 
 src_configure ()
 {
-	return
+	:
 }
 
 src_compile ()
-{ 
-	if use libffi && use x86 && use unicode ; then
-		emake -f ${S}/makefile_linux_utf8_ffi
-	elif use libffi && use amd64 && use unicode ; then
-		emake -f ${S}/makefile_linuxLP64_utf8_ffi
-	elif ! use libffi && use x86 && use unicode ; then
-		emake -f ${S}/makefile_linux_utf8
-	elif ! use libffi && use amd64 && use unicode ; then
-		make -f ${S}/makefile_linuxLP64_utf8
-	elif use libffi && use x86 && ! use unicode ; then
-		make -f ${S}/makefile_linux_ffi
-	elif use libffi && use amd64 && ! use unicode ; then
-		make -f ${S}/makefile_linuxLP64_ffi
-	elif ! use libffi && use x86 && ! use unicode ; then
-		make -f ${S}/makefile_linux
-	elif ! use libffi && use amd64 && ! use unicode ; then
-		emake -f ${S}/makefile_linuxLP64
+{
+	local mymakefile="Makefile"
+	if use x86 ; then
+		if use libffi && use unicode ; then
+			mymakefile=makefile_linux_utf8_ffi
+		elif ! use libffi && use unicode ; then
+			mymakefile=makefile_linux_utf8
+		elif use libffi && ! use unicode ; then
+			mymakefile=makefile_linux_ffi
+		elif ! use libffi && ! use unicode ; then
+			mymakefile=makefile_linux
+		fi
+		emake -f $mymakefile
+	elif use amd64 ; then
+		if use libffi && use unicode ; then
+			mymakefile=makefile_linuxLP64_utf8_ffi
+		elif ! use libffi && use unicode ; then
+			mymakefile=makefile_linuxLP64_utf8
+		elif use libffi && ! use unicode ; then
+			mymakefile=makefile_linuxLP64_ffi
+		elif ! use libffi && ! use unicode ; then
+			mymakefile=makefile_linuxLP64
+		fi
+		emake -f $mymakefile
 	else
-		./configure-alt --prefix="/usr"
+		./configure-alt --prefix=/usr
 	fi
 }
 
 src_install() {
-	emake install
+	dobin newlisp
+	dobin util/newlispdoc
+	doman doc/newlisp.1 && rm doc/newlisp.1
+	use doc && dodoc -r doc
+	dobin guiserver/newlisp-edit.lsp
+
+	if use vim-syntax ; then
+		insinto /usr/share/vim/vimfiles/syntax
+		doins util/newlisp.vim
+	fi
+	rm util/newlisp.vim
+
+
+	dodir /usr/share/${PN}
+	insinto /usr/share/${PN}
+	doins -r util
+	doins -r modules
+	doins -r guiserver
 }
 
 # eof
