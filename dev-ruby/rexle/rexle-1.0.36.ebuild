@@ -9,7 +9,7 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="Rexle is an XML parser intended for quickly returning elements from an XPath query"
 HOMEPAGE="https://github.com/jrobertson/rexle"
 
 LICENSE="MIT"
