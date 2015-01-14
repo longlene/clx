@@ -8,8 +8,8 @@ inherit multilib
 
 MY_PV=${PV/./-}
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="ACL2 is both a programming language in which you can model computer systems and a tool to help you prove properties of those models"
+HOMEPAGE="http://www.cs.utexas.edu/users/moore/acl2/"
 SRC_URI="http://www.cs.utexas.edu/users/moore/acl2/v${MY_PV}/distrib/acl2.tar.gz -> ${P}.tar.gz
 http://www.acl2.org/Downloads/books-${PV}.tar.gz -> ${PN}-books-${PV}.tar.gz
 "
