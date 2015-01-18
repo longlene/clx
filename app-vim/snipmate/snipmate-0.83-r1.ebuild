@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-VIM_PLUGIN_VIM_VERSION="7.0"
+#VIM_PLUGIN_VIM_VERSION="7.0"
 inherit vim-plugin
 
 DESCRIPTION="vim plugin: TextMate-style snippets"

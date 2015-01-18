@@ -2,7 +2,7 @@
 
 EAPI=4
 
-VIM_PLUGIN_VIM_VERSION="7.0"
+#VIM_PLUGIN_VIM_VERSION="7.0"
 inherit vim-plugin git-2
 
 DESCRIPTION="vim plugin: Next generation completion framework after neocomplcache"

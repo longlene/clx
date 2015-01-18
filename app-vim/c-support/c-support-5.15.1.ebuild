@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/app-vim/c-support/c-support-5.13.ebuild,v 1.1 2011/04/29 04:28:46 radhermit Exp $
 
 EAPI="4"
-VIM_PLUGIN_VIM_VERSION="7.0"
+#VIM_PLUGIN_VIM_VERSION="7.0"
 
 inherit vim-plugin
 

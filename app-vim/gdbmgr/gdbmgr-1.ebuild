@@ -4,7 +4,7 @@
 
 EAPI=4
 
-VIM_PLUGIN_VIM_VERSION="7.3"
+#VIM_PLUGIN_VIM_VERSION="7.3"
 inherit vim-plugin toolchain-funcs
 
 DESCRIPTION="vim plugin: vim interface to gdb"

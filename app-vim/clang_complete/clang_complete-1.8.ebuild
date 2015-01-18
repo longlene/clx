@@ -2,7 +2,7 @@
 
 EAPI=4
 
-VIM_PLUGIN_VIM_VERSION="7.3"
+#VIM_PLUGIN_VIM_VERSION="7.3"
 inherit vim-plugin vcs-snapshot
 
 DESCRIPTION="vim plugin: use clang for completing C/C++ code."
