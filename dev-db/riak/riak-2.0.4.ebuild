@@ -58,7 +58,7 @@ RDEPEND="
 "
 # TODO test non smp install
 DEPEND="
-	>=dev-lang/erlang-17
+<dev-lang/erlang-17.0.0
 	${RDEPEND}
 "
 
