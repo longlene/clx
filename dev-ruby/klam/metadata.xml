@@ -7,7 +7,6 @@
 			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
-ZenTest provides 4 different tools: zentest, unit_diff, autotest, and
-multiruby
+Klam is a Ruby implementation of Kl, the small Lisp on top of which the Shen programming language is implemented
 		</longdescription>
 	</pkgmetadata>
