@@ -1,0 +1,27 @@
+diff -Nur gosu-0.8.7.2.orig/cmake/GosuConfig.cmake.in gosu-0.8.7.2/cmake/GosuConfig.cmake.in
+--- gosu-0.8.7.2.orig/cmake/GosuConfig.cmake.in	2015-01-19 07:20:21.000000000 +0800
++++ gosu-0.8.7.2/cmake/GosuConfig.cmake.in	2015-02-17 20:45:54.174766608 +0800
+@@ -63,12 +63,12 @@
+ find_package(OpenGL REQUIRED)
+ 
+ find_package(PkgConfig REQUIRED)
+-pkg_check_modules(SDL2 REQUIRED SDL2)
++pkg_check_modules(SDL2 REQUIRED sdl2)
+ pkg_check_modules(VORBIS REQUIRED vorbisfile)
+ 
+ if(NOT WIN32 AND NOT APPLE)
+     find_package(Freetype REQUIRED)
+-    find_package(SDL2_ttf REQUIRED)
++    pkg_check_modules(SDL2_ttf REQUIRED)
+     find_package(X11 REQUIRED)
+     pkg_check_modules(PANGO REQUIRED pango)
+     pkg_check_modules(PANGOFT REQUIRED pangoft2)
+diff -Nur gosu-0.8.7.2.orig/cmake/gosu.pc.in gosu-0.8.7.2/cmake/gosu.pc.in
+--- gosu-0.8.7.2.orig/cmake/gosu.pc.in	2015-01-19 07:20:21.000000000 +0800
++++ gosu-0.8.7.2/cmake/gosu.pc.in	2015-02-17 20:39:45.104780469 +0800
+@@ -7,4 +7,4 @@
+ 
+ Requires:
+ Libs: -L@Gosu_LIBRARY_INSTALL_DIRS@ @LINKER_FLAGS@
+-Cflags: -I@Gosu_INCLUDE_DIR@
++Cflags: -I${prefix}/include

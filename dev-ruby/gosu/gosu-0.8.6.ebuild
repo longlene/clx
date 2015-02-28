@@ -17,4 +17,29 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
+DEPEND="
+media-libs/mesa
+media-libs/libsdl2
+x11-libs/pango
+media-libs/libvorbis
+media-libs/openal
+media-libs/libsndfile
+media-libs/sdl2-ttf
+media-libs/freeimage
+"
 
+all_ruby_prepare() {
+	sed -e '111,116 d' \
+		-e '118 d' \
+		-i ext/gosu/extconf.rb
+}
+
+
+each_ruby_configure() {
+	${RUBY} -Cext/gosu extconf.rb
+}
+
+each_ruby_compile() {
+	emake -Cext/gosu
+	cp ext/gosu/gosu.so lib || die
+}
