@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+# Summary: Configure the shell environment for rbenv
+# Usage: eval "$(rbenv init - [--no-rehash] [<shell>])"
+
+set -e
+[ -n "$RBENV_DEBUG" ] && set -x
+
+print=""
+no_rehash=""
+for args in "$@"
+do
+  if [ "$args" = "-" ]; then
+    print=1
+		shift
+  fi
+
+  if [ "$args" = "--no-rehash" ]; then
+    no_rehash=1
+    shift
+  fi
+done
+
+shell="$1"
+if [ -z "$shell" ]; then
+  shell="$(basename "$SHELL")"
+fi
+
+resolve_link() {
+  $(type -p greadlink readlink | head -1) $1
+}
+
+abs_dirname() {
+  local cwd="$(pwd)"
+  local path="$1"
+
+  while [ -n "$path" ]; do
+    cd "${path%/*}"
+    local name="${path##*/}"
+    path="$(resolve_link "$name" || true)"
+  done
+
+  pwd
+  cd "$cwd"
+}
+
+root="$(abs_dirname "$0")/.."
+
+if [ -z "$print" ]; then
+  case "$shell" in
+  bash )
+    profile='~/.bash_profile'
+    ;;
+  zsh )
+    profile='~/.zshrc'
+    ;;
+  ksh )
+    profile='~/.profile'
+    ;;
+  * )
+    profile='your profile'
+    ;;
+  esac
+
+  { echo "# Load rbenv automatically by adding"
+    echo "# the following to ${profile}:"
+    echo
+    echo 'eval "$(rbenv init -)"'
+    echo
+  } >&2
+
+  exit 1
+fi
+
+mkdir -p "${RBENV_ROOT}/"{shims,versions}
+
+echo 'export PATH="'${RBENV_ROOT}'/shims:${PATH}"'
+
+case "$shell" in
+zsh )
+  echo "source \"$root/share/zsh/site-functions/_rbenv\""
+  ;;
+bash )
+  echo "source \"$root/share/bash-completion/completions/rbenv\""
+  ;;
+esac
+
+if [ -z "$no_rehash" ]; then
+  echo 'rbenv rehash 2>/dev/null'
+fi
+
+commands=(`rbenv-commands --sh`)
+IFS="|"
+cat <<EOS
+rbenv() {
+  typeset command
+  command="\$1"
+  if [ "\$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "\$command" in
+  ${commands[*]})
+    eval \`rbenv "sh-\$command" "\$@"\`;;
+  *)
+    command rbenv "\$command" "\$@";;
+  esac
+}
+EOS

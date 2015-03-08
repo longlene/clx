@@ -10,23 +10,23 @@ SRC_URI="https://github.com/sstephenson/rbenv/archive/v${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-#KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="bash-completion zsh-completion"
 
 DEPEND=""
-RDEPEND="${DEPEND}
-zsh-completion? ( app-shells/zsh-completion )"
+RDEPEND="${DEPEND}"
+
+src_prepare() {
+	cp "${FILESDIR}"/rbenv-init libexec
+}
 
 
 src_install() {
-	local dest=/usr/$(get_libdir)/${PN}/libexec
-
-	dodir ${dest}
-
-	exeinto ${dest}
+	exeinto /usr/bin
+	doexe bin/ruby-local-exec
+	exeinto /usr/libexec
 	doexe libexec/*
-
-	dosym ${dest}/${PN} /usr/bin/${PN}
+	dosym /usr/libexec/rbenv /usr/bin/rbenv
 
 	dodoc README.md
 
@@ -34,14 +34,8 @@ src_install() {
 
 	if use zsh-completion ; then
 		insinto /usr/share/zsh/site-functions
-		doins completions/rbenv.zsh
+		newins completions/rbenv.zsh _rbenv
 	fi
-
-	local fenv=99rbenv
-	cat > ${fenv} <<-EOF
-	RBENV_ROOT=${dest}
-	EOF
-	doenvd ${fenv}
 }
 
 pkg_postinst() {
