@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<name>loong0</name>
+		<email>longlene@gmail.com</email>
+	</maintainer>
+	<longdescription>
+		PicoC is a very small C interpreter for scripting. It was originally written 
+		as a script language for a UAV's on-board flight system. It's also very 
+		suitable for other robotic, embedded and non-embedded applications.
+	</longdescription>
+</pkgmetadata>
