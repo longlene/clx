@@ -3,11 +3,9 @@ clx -- Overlay For Funtoo/Gentoo Linux
 
 ## DESCRIPTION
 
-Goal: make funtoo/gentoo Linux a more developer-friendly platform
+To make Funtoo/Gentoo the best environment for developer.
 
-This overlay stores some ebuilds for Common Lisp, Ruby and Lua developer and other interesting ebuilds.
-
-some ebuilds are collected from the Internet and others are wrote by myself.
+This overlay stores fresh ebuilds for C++, Ruby, Common Lisp, Lua and other fresh interesting stuff.
 
 
 ## INSTALLATION
