@@ -1,11 +1,13 @@
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
-EAPI=4
+EAPI=5
 
 inherit npm
 
-DESCRIPTION="Wechat is a middleware and SDK of Wechat Official Account Admin Platform"
-HOMEPAGE="https://github.com/node-webot/wechat"
+DESCRIPTION="Recursively mkdir, like \`mkdir -p\`"
+HOMEPAGE="https://github.com/substack/node-mkdirp"
 #SRC_URI=""
 
 LICENSE="MIT"
@@ -15,4 +17,3 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-

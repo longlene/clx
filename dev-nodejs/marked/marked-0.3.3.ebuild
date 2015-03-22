@@ -6,7 +6,7 @@ inherit npm
 
 DESCRIPTION="A markdown parser and compiler"
 HOMEPAGE="https://github.com/chjj/marked"
-SRC_URI="https://github.com/chjj/marked/archive/v${PV}.tar.gz"
+#SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"

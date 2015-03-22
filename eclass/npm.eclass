@@ -88,24 +88,31 @@ npm_src_install() {
 		fi
 	done
 
+	if [[ -e "${S}"/bin ]]; then
+		cp -r "${S}"/bin ${node_modules}
+		local cmd
+		for cmd in "${S}"/bin/*; do
+			dosym /usr/$(get_libdir)/node_modules/${NPM_MODULE}/bin/$(basename ${cmd}) /usr/bin/$(basename ${cmd})
+		done
+	fi
+
 	# Install docs usually found in NodeJS/NPM packages.
 	local f
-	for f in README* HISTORY* ChangeLog AUTHORS NEWS TODO CHANGES \
-		THANKS BUGS FAQ CREDITS CHANGELOG*; do
-	if [[ -s ${f} ]]; then
-		dodoc "${f}"
-	fi
-done
-if has doc ${USE}; then
-	local npm_docs="${NPM_DOCS}"
-
-	for f in $npm_docs
-	do
-		if [[ -e "${S}/$f" ]]; then
-			dodoc -r "${S}/$f"
+	for f in README* HISTORY* ChangeLog AUTHORS NEWS TODO CHANGES THANKS BUGS FAQ CREDITS CHANGELOG*; do
+		if [[ -s ${f} ]]; then
+			dodoc "${f}"
 		fi
 	done
-fi
+	if has doc ${USE}; then
+		local npm_docs="${NPM_DOCS}"
+
+		for f in $npm_docs
+		do
+			if [[ -e "${S}/$f" ]]; then
+				dodoc -r "${S}/$f"
+			fi
+		done
+	fi
 }
 
 EXPORT_FUNCTIONS src_unpack src_compile src_install

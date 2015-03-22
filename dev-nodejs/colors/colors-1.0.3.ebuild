@@ -1,11 +1,13 @@
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
-EAPI=4
+EAPI=5
 
 inherit npm
 
-DESCRIPTION="Fast, unopinionated, minimalist web framework for node"
-HOMEPAGE="http://expressjs.com"
+DESCRIPTION="get colors in your node.js console"
+HOMEPAGE="https://github.com/Marak/colors.js"
 #SRC_URI=""
 
 LICENSE="MIT"
@@ -15,4 +17,3 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-
