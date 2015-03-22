@@ -2,14 +2,17 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
-DESCRIPTION=""
-HOMEPAGE=""
+inherit common-lisp-3 git-2 multilib qmake-utils
+
+DESCRIPTION="A Common Lisp binding to the smoke library for Qt"
+HOMEPAGE="https://common-lisp.net/project/commonqt"
 SRC_URI=""
-EGIT_REPO_URI="git://gitorious.org/commonqt/commonqt.git"
-LICENSE=""
+
+EGIT_REPO_URI="https://github.com/stassats/commonqt.git"
+
+LICENSE="as-is"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
@@ -25,3 +28,10 @@ dev-lisp/iterate
 dev-lisp/trivial-garbage
 dev-lisp/bordeaux-threads"
 
+src_configure() {
+	eqmake4 || die "configure failed"
+}
+
+src_compile() {
+	emake || die "compile failed"
+}
