@@ -27,6 +27,6 @@ src_prepare() {
 src_install() {
 	common-lisp-install-sources .
 	common-lisp-install-asdf
-	dodoc README doc/nibbles-doc.txt
+	#dodoc README doc/nibbles-doc.txt
 	dohtml doc/{index.html,style.css}
 }
