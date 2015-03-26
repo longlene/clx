@@ -1,0 +1,33 @@
+diff -urN nibbles-0.12.orig/nibbles.asd nibbles-0.12/nibbles.asd
+--- nibbles-0.12.orig/nibbles.asd	2014-10-09 08:57:52.000000000 +0800
++++ nibbles-0.12/nibbles.asd	2015-03-19 19:22:17.173689714 +0800
+@@ -6,8 +6,6 @@
+ (cl:in-package :nibbles-system)
+ 
+ (defclass nibbles-source-file (asdf:cl-source-file) ())
+-(defclass txt-file (asdf:doc-file) ((type :initform "txt")))
+-(defclass css-file (asdf:doc-file) ((type :initform "css")))
+ 
+ ;;; Borrowed from iolib.
+ (defun defknown-redefinition-error-p (error)
+@@ -34,19 +32,11 @@
+   :maintainer "Nathan Froyd <froydnj@gmail.com>"
+   :description "A library for accessing octet-addressed blocks of data"
+   :default-component-class nibbles-source-file
+-  :components ((:static-file "README")
+-               (:static-file "LICENSE")
+-               (:static-file "NEWS")
+-               (:file "package")
++  :components ((:file "package")
+                (:file "types" :depends-on ("package"))
+                (:file "macro-utils" :depends-on ("package"))
+                (:file "vectors" :depends-on ("types" "macro-utils"))
+                (:file "streams" :depends-on ("vectors"))
+-	       (:module "doc"
+-			:components
+-			((:html-file "index")
+-			 (:txt-file "nibbles-doc")
+-			 (:css-file "style")))
+                (:module "sbcl-opt"
+                         :depends-on ("package" "macro-utils")
+                         :components ((:file "fndb")
