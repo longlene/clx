@@ -1,9 +1,0 @@
-49,51c49,52
-< 	dolib "${S}"/LINUX64/*.so
-< 	dobin "${S}"/LINUX64/hdf2adf
-< 	dobin "${S}"/LINUX64/adf2hdf
----
-> 	SYSTEM=`${S}/cgsystem`
-> 	dolib "${S}"/"${SYSTEM}"/*.so
-> 	dobin "${S}"/"${SYSTEM}"/hdf2adf
-> 	dobin "${S}"/"${SYSTEM}"/adf2hdf
