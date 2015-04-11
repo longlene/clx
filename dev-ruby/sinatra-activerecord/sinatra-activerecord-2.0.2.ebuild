@@ -14,7 +14,7 @@ HOMEPAGE="http://github.com/janko-m/sinatra-activerecord"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/activerecord-3.2"

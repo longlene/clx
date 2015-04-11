@@ -14,7 +14,7 @@ HOMEPAGE="http://github.com/basho/riak-ruby-client"
 
 LICENSE="Apache 2.0"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/beefcake-0.3.7"

@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/cotag/libuv"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/ffi-1.9"
