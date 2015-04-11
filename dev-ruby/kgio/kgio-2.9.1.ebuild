@@ -14,7 +14,7 @@ DESCRIPTION="kgio provides non-blocking I/O methods for Ruby"
 HOMEPAGE="http://bogomips.org/kgio/"
 
 LICENSE="LGPL"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 
