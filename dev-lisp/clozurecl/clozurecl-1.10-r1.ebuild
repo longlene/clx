@@ -11,14 +11,15 @@ MY_P=${MY_PN}-${PV}
 DESCRIPTION="ClozureCL is a Common Lisp implementation, derived from Digitool's MCL product"
 HOMEPAGE="http://ccl.clozure.com/"
 SRC_URI="x86?   ( ftp://ftp.clozure.com/pub/release/${PV}/${MY_P}-linuxx86.tar.gz )
-		 amd64? ( ftp://ftp.clozure.com/pub/release/${PV}/${MY_P}-linuxx86.tar.gz )"
+		 amd64? ( ftp://ftp.clozure.com/pub/release/${PV}/${MY_P}-linuxx86.tar.gz )
+		 arm? ( ftp://ftp.clozure.com/pub/release/${PV}/${MY_P}-linuxarm.tar.gz )"
 		 # ppc?   ( ftp://ftp.clozure.com/pub/release/${PV}/${MY_P}-linuxppc.tar.gz )
 		 # ppc64? ( ftp://ftp.clozure.com/pub/release/${PV}/${MY_P}-linuxppc.tar.gz )"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
 # KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="doc"
 
 CDEPEND=">=dev-lisp/asdf-2.33-r3:="
@@ -40,6 +41,8 @@ src_configure() {
 		CCL_RUNTIME=ppccl; CCL_HEADERS=headers; CCL_KERNEL=linuxppc
 	elif use ppc64; then
 		CCL_RUNTIME=ppccl64; CCL_HEADERS=headers64; CCL_KERNEL=linuxppc64
+	elif use arm; then
+		CCL_RUNTIME=armcl; CCL_HEADERS=arm-headers; CCL_KERNEL=linuxarm
 	fi
 }
 
