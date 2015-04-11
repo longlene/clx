@@ -9,12 +9,12 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="Ruby: parallel processing make simple and fast"
 HOMEPAGE="https://github.com/grosser/parallel"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 

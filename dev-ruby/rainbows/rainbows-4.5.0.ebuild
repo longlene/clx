@@ -14,7 +14,7 @@ DESCRIPTION="Rainbows! is an HTTP server for sleepy Rack applications"
 HOMEPAGE="http://rainbows.rubyforge.org/"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

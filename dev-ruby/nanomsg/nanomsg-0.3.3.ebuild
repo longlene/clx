@@ -14,7 +14,7 @@ HOMEPAGE="https://bitbucket.org/kschiess/nanomsg"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 

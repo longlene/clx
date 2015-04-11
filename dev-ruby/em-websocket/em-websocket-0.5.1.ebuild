@@ -14,7 +14,7 @@ HOMEPAGE="http://github.com/igrigorik/em-websocket"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/eventmachine-0.12.9"

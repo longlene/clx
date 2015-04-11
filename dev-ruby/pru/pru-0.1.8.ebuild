@@ -9,12 +9,12 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="Pipeable Ruby"
 HOMEPAGE="https://github.com/grosser/pru"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 

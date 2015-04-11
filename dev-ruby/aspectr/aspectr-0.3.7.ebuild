@@ -10,7 +10,7 @@ HOMEPAGE="http://aspectr.rubyforge.org/"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 
