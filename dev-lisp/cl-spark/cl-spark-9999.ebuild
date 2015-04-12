@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/tkych/cl-spark.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

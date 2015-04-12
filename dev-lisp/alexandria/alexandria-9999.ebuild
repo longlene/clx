@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://common-lisp.net/projects/alexandria/alexandria.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE="doc"
 
 src_prepare() {
