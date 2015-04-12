@@ -11,7 +11,7 @@ SRC_URI="http://unauthorised.org/dhog/9wm/9wm-1.1.tar.gz"
 
 LICENSE="9wm"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 RDEPEND="x11-libs/libX11

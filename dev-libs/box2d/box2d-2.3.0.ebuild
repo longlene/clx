@@ -14,11 +14,11 @@ IUSE=""
 
 DESCRIPTION="Box2D is an open source physics engine written primarily for games."
 HOMEPAGE="http://www.box2d.org"
-SRC_URI="http://box2d.googlecode.com/files/${MY_PN}_v${PV}.zip"
+SRC_URI="http://box2d.googlecode.com/files/${MY_PN}_v${PV}.7z"
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 RDEPEND="media-libs/freeglut

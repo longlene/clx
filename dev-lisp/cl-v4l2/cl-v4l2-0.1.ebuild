@@ -9,7 +9,7 @@ SRC_URI="http://repo.or.cz/w/cl-v4l2.git/snapshot/HEAD.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

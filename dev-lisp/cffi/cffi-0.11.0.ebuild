@@ -13,7 +13,7 @@ SRC_URI="http://common-lisp.net/project/${PN}/releases/${MY_P}.tar.gz -> ${P}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE="doc"
 
 DEPEND="doc? ( dev-lisp/sbcl virtual/texi2dvi )"

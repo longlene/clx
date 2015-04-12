@@ -16,7 +16,7 @@ SRC_URI="http://box2d.googlecode.com/files/${MY_PN}_v${PV}.zip"
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 RDEPEND="media-libs/freeglut

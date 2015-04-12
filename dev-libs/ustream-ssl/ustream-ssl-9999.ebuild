@@ -10,7 +10,7 @@ HOMEPAGE="http://wiki.openwrt.org/"
 EGIT_REPO_URI="git://nbd.name/${PN}.git"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="polarssl +openssl"
 
 RDEPEND="dev-libs/libubox

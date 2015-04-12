@@ -10,7 +10,7 @@ SRC_URI="https://github.com/sykopomp/cl-devil/archive/v0.1.4.tar.gz -> ${P}.tar.
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
