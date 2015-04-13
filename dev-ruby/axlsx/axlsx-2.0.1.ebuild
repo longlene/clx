@@ -14,7 +14,7 @@ DESCRIPTION="Office Open XML Spreadsheet Generation"
 HOMEPAGE="https://github.com/randym/axslx"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

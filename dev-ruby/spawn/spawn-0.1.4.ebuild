@@ -14,7 +14,7 @@ DESCRIPTION="spawn"
 HOMEPAGE="https://github.com/soveran/spawn"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

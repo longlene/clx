@@ -14,7 +14,7 @@ DESCRIPTION="Ruby/Graphviz provides an interface to layout and generate images o
 HOMEPAGE="http://github.com/glejeune/Ruby-Graphviz"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

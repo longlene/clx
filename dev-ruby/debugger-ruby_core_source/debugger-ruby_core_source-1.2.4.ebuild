@@ -14,7 +14,7 @@ DESCRIPTION="Retrieve ruby core source files"
 HOMEPAGE="https://github.com/cldwalker/debugger-ruby_core_source"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

@@ -10,6 +10,6 @@ HOMEPAGE="http://www.zeromq.org/bindings:ruby"
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 DEPEND="net-libs/zeromq"

@@ -14,7 +14,7 @@ SRC_URI="http://rubyforge.org/frs/download.php/33561/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 RUBY_FAKEGEM_TASK_DOC="doc"

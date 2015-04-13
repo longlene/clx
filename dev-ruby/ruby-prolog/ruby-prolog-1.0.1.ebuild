@@ -18,7 +18,7 @@ IUSE=""
 SLOT="0"
 
 LICENSE="Apache-2"
-KEYWORDS="~amd64 ~ppc64 ~x86"
+KEYWORDS="~amd64 ~ppc64 ~x86 ~arm"
 
 ruby_add_rdepend "
 	>=dev-ruby/coderay-1.0.5

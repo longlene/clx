@@ -14,7 +14,7 @@ DESCRIPTION="A generator for Ruby FFI bindings"
 HOMEPAGE="https://github.com/neelance/ffi_gen"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

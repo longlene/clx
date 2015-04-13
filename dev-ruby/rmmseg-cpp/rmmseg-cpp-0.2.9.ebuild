@@ -14,7 +14,7 @@ DESCRIPTION="rmmseg-cpp is a high performance Chinese word segmentation utility 
 HOMEPAGE="http://rmmseg-cpp.rubyforge.org/"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

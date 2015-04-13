@@ -14,7 +14,7 @@ DESCRIPTION="Description of Index"
 HOMEPAGE="http://danielpuglisi.com/"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

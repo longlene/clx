@@ -14,7 +14,7 @@ DESCRIPTION="This ripl plugin provides a console for rack apps"
 HOMEPAGE="http://github.com/cldwalker/ripl-rack"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

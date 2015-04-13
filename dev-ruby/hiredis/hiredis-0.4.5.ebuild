@@ -14,7 +14,7 @@ DESCRIPTION="Ruby wrapper for hiredisRuby wrapper for hiredis"
 HOMEPAGE="https://github.com/pietern/hiredis-rb"
 
 LICENSE="BSD"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

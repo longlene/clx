@@ -14,7 +14,7 @@ DESCRIPTION="Arrange an array aligned in columns vertically or horizontally"
 HOMEPAGE="https://github.com/rocky/columnize"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

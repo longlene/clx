@@ -14,7 +14,7 @@ DESCRIPTION="Wavy IRB: colorizes irb results"
 HOMEPAGE="https://github.com/janlelis/wirb"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

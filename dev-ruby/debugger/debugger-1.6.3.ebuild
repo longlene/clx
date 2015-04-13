@@ -14,7 +14,7 @@ DESCRIPTION="A fast implementation of the standard Ruby debugger"
 HOMEPAGE="https://github.com/cldwalker/debugger"
 
 LICENSE="BSD"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

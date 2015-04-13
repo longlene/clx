@@ -18,7 +18,7 @@ IUSE=""
 SLOT="0"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~ppc64 ~x86"
+KEYWORDS="~amd64 ~ppc64 ~x86 ~arm"
 
 ruby_add_rdepend "
 >=dev-ruby/activesupport-3.2.16

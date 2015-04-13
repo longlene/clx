@@ -14,7 +14,7 @@ DESCRIPTION="Roo can access the contents of various spreadshee files"
 HOMEPAGE="http://github.com/Empact/roo"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

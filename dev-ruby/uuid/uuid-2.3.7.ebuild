@@ -14,7 +14,7 @@ DESCRIPTION="UUID generator for producing universally unique identifiers based o
 HOMEPAGE="http://github.com/assaf/uuid"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

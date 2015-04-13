@@ -16,7 +16,7 @@ HOMEPAGE="http://chneukirchen.org/blog/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~alpha ~arm amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha ~arm amd64 ~hppa ~ia64 ppc ppc64 ~sparc x86 ~arm"
 IUSE=""
 
 ruby_add_bdepend test dev-ruby/mocha

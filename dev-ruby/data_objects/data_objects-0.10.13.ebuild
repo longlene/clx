@@ -14,7 +14,7 @@ DESCRIPTION="A standard and simplified API for communicating with RDBMS from Rub
 HOMEPAGE="https://github.com/datamapper/do"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

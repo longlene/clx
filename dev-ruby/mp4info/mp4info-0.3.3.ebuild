@@ -11,7 +11,7 @@ SRC_URI="http://gems.rubyforge.org/gems/${MY_P}.gem"
 
 LICENSE="Ruby"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 
 IUSE=""
 USE_RUBY="ruby18"

@@ -14,7 +14,7 @@ DESCRIPTION="ripl is a light, modular alternative to irb"
 HOMEPAGE="http://github.com/cldwalker/ripl"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

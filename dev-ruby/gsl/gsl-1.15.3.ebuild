@@ -14,7 +14,7 @@ DESCRIPTION="Ruby/GSL is a Ruby interface to the GNU Scientific Library"
 HOMEPAGE="http://rb-gsl.rubyforge.org/"
 
 LICENSE="GPL"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

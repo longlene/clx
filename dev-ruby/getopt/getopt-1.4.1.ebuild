@@ -14,7 +14,7 @@ DESCRIPTION="command line option parsers"
 HOMEPAGE="http://www.rubyforge.org/projects/shards"
 
 LICENSE="as-is"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="amd64 ppc x86 ~arm"
 IUSE="test"
 SLOT="0"
 

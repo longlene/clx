@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/ttilley/fssm"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 
 ruby_add_rdepend "dev-ruby/rb-inotify"

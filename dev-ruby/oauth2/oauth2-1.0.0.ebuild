@@ -19,7 +19,7 @@ HOMEPAGE="http://github.com/intridea/oauth2"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/faraday-0.8

@@ -14,7 +14,7 @@ DESCRIPTION="A library that can manipulate with stardict dictionaries"
 HOMEPAGE="http://rubyforge.org/projects/rbstardict"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

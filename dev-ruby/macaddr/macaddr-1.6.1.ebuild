@@ -14,7 +14,7 @@ DESCRIPTION="cross platform mac address determination for ruby"
 HOMEPAGE="https://github.com/ahoward/macaddr"
 
 LICENSE="|| ( Ruby-BSD BSD-2 )"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

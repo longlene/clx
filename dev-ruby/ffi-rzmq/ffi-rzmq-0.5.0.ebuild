@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://github.com/chuckremes/${PN}.git"
 EGIT_MASTER="${PV}"
 IUSE="doc examples"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 LICENSE="MIT"
 
 RDEPEND="${DEPEND}

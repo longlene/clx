@@ -14,7 +14,7 @@ DESCRIPTION="Provides YARD and extended documentation support for Pry"
 HOMEPAGE="https://github.com/pry/pry-doc"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

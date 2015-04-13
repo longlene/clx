@@ -13,7 +13,7 @@ HOMEPAGE="http://home.gna.org/xmpp4r/"
 
 LICENSE="Ruby"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 x86"
+KEYWORDS="amd64 ~ppc ~ppc64 x86 ~arm"
 IUSE="examples"
 
 # Tests fail, reported upstream: http://github.com/ln/xmpp4r/issues/issue/6

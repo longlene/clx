@@ -14,7 +14,7 @@ DESCRIPTION="Rice is a C++ interface to Ruby's C API"
 HOMEPAGE="http://rice.rubyforge.org/"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

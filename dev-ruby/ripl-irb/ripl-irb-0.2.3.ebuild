@@ -14,7 +14,7 @@ DESCRIPTION="A ripl plugin that smooths the transition from irb by mocking out I
 HOMEPAGE="http://github.com/cldwalker/ripl-irb"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

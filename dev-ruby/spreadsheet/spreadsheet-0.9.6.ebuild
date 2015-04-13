@@ -14,7 +14,7 @@ DESCRIPTION="Excel library"
 HOMEPAGE="https://github.com/zdavatz/spreadsheet"
 
 LICENSE="GPL-3"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

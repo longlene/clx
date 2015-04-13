@@ -14,7 +14,7 @@ DESCRIPTION="A Modern, Concurrent Web Server for Ruby"
 HOMEPAGE="http://puma.io/"
 
 LICENSE="BSD"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

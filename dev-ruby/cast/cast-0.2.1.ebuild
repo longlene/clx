@@ -14,7 +14,7 @@ DESCRIPTION="C parser and AST constructor"
 HOMEPAGE="http://github.com/oggy/cast"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

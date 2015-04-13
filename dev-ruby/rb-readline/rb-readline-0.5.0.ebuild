@@ -14,7 +14,7 @@ DESCRIPTION="A pure Ruby implementation of readline library"
 HOMEPAGE="http://github.com/luislavena/rb-readline"
 
 LICENSE="BSD"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

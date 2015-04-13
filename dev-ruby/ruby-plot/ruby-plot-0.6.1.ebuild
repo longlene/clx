@@ -14,7 +14,7 @@ DESCRIPTION="Gnuplot drawing library - Ruby Bindings"
 HOMEPAGE="https://github.com/davor/ruby-plot"
 
 LICENSE="BSD"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

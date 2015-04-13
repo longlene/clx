@@ -12,7 +12,7 @@ HOMEPAGE="http://rubyforge.org/projects/ruby-oci8/"
 SRC_URI="mirror://rubyforge/${PN}/${P}.tar.gz"
 LICENSE="Ruby"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-db/oracle-instantclient-basic"

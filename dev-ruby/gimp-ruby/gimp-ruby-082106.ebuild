@@ -8,7 +8,7 @@ SRC_URI="http://files.slembcke.net/gimp-ruby/gimp-ruby.tgz"
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~arm"
 IUSE=""
 
 DEPEND="

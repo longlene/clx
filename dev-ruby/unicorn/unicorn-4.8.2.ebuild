@@ -14,7 +14,7 @@ DESCRIPTION="Unicorn is an HTTP server for Rack application"
 HOMEPAGE="http://unicorn.bogomips.org"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

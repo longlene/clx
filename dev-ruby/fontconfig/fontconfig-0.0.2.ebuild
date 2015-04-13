@@ -14,7 +14,7 @@ DESCRIPTION="Ruby binding for fontconfig library"
 HOMEPAGE="http://rubygems.org/gems/fontconfig"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

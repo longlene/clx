@@ -14,7 +14,7 @@ DESCRIPTION="ROpenCV is a ffi ruby binding for the Open Source Computer Vision L
 HOMEPAGE="http://www.ropencv.aduda.eu/"
 
 LICENSE="BSD"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

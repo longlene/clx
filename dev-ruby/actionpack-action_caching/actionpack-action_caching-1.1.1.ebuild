@@ -18,7 +18,7 @@ HOMEPAGE="https://github.com/rails/actionpack-action_caching"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 
 ruby_add_rdepend ">=dev-ruby/actionpack-4.0.0"

@@ -14,7 +14,7 @@ DESCRIPTION="ruby library for automatically generating ruby ffi bindings for c/c
 HOMEPAGE="http://github.com/D-Alex/rbind"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

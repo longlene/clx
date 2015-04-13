@@ -14,7 +14,7 @@ DESCRIPTION="Linecache is a module for reading and caching lines"
 HOMEPAGE="https://github.com/cldwalker/debugger-linecache"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

@@ -14,7 +14,7 @@ DESCRIPTION="NMatrix is a linear algebra library for Ruby"
 HOMEPAGE="http://sciruby.com/"
 
 LICENSE="BSD-2"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

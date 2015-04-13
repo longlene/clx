@@ -14,7 +14,7 @@ DESCRIPTION="RMMSegis an implementation of MMSEG word segmentationalgorithm"
 HOMEPAGE="http://rmmseg.rubyforge.org/"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

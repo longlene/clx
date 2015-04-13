@@ -14,7 +14,7 @@ DESCRIPTION="This ripl plugin colorizes ripl results"
 HOMEPAGE="http://github.com/janlelis/ripl-color_result"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

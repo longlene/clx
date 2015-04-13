@@ -8,7 +8,7 @@ USE_RUBY="ruby19 ruby20 ruby21 ruby22"
 inherit ruby-ng-gnome2
 
 DESCRIPTION="Ruby Gtk2 bindings"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE=""
 
 DEPEND="${DEPEND} x11-libs/gtk+:2

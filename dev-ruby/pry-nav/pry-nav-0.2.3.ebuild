@@ -14,7 +14,7 @@ DESCRIPTION="Binding navigation commands for Pry to make a simple debugger"
 HOMEPAGE="https://github.com/nixme/pry-nav"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

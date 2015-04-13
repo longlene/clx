@@ -14,7 +14,7 @@ DESCRIPTION="jruby stdlib jar files"
 HOMEPAGE="http://rubygems.org/gems/jruby-jars"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

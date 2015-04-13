@@ -14,7 +14,7 @@ DESCRIPTION="This ripl plugin allows you to evaluate multiple lines of Ruby code
 HOMEPAGE="http://github.com/janlelis/ripl-multi_line"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

@@ -14,7 +14,7 @@ DESCRIPTION="A simple OPML parser"
 HOMEPAGE="http://projects.gw-computing.net/projects/opml-parser"
 
 LICENSE="BSD-3"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

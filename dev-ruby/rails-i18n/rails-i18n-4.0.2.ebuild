@@ -18,7 +18,7 @@ HOMEPAGE="http://github.com/svenfuchs/rails-i18n"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 
 ruby_add_rdepend ">=dev-ruby/rails-4.0"

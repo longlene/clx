@@ -14,7 +14,7 @@ DESCRIPTION="Raindrops is a real-time stats toolkit to show statistics for Rack 
 HOMEPAGE="http://raindrops.bogomips.org"
 
 LICENSE="LGPL"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 

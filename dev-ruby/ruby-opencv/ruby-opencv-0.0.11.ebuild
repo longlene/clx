@@ -14,7 +14,7 @@ DESCRIPTION="ruby-opencv is a wrapper of OpenCV for Ruby"
 HOMEPAGE="https://github.com/ruby-opencv/ruby-opencv/"
 
 LICENSE="BSD"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="test"
 SLOT="0"
 
