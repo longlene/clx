@@ -15,7 +15,7 @@ RESTRICT="mirror"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~arm"
 IUSE="X source sse2"
 
 CDEPEND=">=dev-lisp/asdf-2.33-r3:=

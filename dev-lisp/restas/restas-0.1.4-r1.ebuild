@@ -11,7 +11,7 @@ SRC_URI="https://github.com/archimag/restas/archive/version-${PV}.tar.gz -> ${P}
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE="doc slime"
 
 RDEPEND=" >=dev-lisp/cl-routes-0.2.2

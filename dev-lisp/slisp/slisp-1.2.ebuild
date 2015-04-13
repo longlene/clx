@@ -10,7 +10,7 @@ SRC_URI="http://www.sigala.it/sandro/files/slisp-${PV}.tar.gz"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

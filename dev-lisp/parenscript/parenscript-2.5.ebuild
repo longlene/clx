@@ -11,7 +11,7 @@ SRC_URI="http://common-lisp.net/project/${PN}/release/${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE="doc"
 
 RDEPEND="!dev-lisp/cl-${PN}

@@ -9,7 +9,7 @@ HOMEPAGE="http://lush.sourceforge.net/"
 SRC_URI="mirror://sourceforge/lush/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~arm"
 IUSE="X"
 
 DEPEND="X? ( x11-libs/libX11 x11-libs/libICE x11-libs/libSM )"

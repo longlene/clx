@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://github.com/marijnh/parse-js.git"
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

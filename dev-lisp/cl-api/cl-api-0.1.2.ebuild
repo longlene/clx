@@ -12,7 +12,7 @@ SRC_URI="http://common-lisp.net/project/cl-api/files/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-lisp/closer-mop

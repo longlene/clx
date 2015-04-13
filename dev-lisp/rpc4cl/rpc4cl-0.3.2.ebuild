@@ -10,7 +10,7 @@ SRC_URI="http://code.stiernstrom.se/rpc4cl/downloads/rpc4cl-${PV}.tar.gz -> ${P}
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

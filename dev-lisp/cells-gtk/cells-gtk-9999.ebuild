@@ -16,7 +16,7 @@ HOMEPAGE="http://common-lisp.net/project/cells/
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 DEPEND=">=dev-lisp/cells-2

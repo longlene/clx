@@ -16,7 +16,7 @@ http://www.acl2.org/Downloads/books-${PV}.tar.gz -> ${PN}-books-${PV}.tar.gz
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 # use clisp's readline

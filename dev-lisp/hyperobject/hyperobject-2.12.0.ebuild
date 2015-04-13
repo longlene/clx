@@ -12,7 +12,7 @@ SRC_URI="http://files.b9.com/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE="doc"
 
 RDEPEND="!dev-lisp/cl-${PN}

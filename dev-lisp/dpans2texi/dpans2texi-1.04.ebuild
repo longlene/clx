@@ -12,7 +12,7 @@ SRC_URI="http://www.phys.au.dk/~harder/${P}.tar.gz
 
 LICENSE="GPL2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 
 IUSE="emacs html"
 

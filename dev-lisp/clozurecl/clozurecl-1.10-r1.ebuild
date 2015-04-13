@@ -18,7 +18,7 @@ SRC_URI="x86?   ( ftp://ftp.clozure.com/pub/release/${PV}/${MY_P}-linuxx86.tar.g
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-# KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+# KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~arm"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="doc"
 

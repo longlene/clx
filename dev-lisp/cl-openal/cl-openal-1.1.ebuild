@@ -8,7 +8,7 @@ SRC_URI="https://github.com/sykopomp/cl-openal/archive/v${PV}.tar.gz -> ${P}.tar
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

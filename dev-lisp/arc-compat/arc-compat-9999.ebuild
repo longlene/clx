@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/g000001/arc-compat.git"
 
 LICENSE="Aritstic License 2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

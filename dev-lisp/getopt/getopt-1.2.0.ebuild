@@ -11,7 +11,7 @@ SRC_URI="http://files.b9.com/${PN}/${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-lisp/ptester"

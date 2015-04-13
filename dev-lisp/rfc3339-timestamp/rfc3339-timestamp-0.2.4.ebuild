@@ -10,7 +10,7 @@ SRC_URI="http://code.stiernstrom.se/rfc3339-timestamp/downloads/rfc3339-timestam
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

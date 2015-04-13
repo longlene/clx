@@ -10,7 +10,7 @@ SRC_URI="http://heanet.dl.sourceforge.net/project/clorb/clorb/${PV}/clorb_${PV}.
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

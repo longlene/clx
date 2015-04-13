@@ -14,7 +14,7 @@ HOMEPAGE="http://portableaserve.sourceforge.net/
 SRC_URI="https://mydebian.googlecode.com/files/cl-portable-aserve_${MY_PV}+cvs.${CVS_PV}.orig.tar.gz"
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 DEPEND="=dev-lisp/acl-compat-${PV}*"
 

@@ -11,7 +11,7 @@ SRC_URI=""
 EGIT_REPO_URI="git://github.com/jmbr/incf-cl.git"
 LICENSE="MIT" #is same to X11 License?
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/dardoria/${PN}/tarball/20-07-2011 -> ${P}.tgz"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-lisp/ironclad

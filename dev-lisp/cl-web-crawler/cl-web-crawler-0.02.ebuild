@@ -10,7 +10,7 @@ SRC_URI="https://cl-web-crawler.googlecode.com/files/cl-web-crawler_0.02.tar.gz 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

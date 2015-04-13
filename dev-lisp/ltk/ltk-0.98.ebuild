@@ -10,7 +10,7 @@ SRC_URI="http://www.peter-herth.de/ltk/${P}.tgz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="!dev-lisp/cl-${PN}

@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://github.com/redline6561/coleslaw.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

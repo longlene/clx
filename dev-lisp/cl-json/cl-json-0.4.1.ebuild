@@ -13,7 +13,7 @@ SRC_URI="http://common-lisp.net/project/${PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-lisp/fiveam"

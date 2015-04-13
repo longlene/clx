@@ -10,7 +10,7 @@ HOMEPAGE="http://common-lisp.net/project/cl-markdown"
 SRC_URI="https://github.com/gwkkwg/${PN}/tarball/version-${PV}_version-${PV} -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND=">=dev-lisp/metatilities-base-0.6.0

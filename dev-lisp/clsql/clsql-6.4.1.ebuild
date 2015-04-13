@@ -13,7 +13,7 @@ SRC_URI="http://files.b9.com/clsql/${P}.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE="doc examples mysql odbc oracle postgres sqlite sqlite3"
 
 RDEPEND="!dev-lisp/cl-sql

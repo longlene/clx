@@ -12,7 +12,7 @@ SRC_URI="http://beta.quicklisp.org/archive/cl-opengl/2012-05-20/cl-opengl-201205
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-lisp/cffi

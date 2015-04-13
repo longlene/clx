@@ -12,7 +12,7 @@ EGIT_REPO_URI="http://common-lisp.net/r/projects/qitab/inferior-shell.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

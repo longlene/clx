@@ -11,7 +11,7 @@ SRC_URI="http://common-lisp.net/project/iolib/files/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND=">dev-lisp/asdf-2.31.1

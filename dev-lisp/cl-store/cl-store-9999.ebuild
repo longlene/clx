@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/skypher/cl-store.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE="doc"
 
 DEPEND="sys-apps/texinfo

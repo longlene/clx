@@ -24,7 +24,7 @@ SRC_URI="mirror://sourceforge/sbcl/${P}-source.tar.bz2
 RESTRICT="mirror"
 LICENSE="MIT"
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE="debug doc source +threads +unicode zlib"
 
 CDEPEND=">=dev-lisp/asdf-2.33-r3:="

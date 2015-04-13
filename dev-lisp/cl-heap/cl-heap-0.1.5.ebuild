@@ -10,7 +10,7 @@ SRC_URI="https://github.com/TheRiver/CL-HEAP/archive/release-${PV}.tar.gz -> ${P
 
 LICENSE="GPLv3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

@@ -15,7 +15,7 @@ SRC_URI="http://www.common-lisp.net/project/${PN}/files/${MY_P}.tgz"
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 DEPEND=">=dev-lisp/cells-2

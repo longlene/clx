@@ -12,7 +12,7 @@ EGIT_SRC_URI="https://github.com/llibra/percent-encoding.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

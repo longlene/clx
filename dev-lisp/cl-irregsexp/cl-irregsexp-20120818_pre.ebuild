@@ -13,7 +13,7 @@ SRC_URI="http://common-lisp.net/project/cl-irregsexp/downloads/cl-irregsexp.tar.
 
 LICENSE="Unknown"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-lisp/alexandria"

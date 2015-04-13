@@ -11,7 +11,7 @@ EGIT_REPO_URI="git://github.com/archimag/cl-sanitize.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

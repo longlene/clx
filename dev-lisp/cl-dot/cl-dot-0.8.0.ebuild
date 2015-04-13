@@ -10,7 +10,7 @@ SRC_URI="https://github.com/michaelw/cl-dot/archive/cl-dot-${PV}.tar.gz -> ${P}.
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

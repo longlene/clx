@@ -12,7 +12,7 @@ EHG_REPO_URI="https://bitbucket.org/tarballs_are_good/cl-permutation"
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

@@ -10,7 +10,7 @@ SRC_URI=""
 EGIT_REPO_URI="git://github.com/vsedach/cliki2.git"
 LICENSE="AGPLv3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

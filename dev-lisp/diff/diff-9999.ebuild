@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/froydnj/diff.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="!dev-lisp/cl-${PN}"

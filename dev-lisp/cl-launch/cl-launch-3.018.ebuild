@@ -11,7 +11,7 @@ SRC_URI="http://common-lisp.net/project/xcvb/${PN}/${PN}-${PV}.tar.gz"
 LICENSE="No-Problem-Bugroff LLGPL-2.1"
 
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 CL_LAUNCH_FASLDIR=/var/cache/cl-launch

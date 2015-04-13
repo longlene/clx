@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/Liutos/cl-github-page.git"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

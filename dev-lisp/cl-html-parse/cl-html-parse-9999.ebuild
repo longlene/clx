@@ -12,7 +12,7 @@ EGIT_URI="https://github.com/gwkkwg/cl-html-parse.git"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 #S="${WORKDIR}"/${PN}

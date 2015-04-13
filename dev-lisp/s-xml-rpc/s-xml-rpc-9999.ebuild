@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/Publitechs/s-xml-rpc.git"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-lisp/s-xml

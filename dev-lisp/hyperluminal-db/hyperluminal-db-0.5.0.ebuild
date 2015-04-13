@@ -10,7 +10,7 @@ SRC_URI="https://github.com/cosmos72/hyperluminal-db/archive/v${PV}.tar.gz -> ${
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

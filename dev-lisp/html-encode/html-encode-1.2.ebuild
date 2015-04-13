@@ -9,7 +9,7 @@ HOMEPAGE="http://www.cliki.net/html-encode"
 SRC_URI="http://beta.quicklisp.org/orphans/${P}.tgz"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="!dev-lisp/cl-${PN}"

@@ -11,7 +11,7 @@ SRC_URI="http://common-lisp.net/project/cl-ncurses/files/cl-ncurses_${PV}.tgz ->
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc x86 ~arm"
 IUSE=""
 
 DEPEND="dev-lisp/common-lisp-controller

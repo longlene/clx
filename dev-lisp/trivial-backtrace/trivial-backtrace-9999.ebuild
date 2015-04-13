@@ -12,7 +12,7 @@ EGIT_REPO_URI="http://common-lisp.net/project/trivial-backtrace/trivial-backtrac
 
 LICENSE="MIT BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 CLSYSTEMS="${PN} ${PN}-test"

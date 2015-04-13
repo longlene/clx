@@ -10,7 +10,7 @@ SRC_URI="https://github.com/fukamachi/circular-streams/archive/0.1.tar.gz -> ${P
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 x86 ~arm"
 IUSE=""
 
 DEPEND=""

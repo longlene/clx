@@ -14,7 +14,7 @@ EGIT_REPO_URI="https://github.com/fukamachi/websocket-driver.git"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

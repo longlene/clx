@@ -11,7 +11,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.gz http://dev.gentoo.org/~grozin/${P}-fedor
 
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~x86 ~arm"
 IUSE="+ansi athena emacs +readline tk X doc"
 
 # See bug #205803

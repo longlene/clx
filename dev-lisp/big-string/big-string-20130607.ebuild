@@ -10,7 +10,7 @@ SRC_URI="https://bitbucket.org/tarballs_are_good/big-string/get/tip.tar.gz -> ${
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

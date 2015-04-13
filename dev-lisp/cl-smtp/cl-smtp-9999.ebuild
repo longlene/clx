@@ -14,7 +14,7 @@ EGIT_REPO_URI="git@github.com:ury-marshak/cl-smtp.git"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-lisp/cl-base64

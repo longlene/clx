@@ -10,7 +10,7 @@ SRC_URI="https://cl-mssql.googlecode.com/files/cl-mssql-${PV}.tar.bz2"
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

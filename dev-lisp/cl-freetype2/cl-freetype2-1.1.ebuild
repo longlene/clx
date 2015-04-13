@@ -10,7 +10,7 @@ SRC_URI="https://github.com/rpav/cl-freetype2/archive/${PV}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

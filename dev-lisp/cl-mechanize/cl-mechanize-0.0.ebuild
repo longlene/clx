@@ -9,7 +9,7 @@ SRC_URI="https://github.com/joachifm/cl-mechanize/tarball/0.0 -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

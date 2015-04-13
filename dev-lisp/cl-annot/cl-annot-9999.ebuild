@@ -15,7 +15,7 @@ EGIT_REPO_URI="https://github.com/arielnetworks/cl-annot.git"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-lisp/alexandria"

@@ -13,7 +13,7 @@ EGTI_URI="http://mr.gy/maintenance/net-telent-date/net-telent-date.git"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="!dev-lisp/cl-${PN}"

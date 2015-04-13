@@ -10,7 +10,7 @@ SRC_URI="https://github.com/billstclair/cl-crypto/archive/${PV}.tar.gz -> ${P}.t
 
 LICENSE="Apache"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

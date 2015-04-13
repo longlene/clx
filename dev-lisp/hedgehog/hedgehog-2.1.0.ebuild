@@ -9,7 +9,7 @@ SRC_URI="http://hedgehog.oliotalo.fi/download/${P}.tar.gz"
 HOMEPAGE="http://hedgehog.oliotalo.fi/"
 SLOT="0"
 LICENSE="LGPL-2.1 BSD"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~arm"
 IUSE=""
 
 DEPEND=""

@@ -9,7 +9,7 @@ HOMEPAGE="http://cl-sdl.sourceforge.net/"
 SRC_URI="mirror://sourceforge/cl-sdl/${PN}_${PV}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc x86 ~arm"
 IUSE=""
 DEPEND="dev-lisp/cl-uffi
 	media-libs/libsdl

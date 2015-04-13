@@ -13,7 +13,7 @@ SRC_URI="https://github.com/${MY_USER}/${PN}/tarball/master -> ${P}.tgz"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="dev-lisp/alexandria"

@@ -12,7 +12,7 @@ EGTI_REPO_URI="https://github.com/fare/lisp-interface-library.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

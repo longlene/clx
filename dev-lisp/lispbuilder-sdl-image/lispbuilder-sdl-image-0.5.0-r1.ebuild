@@ -11,7 +11,7 @@ SRC_URI="http://lispbuilder.googlecode.com/files/${P}.tgz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="media-libs/libpng
