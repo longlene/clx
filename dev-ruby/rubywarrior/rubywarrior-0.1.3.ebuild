@@ -20,11 +20,4 @@ SLOT="0"
 
 RDEPEND="${RDEPEND}"
 
-#all_ruby_prepare() {
-#	# Existing metadata causes a crash in jruby, so use our own.
-#	rm ../metadata || die "Unable to remove metadata."
-#}
-#
-#each_ruby_test() {
-#	${RUBY} -Ctest test_gnuplot.rb || die
-#}
+RUBY_FAKEGEM_EXTRAINSTALL="templates towers"
