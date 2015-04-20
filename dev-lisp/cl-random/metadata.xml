@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		cl-random is a library for (1) generating random draws from various commonly used distributions, and (2) calculating statistical functions, such as density and quantiles for these distributions.
+	</longdescription>
+</pkgmetadata>

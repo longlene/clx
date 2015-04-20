@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3
 
 DESCRIPTION="High-performance Transactional Memory for Common Lisp"
 HOMEPAGE="http://stmx.org"
@@ -15,8 +15,10 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
+dev-lisp/alexandria
 dev-lisp/log4cl
 dev-lisp/closer-mop
 dev-lisp/bordeaux-threads
-dev-lisp/trivial-garbage"
+dev-lisp/trivial-garbage
+"
 

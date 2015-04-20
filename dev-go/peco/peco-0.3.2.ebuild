@@ -4,20 +4,20 @@
 
 EAPI=5
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="Simplistic interactive filtering tool"
+HOMEPAGE="https://github.com/peco/peco"
 SRC_URI="https://github.com/peco/peco/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
-DEPEND=""
+DEPEND="dev-lang/go"
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	go build -o ${PN}
+	go build cmd/peco/peco.go
 }
 
 src_install() {
