@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		ffiex
+
+		extend luajit ffi module to give more affinity to C codes
+		can #include typical system C headers (no more manual C definition injection)
+		enable to use C sources without pre-build it.
+		caution : there is no official support for windows related OS.
+
+	</longdescription>
+</pkgmetadata>

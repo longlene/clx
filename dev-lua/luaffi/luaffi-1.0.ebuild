@@ -25,6 +25,6 @@ src_compile() {
 }
 
 src_install() {
-	insinto $(pkg-config --variable INSTALL_CMOD)
+	insinto $($(tc-getPKG_CONFIG) --variable INSTALL_CMOD lua)
 	doins ffi.so
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		Date and Time module for Lua 5.x.
+		Features:
+
+		Date and Time string parsing.
+		Time addition and subtraction.
+		Time span calculation.
+		Support ISO 8601 Dates.
+		Local time support.
+		Lua module (not binary).
+		Formats Date and Time like strftime.
+		/longdescription>
+	</pkgmetadata>

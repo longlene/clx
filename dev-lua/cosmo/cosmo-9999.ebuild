@@ -28,12 +28,12 @@ src_configure() {
 src_install() {
 	docompress -x /usr/share/doc
 	emake DESTDIR="${D}" install || die "Can't install Cosmo"
-        use doc && (
-                insinto /usr/share/doc/${PF}/examples
-                doins -r samples/*
-                insinto /usr/share/doc/${PF}
-                doins -r doc/*
-        )
+	use doc && (
+	insinto /usr/share/doc/${PF}/examples
+	doins -r samples/*
+	insinto /usr/share/doc/${PF}
+	doins -r doc/*
+	)
 
-#emake DESTDIR="${D}" PREFIX="/usr/share/doc/${P}" install-doc install-samples
+	#emake DESTDIR="${D}" PREFIX="/usr/share/doc/${P}" install-doc install-samples
 }

@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="4"
-inherit eutils multilib
+inherit lua
 
 DESCRIPTION="Bit Operations Library for the Lua Programming Language"
 HOMEPAGE="http://bitop.luajit.org"
@@ -33,7 +33,6 @@ src_test() {
 }
 
 src_install() {
-	exeinto /usr/$(get_libdir)/lua/5.1
-	doexe bit.so
+	lua_install_cmodule bit.so
 	dohtml -r doc/*
 }

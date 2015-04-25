@@ -4,27 +4,26 @@
 
 EAPI="4"
 
-inherit cmake-utils git-2
+inherit cmake-utils lua
 
 DESCRIPTION="Lua bindings to zlib"
 HOMEPAGE="http://github.com/brimworks/lua-zlib"
-EGIT_REPO_URI="git://github.com/brimworks/lua-zlib.git"
+SRC_URI="https://github.com/brimworks/lua-zlib/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
-IUSE=""
+KEYWORDS="~amd64 ~x86 ~arm"
+IUSE="luajit"
 
 RDEPEND="|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 )
-		sys-libs/zlib"
+sys-libs/zlib"
 DEPEND="${RDEPEND}
-		dev-util/pkgconfig"
-
-src_prepare() {
-	mv *-${PN}-* "${S}"
-}
-
+dev-util/pkgconfig"
 src_configure() {
-	MYCMAKEARGS="-DINSTALL_CMOD='$(pkg-config --variable INSTALL_CMOD lua)'"
+	local mycmakeargs=(
+	cmake-utils_use_use luajit LUAJIT
+	"-DINSTALL_CMOD='$(pkg-config --variable INSTALL_CMOD lua)'"
+	"-DUSE_LUA_VERSION=${LUA_VER}"
+	)
 	cmake-utils_src_configure
 }

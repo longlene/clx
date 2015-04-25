@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit multilib toolchain-funcs flag-o-matic mercurial eutils
+inherit lua
 
 DESCRIPTION="XMPP client library written in Lua."
 HOMEPAGE="http://code.mathewwild.co.uk/"
@@ -21,6 +21,5 @@ RDEPEND="|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 )
 DEPEND="${RDEPEND}"
 
 src_install() {
-	insinto $(pkg-config --variable INSTALL_LMOD lua)/${PN}/;
-	doins *.lua || die
+	lua_install_module -r ${PN}
 }

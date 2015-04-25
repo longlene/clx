@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit multilib toolchain-funcs flag-o-matic mercurial eutils
+inherit mercurial lua
 
 DESCRIPTION="Lua Asynchronous HTTP Library."
 HOMEPAGE="http://code.mathewwild.co.uk/"
@@ -25,6 +25,5 @@ src_compile() {
 }
 
 src_install() {
-	insinto $(pkg-config --variable INSTALL_LMOD lua)
-	doins lahttp.lua || die
+	lua_install_module lahttp.lua
 }
