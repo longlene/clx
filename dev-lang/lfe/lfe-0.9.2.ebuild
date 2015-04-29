@@ -26,7 +26,12 @@ src_prepare() {
 }
 
 src_install() {
-	dobin lfe
-	dobin lfec
-	dobin lfescript
+	insinto /usr/$(get_libdir)/lfe
+	doins -r ebin
+	exeinto /usr/$(get_libdir)/lfe/bin
+	doexe bin/lfe bin/lfec bin/lfescript
+	dodoc README.md
+	dosym /usr/$(get_libdir)/lfe/bin/lfe /usr/bin/lfe
+	dosym /usr/$(get_libdir)/lfe/bin/lfec /usr/bin/lfec
+	dosym /usr/$(get_libdir)/lfe/bin/lfescript /usr/bin/lfescript
 }
