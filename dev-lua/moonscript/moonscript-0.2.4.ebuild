@@ -12,7 +12,7 @@ SRC_URI="https://github.com/leafo/moonscript/archive/v${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd6 ~x86 ~arm"
 IUSE="luajit +inotify"
 
 RDEPEND="
