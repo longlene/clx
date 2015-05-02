@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		The Nebula file server
+		Introduction
+
+		Nebula is a prototype file store that uses a capability model for security and a content-addressable storage scheme for the underlying data. This particular version is a development demonstrator that aims to vet the core ideas.
+
+		The motivations and general concepts are explained in more depth in this blog post. The intro.org file in this repo contains additional description of the problem
+	</longdescription>
+</pkgmetadata>

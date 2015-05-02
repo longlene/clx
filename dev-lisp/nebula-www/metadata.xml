@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		cl-nebula-www
+
+		This is the HTTP frontend for Nebula. It requires nebula[1], and the
+		nebula setup must be complete (namely, database setup and creating the
+		credentials file). For more information about Nebula, see [2].
+
+		[1] https://github.com/kisom/nebula
+		[2] https://kyleisom.net/blog/2015/04/07/nebula/
+	</longdescription>
+</pkgmetadata>
