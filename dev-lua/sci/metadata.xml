@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		The Sci library is part of the SciLua framework which aims to offer a framework for numerical computing which combines the ease of use of scripting languages (Matlab, R, ...) with the high performance of compiled languages (C/C++, Fortran, ...). Please refer to the project's homepage for more information.
+	</longdescription>
+</pkgmetadata>

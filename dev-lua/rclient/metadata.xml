@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		Rclient is a MIT licensed library that allows to execute arbitrary R programs within LuaJIT. Being the most widely used language for statistical computing, R features a huge number of scientific libraries. Of particular relevance is the possibility to leverage on the plotting capabilities of ggplot2 and similar libraries.
+	</longdescription>
+</pkgmetadata>

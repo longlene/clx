@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		Using the MIT licensed LJSQLite3 library data can be conveniently exchanged between Lua and SQLite databases. Moreover arbitrary operations can be performed on SQLite databases directly from Lua.
+	</longdescription>
+</pkgmetadata>
