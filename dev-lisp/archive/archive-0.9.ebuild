@@ -1,11 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 inherit common-lisp-3
-
-#MY_P=${PN}_${PV}
 
 DESCRIPTION="Archive is Nathan Froyd's tar/cpio package for CL."
 HOMEPAGE="http://www.cliki.net/Archive"
@@ -16,4 +14,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
-#S="${WORKDIR}"/${MY_P}
+DEPEND=""
+RDEPEND="${DEPEND}
+dev-lisp/trivial-gray-streams
+dev-lisp/cl-fad
+"
+
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all README TODO NEWS LICENSE
+}

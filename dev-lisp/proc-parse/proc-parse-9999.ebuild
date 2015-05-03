@@ -6,27 +6,28 @@ EAPI=5
 
 inherit common-lisp-3 git-2
 
-DESCRIPTION="Low-level UNIX socket library"
-HOMEPAGE="https://github.com/fukamachi/wsock"
+DESCRIPTION="Procedural vector parser"
+HOMEPAGE="https://github.com/fukamachi/proc-parse"
 SRC_URI=""
 
-EGIT_REPO_URI="https://github.com/fukamachi/wsock.git"
+EGIT_REPO_URI="https://github.com/fukamachi/proc-parse.git"
 
-LICENSE="MIT"
+LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/cffi
+dev-lisp/alexandria
+dev-lisp/babel
 "
 
 src_install() {
 	common-lisp-install-sources -t all src README.markdown
-	common-lisp-install-asdf wsock.asd
+	common-lisp-install-asdf ${PN}.asd
 	if use test ; then
 		common-lisp-install-sources t
-		common-lisp-install-asdf wsock-test.asd
+		common-lisp-install-asdf ${PN}-test.asd
 	fi
 }

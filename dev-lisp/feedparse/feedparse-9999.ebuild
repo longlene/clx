@@ -29,6 +29,10 @@ src_prepare() {
 }
 
 src_install() {
-	common-lisp-src-install -t all src feedparse.asd README.markdown
-	use test && common-lisp-src-install t feedparse-test.asd
+	common-lisp-install-sources -t all src README.markdown
+	common-lisp-install-asdf feedparse.asd
+	if use test ; then
+		common-lisp-install-sources t
+		common-lisp-install-asdf feedparse-test.asd
+	fi
 }

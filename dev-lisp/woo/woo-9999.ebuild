@@ -15,7 +15,7 @@ EGIT_REPO_URI="https://github.com/fukamachi/woo.git"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -33,12 +33,11 @@ dev-lisp/local-time
 dev-lisp/alexandria
 dev-lisp/split-sequence"
 
-src_prepare() {
-	rm -rf benchmark
-}
-
 src_install() {
-	common-lisp-3_src_install
-	# for ugly code in asd
-	common-lisp-install-sources -t all README.md
+	common-lisp-install-sources -t all README.md src
+	common-lisp-install-asdf ${PN}.asd
+	if use test ; then
+		common-lisp-install-sources t
+		common-lisp-install-asdf ${PN}-test.asd
+	fi
 }

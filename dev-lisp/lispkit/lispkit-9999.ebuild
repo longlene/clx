@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit git-2 common-lisp-3
+inherit common-lisp-3 git-2
 
 DESCRIPTION="A lisp browser using WebKit"
 HOMEPAGE="http://github.com/AeroNotix/lispkit"
@@ -23,5 +23,6 @@ dev-lisp/cl-xkeysym
 dev-lisp/djula
 dev-lisp/parenscript
 dev-lisp/split-sequence
-test? ( dev-lisp/lisp-unit dev-lisp/alexandria )"
+test? ( dev-lisp/lisp-unit dev-lisp/alexandria )
+"
 

@@ -23,6 +23,6 @@ dev-libs/libev
 dev-lisp/cffi"
 
 src_install() {
-	common-lisp-3_src_install
-	common-lisp-install-sources -t all README.md
+	common-lisp-install-sources -t all src README.md
+	common-lisp-install-asdf lev.asd
 }
