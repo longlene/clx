@@ -14,7 +14,7 @@ KEYWORDS="x86 amd64"
 IUSE="perl xft"
 
 DEPEND="perl? ( dev-lang/perl )
-xft? ( virtual/xft )"
+xft? ( x11-libs/libXft )"
 
 RDEPEND="${DEPEND}
 !dev-scheme/racket"
