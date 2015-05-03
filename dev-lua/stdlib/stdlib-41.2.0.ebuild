@@ -10,16 +10,13 @@ SRC_URI="http://luaforge.net/frs/download.php/3584/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+#KEYWORDS="~amd64"
 IUSE="doc"
 
-DEPEND="
-dev-lang/lua
-!dev-lua/getopt
-"
+DEPEND="dev-lang/lua
+	!dev-lua/getopt"
 RDEPEND="${DEPEND}
->=dev-lua/lrexlib-2.2.0
-"
+	>=dev-lua/lrexlib-2.2.0"
 
 S="${WORKDIR}/${PN}"
 
