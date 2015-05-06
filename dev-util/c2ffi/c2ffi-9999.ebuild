@@ -10,22 +10,21 @@ SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/rpav/c2ffi.git"
 
-LICENSE="LGPL-2"
+LICENSE="GPL-2"
 SLOT="0"
-#KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+>=sys-devel/llvm-3.5.0
+"
 RDEPEND="${DEPEND}"
 
-src_compile() {
-	./autogen
-	mkdir build
-	cd build
-	../configure
-	emake
+src_configure() {
+	./autogen && econf
 }
 
 src_install() {
-	do_bin src/c2ffi
+	dobin src/c2ffi
+	dodoc README.md
 }
