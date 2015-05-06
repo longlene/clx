@@ -13,7 +13,7 @@ SRC_URI="https://github.com/sandstorm-io/capnproto/archive/v${PV}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE="+tools test lite"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
@@ -21,13 +21,16 @@ RDEPEND="${DEPEND}"
 CMAKE_USE_DIR="${S}"/c++
 
 src_prepare() {
-	sed -i '/symlink/d' c++/src/capnp/CMakeLists.txt
+	sed -i "/LIB_INSTALL_DIR/ s/lib/$(get_libdir)/" c++/CMakeLists.txt
+	sed -i '/create_symlink/d' c++/src/capnp/CMakeLists.txt
 }
 
 src_configure() {
 	local mycmakeargs=(
 	-DCMAKE_INSTALL_PREFIX=/usr
+	$(cmake-utils_use_build tools TOOLS)
 	$(cmake-utils_use_build test TESTING)
+	$(cmake-utils_use lite CAPNP_LITE)
 	)
 	cmake-utils_src_configure
 }

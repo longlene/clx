@@ -1,0 +1,47 @@
+diff -ur elephant-0.9.1.orig/config.sexp elephant-0.9.1/config.sexp
+--- elephant-0.9.1.orig/config.sexp	2008-01-05 11:48:51.000000000 +0100
++++ elephant-0.9.1/config.sexp	2008-01-05 13:16:05.000000000 +0100
+@@ -1,18 +1,18 @@
+ 
+ ;; Linux defaults
+-#+(and (or sbcl allegro openmcl lispworks) (not (or mswindows windows)) (not (or macosx darwin)))
++#+(and (or sbcl allegro openmcl lispworks) (not (or macosx darwin)))
+ ((:compiler . :gcc)
+- (:berkeley-db-include-dir . "/usr/local/BerkeleyDB.4.5/include/")
+- (:berkeley-db-lib-dir . "/usr/local/BerkeleyDB.4.5/lib/")
+- (:berkeley-db-lib . "/usr/local/BerkeleyDB.4.5/lib/libdb-4.5.so")
+- (:berkeley-db-deadlock . "/usr/local/BerkeleyDB.4.5/bin/db_deadlock")
++ (:berkeley-db-include-dir . "/usr/include/db4.5/")
++ (:berkeley-db-lib-dir . "/usr/lib/")
++ (:berkeley-db-lib . "/usr/lib/libdb-4.5.so")
++ (:berkeley-db-deadlock . "/usr/bin/db4.5_deadlock")
+  (:berkeley-db-cachesize . 20971520)
+  (:berkeley-db-map-degree2 . t)
+  (:clsql-lib-paths . nil)
+  (:prebuilt-libraries . nil))
+ 
+ ;; OSX Defaults 
+-#+(and (or sbcl allegro openmcl lispworks) (not (or mswindows windows)) (or macosx darwin))
++#+(and (or sbcl allegro openmcl lispworks) (or macosx darwin))
+ ((:compiler . :gcc)
+  (:berkeley-db-include-dir . "/usr/local/BerkeleyDB.4.5/include/")
+  (:berkeley-db-lib-dir . "/usr/local/BerkeleyDB.4.5/lib/")
+@@ -23,18 +23,6 @@
+  (:clsql-lib-paths . nil)
+  (:prebuilt-libraries . nil))
+ 
+-;; Windows defaults (assumes prebuild libraries)
+-#+(or mswindows windows)
+-((:compiler . :cygwin)
+- (:berkeley-db-include-dir . "C:/Program Files/Oracle/Berkeley DB 4.5.20/include/")
+- (:berkeley-db-lib-dir . "C:/Program Files/Oracle/Berkeley DB 4.5.20/bin/")
+- (:berkeley-db-lib . "C:/Program Files/Oracle/Berkeley DB 4.5.20/bin/libdb45.dll")
+- (:berkeley-db-deadlock . "C:/Program Files/Oracle/Berkeley DB 4.5.20/bin/db_deadlock.exe")
+- (:berkeley-db-cachesize . 20971520)
+- (:berkeley-db-map-degree2 . t)
+- (:clsql-lib-paths . nil)
+- (:prebuilt-libraries . t))
+-
+ ;; Berkeley 4.5 is required, each system will have different settings for
+ ;; these directories, use this as an indication of what each key means
+ ;;

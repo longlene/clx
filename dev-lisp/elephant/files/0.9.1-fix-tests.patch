@@ -1,0 +1,161 @@
+diff -ur elephant-0.9.1.orig/elephant-tests.asd elephant-0.9.1/elephant-tests.asd
+--- elephant-0.9.1.orig/elephant-tests.asd	2008-01-05 11:48:51.000000000 +0100
++++ elephant-0.9.1/elephant-tests.asd	2008-01-05 13:51:36.000000000 +0100
+@@ -51,24 +51,21 @@
+   :description "Object database for Common Lisp"
+   :long-description "An object-oriented database based on Berkeley DB, for CMUCL/SBCL, OpenMCL, Lispworks, and Allegro."
+   
+-  :depends-on #-use-fiveam (:elephant :rt)
+-              #+use-fiveam (:elephant :fiveam)
++  :depends-on (:elephant :fiveam)
+   :components
+   ((:module :tests
+-	    :components
+-	    ((:file "elet-package")
+-             #+use-fiveam
+-             (:file "fiveam-rt")
+-             (:file "elephant-tests")
+-             (:file "testperformance")
+-	     (:file "testserializer")
+-	     (:file "testconditions")
+-	     (:file "mop-tests")
+-	     (:file "testcollections")
+-	     (:file "testindexing")
+-	     (:file "testmigration")
+-	     )
+-	    :serial t)))
++	:components
++    ((:file "elet-package")
++     (:file "fiveam-rt")
++     (:file "elephant-tests")
++     (:file "testperformance")
++     (:file "testserializer")
++     (:file "testconditions")
++     (:file "mop-tests")
++     (:file "testcollections")
++     (:file "testindexing")
++     (:file "testmigration"))
++    :serial t)))
+ 
+ (defsystem elephant-tests-bdb
+   :name "elephant"
+diff -ur elephant-0.9.1.orig/tests/elephant-tests.lisp elephant-0.9.1/tests/elephant-tests.lisp
+--- elephant-0.9.1.orig/tests/elephant-tests.lisp	2008-01-05 11:48:51.000000000 +0100
++++ elephant-0.9.1/tests/elephant-tests.lisp	2008-01-05 14:06:11.000000000 +0100
+@@ -95,6 +95,10 @@
+ ;; COMPREHENSIVE TESTING
+ ;;
+ 
++(defvar *test-spec-primary*)
++(defvar *test-spec-secondary*)
++(defvar *store-controller*)
++
+ (defun run-regression-tests (type)
+   (let (sc1 sc2 oid)
+     (case type
+@@ -110,8 +114,7 @@
+ 	     sc2 *testpg-spec*))
+       (t (error "Unrecognized data store type: ~A" type)))
+     (let ((*test-spec-primary* sc1)
+-	  (*test-spec-secondary* sc2))
+-      (declare (special *test-spec-secondary* *test-spec-primary*))
++          (*test-spec-secondary* sc2))
+       (do-backend-tests sc1))))
+ 
+ ;;
+@@ -150,7 +153,6 @@
+   "Interface to do explicit migration tests between backends"
+   (let ((*test-spec-primary* spec1)
+ 	(*test-spec-secondary* spec2))
+-    (declare (special *test-spec-primary* *test-spec-secondary*))
+     (if oid-spec
+ 	(set-oid-spec oid-spec)
+ 	(set-oid-spec nil))
+@@ -161,7 +163,6 @@
+ (defun do-migration-test-spec (test spec1 spec2)
+   (let ((*test-spec-primary* spec1)
+ 	(*test-spec-secondary* spec2))
+-    (declare (special *test-spec-primary* *test-spec-secondary*))
+     (print (do-test test))))
+ 
+ 
+diff -ur elephant-0.9.1.orig/tests/elet-package.lisp elephant-0.9.1/tests/elet-package.lisp
+--- elephant-0.9.1.orig/tests/elet-package.lisp	2008-01-05 11:48:51.000000000 +0100
++++ elephant-0.9.1/tests/elet-package.lisp	2008-01-05 14:00:08.000000000 +0100
+@@ -18,10 +18,7 @@
+ 
+ (defpackage elephant-tests
+   (:nicknames :ele-tests)
+-  #+use-fiveam
+   (:use :common-lisp :elephant :5am)
+-  #-use-fiveam
+-  (:use :common-lisp :elephant :regression-test)
+   (:import-from :elephant
+ 		with-buffer-streams
+ 		serialize
+@@ -56,4 +53,4 @@
+ 		slot-definition-name
+ 		slot-makunbound-using-class
+ 		class-slots)
+-  )
+\ No newline at end of file
++  )
+diff -ur elephant-0.9.1.orig/tests/testindexing.lisp elephant-0.9.1/tests/testindexing.lisp
+--- elephant-0.9.1.orig/tests/testindexing.lisp	2008-01-05 11:48:52.000000000 +0100
++++ elephant-0.9.1/tests/testindexing.lisp	2008-01-05 13:59:41.000000000 +0100
+@@ -4,10 +4,6 @@
+ (in-suite* testindexing :in elephant-tests)
+ 
+ (defun setup-testing ()
+-  #-use-fiveam
+-  (progn
+-    (setf regression-test::*debug* t)
+-    (setf regression-test::*catch-errors* nil))
+ ;;  (trace elephant::indexed-slot-writer)
+   (trace ((method initialize-instance :before (persistent))))
+   (trace ((method initialize-instance (persistent-object))))
+@@ -27,6 +23,9 @@
+ (defvar inst1)
+ (defvar inst2)
+ (defvar inst3)
++(defvar inst4)
++(defvar inst5)
++(defvar inst6)
+ 
+ (test disable-class-indexing-test 
+   (5am:finishes
+diff -ur elephant-0.9.1.orig/tests/testmigration.lisp elephant-0.9.1/tests/testmigration.lisp
+--- elephant-0.9.1.orig/tests/testmigration.lisp	2008-01-05 11:48:51.000000000 +0100
++++ elephant-0.9.1/tests/testmigration.lisp	2008-01-05 14:05:11.000000000 +0100
+@@ -62,7 +62,6 @@
+ 	(let ((*store-controller* nil)
+ 	      (sc1 (open-store *test-spec-primary* :recover t))
+ 	      (sc2 (open-store *test-spec-secondary* :recover t)))
+-	  (declare (special *store-controller*))
+ 	  (unwind-protect 
+ 	       (progn
+ 		 (elephant::initialize-migrate-duplicate-detection)
+@@ -130,7 +129,6 @@
+ 	(let ((*store-controller* nil)
+ 	      (sc1 (open-store *test-spec-primary* :recover t))
+ 	      (sc2 (open-store *test-spec-secondary* :recover t)))
+-	  (declare (special *store-controller*))
+ 	  (unwind-protect
+ 	       (progn
+ 		 (elephant::initialize-migrate-duplicate-detection)
+@@ -172,7 +170,6 @@
+       (let* ((sc1 (open-store *test-spec-primary* :recover t :deadlock-detect t))
+ 	     (sc2 (open-store *test-spec-secondary* :recover t :deadlock-detect t))
+ 	     (*store-controller* nil))
+-	(declare (special *store-controller*))
+ 	(unwind-protect
+ 	     (progn (elephant::initialize-migrate-duplicate-detection)
+ 		    (let* ((simplesrc (make-instance 'pfoo :slot1 0 :sc sc1))
+@@ -238,7 +235,6 @@
+ 	  (let ((sc2 (open-store *test-spec-secondary* :recover t))
+ 		(sc1 (open-store *test-spec-primary* :recover t))
+ 		(*store-controller* nil))
+-	    (declare (special *store-controller*))
+ 	    (unwind-protect
+ 		 ;; ensure class index is initialized in sc1
+ 		 (progn
