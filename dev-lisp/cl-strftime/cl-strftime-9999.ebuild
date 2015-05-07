@@ -12,11 +12,14 @@ EGIT_REPO_URI="https://github.com/ruricolist/cl-strftime.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
+dev-lisp/alexandria
+dev-lisp/serapeum
 dev-lisp/cl-ppcre
-dev-lisp/date-calc"
+dev-lisp/local-time
+"
 
