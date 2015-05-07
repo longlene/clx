@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit git-2
+inherit multilib git-2
 
 DESCRIPTION="mruby is the lightweight implementation of the Ruby language complying to (part of) the ISO standard."
 HOMEPAGE="https://github.com/mruby/mruby"
@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://github.com/mruby/mruby.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=""
