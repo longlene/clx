@@ -12,9 +12,9 @@ SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/matlisp/matlisp.git"
 
-LICENSE=""
+LICENSE="as-is"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
