@@ -34,8 +34,9 @@ dev-lisp/alexandria
 dev-lisp/split-sequence"
 
 src_install() {
-	common-lisp-install-sources -t all README.md src
-	common-lisp-install-asdf ${PN}.asd
+	common-lisp-install-sources src
+	common-lisp-install-sources -t all README.md
+	common-lisp-install-asdf ${PN}.asd clack-handler-woo.asd
 	if use test ; then
 		common-lisp-install-sources t
 		common-lisp-install-asdf ${PN}-test.asd
