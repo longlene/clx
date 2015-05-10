@@ -13,11 +13,28 @@ EGIT_REPO_URI="https://github.com/eudoxia0/arachne.git"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/drakma
-dev-lisp/closure-html
-dev-lisp/plexippus-xpath"
+dev-lisp/plump
+dev-lisp/clss
+dev-lisp/xpath
+dev-lisp/cxml-stp
+dev-lisp/trivial-types
+dev-lisp/local-time
+dev-lisp/cl-mop
+test? ( dev-lisp/fiveam dev-lisp/lucerne )
+"
+src_install() {
+	common-lisp-install-sources src
+	common-lisp-install-sources -t all README.md
+	common-lisp-install-asdf ${PN}.asd
+	if use test ; then
+		common-lisp-install-sources t
+		common-lisp-install-asdf ${PN}-test.asd
+
+	fi
+}
 

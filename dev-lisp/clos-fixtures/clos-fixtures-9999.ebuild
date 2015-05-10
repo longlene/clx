@@ -6,31 +6,26 @@ EAPI=5
 
 inherit common-lisp-3 git-2
 
-DESCRIPTION="Low-level Lisp for LLVM"
-HOMEPAGE="https://github.com/eudoxia0/corvus"
+DESCRIPTION="CLOS fixtures"
+HOMEPAGE="https://github.com/eudoxia0/clos-fixtures"
 SRC_URI=""
 
-EGIT_REPO_URI="https://github.com/eudoxia0/corvus.git"
+EGIT_REPO_URI="https://github.com/eudoxia0/clos-fixtures.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}
-dev-lisp/cl-ppcre
-dev-lisp/esrap
-dev-lisp/trivial-types
-dev-lisp/anaphora
-"
+RDEPEND="${DEPEND}"
 
 src_install() {
-	common-lisp-install-sources compiler/bootstrap/*.lisp
+	common-lisp-install-sources src
 	common-lisp-install-sources -t all README.md
 	common-lisp-install-asdf ${PN}.asd
 	if use test ; then
-		common-lisp-install-sources compiler/bootstrap/tests
+		common-lisp-install-sources t
 		common-lisp-install-asdf ${PN}-test.asd
 	fi
 }
