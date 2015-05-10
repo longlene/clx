@@ -15,7 +15,7 @@ SRC_URI="http://pocoproject.org/releases/${P}/${MY_P}-all.tar.gz
 	doc? ( http://pocoproject.org/releases/${P}/${MY_DOCP}.tar.gz )"
 LICENSE="Boost-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="doc examples iodbc mysql odbc sqlite mongodb ssl test"
 
 DEPEND=">=dev-libs/libpcre-8.13
