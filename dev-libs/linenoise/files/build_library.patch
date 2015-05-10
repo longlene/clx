@@ -1,0 +1,26 @@
+--- linenoise-1.0.orig/Makefile	2015-04-13 15:38:43.000000000 +0800
++++ linenoise-1.0/Makefile	2015-05-10 20:12:47.013071679 +0800
+@@ -1,6 +1,21 @@
+-linenoise_example: linenoise.h linenoise.c
++MAJOR_VERSION = 1
++EXTRA_VERSION = .0
++SONAME = liblinenoise.so.$(MAJOR_VERSION)
++LIB = $(SONAME)$(EXTRA_VERSION)
+ 
+-linenoise_example: linenoise.c example.c
++CFLAGS ?= -Wall -fPIC
++LIBDIR ?= /usr/lib
++INCLUDEDIR ?= /usr/include
++
++.PHONY: all
++all: $(LIB) linenoise_example
++
++$(LIB): linenoise.o
++	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SONAME) $(LDFLAGS) -o $@ $^
++	ln -s $(LIB) $(SONAME)
++	ln -s $(SONAME) liblinenoise.so
++
++linenoise_example: linenoise.h linenoise.c example.c
+ 	$(CC) -Wall -W -Os -g -o linenoise_example linenoise.c example.c
+ 
+ clean:

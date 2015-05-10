@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		Linenoise
+
+		A minimal, zero-config, BSD licensed, readline replacement used in Redis, MongoDB, and Android.
+
+		Single and multi line editing mode with the usual key bindings implemented.
+		History handling.
+		Completion.
+		About 1,100 lines of BSD license source code.
+		Only uses a subset of VT100 escapes (ANSI.SYS compatible).
+	</longdescription>
+</pkgmetadata>
