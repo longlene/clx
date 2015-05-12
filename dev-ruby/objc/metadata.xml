@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+This gem is a test suite runner for Objective-C files to allow for the easy
+execution of a test suite without the hassle of managing an Xcode Project File
+		</longdescription>
+	</pkgmetadata>
