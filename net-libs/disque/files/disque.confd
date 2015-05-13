@@ -1,0 +1,20 @@
+# Redis user.
+DISQUE_USER="disque"
+
+# Redis group.
+DISQUE_GROUP="disque"
+
+# Redis configuration file.
+DISQUE_CONF="/etc/disque.conf"
+
+# Redis dump directory.
+DISQUE_DIR="/var/lib/disque"
+
+# Redis pid file.
+# (Be sure to change the main disque configuration file as well if you change
+# this from the default.)
+DISQUE_PID="/var/run/disque/disque.pid"
+
+# Redis options.
+# (Redis expects the first argument to be the configuration file.)
+DISQUE_OPTS="${DISQUE_CONF}"

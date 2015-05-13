@@ -1,0 +1,29 @@
+diff -ur disque.org/src/Makefile disque/src/Makefile
+--- disque.org/src/Makefile	2015-05-13 20:16:20.215324040 +0800
++++ disque/src/Makefile	2015-05-13 20:24:07.640340298 +0800
+@@ -26,12 +26,7 @@
+ INSTALL_BIN=$(PREFIX)/bin
+ INSTALL=install
+ 
+-# Default allocator
+-ifeq ($(uname_S),Linux)
+-	MALLOC=jemalloc
+-else
+-	MALLOC=libc
+-endif
++MALLOC?=jemalloc
+ 
+ # Backwards compatibility for selecting an allocator
+ ifeq ($(USE_TCMALLOC),yes)
+@@ -89,9 +84,8 @@
+ endif
+ 
+ ifeq ($(MALLOC),jemalloc)
+-	DEPENDENCY_TARGETS+= jemalloc
+-	FINAL_CFLAGS+= -DUSE_JEMALLOC -I../deps/jemalloc/include
+-	FINAL_LIBS+= ../deps/jemalloc/lib/libjemalloc.a -ldl
++	FINAL_CFLAGS+= -DUSE_JEMALLOC -DJEMALLOC_NO_DEMANGLE
++	FINAL_LIBS+= -ljemalloc -ldl
+ endif
+ 
+ DISQUE_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)

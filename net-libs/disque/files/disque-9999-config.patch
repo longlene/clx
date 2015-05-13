@@ -1,0 +1,39 @@
+diff -ur disque.org/disque.conf disque/disque.conf
+--- disque.org/disque.conf	2015-05-13 20:16:20.215324040 +0800
++++ disque/disque.conf	2015-05-13 20:42:51.003379369 +0800
+@@ -38,7 +38,7 @@
+ 
+ # When running daemonized, Disque writes a pid file in /var/run/disque.pid by
+ # default. You can specify a custom pid file location here.
+-pidfile /var/run/disque.pid
++pidfile /run/disque/disque.pid
+ 
+ # Accept connections on the specified port, default is 7711.
+ # If port 0 is specified Disque will not listen on a TCP socket.
+@@ -61,7 +61,7 @@
+ # Examples:
+ #
+ # bind 192.168.1.100 10.0.0.1
+-# bind 127.0.0.1
++bind 127.0.0.1
+ 
+ # Specify the path for the Unix socket that will be used to listen for
+ # incoming connections. There is no default, so Disque will not listen
+@@ -100,7 +100,7 @@
+ # Specify the log file name. Also the empty string can be used to force
+ # Disque to log on the standard output. Note that if you use standard
+ # output for logging but daemonize, logs will be sent to /dev/null
+-logfile ""
++logfile /var/log/disque/disque.log
+ 
+ # To enable logging to the system logger, just set 'syslog-enabled' to yes,
+ # and optionally update the other syslog parameters to suit your needs.
+@@ -121,7 +121,7 @@
+ # The Append Only File will also be created inside this directory.
+ #
+ # Note that you must specify a directory here, not a file name.
+-dir ./
++dir /var/lib/disque/
+ 
+ ################################## SECURITY ###################################
+ 

@@ -1,0 +1,14 @@
+[Unit]
+Description=A distributed message broker
+After=syslog.target network.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/disque/disque.pid
+ExecStart=/usr/sbin/disque-server /etc/disque.conf
+User=disque
+Group=disque
+
+[Install]
+WantedBy=multi-user.target
+
