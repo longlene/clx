@@ -1,0 +1,34 @@
+--- test.c.orig	2015-05-17 14:49:08.403146371 +0800
++++ test.c	2015-05-17 14:45:42.312139203 +0800
+@@ -343,6 +343,7 @@
+ static void test_blocking_connection_errors(void) {
+     redisContext *c;
+ 
++    /*
+     test("Returns error when host cannot be resolved: ");
+     c = redisConnect((char*)"idontexist.test", 6379);
+     test_cond(c->err == REDIS_ERR_OTHER &&
+@@ -353,6 +354,7 @@
+          strcmp(c->errstr,"Temporary failure in name resolution") == 0 ||
+          strcmp(c->errstr,"no address associated with name") == 0));
+     redisFree(c);
++    */
+ 
+     test("Returns error when the port is not open: ");
+     c = redisConnect((char*)"localhost", 1);
+@@ -773,6 +775,7 @@
+     test_blocking_connection_errors();
+     test_free_null();
+ 
++    /*
+     printf("\nTesting against TCP connection (%s:%d):\n", cfg.tcp.host, cfg.tcp.port);
+     cfg.type = CONN_TCP;
+     test_blocking_connection(cfg);
+@@ -781,6 +784,7 @@
+     test_invalid_timeout_errors(cfg);
+     test_append_formatted_commands(cfg);
+     if (throughput) test_throughput(cfg);
++    */
+ 
+     printf("\nTesting against Unix socket connection (%s):\n", cfg.unix.path);
+     cfg.type = CONN_UNIX;
