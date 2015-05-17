@@ -37,6 +37,8 @@ src_compile() {
 	# overhead is low w/creating it all the time.  It's also needed
 	# by the tests.
 	_emake dynamic static
+	# for generate right .pc file
+	_emake PREFIX="/usr" LIBRARY_PATH="$(get_libdir)" hiredis.pc
 }
 
 src_test() {
