@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 DEPEND=""
