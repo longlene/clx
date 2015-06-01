@@ -17,7 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="+jemalloc tcmalloc test"
 
-DEPEND=""
+DEPEND="
+jemalloc? ( dev-libs/jemalloc )
+"
 RDEPEND="${DEPEND}
 test? ( dev-lang/tcl )
 "
