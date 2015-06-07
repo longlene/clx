@@ -21,7 +21,7 @@ x11-libs/pangox-compat
 webkit? ( net-libs/webkit-gtk )
 motif? ( x11-libs/motif x11-proto/printproto )
 opengl? ( virtual/glu )
-lua? ( >=dev-lua/lua-5.1 )"
+lua? ( >=dev-lang/lua-5.1 )"
 
 S="${WORKDIR}"/${PN}
 
