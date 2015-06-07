@@ -40,7 +40,6 @@ dev-nodejs
 dev-perl
 dev-php
 dev-php5
-dev-plan9
 dev-python
 dev-ruby
 dev-scheme
@@ -120,6 +119,7 @@ sys-devel
 sys-fs
 sys-kernel
 sys-libs
+sys-plan9
 sys-power
 sys-process
 virtual
