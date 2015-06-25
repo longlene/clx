@@ -6,7 +6,7 @@ EAPI=5
 
 inherit multilib
 
-BV_AMD64=0.7.3-1
+BV_AMD64=${PV}-1
 
 DESCRIPTION="The Crystal Programming Language"
 HOMEPAGE="http://crystal-lang.org"
@@ -20,7 +20,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-libs/boehm-gc
+dev-libs/boehm-gc[static-libs]
 dev-libs/pcl
 "
 
