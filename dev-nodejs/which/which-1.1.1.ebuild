@@ -6,8 +6,8 @@ EAPI=5
 
 inherit npm
 
-DESCRIPTION="Higher-level content negotiation"
-HOMEPAGE="https://github.com/jshttp/accepts"
+DESCRIPTION="Find the first instance of an executable in the PATH"
+HOMEPAGE="https://github.com/isaacs/node-which"
 #SRC_URI=""
 
 LICENSE="MIT"
@@ -17,6 +17,6 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-nodejs/mime-types
-dev-nodejs/negotiator
+dev-nodejs/is-absolute
 "
+

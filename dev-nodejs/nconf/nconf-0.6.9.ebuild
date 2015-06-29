@@ -10,7 +10,7 @@ HOMEPAGE="http://github.com/flatiron/nconf"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

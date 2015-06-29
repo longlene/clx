@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/jaredhanson/utils-merge"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

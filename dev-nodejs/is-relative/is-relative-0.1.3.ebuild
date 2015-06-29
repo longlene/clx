@@ -6,8 +6,8 @@ EAPI=5
 
 inherit npm
 
-DESCRIPTION="Higher-level content negotiation"
-HOMEPAGE="https://github.com/jshttp/accepts"
+DESCRIPTION="Return true if a file path is absolute"
+HOMEPAGE="https://github.com/jonschlinkert/is-absolute"
 #SRC_URI=""
 
 LICENSE="MIT"
@@ -17,6 +17,5 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-nodejs/mime-types
-dev-nodejs/negotiator
+dev-nodejs/is-relative
 "
