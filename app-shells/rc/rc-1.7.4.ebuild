@@ -29,14 +29,14 @@ src_configure() {
 
 src_install() {
 	into /
-	dobin rc
-	doman rc.1
+	newbin rc rcsh || die
+	newman rc.1 rcsh.1
 	dodoc AUTHORS ChangeLog NEWS README
 }
 
 pkg_postinst() {
 	ebegin "Updating /etc/shells"
-	( grep -v "^/bin/rc$" "${ROOT}"etc/shells; echo "/bin/rc" ) > "${T}"/shells
+	( grep -v "^/bin/rcsh$" "${ROOT}"etc/shells; echo "/bin/rcsh" ) > "${T}"/shells
 	mv -f "${T}"/shells "${ROOT}"etc/shells
 	eend $?
 }
