@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=XArchive
-Comment=Front-end for various command line archiving tools
-Exec=xarchive
-Icon=gnome-package
-Terminal=false
-Type=Application
-Categories=Application;Utility;
