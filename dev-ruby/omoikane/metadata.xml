@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+Omoikane (思金) is a Shinto god of wisdom and intelligence, who is always
+called upon to "ponder" and give good counsel in deliberations of the heavenly
+deities
+		</longdescription>
+	</pkgmetadata>
