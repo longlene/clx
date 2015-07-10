@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+
+    This small class will store (and if requested, also output) Environment
+    information, such as the GCC Version in use, the Kernel, which Ruby Version
+    is used, what the Host CPU Model is (on Linux), GTK and GLIB version,
+    and so forth
+		</longdescription>
+	</pkgmetadata>
