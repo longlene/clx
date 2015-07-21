@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<name>loong0</name>
+			<email>longlene@gmail.com</email>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+Powers System Browser Client, which is a desktop application that displays information about Ruby classes and modules, showing both methods and their source code
+		</longdescription>
+	</pkgmetadata>
