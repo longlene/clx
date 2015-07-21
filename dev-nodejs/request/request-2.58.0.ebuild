@@ -32,7 +32,7 @@ dev-nodejs/node-uuid
 dev-nodejs/mime-types
 dev-nodejs/json-stringify-safe
 dev-nodejs/form-data
-dev-nodejs/foever-agent
+dev-nodejs/forever-agent
 dev-nodejs/extend
 dev-nodejs/caseless
 dev-nodejs/bl
