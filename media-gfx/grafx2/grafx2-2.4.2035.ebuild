@@ -5,12 +5,13 @@
 EAPI=2
 
 DESCRIPTION="A pixelart-oriented painting program"
-HOMEPAGE="http://code.google.com/p/grafx2/"
-SRC_URI="http://grafx2.googlecode.com/files/${P}-src.tgz"
+HOMEPAGE="http://pulkomandy.tk/projects/GrafX2"
+#SRC_URI="http://grafx2.googlecode.com/files/${P}-src.tgz"
+SRC_URI="http://pulkomandy.tk/projects/GrafX2/downloads/21 -> ${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS=""
 IUSE="ttf lua"
 
 DEPEND="media-libs/libsdl
