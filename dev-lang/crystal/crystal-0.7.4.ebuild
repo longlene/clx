@@ -20,6 +20,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
+sys-libs/libunwind
 dev-libs/boehm-gc[static-libs]
 dev-libs/pcl
 "
