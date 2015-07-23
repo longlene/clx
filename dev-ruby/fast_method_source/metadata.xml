@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+Retrieves the source code for a method (and its comment) and does it faster than any other existing solution
+		</longdescription>
+	</pkgmetadata>
