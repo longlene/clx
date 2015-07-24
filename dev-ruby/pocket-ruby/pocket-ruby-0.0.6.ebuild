@@ -25,3 +25,6 @@ ruby_add_rdepend ">=dev-ruby/faraday_middleware-0.9"
 ruby_add_rdepend ">=dev-ruby/multi_json-1.0"
 ruby_add_rdepend ">=dev-ruby/hashie-0.4.0"
 
+all_ruby_prepare() {
+	sed -e '/git ls-files/d' -i ${PN}.gemspec
+}
