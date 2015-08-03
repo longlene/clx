@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+It will unzip files if necessary, but you give it a file at it will give you the contents back
+		</longdescription>
+	</pkgmetadata>
