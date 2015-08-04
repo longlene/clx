@@ -4,7 +4,7 @@ EAPI=5
 USE_RUBY="ruby19 ruby20 ruby21 ruby22"
 
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_EXTRADOC="README.md"
+RUBY_FAKEGEM_EXTRADOC="README.rdoc"
 RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
@@ -13,7 +13,7 @@ DESCRIPTION="Net::SSH: a pure-Ruby implementation of the SSH2 client protocol"
 HOMEPAGE="https://github.com/net-ssh/net-ssh"
 
 LICENSE="MIT"
-SLOT="0"
+SLOT="2.6"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
