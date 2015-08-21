@@ -7,15 +7,17 @@ EAPI=5
 inherit multilib
 
 BV_AMD64=${PV}-1
+BV_X86=${PV}-1
 
 DESCRIPTION="The Crystal Programming Language"
 HOMEPAGE="http://crystal-lang.org"
 SRC_URI="https://github.com/manastech/crystal/archive/${PV}.tar.gz -> ${P}.tar.gz
-amd64? ( https://github.com/manastech/crystal/releases/download/${PV}/crystal-${BV_AMD64}-linux-x86_64.tar.gz )"
+amd64? ( https://github.com/manastech/crystal/releases/download/${PV}/crystal-${BV_AMD64}-linux-x86_64.tar.gz )
+x86? ( https://github.com/manastech/crystal/releases/download/${PV}/crystal-${BV_X86}-linux-i686.tar.gz )"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
