@@ -8,7 +8,7 @@ inherit common-lisp-3 git-2
 
 DESCRIPTION="A collection of public domain utilities."
 HOMEPAGE="http://common-lisp.net/project/alexandria/"
-EGIT_REPO_URI="git://common-lisp.net/projects/alexandria/alexandria.git"
+EGIT_REPO_URI="https://github.com/keithj/alexandria.git"
 
 LICENSE="MIT"
 SLOT="0"
