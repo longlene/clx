@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
-DEPEND=""
+DEPEND="media-libs/libao"
 RDEPEND="${DEPEND}"
 
 src_configure() {
