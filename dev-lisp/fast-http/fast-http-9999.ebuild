@@ -13,15 +13,24 @@ EGIT_REPO_URI="https://github.com/fukamachi/fast-http.git"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/alexandria
 dev-lisp/cl-utilities
 dev-lisp/babel
+dev-lisp/proc-parse
 dev-lisp/xsubseq
-dev-lisp/log4cl"
+dev-lisp/log4cl
+dev-lisp/uiop
+dev-lisp/flexi-streams"
 
-# TODO
-# long-description may read error in gentoo
+src_install() {
+	common-lisp-install-sources -t all README.markdown src
+	common-lisp-install-asdf ${PN}.asd
+	if use test; then
+		common-lisp-install-sources t
+		common-lisp-install-asdf ${PN}-test.asd
+	fi
+}

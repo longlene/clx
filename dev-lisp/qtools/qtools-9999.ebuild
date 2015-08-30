@@ -26,4 +26,5 @@ dev-lisp/named-readtable
 dev-lisp/trivial-indent
 dev-lisp/form-fiddle
 dev-lisp/cl-ppcre
+dev-lisp/trivial-main-thread
 "

@@ -30,7 +30,7 @@ dev-lisp/split-sequence
 dev-lisp/cl-ppcre
 
 dev-lisp/trivial-mimes
-dev-lisp/cl-fad
+dev-lisp/uiop
 dev-lisp/alexandria
 
 dev-lisp/quri
