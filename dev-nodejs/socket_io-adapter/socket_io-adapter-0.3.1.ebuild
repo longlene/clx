@@ -21,6 +21,6 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-nodejs/debug
-dev-nodejs/scoket_io-parser
+dev-nodejs/socket_io-parser
 dev-nodejs/object-keys
 "

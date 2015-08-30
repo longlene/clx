@@ -9,8 +9,8 @@ inherit npm
 MY_PN=${PN/_/.}
 MY_P=${MY_PN}-${PV}
 
-DESCRIPTION="socket.io client"
-HOMEPAGE="https://github.com/Automattic/socket.io-client"
+DESCRIPTION="Client for the realtime Engine"
+HOMEPAGE="https://github.com/Automattic/engine.io-client"
 SRC_URI="http://registry.npmjs.org/${MY_PN}/-/${MY_P}.tgz"
 
 LICENSE="MIT"
@@ -20,15 +20,15 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-nodejs/backo2
-dev-nodejs/to-array
+dev-nodejs/xmlhttprequest
+dev-nodejs/ws
 dev-nodejs/parseuri
+dev-nodejs/parseqs
+dev-nodejs/parsejson
 dev-nodejs/indexof
-dev-nodejs/has-binary
-dev-nodejs/socket_io-parser
-dev-nodejs/object-component
-dev-nodejs/component-emitter
-dev-nodejs/component-bind
-dev-nodejs/engine_io-client
+dev-nodejs/has-cors
+dev-nodejs/engine_io-parser
 dev-nodejs/debug
+dev-nodejs/component-inherit
+dev-nodejs/component-emitter
 "

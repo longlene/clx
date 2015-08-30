@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}
 dev-nodejs/debug
 dev-nodejs/has-binary-data
 dev-nodejs/socket_io-adapter
-dev-nodejs/scoket_io-client
-dev-nodejs/scoket_io-parser
+dev-nodejs/socket_io-client
+dev-nodejs/socket_io-parser
 dev-nodejs/engine_io
 "
