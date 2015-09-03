@@ -6,17 +6,19 @@ EAPI=5
 
 inherit eutils
 
-DESCRIPTION="A "
-HOMEPAGE=""
+DESCRIPTION="A C library for creating Excel XLSX files"
+HOMEPAGE="https://libxlsxwriter.github.io"
 SRC_URI="https://github.com/jmcnamara/libxlsxwriter/archive/RELEASE_${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+sys-libs/zlib[minizip]
+"
 
 S="${WORKDIR}"/${PN}-RELEASE_${PV}
 
