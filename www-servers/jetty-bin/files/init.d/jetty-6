@@ -1,0 +1,51 @@
+#!/sbin/runscript
+
+depend() {
+  need net
+}
+
+start() {
+    ebegin "Starting ${SVCNAME}"
+
+    JETTY_HOME="/var/lib/${SVCNAME}"
+    CONF_FILES="${JETTY_HOME}/etc/jetty.xml"
+    JETTY_OPTS="-DSTART=${JETTY_HOME}/start.config"
+
+    if [[ -n ${JETTY_HOST} ]]; then
+       JETTY_OPTS="${JETTY_OPTS} -Djetty.host=${JETTY_HOST}"
+    fi
+    if [[ -n ${JETTY_PORT} ]]; then
+       JETTY_OPTS="${JETTY_OPTS} -Djetty.port=${JETTY_PORT}"
+    fi
+    if [[ -n ${STOP_PORT} ]]; then
+       JETTY_OPTS="${JETTY_OPTS} -DSTOP.PORT=${STOP_PORT}"
+    fi
+    if [[ -n ${STOP_KEY} ]]; then
+       JETTY_OPTS="${JETTY_OPTS} -DSTOP.KEY=${STOP_KEY}"
+    fi
+    if [[ ${USE_SETUID} -eq 1 ]]; then
+       # Setuid configuration file needs to be the first one in the list
+       CONF_FILES="${JETTY_HOME}/etc/jetty-setuid.xml ${CONF_FILES}"
+       JETTY_OPTS="${JETTY_OPTS} -Djava.library.path=/usr/lib64/${SVCNAME}/"
+    fi
+    if [[ ${USE_IPV6} -ne 1 ]]; then
+       JETTY_OPTS="${JETTY_OPTS} -Djava.net.preferIPv4Stack=true"
+    fi
+    if [[ ${USE_SSL} -eq 1 ]]; then
+       # Setuid configuration file needs to be the first one in the list
+       CONF_FILES="${CONF_FILES} ${JETTY_HOME}/etc/jetty-ssl.xml"
+    fi
+
+    cd "${JETTY_HOME}"
+
+    start-stop-daemon --start --background --make-pidfile \
+	  --pidfile /var/run/${SVCNAME}.pid \
+	  --startas java -- ${JETTY_OPTS} -jar ${JETTY_HOME}/start.jar ${CONF_FILES} ${JETTY_CONF}
+    eend $?
+}
+
+stop() {
+   ebegin "Stopping ${SVCNAME}"
+   start-stop-daemon --stop --quiet --pidfile /var/run/${SVCNAME}.pid
+   eend $?
+}
