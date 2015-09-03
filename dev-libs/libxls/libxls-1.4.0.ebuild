@@ -4,13 +4,13 @@
 
 EAPI=5
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="A library which can read Excel (xls) files"
+HOMEPAGE="http://libxls.sourceforge.net/"
 SRC_URI="mirror://sourceforge/libxls/${P}.zip"
 
-LICENSE=""
+LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
