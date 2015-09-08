@@ -1,0 +1,37 @@
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=5
+USE_RUBY="ruby19 ruby20 ruby21 ruby22"
+
+RUBY_FAKEGEM_TASK_DOC=""
+RUBY_FAKEGEM_EXTRADOC="README.md"
+RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
+
+inherit ruby-fakegem
+
+DESCRIPTION="Process monitoring tool"
+HOMEPAGE="http://github.com/kostya/eye"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~x86 ~amd64 ~arm"
+IUSE=""
+
+ruby_add_rdepend ">=dev-ruby/celluloid-0.15.0"
+ruby_add_rdepend ">=dev-ruby/celluloid-io-0.15.0"
+ruby_add_rdepend ">=dev-ruby/state_machine-0"
+ruby_add_rdepend ">=dev-ruby/thor-0"
+ruby_add_rdepend ">=dev-ruby/sigar-0.7.2"
+ruby_add_rdepend ">=dev-ruby/rake-0"
+ruby_add_rdepend "<dev-ruby/rspec-2.14"
+ruby_add_rdepend ">=dev-ruby/rr-0"
+ruby_add_rdepend ">=dev-ruby/ruby-graphviz-0"
+ruby_add_rdepend ">=dev-ruby/forking-0"
+ruby_add_rdepend ">=dev-ruby/fakeweb-0"
+ruby_add_rdepend ">=dev-ruby/eventmachine-1.0.3"
+ruby_add_rdepend ">=dev-ruby/sinatra-0"
+ruby_add_rdepend ">=dev-ruby/thin-0"
+ruby_add_rdepend ">=dev-ruby/xmpp4r-0"
+ruby_add_rdepend ">=dev-ruby/coveralls-0"
+ruby_add_rdepend ">=dev-ruby/simplecov-0.8.1"
+
