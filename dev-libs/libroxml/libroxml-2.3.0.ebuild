@@ -6,13 +6,13 @@ EAPI=5
 
 inherit cmake-utils
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="very light C xml parser library"
+HOMEPAGE="http://www.libroxml.net/"
 SRC_URI="https://github.com/blunderer/libroxml/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
