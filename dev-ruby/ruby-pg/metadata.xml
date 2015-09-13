@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+			<tool>gbuild.rb</tool>
+		</maintainer>
+		<longdescription>
+This is an old, deprecated version of the 'pg' gem that hasn't been
+maintained or supported since early 2008
+		</longdescription>
+	</pkgmetadata>
