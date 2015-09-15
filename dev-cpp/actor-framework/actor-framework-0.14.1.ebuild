@@ -6,11 +6,11 @@ EAPI=5
 
 inherit flag-o-matic cmake-utils
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="The Actor Model in C++"
+HOMEPAGE="http://actor-framework.org/"
 SRC_URI="https://github.com/actor-framework/actor-framework/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
