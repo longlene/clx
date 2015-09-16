@@ -6,19 +6,20 @@ EAPI=5
 
 inherit multilib
 
-BV_AMD64=${PV}-1
-BV_X86=${PV}-1
+BV=${PV}-1
+BV_AMD64=${BV}-linux-x86_64
+BV_X86=${BV}-linux-i686
 
 DESCRIPTION="The Crystal Programming Language"
 HOMEPAGE="http://crystal-lang.org"
 SRC_URI="https://github.com/manastech/crystal/archive/${PV}.tar.gz -> ${P}.tar.gz
-amd64? ( https://github.com/manastech/crystal/releases/download/${PV}/crystal-${BV_AMD64}-linux-x86_64.tar.gz )
-x86? ( https://github.com/manastech/crystal/releases/download/${PV}/crystal-${BV_X86}-linux-i686.tar.gz )"
+amd64? ( https://github.com/manastech/crystal/releases/download/${PV}/crystal-${BV_AMD64}.tar.gz )
+x86? ( https://github.com/manastech/crystal/releases/download/${PV}/crystal-${BV_X86}.tar.gz )"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
+KEYWORDS="~amd64"
+IUSE="doc examples zsh-completion"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -27,17 +28,40 @@ dev-libs/boehm-gc[static-libs]
 dev-libs/pcl
 "
 
-src_prepare() {
-	sed -i "s/env(\"CRYSTAL_CONFIG_VERSION\")/\"${PV}\"/" src/compiler/crystal/config.cr
-	sed -i "s|env(\"CRYSTAL_CONFIG_PATH\")|\"/usr/$(get_libdir)/crystal/src\"|" src/compiler/crystal/config.cr
-}
 src_compile() {
-	PATH=${PATH}:${WORKDIR}/${PN}-${BV_AMD64}/bin
-	emake || die "compile failed"
+	emake \
+		release=1 \
+		PATH=${PATH}:${WORKDIR}/${PN}-${BV}/bin \
+		CRYSTAL_PATH=src \
+		CRYSTAL_CONFIG_VERSION=${PV} \
+		CRYSTAL_CONFIG_PATH="libs:/usr/$(get_libdir)/crystal" || die "compile failed"
+	if use doc ; then
+		emake doc || "compile doc failed"
+	fi
+}
+
+src_test() {
+	make spec \
+		CRYSTAL_PATH=src \
+		CRYSTAL_CONFIG_VERSION=${PV} || die "test failed"
 }
 
 src_install() {
 	insinto /usr/$(get_libdir)/crystal/
-	doins -r src
+	doins -r src/*
 	dobin .build/crystal
+	if use zsh-completion; then
+		insinto /usr/share/zsh/site-functions
+		newins etc/completion.zsh _crystal
+	fi
+	if use doc ; then
+		dodir /usr/share/doc/${PF}/api
+		insinto /usr/share/doc/${PF}/api
+		doins -r doc/*
+	fi
+
+	if use examples ; then
+		insinto /usr/share/doc/${PF}
+		doins -r samples
+	fi
 }
