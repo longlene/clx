@@ -9,12 +9,14 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="\`hub\` is a command line utility which adds GitHub knowledge to \`git\`"
-HOMEPAGE="http://hub.github.com/"
+DESCRIPTION="gem for converting Excel files to csv"
+HOMEPAGE="https://github.com/anjlab/excel2csv-ruby"
 
-LICENSE="MIT"
+LICENSE=""
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
+ruby_add_rdepend ">=dev-ruby/rspec-2.8"
+ruby_add_rdepend ">=dev-ruby/rake-0"
 

@@ -9,12 +9,14 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="\`hub\` is a command line utility which adds GitHub knowledge to \`git\`"
-HOMEPAGE="http://hub.github.com/"
+DESCRIPTION="XLSX is a Ruby library for writing simple XLSX-format Excel documents"
+HOMEPAGE="http://github.com/bwbuchanan/xlsx"
 
-LICENSE="MIT"
+LICENSE=""
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
+ruby_add_rdepend ">=dev-ruby/builder-2.1.2"
+ruby_add_rdepend ">=dev-ruby/rubyzip-0.9.1"
 
