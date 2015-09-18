@@ -19,13 +19,20 @@ x86? ( https://github.com/manastech/crystal/releases/download/${PV}/crystal-${BV
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc examples zsh-completion"
+IUSE="doc examples +xml +yaml zsh-completion"
 
-DEPEND=""
-RDEPEND="${DEPEND}
-sys-libs/libunwind
+DEPEND="
 dev-libs/boehm-gc[static-libs]
+dev-libs/libatomic_ops
+dev-libs/libevent
+dev-libs/libpcre
+sys-libs/libunwind
 dev-libs/pcl
+dev-libs/gmp
+"
+RDEPEND="${DEPEND}
+xml? ( dev-libs/libxml2 )
+yaml? ( dev-libs/libyaml )
 "
 
 src_compile() {
