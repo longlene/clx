@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
@@ -28,7 +28,7 @@ DEPEND="
 	dev-libs/libpcre
 	sys-libs/libunwind
 	dev-libs/pcl
-	dev-libs/gmp
+	dev-libs/gmp:0
 "
 RDEPEND="${DEPEND}
 xml? ( dev-libs/libxml2 )
@@ -41,16 +41,14 @@ src_compile() {
 		PATH=${PATH}:${WORKDIR}/${PN}-${BV}/bin \
 		CRYSTAL_PATH=src \
 		CRYSTAL_CONFIG_VERSION=${PV} \
-		CRYSTAL_CONFIG_PATH="libs:/usr/$(get_libdir)/crystal" || die "compile failed"
-	if use doc ; then
-		emake doc || "compile doc failed"
-	fi
+		CRYSTAL_CONFIG_PATH="libs:/usr/$(get_libdir)/crystal"
+	use doc && emake doc
 }
 
 src_test() {
 	emake spec \
 		CRYSTAL_PATH=src \
-		CRYSTAL_CONFIG_VERSION=${PV} || die "test failed"
+		CRYSTAL_CONFIG_VERSION=${PV}
 }
 
 src_install() {
@@ -62,7 +60,6 @@ src_install() {
 		newins etc/completion.zsh _crystal
 	fi
 	if use doc ; then
-		dodir /usr/share/doc/${PF}/api
 		insinto /usr/share/doc/${PF}/api
 		doins -r doc/*
 	fi
