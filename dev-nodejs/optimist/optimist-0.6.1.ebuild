@@ -1,13 +1,13 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
 inherit npm
 
-DESCRIPTION="File system module for Hexo"
-HOMEPAGE="https://github.com/hexojs/hexo-fs"
+DESCRIPTION="Light-weight option parsing with an argv hash. No optstrings attached"
+HOMEPAGE="https://github.com/substack/node-optimist"
 #SRC_URI=""
 
 LICENSE="MIT"
@@ -17,8 +17,6 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-nodejs/bluebird
-dev-nodejs/chokidar
-dev-nodejs/escape-string-regexp
-dev-nodejs/graceful-fs
+dev-nodejs/minimist
+dev-nodejs/wordwrap
 "

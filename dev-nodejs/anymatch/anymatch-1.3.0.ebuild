@@ -1,24 +1,22 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
 inherit npm
 
-DESCRIPTION="File system module for Hexo"
-HOMEPAGE="https://github.com/hexojs/hexo-fs"
+DESCRIPTION="Matches strings against configurable strings, globs, regular expressions, and/or functions"
+HOMEPAGE="https://github.com/es128/anymatch"
 #SRC_URI=""
 
-LICENSE="MIT"
+LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-nodejs/bluebird
-dev-nodejs/chokidar
-dev-nodejs/escape-string-regexp
-dev-nodejs/graceful-fs
+dev-nodejs/micromatch
+dev-nodejs/arrify
 "

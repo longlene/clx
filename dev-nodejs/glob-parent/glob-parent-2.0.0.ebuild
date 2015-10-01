@@ -1,24 +1,21 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
 inherit npm
 
-DESCRIPTION="File system module for Hexo"
-HOMEPAGE="https://github.com/hexojs/hexo-fs"
+DESCRIPTION="Strips glob magic from a string to provide the parent path"
+HOMEPAGE="https://github.com/es128/glob-parent"
 #SRC_URI=""
 
-LICENSE="MIT"
+LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-nodejs/bluebird
-dev-nodejs/chokidar
-dev-nodejs/escape-string-regexp
-dev-nodejs/graceful-fs
+dev-nodejs/is-glob
 "

@@ -1,24 +1,23 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
 inherit npm
 
-DESCRIPTION="File system module for Hexo"
-HOMEPAGE="https://github.com/hexojs/hexo-fs"
+DESCRIPTION="easily create complex multi-column command-line-interfaces"
+HOMEPAGE="https://github.com/bcoe/cliui"
 #SRC_URI=""
 
-LICENSE="MIT"
+LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-nodejs/bluebird
-dev-nodejs/chokidar
-dev-nodejs/escape-string-regexp
-dev-nodejs/graceful-fs
+dev-nodejs/center-align
+dev-nodejs/right-align
+dev-nodejs/wordwrap
 "
