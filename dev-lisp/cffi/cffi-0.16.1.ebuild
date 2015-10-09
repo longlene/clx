@@ -12,7 +12,7 @@ SRC_URI="https://github.com/cffi/cffi/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
+#KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE="doc"
 
 DEPEND="doc? ( dev-lisp/sbcl virtual/texi2dvi )"
@@ -30,7 +30,9 @@ src_compile() {
 }
 
 src_install() {
-	common-lisp-3_src_install
+	common-lisp-install-sources examples/ src/ uffi-compat/
+	common-lisp-install-sources -t all grovel/ tests/
+	common-lisp-install-asdf
 	dodoc README.md TODO doc/*.txt
 	if use doc; then
 		doinfo doc/*.info
