@@ -6,7 +6,7 @@ EAPI=5
 
 inherit common-lisp-3 git-2
 
-DESCRIPTION="A minimal Clack"
+DESCRIPTION="Lack, the core of Clack"
 HOMEPAGE="https://github.com/fukamachi/lack"
 SRC_URI=""
 
@@ -14,7 +14,7 @@ EGIT_REPO_URI="https://github.com/fukamachi/lack.git"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
