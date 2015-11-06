@@ -20,4 +20,11 @@ src_prepare() {
 	sed -i -e '/PREFIX/ s#/local##' \
 		-e '/MANPREFIX/ s#man#share/man#' \
 		-e '/LDLIBS/ s#$# -ltinfo#' Makefile
+	#sed -i '/struct assoc/,/};/ /sh/d;s/less/vim/' config.def.h
+	sed -i '/struct assoc/,/\}\;/{/sh/d; s/less/vim/}' config.def.h
+}
+
+src_install() {
+	dobin noice
+	doman noice.1
 }

@@ -22,7 +22,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="doc"
 
-CDEPEND=">=dev-lisp/asdf-2.33-r3:="
+CDEPEND=">=dev-lisp/asdf-3.0.3"
 DEPEND="${CDEPEND}
 		!dev-lisp/openmcl
 		dev-vcs/subversion"
