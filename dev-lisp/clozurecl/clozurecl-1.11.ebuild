@@ -92,6 +92,6 @@ src_install() {
 	doenvd "${ENVD}"
 
 	dodoc doc/release-notes.txt
-	dohtml doc/ccl-documentation.html
+	#dohtml doc/ccl-documentation.html
 	use doc && dohtml -r examples
 }
