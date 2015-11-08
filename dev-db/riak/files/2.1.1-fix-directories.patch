@@ -1,5 +1,6 @@
---- a/rel/vars.config	2013-08-04 06:44:05.000000000 +0000
-+++ b/rel/vars.config	2013-08-19 14:22:26.463290231 +0000
+diff -ur riak-2.1.1.orig/rel/vars.config riak-2.1.1/rel/vars.config
+--- riak-2.1.1.orig/rel/vars.config	2015-05-03 03:20:23.000000000 +0800
++++ riak-2.1.1/rel/vars.config	2015-05-09 16:53:26.614808427 +0800
 @@ -2,11 +2,11 @@
  %% ex: ft=erlang ts=4 sw=4 et
  
@@ -17,11 +18,11 @@
  
  %%
  %% etc/app.config
-@@ -47,12 +47,12 @@
+@@ -41,13 +41,13 @@
  %%
  %% bin/riak
  %%
--{runner_script_dir,  "$(cd ${0%/*} && pwd)"}.
+-{runner_script_dir,  "\`cd \\`dirname $0\\` && /bin/pwd\`"}.
 -{runner_base_dir,    "{{runner_script_dir}}/.."}.
 -{runner_etc_dir,     "$RUNNER_BASE_DIR/etc"}.
 -{runner_log_dir,     "$RUNNER_BASE_DIR/log"}.
@@ -37,3 +38,4 @@
 +{pipe_dir,           "/tmp/riak"}.
  {runner_user,        ""}.
  {runner_wait_process, "riak_core_node_watcher"}.
+ {runner_ulimit_warn, 65536}.

@@ -56,10 +56,9 @@ RDEPEND="
 	sys-libs/ncurses
 	sys-libs/zlib
 "
-# TODO test non smp install
 DEPEND="
-<dev-lang/erlang-17.0.0
-	${RDEPEND}
+>=dev-lang/erlang-17.3
+${RDEPEND}
 "
 
 pkg_setup() {
