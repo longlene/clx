@@ -4,18 +4,17 @@ EAPI=5
 USE_RUBY="ruby20 ruby21 ruby22"
 
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_EXTRADOC="README.md"
+RUBY_FAKEGEM_EXTRADOC=""
 RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="ASCII art avatars emote your messages"
-HOMEPAGE="https://github.com/moneydesktop/cowsay"
+DESCRIPTION="Do some browser detection with Ruby"
+HOMEPAGE="http://github.com/fnando/browser"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/rake-0"
 

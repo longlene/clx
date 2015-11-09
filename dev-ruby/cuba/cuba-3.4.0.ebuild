@@ -22,3 +22,7 @@ ruby_add_rdepend ">=dev-ruby/cutest-0"
 ruby_add_rdepend ">=dev-ruby/rack-test-0"
 ruby_add_rdepend ">=dev-ruby/tilt-0"
 
+all_ruby_prepare() {
+	sed -i -e '/git ls-files/d' ${PN}.gemspec
+}
+
