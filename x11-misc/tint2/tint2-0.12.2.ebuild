@@ -42,6 +42,7 @@ src_configure() {
 		$(cmake-utils_use_enable battery BATTERY)
 		$(cmake-utils_use_enable examples EXAMPLES)
 		$(cmake-utils_use_enable tint2conf TINT2CONF)
+		$(cmake-utils_use_enable startup-notification SN)
 	)
 
 	cmake-utils_src_configure
