@@ -2,6 +2,8 @@
 
 EAPI=4
 
+inherit common-lisp-3
+
 DESCRIPTION="Common Lisp bindings for the OpenAL audio library"
 HOMEPAGE="https://github.com/sykopomp/cl-openal"
 SRC_URI="https://github.com/sykopomp/cl-openal/archive/v${PV}.tar.gz -> ${P}.tar.gz"
