@@ -13,13 +13,10 @@ SRC_URI="https://github.com/rvirding/lfe/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="emacs"
 
 RDEPEND="dev-lang/erlang"
 DEPEND="${RDEPEND}"
-
-#eh?
-#S=${WORKDIR}/${P}a
 
 src_prepare() {
 	sed -i -e 's/cp -pPR $(INCDIR) $(INSTALLDIR); \\/echo " "; \\/' Makefile || die
@@ -34,4 +31,19 @@ src_install() {
 	dosym /usr/$(get_libdir)/lfe/bin/lfe /usr/bin/lfe
 	dosym /usr/$(get_libdir)/lfe/bin/lfec /usr/bin/lfec
 	dosym /usr/$(get_libdir)/lfe/bin/lfescript /usr/bin/lfescript
+	if use emacs ; then
+		elisp-install ${PN} emacs/*.el
+	fi
+}
+
+pkg_postinst() {
+	if use emacs ; then
+		elisp-site-regen
+	fi
+}
+
+pkg_postrm() {
+	if use emacs ; then
+		elisp-site-regen
+	fi
 }
