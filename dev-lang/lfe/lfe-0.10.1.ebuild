@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit multilib
+inherit multilib elisp-common
 
 DESCRIPTION="Lisp-flavoured Erlang"
 HOMEPAGE="http://lfe.github.io/"
