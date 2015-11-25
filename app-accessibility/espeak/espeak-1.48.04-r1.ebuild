@@ -13,10 +13,12 @@ HOMEPAGE="http://espeak.sourceforge.net/"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
-IUSE="portaudio pulseaudio"
+IUSE="portaudio pulseaudio +zh_CN"
 
-COMMON_DEPEND=" portaudio? ( >=media-libs/portaudio-19_pre20071207 )
-	pulseaudio? ( media-sound/pulseaudio )"
+COMMON_DEPEND="
+	portaudio? ( >=media-libs/portaudio-19_pre20071207 )
+	pulseaudio? ( media-sound/pulseaudio )
+"
 
 DEPEND="${COMMON_DEPEND}
 	app-arch/unzip"
@@ -41,7 +43,7 @@ get_audio() {
 src_prepare() {
 	# gentoo uses portaudio 19.
 	mv -f portaudio19.h portaudio.h
-	cp -v "${FILESDIR}"/{zh_listx,zhy_list} "${WORKDIR}/${MY_P}"/dictsource
+	use zh_CN && cp -v "${FILESDIR}"/{zh_listx,zhy_list} "${WORKDIR}/${MY_P}"/dictsource
 }
 
 src_compile() {
@@ -65,6 +67,12 @@ src_compile() {
 		. \
 		../../espeak-data/phondata-manifest
 	cp -f phondata phonindex phontab "../../espeak-data"
+	popd
+	if use zh_CN ; then
+		cd "${WORKDIR}/${MY_P}/dictsource"
+		"${S}"/espeak --compile=zh --path="${WORKDIR}/${MY_P}"
+		"${S}"/espeak --compile=zh-yue --path="${WORKDIR}/${MY_P}"
+	fi
 }
 
 src_install() {
