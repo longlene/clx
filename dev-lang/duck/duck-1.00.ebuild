@@ -22,7 +22,3 @@ RDEPEND="${DEPEND}
 
 S="${WORKDIR}"/duck-lang-${PV}
 
-src_install() {
-	dobin bin/duck
-	dobin bin/gduck
-}
