@@ -2,9 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
-<name>loong0</name>
 <email>longlene@gmail.com</email>
-<tool>gbuild.rb</tool>
+<name>loong0</name>
 </maintainer>
 <longdescription>
 Dummy gem, sinatra-reloader is now part of sinatra-contrib: http://www.sinatrarb.com/contrib/

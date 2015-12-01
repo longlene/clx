@@ -4,7 +4,6 @@
 		<maintainer>
 			<name>loong0</name>
 			<email>longlene@gmail.com</email>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 Generate charts using Google API & Ruby

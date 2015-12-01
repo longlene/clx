@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 inherit perl-module eutils
 
 DESCRIPTION="rabak is a backup utility for files and databases based on rsync."

@@ -4,7 +4,6 @@
 		<maintainer>
 			<name>loong0</name>
 			<email>longlene@gmail.com</email>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 Use vim (or any other text editor) from inside irb to quickly test & write new code

@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/lince/lince-1.0.ebuild,v 1.1 2008/09/23 21:58:13 coldwind Exp $
+# $Header:
 
+EAPI=5
 ESVN_REPO_URI="https://lincetorrent.svn.sourceforge.net/svnroot/lincetorrent/trunk"
 
 inherit subversion
 
-EAPI="1"
 
 #MY_PV="${PV/_}"
 #MY_P="Lince-${MY_PV}"

@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit subversion eutils
+EAPI=5
 
-EAPI="2"
+inherit subversion eutils
 
 DESCRIPTION="Libresample from Asterisk Third Party, needed for eSpeak"
 HOMEPAGE="http://svnview.digium.com/svn/thirdparty/libresample/"

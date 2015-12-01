@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:  $
 
+EAPI="5"
+
 RESTRICT="primaryuri"
 
-EAPI="2"
 inherit eutils qt4-r2
 
 DESCRIPTION="Romanian Definitions Dictionary"

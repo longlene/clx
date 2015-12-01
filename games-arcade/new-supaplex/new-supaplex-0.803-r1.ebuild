@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/games-arcade/new-supaplex/new-supaplex-0.721.ebuild, v1 2010/11/30 20:18:30 oschtan Exp $
 
-EAPI=2
+EAPI=5
 inherit eutils games toolchain-funcs
 
 DESCRIPTION="Clone of the game Supaplex"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 inherit eutils games qt4-r2
 
 DESCRIPTION="Dexterity game for 2-8 players on one computer"

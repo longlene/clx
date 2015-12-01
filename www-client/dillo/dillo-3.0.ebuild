@@ -1,8 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/dillo/dillo-2.2.ebuild,v 1.10 2010/11/08 12:38:58 nelchael Exp $
+# $Header:
 
-EAPI="2"
+EAPI=5
+
 inherit eutils flag-o-matic multilib
 
 DESCRIPTION="Lean FLTK2-based web browser"

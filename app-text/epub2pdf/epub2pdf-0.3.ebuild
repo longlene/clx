@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="5"
+
 inherit java-pkg-2 java-ant-2
 
-EAPI="2"
 
 DESCRIPTION="epub2pdf is a command-line tool that quickly generates PDF files
 from EPUB ebooks. It allows the user to specify page size, fonts, margins, and

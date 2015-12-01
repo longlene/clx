@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		CL-HEAP is a Common Lisp library that provides efficient priority queue and heap implementations. Heaps are tree data structure in which any child, c, of a parent, p, obeys the relation p R c, for some relation R (often less-than or greater-than). Heaps can be used directly as priority queues, and are important components of many algorithms, like those for finding shortest paths and calculating minimum spanning trees.

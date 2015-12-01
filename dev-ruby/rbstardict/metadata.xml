@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		Provides a library that can mainpulate with stardict dictionaries, it can perform searching operations and/or getting dictionary's data.

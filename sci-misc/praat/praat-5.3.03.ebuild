@@ -2,12 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 inherit versionator
 # FIXME: for versions with last part < 10 pad with zeroes
 # e.g 4 => 4000, 5.1 => 5100, 5.2.7 => 5207.
 MY_PV=$(delete_all_version_separators)
 
-EAPI=3
 
 DESCRIPTION="Speech analysis and synthesis"
 HOMEPAGE="http://www.fon.hum.uva.nl/praat/"

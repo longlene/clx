@@ -2,9 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 	<pkgmetadata>
 		<maintainer>
-			<name>loong0</name>
 			<email>longlene@gmail.com</email>
-			<tool>gbuild.rb</tool>
+			<name>loong0</name>
 		</maintainer>
 		<longdescription>
 Provides a better error page for Rails and other Rack apps. Includes source code inspection, a live REPL and local/instance variable inspection for all stack frames.

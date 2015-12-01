@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 An Adhearsion Plugin providing Asterisk-specific dialplan methods, AMI access, and access to Asterisk configuration

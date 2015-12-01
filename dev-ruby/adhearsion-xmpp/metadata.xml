@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 This gem provides the XMPP plugin to Adhearsion, allowing your Adhearsion application to send and receive messages and react to presence changes

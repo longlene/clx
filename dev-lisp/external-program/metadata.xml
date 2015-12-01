@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		EXTERNAL-PROGRAM enables running programs outside the Lisp process. It is an attempt to make the RUN-PROGRAM functionality in implementations like SBCL and CCL as portable as possible without sacrificing much in the way of power

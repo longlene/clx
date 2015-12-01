@@ -2,10 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
-		CLNUPlot lets you manipulate plots in Lisp and then write out a command file that can executed in GNUPlot. The basic model is one of plots and data-sets. A plot contains information for the entire information display; for example, the title, the axis labels and so forth. Each data set contains information about how to display a single group of data in some format; e.g., the data, the display style, the name of the data in the legend and so forth. A plot contains one or data sets.
+	CLNUPlot lets you manipulate plots in Lisp and then write out a command file that can executed in GNUPlot. The basic model is one of plots and data-sets. A plot contains information for the entire information display; for example, the title, the axis labels and so forth. Each data set contains information about how to display a single group of data in some format; e.g., the data, the display style, the name of the data in the legend and so forth. A plot contains one or data sets.
 	</longdescription>
 </pkgmetadata>

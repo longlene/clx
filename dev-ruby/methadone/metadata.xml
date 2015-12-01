@@ -2,9 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 	<pkgmetadata>
 		<maintainer>
-			<name>loong0</name>
 			<email>longlene@gmail.com</email>
-			<tool>gbuild.rb</tool>
+			<name>loong0</name>
 		</maintainer>
 		<longdescription>
 Methadone provides a lot of small but useful features for developing a command-line app, including an opinionated bootstrapping process, some helpful cucumber steps, and some classes to bridge logging and output into a simple, unified, interface

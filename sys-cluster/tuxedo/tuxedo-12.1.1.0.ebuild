@@ -19,5 +19,4 @@ RDEPEND="${DEPEND}"
 pkg_nofetch() {
 	eerror "Please go to"
 	eerror ""
-
 }

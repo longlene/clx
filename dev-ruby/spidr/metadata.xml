@@ -2,9 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 	<pkgmetadata>
 		<maintainer>
-			<name>loong0</name>
 			<email>longlene@gmail.com</email>
-			<tool>gbuild.rb</tool>
+			<name>loong0</name>
 		</maintainer>
 		<longdescription>
 Spidr is a versatile Ruby web spidering library that can spider a site, multiple domains, certain links or infinitely

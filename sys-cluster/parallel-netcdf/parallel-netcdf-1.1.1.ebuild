@@ -1,11 +1,14 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=5
+
 DESCRIPTION="Parallel extension to netCDF"
-LICENSE="UCAR-Unidata"
 HOMEPAGE="http://www-unix.mcs.anl.gov/parallel-netcdf/"
 SLOT="0"
-EAPI="3"
+
+LICENSE="UCAR-Unidata"
 KEYWORDS="~amd64 -x86"
 SRC_URI="http://ftp.mcs.anl.gov/pub/parallel-netcdf/parallel-netcdf-1.1.1.tar.bz2"
 RDEPEND="dev-libs/clearsilver

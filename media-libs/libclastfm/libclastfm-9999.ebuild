@@ -2,13 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI=5
 
 MY_PN="liblastfm"
 
 EGIT_REPO_URI="git://${MY_PN}.git.sourceforge.net/gitroot/${MY_PN}/${MY_PN}"
 
-inherit base autotools git
+inherit base autotools git-2
 
 DESCRIPTION="C-API for the Last.fm web service written with libcurl"
 HOMEPAGE="http://liblastfm.sourceforge.net"

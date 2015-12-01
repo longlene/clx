@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 
 SRC_URI="http://www.owl-s.org/zip/homepage/${P}.tar.gz"
 DESCRIPTION="The Generic PreProcessor"

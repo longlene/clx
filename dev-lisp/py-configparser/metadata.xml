@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		In short, it implements reading and writing of .INI-file style configuration files with sections containing key/value pairs of configuration options. In line with the functionalities in the python module, does this package implement basic interpolation of option values in other options.

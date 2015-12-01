@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git
+inherit git-2
 
 DESCRIPTION="Mickey's own dbus introspection utility"
 HOMEPAGE="http://wiki.openmoko.org/wiki/OpenmokoFramework/mdbus"

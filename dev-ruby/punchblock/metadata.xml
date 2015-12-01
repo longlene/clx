@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 Like Rack is to Rails and Sinatra, Punchblock provides a consistent API on top of several underlying third-party call control protocols

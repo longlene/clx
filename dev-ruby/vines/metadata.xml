@@ -2,9 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 	<pkgmetadata>
 		<maintainer>
-			<name>loong0</name>
 			<email>longlene@gmail.com</email>
-			<tool>gbuild.rb</tool>
+			<name>loong0</name>
 		</maintainer>
 		<longdescription>
 Vines is an XMPP chat server that supports thousands of simultaneous connections, using EventMachine and Nokogiri

@@ -1,9 +1,8 @@
 # Gentoo Ebuild for bmpanel2
 
-EAPI=3
+EAPI=5
 
-inherit cmake-utils
-inherit git
+inherit cmake-utils git-2
 
 EGIT_REPO_URI="git://github.com/nsf/bmpanel2.git"
 

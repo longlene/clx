@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		L-MATH is a library for performing simple linear algebra. Vector and matrix classes are available, as are simple linear interpolation functions, spline-based interpolations (Catmull-Rom and B-Spline methods), and various operations related to creating rotation matrices.

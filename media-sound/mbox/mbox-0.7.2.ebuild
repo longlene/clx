@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI=5
 
 DESCRIPTION="mBox is program intended to help you with organizing your music files."
 HOMEPAGE="http://www.mbox.wz.cz/"
@@ -19,7 +19,6 @@ mp3? ( media-sound/lame )
 mplayer? ( media-video/mplayer )
 python-optimize? ( dev-python/psyco )"
 DEPEND=$RDEPEND
-ewarn "mBox will complain at runtime if all the USE (except python-optimize) are not enabled."
 
 src_install()
 {

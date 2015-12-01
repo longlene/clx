@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-text/xiphos/xiphos-9999.ebuild,v 1.0 2010/05/16 00:29:08 Exp $
 
-EAPI=2
+EAPI=5
 GCONF_DEBUG=no
 
 

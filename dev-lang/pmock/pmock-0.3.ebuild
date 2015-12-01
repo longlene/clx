@@ -1,5 +1,7 @@
 # $Header$
 
+EAPI=5
+
 inherit distutils
 
 DESCRIPTION="Python mock object framework"

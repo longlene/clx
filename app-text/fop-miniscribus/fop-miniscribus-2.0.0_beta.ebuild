@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 inherit subversion qt4-r2 eutils
 
 MY_PV="${PV/_beta/}"

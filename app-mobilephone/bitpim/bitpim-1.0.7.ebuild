@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-mobilephone/bitpim/bitpim-1.0.6-r1.ebuild,v 1.4 2010/06/08 16:23:41 arfrever Exp $
 
-EAPI="2"
+EAPI="5"
 
 inherit eutils distutils fdo-mime multilib subversion
 

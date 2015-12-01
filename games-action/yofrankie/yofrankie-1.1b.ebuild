@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/games-action/yofrankie/yofrankie-1.1b.ebuild, v1 2010/07/28 09:57:30 oschtan Exp $
 
-EAPI=2
+EAPI=5
 inherit eutils games python
 
 DESCRIPTION="Open video game made by the Blender Institute"

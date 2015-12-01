@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils git
+inherit eutils git-2
 
 DESCRIPTION="Tool to store the metadata of files,directories,links in a file tree."
 HOMEPAGE="http://david.hardeman.nu/software.php"

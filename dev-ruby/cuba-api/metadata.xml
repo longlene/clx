@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 add content negogiation, serialization of objects (their attributes map), and some helpers for authentication + authorization to the cuba framework

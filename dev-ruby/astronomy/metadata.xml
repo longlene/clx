@@ -2,9 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 	<pkgmetadata>
 		<maintainer>
-			<name>loong0</name>
 			<email>longlene@gmail.com</email>
-			<tool>gbuild.rb</tool>
+			<name>loong0</name>
 		</maintainer>
 		<longdescription>
 Search or browse the names, descriptions and image URLs for various categories including: Asterism, Celestial Object, Star, Planet, Star System, Galaxy, Moon, Comet, Asteroid, Constellation, Nebula, Astronomical Discovery, Cluster and Meteor Shower

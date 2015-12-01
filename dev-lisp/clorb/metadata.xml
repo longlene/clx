@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		CLORB is a Common Lisp library (with the goal of) implementing CORBA 2.6 following the OMG defined mapping for LISP. CORBA is the Object Management Group's Object Request Broker

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 
 DESCRIPTION="DirectDraw Surface (DDS) format plugin for Gimp 2"
 SRC_URI="http://nifelheim.dyndns.org/~cocidius/files/${P}.tar.bz2"

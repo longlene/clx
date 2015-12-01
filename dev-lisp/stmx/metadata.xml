@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		STMX is a high-performance implementation of composable Transactional Memory (TM) for Common Lisp. TM is a concurrency control mechanism aimed at making concurrent programming easier to write and understand. Instead of traditional lock-based programming, one programs with atomic memory transactions, which can be composed together to make larger atomic memory transactions.

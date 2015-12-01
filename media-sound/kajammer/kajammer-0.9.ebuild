@@ -1,6 +1,7 @@
+EAPI=5
+
 inherit qt4-r2
 
-EAPI="2"
 DESCRIPTION="Simple Qt audio player."
 HOMEPAGE="https://sourceforge.net/projects/kajammer/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"

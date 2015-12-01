@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 Cl-async is a library for general purpose, non-blocking programming in Common Lisp. Cl-async uses Libevent2 as the backend, which is a fast, stable, portable library for asynchronous IO (see my notes on choosing Libevent).

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 
 ESVN_REPO_URI="https://pcsxr.svn.codeplex.com/svn/pcsxr"
 ESVN_PROJECT="pcsxr"

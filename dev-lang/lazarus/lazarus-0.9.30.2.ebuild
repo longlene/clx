@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/lazarus/lazarus-0.9.28.2-r1.ebuild,v 1.2 2011/03/29 07:58:55 angelos Exp $
 
-EAPI=2
+EAPI=5
 
 inherit eutils
 

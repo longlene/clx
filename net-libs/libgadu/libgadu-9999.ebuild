@@ -2,8 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 ESVN_REPO_URI="http://toxygen.net/svn/${PN}/trunk/"
-EAPI="2"
 
 inherit autotools subversion
 

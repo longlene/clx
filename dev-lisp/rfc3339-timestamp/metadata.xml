@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		RFC3339-timestamp is relaxed implementation of RFC3339 timestamps using cl-yacc for parsing and a very simple timestamp class for keeping track of fractions of a second and offset if you need it to survive a decode/encode round trip.

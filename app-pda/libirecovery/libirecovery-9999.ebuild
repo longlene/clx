@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git
+EAPI="5"
 
-EAPI="2"
+inherit git-2
 
 DESCRIPTION="iRecovery is a libusb-based commandline utility to talk to iBoot/iBSS in Apple's iPhone/iPod touch via USB"
 HOMEPAGE="http://github.com/chronicdev/libirecovery.git"

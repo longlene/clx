@@ -2,9 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
-<name>loong0</name>
 <email>longlene@gmail.com</email>
-<tool>gbuild.rb</tool>
+<name>loong0</name>
 </maintainer>
 <longdescription>
 It is a design pattern in key-value databases to use the key to simulate structure, and Nido can take care of that.

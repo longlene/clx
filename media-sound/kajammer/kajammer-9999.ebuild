@@ -1,7 +1,6 @@
-inherit qt4-r2
-inherit git-2
+EAPI=5
+inherit qt4-r2 git-2
 
-EAPI="2"
 DESCRIPTION="Simple Qt audio player."
 HOMEPAGE="https://sourceforge.net/projects/kajammer/"
 EGIT_REPO_URI="git://github.com/pvtcupcakes/kajammer.git"

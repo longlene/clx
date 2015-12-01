@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		OpenBinder is a system-level component architecture, designed to provide a richer high-level abstraction on top of traditional modern operating system services. The current implementation runs on Linux, but the code has run on a diverse variety of platforms, including BeOS, Windows, and PalmOS Cobalt.

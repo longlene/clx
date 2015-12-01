@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 gpio allows for devices such as raspberry pi or systems with 1wire usb adapters to speak to the system's input/output pins

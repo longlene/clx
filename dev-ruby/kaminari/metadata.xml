@@ -4,7 +4,6 @@
 		<maintainer>
 			<name>loong0</name>
 			<email>longlene@gmail.com</email>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated paginator for Rails 3+

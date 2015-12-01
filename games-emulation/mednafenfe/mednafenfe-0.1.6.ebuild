@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/games-emulation/fceultra/fceultra-0.98.12.ebuild,v 1.7 2007/08/13 16:52:11 mr_bones_ Exp $
 
-EAPI=2
+EAPI=5
 inherit eutils games python
 
 MY_PN="mfe"

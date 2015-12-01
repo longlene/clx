@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 This is a modernization of the glorious but unmaintained ruby-opengl version, aimed at making it compatible with ruby 1

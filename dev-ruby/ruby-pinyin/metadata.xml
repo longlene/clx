@@ -2,9 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
-<name>loong0</name>
 <email>longlene@gmail.com</email>
-<tool>gbuild.rb</tool>
+<name>loong0</name>
 </maintainer>
 <longdescription>
 Pinyin is a romanization system (phonemic notation) of Chinese characters, this gem helps you to convert Chinese characters into pinyin form.

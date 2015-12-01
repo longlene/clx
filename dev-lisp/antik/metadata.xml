@@ -2,12 +2,12 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
-		Antik provides a foundation for scientific and engineering computation in Common Lisp. It is designed not only to facilitate numerical computations, but to permit the use of numerical computation libraries and the interchange of data and procedures, whether foreign (non-lisp) or Lisp libraries. It is named after the Antikythera mechanism, one of the oldest examples of a scientific computer known.
 
+		Antik provides a foundation for scientific and engineering computation in Common Lisp. It is designed not only to facilitate numerical computations, but to permit the use of numerical computation libraries and the interchange of data and procedures, whether foreign (non-lisp) or Lisp libraries. It is named after the Antikythera mechanism, one of the oldest examples of a scientific computer known.
 		Antik provides the following:
 
 		Mathematics

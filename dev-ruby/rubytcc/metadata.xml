@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 This gem is a Ruby wrapper for the Honeywell Total Connect Comfort SOAP API, built on Savon

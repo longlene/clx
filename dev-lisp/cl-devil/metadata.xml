@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		CL-DevIL is a Common Lisp library that includes bindings to the DevIL Image library. It includes direct bindings to DevIL's C API, as well as some utility functions that wrap these.

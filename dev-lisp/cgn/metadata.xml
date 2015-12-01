@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		Cgn is a library to interface Gnuplot from Common Lisp. Gnuplot is a program that lets you draw scatter and functions graphics. It's free software and you can find It at http://www.gnuplot.info. Lots of scientist software uses it for the graphics. 

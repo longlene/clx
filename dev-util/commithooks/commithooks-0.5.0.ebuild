@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 
 EGIT_REPO_URI="git://git.complete.org/commithooks"
 EGIT_TREE="f30e13e43b669a7806adcad8cbc7e62b3c3d3451"
 
-inherit eutils git
+inherit eutils git-2
 
 DESCRIPTION="Commit hooks for version control systems to inject the result into bugtrackers"
 HOMEPAGE="http://software.complete.org/software/projects/show/commithooks"

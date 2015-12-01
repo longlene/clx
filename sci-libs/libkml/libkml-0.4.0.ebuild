@@ -1,3 +1,5 @@
+EAPI=5
+
 inherit autotools distutils eutils perl-module toolchain-funcs
 
 IUSE="curl java python swig"

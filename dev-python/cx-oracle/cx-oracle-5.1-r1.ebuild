@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="4-python"
+EAPI="5"
 
 PYTHON_MULTIPLE_ABIS="1"
 PYTHON_MODNAME="cx_Oracle"

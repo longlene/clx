@@ -2,10 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 DESCRIPTION="GNU Shishi, a Kerberos 5 Implementation"
 HOMEPAGE="http://www.gnu.org/software/shishi"
 SRC_URI="ftp://alpha.gnu.org/pub/gnu/shishi/${P}.tar.gz"
-EAPI=1
 
 LICENSE="GPL-3"
 SLOT="0"

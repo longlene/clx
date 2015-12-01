@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
+EAPI=5
 PYTHON_DEPEND="2:2.5"
 
 LANGS=" ca ca@valencia cs da de el en_GB es fr gl hu it nb pl pt pt_BR sl sv uk zh_CN zh_HK zh_TW"

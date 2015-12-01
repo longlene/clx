@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 inherit multilib python gnome2
 
 MY_P="${PN}-1.0-RC2"

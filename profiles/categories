@@ -45,6 +45,7 @@ dev-php5
 dev-python
 dev-ruby
 dev-scheme
+dev-swift
 dev-tcltk
 dev-tinyos
 dev-util

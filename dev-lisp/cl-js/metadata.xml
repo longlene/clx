@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		CL-JavaScript allows you to add user scripting to your Common Lisp application without requiring your poor users to learn Common Lisp. It is a JavaScript to Common Lisp translator, runtime, and standard library. We are ECMAScript 3 compatible, with some of the ECMAScript 5 extensions.

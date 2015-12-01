@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		CL-feed-parser is a feed parser library for Common Lisp. The function parse-feed takes a url, pathname, string or stream as an argument, and returns hash-table stored feed data. The goal of cl-feed-parser is to treat the feed as the one format by hiding the difference of various feed formats (atom1.0, rss1.0, rss2.0, etc.).

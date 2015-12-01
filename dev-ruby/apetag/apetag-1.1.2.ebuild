@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit ruby gems
+EAPI=5
+
+USE_RUBY="ruby20 ruby21 ruby22"
+inherit ruby-fakegem
 
 DESCRIPTION="A pure Ruby library for manipulating APEv2 tags"
 HOMEPAGE="http://rubyforge.org/projects/apetag/"
@@ -13,6 +16,5 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 
 IUSE=""
-USE_RUBY="ruby18"
-DEPEND="virtual/ruby
-	dev-ruby/cicphash"
+
+ruby_add_rdepend "dev-ruby/cicphash"

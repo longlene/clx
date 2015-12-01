@@ -2,9 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
-<name>loong0</name>
 <email>longlene@gmail.com</email>
-<tool>gbuild.rb</tool>
+<name>loong0</name>
 </maintainer>
 <longdescription>
 Agent is a diverse family of related approaches for modelling concurrent systems, in Ruby

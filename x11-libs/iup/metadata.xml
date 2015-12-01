@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		IUP is a multi-platform toolkit for building graphical user interfaces. It offers a simple API in three basic languages: C, Lua and LED. IUP's purpose is to allow a program source code to be compiled in different systems without any modification. Its main advantages are:

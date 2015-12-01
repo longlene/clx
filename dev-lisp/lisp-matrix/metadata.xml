@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		Linear algebra library for ANSI Common Lisp; implemented at the lowest level using CFFI to call the BLAS and LAPACK. Should run on any ANSI CL implementation that supports CFFI. Uses both lisp-centric and foreign-centric storage, in a manner friendly to the complimentary other storage facility.

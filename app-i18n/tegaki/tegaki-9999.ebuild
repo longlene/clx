@@ -2,14 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="5"
 
 EGIT_REPO_URI="http://www.mblondel.org/code/hwr.git"
 SRC_URI="
 	http://www.tegaki.org/releases/0.3/models/tegaki-zinnia-japanese-0.3.zip
 	http://www.tegaki.org/releases/0.3/models/tegaki-wagomu-japanese-0.3.zip"
 
-inherit eutils distutils git
+inherit eutils distutils git-2
 
 DESCRIPTION="Tegaki handwriting recognition"
 HOMEPAGE="http://tegaki.org"

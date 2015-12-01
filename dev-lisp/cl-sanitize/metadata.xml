@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		cl-sanitize is a whitelist-based HTML sanitizer. Given a list of acceptable elements and attributes, cl-sanitize will remove all unacceptable HTML from a string.

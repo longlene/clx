@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		This is CL-TUPLES, an experimental "type facade" which appears to give you configurable homogenous vectors based on defstruct, and allow for free conversion between multiple values and vectors. As such it is to be hoped that it will be of most use when writing code for raytracers, games, and the like, which use simple linear algebra primitives intensely.

@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		Xelf extends Common Lisp with an Emacs-inspired 2D OpenGL game engine, a game project editor interface, and an integrated command shell. Along with a Common Lisp compiler such as Steel Bank Common Lisp, Xelf can be used to write games that compile from a single codebase into optimized native executables for Windows, Mac, and GNU/Linux. Xelf also supports live integration with GNU Emacs via SLIME or SLIMV.

@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-# Nonofficial ebuild by Ycarus. For new version look here : http://gentoo.zugaina.org/
-# Thanks to Mark Byers for an other search technique for gjc
+
+EAPI=5
 
 ESVN_REPO_URI="svn://svn.berlios.de/irate/trunk/irate"
 inherit subversion eutils
@@ -11,7 +11,7 @@ IUSE=""
 
 MY_P="irate"
 DESCRIPTION="iRATE radio is a collaborative filtering system for music. You rate the tracks it downloads and the server uses your ratings and other people's to guess what you'll like. (SVN version)"
-DESCRIPTION_FR="TÈlÈchargement de musique gratuite suivant vos gouts  (Version SVN)"
+DESCRIPTION_FR="TÈñòÈñèhargement de musique gratuite suivant vos gouts  (Version SVN)"
 
 HOMEPAGE="http://irate.sf.net"
 SLOT="0"

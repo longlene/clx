@@ -4,7 +4,6 @@
 		<maintainer>
 			<name>loong0</name>
 			<email>longlene@gmail.com</email>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 A markup to HTML & PDF converter

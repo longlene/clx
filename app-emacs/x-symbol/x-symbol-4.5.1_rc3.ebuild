@@ -2,12 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="5"
+
 RESTRICT="primaryuri"
 
 NEED_EMACS="22" # at least
 EMACS_22="emacs-${NEED_EMACS}"
 
-EAPI="2"
 inherit elisp versionator
 
 PV_A=($(get_version_components))

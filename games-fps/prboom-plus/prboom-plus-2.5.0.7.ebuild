@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/games-fps/prboom/prboom-2.5.0.ebuild,v 1.7 2010/06/03 09:51:53 hwoarang Exp $
 
-EAPI=2
+EAPI=5
 inherit eutils toolchain-funcs games
 
 DESCRIPTION="Port of ID's doom to SDL and OpenGL"

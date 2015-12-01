@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sys-cluster/gearmand/gearmand-0.14.ebuild,v 1.3 2010/10/15 14:59:29 flameeyes Exp $
 
-EAPI=2
+EAPI=5
 
 inherit flag-o-matic libtool
 

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 
 DESCRIPTION="mpg123 replacement using gstreamer being able to play all file formats gstreamer understands"
 HOMEPAGE="http://space.twc.de/~stefan/gst123.php"

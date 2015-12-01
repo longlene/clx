@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 A ruby binding of Message Passing Interface (MPI), which is an API specification that allows processes to communicate with one another by sending and receiving messages

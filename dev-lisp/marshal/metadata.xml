@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		Simple and fast marshalling of Lisp datastructures. Convert any object into a string representation, put it on a stream an revive it from there. Only minimal changes required to make your CLOS objects serializable.

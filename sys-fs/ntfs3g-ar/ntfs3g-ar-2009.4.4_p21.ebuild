@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sys-fs/ntfs3g/ntfs3g-2009.4.4-r1.ebuild,v 1.1 2009/10/28 22:32:19 eva Exp $
 
-EAPI=2
+EAPI=5
 
 MY_PN="${PN/3g-ar/-3g}"
 MY_P="${MY_PN}-${PV/_p/AR.}"

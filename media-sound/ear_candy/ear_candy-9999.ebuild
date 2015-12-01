@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
 inherit bzr distutils
 
 EBZR_REPO_URI="http://bazaar.launchpad.net/~killerkiwi2005/earcandy/"

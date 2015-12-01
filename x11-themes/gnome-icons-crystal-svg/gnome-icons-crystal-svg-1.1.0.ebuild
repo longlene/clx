@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 GCONF_DEBUG="no"
 MY_PN="ICON-Crystal-SVG"
 S=${WORKDIR}/${MY_PN}-${PV}

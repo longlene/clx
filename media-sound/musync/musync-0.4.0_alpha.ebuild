@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 
+EAPI=5
+
 inherit eutils distutils
 
 DESCRIPTION="A sleek music synchronizer written in python"

@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 inherit gnome2 distutils
 
 DESCRIPTION="GNOME way to post at del.icio.us"

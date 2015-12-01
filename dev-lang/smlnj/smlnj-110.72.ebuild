@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/smlnj/smlnj-110.71.ebuild,v 1.1 2009/10/09 14:33:22 hkbst Exp $
 
-EAPI=2
+EAPI=5
 
 inherit eutils
 

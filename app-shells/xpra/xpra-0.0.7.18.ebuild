@@ -1,20 +1,20 @@
 # Copyright 2010-2011 Antoine Martin <antoine@nagafix.co.uk>
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=5
+
 inherit eutils
 SUPPORT_PYTHON_ABIS="1"
 inherit distutils
 
 
-DESCRIPTION="screen for X - this is the modified version designed to work with
-Window-Switch"
+DESCRIPTION="screen for X - this is the modified version designed to work with Window-Switch"
 HOMEPAGE="http://code.google.com/p/partiwm/wiki/xpra"
 SRC_URI="http://windowswitch.org/src/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE="+server +ssh"
-EAPI="2"
 PYTHON_DEPEND="2"
 RESTRICT_PYTHON_ABIS="3.*"
 

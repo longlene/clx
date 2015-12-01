@@ -1,8 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_chroot/pam_chroot-0.9.2.ebuild,v 1.2 2008/03/21 14:34:13 maekke Exp $
+# $Header:
 
-inherit cmake-utils eutils pam 
+EAPI=5
+
+inherit cmake-utils eutils pam
 
 DESCRIPTION="One-Time Passwords auth module for PAM"
 HOMEPAGE="http://savannah.nongnu.org/projects/otpasswd"
@@ -21,7 +23,7 @@ RESTRICT=test
 src_install() {
 	cmake-utils_src_install
 	dodoc README INSTALL || die "unable to install docs"
-	
+
 	# Change utility and directory owner
 	fowners otpasswd:root /etc/otpasswd || die "Unable to set permissions"
 

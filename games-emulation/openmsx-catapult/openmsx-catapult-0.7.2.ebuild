@@ -1,7 +1,7 @@
 # Copyright 2008 Gentoo Foundation
 # [v-fox] ftp://dfx.homeftp.net/services/GENTOO/v-fox
 # Distributed under the terms of the GNU General Public License v2 or later
-EAPI=2
+EAPI=5
 
 inherit toolchain-funcs games
 

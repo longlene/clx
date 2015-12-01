@@ -2,17 +2,19 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit ruby gems
+EAPI=5
+USE_RUBY="ruby20 ruby21 ruby22"
 
-USE_RUBY="ruby18"
+inherit ruby-fakegem
+
 DESCRIPTION="This library adds simple versioning to an ActiveRecord module."
 HOMEPAGE="http://rubyforge.org/projects/ar-versioned"
 SRC_URI="http://gems.rubyforge.org/gems/${P}.gem"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~arm"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
-DEPEND="virtual/ruby"
+DEPEND=""
 RDEPEND="${DEPEND} dev-ruby/activerecord"

@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		CommonORBIT (also called CORBIT) is an object-oriented extension of Common Lisp. It uses a prototype (classless) model of OOP, is easy to use and yet has many sophisticated features found also in KL-ONE type languages. CommonORBIT is a Common Lisp reimplementation of ORBIT, which was originally conceived by Luc Steels around 1981-1983. Because of its delegation-based rather than class-based inheritance, CommonORBIT offers extreme flexibility to define and change practically anything at run-time. Because of the generic functions, it fits well into regular Lisp code. It can co-exist with CLOS but remains completely separate.

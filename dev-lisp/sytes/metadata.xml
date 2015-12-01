@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		Sytes implements a Lispy template language, as well as Hunchentoot handlers for easily mapping HTTP requests to templates on disk. Templates may “inherit” from other templates, or process other templates. The language available templates is a Scheme-like mini-language providing very few primitive operations.

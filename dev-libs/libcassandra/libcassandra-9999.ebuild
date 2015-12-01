@@ -2,8 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
-inherit eutils git
+EAPI=5
+
+inherit eutils git-2
 
 DESCRIPTION="A high level C++ client for Cassandra"
 HOMEPAGE="http://github.com/posulliv/libcassandra"

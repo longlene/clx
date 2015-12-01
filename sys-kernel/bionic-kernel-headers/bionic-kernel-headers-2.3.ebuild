@@ -1,6 +1,6 @@
-EAPI=2
+EAPI=5
 
-inherit eutils git
+inherit eutils git-2
 
 DESCRIPTION="Linux kernel headers from the bionic C library"
 HOMEPAGE="http://android.git.kernel.org/?p=platform/bionic.git"

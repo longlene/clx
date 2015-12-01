@@ -1,8 +1,8 @@
 # FIXME: patches for USE=android vs USE=-android
 
-EAPI=2
+EAPI=5
 
-inherit eutils toolchain-funcs git
+inherit eutils toolchain-funcs git-2
 
 DESCRIPTION="The bionic C library"
 HOMEPAGE="http://android.git.kernel.org/?p=platform/bionic.git"

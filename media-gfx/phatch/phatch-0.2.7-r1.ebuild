@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: Exp $
 
+EAPI=5
+
 inherit distutils fdo-mime
 
 DESCRIPTION="Phatch is a simple to use cross-platform GUI Photo Batch Processor"

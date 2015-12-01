@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		CL+J is a JNI based interface to a Java Virtual Machine through CFFI. It targets safe, exact and complete access to Java from Common Lisp with as high integration as possible of the Java and CL respective runtime environments (especially at the condition/exception level).

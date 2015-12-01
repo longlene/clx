@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /cvsroot/dictator/latest/scripts/templates/dictator.ebuild,v 1.2 2005/08/01 22:43:26 kmh1979 Exp $
 
+EAPI=5
+
 inherit distutils
 
 DESCRIPTION="On-screen text file reader employing Rapid Serial Visual Presentation."

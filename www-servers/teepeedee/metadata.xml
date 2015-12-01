@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		teepeedee is a small, hopefully scalable, single-threaded file server. It can serve or receive multiple files over http, https and ftp simultaneously, listening on any number of ports and providing entirely different views of the filesystem to different users. It uses sendfile and is written in C++.

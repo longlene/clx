@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git
+inherit git-2
 
 DESCRIPTION="Assemble boot images for the Android bootloader"
 SRC_URI=""

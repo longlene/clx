@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		Common Lisp[1] is a high-level programming language with a long history that has been used for many diverse tasks, including artificial intelligence, computer aided design and drafting, mathematical computation, and scientific programming. One common complaint about common lisp is the lack of publicly available libraries for a wide variety of tasks. In the past few years, projects such as common-lisp.net[2] , the Common Lisp Gardereners[3] , and The Common Lisp Open Code Collection (CLOCC)[4] have been developed to address this lack of publicly available libraries. Image representation and manipulation is an important, or central, part of many computing tasks, but there remains a dearth of feature-rich, efficient, publicly available image-processing libraries. ch-image is an open-source common lisp library for image processing and manipulation and is licensed under a liberal BSD-style license. ch-image uses the clem common-lisp matrix package which provides for efficient representation and access to typed common lisp arrays and for basic matrix operations such as matrix arithmetic and affine transformations.

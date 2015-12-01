@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git
+inherit common-lisp-3 git-2
 
 DESCRIPTION="A library for representing and processing images"
 HOMEPAGE=""

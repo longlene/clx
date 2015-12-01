@@ -2,9 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 PYTHON_DEPEND="2:2.6"
 RESTRICT_PYTHON_ABIS="3.*"
-EAPI=3
 inherit distutils eutils gnome2-utils python
 DESCRIPTION="Gnome taskbar applet with groupping and group manipulation"
 HOMEPAGE="http://launchpad.net/dockbar"

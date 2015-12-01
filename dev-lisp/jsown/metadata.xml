@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		jsown is a high performance Common Lisp json parser. Its aim is to allow for the fast parsing of json objects in CL. Recently, functions and macros have been added to ease the burden of writing and editing jsown objects.

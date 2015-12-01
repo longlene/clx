@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
 		Sheeple is a Dynamic, CLOS-like, Delegative Prototype-based Object-Oriented Programming Framework (or “POOP Framework”) that strives to optimize application flexibility, minimize cost while increasing value, maximize programmer resources, and empower application implementers to better assist them in leveraging modern paradigms in order to proactively achieve next-generation synergy in tomorrow’s web 3.0 world. It is implemented in (mostly) ANSI Common Lisp. Sheeple is fully buzzword compliant.

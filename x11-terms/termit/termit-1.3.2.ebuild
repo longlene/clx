@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 inherit cmake-utils
 
 SRC_URI="http://termit.googlecode.com/files/${P}.tar.bz2"

@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 inherit perl-module toolchain-funcs
 
 DESCRIPTION="Serialize your C data quickly and easily"
