@@ -7,6 +7,6 @@
 			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
-
+Pragmatic Segmenter is a sentence segmentation tool for Ruby
 		</longdescription>
 	</pkgmetadata>

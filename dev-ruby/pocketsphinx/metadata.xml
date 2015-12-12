@@ -7,6 +7,6 @@
 			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
-
+Nice wrapper for pocketsphinx
 		</longdescription>
 	</pkgmetadata>
