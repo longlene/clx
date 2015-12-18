@@ -4,11 +4,13 @@
 
 EAPI=5
 
-inherit lua
+inherit git-2 lua
 
 DESCRIPTION="A WebSocket implementation for Lua"
 HOMEPAGE="https://github.com/mbalmer/luawebsocket"
-SRC_URI="https://github.com/mbalmer/luawebsocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
+#SRC_URI="https://github.com/mbalmer/luawebsocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
+
+EGIT_REPO_URI="https://github.com/mbalmer/luawebsocket.git"
 
 LICENSE="BSD-3"
 SLOT="0"
@@ -18,12 +20,7 @@ IUSE="doc"
 DEPEND="dev-libs/openssl"
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	sed -i '/luanet.h/d' luawebsocket.c
-}
-
 src_install() {
 	lua_install_cmodule websocket.so
-	use doc && dodoc luawebsocket.pdf
 	dodoc README.md
 }
