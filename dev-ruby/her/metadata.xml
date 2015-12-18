@@ -7,6 +7,6 @@
 			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
-
+Her is an ORM that maps REST resources and collections to Ruby objects
 		</longdescription>
 	</pkgmetadata>

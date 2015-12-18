@@ -7,6 +7,6 @@
 			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
-
+Ruby Driver for Elastic Search
 		</longdescription>
 	</pkgmetadata>
