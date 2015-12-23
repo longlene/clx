@@ -14,10 +14,11 @@ EGIT_REPO_URI="https://github.com/death/lredis.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/babel
-dev-lisp/usocket"
+	dev-lisp/babel
+	dev-lisp/usocket
+"
