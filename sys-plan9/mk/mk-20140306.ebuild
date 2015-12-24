@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 DESCRIPTION="Make equivalent for the Plan9 System"
 HOMEPAGE="http://cm.bell-labs.com/magic/man2html/1/mk"
 SRC_URI="http://plan9port.googlecode.com/files/plan9port-${PV}.tgz"
@@ -15,6 +17,10 @@ DEPEND=""
 RDEPEND=""
 
 S="${WORKDIR}/plan9port"
+
+src_prepare() {
+	sed -i 's/_BSD_SOURCE/_DEFAULT_SOURCE/' src/lib9/utf/utfecpy.c src/cmd/troff/n2.c src/cmd/troff/n7.c src/cmd/grap/main.c include/u.h
+}
 
 src_compile() {
 	PLAN9=`pwd` export PLAN9
