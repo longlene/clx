@@ -15,5 +15,14 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-scheme/guile
+	dev-scheme/guile
 "
+
+src_compile() {
+	:
+}
+src_install() {
+	insinto $(guile -c "(display (car %load-path))")/ice-9
+	doins ice-9/colorized.scm
+	dodoc README.md
+}

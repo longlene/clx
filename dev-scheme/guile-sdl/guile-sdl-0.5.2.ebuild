@@ -15,8 +15,13 @@ IUSE=""
 
 DEPEND="dev-scheme/guile"
 RDEPEND="${DEPEND}
-media-libs/libsdl
-media-libs/sdl-mixer
-media-libs/sdl-gfx
-media-libs/sdl-ttf
+	media-libs/sdl-image
+	media-libs/libsdl
+	media-libs/sdl-mixer
+	media-libs/sdl-gfx
+	media-libs/sdl-ttf
 "
+
+src_compile() {
+	emake -j1
+}

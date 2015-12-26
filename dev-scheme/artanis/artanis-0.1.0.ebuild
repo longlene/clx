@@ -4,6 +4,8 @@
 
 EAPI=5
 
+inherit bash-completion-r1
+
 DESCRIPTION="A fast monolithic-architecture web-framework of Scheme language"
 HOMEPAGE="http://web-artanis.com"
 SRC_URI="https://github.com/NalaGinrut/artanis/archive/v${PV}.tar.gz -> ${P}.tar.gz"
@@ -11,7 +13,7 @@ SRC_URI="https://github.com/NalaGinrut/artanis/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="bash-completion doc"
 
 DEPEND=""
 RDEPEND="${DEPEND}
