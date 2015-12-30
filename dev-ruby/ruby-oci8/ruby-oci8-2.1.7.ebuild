@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-oci8/ruby-oci8-2.1.3.ebuild,v 1.3 2013/08/31 09:15:22 ago Exp $
 
 EAPI="2"
-USE_RUBY="ruby19 ruby20 ruby21 ruby22"
+USE_RUBY="ruby19 ruby20 ruby21 ruby22 ruby23"
 
 inherit ruby-ng
 

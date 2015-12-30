@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/test-unit/test-unit-2.5.5-r2.ebuild,v 1.3 2014/05/16 05:16:01 graaff Exp $
 
 EAPI=5
-USE_RUBY="ruby19 ruby20 ruby21 ruby22 jruby"
+USE_RUBY="ruby19 ruby20 ruby21 ruby22 ruby23 jruby"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_DOCDIR="doc"

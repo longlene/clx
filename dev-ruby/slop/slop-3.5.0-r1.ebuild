@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/slop/slop-3.5.0.ebuild,v 1.1 2014/03/27 12:14:28 mrueg Exp $
 
 EAPI=5
-USE_RUBY="ruby19 ruby20 ruby21 ruby22 jruby"
+USE_RUBY="ruby19 ruby20 ruby21 ruby22 ruby23 jruby"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="CHANGES.md README.md"
