@@ -4,13 +4,11 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3
 
 DESCRIPTION="Unix-style command line options parser"
 HOMEPAGE="https://github.com/mrkkrp/unix-opts/"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/mrkkrp/unix-opts.git"
+SRC_URI="https://github.com/mrkkrp/unix-opts/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
