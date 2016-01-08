@@ -15,6 +15,7 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
 RDEPEND="!dev-lisp/cl-${PN}
+		dev-lisp/chipz
 		>=dev-lisp/chunga-1.1.0
 		>=dev-lisp/puri-1.5.0
 		>=dev-lisp/cl-base64-3.3.2
