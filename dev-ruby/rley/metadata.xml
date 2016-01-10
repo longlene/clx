@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A Ruby implementation of the Earley's parsing algorithm
+A general parser using the Earley algorithm
 		</longdescription>
 	</pkgmetadata>

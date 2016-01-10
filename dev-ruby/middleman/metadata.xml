@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A static site generator
+A static site generator based on Sinatra
 		</longdescription>
 	</pkgmetadata>

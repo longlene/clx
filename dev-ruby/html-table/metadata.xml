@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+    The html-table library provides an interface for generating HTML tables
+    in a syntax comfortable to Ruby programmers, but with some enforcement
+    of where certain elements can be placed
+		</longdescription>
+	</pkgmetadata>

@@ -4,6 +4,7 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
+			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 A job queue that uses PostgreSQL's advisory locks for speed and reliability

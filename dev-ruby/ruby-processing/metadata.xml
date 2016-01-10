@@ -6,7 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-
-  Ruby-Processing is a Ruby wrapper for the Processing code art framework
+  Ruby-Processing is a ruby wrapper for the processing-2
 		</longdescription>
 	</pkgmetadata>

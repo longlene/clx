@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Ruboto (JRuby on Android) is a platform for developing full stand-alone apps for Android using the Ruby language and libraries. It includes support libraries and generators for creating projects, classes, tests, and more. The complete APIs of Android, Java, and Ruby are available to you using the Ruby language
-	</longdescription>
-</pkgmetadata>
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+Ruboto (JRuby on Android) is a platform for developing full stand-alone apps for
+Android using the Ruby language and libraries
+		</longdescription>
+	</pkgmetadata>

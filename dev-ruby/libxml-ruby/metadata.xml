@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-<maintainer>
-<email>longlene@gmail.com</email>
-<name>loong0</name>
-</maintainer>
-<longdescription>
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
     The Libxml-Ruby project provides Ruby language bindings for the GNOME
-    Libxml2 XML toolkit. It is free software, released under the MIT License.
-    Libxml-ruby's primary advantage over REXML is performance - if speed
-    is your need, these are good libraries to consider, as demonstrated
-    by the informal benchmark below.
-
-</longdescription>
-</pkgmetadata>
+    Libxml2 XML toolkit
+		</longdescription>
+	</pkgmetadata>

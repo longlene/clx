@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		The Ruby Spreadsheet
-	</longdescription>
-</pkgmetadata>
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+The Spreadsheet Library is designed to read and write Spreadsheet Documents
+		</longdescription>
+	</pkgmetadata>

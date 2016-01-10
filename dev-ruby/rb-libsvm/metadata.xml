@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-libsvm and ruby without using swig
+Self-contained LIBSVM package for Ruby (that doesn't use SWIG)
 		</longdescription>
 	</pkgmetadata>

@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-FancyIrb patches your IRB to create a smooth output experience
+FancyIrb makes IRB # => friendly
 		</longdescription>
 	</pkgmetadata>

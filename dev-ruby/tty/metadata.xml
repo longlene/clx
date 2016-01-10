@@ -4,8 +4,9 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
+			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
-Toolbox for developing CLI clients
+A toolbox for developing beautiful command line clients
 		</longdescription>
 	</pkgmetadata>

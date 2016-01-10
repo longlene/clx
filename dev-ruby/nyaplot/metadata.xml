@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-interactive plots generator for Ruby users
+Nyaplot is an Interactive plots generator based on Web technology like SVG, WebGL, and JavaScript
 		</longdescription>
 	</pkgmetadata>

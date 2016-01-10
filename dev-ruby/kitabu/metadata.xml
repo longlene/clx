@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A framework that generates PDF and e-Pub from Markdown, Textile, and HTML files
+A framework for creating e-books from Markdown using Ruby
 		</longdescription>
 	</pkgmetadata>

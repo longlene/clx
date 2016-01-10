@@ -4,6 +4,7 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
+			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 Object-oriented representers help you defining nested REST API documents which can then be rendered and parsed using one and the same concept

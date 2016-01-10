@@ -4,6 +4,7 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
+			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 Ruby implementation of the ICU (International Components for Unicode) that uses the Common Locale Data Repository to format dates, plurals, and more

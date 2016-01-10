@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-nanoc is a simple but very flexible static site generator written in Ruby
+Nanoc is a static-site generator focused on flexibility
 		</longdescription>
 	</pkgmetadata>
