@@ -1,0 +1,26 @@
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=5
+USE_RUBY="ruby20 ruby21 ruby22 ruby23"
+
+RUBY_FAKEGEM_TASK_DOC=""
+RUBY_FAKEGEM_EXTRADOC="README.md"
+RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
+
+inherit ruby-fakegem
+
+DESCRIPTION="ActiveRecord style Object Graph Mapping for neo4j"
+HOMEPAGE=""
+
+LICENSE=""
+SLOT="0"
+KEYWORDS="~x86 ~amd64 ~arm"
+IUSE=""
+
+ruby_add_rdepend ">=dev-ruby/active_attr-0"
+ruby_add_rdepend ">=dev-ruby/neography-0"
+ruby_add_rdepend ">=dev-ruby/rspec-0"
+ruby_add_rdepend ">=dev-ruby/rake-0.8.7"
+ruby_add_rdepend ">=dev-ruby/coveralls-0"
+ruby_add_rdepend ">=dev-ruby/codeclimate-test-reporter-0"
+
