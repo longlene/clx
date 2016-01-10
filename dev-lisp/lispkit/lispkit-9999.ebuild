@@ -5,8 +5,9 @@ EAPI=4
 inherit common-lisp-3 git-2
 
 DESCRIPTION="A lisp browser using WebKit"
-HOMEPAGE="http://github.com/AeroNotix/lispkit"
+HOMEPAGE="http://lispkit.org"
 SRC_URI=""
+
 EGIT_REPO_URI="https://github.com/AeroNotix/lispkit.git"
 
 LICENSE="BSD"
@@ -16,13 +17,19 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/cl-cffi-gtk
-dev-lisp/cl-webkit
-dev-lisp/purl
-dev-lisp/cl-xkeysym
-dev-lisp/djula
-dev-lisp/parenscript
-dev-lisp/split-sequence
-test? ( dev-lisp/lisp-unit dev-lisp/alexandria )
+	dev-lisp/alexandria
+	dev-lisp/cl-cffi-gtk
+	dev-lisp/cl-ppcre
+	dev-lisp/cl-webkit
+	dev-lisp/cl-xkeysym
+	dev-lisp/djula
+	dev-lisp/lparallel
+	dev-lisp/parenscript
+	dev-lisp/purl
+	dev-lisp/split-sequence
+	test? ( dev-lisp/prove )
 "
 
+src_prepare() {
+	use test || rm -rf test lispkit-test.asd
+}
