@@ -33,6 +33,7 @@ dev-go
 dev-haskell
 dev-inferno
 dev-java
+dev-javascript
 dev-lang
 dev-libs
 dev-lisp
@@ -68,8 +69,6 @@ games-util
 gnome-base
 gnome-extra
 gnustep-apps
-jquery-plugins
-js-libs
 kde-misc
 mail-client
 mail-filter
