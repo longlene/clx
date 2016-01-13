@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit bash-completion
+inherit bash-completion-r1
 
 DESCRIPTION="Paco is a source code package organizer"
 HOMEPAGE="http://paco.sourceforge.net"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 x86"
-IUSE="gtk"
+IUSE="gtk nls"
 
 RDEPEND="gtk? ( =dev-cpp/gtkmm-2* )"
 
