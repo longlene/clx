@@ -26,5 +26,5 @@ src_install() {
 	common-lisp-install-sources *.lisp
 	common-lisp-install-asdf
 	dodoc TODO NEWS
-	dohtml doc/{${PN}.html,style.css}
+	dohtml doc/{index.html,style.css,chipz-doc.txt}
 }

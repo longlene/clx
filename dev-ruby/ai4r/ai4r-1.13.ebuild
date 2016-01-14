@@ -9,7 +9,7 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="Artificial Intelligence for Ruby"
 HOMEPAGE="http://www.ai4r.org"
 
 LICENSE=""
