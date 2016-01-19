@@ -19,12 +19,15 @@ test? ( dev-libs/check )
 doc? ( dev-python/sphinx )"
 
 src_prepare() {
-	if ! use doc ; then
-		sed -i '/add_subdirectory(doc/d' CMakeLists.txt
-	fi
-
-	if ! use test ; then
-		sed -i '/add_subdirectory(tests/d' CMakeLists.txt
-	fi
+	sed -i '45,55d' CMakeLists.txt
+	sed -i '23,35d' CMakeLists.txt
+	use doc || sed -i '/add_subdirectory(doc/d' CMakeLists.txt
+	use test || sed -i '/add_subdirectory(tests/d' CMakeLists.txt
 }
 
+src_configure() {
+	local mycmakeargs=(
+	-DBASE_VERSION=${PV}
+	)
+	cmake-utils_src_configure
+}
