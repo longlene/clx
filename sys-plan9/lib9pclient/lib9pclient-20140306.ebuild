@@ -2,9 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 PHEADERS="9pclient"
 DEPEND="dev-plan9/lib9"
 inherit plan9-libs
 
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 

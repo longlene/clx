@@ -21,6 +21,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/array-operations
 	dev-lisp/introspect-environment
+	dev-lisp/iterate
 	dev-lisp/lparallel
 	dev-lisp/parse-number
 "
