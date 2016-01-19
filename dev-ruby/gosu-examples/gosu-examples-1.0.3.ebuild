@@ -9,7 +9,7 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="The `gosu-examples` tool provides an easy way to run and inspect example games written for the Gosu game development library"
+DESCRIPTION="The gosu-examples tool provides an easy way to run and inspect example games written for the Gosu game development library"
 HOMEPAGE="http://www.libgosu.org/"
 
 LICENSE=""
