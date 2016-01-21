@@ -13,7 +13,14 @@ SRC_URI="https://github.com/jgm/cmark/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+
+src_configure() {
+	local mycmakeargs=(
+	$(cmake-utils_use test CMARK_TESTS)
+	)
+	cmake-utils_src_configure
+}
