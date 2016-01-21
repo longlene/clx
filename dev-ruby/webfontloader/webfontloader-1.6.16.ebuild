@@ -9,8 +9,7 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="WebFont Loader gives you added control when using linked fonts via
-`@font-face`"
+DESCRIPTION="WebFont Loader gives you added control when using linked fonts via @font-face"
 HOMEPAGE="http://github.com/typekit/webfontloader"
 
 LICENSE="Apache 2.0"
