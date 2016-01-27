@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 common-lis-3
+inherit git-2 common-lisp-3
 
 DESCRIPTION="Common Lisp EPMD client and server"
 HOMEPAGE="https://github.com/flambard/cl-epmd"
