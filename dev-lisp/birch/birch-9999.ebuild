@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 	dev-lisp/usocket
 	dev-lisp/flexi-streams
-	dev-lisp/alexanria
+	dev-lisp/alexandria
 "
 
 src_prepare() {
