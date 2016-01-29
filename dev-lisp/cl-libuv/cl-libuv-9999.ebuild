@@ -17,5 +17,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/cffi"
+	dev-libs/libuv
+	dev-lisp/alexandria
+	dev-lisp/cffi
+"
 

@@ -13,14 +13,23 @@ EGIT_REPO_URI="https://github.com/orthecreedence/cl-async.git"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/cl-libevent2
-dev-lisp/cl-ppcre
-dev-lisp/trivial-features
-dev-lisp/babel
-dev-lisp/trivial-gray-streams
-virtual/puri"
+	dev-lisp/babel
+	dev-lisp/bordeaux-threads
+	dev-lisp/cffi
+	dev-lisp/cl-libuv
+	dev-lisp/cl-ppcre
+	dev-lisp/fast-io
+	dev-lisp/trivial-features
+	dev-lisp/static-vectors
+	dev-lisp/trivial-gray-streams
+	dev-lisp/uiop
+	dev-lisp/vom
+"
 
+src_prepare() {
+	use test || rm -r test cl-async-test.asd
+}
