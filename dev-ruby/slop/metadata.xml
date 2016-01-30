@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 A DSL for gathering options and parsing command line flags

@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 TexPlay is a light-weight image manipulation framework for Ruby and Gosu

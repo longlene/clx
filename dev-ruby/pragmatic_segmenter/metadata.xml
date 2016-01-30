@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 Pragmatic Segmenter is a sentence segmentation tool for Ruby

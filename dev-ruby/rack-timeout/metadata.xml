@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 Rack middleware which aborts requests that have been running for longer than a specified timeout

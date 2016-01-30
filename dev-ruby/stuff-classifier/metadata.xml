@@ -4,7 +4,6 @@
 		<maintainer>
 			<email>longlene@gmail.com</email>
 			<name>loong0</name>
-			<tool>gbuild.rb</tool>
 		</maintainer>
 		<longdescription>
 2 methods are provided for now - (1) naive bayes implementation + (2) tf-idf weights
