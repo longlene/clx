@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>longlene@gmail.com</email>
+		<name>Lixiao Chen</name>
+	</maintainer>
+	<longdescription lang="en">
+		Vicr stands for "Vim-like Interactive CRystal" and represents a tiny
+		command line application that designed to quickly execute Crystal code
+		with fast feedback and options to proceed
+	</longdescription>
+	<upstream>
+		<remote-id type="github">veelenga/vicr</remote-id>
+	</upstream>
+</pkgmetadata>
