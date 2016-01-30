@@ -15,7 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
-DEPEND=""
+DEPEND="
 dev-nodejs/inherits
 dev-nodejs/create-hash
+"
 RDEPEND="${DEPEND}"

@@ -1,7 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-EAPI="2"
+EAPI="5"
+
 inherit distutils eutils gnome2-utils
 
 DESCRIPTION="Gnome taskbar applet with groupping and group manipulation"

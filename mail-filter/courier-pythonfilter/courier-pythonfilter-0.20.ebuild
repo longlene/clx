@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 inherit distutils
 
 DESCRIPTION="Python-framework for Courier-MTA's courierfilter"

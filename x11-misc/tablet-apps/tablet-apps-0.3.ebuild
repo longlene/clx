@@ -2,7 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=5
+
 inherit distutils
+
 DESCRIPTION="Utilities for graphics tablets"
 SRC_URI="http://alexmac.cc/tablet-apps/${P}.tar.bz2"
 HOMEPAGE="http://alexmac.cc/tablet-apps/"
