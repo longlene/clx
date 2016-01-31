@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inhrit common-lisp-3 git-2
+inherit common-lisp-3 git-2
 
 DESCRIPTION="A SQL generator for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/sxql"

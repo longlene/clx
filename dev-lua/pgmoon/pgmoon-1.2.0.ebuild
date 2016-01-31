@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A pure Lua Postgres driver for use in OpenResty & more"
 HOMEPAGE="https://github.com/leafo/pgmoon"
-SRC_URI="mirror://github/leafo/pgmoon/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/leafo/pgmoon/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

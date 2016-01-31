@@ -8,7 +8,7 @@ inherit eutils vcs-snapshot
 MY_USER="herenvarno"
 DESCRIPTION="A free music player"
 HOMEPAGE="http://www.linnya.org"
-SRC_URI="mirror://github/${MY_USER}/${PN}/tarball/${PV} -> ${P}.tar.gz"
+SRC_URI="https://github.com/${MY_USER}/${PN}/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

@@ -11,7 +11,7 @@ MY_P=${PN}-${MY_PV}
 
 DESCRIPTION="A very simple API that convert Lua tables to and from XML documents"
 HOMEPAGE="http://www.keplerproject.org/luasoap"
-SRC_URI="mirror://github/tomasguisasola/luasoap/archive/v${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
+SRC_URI="https://github.com/tomasguisasola/luasoap/archive/v${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

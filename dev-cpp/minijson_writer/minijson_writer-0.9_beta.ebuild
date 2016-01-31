@@ -8,7 +8,7 @@ MY_PV=${PV/_/-}
 
 DESCRIPTION="A simple, little-overhead, allocation-free and extensible C++ JSON writer"
 HOMEPAGE="https://github.com/giacomodrago/minijson_writer"
-SRC_URI="mirror://github/giacomodrago/minijson_writer/archive/v${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/giacomodrago/minijson_writer/archive/v${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

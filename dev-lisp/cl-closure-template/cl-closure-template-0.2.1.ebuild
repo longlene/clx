@@ -7,7 +7,7 @@ inherit common-lisp-3 elisp-common eutils vcs-snapshot
 
 DESCRIPTION="Common Lisp implementation of Google's Closure Templates."
 HOMEPAGE="http://code.google.com/p/cl-closure-template/"
-SRC_URI="mirror://github/archimag/cl-closure-template/archive/version-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/archimag/cl-closure-template/archive/version-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"

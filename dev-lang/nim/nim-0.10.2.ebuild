@@ -6,7 +6,7 @@ inherit eutils
 
 DESCRIPTION="A statically typed, imperative programming language"
 HOMEPAGE="http://nim-lang.org"
-SRC_URI="mirror://github/Araq/Nim/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Araq/Nim/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

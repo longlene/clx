@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="LuaJIT Client for Rserve"
 HOMEPAGE="http://scilua.org/rclient.html"
-SRC_URI="mirror://github/stepelu/lua-rclient/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/stepelu/lua-rclient/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

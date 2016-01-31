@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp machine learning library"
 HOMEPAGE="https://github.com/melisgl/mgl"
-SRC_URI="mirror://github/melisgl/mgl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/melisgl/mgl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

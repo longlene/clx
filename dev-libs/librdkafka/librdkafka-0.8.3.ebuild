@@ -6,7 +6,7 @@ inherit multilib vcs-snapshot
 
 DESCRIPTION="The Apache Kafka C/C++ library"
 HOMEPAGE="https://github.com/edenhill/librdkafka"
-SRC_URI="mirror://github/edenhill/librdkafka/archive/debian/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/edenhill/librdkafka/archive/debian/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

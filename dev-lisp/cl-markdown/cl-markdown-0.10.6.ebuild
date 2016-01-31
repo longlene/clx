@@ -7,7 +7,7 @@ inherit common-lisp-2 eutils vcs-snapshot
 
 DESCRIPTION="CL-Markdown is a Common Lisp rewrite of Markdown."
 HOMEPAGE="http://common-lisp.net/project/cl-markdown"
-SRC_URI="mirror://github/gwkkwg/${PN}/tarball/version-${PV}_version-${PV} -> ${P}.tar.gz"
+SRC_URI="https://github.com/gwkkwg/${PN}/tarball/version-${PV}_version-${PV} -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"

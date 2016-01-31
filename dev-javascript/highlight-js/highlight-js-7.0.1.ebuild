@@ -6,7 +6,7 @@ EAPI="4"
 
 DESCRIPTION="highlight.js"
 HOMEPAGE="https://github.com/isagalaev/highlight.js"
-SRC_URI="mirror://github/isagalaev/highlight.js/tarball/${PV} -> ${P}.tar.gz"
+SRC_URI="https://github.com/isagalaev/highlight.js/tarball/${PV} -> ${P}.tar.gz"
 
 IUSE=""
 LICENSE=""

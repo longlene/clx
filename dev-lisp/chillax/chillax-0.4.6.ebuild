@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="CouchDB abstraction layer for Common Lisp"
 HOMEPAGE="https://github.com/sykopomp/chillax"
-SRC_URI="mirror://github/sykopomp/chillax/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/sykopomp/chillax/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

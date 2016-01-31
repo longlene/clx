@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Common Lisp environment setup Utility"
 HOMEPAGE="https://github.com/snmsts/roswell"
-SRC_URI="mirror://github/snmsts/roswell/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/snmsts/roswell/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

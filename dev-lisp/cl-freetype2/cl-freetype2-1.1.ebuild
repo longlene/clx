@@ -6,7 +6,7 @@ inherit common-lisp-3 git-2
 
 DESCRIPTION="Common Lisp bindings for Freetype 2"
 HOMEPAGE="https://github.com/rpav/cl-freetype2"
-SRC_URI="mirror://github/rpav/cl-freetype2/archive/${PV}.tar.gz"
+SRC_URI="https://github.com/rpav/cl-freetype2/archive/${PV}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="Lisp-flavoured C"
 HOMEPAGE="https://github.com/tomhrr/dale"
-SRC_URI="mirror://github/tomhrr/dale/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/tomhrr/dale/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

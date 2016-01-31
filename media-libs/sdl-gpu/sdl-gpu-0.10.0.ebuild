@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="A library for high-performance, modern 2D graphics with SDL written in C"
 HOMEPAGE="https://github.com/grimfang4/sdl-gpu"
-SRC_URI="mirror://github/grimfang4/sdl-gpu/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/grimfang4/sdl-gpu/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

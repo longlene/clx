@@ -8,7 +8,7 @@ inherit lua cmake-utils
 
 DESCRIPTION="Very fast json module for Lua based on RapidJSON"
 HOMEPAGE="https://github.com/xpol/lua-rapidjson"
-SRC_URI="mirror://github/xpol/lua-rapidjson/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/xpol/lua-rapidjson/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

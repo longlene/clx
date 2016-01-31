@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Plan compatible C89 UTF-8 library"
 HOMEPAGE="https://github.com/cls/libutf"
-SRC_URI="mirror://github/cls/libutf/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/cls/libutf/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

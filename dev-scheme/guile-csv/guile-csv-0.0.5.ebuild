@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Guile csv reader"
 HOMEPAGE="https://github.com/NalaGinrut/guile-csv"
-SRC_URI="mirror://github/NalaGinrut/guile-csv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/NalaGinrut/guile-csv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

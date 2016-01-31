@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="extend luajit ffi module to give more affinity to C codes"
 HOMEPAGE="https://github.com/umegaya/ffiex"
-SRC_URI="mirror://github/umegaya/ffiex/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/umegaya/ffiex/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2"
 SLOT="0"

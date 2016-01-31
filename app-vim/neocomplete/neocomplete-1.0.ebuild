@@ -7,7 +7,7 @@ inherit vim-plugin vcs-snapshot
 
 DESCRIPTION="vim plugin: Next generation completion framework after neocomplcache"
 HOMEPAGE="https://github.com/Shougo/neocomplete.vim"
-SRC_URI="mirror://github/Shougo/neocomplete.vim/archive/ver.${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Shougo/neocomplete.vim/archive/ver.${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"

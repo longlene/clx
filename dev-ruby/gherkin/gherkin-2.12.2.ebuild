@@ -16,7 +16,7 @@ inherit ruby-fakegem
 DESCRIPTION="Fast Gherkin lexer and parser based on Ragel"
 HOMEPAGE="https://github.com/cucumber/gherkin"
 LICENSE="MIT"
-SRC_URI="mirror://github/cucumber/gherkin/archive/v${PV}.tar.gz -> ${P}-git.tgz"
+SRC_URI="https://github.com/cucumber/gherkin/archive/v${PV}.tar.gz -> ${P}-git.tgz"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~x86 ~arm"
 SLOT="0"

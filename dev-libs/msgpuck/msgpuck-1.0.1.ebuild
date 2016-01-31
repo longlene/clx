@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="A simple and efficient MsgPack binary serialization in a self-contained header file"
 HOMEPAGE="https://github.com/rtsisyk/msgpuck"
-SRC_URI="mirror://github/rtsisyk/msgpuck/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/rtsisyk/msgpuck/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

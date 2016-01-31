@@ -9,7 +9,7 @@ inherit common-lisp-2 vcs-snapshot
 DESCRIPTION="A Common Lisp library for generation of UUIDs as described by RFC 4122."
 HOMEPAGE="http://www.dardoria.net/software/uuid.html"
 #SRC_URI="http://common-lisp.net/~sionescu/files/${P}.tar.bz2"
-SRC_URI="mirror://github/dardoria/${PN}/tarball/20-07-2011 -> ${P}.tgz"
+SRC_URI="https://github.com/dardoria/${PN}/tarball/20-07-2011 -> ${P}.tgz"
 
 LICENSE="LLGPL"
 SLOT="0"

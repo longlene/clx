@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp dokuwiki parser."
 HOMEPAGE="http://github.com/archimag/wiki-parser"
-SRC_URI="mirror://github/archimag/wiki-parser/archive/version-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/archimag/wiki-parser/archive/version-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"

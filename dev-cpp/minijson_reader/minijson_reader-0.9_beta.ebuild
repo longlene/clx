@@ -10,7 +10,7 @@ MY_PV=${PV/_/-}
 
 DESCRIPTION="A DOM-less JSON parser that can parse a JSON object without allocating a single byte of memory"
 HOMEPAGE="https://github.com/giacomodrago/minijson_reader"
-SRC_URI="mirror://github/giacomodrago/minijson_reader/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/giacomodrago/minijson_reader/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

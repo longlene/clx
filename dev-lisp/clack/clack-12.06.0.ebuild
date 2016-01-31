@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Web application environment for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/clack"
-SRC_URI="mirror://github/fukamachi/clack/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/fukamachi/clack/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

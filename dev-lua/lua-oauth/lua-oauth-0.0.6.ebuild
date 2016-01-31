@@ -10,7 +10,7 @@ MY_PV=${PV}-1
 
 DESCRIPTION="A OAuth client library for Lua"
 HOMEPAGE="https://github.com/ignacio/LuaOAuth"
-SRC_URI="mirror://github/ignacio/LuaOAuth/archive/${MY_PV}.tar.gz -> ${PN}-${MY_PV}.tar.gz"
+SRC_URI="https://github.com/ignacio/LuaOAuth/archive/${MY_PV}.tar.gz -> ${PN}-${MY_PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Lua proxy to access a Lua state from within another state"
 HOMEPAGE="https://github.com/mbalmer/luaproxy"
-SRC_URI="mirror://github/mbalmer/luaproxy/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/mbalmer/luaproxy/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

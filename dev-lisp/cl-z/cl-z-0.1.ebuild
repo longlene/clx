@@ -4,7 +4,7 @@ EAPI=4
 
 DESCRIPTION="Common Lisp wrapper of ZLib compression library"
 HOMEPAGE="https://github.com/andy128k/cl-z"
-SRC_URI="mirror://github/andy128k/cl-z/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/andy128k/cl-z/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL"
 SLOT="0"

@@ -12,7 +12,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="A simple option parser with an easy to remember syntax and friendly API."
 HOMEPAGE="https://github.com/injekt/slop"
-SRC_URI="mirror://github/injekt/${PN}/archive/v${PV}.tar.gz -> ${P}.tgz"
+SRC_URI="https://github.com/injekt/${PN}/archive/v${PV}.tar.gz -> ${P}.tgz"
 
 LICENSE="MIT"
 SLOT="3"

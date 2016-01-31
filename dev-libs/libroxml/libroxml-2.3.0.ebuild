@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="very light C xml parser library"
 HOMEPAGE="http://www.libroxml.net/"
-SRC_URI="mirror://github/blunderer/libroxml/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/blunderer/libroxml/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL"
 SLOT="0"

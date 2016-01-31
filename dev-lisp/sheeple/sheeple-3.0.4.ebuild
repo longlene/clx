@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Cheeky prototypes for Common Lisp"
 HOMEPAGE="https://github.com/sykopomp/sheeple"
-SRC_URI="mirror://github/sykopomp/sheeple/archive/v3.0.4.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/sykopomp/sheeple/archive/v3.0.4.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

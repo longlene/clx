@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="A fast JSON parser/generator for C++ with both SAX/DOM style API"
 HOMEPAGE="https://github.com/miloyip/rapidjson"
-SRC_URI="mirror://github/miloyip/rapidjson/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/miloyip/rapidjson/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

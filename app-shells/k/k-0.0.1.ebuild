@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="k is the new l"
 HOMEPAGE="https://github.com/supercrabtree/k"
-SRC_URI="mirror://github/supercrabtree/k/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/supercrabtree/k/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

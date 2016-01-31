@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="a binding to WebKitGtk+ for Common Lisp"
 HOMEPAGE="https://github.com/AeroNotix/cl-webkit"
-SRC_URI="mirror://github/joachifm/cl-webkit/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/joachifm/cl-webkit/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

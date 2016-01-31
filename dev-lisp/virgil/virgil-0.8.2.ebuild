@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="An extensible and high level FFI"
 HOMEPAGE="https://github.com/Lovesan/virgil"
-SRC_URI="mirror://github/Lovesan/virgil/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Lovesan/virgil/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

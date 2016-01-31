@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Lua bindings to ImageMagick for LuaJIT using FFI"
 HOMEPAGE="https://github.com/leafo/magick"
-SRC_URI="mirror://github/leafo/magick/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/leafo/magick/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Yet another unit testing framework for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/prove"
-SRC_URI="mirror://github/fukamachi/prove/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/fukamachi/prove/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Xavante is a Lua HTTP 1.1 Web server"
 HOMEPAGE="https://github.com/keplerproject/xavante"
-SRC_URI="mirror://github/keplerproject/xavante/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/keplerproject/xavante/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

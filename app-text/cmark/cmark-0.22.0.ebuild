@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="CommonMark parsing and rendering library and program in C"
 HOMEPAGE="https://github.com/jgm/cmark"
-SRC_URI="mirror://github/jgm/cmark/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jgm/cmark/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

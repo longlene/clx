@@ -8,7 +8,7 @@ inherit cmake-utils lua
 
 DESCRIPTION="Lua bindings to zlib"
 HOMEPAGE="http://github.com/brimworks/lua-zlib"
-SRC_URI="mirror://github/brimworks/lua-zlib/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/brimworks/lua-zlib/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

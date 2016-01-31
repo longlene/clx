@@ -8,7 +8,7 @@ inherit vcs-snapshot
 
 DESCRIPTION="An easy to use, scalable and secure web application framework for writing web APIs in C"
 HOMEPAGE="https://kore.io"
-SRC_URI="mirror://github/jorisvink/kore/archive/${PV}-release.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jorisvink/kore/archive/${PV}-release.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"

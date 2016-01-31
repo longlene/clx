@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="A simple mechanism to auto-load Lisp libraries from respositories"
 HOMEPAGE="https://github.com/billstclair/cl-autorepo"
-SRC_URI="mirror://github/billstclair/cl-autorepo/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/billstclair/cl-autorepo/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache"
 SLOT="0"

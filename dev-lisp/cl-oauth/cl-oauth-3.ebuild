@@ -9,7 +9,7 @@ MY_USER="skypher"
 
 DESCRIPTION="An implementation of the OAuth 1.0a standard in Common Lisp."
 HOMEPAGE="http://github.com/skypher/cl-oauth"
-SRC_URI="mirror://github/${MY_USER}/${PN}/tarball/master -> ${P}.tgz"
+SRC_URI="https://github.com/${MY_USER}/${PN}/tarball/master -> ${P}.tgz"
 
 LICENSE="LGPL"
 SLOT="0"

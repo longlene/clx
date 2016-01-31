@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Easy modification of places with any given function"
 HOMEPAGE="https://github.com/mrkkrp/trivial-update/"
-SRC_URI="mirror://github/mrkkrp/trivial-update/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/mrkkrp/trivial-update/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

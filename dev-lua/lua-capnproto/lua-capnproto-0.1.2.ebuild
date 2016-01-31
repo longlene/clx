@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Lua-capnp is a pure lua implementation of capnproto based on luajit"
 HOMEPAGE="https://github.com/calio/lua-capnproto"
-SRC_URI="mirror://github/cloudflare/lua-capnproto/archive/v${PV}-1.tar.gz -> ${P}-1.tar.gz"
+SRC_URI="https://github.com/cloudflare/lua-capnproto/archive/v${PV}-1.tar.gz -> ${P}-1.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

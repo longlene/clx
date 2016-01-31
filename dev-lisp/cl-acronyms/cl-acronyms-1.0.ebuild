@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="An acronym expander that utilizes a templating system"
 HOMEPAGE="https://github.com/isoraqathedh/cl-acronyms/"
-SRC_URI="mirror://github/isoraqathedh/cl-acronyms/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/isoraqathedh/cl-acronyms/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

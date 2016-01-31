@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Simple wrapper around luasocket smtp.send"
 HOMEPAGE="https://github.com/moteus/lua-sendmail"
-SRC_URI="mirror://github/moteus/lua-sendmail/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/moteus/lua-sendmail/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

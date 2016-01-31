@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="a Common Lisp CFFI interface to the libgit2 library"
 HOMEPAGE="https://github.com/russell/cl-git"
-SRC_URI="mirror://github/russell/cl-git/archive/${PV}.tar.gz"
+SRC_URI="https://github.com/russell/cl-git/archive/${PV}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

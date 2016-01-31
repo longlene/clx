@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Efficient endianness conversion for SBCL"
 HOMEPAGE="https://github.com/sionescu/swap-bytes"
-SRC_URI="mirror://github/sionescu/swap-bytes/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/sionescu/swap-bytes/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

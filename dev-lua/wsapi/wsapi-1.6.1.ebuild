@@ -8,7 +8,7 @@ inherit multilib eutils
 
 DESCRIPTION="Lua WSAPI Library"
 HOMEPAGE="https://github.com/keplerproject/wsapi"
-SRC_URI="mirror://github/keplerproject/wsapi/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/keplerproject/wsapi/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

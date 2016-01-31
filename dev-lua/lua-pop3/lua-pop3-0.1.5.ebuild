@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="POP3 client library for Lua"
 HOMEPAGE="https://github.com/moteus/lua-pop3"
-SRC_URI="mirror://github/moteus/lua-pop3/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/moteus/lua-pop3/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

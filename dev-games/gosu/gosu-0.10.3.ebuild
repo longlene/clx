@@ -10,7 +10,7 @@ inherit cmake-utils
 
 DESCRIPTION="2D game develop library"
 HOMEPAGE="http://www.libgosu.org"
-SRC_URI="mirror://github/gosu/gosu/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/gosu/gosu/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

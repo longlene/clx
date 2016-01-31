@@ -8,7 +8,7 @@ inherit autotools
 
 DESCRIPTION="XMLRPC module for Guile"
 HOMEPAGE="https://github.com/aconchillo/guile-xmlrpc"
-SRC_URI="mirror://github/aconchillo/guile-xmlrpc/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/aconchillo/guile-xmlrpc/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-3"
 SLOT="0"

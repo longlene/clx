@@ -8,7 +8,7 @@ inherit multilib
 
 DESCRIPTION="A size-optimized STL implementation"
 HOMEPAGE="http://msharov.github.io/ustl"
-SRC_URI="mirror://github/msharov/ustl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/msharov/ustl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

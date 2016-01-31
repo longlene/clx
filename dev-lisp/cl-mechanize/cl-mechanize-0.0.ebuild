@@ -5,7 +5,7 @@ EAPI=4
 inherit common-lisp-3 vcs-snapshot
 DESCRIPTION="A WWW::Mechanize work-alike library for Common Lisp."
 HOMEPAGE="https://github.com/joachifm/cl-mechanize"
-SRC_URI="mirror://github/joachifm/cl-mechanize/tarball/0.0 -> ${P}.tar.gz"
+SRC_URI="https://github.com/joachifm/cl-mechanize/tarball/0.0 -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

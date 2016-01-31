@@ -6,7 +6,7 @@ EAPI="4"
 
 DESCRIPTION="a presentation framework based on CSS3 transforms and transitions inspired by prezi.com"
 HOMEPAGE="http://bartaz.github.com/impress.js"
-SRC_URI="mirror://github/bartaz/impress.js/tarball/${PV} -> ${P}.tar.gz"
+SRC_URI="https://github.com/bartaz/impress.js/tarball/${PV} -> ${P}.tar.gz"
 
 IUSE=""
 LICENSE="MIT GPL-2"

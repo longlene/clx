@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="A cross platform toolkit for creative coding in C++"
 HOMEPAGE="http://openframeworks.cc"
-SRC_URI="mirror://github/openframeworks/openFrameworks/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/openframeworks/openFrameworks/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

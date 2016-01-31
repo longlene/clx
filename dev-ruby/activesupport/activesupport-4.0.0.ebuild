@@ -18,7 +18,7 @@ inherit ruby-fakegem versionator
 
 DESCRIPTION="Utility Classes and Extension to the Standard Library"
 HOMEPAGE="http://rubyforge.org/projects/activesupport/"
-SRC_URI="mirror://github/rails/rails/archive/v${PV}.tar.gz -> rails-${PV}.tgz"
+SRC_URI="https://github.com/rails/rails/archive/v${PV}.tar.gz -> rails-${PV}.tgz"
 
 LICENSE="MIT"
 SLOT="$(get_version_component_range 1-2)"

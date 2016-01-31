@@ -6,7 +6,7 @@ inherit multilib bash-completion-r1 vcs-snapshot
 
 DESCRIPTION="Groom your app's Ruby environment"
 HOMEPAGE="https://github.com/sstephenson/rbenv"
-SRC_URI="mirror://github/sstephenson/rbenv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/sstephenson/rbenv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

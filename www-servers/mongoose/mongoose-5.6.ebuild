@@ -7,7 +7,7 @@ EAPI=5
 inherit toolchain-funcs
 
 DESCRIPTION="easy to use web server"
-SRC_URI="mirror://github/cesanta/${PN}/archive/${PV}.zip -> ${P}.zip"
+SRC_URI="https://github.com/cesanta/${PN}/archive/${PV}.zip -> ${P}.zip"
 HOMEPAGE="https://code.google.com/p/${PN}/"
 
 LICENSE="GPL-2"

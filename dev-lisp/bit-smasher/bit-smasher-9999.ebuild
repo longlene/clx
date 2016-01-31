@@ -8,7 +8,7 @@ DESCRIPTION="Common Lisp library for handling bit vectors, bit vector arithmetic
 HOMEPAGE="https://github.com/thephoeron/bit-smasher/"
 SRC_URI=""
 
-EGIT_SRC_URI="mirror://github/thephoeron/bit-smasher.git"
+EGIT_SRC_URI="https://github.com/thephoeron/bit-smasher.git"
 
 LICENSE="MIT"
 SLOT="0"

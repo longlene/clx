@@ -8,7 +8,7 @@ DESCRIPTION="RFC 3986 percent-encoding library"
 HOMEPAGE="https://github.com/llibra/percent-encoding"
 SRC_URI=""
 
-EGIT_SRC_URI="mirror://github/llibra/percent-encoding.git"
+EGIT_SRC_URI="https://github.com/llibra/percent-encoding.git"
 
 LICENSE="MIT"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Lexing & Syntax Highlighting in Lua"
 HOMEPAGE="http://peterodding.com/code/lua/lxsh/"
-SRC_URI="mirror://github/xolox/lua-lxsh/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/xolox/lua-lxsh/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

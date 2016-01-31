@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Graphical User Interfaces"
 HOMEPAGE="http://pipeglade.boundp.org"
-SRC_URI="mirror://github/trebb/pipeglade/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/trebb/pipeglade/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

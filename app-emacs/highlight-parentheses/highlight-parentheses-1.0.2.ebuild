@@ -6,7 +6,7 @@ inherit elisp eutils
 
 DESCRIPTION="Highlight surrounding parentheses"
 HOMEPAGE="https://github.com/nschum/highlight-parentheses.el"
-SRC_URI="mirror://github/nschum/highlight-parentheses.el/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/nschum/highlight-parentheses.el/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

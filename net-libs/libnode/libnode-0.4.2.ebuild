@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION=""
 HOMEPAGE=""
-SRC_URI="mirror://github/plenluno/libnode/archive/libnode-v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/plenluno/libnode/archive/libnode-v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"

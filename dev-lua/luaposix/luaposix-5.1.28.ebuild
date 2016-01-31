@@ -8,7 +8,7 @@ inherit toolchain-funcs flag-o-matic
 
 DESCRIPTION="POSIX bindings for Lua"
 HOMEPAGE="http://luaposix.github.com/luaposix"
-SRC_URI="mirror://github/luaposix/luaposix/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/luaposix/luaposix/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

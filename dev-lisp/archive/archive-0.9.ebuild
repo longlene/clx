@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Archive is Nathan Froyd's tar/cpio package for CL."
 HOMEPAGE="http://www.cliki.net/Archive"
-SRC_URI="mirror://github/froydnj/archive/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/froydnj/archive/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

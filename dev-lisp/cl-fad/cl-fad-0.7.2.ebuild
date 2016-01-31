@@ -8,7 +8,7 @@ inherit common-lisp-2
 
 DESCRIPTION="CL-FAD is a thin portability layer atop the Common Lisp standard pathname functions."
 HOMEPAGE="http://weitz.de/cl-fad/"
-SRC_URI="mirror://github/edicl/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/edicl/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"

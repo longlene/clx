@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Compile and execute C \"scripts\" in one go!"
 HOMEPAGE="https://github.com/ryanmjacobs/c"
-SRC_URI="mirror://github/ryanmjacobs/c/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/ryanmjacobs/c/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

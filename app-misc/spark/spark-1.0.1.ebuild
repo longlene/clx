@@ -4,7 +4,7 @@ EAPI=4
 
 DESCRIPTION="sparkline in your shell"
 HOMEPAGE="http://zachholman.com/spark/"
-SRC_URI="mirror://github/holman/spark/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/holman/spark/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

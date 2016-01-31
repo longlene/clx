@@ -8,7 +8,7 @@ inherit common-lisp-2 vcs-snapshot elisp-common
 
 DESCRIPTION="BLOCKY is a visual programming language for Common Lisp."
 HOMEPAGE="http://blocky.io/"
-SRC_URI="mirror://github/dto/blocky/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/dto/blocky/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="A primitive Lua indenter/formatter/beautfier"
 HOMEPAGE="https://github.com/lipp/ludent"
-SRC_URI="mirror://github/lipp/ludent/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/lipp/ludent/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

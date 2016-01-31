@@ -6,7 +6,7 @@ inherit elisp
 
 DESCRIPTION="On-the-fly syntax checks for Emacs"
 HOMEPAGE="https://github.com/illusori/emacs-flymake"
-SRC_URI="mirror://github/illusori/emacs-flymake/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/illusori/emacs-flymake/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

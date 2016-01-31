@@ -16,7 +16,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="A Ruby client library for Redis"
 HOMEPAGE="https://github.com/redis/redis-rb"
-SRC_URI="mirror://github/redis/redis-rb/archive/v${PV}.tar.gz -> ${MY_P}.tar.gz"
+SRC_URI="https://github.com/redis/redis-rb/archive/v${PV}.tar.gz -> ${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -4,7 +4,7 @@ EAPI=4
 
 DESCRIPTION="high performance Common Lisp json parser"
 HOMEPAGE="https://github.com/madnificent/jsown"
-SRC_URI="mirror://github/madnificent/jsown/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/madnificent/jsown/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

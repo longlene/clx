@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Fast Concurrent Memoization Map"
 HOMEPAGE="https://github.comgiacomodrago/fcmm"
-SRC_URI="mirror://github/giacomodrago/fcmm/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/giacomodrago/fcmm/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

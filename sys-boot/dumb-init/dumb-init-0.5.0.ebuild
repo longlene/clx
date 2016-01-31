@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="A minimal init system for Linux containers"
 HOMEPAGE="https://github.com/Yelp/dumb-init"
-SRC_URI="mirror://github/Yelp/dumb-init/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Yelp/dumb-init/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

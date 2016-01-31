@@ -8,7 +8,7 @@ inherit multilib toolchain-funcs
 
 DESCRIPTION="Standalone FFI library for calling C functions from lua"
 HOMEPAGE="https://github.com/jmckaskill/luaffi"
-SRC_URI="mirror://github/jmckaskill/luaffi/archive/${PV}-work1.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jmckaskill/luaffi/archive/${PV}-work1.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

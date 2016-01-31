@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="CGILua is a tool for creating dynamic HTML pages and manipulating input data from Web forms"
 HOMEPAGE="http://keplerproject.github.com/cgilua"
-SRC_URI="mirror://github/keplerproject/cgilua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/keplerproject/cgilua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"

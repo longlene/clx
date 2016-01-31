@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="Capstone disassembly/disassembler framework"
 HOMEPAGE="http://www.capstone-engine.org"
-SRC_URI="mirror://github/aquynh/capstone/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/aquynh/capstone/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

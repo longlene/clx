@@ -6,7 +6,7 @@ inherit distutils
 
 DESCRIPTION="Extract files from captured TCP sessions. Support live streams and pcap files."
 HOMEPAGE="https://www.abnorm.org/projects/tcpextract/"
-SRC_URI="mirror://github/faust/tcpextract/downloads/${PN}-${PV}.tar.gz"
+SRC_URI="https://github.com/faust/tcpextract/downloads/${PN}-${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

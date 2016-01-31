@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Microservice & API Management Layer"
 HOMEPAGE="https://getkong.org"
-SRC_URI="mirror://github/Mashape/kong/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Mashape/kong/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

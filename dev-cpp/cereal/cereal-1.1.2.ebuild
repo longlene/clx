@@ -8,7 +8,7 @@ EAPI=5
 
 DESCRIPTION="A C++11 library for serialization"
 HOMEPAGE="https://github.com/USCiLab/cereal"
-SRC_URI="mirror://github/USCiLab/cereal/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/USCiLab/cereal/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

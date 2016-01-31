@@ -10,7 +10,7 @@ MY_PV=${PV//./_}
 
 DESCRIPTION="Lua coxpcall Library"
 HOMEPAGE="https://github.com/keplerproject/coxpcall"
-SRC_URI="mirror://github/keplerproject/coxpcall/archive/v${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/keplerproject/coxpcall/archive/v${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

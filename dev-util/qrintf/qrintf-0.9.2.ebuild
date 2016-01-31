@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="sprintf accelerator for GCC and Clang"
 HOMEPAGE="https://github.com/h2o/qrintf"
-SRC_URI="mirror://github/h2o/qrintf/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/h2o/qrintf/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

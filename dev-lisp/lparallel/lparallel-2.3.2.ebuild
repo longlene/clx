@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Parallelism for Common Lisp"
 HOMEPAGE="https://github.com/lmj/lparallel"
-SRC_URI="mirror://github/lmj/lparallel/archive/lparallel-${PV}.tar.gz"
+SRC_URI="https://github.com/lmj/lparallel/archive/lparallel-${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

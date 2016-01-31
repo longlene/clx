@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="The Howl Editor"
 HOMEPAGE="http://howl.io"
-SRC_URI="mirror://github/howl-editor/howl/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/howl-editor/howl/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

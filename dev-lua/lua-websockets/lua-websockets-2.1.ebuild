@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Websockets for Lua"
 HOMEPAGE="https://github.com/lipp.github.com/lua-websockets/"
-SRC_URI="mirror://github/lipp/lua-websockets/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/lipp/lua-websockets/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

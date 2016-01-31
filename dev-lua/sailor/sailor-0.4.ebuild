@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A Lua MVC Web Framework"
 HOMEPAGE="http://sailorproject.org"
-SRC_URI="mirror://github/Etiene/sailor/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Etiene/sailor/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

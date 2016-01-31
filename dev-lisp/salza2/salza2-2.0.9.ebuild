@@ -8,7 +8,7 @@ inherit common-lisp-3 vcs-snapshot
 
 DESCRIPTION="A compression library for creating data in the ZLIB, DEFLATE, or GZIP data formats."
 HOMEPAGE="http://www.xach.com/lisp/salza2/"
-SRC_URI="mirror://github/xach/salza2/archive/release-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/xach/salza2/archive/release-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"

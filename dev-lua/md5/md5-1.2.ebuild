@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="MD5 offers basic cryptographic facilities for Lua"
 HOMEPAGE="https://github.com/keplerproject/md5"
-SRC_URI="mirror://github/keplerproject/md5/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/keplerproject/md5/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

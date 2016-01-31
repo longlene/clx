@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Very low footprint JSON parser written in portable ANSI C"
 HOMEPAGE="https://github.com/udp/json-parser"
-SRC_URI="mirror://github/udp/json-parser/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/udp/json-parser/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

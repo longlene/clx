@@ -8,7 +8,7 @@ inherit common-lisp-2
 
 DESCRIPTION="A library meant to make writing portable multi-threaded apps simple."
 HOMEPAGE="http://common-lisp.net/project/bordeaux-threads/"
-SRC_URI="mirror://github/sionescu/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/sionescu/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

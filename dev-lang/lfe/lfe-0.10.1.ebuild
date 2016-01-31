@@ -8,7 +8,7 @@ inherit multilib elisp-common
 
 DESCRIPTION="Lisp-flavoured Erlang"
 HOMEPAGE="http://lfe.github.io/"
-SRC_URI="mirror://github/rvirding/lfe/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/rvirding/lfe/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"

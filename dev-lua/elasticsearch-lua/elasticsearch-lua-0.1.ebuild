@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Lua client for elasticsearch"
 HOMEPAGE="https://github.com/DhavalKapil/elasticsearch-lua"
-SRC_URI="mirror://github/DhavalKapil/elasticsearch-lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/DhavalKapil/elasticsearch-lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

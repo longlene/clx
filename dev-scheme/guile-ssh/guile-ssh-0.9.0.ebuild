@@ -8,7 +8,7 @@ inherit autotools
 
 DESCRIPTION="Guile-SSH is a library that provides access to the SSH protocol for GNU Guile programs"
 HOMEPAGE="https://github.com/artyom-poptsov/guile-ssh"
-SRC_URI="mirror://github/artyom-poptsov/guile-ssh/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/artyom-poptsov/guile-ssh/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

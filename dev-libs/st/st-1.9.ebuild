@@ -6,7 +6,7 @@ inherit multilib
 
 DESCRIPTION="State Threads Library"
 HOMEPAGE="https://github.com/winlinvip/state-threads http://sourceforge.net/projects/state-threads"
-SRC_URI="mirror://github/winlinvip/state-threads/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/winlinvip/state-threads/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MPL GPL-2"
 SLOT="0"

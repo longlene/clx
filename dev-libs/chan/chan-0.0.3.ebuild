@@ -5,7 +5,7 @@ inherit multilib
 
 DESCRIPTION="Pure C implementation of Go channels"
 HOMEPAGE="https://github.com/tylertreat/chan"
-SRC_URI="mirror://github/tylertreat/chan/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/tylertreat/chan/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache"
 SLOT="0"

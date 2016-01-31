@@ -8,7 +8,7 @@ inherit multilib
 
 DESCRIPTION="CarpVM"
 HOMEPAGE="https://github.com/tekknolagi/carp"
-SRC_URI="mirror://github/tekknolagi/carp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/tekknolagi/carp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

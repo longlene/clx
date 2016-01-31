@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="ANSI terminal color manipulation for Lua"
 HOMEPAGE="https://github.com/kikito/ansicolors.lua"
-SRC_URI="mirror://github/kikito/ansicolors.lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/kikito/ansicolors.lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

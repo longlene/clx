@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp driver for MongoDB"
 HOMEPAGE="https://github.com/archimag/mongo-cl-driver"
-SRC_URI="mirror://github/archimag/mongo-cl-driver/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/archimag/mongo-cl-driver/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

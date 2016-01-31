@@ -8,7 +8,7 @@ inherit base toolchain-funcs
 
 DESCRIPTION="A programmer friendly language that compiles into Lua."
 HOMEPAGE="https://github.com/leafo/moonscript"
-SRC_URI="mirror://github/leafo/moonscript/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/leafo/moonscript/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

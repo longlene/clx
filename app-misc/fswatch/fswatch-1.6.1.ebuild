@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="A cross-platform file change monitor"
 HOMEPAGE="http://emcrisostomo.github.io/fswatch/"
-SRC_URI="mirror://github/emcrisostomo/fswatch/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/emcrisostomo/fswatch/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

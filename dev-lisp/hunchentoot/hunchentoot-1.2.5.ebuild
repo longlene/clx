@@ -7,7 +7,7 @@ inherit common-lisp-3 vcs-snapshot
 
 DESCRIPTION="Hunchentoot is a web server written in Common Lisp."
 HOMEPAGE="http://weitz.de/hunchentoot/"
-SRC_URI="mirror://github/edicl/${PN}/tarball/v${PV} -> ${P}.tar.gz"
+SRC_URI="https://github.com/edicl/${PN}/tarball/v${PV} -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"

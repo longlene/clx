@@ -7,7 +7,7 @@ inherit git-2
 DESCRIPTION="Mach-O loader for Linux"
 HOMEPAGE="https://github.com/shinh/maloader"
 SRC_URI=""
-EGIT_SRC_URI="mirror://github/shinh/maloader.git"
+EGIT_SRC_URI="https://github.com/shinh/maloader.git"
 
 LICENSE="GPL-3"
 SLOT="0"

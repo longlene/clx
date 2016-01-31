@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Software Token for Linux/UNIX"
 HOMEPAGE="http://stoken.sf.net"
-SRC_URI="mirror://github/cernekee/stoken/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/cernekee/stoken/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL"
 SLOT="0"

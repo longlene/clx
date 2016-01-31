@@ -5,7 +5,7 @@ EAPI=4
 inherit common-lisp-3
 DESCRIPTION="Quickproject creates the skeleton of a Common Lisp project."
 HOMEPAGE="https://github.com/xach/quickproject"
-SRC_URI="mirror://github/xach/${PN}/archive/release-${PV}.tar.gz -> ${P}.tgz"
+SRC_URI="https://github.com/xach/${PN}/archive/release-${PV}.tar.gz -> ${P}.tgz"
 
 LICENSE="MIT"
 SLOT="0"

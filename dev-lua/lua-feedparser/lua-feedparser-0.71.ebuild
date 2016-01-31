@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A decent RSS and Atom XML feed parser"
 HOMEPAGE="http://feedparser.luaforge.net/"
-SRC_URI="mirror://github/slact/lua-feedparser/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/slact/lua-feedparser/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

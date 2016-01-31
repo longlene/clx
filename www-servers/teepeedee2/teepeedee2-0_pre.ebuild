@@ -10,7 +10,7 @@ MY_PN="teepeedee2"
 
 DESCRIPTION="A fast webapplication framework for dynamic webpages in Common Lisp."
 HOMEPAGE="http://github.com/vii/teepeedee2"
-SRC_URI="mirror://github/${MY_USER}/${MY_PN}/tarball/master -> ${P}.tgz"
+SRC_URI="https://github.com/${MY_USER}/${MY_PN}/tarball/master -> ${P}.tgz"
 
 LICENSE="Lisp LGPL"
 SLOT="0"

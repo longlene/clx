@@ -11,7 +11,7 @@ inherit common-lisp-3 ${GIT_ECLASS} elisp eutils
 DESCRIPTION="SLIME, the Superior Lisp Interaction Mode (Extended)"
 HOMEPAGE="http://common-lisp.net/project/slime/"
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="mirror://github/slime/slime/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://github.com/slime/slime/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 fi
 
 LICENSE="GPL-2 xref? ( xref.lisp )"

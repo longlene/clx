@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="colorized REPL for GNU Guile"
 HOMEPAGE="https://github.com/NalaGinrut/guile-colorized"
-SRC_URI="mirror://github/NalaGinrut/guile-colorized/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/NalaGinrut/guile-colorized/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

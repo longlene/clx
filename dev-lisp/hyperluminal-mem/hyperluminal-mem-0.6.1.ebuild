@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="High performance serialization library for Common Lisp"
 HOMEPAGE="https://github.com/cosmos72/hyperluminal-mem"
-SRC_URI="mirror://github/cosmos72/hyperluminal-mem/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/cosmos72/hyperluminal-mem/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

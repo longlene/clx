@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A networking suite for LuaJIT2"
 HOMEPAGE="http://turbolua.org"
-SRC_URI="mirror://github/kernelsauce/turbo/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/kernelsauce/turbo/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

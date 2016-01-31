@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Optimized Pattern Matching Library for Common Lisp"
 HOMEPAGE="https://github.com/m2ym/optima"
-SRC_URI="mirror://github/m2ym/optima/archive/v0.1.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/m2ym/optima/archive/v0.1.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"

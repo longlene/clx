@@ -8,7 +8,7 @@ inherit lua cmake-utils
 
 DESCRIPTION="Lua integration with libev"
 HOMEPAGE="https://github.com/brimworks/lua-ev"
-SRC_URI="mirror://github/brimworks/lua-ev/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/brimworks/lua-ev/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A Lua client library for the redis key value storage system"
 HOMEPAGE="https://github.com/nrk/redis-lua"
-SRC_URI="mirror://github/nrk/redis-lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/nrk/redis-lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

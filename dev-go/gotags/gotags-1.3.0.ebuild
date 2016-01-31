@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="ctags-compatible tag generator for Go"
 HOMEPAGE="https://github.com/jstemmer/gotags"
-SRC_URI="mirror://github/jstemmer/gotags/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jstemmer/gotags/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

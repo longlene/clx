@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="implementation of the Markdown markup language in CPP"
 HOMEPAGE="https://github.com/sadhen/libmdcpp"
-SRC_URI="mirror://github/sadhen/libmdcpp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/sadhen/libmdcpp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
