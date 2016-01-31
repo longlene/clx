@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Library for creating ZIP archive"
 HOMEPAGE="https://github.com/moteus/ZipWriter"
-SRC_URI="https://github.com/moteus/ZipWriter/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/moteus/ZipWriter/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

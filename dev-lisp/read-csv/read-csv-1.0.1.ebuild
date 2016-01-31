@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="read-csv is a lisp library for reading CSV files"
 HOMEPAGE="https://github.com/deadtrickster/read-csv/"
-SRC_URI="https://github.com/deadtrickster/read-csv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/deadtrickster/read-csv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-2"
 SLOT="0"

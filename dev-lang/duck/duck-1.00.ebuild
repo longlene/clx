@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="Duck Programming Language"
 HOMEPAGE="http://www.ducklang.org"
-SRC_URI="https://github.com/gregtour/duck-lang/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/gregtour/duck-lang/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

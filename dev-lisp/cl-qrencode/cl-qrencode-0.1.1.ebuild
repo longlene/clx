@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="QR code 2005 encoder in Common Lisp"
 HOMEPAGE="https://github.com/jnjcc/cl-qrencode"
-SRC_URI="https://github.com/jnjcc/cl-qrencode/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/jnjcc/cl-qrencode/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

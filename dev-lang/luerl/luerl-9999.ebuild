@@ -8,7 +8,7 @@ inherit multilib git-2
 
 DESCRIPTION="Lua in Erlang"
 HOMEPAGE="https://github.com/rvirding/luerl"
-#SRC_URI="https://github.com/rvirding/luerl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+#SRC_URI="mirror://github/rvirding/luerl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 EGIT_REPO_URI="https://github.com/rvirding/luerl.git"
 
 LICENSE="Apache-2"

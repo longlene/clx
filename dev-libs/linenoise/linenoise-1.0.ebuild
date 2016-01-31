@@ -8,7 +8,7 @@ inherit eutils flag-o-matic
 
 DESCRIPTION="A small self-contained alternative to readline and libedit"
 HOMEPAGE="https://github.com/antirez/linenoise"
-SRC_URI="https://github.com/antirez/linenoise/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/antirez/linenoise/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

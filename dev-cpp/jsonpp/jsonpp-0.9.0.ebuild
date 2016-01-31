@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="C++11 JSON parser and writer"
 HOMEPAGE="http://rapptz.github.com/jsonpp"
-SRC_URI="https://github.com/Rapptz/jsonpp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/Rapptz/jsonpp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

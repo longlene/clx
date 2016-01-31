@@ -8,7 +8,7 @@ inherit eutils
 
 DESCRIPTION="A C library for creating Excel XLSX files"
 HOMEPAGE="https://libxlsxwriter.github.io"
-SRC_URI="https://github.com/jmcnamara/libxlsxwriter/archive/RELEASE_${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/jmcnamara/libxlsxwriter/archive/RELEASE_${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

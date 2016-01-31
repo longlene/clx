@@ -13,7 +13,7 @@ inherit ruby-fakegem eutils
 
 DESCRIPTION="A feed fetching and parsing library for Ruby."
 HOMEPAGE="https://github.com/pauldix/feedzirra"
-SRC_URI="https://github.com/pauldix/${PN}/tarball/v${PV//_/.} -> ${P}.tar.gz"
+SRC_URI="mirror://github/pauldix/${PN}/tarball/v${PV//_/.} -> ${P}.tar.gz"
 RUBY_S="pauldix-${PN}-*"
 
 LICENSE="as-is"

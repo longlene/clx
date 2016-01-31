@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="CL-JavaScript is a JavaScript programming language compiler for Common Lisp."
 HOMEPAGE="http://marijnhaverbeke.nl/cl-javascript/ http://github.com/akapav/js"
-SRC_URI="https://github.com/akapav/js/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/akapav/js/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

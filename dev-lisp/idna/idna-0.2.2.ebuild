@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp IDNA encding/decoding functions"
 HOMEPAGE="https://github.com/antifuchs/idna"
-SRC_URI="https://github.com/antifuchs/idna/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/antifuchs/idna/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

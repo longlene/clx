@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="A neat and simple webcam app"
 HOMEPAGE="http://www.sanslogic.co.uk/fswebcam/"
-SRC_URI="https://github.com/fsphil/fswebcam/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/fsphil/fswebcam/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

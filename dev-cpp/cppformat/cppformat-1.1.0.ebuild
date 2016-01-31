@@ -8,7 +8,7 @@ inherit multilib cmake-utils
 
 DESCRIPTION="Small, safe and fast formatting library for C++"
 HOMEPAGE="http://cppformat.github.io"
-SRC_URI="https://github.com/cppformat/cppformat/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/cppformat/cppformat/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

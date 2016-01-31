@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp Erlang Interface"
 HOMEPAGE="http://common-lisp.net/project/cleric"
-SRC_URI="https://github.com/flambard/CLERIC/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/flambard/CLERIC/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

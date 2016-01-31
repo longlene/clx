@@ -8,7 +8,7 @@ inherit autotools eutils
 
 DESCRIPTION="inotify bindings for Lua"
 HOMEPAGE="https://github.com/hoelzro/linotify"
-SRC_URI="https://github.com/hoelzro/linotify/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/hoelzro/linotify/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

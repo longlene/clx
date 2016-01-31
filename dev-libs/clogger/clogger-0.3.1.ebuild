@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="A C logging library based on Python's logbook"
 HOMEPAGE="http://clogger.readthedocs.org/"
-SRC_URI="https://github.com/redjack/clogger/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/redjack/clogger/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

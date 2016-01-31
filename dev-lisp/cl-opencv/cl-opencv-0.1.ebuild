@@ -6,8 +6,8 @@ inherit common-lisp-2 vcs-snapshot
 
 DESCRIPTION="OpenCV bindings for SBCL"
 HOMEPAGE="https://github.com/longlene/cl-opencv"
-#SRC_URI="https://github.com/ryepup/cl-opencv/tarball/master -> ${P}.tar.gz"
-SRC_URI="https://github.com/longlene/cl-opencv/tarball/master -> ${P}.tar.gz"
+#SRC_URI="mirror://github/ryepup/cl-opencv/tarball/master -> ${P}.tar.gz"
+SRC_URI="mirror://github/longlene/cl-opencv/tarball/master -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

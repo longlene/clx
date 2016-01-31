@@ -10,7 +10,7 @@ MY_PV=${PV//./_}
 
 DESCRIPTION="Lua bindings for OpenSSL libcrypto"
 HOMEPAGE="http://luacrypto.luaforge.net/"
-SRC_URI="https://github.com/luaforge/luacrypto/archive/v${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/luaforge/luacrypto/archive/v${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

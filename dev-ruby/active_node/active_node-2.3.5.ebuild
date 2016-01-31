@@ -10,9 +10,9 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 inherit ruby-fakegem
 
 DESCRIPTION="ActiveRecord style Object Graph Mapping for neo4j"
-HOMEPAGE=""
+HOMEPAGE="https://github.com/klobuczek/active_node"
 
-LICENSE=""
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""

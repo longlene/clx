@@ -4,7 +4,7 @@ EAPI=4
 
 DESCRIPTION="A simple package to generate big prime numbers"
 HOMEPAGE="http://github.com/nakrakiiya/cl-prime-maker"
-SRC_URI="https://github.com/nakrakiiya/cl-prime-maker/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/nakrakiiya/cl-prime-maker/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

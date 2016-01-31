@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Unix-style command line options parser"
 HOMEPAGE="https://github.com/mrkkrp/unix-opts/"
-SRC_URI="https://github.com/mrkkrp/unix-opts/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/mrkkrp/unix-opts/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

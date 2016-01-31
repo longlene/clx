@@ -7,7 +7,7 @@ inherit vim-plugin vcs-snapshot
 
 DESCRIPTION="vim plugin: Powerful shell implemented by vim"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id="
-SRC_URI="https://github.com/Shougo/vimshell.vim/archive/ver.${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/Shougo/vimshell.vim/archive/ver.${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE=""
 KEYWORDS="~amd64 ~x86"
 IUSE=""

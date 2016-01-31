@@ -18,7 +18,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="Celluloid provides a simple and natural way to build fault-tolerant concurrent programs in Ruby"
 HOMEPAGE="https://github.com/celluloid/celluloid"
-SRC_URI="https://github.com/celluloid/celluloid/archive/v${PV}.tar.gz -> ${P}-git.tgz"
+SRC_URI="mirror://github/celluloid/celluloid/archive/v${PV}.tar.gz -> ${P}-git.tgz"
 IUSE=""
 SLOT="0"
 

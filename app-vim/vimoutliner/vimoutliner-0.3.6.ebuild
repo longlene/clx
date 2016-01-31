@@ -7,7 +7,7 @@ inherit vim-plugin
 DESCRIPTION="vim plugin: easy and fast outlining"
 HOMEPAGE="http://www.vimoutliner.org/"
 #SRC_URI="mirror://gentoo/${P}.tgz"
-SRC_URI="https://github.com/downloads/vimoutliner/vimoutliner/${P}.tgz"
+SRC_URI="mirror://github/downloads/vimoutliner/vimoutliner/${P}.tgz"
 LICENSE="GPL-2"
 KEYWORDS="alpha amd64 ia64 ~mips ppc sparc x86"
 IUSE=""

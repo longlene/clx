@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="cpptoml is a header-only library for parsing TOML"
 HOMEPAGE="https://github.com/skystrife/cpptoml"
-SRC_URI="https://github.com/skystrife/cpptoml/archive/toml-v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/skystrife/cpptoml/archive/toml-v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

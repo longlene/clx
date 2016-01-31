@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="A Lua-based Build Tool"
 HOMEPAGE="https://github.com/stevedonovan/Lake"
-SRC_URI="https://github.com/stevedonovan/Lake/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/stevedonovan/Lake/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

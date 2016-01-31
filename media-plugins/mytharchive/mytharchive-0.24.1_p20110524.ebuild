@@ -58,7 +58,7 @@ esac
 
 HOMEPAGE="http://www.mythtv.org"
 LICENSE="GPL-2"
-SRC_URI="https://github.com/MythTV/${REPO}/tarball/${MYTHTV_REV} -> ${REPO}-${PV}.tar.gz"
+SRC_URI="mirror://github/MythTV/${REPO}/tarball/${MYTHTV_REV} -> ${REPO}-${PV}.tar.gz"
 
 MTVCONF=${MTVCONF:=""}
 

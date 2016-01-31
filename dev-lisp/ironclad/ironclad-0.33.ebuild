@@ -10,7 +10,7 @@ inherit common-lisp-3
 DESCRIPTION="Ironclad is a Common Lisp library similar to OpenSSL, GNU TLS or Crypto++"
 HOMEPAGE="http://method-combination.net/lisp/ironclad/
 		http://www.cliki.net/Ironclad"
-SRC_URI="https://github.com/froydnj/ironclad/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/froydnj/ironclad/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

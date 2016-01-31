@@ -2,10 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 	<pkgmetadata>
 		<maintainer>
-			<name>loong0</name>
 			<email>longlene@gmail.com</email>
+			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Minidown is a lightweight & fast markdown parser, with complete GFM support
+Minidown is a lightweight and fast markdown parser, with complete GFM support
 		</longdescription>
 	</pkgmetadata>

@@ -22,7 +22,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="A Ruby driver for MongoDB"
 HOMEPAGE="http://www.mongodb.org/"
-SRC_URI="https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/tarball/${PV} -> ${GITHUB_PROJECT}-${PV}.tar.gz"
+SRC_URI="mirror://github/${GITHUB_USER}/${GITHUB_PROJECT}/tarball/${PV} -> ${GITHUB_PROJECT}-${PV}.tar.gz"
 
 LICENSE="APSL-2"
 SLOT="0"

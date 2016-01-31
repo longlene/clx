@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Lua XML-RPC is a Lua package to access and provide XML-RPC services"
 HOMEPAGE="https://github.com/timn/lua-xmlrpc"
-SRC_URI="https://github.com/timn/lua-xmlrpc/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/timn/lua-xmlrpc/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

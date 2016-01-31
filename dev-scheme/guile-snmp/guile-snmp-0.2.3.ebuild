@@ -8,7 +8,7 @@ inherit vcs-snapshot autotools
 
 DESCRIPTION="Guile bindings for Net-SNMP with a powerful reporting dialect"
 HOMEPAGE="https://github.com/tcolgate/guile-snmp"
-SRC_URI="https://github.com/tcolgate/guile-snmp/archive/${P}.tar.gz"
+SRC_URI="mirror://github/tcolgate/guile-snmp/archive/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

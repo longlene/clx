@@ -8,7 +8,7 @@ inherit lua cmake-utils
 
 DESCRIPTION="LuaCURL is a module providing Internet browsing capabilities based on the cURL library"
 HOMEPAGE="http://luaforge.net/projects/luacurl/"
-SRC_URI="https://github.com/LuaDist/luacurl/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/LuaDist/luacurl/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

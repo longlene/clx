@@ -23,7 +23,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="Origin is a simple DSL for generating MongoDB selectors and options"
 HOMEPAGE="http://mongoid.org/"
-SRC_URI="https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/archive/v${MY_PV}.tar.gz -> ${GITHUB_PROJECT}-${MY_PV}.tar.gz"
+SRC_URI="mirror://github/${GITHUB_USER}/${GITHUB_PROJECT}/archive/v${MY_PV}.tar.gz -> ${GITHUB_PROJECT}-${MY_PV}.tar.gz"
 LICENSE="MIT"
 
 SLOT="0"

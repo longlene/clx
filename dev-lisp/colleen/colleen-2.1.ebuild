@@ -8,7 +8,7 @@ inherit common-lisp-3 git-2
 
 DESCRIPTION="Common Lisp IRC bot with a modular framework"
 HOMEPAGE="https://shinmera.github.io/colleen"
-SRC_URI="https://github.com/Shinmera/colleen/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/Shinmera/colleen/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"

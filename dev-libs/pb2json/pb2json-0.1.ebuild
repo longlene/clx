@@ -4,7 +4,7 @@ EAPI=4
 
 DESCRIPTION="Decode protobuf json format"
 HOMEPAGE="https://github.com/renenglish/pb2json"
-SRC_URI="https://github.com/renenglish/pb2json/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/renenglish/pb2json/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

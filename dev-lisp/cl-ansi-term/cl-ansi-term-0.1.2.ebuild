@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Colorized output on ANSI terminals and more"
 HOMEPAGE="https://mrkkrp/github.io/cl-ansi-term/"
-SRC_URI="https://github.com/mrkkrp/cl-ansi-term/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/mrkkrp/cl-ansi-term/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

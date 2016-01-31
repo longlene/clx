@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Lua binding to libcurl"
 HOMEPAGE="https://github.com/moteus/lua-lcurl"
-SRC_URI="https://github.com/moteus/lua-lcurl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/moteus/lua-lcurl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A high-performance functional programming library for LuaJIT"
 HOMEPAGE="https://rtsisyk.github.com/luafun"
-SRC_URI="https://github.com/rtsisyk/luafun/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/rtsisyk/luafun/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

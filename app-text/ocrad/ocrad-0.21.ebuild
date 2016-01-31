@@ -6,7 +6,7 @@ EAPI="5"
 
 DESCRIPTION="GNU Ocrad is an OCR (Optical Character Recognition) program based on a feature extraction method."
 HOMEPAGE="https://www.gnu.org/software/ocrad"
-SRC_URI="http://ftp.gnu.org/gnu/ocrad/${P}.tar.gz"
+SRC_URI="mirror://gnu/ocrad/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

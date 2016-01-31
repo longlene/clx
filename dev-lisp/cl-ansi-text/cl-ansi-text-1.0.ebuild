@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Enable ANSI colors printing"
 HOMEPAGE="https://github.com/pnathan/cl-ansi-text"
-SRC_URI="https://github.com/pnathan/cl-ansi-text/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/pnathan/cl-ansi-text/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

@@ -6,7 +6,7 @@ inherit elisp eutils
 
 DESCRIPTION="Modular in-buffer completion framework"
 HOMEPAGE="https://github.com/emacsmirror/company"
-SRC_URI="https://github.com/emacsmirror/company/archive/0.6.9.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/emacsmirror/company/archive/0.6.9.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

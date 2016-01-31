@@ -8,7 +8,7 @@ inherit lua cmake-utils
 
 DESCRIPTION="Bare libuv bindings for lua"
 HOMEPAGE="https://github.com/luvit/luv"
-SRC_URI="https://github.com/luvit/luv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/luvit/luv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

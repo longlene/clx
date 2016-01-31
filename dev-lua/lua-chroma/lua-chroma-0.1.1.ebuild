@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="simple colour text printing for the ANSI compatible terminals"
 HOMEPAGE="https://github.com/ldrumm/lua-chroma"
-SRC_URI="https://github.com/ldrumm/lua-chroma/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/ldrumm/lua-chroma/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

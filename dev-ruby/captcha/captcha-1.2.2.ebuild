@@ -9,10 +9,10 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="A Google-style captcha for enterprise Rails app"
 HOMEPAGE="http://github.com/winton/captcha"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""

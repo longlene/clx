@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Convert terminal recordings to animated gifs"
 HOMEPAGE="https://github.com/icholy/ttygif"
-SRC_URI="https://github.com/icholy/ttygif/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/icholy/ttygif/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

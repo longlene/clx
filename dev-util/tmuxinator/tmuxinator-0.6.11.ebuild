@@ -14,7 +14,7 @@ inherit ruby-fakegem bash-completion-r1 fish-completion
 
 DESCRIPTION="Create and manage complex tmux sessions easily"
 HOMEPAGE="https://github.com/tmuxinator/tmuxinator"
-SRC_URI="https://github.com/tmuxinator/tmuxinator/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/tmuxinator/tmuxinator/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 IUSE="bash-completion fish-completion zsh-completion"
 SLOT="0"
 

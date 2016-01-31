@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="File system path manipulation library"
 HOMEPAGE="https://github.com/moteus/lua-path"
-SRC_URI="https://github.com/moteus/lua-path/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/moteus/lua-path/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

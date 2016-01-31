@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp TOML parser"
 HOMEPAGE="https://github.com/pnathan/pp-toml"
-SRC_URI="https://github.com/pnathan/pp-toml/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/pnathan/pp-toml/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

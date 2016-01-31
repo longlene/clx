@@ -8,7 +8,7 @@ inherit base
 
 DESCRIPTION="Scheme R6RS interpreter"
 HOMEPAGE="http://code.google.com/p/mosh-scheme/"
-SRC_URI="https://github.com/higepon/mosh/archive/mosh-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/higepon/mosh/archive/mosh-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

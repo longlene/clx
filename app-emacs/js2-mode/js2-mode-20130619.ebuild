@@ -6,7 +6,7 @@ inherit elisp eutils
 
 DESCRIPTION="Improved JavaScript editing mode"
 HOMEPAGE="https://github.com/mooz/js2-mode"
-SRC_URI="https://github.com/mooz/js2-mode/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/mooz/js2-mode/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 
 LICENSE="GPL-3"

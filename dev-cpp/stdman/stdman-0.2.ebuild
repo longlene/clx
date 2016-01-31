@@ -4,7 +4,7 @@ EAPI=4
 
 DESCRIPTION="Formatted C++11/14 stdlib man pages"
 HOMEPAGE="https://github.com/jeaye/stdman"
-SRC_URI="https://github.com/jeaye/stdman/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/jeaye/stdman/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

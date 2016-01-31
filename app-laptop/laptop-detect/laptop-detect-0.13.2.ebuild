@@ -7,7 +7,7 @@ inherit eutils
 
 DESCRIPTION="Laptop mode attempts to determine whether it is being run on a laptop."
 HOMEPAGE="http://packages.ubuntu.com/en/hardy/laptop-detect"
-SRC_URI="http://archive.ubuntu.com/ubuntu/pool/main/l/${PN}/${PN}_${PV}ubuntu$REV.tar.gz"
+SRC_URI="mirror://ubuntu/pool/main/l/${PN}/${PN}_${PV}ubuntu$REV.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

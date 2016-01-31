@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Feature-rich command line parser for Lua"
 HOMEPAGE="https://github.com/mpeterv/argparse"
-SRC_URI="https://github.com/mpeterv/argparse/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/mpeterv/argparse/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Docker implemented in 100 lines of bash"
 HOMEPAGE="https://www.p8952.info/projects.html"
-SRC_URI="https://github.com/p8952/bocker/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/p8952/bocker/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

@@ -7,7 +7,7 @@ inherit common-lisp-3 eutils
 
 DESCRIPTION="Drakma is a Common Lisp HTTP client."
 HOMEPAGE="http://weitz.de/drakma/"
-SRC_URI="https://github.com/edicl/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/edicl/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"

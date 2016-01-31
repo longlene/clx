@@ -8,7 +8,7 @@ inherit git-2 common-lisp-2 elisp-common
 
 DESCRIPTION="XELF is a visual programming language for Common Lisp"
 HOMEPAGE="http://xelf.me/"
-SRC_URI="https://github.com/dto/xelf/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/dto/xelf/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

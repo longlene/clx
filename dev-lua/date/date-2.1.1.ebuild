@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Date & Time module for Lua"
 HOMEPAGE="http://tieske.github.io/date/"
-SRC_URI="https://github.com/Tieske/date/archive/version_${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/Tieske/date/archive/version_${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="A Common Lisp binding for the zeromq messaging library"
 HOMEPAGE="https://github.com/galdor/lisp-zmq"
-SRC_URI="https://github.com/galdor/lisp-zmq/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/galdor/lisp-zmq/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

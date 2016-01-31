@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Object-orientation for Lua"
 HOMEPAGE="https://github.com/kikito/middleclass"
-SRC_URI="https://github.com/kikito/middleclass/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/kikito/middleclass/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

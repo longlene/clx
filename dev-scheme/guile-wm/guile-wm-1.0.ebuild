@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="A Window Manager Toolkit for Guile Scheme"
 HOMEPAGE="https://github.com/mwitmer/guile-wm"
-SRC_URI="https://github.com/mwitmer/guile-wm/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/mwitmer/guile-wm/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

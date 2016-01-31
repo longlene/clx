@@ -5,7 +5,7 @@ EAPI=4
 inherit cmake-utils
 DESCRIPTION="Fcitx Tsundere Addon"
 HOMEPAGE="https://github.com/felixonmars/fcitx-tsundere"
-SRC_URI="https://github.com/felixonmars/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/felixonmars/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"

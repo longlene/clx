@@ -9,7 +9,7 @@ MY_P=${PN}_${PV}
 
 DESCRIPTION="A library for accessing multibyte integers from octet arrays and streams"
 HOMEPAGE="http://method-combination.net/lisp/nibbles/"
-SRC_URI="https://github.com/froydnj/nibbles/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/froydnj/nibbles/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

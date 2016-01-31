@@ -8,7 +8,7 @@ inherit games cmake-utils flag-o-matic
 
 DESCRIPTION="Freeminer is an open source sandbox game inspired by Minecraft"
 HOMEPAGE="http://freeminer.org/"
-SRC_URI="https://github.com/freeminer/freeminer/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/freeminer/freeminer/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

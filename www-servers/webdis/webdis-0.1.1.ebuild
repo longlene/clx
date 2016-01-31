@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="A Redis HTTP interface with JSON output"
 HOMEPAGE="http://webd.is"
-SRC_URI="https://github.com/nicolasff/webdis/archive/0.1.1.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/nicolasff/webdis/archive/0.1.1.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

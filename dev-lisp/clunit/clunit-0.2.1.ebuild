@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="CLUnit: A Common Lisp Unit Testing Framework"
 HOMEPAGE="https://github.com/tgutu/clunit"
-SRC_URI="https://github.com/tgutu/clunit/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/tgutu/clunit/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

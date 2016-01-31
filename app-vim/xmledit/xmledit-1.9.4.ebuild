@@ -7,7 +7,7 @@ inherit vim-plugin
 
 DESCRIPTION="vim plugin: A file type plugin to help edit XML documents. It includes tag completion and tag jumping"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=301"
-SRC_URI="https://github.com/Valloric/xmledit/archive/1.9.4.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/Valloric/xmledit/archive/1.9.4.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL"
 KEYWORDS="~amd64 ~x86"

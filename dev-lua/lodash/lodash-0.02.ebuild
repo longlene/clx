@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A functional programming library for lua"
 HOMEPAGE="https://github.com/axmat/lodash.lua"
-SRC_URI="https://github.com/axmat/lodash.lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/axmat/lodash.lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

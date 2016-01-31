@@ -7,7 +7,7 @@ EAPI=5
 inherit npm
 
 DESCRIPTION="elegant & feature rich browser/node HTTP with a fluent API"
-HOMEPAGE=""
+HOMEPAGE="https://github.com/visionmedia/superagent"
 #SRC_URI=""
 
 LICENSE="MIT"

@@ -1,6 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
+
+EAPI=4
 
 DESCRIPTION="Andy-tracking kernel for Openmoko devices"
 HOMEPAGE="http://www.openmoko.org/"

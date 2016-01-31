@@ -2,10 +2,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
-		Escapes HTML tag characters: &, <>, ", ', /
+		Escapes HTML tag characters
 	</longdescription>
 </pkgmetadata>

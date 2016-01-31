@@ -10,7 +10,7 @@ MY_PV=${PV//./_}
 
 DESCRIPTION="Copas is a dispatcher based on coroutines that can be used by TCP/IP servers"
 HOMEPAGE="https://github.com/keplerproject/copas"
-SRC_URI="https://github.com/keplerproject/copas/archive/v${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/keplerproject/copas/archive/v${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

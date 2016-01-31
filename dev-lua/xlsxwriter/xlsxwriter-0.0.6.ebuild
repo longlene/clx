@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A lua module for creating Excel XLSX files"
 HOMEPAGE="https://github.com/jmcnamara/xlsxwriter.lua"
-SRC_URI="https://github.com/jmcnamara/xlsxwriter.lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/jmcnamara/xlsxwriter.lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

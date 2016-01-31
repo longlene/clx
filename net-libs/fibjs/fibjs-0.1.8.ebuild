@@ -6,7 +6,7 @@ inherit cmake-utils
 
 DESCRIPTION="A runtime for javascript applictions built on google v8 JS"
 HOMEPAGE="http://fibjs.org"
-SRC_URI="https://github.com/xicilion/fibjs/releases/download/v${PV}/${P}-fullsrc.zip"
+SRC_URI="mirror://github/xicilion/fibjs/releases/download/v${PV}/${P}-fullsrc.zip"
 
 LICENSE="GPL-3"
 SLOT="0"

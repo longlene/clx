@@ -13,7 +13,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="Provides the gem yank and gem webhook commands to RubyGems"
 HOMEPAGE="http://github.com/rubygems/gemcutter"
-SRC_URI="https://github.com/rubygems/gemcutter/tarball/v${PV} -> ${P}-git.tgz"
+SRC_URI="mirror://github/rubygems/gemcutter/tarball/v${PV} -> ${P}-git.tgz"
 RUBY_S="rubygems-gemcutter-*"
 
 LICENSE="MIT"

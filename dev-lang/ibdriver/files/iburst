@@ -1,6 +1,0 @@
-# values for iburst pcmcia card
-options pcmcia_core unreset_check=20 unreset_delay=100 unreset_limit=100
-
-alias iburst_cs ib-pcmcia
-
-options ib-pcmcia debug=7 interval=100

@@ -8,7 +8,7 @@ inherit lua vcs-snapshot
 
 DESCRIPTION="Fast, lightweight and easy-to-use pathfinding library for grid-based games"
 HOMEPAGE="https://github.com/Yonaba/Jumper"
-SRC_URI="https://github.com/Yonaba/Jumper/archive/${P}.tar.gz"
+SRC_URI="mirror://github/Yonaba/Jumper/archive/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

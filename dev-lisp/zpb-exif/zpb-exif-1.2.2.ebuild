@@ -6,7 +6,7 @@ inherit common-lisp-3 vcs-snapshot
 
 DESCRIPTION="Read EXIF data from image files"
 HOMEPAGE="https://github.com/xach/zpb-exif"
-SRC_URI="https://github.com/xach/zpb-exif/archive/release-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/xach/zpb-exif/archive/release-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Full-text search engine in Common Lisp"
 HOMEPAGE="https://github.com/skypher/montezuma http://code.google.com/p/montezuma/"
-SRC_URI="https://github.com/skypher/montezuma/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/skypher/montezuma/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

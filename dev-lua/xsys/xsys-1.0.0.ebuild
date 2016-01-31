@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="LuaJIT General Purpose Routines"
 HOMEPAGE="http://scilua.org/xsys.html"
-SRC_URI="https://github.com/stepelu/lua-xsys/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/stepelu/lua-xsys/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -6,6 +6,6 @@
 		<name>loong0</name>
 	</maintainer>
 	<longdescription>
-		Use vim (or any other text editor) from inside irb to quickly test & write new code
+		Use editor from inside irb to quickly test and write new code
 	</longdescription>
 </pkgmetadata>

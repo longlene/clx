@@ -9,7 +9,7 @@ MY_USER="arielnetworks"
 
 DESCRIPTION="Python-like Annotation Syntax for Common Lisp."
 HOMEPAGE="http://github.com/arielnetworks/cl-annot"
-SRC_URI="https://github.com/${MY_USER}/${PN}/tarball/master -> ${P}.tgz"
+SRC_URI="mirror://github/${MY_USER}/${PN}/tarball/master -> ${P}.tgz"
 
 LICENSE="LLGPL"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp bindings to GNU Readline library"
 HOMEPAGE="https://mrkkrp.github.io/cl-readline/"
-SRC_URI="https://github.com/mrkkrp/cl-readline/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/mrkkrp/cl-readline/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

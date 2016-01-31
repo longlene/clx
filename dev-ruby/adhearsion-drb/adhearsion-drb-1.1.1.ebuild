@@ -10,9 +10,9 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 inherit ruby-fakegem
 
 DESCRIPTION="This gem is an Adhearsion plugin that handles the Drb related stuff"
-HOMEPAGE=""
+HOMEPAGE="https://github.com/adhearsion/adhearsion-drb"
 
-LICENSE=""
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""

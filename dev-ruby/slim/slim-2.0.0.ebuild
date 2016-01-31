@@ -13,7 +13,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="Template language whose goal is reduce the syntax to the essential parts without becoming cryptic."
 HOMEPAGE="https://github.com/slim-template/slim"
-SRC_URI="https://github.com/slim-template/slim/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/slim-template/slim/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

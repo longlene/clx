@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Arrow-macros provides Clojure-like arrow macros in Common Lisp"
 HOMEPAGE="https://github.com/hipeta/arrow-macros"
-SRC_URI="https://github.com/hipeta/arrow-macros/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/hipeta/arrow-macros/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

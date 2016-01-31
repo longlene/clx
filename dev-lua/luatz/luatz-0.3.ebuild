@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A lua library for time and date manipulation"
 HOMEPAGE="https://github.com/daurnimator/luatz"
-SRC_URI="https://github.com/daurnimator/luatz/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/daurnimator/luatz/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -11,7 +11,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="A feed fetching and parsing library for Ruby."
 HOMEPAGE="https://github.com/pauldix/feedzirra"
-#SRC_URI="https://github.com/pauldix/${PN}/tarball/v${PV} -> ${P}.tgz"
+#SRC_URI="mirror://github/pauldix/${PN}/tarball/v${PV} -> ${P}.tgz"
 
 LICENSE="as-is"
 SLOT="0"

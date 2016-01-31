@@ -4,7 +4,7 @@ EAPI=4
 
 DESCRIPTION="Portable channel-based concurrency for Common Lisp"
 HOMEPAGE="https://github.com/sykopomp/chanl"
-SRC_URI="https://github.com/sykopomp/chanl/archive/v0.4.1.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/sykopomp/chanl/archive/v0.4.1.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

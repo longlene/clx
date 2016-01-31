@@ -8,7 +8,7 @@ inherit vim-plugin
 
 DESCRIPTION="vim plugin: aid Lisp development by providing a SLIME-like Lisp and Clojure REPL"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=2531"
-SRC_URI="https://github.com/vim-scripts/${PN}.vim/tarball/${PV} -> ${P}.tar.gz"
+SRC_URI="mirror://github/vim-scripts/${PN}.vim/tarball/${PV} -> ${P}.tar.gz"
 LICENSE="public-domain"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

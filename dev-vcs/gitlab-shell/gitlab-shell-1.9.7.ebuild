@@ -10,7 +10,7 @@ inherit eutils ruby-ng user
 
 DESCRIPTION="GitLab Shell is a free SSH access and repository management application"
 HOMEPAGE="https://github.com/gitlabhq/gitlab-shell"
-SRC_URI="https://github.com/gitlabhq/gitlab-shell/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/gitlabhq/gitlab-shell/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"

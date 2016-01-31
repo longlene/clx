@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Pure lisp crypto"
 HOMEPAGE="https://github.com/billstclair/cl-crypto"
-SRC_URI="https://github.com/billstclair/cl-crypto/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/billstclair/cl-crypto/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="LuaJIT SQLite Binding"
 HOMEPAGE="http://scilua.org/ljsqlite3.html"
-SRC_URI="https://github.com/stepelu/lua-ljsqlite3/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/stepelu/lua-ljsqlite3/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

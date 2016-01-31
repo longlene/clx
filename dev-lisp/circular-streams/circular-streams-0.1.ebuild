@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Circularly readable streams for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/circular-streams"
-SRC_URI="https://github.com/fukamachi/circular-streams/archive/0.1.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/fukamachi/circular-streams/archive/0.1.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

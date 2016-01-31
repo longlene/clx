@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Lua RESTful Web Application Framework"
 HOMEPAGE="https://github.com/Olivine-Labs/lusty"
-SRC_URI="https://github.com/Olivine-Labs/lusty/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/Olivine-Labs/lusty/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

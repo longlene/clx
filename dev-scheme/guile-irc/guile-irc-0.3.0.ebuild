@@ -8,7 +8,7 @@ inherit autotools
 
 DESCRIPTION=""
 HOMEPAGE=""
-SRC_URI="https://github.com/guildhall/guile-irc/archive/v0.3.0.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/guildhall/guile-irc/archive/v0.3.0.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"

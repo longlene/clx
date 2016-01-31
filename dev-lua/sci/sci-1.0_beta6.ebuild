@@ -11,7 +11,7 @@ MY_P=${PN}-${MY_PV}
 
 DESCRIPTION="General Purpose Scientific Computing in LuaJIT"
 HOMEPAGE="http://scilua.org/sci.html"
-SRC_URI="https://github.com/stepelu/lua-sci/archive/v${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
+SRC_URI="mirror://github/stepelu/lua-sci/archive/v${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

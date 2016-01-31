@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Reasonable Utilities package for Common Lisp"
 HOMEPAGE="https://github.com/mabragor/rutils"
-SRC_URI="https://github.com/vseloved/rutils/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/vseloved/rutils/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

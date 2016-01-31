@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Vim-like Interactive CRystal"
 HOMEPAGE="https://github.com/veelenga/vicr"
-SRC_URI="https://github.com/veelenga/vicr/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/veelenga/vicr/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -9,7 +9,7 @@ inherit common-lisp-3 eutils
 
 DESCRIPTION="A library for decompressing deflate, zlib, and gzip data."
 HOMEPAGE="http://method-combination.net/lisp/chipz/"
-SRC_URI="https://github.com/froydnj/chipz/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/froydnj/chipz/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

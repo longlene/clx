@@ -7,8 +7,8 @@ EAPI=5
 inherit lua
 
 DESCRIPTION="Tiny C Compiler binding for LuaJIT. "
-HOMEPAGE=""
-SRC_URI="https://github.com/Playermet/luajit-tcc/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/Playermet/luajit-tcc"
+SRC_URI="mirror://github/Playermet/luajit-tcc/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

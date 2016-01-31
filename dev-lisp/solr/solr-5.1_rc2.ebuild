@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="Allegro Common Lisp interface to Solr"
 HOMEPAGE="https://github.com/franzinc/solr"
-SRC_URI="https://github.com/franzinc/solr/archive/release${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/franzinc/solr/archive/release${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="EPL-1.0"
 SLOT="0"

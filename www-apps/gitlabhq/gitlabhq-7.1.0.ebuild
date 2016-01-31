@@ -11,7 +11,7 @@ inherit eutils python ruby-ng versionator user
 
 DESCRIPTION="GitLab is a free project and repository management application"
 HOMEPAGE="https://github.com/gitlabhq/gitlabhq"
-SRC_URI="https://github.com/gitlabhq/gitlabhq/archive/v$PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/gitlabhq/gitlabhq/archive/v$PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="7.1"

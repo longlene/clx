@@ -10,7 +10,7 @@ MY_P="v${PV}"
 
 DESCRIPTION='CL-WHO (is yet another Lisp Markup Language).'
 HOMEPAGE="http://weitz.de/cl-who/"
-SRC_URI="https://github.com/edicl/${PN}/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/edicl/${PN}/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"

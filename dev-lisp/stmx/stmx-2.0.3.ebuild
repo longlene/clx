@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="High-performance Transactional Memory for Common Lisp"
 HOMEPAGE="http://stmx.org"
-SRC_URI="https://github.com/cosmos72/stmx/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/cosmos72/stmx/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

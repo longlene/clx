@@ -9,7 +9,7 @@ inherit vim-plugin
 
 DESCRIPTION="vim plugin: Personal Wiki for Vim"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=2332"
-SRC_URI="https://github.com/vimwiki/vimwiki/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/vimwiki/vimwiki/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""

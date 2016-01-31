@@ -6,7 +6,7 @@ inherit common-lisp-3 vcs-snapshot
 
 DESCRIPTION="High performance memory-mapped database and serialization library for Common Lisp"
 HOMEPAGE="https://github.com/cosmos72/hyperluminal-db"
-SRC_URI="https://github.com/cosmos72/hyperluminal-db/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/cosmos72/hyperluminal-db/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

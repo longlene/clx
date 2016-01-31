@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="LuaJIT Unix syscall FFI"
 HOMEPAGE="http://www.myriabit.com/ljsyscall"
-SRC_URI="https://github.com/justincormack/ljsyscall/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/justincormack/ljsyscall/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

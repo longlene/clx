@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Lua bindings for linenoise"
 HOMEPAGE="https://github.com/hoelzro/lua-linenoise"
-SRC_URI="https://github.com/hoelzro/lua-linenoise/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/hoelzro/lua-linenoise/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

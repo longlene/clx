@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="minimalistic commandline hexadecimal editor similar to radare"
 HOMEPAGE="https://github.com/radare/ired"
-SRC_URI="https://github.com/radare/ired/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/radare/ired/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

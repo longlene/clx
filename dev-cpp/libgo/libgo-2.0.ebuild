@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="C++ coroutine library"
 HOMEPAGE="https://github.com/yyzybb537/libgo"
-SRC_URI="https://github.com/yyzybb537/libgo/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/yyzybb537/libgo/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL"
 SLOT="0"

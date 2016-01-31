@@ -8,7 +8,7 @@ inherit common-lisp-3
 
 DESCRIPTION="WebSockets for Hunchentoot"
 HOMEPAGE="https://github.com/capitaomorte/hunchensocket"
-SRC_URI="https://github.com/capitaomorte/hunchensocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/capitaomorte/hunchensocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

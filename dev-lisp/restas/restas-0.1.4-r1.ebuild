@@ -7,7 +7,7 @@ inherit common-lisp-2 elisp-common eutils vcs-snapshot
 
 DESCRIPTION="Common Lisp application server"
 HOMEPAGE="http://github.com/archimag/restas"
-SRC_URI="https://github.com/archimag/restas/archive/version-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/archimag/restas/archive/version-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"

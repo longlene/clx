@@ -9,15 +9,15 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="A command line tool to turn images into ASCII art"
 HOMEPAGE="https://github.com/nodanaonlyzuul/asciiart"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
-ruby_add_rdepend "=dev-ruby/rmagick-2.13.4"
-ruby_add_rdepend "=dev-ruby/rainbow-2.0.0"
+ruby_add_rdepend ">=dev-ruby/rmagick-2.13.4"
+ruby_add_rdepend ">=dev-ruby/rainbow-2.0.0"
 ruby_add_rdepend ">=dev-ruby/pry-0"
 

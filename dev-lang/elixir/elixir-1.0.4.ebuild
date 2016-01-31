@@ -8,7 +8,7 @@ inherit multilib
 
 DESCRIPTION="Elixir programming language"
 HOMEPAGE="http://elixir-lang.org"
-SRC_URI="https://github.com/elixir-lang/elixir/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/elixir-lang/elixir/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0 ErlPL-1.1"
 SLOT="0"

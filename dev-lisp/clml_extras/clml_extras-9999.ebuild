@@ -7,10 +7,11 @@ EAPI=5
 inherit common-lisp-3 git-2
 
 DESCRIPTION="Extensions to the CLML"
-HOMEPAGE=""
+HOMEPAGE="https://github.com/mmaul/clml.extras"
 SRC_URI=""
 
-EGIT_REPO_URI=""
+EGIT_REPO_URI="https://github.com/mmaul/clml.extras.git"
+SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"

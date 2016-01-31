@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A module for encoding and decoding JSON data"
 HOMEPAGE="https://github.com/LuaDist/dkjson"
-SRC_URI="https://github.com/LuaDist/dkjson/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/LuaDist/dkjson/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

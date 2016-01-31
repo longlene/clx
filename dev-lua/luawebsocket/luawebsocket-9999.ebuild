@@ -8,7 +8,7 @@ inherit git-2 lua
 
 DESCRIPTION="A WebSocket implementation for Lua"
 HOMEPAGE="https://github.com/mbalmer/luawebsocket"
-#SRC_URI="https://github.com/mbalmer/luawebsocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
+#SRC_URI="mirror://github/mbalmer/luawebsocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 EGIT_REPO_URI="https://github.com/mbalmer/luawebsocket.git"
 

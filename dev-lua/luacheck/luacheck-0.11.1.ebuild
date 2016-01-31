@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="A tool for linting and static analysis of Lua code"
 HOMEPAGE="https://github.com/mpeterv/luacheck"
-SRC_URI="https://github.com/mpeterv/luacheck/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/mpeterv/luacheck/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

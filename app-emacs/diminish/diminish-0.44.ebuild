@@ -6,7 +6,7 @@ inherit elisp
 
 DESCRIPTION="Diminished modes are minor modes with no modeline display"
 HOMEPAGE="http://www.eskimo.com/~seldon"
-SRC_URI="https://github.com/emacsmirror/diminish/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/emacsmirror/diminish/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

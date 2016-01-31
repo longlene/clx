@@ -8,7 +8,7 @@ inherit lua
 
 DESCRIPTION="Chat bot engine based on Markov chains"
 HOMEPAGE="https://github.com/darkstalker/lua_brain"
-SRC_URI="https://github.com/darkstalker/lua_brain/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/darkstalker/lua_brain/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

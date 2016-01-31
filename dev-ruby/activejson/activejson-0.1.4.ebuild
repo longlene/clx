@@ -10,9 +10,9 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 inherit ruby-fakegem
 
 DESCRIPTION="Simple template engine for JSON views"
-HOMEPAGE=""
+HOMEPAGE="https://github.com/bossmc/activejson"
 
-LICENSE=""
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""

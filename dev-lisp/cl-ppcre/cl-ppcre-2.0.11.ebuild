@@ -9,7 +9,7 @@ inherit common-lisp-2
 DESCRIPTION="CL-PPCRE is a portable regular expression library for Common Lisp."
 HOMEPAGE="http://weitz.de/cl-ppcre/
 		  http://www.cliki.net/cl-ppcre"
-SRC_URI="https://github.com/edicl/cl-ppcre/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/edicl/cl-ppcre/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"

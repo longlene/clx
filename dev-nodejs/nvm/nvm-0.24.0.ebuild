@@ -8,7 +8,7 @@ inherit bash-completion-r1
 
 DESCRIPTION="Node Version Manager - Simple bash script to manage multiple active node.js versions"
 HOMEPAGE="https://github.com/creationix/nvm"
-SRC_URI="https://github.com/creationix/nvm/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/creationix/nvm/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

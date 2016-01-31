@@ -4,13 +4,11 @@
 
 EAPI=5
 
-inherit lua cmake-utils git-2
+inherit lua cmake-utils
 
 DESCRIPTION="A self contained Lua MessagePack C implementation"
-HOMEPAGE=""
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/antirez/lua-cmsgpack.git"
+HOMEPAGE="https://github.com/fperrad/lua-MessagePack"
+SRC_URI="mirror://github/fperrad/lua-MessagePack/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -19,6 +17,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+
+S="${WORKDIR}"/lua-MessagePack-${PV}
 
 src_install() {
 	lua_install_cmodule ${BUILD_DIR}/cmsgpack.so

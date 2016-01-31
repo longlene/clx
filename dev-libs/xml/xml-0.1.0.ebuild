@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="A simple, small and self contained xml parser"
 HOMEPAGE="https://github.com/ooxi/xml.c"
-SRC_URI="https://github.com/ooxi/xml.c/archive/release-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/ooxi/xml.c/archive/release-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

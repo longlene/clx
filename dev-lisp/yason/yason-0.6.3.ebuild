@@ -6,7 +6,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp JSON serializer written with simplicity in mind"
 HOMEPAGE="https://github.com/hanshuebner/yason/ http://common-lisp.net/project/yason"
-SRC_URI="https://github.com/hanshuebner/yason/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/hanshuebner/yason/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -8,7 +8,7 @@ inherit lua vcs-snapshot
 
 DESCRIPTION="A pure Lua uuid generator"
 HOMEPAGE="http://tieske.github.io/uuid/"
-SRC_URI="https://github.com/Tieske/uuid/archive/version_${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/Tieske/uuid/archive/version_${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

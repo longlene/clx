@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="A C/C++ implementation of a sass compiler"
 HOMEPAGE="http://libsass.org"
-SRC_URI="https://github.com/sass/libsass/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/sass/libsass/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

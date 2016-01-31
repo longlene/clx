@@ -7,7 +7,7 @@ inherit vim-plugin
 
 DESCRIPTION='vim plugin: wisely add "end"'
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=2386"
-SRC_URI="https://github.com/tpope/vim-endwise/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://github/tpope/vim-endwise/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="vim"
 KEYWORDS="~amd64 ~x86"
