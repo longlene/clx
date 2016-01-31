@@ -1,4 +1,5 @@
-# ebuild to install NX Web Companion
+EAPI=4
+
 inherit webapp eutils
 
 DESCRIPTION="Managing and defining user sessions is even easier via the new NX Builder. With just one click users can access their already configured NX sessions."

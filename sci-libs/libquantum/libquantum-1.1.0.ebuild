@@ -1,6 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
+
+EAPI=5
+
 inherit eutils
 
 DESCRIPTION="C library for quantum computing and quantum simulation"
@@ -15,11 +18,6 @@ IUSE="+lapack quobtools"
 DEPEND=">=sys-devel/gcc-2.95
 lapack? ( virtual/lapack )"
 RDEPEND="${DEPEND}"
-
-src_unpack() {
-	unpack "${P}.tar.gz"
-	cd "${S}"
-}
 
 src_compile() {
 	econf $(use_with lapack)

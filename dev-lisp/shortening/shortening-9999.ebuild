@@ -2,26 +2,29 @@
 
 EAPI=4
 
-DESCRIPTION=""
-HOMEPAGE=""
+inherit common-lisp-3 git-2
+
+DESCRIPTION="The personal URL shortener"
+HOMEPAGE="https://github.com/zkat/shortening"
 SRC_URI=""
 
-LICENSE=""
+EGIT_REPO_URI="https://github.com/zkat/shortening.git"
+
+LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/hunchentoot
-dev-lisp/alexandria
-dev-lisp/py-configparser
-dev-lisp/yaclml"
+	dev-lisp/hunchentoot
+	dev-lisp/alexandria
+	dev-lisp/py-configparser
+	dev-lisp/yaclml
+"
 
-src_compile() {
-	sbcl --noinform --no-userinit --no-sysinit --disable-debugger \
-		--eval "(require 'asdf)" \
-		--eval "(require 'shortening)" \
-		--eval "(sb-ext:save-lisp-and-die "shortening" :executable t :toplevel #'shortening:init)" \
-		--eval "(exit)"
+src_install() {
+	common-lisp-3_src_install
+	insinto /etc
+	newins shortening.conf.example shortening.conf
 }

@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI="2"
+EAPI="4"
 inherit autotools eutils linux-mod toolchain-funcs
 
 # http://who-t.blogspot.com/2010/09/wacom-support-in-linux.html

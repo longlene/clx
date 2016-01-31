@@ -8,13 +8,13 @@ inherit npm
 
 MY_PN=${PN/_/.}
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="Syntax highlighting with language autodetection"
+HOMEPAGE="https://github.com/isagalaev/highlight.js"
 SRC_URI="http://registry.npmjs.org/${MY_PN}/-/${MY_PN}-${PV}.tgz"
 
-LICENSE=""
+LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""

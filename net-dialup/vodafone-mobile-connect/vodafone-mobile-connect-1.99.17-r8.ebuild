@@ -1,12 +1,12 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=5
+
 inherit eutils
 
 DESCRIPTION="Vodafone Mobile Connect Card driver for Linux"
 HOMEPAGE="https://forge.betavine.net/projects/vodafonemobilec/"
-#SRC_URI="https://forge.betavine.net/frs/download.php/421/vodafone-mobile-connect_1.99.17-8_all.deb"
-#SRC_URI="https://forge.betavine.net/frs/download.php/421/${PN}_${PV}_all.deb"
 SRC_URI="https://forge.betavine.net/frs/download.php/421/${PN}_1.99.17-8_all.deb"
 
 LICENSE="GPL"

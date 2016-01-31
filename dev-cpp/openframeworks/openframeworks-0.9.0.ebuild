@@ -1,16 +1,16 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="A cross platform toolkit for creative coding in C++"
+HOMEPAGE="http://openframeworks.cc"
 SRC_URI="https://github.com/openframeworks/openFrameworks/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+#KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=""

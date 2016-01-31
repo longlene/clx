@@ -2,21 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<name>loong0</name>
 		<email>longlene@gmail.com</email>
+		<name>loong0</name>
 	</maintainer>
 	<longdescription>
-		The libBlocksRuntime.a library from compiler-rt. 
-		Just clang works.
-
-		Usage:
-		// a.c
-		#include <Block.h>
-		int main(int argc, char *argv[])
-		{
-			^{ return 42; }();
-		}
-
-		clang -fblocks -lBlocksRuntime a.c -o a.out
+		The libBlocksRuntime.a library from compiler-rt.
 	</longdescription>
 </pkgmetadata>

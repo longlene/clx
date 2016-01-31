@@ -2,7 +2,7 @@
 
 EAPI=4
 
-DESCRIPTION="▁▂▃▅▂▇ in your shell"
+DESCRIPTION="sparkline in your shell"
 HOMEPAGE="http://zachholman.com/spark/"
 SRC_URI="https://github.com/holman/spark/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 

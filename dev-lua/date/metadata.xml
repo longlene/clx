@@ -16,5 +16,5 @@
 		Local time support.
 		Lua module (not binary).
 		Formats Date and Time like strftime.
-		/longdescription>
-	</pkgmetadata>
+	</longdescription>
+</pkgmetadata>

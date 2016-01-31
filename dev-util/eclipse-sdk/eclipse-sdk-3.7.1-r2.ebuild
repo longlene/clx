@@ -1,7 +1,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="4"
 WANT_ANT_TASKS="ant-nodeps"
 
 # eclipse-build is too complicated for automatic fixing

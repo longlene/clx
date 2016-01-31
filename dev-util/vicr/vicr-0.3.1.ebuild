@@ -14,7 +14,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-lang/crystal"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	|| ( app-editors/vim app-editors/gvim )
+"
 
 src_install() {
 	dobin out/vicr

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
 <pkgmetadata>
 	<maintainer>
 		<name>loong0</name>
@@ -12,6 +12,5 @@
 
 		Andreas Paepcke, "User-Level Language Crafting (Introducing the CLOS Metaobject Protocol)"
 		Gregor Kiczales, Jim des Rivieres, Daniel G. Bobrow, "The Art of the Metaobject Protocol", MIT Press, 1991, ISBN 0-262-61074-4.
-		MOP Resources <http://wiki.alu.org/Metaobject_Protocol>
-		</longdescription>
-	</pkgmetadata>
+	</longdescription>
+</pkgmetadata>

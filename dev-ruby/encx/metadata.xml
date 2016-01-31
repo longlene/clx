@@ -1,11 +1,11 @@
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <?xml version="1.0" encoding="UTF-8"?>
-	<pkgmetadata>
-		<maintainer>
-			<email>longlene@gmail.com</email>
-			<name>loong0</name>
-		</maintainer>
-		<longdescription>
-Encoding utility
-		</longdescription>
-	</pkgmetadata>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription lang="en">
+		Encoding utility
+	</longdescription>
+</pkgmetadata>
