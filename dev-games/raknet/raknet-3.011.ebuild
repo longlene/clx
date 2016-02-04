@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 inherit eutils autotools
 
@@ -12,10 +12,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc autopatcher rakvoice"
 
-DEPEND="	rakvoice? (media-libs/speex) \
-			autopatcher? (dev-db/libpq app-arch/bzip2) \
-			sys-devel/libtool \
-			dev-util/pkgconfig"
+DEPEND="rakvoice? ( media-libs/speex ) 
+		autopatcher? ( dev-db/libpq app-arch/bzip2 )
+		sys-devel/libtool
+		dev-util/pkgconfig"
 RDEPEND="${DEPEND}"
 
 src_unpack() {

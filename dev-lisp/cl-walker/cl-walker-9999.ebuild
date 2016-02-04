@@ -23,10 +23,10 @@ dev-lisp/alexandria
 dev-lisp/anaphora
 dev-lisp/contextl
 dev-lisp/closer-mop
-dev-lisp/hu.dwim.common-lisp
-dev-lisp/hu.dwim.def+contextl
-dev-lisp/hu.dwim.defclass-star+hu.dwim.def
-dev-lisp/nisp.dwim.handle-otherise
+dev-lisp/hu_dwim_common-lisp
+dev-lisp/hu_dwim_def+contextl
+dev-lisp/hu_dwim_defclass-star+hu_dwim_def
+dev-lisp/nisp_dwim_handle-otherise
 dev-lisp/metabang-bind
-dev-lisp/hu.dwim.wui
+dev-lisp/hu_dwim_wui
 "

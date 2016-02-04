@@ -9,7 +9,7 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="A general classifier module to allow Bayesian and other types of classifications"
 HOMEPAGE="https://github.com/jekyll/classifier-reborn"
 
 LICENSE="LGPL"

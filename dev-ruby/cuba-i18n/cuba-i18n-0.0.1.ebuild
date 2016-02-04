@@ -9,8 +9,8 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="cuba i18n module"
+HOMEPAGE="https://github.com/cj/cuba-i18n"
 
 LICENSE="MIT"
 SLOT="0"

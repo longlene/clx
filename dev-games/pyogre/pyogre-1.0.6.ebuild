@@ -19,7 +19,7 @@ IUSE="cegui doc"
 DEPEND=">=dev-lang/python-2.4
 		>=dev-lang/swig-1.3.25
 		>=dev-games/ogre-1.0.6
-		cegui? (dev-games/cegui)"
+		cegui? ( dev-games/cegui )"
 
 S="${WORKDIR}/${MY_P}"
 

@@ -18,5 +18,5 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/ieee-floats
-dev-lisp/com.gigamonkeys.binary-data"
+dev-lisp/com_gigamonkeys_binary-data"
 
