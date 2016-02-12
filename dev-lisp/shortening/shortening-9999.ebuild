@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/hunchentoot
 	dev-lisp/alexandria
 	dev-lisp/py-configparser
-	dev-lisp/yaclml
+	dev-lisp/cl-yaclml
 "
 
 src_install() {
