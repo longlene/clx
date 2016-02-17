@@ -13,11 +13,19 @@ EGIT_REPO_URI="https://github.com/fukamachi/cl-dbi.git"
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/cl-syntax
-dev-lisp/split-sequence
-dev-lisp/closer-mop"
+	dev-lisp/cl-syntax
+	dev-lisp/split-sequence
+	dev-lisp/closer-mop"
 
+src_prepare() {
+	use test || rm -rf t ${PN}-test.asd
+}
+
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-soruces -t all README.markdown
+}
