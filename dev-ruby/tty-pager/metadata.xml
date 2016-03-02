@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Terminal screen size detection which works on Linux, OS X and Windows/Cygwin platforms and supports MRI, JRuby and Rubinius interpreters
+Terminal output paging in a cross-platform way supporting all major ruby interpreters
 		</longdescription>
 	</pkgmetadata>

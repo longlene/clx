@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Terminal screen size detection which works on Linux, OS X and Windows/Cygwin platforms and supports MRI, JRuby and Rubinius interpreters
+The purpose of this library is to help move terminal cursor around using intuitive commands and help in clearing terminal screen
 		</longdescription>
 	</pkgmetadata>
