@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Pry Doc is a Pry REPL plugin
+Authority helps you authorize actions in your Rails app
 		</longdescription>
 	</pkgmetadata>
