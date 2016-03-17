@@ -5,7 +5,6 @@
         <email>jeanfrancis@funtoo.org</email>
         <name>Jean-Francis Roy</name>
 </maintainer>
-<herd>funtoo</herd>
 <use>
 	<flag name="audit">Enable support for <pkg>sys-process/audit</pkg></flag>
 	<flag name="consolekit">Allow proper handling of removable media according

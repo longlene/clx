@@ -1,6 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+EAPI=4
 
 DESCRIPTION="Modular audio synthesizer using Jack, LADSPA, DSSI etc."
 HOMEPAGE="http://www.nongnu.org/om-synth/"
@@ -20,7 +21,8 @@ RDEPEND=">=media-libs/liblo-0.22
 	patch-loader? ( >=dev-libs/libxml2-2.6i )
 	gtk? ( >=dev-cpp/gtkmm-2.4
 		>=dev-cpp/libgnomecanvasmm-2.6
-		>=dev-cpp/libglademm-2.4.1 )"
+		>=dev-cpp/libglademm-2.4.1 )
+"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"

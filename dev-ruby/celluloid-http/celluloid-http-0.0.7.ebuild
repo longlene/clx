@@ -19,7 +19,7 @@ IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rack-0"
 ruby_add_rdepend ">=dev-ruby/celluloid-io-0"
-ruby_add_rdepend ">=dev-ruby/http_parser.rb-0"
+ruby_add_rdepend ">=dev-ruby/http_parser_rb-0"
 ruby_add_rdepend ">=dev-ruby/activesupport-0"
 ruby_add_rdepend ">=dev-ruby/rake-0"
 ruby_add_rdepend ">=dev-ruby/turn-0"

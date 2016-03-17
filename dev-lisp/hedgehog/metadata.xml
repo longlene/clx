@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>common-lisp</herd>
 <longdescription>
 Hedgehog is a very concise implementation of a Lisp-like language for low-end
 and embedded devices. It consists of a compiler and a byte code interpreter. The

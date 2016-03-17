@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>vim</herd>
 	<longdescription lang="en">
 		Slimv tries to mimic a subset of SLIME's (Superior Lisp Interaction Mode
 		for Emacs) functionality inside Vim. The script defines functions and

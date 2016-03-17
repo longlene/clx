@@ -34,7 +34,7 @@ src_prepare() {
 
 src_compile() {
 	tc-export CC
-	emake server
+	emake -C examples simplest_web_server
 }
 
 src_test() {
@@ -42,6 +42,6 @@ src_test() {
 }
 
 src_install() {
-	newbin "${S}/server" "${PN}"
+	newbin "${S}/simplest_web_server" "${PN}"
 	dodoc ../docs/{FAQ,LuaSqlite,Options,SSL,Usage}.md
 }

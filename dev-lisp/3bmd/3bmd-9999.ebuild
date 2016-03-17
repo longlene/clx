@@ -17,7 +17,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/esrap
-dev-lisp/split-sequence
-dev-lisp/alexandria"
+	dev-lisp/alexandria
+	dev-lisp/esrap
+	dev-lisp/split-sequence
+"
 

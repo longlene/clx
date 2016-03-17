@@ -25,7 +25,8 @@ RDEPEND=">=media-libs/liblo-0.22
 		gtk? ( >=dev-cpp/gtkmm-2.4
 			>=dev-cpp/libgnomecanvasmm-2.6
 			dev-cpp/flowcanvas
-			>=dev-cpp/libglademm-2.4.1) )"
+			>=dev-cpp/libglademm-2.4.1) )
+"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"

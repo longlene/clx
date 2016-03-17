@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=4
+
 inherit eutils
 
 DESCRIPTION="llk for linux"
@@ -14,10 +16,10 @@ SLOT="0"
 RESTRICT="mirror"
 KEYWORDS="x86 amd64"
 
-IUSE=""
+IUSE="gtk"
 
 DEPEND="media-libs/sdl-mixer
-	gtk? ( >=x11-libs/gtk+-2.12* )"
+	gtk? ( x11-libs/gtk+:2 )"
 
 RDEPEND="${DEPEND}"
 

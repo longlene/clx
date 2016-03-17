@@ -6,7 +6,7 @@ EAPI=5
 
 DESCRIPTION="GNU Guile-RPC is an implementation of ONC RPC and XDR"
 HOMEPAGE="https://www.gnu.org/software/guile-rpc/"
-SRC_URI="ftp://ftp.gnu.org/gnu/guile-rpc/${P}.tar.gz"
+SRC_URI="mirror://gnu/guile-rpc/${P}.tar.gz"
 
 LICENSE="LGPL-3"
 SLOT="0"

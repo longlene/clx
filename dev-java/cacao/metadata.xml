@@ -2,7 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 
 <pkgmetadata>
-<herd>java</herd>
 
 <longdescription>
 CACAO is started out as a research JIT compiler for Java to explore new 

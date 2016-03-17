@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>common-lisp</herd>
 <longdescription>
 Lush is designed to be used in situations where one would want to
 combine the flexibility of a high-level, loosely-typed interpreted

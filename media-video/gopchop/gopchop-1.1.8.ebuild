@@ -1,6 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+EAPI=4
 
 inherit eutils
 
@@ -15,7 +16,8 @@ IUSE="sdl"
 
 DEPEND=">=media-libs/libmpeg2-0.4.0
 		sdl? ( media-libs/libsdl )
-		=x11-libs/gtk+-1.2*"
+		x11-libs/gtk+:1
+"
 
 src_compile() {
 	econf $(use_enable sdl) --with-x || die "econf failed"

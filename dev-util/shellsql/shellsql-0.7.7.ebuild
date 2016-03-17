@@ -4,18 +4,19 @@
 
 DESCRIPTION="SQL for Shell Scripts"
 HOMEPAGE="http://www.edlsystems.com/shellsql/"
-SRC_URI="ftp://ftp.edlsystems.com/shellsql/${P}.tar.gz"
+SRC_URI="ftp://ftp.edlsystems.com/shellsql/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="freetds mysql odbc postgres sqlite"
 
-DEPEND="freetds? (dev-db/freetds)
-	mysql? (virtual/mysql)
-	odbc? (dev-db/libodbc++)
-	postgres? (dev-db/postgresql)
-	sqlite? (dev-db/sqlite)"
+DEPEND="freetds? ( dev-db/freetds )
+	mysql? ( virtual/mysql )
+	odbc? ( dev-db/libodbc++ )
+	postgres? ( dev-db/postgresql )
+	sqlite? ( dev-db/sqlite )
+"
 RDEPEND=""
 
 src_compile() {

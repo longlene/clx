@@ -17,9 +17,19 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/rutils
-dev-lisp/cl-ppcre
-dev-lisp/cgn"
+	dev-lisp/archive
+	dev-lisp/chipz
+	dev-lisp/cl-fad
+	dev-lisp/cl-ppcre
+	dev-lisp/cxml
+	dev-lisp/drakma
+	dev-lisp/flexi-streams
+	dev-lisp/gzip-stream
+	dev-lisp/rutils
+	dev-lisp/should-test
+	dev-lisp/zip
+"
+
 
 src_install() {
 	common-lisp-install-sources -t all src nltk contrib data *.asd
