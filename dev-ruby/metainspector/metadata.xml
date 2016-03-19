@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-MetaInspector lets you scrape a web page and get its title, charset, link and meta tags
+MetaInspector lets you scrape a web page and get its links, images, texts, meta tags
 		</longdescription>
 	</pkgmetadata>

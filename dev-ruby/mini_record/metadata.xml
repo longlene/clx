@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+
+With it you can add the ability to create columns outside the default schema, directly
+in your model in a similar way that you just know in others projects
+like  DataMapper or  MongoMapper
+		</longdescription>
+	</pkgmetadata>
