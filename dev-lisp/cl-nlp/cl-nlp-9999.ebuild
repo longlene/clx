@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/drakma
 	dev-lisp/flexi-streams
 	dev-lisp/gzip-stream
-	dev-lisp/rutils
+	>dev-lisp/rutils-2.5.0
 	dev-lisp/should-test
 	dev-lisp/zip
 "
