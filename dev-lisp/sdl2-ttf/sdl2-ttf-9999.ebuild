@@ -7,10 +7,10 @@ EAPI=5
 inherit git-2 common-lisp-3
 
 DESCRIPTION="Bindings for sdl2_ttf using autowrap"
-HOMEPAGE="A common lisp wrapper for SDL2_TTF used for loading fonts and creating text assets"
+HOMEPAGE="https://github.com/Failproofshark/cl-sdl2-ttf"
 SRC_URI=""
 
-EGIT_REPO_URI="https://github.com/bogosortist/cl-sdl2-ttf.git"
+EGIT_REPO_URI="https://github.com/Failproofshark/cl-sdl2-ttf.git"
 
 LICENSE="MIT"
 SLOT="0"

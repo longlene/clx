@@ -17,10 +17,13 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/alexandria
-dev-lisp/cl-autowrap
-dev-lisp/cl-ppcre
-dev-lisp/trivial-garbage
-dev-lisp/cl-opengl
-media-libs/libsdl2"
+	dev-lisp/alexandria
+	dev-lisp/cl-autowrap
+	dev-lisp/cl-opengl
+	dev-lisp/cl-ppcre
+	dev-lisp/trivial-garbage
+	dev-lisp/trivial-channels
+	dev-lisp/trivial-features
+	media-libs/libsdl2
+"
 
