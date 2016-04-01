@@ -9,7 +9,7 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="The official `github` command line helper for simplifying your GitHub experience"
+DESCRIPTION="The official \`github\` command line helper for simplifying your GitHub experience"
 HOMEPAGE="https://github.com/defunkt/github-gem"
 
 LICENSE=""
