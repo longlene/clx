@@ -17,9 +17,18 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/cl-opengl
-dev-lisp/sb-cga
-x11-libs/pango
-x11-libs/cairo
-media-libs/freeimage"
+	app-emacs/slime
+	dev-lisp/bordeaux-threads
+	dev-lisp/cffi
+	dev-lisp/cl-cairo2
+	dev-lisp/cl-freeimage
+	dev-lisp/cl-opengl
+	dev-lisp/cl-pango
+	dev-lisp/cl-sdl2
+	dev-lisp/classimp
+	dev-lisp/rtg-math
+	dev-lisp/trivial-channels
+	dev-lisp/trivial-garbage
+	dev-lisp/xmls
+"
 
