@@ -6,11 +6,11 @@ EAPI=5
 
 inherit common-lisp-3 git-2
 
-DESCRIPTION="SDL_mixer wrapper"
-HOMEPAGE="https://github.com/lispgames/cl-sdl2-mixer"
+DESCRIPTION="SDL_image wrapper"
+HOMEPAGE="https://github.com/lispgames/cl-sdl2-image"
 SRC_URI=""
 
-EGIT_REPO_URI="https://github.com/lispgames/cl-sdl2-mixer.git"
+EGIT_REPO_URI="https://github.com/lispgames/cl-sdl2-image.git"
 
 LICENSE="MIT"
 SLOT="0"
@@ -22,6 +22,6 @@ RDEPEND="${DEPEND}
 dev-lisp/alexandria
 dev-lisp/defpackage-plus
 dev-lisp/cl-autowrap
-dev-lisp/sdl2
-media-libs/sdl2-mixer
+dev-lisp/cl-sdl2
+media-libs/sdl2-image
 "

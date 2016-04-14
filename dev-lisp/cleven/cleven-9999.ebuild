@@ -21,5 +21,5 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-fad
-	dev-lisp/sdl2
+	dev-lisp/cl-sdl2
 "

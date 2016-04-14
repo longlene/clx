@@ -30,7 +30,7 @@ dev-lisp/cl-utilities
 dev-lisp/cl-ppcre
 dev-lisp/symbol-munger
 dev-lisp/named-readtables
-dev-lisp/sdl2
+dev-lisp/cl-sdl2
 dev-lisp/cl-devil
 dev-lisp/classimp
 "

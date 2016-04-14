@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/defpackage-plus
 	dev-lisp/cl-autowrap
-	dev-lisp/sdl2
+	dev-lisp/cl-sdl2
 	dev-lisp/cffi
 "
 

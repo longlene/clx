@@ -20,7 +20,7 @@ IUSE="example"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
-	dev-lisp/sdl2
+	dev-lisp/cl-sdl2
 	dev-lisp/defpackage-plus
 "
 

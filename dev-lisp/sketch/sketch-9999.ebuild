@@ -25,8 +25,8 @@ RDEPEND="${DEPEND}
 	dev-lisp/mathkit
 	dev-lisp/md5
 	dev-lisp/sb-cga
-	dev-lisp/sdl2-image
-	dev-lisp/sdl2-ttf
+	dev-lisp/cl-sdl2-image
+	dev-lisp/cl-sdl2-ttf
 	dev-lisp/sdl2kit
 	dev-lisp/static-vectors
 "
