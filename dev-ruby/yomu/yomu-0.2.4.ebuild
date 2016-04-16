@@ -9,7 +9,7 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Read text and metadata from files and documents ("
+DESCRIPTION="Read text and metadata from files and documents"
 HOMEPAGE="http://erol.github.com/yomu"
 
 LICENSE="MIT"
