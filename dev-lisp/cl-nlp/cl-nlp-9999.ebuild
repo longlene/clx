@@ -18,9 +18,12 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/archive
+	dev-lisp/cgn
 	dev-lisp/chipz
 	dev-lisp/cl-fad
 	dev-lisp/cl-ppcre
+	dev-lisp/closer-mop
+	dev-lisp/clsql[sqlite3]
 	dev-lisp/cxml
 	dev-lisp/drakma
 	dev-lisp/flexi-streams
