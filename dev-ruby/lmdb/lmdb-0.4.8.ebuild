@@ -18,6 +18,6 @@ KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rake-10.0"
-ruby_add_rdepend "<=dev-ruby/rake-compiler-0.8.2"
+ruby_add_rdepend ">=dev-ruby/rake-compiler-0.8.2"
 ruby_add_rdepend ">=dev-ruby/rspec-3.0"
 

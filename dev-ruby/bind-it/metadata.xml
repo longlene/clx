@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+ BindIt is a thin wrapper over the Ruby-Java-Bridge (Rjb) to facilitate the creation of Java bindings in Ruby
+		</longdescription>
+	</pkgmetadata>
