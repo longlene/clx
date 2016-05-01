@@ -13,10 +13,17 @@ EGIT_REPO_URI="https://github.com/stackforge/cl-openstack-client.git"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/drakma
-dev-lisp/cl-json"
+	dev-lisp/cl-json
+	dev-lisp/drakma
+	dev-lisp/local-time
+	dev-lisp/alexandria
+	dev-lisp/uri-template
+"
 
+src_prepare() {
+	use test || rm -rf tests ${PN}-test.asd run-tests.lisp update-deps.lisp
+}
