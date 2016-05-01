@@ -6,11 +6,11 @@ EAPI=5
 
 inherit common-lisp-3 git-2
 
-DESCRIPTION="Desktop web apps with Common Lisp"
-HOMEPAGE="http://ceramic.github.io"
+DESCRIPTION="Tools for working with Electron"
+HOMEPAGE="https://github.com/ceramic/electron-tools"
 SRC_URI=""
 
-EGIT_REPO_URI="https://github.com/ceramic/ceramic.git"
+EGIT_REPO_URI="https://github.com/ceramic/electron-tools.git"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,23 +19,15 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/cl-json
-	dev-lisp/clack
-	dev-lisp/external-program
-	dev-lisp/trivial-build
 	dev-lisp/trivial-download
-	dev-lisp/trivial-exe
 	dev-lisp/trivial-extract
-	dev-lisp/trivial-compress
-	dev-lisp/electron-tools
+	dev-lisp/osicat
+	dev-lisp/trivial-exe
 	dev-lisp/uiop
-	dev-lisp/uuid
-	dev-lisp/copy-directory
-	dev-lisp/remote-js
 "
 
 src_prepare() {
-	use test || rm -r t ${PN}-test.asd
+	use test || rm -rf ${PN}-test.asd t
 }
 
 src_install() {

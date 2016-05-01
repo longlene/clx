@@ -1,6 +1,8 @@
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
-EAPI=4
+EAPI=5
 
 inherit common-lisp-3 git-2
 
@@ -15,6 +17,14 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	media-libs/libsdl2
+	media-libs/sdl2-image
+	media-libs/sdl2-ttf
+"
 RDEPEND="${DEPEND}"
 
+
+src_prepare() {
+	./bin/build.sh
+}
