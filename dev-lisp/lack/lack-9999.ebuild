@@ -36,7 +36,7 @@ dev-lisp/alexandria
 dev-lisp/quri
 dev-lisp/http-body
 
-dev-lisp/dbi
+dev-lisp/cl-dbi
 dev-lisp/marshal
 "
 
