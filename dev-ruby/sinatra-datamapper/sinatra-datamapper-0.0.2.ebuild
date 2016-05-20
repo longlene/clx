@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/jmkeyes/sinatra-datamapper"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/datamapper-1.2.0"
