@@ -22,5 +22,5 @@ ruby_add_rdepend ">=dev-ruby/rubyntlm-0.3.2"
 ruby_add_rdepend ">=dev-ruby/rake-10.0"
 ruby_add_rdepend ">=dev-ruby/rspec-2.14"
 ruby_add_rdepend ">=dev-ruby/mocha-0.13"
-ruby_add_rdepend ">=dev-ruby/puma-2.3.2"
+ruby_add_rdepend ">=www-servers/puma-2.3.2"
 
