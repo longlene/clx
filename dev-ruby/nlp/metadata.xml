@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Ruby wrapper for hiredis (protocol serialization/deserialization and blocking I/O)
+Tools for processing polish language
 		</longdescription>
 	</pkgmetadata>

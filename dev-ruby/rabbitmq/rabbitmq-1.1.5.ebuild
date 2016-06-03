@@ -9,20 +9,19 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Pure Ruby implementation of RFC 7252 (Constrained Application Protocol (CoAP))"
-HOMEPAGE="https://github.com/nning/coap"
+DESCRIPTION="A Ruby RabbitMQ client library based on FFI bindings for librabbitmq"
+HOMEPAGE="https://github.com/jemc/ruby-rabbitmq"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
+ruby_add_rdepend ">=dev-ruby/ffi-1.9"
 ruby_add_rdepend ">=dev-ruby/bundler-1.6"
-ruby_add_rdepend ">=dev-ruby/coveralls-0.7"
-ruby_add_rdepend ">=dev-ruby/faker-1.4"
-ruby_add_rdepend ">=dev-ruby/minitest-5.4"
 ruby_add_rdepend ">=dev-ruby/rake-10.3"
+ruby_add_rdepend ">=dev-ruby/pry-0.9"
 ruby_add_rdepend ">=dev-ruby/rspec-3.0"
-ruby_add_rdepend ">=dev-ruby/celluloid-io-0.17.3"
-ruby_add_rdepend ">=dev-ruby/resolv-ipv6favor-0"
+ruby_add_rdepend ">=dev-ruby/rspec-its-1.0"
+ruby_add_rdepend ">=dev-ruby/fivemat-1.3"
 

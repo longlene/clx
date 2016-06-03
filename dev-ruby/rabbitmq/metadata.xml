@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Ruby wrapper for hiredis (protocol serialization/deserialization and blocking I/O)
+A Ruby RabbitMQ client library based on FFI bindings for librabbitmq
 		</longdescription>
 	</pkgmetadata>
