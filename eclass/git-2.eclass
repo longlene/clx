@@ -1,24 +1,15 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/git-2.eclass,v 1.32 2013/09/08 22:54:24 mgorny Exp $
+# $Id$
 
 # @ECLASS: git-2.eclass
 # @MAINTAINER:
-# Michał Górny <mgorny@gentoo.org>
 # Donnie Berkholz <dberkholz@gentoo.org>
 # @BLURB: Eclass for fetching and unpacking git repositories.
 # @DESCRIPTION:
 # Eclass for easing maitenance of live ebuilds using git as remote repository.
 # Eclass support working with git submodules and branching.
-
-# @ECLASS-VARIABLE: EGIT_USE_GIT_R3
-# @DEFAULT_UNSET
-# @DESCRIPTION:
-# Use git-r3 backend instead of classic git-2 behavior. This is intended
-# for early testing of git-r3 and is to be set in make.conf.
-
-# (since we override src_unpack this doesn't hurt)
-inherit git-r3
+#
 
 # This eclass support all EAPIs
 EXPORT_FUNCTIONS src_unpack
@@ -187,7 +178,7 @@ git-2_submodules() {
 		fi
 
 		debug-print "${FUNCNAME}: working in \"${1}\""
-		pushd "${EGIT_DIR}" > /dev/null
+		pushd "${EGIT_DIR}" > /dev/null || die
 
 		debug-print "${FUNCNAME}: git submodule init"
 		git submodule init || die
@@ -196,7 +187,7 @@ git-2_submodules() {
 		debug-print "${FUNCNAME}: git submodule update"
 		git submodule update || die
 
-		popd > /dev/null
+		popd > /dev/null || die
 	fi
 }
 
@@ -211,7 +202,7 @@ git-2_branch() {
 	local branchname src
 
 	debug-print "${FUNCNAME}: working in \"${EGIT_SOURCEDIR}\""
-	pushd "${EGIT_SOURCEDIR}" > /dev/null
+	pushd "${EGIT_SOURCEDIR}" > /dev/null || die
 
 	local branchname=branch-${EGIT_BRANCH} src=origin/${EGIT_BRANCH}
 	if [[ ${EGIT_COMMIT} != ${EGIT_BRANCH} ]]; then
@@ -222,7 +213,7 @@ git-2_branch() {
 	git checkout -b ${branchname} ${src} \
 		|| die "${FUNCNAME}: changing the branch failed"
 
-	popd > /dev/null
+	popd > /dev/null || die
 }
 
 # @FUNCTION: git-2_gc
@@ -235,13 +226,13 @@ git-2_gc() {
 	local args
 
 	if [[ ${EGIT_REPACK} || ${EGIT_PRUNE} ]]; then
-		pushd "${EGIT_DIR}" > /dev/null
+		pushd "${EGIT_DIR}" > /dev/null || die
 		ebegin "Garbage collecting the repository"
 		[[ ${EGIT_PRUNE} ]] && args='--prune'
 		debug-print "${FUNCNAME}: git gc ${args}"
 		git gc ${args}
 		eend $?
-		popd > /dev/null
+		popd > /dev/null || die
 	fi
 }
 
@@ -313,12 +304,12 @@ git-2_move_source() {
 	debug-print-function ${FUNCNAME} "$@"
 
 	debug-print "${FUNCNAME}: ${MOVE_COMMAND} \"${EGIT_DIR}\" \"${EGIT_SOURCEDIR}\""
-	pushd "${EGIT_DIR}" > /dev/null
+	pushd "${EGIT_DIR}" > /dev/null || die
 	mkdir -p "${EGIT_SOURCEDIR}" \
 		|| die "${FUNCNAME}: failed to create ${EGIT_SOURCEDIR}"
 	${MOVE_COMMAND} "${EGIT_SOURCEDIR}" \
 		|| die "${FUNCNAME}: sync to \"${EGIT_SOURCEDIR}\" failed"
-	popd > /dev/null
+	popd > /dev/null || die
 }
 
 # @FUNCTION: git-2_initial_clone
@@ -395,22 +386,22 @@ git-2_fetch() {
 
 	if [[ ! -d ${EGIT_DIR} ]]; then
 		git-2_initial_clone
-		pushd "${EGIT_DIR}" > /dev/null
+		pushd "${EGIT_DIR}" > /dev/null || die
 		cursha=$(git rev-parse ${UPSTREAM_BRANCH})
 		echo "GIT NEW clone -->"
 		echo "   repository:               ${EGIT_REPO_URI_SELECTED}"
 		echo "   at the commit:            ${cursha}"
 
-		popd > /dev/null
+		popd > /dev/null || die
 	elif [[ ${EVCS_OFFLINE} ]]; then
-		pushd "${EGIT_DIR}" > /dev/null
+		pushd "${EGIT_DIR}" > /dev/null || die
 		cursha=$(git rev-parse ${UPSTREAM_BRANCH})
 		echo "GIT offline update -->"
 		echo "   repository:               $(git config remote.origin.url)"
 		echo "   at the commit:            ${cursha}"
-		popd > /dev/null
+		popd > /dev/null || die
 	else
-		pushd "${EGIT_DIR}" > /dev/null
+		pushd "${EGIT_DIR}" > /dev/null || die
 		oldsha=$(git rev-parse ${UPSTREAM_BRANCH})
 		git-2_update_repo
 		cursha=$(git rev-parse ${UPSTREAM_BRANCH})
@@ -428,7 +419,7 @@ git-2_fetch() {
 
 		# print nice statistic of what was changed
 		git --no-pager diff --stat ${oldsha}..${UPSTREAM_BRANCH}
-		popd > /dev/null
+		popd > /dev/null || die
 	fi
 	# export the version the repository is at
 	export EGIT_VERSION="${cursha}"
@@ -461,7 +452,7 @@ git-2_bootstrap() {
 	# combination with --keep-going it would lead in not-updating
 	# pakcages that are up-to-date.
 	if [[ ${EGIT_BOOTSTRAP} ]]; then
-		pushd "${EGIT_SOURCEDIR}" > /dev/null
+		pushd "${EGIT_SOURCEDIR}" > /dev/null || die
 		einfo "Starting bootstrap"
 
 		if [[ -f ${EGIT_BOOTSTRAP} ]]; then
@@ -485,7 +476,7 @@ git-2_bootstrap() {
 		fi
 
 		einfo "Bootstrap finished"
-		popd > /dev/null
+		popd > /dev/null || die
 	fi
 }
 
@@ -581,66 +572,23 @@ git-2_cleanup() {
 	unset EGIT_LOCAL_NONBARE
 }
 
-git-2_r3_wrapper() {
-	ewarn "Using git-r3 backend in git-2. Not everything is supported."
-	ewarn "Expect random failures and have fun testing."
-
-	if [[ ${EGIT_SOURCEDIR} ]]; then
-		EGIT_CHECKOUT_DIR=${EGIT_SOURCEDIR}
-		unset EGIT_SOURCEDIR
-	fi
-
-	if [[ ${EGIT_MASTER} ]]; then
-		: ${EGIT_BRANCH:=${EGIT_MASTER}}
-		unset EGIT_MASTER
-	fi
-
-	if [[ ${EGIT_HAS_SUBMODULES} ]]; then
-		unset EGIT_HAS_SUBMODULES
-	fi
-
-	if [[ ${EGIT_PROJECT} ]]; then
-		unset EGIT_PROJECT
-	fi
-
-	local boots unp
-	if [[ ${EGIT_NOUNPACK} ]]; then
-		unp=1
-		unset EGIT_NOUNPACK
-	fi
-
-	if [[ ${EGIT_BOOTSTRAP} ]]; then
-		boots=1
-		unset EGIT_BOOTSTRAP
-	fi
-
-	git-r3_src_unpack
-
-	[[ ${boots} ]] && EGIT_BOOTSTRAP=${boots} git-2_bootstrap
-	[[ ${unp} ]] && EGIT_NOUNPACK=1
-}
-
 # @FUNCTION: git-2_src_unpack
 # @DESCRIPTION:
 # Default git src_unpack function.
 git-2_src_unpack() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	if [[ ${EGIT_USE_GIT_R3} ]]; then
-		git-2_r3_wrapper
-	else
-		git-2_init_variables
-		git-2_prepare_storedir
-		git-2_migrate_repository
-		git-2_fetch "$@"
-		git-2_gc
-		git-2_submodules
-		git-2_move_source
-		git-2_branch
-		git-2_bootstrap
-		git-2_cleanup
-		echo ">>> Unpacked to ${EGIT_SOURCEDIR}"
-	fi
+	git-2_init_variables
+	git-2_prepare_storedir
+	git-2_migrate_repository
+	git-2_fetch "$@"
+	git-2_gc
+	git-2_submodules
+	git-2_move_source
+	git-2_branch
+	git-2_bootstrap
+	git-2_cleanup
+	echo ">>> Unpacked to ${EGIT_SOURCEDIR}"
 
 	# Users can specify some SRC_URI and we should
 	# unpack the files too.
