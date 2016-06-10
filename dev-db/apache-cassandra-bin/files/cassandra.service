@@ -1,0 +1,16 @@
+[Unit]
+Description=Cassandra
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/var/lib/cassandra/cassandra-{SLOT}.pid
+User=cassandra
+Group=cassandra
+ExecStart=/usr/bin/cassandra-{SLOT} -p /var/lib/cassandra/cassandra-{SLOT}.pid
+StandardOutput=journal
+StandardError=journal
+LimitNOFILE=infinity
+
+[Install]
+WantedBy=multi-user.target
