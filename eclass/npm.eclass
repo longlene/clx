@@ -12,7 +12,7 @@
 # Requires EAPI=2 or later.
 
 case ${EAPI} in
-	2|3|4|5) :
+	2|3|4|5|6) :
 		;;
 	*) die "npm.eclass: unsupported EAPI=${EAPI:-0}"
 		;;
