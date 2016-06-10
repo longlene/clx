@@ -1,0 +1,48 @@
+#
+# For more configuration options see /etc/init.d/solr-bin.
+#
+
+# Set the handle of the JVM to use. If unset uses the system-vm.
+# run 'eselect java-vm list' to get possible values.
+#
+#SOLR_JVM="icedtea-7"
+
+# Additional options to pass to the JVM.
+#
+JAVA_OPTS="-server -Xss256k -Xms512m -Xmx512m -XX:CMSFullGCsBeforeCompaction=1 -XX:CMSTriggerPermRatio=80"
+
+# User/group of this instance
+SOLR_USER=solr
+SOLR_GROUP=solr
+
+# SOLR home directory.
+#
+#SOLR_HOME_DIR=/var/lib/solr
+
+# SOLR host.
+#
+#SOLR_HOST=localhost
+
+# SOLR port.
+#
+#SOLR_PORT=8983
+
+# SOLR stop port.
+#
+#SOLR_STOP_PORT=7983
+
+# SOLR time zone.
+#
+#SOLR_TIMEZONE=UTC
+
+# SOLR stop key.
+#
+#SOLR_STOP_KEY=solrrocks
+
+# SOLR log directory.
+#
+#SOLR_LOG_DIR=/var/log/solr
+
+# SOLR module.
+#
+#SOLR_MODULE=http

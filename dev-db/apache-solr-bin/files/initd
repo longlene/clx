@@ -1,0 +1,58 @@
+#!/sbin/runscript
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+: ${SOLR_INCLUDE:=/opt/solr/bin/solr.in.sh}
+: ${SOLR_PID_DIR:=/var/run}
+: ${SOLR_JAVA_HOME:=$(java-config ${SOLR_JVM:+--select-vm ${SOLR_JVM}} --jre-home)}
+: ${SOLR_SERVER_DIR:=/opt/solr/server}
+: ${SOLR_HOME_DIR:=/var/lib/solr}
+: ${SOLR_PORT:=8983}
+: ${SOLR_STOP_KEY:=solrrocks}
+
+SOLR_PID=${SOLR_PID_DIR}/solr-${SOLR_PORT}.pid
+SCRIPT=/usr/bin/solr
+
+depend() {
+	use dns logger net
+}
+
+start() {
+	ebegin "Starting ${RC_SVCNAME}"
+
+	local javaopts=""
+
+	if [ -n "${JAVA_OPTS}" ] ; then
+		javaopts="-a \"${JAVA_OPTS}\""
+	fi
+
+	start-stop-daemon --start \
+		--quiet --background \
+		--chdir ${SOLR_HOME} \
+		--user ${SOLR_USER}:${SOLR_GROUP} \
+		--pidfile ${SOLR_PID} \
+		--exec ${SCRIPT} \
+		-- \
+			start \
+			-d ${SOLR_SERVER_DIR} \
+			-s ${SOLR_HOME_DIR} \
+			-p ${SOLR_PORT} \
+			${SOLR_EXTRA_ARGS} ${javaopts}
+
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${RC_SVCNAME}"
+
+	start-stop-daemon --stop \
+		--quiet --retry=60 \
+		--pidfile ${SOLR_PID} \
+		--exec ${SCRIPT} \
+		-- \
+			stop \
+			-p ${SOLR_PORT} \
+			-k ${SOLR_STOP_KEY}
+
+	eend $?
+}

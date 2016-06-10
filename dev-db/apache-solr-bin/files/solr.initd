@@ -1,0 +1,68 @@
+#!/sbin/runscript
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+: ${JAVA_HOME:=$(java-config ${SOLR_JVM:+--select-vm ${SOLR_JVM}} --jre-home)}
+: ${SOLR_HOME_DIR:=/var/lib/solr}
+: ${SOLR_HOST:=localhost}
+: ${SOLR_PORT:=8983}
+: ${SOLR_STOP_PORT:=7983}
+: ${SOLR_STOP_KEY:=solrrocks}
+: ${SOLR_TIMEZONE:=UTC}
+: ${SOLR_LOG_DIR:=/var/log/solr}
+: ${SOLR_MODULE:=http}
+
+PIDDIR=/var/run/solr
+PIDFILE=${PIDDIR}/solr-${SOLR_PORT}.pid
+JAVA=${JAVA_HOME}/bin/java
+SOLR_TIP=/opt/solr
+SOLR_SERVER_DIR=/opt/solr/server
+
+depend() {
+	use dns logger net
+}
+
+start() {
+	ebegin "Starting ${RC_SVCNAME}"
+
+	mkdir -p ${PIDDIR}
+	chown ${SOLR_USER}:${SOLR_GROUP} ${PIDDIR}
+
+	start-stop-daemon --start \
+		--quiet --background \
+		--chdir ${SOLR_SERVER_DIR} \
+		--user ${SOLR_USER}:${SOLR_GROUP} \
+		--make-pid --pidfile ${PIDFILE} \
+		--exec ${JAVA} \
+		-- \
+			${JAVA_OPTS} \
+			-Djetty.port=${SOLR_PORT} \
+			-DSTOP.PORT=${SOLR_STOP_PORT} \
+			-DSTOP.KEY=${SOLR_STOP_KEY} \
+			-Duser.timezone=${SOLR_TIMEZONE} \
+			-Djetty.home=${SOLR_SERVER_DIR} \
+			-Dsolr.solr.home=${SOLR_HOME_DIR} \
+			-Dsolr.install.dir=${SOLR_TIP} \
+			-jar start.jar \
+			"-XX:OnOutOfMemoryError=/opt/solr/bin/oom_solr.sh ${SOLR_PORT} ${SOLR_LOG_DIR}" \
+			--module=${SOLR_MODULE}
+
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${RC_SVCNAME}"
+
+	start-stop-daemon --stop \
+		--quiet \
+		--pidfile ${PIDFILE} \
+		--exec ${JAVA} \
+		-- \
+			${JAVA_OPTS} \
+			-jar ${SOLR_SERVER_DIR}/start.jar \
+			STOP.PORT=${SOLR_STOP_PORT} \
+			STOP.KEY=${SOLR_STOP_KEY} \
+			--stop
+
+	eend $?
+}
