@@ -7,11 +7,11 @@ inherit eutils
 
 DESCRIPTION="Neo4j is a high-performance, NOSQL graph database with all the features of a mature and robust database."
 HOMEPAGE="http://neo4j.org/"
-SRC_URI="http://dist.neo4j.org/${PN}-${PV}-unix.tar.gz"
+SRC_URI="http://dist.neo4j.org/${P}-unix.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+#KEYWORDS="amd64 ~x86"
 
 RDEPEND="!dev-db/neo4j-advanced
 	!dev-db/neo4j-enterprise
