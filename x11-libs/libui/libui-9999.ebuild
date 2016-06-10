@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit cmake-utils git-r3
 
 DESCRIPTION="Simple and portable GUI library in C"
 HOMEPAGE="https://github.com/andlabs/libui"
@@ -23,6 +23,6 @@ RDEPEND="${DEPEND}"
 src_install() {
 	insinto /usr/include
 	doins ui.h ui_unix.h
-	dolib.so out/libui.so*
+	dolib.so ${CMAKE_BUILD_DIR}/out/libui.so*
 	dodoc README.md
 }
