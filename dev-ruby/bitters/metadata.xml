@@ -6,7 +6,7 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Bourbon is a library of pure Sass mixins that are designed to be simple and easy
-to use
+    Bitters helps designers start projects faster by defining a basic set of
+    Sass variables, default element style and project structure
 		</longdescription>
 	</pkgmetadata>

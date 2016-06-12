@@ -6,7 +6,7 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Bourbon is a library of pure Sass mixins that are designed to be simple and easy
-to use
+Neat is a fluid grid framework built with Bourbon with the aim of being easy
+enough to use out of the box and flexible enough to customize down the road
 		</longdescription>
 	</pkgmetadata>
