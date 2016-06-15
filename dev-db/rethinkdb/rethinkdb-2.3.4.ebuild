@@ -10,7 +10,7 @@ DESCRIPTION="The open-source database for the realtime web."
 HOMEPAGE="http://www.rethinkdb.com"
 LICENSE="AGPL-3"
 SLOT="0"
-SRC_URI="http://download.rethinkdb.com/dist/${P}.tgz"
+SRC_URI="https://github.com/rethinkdb/rethinkdb/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 KEYWORDS="~amd64 ~x86"
 IUSE="doc +jemalloc tcmalloc"
@@ -49,8 +49,6 @@ src_prepare() {
 
 	# fix termcap detection
 	#sed -e 's/termcap:termcap tinfo ncurses/termcap:ncurses termcap tinfo/g' -i configure || die
-	sed -i '1{s/python/python2/}' build/external/v8_3.30.33.16/build/build/gyp/gyp_main.py
-
 }
 
 src_configure() {
