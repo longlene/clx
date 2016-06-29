@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+The wrapper automates LaTeX to HTML5 conversions with LaTeXML, addressing common production needs such as error-handling, timeouts, managing option sets and automatic recognition of available binaries
+		</longdescription>
+	</pkgmetadata>
