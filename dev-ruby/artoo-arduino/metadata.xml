@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A GraphQL server implementation for Ruby
+Artoo adaptor and driver for Arduino
 		</longdescription>
 	</pkgmetadata>

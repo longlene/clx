@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A GraphQL server implementation for Ruby
+A Ruby gem that streams and parses large Excel(xlsx and xlsm) files fast and efficiently
 		</longdescription>
 	</pkgmetadata>

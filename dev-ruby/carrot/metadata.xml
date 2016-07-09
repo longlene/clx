@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A GraphQL server implementation for Ruby
+A synchronous version of the ruby amqp client
 		</longdescription>
 	</pkgmetadata>

@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A GraphQL server implementation for Ruby
+Ohai profiles your system and emits JSON
 		</longdescription>
 	</pkgmetadata>
