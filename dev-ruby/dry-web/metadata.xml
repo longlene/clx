@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Automatically generate a sitemap
+Lightweight web application stack on top of dry-component
 		</longdescription>
 	</pkgmetadata>
