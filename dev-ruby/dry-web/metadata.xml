@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-
+Lightweight web application stack on top of dry-component
 		</longdescription>
 	</pkgmetadata>

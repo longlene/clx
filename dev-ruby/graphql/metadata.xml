@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A GraphQL adapter for Ruby
+A GraphQL server implementation for Ruby
 		</longdescription>
 	</pkgmetadata>

@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Profiling toolkit for Rack applications with Rails integration
+Useful for testing the server's BOSH support
 		</longdescription>
 	</pkgmetadata>

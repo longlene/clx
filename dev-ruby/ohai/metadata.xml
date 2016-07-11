@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Profiling toolkit for Rack applications with Rails integration
+Ohai profiles your system and emits JSON
 		</longdescription>
 	</pkgmetadata>
