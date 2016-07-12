@@ -2,7 +2,7 @@
 
 EAPI=5
 
-#inherit 
+inherit 
 
 DESCRIPTION=""
 HOMEPAGE=""
