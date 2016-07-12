@@ -7,11 +7,11 @@ EAPI=6
 MY_PN=BitArray
 MY_P=${MY_PN}-${PV}
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="C code for bit arrays"
+HOMEPAGE="https://github.com/noporpoise/BitArray"
 SRC_URI="https://github.com/noporpoise/BitArray/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
