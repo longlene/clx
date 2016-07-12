@@ -18,7 +18,9 @@ KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	dev-libs/libuv
+"
 
 src_install() {
 	insinto /usr/include
