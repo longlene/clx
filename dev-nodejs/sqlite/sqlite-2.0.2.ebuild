@@ -6,17 +6,14 @@ EAPI=5
 
 inherit npm
 
-DESCRIPTION="streaming JSON.parse and stringify"
-HOMEPAGE="https://github.com/dominictarr/JSONStream"
+DESCRIPTION="SQLite3 bindings for Node"
+HOMEPAGE="https://github.com/orlandov/node-sqlite"
 #SRC_URI=""
 
-LICENSE="MIT"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}
-	dev-nodejs/through
-	dev-nodejs/jsonparse
-"
+RDEPEND="${DEPEND}"
