@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+Rb++ combines the powerful query interface of rbgccxml and the Rice library to
+make Ruby wrapping extensions of C++ libraries easier to write than ever
+		</longdescription>
+	</pkgmetadata>
