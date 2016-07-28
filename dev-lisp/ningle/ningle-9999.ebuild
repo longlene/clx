@@ -13,12 +13,17 @@ EGIT_REPO_URI="https://github.com/fukamachi/ningle.git"
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/clack
-dev-lisp/cl-syntax"
+	dev-lisp/clack
+	dev-lisp/cl-syntax
+"
+
+src_prepare() {
+	use test || rm -rf t ${PN}-test.asd
+}
 
 src_prepare() {
 	# remove the static file dependency
