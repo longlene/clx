@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Tool to try any android library hosted online directly from the command line
+An extensible Ruby wrapper for Atom and RSS parsers
 		</longdescription>
 	</pkgmetadata>
