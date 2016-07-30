@@ -77,7 +77,7 @@ npm_src_compile() {
 
 npm_src_install() {
 	local npm_files="${NPM_FILES} ${NPM_EXTRA_FILES}"
-	local node_modules="${D}/usr/$(get_libdir)/node_modules/${NPM_MODULE}"
+	local node_modules="${D}/usr/$(get_libdir)/node/${NPM_MODULE}"
 
 	mkdir -p ${node_modules} || die "Could not create DEST folder"
 
