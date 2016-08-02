@@ -20,6 +20,20 @@ IUSE=""
 DEPEND="!net-misc/gnatsd"
 RDEPEND="${DEPEND}"
 
+QA_PREBUILT="usr/bin/gnatsd"
+
+src_unpack() {
+	default
+
+	if use amd64 ; then
+		S="${WORKDIR}"/gnatsd-v${PV}-linux-amd64
+	elif use arm ; then
+		S="${WORKDIR}"/gnatsd-v${PV}-linux-arm
+	elif use x86 ; then
+		S="${WORKDIR}"/gnatsd-v${PV}-linux-386
+	fi
+}
+
 # TODO init.d file needed
 src_install() {
 	dobin gnatsd
