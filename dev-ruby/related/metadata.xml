@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-rom-repository adds support for auto-mapping and commands on top of rom-rb relations
+Related is a Redis-backed high performance distributed graph database
 		</longdescription>
 	</pkgmetadata>

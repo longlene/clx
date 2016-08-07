@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-rom-repository adds support for auto-mapping and commands on top of rom-rb relations
+FasterPath is a reimplementation of Pathname for better performance
 		</longdescription>
 	</pkgmetadata>
