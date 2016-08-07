@@ -5,7 +5,7 @@
 inherit common-lisp-3 git-2
 
 
-DESCRIPTION="A Common Lisp client library for the SMTP network protocol."
+DESCRIPTION="A Common Lisp client library for the SMTP network protocol"
 HOMEPAGE="http://common-lisp.net/project/cl-smtp/
 		http://www.cliki.net/CL-SMTP"
 SRC_URI=""
