@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-    Modern concurrency tools including agents, futures, promises, thread pools, actors, supervisors, and more
+Includes a thread pool, message passing capabilities, a recursive mutex, promise, future and delay
 		</longdescription>
 	</pkgmetadata>

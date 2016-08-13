@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-    Modern concurrency tools including agents, futures, promises, thread pools, actors, supervisors, and more
+RDL is a gem that allows contracts (pre- and postconditions) to be added to methods
 		</longdescription>
 	</pkgmetadata>

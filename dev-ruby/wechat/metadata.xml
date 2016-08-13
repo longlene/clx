@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-    Modern concurrency tools including agents, futures, promises, thread pools, actors, supervisors, and more
+API, command and message handling for WeChat in Rails
 		</longdescription>
 	</pkgmetadata>

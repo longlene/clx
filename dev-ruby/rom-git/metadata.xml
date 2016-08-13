@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-    Modern concurrency tools including agents, futures, promises, thread pools, actors, supervisors, and more
+Git adapter for the rom-rb
 		</longdescription>
 	</pkgmetadata>
