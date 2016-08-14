@@ -32,8 +32,7 @@ S="${WORKDIR}/${MY_P}-all"
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}"/${PV}-gentoo.patch \
-		"${FILESDIR}"/poco-1.6.0-patch-for-libpcre-8.32.patch
+		"${FILESDIR}"/${PV}-funtoo.patch
 	sed -i "/INSTALLDIR/ s/\/lib/\/$(get_libdir)/" Makefile
 }
 
