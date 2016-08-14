@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+Extension for popular TDD and BDD frameworks like "Cucumber", "RSpec" and "Minitest" to make testing commandline applications meaningful, easy and fun
+		</longdescription>
+	</pkgmetadata>
