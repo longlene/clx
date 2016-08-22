@@ -1,16 +1,14 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3
 
 DESCRIPTION="A powerful infix syntax notation for Common LISP"
 HOMEPAGE="https://github.com/vcerovski/binfix/"
-#SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/vcerovski/binfix.git"
+SRC_URI="https://github.com/vcerovski/binfix/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
