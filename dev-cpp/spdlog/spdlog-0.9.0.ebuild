@@ -4,13 +4,11 @@
 
 EAPI=5
 
-inherit flag-o-matic git-2
+inherit cmake-utils
 
 DESCRIPTION="Super fast C++ logging library"
 HOMEPAGE="https://github.com/gabime/spdlog"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/gabime/spdlog.git"
+SRC_URI="https://github.com/gabime/spdlog/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
@@ -20,14 +18,14 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-pkg_pretend() {
-	if ! test-flag-CXX -std=c++11 ; then
-		die "C++11 need support for this library"
-	fi
-}
-
-src_install() {
-	insinto /usr/include
-	doins -r include/spdlog
-	dodoc README.md
-}
+#pkg_pretend() {
+#	if ! test-flag-CXX -std=c++11 ; then
+#		die "C++11 need support for this library"
+#	fi
+#}
+#
+#src_install() {
+#	insinto /usr/include
+#	doins -r include/spdlog
+#	dodoc README.md
+#}
