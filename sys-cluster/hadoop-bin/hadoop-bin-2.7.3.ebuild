@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI="5"
 
@@ -20,7 +20,8 @@ RESTRICT="mirror binchecks"
 IUSE=""
 
 DEPEND=""
-RDEPEND=">=virtual/jre-1.6
+RDEPEND="
+	>=virtual/jre-1.6
 	net-misc/openssh
 	net-misc/rsync"
 
