@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="server"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
