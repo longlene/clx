@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A client library for the Kafka distributed commit log
+ActiveMessaging is an attempt to bring the simplicity and elegance of rails development to the world of messaging
 		</longdescription>
 	</pkgmetadata>

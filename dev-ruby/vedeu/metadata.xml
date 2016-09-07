@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A GUI framework written in Ruby for building terminal/console applications
+A framework for building GUI/TUI terminal/console applications
 		</longdescription>
 	</pkgmetadata>

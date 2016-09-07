@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Imitating static typed struct
+Pseudo type system on struct
 		</longdescription>
 	</pkgmetadata>
