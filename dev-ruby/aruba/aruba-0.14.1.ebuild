@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
-ruby_add_rdepend ">=dev-util/cucumber-1.3.19"
+ruby_add_rdepend ">=dev-ruby/cucumber-1.3.19"
 ruby_add_rdepend ">=dev-ruby/childprocess-0.5.6"
 ruby_add_rdepend ">=dev-ruby/ffi-1.9.10"
 ruby_add_rdepend ">=dev-ruby/rspec-expectations-2.99"
