@@ -8,9 +8,7 @@ inherit lua git-2
 
 DESCRIPTION="toml decoder/encoder"
 HOMEPAGE="https://github.com/jonstoler/lua-toml"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/jonstoler/lua-toml.git"
+SRC_URI="https://github.com/jonstoler/lua-toml/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
