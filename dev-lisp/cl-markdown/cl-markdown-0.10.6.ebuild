@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=4
-inherit common-lisp-2 eutils vcs-snapshot
+inherit common-lisp-3 eutils vcs-snapshot
 
 DESCRIPTION="CL-Markdown is a Common Lisp rewrite of Markdown."
 HOMEPAGE="http://common-lisp.net/project/cl-markdown"

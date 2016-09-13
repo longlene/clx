@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="Portable URI library for Common Lisp based on the Franz, Inc. :net.uri module."
 HOMEPAGE="http://github.com/archimag/puri-unicode"

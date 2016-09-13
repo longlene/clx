@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="4"
-inherit common-lisp-2 git-2
+inherit common-lisp-3 git-2
 
 
 DESCRIPTION="A Common Lisp XML library implementing namespaces, a validating SAX-like XML 1.0 parser and the DOM Level 1 Core interfaces."

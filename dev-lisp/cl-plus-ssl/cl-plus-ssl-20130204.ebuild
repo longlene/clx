@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2 eutils multilib
+inherit common-lisp-3 eutils multilib
 
 MY_PN=cl+ssl
 MY_P=cl-plus-ssl

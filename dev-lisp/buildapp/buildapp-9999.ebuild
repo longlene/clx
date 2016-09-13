@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit common-lisp-2 git-2
+inherit common-lisp-3 git-2
 
 DESCRIPTION="Create executables with SBCL"
 HOMEPAGE="http://www.xach.com/lisp/buildapp/"

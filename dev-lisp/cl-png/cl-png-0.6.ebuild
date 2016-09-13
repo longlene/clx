@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-2
+inherit common-lisp-3
 DESCRIPTION="Common Lisp package to read and write png image files from Ljosa"
 HOMEPAGE="http://www.ljosa.com/~ljosa/software/cl-png/"
 SRC_URI="http://www.ljosa.com/~ljosa/software/cl-png/download/${P}.tar.gz"

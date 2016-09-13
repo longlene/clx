@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="A Common Lisp utility for command-line processing."
 HOMEPAGE="http://uffi.b9.com/"

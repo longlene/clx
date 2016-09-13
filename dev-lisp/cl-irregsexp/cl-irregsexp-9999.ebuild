@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit common-lisp-2 git-2
+inherit common-lisp-3 git-2
 #MY_USER="vii"
 
 DESCRIPTION="More powerful and prettier way of text matching in Common Lisp."

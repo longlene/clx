@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2 eutils
+inherit common-lisp-3 eutils
 
 DESCRIPTION="LTK is a Common Lisp binding for the Tk graphics toolkit which does not require any Tk knowledge for its usage."
 HOMEPAGE="http://www.peter-herth.de/ltk/"

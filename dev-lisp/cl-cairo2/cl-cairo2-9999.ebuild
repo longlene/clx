@@ -4,7 +4,7 @@
 
 EGIT_REPO_URI="http://www.princeton.edu/~tpapp/software/cl-cairo2.git/"
 
-inherit common-lisp-2 git-2
+inherit common-lisp-3 git-2
 
 DESCRIPTION="Common Lisp bindings for Cairo"
 HOMEPAGE="http://common-lisp.net/project/cl-cairo2/"

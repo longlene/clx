@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2 git-2
+inherit common-lisp-3 git-2
 
 DESCRIPTION="A Common Lisp implementation of Bse64 Encoding/Decoding."
 HOMEPAGE="http://homepage.mac.com/svc/s-base64/"

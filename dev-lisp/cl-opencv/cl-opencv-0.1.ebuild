@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-2 vcs-snapshot
+inherit common-lisp-3 vcs-snapshot
 
 DESCRIPTION="OpenCV bindings for SBCL"
 HOMEPAGE="https://github.com/longlene/cl-opencv"

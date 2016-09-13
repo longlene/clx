@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2 git-2
+inherit common-lisp-3 git-2
 
 DESCRIPTION="A parser that parses HTML documents and generates a sexp-based representation."
 HOMEPAGE="http://www.cl-user.net/asp/libs/cl-html-parse

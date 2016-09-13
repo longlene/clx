@@ -1,7 +1,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=4
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="Prepare HTML documentation for Common Lisp libraries"
 HOMEPAGE="http://weitz.de/documentation-template"

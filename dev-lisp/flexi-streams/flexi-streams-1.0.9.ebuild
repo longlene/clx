@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="FLEXI-STREAMS implements \"virtual\" bivalent streams that can be layered atop real binary or bivalent streams."
 HOMEPAGE="http://weitz.de/flexi-streams/

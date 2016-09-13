@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit git-2 common-lisp-2
+inherit git-2 common-lisp-3
 
 DESCRIPTION="BLOCKY is a visual programming language for Common Lisp."
 HOMEPAGE="http://blocky.io/"

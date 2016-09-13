@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="CL-FAD is a thin portability layer atop the Common Lisp standard pathname functions."
 HOMEPAGE="http://weitz.de/cl-fad/"

@@ -3,7 +3,7 @@
 
 EAPI=4
 
-inherit common-lisp-2 elisp-common eutils vcs-snapshot
+inherit common-lisp-3 elisp-common eutils vcs-snapshot
 
 DESCRIPTION="Common Lisp application server"
 HOMEPAGE="http://github.com/archimag/restas"

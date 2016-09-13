@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="CL-PPCRE is a portable regular expression library for Common Lisp."
 HOMEPAGE="http://weitz.de/cl-ppcre/

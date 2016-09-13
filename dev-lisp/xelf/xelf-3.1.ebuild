@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit git-2 common-lisp-2 elisp-common
+inherit git-2 common-lisp-3 elisp-common
 
 DESCRIPTION="XELF is a visual programming language for Common Lisp"
 HOMEPAGE="http://xelf.me/"

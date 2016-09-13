@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git-2 common-lisp-2 eutils
+inherit git-2 common-lisp-3 eutils
 
 DESCRIPTION="A simple library for generating a backtrace portably."
 HOMEPAGE="http://common-lisp.net/project/trivial-backtrace"

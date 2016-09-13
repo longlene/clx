@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="cl-launch is a utility to make Common Lisp software easily invokable from the command-line."
 HOMEPAGE="http://www.cliki.net/cl-launch"

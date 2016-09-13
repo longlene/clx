@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-2 git-2
+inherit common-lisp-3 git-2
 
 DESCRIPTION="OpenCV bindings for SBCL"
 HOMEPAGE="https://github.com/longlene/cl-opencv"

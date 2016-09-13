@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="Portable chunked streams for Common Lisp"
 HOMEPAGE="http://weitz.de/chunga/"

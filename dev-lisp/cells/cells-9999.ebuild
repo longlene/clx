@@ -8,7 +8,7 @@ ECVS_USER="anonymous"
 ECVS_PASS="anonymous"
 ECVS_CVS_OPTIONS="-dP"
 
-inherit common-lisp-2 cvs
+inherit common-lisp-3 cvs
 
 DESCRIPTION="Cells is a Common Lisp library providing a data flow extension to CLOS."
 HOMEPAGE="http://common-lisp.net/project/cells/

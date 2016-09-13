@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="Common Lisp library for pipes or streams."
 HOMEPAGE="http://uffi.b9.com/"

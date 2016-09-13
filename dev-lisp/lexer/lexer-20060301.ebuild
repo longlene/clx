@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2 eutils
+inherit common-lisp-3 eutils
 
 DESCRIPTION="Lexical-analyzer-generator package for Common Lisp"
 HOMEPAGE="http://www.geocities.com/mparker762/clawk.html#lexer

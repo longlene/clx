@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="XMLS is a small, simple, non-validating XML parser for Common Lisp."
 HOMEPAGE="http://www.common-lisp.net/project/xmls/

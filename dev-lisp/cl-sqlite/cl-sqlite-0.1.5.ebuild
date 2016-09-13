@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="A CommonLisp interface to the SQLite embedded relational database engine."
 HOMEPAGE="http://common-lisp.net/project/cl-sqlite/"

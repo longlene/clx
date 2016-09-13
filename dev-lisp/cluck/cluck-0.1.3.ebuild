@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="A Common Lisp library to help automate clock and divisor selections for microcontrollers."
 HOMEPAGE="http://uffi.b9.com/"

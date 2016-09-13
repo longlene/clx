@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="A set of CFFI bindings to the OpenGL, GLU and GLUT APIs."
 HOMEPAGE="http://common-lisp.net/project/cl-opengl/"

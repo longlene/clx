@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-2 git-2
+inherit common-lisp-3 git-2
 DESCRIPTION="Common Lisp interface to MongoDB"
 HOMEPAGE="http://fons.github.com/cl-mongo"
 SRC_URI=""

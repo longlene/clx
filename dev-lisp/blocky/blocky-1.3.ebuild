@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit common-lisp-2 vcs-snapshot elisp-common
+inherit common-lisp-3 vcs-snapshot elisp-common
 
 DESCRIPTION="BLOCKY is a visual programming language for Common Lisp."
 HOMEPAGE="http://blocky.io/"

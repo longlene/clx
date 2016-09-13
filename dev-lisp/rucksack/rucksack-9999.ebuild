@@ -8,7 +8,7 @@ ECVS_USER="anonymous"
 ECVS_PASS="anonymous"
 ECVS_CVS_OPTIONS="-dP"
 
-inherit common-lisp-2 cvs
+inherit common-lisp-3 cvs
 
 DESCRIPTION="Rucksack: a flexible, light weight, open source persistence library for common lisp."
 HOMEPAGE="http://common-lisp.net/project/rucksack"

@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="Hyperobject is a Common Lisp library for representing objects."
 HOMEPAGE="http://hyperobject.b9.com/

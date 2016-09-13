@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2 git-2
+inherit common-lisp-3 git-2
 
 DESCRIPTION="A Common Lisp library for sending email."
 HOMEPAGE="http://www.cliki.net/cl-mime/"

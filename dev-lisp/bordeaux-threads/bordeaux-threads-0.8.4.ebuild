@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="A library meant to make writing portable multi-threaded apps simple."
 HOMEPAGE="http://common-lisp.net/project/bordeaux-threads/"

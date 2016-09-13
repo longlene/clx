@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2 eutils
+inherit common-lisp-3 eutils
 
 DESCRIPTION="Colorize is a Common Lisp application for colorizing source code."
 HOMEPAGE="http://www.cliki.net/colorize"

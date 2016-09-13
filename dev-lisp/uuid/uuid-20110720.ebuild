@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit common-lisp-2 vcs-snapshot
+inherit common-lisp-3 vcs-snapshot
 
 DESCRIPTION="A Common Lisp library for generation of UUIDs as described by RFC 4122."
 HOMEPAGE="http://www.dardoria.net/software/uuid.html"

@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="CL-API is an application that generates an API in HTML format, given a package name and reading docstrings."
 HOMEPAGE="http://common-lisp.net/project/cl-api/"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2 git-2
+inherit common-lisp-3 git-2
 
 DESCRIPTION="S-XML-RPC is an implementation of XML-RPC in Common Lisp for both client and server."
 HOMEPAGE="http://www.common-lisp.net/project/s-xml-rpc/"

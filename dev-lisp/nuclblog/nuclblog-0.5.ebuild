@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2 eutils
+inherit common-lisp-3 eutils
 
 MY_P=${PN}_${PV}
 

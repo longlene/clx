@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit common-lisp-2
+inherit common-lisp-3
 MY_USER="skypher"
 
 DESCRIPTION="An implementation of the OAuth 1.0a standard in Common Lisp."

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="closure-common is a helper library for Closure and Closure XML implementing runes."
 HOMEPAGE="http://www.cliki.net/closure-common"

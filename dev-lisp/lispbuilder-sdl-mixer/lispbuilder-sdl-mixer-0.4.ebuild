@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit common-lisp-2
+inherit common-lisp-3
 
 DESCRIPTION="Lisp Application Builder Interface to sdl-mixer"
 HOMEPAGE="http://code.google.com/p/lispbuilder/"

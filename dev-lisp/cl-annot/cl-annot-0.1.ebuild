@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit common-lisp-2 vcs-snapshot
+inherit common-lisp-3 vcs-snapshot
 MY_USER="arielnetworks"
 
 DESCRIPTION="Python-like Annotation Syntax for Common Lisp."
