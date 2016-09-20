@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
- Termit is an easy way to translate stuff and use speech synthesis in your terminal
+Ruby bindings for OpenGL - 4
 		</longdescription>
 	</pkgmetadata>

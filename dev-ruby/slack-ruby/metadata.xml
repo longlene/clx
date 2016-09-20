@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
- Termit is an easy way to translate stuff and use speech synthesis in your terminal
+A Ruby interface to Slack API
 		</longdescription>
 	</pkgmetadata>

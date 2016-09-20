@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
- Termit is an easy way to translate stuff and use speech synthesis in your terminal
+espeak-ruby is small Ruby API for utilizing ‘espeak’ and ‘lame’ to create Text-To-Speech mp3 files
 		</longdescription>
 	</pkgmetadata>
