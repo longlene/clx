@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Provides a better error page for Rails and other Rack apps
+Macro Recording and Saving functionality for pry
 		</longdescription>
 	</pkgmetadata>

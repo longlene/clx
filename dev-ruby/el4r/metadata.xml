@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Provides a better error page for Rails and other Rack apps
+El4r enables you to write Emacs programs in Ruby(EmacsRuby) as well as in EmacsLisp
 		</longdescription>
 	</pkgmetadata>

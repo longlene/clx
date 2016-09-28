@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Provides a better error page for Rails and other Rack apps
+Pry state lets you to see the values of the instance and local variables in a pry session
 		</longdescription>
 	</pkgmetadata>

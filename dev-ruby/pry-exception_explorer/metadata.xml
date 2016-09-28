@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Provides a better error page for Rails and other Rack apps
+Enter the context of exceptions
 		</longdescription>
 	</pkgmetadata>

@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Provides a better error page for Rails and other Rack apps
+Connect to Pry remotely using EventMachine with tab-completion, paging, user auth and SSL
 		</longdescription>
 	</pkgmetadata>

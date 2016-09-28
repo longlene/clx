@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Provides a better error page for Rails and other Rack apps
+When a pry session starts, change the process title and alert user with a terminal bell
 		</longdescription>
 	</pkgmetadata>
