@@ -26,5 +26,5 @@ ruby_add_rdepend ">=dev-ruby/cane-0"
 ruby_add_rdepend ">=dev-ruby/pry-0"
 ruby_add_rdepend ">=dev-ruby/simplecov-0"
 ruby_add_rdepend ">=dev-ruby/webmock-0"
-ruby_add_rdepend "=dev-ruby/parallel-1.3.3"
+ruby_add_rdepend ">=dev-ruby/parallel-1.3.3"
 

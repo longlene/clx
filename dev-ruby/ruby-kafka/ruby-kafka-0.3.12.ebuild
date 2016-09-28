@@ -27,7 +27,7 @@ ruby_add_rdepend ">=dev-ruby/rspec-benchmark-0"
 ruby_add_rdepend ">=dev-ruby/activesupport-0"
 ruby_add_rdepend ">=dev-ruby/snappy-0"
 ruby_add_rdepend ">=dev-ruby/colored-0"
-ruby_add_rdepend "=dev-ruby/rspec_junit_formatter-0.2.2"
+ruby_add_rdepend ">=dev-ruby/rspec_junit_formatter-0.2.2"
 ruby_add_rdepend ">=dev-ruby/dogstatsd-ruby-0"
 ruby_add_rdepend ">=dev-ruby/ruby-prof-0"
 
