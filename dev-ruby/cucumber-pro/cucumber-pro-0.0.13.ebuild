@@ -23,7 +23,7 @@ ruby_add_rdepend ">=dev-ruby/rake-0.9.2"
 ruby_add_rdepend ">=dev-ruby/rspec-2.14.1"
 ruby_add_rdepend ">=dev-ruby/cucumber-0"
 ruby_add_rdepend ">=dev-ruby/aruba-0"
-ruby_add_rdepend ">=dev-ruby/puma-0"
+ruby_add_rdepend ">=www-servers/puma-0"
 ruby_add_rdepend ">=dev-ruby/rack-0"
 ruby_add_rdepend ">=dev-ruby/anticipate-0"
 
