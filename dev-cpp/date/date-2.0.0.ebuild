@@ -4,13 +4,9 @@
 
 EAPI=5
 
-inherit git-2
-
 DESCRIPTION="A date and time library based on the C++11"
 HOMEPAGE="https://github.com/HowardHinnant/date"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/HowardHinnant/date.git"
+SRC_URI="https://github.com/HowardHinnant/date/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -22,6 +18,6 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	insinto /usr/include
-	doins date.h iso_week.h tz.h
-	# TODO: add tz.h
+	doins date.h chrono_io.h iso_week.h julian.h islamic.h
+	# TODO: add cpp file
 }
