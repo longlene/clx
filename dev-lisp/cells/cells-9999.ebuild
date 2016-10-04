@@ -1,36 +1,28 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-ECVS_SERVER="common-lisp.net:/project/cells/cvsroot"
-ECVS_MODULE="cells"
-ECVS_USER="anonymous"
-ECVS_PASS="anonymous"
-ECVS_CVS_OPTIONS="-dP"
+EAPI=6
 
-inherit common-lisp-3 cvs
+inherit common-lisp-3 git-r3
 
-DESCRIPTION="Cells is a Common Lisp library providing a data flow extension to CLOS."
-HOMEPAGE="http://common-lisp.net/project/cells/
-	http://www.tilton-technology.com/cells_top.html"
+DESCRIPTION="A Common Lisp implementation of the dataflow programming paradigm"
+HOMEPAGE="https://github.com/kennytilton/cells"
 SRC_URI=""
 
-LICENSE="BSD"
+EGIT_REPO_URI="https://github.com/kennytilton/cells.git"
+
+LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS=""
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
+IUSE="test"
 
 DEPEND=""
+RDEPEND="${DEPEND}
+	dev-lisp/utils-kt
+"
 
-S="${WORKDIR}/${ECVS_MODULE}"
-
-src_install() {
-	cd "${S}"
-
-	common-lisp-install utils-kt/*.{asd,lisp} \
-	                    *.{asd,lisp} \
-	                    ${PN}-test/*.lisp
-
-	common-lisp-symlink-asdf utils-kt/utils-kt \
-	                         ${PN}
+src_prepare() {
+	eapply_user
+	use test || rm -rf ${PN}-test.asd {test,test-cc,test-ephemeral,test-cycle,test-propagation,test-synapse}.lisp cells-test
 }
