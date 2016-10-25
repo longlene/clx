@@ -22,3 +22,21 @@ ruby_add_rdepend ">=dev-ruby/rake-0"
 ruby_add_rdepend ">=dev-ruby/rake-compiler-0"
 ruby_add_rdepend ">=dev-ruby/minitest-0"
 
+each_ruby_prepare() {
+	sed -e '/EXT_BASE =/{s,#{abs}/../ext/cppjieba/,/usr/share/jieba_rb/,}' -i lib/jieba_rb.rb
+}
+
+each_ruby_configure() {
+	${RUBY} -C ext/jieba extconf.rb
+}
+
+each_ruby_compile() {
+	emake -C ext/jieba V=1 CFLAGS="${CFLAGS} -fPIC" archflag="${LDFLAGS}"
+	cp ext/jieba/*$(get_modname) lib/
+}
+
+all_ruby_install() {
+	all_fakegem_install
+	insinto /usr/share/jieba_rb/dict
+	doins ext/cppjieba/dict/*.utf8
+}
