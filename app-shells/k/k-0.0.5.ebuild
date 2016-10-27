@@ -4,17 +4,13 @@
 
 EAPI=5
 
-inherit git-2
-
 DESCRIPTION="k is the new l"
 HOMEPAGE="https://github.com/supercrabtree/k"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/supercrabtree/k.git"
+SRC_URI="https://github.com/supercrabtree/k/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="app-shells/zsh"
