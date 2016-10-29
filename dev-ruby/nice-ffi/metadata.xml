@@ -6,6 +6,7 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A Like/Dislike recommendation engine for Ruby apps using Redis
+Nice-FFI is a layer on top of Ruby-FFI (and compatible FFI systems)
+with features to ease development of FFI-based libraries
 		</longdescription>
 	</pkgmetadata>

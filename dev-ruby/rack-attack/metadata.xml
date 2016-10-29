@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A Like/Dislike recommendation engine for Ruby apps using Redis
+A rack middleware for throttling and blocking abusive requests
 		</longdescription>
 	</pkgmetadata>

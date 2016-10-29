@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A Like/Dislike recommendation engine for Ruby apps using Redis
+Guard::LiveReload automatically reloads your browser when 'view' files are modified
 		</longdescription>
 	</pkgmetadata>

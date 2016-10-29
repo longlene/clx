@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A Like/Dislike recommendation engine for Ruby apps using Redis
+Pong is Ruby app that runs ping in the background on several hosts at once, and decorates the results, tracking statistics in realtime, refreshing the screen every 5 seconds
 		</longdescription>
 	</pkgmetadata>

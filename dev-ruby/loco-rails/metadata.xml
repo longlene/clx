@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A Like/Dislike recommendation engine for Ruby apps using Redis
+Rails is awesome, but modern web needs Loco-motive
 		</longdescription>
 	</pkgmetadata>
