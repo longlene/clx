@@ -4,13 +4,11 @@
 
 EAPI=5
 
-inherit git-2 lua
+inherit lua
 
 DESCRIPTION="A WebSocket implementation for Lua"
 HOMEPAGE="https://github.com/mbalmer/luawebsocket"
-#SRC_URI="https://github.com/mbalmer/luawebsocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
-
-EGIT_REPO_URI="https://github.com/mbalmer/luawebsocket.git"
+SRC_URI="https://github.com/arcapos/luawebsocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
