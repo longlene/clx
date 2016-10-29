@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-EventMachine Proxy DSL
+Culpa is a framework following MEA principles
 		</longdescription>
 	</pkgmetadata>

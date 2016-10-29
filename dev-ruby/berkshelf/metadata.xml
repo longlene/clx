@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-EventMachine Proxy DSL
+Manages a Cookbook's, or an Application's, Cookbook dependencies
 		</longdescription>
 	</pkgmetadata>

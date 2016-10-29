@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-EventMachine Proxy DSL
+It provides a single-method interface that receives a block and returns well-structured configuration values
 		</longdescription>
 	</pkgmetadata>

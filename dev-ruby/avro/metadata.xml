@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-EventMachine Proxy DSL
+Avro is a data serialization and RPC format
 		</longdescription>
 	</pkgmetadata>

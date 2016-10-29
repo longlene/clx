@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-EventMachine Proxy DSL
+EM Midori is an EventMachine-based Web Framework written in pure Ruby, providing high performance and proper abstraction
 		</longdescription>
 	</pkgmetadata>

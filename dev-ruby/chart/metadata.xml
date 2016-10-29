@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-EventMachine Proxy DSL
+Add beautiful and reusable charts with one line of ruby ChartJS, NVD3, Google Chart and Highchart
 		</longdescription>
 	</pkgmetadata>
