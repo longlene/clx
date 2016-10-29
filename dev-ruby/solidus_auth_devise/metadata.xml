@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Shrine is a toolkit for file attachments in Ruby applications
+Provides authentication and authorization services for use with Solidus by using Devise and CanCan
 		</longdescription>
 	</pkgmetadata>

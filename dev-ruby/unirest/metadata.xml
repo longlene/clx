@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Shrine is a toolkit for file attachments in Ruby applications
+Unirest is a set of lightweight HTTP libraries available in multiple languages
 		</longdescription>
 	</pkgmetadata>

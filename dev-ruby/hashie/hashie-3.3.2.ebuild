@@ -13,7 +13,7 @@ DESCRIPTION="Hashie is a collection of classes and mixins that make hashes more 
 HOMEPAGE="https://github.com/intridea/hashie"
 
 LICENSE="MIT"
-SLOT="0"
+SLOT="3"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 

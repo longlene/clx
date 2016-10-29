@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Shrine is a toolkit for file attachments in Ruby applications
+Solidus extension for communicating with Signifyd to check orders for fraud
 		</longdescription>
 	</pkgmetadata>

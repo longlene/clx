@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Shrine is a toolkit for file attachments in Ruby applications
+A c++ table class wrapper generator for sqlpp11 (c++11)
 		</longdescription>
 	</pkgmetadata>

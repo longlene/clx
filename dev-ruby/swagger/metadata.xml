@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Shrine is a toolkit for file attachments in Ruby applications
+Duck punch Resque to use active record for backround jobs instead of redis
 		</longdescription>
 	</pkgmetadata>
