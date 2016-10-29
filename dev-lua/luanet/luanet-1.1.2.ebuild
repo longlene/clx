@@ -4,13 +4,11 @@
 
 EAPI=5
 
-inherit git-2 lua
+inherit lua
 
 DESCRIPTION="Network access for Lua"
 HOMEPAGE="https://github.com/mbalmer/luanet"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/mbalmer/luanet.git"
+SRC_URI="https://github.com/arcapos/luanet/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
