@@ -29,5 +29,7 @@ src_compile() {
 src_install() {
 	dolib.so solib/libcolib.so
 	use static-libs && dolib.a libcolib.a
+	insinto /usr/include
+	doins co_routine.h co_routine_inner.h coctx.h
 	dodoc README.md
 }
