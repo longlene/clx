@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A performance dashboard for Postgres
+A nice shortcut for group count queries
 		</longdescription>
 	</pkgmetadata>

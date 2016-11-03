@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A performance dashboard for Postgres
+Declarative API for specifying features, switchable in declaration, database and cookies
 		</longdescription>
 	</pkgmetadata>

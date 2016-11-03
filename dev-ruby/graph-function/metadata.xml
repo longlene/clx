@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A performance dashboard for Postgres
+Using gnuplot and Ruby's benchmarking abilities, see the asymptotic behavior of your functions graphed
 		</longdescription>
 	</pkgmetadata>

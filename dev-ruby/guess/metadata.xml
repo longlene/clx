@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A performance dashboard for Postgres
+Statistical gender detection for Ruby
 		</longdescription>
 	</pkgmetadata>

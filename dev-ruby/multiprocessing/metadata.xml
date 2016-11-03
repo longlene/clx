@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A performance dashboard for Postgres
+Classes for inter-process synchronization/communication like thread library in ruby standard library
 		</longdescription>
 	</pkgmetadata>
