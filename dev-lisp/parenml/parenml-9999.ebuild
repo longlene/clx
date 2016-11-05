@@ -6,11 +6,11 @@ EAPI=6
 
 inherit common-lisp-3 git-r3
 
-DESCRIPTION="A markup language with TeX syntax"
-HOMEPAGE="https://github.com/CommonDoc/vertex"
+DESCRIPTION="An S-expression markup language"
+HOMEPAGE="https://github.com/CommonDoc/parenml"
 SRC_URI=""
 
-EGIT_REPO_URI="https://github.com/CommonDoc/vertex.git"
+EGIT_REPO_URI="https://github.com/CommonDoc/parenml.git"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,9 +19,9 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/common-doc
+	dev-lisp/plump
 	dev-lisp/common-doc-plump
-	dev-lisp/plump-tex
+	dev-lisp/esrap
 	test? ( dev-lisp/fiveam )
 "
 

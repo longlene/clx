@@ -6,11 +6,11 @@ EAPI=6
 
 inherit common-lisp-3 git-r3
 
-DESCRIPTION="A markup language with TeX syntax"
-HOMEPAGE="https://github.com/CommonDoc/vertex"
+DESCRIPTION="Convert Plump documents to CommonDoc ones, and vice versa"
+HOMEPAGE="https://github.com/CommonDoc/common-doc-plump"
 SRC_URI=""
 
-EGIT_REPO_URI="https://github.com/CommonDoc/vertex.git"
+EGIT_REPO_URI="https://github.com/CommonDoc/common-doc-plump.git"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,8 +20,9 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/common-doc
-	dev-lisp/common-doc-plump
-	dev-lisp/plump-tex
+	dev-lisp/plump
+	dev-lisp/anaphora
+	dev-lisp/cl-markup
 	test? ( dev-lisp/fiveam )
 "
 
@@ -34,3 +35,4 @@ src_install() {
 	common-lisp-3_src_install
 	common-lisp-install-sources -t all README.md
 }
+

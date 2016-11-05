@@ -19,7 +19,7 @@ IUSE="emacs test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/common-doc
+	dev-lisp/common-doc-plump
 	dev-lisp/plum-sexp
 	dev-lisp/esrap
 	test? ( dev-lisp/fiveam )

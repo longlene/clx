@@ -6,11 +6,11 @@ EAPI=6
 
 inherit common-lisp-3 git-r3
 
-DESCRIPTION="A markup language with TeX syntax"
-HOMEPAGE="https://github.com/CommonDoc/vertex"
+DESCRIPTION="Insert special characters into CommonDoc documents"
+HOMEPAGE="https://github.com/CommonDoc/thorn"
 SRC_URI=""
 
-EGIT_REPO_URI="https://github.com/CommonDoc/vertex.git"
+EGIT_REPO_URI="https://github.com/CommonDoc/thorn.git"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,8 +20,6 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/common-doc
-	dev-lisp/common-doc-plump
-	dev-lisp/plump-tex
 	test? ( dev-lisp/fiveam )
 "
 
