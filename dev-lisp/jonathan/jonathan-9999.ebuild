@@ -15,20 +15,27 @@ EGIT_REPO_URI="https://github.com/Rudolph-Miller/jonathan.git"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/cl-syntax
-dev-lisp/fast-io
-dev-lisp/trivial-types
-dev-lisp/babel
-dev-lisp/proc-parse
-dev-lisp/cl-ppcre
-dev-lisp/cl-annot
+	dev-lisp/cl-syntax
+	dev-lisp/fast-io
+	dev-lisp/trivial-types
+	dev-lisp/babel
+	dev-lisp/proc-parse
+	dev-lisp/cl-ppcre
+	dev-lisp/cl-annot
+	test? ( dev-lisp/prove )
 "
+
+src_prepare() {
+	eapply_user
+	use test || rm -rf ${PN}-test.asd t
+}
 
 src_install() {
 	common-lisp-3_src_install
 	common-lisp-install-sources -t all README.md
 }
+

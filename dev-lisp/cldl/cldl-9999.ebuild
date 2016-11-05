@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Deep Learning in Common Lisp"
 HOMEPAGE="https://github.com/Rudolph-Miller/cldl"
@@ -22,9 +22,11 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-syntax
 	dev-lisp/alexandria
 	dev-lisp/closer-mop
+	test? ( dev-lisp/prove dev-lisp/split-sequence )
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -r t ${PN}-test.asd
 }
 
