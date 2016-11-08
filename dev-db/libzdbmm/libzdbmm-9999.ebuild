@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit autotools git-r3
+inherit cmake-utils git-r3
 
 DESCRIPTION="C++ binding for libzdb"
 HOMEPAGE="https://github.com/mverbert/libzdbmm"
 SRC_URI=""
 
-EGIT_REPO_URI="https://github.com/mverbert/libzdbmm.git"
+EGIT_REPO_URI="https://github.com/longlene/libzdbmm.git"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -20,7 +20,3 @@ IUSE=""
 DEPEND="dev-libs/libzdb"
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	eapply_user
-	eautoreconf
-}
