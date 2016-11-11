@@ -4,25 +4,24 @@
 
 EAPI=6
 
-inherit autotools
-
-MY_PV=${PV/./-}
+inherit git-r3
 
 DESCRIPTION="libzdb c++ 11 wrapper"
 HOMEPAGE="https://github.com/abc100m/libzdbcpp"
-SRC_URI="https://github.com/abc100m/libzdbcpp/archive/release-${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI=""
+
+EGIT_REPO_URI="https://github.com/abc100m/libzdbcpp.git"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-DEPEND="!dev-db/libzdb"
+DEPEND="dev-db/libzdb"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}"/${PN}-release-${MY_PV}
-
-src_prepare() {
-	eapply_user
-	eautoreconf
+src_install() {
+	insinto /usr/include
+	doins src/zdbcpp.h
+	dodoc README.md
 }
