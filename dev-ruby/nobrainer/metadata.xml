@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-a class factory and dsl for generating command line programs real quick
+ORM for RethinkDB
 		</longdescription>
 	</pkgmetadata>
