@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-This gem adds String#display_size to get the display size of a string using EastAsianWidth
+[Unicode 9
 		</longdescription>
 	</pkgmetadata>
