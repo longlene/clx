@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Blazing fast application deployment tool
+Posgra is a tool to manage PostgreSQL roles/permissions
 		</longdescription>
 	</pkgmetadata>
