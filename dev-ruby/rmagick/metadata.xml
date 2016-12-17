@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Collection of useful Sinatra extensions
+RMagick is an interface between Ruby and ImageMagick
 		</longdescription>
 	</pkgmetadata>

@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Collection of useful Sinatra extensions
+A javascript library for working with dialogs
 		</longdescription>
 	</pkgmetadata>

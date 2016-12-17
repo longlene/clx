@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Collection of useful Sinatra extensions
+A set of useful utilties for Rails applications
 		</longdescription>
 	</pkgmetadata>

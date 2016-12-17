@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Collection of useful Sinatra extensions
+A full Rails engine providing e-commerce functionality for any Rails 4 application
 		</longdescription>
 	</pkgmetadata>

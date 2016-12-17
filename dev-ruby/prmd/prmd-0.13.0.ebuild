@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/heroku/prmd"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~arm"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/erubis-2.7"

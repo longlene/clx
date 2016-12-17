@@ -6,6 +6,8 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Collection of useful Sinatra extensions
+
+    YARD-Activerecord is a YARD extension that handles and interprets methods
+    used when developing applications with ActiveRecord
 		</longdescription>
 	</pkgmetadata>

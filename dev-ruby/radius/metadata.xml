@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Collection of useful Sinatra extensions
+Radius is a powerful tag-based template language for Ruby inspired by the template languages used in MovableType and TextPattern
 		</longdescription>
 	</pkgmetadata>

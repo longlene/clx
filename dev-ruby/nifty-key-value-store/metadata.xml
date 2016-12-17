@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Collection of useful Sinatra extensions
+A key value store controller for Rails models
 		</longdescription>
 	</pkgmetadata>
