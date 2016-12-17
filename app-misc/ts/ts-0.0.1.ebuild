@@ -8,13 +8,13 @@ inherit golang-build golang-vcs-snapshot
 
 EGO_PN="github.com/longlene/ts"
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="Tiny Translator in Console"
+HOMEPAGE="https://github.com/longlene/ts"
 SRC_URI="https://github.com/longlene/ts/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="as-is"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
