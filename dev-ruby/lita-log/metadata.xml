@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-The easiest way to automate beta deployments and releases for your iOS and Android apps
+A Lita handler that logs arbitrary messages to Lita's Logger object
 		</longdescription>
 	</pkgmetadata>

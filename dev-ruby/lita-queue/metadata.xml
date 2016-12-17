@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-The easiest way to automate beta deployments and releases for your iOS and Android apps
+Lita plugin to manage channel specific queue
 		</longdescription>
 	</pkgmetadata>

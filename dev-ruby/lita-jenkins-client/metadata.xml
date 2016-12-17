@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-The easiest way to automate beta deployments and releases for your iOS and Android apps
+Lita jenkins handler that use the jenkins_api_client gem
 		</longdescription>
 	</pkgmetadata>
