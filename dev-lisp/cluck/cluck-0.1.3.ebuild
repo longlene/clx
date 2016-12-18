@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="A Common Lisp library to help automate clock and divisor selections for microcontrollers."
 HOMEPAGE="http://uffi.b9.com/"
-SRC_URI="http://files.b9.com/cluck/${P}.zip"
+SRC_URI="http://files.kpe.io/cluck/${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"

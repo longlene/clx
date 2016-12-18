@@ -8,7 +8,7 @@ inherit common-lisp-3
 DESCRIPTION="Hyperobject is a Common Lisp library for representing objects."
 HOMEPAGE="http://hyperobject.b9.com/
 		http://www.cliki.net/hyperobject"
-SRC_URI="http://files.b9.com/${PN}/${P}.tar.gz"
+SRC_URI="http://files.kpe.io/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

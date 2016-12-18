@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="A Common Lisp utility for command-line processing."
 HOMEPAGE="http://uffi.b9.com/"
-SRC_URI="http://files.b9.com/${PN}/${P}.zip"
+SRC_URI="http://files.kpe.io/${PN}/${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"
