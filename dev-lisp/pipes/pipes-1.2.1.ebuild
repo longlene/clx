@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp library for pipes or streams."
 HOMEPAGE="http://uffi.b9.com/"
-SRC_URI="http://files.b9.com/${PN}/${P}.zip"
+SRC_URI="http://files.kpe.io/${PN}/${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"

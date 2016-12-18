@@ -5,8 +5,8 @@ EAPI=4
 inherit common-lisp-3
 
 DESCRIPTION="a Common Lisp library for fetching and parsing Remote Site Summary data via HTTP"
-HOMEPAGE="http://files.b9.com/cl-rss/"
-SRC_URI="http://files.b9.com/cl-rss/cl-rss-${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="http://files.kpe.io/cl-rss/"
+SRC_URI="http://files.kpe.io/cl-rss/cl-rss-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

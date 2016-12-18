@@ -7,7 +7,7 @@ inherit common-lisp-3 multilib
 
 DESCRIPTION="Portable FFI library for Common Lisp."
 HOMEPAGE="http://uffi.b9.com/"
-SRC_URI="http://files.b9.com/uffi/${P}.tar.gz"
+SRC_URI="http://files.kpe.io/uffi/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
