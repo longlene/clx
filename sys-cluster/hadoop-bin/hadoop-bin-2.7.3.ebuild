@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -17,13 +17,14 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror binchecks"
-IUSE=""
+IUSE="doc"
 
 DEPEND=""
 RDEPEND="
 	>=virtual/jre-1.6
 	net-misc/openssh
-	net-misc/rsync"
+	net-misc/rsync
+"
 
 S=${WORKDIR}/${MY_P}
 INSTALL_DIR=/opt/hadoop
@@ -31,13 +32,19 @@ INSTALL_DIR=/opt/hadoop
 pkg_setup(){
 	enewgroup hadoop
 	enewuser hdfs -1 /bin/bash /var/lib/hadoop/hdfs hadoop
+	enewuser yarn -1 /bin/bash /var/lib/hadoop/yarn hadoop
 	enewuser mapred -1 /bin/bash /var/lib/hadoop/mapred hadoop
 }
 
-src_install() {
+src_prepare() {
+	eapply_user
+	use doc || rm -rf share/doc
+
 	# remove the useless cmd bat file
 	find "${S}" -name '*.cmd' -exec rm {} \;
+}
 
+src_install() {
 	# The hadoop-env.sh file needs JAVA_HOME set explicitly
 	JAVA_HOME=$(java-config -g JAVA_HOME)
 	sed -e "2iexport JAVA_HOME=${JAVA_HOME}" -i etc/hadoop/hadoop-env.sh || die "sed failed"
