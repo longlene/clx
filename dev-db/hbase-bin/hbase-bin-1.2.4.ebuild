@@ -1,38 +1,44 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI="2"
+EAPI="6"
 
 inherit eutils java-utils-2
 
-MY_PN="${PN/apache-/}"
-MY_P="${MY_PN}-${PV}"
+MY_PN="hbase"
+MY_P=${MY_PN}-${PV}
 
-DESCRIPTION="HBase is the Hadoop database."
-HOMEPAGE="http://hadoop.apache.org/"
-SRC_URI="mirror://apache/hadoop/${MY_PN}/${MY_P}/${MY_P}.tar.gz"
+DESCRIPTION="HBase is the Hadoop database"
+HOMEPAGE="http://hbase.apache.org/"
+SRC_URI="mirror://apache/hbase/${PV}/${MY_P}-bin.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="mirror binchecks"
-IUSE=""
+IUSE="doc"
 
 DEPEND=""
-RDEPEND=">=virtual/jre-1.6
-	dev-lang/ruby
-	sys-cluster/apache-hadoop-common
-	sys-cluster/apache-zookeeper"
+RDEPEND="
+	sys-cluster/hadoop-bin
+"
 
-S="${WORKDIR}/${MY_P}"
 INSTALL_DIR=/opt/"${PN}"
 DATA_DIR=/var/db/"${PN}"
 export CONFIG_PROTECT="${CONFIG_PROTECT} ${INSTALL_DIR}/conf"
 
+src_prepare() {
+	eapply_user
+	use doc || rm -rf docs
+	find "${S}" -name '*.cmd' -exec rm {} \;
+}
+
 src_install() {
 	# The hadoop-env.sh file needs JAVA_HOME set explicitly
-	sed -i -e "2iexport JAVA_HOME=${JAVA_HOME}" conf/hbase-env.sh || die "sed failed"
+	sed -e "2iexport JAVA_HOME=${JAVA_HOME}" \
+		-e "3iexport HBASE_LOG_DIR=/var/log/hadoop" \
+		-i conf/hbase-env.sh
 
 	dodir "${INSTALL_DIR}"
 	mv "${S}"/* "${D}${INSTALL_DIR}" || die "install failed"
@@ -42,7 +48,7 @@ src_install() {
 		PATH=${INSTALL_DIR}/bin
 		CONFIG_PROTECT=${INSTALL_DIR}/conf
 	EOF
-	doenvd 99"${PN}" || die "doenvd failed"
+	doenvd 99"${PN}"
 
 	cat > "${PN}" <<-EOF
 		#!/sbin/runscript
@@ -55,9 +61,9 @@ src_install() {
 			${INSTALL_DIR}/bin/stop-hbase.sh > /dev/null
 				}
 	EOF
-	doinitd "${PN}" || die "doinitd failed"
+	doinitd "${PN}"
 }
 
 pkg_postinst() {
-	elog "For info on configuration see http://hadoop.apache.org/${MY_PN}/docs/r${PV}"
+	elog "For info on configuration see http://hadoop.apache.org/${PN}/docs/r${PV}"
 }
