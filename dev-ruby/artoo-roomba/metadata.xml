@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Rice is a C++ interface to Ruby's C API
+Artoo adaptor and driver for Roomba robot
 		</longdescription>
 	</pkgmetadata>
