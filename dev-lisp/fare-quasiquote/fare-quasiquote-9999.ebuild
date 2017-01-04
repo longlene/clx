@@ -8,7 +8,7 @@ DESCRIPTION="A portable quasiquote implementation that plays well with pattern-m
 HOMEPAGE="http://cliki.net/fare-quasiquote"
 SRC_URI=""
 
-EGIT_REPO_URI="git://common-lisp.net/users/frideau/fare-quasiquote.git"
+EGIT_REPO_URI="https://github.com/fare/fare-quasiquote.git"
 
 LICENSE="as-is"
 SLOT="0"

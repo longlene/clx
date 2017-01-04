@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="RFC 3986 percent-encoding library"
 HOMEPAGE="https://github.com/llibra/percent-encoding"
@@ -17,6 +17,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/anaphora
-dev-lisp/babel"
+	dev-lisp/anaphora
+	dev-lisp/babel
+"
 

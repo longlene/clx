@@ -1,8 +1,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="coleslaw: A Flexible Lisp Blogware"
 HOMEPAGE="https://github.com/redline6561/coleslaw"
@@ -17,12 +17,15 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-lisp/cl-closure-template
 	dev-lisp/3bmd
 	dev-lisp/alexandria
 	dev-lisp/local-time
 	dev-lisp/inferior-shell
 	dev-lisp/cl-fad
 	dev-lisp/cl-ppcre
+	dev-lisp/closer-mop
+	dev-lisp/cl-unicode
 "
 
 src_prepare() {
