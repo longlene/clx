@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=4
+EAPI=6
 
 inherit common-lisp-3
 
@@ -20,12 +20,7 @@ RDEPEND="dev-lisp/flexi-streams"
 PDEPEND="dev-lisp/cl-ppcre-unicode"
 
 src_prepare() {
-	rm -rf cl-ppcre-unicode test/unicode*
+	eapply_user
+	rm -rf cl-ppcre-unicode test/unicode* cl-ppcre-unicode.asd
 }
 
-src_install() {
-	common-lisp-install *.lisp ${PN}.asd test/
-	common-lisp-symlink-asdf
-	dodoc CHANGELOG
-	dohtml doc/index.html
-}

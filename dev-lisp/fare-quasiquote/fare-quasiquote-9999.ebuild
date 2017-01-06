@@ -18,3 +18,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all version.text
+}

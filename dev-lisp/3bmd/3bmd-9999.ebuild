@@ -20,5 +20,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/esrap
 	dev-lisp/split-sequence
+	dev-lisp/colorize
+	dev-lisp/uiop
 "
 
