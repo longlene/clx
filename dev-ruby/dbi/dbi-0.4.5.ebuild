@@ -17,5 +17,5 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
-ruby_add_rdepend "=dev-ruby/deprecated-2.0.1"
+ruby_add_rdepend ">=dev-ruby/deprecated-2.0.1"
 
