@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-
+Job queue system to run job with Docker
 		</longdescription>
 	</pkgmetadata>

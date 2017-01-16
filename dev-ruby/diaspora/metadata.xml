@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-
+Experimental gem for setting up and managing a Diaspora pod
 		</longdescription>
 	</pkgmetadata>

@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-
+Analyze code for potentially uncalled / dead methods, now with auto-removal
 		</longdescription>
 	</pkgmetadata>
