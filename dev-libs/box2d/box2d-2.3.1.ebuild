@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI="2"
+EAPI="6"
 
 MY_PN=Box2D
 
@@ -14,18 +14,30 @@ SRC_URI="https://github.com/erincatto/Box2D/archive/v${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
+IUSE="doc example static-libs"
 
-RDEPEND="media-libs/freeglut
-	app-arch/unzip"
+RDEPEND="
+	example? (
+		virtual/opengl 
+		media-libs/freeglut
+		media-libs/glew
+		media-libs/glfw
+	)
+"
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}"/${MY_PN}-${PV}/${MY_PN}
+S="${WORKDIR}"/${MY_PN}-${PV}
+CMAKE_USE_DIR="${S}"/${MY_PN}
 
 src_configure()
 {
-	mycmakeargs="${mycmakeargs} -DBOX2D_BUILD_SHARED=ON"
+	local mycmakeargs=(
+	-DBOX2D_INSTALL_DOC=$(usex doc)
+	-DBOX2D_BUILD_SHARED=$(usex !static-libs)
+	-DBOX2D_BUILD_STATIC=$(usex static-libs)
+	-DBOX2D_BUILD_EXAMPLES=$(usex example)
+	)
 
 	cmake-utils_src_configure
 }
