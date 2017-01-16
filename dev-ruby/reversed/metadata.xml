@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Reek is a tool that examines Ruby classes, modules and methods and reports any code smells it finds
+
 		</longdescription>
 	</pkgmetadata>
