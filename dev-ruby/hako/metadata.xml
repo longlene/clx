@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A persistence framework with entities and repositories
+Deploy Docker container
 		</longdescription>
 	</pkgmetadata>

@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A persistence framework with entities and repositories
+Fast HTML escape utility
 		</longdescription>
 	</pkgmetadata>

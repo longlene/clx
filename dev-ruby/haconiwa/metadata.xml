@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A persistence framework with entities and repositories
+Ruby on Container / helper tools with DSL for your handmade linux containers
 		</longdescription>
 	</pkgmetadata>

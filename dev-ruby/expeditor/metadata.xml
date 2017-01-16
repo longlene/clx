@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A persistence framework with entities and repositories
+Expeditor provides asynchronous execution and fault tolerance for microservices
 		</longdescription>
 	</pkgmetadata>
