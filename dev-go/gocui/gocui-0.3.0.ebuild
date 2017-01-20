@@ -18,6 +18,6 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND="
-	dev-libs/termbox-go
+	dev-go/termbox-go
 "
 RDEPEND="${DEPEND}"
