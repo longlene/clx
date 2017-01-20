@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND="
-	dev-go/runewidth
+	dev-go/go-runewidth
 "
 RDEPEND="${DEPEND}"
 
