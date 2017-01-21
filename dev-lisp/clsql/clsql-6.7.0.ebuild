@@ -14,7 +14,7 @@ SRC_URI="http://files.kpe.io/clsql/${P}.tar.gz"
 LICENSE="LLGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE="doc examples mysql odbc oracle postgres sqlite sqlite3"
+IUSE="doc examples mysql odbc oracle postgres sqlite"
 
 RDEPEND="!dev-lisp/cl-sql
 	dev-lisp/md5
@@ -23,8 +23,7 @@ RDEPEND="!dev-lisp/cl-sql
 	odbc? ( dev-db/unixODBC )
 	oracle? ( dev-db/oracle-instantclient-basic )
 	postgres? ( dev-db/postgresql-base )
-	sqlite? ( dev-db/sqlite:0 )
-	sqlite3? ( dev-db/sqlite:3 )"
+	sqlite? ( dev-db/sqlite:3 )"
 
 src_prepare() {
 	sed -i "s,/usr/lib,/usr/$(get_libdir),g" "${S}"/${PN}-{mysql,uffi}.asd
@@ -78,9 +77,10 @@ src_install() {
 	exeinto /usr/$(get_libdir)/${PN} ; doexe uffi/${PN}_uffi.so
 
 	use postgres && install_clsql_postgresql
-	for dbtype in mysql odbc oracle sqlite sqlite3; do
+	for dbtype in mysql odbc oracle ; do
 		use ${dbtype} && install_clsql_pkg ${dbtype}
 	done
+	use sqlite && install_clsql_pkg sqlite3
 
 	# TODO: figure out the dependencies
 	install_clsql_pkg aodbc
