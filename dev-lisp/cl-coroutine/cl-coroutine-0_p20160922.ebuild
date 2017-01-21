@@ -4,13 +4,13 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3
+
+EGIT_COMMIT="de098f8d5debd8b14ef6864b5bdcbbf5ddbcfd72"
 
 DESCRIPTION="cl-coroutine is a coroutine library for Common Lisp"
 HOMEPAGE="https://github.com/takagi/cl-coroutine"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/takagi/cl-coroutine.git"
+SRC_URI="https://github.com/takagi/cl-coroutine/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

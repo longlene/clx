@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3
+
+EGIT_COMMIT="3d6ad148c96a93e508d5d14638b125de331d3feb"
 
 DESCRIPTION="A noise library in Common Lisp"
 HOMEPAGE="https://github.com/aerique/black-tie"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/aerique/black-tie.git"
+SRC_URI="https://github.com/aerique/black-tie/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
