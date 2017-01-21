@@ -4,13 +4,13 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3
+
+EGIT_COMMIT="32f30e2793ea1d31e3d43524ab1e09169cf4f911"
 
 DESCRIPTION="Lake is a GNU make like build utility in Common Lisp"
 HOMEPAGE="https://github.com/takagi/lake"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/takagi/lake.git"
+SRC_URI="https://github.com/takagi/lake/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -23,6 +23,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-syntax
 	dev-lisp/lparallel
 	dev-lisp/split-sequence
+	test? ( dev-lisp/prove )
 "
 
 src_prepare() {

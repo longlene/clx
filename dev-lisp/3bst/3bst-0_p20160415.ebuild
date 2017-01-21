@@ -4,13 +4,13 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3
+
+EGIT_COMMIT="9599342887a7f15eb79ca5022fdc6fc738942ab7"
 
 DESCRIPTION="CL port of the terminal emulation part of st"
 HOMEPAGE="https://github.com/3b/3bst"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/3b/3bst.git"
+SRC_URI="https://github.com/3b/3bst/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

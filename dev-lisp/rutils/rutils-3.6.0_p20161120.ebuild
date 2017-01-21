@@ -2,13 +2,13 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3
+
+EGIT_COMMIT="a1117a6441fee0303f89781ebe07a95045233619"
 
 DESCRIPTION="Reasonable Utilities package for Common Lisp"
 HOMEPAGE="https://github.com/mabragor/rutils"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/vseloved/rutils.git"
+SRC_URI="https://github.com/vseloved/rutils/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
