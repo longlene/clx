@@ -2,17 +2,17 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="407b6aff367d3bf92e6b1197b66787f136c1b089"
 
 DESCRIPTION="Libuv bindings for Common Lisp"
 HOMEPAGE="https://github.com/orthecreedence/cl-libuv"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/orthecreedence/cl-libuv.git"
+SRC_URI="https://github.com/orthecreedence/cl-libuv/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""

@@ -4,13 +4,13 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="22033d69a10becf5cc9d92bb98263ebb4bbee856"
 
 DESCRIPTION="A small hash utility library for Common Lisp"
 HOMEPAGE="https://github.com/orthecreedence/cl-hash-util"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/orthecreedence/cl-hash-util.git"
+SRC_URI="https://github.com/orthecreedence/cl-hash-util/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

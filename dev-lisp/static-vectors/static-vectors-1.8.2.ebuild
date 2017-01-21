@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=5
 
 inherit common-lisp-3
 
@@ -10,15 +10,16 @@ SRC_URI="https://github.com/sionescu/static-vectors/archive/v${PV}.tar.gz -> ${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/alexandria
-dev-lisp/cffi"
+	dev-lisp/alexandria
+	dev-lisp/cffi
+"
 
 src_install() {
 	common-lisp-3_src_install
-	common-lisp-install-sources -t all version.lisp-expr
+	common-lisp-install-sources -t all version.sexp
 }

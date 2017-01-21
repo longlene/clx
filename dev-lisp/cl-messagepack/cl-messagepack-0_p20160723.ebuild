@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="fb97ec9d0e4d5ea3eef95116b7df971e48e41e76"
 
