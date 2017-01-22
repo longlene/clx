@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="8c9bc913f0d370a69f8c008cad39b9520fc0a187"
 
 DESCRIPTION="XDR serializer"
 HOMEPAGE="https://github.com/fjames86/drx"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/fjames86/drx.git"
+SRC_URI="https://github.com/fjames86/drx/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

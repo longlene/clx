@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="c134f4a652c5eafd2f909f4607c09d9a073f7fb5"
 
 DESCRIPTION="Yet another socket FFI"
 HOMEPAGE="https://github.com/fjames86/fsocket"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/fjames86/fsocket.git"
+SRC_URI="https://github.com/fjames86/fsocket/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

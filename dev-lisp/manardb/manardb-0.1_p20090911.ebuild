@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="6791f3569acd42b723ce82051cc8e2e3ee42a671"
 
 DESCRIPTION="Persistent, fast mmap'd database for Common Lisp using MOP; includes its own GC systems"
 HOMEPAGE="https://github.com/ilitirit/manardb"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/ilitirit/manardb.git"
+SRC_URI="https://github.com/ilitirit/manardb/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
@@ -24,6 +24,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/closer-mop
 	dev-lisp/cl-irregsexp
+	test? ( dev-lisp/stefil )
 "
 
 src_prepare() {

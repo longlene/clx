@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="bb075565cc00906a36c1206d9e655ee270b1c379"
 
 DESCRIPTION="Common Lisp ASN1 parser"
 HOMEPAGE="https://github.com/fjames86/asinine"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/fjames86/asinine.git"
+SRC_URI="https://github.com/fjames86/asinine/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -26,3 +26,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/babel
 	dev-lisp/nibbles
 "
+
+src_prepare() {
+	use test || rm -rf ${PN}-test.asd test{,-choice,-encdec}.lisp
+}
