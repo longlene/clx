@@ -28,7 +28,7 @@ src_configure() {
 }
 
 src_compile() {
-	make -C build -f nanovg.make
+	make -C build nanovg
 }
 
 src_install() {

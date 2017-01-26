@@ -4,17 +4,17 @@
 
 EAPI=5
 
-inherit git-2
+inherit vcs-snapshot
+
+EGIT_COMMIT="dc12d90586a8ab99da0c575aafff999666aa5d55"
 
 DESCRIPTION="Simple stupid SVG parser"
 HOMEPAGE="https://github.com/memononen/nanosvg"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/memononen/nanosvg.git"
+SRC_URI="https://github.com/memononen/nanosvg/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
@@ -22,6 +22,6 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	insinto /usr/include
-	doins src/nanosvg.h src/nanosvgrast.h
+	doins src/nanosvg.h
 	dodoc README.md
 }
