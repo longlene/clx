@@ -12,13 +12,12 @@ SRC_URI="https://github.com/mrkkrp/unix-opts/archive/${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_install() {
-	common-lisp-install-asdf unix-opts.asd
-	common-lisp-install-sources unix-opts.lisp
+src_prepare() {
+	use test || rm -r ${PN}-tests.asd tests.lisp
 }
