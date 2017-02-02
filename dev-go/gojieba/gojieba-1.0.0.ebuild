@@ -15,7 +15,13 @@ SRC_URI="https://github.com/yanyiwu/gojieba/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="bleve"
 
-DEPEND=""
+DEPEND="
+	bleve? ( dev-go/bleve )
+"
 RDEPEND="${DEPEND}"
+
+src_configure() {
+	use bleve && EGO_PN+="/..."
+}
