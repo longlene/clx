@@ -7,11 +7,10 @@ EAPI=6
 inherit golang-build golang-vcs-snapshot
 
 EGO_PN="github.com/nuveo/prest"
-EGIT_COMMIT="6e51426bac05042232f955658dfc1ae7f5b8647a"
 
 DESCRIPTION="Serve a RESTful API from any PostgreSQL database"
 HOMEPAGE="http://postgres.rest"
-SRC_URI="https://${EGO_PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/nuveo/prest/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
