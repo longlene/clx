@@ -10,7 +10,7 @@ SRC_URI="http://common-lisp.net/project/mkcl/releases/mkcl-${PV}.tar.gz -> ${P}.
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+#KEYWORDS="~x86 ~amd64"
 IUSE="debug gengc threads +unicode"
 
 DEPEND=""

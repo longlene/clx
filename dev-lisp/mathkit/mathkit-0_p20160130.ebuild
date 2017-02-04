@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="fd884f94b36ef5e9bc19459ad0b3cda6303d2a2a"
 
 DESCRIPTION="Pure math functions useful for games, 3D, and GL in general"
 HOMEPAGE="https://github.com/lispgames/mathkit"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/lispgames/mathkit.git"
+SRC_URI="https://github.com/lispgames/mathkit/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
