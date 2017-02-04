@@ -18,7 +18,6 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-autowrap
-	dev-lisp/cl-plus-c
 "
 
 src_install() {
