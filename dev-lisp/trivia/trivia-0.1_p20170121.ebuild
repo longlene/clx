@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="2705c065017cb96a4a020cac236e523ef7da21e0"
 
 DESCRIPTION="Pattern Matcher Compatible with Optima"
 HOMEPAGE="https://github.com/guicho271828/trivia"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/guicho271828/trivia.git"
+SRC_URI="https://github.com/guicho271828/trivia/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
@@ -22,12 +22,13 @@ RDEPEND="${DEPEND}
 	dev-lisp/lisp-namespaces
 	dev-lisp/closer-mop
 	dev-lisp/alexandria
+	dev-lisp/fare-quasiquote
 	test? ( dev-lisp/fiveam )
 "
 
 src_prepare() {
 	eapply_user
-	use test || rm -rf test *.test.asd
+	use test || rm -rf test *.test.asd bench ${PN}.benchmark.asd
 }
 
 src_install() {

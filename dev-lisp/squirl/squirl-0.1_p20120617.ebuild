@@ -2,22 +2,22 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="d5ab125b389008696a66f5a0d1bbb7449584db90"
 
 DESCRIPTION="Common Lisp port of the Chipmunk 2d physics library"
 HOMEPAGE="https://github.com/sykopomp/squirl"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/sykopomp/squirl.git"
+SRC_URI="https://github.com/sykopomp/squirl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-games/chipmunk
-dev-lisp/cl-opengl
-dev-lisp/lispbuilder-sdl"
+	dev-games/chipmunk
+	dev-lisp/cl-opengl
+"
 

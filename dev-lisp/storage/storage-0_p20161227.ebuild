@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="c5b7f2aa58b044d77b4abaacf66dc234f1261089"
 
 DESCRIPTION="CL persistent object storage"
 HOMEPAGE="https://github.com/stassats/storage"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/stassats/storage.git"
+SRC_URI="https://github.com/stassats/storage/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

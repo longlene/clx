@@ -4,13 +4,13 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="0b4b98a45863b0f4437a8592c5630faa2d6437c5"
 
 DESCRIPTION="A Common Lisp parallelization library"
 HOMEPAGE="http://marijnhaverbeke.nl/pcall"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/marijnh/pcall.git"
+SRC_URI="https://github.com/marijnh/pcall/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
@@ -20,4 +20,5 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
+	dev-lisp/fiveam
 "

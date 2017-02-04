@@ -4,13 +4,13 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="a38a59f3bfeaf56615229963d0fc64e780053a82"
 
 DESCRIPTION="S-expression to OpenCL C"
 HOMEPAGE="https://github.com/gos-k/oclcl"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/gos-k/oclcl.git"
+SRC_URI="https://github.com/gos-k/oclcl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
@@ -32,7 +32,7 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	use example || rm -r examples ${PN}-examples.asd
-	use test || rm -r tests ${PN}-test.asd
+	use test || rm -r t ${PN}-test.asd
 }
 
 src_install() {
