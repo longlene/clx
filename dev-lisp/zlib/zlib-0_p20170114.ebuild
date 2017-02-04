@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="410e5579c31d6fbc4e6df794265d506d92ad356b"
 
 DESCRIPTION="ZLIB library"
 HOMEPAGE="https://github.com/sharplispers/zlib"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/sharplispers/zlib.git"
+SRC_URI="https://github.com/sharplispers/zlib/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
