@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
 
-DESCRIPTION="Serve REST APIs from Common Lisp"
+EGIT_COMMIT="7c60a26eda6b899d385349be27722ee32c1db456"
+
+DESCRIPTION="Common Lisp REST Server"
 HOMEPAGE="https://github.com/mmontone/cl-rest-server"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/mmontone/cl-rest-server.git"
+SRC_URI="https://github.com/mmontone/cl-rest-server/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
