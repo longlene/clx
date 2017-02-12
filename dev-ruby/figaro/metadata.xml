@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Decorators on top of your ORM layer
+Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
 		</longdescription>
 	</pkgmetadata>

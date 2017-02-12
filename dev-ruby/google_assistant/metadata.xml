@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Decorators on top of your ORM layer
+This SDK provides the framework for creating Google Assistant actions in Ruby
 		</longdescription>
 	</pkgmetadata>

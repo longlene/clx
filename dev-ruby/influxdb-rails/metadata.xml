@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Decorators on top of your ORM layer
+This gem automatically instruments your Ruby on Rails 3
 		</longdescription>
 	</pkgmetadata>

@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Decorators on top of your ORM layer
+Ffaker generates dummy data
 		</longdescription>
 	</pkgmetadata>

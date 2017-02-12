@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Decorators on top of your ORM layer
+HexaPDF is a pure Ruby library with an accompanying application for working with PDF files
 		</longdescription>
 	</pkgmetadata>
