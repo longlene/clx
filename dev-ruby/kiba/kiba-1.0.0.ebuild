@@ -14,7 +14,7 @@ HOMEPAGE="http://thbar.github.io/kiba/"
 
 LICENSE="LGPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rake-0"

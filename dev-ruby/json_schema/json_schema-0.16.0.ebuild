@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/brandur/json_schema"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/ecma-re-validator-0.1"

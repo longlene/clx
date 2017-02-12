@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/atech/nifty-utils"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 

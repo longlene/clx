@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/lxc/ruby-lxc"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rdoc-0"

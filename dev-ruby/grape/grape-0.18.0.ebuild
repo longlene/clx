@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/ruby-grape/grape"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rack-1.3.0"

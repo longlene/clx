@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/jgraichen/rbzmq"
 
 LICENSE="LGPLv3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/ffi-rzmq-2.0"

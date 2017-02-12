@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/osyo-manga/gem-ruboty-line"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rack-0"

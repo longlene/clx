@@ -14,7 +14,7 @@ HOMEPAGE="http://github.com/jlong/radius"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 

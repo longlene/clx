@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/k0kubun/hamlit"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/temple-0.7.6"

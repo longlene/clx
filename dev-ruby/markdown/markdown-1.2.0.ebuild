@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/rubylibs/markdown"
 
 LICENSE="Public Domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/props-1.1.2"

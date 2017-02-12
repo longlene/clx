@@ -14,7 +14,7 @@ HOMEPAGE="http://cocktail-party.rubyforge.org"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/ncurses-0"

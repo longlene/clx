@@ -14,7 +14,7 @@ HOMEPAGE="https://developers.google.com/protocol-buffers"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rake-compiler-dock-0"

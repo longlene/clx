@@ -14,7 +14,7 @@ HOMEPAGE="http://github.com/iconara/etcd-rb"
 
 LICENSE="Apache License 2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/httpclient-2.3.0"

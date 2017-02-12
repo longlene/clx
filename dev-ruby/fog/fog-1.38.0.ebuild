@@ -14,7 +14,7 @@ HOMEPAGE="http://github.com/fog/fog"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/fog-core-1.32"

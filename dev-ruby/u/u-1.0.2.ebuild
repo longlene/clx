@@ -16,7 +16,7 @@ HOMEPAGE="http://disu.se/software/u-1.0/"
 
 LICENSE="LGPLv3+"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/inventory-1.5"

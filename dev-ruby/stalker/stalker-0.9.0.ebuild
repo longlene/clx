@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/han/stalker"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/beanstalk-client-0"

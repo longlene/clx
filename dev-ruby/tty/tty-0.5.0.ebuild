@@ -14,7 +14,7 @@ HOMEPAGE="https://piotrmurach.github.io/tty/"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/tty-color-0.3.0"

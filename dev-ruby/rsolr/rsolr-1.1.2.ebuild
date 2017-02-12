@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/rsolr/rsolr"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/builder-2.1.2"

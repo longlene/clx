@@ -14,7 +14,7 @@ HOMEPAGE="http://www.rubyforge.org/projects/ruby-dbi"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/dbi-0.4.0"

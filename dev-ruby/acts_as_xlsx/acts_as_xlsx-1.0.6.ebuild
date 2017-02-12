@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/randym/acts_as_xlsx"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/axlsx-1.0.13"

@@ -14,7 +14,7 @@ HOMEPAGE="http://spreecommerce.com"
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend "=dev-ruby/spree_core-3.1.3"

@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/yorickpeterse/ruby-lint/"
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/parser-2.2"
