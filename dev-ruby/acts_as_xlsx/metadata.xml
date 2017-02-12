@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-The official AWS SDK for Ruby
+    acts_as_xlsx lets you turn any ActiveRecord::Base inheriting class into an excel spreadsheet
 		</longdescription>
 	</pkgmetadata>

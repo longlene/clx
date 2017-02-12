@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-The official AWS SDK for Ruby
+Compatible with mysql, sqlite, and postgres
 		</longdescription>
 	</pkgmetadata>

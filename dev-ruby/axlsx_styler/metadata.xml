@@ -6,6 +6,7 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-The official AWS SDK for Ruby
+
+    Axlsx gem is an excellent tool to build Excel worksheets
 		</longdescription>
 	</pkgmetadata>
