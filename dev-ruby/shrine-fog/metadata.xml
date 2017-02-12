@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A Ruby interface to Nmap, the exploration tool and security / port scanner
+Provides Fog storage for Shrine
 		</longdescription>
 	</pkgmetadata>
