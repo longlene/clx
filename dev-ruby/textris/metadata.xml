@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Identify email addresses or domains names that belong to colleges or universities
+Implement texter classes for sending SMS messages in similar way to how e-mails are sent with ActionMailer-based mailers
 		</longdescription>
 	</pkgmetadata>

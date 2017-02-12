@@ -6,6 +6,7 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Identify email addresses or domains names that belong to colleges or universities
+Surus accelerates ActiveRecord with PostgreSQL specific types and
+                    functionality
 		</longdescription>
 	</pkgmetadata>

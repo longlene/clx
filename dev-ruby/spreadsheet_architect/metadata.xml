@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Identify email addresses or domains names that belong to colleges or universities
+SpreadsheetArchitect lets you turn any activerecord relation or ruby object collection into a XLSX, ODS, or CSV spreadsheets
 		</longdescription>
 	</pkgmetadata>

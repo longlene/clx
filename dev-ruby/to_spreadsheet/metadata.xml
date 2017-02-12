@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Identify email addresses or domains names that belong to colleges or universities
+Render XLSX from Rails using existing views ( 
 		</longdescription>
 	</pkgmetadata>
