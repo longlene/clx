@@ -4,13 +4,13 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="a93efe3a75469254abfdfa56be5ac1e6da81a596"
 
 DESCRIPTION="SuperCollider client for Common Lisp"
 HOMEPAGE="https://github.com/byulparan/cl-collider"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/byulparan/cl-collider.git"
+SRC_URI="https://github.com/byulparan/cl-collider/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
@@ -21,11 +21,10 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/bordeaux-threads
-	dev-lisp/chanl
 	dev-lisp/flexi-streams
-	dev-lisp/osc-ext
+	dev-lisp/ieee-floats
 	dev-lisp/scheduler
 	dev-lisp/simple-utils
+	dev-lisp/split-sequence
 	dev-lisp/usocket
-	media-sound/supercollider
 "
