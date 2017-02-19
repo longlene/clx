@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-A simple, pure Ruby bit-array / bitfield implementation
+the tiniest blog-engine in Oz
 		</longdescription>
 	</pkgmetadata>
