@@ -4,13 +4,13 @@
 
 EAPI=5
 
-inherit git-2
+inherit vcs-snapshot
+
+EGIT_COMMIT="ef2dcd3b779647e0140bb78863cb8439774e277b"
 
 DESCRIPTION="A small ANSI C GUI toolkit"
 HOMEPAGE="https://github.com/vurtun/nuklear"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/vurtun/nuklear.git"
+SRC_URI="https://github.com/vurtun/nuklear/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
@@ -23,5 +23,5 @@ RDEPEND="${DEPEND}"
 src_install() {
 	insinto /usr/include
 	doins nuklear.h
-	dodoc README.md
+	dodoc Readme.md
 }
