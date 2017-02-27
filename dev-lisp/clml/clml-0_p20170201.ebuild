@@ -6,7 +6,7 @@ EAPI=5
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4a2ced9939210c0374a5cd235725ef2efd2aedcd"
+EGIT_COMMIT="be5cde037cd894c2acfa74de5c02a8c53b5970c5"
 
 DESCRIPTION="Common Lisp Machine Learning Library"
 HOMEPAGE="https://github.com/mmaul/clml"
