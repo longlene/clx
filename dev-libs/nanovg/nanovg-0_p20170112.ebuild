@@ -25,6 +25,7 @@ RDEPEND="${DEPEND}"
 src_configure() {
 	premake4 gmake
 	sed -i 's#$(ARCH)##g' build/*.make
+	sed -i '/-Wall/{s#$# -fPIC#}' build/nanovg.make
 }
 
 src_compile() {
@@ -34,7 +35,7 @@ src_compile() {
 src_install() {
 	dolib.a build/libnanovg.a
 	insinto /usr/include
-	doins src/nanovg.h
+	doins src/nanovg{,_gl}.h
 	dodoc README.md
 }
 
