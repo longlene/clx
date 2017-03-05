@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="d550bd8efef37725e340dd6918eb3cfc5c946481"
 
 DESCRIPTION="Yet another Common Lisp game engine"
 HOMEPAGE="https://github.com/Shirakumo/trial"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/Shirakumo/trial.git"
+SRC_URI="https://github.com/Shirakumo/trial/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
@@ -33,5 +33,4 @@ RDEPEND="${DEPEND}
 	dev-lisp/pathname-utils
 	dev-lisp/flare
 	dev-lisp/for
-	dev-lisp/
 "
