@@ -8,7 +8,7 @@ inherit eutils
 
 DESCRIPTION="Oracle Tuxedo is #1 application server"
 HOMEPAGE="http://www.oracle.com/technetwork/middleware/tuxedo/index.html"
-SRC_URI="tuxedo121300_64_Linux_01_x86.zip"
+SRC_URI="tuxedo122200_64_Linux_01_x86.zip"
 
 LICENSE="as-is"
 SLOT="0"
@@ -45,7 +45,7 @@ src_install() {
 	local ldpath=/${tuxdir}/$(get_libdir)
 
 	into "/${tuxdir}"
-	dolib.so ${CLIENT_DATA_DIR}/lib{buft,engine,fml,fml32,giconv,gpnet,jms,msgq1,ociicus,omg,orbutl,plugin,qm,qs,sec,secssl,ticuuc,ticudata,tux,txml,usort,utrace,wsc}$(get_libname)*
+	dolib.so ${CLIENT_DATA_DIR}/lib{buft,engine,fml,fml32,giconv,gpnet,jms,msgq1,omg,orbutl,plugin,qm,qs,sec,secssl,trpc,ticuuc,ticudata,tux,txml,usort,utrace,wsc}$(get_libname)*
 	dosym libtxml$(get_libname 25.0) "/${tuxdir}"/$(get_libdir)/libtxml$(get_libname 25) 
 	dosym libticuuc$(get_libname 36.0) "/${tuxdir}"/$(get_libdir)/libticuuc$(get_libname 36) 
 	dosym libticudata$(get_libname 36.0) "/${tuxdir}"/$(get_libdir)/libticudata$(get_libname 36) 
@@ -57,10 +57,10 @@ src_install() {
 	done
 
 	insinto "/${tuxdir}"/include
-	doins ${CLIENT_DATA_DIR}/{atmi.h,fml.h,fml32.h,tmenv.h,tpadm.h,userlog.h}
+	doins ${CLIENT_DATA_DIR}/{atmi.h,fml.h,fml1632.h,fml32.h,tmenv.h,tpadm.h,userlog.h}
 	
 	insinto "/${tuxdir}"/locale/C
-	for f in CMDFML CMDTUX ; do
+	for f in CMDFML CMDGW CMDTUX LIBFML LIBGWT LIBGW LIBPLUGIN LIBSEC LIBTUX LIBWSC ORACLE ; do
 		newins ${CLIENT_DATA_DIR}/${f}_CAT2 ${f}_CAT
 		newins ${CLIENT_DATA_DIR}/${f}.text2 ${f}.text
 	done
@@ -71,7 +71,7 @@ src_install() {
 			dobin ${SERVER_DATA_DIR}/${f}
 			dosym "/${tuxdir}"/bin/${f} /usr/bin/${f}
 		done
-			dolib.so ${SERVER_DATA_DIR}/lib{tmib,gw,gwt}$(get_libname)*
+			dolib.so ${SERVER_DATA_DIR}/lib{tmib,gw,gwt,tuxj,tuxjni}$(get_libname)*
 		insinto "/${tuxdir}"/include
 		doins ${SERVER_DATA_DIR}/sqlca.h
 
