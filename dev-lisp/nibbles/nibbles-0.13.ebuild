@@ -1,11 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=3
-inherit common-lisp-3 eutils
+EAPI=6
 
-MY_P=${PN}_${PV}
+inherit common-lisp-3
 
 DESCRIPTION="A library for accessing multibyte integers from octet arrays and streams"
 HOMEPAGE="http://method-combination.net/lisp/nibbles/"
@@ -16,17 +15,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
-RDEPEND="!dev-lisp/cl-${PN}"
-
-S="${WORKDIR}"/${MY_P}
-
-src_prepare() {
-	epatch "${FILESDIR}"/${PV}-gentoo-fix-asd.patch
-}
+DEPEND=""
+RDEPEND="${DEPEND}"
 
 src_install() {
-	common-lisp-install-sources .
-	common-lisp-install-asdf
-	dodoc README doc/nibbles-doc.txt
-	dohtml doc/{index.html,style.css}
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all README LICENSE NEWS
 }
