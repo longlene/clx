@@ -24,8 +24,8 @@ RDEPEND="
 	sys-cluster/hadoop-bin
 "
 
-INSTALL_DIR=/opt/"${PN}"
-DATA_DIR=/var/db/"${PN}"
+INSTALL_DIR=/opt/"${MY_P}"
+DATA_DIR=/var/lib/hbase
 export CONFIG_PROTECT="${CONFIG_PROTECT} ${INSTALL_DIR}/conf"
 
 src_prepare() {
@@ -35,7 +35,7 @@ src_prepare() {
 }
 
 src_install() {
-	# The hadoop-env.sh file needs JAVA_HOME set explicitly
+	# The hbase-env.sh file needs JAVA_HOME set explicitly
 	sed -e "2iexport JAVA_HOME=${JAVA_HOME}" \
 		-e "3iexport HBASE_LOG_DIR=/var/log/hadoop" \
 		-i conf/hbase-env.sh
@@ -64,6 +64,3 @@ src_install() {
 	doinitd "${PN}"
 }
 
-pkg_postinst() {
-	elog "For info on configuration see http://hadoop.apache.org/${PN}/docs/r${PV}"
-}
