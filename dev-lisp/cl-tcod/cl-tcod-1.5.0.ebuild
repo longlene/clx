@@ -19,6 +19,5 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/libtcod
 	dev-lisp/cffi
-	dev-lisp/cffi-libffi
 	dev-lisp/defstar
 "
