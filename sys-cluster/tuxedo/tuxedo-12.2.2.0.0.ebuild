@@ -6,9 +6,14 @@ EAPI=5
 
 inherit eutils
 
+MY_PV=${PV//./}
+
 DESCRIPTION="Oracle Tuxedo is #1 application server"
 HOMEPAGE="http://www.oracle.com/technetwork/middleware/tuxedo/index.html"
-SRC_URI="tuxedo122200_64_Linux_01_x86.zip"
+SRC_URI="
+	x86? ( tuxedo${MY_PV}_32_Linux_01_x86.zip )
+	amd64? ( tuxedo${MY_PV}_64_Linux_01_x86.zip )
+"
 
 LICENSE="as-is"
 SLOT="0"
