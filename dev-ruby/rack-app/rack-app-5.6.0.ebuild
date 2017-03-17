@@ -18,7 +18,8 @@ KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/bundler-0"
-ruby_add_rdepend "=dev-ruby/rake-10.4.2"
+ruby_add_rdepend ">=dev-ruby/rake-10.4.2"
 ruby_add_rdepend ">=dev-ruby/rspec-0"
 ruby_add_rdepend ">=dev-ruby/rack-0"
 
+RUBY_FAKEGEM_EXTRAINSTALL="VERSION"
