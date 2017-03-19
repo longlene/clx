@@ -17,9 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/lua-5.1:=
-dev-lang/luajit:2
-=sci-libs/torch7-9999"
+DEPEND="
+	>=dev-lang/lua-5.1:=
+	dev-lang/luajit:2
+	sci-libs/torch7
+"
 RDEPEND="${DEPEND}"
 
 src_configure() {
