@@ -4,11 +4,13 @@
 
 EAPI=6
 
+inherit vcs-snapshot
+
+EGIT_COMMIT="526541b2896517b821f2a47baa35c6359b14150f"
+
 DESCRIPTION="Hprose for C++"
 HOMEPAGE="https://github.com/hprose/hprose-cpp"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/hprose/hprose-cpp.git"
+SRC_URI="https://github.com/hprose/hprose-cpp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,7 +21,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
-	insinto /usr
+	insinto /usr/include
 	doins -r hprose
 	dodoc README.md
 }
