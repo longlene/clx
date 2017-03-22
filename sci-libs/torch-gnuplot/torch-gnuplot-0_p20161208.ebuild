@@ -18,8 +18,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-lua/torch-paths
 	sci-libs/torch7
-	sci-libs/torch-paths
 	sci-visualization/gnuplot
 "
 
