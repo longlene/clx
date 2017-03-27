@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=5
 
@@ -10,18 +9,19 @@ DESCRIPTION="Lua client for elasticsearch"
 HOMEPAGE="https://github.com/DhavalKapil/elasticsearch-lua"
 SRC_URI="https://github.com/DhavalKapil/elasticsearch-lua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Apache-2.0"
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lua/luasocket
-dev-lua/lua-cjson
-dev-lua/lunitx
+	dev-lua/luasocket
+	dev-lua/lua-cjson
+	dev-lua/lunitx
 "
 
 src_install() {
-	lua_install_module -r elasticsearch
+	lua_install_module -r src/elasticsearch
+	dodoc README.md
 }
