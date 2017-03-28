@@ -17,8 +17,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/anapora
-dev-lisp/alexandria
-dev-lisp/array-operations
-dev-lisp/let-plus"
+	dev-lisp/anaphora
+	dev-lisp/alexandria
+	dev-lisp/array-operations
+	dev-lisp/let-plus"
 
