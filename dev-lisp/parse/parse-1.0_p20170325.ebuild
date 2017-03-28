@@ -4,13 +4,13 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="821986ad17647bbed373e0b5ceeaa7886f50b331"
 
 DESCRIPTION="Monadic parsing for Common Lisp"
 HOMEPAGE="https://github.com/massung/parse"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/massung/parse.git"
+SRC_URI="https://github.com/massung/parse/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
