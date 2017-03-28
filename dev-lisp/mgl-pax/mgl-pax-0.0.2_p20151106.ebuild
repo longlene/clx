@@ -20,7 +20,6 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/3bmd
-	dev-lisp/3bmd-ext-code-blocks
 	dev-lisp/alexandria
 	dev-lisp/babel
 	dev-lisp/cl-fad
