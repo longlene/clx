@@ -1,6 +1,5 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=5
 
@@ -13,15 +12,16 @@ SRC_URI="mirror://sourceforge/${PN}/${P}_Sources.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="webkit static-libs lua opengl lua motif"
+IUSE="webkit static-libs lua opengl lua motif led"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-x11-libs/pangox-compat
-webkit? ( net-libs/webkit-gtk )
-motif? ( x11-libs/motif x11-proto/printproto )
-opengl? ( virtual/glu )
-lua? ( >=dev-lang/lua-5.1 )"
+	x11-libs/pangox-compat
+	webkit? ( net-libs/webkit-gtk )
+	motif? ( x11-libs/motif x11-proto/printproto )
+	opengl? ( virtual/glu )
+	lua? ( >=dev-lang/lua-5.1 )
+"
 
 S="${WORKDIR}"/${PN}
 
@@ -73,4 +73,8 @@ src_install() {
 
 	insinto /usr/include/iup
 	doins include/*.h
+
+	if use led; then
+		dobin bin/*/ledc
+	fi
 }
