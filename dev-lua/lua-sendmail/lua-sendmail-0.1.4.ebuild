@@ -1,23 +1,22 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit lua
 
-DESCRIPTION="Simple wrapper around luasocket smtp.send"
+DESCRIPTION="Simple wrapper around luasoket smtp.send"
 HOMEPAGE="https://github.com/moteus/lua-sendmail"
 SRC_URI="https://github.com/moteus/lua-sendmail/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lua/luasocket
+	dev-lua/luasocket
 "
 
 src_install() {

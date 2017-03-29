@@ -19,7 +19,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lua/redis-lua
-	dev-lua/lau-cjson
+	dev-lua/lua-cjson
 	sci-libs/torch-sys
 "
 
