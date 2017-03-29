@@ -4,13 +4,11 @@
 
 EAPI=5
 
-inherit git-2
+inherit vcs-snapshot
 
 DESCRIPTION="mruby/c is an another implementation of mruby"
 HOMEPAGE="https://github.com/mrubyc/mrubyc"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/mrubyc/mrubyc.git"
+SRC_URI="https://github.com/mrubyc/mrubyc/archive/release${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
@@ -26,5 +24,8 @@ src_compile() {
 
 src_install() {
 	dobin sample_c/${PN}
+	dolib.a src/libmrubyc.a
+	insinto /usr/include
+	doins src/mrubyc.h
 	dodoc README.md
 }
