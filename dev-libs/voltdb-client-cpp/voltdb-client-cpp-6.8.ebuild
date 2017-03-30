@@ -1,6 +1,5 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -8,7 +7,7 @@ inherit vcs-snapshot
 
 DESCRIPTION="VoltDB C++ wireprotocol and client implementation"
 HOMEPAGE="https://github.com/VoltDB/voltdb-client-cpp"
-SRC_URI="https://github.com/VoltDB/voltdb-client-cpp/archive/${P}.tar.gz"
+SRC_URI="https://github.com/VoltDB/voltdb-client-cpp/archive/${PN}-v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
