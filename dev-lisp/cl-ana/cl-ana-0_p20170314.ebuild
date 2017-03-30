@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="1d574c658a7ace855b0751665fb1e9a0385ed472"
 
 DESCRIPTION="Common Lisp data analysis library with emphasis on modularity and conceptual clarity"
 HOMEPAGE="https://github.com/ghollisjr/cl-ana"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/ghollisjr/cl-ana.git"
+SRC_URI="https://github.com/ghollisjr/cl-ana/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
