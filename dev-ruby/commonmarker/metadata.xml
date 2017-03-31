@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Simple authorization solution for Rails
+A fast, safe, extensible parser for CommonMark
 		</longdescription>
 	</pkgmetadata>

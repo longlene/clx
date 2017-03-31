@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Simple authorization solution for Rails
+A version of Ruby's Struct class that creates classes whose instances are immutable
 		</longdescription>
 	</pkgmetadata>
