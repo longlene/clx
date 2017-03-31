@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Provides the generator settings required for Rails 3+ to use Slim
+Reactive programming framework for Ruby, painless evented IO, futures and an efficient byte buffer
 		</longdescription>
 	</pkgmetadata>

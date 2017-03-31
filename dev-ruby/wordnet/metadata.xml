@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Provides the generator settings required for Rails 3+ to use Slim
+This library is a Ruby interface to WordNet®[http://wordnet
 		</longdescription>
 	</pkgmetadata>
