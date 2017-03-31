@@ -17,9 +17,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-sys-libs/libtermcap-compat
-sys-devel/bison
-dev-lang/ruby"
+	sys-devel/bison
+	dev-lang/ruby"
 
 src_install() {
 	dobin bin/{mirb,mrbc,mruby}
