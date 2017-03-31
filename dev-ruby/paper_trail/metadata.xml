@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Track changes to your models' data
+Track changes to your models, for auditing or versioning
 		</longdescription>
 	</pkgmetadata>
