@@ -17,12 +17,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
+	dev-lua/async
+	dev-lua/luasocket
+	dev-lua/lua-cjson
 	sci-libs/torch7
 	sci-libs/torch-sys
 	sci-libs/torch-image
-	dev-lua/luasocket
-	dev-lua/lua-cjson
-	dev-lua/async
 "
 RDEPEND="${DEPEND}"
 
