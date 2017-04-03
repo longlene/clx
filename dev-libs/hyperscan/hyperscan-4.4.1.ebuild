@@ -1,13 +1,12 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit cmake-utils
 
 DESCRIPTION="High-performance regular expression matching library"
-HOMEPAGE="https://github.com/01org/hyperscan"
+HOMEPAGE="https://01.org/hyperscan"
 SRC_URI="https://github.com/01org/hyperscan/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
