@@ -1,6 +1,7 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+
+EAPI=6
 
 inherit common-lisp-3
 
@@ -10,14 +11,16 @@ SRC_URI="http://common-lisp.net/project/${PN}/releases/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="test"
 
 RDEPEND="
 	dev-lisp/split-sequence
-	dev-lisp/rt
+	dev-lisp/portable-threads
+	test? ( dev-lisp/rt )
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -rf ${PN}-test.asd test
 }

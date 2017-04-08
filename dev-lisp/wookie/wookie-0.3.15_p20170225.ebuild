@@ -4,7 +4,7 @@ EAPI=5
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="335e0a9d9a6f0c4c791c0e2f29d47590fb3f6ed9"
+EGIT_COMMIT="1a07018011484ff1e16bb758644292edd0efe386"
 
 DESCRIPTION="An evented webserver for Common Lisp"
 HOMEPAGE="https://github.com/orthecreedence/wookie"
