@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -11,7 +10,7 @@ if [[ ${PV} = *9999* ]] ; then
 	EGIT_REPO_URI="https://github.com/fukamachi/jsonrpc.git"
 else
 	inherit vcs-snapshot
-	EGIT_COMMIT="2ae6e584b590d88acedfd8081dc86e1dc5fe81cd"
+	EGIT_COMMIT="9177a3002ef4d91c480d52143e4de6e616313a64"
 	SRC_URI="https://github.com/fukamachi/jsonrpc/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 fi
 

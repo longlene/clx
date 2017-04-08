@@ -1,6 +1,5 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -15,7 +14,7 @@ SRC_URI="https://github.com/capitaomorte/snooze/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -27,15 +26,24 @@ RDEPEND="${DEPEND}
 	dev-lisp/parse-float
 	dev-lisp/rfc2388
 
-	dev-lisp/fiasco
-	dev-lisp/cl-who
-	dev-lisp/cl-fad
-	dev-lisp/cl-css
-	dev-lisp/hunchentoot
-	dev-lisp/cl-json
-	dev-lisp/local-time
-	dev-lisp/local-time-duration
+	test? (
+			dev-lisp/fiasco
+			dev-lisp/cl-who
+			dev-lisp/cl-fad
+			dev-lisp/cl-css
+			dev-lisp/hunchentoot
+			dev-lisp/cl-json
+			dev-lisp/local-time
+			dev-lisp/local-time-duration
+	)
 "
+
+src_prepare() {
+	if use test ; then
+		sed -i '/snooze-tests/,$ d' snooze.asd
+		rm -r demo snooze-tests.lisp
+	fi
+}
 
 src_install() {
 	common-lisp-3_src_install
