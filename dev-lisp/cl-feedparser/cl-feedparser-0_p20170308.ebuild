@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3
 
-EGIT_COMMIT="7dc57d6c05baa47639e9195276412eeb373f839f"
+EGIT_COMMIT="4bab9a8d6f87cf8e5f99575c67e0118e33e6759f"
 
 DESCRIPTION="Common Lisp feed parser"
 HOMEPAGE="https://github.com/TBRSS/cl-feedparser"
