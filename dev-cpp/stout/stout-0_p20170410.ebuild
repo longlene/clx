@@ -5,7 +5,7 @@ EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="6f3ddb489ef2a26c1e4639ea402a60b16d4474b2"
+EGIT_COMMIT="f08657642fa3923923344008e35976386937b62f"
 
 DESCRIPTION="A C++ library for building sturdy software"
 HOMEPAGE="https://github.com/longlene/stout"
