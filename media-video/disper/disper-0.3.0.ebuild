@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="3"
-inherit eutils multilib python
+inherit eutils multilib python-r1
 
 MY_PN="disper"
 MY_P="${MY_PN}-${PV}"
