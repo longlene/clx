@@ -1,5 +1,0 @@
-#!/bin/sh
-
-PYTHON_VERSION=$(eselect python show --ABI | sed 's/^\([0-9][0-9]*\)\..*/\1/');
-
-gcc-with-python${PYTHON_VERSION} $@
