@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=The streaming build system
+EAPI=5
+HOMEPAGE=https://github.com/gulpjs/gulp
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-nodejs/archy dev-nodejs/chalk dev-nodejs/deprecated dev-nodejs/gulp-util dev-nodejs/interpret dev-nodejs/liftoff dev-nodejs/minimist dev-nodejs/orchestrator dev-nodejs/pretty-hrtime dev-nodejs/semver dev-nodejs/tildify dev-nodejs/v8flags dev-nodejs/vinyl-fs
+SLOT=0
+SRC_URI=http://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=cc55ff6b06347b074c89768fa3efeb09

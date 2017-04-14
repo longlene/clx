@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=Formatted text output
+EAPI=4
+HOMEPAGE=https://github.com/gigamonkey/monkeylib-text-output/
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=BSD
+RDEPEND=dev-lisp/monkeylib-macro-utilities dev-lisp/monkeylib-test-framework dev-lisp/monkeylib-pathnames dev-lisp/monkeylib-utilities
+SLOT=0
+_md5_=4cab49d3285a70bb0cdca871836934ec

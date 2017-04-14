@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Make asyncronus requests using libuv and libcurl
+EAPI=6
+HOMEPAGE=https://github.com/moteus/lua-lluv-curl
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lua/lluv dev-lua/lua-curl dev-lua/eventmitter
+SLOT=0
+SRC_URI=https://github.com/moteus/lua-lluv-curl/archive/fd274b76126ce2201fa2ad5ab6542a4a88040757.tar.gz -> lluv-curl-0_p20170228.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=8559b2b306010092b4e5937302952fcb

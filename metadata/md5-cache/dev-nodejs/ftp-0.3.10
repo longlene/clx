@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=An FTP client module for node.js
+EAPI=5
+HOMEPAGE=https://www.npmjs.com/package/ftp
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-nodejs/readable-stream dev-nodejs/xregexp
+SLOT=0
+SRC_URI=http://registry.npmjs.org/ftp/-/ftp-0.3.10.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=56644b73eee96f829f13fb11f81e7f3d

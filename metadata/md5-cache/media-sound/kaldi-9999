@@ -1,0 +1,7 @@
+DEFINED_PHASES=unpack
+DEPEND=media-sound/sph2pipe sci-libs/atlas sys-libs/zlib dev-vcs/git
+EAPI=5
+RDEPEND=media-sound/sph2pipe sci-libs/atlas sys-libs/zlib
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=0dbfcd48c9dea402528b72428bb64401

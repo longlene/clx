@@ -1,0 +1,13 @@
+DEFINED_PHASES=install
+DEPEND=sci-electronics/gerbv
+DESCRIPTION=Calculate GCode from given PCB layouts
+EAPI=3
+HOMEPAGE=http://sourceforge.net/apps/mediawiki/pcb2gcode/
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=sci-electronics/gerbv
+RESTRICT=nomirror
+SLOT=0
+SRC_URI=mirror://sourceforge/pcb2gcode/pcb2gcode-1.1.0.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=7369666e01481ff9e85ceb7ea7bf12c3

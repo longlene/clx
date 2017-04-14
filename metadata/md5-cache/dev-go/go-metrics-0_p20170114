@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=A Golang library for exporting performance and runtime metrics to external metrics systems
+EAPI=6
+HOMEPAGE=https://github.com/armon/go-metrics
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/armon/go-metrics/archive/93f237eba9b0602f3e73710416558854a81d9337.tar.gz -> go-metrics-0_p20170114.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=43c56521f41f7717d75b99ef54708e72

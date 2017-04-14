@@ -1,0 +1,9 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Fast C/C++ HTML 5 Parser
+EAPI=5
+HOMEPAGE=https://github.com/lexborisov/myhtml
+LICENSE=Apache-2.0
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=a6e261f9f1ecf9b45fd7563e0d03cf62

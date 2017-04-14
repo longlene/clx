@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=x11-terms/eterm
+DESCRIPTION=A GUI front-end for Esetroot
+EAPI=0
+HOMEPAGE=http://gsetroot.sourceforge.net
+KEYWORDS=~x86
+LICENSE=GPL-2
+RDEPEND=virtual/x11 x11-terms/eterm
+SLOT=0
+SRC_URI=mirror://sourceforge/gsetroot/gsetroot-1.0.tar.gz
+_md5_=7d9a96900444812c5b53a851c1dffc79

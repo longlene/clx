@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=media-libs/portaudio >=dev-lang/go-1.7:=
+DESCRIPTION=Go bindings for the PortAudio audio I/O library
+EAPI=6
+HOMEPAGE=https://github.com/gordonklaus/portaudio
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=media-libs/portaudio
+SLOT=0
+SRC_URI=https://github.com/gordonklaus/portaudio/archive/2a038c93424fb36d026982db9fd365504a49f566.tar.gz -> portaudio-0_p20161117.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=bf1e4632bd166ed2c11a11eea182dfa7

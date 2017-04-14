@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DEPEND=>=dev-libs/glib-2.6.0
+DESCRIPTION=A small and simple interprocess communication library
+EAPI=0
+HOMEPAGE=http://xffm.sourceforge.net/libtubo.html
+KEYWORDS=~amd64
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=http://downloads.sourceforge.net/xffm/libtubo-4.5.0.tar.gz
+_md5_=44b65be5d3d2ebe40b473ec379b57e59

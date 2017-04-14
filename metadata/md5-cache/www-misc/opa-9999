@@ -1,0 +1,10 @@
+DEFINED_PHASES=configure prepare unpack
+DEPEND=>=dev-lang/ocaml-3.12 dev-ml/camlidl dev-ml/ocaml-ssl dev-ml/cryptokit[ocamlopt] dev-ml/camlzip[ocamlopt] dev-ml/ocamlgraph[ocamlopt] dev-ml/ulex[ocamlopt] dev-vcs/git
+DESCRIPTION=Open source programming language for web application development
+EAPI=4
+HOMEPAGE=http://opalang.org/
+LICENSE=AGPL-3
+RDEPEND=>=dev-lang/ocaml-3.12 dev-ml/camlidl dev-ml/ocaml-ssl dev-ml/cryptokit[ocamlopt] dev-ml/camlzip[ocamlopt] dev-ml/ocamlgraph[ocamlopt] dev-ml/ulex[ocamlopt]
+SLOT=0
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	git-2	7af5d170bfc02983b4bcd3167dc5edd4	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=3367d5b65e8aac3173f6ba937a0dcea6

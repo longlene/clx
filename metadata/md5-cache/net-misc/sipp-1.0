@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=>=sys-libs/ncurses-5.4-r6
+DESCRIPTION=Open Source test tool and traffic generator for SIP
+EAPI=0
+HOMEPAGE=http://sipp.sourceforge.net/
+KEYWORDS=~x86 ~sparc
+LICENSE=GPL-2
+RDEPEND=>=sys-libs/ncurses-5.4-r6
+SLOT=0
+SRC_URI=mirror://sourceforge/sipp/sipp.1.0.tar.gz
+_md5_=d1e876432586631ce03d844a2e2634f4

@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-libs/nanomsg dev-vcs/git
+DESCRIPTION=nanomsg for lua
+EAPI=5
+HOMEPAGE=https://github.com/mbalmer/luananomsg
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=as-is
+RDEPEND=dev-libs/nanomsg
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4	lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=9a2d89584f642bb613692fabb0b9e09b

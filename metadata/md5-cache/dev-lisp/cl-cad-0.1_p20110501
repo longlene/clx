@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=CAD system, powered by Common Lisp
+EAPI=6
+HOMEPAGE=http://cl-cad.blogspot.com
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=LGPL
+RDEPEND=dev-lisp/cl-gtk2 dev-lisp/cffi dev-lisp/trivial-garbage dev-lisp/iterate dev-lisp/cl-cairo2
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/LiteTabs/CL-CAD/archive/539c90e58e668b72a2849e8c0caebf65236866c6.tar.gz -> cl-cad-0.1_p20110501.tar.gz
+_eclasses_=common-lisp-3	e3b01fd04bd5f6e4c79e470ea00b97a8	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=229654516d50a72c9ecb376c74a1dce2

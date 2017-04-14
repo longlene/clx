@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=Package fs provides filesystem-related functions
+EAPI=6
+HOMEPAGE=https://github.com/kr/fs
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/kr/fs/archive/2788f0dbd16903de03cb8186e5c7d97b69ad387b.tar.gz -> fs-0_p20131111.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=9f33399f38f56a064f81bded2c0298e1

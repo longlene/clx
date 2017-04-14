@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install
+DEPEND=>=dev-lang/lua-5.1 sqlite? ( dev-db/sqlite:0 ) sqlite3? ( dev-db/sqlite:3 ) mysql? ( virtual/mysql ) odbc? ( dev-db/unixODBC ) firebird? ( dev-db/firebird ) oracle? ( dev-db/oracle-instantclient-basic ) postgres? ( virtual/postgresql-base ) virtual/pkgconfig
+DESCRIPTION=Database connectivity for the Lua programming language
+EAPI=5
+HOMEPAGE=http://www.keplerproject.org/luasql/
+IUSE=sqlite sqlite3 mysql postgres odbc firebird oracle
+KEYWORDS=x86 amd64
+LICENSE=Kepler
+RDEPEND=>=dev-lang/lua-5.1 sqlite? ( dev-db/sqlite:0 ) sqlite3? ( dev-db/sqlite:3 ) mysql? ( virtual/mysql ) odbc? ( dev-db/unixODBC ) firebird? ( dev-db/firebird ) oracle? ( dev-db/oracle-instantclient-basic ) postgres? ( virtual/postgresql-base )
+SLOT=0
+SRC_URI=https://github.com/keplerproject/luasql/archive/v2.3.5.tar.gz -> luasql-2.3.5.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=005b58e4879ccdb3dfdff8f2adbacb2d

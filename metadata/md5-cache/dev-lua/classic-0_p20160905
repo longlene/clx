@@ -1,0 +1,11 @@
+DEFINED_PHASES=install prepare unpack
+DESCRIPTION=A class system for Lua
+EAPI=6
+HOMEPAGE=https://github.com/deepmind/classic
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD-3
+RDEPEND=sci-libs/torch7 dev-lua/torch-totem
+SLOT=0
+SRC_URI=https://github.com/deepmind/classic/archive/f1adac7b837850cc0783c44ed5a9a91001b334aa.tar.gz -> classic-0_p20160905.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=d80bbc3d347798fe942ff41a7a9aa3cf

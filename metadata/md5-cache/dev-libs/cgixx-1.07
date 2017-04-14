@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DEPEND=virtual/libc virtual/libstdc++
+DESCRIPTION=A C++ library for writing CGI programs
+EAPI=0
+HOMEPAGE=http://content.noscience.net/projects/cgixx/
+IUSE=doc
+KEYWORDS=~x86
+RDEPEND=virtual/libc virtual/libstdc++
+SLOT=0
+SRC_URI=http://files.noscience.net/pub/cgixx/files/cgixx-1.07.tar.bz2
+_md5_=8110756cd65e36519bbea44733ab56d1

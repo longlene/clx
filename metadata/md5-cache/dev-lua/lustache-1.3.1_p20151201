@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Mustache templates for Lua
+EAPI=6
+HOMEPAGE=https://github.com/Olivine-Labs/lustache
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/Olivine-Labs/lustache/archive/c2e7573a1d19e93f5498143d95d9fa705ee512fd.tar.gz -> lustache-1.3.1_p20151201.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=460efce4a6b3fd1c117ce6e707fdbc11

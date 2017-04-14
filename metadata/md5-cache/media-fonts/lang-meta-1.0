@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=Meta ebuild to pull in fonts for many languages
+EAPI=0
+HOMEPAGE=http://www.gentoo.org
+KEYWORDS=amd64 x86
+LICENSE=GPL-3
+RDEPEND=media-fonts/dejavu media-fonts/arphicfonts media-fonts/baekmuk-fonts media-fonts/font-misc-meltho media-fonts/free-bangla-font media-fonts/ja-ipafonts media-fonts/khmer media-fonts/kochi-substitute media-fonts/lklug media-fonts/lohit-fonts media-fonts/manchu-font media-fonts/romancyrillicstd media-fonts/saweri media-fonts/sil-nubian media-fonts/sil-nuosu media-fonts/sil-padauk media-fonts/tagdoc media-fonts/thanaunicode media-fonts/tibetan-machine-font media-fonts/vulcanius
+SLOT=0
+_md5_=eb017431d27c10815807df68ee20cbc7

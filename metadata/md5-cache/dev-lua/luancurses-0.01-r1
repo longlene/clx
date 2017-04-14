@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=>=dev-lang/lua-5.1
+DESCRIPTION=Ncurses interface for Lua
+EAPI=0
+HOMEPAGE=http://luaforge.net/projects/luancurses/
+IUSE=examples
+KEYWORDS=~amd64
+LICENSE=as-is
+RDEPEND=>=dev-lang/lua-5.1
+SLOT=0
+SRC_URI=http://luaforge.net/frs/download.php/3224/LuaNcurses-0.01.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=21ba2cf634ebb1488eaedc59a1ecaf36

@@ -1,0 +1,13 @@
+DEFINED_PHASES=install postinst prerm setup
+DEPEND=dev-perl/Template-Toolkit perl-core/CGI dev-perl/RTPG dev-perl/RPC-XML dev-perl/JSON-XS apache2? ( www-apache/mod_scgi ) !minimal? ( net-p2p/rtorrent[xmlrpc] ) || ( virtual/httpd-cgi virtual/httpd-fastcgi ) >=app-admin/webapp-config-1.50.15
+DESCRIPTION=Web interface for rtorrent. Writen in Perl
+EAPI=2
+HOMEPAGE=http://rtpg.uvw.ru/
+IUSE=apache2 minimal vhosts
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=dev-perl/Template-Toolkit perl-core/CGI dev-perl/RTPG dev-perl/RPC-XML dev-perl/JSON-XS apache2? ( www-apache/mod_scgi ) !minimal? ( net-p2p/rtorrent[xmlrpc] ) >=app-admin/webapp-config-1.50.15
+SLOT=0.1.6
+SRC_URI=mirror://debian/pool/main/r/rtpg/rtpg_0.1.6.orig.tar.gz
+_eclasses_=webapp	a76ebd3cb5649737496e8238992dd7ca
+_md5_=e77f8453b7980bdf0510c3867e52952e

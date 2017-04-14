@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst preinst prepare setup unpack
+DEPEND=virtual/opengl sys-libs/zlib dev-libs/zziplib media-libs/libsdl[joystick] x11-libs/agg nls? ( virtual/libintl sys-devel/gettext ) openal? ( media-libs/openal ) gtk? ( >=x11-libs/gtk+-2.8.0 x11-libs/gtkglext ) glade? ( gnome-base/libglade x11-libs/gtkglext ) osmesa? ( media-libs/mesa[osmesa] ) wifi? ( net-libs/libpcap ) wxwidgets? ( x11-libs/wxGTK )
+DESCRIPTION=Nintendo DS emulator
+EAPI=2
+HOMEPAGE=http://desmume.org/
+IUSE=openal gtk glade osmesa nls wifi wxwidgets
+KEYWORDS=~amd64 ~ppc ~x86
+LICENSE=GPL-2
+RDEPEND=virtual/opengl sys-libs/zlib dev-libs/zziplib media-libs/libsdl[joystick] x11-libs/agg nls? ( virtual/libintl sys-devel/gettext ) openal? ( media-libs/openal ) gtk? ( >=x11-libs/gtk+-2.8.0 x11-libs/gtkglext ) glade? ( gnome-base/libglade x11-libs/gtkglext ) osmesa? ( media-libs/mesa[osmesa] ) wifi? ( net-libs/libpcap ) wxwidgets? ( x11-libs/wxGTK ) games-misc/games-envd
+SLOT=0
+SRC_URI=mirror://sourceforge/desmume/desmume-0.9.6-1.tar.gz
+_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	games	2bb3ede665927a68ffdb7c41eec7efde	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	user	e10ccb95af96d45f86016fa982a949bb
+_md5_=1f530842a75b76155d70d4bdd6971715

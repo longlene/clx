@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=render dom nodes to string
+EAPI=5
+HOMEPAGE=https://github.com/cheeriojs/dom-renderer
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-nodejs/domelementtype dev-nodejs/entities
+SLOT=0
+SRC_URI=http://registry.npmjs.org/dom-serializer/-/dom-serializer-0.1.0.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=f62e3fa96d03d90d500bc73315e899e5

@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Persist: a simple persisting table for Torch
+EAPI=6
+HOMEPAGE=https://github.com/clementfarabet/persist
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-lua/redis-lua dev-lua/lua-cjson sci-libs/torch-sys
+SLOT=0
+SRC_URI=https://github.com/clementfarabet/persist/archive/83167716b35eedc1ff2f88ccb72ac66622006833.tar.gz -> persist-0_p20140706.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=268c3e8cb0cef146c7917bd61148c1bf

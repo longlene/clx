@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DESCRIPTION=A mathematics/matrix library for Common Lisp
+EAPI=4
+HOMEPAGE=http://common-lisp.net/project/lisplab/
+LICENSE=GPL
+SLOT=0
+SRC_URI=http://common-lisp.net/project/lisplab/download/lisplab-0.1.0-svn149.tgz -> lisplab-0.1.0.tar.gz
+_md5_=9dd98098d29748c22b512356973d8e8b

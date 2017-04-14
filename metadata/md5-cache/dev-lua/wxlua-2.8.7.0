@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=>=dev-lang/lua-5.1 >=x11-libs/wxGTK-2.8.7.0 opengl? ( virtual/opengl )
+DESCRIPTION=Set of bindings to the wxWidgets library for the Lua programming language.
+EAPI=0
+HOMEPAGE=http://wxlua.sourceforge.net/
+IUSE=opengl unicode
+KEYWORDS=~amd64
+LICENSE=wxWinFDL-3
+RDEPEND=>=dev-lang/lua-5.1 >=x11-libs/wxGTK-2.8.7.0 opengl? ( virtual/opengl )
+SLOT=0
+SRC_URI=mirror://sourceforge/wxlua/wxLua-2.8.7.0-src.tar.gz
+_md5_=b9eb869ab4984c1da923b352a9214479

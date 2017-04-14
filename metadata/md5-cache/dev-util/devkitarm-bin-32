@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DESCRIPTION=DevKitPro toolchain for ARM processors
+EAPI=0
+HOMEPAGE=http://devkitpro.org/
+KEYWORDS=amd64 ~x86
+LICENSE=GPL-2
+RESTRICT=strip
+SLOT=0
+SRC_URI=mirror://sourceforge/devkitpro/devkitARM_r32-x86_64-linux.tar.bz2
+_md5_=a9b6fe0d8c35a3cd2a8a6fdcdeda538d

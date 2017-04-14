@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=A simple, higher level interface for Go web scraping
+EAPI=6
+HOMEPAGE=https://github.com/yhat/scrape
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/yhat/scrape/archive/24b7890b0945459dbf91743e4d2ac5d75a51fee2.tar.gz -> scrape-0_p20161128.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=4db477203b750d2cf32595abe2fc0e4d

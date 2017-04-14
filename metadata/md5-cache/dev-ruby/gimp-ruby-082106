@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=>=dev-lang/ruby-1.8 >=media-gfx/gimp-2.3
+DESCRIPTION=Ruby extension to write Gimp plug-ins and procedures using Ruby-Fu
+EAPI=0
+HOMEPAGE=http://wiki.slembcke.net/main/published/Gimp-Ruby
+KEYWORDS=~x86 ~arm
+LICENSE=GPL
+RDEPEND=>=dev-lang/ruby-1.8 >=media-gfx/gimp-2.3
+SLOT=0
+SRC_URI=http://files.slembcke.net/gimp-ruby/gimp-ruby.tgz
+_md5_=69ffb41793e82af64e986f4b13a54609

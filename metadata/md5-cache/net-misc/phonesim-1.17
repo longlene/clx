@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=x11-libs/qt-core x11-libs/qt-dbus x11-libs/qt-gui x11-libs/qt-script virtual/pkgconfig
+DESCRIPTION=Phone Simulator for modem testing
+EAPI=2
+HOMEPAGE=http://ofono.org/
+KEYWORDS=amd64 arm x86
+LICENSE=GPL-2
+RDEPEND=x11-libs/qt-core x11-libs/qt-dbus x11-libs/qt-gui x11-libs/qt-script
+SLOT=0
+SRC_URI=mirror://kernel/linux/network/ofono/phonesim-1.17.tar.bz2
+_md5_=dc7e7acff5f496894d7b547f1f81e0cd

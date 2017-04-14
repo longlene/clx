@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install prepare unpack
+DEPEND=perl? ( dev-lang/perl ) readline? ( sys-libs/readline ) dev-util/pkgconfig >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=A stand-alone distribution of the JavaScript (JS) programming language reference implementation from Mozilla.
+EAPI=4
+HOMEPAGE=http://www.ossp.org/pkg/lib/js/
+IUSE=dso perl pic readline unicode
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-2.0
+RDEPEND=perl? ( dev-lang/perl ) readline? ( sys-libs/readline )
+SLOT=0
+SRC_URI=ftp://ftp.ossp.org/pkg/lib/js/js-1.6.20070208.tar.gz -> ossp-js-1.6.20070208.tar
+_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	libtool	e32ea84bf82cf8987965b574672dba93	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=54486c09ff29a9041d1d374ed6571f7b

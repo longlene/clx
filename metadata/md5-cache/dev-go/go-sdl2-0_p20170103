@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=media-libs/libsdl2 media-libs/sdl2-gfx media-libs/sdl2-image media-libs/sdl2-mixer[midi] media-libs/sdl2-ttf >=dev-lang/go-1.7:=
+DESCRIPTION=SDL2 binding for Go
+EAPI=6
+HOMEPAGE=https://github.com/veandco/go-sdl2
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD-3
+RDEPEND=media-libs/libsdl2 media-libs/sdl2-gfx media-libs/sdl2-image media-libs/sdl2-mixer[midi] media-libs/sdl2-ttf
+SLOT=0
+SRC_URI=https://github.com/veandco/go-sdl2/archive/29d75db2591136c18034ee04a816f23f28b673d6.tar.gz -> go-sdl2-0_p20170103.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=ddc7b91b2d16695a219e3e6e79414196

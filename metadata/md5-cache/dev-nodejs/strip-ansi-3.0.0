@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Strip ANSI escape codes
+EAPI=5
+HOMEPAGE=https://github.com/sindresorhus/strip-ansi
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-nodejs/ansi-regex
+SLOT=0
+SRC_URI=http://registry.npmjs.org/strip-ansi/-/strip-ansi-3.0.0.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=80cafc7aa76e39c3ea84ed3feceda131

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=sys-libs/zlib ssl? ( dev-libs/openssl ) postgres? ( dev-db/postgresql )
+DESCRIPTION=An easy to use, scalable and secure web application framework for writing web APIs in C
+EAPI=5
+HOMEPAGE=https://kore.io
+IUSE=debug postgres +ssl +threads
+KEYWORDS=~amd64 ~x86 ~arm
+RDEPEND=sys-libs/zlib ssl? ( dev-libs/openssl ) postgres? ( dev-db/postgresql )
+SLOT=0
+SRC_URI=https://github.com/jorisvink/kore/archive/2.0.0-release.tar.gz -> kore-2.0.0.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=52e677b35ceb3511fbee7e5a0fb6daf4

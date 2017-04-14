@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=A Go package for representing a list of errors as a single error
+EAPI=6
+HOMEPAGE=https://github.com/hashicorp/go-multierror
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MPL-2.0
+SLOT=0
+SRC_URI=https://github.com/hashicorp/go-multierror/archive/ed905158d87462226a13fe39ddf685ea65f1c11f.tar.gz -> go-multierror-0_p20161217.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=3d007965188c1ddaf8bb60766f3983f2

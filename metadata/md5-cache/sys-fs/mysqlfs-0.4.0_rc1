@@ -1,0 +1,11 @@
+DEFINED_PHASES=install postinst
+DEPEND=sys-fs/fuse virtual/mysql
+DESCRIPTION=Fuse-filesystem utilising a MySQL database
+EAPI=0
+HOMEPAGE=http://sourceforge.net/projects/mysqlfs/
+KEYWORDS=~x86
+LICENSE=GPL-2
+RDEPEND=sys-fs/fuse virtual/mysql
+SLOT=0
+SRC_URI=mirror://sourceforge/mysqlfs/mysqlfs-0.4.0-rc1.tar.bz2
+_md5_=7aa03aad6c4f4ac67b872619fb669d58

@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=Parallel lua states
+EAPI=6
+HOMEPAGE=https://github.com/cloudwu/hive
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/cloudwu/hive/archive/182afa65149d4d4e58ad16dbe7fa85480f9700e8.tar.gz -> hive-0.1_p20140314.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=b1962cf2f485c9ac131c548c38c74d59

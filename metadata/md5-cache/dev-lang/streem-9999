@@ -1,0 +1,12 @@
+DEFINED_PHASES=install unpack
+DEPEND=sys-devel/bison sys-devel/flex dev-libs/boehm-gc dev-vcs/git
+DESCRIPTION=prototype of stream based programming language
+EAPI=5
+HOMEPAGE=https://github.com/matz/streem
+IUSE=examples
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=sys-devel/bison sys-devel/flex dev-libs/boehm-gc
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=20e12a300827ae7da3e6cb5242f24def

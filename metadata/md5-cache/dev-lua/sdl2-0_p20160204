@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=A LuaJIT interface to SDL2
+EAPI=6
+HOMEPAGE=https://github.com/torch/sdl2-ffi
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=media-libs/libsdl2
+SLOT=0
+SRC_URI=https://github.com/torch/sdl2-ffi/archive/50659fbeca83d667240b197298a0462c7ec0ad21.tar.gz -> sdl2-0_p20160204.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=1ed0153bef7216bedb6426883af7edae

@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=A simple lexing library
+EAPI=5
+HOMEPAGE=https://github.com/jtmurphy/liblex
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=7a537c95877c01dfee55dba4f180e752

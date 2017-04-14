@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst
+DEPEND=libpcap? ( net-libs/libpcap )
+DESCRIPTION=The Link Layer Discovery Protocol
+EAPI=0
+HOMEPAGE=http://openlldp.sourceforge.net
+IUSE=libpcap debug
+KEYWORDS=~x86 ~amd64
+LICENSE=GPL-2
+RDEPEND=libpcap? ( net-libs/libpcap )
+SLOT=0
+SRC_URI=http://downloads.sourceforge.net/openlldp/openlldp-0.3alpha.tar.gz
+_md5_=47d1b5127bd85f9720e1a92b46a053e5

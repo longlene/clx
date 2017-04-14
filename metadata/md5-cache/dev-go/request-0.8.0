@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/go-simplejson >=dev-lang/go-1.7:=
+DESCRIPTION=A developer-friendly HTTP request library for Gopher
+EAPI=6
+HOMEPAGE=https://github.com/mozillazg/request
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-go/go-simplejson
+SLOT=0
+SRC_URI=https://github.com/mozillazg/request/archive/v0.8.0.tar.gz -> request-0.8.0.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=361d82ba15b257ffec5b8f1fa351c5af

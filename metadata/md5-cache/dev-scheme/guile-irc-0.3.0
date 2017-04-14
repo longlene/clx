@@ -1,0 +1,9 @@
+DEFINED_PHASES=prepare
+DEPEND=net-libs/gnutls[guile] >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+EAPI=5
+KEYWORDS=~amd64 ~x86 ~arm
+RDEPEND=net-libs/gnutls[guile]
+SLOT=0
+SRC_URI=https://github.com/guildhall/guile-irc/archive/v0.3.0.tar.gz -> guile-irc-0.3.0.tar.gz
+_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	libtool	e32ea84bf82cf8987965b574672dba93	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=0bfaa18d07e25670e1a31e57a5677c36

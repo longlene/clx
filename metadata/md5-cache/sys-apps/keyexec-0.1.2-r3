@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=>=sys-apps/keyutils-1.1 >=sys-auth/pam_keystore-0.1 kde? ( >=kde-base/kdelibs-4.1.0 )
+DESCRIPTION=Starts other program using the password of the user kept in the kernel
+EAPI=0
+HOMEPAGE=http://www.calculate-linux.org/keyexec
+IUSE=kde
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=>=sys-apps/keyutils-1.1 >=sys-auth/pam_keystore-0.1 kde? ( >=kde-base/kdelibs-4.1.0 )
+SLOT=0
+SRC_URI=ftp://mirror.yandex.ru/calculate/keyexec/keyexec-0.1.2.tar.bz2 http://mirror.yandex.ru/calculate/keyexec/keyexec-0.1.2.tar.bz2 ftp://ftp.linux.kiev.ua/pub/Linux/Calculate/keyexec/keyexec-0.1.2.tar.bz2
+_md5_=81807998e9d751ae7086525db87fd50e

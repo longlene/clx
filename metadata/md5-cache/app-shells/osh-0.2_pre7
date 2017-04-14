@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst unpack
+DEPEND=sys-libs/readline sys-libs/ncurses
+DESCRIPTION=Ole's Shell, a lightweight shell
+EAPI=0
+HOMEPAGE=http://osh.sf.net/
+IUSE=debug
+KEYWORDS=~x86
+LICENSE=GPL-2
+RDEPEND=sys-libs/readline sys-libs/ncurses
+SLOT=0
+SRC_URI=mirror://sourceforge/osh/osh-0.2-pre7.tar.bz2
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=5620aab756ef55f4a67125014d794fa8

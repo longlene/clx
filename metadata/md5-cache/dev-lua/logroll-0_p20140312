@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=A basic logging library for Lua and Torch
+EAPI=6
+HOMEPAGE=https://github.com/rosejn/logroll
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD-3
+SLOT=0
+SRC_URI=https://github.com/rosejn/logroll/archive/80e1ae7834345a7008fc0f09a270770469daf332.tar.gz -> logroll-0_p20140312.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=8401ee44e5df644521f36aa4cae000b8

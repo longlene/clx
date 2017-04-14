@@ -1,0 +1,12 @@
+DEFINED_PHASES=install postinst postrm
+DEPEND=app-text/sdcv || ( >=app-editors/vim-7.3 >=app-editors/gvim-7.3 )
+DESCRIPTION=vim plugin: vim stardict
+EAPI=6
+HOMEPAGE=http://www.vim.org/scripts/script.php?script_id=
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=|| ( >=app-editors/vim-7.3 >=app-editors/gvim-7.3 )
+SLOT=0
+SRC_URI=https://github.com/phongvcao/vim-stardict/archive/0.5.0.tar.gz -> vim-stardict-0.5.0.tar.gz
+_eclasses_=vim-doc	af2c81a1feeb0a99e91bee3e20769edb	vim-plugin	6f0171b0a2f2fce005c13b4c0685a0d8
+_md5_=a9419055d773aa1e9d5112843df0af5c

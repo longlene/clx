@@ -1,0 +1,12 @@
+DEFINED_PHASES=install postinst
+DEPEND=>=sys-libs/glibc-2.4
+DESCRIPTION=Password recovery for 7zip, rar and zip files
+EAPI=0
+HOMEPAGE=http://rarcrack.sourceforge.net
+IUSE=7zip rar zip
+KEYWORDS=~x86 ~amd64
+LICENSE=GPL-2
+RDEPEND=rar? ( app-arch/unrar ) zip? ( app-arch/unzip ) 7zip? ( app-arch/p7zip )
+SLOT=0
+SRC_URI=mirror://sourceforge/rarcrack/rarcrack-0.2.tar.bz2
+_md5_=5ed811c2890d2aeaea5259ea8230438c

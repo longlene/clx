@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=net-libs/libpcap net-libs/libnet media-libs/alsa-lib ncurses? ( sys-libs/ncurses ) pcre? ( dev-libs/libpcre ) ssl? ( dev-libs/openssl )
+DESCRIPTION=An IP Video security assessment tool
+EAPI=2
+HOMEPAGE=http://videojak.sourceforge.net/
+IUSE=debug ncurses pcre ssl
+KEYWORDS=~x86
+LICENSE=GPL-3
+RDEPEND=net-libs/libpcap net-libs/libnet media-libs/alsa-lib ncurses? ( sys-libs/ncurses ) pcre? ( dev-libs/libpcre ) ssl? ( dev-libs/openssl )
+SLOT=0
+SRC_URI=mirror://sourceforge/videojak/videojak-2.0.tar.gz
+_md5_=4b7e8486cf421dec498224868fe10c2b

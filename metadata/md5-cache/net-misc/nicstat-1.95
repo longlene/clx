@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=network traffic statics utility for Solaris and Linux
+EAPI=5
+HOMEPAGE=https://sourceforge.net/projects/nicstat/
+KEYWORDS=~amd64 ~x86
+LICENSE=Artistic-2
+SLOT=0
+SRC_URI=mirror://sourceforge/nicstat/nicstat-1.95.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=822a027ef06619abfbacd62c013cdef4

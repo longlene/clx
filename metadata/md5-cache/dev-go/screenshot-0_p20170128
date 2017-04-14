@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/xgb >=dev-lang/go-1.7:=
+DESCRIPTION=Simple cross-platform pure Go screen shot library
+EAPI=6
+HOMEPAGE=https://github.com/vova616/screenshot
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-go/xgb
+SLOT=0
+SRC_URI=https://github.com/vova616/screenshot/archive/078a68cd574545eb3a1d713f5b02a61cc6c42128.tar.gz -> screenshot-0_p20170128.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=56f8d2acbc4b172fec9fc055b136898f

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Closure is a web browser implemented in Common Lisp, implemented using CLIM.
+EAPI=0
+HOMEPAGE=http://common-lisp.net/project/closure
+KEYWORDS=~amd64 ~ppc ~sparc ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-lisp/cxml dev-lisp/closure-html dev-lisp/mcclim dev-lisp/bordeaux-threads dev-lisp/trivial-sockets dev-lisp/zip dev-lisp/flexi-streams dev-lisp/skippy media-libs/jpeg
+RESTRICT=mirror
+SLOT=0
+SRC_URI=http://common-lisp.net/~sionescu/files/closure-20080602.tar.bz2
+_eclasses_=common-lisp-3	e3b01fd04bd5f6e4c79e470ea00b97a8	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=1da773813d2a485016ecb1400cf8fec9

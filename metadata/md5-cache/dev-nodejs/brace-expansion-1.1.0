@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Brace expansion as known from sh/bash
+EAPI=5
+HOMEPAGE=https://github.com/juliangruber/brace-expansion
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-nodejs/balanced-match dev-nodejs/concat-map
+SLOT=0
+SRC_URI=http://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.0.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=f0c0e521e7c680b2ecdd110fd3b25d20

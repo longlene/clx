@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=Free, open source compiler of ASN.1 specifications into C source code.
+EAPI=0
+HOMEPAGE=http://lionet.info/asn1c/
+KEYWORDS=~x86 ~amd64 ~alpha ~ppc ~sparc
+LICENSE=BSD
+SLOT=0
+SRC_URI=http://lionet.info/soft/asn1c-0.9.19.tar.gz
+_md5_=f01c77b5134ad8fa8d57b1026d08b5ba

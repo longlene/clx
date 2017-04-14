@@ -1,0 +1,14 @@
+DEFINED_PHASES=install postinst postrm prepare prerm setup unpack
+DEPEND=selinux? ( sec-policy/selinux-java ) jce? ( app-arch/unzip:0 ) pax_kernel? ( sys-apps/paxctl:0 ) >=dev-java/java-config-2.2.0-r3 >=app-eselect/eselect-java-0.2.0
+DESCRIPTION=Oracle's Java SE Development Kit
+EAPI=5
+HOMEPAGE=http://www.oracle.com/technetwork/java/javase/
+IUSE=+X alsa aqua derby doc +fontconfig jce nsplugin pax_kernel selinux source
+KEYWORDS=*
+LICENSE=Oracle-BCLA-JavaSE
+RDEPEND=selinux? ( sec-policy/selinux-java ) X? ( !aqua? ( x11-libs/libX11:0 x11-libs/libXext:0 x11-libs/libXi:0 x11-libs/libXrender:0 x11-libs/libXtst:0 ) ) alsa? ( media-libs/alsa-lib:0 ) doc? ( dev-java/java-sdk-docs:1.8 ) fontconfig? ( media-libs/fontconfig:1.0 ) !prefix? ( sys-libs/glibc:* ) >=dev-java/java-config-2.2.0-r3 >=app-eselect/eselect-java-0.2.0
+RESTRICT=mirror strip
+SLOT=1.8
+SRC_URI=amd64? ( mirror://funtoo/oracle-java/jdk-8u51-linux-x64.tar.gz ) arm? ( mirror://funtoo/oracle-java/jdk-8u33-linux-arm-vfp-hflt.tar.gz ) x86? ( mirror://funtoo/oracle-java/jdk-8u51-linux-i586.tar.gz ) jce? ( mirror://funtoo/oracle-java/UnlimitedJCEPolicyJDK8.zip )
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	fdo-mime	21ef5adf81836863efa968f2a25cff64	java-vm-2	477ca23a49dfcd57017ee7f3bed47564	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	pax-utils	4c2654a34ebe732e85fda354f6ee642f	prefix	df8265631f8bf5f5df387e9b987121f9	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=fec3c592e3bb995a4d6497dac1947743

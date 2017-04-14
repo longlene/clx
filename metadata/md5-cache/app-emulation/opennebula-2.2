@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst prepare setup test unpack
+DEPEND=>=dev-libs/xmlrpc-c-1.18.02[abyss,cxx,threads] dev-lang/ruby:1.8 mysql? ( dev-db/mysql ) dev-db/sqlite:3[threadsafe] net-misc/openssh qemu? ( app-emulation/libvirt[libvirtd,qemu] ) xen? ( app-emulation/xen-tools ) >=dev-util/scons-1.2.0-r1 test? ( ruby_targets_ruby18? ( dev-ruby/nokogiri[ruby_targets_ruby18] dev-ruby/crack[ruby_targets_ruby18] ) ) ruby_targets_ruby18? ( dev-lang/ruby:1.8 )
+DESCRIPTION=OpenNebula Virtual Infrastructure Engine
+EAPI=3
+HOMEPAGE=http://www.opennebula.org/
+IUSE=qemu mysql sqlite xen test elibc_FreeBSD ruby_targets_ruby18
+KEYWORDS=~amd64
+LICENSE=Apache-2.0
+RDEPEND=>=dev-libs/xmlrpc-c-1.18.02[abyss,cxx,threads] dev-lang/ruby:1.8 mysql? ( dev-db/mysql ) dev-db/sqlite:3[threadsafe] net-misc/openssh qemu? ( app-emulation/libvirt[libvirtd,qemu] ) xen? ( app-emulation/xen-tools ) ruby_targets_ruby18? ( dev-ruby/nokogiri[ruby_targets_ruby18] dev-ruby/crack[ruby_targets_ruby18] ) ruby_targets_ruby18? ( dev-lang/ruby:1.8 )
+RESTRICT=test
+SLOT=0
+SRC_URI=http://dev.opennebula.org/attachments/download/339/opennebula-2.2.tar.gz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	java-utils-2	1971a6927fcd7ec839f7e12b28a24bdd	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	ruby-ng	2abd9e38aac141db06ae38bf32e748cd	ruby-utils	e9d0baddf239294b286da449ae7ac6a3	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=f68cd0fcf35291e4568307fa57df6449

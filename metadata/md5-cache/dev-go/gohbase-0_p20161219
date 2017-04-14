@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/logrus dev-go/b dev-go/protobuf dev-go/go-zookeeper dev-go/go-net >=dev-lang/go-1.7:=
+DESCRIPTION=Pure-Go HBase client
+EAPI=6
+HOMEPAGE=https://github.com/tsuna/gohbase
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-go/logrus dev-go/b dev-go/protobuf dev-go/go-zookeeper dev-go/go-net
+SLOT=0
+SRC_URI=https://github.com/tsuna/gohbase/archive/ed25038db1c836cc7390f0ecf46c282a77591816.tar.gz -> gohbase-0_p20161219.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=baff52849c391a84254a21d29fa9baaa

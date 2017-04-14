@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare
+DESCRIPTION=IUP is a multi-platform toolkit for building graphical user interfaces
+EAPI=5
+HOMEPAGE=http://iup.sourceforge.net/
+IUSE=webkit static-libs lua opengl lua motif led
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=x11-libs/pangox-compat webkit? ( net-libs/webkit-gtk ) motif? ( x11-libs/motif x11-proto/printproto ) opengl? ( virtual/glu ) lua? ( >=dev-lang/lua-5.1 )
+SLOT=0
+SRC_URI=mirror://sourceforge/iup/iup-3.21_Sources.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=4a8b047d13afbd276680dd75dbd342e0

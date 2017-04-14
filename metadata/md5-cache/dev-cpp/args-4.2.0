@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=doc? ( app-doc/doxygen )
+DESCRIPTION=A simple header-only C++ argument parser library
+EAPI=6
+HOMEPAGE=https://github.com/Taywee/args
+IUSE=doc
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=doc? ( app-doc/doxygen )
+SLOT=0
+SRC_URI=https://github.com/Taywee/args/archive/4.2.0.tar.gz -> args-4.2.0.tar.gz
+_md5_=a7c2bf73bc0834347d0ea8e6b21d6ac7

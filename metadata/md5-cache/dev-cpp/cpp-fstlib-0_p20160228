@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=C++11 header-only Minimal Acyclic Subsequential Transducers
+EAPI=6
+HOMEPAGE=https://github.com/yhirose/cpp-fstlib
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/yhirose/cpp-fstlib/archive/d7813aa1aeb5936b9bee9ec5a7653f59f63e9672.tar.gz -> cpp-fstlib-0_p20160228.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=c49d4980b2d4a668a9147e4ee18680e2

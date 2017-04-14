@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=A native Thrift package for Go
+EAPI=6
+HOMEPAGE=https://github.com/samuel/go-thrift
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD-3
+SLOT=0
+SRC_URI=https://github.com/samuel/go-thrift/archive/e9042807f4f5bf47563df6992d3ea0857313e2be.tar.gz -> go-thrift-0_p20160420.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=7df09baae4e40f9132bcd912ecf920e8

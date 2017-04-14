@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Return a copy of an object excluding the given key, or array of keys
+EAPI=6
+HOMEPAGE=https://github.com/jonschlinkert/object.omit
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-nodejs/is-extendable dev-nodejs/for-own
+SLOT=0
+SRC_URI=http://registry.npmjs.org/object.omit/-/object.omit-2.0.0.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=c5bf20278e279824413dff35cd85fcb1

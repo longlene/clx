@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Self-contained C/C++ profiler library for Linux
+EAPI=5
+HOMEPAGE=https://github.com/cyrus-and/prof
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=as-is
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=04ef77ab5f98d022829adb7c23b8330d

@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=command line id3v2.3/id3v1.1 tagger for mp3 files
+EAPI=0
+HOMEPAGE=http://home.wanadoo.nl/squell/id3.html
+KEYWORDS=~x86
+LICENSE=Cryptix/BSD
+SLOT=0
+SRC_URI=http://home.wanadoo.nl/squell/files/id3-0.75.tar.gz
+_md5_=a5d04fe6b2fc9f1d6730ec29847be461

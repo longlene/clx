@@ -1,0 +1,10 @@
+DEFINED_PHASES=install prepare
+DESCRIPTION=Multi-User Tmux
+EAPI=5
+HOMEPAGE=https://github.com/zolrath/wemux
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=app-misc/tmux
+SLOT=0
+SRC_URI=https://github.com/zolrath/wemux/archive/v3.2.0.tar.gz -> wemux-3.2.0.tar.gz
+_md5_=553aba5a4914d2429be7b5c34a4fc94c

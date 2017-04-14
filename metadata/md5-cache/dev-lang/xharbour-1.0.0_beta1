@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=sys-libs/ncurses virtual/libc allegro? ( media-libs/allegro ) gpm? ( sys-libs/gpm ) odbc? ( dev-db/unixODBC ) slang? ( sys-libs/slang ) X? ( media-libs/freetype x11-libs/libX11 x11-libs/libXext x11-libs/libXmu x11-libs/libXpm x11-libs/libXt ) sys-devel/bison
+DESCRIPTION=An extended implementation of the Clipper dialect of the xBase language family
+EAPI=0
+HOMEPAGE=http://www.xharbour.org/
+IUSE=allegro doc gpm odbc slang threads X
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2-with-exceptions
+RDEPEND=sys-libs/ncurses virtual/libc allegro? ( media-libs/allegro ) gpm? ( sys-libs/gpm ) odbc? ( dev-db/unixODBC ) slang? ( sys-libs/slang ) X? ( media-libs/freetype x11-libs/libX11 x11-libs/libXext x11-libs/libXmu x11-libs/libXpm x11-libs/libXt )
+SLOT=0
+SRC_URI=mirror://sourceforge/xharbour/xharbour-1.0.0-beta1.src.tar.gz
+_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=fa49de7a9f715e51d1a5996d252689d2

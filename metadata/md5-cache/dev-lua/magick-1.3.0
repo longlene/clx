@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Lua bindings to ImageMagick for LuaJIT using FFI
+EAPI=6
+HOMEPAGE=https://github.com/leafo/magick
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=media-gfx/imagemagick
+SLOT=0
+SRC_URI=https://github.com/leafo/magick/archive/v1.3.0.tar.gz -> magick-1.3.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=9d8125faecc447bf55851c58b9612487

@@ -1,0 +1,10 @@
+DEFINED_PHASES=configure unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Conspack implementation for C
+EAPI=5
+HOMEPAGE=https://github.com/conspack/libconspack
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=LGPL-2
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=b16e112949ff7ed70ec7636f770bce3e

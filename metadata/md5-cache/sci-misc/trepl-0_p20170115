@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=>=dev-lang/lua-5.1:= dev-lang/luajit:2 sys-libs/readline sci-libs/torch7
+DESCRIPTION=TREPL is a command-line REPL for Torch.
+EAPI=5
+HOMEPAGE=https://github.com/torch/trepl
+KEYWORDS=~amd64 ~arm
+LICENSE=BSD
+RDEPEND=>=dev-lang/lua-5.1:= dev-lang/luajit:2 sys-libs/readline sci-libs/torch7
+SLOT=0
+SRC_URI=https://github.com/torch/trepl/archive/818868e23521ec1eb6b4bea32714fe39024e01db.tar.gz -> trepl-0_p20170115.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=56318d44355615ab3dc69757142885ec

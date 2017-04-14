@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install preinst setup
+DEPEND=>=dev-libs/crypto++-5 >=sys-libs/zlib-1.2.1 stats? ( >=media-libs/gd-2.0.26[jpeg] ) geoip? ( dev-libs/geoip ) upnp? ( >=net-libs/libupnp-1.6.6 ) remote? ( >=media-libs/libpng-1.2.0 unicode? ( >=media-libs/gd-2.0.26 ) ) X? ( >=x11-libs/wxGTK-2.8.12[X] ) !X? ( >=x11-libs/wxGTK-2.8.12 )
+DESCRIPTION=aMule Adunanza, the all-platform eMule p2p client for FastWeb customers.
+EAPI=2
+HOMEPAGE=http://www.adunanza.net/
+IUSE=daemon debug geoip nls remote stats unicode upnp +X
+KEYWORDS=~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86
+LICENSE=GPL-2
+RDEPEND=>=dev-libs/crypto++-5 >=sys-libs/zlib-1.2.1 stats? ( >=media-libs/gd-2.0.26[jpeg] ) geoip? ( dev-libs/geoip ) upnp? ( >=net-libs/libupnp-1.6.6 ) remote? ( >=media-libs/libpng-1.2.0 unicode? ( >=media-libs/gd-2.0.26 ) ) X? ( >=x11-libs/wxGTK-2.8.12[X] ) !X? ( >=x11-libs/wxGTK-2.8.12 ) !net-p2p/amule
+SLOT=0
+SRC_URI=mirror://sourceforge/amule-adunanza/aMule-AdunanzA/Stable/aMule-AdunanzA-2010.1-2.2.6.tar.bz2
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	35067884fbff37bc0c8e7421c5315558	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	wxwidgets	04e063b0eff26daaea83d859dd9d6e05
+_md5_=45b4606bf41845d7b4f43fd6f2968865

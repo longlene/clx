@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/termbox-go >=dev-lang/go-1.7:=
+DESCRIPTION=Minimalist Go package aimed at creating Console User Interfaces
+EAPI=6
+HOMEPAGE=https://github.com/jroimartin/gocui
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-go/termbox-go
+SLOT=0
+SRC_URI=https://github.com/jroimartin/gocui/archive/c690b943b6427bf9a3bca8b88cbd8457afcaac37.tar.gz -> gocui-0.3.0_p20170206.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=2e677fa7d45870151f02966bf9e25c95

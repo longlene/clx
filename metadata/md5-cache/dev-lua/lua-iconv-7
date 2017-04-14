@@ -1,0 +1,11 @@
+DEFINED_PHASES=install prepare
+DEPEND=|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 ) dev-util/pkgconfig
+DESCRIPTION=Lua bindings for POSIX iconv
+EAPI=5
+HOMEPAGE=http://ittner.github.com/lua-iconv
+LICENSE=MIT
+RDEPEND=|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 )
+SLOT=0
+SRC_URI=https://github.com/ittner/lua-iconv/archive/lua-iconv-7.tar.gz -> lua-iconv-7.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=40c6d6a31631d2d86b0c9e2e5ecd9072

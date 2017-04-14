@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=ASN.1 BER and DER encoding library for golang
+EAPI=6
+HOMEPAGE=https://github.com/PromonLogicalis/asn1
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/PromonLogicalis/asn1/archive/c9c836c1a3cd4b4696c1adf57ab887c36fc06fae.tar.gz -> asn1-0_p20160308.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=af35be2a3b571fc501351b4c5a56a458

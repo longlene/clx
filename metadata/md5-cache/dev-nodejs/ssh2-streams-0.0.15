@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=SSH2 and SFTP(v3) client/server protocol streams for node.js
+EAPI=5
+HOMEPAGE=https://github.com/mscdex/ssh2-streams
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-nodejs/jsbn dev-nodejs/asn1 dev-nodejs/streamsearch dev-nodejs/readable-stream
+SLOT=0
+SRC_URI=http://registry.npmjs.org/ssh2-streams/-/ssh2-streams-0.0.15.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=f2aed7e8cb7f421142e8b3820ce16ec9

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/bigfft >=dev-lang/go-1.7:=
+DESCRIPTION=Utilities supplemental to the Go standard "rand" and "math" packages
+EAPI=6
+HOMEPAGE=https://github.com/cznic/mathutil
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-go/bigfft
+SLOT=0
+SRC_URI=https://github.com/cznic/mathutil/archive/4609a45a9e61188d0d69a5d8ad42600c3df35002.tar.gz -> mathutil-0_p20161012.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=44b4ef4726ac63996ce4be24353a926e

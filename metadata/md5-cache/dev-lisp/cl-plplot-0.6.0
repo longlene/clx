@@ -1,0 +1,10 @@
+DEFINED_PHASES=-
+DESCRIPTION=A CFFI based interface to the PLplot scientific plotting library
+EAPI=4
+HOMEPAGE=http://common-lisp.net/project/cl-plplot/
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-lisp/asdf dev-lisp/cffi sci-libs/plplot
+SLOT=0
+SRC_URI=http://common-lisp.net/project/cl-plplot/cl-plplot-0.6.0.tar.gz
+_md5_=43ac5448e4cc5600c352cd258853243d

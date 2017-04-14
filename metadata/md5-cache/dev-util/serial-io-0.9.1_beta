@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DEPEND=>=x11-libs/qt-4.2
+DESCRIPTION=Serial-IO-Manager is a simple program to send and receive data from a serial interface.
+EAPI=0
+HOMEPAGE=http://www.sourceforge.net/projects/serial-io/
+KEYWORDS=~x86
+LICENSE=GPL2
+RDEPEND=>=dev-libs/libserial-0.6.0_rc1 >=x11-libs/qt-4.2
+SLOT=0
+SRC_URI=mirror://sourceforge/serial-io/serial-io-0.9.1_beta.tar.bz2
+_md5_=dfc2591c967c458f3073c645782059f4

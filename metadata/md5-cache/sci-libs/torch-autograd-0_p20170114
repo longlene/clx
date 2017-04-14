@@ -1,0 +1,12 @@
+DEFINED_PHASES=install unpack
+DEPEND=sci-libs/torch7
+DESCRIPTION=Automatic differentiation for Torch
+EAPI=6
+HOMEPAGE=https://github.com/twitter/torch-autograd
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=sci-libs/torch7
+SLOT=0
+SRC_URI=https://github.com/twitter/torch-autograd/archive/4bc278a4169e13b928b54ef5c4a723267c6e0a04.tar.gz -> torch-autograd-0_p20170114.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=49a8742b14f550e57d052241940ad5fa

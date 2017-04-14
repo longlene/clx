@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Lua etcd client
+EAPI=6
+HOMEPAGE=https://github.com/anibali/etcd.lua
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lua/luasocket dev-lua/lua-cjson
+SLOT=0
+SRC_URI=https://github.com/anibali/etcd.lua/archive/v0.1.0.tar.gz -> etcd-0.1.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=88c20c61b15bc7aa2d4a5344025488ad

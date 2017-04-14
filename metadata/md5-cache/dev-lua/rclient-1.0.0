@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=LuaJIT Client for Rserve
+EAPI=5
+HOMEPAGE=http://scilua.org/rclient.html
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-lang/luajit dev-lua/xsys
+SLOT=0
+SRC_URI=https://github.com/stepelu/lua-rclient/archive/v1.0.0.tar.gz -> rclient-1.0.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=3fbbea3e02f69b5779e61cc559634b84

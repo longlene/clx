@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=net-im/pidgin[gtk]
+DESCRIPTION=Pidgin plugin to performs itself like an answering machine or, more likely, a prompter robot
+EAPI=2
+HOMEPAGE=http://pidgin-autoansw.sourceforge.net
+KEYWORDS=~x86
+LICENSE=GPL-2
+RDEPEND=net-im/pidgin[gtk]
+SLOT=0
+SRC_URI=mirror://sourceforge/pidgin-autoansw/pidgin-autoanswer-0.71.tar.gz
+_md5_=febd2de15944bdcf641853d4c5ed9c5d

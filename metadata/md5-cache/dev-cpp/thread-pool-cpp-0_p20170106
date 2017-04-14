@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=High performance C++14 thread pool
+EAPI=6
+HOMEPAGE=https://github.com/inkooboo/thread-pool-cpp
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/inkooboo/thread-pool-cpp/archive/dd570aa5156dd662bb8a981934f7cf287087d51c.tar.gz -> thread-pool-cpp-0_p20170106.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=3d10772e55c1c81e4c7fb81bcb232b0e

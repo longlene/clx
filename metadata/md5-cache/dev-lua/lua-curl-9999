@@ -1,0 +1,11 @@
+DEFINED_PHASES=install prepare unpack
+DEPEND=|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 ) net-misc/curl >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4 dev-vcs/git
+DESCRIPTION=Lua cURL Library
+EAPI=4
+HOMEPAGE=https://github.com/msva/lua-curl
+IUSE=doc examples
+LICENSE=MIT
+RDEPEND=|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 )
+SLOT=0
+_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	git-2	7af5d170bfc02983b4bcd3167dc5edd4	libtool	e32ea84bf82cf8987965b574672dba93	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=1047e6e1a235407e4c1288202e1b26f7

@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=Crash your app in style
+EAPI=6
+HOMEPAGE=https://github.com/maruel/panicparse/
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=Apache-2.0
+SLOT=0
+SRC_URI=https://github.com/maruel/panicparse/archive/ad661195ed0e88491e0f14be6613304e3b1141d6.tar.gz -> panicparse-0_p20160720.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=71a897e5f0ee6f7cdd621467262ad838

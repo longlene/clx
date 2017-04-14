@@ -1,0 +1,12 @@
+DEFINED_PHASES=unpack
+DEPEND=!dev-libs/xerces-c
+DESCRIPTION=Greenplum patched xerces-c
+EAPI=6
+HOMEPAGE=https://github.com/greenplum-db/gp-xerces
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=!dev-libs/xerces-c
+SLOT=0
+SRC_URI=https://github.com/greenplum-db/gp-xerces/archive/v3.1.2-p1.tar.gz -> gp-xerces-3.1.2_p1.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=948f14215b70b301f1835311c018d49a

@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=C++11 libuv wrapper
+EAPI=5
+HOMEPAGE=https://github.com/larroy/uvpp
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-libs/libuv
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=cfbb09c6f3ea05a5f4978b0687f5ee01

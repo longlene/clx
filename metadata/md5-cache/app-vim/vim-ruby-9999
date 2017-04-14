@@ -1,0 +1,11 @@
+DEFINED_PHASES=install postinst postrm unpack
+DEPEND=dev-vcs/git || ( >=app-editors/vim-7.3 >=app-editors/gvim-7.3 )
+DESCRIPTION=vim plugin: Vim/Ruby Configuration Files
+EAPI=5
+HOMEPAGE=https://github.com/vim-ruby/vim-ruby
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=|| ( >=app-editors/vim-7.3 >=app-editors/gvim-7.3 )
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4	vim-doc	af2c81a1feeb0a99e91bee3e20769edb	vim-plugin	6f0171b0a2f2fce005c13b4c0685a0d8
+_md5_=87248eac6c9862a06e5083b9835b5a36

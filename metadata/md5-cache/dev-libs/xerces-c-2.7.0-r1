@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install setup unpack
+DEPEND=doc? ( app-doc/doxygen )
+DESCRIPTION=Xerces-C++ is a validating XML parser written in a portable subset of C++.
+EAPI=5
+HOMEPAGE=http://xml.apache.org/xerces-c/index.html
+IUSE=doc elibc_FreeBSD
+KEYWORDS=alpha amd64 ~hppa ppc ppc64 sparc x86 ~x86-fbsd
+LICENSE=Apache-2.0
+SLOT=0
+SRC_URI=mirror://gentoo/xerces-c-src_2_7_0.tar.gz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=2431114c8a2da2de4629bbc40b19b689

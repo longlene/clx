@@ -1,0 +1,12 @@
+DEFINED_PHASES=install postinst postrm
+DEPEND=dev-libs/libxml2
+DESCRIPTION=MathML DTD and entity files
+EAPI=0
+HOMEPAGE=http://www.w3.org/1998/Math/MathML
+KEYWORDS=~x86
+LICENSE=GPL-2
+RDEPEND=dev-libs/libxml2
+SLOT=0
+SRC_URI=http://www.w3.org/Math/DTD/mathml2.tgz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=3ad7ff3270874fc08d3f68563baa0413

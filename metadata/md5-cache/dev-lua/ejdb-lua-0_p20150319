@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=dev-libs/ejdb
+DESCRIPTION=EJDB Lua binding
+EAPI=6
+HOMEPAGE=https://github.com/Softmotions/ejdb-lua
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-2
+RDEPEND=dev-libs/ejdb
+SLOT=0
+SRC_URI=https://github.com/Softmotions/ejdb-lua/archive/c670194df81cb7da78b9031a77b8e9987f377d2a.tar.gz -> ejdb-lua-0_p20150319.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=8085ba2b755b52b771583a5e5ee0d6d2

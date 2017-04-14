@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Tool to store the metadata of files,directories,links in a file tree
+EAPI=0
+HOMEPAGE=http://david.hardeman.nu/software.php
+KEYWORDS=~x86
+LICENSE=GPL-2
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=18feeda1eb775d41f765f51864797307

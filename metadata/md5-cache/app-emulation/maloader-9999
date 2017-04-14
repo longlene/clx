@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Mach-O loader for Linux
+EAPI=4
+HOMEPAGE=https://github.com/shinh/maloader
+IUSE=cxx
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=dev-libs/opencflite cxx? ( sys-devel/libcxx )
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=e3571e1eda441b099aa95e3b922a0b1e

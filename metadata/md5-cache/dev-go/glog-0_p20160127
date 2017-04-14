@@ -1,0 +1,8 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+EAPI=6
+KEYWORDS=~amd64 ~x86
+SLOT=0
+SRC_URI=https://github.com/golang/glog/archive/23def4e6c14b4da8ac2ed8007337bc5eb5007998.tar.gz -> glog-0_p20160127.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=4d811c4a4c31d398fac710338d364e5d

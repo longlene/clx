@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install
+DEPEND=!luajit? ( >=dev-lang/lua-5.1 ) luajit? ( dev-lang/luajit:2 ) dev-lua/lpeg dev-lua/luafilesystem dev-lua/alt-getopt inotify? ( dev-lua/linotify ) dev-util/pkgconfig
+DESCRIPTION=A programmer friendly language that compiles into Lua.
+EAPI=5
+HOMEPAGE=https://github.com/leafo/moonscript
+IUSE=luajit +inotify
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=!luajit? ( >=dev-lang/lua-5.1 ) luajit? ( dev-lang/luajit:2 ) dev-lua/lpeg dev-lua/luafilesystem dev-lua/alt-getopt inotify? ( dev-lua/linotify )
+SLOT=0
+SRC_URI=https://github.com/leafo/moonscript/archive/v0.5.0.tar.gz -> moonscript-0.5.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=ab4c10146673ab07adbd6bd36a344411

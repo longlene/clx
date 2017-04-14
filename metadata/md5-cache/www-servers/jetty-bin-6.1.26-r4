@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install preinst prepare setup
+DEPEND=tomcat7? ( dev-java/tomcat-servlet-api:3.0 ) !tomcat7? ( dev-java/tomcat-servlet-api:2.5 ) !www-servers/jetty:6 !www-servers/jetty-eclipse:6 !www-servers/jetty-eclipse-bin:6 >=dev-java/java-config-2.2.0-r3
+DESCRIPTION=Jetty Web Server; Java Servlet container
+EAPI=2
+HOMEPAGE=http://jetty.codehaus.org/
+IUSE=anttasks client ldap ssl stats tomcat7 elibc_FreeBSD
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=tomcat7? ( dev-java/tomcat-servlet-api:3.0 ) !tomcat7? ( dev-java/tomcat-servlet-api:2.5 ) !www-servers/jetty:6 !www-servers/jetty-eclipse:6 !www-servers/jetty-eclipse-bin:6 anttasks? ( dev-java/ant ) >=dev-java/slf4j-api-1.3.1 >=dev-java/sun-javamail-1.4 >=dev-java/jta-1.0.1 >=java-virtuals/jaf-1.1 || ( virtual/jre:1.6 virtual/jre:1.7 ) >=dev-java/java-config-2.2.0-r3
+RESTRICT=mirror
+SLOT=6
+SRC_URI=http://dist.codehaus.org/jetty/jetty-6.1.26/jetty-6.1.26.zip anttasks? ( http://dist.codehaus.org/jetty/jetty-6.1.26/jetty-ant-6.1.26.jar )
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	java-pkg-2	c4e6af2574fd1dc79b43a6e27af4b5fb	java-utils-2	1971a6927fcd7ec839f7e12b28a24bdd	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=8545392e307b09d071f18fb5141cd66d

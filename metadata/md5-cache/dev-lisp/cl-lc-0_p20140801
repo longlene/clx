@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=List comprehensions and friends
+EAPI=6
+HOMEPAGE=https://github.com/TBRSS/cl-lc
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/alexandria dev-lisp/optima dev-lisp/iterate
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/TBRSS/cl-lc/archive/3cd784698b0a9abd32c901e6cbbe0352ef33fda3.tar.gz -> cl-lc-0_p20140801.tar.gz
+_eclasses_=common-lisp-3	e3b01fd04bd5f6e4c79e470ea00b97a8	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=d865379195a28a9f0246295f628b1637

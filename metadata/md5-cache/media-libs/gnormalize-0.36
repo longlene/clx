@@ -1,0 +1,13 @@
+DEFINED_PHASES=install
+DEPEND=dev-perl/gtk2-perl media-sound/normalize media-sound/cdparanoia dev-perl/MP3-Info media-sound/cdcd mp3? ( media-sound/lame ) aac? ( media-libs/faac media-libs/faad2 ) musepack? ( media-sound/musepack-tools ) flac? ( >=media-libs/flac-1.1.1 ) oggvorbis? ( media-sound/vorbis-tools ) cddb? ( dev-perl/CDDB_get )
+DESCRIPTION=frontend for normalize and various audio encoders
+EAPI=0
+HOMEPAGE=http://gnormalize.sourceforge.net/
+IUSE=aac cddb flac mp3 musepack oggvorbis
+KEYWORDS=~x86 ~amd64
+LICENSE=GPL-2
+RDEPEND=dev-perl/gtk2-perl media-sound/normalize media-sound/cdparanoia dev-perl/MP3-Info media-sound/cdcd mp3? ( media-sound/lame ) aac? ( media-libs/faac media-libs/faad2 ) musepack? ( media-sound/musepack-tools ) flac? ( >=media-libs/flac-1.1.1 ) oggvorbis? ( media-sound/vorbis-tools ) cddb? ( dev-perl/CDDB_get )
+SLOT=0
+SRC_URI=mirror://sourceforge/gnormalize/gnormalize-0.36.tar.gz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=805ae752c61957f05593a2040b7962d2

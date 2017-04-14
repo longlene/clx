@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Utility library for functional programming in Lua
+EAPI=6
+HOMEPAGE=https://github.com/Yonaba/Moses
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/Yonaba/Moses/archive/daf91d0333e9b6d345ff37c698925dcb12caeec9.tar.gz -> moses-1.4.0_p20150828.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=31b0b73017847a83f1a99ee705aec050

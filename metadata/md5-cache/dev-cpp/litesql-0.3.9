@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=expat? ( >=dev-libs/expat-2.0.1-r3 ) mysql? ( >=virtual/mysql-5.0 ) postgresql? ( >=dev-db/postgresql-base-8.2.18 ) sqlite? ( >=dev-db/sqlite-2.8.16 ) >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=C++ Object-Relational Persistence Framework
+EAPI=3
+HOMEPAGE=http://sourceforge.net/apps/trac/litesql
+IUSE=doc +expat mysql postgresql sqlite
+KEYWORDS=~x86
+LICENSE=BSD
+RDEPEND=expat? ( >=dev-libs/expat-2.0.1-r3 ) mysql? ( >=virtual/mysql-5.0 ) postgresql? ( >=dev-db/postgresql-base-8.2.18 ) sqlite? ( >=dev-db/sqlite-2.8.16 )
+SLOT=0
+SRC_URI=mirror://sourceforge/project/litesql/litesql/0.3.9/litesql-src-0.3.9.tar.gz
+_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	libtool	e32ea84bf82cf8987965b574672dba93	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=78be90531cb1518bc2e633b1f5f3edac

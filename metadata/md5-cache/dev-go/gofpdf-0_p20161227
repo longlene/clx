@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/barcode dev-go/golang-pdf417 dev-go/go-image >=dev-lang/go-1.7:=
+DESCRIPTION=A PDF document generator with high level support for text, drawing and images
+EAPI=6
+HOMEPAGE=https://github.com/jung-kurt/gofpdf
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-go/barcode dev-go/golang-pdf417 dev-go/go-image
+SLOT=0
+SRC_URI=https://github.com/jung-kurt/gofpdf/archive/328db88096525175c22c4337b54cc9d809332c4a.tar.gz -> gofpdf-0_p20161227.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=58a96063fc0e845908dc5b9a8041eb64

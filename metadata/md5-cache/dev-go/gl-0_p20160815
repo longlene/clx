@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=virtual/opengl >=dev-lang/go-1.7:=
+DESCRIPTION=Go bindings for OpenGL
+EAPI=6
+HOMEPAGE=https://github.com/go-gl/gl
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=virtual/opengl
+SLOT=0
+SRC_URI=https://github.com/go-gl/gl/archive/b303bcb3e83b7ef645a5104e1c2db7f8d9e8918a.tar.gz -> gl-0_p20160815.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=97eaa68e2d09b3020a7f587becd3154d

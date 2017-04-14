@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=A unified http/s client library for lua
+EAPI=6
+HOMEPAGE=https://github.com/lusis/lua-httpclient
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache
+RDEPEND=dev-lua/luasocket dev-lua/inspect
+SLOT=0
+SRC_URI=https://github.com/lusis/lua-httpclient/archive/de03a3881b56043d1ac52325ff117b30a6437eb2.tar.gz -> lua-httpclient-0.1.0_p20161101.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=cc80d3066a774448a1a567f4827990c3

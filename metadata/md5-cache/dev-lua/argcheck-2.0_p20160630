@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=A powerful argument checker and function overloading system for Lua or LuaJIT
+EAPI=6
+HOMEPAGE=https://github.com/torch/argcheck
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD-3
+SLOT=0
+SRC_URI=https://github.com/torch/argcheck/archive/b3b32c060c4269c25d11cf9f983c291d9448e1ee.tar.gz -> argcheck-2.0_p20160630.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=13780b6998c23cc38ee8fde93d17b292

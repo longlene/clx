@@ -1,0 +1,9 @@
+DEFINED_PHASES=prepare
+DESCRIPTION=a simple http server for mostly static content
+EAPI=6
+HOMEPAGE=http://linux.bytesex.org/misc/webfs.html
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://www.kraxel.org/releases/webfs/webfs-1.21.tar.gz
+_md5_=d4f9c1985d45df45a13b81b905bf0728

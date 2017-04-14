@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test unpack
+DEPEND=virtual/python-argparse doc? ( dev-python/sphinx dev-python/docutils ) test? ( python_targets_python2_6? ( virtual/python-unittest2 ) || ( >=dev-vcs/git-1.7.2 >=dev-python/pygit2-0.17 ) python_targets_python2_6? ( dev-vcs/mercurial dev-vcs/bzr ) python_targets_python2_7? ( dev-vcs/mercurial dev-vcs/bzr ) ) dev-vcs/git python_targets_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7 ) >=dev-lang/python-exec-2:=[python_targets_python2_7(-)?,-python_single_target_python2_7(-)] X? ( x11-apps/mkfontdir media-fonts/encodings )
+DESCRIPTION=The ultimate statusline/prompt utility.
+EAPI=5
+HOMEPAGE=http://github.com/Lokaltog/powerline
+IUSE=vim zsh doc awesome tmux bash ipython test git python_targets_python2_7 X
+KEYWORDS=~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris
+LICENSE=MIT
+RDEPEND=virtual/python-argparse vim? ( || ( app-editors/vim[python] app-editors/gvim[python] ) ) awesome? ( >=x11-wm/awesome-3.5 ) git? ( || ( >=dev-vcs/git-1.7.2 >=dev-python/pygit2-0.17 ) ) !app-vim/powerline python_targets_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7 ) >=dev-lang/python-exec-2:=[python_targets_python2_7(-)?,-python_single_target_python2_7(-)]
+REQUIRED_USE=|| ( python_targets_python2_7 )
+SLOT=0
+_eclasses_=distutils-r1	039ba10839816478cfb070fdeb053906	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	font	82836641e7d4639329d8c195234ad0e3	git-2	7af5d170bfc02983b4bcd3167dc5edd4	ltprune	2770eed66a9b8ef944714cd0e968182e	multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	284a473719153462f3e974d86c8cb81c	python-r1	0c067f080a047742ffac024b16895b45	python-utils-r1	a166d0f5815d7f1e67bb60a196f1bf7e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	xdg-utils	b9389dfad0ee8f8e0b2a41b79fcf7120
+_md5_=8c7cdbc0457af02d3cb91926e0716685

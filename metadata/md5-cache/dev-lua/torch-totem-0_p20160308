@@ -1,0 +1,12 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-lua/penlight sci-libs/torch7 sci-libs/torch-sys sci-libs/torch-nn sci-libs/torch-nngraph
+DESCRIPTION=Torch test module
+EAPI=6
+HOMEPAGE=https://github.com/deepmind/torch-totem
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-lua/penlight sci-libs/torch7 sci-libs/torch-sys sci-libs/torch-nn sci-libs/torch-nngraph
+SLOT=0
+SRC_URI=https://github.com/deepmind/torch-totem/archive/21240faf12ee7db95d7adc41760a04ec4ca036d0.tar.gz -> torch-totem-0_p20160308.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=8f140fdc880311d4f3d17e40f4d17cf2

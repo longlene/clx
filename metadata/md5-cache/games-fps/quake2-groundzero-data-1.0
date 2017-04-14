@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst preinst setup unpack
+DEPEND=games-fps/quake2-data
+DESCRIPTION=Quake 2: Ground Zero data files
+EAPI=0
+HOMEPAGE=http://www.roguesoftware.com/
+IUSE=doc videos
+KEYWORDS=amd64 x86
+LICENSE=Q2GRNDZERO
+RDEPEND=games-misc/games-envd
+SLOT=0
+_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	games	2bb3ede665927a68ffdb7c41eec7efde	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	user	e10ccb95af96d45f86016fa982a949bb
+_md5_=a40ca78354d87ae520146430eb5870a8

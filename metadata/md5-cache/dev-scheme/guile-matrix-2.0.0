@@ -1,0 +1,12 @@
+DEFINED_PHASES=prepare
+DEPEND=virtual/lapack >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=A Matlab-like matrix environment for Guile Scheme
+EAPI=6
+HOMEPAGE=https://github.com/antoniogarro/guile-matrix
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=GPL-2
+RDEPEND=virtual/lapack
+SLOT=0
+SRC_URI=https://github.com/antoniogarro/guile-matrix/archive/v2.0.0.tar.gz -> guile-matrix-2.0.0.tar.gz
+_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	libtool	e32ea84bf82cf8987965b574672dba93	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=7dd0910b6c2108889265ed35aa3b9610

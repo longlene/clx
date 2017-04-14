@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=Common Lisp interface to GNUPlot
+EAPI=4
+HOMEPAGE=https://github.com/gwkkwg/clnuplot
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-lisp/cl-containers dev-lisp/cl-mathstats dev-lisp/metabang-bind dev-lisp/trivial-shell sci-visualization/gnuplot
+SLOT=0
+_md5_=1944ee21ea9e573675a03d3598fc2d34

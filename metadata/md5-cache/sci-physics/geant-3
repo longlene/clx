@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DESCRIPTION=Virtual for Geant-3
+EAPI=4
+IUSE=vmc
+KEYWORDS=~x86 ~amd64
+RDEPEND=vmc? ( sci-physics/geant3-vmc ) || ( sci-physics/geant:3 sci-physics/geant3-vmc )
+SLOT=3
+_md5_=348be11235760ad36b42b72eaa1f7605

@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=high performance Common Lisp json parser
+EAPI=4
+HOMEPAGE=https://github.com/madnificent/jsown
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/madnificent/jsown/archive/1.0.0.tar.gz -> jsown-1.0.0.tar.gz
+_md5_=d9eb97a3326c1d722fe06926599bcd79

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/redis dev-go/go-zookeeper dev-go/beego dev-go/goes dev-go/pb >=dev-lang/go-1.7:=
+DESCRIPTION=golang http/tcp backend framework
+EAPI=6
+HOMEPAGE=https://github.com/songtianyi/rrframework
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-go/redis dev-go/go-zookeeper dev-go/beego dev-go/goes dev-go/pb
+SLOT=0
+SRC_URI=https://github.com/songtianyi/rrframework/archive/b07188ce902cd7db8a4fb10d6da8f4f8034b3876.tar.gz -> rrframework-0_p20170124.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=f54452611cae8f9e39160d4001293d74

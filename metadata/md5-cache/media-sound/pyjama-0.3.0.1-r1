@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install postinst
+DESCRIPTION=A Python/GTK application to play free music from Jamendo
+EAPI=5
+HOMEPAGE=https://launchpad.net/pyjama
+IUSE=gnome
+KEYWORDS=~x86 ~amd64
+LICENSE=GPL-3
+RDEPEND=dev-python/pygtk dev-python/simplejson || ( dev-python/lxml dev-python/pyxml ) || ( dev-lang/python:2.6[sqlite] dev-python/pysqlite ) dev-lang/python:2.6 >=dev-python/gst-python-0.10 >=media-plugins/gst-plugins-soup-0.10 gnome? ( dev-python/gnome-python-extras )
+SLOT=0
+SRC_URI=http://launchpad.net/pyjama/trunk/0.3/+download/pyjama-0.3.0.1_all.tar.gz -> pyjama-0.3.0.1.tar.gz
+_md5_=fc066101d0757ba95e808fb70caf3d6f

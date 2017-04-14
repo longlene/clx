@@ -1,0 +1,10 @@
+DEFINED_PHASES=-
+DESCRIPTION=A Window Manager Toolkit for Guile Scheme
+EAPI=5
+HOMEPAGE=https://github.com/mwitmer/guile-wm
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=GPL-3
+RDEPEND=dev-scheme/guile dev-scheme/guile-xcb
+SLOT=0
+SRC_URI=https://github.com/mwitmer/guile-wm/archive/1.0.tar.gz -> guile-wm-1.0.tar.gz
+_md5_=0d7671d5234038e7cae376d26ff7e1cc

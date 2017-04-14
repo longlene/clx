@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DESCRIPTION=SOAP library in pure C
+EAPI=6
+HOMEPAGE=http://csoap.sourceforge.net
+KEYWORDS=~amd64 ~x86
+SLOT=0
+SRC_URI=mirror://sourceforge/csoap/libsoap-1.1.0.tar.gz
+_md5_=0031fd4c57f8cfba7fe153c411dd23ab

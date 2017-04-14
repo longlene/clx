@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=JSON4Lua and JSONRPC4Lua implement JSON encoding and decoding and a JSON-RPC-over-HTTP client for lua
+EAPI=5
+HOMEPAGE=https://github.com/craigm/json4lua
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=GPL
+RDEPEND=dev-lua/luasocket
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4	lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=d641efd357d3d9bc505a38cb5071695e

@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=A pure Lua Postgres driver for use in OpenResty & more
+EAPI=5
+HOMEPAGE=https://github.com/leafo/pgmoon
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/leafo/pgmoon/archive/v1.2.0.tar.gz -> pgmoon-1.2.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=b7cc9a94b6b91bc4b8f3d49bfc46ff52

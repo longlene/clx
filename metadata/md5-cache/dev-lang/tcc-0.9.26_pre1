@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=app-text/texi2html
+DESCRIPTION=A very small C compiler for ix86/amd64
+EAPI=5
+HOMEPAGE=http://bellard.org/tcc/
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-2.1
+RDEPEND=!dev-lang/tendra
+RESTRICT=test
+SLOT=0
+SRC_URI=http://dev.gentoo.org/~patrick/tcc-0.9.26_pre1.tar.bz2
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=9711df32a6f8b319bbed1fd1c768c5b6

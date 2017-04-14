@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install postinst
+DEPEND=app-crypt/trousers
+DESCRIPTION=A pre-kernel/VMM module that uses Intel(R) TXT to perform a measured and verified launch of an OS kernel/VMM.
+EAPI=0
+HOMEPAGE=http://tboot.sourceforge.net
+KEYWORDS=~x86 ~amd64
+LICENSE=BSD
+RDEPEND=app-crypt/trousers
+SLOT=0
+SRC_URI=mirror://sourceforge/tboot/tboot-1.7.0.tar.gz
+_md5_=e9c7fa50c260ffc7b3b9eb401c60b283

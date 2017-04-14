@@ -1,0 +1,11 @@
+DEFINED_PHASES=install prepare
+DESCRIPTION=Zmanda MySQL backup/recovery tool
+EAPI=4
+HOMEPAGE=http://mysqlbackup.zmanda.com/
+KEYWORDS=~x86 ~amd64
+LICENSE=GPL-2
+RDEPEND=dev-lang/perl dev-perl/DBI dev-perl/DBD-mysql dev-perl/XML-Parser dev-perl/XML-RSS
+SLOT=0
+SRC_URI=http://www.zmanda.com/downloads/community/ZRM-MySQL/2.2/Source/MySQL-zrm-2.2.0-release.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=be8d202025769b6308fb0206969442aa

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/compress dev-go/bytebufferpool >=dev-lang/go-1.7:=
+DESCRIPTION=Fast HTTP package for Go
+EAPI=6
+HOMEPAGE=https://github.com/valyala/fasthttp
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-go/compress dev-go/bytebufferpool
+SLOT=0
+SRC_URI=https://github.com/valyala/fasthttp/archive/b69eba7101fa6c66ba4db0641968a401c9f4f148.tar.gz -> fasthttp-0_p20170131.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=b87fe86a31d6493f8361760965883a74

@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=A lightweight C++14 utility library for sqlite
+EAPI=5
+HOMEPAGE=https://github.com/janezz55/sqliteutils
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-db/sqlite
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=353c65157085acdf43ae785297e5dc54

@@ -1,0 +1,12 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-lua/luacrypto dev-lua/luasocket dev-lua/luasec dev-lua/luajson
+DESCRIPTION=Rethinkdb driver in Lua
+EAPI=6
+HOMEPAGE=https://github.com/grandquista/Lua-ReQL
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache
+RDEPEND=dev-lua/luacrypto dev-lua/luasocket dev-lua/luasec dev-lua/luajson
+SLOT=0
+SRC_URI=https://github.com/grandquista/Lua-ReQL/archive/81a35f1a111a7c20558492c4ee814b7418fa98ed.tar.gz -> lua-reql-1.0.3_p20170306.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=431d78fd5a6c437aba7cf5fe25228155

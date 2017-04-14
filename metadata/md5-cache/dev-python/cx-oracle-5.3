@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install prepare test unpack
+DEPEND=>=dev-db/oracle-instantclient-basic-10.2.0.3 python_targets_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7 ) python_targets_python3_4? ( dev-lang/python:3.4 ) python_targets_python3_5? ( dev-lang/python:3.5 ) >=dev-lang/python-exec-2:=[python_targets_python2_7(-)?,python_targets_python3_4(-)?,python_targets_python3_5(-)?,-python_single_target_python2_7(-),-python_single_target_python3_4(-),-python_single_target_python3_5(-)]
+DESCRIPTION=Python interface to Oracle
+EAPI=6
+HOMEPAGE=http://www.cxtools.net/default.aspx?nav=cxorlb
+IUSE=python_targets_python2_7 python_targets_python3_4 python_targets_python3_5
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=>=dev-db/oracle-instantclient-basic-10.2.0.3 python_targets_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7 ) python_targets_python3_4? ( dev-lang/python:3.4 ) python_targets_python3_5? ( dev-lang/python:3.5 ) >=dev-lang/python-exec-2:=[python_targets_python2_7(-)?,python_targets_python3_4(-)?,python_targets_python3_5(-)?,-python_single_target_python2_7(-),-python_single_target_python3_4(-),-python_single_target_python3_5(-)]
+REQUIRED_USE=|| ( python_targets_python2_7 python_targets_python3_4 python_targets_python3_5 )
+SLOT=0
+SRC_URI=https://github.com/oracle/python-cx_Oracle/archive/5.3.tar.gz -> cx-oracle-5.3.tar.gz
+_eclasses_=distutils-r1	039ba10839816478cfb070fdeb053906	multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	165fc17c38d1b11dac2008280dab6e80	multiprocessing	284a473719153462f3e974d86c8cb81c	python-r1	0c067f080a047742ffac024b16895b45	python-utils-r1	a166d0f5815d7f1e67bb60a196f1bf7e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd	xdg-utils	b9389dfad0ee8f8e0b2a41b79fcf7120
+_md5_=4da2f87ee97c9144342f9fb4aaa22018

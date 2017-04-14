@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/pp dev-go/chardet >=dev-lang/go-1.7:=
+DESCRIPTION=Golang character encoding converter with an automatic code-estimation
+EAPI=6
+HOMEPAGE=https://github.com/timakin/gonvert
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-go/pp dev-go/chardet
+SLOT=0
+SRC_URI=https://github.com/timakin/gonvert/archive/5dce59dbd0d84ff296c85c0341c88cb6f4eac1e3.tar.gz -> gonvert-0_p20170112.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=0e5bce7efb79b1ecb2407f9ef79d8c1a

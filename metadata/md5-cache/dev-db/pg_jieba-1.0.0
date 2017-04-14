@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=dev-db/postgresql
+DESCRIPTION=Postgresql full-text search extension for chinese
+EAPI=6
+HOMEPAGE=https://github.com/jaiminpan/pg_jieba
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-db/postgresql
+SLOT=0
+SRC_URI=https://github.com/jaiminpan/pg_jieba/archive/v1.0.0.tar.gz -> pg_jieba-1.0.0.tar.gz
+_md5_=749c2004d53d0f4803140e12a66836b0

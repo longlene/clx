@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=Simple error handling primitives
+EAPI=6
+HOMEPAGE=https://godoc.org/github.com/pkg/errors
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD-2
+SLOT=0
+SRC_URI=https://github.com/pkg/errors/archive/v0.8.0.tar.gz -> errors-0.8.0.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=67f5b34514aa18273831d1654db58f2f

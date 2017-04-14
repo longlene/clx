@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Torch extensions
+EAPI=6
+HOMEPAGE=https://github.com/nicholas-leonard/torchx
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=sci-libs/torch7 sci-libs/torch-sys dev-lua/torch-paths
+SLOT=0
+SRC_URI=https://github.com/nicholas-leonard/torchx/archive/28026768231c0bea73a4a4eaede5a90324be1404.tar.gz -> torchx-0_p20170301.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=a20c3906bb7a1b9c780c35085f3d4915

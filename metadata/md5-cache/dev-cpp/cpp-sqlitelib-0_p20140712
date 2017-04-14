@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=C++ SQLite wrapper library
+EAPI=6
+HOMEPAGE=https://github.com/yhirose/cpp-sqlitelib
+KEYWORDS=~amd64 ~x86
+LICENSE=Boost-1.0
+RDEPEND=dev-db/sqlite:3
+SLOT=0
+SRC_URI=https://github.com/yhirose/cpp-sqlitelib/archive/4969ef56de66fd85bb088486836073302b997ebd.tar.gz -> cpp-sqlitelib-0_p20140712.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=81df02378e0594e820d7ece8105f9500

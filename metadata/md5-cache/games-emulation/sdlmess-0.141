@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst preinst prepare setup unpack
+DEPEND=>=media-libs/libsdl-1.2.10[audio,joystick,opengl?,video] media-libs/sdl-ttf dev-libs/expat debug? ( x11-libs/gtk+:2 gnome-base/gconf x11-libs/libXinerama ) app-arch/unzip debug? ( x11-proto/xineramaproto )
+DESCRIPTION=Multiple Emulator Super System (SDL)
+EAPI=5
+HOMEPAGE=http://www.mess.org/
+IUSE=debug opengl
+KEYWORDS=~amd64 ~ppc ~x86
+LICENSE=XMAME
+RDEPEND=>=media-libs/libsdl-1.2.10[audio,joystick,opengl?,video] media-libs/sdl-ttf dev-libs/expat debug? ( x11-libs/gtk+:2 gnome-base/gconf x11-libs/libXinerama ) games-misc/games-envd
+SLOT=0
+SRC_URI=http://www.mess.org/files/mess0141s.zip http://www.mame.org/files/mame0141s.zip http://www.netswarm.net/misc/sdlmame-ui.bdf.gz
+_eclasses_=base	3fe4f8980633fd7bc69e9887209ba2fe	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	35067884fbff37bc0c8e7421c5315558	games	2bb3ede665927a68ffdb7c41eec7efde	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	user	e10ccb95af96d45f86016fa982a949bb
+_md5_=3ba7428e1d51392d80aae43c4c3c8042

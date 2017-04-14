@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=Tiny C Compiler binding for LuaJIT.
+EAPI=5
+HOMEPAGE=https://github.com/Playermet/luajit-tcc
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lang/tcc dev-lang/luajit
+SLOT=0
+SRC_URI=https://github.com/Playermet/luajit-tcc/archive/v1.0.0.tar.gz -> luajit-tcc-1.0.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=ed37217de881043c61ce9902f8f3a1bf

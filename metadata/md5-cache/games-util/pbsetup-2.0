@@ -1,0 +1,9 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Updating PunkBuster
+EAPI=0
+HOMEPAGE=http://www.evenbalance.com/index.php?page=pbsetup.php
+KEYWORDS=x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=http://websec.evenbalance.com/downloads/linux/pbsetup.run
+_md5_=b17ed20ead21fa4db02082420ca45931

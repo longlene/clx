@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst unpack
+DEPEND=virtual/libc x11-libs/libX11 x11-libs/libXi msoffice? ( app-text/catdoc app-text/wv ) dev-libs/atk dev-libs/glib x11-libs/gtk+ x11-libs/pango >=app-arch/rpm2targz-9.0.0.3g
+DESCRIPTION=Google Desktop
+EAPI=0
+HOMEPAGE=http://desktop.google.com/linux/
+IUSE=firefox thunderbird msoffice
+KEYWORDS=-* ~amd64 ~x86
+LICENSE=as-is
+RDEPEND=virtual/libc x11-libs/libX11 x11-libs/libXi msoffice? ( app-text/catdoc app-text/wv ) dev-libs/atk dev-libs/glib x11-libs/gtk+ x11-libs/pango
+SLOT=0
+SRC_URI=x86? ( http://dl.google.com/linux/rpm/stable/i386/google-desktop-linux-current.rpm ) amd64? ( http://dl.google.com/linux/rpm/stable/x86_64/google-desktop-linux-current.rpm )
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	rpm	f52cfa3a435468d86d3b49c357b9cb35	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=635d37edd6eb583884dbf0a9a629e4aa

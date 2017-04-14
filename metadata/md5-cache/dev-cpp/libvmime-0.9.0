@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=virtual/libiconv gnutls? ( >=net-libs/gnutls-1.2.0 ) sasl? ( || ( net-libs/libgsasl net-misc/gsasl ) ) sendmail? ( mail-mta/ssmtp ) doc? ( app-doc/doxygen )
+DESCRIPTION=Library for working with MIME messages and Internet messaging services like IMAP, POP or SMTP
+EAPI=1
+HOMEPAGE=http://www.vmime.org
+IUSE=debug doc examples +gnutls +imap +maildir +pop +sasl +sendmail +smtp
+KEYWORDS=~amd64 ~ia64 ~ppc ~ppc64 ~x86
+LICENSE=GPL-2
+RDEPEND=virtual/libiconv gnutls? ( >=net-libs/gnutls-1.2.0 ) sasl? ( || ( net-libs/libgsasl net-misc/gsasl ) ) sendmail? ( mail-mta/ssmtp ) doc? ( app-doc/doxygen )
+SLOT=0
+SRC_URI=mirror://sourceforge/vmime/libvmime-0.9.0.tar.bz2
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=e4f67bab00ed64e26f2d7693a5abd8f2

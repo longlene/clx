@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=A simple utility to transform a CSV file into a Torch7 Tensor
+EAPI=6
+HOMEPAGE=https://github.com/willkurt/csv2tensor
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=sci-libs/torch7 dev-lua/csvigo
+SLOT=0
+SRC_URI=https://github.com/willkurt/csv2tensor/archive/6f8f68b437ba3922d0e1bbf9d9fb10c92408c7ce.tar.gz -> csv2tensor-0.2_p20150203.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=3770af41c341e7e9f653f4257b22db64

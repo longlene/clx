@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DEPEND=dev-plan9/lib9 dev-plan9/mk
+DESCRIPTION=The lib9pclient library in Plan9 from user space
+EAPI=5
+HOMEPAGE=http://swtch.com/plan9port/
+KEYWORDS=~x86 ~amd64
+LICENSE=PLAN9
+SLOT=0
+SRC_URI=http://plan9port.googlecode.com/files/plan9port-20140306.tgz
+_eclasses_=plan9-libs	def1054c6c639deaa62aab5fc4953e73
+_md5_=51f0bfc3d2208f983b118b81e317ee9e

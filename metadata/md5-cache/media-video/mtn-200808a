@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=media-video/ffmpeg media-fonts/liberation-fonts media-libs/gd
+DESCRIPTION=Sequential video thumbnail generator
+EAPI=3
+HOMEPAGE=http://moviethumbnail.sf.net/
+KEYWORDS=~amd64
+LICENSE=GPL-2
+RDEPEND=media-video/ffmpeg media-fonts/liberation-fonts media-libs/gd
+SLOT=0
+SRC_URI=http://downloads.sourceforge.net/moviethumbnail/mtn-200808a.zip
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=0f34f9436cc89f6d9951789d27fee8b1

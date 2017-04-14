@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=A super simple regression test package
+EAPI=6
+HOMEPAGE=https://github.com/clementfarabet/regress
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=sci-libs/torch7 sci-misc/trepl
+SLOT=0
+SRC_URI=https://github.com/clementfarabet/regress/archive/50646251908e5cdfeb7d071980c4ec922e8e8ff4.tar.gz -> regress-0_p20160116.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=8bc3ed77e5f5147798c24384e12aff9e

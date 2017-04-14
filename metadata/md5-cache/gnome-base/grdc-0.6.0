@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install
+DEPEND=>=x11-libs/gtk+-2.12 net-misc/rdesktop vnc? ( net-libs/libvncserver ) ssh? ( net-libs/libssh ) avahi? ( net-dns/avahi ) vte? ( x11-libs/vte ) gcrypt? ( dev-libs/libgcrypt ) gnome? ( >=gnome-base/gnome-panel-2.20 )
+DESCRIPTION=GTK+/Gnome Remote Desktop Client
+EAPI=2
+HOMEPAGE=http://grdc.sourceforge.net/
+IUSE=vnc ssh avahi vte gcrypt gnome
+KEYWORDS=~amd64
+LICENSE=GPL-2
+RDEPEND=>=x11-libs/gtk+-2.12 net-misc/rdesktop vnc? ( net-libs/libvncserver ) ssh? ( net-libs/libssh ) avahi? ( net-dns/avahi ) vte? ( x11-libs/vte ) gcrypt? ( dev-libs/libgcrypt ) gnome? ( >=gnome-base/gnome-panel-2.20 )
+SLOT=0
+SRC_URI=mirror://sourceforge/grdc/grdc-0.6.0.tar.gz mirror://sourceforge/grdc/grdc-gnome-0.6.0.tar.gz
+_md5_=37723b337e858d00d9a757475e9310ab

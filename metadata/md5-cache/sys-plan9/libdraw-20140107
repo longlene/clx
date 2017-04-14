@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=dev-plan9/lib9 dev-plan9/mk
+DESCRIPTION=The libdraw library in Plan9 from user space
+EAPI=0
+HOMEPAGE=http://swtch.com/plan9port/
+KEYWORDS=~x86
+LICENSE=PLAN9
+RDEPEND=dev-plan9/lib9
+SLOT=0
+SRC_URI=http://plan9port.googlecode.com/files/plan9port-20140107.tgz
+_eclasses_=plan9-libs	def1054c6c639deaa62aab5fc4953e73
+_md5_=b067b58a1c34cb6acd32f2e66adcffce

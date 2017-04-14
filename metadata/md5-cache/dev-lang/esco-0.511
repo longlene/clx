@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=dev-libs/gmp
+DESCRIPTION=ESoteric COmbine - interpreter of esoteric programing languages
+EAPI=0
+HOMEPAGE=http://esco.sourceforge.net/
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=dev-libs/gmp
+SLOT=0
+SRC_URI=mirror://sourceforge/esco/esco-src-0.511.tbz2
+_md5_=8ad2a47515d40be600e3c8793fbbc317

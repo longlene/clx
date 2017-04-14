@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=HTTP request logger middleware for node.js
+EAPI=6
+HOMEPAGE=https://github.com/expressjs/morgan
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-nodejs/on-headers dev-nodejs/on-finished dev-nodejs/depd dev-nodejs/debug dev-nodejs/basic-auth
+SLOT=0
+SRC_URI=http://registry.npmjs.org/morgan/-/morgan-1.7.0.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=dc6cdce8faa6d095366690fe35ad1b79

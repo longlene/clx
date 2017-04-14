@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Pure Lua driver for Apache Cassandra
+EAPI=6
+HOMEPAGE=https://thibaultcha.github.io/lua-cassandra
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lua/LuaBitOp
+SLOT=0
+SRC_URI=https://github.com/thibaultcha/lua-cassandra/archive/1.2.0.tar.gz -> lua-cassandra-1.2.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=4a4923c522e74c6e1653d7afff9de17e

@@ -1,0 +1,12 @@
+DEFINED_PHASES=install unpack
+DEPEND=sci-libs/torch-sys sci-libs/torch7 sci-libs/torch-image
+DESCRIPTION=A simple Lua wrapper to graphicsmagick
+EAPI=6
+HOMEPAGE=https://github.com/clementfarabet/graphicsmagick
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD
+RDEPEND=sci-libs/torch-sys sci-libs/torch7 sci-libs/torch-image
+SLOT=0
+SRC_URI=https://github.com/clementfarabet/graphicsmagick/archive/203df4457613fa612fabe3180217b48fff1d802b.tar.gz -> graphicsmagick-0_p20170302.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=7096924623feda98a3242a76bc6533b1

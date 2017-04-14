@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=A set of distributed learning algorithms for Torch
+EAPI=6
+HOMEPAGE=https://github.com/twitter/torch-distlearn
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=sci-libs/torch7 dev-lua/torch-ipc dev-lua/regress
+SLOT=0
+SRC_URI=https://github.com/twitter/torch-distlearn/archive/3836f0c689d5e734053667780020848372e6787c.tar.gz -> torch-distlearn-0_p20160218.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=581436cccedf4d96c11c5225e06ade81

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=MAT is library for working with multi-dimensional arrays which supports efficient interfacing to foreign and CUDA code
+EAPI=5
+HOMEPAGE=https://github.com/melisgl/mgl-mat
+IUSE=test
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/alexandria dev-lisp/bordeaux-threads dev-lisp/cffi dev-lisp/cl-cuda dev-lisp/flexi-streams dev-lisp/ieee-floats dev-lisp/lla dev-lisp/mgl-pax dev-lisp/static-vectors dev-lisp/trivial-garbage test? ( dev-lisp/cl-fad )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/melisgl/mgl-mat/archive/10be6a8ff5c7300da7267977111f8f9a2d86e76a.tar.gz -> mgl-mat-0.1.0_p20150911.tar.gz
+_eclasses_=common-lisp-3	e3b01fd04bd5f6e4c79e470ea00b97a8	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=ed17d89fbadd002556807cf3108ae316

@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=A minimalistic initrd implementation
+EAPI=5
+HOMEPAGE=https://github.com/chris-se/tiny-initrd
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=GPL-3
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=47088790649516152a14d6613bbb112f

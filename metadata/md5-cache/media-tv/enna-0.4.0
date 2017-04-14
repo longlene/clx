@@ -1,0 +1,13 @@
+DEFINED_PHASES=configure install
+DEPEND=>=x11-libs/elementary-0.6.0.063 >=x11-libs/e_dbus-0.5.0.063 >=media-libs/libplayer-1.0.0 <media-libs/libplayer-1.1.0 >=media-libs/libvalhalla-1.0.0 <media-libs/libvalhalla-2.0.0 efreet? ( dev-libs/efreet ) curl? ( net-misc/curl ) xml? ( dev-libs/libxml2 ) xrandr? ( x11-libs/libXrandr ) lirc? ( app-misc/lirc )
+DESCRIPTION=Media Center app using (EFL) for the GUI and GeeXboX libs for playback and information retrieval
+EAPI=5
+HOMEPAGE=http://enna.geexbox.org/
+IUSE=+theme +bookstore +configuration +music +photo +video +weather +dvd +keyboard +hal +mtab +efreet +cddb +curl +xml +xrandr +lirc
+KEYWORDS=~x86 ~amd64
+LICENSE=LGPL-2.1
+RDEPEND=>=x11-libs/elementary-0.6.0.063 >=x11-libs/e_dbus-0.5.0.063 >=media-libs/libplayer-1.0.0 <media-libs/libplayer-1.1.0 >=media-libs/libvalhalla-1.0.0 <media-libs/libvalhalla-2.0.0 efreet? ( dev-libs/efreet ) curl? ( net-misc/curl ) xml? ( dev-libs/libxml2 ) xrandr? ( x11-libs/libXrandr ) lirc? ( app-misc/lirc )
+SLOT=0
+SRC_URI=http://enna.geexbox.org//releases/enna-0.4.0.tar.bz2
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=60f9a95d1d8fd62457aac75cdb4afae9

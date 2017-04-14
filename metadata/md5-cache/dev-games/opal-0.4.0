@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install
+DEPEND=dev-games/ode app-arch/unzip dev-util/scons
+DESCRIPTION=high-level interface for low-level physics engines
+EAPI=0
+HOMEPAGE=http://opal.sourceforge.net/
+IUSE=debug double-precision examples
+KEYWORDS=~x86
+LICENSE=|| ( BSD LGPL-2.1 )
+RDEPEND=dev-games/ode
+SLOT=0
+SRC_URI=mirror://sourceforge/opal/opal-0.4.0-src.zip
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=b31f7a884799db71ecd4e834c02e4578

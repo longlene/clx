@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=toml decoder/encoder
+EAPI=5
+HOMEPAGE=https://github.com/jonstoler/lua-toml
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/jonstoler/lua-toml/archive/v1.0.tar.gz -> lua-toml-1.0.tar.gz
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4	lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=fa72f9eed0e07aee81ab56e1d81264bc

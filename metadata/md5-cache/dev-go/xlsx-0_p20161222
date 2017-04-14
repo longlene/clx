@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=Google Go library for reading and writing XLSX files
+EAPI=6
+HOMEPAGE=https://github.com/tealeg/xlsx
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD
+SLOT=0
+SRC_URI=https://github.com/tealeg/xlsx/archive/e0f3d7d6cf84b282edb711bc6a23e8dbbd331a13.tar.gz -> xlsx-0_p20161222.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=4cea2aa129fc7dab7912d4806b6896d2

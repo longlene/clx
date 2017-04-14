@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-lang/luajit dev-vcs/git
+DESCRIPTION=A Lua bytecode compiler written in Lua itself
+EAPI=5
+HOMEPAGE=https://github.com/franko/luajit-lang-toolkit
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-lang/luajit
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4	lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=c17a4d45bff0fd2ed5e0c7442eecfd72

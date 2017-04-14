@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install postinst
+DEPEND=dev-libs/libusb sys-fs/udev
+DESCRIPTION=Software for temporarily disabling ZeroCD and allowing the modem to be a modem.
+EAPI=0
+HOMEPAGE=http://www.pharscape.org/ozerocdoff.html
+KEYWORDS=~x86 ~amd64
+LICENSE=Uncknown
+RDEPEND=dev-libs/libusb sys-fs/udev
+SLOT=0
+SRC_URI=http://downloads.greenmice.info/distfiles/udev.tar.gz
+_md5_=f542f99f9b4e0054735229fba31d7b65

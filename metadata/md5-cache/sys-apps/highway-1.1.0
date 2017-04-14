@@ -1,0 +1,11 @@
+DEFINED_PHASES=prepare
+DEPEND=>=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=High perforance source code search tool
+EAPI=5
+HOMEPAGE=https://github.com/tkengo/highway
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/tkengo/highway/archive/v1.1.0.tar.gz -> highway-1.1.0.tar.gz
+_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	libtool	e32ea84bf82cf8987965b574672dba93	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=2250bb17ba3c2eec7dd2d8ba7fc1d815

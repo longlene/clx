@@ -1,0 +1,13 @@
+DEFINED_PHASES=install unpack
+DEPEND=x11-misc/xplanet dev-python/pygtk xinerama? ( media-gfx/imagemagick ) || ( ( >=dev-python/pysqlite-2.0.3 <dev-lang/python-2.5 ) >=dev-lang/python-2.5 ) app-arch/unzip
+DESCRIPTION=Wrapper script to draw traceroutes of current network connections on xplanet images
+EAPI=0
+HOMEPAGE=http://geoxplanet.sourceforge.net
+IUSE=xinerama
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-1 MAXMIND
+RDEPEND=x11-misc/xplanet dev-python/pygtk xinerama? ( media-gfx/imagemagick ) || ( ( >=dev-python/pysqlite-2.0.3 <dev-lang/python-2.5 ) >=dev-lang/python-2.5 )
+SLOT=0
+SRC_URI=mirror://sourceforge/geoxplanet/GeoXPlanet-0.4.5-r2.zip mirror://sourceforge/geoxplanet/geoip.db.zip
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=e24ecfd9480a4f64e2f1716295c39aca

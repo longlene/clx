@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=A Vindinium starter kit for Lua
+EAPI=5
+HOMEPAGE=https://github.com/mtdowling/vindinlua
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=as-is
+RDEPEND=dev-lua/dkjson dev-lua/luasocket
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4	lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=3b9ab8371c84de16a5d2731fa0eb8a7a

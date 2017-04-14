@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=A simple and easy-to-use library to learn videogames programming
+EAPI=6
+HOMEPAGE=http://www.raylib.com
+IUSE=static
+KEYWORDS=~amd64 ~x86
+SLOT=0
+SRC_URI=https://github.com/raysan5/raylib/archive/1.6.0.tar.gz -> raylib-1.6.0.tar.gz
+_md5_=e1646d4f10c0c5755e1f7cf1a7d89fdc

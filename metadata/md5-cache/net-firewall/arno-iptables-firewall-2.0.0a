@@ -1,0 +1,12 @@
+DEFINED_PHASES=install postinst
+DEPEND=>=net-firewall/iptables-1.2.5 >=sys-apps/iproute2-2.6.35-r2
+DESCRIPTION=Arno's iptables firewall script
+EAPI=1
+HOMEPAGE=http://rocky.eld.leidenuniv.nl/
+IUSE=+plugins
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=>=net-firewall/iptables-1.2.5 >=sys-apps/iproute2-2.6.35-r2
+SLOT=0
+SRC_URI=http://rocky.eld.leidenuniv.nl/arno-iptables-firewall/arno-iptables-firewall_2.0.0a.tar.gz
+_md5_=2f25e14660b93cee990b671a258710ee

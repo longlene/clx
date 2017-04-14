@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=github.com/gonum/floats in any of: package github.com/gonum/internal/asm/f32 in any of: e github.com/gonum/internal/asm/f64 in any of: >=dev-lang/go-1.7:=
+DESCRIPTION=Machine Learning for Go
+EAPI=6
+HOMEPAGE=https://github.com/sjwhitworth/golearn
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=github.com/gonum/floats in any of: package github.com/gonum/internal/asm/f32 in any of: e github.com/gonum/internal/asm/f64 in any of:
+SLOT=0
+SRC_URI=https://github.com/sjwhitworth/golearn/archive/9884cbc086ef4304cf269aa2a750581126025aa7.tar.gz -> golearn-0_p20170215.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=9c7c357d3a762ab804275dc17a8fb179

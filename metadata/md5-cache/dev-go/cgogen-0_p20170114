@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/cc dev-go/xc dev-go/go-spin dev-go/pkgconfig dev-go/go-tools dev-go/yaml >=dev-lang/go-1.7:=
+DESCRIPTION=Automatic C Bindings Generator for Go Programming Language
+EAPI=6
+HOMEPAGE=https://for-go.com
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-go/cc dev-go/xc dev-go/go-spin dev-go/pkgconfig dev-go/go-tools dev-go/yaml
+SLOT=0
+SRC_URI=https://github.com/xlab/c-for-go/archive/cc509ddb36475152e28fa999146f4c1b93f4ec43.tar.gz -> cgogen-0_p20170114.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=4709680290b848b9ef9b8af7c8306e7e

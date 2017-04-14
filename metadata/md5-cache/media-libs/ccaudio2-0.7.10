@@ -1,0 +1,12 @@
+DEFINED_PHASES=install
+DEPEND=gsm? ( media-sound/gsm )
+DESCRIPTION=a C++ class framework for processing audio files.
+EAPI=0
+HOMEPAGE=http://www.gnu.org/software/bayonne/bayonne.html
+IUSE=gsm
+KEYWORDS=~x86
+LICENSE=GPL2
+RDEPEND=gsm? ( media-sound/gsm )
+SLOT=0
+SRC_URI=mirror://sourceforge/gnutelephony/ccaudio2-0.7.10.tar.gz
+_md5_=dcd34d3ef8a25de9b226c69250d0865b

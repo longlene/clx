@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/go-crypto dev-go/logrus >=dev-lang/go-1.7:=
+DESCRIPTION=A fake SSH server that lets everyone in and logs their activity
+EAPI=6
+HOMEPAGE=https://github.com/jaksi/sshesame
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-go/go-crypto dev-go/logrus
+SLOT=0
+SRC_URI=https://github.com/jaksi/sshesame/archive/b74f93f9a21f838a17fae50317eecc7617abaa47.tar.gz -> sshesame-0_p20161117.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=e991ce05ca32856861042577788234b3

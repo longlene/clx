@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=command line utility for batch processing of id3 tags
+EAPI=0
+HOMEPAGE=http://home.wanadoo.nl/squell/id3.html
+KEYWORDS=x86 sparc amd64 alpha
+LICENSE=as-is
+SLOT=0
+SRC_URI=http://home.wanadoo.nl/squell/files/id3-0.78.tar.gz
+_md5_=dddd8221d4b2dde0845b8caf0f689850

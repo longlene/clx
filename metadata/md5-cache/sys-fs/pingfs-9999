@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=A filesystem where the data is stored only in the Internet
+EAPI=5
+HOMEPAGE=https://github.com/yarrick/pingfs
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=ISC
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=ff6c65041b83c2c8b99dbc02098aceff

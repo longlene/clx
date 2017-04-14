@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=virtual/blas >=dev-lang/go-1.7:=
+DESCRIPTION=A BLAS implementation for Go
+EAPI=6
+HOMEPAGE=https://github.com/gonum/blas
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=virtual/blas
+SLOT=0
+SRC_URI=https://github.com/gonum/blas/archive/34a5cb24f900bb4f059b51aa300aed4da4437d0c.tar.gz -> blas-0_p20170123.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=5f605828a465ad6ae6928b3efca1226c

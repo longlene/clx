@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DESCRIPTION=Simulation of Urban MObility
+EAPI=5
+HOMEPAGE=http://www.dlr.de/ts/en/desktopdefault.aspx/tabid-9883/16931_read-41000/
+KEYWORDS=~amd64
+SLOT=0
+SRC_URI=mirror://sourceforge/sumo/sumo-src-0.23.0.tar.gz
+_md5_=2487076e4a261bd46fb8dfce531ff86c

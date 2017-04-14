@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile configure install unpack
+DESCRIPTION=A Common Lisp binding to the smoke library for Qt
+EAPI=5
+HOMEPAGE=https://common-lisp.net/project/commonqt
+LICENSE=BSD
+RDEPEND=kde-base/smokeqt dev-lisp/trivial-features dev-lisp/cffi dev-lisp/named-readtables dev-lisp/cl-ppcre dev-lisp/alexandria dev-lisp/closer-mop dev-lisp/iterate dev-lisp/trivial-garbage dev-lisp/bordeaux-threads
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/commonqt/commonqt/archive/6ceee90ede708c7a30fe2c9f03bc6232dcb448e1.tar.gz -> commonqt-0_p20160323.tar.gz
+_eclasses_=common-lisp-3	e3b01fd04bd5f6e4c79e470ea00b97a8	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	qmake-utils	0a242e7177789b0028b4045f336dd4db	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=a5e06cb60583b47eb71afe34f64f9383

@@ -1,0 +1,10 @@
+DEFINED_PHASES=prepare unpack
+DEPEND=dev-libs/libnl:3 dev-vcs/git
+DESCRIPTION=swconfig from OpenWrt
+EAPI=5
+HOMEPAGE=https://github.com/jekader/swconfig
+LICENSE=GPL-2
+RDEPEND=dev-libs/libnl:3
+SLOT=0
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	35067884fbff37bc0c8e7421c5315558	git-2	7af5d170bfc02983b4bcd3167dc5edd4	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=2ca47e0ab388f782e4c8b3c2421d4088

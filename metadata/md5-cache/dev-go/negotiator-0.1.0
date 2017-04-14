@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/headers >=dev-lang/go-1.7:=
+DESCRIPTION=An HTTP content negotiator for Go
+EAPI=6
+HOMEPAGE=https://github.com/go-http-utils/negotiator
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-go/headers
+SLOT=0
+SRC_URI=https://github.com/go-http-utils/negotiator/archive/0.1.0.tar.gz -> negotiator-0.1.0.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=a74cea83499a9731adf7b95b14addbc8

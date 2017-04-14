@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install unpack
+DEPEND=dev-util/premake
+DESCRIPTION=Antialiased 2D vector drawing library on top of OpenGL for UI and visualizations
+EAPI=6
+HOMEPAGE=https://github.com/memononen/nanovg
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-util/premake
+SLOT=0
+SRC_URI=https://github.com/memononen/nanovg/archive/8feae63a46fdf8ed83613b6a46da25d44adde07f.tar.gz -> nanovg-0_p20170112.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=02c4e797cffd516f385174617e1776a3

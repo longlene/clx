@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=Lua client for elasticsearch
+EAPI=5
+HOMEPAGE=https://github.com/DhavalKapil/elasticsearch-lua
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lua/luasocket dev-lua/lua-cjson dev-lua/lunitx
+SLOT=0
+SRC_URI=https://github.com/DhavalKapil/elasticsearch-lua/archive/v1.0.0.tar.gz -> elasticsearch-lua-1.0.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=1075f68dcbb77555f591ffc228666399

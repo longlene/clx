@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=PostgreSQL client based on lluv library
+EAPI=6
+HOMEPAGE=https://github.com/moteus/lua-lluv-pg
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lua/lluv dev-lua/eventmitter dev-lua/lmd5 dev-lua/null dev-lua/luuid
+SLOT=0
+SRC_URI=https://github.com/moteus/lua-lluv-pg/archive/014f7b19f7d740ed8de66cd6d73ed2d7b09d5168.tar.gz -> lluv-pg-0_p20170315.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=35fa9fd054eb510d4f1dc6def8be2002

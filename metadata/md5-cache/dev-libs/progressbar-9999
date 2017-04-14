@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=An easy-to-use C library for displaying text progress bars
+EAPI=5
+HOMEPAGE=https://github.com/doches/progressbar
+IUSE=static-libs
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=as-is
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=7f82894917ac278c8f1a12cfbdf8e193

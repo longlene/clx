@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/gocui >=dev-lang/go-1.7:=
+DESCRIPTION=Interactive cli tool for HTTP inspection
+EAPI=6
+HOMEPAGE=https://github.com/asciimoo/wuzz
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=GPL-3
+RDEPEND=dev-go/gocui
+SLOT=0
+SRC_URI=https://github.com/asciimoo/wuzz/archive/45b6a64e667b3647216af68e06e253958b81b3c4.tar.gz -> wuzz-0_p20170206.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=8437e043a82889cafeb9bd12971b2975

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/fsnotify dev-go/osext dev-go/sourcemap dev-go/cobra dev-go/pflag dev-go/go-tools >=dev-lang/go-1.7:=
+DESCRIPTION=A compiler from Go to JavaScript for running Go code in a browser
+EAPI=6
+HOMEPAGE=https://github.com/gopherjs/gopherjs
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-go/fsnotify dev-go/osext dev-go/sourcemap dev-go/cobra dev-go/pflag dev-go/go-tools
+SLOT=0
+SRC_URI=https://github.com/gopherjs/gopherjs/archive/5c8f21741620ef6a52e185bbc920499581901c9e.tar.gz -> gopherjs-0_p20170129.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=60e2d721f5251f49019617121a403f6f

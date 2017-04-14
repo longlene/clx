@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=Go bindings for GLFW
+EAPI=6
+HOMEPAGE=https://github.com/go-gl/glfw
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=media-libs/glfw
+SLOT=0
+SRC_URI=https://github.com/go-gl/glfw/archive/eecd6608b5674c04450c6e27b207340a57d27348.tar.gz -> glfw-0_p20170124.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=3085b9d8ae31ecefa61f92cb5fc5e7c7

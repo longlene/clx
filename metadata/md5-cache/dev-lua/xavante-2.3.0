@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=Xavante is a Lua HTTP 1.1 Web server
+EAPI=5
+HOMEPAGE=https://github.com/keplerproject/xavante
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-lua/luasocket dev-lua/copas dev-lua/luafilesystem
+SLOT=0
+SRC_URI=https://github.com/keplerproject/xavante/archive/v2.3.0.tar.gz -> xavante-2.3.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=660b047b07b4b223eaebd804ba92f252

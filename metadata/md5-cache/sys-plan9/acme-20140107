@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=dev-plan9/libregexp dev-plan9/libplumb dev-plan9/libframe dev-plan9/libbio dev-plan9/libcomplete dev-plan9/libmux dev-plan9/mk
+DESCRIPTION=The acme library in Plan9 from user space
+EAPI=0
+HOMEPAGE=http://swtch.com/plan9port/
+KEYWORDS=~x86 ~amd64
+LICENSE=PLAN9
+RDEPEND=dev-plan9/devdraw
+SLOT=0
+SRC_URI=http://plan9port.googlecode.com/files/plan9port-20140107.tgz
+_eclasses_=plan9-cmds	9bf02fccb7b713f213c09b90215e6428	plan9-libs	def1054c6c639deaa62aab5fc4953e73
+_md5_=b4810008f4d52ff40eee64766b8f3e4d

@@ -1,0 +1,12 @@
+DEFINED_PHASES=install postinst
+DEPEND=>=dev-lang/mono-2.0.1-r1
+DESCRIPTION=Cobra is a general purpose programming language.
+EAPI=0
+HOMEPAGE=http://cobra-language.com/
+IUSE=doc
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=>=dev-lang/mono-2.0.1-r1
+SLOT=0
+SRC_URI=http://cobra-language.com/downloads/Cobra-0.8.0.tar.gz
+_md5_=7d0e83e03170c2c1cea1c8b1f2143c7a

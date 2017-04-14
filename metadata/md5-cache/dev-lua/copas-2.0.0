@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Copas is a dispatcher based on coroutines that can be used by TCP/IP servers
+EAPI=5
+HOMEPAGE=https://github.com/keplerproject/copas
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-lua/luasocket dev-lua/coxpcall
+SLOT=0
+SRC_URI=https://github.com/keplerproject/copas/archive/v2_0_0.tar.gz -> copas-2.0.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=55f5559020aafd5b48a7225b63fb513d

@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=single header libraries for C/C++
+EAPI=5
+HOMEPAGE=https://github.com/vurtun/mmx
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=zlib
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=b554750f504b3196b6141eeee2110a31

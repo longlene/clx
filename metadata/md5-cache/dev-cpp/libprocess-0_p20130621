@@ -1,0 +1,11 @@
+DEFINED_PHASES=prepare unpack
+DEPEND=>=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=Library that provides an actor style message-passing programming model
+EAPI=6
+HOMEPAGE=https://github.com/3rdparty/libprocess
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+SLOT=0
+SRC_URI=https://github.com/3rdparty/libprocess/archive/f0d47da3b4a42c2d3e06998355ff9d23458e9b5f.tar.gz -> libprocess-0_p20130621.tar.gz
+_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	libtool	e32ea84bf82cf8987965b574672dba93	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=f95499b1da5147cd0249627cd210a1c4

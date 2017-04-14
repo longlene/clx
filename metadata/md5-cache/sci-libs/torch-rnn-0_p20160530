@@ -1,0 +1,13 @@
+DEFINED_PHASES=install unpack
+DEPEND=sci-libs/torch7 sci-libs/torch-nn opencl? ( sci-libs/cltorch sci-libs/clnn ) cuda? ( sci-libs/torch-cutorch sci-libs/torch-cunn )
+DESCRIPTION=Efficient, reusable RNNs and LSTMs for torch
+EAPI=6
+HOMEPAGE=https://github.com/jcjohnson/torch-rnn
+IUSE=opencl cuda
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=sci-libs/torch7 sci-libs/torch-nn opencl? ( sci-libs/cltorch sci-libs/clnn ) cuda? ( sci-libs/torch-cutorch sci-libs/torch-cunn )
+SLOT=0
+SRC_URI=https://github.com/jcjohnson/torch-rnn/archive/690036d06c72a8845db64942434ad9c35836c315.tar.gz -> torch-rnn-0_p20160530.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=0ce41c8ef8bbb13f04d220def2d21180

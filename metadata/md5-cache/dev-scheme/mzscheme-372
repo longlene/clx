@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile prepare
+DEPEND=perl? ( dev-lang/perl ) xft? ( x11-libs/libXft )
+DESCRIPTION=MzScheme scheme compiler
+EAPI=4
+HOMEPAGE=http://www.plt-scheme.org/software/mzscheme/
+IUSE=perl xft
+KEYWORDS=x86 amd64
+LICENSE=LGPL-2
+RDEPEND=perl? ( dev-lang/perl ) xft? ( x11-libs/libXft ) !dev-scheme/racket
+SLOT=0
+SRC_URI=http://download.plt-scheme.org/bundles/372/mz/mz-372-src-unix.tgz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	35067884fbff37bc0c8e7421c5315558	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=dfc782da3e93e9f9e473cc2ab1358683

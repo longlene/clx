@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Module that helps you write generated functions in Node
+EAPI=5
+HOMEPAGE=https://github.com/mafintosh/generate-function
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+SLOT=0
+SRC_URI=http://registry.npmjs.org/generate-function/-/generate-function-2.0.0.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=b1f940149eb835d1661eb6beb1b7ff7f

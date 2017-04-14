@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=>=dev-lang/lua-5.1
+DESCRIPTION=Standalone FFI library for calling C functions from lua
+EAPI=5
+HOMEPAGE=https://github.com/jmckaskill/luaffi
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=>=dev-lang/lua-5.1
+SLOT=0
+SRC_URI=https://github.com/jmckaskill/luaffi/archive/1.0-work1.tar.gz -> luaffi-1.0.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=b42ac2bae484d018e8ddf8268c2962d6

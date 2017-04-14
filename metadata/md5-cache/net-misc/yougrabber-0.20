@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=>=net-misc/curl-7.15.4 >=sys-libs/ncurses-5.5
+DESCRIPTION=YouGrabber is a lightweight, multi-threaded (NPTL based) command line YouTube.com video downloader with proxy (HTTP, SOCKS 4 and 5) support, made from scratch in ANSI C using the libcURL API.
+EAPI=0
+HOMEPAGE=http://yougrabber.sourceforge.net/
+KEYWORDS=x86
+LICENSE=GPL-2
+RDEPEND=>=net-misc/curl-7.15.4 >=sys-libs/ncurses-5.5
+SLOT=0
+SRC_URI=mirror://sourceforge/yougrabber/YouGrabber-0.20.tar.bz2
+_md5_=2d59fc5964f762ecdd441eff82cfcc60

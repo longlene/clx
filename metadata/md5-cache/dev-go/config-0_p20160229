@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=Configuration file parser for INI format
+EAPI=6
+HOMEPAGE=https://github.com/larspensjo/config
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MPL-2.0
+SLOT=0
+SRC_URI=https://github.com/larspensjo/config/archive/b6db95dc6321c46dab9cd53d0c85164a27686aa6.tar.gz -> config-0_p20160229.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=df29430f7e9db25e409f12d1b11a8ff9

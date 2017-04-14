@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=>=sys-fs/fuse-2.2 media-tv/mythtv
+DESCRIPTION=access mythtv recordings via FUSE
+EAPI=0
+HOMEPAGE=http://outflux.net/software/pkgs/mythtvfs-fuse/
+KEYWORDS=~x86 ~amd64
+LICENSE=GPL-3
+RDEPEND=>=sys-fs/fuse-2.2 media-tv/mythtv
+SLOT=0
+SRC_URI=http://outflux.net/software/pkgs/mythtvfs-fuse/download/mythtvfs-fuse-0.6.0.tar.gz
+_md5_=c56187bc85e95f1cadffea9c0a4621a5

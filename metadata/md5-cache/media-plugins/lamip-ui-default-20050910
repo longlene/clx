@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install
+DEPEND=media-sound/lamip-core >=x11-libs/gtk+-2
+DESCRIPTION=LAMIP is a modularized audio player. This is the default control plugin
+EAPI=0
+HOMEPAGE=http://fondriest.frederic.free.fr/realisations/lamip/
+IUSE=debug shoutcast
+KEYWORDS=~x86
+LICENSE=GPL-2
+RDEPEND=media-sound/lamip-core >=x11-libs/gtk+-2
+RESTRICT=nomirror
+SLOT=0
+SRC_URI=http://fondriest.frederic.free.fr/realisations/lamip/files/src/0.0.3/lamip-controlDEFAULT_20050910.tar.bz2
+_md5_=3390a270a81a153dc243d9491b71287f

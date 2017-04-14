@@ -1,0 +1,10 @@
+DEFINED_PHASES=configure install unpack
+DESCRIPTION=speech-recognition scoring software
+EAPI=6
+HOMEPAGE=http://www.openslr.org/4/
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=public-domain
+SLOT=0
+SRC_URI=ftp://jaguar.ncsl.nist.gov/pub/sctk-2.4.10-20151007-1312Z.tar.bz2
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=3da0b63340c2e5434e65500d3179f9ea

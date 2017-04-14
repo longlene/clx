@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND==dev-lang/squirrel-2.1.1
+DESCRIPTION=An easy to use binding system for Squirrel
+EAPI=0
+HOMEPAGE=http://wiki.squirrel-lang.org/default.aspx/SquirrelWiki/SqPlus.html
+IUSE=examples
+KEYWORDS=~amd64 ~x86
+LICENSE=ZLIB
+RDEPEND==dev-lang/squirrel-2.1.1
+SLOT=0
+SRC_URI=http://www.brightland.com/sq/SQUIRREL2_1_1_sqplus_23.zip
+_md5_=bea48ff5c4efc9c95c651de6a87fb822

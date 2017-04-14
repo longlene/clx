@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/termbox-go >=dev-lang/go-1.7:=
+DESCRIPTION=Display images in the terminal
+EAPI=6
+HOMEPAGE=https://github.com/ichinaski/pxl
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-go/termbox-go
+SLOT=0
+SRC_URI=https://github.com/ichinaski/pxl/archive/9c3ae93d9c25708e6a954fe86e5649306ac71eb8.tar.gz -> pxl-0_p20161026.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=78f1587a424b55cce4b97f890e8549f9

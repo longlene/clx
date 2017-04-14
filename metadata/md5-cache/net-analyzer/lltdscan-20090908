@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=net-libs/libpcap >=net-libs/libnet-1.1.0-r3
+DESCRIPTION=Scan for LLTD-enabled hosts on your network
+EAPI=0
+HOMEPAGE=http://github.com/zed-0xff/lltdscan
+KEYWORDS=amd64 x86
+LICENSE=GPL-2
+RDEPEND=net-libs/libpcap >=net-libs/libnet-1.1.0-r3
+SLOT=2
+SRC_URI=http://cloud.github.com/downloads/zed-0xff/lltdscan/lltdscan-20090908.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=3b408d633e8e5848a60f4054e2a7b95b

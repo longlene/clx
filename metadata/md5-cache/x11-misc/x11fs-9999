@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=sys-fs/fuse x11-libs/libxcb x11-libs/xcb-util-wm dev-vcs/git
+DESCRIPTION=A tool for manipulating X windows
+EAPI=5
+HOMEPAGE=https://github.com/sdhand/x11fs
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=sys-fs/fuse x11-libs/libxcb x11-libs/xcb-util-wm
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=62d297ed0dde7347a45d245928d28444

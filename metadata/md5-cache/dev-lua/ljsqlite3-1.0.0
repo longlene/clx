@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=LuaJIT SQLite Binding
+EAPI=5
+HOMEPAGE=http://scilua.org/ljsqlite3.html
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-lang/luajit dev-db/sqlite:3
+SLOT=0
+SRC_URI=https://github.com/stepelu/lua-ljsqlite3/archive/v1.0.0.tar.gz -> ljsqlite3-1.0.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=1731a14b527dbde30438550a82174c22

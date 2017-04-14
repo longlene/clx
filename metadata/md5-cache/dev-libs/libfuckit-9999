@@ -1,0 +1,9 @@
+DEFINED_PHASES=unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=The best-effort C/C++ error steamrolloer
+EAPI=5
+HOMEPAGE=https://github.com/phoeagon/libfuckit
+LICENSE=Apache-2.0
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=fadc339d31658d926b504ffeb6798dcb

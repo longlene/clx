@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=media-video/ffmpeg >=dev-lang/go-1.7:=
+DESCRIPTION=Go language bindings for ffmpeg libraries
+EAPI=6
+HOMEPAGE=https://github.com/imkira/go-libav
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=media-video/ffmpeg
+SLOT=0
+SRC_URI=https://github.com/imkira/go-libav/archive/d11e7b8582564abeb22088a4f88e85b4f0c9c2a1.tar.gz -> go-libav-0_p20161101.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=4400b431d4ee98ca4e44f58e75720478

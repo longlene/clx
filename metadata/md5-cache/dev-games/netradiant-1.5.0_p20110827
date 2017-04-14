@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install prepare setup unpack
+DEPEND=dev-libs/glib:2 dev-libs/libxml2 >=media-libs/libpng-1.2 >=sys-libs/zlib-1.2 gtk? ( >=x11-libs/gtk+-2.4:2 >=x11-libs/gtkglext-1 x11-libs/pango ) !dev-games/gtkradiant app-arch/xz-utils dev-util/pkgconfig osirion? ( app-arch/unzip ) warsow? ( app-arch/unzip ) !bindist? ( openarena? ( app-arch/unzip ) quake? ( app-arch/unzip ) quake2? ( app-arch/unzip ) tremulous? ( app-arch/unzip ) )
+DESCRIPTION=NetRadiant is a fork of map editor for Q3 based games, GtkRadiant 1.5
+EAPI=4
+HOMEPAGE=http://dev.alientrap.org/projects/netradiant
+IUSE=darkplaces nexuiz osirion quake2world warsow +xonotic openarena quake quake2 tremulous +h2data +q2map +q3data +q3map2 +qdata3 +gtk bindist
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=dev-libs/glib:2 dev-libs/libxml2 >=media-libs/libpng-1.2 >=sys-libs/zlib-1.2 gtk? ( >=x11-libs/gtk+-2.4:2 >=x11-libs/gtkglext-1 x11-libs/pango ) !dev-games/gtkradiant
+SLOT=0
+SRC_URI=http://rion-overlay.googlecode.com/files/netradiant-1.5.0_p20110827.tar.xz osirion? ( http://ingar.satgnu.net/files/gtkradiant/gamepacks//OsirionPack.zip ) warsow? ( http://ingar.satgnu.net/files/gtkradiant/gamepacks//WarsowPack.zip ) !bindist? ( openarena? ( http://ingar.satgnu.net/files/gtkradiant/gamepacks//OpenArenaPack.zip ) quake? ( http://ingar.satgnu.net/files/gtkradiant/gamepacks//QuakePack.zip ) quake2? ( http://ingar.satgnu.net/files/gtkradiant/gamepacks//Quake2Pack.zip ) tremulous? ( http://ingar.satgnu.net/files/gtkradiant/gamepacks//TremulousPack.zip ) )
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=d7d2b7128a395b286f50d423c9501605

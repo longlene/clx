@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=FirstClass Client for Linux
+EAPI=4
+HOMEPAGE=http://www.firstclass.com/index.shtml
+KEYWORDS=~x86
+RDEPEND=>=x11-libs/qt-3.3.3:3 >=media-libs/alsa-lib-1.0.15
+SLOT=0
+SRC_URI=http://www3.firstclass.com/ClientDownloads/FC83ClientDownloadFiles/fcc-8.315-2-Linux.i686.tar.bz2
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=e89c398c3a59ceb92e833f722086c73b

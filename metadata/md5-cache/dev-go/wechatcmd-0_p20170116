@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/go-colortext dev-go/termui dev-go/open-golang >=dev-lang/go-1.7:=
+DESCRIPTION=Wechat command line
+EAPI=6
+HOMEPAGE=https://github.com/liushuchun/wechatcmd
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=GPL-3
+RDEPEND=dev-go/go-colortext dev-go/termui dev-go/open-golang
+SLOT=0
+SRC_URI=https://github.com/liushuchun/wechatcmd/archive/1fe3802c114a7b211303afeabbf96a4edd26e9bb.tar.gz -> wechatcmd-0_p20170116.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=7be0d10177df6fdc259b92fce866e12a

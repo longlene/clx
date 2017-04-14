@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=dev-db/lmdb
+DESCRIPTION=Lightningdbm is a thin wrapper around OpenLDAP Lightning Memory-Mapped Database (LMDB)
+EAPI=6
+HOMEPAGE=https://github.com/shmul/lightningmdb
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-db/lmdb
+SLOT=0
+SRC_URI=https://github.com/shmul/lightningmdb/archive/184f3788809e68c897a6b2def34a5e9377278fa8.tar.gz -> lightningmdb-0.9.18.2_p20160709.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=81e7d802062dcf6155197fa5568fcfbc

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/bolt dev-go/kv dev-go/murmur dev-go/sego >=dev-lang/go-1.7:=
+DESCRIPTION=悟空全文搜索引擎
+EAPI=6
+HOMEPAGE=https://github.com/huichen/wukong
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-go/bolt dev-go/kv dev-go/murmur dev-go/sego
+SLOT=0
+SRC_URI=https://github.com/huichen/wukong/archive/d014a1f19dae3664677c11bd25549cfc820cd890.tar.gz -> wukong-0_p20161011.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=e5cb0378c708d85d5d39b42634f237f5

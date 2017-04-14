@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DEPEND=sys-apps/groff
+DESCRIPTION=Simple NNTP news server
+EAPI=0
+HOMEPAGE=http://www.easysw.com/~mike/newsd/index.php
+KEYWORDS=~x86
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=ftp://ftp.easysw.com/pub/newsd/test/newsd-1.44rc4-source.tar.bz2
+_md5_=2fe775c0dc7a8cef41446badd0c1305e

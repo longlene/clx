@@ -1,0 +1,13 @@
+DEFINED_PHASES=config configure install postinst prepare setup unpack
+DEPEND=!mail-mta/ssmtp >=dev-libs/libcitadel-9999 net-mail/mailbase ldap? ( >=net-nds/openldap-2.0.27 ) pam? ( sys-libs/pam ) postfix? ( mail-mta/postfix ) ssl? ( >=dev-libs/openssl-0.9.6 ) !postfix? ( !virtual/mta ) !net-mail/mailwrapper >=sys-devel/autoconf-2.52 >=sys-devel/libtool-1.4 dev-vcs/git >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=Git master version of the whole citadel suit
+EAPI=2
+HOMEPAGE=http://citadel.org
+IUSE=ldap pam pic postfix ssl threads
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+PROVIDE=!postfix? ( virtual/mta ) virtual/mda virtual/imapd
+RDEPEND=!mail-mta/ssmtp >=dev-libs/libcitadel-9999 net-mail/mailbase ldap? ( >=net-nds/openldap-2.0.27 ) pam? ( sys-libs/pam ) postfix? ( mail-mta/postfix ) ssl? ( >=dev-libs/openssl-0.9.6 ) !postfix? ( !virtual/mta ) !net-mail/mailwrapper
+SLOT=0
+_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	git-2	7af5d170bfc02983b4bcd3167dc5edd4	libtool	e32ea84bf82cf8987965b574672dba93	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=a62a1f4f353d98b1ec9d1d9c0f7f4abb

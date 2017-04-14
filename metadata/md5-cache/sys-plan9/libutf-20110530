@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=a port of Plan 9's support library for UTF-8 and Unicode.
+EAPI=4
+HOMEPAGE=http://swtch.com/plan9port/unix/
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=http://swtch.com/plan9port/unix/libutf.tgz -> libutf-20110530.tgz
+_md5_=b742f1c068439822ebd45ac4cd45c40f

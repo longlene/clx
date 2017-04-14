@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install
+DEPEND=|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 ) virtual/glu iup? ( dev-libs/iup ) cd? ( media-libs/cd ) im? ( media-libs/im )
+DESCRIPTION=OpenGL binding for Lua
+EAPI=4
+HOMEPAGE=http://luagl.sourceforge.net/
+IUSE=gtk iup cd im static-libs
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 ) virtual/glu iup? ( dev-libs/iup ) cd? ( media-libs/cd ) im? ( media-libs/im )
+SLOT=0
+SRC_URI=mirror://sourceforge/project/luagl/1.11/Docs%20and%20Sources/luagl-1.11_Sources.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=82eee535dfb7b82308600f0cbeacd2f3

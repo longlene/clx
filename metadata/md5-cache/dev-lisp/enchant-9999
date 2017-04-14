@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=Common Lisp interface for Enchant spell-checker library
+EAPI=4
+HOMEPAGE=https://github.com/tlikonen/cl-enchant
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=public-domain
+RDEPEND=dev-lisp/cffi app-text/enchant
+SLOT=0
+_md5_=03e9b4ce52fc159b17e38be29791426e

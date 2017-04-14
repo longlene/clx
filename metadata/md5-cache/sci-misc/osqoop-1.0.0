@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Open source software oscilloscope
+EAPI=0
+HOMEPAGE=http://lsn.unige.ch/osqoop
+IUSE=doc tseadext virtualmouse
+KEYWORDS=~x86
+LICENSE=GPL-2
+RDEPEND=>=x11-libs/qt-4.1 virtualmouse? ( >=x11-libs/libXtst-1.0.2 ) tseadext? ( >=sys-apps/fxload-20020411 >=dev-libs/libusb-0.1.11 )
+SLOT=0
+SRC_URI=http://lsn.unige.ch/osqoop/deb/source/osqoop_1.0.0.tar.gz
+_md5_=5051d1aaa5f9e09cf002926a25d395e9

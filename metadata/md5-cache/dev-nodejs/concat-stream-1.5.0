@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=writable stream that concatenates strings or binary data and calls a callback with the result
+EAPI=5
+HOMEPAGE=https://www.npmjs.com/package/concat-stream
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-nodejs/readable-stream dev-nodejs/typedarray dev-nodejs/inherits
+SLOT=0
+SRC_URI=http://registry.npmjs.org/concat-stream/-/concat-stream-1.5.0.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=48d225d63273178b212e58d830a74330

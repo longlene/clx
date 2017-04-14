@@ -1,0 +1,10 @@
+DEFINED_PHASES=prepare unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=quark web server
+EAPI=5
+HOMEPAGE=http://git.suckless.org/quark/
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=ad642077c82e2a4d385d6b014d3856d8

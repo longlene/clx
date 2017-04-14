@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Infer the content-type of a request
+EAPI=6
+HOMEPAGE=https://github.com/jshttp/type-is
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-nodejs/mime-types dev-nodejs/media-typer
+SLOT=0
+SRC_URI=http://registry.npmjs.org/type-is/-/type-is-1.6.13.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=d13589407787c44ad745b88f65e27319

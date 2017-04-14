@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure
+DEPEND=|| ( dev-libs/nettle dev-libs/libtomcrypt ) dev-libs/libxml2 gtk3? ( x11-libs/gtk+:3 )
+DESCRIPTION=Software Token for Linux/UNIX
+EAPI=5
+HOMEPAGE=http://stoken.sf.net
+IUSE=gtk3
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=LGPL
+RDEPEND=|| ( dev-libs/nettle dev-libs/libtomcrypt ) dev-libs/libxml2 gtk3? ( x11-libs/gtk+:3 )
+SLOT=0
+SRC_URI=https://github.com/cernekee/stoken/archive/v0.90.tar.gz -> stoken-0.90.tar.gz
+_md5_=337327b8df7f31ea30748ef4f342ced6

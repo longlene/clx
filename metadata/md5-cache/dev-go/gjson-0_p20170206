@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/match >=dev-lang/go-1.7:=
+DESCRIPTION=Get JSON values very quickly in Go
+EAPI=6
+HOMEPAGE=https://github.com/tidwall/gjson
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-go/match
+SLOT=0
+SRC_URI=https://github.com/tidwall/gjson/archive/09d1c5c5bc64e094394dfe2150220d906c55ac37.tar.gz -> gjson-0_p20170206.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=78a88530a6aa0f8f13ade37865f30f97

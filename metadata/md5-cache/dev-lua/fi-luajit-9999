@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=FreeImage Luajit binding
+EAPI=5
+HOMEPAGE=https://github.com/nyfair/fi-luajit
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=public-domain
+RDEPEND=media-libs/freeimage
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4	lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=a4e89ed017ed968d50beb3c147a41913

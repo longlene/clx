@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=A decent RSS and Atom XML feed parser
+EAPI=5
+HOMEPAGE=http://feedparser.luaforge.net/
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=BSD
+RDEPEND=dev-lang/luaexpat
+SLOT=0
+SRC_URI=https://github.com/slact/lua-feedparser/archive/0.71.tar.gz -> lua-feedparser-0.71.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=a1f65ce67eecf0b3ead4312741b7466e

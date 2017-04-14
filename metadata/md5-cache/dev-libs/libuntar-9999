@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=C library for reading tarfiles, stripped down version of libtar
+EAPI=5
+HOMEPAGE=https://github.com/justincormack/libuntar
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=as-is
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=0ce5cd9b6a66493b41c033e273dbe090

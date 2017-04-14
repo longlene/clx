@@ -1,0 +1,12 @@
+DEFINED_PHASES=install nofetch postinst
+DESCRIPTION=Cedega replaces WineX, a distribution of Wine with enhanced DirectX for gaming
+EAPI=0
+HOMEPAGE=http://www.transgaming.com/
+IUSE=cups dbus opengl
+KEYWORDS=-* amd64 x86
+LICENSE=cedega
+RDEPEND=x11-libs/libX11 opengl? ( virtual/opengl ) dbus? ( dev-python/dbus-python ) >=sys-libs/ncurses-5.2 cups? ( net-print/cups ) >=media-libs/freetype-2.0.0 >=dev-lang/python-2.4 >=dev-python/pygtk-2.6 >=dev-util/glade-2.6 !app-emulation/point2play amd64? ( app-emulation/emul-linux-x86-xlibs app-emulation/emul-linux-x86-soundlibs )
+RESTRICT=fetch strip
+SLOT=3
+SRC_URI=cedega-000133.tgz
+_md5_=87b09810cef9210ddac1cfdbda89cef5

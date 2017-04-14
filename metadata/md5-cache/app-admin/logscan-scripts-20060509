@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DEPEND=app-admin/logscan
+DESCRIPTION=Logscan summarizes you logfiles in a quick, effective, flexible and standardised way
+EAPI=0
+HOMEPAGE=http://sourceforge.net/projects/logscan/
+KEYWORDS=x86
+LICENSE=GPL
+RDEPEND=app-admin/logscan
+SLOT=0
+SRC_URI=mirror://sourceforge/logscan/logscan-scripts-20060509.tar.bz2
+_md5_=244e59021d42333ceff5cfbf7ac235f6

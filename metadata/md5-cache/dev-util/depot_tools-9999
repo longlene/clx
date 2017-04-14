@@ -1,0 +1,11 @@
+DEFINED_PHASES=install setup unpack
+DEPEND=>=dev-vcs/git-1.8.2.1
+DESCRIPTION=Chromium uses a package of scripts, the depot_tools, to manage interaction with the Chromium source code repository and the Chromium development process
+EAPI=6
+HOMEPAGE=https://dev.chromium.org/developers/how-tos/install-depot-tools
+IUSE=doc zsh-completions python_targets_python2_7
+KEYWORDS=~amd64
+LICENSE=GPL-2
+SLOT=0
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	git-r3	6efc2d7de07a77bf72c7207b48d0e123	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	python-single-r1	c3e54dd0dc1e70c6252f2551a55bf053	python-utils-r1	a166d0f5815d7f1e67bb60a196f1bf7e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=0f9ab20dd6b22dc9fcf7e351fd0797fe

@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=A micro Tcl implementation
+EAPI=6
+HOMEPAGE=https://github.com/zserge/partcl
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/zserge/partcl/archive/2f03722439d3a876f5fe756c7d379128ada60eeb.tar.gz -> partcl-0_p20160812.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=4fb382996c6084d6800ee520bd7cb79d

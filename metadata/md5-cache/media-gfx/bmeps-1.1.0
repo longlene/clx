@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=sys-libs/zlib media-libs/libpng jpeg? ( media-libs/jpeg )
+DESCRIPTION=Convert PNG/JPEG/NetPBM to EPS
+EAPI=0
+HOMEPAGE=http://bmeps.sourceforge.net/
+IUSE=jpeg
+KEYWORDS=~x86
+LICENSE=GPL-2
+RDEPEND=sys-libs/zlib media-libs/libpng jpeg? ( media-libs/jpeg )
+SLOT=0
+SRC_URI=mirror://sourceforge/bmeps/bmeps-1.1.0-a.tar.gz
+_md5_=b6a491123d06d73d86c72bcac12c5000

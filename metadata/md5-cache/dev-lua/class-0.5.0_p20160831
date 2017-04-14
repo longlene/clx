@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Oriented Object Programming for Lua
+EAPI=6
+HOMEPAGE=https://github.com/torch/class
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-lua/argcheck
+SLOT=0
+SRC_URI=https://github.com/torch/class/archive/e2e4cd24aad5c707e42481367eb8de30f437df0f.tar.gz -> class-0.5.0_p20160831.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=7491ca83fa3821f15cd4ea0bbb53f672

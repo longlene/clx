@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=sys-devel/clang dev-lang/luajit doc? ( app-text/asciidoc ) dev-vcs/git
+DESCRIPTION=A LuaJIT-based interface to libclang
+EAPI=5
+HOMEPAGE=https://github.com/helixhorned/ljclang
+IUSE=doc
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=as-is
+RDEPEND=sys-devel/clang dev-lang/luajit doc? ( app-text/asciidoc )
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4	lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=c835a85a5fa10856ff3ffcf0a2b13549

@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DEPEND=|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 ) dev-lua/squish dev-lua/luasocket
+DESCRIPTION=XMPP client library written in Lua.
+EAPI=4
+HOMEPAGE=http://code.mathewwild.co.uk/
+LICENSE=MIT
+RDEPEND=|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 ) dev-lua/squish dev-lua/luasocket
+SLOT=0
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=2240c5a195cad03c2ed4b16f76e8b310

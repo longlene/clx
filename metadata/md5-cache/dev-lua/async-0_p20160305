@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=An async framework for Lua/Torch
+EAPI=5
+HOMEPAGE=https://github.com/clementfarabet/async
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD
+RDEPEND=dev-lua/lua-cjson sci-libs/torch7
+SLOT=0
+SRC_URI=https://github.com/clementfarabet/async/archive/293348b5aef029b8ca29269f96c8a8fe9bde33ce.tar.gz -> async-0_p20160305.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=12187d17793b268e9d3da647de69ab94

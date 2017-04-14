@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=media-libs/libpng sys-libs/zlib x11-libs/libX11 x11-libs/libXtst x11-libs/libxcb x11-libs/libxkbcommon >=dev-lang/go-1.7:=
+DESCRIPTION=RobotGo,Go Native cross-platform system automation
+EAPI=6
+HOMEPAGE=https://github.com/go-vgo/robotgo
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=media-libs/libpng sys-libs/zlib x11-libs/libX11 x11-libs/libXtst x11-libs/libxcb x11-libs/libxkbcommon
+SLOT=0
+SRC_URI=https://github.com/go-vgo/robotgo/archive/0.42.0.tar.gz -> robotgo-0.42.0.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=0744c6ef769344f2bf88d113f23ada5c

@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=C++11 header-only memory mapped file library
+EAPI=6
+HOMEPAGE=https://github.com/yhirose/cpp-mmaplib
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/yhirose/cpp-mmaplib/archive/72e3cd93cbeb447e5f25d623aac0b7482b8adf0e.tar.gz -> cpp-mmaplib-0_p20160305.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=0471a136c4289970b613c331cb110d24

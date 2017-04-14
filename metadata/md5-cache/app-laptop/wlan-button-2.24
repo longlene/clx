@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst unpack
+DEPEND=sys-fs/sysfsutils =dev-libs/libxml2-2*
+DESCRIPTION=Hotkey driver for some Acer and Acer-like laptops
+EAPI=0
+HOMEPAGE=http://www.roessner-net.com/wlan-button/
+IUSE=acerhk debug
+KEYWORDS=~x86
+LICENSE=GPL-2
+RDEPEND=acerhk? ( app-laptop/acerhk )
+SLOT=0
+SRC_URI=http://www.roessner-net.com/wlan-button/wlan-button-2.24.tar.bz2
+_md5_=b1bd88f6daf9b3d71b49856e003b7051

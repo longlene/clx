@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst
+DEPEND=sys-devel/make app-arch/bzip2 app-arch/gzip dev-util/pkgconfig net-misc/openssh sys-apps/coreutils dev-lang/perl crypt? ( app-crypt/mcrypt ) >=dev-libs/glib-2 dev-perl/File-Copy-Recursive sys-apps/attr >=app-shells/bash-3
+DESCRIPTION=rdup is a platform for backups. It provides a list of files to backup and the necessary mechanisms to process them. It delegates the encryption, compression, transfer and packaging to other utilities in a true Unix-way.
+EAPI=0
+HOMEPAGE=http://www.miek.nl/projects/rdup/index.html
+IUSE=crypt
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=sys-devel/make app-arch/bzip2 app-arch/gzip dev-util/pkgconfig net-misc/openssh sys-apps/coreutils dev-lang/perl crypt? ( app-crypt/mcrypt ) >=dev-libs/glib-2 dev-perl/File-Copy-Recursive sys-apps/attr >=app-shells/bash-3
+SLOT=0
+SRC_URI=http://www.miek.nl/projects/rdup/rdup-0.5.2.tar.bz2
+_md5_=cd018f4c1baa07f07935ea8bd00ef3f0

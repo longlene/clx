@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DEPEND=>=x11-libs/qt-4.3 >=dev-libs/libserial-0.5.2
+DESCRIPTION=LVProg - Linux Vinculum (USB host controller) Programmer
+EAPI=0
+HOMEPAGE=http://www.sourceforge.net/projects/lvprog/
+KEYWORDS=~x86
+LICENSE=GPL2
+RDEPEND=>=x11-libs/qt-4.3 >=dev-libs/libserial-0.5.2
+SLOT=0
+SRC_URI=mirror://sourceforge/lvprog/LVProg-0.1.1_beta.tar.bz2
+_md5_=b417bcc0bece2642f2adeb9471602844

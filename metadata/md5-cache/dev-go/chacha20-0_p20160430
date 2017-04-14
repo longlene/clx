@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=Golang ChaCha20 stream cipher
+EAPI=6
+HOMEPAGE=https://github.com/Yawning/chacha20
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=CC0-1.0
+SLOT=0
+SRC_URI=https://github.com/Yawning/chacha20/archive/c91e78db502ff629614837aacb7aa4efa61c651a.tar.gz -> chacha20-0_p20160430.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=74cfc5739e33df1b8c883fd988285eef

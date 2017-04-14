@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/go-porterstemmer dev-go/segment dev-go/bolt dev-go/protobuf dev-go/gtreap dev-go/bitset dev-go/moss dev-go/cuckoofilter dev-go/goleveldb dev-go/go-metrics >=dev-lang/go-1.7:=
+DESCRIPTION=A modern text indexing library for go
+EAPI=6
+HOMEPAGE=https://github.com/blevesearch/bleve/
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-go/go-porterstemmer dev-go/segment dev-go/bolt dev-go/protobuf dev-go/gtreap dev-go/bitset dev-go/moss dev-go/cuckoofilter dev-go/goleveldb dev-go/go-metrics
+SLOT=0
+SRC_URI=https://github.com/blevesearch/bleve/archive/v0.5.0.tar.gz -> bleve-0.5.0.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=06e1976da3cd9175cac238436777b131

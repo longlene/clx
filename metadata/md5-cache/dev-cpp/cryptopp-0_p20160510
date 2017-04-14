@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=C++ class library of cryptographic schemes
+EAPI=6
+HOMEPAGE=https://github.com/chfast/cryptopp
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=public-domain
+SLOT=0
+SRC_URI=https://github.com/chfast/cryptopp/archive/eb2efc3eaec9a178c0f2049894417ca8c0b8bad4.tar.gz -> cryptopp-0_p20160510.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=66d5b9476cad3a92dd2282170a793cf9

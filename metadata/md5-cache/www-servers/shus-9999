@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=A tiny HTTP server for static sites
+EAPI=4
+HOMEPAGE=https://github.com/dimkr/shus
+KEYWORDS=~amd64 ~x86
+LICENSE=public-domain
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=8e7f8a91395aec61f04af24ab8397618

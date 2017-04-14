@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Torch interface to Gnuplot
+EAPI=6
+HOMEPAGE=https://github.com/torch/gnuplot
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-lua/torch-paths sci-libs/torch7 sci-visualization/gnuplot
+SLOT=0
+SRC_URI=https://github.com/torch/gnuplot/archive/a75e6782bdd5a7aa3ed5c2a0a88b63a916472c66.tar.gz -> torch-gnuplot-0_p20161208.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=c6c133ce9b5278a78f473e0fe5b3e57f

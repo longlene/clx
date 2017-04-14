@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=a FIFO-ordered associative container for C++
+EAPI=5
+HOMEPAGE=https://github.com/nlohmann/fifo_map
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=678f47517e25bb677259bf95ff5cdab1

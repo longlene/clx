@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=a JIT assembler for x86/x64 by C++ header
+EAPI=6
+HOMEPAGE=https://github.com/herumi/xbyak
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/herumi/xbyak/archive/v4.90.tar.gz -> xbyak-4.90.tar.gz
+_md5_=e9d5b7fced81308a7829f05e95a8847c

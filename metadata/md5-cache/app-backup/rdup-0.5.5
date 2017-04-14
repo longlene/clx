@@ -1,0 +1,13 @@
+DEFINED_PHASES=install unpack
+DEPEND=>dev-libs/glib-2.0.0 dev-util/pkgconfig
+DESCRIPTION=rdup is a utility inspired by rsync and the plan9 way of doing backups.
+EAPI=0
+HOMEPAGE=http://www.miek.nl/projects/rdup/index.html
+IUSE=crypt ssl xattr zip
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=>dev-libs/glib-2.0.0 dev-util/pkgconfig >=app-shells/bash-3.0.0 crypt? ( app-crypt/mcrypt ) ssl? ( virtual/ssh ) xattr? ( sys-apps/attr ) zip? ( app-arch/zip )
+SLOT=0
+SRC_URI=http://www.miek.nl/projects/rdup/rdup-0.5.5.tar.bz2
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=a0c8255c6fdee95fb400b7aaf1605476

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install
+DEPEND=X? ( virtual/x11 )
+DESCRIPTION=A language for scientific computing and rapid prototyping
+EAPI=0
+HOMEPAGE=http://yorick-mb.sourceforge.net/
+IUSE=X
+KEYWORDS=~x86
+LICENSE=BSD
+RDEPEND=X? ( virtual/x11 )
+RESTRICT=nomirror
+SLOT=0
+SRC_URI=mirror://sourceforge/yorick-mb/yorick-mb-1.5.22.tar.gz
+_md5_=17ef2a1453a14f233411c7abf7e45f1d

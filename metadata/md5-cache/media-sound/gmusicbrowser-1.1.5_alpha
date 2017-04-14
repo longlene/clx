@@ -1,0 +1,12 @@
+DEFINED_PHASES=install postinst postrm unpack
+DESCRIPTION=An open-source jukebox for large collections of mp3/ogg/flac files
+EAPI=0
+HOMEPAGE=http://gmusicbrowser.org/
+IUSE=dbus gstreamer mplayer mozilla webkit
+KEYWORDS=~amd64 ~sparc ~x86
+LICENSE=GPL-2
+RDEPEND=>=dev-lang/perl-5.8 dev-perl/gtk2-perl dev-perl/gtk2-trayicon dbus? ( dev-perl/Net-DBus ) gstreamer? ( dev-perl/GStreamer dev-perl/GStreamer-Interfaces media-libs/gst-plugins-good ) mplayer? ( media-video/mplayer ) !gstreamer? ( !mplayer? ( media-sound/mpg123 media-sound/mpg321 media-sound/vorbis-tools media-sound/flac123 media-sound/alsa-utils ) ) mozilla? ( dev-perl/Gtk2-MozEmbed ) webkit? ( dev-perl/Gtk2-WebKit )
+SLOT=0
+SRC_URI=http://gmusicbrowser.org/download/gmusicbrowser-1.1.5.tar.gz
+_eclasses_=fdo-mime	21ef5adf81836863efa968f2a25cff64
+_md5_=a13e1328ae42a4f5e9dc3c555ddc64ff

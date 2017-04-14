@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=Yet Another Serialization
+EAPI=5
+HOMEPAGE=https://github.com/niXman/yas
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=Boost-1.0
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=62066575bba755ee6fa4fec1f236f1ad

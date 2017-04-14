@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=dev-libs/boost[context,threads]
+DESCRIPTION=C++ Kafka Client Library using Boost Asio
+EAPI=6
+HOMEPAGE=https://github.com/danieljoos/libkafka-asio
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-libs/boost[context,threads]
+SLOT=0
+SRC_URI=https://github.com/danieljoos/libkafka-asio/archive/v0.2.0.tar.gz -> libkafka-asio-0.2.0.tar.gz
+_md5_=11c4951925c59468e93a2fd2f2e3f7d1

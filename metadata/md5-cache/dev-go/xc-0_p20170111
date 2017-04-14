@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/golex dev-go/strutil >=dev-lang/go-1.7:=
+DESCRIPTION=cross language compiler support/utility stuff
+EAPI=6
+HOMEPAGE=https://github.com/cznic/xc
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-go/golex dev-go/strutil
+SLOT=0
+SRC_URI=https://github.com/cznic/xc/archive/056465bb2be50ec239d754187e1cccbe1b940aa6.tar.gz -> xc-0_p20170111.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=693b567efd9c761b595cb3a3d7e04fa3

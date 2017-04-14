@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=Data structure and relevant algorithms for extremely fast prefix/fuzzy string searching
+EAPI=6
+HOMEPAGE=https://github.com/derekparker/trie
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/derekparker/trie/archive/99ba9900fa2c45475da655bbf7f869461fc04165.tar.gz -> trie-0_p20160804.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=209ae56bbb2dcae47fffec2d0f9e9bf5

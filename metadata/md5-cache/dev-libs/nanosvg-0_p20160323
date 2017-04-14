@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Simple stupid SVG parser
+EAPI=5
+HOMEPAGE=https://github.com/memononen/nanosvg
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/memononen/nanosvg/archive/dc12d90586a8ab99da0c575aafff999666aa5d55.tar.gz -> nanosvg-0_p20160323.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=e5c5fdb459ada1e641c7b6faef83e4a9

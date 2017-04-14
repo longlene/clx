@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-vcs/git
+DESCRIPTION=run as random user
+EAPI=5
+HOMEPAGE=https://github.com/teran-mckinney/raru
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=public-domain
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=ed9065a5c5d50a3e810b36a965ce90d9

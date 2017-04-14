@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=The API Gateway & Microservice Management Layer
+EAPI=5
+HOMEPAGE=https://getkong.org
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lua/luasec dev-lua/luasocket dev-lua/penlight dev-lua/mediator_lua dev-lua/lua-resty-http dev-lua/lua-resty-jit-uuid dev-lua/multipart dev-lua/version dev-lua/lapis dev-lua/lua-cassandra dev-lua/pgmoon-mashape dev-lua/luatz dev-lua/lua_system_constants dev-lua/lua-resty-iputils dev-lua/luacrypto dev-lua/luasyslog dev-lua/lua_pack dev-lua/lua-resty-dns-client dev-lua/lua-resty-worker-events
+SLOT=0
+SRC_URI=https://github.com/Mashape/kong/archive/0.10.0.tar.gz -> kong-0.10.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=591db29f67ffeac8837351d576377419

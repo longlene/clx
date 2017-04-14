@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=dev-lang/lua >=dev-libs/expat-2.0.0
+DESCRIPTION=A SAX XML parser based on the Expat library.
+EAPI=0
+HOMEPAGE=http://www.keplerproject.org/luaexpat/
+KEYWORDS=~amd64
+LICENSE=as-is
+RDEPEND=dev-lang/lua >=dev-libs/expat-2.0.0
+SLOT=0
+SRC_URI=http://luaforge.net/frs/download.php/2469/luaexpat-1.1.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=e2c399712ed98565fd35b4c464588f1f

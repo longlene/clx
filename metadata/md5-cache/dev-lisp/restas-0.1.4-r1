@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst postrm unpack
+DESCRIPTION=Common Lisp application server
+EAPI=4
+HOMEPAGE=http://github.com/archimag/restas
+IUSE=doc slime
+KEYWORDS=~amd64 ~ppc ~sparc ~x86 ~arm
+LICENSE=LLGPL-2.1
+RDEPEND=>=dev-lisp/cl-routes-0.2.2 dev-lisp/data-sift dev-lisp/alexandria >=dev-lisp/hunchentoot-1.2.0 slime? ( app-emacs/slime-archimag dev-lisp/closer-mop )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/archimag/restas/archive/version-0.1.4.tar.gz -> restas-0.1.4.tar.gz
+_eclasses_=common-lisp-3	e3b01fd04bd5f6e4c79e470ea00b97a8	elisp-common	19ff54b35acd0bf2a14831a308a57753	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=450260fe55c07d2e937b208e625dc247

@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=net-libs/webkit-gtk x11-libs/gtk+:2 dev-vcs/git
+DESCRIPTION=sb - simple webkit browser
+EAPI=5
+HOMEPAGE=https://github.com/mutantturkey/sb
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=net-libs/webkit-gtk x11-libs/gtk+:2
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=6d434a00cd17e04a92947b9060f74ad3

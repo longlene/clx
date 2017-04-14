@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=CGO bindings to Vedis
+EAPI=6
+HOMEPAGE=https://github.com/icholy/vedis
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/icholy/vedis/archive/c1fec7cb3c7d89fb0662b557e64f53bec588dd54.tar.gz -> vedis-0_p20140403.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=24433d9a4a8f47e420f0b72f21734f26

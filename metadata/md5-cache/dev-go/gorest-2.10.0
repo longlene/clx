@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/golib >=dev-lang/go-1.7:=
+DESCRIPTION=Tideland Go REST Server Library
+EAPI=6
+HOMEPAGE=https://github.com/tideland/gorest
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD-3
+RDEPEND=dev-go/golib
+SLOT=0
+SRC_URI=https://github.com/tideland/gorest/archive/v2.10.0.tar.gz -> gorest-2.10.0.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=5f04fbb353fdf7ee19efaec30f81468d

@@ -1,0 +1,12 @@
+DEFINED_PHASES=install postinst prepare
+DESCRIPTION=mruby is the lightweight implementation of the Ruby language complying to (part of) the ISO standard.
+EAPI=6
+HOMEPAGE=https://github.com/mruby/mruby
+IUSE=savedconfig savedconfig
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=sys-devel/bison dev-lang/ruby
+SLOT=0
+SRC_URI=https://github.com/mruby/mruby/archive/1.2.0.tar.gz -> mruby-1.2.0.tar.gz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	portability	2b88d3ecc35035a3b8ab628b49cafb0e	savedconfig	e6948c872ff47e15a10e5ad1be15c18e	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=ea88bdb715a3a7809d47a86c73aee21a

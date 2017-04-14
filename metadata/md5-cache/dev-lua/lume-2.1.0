@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DESCRIPTION=Lua functions geared towards gamedev
+EAPI=5
+HOMEPAGE=https://github.com/rxi/lume/
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/rxi/lume/archive/v2.1.0.tar.gz -> lume-2.1.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=95a56eb5d3e696205a3fdd8da0c1c880

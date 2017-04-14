@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-libs/libevent
+DESCRIPTION=xredis-server is a redis server framework library write by C++
+EAPI=6
+HOMEPAGE=https://github.com/0xsky/xredis-server
+LICENSE=MIT
+RDEPEND=dev-libs/libevent
+SLOT=0
+SRC_URI=https://github.com/0xsky/xredis-server/archive/xredis-server-1.0.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=3f16102bc8f429569f4dffea349aa8b1

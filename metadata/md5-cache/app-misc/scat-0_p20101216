@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Slow cat. Cats a file or stdin at a specified number of bits per second.
+EAPI=2
+HOMEPAGE=http://mama.indstate.edu/users/ice/progs.html
+KEYWORDS=~amd64 ~x86
+LICENSE=|| ( GPL-2 GPL-3 )
+SLOT=0
+SRC_URI=http://mama.indstate.edu/users/ice/progs/scat.c -> scat-0_p20101216.c
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=b9d585af9a61f45d827d2ab279519528

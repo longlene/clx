@@ -1,0 +1,11 @@
+DEFINED_PHASES=prepare unpack
+DEPEND=media-libs/giflib dev-vcs/git
+DESCRIPTION=imagefile conversion tools
+EAPI=5
+HOMEPAGE=http://git.2f30.org/imagefile/
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=media-libs/giflib
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=274cde9002398e6ff5e9a9c6d5acc29e

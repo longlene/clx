@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=dev-perl/gtk2-perl
+DESCRIPTION=Program which locks your keyboard but leaves your mouse free.
+EAPI=0
+HOMEPAGE=http://csincock.customer.netspace.net.au/lock-keyboard-for-baby.htm
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=dev-perl/gtk2-perl
+SLOT=0
+SRC_URI=http://csincock.customer.netspace.net.au/download/lock-keyboard-for-baby-20080706
+_md5_=7c1097d1aeaa85e00f927201eb62bbf1

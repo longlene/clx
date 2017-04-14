@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DESCRIPTION=A cross platform toolkit for creative coding in C++
+EAPI=5
+HOMEPAGE=http://openframeworks.cc
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/openframeworks/openFrameworks/archive/0.9.0.tar.gz -> openframeworks-0.9.0.tar.gz
+_md5_=c03954f050a2b6a97353e5b6e6311312

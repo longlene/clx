@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install test
+DEPEND=>=app-text/tesseract-2 media-libs/tiff media-libs/libpng media-libs/jpeg media-libs/iulib spell? ( app-text/aspell ) openfst? ( media-libs/OpenFst ) lua? ( media-libs/leptonlib ) interactive? ( dev-libs/libedit ) dev-util/ftjam
+DESCRIPTION=state-of-the-art document analysis and OCR system based on tesseract
+EAPI=0
+HOMEPAGE=http://code.google.com/p/ocropus/
+IUSE=sdl lua openfst spell interactive
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=>=app-text/tesseract-2 media-libs/tiff media-libs/libpng media-libs/jpeg media-libs/iulib spell? ( app-text/aspell ) openfst? ( media-libs/OpenFst ) lua? ( media-libs/leptonlib ) interactive? ( dev-libs/libedit )
+SLOT=0
+SRC_URI=http://ocropus.googlecode.com/files/ocropus-0.3.1.tar.gz
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=1d83151823f6d4529c5ca5e7781fa79f

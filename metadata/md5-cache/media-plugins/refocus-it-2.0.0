@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DEPEND=>=media-gfx/gimp-2.0.0 >=x11-libs/gtk+-2.2.2
+DESCRIPTION=Refocus-It plugin for The Gimp
+EAPI=0
+HOMEPAGE=http://refocus-it.sf.net/
+KEYWORDS=~x86
+LICENSE=GPL
+RDEPEND=>=media-gfx/gimp-2.0.0 >=x11-libs/gtk+-2.2.2
+SLOT=0
+SRC_URI=mirror://sourceforge/refocus-it/refocus-it-2.0.0.tar.gz
+_md5_=99e7789389c71f3831317e48a96ef400

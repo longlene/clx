@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=OpenFst is a library for constructing, combining, optimizing, and searching weighted finite-state transducers (FSTs).
+EAPI=5
+HOMEPAGE=http://www.openfst.org/
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+SLOT=0
+SRC_URI=http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.5.0.tar.gz
+_md5_=a11937d97be1c010e9a9c610c2880834

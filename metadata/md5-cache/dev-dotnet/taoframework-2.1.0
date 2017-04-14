@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install preinst unpack
+DEPEND=cg? ( >=media-gfx/nvidia-cg-toolkit-1.4.1 ) devil? ( >=media-libs/devil-1.6.8_rc2 ) ffmpeg? ( >=media-video/ffmpeg-0.4.9 ) freeglut? ( >=media-libs/freeglut-2.4.0 ) freetype? ( >=media-libs/freetype-2 ) glfw? ( >=media-libs/glfw-2.5.0 ) lua? ( >=dev-lang/lua-5.1.1 ) ode? ( >=dev-games/ode-0.6 ) openal? ( media-libs/openal ) opengl? ( virtual/opengl ) physfs? ( >=dev-games/physfs-1.0.1 ) sdl? ( >=media-libs/libsdl-1.2.11 ) X? ( x11-libs/libX11 ) dev-dotnet/nant sys-apps/sed dev-vcs/subversion net-misc/rsync
+DESCRIPTION=Various .NET and Mono Bindings
+EAPI=0
+HOMEPAGE=http://www.taoframework.com/
+IUSE=cg devil ffmpeg freeglut freetype glfw lua ode openal opengl physfs sdl X
+KEYWORDS=~x86 ~amd64
+LICENSE=MIT
+RDEPEND=cg? ( >=media-gfx/nvidia-cg-toolkit-1.4.1 ) devil? ( >=media-libs/devil-1.6.8_rc2 ) ffmpeg? ( >=media-video/ffmpeg-0.4.9 ) freeglut? ( >=media-libs/freeglut-2.4.0 ) freetype? ( >=media-libs/freetype-2 ) glfw? ( >=media-libs/glfw-2.5.0 ) lua? ( >=dev-lang/lua-5.1.1 ) ode? ( >=dev-games/ode-0.6 ) openal? ( media-libs/openal ) opengl? ( virtual/opengl ) physfs? ( >=dev-games/physfs-1.0.1 ) sdl? ( >=media-libs/libsdl-1.2.11 ) X? ( x11-libs/libX11 )
+SLOT=0
+_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	ltprune	2770eed66a9b8ef944714cd0e968182e	mono	a59df07822fcb0dec319e09526d84c1f	multilib	165fc17c38d1b11dac2008280dab6e80	subversion	352e2f8415dd2e3c297d2d2e32670deb	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=3ce873e77099aa7695824a7a5c6ca530

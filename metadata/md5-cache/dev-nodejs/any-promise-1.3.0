@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Resolve any installed ES6 compatible promise
+EAPI=6
+HOMEPAGE=https://github.com/kevinbeaty/any-promise
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=http://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz
+_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_md5_=76758b4ebdc99b8d6e6722d543c0161a

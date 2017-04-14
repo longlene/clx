@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=luajit? ( dev-lang/luajit:2 ) !luajit? ( dev-lang/lua:= )
+DESCRIPTION=A pure Lua implementation of the MessagePack serialization format
+EAPI=6
+HOMEPAGE=http://fperrad.github.io/lua-MessagePack/
+IUSE=+luajit
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=luajit? ( dev-lang/luajit:2 ) !luajit? ( dev-lang/lua:= )
+SLOT=0
+SRC_URI=https://github.com/fperrad/lua-MessagePack/archive/0.5.0.tar.gz -> messagepack-0.5.0.tar.gz
+_eclasses_=lua	d0efa5e4d05e35a139739f5a6747da11	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_md5_=1622f1c2b6facef540900c5364d30755

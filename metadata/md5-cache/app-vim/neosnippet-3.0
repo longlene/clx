@@ -1,0 +1,12 @@
+DEFINED_PHASES=install postinst postrm prepare unpack
+DEPEND=|| ( >=app-editors/vim-7.3 >=app-editors/gvim-7.3 )
+DESCRIPTION=vim plugin: Use snippet files under neocomplcache.
+EAPI=4
+HOMEPAGE=https://github.com/Shougo/neosnippet
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=app-vim/vital !app-vim/snipmate || ( >=app-editors/vim-7.3 >=app-editors/gvim-7.3 )
+SLOT=0
+SRC_URI=https://github.com/Shougo/neosnippet/tarball/ver.3.0 -> neosnippet-3.0.tar.gz
+_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd	vim-doc	af2c81a1feeb0a99e91bee3e20769edb	vim-plugin	6f0171b0a2f2fce005c13b4c0685a0d8
+_md5_=e54931c706e182fadd09580e3dd73f9c

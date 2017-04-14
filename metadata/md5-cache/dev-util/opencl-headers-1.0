@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DEPEND=!dev-util/nvidia-cuda-toolkit dev-vcs/git
+DESCRIPTION=OpenCL headers from Khronos.org, tracked on github.
+EAPI=4
+HOMEPAGE=https://github.com/nbigaouette/opencl-headers
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RESTRICT=mirror
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=7f052c5e6514ccb178ac9690eebba7b5

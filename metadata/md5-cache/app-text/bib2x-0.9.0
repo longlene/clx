@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Bib2x - The Tool For Manipulating and Converting BibTeX-Libraries
+EAPI=0
+HOMEPAGE=http://www.xandi.eu/bib2x/
+KEYWORDS=~amd64
+LICENSE=GPL
+SLOT=0
+SRC_URI=http://www.xandi.eu/bib2x/files/dist/bib2x_0.9_src.tgz
+_md5_=e1e95df92f2ea0adf11f09ca14f926b5

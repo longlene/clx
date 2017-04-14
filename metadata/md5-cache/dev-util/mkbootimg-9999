@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=sys-devel/gcc dev-vcs/git
+DESCRIPTION=Assemble boot images for the Android bootloader
+EAPI=0
+HOMEPAGE=http://android.git.kernel.org/?p=platform/system/core.git;a=summary
+KEYWORDS=~arm
+LICENSE=Apache-2.0 BSD
+RDEPEND=sys-devel/gcc
+SLOT=0
+_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
+_md5_=9c160a117cf8d1b3f2bbbd5f338c14eb

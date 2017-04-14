@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.7:=
+DESCRIPTION=Package b implements a B+tree
+EAPI=6
+HOMEPAGE=https://github.com/cznic/b
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/cznic/b/archive/bcff30a622dbdcb425aba904792de1df606dab7c.tar.gz -> b-0_p20160716.tar.gz
+_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_md5_=1aa4ef9dd9af247fffe5182ed211d5f8
