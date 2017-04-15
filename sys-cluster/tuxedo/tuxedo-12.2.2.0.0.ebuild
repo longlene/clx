@@ -18,9 +18,11 @@ SRC_URI="
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="server"
+IUSE="apache server"
 
-DEPEND=""
+DEPEND="
+	apache? ( www-servers/apache )
+"
 RDEPEND="${DEPEND}"
 
 QA_PREBUILT="usr/lib*/tuxedo/lib*/lib*"
@@ -85,6 +87,10 @@ src_install() {
 			newins ${SERVER_DATA_DIR}/${f}_CAT2 ${f}_CAT
 			newins ${SERVER_DATA_DIR}/${f}.text2 ${f}.text
 		done
+		if use apache ; then
+			exeinto /usr/$(get_libdir)/apache2/modules
+			doexe ${SERVER_DATA_DIR}/mod_tuxedo.so
+		fi
 	fi
 
 	dosym $(get_libdir) "/${tuxdir}"/lib
