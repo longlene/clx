@@ -1,7 +1,6 @@
 #!/sbin/openrc-run
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 extra_commands="format"
 
@@ -20,7 +19,7 @@ chk_initd() {
 }
 
 init_env_vars() {
-	export HADOOP_PREFIX="/usr"
+	export HADOOP_PREFIX="/opt/hadoop-VERSION"
 
 	# source hadoop-env.sh
 	if test -f /etc/hadoop/hadoop-env.sh; then
