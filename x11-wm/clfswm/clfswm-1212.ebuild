@@ -1,10 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=4
 
-inherit eutils multilib common-lisp-2
+inherit eutils multilib common-lisp-3
 
 #MY_P="${P/./-}"
 DESCRIPTION="100% Common Lisp X11 window manager (based on Tinywm and Stumpwm)"
