@@ -1,6 +1,5 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -12,7 +11,7 @@ HOMEPAGE="http://cassandra.apache.org/"
 SRC_URI="mirror://apache/cassandra/${PV}/apache-cassandra-${PV}-bin.tar.gz"
 
 LICENSE="Apache-2.0"
-SLOT="$(get_version_component_range 1-2)"
+SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="systemd"
 
@@ -28,7 +27,7 @@ INSTALL_DIR="/opt/cassandra-${SLOT}"
 
 pkg_setup() {
 	enewgroup cassandra
-	enewuser cassandra -1 /bin/bash ${INSTALL_DIR} cassandra
+	enewuser cassandra -1 /bin/bash /var/lib/cassandra cassandra
 }
 
 src_prepare() {
