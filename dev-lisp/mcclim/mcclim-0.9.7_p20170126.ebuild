@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-inherit common-lisp-2 elisp-common eutils
+inherit common-lisp-3 elisp-common eutils
 
 DESCRIPTION="McCLIM is a free software implementation of CLIM."
 HOMEPAGE="http://common-lisp.net/project/mcclim

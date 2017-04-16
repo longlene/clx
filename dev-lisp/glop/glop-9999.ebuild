@@ -2,7 +2,7 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Direct FFI bindings for OpenGL window and context management"
 HOMEPAGE="https://github.com/patzy/glop"
