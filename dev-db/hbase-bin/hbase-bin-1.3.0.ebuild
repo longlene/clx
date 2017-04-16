@@ -1,8 +1,7 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="6"
+EAPI=6
 
 inherit eutils java-utils-2
 
@@ -22,11 +21,17 @@ IUSE="doc"
 DEPEND=""
 RDEPEND="
 	sys-cluster/hadoop-bin
+	sys-cluster/zookeeper-bin
 "
 
-INSTALL_DIR=/opt/"${MY_P}"
+S="${WORKDIR}"/${MY_P}
+INSTALL_DIR=/opt/${MY_P}
 DATA_DIR=/var/lib/hbase
 export CONFIG_PROTECT="${CONFIG_PROTECT} ${INSTALL_DIR}/conf"
+
+pkg_config() {
+	enewuser -hbase -1 /bin/bash /var/lib/hbase hadoop
+}
 
 src_prepare() {
 	eapply_user
@@ -35,32 +40,41 @@ src_prepare() {
 }
 
 src_install() {
-	# The hbase-env.sh file needs JAVA_HOME set explicitly
-	sed -e "2iexport JAVA_HOME=${JAVA_HOME}" \
-		-e "3iexport HBASE_LOG_DIR=/var/log/hadoop" \
-		-i conf/hbase-env.sh
+	cat >tmpfile<<EOF
+# Add by Portage
+export JAVA_HOME=$(java-config -g JAVA_HOME)
+export HBASE_PID_DIR=/var/run/hbase
+export HBASE_LOG_DIR=/var/log/hbase
+EOF
+	sed -i '/# Set environment variables/r tmpfile' conf/hbase-env.sh || die
+	cat >tmpfile<<EOF
+<configuration>
+  <property>
+    <name>hbase.rootdir</name>
+    <value>file:///var/lib/hbase</value>
+  </property>
+  <property>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/var/lib/zookeeper</value>
+  </property>
+</configuration>
+EOF
+	sed -i '/<configuration>/r tmpfile' conf/hbase-site.xml || die
 
 	dodir "${INSTALL_DIR}"
 	mv "${S}"/* "${D}${INSTALL_DIR}" || die "install failed"
 
-	# env file
-	cat > 99"${PN}" <<-EOF
-		PATH=${INSTALL_DIR}/bin
-		CONFIG_PROTECT=${INSTALL_DIR}/conf
-	EOF
-	doenvd 99"${PN}"
+	## env file
+	#cat > 99"${PN}" <<-EOF
+	#	PATH=${INSTALL_DIR}/bin
+	#	CONFIG_PROTECT=${INSTALL_DIR}/conf
+	#EOF
+	#doenvd 99"${PN}"
 
-	cat > "${PN}" <<-EOF
-		#!/sbin/runscript
+	cp "${FILESDIR}"/${MY_PN}.initd .
+	sed -e "/HBASE_HOME/{s#hbase-VERSION#hbase-${PV}#}" -i ${MY_PN}.initd
+	doinitd ${MY_PN}.initd
 
-		start() {
-			${INSTALL_DIR}/bin/start-hbase.sh > /dev/null
-				}
-
-		stop() {
-			${INSTALL_DIR}/bin/stop-hbase.sh > /dev/null
-				}
-	EOF
-	doinitd "${PN}"
+	dosym ${INSTALL_DIR}/conf /etc/hbase
 }
 
