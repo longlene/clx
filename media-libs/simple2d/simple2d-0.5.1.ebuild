@@ -10,7 +10,7 @@ SRC_URI="https:/github.com/simple2d/simple2d/archive/v${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND="
