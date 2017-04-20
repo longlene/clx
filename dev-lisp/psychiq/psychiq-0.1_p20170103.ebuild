@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="afefdffa5aafd650af79ebac0249497b3d2b84b4"
 
 DESCRIPTION="Background job processing for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/psychiq"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/fukamachi/psychiq.git"
+SRC_URI="https://github.com/fukamachi/psychiq/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
@@ -28,9 +27,11 @@ RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/uiop
 	dev-lisp/vom
+	test? ( dev-lisp/prove )
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -rf t ${PN}-test.asd
 }
 
