@@ -1,20 +1,19 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="4ff713f001c0959ffb8946f76beebd744a50624f"
 
 DESCRIPTION="websockets server in CL"
 HOMEPAGE="https://github.com/deadtrickster/clws"
-# original 3b/clws
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/deadtrickster/clws.git"
+SRC_URI="https://github.com/deadtrickster/clws/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="sbcl"
+KEYWORDS="~amd64 ~arm ~x86"
+IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
