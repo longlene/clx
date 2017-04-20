@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a1117a6441fee0303f89781ebe07a95045233619"
+EGIT_COMMIT="15b9daf6734b115a12937523af18b5c5332a693b"
 
 DESCRIPTION="Reasonable Utilities package for Common Lisp"
 HOMEPAGE="https://github.com/mabragor/rutils"
@@ -22,6 +22,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -rf rutils-test.asd rutilsx-test.asd test
 }
 

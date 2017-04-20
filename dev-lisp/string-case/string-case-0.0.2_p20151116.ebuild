@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="90f01fa17bdcdf12ad9d48f57c9d8c69c8a1c355"
 
 DESCRIPTION="xcessive macro that generates decision trees for small sets of strings"
 HOMEPAGE="https://github.com/pkhuong/string-case"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/pkhuong/string-case.git"
+SRC_URI="https://github.com/pkhuong/string-case/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

@@ -2,17 +2,17 @@
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="aa0187797b08cc09e40b27f02f09f7776cd674d0"
 
 DESCRIPTION="A SQL generator for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/sxql"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/fukamachi/sxql.git"
+SRC_URI="https://github.com/fukamachi/sxql/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="test"
 
 DEPEND=""

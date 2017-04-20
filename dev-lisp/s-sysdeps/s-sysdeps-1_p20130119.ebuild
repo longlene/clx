@@ -2,25 +2,19 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="d28246b5dffef9e73a0e0e6cfbc4e878006fe34d"
 
 DESCRIPTION="A Common Lisp library implementing an abstraction layer over platform dependent functionality."
 HOMEPAGE="http://homepage.mac.com/svc/s-sysdeps/"
-SRC_URI=""
-
-EGIT_REPO_URI="git://github.com/svenvc/s-sysdeps.git"
+SRC_URI="https://github.com/svenvc/s-sysdeps/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-
-
-src_install() {
-	dohtml doc/*.html
-	common-lisp-3_src_install
-}
