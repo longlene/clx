@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="a107a639e76220892fa1703c844ed688f0597271"
 
 DESCRIPTION="Distributed, asychronous message passing system for Clozure Common Lisp"
 HOMEPAGE="https://github.com/eugeneia/erlangen"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/eugeneia/erlangen.git"
+SRC_URI="https://github.com/eugeneia/erlangen/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="AGPL-3.0"
 SLOT="0"
