@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="bb3e38950f58b80e6890ed9cda2cf6c887726eeb"
 
 DESCRIPTION="SDL2 backend for ulubis"
 HOMEPAGE="https://github.com/malcolmstill/ulubis-sdl"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/malcolmstill/ulubis-sdl.git"
+SRC_URI="https://github.com/malcolmstill/ulubis-sdl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
@@ -20,6 +19,6 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
-	dev-lisp/cepl_sdl2
+	dev-lisp/cepl-sdl2
 	dev-lisp/ulubis
 "
