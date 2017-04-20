@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a6129c586762d54cae7194eed83e5b3114b54f4b"
+EGIT_COMMIT="56fb0c8760159988d33a0a58f67e7fd00da16e87"
 
 DESCRIPTION="A library for the Linux GPIO kernel module"
 HOMEPAGE="https://github.com/Shinmera/cl-gpio"
