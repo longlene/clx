@@ -2,16 +2,19 @@
 
 EAPI=4
 
+inherit common-lisp-3
+
 DESCRIPTION="Portable channel-based concurrency for Common Lisp"
-HOMEPAGE="https://github.com/sykopomp/chanl"
-SRC_URI="https://github.com/sykopomp/chanl/archive/v0.4.1.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/zkat/chanl"
+SRC_URI="https://github.com/zkat/chanl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/bordeaux-threads"
+	dev-lisp/bordeaux-threads
+"
 
