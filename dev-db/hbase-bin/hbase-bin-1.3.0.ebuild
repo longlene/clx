@@ -73,7 +73,7 @@ EOF
 
 	cp "${FILESDIR}"/${MY_PN}.initd .
 	sed -e "/HBASE_HOME/{s#hbase-VERSION#hbase-${PV}#}" -i ${MY_PN}.initd
-	doinitd ${MY_PN}.initd
+	newinitd ${MY_PN}.initd ${PN}
 
 	dosym ${INSTALL_DIR}/conf /etc/hbase
 }
