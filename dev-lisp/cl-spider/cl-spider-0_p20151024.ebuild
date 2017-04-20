@@ -1,20 +1,19 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="a64f0c377757ca5d9ac5d9e8c5683653a75b8516"
 
 DESCRIPTION="A Common Lisp Spider for the Web"
 HOMEPAGE="https://github.com/VitoVan/cl-spider"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/VitoVan/cl-spider.git"
+SRC_URI="https://github.com/VitoVan/cl-spider/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
