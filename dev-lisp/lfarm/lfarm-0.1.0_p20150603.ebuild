@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="f7ba49f1ec01fb99a7aeb8f18e245a44411c361b"
 
 DESCRIPTION="Distribute work across machines using the lparallel API"
 HOMEPAGE="https://github.com/lmj/lfarm"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/lmj/lfarm.git"
+SRC_URI="https://github.com/lmj/lfarm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

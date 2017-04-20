@@ -1,12 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="846294e549caa08548dd85edb10b0d833c05b675"
+EGIT_COMMIT="844a64e3cceebab1b4b5c756fc0d26aa8655cdab"
 
 DESCRIPTION="A base library for scientific computation in Lisp"
 HOMEPAGE="https://github.com/matlisp/matlisp"
@@ -15,7 +14,7 @@ SRC_URI="https://github.com/matlisp/matlisp/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -32,3 +31,11 @@ RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/fiveam
 "
+
+src_prepare() {
+	eapply_user
+	if ! use test ; then
+		rm -r t
+		sed -e '/defsystem\ :matlisp-tests/,$d' -i ${PN}.asd
+	fi
+}

@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a313605c70eb5fadff792c063557d2c49ba0bc23"
+EGIT_COMMIT="85263af1c49c02d7e7b30110f2f6cce710818aba"
 
 DESCRIPTION="OpenCL bindings for Matlisp"
 HOMEPAGE="https://github.com/matlisp/matlisp-opencl"
