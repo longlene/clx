@@ -5,11 +5,9 @@ EAPI=6
 
 inherit lua vcs-snapshot
 
-EGIT_COMMIT="654cfc629d2b3d62c5cd2477b7ab4165520195cb"
-
 DESCRIPTION="Open-Source Neural Machine Translation in Torch"
 HOMEPAGE="https://github.com/opennmt/opennmt"
-SRC_URI="https://github.com/OpenNMT/OpenNMT/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/OpenNMT/OpenNMT/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
