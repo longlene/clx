@@ -17,3 +17,15 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	eapply_user
+	sed -i '/install/{/${CMAKE_BINARY_DIR}\/bin/d}' CMakeLists.txt
+}
+
+src_configure() {
+	local mycmakeargs=(
+	-DUSE_CUSTOM_TCP_CLIENT=true
+	)
+	cmake-utils_src_configure
+}
