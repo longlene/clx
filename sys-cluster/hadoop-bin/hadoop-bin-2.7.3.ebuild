@@ -36,8 +36,6 @@ INSTALL_DIR=/opt/${MY_P}
 
 pkg_setup(){
 	enewgroup hadoop
-	diropts -g hadoop
-	dodir /var/lib/hadoop
 	enewuser hdfs -1 /bin/bash /var/lib/hadoop/hdfs hadoop
 	enewuser yarn -1 /bin/bash /var/lib/hadoop/yarn hadoop
 	enewuser mapred -1 /bin/bash /var/lib/hadoop/mapred hadoop
@@ -237,19 +235,38 @@ EOF
 	dosym ${INSTALL_DIR}/etc/hadoop /etc/hadoop
 
 	# init scripts
-	cp "${FILESDIR}"/"${MY_PN}".initd .
-	sed -e "/HADOOP_PREFIX/{s#hadoop-VERSION#hadoop-${PV}#}" -i "${MY_PN}".initd
-	newinitd "${MY_PN}".initd "${MY_PN}".init
-	for i in "namenode" "datanode" "historyserver" "jobtracker" "secondarynamenode" "tasktracker"
+	for h in "hadoop" "mapred" "yarn"
+	do
+		cp "${FILESDIR}"/${h}.initd .
+		sed -e "/HADOOP_PREFIX/{s#hadoop-VERSION#hadoop-${PV}#}" -i ${h}.initd
+		newinitd ${h}.initd ${h}.init
+	done
+
+	# hdfs
+	for i in "namenode" "datanode" "secondarynamenode" "journalnode"
 	do
 		if [ `egrep -c "^[0-9].*#.*namenode" /etc/hosts` -eq 0 ] || [ `egrep -c "^[0-9].*${hostname}.*#.* ${i}" /etc/hosts` -eq 1 ] ; then
 			dosym  /etc/init.d/hadoop.init /etc/init.d/hadoop-"${i}"
 		fi
 	done
 
-	#fowners root:hadoop "${ROOT}"var/lib/hadoop
-	#fperms g+w "${ROOT}"var/lib/hadoop/{hdfs,mapred,yarn}
+	# yarn
+	for i in "resourcemanager" "nodemanager"
+	do
+		if [ `egrep -c "^[0-9].*#.*namenode" /etc/hosts` -eq 0 ] || [ `egrep -c "^[0-9].*${hostname}.*#.* ${i}" /etc/hosts` -eq 1 ] ; then
+			dosym  /etc/init.d/yarn.init /etc/init.d/yarn-"${i}"
+		fi
+	done
 
+	# mapred
+	if [ `egrep -c "^[0-9].*#.*namenode" /etc/hosts` -eq 0 ] || [ `egrep -c "^[0-9].*${hostname}.*#.* historyserver" /etc/hosts` -eq 1 ] ; then
+		dosym  /etc/init.d/mapred.init /etc/init.d/mapred-historyserver
+	fi
+
+	keepdir /var/lib/hadoop
+	fowners root:hadoop /var/lib/hadoop
+	keepdir /var/lib/hadoop/{hdfs,mapred,yarn}
+	fperms g+w /var/lib/hadoop/{hdfs,mapred,yarn}
 }
 
 pkg_postinst() {

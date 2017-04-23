@@ -27,12 +27,9 @@ init_env_vars() {
 	fi
 
 	# setup secure dn user for datanodes
-	if [ -n "$HADOOP_SECURE_DN_USER" ] && [ "${DAEMON}" == "datanode" ]; then
+	if [ -n "$HADOOP_SECURE_DN_USER" ] && [ "${DAEMON}" == "datanode" ] ; then
 		DN_USER="root"
 		IDENT_USER=${HADOOP_SECURE_DN_USER}
-	elif [ "${DAEMON}" == "jobtracker" ] || [ "${DAEMON}" == "tasktracker" ] || [ "${DAEMON}" == "historyserver" ]; then
-		DN_USER="mapred"
-		IDENT_USER=${DN_USER}
 	else
 		DN_USER="hdfs"
 		IDENT_USER=${DN_USER}

@@ -22,7 +22,7 @@ start() {
 	ebegin "Starting HBase ${DAEMON}"
 	init_env_vars
 	start-stop-daemon --start --quiet \
-		--pidfile ${HBASE_PID_DIR}/hbase.pid \
+		--pidfile ${HBASE_PID_DIR}/hbase-hbase-master.pid \
 		-u hbase -x ${HBASE_HOME}/bin/hbase-daemon.sh -- \
 		--config ${HBASE_CONF_DIR} start master
 	eend $?
@@ -32,7 +32,7 @@ stop() {
 	ebegin "Stopping HBase ${DAEMON}"
 	init_env_vars
 	start-stop-daemon --stop --quiet \
-		--pidfile ${HBASE_PID_DIR}/hbase.pid
+		--pidfile ${HBASE_PID_DIR}/hbase-hbase-master.pid
 	eend $?
 }
 

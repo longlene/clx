@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python2_7 )
 inherit distutils-r1 eutils java-utils-2 user
 
 MY_PN="zookeeper"
-MY_P=${MY_P}-${PV}
+MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="A high-performance coordination service for distributed applications."
 HOMEPAGE="http://zookeeper.apache.org/"
