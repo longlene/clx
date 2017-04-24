@@ -1,8 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
@@ -28,10 +27,11 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -r ${PN}-test.asd t
 }
 
 src_install() {
 	common-lisp-3_src_install
-	common-lisp-install-souces -t all src README.markdown
+	common-lisp-install-sources -t all src README.markdown
 }
