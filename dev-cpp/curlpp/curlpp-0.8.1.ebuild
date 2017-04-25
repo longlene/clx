@@ -1,10 +1,9 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit autotools
+inherit cmake-utils
 
 DESCRIPTION="C++ wrapper around libcURL"
 HOMEPAGE="http://www.curlpp.org/"
@@ -19,7 +18,9 @@ DEPEND="net-misc/curl"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	sed -i '/examples/d' configure.ac
-	sed -i '/SUBDIRS/{s/examples//}' Makefile.am
-	eautoreconf
+	eapply_user
+	sed -e 's#-L@libdir@##' \
+		-e 's#@LDFLAGS@\ @LIBS@##' \
+		-e 's#-I@includedir@##' \
+		-i extras/curlpp.pc.in
 }
