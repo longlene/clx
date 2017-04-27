@@ -6,7 +6,7 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="5b301ade30d5cbaf76c5b53d35d2482850cdeb1b"
 
-DESCRIPTION="markdown processor in CL using esrap parser."
+DESCRIPTION="markdown processor in CL using esrap parser"
 HOMEPAGE="https://github.com/3b/3bmd"
 SRC_URI="https://github.com/3b/3bmd/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 

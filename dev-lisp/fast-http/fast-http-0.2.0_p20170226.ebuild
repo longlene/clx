@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f91fac908a381d9c748feedff0c305621e9eddcb"
+EGIT_COMMIT="5c7ee834d78b713ccf97c7fdaa105026898caf86"
 
 DESCRIPTION="A fast HTTP request/response parser for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/fast-http"
@@ -28,6 +28,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -r ${PN}-test.asd t
 }
 

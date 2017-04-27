@@ -1,10 +1,9 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit git-r3
+inherit common-lisp-3
 
 DESCRIPTION="Eventfd bindings"
 HOMEPAGE="https://github.com/deadtrickster/eventfd"

@@ -22,6 +22,7 @@ RDEPEND="
 	dev-lisp/swap-bytes
 	dev-lisp/alexandria
 	dev-lisp/split-sequence
+	dev-lisp/libfixposix
 	test? ( dev-lisp/fiveam )
 "
 
@@ -33,5 +34,5 @@ src_prepare() {
 
 src_install() {
 	common-lisp-3_src_install
-	common-lisp-install-sources -t all version.sexp
+	common-lisp-install-sources -t all version.sexp src/grovel/grovel-common.h
 }
