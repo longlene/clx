@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d8dd8976e8112974154803b3b60f6f27131f7478"
+EGIT_COMMIT="5faf5e6138418433fd594bbaf0c0deb0faf2c24e"
 
 DESCRIPTION="Code Evaluate Play Loop"
 HOMEPAGE="https://github.com/cbaggers/cepl"
@@ -30,6 +29,8 @@ RDEPEND="${DEPEND}
 	dev-lisp/named-readtables
 	dev-lisp/rtg-math
 	dev-lisp/varjo
+	dev-lisp/closer-mop
+	dev-lisp/bordeaux-threads
 "
 
 src_prepare() {

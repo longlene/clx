@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c172c7777042be07370626cbcfa911666922d4e6"
+EGIT_COMMIT="da575f2f747ba87334db868dea2da5ee4f5b8dc3"
 
 DESCRIPTION="Cl-cuda is a library to use NVIDIA CUDA in Common Lisp programs"
 HOMEPAGE="https://github.com/takagi/cl-cuda"

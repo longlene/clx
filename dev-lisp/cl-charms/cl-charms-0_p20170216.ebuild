@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="06859f597189f36bf0ebc6acadddf2247c0234f6"
+EGIT_COMMIT="983d6b9350d9802daaf16aee25881d3a672dbaeb"
 
 DESCRIPTION="CFFI bindings to libcurses"
 HOMEPAGE="http://gitorious.org/cl-charms"
@@ -23,6 +23,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	use example || rm -r ${PN}-paint.asd ${PN}-timer.asdf examples
 }
 
