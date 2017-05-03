@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d6ff1c667202c873bb77c00fb4bb529424c428ce"
+EGIT_COMMIT="eb5fbea3592b74cdb0458b7bcdeb70f0423a8183"
 
 DESCRIPTION="Video file decoding in Common Lisp"
 HOMEPAGE="https://github.com/varjagg/cl-video"
@@ -19,9 +18,12 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-lisp/bordeaux-threads
+	dev-lisp/alexandria
 	dev-lisp/cl-riff
 	dev-lisp/cl-jpeg
-	dev-lisp/bordeaux-threads
 	dev-lisp/flexi-streams
+	dev-lisp/skippy
 	dev-lisp/clx
+	dev-lisp/cl-portaudio
 "
