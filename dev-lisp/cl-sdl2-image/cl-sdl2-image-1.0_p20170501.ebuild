@@ -1,20 +1,20 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=5
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="6c2399f2673e1ae9e028abfe4b52976d9a2d96da"
+EGIT_COMMIT="919821eec0ad483015a4a4b405518b3775c9b4ee"
 
-DESCRIPTION="Bindings for sdl2_ttf using autowrap"
-HOMEPAGE="https://github.com/Failproofshark/cl-sdl2-ttf"
-SRC_URI="https://github.com/Failproofshark/cl-sdl2-ttf/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="SDL_image wrapper"
+HOMEPAGE="https://github.com/lispgames/cl-sdl2-image"
+SRC_URI="https://github.com/lispgames/cl-sdl2-image/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="example"
+IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -22,13 +22,8 @@ RDEPEND="${DEPEND}
 	dev-lisp/defpackage-plus
 	dev-lisp/cl-autowrap
 	dev-lisp/cl-sdl2
-	dev-lisp/cffi
+	media-libs/sdl2-image
 "
-
-src_prepare() {
-	eapply_user
-	use example || rm -rf sdl2-ttf-examples.asd examples
-}
 
 src_install() {
 	common-lisp-3_src_install

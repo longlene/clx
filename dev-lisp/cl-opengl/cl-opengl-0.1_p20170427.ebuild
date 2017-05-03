@@ -1,12 +1,11 @@
 # Copyright 2008-2017 Funtoo Technologies
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="5"
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="34636d9754676ddaca5fab64a4f1e055cb1b76b3"
+EGIT_COMMIT="06b7d42b86e4886124a27baf0af3182d2a4504bc"
 
 DESCRIPTION="A set of CFFI bindings to the OpenGL, GLU and GLUT APIs."
 HOMEPAGE="http://common-lisp.net/project/cl-opengl/"
@@ -23,6 +22,10 @@ RDEPEND="
 	virtual/opengl
 "
 src_prepare() {
+	eapply_user
 	use example || rm -rf cl-glut-examples.asd examples
 }
 
+src_compile() {
+	:
+}

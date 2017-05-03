@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="d8894ea4cd59393518835f2bd44b9bdc78fa4ec7"
 
 DESCRIPTION="Common Lisp bindings for libsoundio to allow direct sound input and output cross-platform"
 HOMEPAGE="https://github.com/Shirakumo/cl-soundio"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/Shirakumo/cl-soundio.git"
+SRC_URI="https://github.com/Shirakumo/cl-soundio/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Artistic-2"
 SLOT="0"
