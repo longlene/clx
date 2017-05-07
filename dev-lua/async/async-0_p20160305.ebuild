@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}
 "
 
 src_install() {
-	lua_install_module async
+	lua_install_module -r async
 	lua_install_cmodule luv/luv.so lhttp_parser/lhttp_parser.so
 	dodoc README.md
 }
