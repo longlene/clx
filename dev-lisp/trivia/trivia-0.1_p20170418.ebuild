@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2705c065017cb96a4a020cac236e523ef7da21e0"
+EGIT_COMMIT="752b7a577986ead6b77570b983bfcc1ae8a09f40"
 
 DESCRIPTION="Pattern Matcher Compatible with Optima"
 HOMEPAGE="https://github.com/guicho271828/trivia"
