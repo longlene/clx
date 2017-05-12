@@ -1,10 +1,9 @@
-# Copyright 2008-2012 Funtoo Technologies
+# Copyright 2008-2016 Funtoo Technologies
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
 
 DESCRIPTION="Create executables with SBCL"
 HOMEPAGE="http://www.xach.com/lisp/buildapp/"
@@ -17,17 +16,18 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-		dev-lisp/sbcl"
+	dev-lisp/sbcl"
+
+QA_PRESTRIPPED="/usr/bin/buildapp"
 
 src_compile() {
-	emake || die "emake failed"
+	emake
 }
 
 src_install() {
 	common-lisp-3_src_install
 	dobin buildapp
 	dodoc README
-	dodoc doc/LICENSE
-	dohtml doc/{index.html,style.css}
+	dodoc doc/LICENSE doc/{index.html,style.css}
 }
 

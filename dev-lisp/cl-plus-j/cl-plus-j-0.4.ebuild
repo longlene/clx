@@ -14,14 +14,27 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
+DEPEND=">=virtual/jdk-1.5"
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-garbage
-	dev-lisp/tordeaux-threads
+	dev-lisp/bordeaux-threads
+	>=virtual/jre-1.5
 "
+
+S="${WORKDIR}"/cl+j-${PV}
 
 src_prepare() {
 	eapply_user
 	use example || rm -r demos
+	sed -e "s#JRE_HOME#JAVA_HOME#g" \
+		-e "s#/lib/i386/client/libjvm.so#/jre/lib/i386/client/libjvm.so#g" \
+		-e "s#/lib/amd64/server/libjvm.so#/jre/lib/amd64/server/libjvm.so#g" \
+		-e "s#;;(defvar \*jvm-options\*)#\(defvar *jvm-options* \'(\"-Djava.class.path=/usr/share/common-lisp/source/cl-plus-j/cl_j.jar\"\)\)#" \
+		-i jni.lisp
+}
+
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all cl_j.jar
 }
