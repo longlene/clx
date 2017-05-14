@@ -1,13 +1,12 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 inherit cmake-utils eutils versionator unpacker
 
 DESCRIPTION="ZDoom is an enhanced port of the official DOOM source code"
 HOMEPAGE="http://www.zdoom.org"
-SRC_URI="http://www.zdoom.org/files/${PN}/$(get_version_component_range 1-2)/${P}-src.7z"
+SRC_URI="https://github.com/rheit/zdoom/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD BUILD DOOM"
 SLOT="0"

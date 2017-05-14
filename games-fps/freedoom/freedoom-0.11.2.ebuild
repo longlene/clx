@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
+
 inherit games
 
 DESCRIPTION="Freedoom - Open Source Doom resources"
@@ -21,7 +22,7 @@ S=${WORKDIR}
 src_install() {
 	insinto "${GAMES_DATADIR}"/doom-data/${PN}
 	doins */*.wad
-	dodoc ${P}/CREDITS
+	dodoc ${P}/CREDITS.txt
 	dohtml ${P}/README.html
 	prepgamesdirs
 }
