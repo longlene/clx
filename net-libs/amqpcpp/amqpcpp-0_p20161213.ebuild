@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit git-r3
+inherit vcs-snapshot
+
+EGIT_COMMIT="5a9eaa45171b9bd07cc25319e8a2ab93c2e8c89a"
 
 DESCRIPTION="rabbitcpp is a C++ library for Message Queue Server RabbitMQ"
 HOMEPAGE="https://github.com/akalend/amqpcpp"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/akalend/amqpcpp.git"
+SRC_URI="https://github.com/akalend/amqpcpp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
