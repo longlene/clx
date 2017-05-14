@@ -1,16 +1,15 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
 DESCRIPTION="simple slides viewer"
 HOMEPAGE="http://git.2f30.org/catpoint/"
-SRC_URI="http://git.2f30.org/catpoint/snapshot/${P}.tar.gz"
+SRC_URI="http://dl.2f30.org/releases/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""

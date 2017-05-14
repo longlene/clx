@@ -1,14 +1,15 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit common-lisp-2 elisp eutils
+EAPI=6
+
+inherit common-lisp-3 elisp eutils
 
 DESCRIPTION="SLIME, the Superior Lisp Interaction Mode (Extended)"
 HOMEPAGE="http://common-lisp.net/project/slime/"
 SRC_URI="http://archimag-lisp-overlay.googlecode.com/files/${P}.tar.bz2"
 
-LICENSE="GPL-2 xref.lisp"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="doc"
@@ -23,10 +24,8 @@ CLPACKAGE=swank
 CLSYSTEMS=swank
 SITEFILE=70${PN}-gentoo.el
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
+	eapply_user
 	epatch "${FILESDIR}"/fix-sbcl-syscall-error-not-compatibility.patch
 }
 
