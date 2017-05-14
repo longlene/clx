@@ -13,7 +13,18 @@ SRC_URI="https://github.com/h2o/h2o/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="static"
 
-DEPEND=""
+DEPEND="
+	dev-libs/libuv
+	dev-libs/openssl
+"
 RDEPEND="${DEPEND}"
+
+src_configure() {
+	local mycmakeargs=(
+	-DWITH_BUNDLED_SSL=OFF
+	-DBUILD_SHARED_LIBS=$(usex !static)
+	)
+	cmake-utils_src_configure
+}

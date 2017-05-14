@@ -1,7 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit common-lisp-2 eutils
+inherit common-lisp-3 eutils
 
 DESCRIPTION="Plugin for publish directories with RESTAS application server"
 HOMEPAGE="http://github.com/archimag/restas-directory-publisher"

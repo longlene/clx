@@ -1,7 +1,8 @@
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit common-lisp-2 eutils
+EAPI=5
+
+inherit common-lisp-3 eutils
 
 DESCRIPTION="Pastebin plugin for RESTAS application server"
 HOMEPAGE="http://github.com/archimag/restas-colorize"
@@ -20,10 +21,7 @@ RDEPEND=">=dev-lisp/restas-0.0.4
 CLSYSTEMS="${PN}"
 
 src_install() {
-	common-lisp-install *.asd src resources
-	common-lisp-symlink-asdf
-
-	dodoc COPYING
-	docinto example && dodoc example/*
+	common-lisp-3_src_install
+	common-lisp-install -t all resources
 }
 
