@@ -3,9 +3,9 @@ clx -- Overlay For Funtoo/Gentoo Linux
 
 ## DESCRIPTION
 
-To make Funtoo/Gentoo the best environment for developer.
+To make Funtooo the best meta-platform for developers.
 
-This overlay stores fresh ebuilds for C++, Ruby, Common Lisp, Lua and other fresh interesting stuff.
+This overlay stores fresh ebuilds for C, C++, Ruby, Common Lisp, Lua and other interesting stuff.
 
 
 ## INSTALLATION
@@ -25,6 +25,6 @@ Add this overlay with your layman:
 layman -f -a clx -o https://raw.github.com/longlene/clx/master/repo.xml
 ```
 
-Some ebuilds may be on bleeing edge. Take care if you wanna to use them.
+Some ebuilds may be on bleeing edge. Take care if you wanna use them.
 Please issue or mail me if you encounter a problem.
 
