@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="2"
-USE_RUBY="ree18 ruby19 ruby20 ruby21 ruby22 ruby23 jruby"
+USE_RUBY="ree18 ruby21 ruby22 ruby23 ruby24 jruby"
 
 inherit ruby-ng git-2
 

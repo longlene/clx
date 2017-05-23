@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/trollop/trollop-2.0.ebuild,v 1.7 2014/08/05 16:00:37 mrueg Exp $
 
 EAPI=4
-USE_RUBY="ruby19 ruby20 ruby21 ruby22 ruby23 jruby"
+USE_RUBY="ruby21 ruby22 ruby23 ruby24 jruby"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="FAQ.txt History.txt README.txt"

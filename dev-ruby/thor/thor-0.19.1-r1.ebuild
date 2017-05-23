@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/thor/thor-0.19.1.ebuild,v 1.3 2014/11/25 11:34:25 mrueg Exp $
 
 EAPI=5
-USE_RUBY="ruby19 ruby20 ruby21 ruby22 ruby23"
+USE_RUBY="ruby21 ruby22 ruby23 ruby24"
 
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 RUBY_FAKEGEM_RECIPE_TEST="rspec"
