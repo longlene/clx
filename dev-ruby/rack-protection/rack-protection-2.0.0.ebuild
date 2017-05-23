@@ -13,11 +13,9 @@ DESCRIPTION="You should use protection!"
 HOMEPAGE="http://github.com/rkh/rack-protection"
 
 LICENSE="MIT"
-SLOT="0"
+SLOT="2"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rack-0"
-ruby_add_rdepend ">=dev-ruby/rack-test-0"
-ruby_add_rdepend ">=dev-ruby/rspec-2.0"
 

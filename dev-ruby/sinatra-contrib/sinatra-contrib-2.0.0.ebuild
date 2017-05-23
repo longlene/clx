@@ -19,8 +19,8 @@ IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/backports-2.0"
 ruby_add_rdepend ">=dev-ruby/multi_json-0"
-ruby_add_rdepend ">=dev-ruby/rack-protection-0"
-ruby_add_rdepend ">=dev-ruby/rack-test-0"
-ruby_add_rdepend ">=dev-ruby/sinatra-1.4.0"
+ruby_add_rdepend ">=dev-ruby/mustermann-1.0"
+ruby_add_rdepend "=dev-ruby/rack-protection-2.0.0"
+ruby_add_rdepend ">=dev-ruby/sinatra-2.0.0"
 ruby_add_rdepend ">=dev-ruby/tilt-1.3"
 
