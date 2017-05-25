@@ -1,4 +1,4 @@
-EAPI="6"
+EAPI=6
 
 inherit eutils user
 
@@ -18,11 +18,10 @@ MY_PN="activemq"
 INSTALL_DIR="/opt/${MY_PN}"
 
 pkg_setup() {
-	enewuser ${MY_PN} -1 /bin/bash ${INSTALL_DIR}
+	enewuser activemq -1 /bin/bash /var/lib/activemq
 }
 
 src_prepare() {
-	cd "${S}"
 	find . \( -name \*.bat -or -name \*.exe \) -delete
 }
 
