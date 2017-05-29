@@ -4,26 +4,23 @@
 
 EAPI="5"
 
-inherit base git-r3 toolchain-funcs
+inherit lua
 
 DESCRIPTION="Lua driver for MongoDB"
 HOMEPAGE="https://github.com/mwild1/luamongo/"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/mwild1/luamongo git://github.com/mwild1/luamongo"
+SRC_URI="https://github.com/moai/luamongo/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
-IUSE="luajit"
+KEYWORDS="~amd64 ~x86"
+IUSE=""
 
-RDEPEND="|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 )
+RDEPEND="
+	|| ( >=dev-lang/lua-5.1 dev-lang/luajit:2 )
 	dev-libs/boost
-	dev-db/mongodb[sharedclient]
+	dev-db/mongodb
 "
 DEPEND="${RDEPEND}"
-
-DOCS=( "README.md" )
 
 src_compile() {
 	local lua=lua;
@@ -32,9 +29,6 @@ src_compile() {
 }
 
 src_install() {
-	local lua=lua;
-	use luajit && lua=luajit;
-	insinto "$($(tc-getPKG_CONFIG) --variable INSTALL_CMOD ${lua})"
-	doins "mongo.so"
-	base_src_install_docs
+	lua_install_cmodule mongo.so
+	dodoc README.md
 }

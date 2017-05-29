@@ -35,7 +35,7 @@ src_configure() {
 		"-DLUA_PATH=$(lua_get_sharedir)"
 		"-DLIBDIR=$(lua_get_libdir)"
 		"-DLUA_BINDIR=/usr/bin"
-		"-DLUA_INCDIR=/usr/include/luajit-2.0"
+		"-DLUA_INCDIR=/usr/include"
 		"-DLUA_LIBDIR=/usr/$(get_libdir)"
 		"-DLUALIB=/usr/lib/libluajit-5.1.so"
 		"-DLUA=/usr/bin/luajit"

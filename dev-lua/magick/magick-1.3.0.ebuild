@@ -1,8 +1,7 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 
 inherit lua
 
@@ -12,20 +11,19 @@ SRC_URI="https://github.com/leafo/magick/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
-
-src_prepare() {
-	rm magick/init.moon
-}
+RDEPEND="${DEPEND}
+	media-gfx/imagemagick
+"
 
 src_compile() {
 	:
 }
 
 src_install() {
-	lua_install_module -r magick magick.lua
+	lua_install_module -r magick
+	dodoc README.md
 }

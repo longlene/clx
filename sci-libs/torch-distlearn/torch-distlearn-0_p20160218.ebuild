@@ -20,7 +20,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	sci-libs/torch7
 	dev-lua/torch-ipc
-	dev-lua/torch-regress
+	dev-lua/regress
 "
 
 src_install() {

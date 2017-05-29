@@ -29,7 +29,7 @@ src_configure() {
 		"-DLUADIR=/usr/share/lua/5.1"
 		"-DLIBDIR=/usr/lib/lua/5.1"
 		"-DLUA_BINDIR=/usr/bin"
-		"-DLUA_INCDIR=/usr/include/luajit-2.0"
+		"-DLUA_INCDIR=/usr/include"
 		"-DLUA_LIBDIR=/usr/lib"
 		"-DLUALIB=/usr/lib/libluajit-5.1.so"
 		"-DLUA=/usr/bin/luajit"

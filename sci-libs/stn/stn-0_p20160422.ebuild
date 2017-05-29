@@ -1,16 +1,15 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit cmake-utils lua vcs-snapshot
 
-EGIT_COMMIT="27db8939bb16c45d0285c756897d29944c5217d1"
+EGIT_COMMIT="88e7a83dc1b55fd032aaccd39597e5ca32ab4b7f"
 
-DESCRIPTION="OpenCV bindings for Torch"
-HOMEPAGE="https://github.com/VisionLabs/torch-opencv"
-SRC_URI="https://github.com/VisionLabs/torch-opencv/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Spatial Transformer Networks for Torch"
+HOMEPAGE="https://github.com/qassemoquab/stnbhwd"
+SRC_URI="https://github.com/qassemoquab/stnbhwd/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -18,24 +17,25 @@ KEYWORDS="~amd64 ~x86"
 IUSE="cuda"
 
 DEPEND="
-	>=dev-lang/lua-5.1:=
-	dev-lang/luajit:2
-	>=media-libs/opencv-3.1.0
-	sci-libs/torch7
-	cuda? ( >=dev-util/nvidia-cuda-toolkit-7.0 )
+	sci-libs/torch7[cuda?]
+	sci-libs/torch-nn
 "
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	eapply_user
+	use cuda || sed -i '/FIND_PACKAGE(CUDA/,$ d' CMakeLists.txt
+}
 
 src_configure() {
 	local mycmakeargs=(
 		"-DLUADIR=$(lua_get_sharedir)"
 		"-DLIBDIR=$(lua_get_libdir)"
 		"-DLUA_BINDIR=/usr/bin"
-		"-DLUA_INCDIR=/usr/include/luajit-2.0"
+		"-DLUA_INCDIR=/usr/include"
 		"-DLUA_LIBDIR=/usr/$(get_libdir)"
 		"-DLUALIB=/usr/lib/libluajit-5.1.so"
 		"-DLUA=/usr/bin/luajit"
-		-DBUILD_CUDA=$(usex cuda)
 	)
 
 	cmake-utils_src_configure
@@ -43,7 +43,8 @@ src_configure() {
 
 src_install() {
 	cmake-utils_src_install
-	dodir $(lua_get_sharedir)
+	dodir $(lua_get_sharedir) $(lua_get_libdir)
 	mv "${D}"/usr/lua/* "${D}"/$(lua_get_sharedir)
+	mv "${D}"/usr/lib/* "${D}"/$(lua_get_libdir)
 	rm -rf "${D}"/usr/lua
 }
