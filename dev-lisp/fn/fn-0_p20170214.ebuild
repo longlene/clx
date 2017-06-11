@@ -1,12 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1f057a83a8e5fca76522b8ca266b47a39687998b"
+EGIT_COMMIT="80aedf95d4f74ca9462b3bf1e39416ee6a017f3c"
 
 DESCRIPTION="A couple of lambda shorthand macros"
 HOMEPAGE="https://github.com/cbaggers/fn"

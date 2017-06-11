@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d1f7f9591f8a91e542a00f2de4126bad9ca23457"
+EGIT_COMMIT="49e210fcfaa851d68c8cda27bed5c09ea2df4cd5"
 
 DESCRIPTION="Fast octet-vector/stream I/O for Common Lisp"
 HOMEPAGE="https://github.com/rpav/fast-io"
@@ -26,5 +25,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -r ${PN}-test.asd t
 }

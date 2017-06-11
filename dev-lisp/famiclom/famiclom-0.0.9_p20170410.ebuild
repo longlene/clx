@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5011f53cdad54bffd0bb59a53b770fc4f40c33bd"
+EGIT_COMMIT="e8e519461af3e35e3278bad22c4ac7ccf22065cd"
 
 DESCRIPTION="An NES Emulator"
 HOMEPAGE="https://github.com/kingcons/famiclom"
