@@ -1,16 +1,15 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 
-inherit eutils flag-o-matic systemd toolchain-funcs user git-2
+inherit eutils flag-o-matic systemd toolchain-funcs user vcs-snapshot
+
+EGIT_COMMIT="0192ba7e1cda157024229962b7bee1c6e86d771b"
 
 DESCRIPTION="A in-memory, distributed message broker"
 HOMEPAGE="https://github.com/antirez/disque"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/antirez/disque.git"
+SRC_URI="https://github.com/antirez/disque/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
