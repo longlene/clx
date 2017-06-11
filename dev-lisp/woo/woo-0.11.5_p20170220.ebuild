@@ -19,7 +19,7 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/lev
-	dev-lisp/clack
+	dev-lisp/clack[test?]
 	dev-lisp/swap-bytes
 	dev-lisp/cffi
 	dev-lisp/static-vectors

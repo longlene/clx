@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3fef76abda2b1c7041b13b5bede368c7782572c0"
+EGIT_COMMIT="421de1e4844a5142e37cb06805bc2d9d13ba048f"
 
 DESCRIPTION="Common Lisp 3D/2D Graphics Engine for OpenGL"
 HOMEPAGE="https://github.com/BradWBeer/CLinch"
