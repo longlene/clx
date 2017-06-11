@@ -1,16 +1,21 @@
-DESCRIPTION="A set of SUID mounting tools for use with v9fs."
-HOMEPAGE="http://sqweek.dnsdojo.org/code/9mount/"
-SRC_URI="http://sqweek.dnsdojo.org/9p/${P}.tar.gz"
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=6
+
+DESCRIPTION="a set of SUID tools for mounting 9p filesystems"
+HOMEPAGE="http://sqweek.net/code/9mount/"
+SRC_URI="http://sqweek.net/9p/${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
+IUSE=""
 
-src_compile() {
-	sed -i -e 's|prefix=.*|prefix='${D}/${ROOT}'|' Makefile
-	make
-}
+DEPEND=""
+RDEPEND="${DEPEND}"
 
 src_install() {
-	make install
+	dobin 9mount 9bind 9umount
+	doman 9mount.1
 }
