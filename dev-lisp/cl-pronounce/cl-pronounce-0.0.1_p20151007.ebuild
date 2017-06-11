@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="a74e67a2275e37164a607f696d112ca9ba63a4d4"
 
 DESCRIPTION="An english number pronounciation service"
 HOMEPAGE="https://github.com/inaimathi/cl-pronounce"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/inaimathi/cl-pronounce.git"
+SRC_URI="https://github.com/inaimathi/cl-pronounce/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"

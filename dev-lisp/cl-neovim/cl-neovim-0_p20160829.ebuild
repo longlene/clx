@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
-inherit common-lisp-3 git-2 vim-plugin
+inherit common-lisp-3 vim-plugin
+
+EGIT_COMMIT="4b817fc2ff121b7a7dc46fc9df669f43956b7304"
 
 DESCRIPTION="Common Lisp client for neovim"
 HOMEPAGE="https://github.com/adolenc/cl-neovim"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/adolenc/cl-neovim.git"
+SRC_URI="https://github.com/adolenc/cl-neovim/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
