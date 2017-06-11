@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="34e31dbd26bf5da4fd86f2f77a0aebc4c583dda9"
+EGIT_COMMIT="1a3e24894e4d7979caf6dc87f7f7f9c2fdffa620"
 
 DESCRIPTION="ZeroMQ Common Lisp bindings"
 HOMEPAGE="https://github.com/orivej/pzmq"

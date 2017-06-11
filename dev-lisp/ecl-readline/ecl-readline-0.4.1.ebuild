@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=6
 
 inherit common-lisp-3
 
@@ -15,6 +15,11 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/ecls
-dev-lisp/asdf"
+	dev-lisp/ecls
+"
+
+src_prepare() {
+	eapply_user
+	sed -i 's#g_completions\ =\ malloc#g_completions = (char **)malloc#' ecl-completions.lisp
+}
 

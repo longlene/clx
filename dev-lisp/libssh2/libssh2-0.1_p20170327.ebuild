@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="b590ec28c862c4ed9c057f9d52ec28ac010a23da"
 
 DESCRIPTION="Libssh2 bindings"
 HOMEPAGE="https://github.com/alxchk/cl-libssh2"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/alxchk/cl-libssh2.git"
+SRC_URI="https://github.com/fare/cl-libssh2/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"

@@ -1,12 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="57138e351f7b956c9777c3ed72fa56ec03f4165d"
+EGIT_COMMIT="f9000c266423373cd8e5a3d8d88f2a581b96c9f2"
 
 DESCRIPTION="Lisp to GLSL Language Translator"
 HOMEPAGE="https://github.com/cbaggers/varjo"
