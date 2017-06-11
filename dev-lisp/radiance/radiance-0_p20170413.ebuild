@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a37582e3bb27a45df7c6ecf51b44df332c1eb702"
+EGIT_COMMIT="6a3c7728c955062b4fc8611cf6d81baf490ded31"
 
 DESCRIPTION="A Common Lisp web application environment"
 HOMEPAGE="https://github.com/Shirakumo/radiance"
@@ -20,7 +19,6 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/modularize
-	dev-lisp/staple
 	dev-lisp/modularize-hooks
 	dev-lisp/modularize-interfaces
 	dev-lisp/ubiquitous-concurrent
@@ -39,4 +37,9 @@ RDEPEND="${DEPEND}
 src_prepare() {
 	eapply_user
 	use test || rm -r test
+}
+
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all static
 }
