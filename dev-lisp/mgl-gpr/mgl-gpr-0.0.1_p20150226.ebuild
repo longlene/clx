@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="e5bfebd119aea2288c4e5718a3da0dd0d5aa4e0a"
 
 DESCRIPTION="MGL-GPR is a library of evolutionary algorithms"
 HOMEPAGE="https://github.com/melisgl/mgl-gpr"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/melisgl/mgl-gpr.git"
+SRC_URI="https://github.com/melisgl/mgl-gpr/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
