@@ -19,7 +19,7 @@ RDEPEND="${DEPEND}"
 src_compile() {
 	local target
 	target+="PLATFORM=PLATFORM_DESKTOP"
-	use static || target+=" SHARED=YES"
+	use static || target+=" SHARED_RAYLIB=YES SHARED_OPENAL=YES"
 	emake -C src ${target} 
 }
 
