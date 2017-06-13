@@ -1,0 +1,20 @@
+# ssdb user.
+SSDB_USER="ssdb"
+
+# ssdb group.
+SSDB_GROUP="ssdb"
+
+# ssdb configuration file.
+SSDB_CONF="/etc/ssdb.conf"
+
+# ssdb dump directory.
+SSDB_DIR="/var/lib/ssdb"
+
+# ssdb pid file.
+# (Be sure to change the main ssdb configuration file as well if you change
+# this from the default.)
+SSDB_PID="/run/ssdb/ssdb.pid"
+
+# ssdb options.
+# (ssdb expects the first argument to be the configuration file.)
+SSDB_OPTS="${SSDB_CONF}"

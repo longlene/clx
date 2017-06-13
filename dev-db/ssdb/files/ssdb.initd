@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+SSDB_DIR=${SSDB_DIR:-/var/lib/ssdb}
+SSDB_CONF=${SSDB_CONF:-/etc/ssdb.conf}
+SSDB_OPTS=${SSDB_OPTS:-"${SSDB_CONF}"}
+SSDB_USER=${SSDB_USER:-ssdb}
+SSDB_GROUP=${SSDB_GROUP:-ssdb}
+SSDB_TIMEOUT=${SSDB_TIMEOUT:-30}
+
+command=/usr/sbin/ssdb-server
+pidfile=${SSDB_PID:-/run/ssdb/ssdb.pid}
+start_stop_daemon_args="--background --pidfile ${pidfile} --chdir \"${SSDB_DIR}\" --user ${SSDB_USER} --group ${SSDB_GROUP}"
+command_args="${SSDB_OPTS}"
+
+depend() {
+	use net localmount logger
+	after keepalived
+}
+
+start_pre() {
+	checkpath -d -m 0775 -o ${SSDB_USER}:${SSDB_GROUP} $(dirname ${SSDB_PID})
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop \
+		--exec ${command} \
+		--retry ${SSDB_TIMEOUT} \
+		--pidfile ${pidfile}
+	eend
+}
