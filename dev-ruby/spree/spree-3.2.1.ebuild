@@ -12,15 +12,15 @@ inherit ruby-fakegem
 DESCRIPTION="Spree is an open source e-commerce framework for Ruby on Rails"
 HOMEPAGE="http://spreecommerce.com"
 
-LICENSE="BSD-3"
+LICENSE="BSD-3-Clause"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend "=dev-ruby/spree_core-3.1.1"
-ruby_add_rdepend "=dev-ruby/spree_api-3.1.1"
-ruby_add_rdepend "=dev-ruby/spree_backend-3.1.1"
-ruby_add_rdepend "=dev-ruby/spree_frontend-3.1.1"
-ruby_add_rdepend "=dev-ruby/spree_sample-3.1.1"
-ruby_add_rdepend "=dev-ruby/spree_cmd-3.1.1"
+ruby_add_rdepend "=dev-ruby/spree_core-3.2.1"
+ruby_add_rdepend "=dev-ruby/spree_api-3.2.1"
+ruby_add_rdepend "=dev-ruby/spree_backend-3.2.1"
+ruby_add_rdepend "=dev-ruby/spree_frontend-3.2.1"
+ruby_add_rdepend "=dev-ruby/spree_sample-3.2.1"
+ruby_add_rdepend "=dev-ruby/spree_cmd-3.2.1"
 
