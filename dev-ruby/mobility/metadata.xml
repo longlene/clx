@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+Stores and retrieves localized data through attributes on a Ruby class, with flexible support for different storage strategies
+		</longdescription>
+	</pkgmetadata>
