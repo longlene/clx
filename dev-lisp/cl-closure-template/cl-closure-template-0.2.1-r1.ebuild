@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
+
 inherit common-lisp-3 elisp-common eutils vcs-snapshot
 
 DESCRIPTION="Common Lisp implementation of Google's Closure Templates."
@@ -12,24 +12,30 @@ SRC_URI="https://github.com/archimag/cl-closure-template/archive/version-${PV}.t
 LICENSE="LLGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE="doc emacs"
+IUSE="doc emacs test"
 
-RDEPEND="dev-lisp/asdf-system-connections
-dev-lisp/babel
-dev-lisp/parenscript
-dev-lisp/split-sequence
-dev-lisp/wiki-parser
-dev-lisp/lift
-dev-lisp/esrap
-dev-lisp/closer-mop
-emacs? ( virtual/emacs )"
-
-CLSYSTEMS="closure-template"
+RDEPEND="
+	dev-lisp/babel
+	dev-lisp/parenscript
+	dev-lisp/split-sequence
+	dev-lisp/wiki-parser
+	test? ( dev-lisp/lift )
+	dev-lisp/esrap
+	dev-lisp/closer-mop
+	emacs? ( virtual/emacs )
+"
 SITEFILE="50${PN}-gentoo.el"
 
+src_prepare() {
+	eapply_user
+	if ! use test; then
+		sed -e '/closure-template-test/,$d' -i closure-template.asd
+	fi
+}
+
 src_install() {
+	common-lisp-3_src_install
 	common-lisp-install-sources -t all src t
-	common-lisp-install-asdf ${CLSYSTEMS}
 
 	if use doc; then
 		insinto /usr/share/doc/${PF}/examples
