@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -8,13 +7,21 @@ DESCRIPTION="A simple and easy-to-use library to learn videogames programming"
 HOMEPAGE="http://www.raylib.com"
 SRC_URI="https://github.com/raysan5/raylib/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="static"
 
-DEPEND=""
+DEPEND="
+	media-libs/glfw
+	media-libs/openal
+"
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	eapply_user
+	sed -i '/-shared/{s#$# -lglfw -lGL -lopenal -lm -lpthread -lXcursor -lX11 -lXrandr -lXinerama -lXi -lXxf86vm -lXcursor#}' src/Makefile
+}
 
 src_compile() {
 	local target
