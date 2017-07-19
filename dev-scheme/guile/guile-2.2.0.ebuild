@@ -11,7 +11,7 @@ HOMEPAGE="http://www.gnu.org/software/guile/"
 SRC_URI="mirror://gnu/guile/${P}.tar.gz"
 
 LICENSE="LGPL-3+"
-SLOT="0"
+SLOT="2"
 #KEYWORDS="~amd64"
 # Work in progress. No keywords.
 # TODO: 
@@ -19,7 +19,7 @@ SLOT="0"
 # 2. Testing agains revdeps
 # 3. Check file placing
 # 4. ...
-KEYWORDS=""
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="networking +regex +deprecated nls debug-malloc debug +threads static"
 
 RDEPEND="
