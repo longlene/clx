@@ -14,11 +14,28 @@ SRC_URI="https://github.com/endurox-dev/endurox/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="GPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="debug doc gpg"
 
 DEPEND="
-	app-crypt/gpgme
+	doc? ( app-text/asciidoc )
+	gpg? ( app-crypt/gpgme )
 "
 RDEPEND="${DEPEND}"
 
 CMAKE_IN_SOURCE_BUILD=yes
+
+src_prepare() {
+	eapply_user
+	sed -i '/#\ Install\ bin,\ scripts/,$d' xadmin/CMakeLists.txt
+}
+
+src_configure() {
+	local mycmakeargs=(
+	-DDEFINE_RELEASEBUILD=$(usex !debug)
+	-DNDRX_MEMORY_DEBUG=$(usex debug)
+	-DDEFINE_DISABLEGPGME=$(usex !gpg)
+	-DDEFINE_DISABLEDOC=$(usex !doc)
+	-DDEFINE_DISABLEPSCRIPT=ON
+	)
+	cmake-utils_src_configure
+}

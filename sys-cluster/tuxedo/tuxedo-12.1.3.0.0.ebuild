@@ -57,7 +57,7 @@ src_install() {
 	done
 
 	insinto "/${tuxdir}"/include
-	doins ${CLIENT_DATA_DIR}/{atmi.h,fml.h,fml32.h,tmenv.h,tpadm.h,userlog.h}
+	doins ${CLIENT_DATA_DIR}/{atmi.h,fml.h,fml32.h,tmenv.h,tpadm.h,userlog.h,xa.h}
 	
 	insinto "/${tuxdir}"/locale/C
 	for f in CMDFML CMDTUX ; do

@@ -52,35 +52,39 @@ src_install() {
 	local ldpath=/${tuxdir}/$(get_libdir)
 
 	into "/${tuxdir}"
-	dolib.so ${CLIENT_DATA_DIR}/lib{buft,engine,fml,fml32,giconv,gpnet,jms,msgq1,omg,orbutl,plugin,qm,qs,sec,secssl,trpc,ticuuc,ticudata,tux,txml,usort,utrace,wsc}$(get_libname)*
+	dolib.so ${CLIENT_DATA_DIR}/lib{buft,engine,fml,fml32,giconv,gpnet,jms,msgq1,omg,orbutl,plugin,qm,qs,sec,secssl,trpc,ticuuc,ticudata,tux,txml,usort,utrace,wsc}$(get_libname)* ${CLIENT_DATA_DIR}/registry$(get_libname)
 	dosym libtxml$(get_libname 25.0) "/${tuxdir}"/$(get_libdir)/libtxml$(get_libname 25) 
 	dosym libticuuc$(get_libname 36.0) "/${tuxdir}"/$(get_libdir)/libticuuc$(get_libname 36) 
 	dosym libticudata$(get_libname 36.0) "/${tuxdir}"/$(get_libdir)/libticudata$(get_libname 36) 
+	dosym "/${tuxdir}"/$(get_libdir)/registry$(get_libname) /usr/$(get_libdir)/registry.so
 	
 	local f
 	for f in buildclient mkfldhdr32 ; do
 		dobin ${CLIENT_DATA_DIR}/${f}
-		dosym "/${tuxdir}"/bin/${f} /usr/bin/${f}
+		#dosym "/${tuxdir}"/bin/${f} /usr/bin/${f}
 	done
 
 	insinto "/${tuxdir}"/include
-	doins ${CLIENT_DATA_DIR}/{atmi.h,fml.h,fml1632.h,fml32.h,tmenv.h,tpadm.h,userlog.h}
+	doins ${CLIENT_DATA_DIR}/{atmi.h,fml.h,fml1632.h,fml32.h,tmenv.h,tpadm.h,userlog.h,xa.h}
 	
 	insinto "/${tuxdir}"/locale/C
-	for f in CMDFML CMDGW CMDTUX LIBFML LIBGWT LIBGW LIBPLUGIN LIBSEC LIBTUX LIBWSC ORACLE ; do
-		newins ${CLIENT_DATA_DIR}/${f}_CAT2 ${f}_CAT
-		newins ${CLIENT_DATA_DIR}/${f}.text2 ${f}.text
+	for f in CMDFML CMDGW CMDTUX GP LIBFML LIBGWT LIBGW LIBPLUGIN LIBSEC LIBTUX LIBWSC ORACLE ; do
+		newins ${CLIENT_DATA_DIR}/${f}_CAT0 ${f}_CAT
+		newins ${CLIENT_DATA_DIR}/${f}.text0 ${f}.text
 	done
 
 
 	if use server ; then
 		for f in tmadmin  tmboot  tmconfig  tmipcrm tmloadcf tmshutdown tmunloadcf buildserver dmadmin dmloadcf dmunloadcf qmadmin BBL DBBL DMADM GWADM GWTDOMAIN TMQUEUE WSH WSL  ; do
 			dobin ${SERVER_DATA_DIR}/${f}
-			dosym "/${tuxdir}"/bin/${f} /usr/bin/${f}
+			#dosym "/${tuxdir}"/bin/${f} /usr/bin/${f}
 		done
 			dolib.so ${SERVER_DATA_DIR}/lib{tmib,gw,gwt,tuxj,tuxjni}$(get_libname)*
 		insinto "/${tuxdir}"/include
 		doins ${SERVER_DATA_DIR}/sqlca.h
+
+		insinto "/${tuxdir}"/udataobj
+		doins ${SERVER_DATA_DIR}/dependency.ini ${CLIENT_DATA_DIR}/SysRegiiop.rdp ${SERVER_DATA_DIR}/SysRegtgiop.rdp
 
 		insinto "/${tuxdir}"/locale/C
 		for f in TMADMIN TPFW TUXMQ WSNAT  ; do
