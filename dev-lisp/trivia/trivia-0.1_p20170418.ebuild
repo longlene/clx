@@ -18,7 +18,7 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/lisp-namespaces
+	dev-lisp/lisp-namespace
 	dev-lisp/closer-mop
 	dev-lisp/alexandria
 	dev-lisp/fare-quasiquote

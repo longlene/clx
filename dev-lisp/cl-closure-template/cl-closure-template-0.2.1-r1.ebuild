@@ -29,7 +29,7 @@ SITEFILE="50${PN}-gentoo.el"
 src_prepare() {
 	eapply_user
 	if ! use test; then
-		sed -e '/closure-template-test/,$d' -i closure-template.asd
+		sed -e '/test-op/,$d' -i closure-template.asd
 	fi
 }
 

@@ -8,7 +8,7 @@ inherit multilib lua
 
 DESCRIPTION="CD (Canvas Draw) is a platform-independent graphics library"
 HOMEPAGE="http://canvasdraw.sourceforge.net/"
-SRC_URI="mirror://sourceforge/cd/${P}_Sources.tar.gz"
+SRC_URI="mirror://sourceforge/canvasdraw/${P}_Sources.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

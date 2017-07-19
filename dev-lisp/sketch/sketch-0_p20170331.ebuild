@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="df894ec3b95d0538afb0fbc6e21f0717c0363968"
 
 DESCRIPTION="Sketch is a Common Lisp framework for the creation of electronic art, computer graphics, visual design, game making and more"
 HOMEPAGE="https://github.com/vydd/sketch"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/vydd/sketch.git"
+SRC_URI="https://github.com/vydd/sketch/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -32,5 +31,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	use example || rm -r examples ${PN}-examples.asd
 }

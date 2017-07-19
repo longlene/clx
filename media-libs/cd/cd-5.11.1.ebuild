@@ -1,14 +1,13 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 
 inherit multilib lua
 
 DESCRIPTION="CD (Canvas Draw) is a platform-independent graphics library"
 HOMEPAGE="http://canvasdraw.sourceforge.net/"
-SRC_URI="mirror://sourceforge/cd/${P}_Sources.tar.gz"
+SRC_URI="mirror://sourceforge/canvasdraw/${P}_Sources.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -18,6 +17,7 @@ IUSE="xft font pdf lua static-libs"
 DEPEND=""
 RDEPEND="${DEPEND}
 sys-libs/zlib
+x11-libs/pangox-compat
 media-libs/freetype
 font? ( media-libs/ftgl )
 x11-libs/libX11
@@ -30,10 +30,6 @@ lua? ( dev-lang/lua )
 media-libs/im"
 
 S="${WORKDIR}"/${PN}
-
-src_prepare() {
-	find .  -type d -exec chmod 755 {} \;
-}
 
 src_compile() {
 	local target=" cd "

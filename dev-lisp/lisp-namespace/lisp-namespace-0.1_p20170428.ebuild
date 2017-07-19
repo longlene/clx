@@ -1,16 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="3286355fdb6c8f285e98177213dbdf4278e86420"
 
 DESCRIPTION="Provides LISP-N --- extensible namespaces in Common Lisp"
 HOMEPAGE="https://github.com/guicho271828/lisp-namespace"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/guicho271828/lisp-namespace.git"
+SRC_URI="https://github.com/guicho271828/lisp-namespace/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

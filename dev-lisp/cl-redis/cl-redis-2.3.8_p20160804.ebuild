@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
@@ -13,7 +13,7 @@ SRC_URI="https://github.com/vseloved/cl-redis/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -24,6 +24,14 @@ RDEPEND="${DEPEND}
 	dev-lisp/babel
 	dev-lisp/bordeaux-threads
 	dev-lisp/flexi-streams
-	dev-lisp/should-test
+	test? ( dev-lisp/should-test )
 "
+
+src_prepare() {
+	eapply_user
+	if ! use test ; then
+		sed -i '/defsystem\ #:cl-redis-test/,$d' ${PN}.asd
+		rm test.lisp
+	fi
+}
 
