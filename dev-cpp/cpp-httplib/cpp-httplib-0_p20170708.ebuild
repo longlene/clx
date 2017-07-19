@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="902bf3d0ebbcdeb778aaea69395677bf514b2b15"
+EGIT_COMMIT="0b00f3fba0e406703205ce3a5339a852b07a0745"
 
 DESCRIPTION="C++11 header-only HTTP sever library"
 HOMEPAGE="https://github.com/yhirose/cpp-httplib"
