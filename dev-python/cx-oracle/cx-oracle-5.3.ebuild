@@ -8,7 +8,7 @@ inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Python interface to Oracle"
 HOMEPAGE="http://www.cxtools.net/default.aspx?nav=cxorlb"
-SRC_URI="https://github.com/oracle/python-cx_Oracle/archive/5.3.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/oracle/python-cx_Oracle/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

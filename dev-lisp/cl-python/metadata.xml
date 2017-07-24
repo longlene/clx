@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		CLPython is an open-source implementation of Python written in Common Lisp. With CLPython you can run Python programs in a Lisp environment. Libraries written in Lisp are available to Python code, and Python libraries can be accessed by Lisp code.
+
+CLPython is developed by Willem Broekema and is released as open source under the LLGPL.
+	</longdescription>
+</pkgmetadata>
