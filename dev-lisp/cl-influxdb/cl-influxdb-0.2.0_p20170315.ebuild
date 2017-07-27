@@ -1,12 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="768036a1f9f7ee4b0edde0447fd5b64653e275d5"
+EGIT_COMMIT="a822fb251df43ab252fe08687568d317981f6918"
 
 DESCRIPTION="Common Lisp interface to the Time Series Database InfluxDB"
 HOMEPAGE="https://github.com/mmaul/cl-influxdb"

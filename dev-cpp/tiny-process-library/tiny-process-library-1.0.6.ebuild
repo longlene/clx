@@ -20,6 +20,7 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	dolib.a ${BUILD_DIR}/libtiny-process-library.a
-	insinto porcess.hpp
+	insinto /usr/include
+	doins process.hpp
 	dodoc README.md
 }

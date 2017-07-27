@@ -1,16 +1,15 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="ee6d60e47e3fdd57957af356aab8291a6d925396"
 
 DESCRIPTION="General purpose validation library for Common Lisp"
 HOMEPAGE="https://github.com/mmontone/clavier"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/mmontone/clavier.git"
+SRC_URI="https://github.com/mmontone/clavier/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

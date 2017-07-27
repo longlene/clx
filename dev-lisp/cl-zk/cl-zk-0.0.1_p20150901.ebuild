@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -15,7 +14,7 @@ SRC_URI="https://github.com/AeroNotix/cl-zk/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="AL2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -26,5 +25,13 @@ RDEPEND="${DEPEND}
 	dev-lisp/uuid
 	dev-lisp/usocket
 	dev-lisp/chanl
-	dev-lisp/fiveam
+	test? ( dev-lisp/fiveam )
 "
+
+src_prepare() {
+	eapply_user
+	if ! use test ; then
+		sed -i '/defsystem\ :cl-zk-test/,$d' cl-zk.asd
+		rm -r test
+	fi
+}
