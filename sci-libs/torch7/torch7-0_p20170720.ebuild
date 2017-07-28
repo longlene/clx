@@ -1,12 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit cmake-utils lua vcs-snapshot
 
-EGIT_COMMIT="329dff5dc1ae5b90d6fc7a5d0f2f7c32403c6530"
+EGIT_COMMIT="aed31711c6b8846b8337a263a7f9f998697994e7"
 
 DESCRIPTION="Torch is a Lua-based suite for scientific computations based on multidimensional tensors."
 HOMEPAGE="https://github.com/torch/torch7"
