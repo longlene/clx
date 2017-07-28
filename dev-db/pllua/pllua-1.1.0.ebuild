@@ -4,13 +4,9 @@
 
 EAPI=6
 
-inherit git-r3
-
 DESCRIPTION="PL/Lua is an implementation of Lua as a loadable procedural language for PostgreSQL"
 HOMEPAGE="https://github.com/pllua/pllua"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/pllua/pllua.git"
+SRC_URI="https://github.com/pllua/pllua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
