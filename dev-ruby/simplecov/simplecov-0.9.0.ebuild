@@ -22,8 +22,8 @@ IUSE="doc"
 
 ruby_add_rdepend ">=dev-ruby/multi_json-1.0
 	>=dev-ruby/lockfile-2.1.0
-	dev-ruby/simplecov-html:0.8
-	>=dev-ruby/docile-1.1.0"
+	dev-ruby/simplecov-html
+	dev-ruby/docile"
 
 ruby_add_bdepend "test? (
 	dev-ruby/rspec
