@@ -1,7 +1,17 @@
-diff -ru plan9/bin/9a plan9.new/bin/9a
---- plan9/bin/9a	2010-03-17 22:25:01.000000000 +0000
-+++ plan9.new/bin/9a	2011-03-21 03:20:27.000000000 +0000
-@@ -1,15 +1,21 @@
+Remove unneeded executable stack
+
+Assembly routines in libthread and libmp use an executable stack by
+default. This is not needed and can be removed using --noexecstack.
+
+The plan9port 9a wrapper wrapper needs to be modified to pass flags to the
+underlying assembler first though..
+
+Patch by Andy Spencer
+
+  http://code.swtch.com/plan9port/issue/76/
+--- a/bin/9a
++++ b/bin/9a
+@@ -1,10 +1,5 @@
  #!/bin/sh
  
 -if [ $# != 1 ]; then
@@ -9,10 +19,11 @@ diff -ru plan9/bin/9a plan9.new/bin/9a
 -	exit 1
 -fi
 -
+ test -f $PLAN9/config && . $PLAN9/config
+ 
  aflags=""
- case "`uname`" in
- Darwin)
- 	aflags="-arch `arch`"
+@@ -17,5 +12,16 @@ Darwin-*x86_64*)
+ 	;;
  esac
  
 -out=`echo $1 | sed 's/\.s$//;s/$/.o/'`
@@ -30,10 +41,9 @@ diff -ru plan9/bin/9a plan9.new/bin/9a
 +done
 +
 +exec as $aflags $opts -o $dst $src
-diff -ru plan9/src/mkhdr plan9.new/src/mkhdr
---- plan9/src/mkhdr	2010-04-10 03:59:41.000000000 +0000
-+++ plan9.new/src/mkhdr	2011-03-20 23:57:26.000000000 +0000
-@@ -29,7 +29,7 @@
+--- a/src/mkhdr
++++ b/src/mkhdr
+@@ -30,7 +30,7 @@ AR=9ar
  INSTALL=install
  CFLAGS=
  LDFLAGS=
