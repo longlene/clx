@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/cl-ansi-text
 	dev-lisp/cl-readline
-	dev-lisp/interior-shell
+	dev-lisp/inferior-shell
 	dev-lisp/trivial-timeout
 	dev-lisp/trivial-documentation
 	dev-lisp/split-sequence
