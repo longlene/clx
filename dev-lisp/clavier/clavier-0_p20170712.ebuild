@@ -20,7 +20,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-ppcre
-	dev-lisp/closr-mop
+	dev-lisp/closer-mop
 	dev-lisp/chronicity
 	dev-lisp/cl-fad
 	test? ( dev-lisp/stefil )
