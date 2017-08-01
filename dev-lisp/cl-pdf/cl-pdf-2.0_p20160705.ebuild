@@ -1,10 +1,9 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-EGIT_COMMIT="efb6a995916b51ef74b496a03c2857b91b908900"
+EGIT_COMMIT="7796456e62efe7a8efc51a707a285a69fedc717b"
 
 DESCRIPTION="Common Lisp PDF Generation Library"
 HOMEPAGE="https://github.com/mbattyani/cl-pdf"

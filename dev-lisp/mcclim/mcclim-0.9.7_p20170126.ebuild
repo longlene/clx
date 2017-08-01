@@ -1,17 +1,20 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-inherit common-lisp-3 elisp-common eutils
+EAPI=6
+
+inherit common-lisp-3 elisp-common eutils vcs-snapshot
+
+EGIT_COMMIT="c3125756af57483f5f84bb9b35ab784903c5d041"
 
 DESCRIPTION="McCLIM is a free software implementation of CLIM."
 HOMEPAGE="http://common-lisp.net/project/mcclim
 		http://cliki.net/McCLIM"
-SRC_URI="http://common-lisp.net/project/${PN}/downloads/${P}.tar.gz"
+SRC_URI="https://github.com/robert-strandh/McCLIM/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~arm ~x86"
 IUSE="emacs doc"
 
 DEPEND="doc? ( virtual/texi2dvi )"

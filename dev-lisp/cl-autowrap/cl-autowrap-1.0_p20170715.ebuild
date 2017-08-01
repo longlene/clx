@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="6fa9c82bc15b6bd6f249d72a38f0d7422ed06332"
+EGIT_COMMIT="5f4ef108432a0ba6de67a664b49ec64a4197cc6e"
 
 DESCRIPTION="Import c2ffi specs and generate CFFI wrappers"
 HOMEPAGE="https://github.com/rpav/cl-autowrap"
