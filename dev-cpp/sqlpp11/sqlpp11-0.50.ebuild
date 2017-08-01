@@ -13,13 +13,14 @@ SRC_URI="https://github.com/rbock/sqlpp11/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="example mysql odbc postgres sqlite test"
+IUSE="test"
 
 DEPEND="dev-cpp/date"
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	eapply_user
-	use test || sed -i '/add_subdirectory/{/test/d}' CMakeLists.txt
-	use example || sed -i '/add_subdirectory/{/example/d}' CMakeLists.txt
+src_configure() {
+	local mycmakeargs=(
+	-DENABLE_TESTS=$(usex test)
+	)
+	cmake-utils_src_configure
 }

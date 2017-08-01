@@ -28,7 +28,7 @@ src_prepare() {
 }
 
 src_configure() {
-	local mymakeargs=(
+	local mycmakeargs=(
 	-DSQLPP11_INCLUDE_DIR=/usr/include
 	-DDATE_INCLUDE_DIR=/usr/include
 	)
