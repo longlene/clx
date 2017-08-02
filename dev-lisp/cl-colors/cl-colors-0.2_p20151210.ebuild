@@ -14,10 +14,18 @@ SRC_URI="https://github.com/tpapp/cl-colors/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 RDEPEND="
 	dev-lisp/alexandria
 	dev-lisp/let-plus
+	test? ( dev-lisp/lift )
 "
 
+src_prepare() {
+	eapply_user
+	if ! use test ; then
+		sed -i '/defsystem #:cl-colors-tests/,$d' ${PN}.asd
+		rm test.lisp
+	fi
+}
