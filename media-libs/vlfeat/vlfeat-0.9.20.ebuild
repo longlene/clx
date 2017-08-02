@@ -1,6 +1,5 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -16,11 +15,13 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-if use amd64 ; then
-	ARCH=glnxa64
-elif use x86 ; then
-	ARCH=glnx86
-fi
+pkg_setup() {
+	if use amd64 ; then
+		ARCH=glnxa64
+	elif use x86 ; then
+		ARCH=glnx86
+	fi
+}
 
 src_install() {
 	dobin bin/${ARCH}/{sift,mser}
