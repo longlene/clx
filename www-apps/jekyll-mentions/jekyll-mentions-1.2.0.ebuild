@@ -9,18 +9,15 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="mention support for your Jekyll site"
 HOMEPAGE="https://github.com/jekyll/jekyll-mentions"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/jekyll-2.0"
-ruby_add_rdepend ">=dev-ruby/html-pipeline-1.9.0"
-ruby_add_rdepend ">=dev-ruby/rake-0"
-ruby_add_rdepend ">=dev-ruby/rdoc-0"
-ruby_add_rdepend ">=dev-ruby/shoulda-0"
-ruby_add_rdepend ">=dev-ruby/minitest-0"
+ruby_add_rdepend ">=dev-ruby/jekyll-3.0"
+ruby_add_rdepend ">=dev-ruby/html-pipeline-2.3"
+ruby_add_rdepend ">=dev-ruby/activesupport-4.0"
 

@@ -9,17 +9,13 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="Let Jekyll convert your Ruby into JavaScript using Opal"
 HOMEPAGE="https://github.com/jekyll/jekyll-opal"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/opal-0.6.0"
-ruby_add_rdepend ">=dev-ruby/bundler-1.6"
-ruby_add_rdepend ">=dev-ruby/rake-0"
-ruby_add_rdepend ">=dev-ruby/rspec-3.0"
-ruby_add_rdepend ">=dev-ruby/jekyll-2.0"
+ruby_add_rdepend ">=dev-ruby/opal-0.8"
 

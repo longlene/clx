@@ -9,8 +9,8 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="Ruby wrapper for Apache Spark"
+HOMEPAGE="https://github.com/ondra-m/ruby-spark"
 
 LICENSE="MIT"
 SLOT="0"

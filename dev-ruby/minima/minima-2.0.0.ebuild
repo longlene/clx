@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=www-apps/jekyll-3.3"
+ruby_add_rdepend "www-apps/jekyll"
 ruby_add_rdepend ">=dev-ruby/bundler-1.12"
 
 RUBY_FAKEGEM_EXTRAINSTALL="_includes _layouts _sass assets"
