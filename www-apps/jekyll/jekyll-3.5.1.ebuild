@@ -7,7 +7,7 @@ USE_RUBY="ruby21 ruby22 ruby23 ruby24"
 inherit ruby-fakegem
 
 RUBY_FAKEGEM_EXTRADOC="README.markdown History.markdown"
-RUBY_FAKEGEM_EXTRAINSTALL="features site"
+RUBY_FAKEGEM_EXTRAINSTALL="features"
 
 RUBY_FAKEGEM_GEMSPEC="${PN}.gemspec"
 
