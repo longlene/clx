@@ -9,13 +9,15 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc"
-HOMEPAGE="https://github.com/stympy/faker"
+DESCRIPTION="Whois is an intelligent WHOIS client and parser written in pure Ruby"
+HOMEPAGE="https://whoisrb.org/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/i18n-0.5"
+ruby_add_rdepend ">=dev-ruby/rake-0"
+ruby_add_rdepend ">=dev-ruby/rspec-0"
+ruby_add_rdepend ">=dev-ruby/yard-0"
 

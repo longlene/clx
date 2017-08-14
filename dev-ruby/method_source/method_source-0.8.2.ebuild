@@ -9,13 +9,14 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc"
-HOMEPAGE="http://faker.rubyforge.org"
+DESCRIPTION="retrieve the sourcecode for a method"
+HOMEPAGE="http://banisterfiend.wordpress.com"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/i18n-0.5"
+ruby_add_rdepend ">=dev-ruby/bacon-1.1.0"
+ruby_add_rdepend ">=dev-ruby/rake-0.9"
 

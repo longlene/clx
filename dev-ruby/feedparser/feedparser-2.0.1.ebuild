@@ -9,8 +9,8 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="feedparser - web feed parser and normalizer (RSS 2"
-HOMEPAGE="https://github.com/feedreader/feedparser"
+DESCRIPTION="feedparser - web feed parser and normalizer (RSS, Atom, JSON Feed, HTML h-entry, etc"
+HOMEPAGE="https://github.com/feedparser/feedparser"
 
 LICENSE="Public Domain"
 SLOT="0"

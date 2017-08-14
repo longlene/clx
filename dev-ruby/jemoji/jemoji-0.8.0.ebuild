@@ -9,17 +9,19 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="AASM is a continuation of the acts-as-state-machine rails plugin, built for plain Ruby objects"
-HOMEPAGE="https://github.com/aasm/aasm"
+DESCRIPTION=""
+HOMEPAGE="https://github.com/jekyll/jemoji"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
+ruby_add_rdepend ">=dev-ruby/jekyll-3.0"
+ruby_add_rdepend ">=dev-ruby/html-pipeline-2.2"
+ruby_add_rdepend ">=dev-ruby/activesupport-4.0"
+ruby_add_rdepend ">=dev-ruby/gemoji-3.0"
 ruby_add_rdepend ">=dev-ruby/rake-0"
-ruby_add_rdepend ">=dev-ruby/sdoc-0"
-ruby_add_rdepend ">=dev-ruby/rspec-3"
-ruby_add_rdepend ">=dev-ruby/generator_spec-0"
-ruby_add_rdepend ">=dev-ruby/pry-0"
+ruby_add_rdepend ">=dev-ruby/rdoc-0"
+ruby_add_rdepend ">=dev-ruby/rspec-3.0"
 
