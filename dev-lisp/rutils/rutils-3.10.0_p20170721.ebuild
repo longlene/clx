@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="15b9daf6734b115a12937523af18b5c5332a693b"
+EGIT_COMMIT="5b2232120e5b6dde8591cf45e2d75ade9e55b3eb"
 
 DESCRIPTION="Reasonable Utilities package for Common Lisp"
 HOMEPAGE="https://github.com/mabragor/rutils"

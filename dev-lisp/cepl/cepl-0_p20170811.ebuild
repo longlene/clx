@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5faf5e6138418433fd594bbaf0c0deb0faf2c24e"
+EGIT_COMMIT="2a61dc0da44330dd1c855d2622291ed41e6e0b9a"
 
 DESCRIPTION="Code Evaluate Play Loop"
 HOMEPAGE="https://github.com/cbaggers/cepl"

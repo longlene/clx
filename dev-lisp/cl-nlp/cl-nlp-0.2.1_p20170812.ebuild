@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="44a1efe058973a40fa9c60a061cbed769fef3e93"
+EGIT_COMMIT="b7157c897c5d629a442132a0f3b7dceb2771558d"
 
 DESCRIPTION="Lisp NLP tool-set"
 HOMEPAGE="https://github.com/vseloved/cl-nlp"

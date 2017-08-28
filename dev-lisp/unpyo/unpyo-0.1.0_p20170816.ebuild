@@ -1,16 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="9170abfa15d4f7b865b453e30d487516f9a2128f"
 
 DESCRIPTION="Puma を Common Lisp に移植してみる"
 HOMEPAGE="https://github.com/quek/unpyo"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/quek/unpyo.git"
+SRC_URI="https://github.com/quek/unpyo/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
