@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="131835b3025e9856058486dcbefc17ea7d8c156c"
+EGIT_COMMIT="5ce430b3da5cda3a73b9cf5cee4df2843034422b"
 
 DESCRIPTION="Efficient way to use \"subseq\"s in Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/xsubseq/"
@@ -21,6 +20,11 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	test? ( dev-lisp/prove )
 "
+
+src_prepare() {
+	eapply_user
+	use test || rm -r ${PN}-test.asd t
+}
 
 src_install() {
 	common-lisp-3_src_install

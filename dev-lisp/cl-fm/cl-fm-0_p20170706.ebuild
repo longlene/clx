@@ -1,16 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="f9751d5e8ea18a022ae503a1ed07995b31876a3c"
 
 DESCRIPTION="A graphical File Manager in Common Lisp, using cl-cffi-gtk"
 HOMEPAGE="https://github.com/stacksmith/cl-fm"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/stacksmith/cl-fm.git"
+SRC_URI="https://github.com/stacksmith/cl-fm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
