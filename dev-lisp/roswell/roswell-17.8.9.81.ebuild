@@ -27,6 +27,7 @@ src_prepare() {
 	eapply_user
 	use test || rm -rf ${PN}-test.asd t
 	sed -i 's#`mkdir\ -p\ $(roslispdir);cd\ $(roslispdir);\ pwd\ -W\ 2>/dev/null`#$(roslispdir)#' Makefile.am || die "fix path failed"
+	sed -i '/exec/{s#-L\ sbcl-bin#-L sbcl/system#}' lisp/*.ros || die
 	eautoreconf
 }
 

@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -8,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Bodacious Game Engine"
 HOMEPAGE="https://github.com/borodust/cl-bodge"
-SRC_URI="https://github.com/borodust/cl-bodge/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/borodust/cl-bodge/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
