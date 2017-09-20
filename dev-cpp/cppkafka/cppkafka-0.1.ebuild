@@ -19,3 +19,8 @@ DEPEND="
 	>=dev-libs/librdkafka-0.9.1
 "
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	eapply_user
+	sed -i "/install/,\${s#lib#$(get_libdir)#}" src/CMakeLists.txt || die
+}

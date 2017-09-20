@@ -1,16 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
-inherit git-2
+inherit vcs-snapshot
+
+EGIT_COMMIT="c2444edd7bba25b7258678252c83996cbf04761e"
 
 DESCRIPTION="A header only C++11 library for parsing TOML"
 HOMEPAGE="https://github.com/mayah/tinytoml"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/mayah/tinytoml.git"
+SRC_URI="https://github.com/mayah/tinytoml/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
