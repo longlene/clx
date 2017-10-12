@@ -1,11 +1,11 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9526e1c5f93ae15210cdb2a684dc9bff98499323"
+EGIT_COMMIT="58a6f822ef832bdb9af24adf19203fd111c25459"
 
 DESCRIPTION="Common Lisp RESTful web development"
 HOMEPAGE="https://github.com/capitaomorte/snooze"
@@ -40,7 +40,7 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	if use test ; then
-		sed -i '/snooze-tests/,$ d' snooze.asd
+		sed -i '/defsystem\ snooze-tests/,$ d' snooze.asd
 		rm -r demo snooze-tests.lisp
 	fi
 }

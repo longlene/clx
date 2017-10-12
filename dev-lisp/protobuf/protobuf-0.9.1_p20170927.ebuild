@@ -5,15 +5,15 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="971c10bd35860cc77e09af2b69aabc7bb6d15779"
+EGIT_COMMIT="a893069f618938890dccc835033389d4b5ddb510"
 
 DESCRIPTION="Common Lisp implementation of Google's protocol buffers"
 HOMEPAGE="http://common-lisp.net/project/protobuf/"
-SRC_URI="https://github.com/brown/protobuf/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/longlene/protobuf/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="test"
 
 DEPEND="
@@ -29,6 +29,7 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	eapply_user
+	sed -i 's#c++0x#c++11#' protoc/lisp/Makefile || die
 	use test || rm -r varint/varint-test.asd varint/varint_test.lisp protoc/protoc-test.asd protoc/protoc_test.lisp ${PN}-test.asd *-test.lisp
 }
 

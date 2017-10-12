@@ -7,19 +7,39 @@ inherit autotools vcs-snapshot
 
 EGIT_COMMIT="301d2986b6890dcfee53d8bc8e14f28b27922989"
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="C-Mera is a very simple source-to-source compiler"
+HOMEPAGE="https://github.com/kiselgra/c-mera"
 SRC_URI="https://github.com/kiselgra/c-mera/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	dev-lisp/sbcl
+	dev-lisp/net-didierverna-clon
+"
 RDEPEND="${DEPEND}"
+
+QA_PRESTRIPPED="
+	/usr/bin/cm-c
+	/usr/bin/cm-cxx
+	/usr/bin/cm-glsl
+	/usr/bin/cm-cuda
+	/usr/bin/cm-opencl
+"
+
 
 src_prepare() {
 	eapply_user
 	eautoreconf
+}
+
+src_configure() {
+	econf --with-sbcl
+}
+
+src_compile() {
+	emake -j1
 }
