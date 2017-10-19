@@ -5,7 +5,7 @@ EAPI=6
 
 inherit golang-build golang-vcs-snapshot
 
-EGO_PN="gopkg.in/vmihailenco/msgpack.v2"
+EGO_PN="github.com/vmihailenco/msgpack"
 
 DESCRIPTION="MessagePack encoding for Golang"
 HOMEPAGE="https://github.com/vmihailenco/msgpack"
