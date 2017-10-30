@@ -5,18 +5,21 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="85f82ed88d5fa6e63026038dbb1dad0d6cd5dafe"
+EGIT_COMMIT="e5c54bc30b0887c237bde2827036d17315f88737"
 
 DESCRIPTION="A collection of public domain utilities."
 HOMEPAGE="http://common-lisp.net/project/alexandria/"
-SRC_URI="https://github.com/keithj/alexandria/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://gitlab.common-lisp.net/alexandria/alexandria/repository/archive.tar.gz?ref=${EGIT_COMMIT} -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE="doc"
+IUSE="doc test"
 
 src_prepare() {
 	eapply_user
-	sed -i 's/(:static-file.*LICENCE.*)//' alexandria.asd
+	sed -e 's/(:static-file.*LICENCE.*)//' \
+		-e 's/(:static-file.*tests.*)//' \
+		-i alexandria.asd
+	use test || rm ${PN}-tests.asd tests.lisp
 }
