@@ -1,11 +1,11 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2e4f2328276adcbf18931e1270694c4e68afdc60"
+EGIT_COMMIT="7f0930a682ec4e50b14ae8e616cfff5d7f5d225b"
 
 DESCRIPTION="RabbitMQ interface to Common Lisp"
 HOMEPAGE="https://github.com/lokedhs/cl-rabbit"

@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="289b5b7d02f08d89316d3631d82ac00131f2c6e3"
+EGIT_COMMIT="20f323bba9ac4966d3dab8d13377d7cd22074ceb"
 
 DESCRIPTION="A Nework Time Protocol client written in Common Lisp"
 HOMEPAGE="https://github.com/varjagg/cl-ntp-client"

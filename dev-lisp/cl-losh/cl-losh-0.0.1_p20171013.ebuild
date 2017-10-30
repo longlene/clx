@@ -1,16 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="f9c832296fc33dc94603b944d7eec80a72905aae"
 
 DESCRIPTION="Common Lisp utilities"
 HOMEPAGE="https://github.com/sjl/cl-losh"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/sjl/cl-losh.git"
+SRC_URI="https://github.com/sjl/cl-losh/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
