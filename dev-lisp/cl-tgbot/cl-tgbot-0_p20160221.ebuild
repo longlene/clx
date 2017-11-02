@@ -7,7 +7,7 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="7f191be66b468987925718b3e236581ec2f1aa67"
 
-DESCRIPTION=""
+DESCRIPTION="A Telegram Bot in Common Lisp"
 HOMEPAGE="https://github.com/bonkzwonil/cl-tgbot"
 SRC_URI="https://github.com/bonkzwonil/cl-tgbot/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 

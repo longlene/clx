@@ -25,6 +25,6 @@ RDEPEND="
 
 src_prepare() {
 	eapply_user
-	use test || rm -r sqlite-test.asd sqlite-tests.lisp
+	use test || rm sqlite-tests.asd sqlite-tests.lisp
 }
 
