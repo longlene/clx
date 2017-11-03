@@ -5,7 +5,7 @@ EAPI=6
 
 inherit lua vcs-snapshot
 
-EGIT_COMMIT="690036d06c72a8845db64942434ad9c35836c315"
+EGIT_COMMIT="6e72b866e0a7fe544b7de2d9951063c9c11c00e3"
 
 DESCRIPTION="Efficient, reusable RNNs and LSTMs for torch"
 HOMEPAGE="https://github.com/jcjohnson/torch-rnn"

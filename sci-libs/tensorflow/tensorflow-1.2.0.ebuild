@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -50,6 +49,13 @@ src_configure() {
 }
 
 src_compile() {
+	cat > bazelrc <<EOF
+startup --batch
+build --spawn_strategy=standalone --genrule_strategy=standalone
+build --jobs $(makeopts_jobs)
+EOF
+	export BAZELRC="$PWD/bazelrc"
+
 	local myflags
 	use cuda && myflags+="--cofnig=cuda"
 	bazel build -c opt ${myflags} tensorflow:libtensorflow.so || die
