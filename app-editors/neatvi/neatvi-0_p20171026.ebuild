@@ -1,20 +1,19 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit git-2
+inherit vcs-snapshot
+
+EGIT_COMMIT="896da02715d68d3031e31e3862ac249e4ce4e645"
 
 DESCRIPTION="A small ex/vi editor"
 HOMEPAGE="http://litcave.rudi.ir"
-SRC_URI=""
-
-EGIT_REPO_URI="http://repo.or.cz/neatvi.git"
+SRC_URI="https://github.com/aligrudi/neatvi/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
