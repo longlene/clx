@@ -9,13 +9,14 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Opal DOM library for jquery"
-HOMEPAGE="http://opalrb.org"
+DESCRIPTION=""
+HOMEPAGE="http://github.com/stateless-systems/net-ftp-list"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/opal-0.5.0"
+ruby_add_rdepend ">=dev-ruby/jeweler-0"
+ruby_add_rdepend ">=dev-ruby/test-unit-0"
 

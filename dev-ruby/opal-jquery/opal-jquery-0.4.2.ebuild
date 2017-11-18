@@ -14,11 +14,11 @@ HOMEPAGE="http://opalrb.org"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/opal-0.7.0"
-ruby_add_rdepend ">=dev-ruby/opal-rspec-0.4.0"
+ruby_add_rdepend ">=dev-ruby/opal-rspec-0.5"
 ruby_add_rdepend ">=dev-ruby/yard-0"
 ruby_add_rdepend ">=dev-ruby/rake-0"
 
