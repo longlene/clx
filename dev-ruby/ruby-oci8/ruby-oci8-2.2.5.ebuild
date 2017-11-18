@@ -1,12 +1,10 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
-#USE_RUBY="ruby20 ruby21 ruby22"
-USE_RUBY="ruby22"
+EAPI=6
+USE_RUBY="ruby21 ruby22 ruby23 ruby24"
 
-inherit ruby-fakegem multilib 
+inherit multilib ruby-fakegem
 
 RUBY_FAKEGEM_EXTRADOC="NEWS README.md ChangeLog"
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
@@ -26,8 +24,7 @@ EXT_DIR="ext/oci8"
 
 each_ruby_configure() {
 	# configure the native libraries
-	echo "ruby->>>>> ${RUBY}"
-	${RUBY} --verbose -C${EXT_DIR} extconf.rb --prefix="${D}/usr" || die "configure failed"
+	${RUBY} -C${EXT_DIR} extconf.rb --prefix="${D}/usr" || die "configure failed"
 }
 
 each_ruby_compile() {
