@@ -13,9 +13,9 @@ DESCRIPTION="    Resque is a Redis-backed Ruby library for creating background j
     placing those jobs on multiple queues, and processing them later"
 HOMEPAGE="http://resque.github.io/"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/redis-namespace-1.3"

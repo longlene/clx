@@ -3,8 +3,8 @@
 EAPI=5
 USE_RUBY="ruby21 ruby22 ruby23 ruby24"
 
-RUBY_FAKEGEM_TASK_DOC="rdoc"
-RUBY_FAKEGEM_EXTRADOC="README.rdoc"
+RUBY_FAKEGEM_TASK_DOC=""
+RUBY_FAKEGEM_EXTRADOC="README.md"
 RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
@@ -13,17 +13,14 @@ DESCRIPTION="    A Ruby client for oVirt REST API
 "
 HOMEPAGE="http://github.com/abenari/rbovirt"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/nokogiri-0"
-ruby_add_rdepend ">=dev-ruby/rest-client-0"
+ruby_add_rdepend ">dev-ruby/rest-client-1.7.0"
 ruby_add_rdepend ">=dev-ruby/shoulda-0"
 ruby_add_rdepend ">=dev-ruby/rspec-rails-2.6"
 ruby_add_rdepend ">=dev-ruby/rake-0"
 
-all_ruby_prepare() {
-	sed -i -e '/git ls-files/d' ${PN}.gemspec || die "sed failed"
-}
