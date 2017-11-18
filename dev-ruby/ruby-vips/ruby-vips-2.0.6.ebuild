@@ -14,10 +14,10 @@ HOMEPAGE="http://github.com/jcupitt/ruby-vips"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend "=dev-ruby/gobject-introspection-3.0.8"
+ruby_add_rdepend ">=dev-ruby/ffi-1.9"
 ruby_add_rdepend ">=dev-ruby/rake-11.0"
 ruby_add_rdepend ">=dev-ruby/rspec-3.3"
 ruby_add_rdepend ">=dev-ruby/yard-0.8"

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+Rubix provides abstractions for connecting to Zabbix's API, an ORM for wrapping Zabbix resources, a set of scripts for writing data to Zabbix, and a collection of Monitor classes for building periodic monitors
+		</longdescription>
+	</pkgmetadata>
