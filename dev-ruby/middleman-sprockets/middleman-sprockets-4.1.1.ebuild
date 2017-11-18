@@ -14,11 +14,10 @@ HOMEPAGE="https://github.com/middleman/middleman-sprockets"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/middleman-core-3.3"
-ruby_add_rdepend ">=dev-ruby/sprockets-2.12.1"
-ruby_add_rdepend ">=dev-ruby/sprockets-sass-1.2.0"
-ruby_add_rdepend ">=dev-ruby/sprockets-helpers-1.1.0"
+ruby_add_rdepend ">=dev-ruby/middleman-core-4.0"
+ruby_add_rdepend ">=dev-ruby/sprockets-3.0"
+ruby_add_rdepend ">=dev-ruby/capybara-2.5.0"
 
