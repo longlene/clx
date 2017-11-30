@@ -5,11 +5,9 @@ EAPI=6
 
 inherit lua vcs-snapshot
 
-EGIT_COMMIT="8221be35699141684d742bdffa8a55152546ac94"
-
 DESCRIPTION="Alpine Package Keeper"
 HOMEPAGE="https://github.com/alpinelinux/apk-tools"
-SRC_URI="https://github.com/alpinelinux/apk-tools/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/alpinelinux/apk-tools/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"
@@ -24,6 +22,7 @@ RDEPEND="${DEPEND}"
 src_prepare() {
 	eapply_user
 	sed -i 's/-Werror//' Make.rules
+	sed -i 's#TLS_client_method#SSLv23_client_method#' libfetch/common.c
 }
 
 src_configure() {
