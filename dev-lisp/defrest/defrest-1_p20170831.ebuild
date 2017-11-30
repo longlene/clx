@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f8368767b33ffcceecab315ba5f2ffcd151c1cd5"
+EGIT_COMMIT="169ca3b8e05d7ec82d3264bb03c330ba57f84307"
 
 DESCRIPTION="An easy Common Lisp REST/ajax service definer for hunchentoot"
 HOMEPAGE="https://github.com/bonkzwonil/defrest"
@@ -14,7 +14,7 @@ SRC_URI="https://github.com/bonkzwonil/defrest/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -22,3 +22,13 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/split-sequence
 "
+
+src_prepare() {
+	eapply_user
+	if ! use test ; then
+		sed -i '/defsystem\ :defrest.test/,$d' ${PN}.asd
+		rm -r tests
+	fi
+}
+
+
