@@ -19,7 +19,6 @@ IUSE=""
 DEPEND="
 	>=dev-lang/lua-5.1:=
 	dev-lang/luajit:2
-	sci-libs/torch7
 "
 RDEPEND="${DEPEND}"
 
