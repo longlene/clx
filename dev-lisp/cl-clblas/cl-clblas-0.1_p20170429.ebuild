@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="765156a67f0de38e7ed43d7a0936df258d7f2e05"
+EGIT_COMMIT="e6ca2aa13dadcdd1f72866ea0b16f72818478cc1"
 
 DESCRIPTION="Common Lisp binding for clBLAS"
 HOMEPAGE="https://github.com/gos-k/cl-clblas"

@@ -1,12 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ab010bac5172fc8ea4af3489403131a9104d9896"
+EGIT_COMMIT="ff1ea1e5e836a3a96d0ffc57e591def693d061b5"
 
 DESCRIPTION="Common Lisp binding for OpenCL API"
 HOMEPAGE="https://github.com/gos-k/cl-oclapi"
