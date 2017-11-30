@@ -17,6 +17,6 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	sys-devel/clang[clang]
+	sys-devel/llvm[clang]
 	dev-python/tabulate
 "

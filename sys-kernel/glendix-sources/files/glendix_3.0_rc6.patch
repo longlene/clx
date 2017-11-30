@@ -1,0 +1,152 @@
+diff --git a/Makefile b/Makefile
+index 86f47a0..d4bf2d9 100644
+--- a/Makefile
++++ b/Makefile
+@@ -708,7 +708,7 @@ export mod_strip_cmd
+ 
+ 
+ ifeq ($(KBUILD_EXTMOD),)
+-core-y		+= kernel/ mm/ fs/ ipc/ security/ crypto/ block/
++core-y		+= kernel/ mm/ fs/ ipc/ security/ crypto/ block/ plan9/
+ 
+ vmlinux-dirs	:= $(patsubst %/,%,$(filter %/, $(init-y) $(init-m) \
+ 		     $(core-y) $(core-m) $(drivers-y) $(drivers-m) \
+diff --git a/arch/Kconfig b/arch/Kconfig
+index 26b0e23..fc64cdf 100644
+--- a/arch/Kconfig
++++ b/arch/Kconfig
+@@ -69,7 +69,7 @@ config HAVE_EFFICIENT_UNALIGNED_ACCESS
+ 	  unable to perform such accesses efficiently (e.g. trap on
+ 	  unaligned access and require fixing it up in the exception
+ 	  handler.)
+-
++          
+ 	  This symbol should be selected by an architecture if it can
+ 	  perform unaligned accesses efficiently to allow different
+ 	  code paths to be selected for these cases. Some network
+diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
+index da34972..98bf19a 100644
+--- a/arch/x86/Kconfig
++++ b/arch/x86/Kconfig
+@@ -2166,3 +2166,5 @@ source "crypto/Kconfig"
+ source "arch/x86/kvm/Kconfig"
+ 
+ source "lib/Kconfig"
++
++source "plan9/Kconfig"
+diff --git a/arch/x86/include/asm/irq_vectors.h b/arch/x86/include/asm/irq_vectors.h
+index 6e976ee..4247720 100644
+--- a/arch/x86/include/asm/irq_vectors.h
++++ b/arch/x86/include/asm/irq_vectors.h
+@@ -50,7 +50,7 @@
+ #ifdef CONFIG_X86_32
+ # define SYSCALL_VECTOR			0x80
+ #endif
+-
++# define PLAN9_SYSCALL_VECTOR           0x40
+ /*
+  * Vectors 0x30-0x3f are used for ISA interrupts.
+  *   round up to the next 16-vector boundary
+diff --git a/arch/x86/kernel/entry_32.S b/arch/x86/kernel/entry_32.S
+index 5c1a9197..1b88899 100644
+--- a/arch/x86/kernel/entry_32.S
++++ b/arch/x86/kernel/entry_32.S
+@@ -490,6 +490,20 @@ sysexit_audit:
+ 	PTGS_TO_GS_EX
+ ENDPROC(ia32_sysenter_target)
+ 
++#ifdef CONFIG_BINFMT_PLAN9
++        # plan 9 system call handler stub
++ENTRY(plan9_system_call)
++	RING0_INT_FRAME
++	pushl %eax
++	CFI_ADJUST_CFA_OFFSET 4
++	SAVE_ALL
++	call *plan9_syscall_table(,%eax,4)
++	movl %eax,PT_EAX(%esp)                # store the return value
++	jmp syscall_exit
++	CFI_ENDPROC
++ENDPROC(plan9_system_call)
++#endif
++
+ /*
+  * syscall stub including irq exit should be protected against kprobes
+  */
+@@ -1215,7 +1229,7 @@ return_to_handler:
+ 
+ .section .rodata,"a"
+ #include "syscall_table_32.S"
+-
++#include "plan9_syscall_table.S"
+ syscall_table_size=(.-sys_call_table)
+ 
+ /*
+diff --git a/arch/x86/kernel/traps.c b/arch/x86/kernel/traps.c
+index b9b6716..8844a3d 100644
+--- a/arch/x86/kernel/traps.c
++++ b/arch/x86/kernel/traps.c
+@@ -67,7 +67,7 @@
+ #include <asm/setup.h>
+ 
+ asmlinkage int system_call(void);
+-
++asmlinkage int plan9_system_call(void);
+ /* Do we ignore FPU interrupts ? */
+ char ignore_fpu_irq;
+ 
+@@ -870,6 +870,10 @@ void __init trap_init(void)
+ #ifdef CONFIG_X86_32
+ 	set_system_trap_gate(SYSCALL_VECTOR, &system_call);
+ 	set_bit(SYSCALL_VECTOR, used_vectors);
++#ifdef CONFIG_BINFMT_PLAN9
++        set_system_trap_gate(PLAN9_SYSCALL_VECTOR, &plan9_system_call);
++	set_bit(PLAN9_SYSCALL_VECTOR, used_vectors);
++#endif
+ #endif
+ 
+ 	/*
+diff --git a/fs/Makefile b/fs/Makefile
+index fb68c2b..d95c4fc 100644
+--- a/fs/Makefile
++++ b/fs/Makefile
+@@ -34,6 +34,8 @@ obj-$(CONFIG_BINFMT_AOUT)	+= binfmt_aout.o
+ obj-$(CONFIG_BINFMT_EM86)	+= binfmt_em86.o
+ obj-$(CONFIG_BINFMT_MISC)	+= binfmt_misc.o
+ 
++obj-$(CONFIG_BINFMT_PLAN9)	+= binfmt_plan9.o
++
+ # binfmt_script is always there
+ obj-y				+= binfmt_script.o
+ 
+diff --git a/plan9/syscalls.c b/plan9/syscalls.c
+index c2ced2d..c0938a1 100644
+--- a/plan9/syscalls.c
++++ b/plan9/syscalls.c
+@@ -11,7 +11,8 @@
+ #include <linux/string.h>
+ #include <linux/fsnotify.h>
+ #include <linux/syscalls.h>
+-
++#include <linux/namei.h>
++#include <../fs/internal.h>
+ #include <asm/current.h>
+ #include <asm/uaccess.h>
+ #include <asm/syscalls.h>
+@@ -114,7 +115,7 @@ asmlinkage long sys_plan9_open(struct pt_regs regs)
+ 	if (!IS_ERR(path)) {
+ 		fd = get_unused_fd();
+ 		if (fd >= 0) {
+-			f = do_filp_open(AT_FDCWD, path, (int)NULL, omode, (int)NULL);
++			f = do_filp_open(AT_FDCWD, path, omode, (int)NULL);
+ 			if (IS_ERR(f)) {
+ 				put_unused_fd(fd);
+ 				fd = PTR_ERR(f);
+@@ -359,7 +360,7 @@ asmlinkage long sys_plan9_rfork(struct pt_regs regs)
+ 		}
+ 
+ 		regs.bx = clone_flags;
+-		ret = sys_clone(&regs);
++		ret = sys_clone(NULL, NULL, NULL, NULL, &regs);
+ 
+ 		if (flags & RFCNAMEG) {
+ 			printk(KERN_INFO "rfork with RFCNAMEG called, unsharing!\n");

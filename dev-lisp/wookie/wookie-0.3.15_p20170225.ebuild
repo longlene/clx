@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/babel
 	dev-lisp/chunga
 	dev-lisp/fast-http
-	dev-lisp/qrui
+	dev-lisp/quri
 	dev-lisp/do-urlencode
 	dev-lisp/cl-fad
 	dev-lisp/fast-io
