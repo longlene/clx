@@ -5,32 +5,38 @@ EAPI=6
 
 inherit cmake-utils lua vcs-snapshot
 
-EGIT_COMMIT="014d529f20768fc324a8eaee26de4d7bfcd8e5c1"
+EGIT_COMMIT="83a5f17e9f4fa469a3e910d0ec75833239d7ffdf"
 
-DESCRIPTION="Torch module for neural networks."
-HOMEPAGE="https://github.com/torch/nn"
-SRC_URI="https://github.com/torch/nn/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="A recurrent neural network library for Torch"
+HOMEPAGE="https://github.com/torch/rnn"
+SRC_URI="https://github.com/torch/rnn/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="opencl cuda"
 
 DEPEND="
-	>=dev-lang/lua-5.1:=
-	dev-lang/luajit:2
+	dev-lua/moses
 	sci-libs/torch7
+	sci-libs/torch-nn
+	sci-libs/torchx
+	cuda? (
+		sci-libs/torch-cutorch
+		sci-libs/torch-cunn
+	)
 "
 RDEPEND="${DEPEND}"
 
 src_configure() {
+	use cuda && CUDA=YES
 	local mycmakeargs=(
 		"-DLUADIR=$(lua_get_sharedir)"
 		"-DLIBDIR=$(lua_get_libdir)"
 		"-DLUA_BINDIR=/usr/bin"
 		"-DLUA_INCDIR=/usr/include"
 		"-DLUA_LIBDIR=/usr/$(get_libdir)"
-		"-DLUALIB=/usr/lib/libluajit-5.1.so"
+		"-DLUALIB=/usr/$(get_libdir)/libluajit-5.1.so"
 		"-DLUA=/usr/bin/luajit"
 	)
 
@@ -39,8 +45,7 @@ src_configure() {
 
 src_install() {
 	cmake-utils_src_install
-	dodir $(lua_get_libdir) $(lua_get_sharedir)
-	mv "${D}"/usr/lib/* "${D}"/$(lua_get_libdir)
+	dodir $(lua_get_sharedir)
 	mv "${D}"/usr/lua/* "${D}"/$(lua_get_sharedir)
 	rm -rf "${D}"/usr/lua
 }

@@ -5,7 +5,7 @@ EAPI=6
 
 inherit cmake-utils lua vcs-snapshot
 
-EGIT_COMMIT="75a86469aa9e2f5f04e11895b269ec22eb0e4687"
+EGIT_COMMIT="89ede3ba90c906a8ec6b9a0f4bef188ba5bb2fd8"
 
 DESCRIPTION="Torch is a Lua-based suite for scientific computations based on multidimensional tensors."
 HOMEPAGE="https://github.com/torch/torch7"

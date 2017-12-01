@@ -1,16 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit cmake-utils lua vcs-snapshot
 
-EGIT_COMMIT="fc214c0292f014d71312b1bbb3c54a75e0cda3b6"
+EGIT_COMMIT="a5ceed7c21a56d32a36706823e8436741b230d1c"
 
-DESCRIPTION="Torch module for image processing."
-HOMEPAGE="https://github.com/torch/image"
-SRC_URI="https://github.com/torch/image/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Torch module for optimisations."
+HOMEPAGE="https://github.com/torch/optim"
+SRC_URI="https://github.com/torch/optim/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -40,8 +39,7 @@ src_configure() {
 
 src_install() {
 	cmake-utils_src_install
-	dodir $(lua_get_libdir) $(lua_get_sharedir)
-	mv "${D}"/usr/lib/* "${D}"/$(lua_get_libdir)
+	dodir $(lua_get_sharedir)
 	mv "${D}"/usr/lua/* "${D}"/$(lua_get_sharedir)
 	rm -rf "${D}"/usr/lua
 }

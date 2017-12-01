@@ -5,11 +5,11 @@ EAPI=6
 
 inherit cmake-utils lua vcs-snapshot
 
-EGIT_COMMIT="14cedef2d03dcbdd95e49be935c7368ed3d475c5"
+EGIT_COMMIT="8da729a67fcf17c62ede697e77a82c70b7f5fd00"
 
-DESCRIPTION="Torch module for neural networks."
-HOMEPAGE="https://github.com/torch/nn"
-SRC_URI="https://github.com/torch/nn/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="A collection of Torch dataset loaders"
+HOMEPAGE="https://github.com/Element-Research/dataload"
+SRC_URI="https://github.com/Element-Research/dataload/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -19,7 +19,14 @@ IUSE=""
 DEPEND="
 	>=dev-lang/lua-5.1:=
 	dev-lang/luajit:2
+	dev-lua/luafilesystem
+	dev-lua/moses
 	sci-libs/torch7
+	sci-libs/torch-sys
+	dev-lua/torch-paths
+	sci-libs/torchx
+	sci-libs/torch-xlua
+	sci-libs/torch-image
 "
 RDEPEND="${DEPEND}"
 
@@ -30,7 +37,7 @@ src_configure() {
 		"-DLUA_BINDIR=/usr/bin"
 		"-DLUA_INCDIR=/usr/include"
 		"-DLUA_LIBDIR=/usr/$(get_libdir)"
-		"-DLUALIB=/usr/lib/libluajit-5.1.so"
+		"-DLUALIB=/usr/$(get_libdir)/libluajit-5.1.so"
 		"-DLUA=/usr/bin/luajit"
 	)
 
@@ -39,8 +46,7 @@ src_configure() {
 
 src_install() {
 	cmake-utils_src_install
-	dodir $(lua_get_libdir) $(lua_get_sharedir)
-	mv "${D}"/usr/lib/* "${D}"/$(lua_get_libdir)
+	dodir $(lua_get_sharedir)
 	mv "${D}"/usr/lua/* "${D}"/$(lua_get_sharedir)
 	rm -rf "${D}"/usr/lua
 }

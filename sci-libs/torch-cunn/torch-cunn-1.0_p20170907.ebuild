@@ -1,14 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit git-r3 cmake-utils
+inherit cmake-utils vcs-snapshot
+
+EGIT_COMMIT="1ae6aa08bd062bb609d126ca7a2d8f5411797b8c"
 
 DESCRIPTION="Torch module for CUDA Neural Networks."
 HOMEPAGE="https://github.com/torch/cunn"
-EGIT_REPO_URI="https://github.com/torch/cunn.git"
+SRC_URI="https://github.com/torch/cunn/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD3"
 SLOT="0"
