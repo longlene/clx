@@ -1,26 +1,21 @@
-diff -Nurwp io-9999-orig/addons/CMakeLists.txt io-9999-new/addons/CMakeLists.txt
---- io-9999-orig/addons/CMakeLists.txt	2012-10-21 13:17:10.924234976 +0800
-+++ io-9999-new/addons/CMakeLists.txt	2013-01-17 20:40:21.814553557 +0800
-@@ -52,71 +52,135 @@ add_subdirectory(BigNum)
- add_subdirectory(Bitly)
+diff -Nurwp io-2017.09.06.orig/addons/CMakeLists.txt io-2017.09.06/addons/CMakeLists.txt
+--- io-2017.09.06.orig/addons/CMakeLists.txt	2017-08-12 02:47:18.000000000 +0800
++++ io-2017.09.06/addons/CMakeLists.txt	2017-12-01 11:08:20.009899646 +0800
+@@ -53,70 +53,132 @@ add_subdirectory(Bitly)
  add_subdirectory(Blowfish)
  add_subdirectory(Box)
--#add_subdirectory(CFFI)
-+if(ENABLE_CFFI)
-+add_subdirectory(CFFI)
-+endif(ENABLE_CFFI)
+ #add_subdirectory(CFFI)
 +if(ENABLE_CGI)
  add_subdirectory(CGI)
--#add_subdirectory(Cairo) # XXX: Broken on OSX: ld: library not found for -lpng12
 +endif(ENABLE_CGI)
 +if(ENABLE_CAIRO)
-+add_subdirectory(Cairo) # XXX: Broken on OSX: ld: library not found for -lpng12
+ add_subdirectory(Cairo) # XXX: Broken on OSX: ld: library not found for -lpng12
 +endif(ENABLE_CAIRO)
 +if(ENABLE_CLUTTER)
  add_subdirectory(Clutter)
 +endif(ENABLE_CLUTTER)
  add_subdirectory(ContinuedFraction)
- #add_subdirectory(Curses)
+ add_subdirectory(Curses)
 +if(ENABLE_DBI)
  add_subdirectory(DBI)
 +endif(ENABLE_DBI)
@@ -49,9 +44,9 @@ diff -Nurwp io-9999-orig/addons/CMakeLists.txt io-9999-new/addons/CMakeLists.txt
 +if(ENABLE_LZO)
  add_subdirectory(LZO)
 +endif(ENABLE_LZO)
-+if(LIBSNDFILE)
++if(ENABLE_LIBSNDFILE)
  add_subdirectory(LibSndFile)
-+endif(LIBSNDFILE)
++endif(ENABLE_LIBSNDFILE)
 +if(ENABLE_LIBXML2)
  add_subdirectory(Libxml2)
 +endif(ENABLE_LIBXML2)
@@ -59,17 +54,17 @@ diff -Nurwp io-9999-orig/addons/CMakeLists.txt io-9999-new/addons/CMakeLists.txt
 +if(ENABLE_LOUDMOUTH)
  add_subdirectory(Loudmouth)
 +endif(ENABLE_LOUDMOUTH)
-+if(ENABLE_MD5SUM)
++if(ENABLE_MD5)
  add_subdirectory(MD5)
-+endif(ENABLE_MD5SUM)
- add_subdirectory(Memcached)
++endif(ENABLE_MD5)
+ #add_subdirectory(Memcached)
 +if(ENABLE_MYSQL)
  add_subdirectory(MySQL)
 +endif(ENABLE_MYSQL)
  #add_subdirectory(NetworkAdapter)
  add_subdirectory(NotificationCenter)
  #add_subdirectory(Oauth) # OAuth should no longer break CMake configuration on Windows now.
- #add_subdirectory(ODE) # XXX: Can't meet dependencies
+ add_subdirectory(ODE) # XXX: Can't meet dependencies
  add_subdirectory(ObjcBridge) # XXX: Broken for me -- Objective-C 2.0 not supported
  add_subdirectory(Obsidian)
 +if(ENABLE_OGG)
@@ -79,9 +74,9 @@ diff -Nurwp io-9999-orig/addons/CMakeLists.txt io-9999-new/addons/CMakeLists.txt
  add_subdirectory(OpenGL)
 +endif(ENABLE_OPENGL)
  #add_subdirectory(PortAudio) # XXX: Dependency broken for me
-+if(ENABLE_POSTRESQL)
++if(ENABLE_POSTGRES)
  add_subdirectory(PostgreSQL)
-+endif(ENABLE_POSTRESQL)
++endif(ENABLE_POSTGRES)
  #add_subdirectory(Postgres)
 +if(ENABLE_PYTHON)
  add_subdirectory(Python)
@@ -101,9 +96,9 @@ diff -Nurwp io-9999-orig/addons/CMakeLists.txt io-9999-new/addons/CMakeLists.txt
  add_subdirectory(SHA1)
 +endif(ENABLE_SHA1)
  #add_subdirectory(SQLite) # XXX: Want to delete in favour of SQLite3
-+if(ENABLE_SQLITE3)
++if(ENABLE_SQLITE)
  add_subdirectory(SQLite3)
-+endif(ENABLE_SQLITE3)
++endif(ENABLE_SQLITE)
  #add_subdirectory(SampleRateConverter)
  add_subdirectory(SecureSocket)
  #add_subdirectory(SkipDB) # XXX: Disabled...why?
@@ -139,24 +134,14 @@ diff -Nurwp io-9999-orig/addons/CMakeLists.txt io-9999-new/addons/CMakeLists.txt
 +if(ENABLE_ZLIB)
  add_subdirectory(Zlib)
 +endif(ENABLE_ZLIB)
-diff -Nurwp io-9999-orig/libs/basekit/CMakeLists.txt io-9999-new/libs/basekit/CMakeLists.txt
---- io-9999-orig/libs/basekit/CMakeLists.txt	2012-10-21 13:17:11.551227751 +0800
-+++ io-9999-new/libs/basekit/CMakeLists.txt	2013-01-17 20:06:22.026054422 +0800
-@@ -32,3 +32,6 @@ target_link_libraries(basekit ${BASEKIT_
- # The following add the install target, so we put libbasekit.* in our
- # install prefix.
- install(TARGETS basekit DESTINATION lib)
-+
-+#Link basekit library against libdl (required by as-needed linking).
-+target_link_libraries(basekit dl)
-diff -Nurwp io-9999-orig/libs/coroutine/source/asm.S io-9999-new/libs/coroutine/source/asm.S
---- io-9999-orig/libs/coroutine/source/asm.S	2012-10-21 13:17:11.563227612 +0800
-+++ io-9999-new/libs/coroutine/source/asm.S	2013-01-17 20:08:51.853181326 +0800
+diff -Nurwp io-2017.09.06.orig/libs/coroutine/source/asm.S io-2017.09.06/libs/coroutine/source/asm.S
+--- io-2017.09.06.orig/libs/coroutine/source/asm.S	2017-08-12 02:47:18.000000000 +0800
++++ io-2017.09.06/libs/coroutine/source/asm.S	2017-12-01 11:10:40.409897355 +0800
 @@ -258,3 +258,7 @@ SET:
  	ldr	r0, [r0]
  	mov	pc, lr
  #endif
 +
 +#if defined(__linux__) && defined(__ELF__)
-+        .section .note.GNU-stack,"",%progbits
++    .section .note.GNU-stack,"",%progbits
 +#endif
