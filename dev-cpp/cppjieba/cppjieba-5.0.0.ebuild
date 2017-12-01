@@ -1,6 +1,5 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -19,5 +18,7 @@ RDEPEND="${DEPEND}"
 src_install() {
 	insinto /usr
 	doins -r include
-	dodoc -r dict test README.md
+	insinto /usr/share/jieba/dict
+	doins dict/*.utf8
+	dodoc -r README.md
 }
