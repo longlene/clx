@@ -16,14 +16,4 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}
-	dev-python/mpyq
-	dev-python/six
-	dev-python/absl-py
-	dev-python/numpy
-	dev-python/portpicker
-	dev-python/protobuf
-	dev-python/pygame
-	dev-python/s2client-proto
-	dev-python/websocket-client
-"
+RDEPEND="${DEPEND}"
