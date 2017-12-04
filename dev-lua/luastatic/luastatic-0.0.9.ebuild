@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit lua vcs-snapshot
-
-EGIT_COMMIT="9d376ade2275684b34862233c504a06e7391767b"
+inherit lua
 
 DESCRIPTION="Build a standalone executable from a Lua program"
 HOMEPAGE="https://github.com/ers35/luastatic"
-SRC_URI="https://github.com/ers35/luastatic/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/ers35/luastatic/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
