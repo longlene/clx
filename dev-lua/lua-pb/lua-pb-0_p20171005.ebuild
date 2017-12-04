@@ -1,26 +1,25 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 
-inherit lua git-2
+inherit lua vcs-snapshot
+
+EGIT_COMMIT="1253c85d7c67dc355ec8d827df74d72c4eee3e3f"
 
 DESCRIPTION="Lua Protocol Buffers"
 HOMEPAGE="https://github.com/Neopallium/lua-pb"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/Neopallium/lua-pb.git"
+SRC_URI="https://github.com/Neopallium/lua-pb/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
 dev-lua/lpeg
-dev-lua/LuaBitOp
+dev-lua/luabitop
 dev-lua/struct
 "
 
