@@ -1,10 +1,11 @@
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="2c2bc76ba76e95adcf897589f4be7dbcb023afaf"
+EGIT_COMMIT="014b635a690a6508679d60c9b719b2d32d039711"
 
 DESCRIPTION="Clang-based FFI wrapper generator"
 HOMEPAGE="https://github.com/rpav/c2ffi"
@@ -16,10 +17,11 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND="
-	>=sys-devel/llvm-3.7.0
+	>=sys-devel/llvm-3.9.0
 "
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	sed '/find_package/{s#3.7#3.9#}' -i CMakeLists.txt
+	eapply_user
+	sed '/find_package/{s#4.0#3.9#}' -i CMakeLists.txt
 }
