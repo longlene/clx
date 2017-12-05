@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="001350f0b39ba72a7b3a9d5d34803bed2503a96b"
+EGIT_COMMIT="e310e8d69a6330fd5ed23db9094e9d44f5f96700"
 
 DESCRIPTION="A Common Lisp implementation of the MessagePack-RPC specification"
 HOMEPAGE="https://github.com/adolenc/cl-messagepack-rpc"
@@ -23,6 +23,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-libuv
 	dev-lisp/cffi
 	dev-lisp/flexi-streams
+	dev-lisp/trivial-backtrace
 	dev-lisp/alexandria
 	test? ( dev-lisp/fiveam )
 "

@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="dd33e38bb37dd2a03e4a3454e1bb3ff394e0d313"
+EGIT_COMMIT="ebefd97280dc176914026054e4bf73c026f59fd9"
 
 DESCRIPTION="Generate modern project skeletons"
 HOMEPAGE="https://github.com/fukamachi/cl-project"
@@ -26,6 +26,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -r ${PN}-test.asd t
 }
 
