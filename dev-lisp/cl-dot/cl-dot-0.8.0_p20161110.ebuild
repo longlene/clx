@@ -1,22 +1,24 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=6
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="10494fafd5f0aabcffd4d6b726517805b6ac2548"
 
 DESCRIPTION="Common Lisp package for generating graphviz (dot) files"
 HOMEPAGE="https://github.com/michaelw/cl-dot"
-SRC_URI="https://github.com/michaelw/cl-dot/archive/cl-dot-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/michaelw/cl-dot/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	# remove the annoy static file dependency
-	sed -i -e '17,25s/^/;/' -e '$a))' ${PN}.asd
+	eapply_user
+	sed -i '/static-file/d' ${PN}.asd
 }
