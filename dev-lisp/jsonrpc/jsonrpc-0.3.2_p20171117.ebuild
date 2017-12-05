@@ -10,7 +10,7 @@ if [[ ${PV} = *9999* ]] ; then
 	EGIT_REPO_URI="https://github.com/fukamachi/jsonrpc.git"
 else
 	inherit vcs-snapshot
-	EGIT_COMMIT="9177a3002ef4d91c480d52143e4de6e616313a64"
+	EGIT_COMMIT="248ae8c5223ed49de03838b7b84ceefad14d3e94"
 	SRC_URI="https://github.com/fukamachi/jsonrpc/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 fi
 
@@ -21,7 +21,7 @@ HOMEPAGE="https://github.com/fukamachi/jsonrpc"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -33,3 +33,10 @@ RDEPEND="${DEPEND}
 	dev-lisp/uiop
 "
 
+src_prepare() {
+	eapply_user
+	if ! use test ; then
+		sed -i '/defsystem "jsonrpc/tests"/,$d' ${PN}.asd
+		rm -r tests
+	fi
+}
