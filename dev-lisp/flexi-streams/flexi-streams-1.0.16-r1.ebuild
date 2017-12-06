@@ -1,8 +1,7 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="4"
+EAPI=6
 
 inherit common-lisp-3
 
@@ -14,16 +13,15 @@ SRC_URI="https://github.com/edicl/flexi-streams/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+IUSE="test"
 
-RDEPEND="!dev-lisp/cl-${PN}
-		>=dev-lisp/trivial-gray-streams-20060925"
+RDEPEND="
+	>=dev-lisp/trivial-gray-streams-20060925"
 
-src_install() {
-	common-lisp-install *.{lisp,asd}
-	common-lisp-symlink-asdf
-	dodoc CHANGELOG
-	dohtml doc/index.html
-	insinto /usr/share/doc/${P}/html
-	doins doc/foo.txt
+src_prepare() {
+	eapply_user
+	if ! use test ; then
+		sed -i '/defsystem :flexi-streams-test/,$d' ${PN}.asd
+		rm -r test
+	fi
 }

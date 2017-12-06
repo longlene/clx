@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
@@ -13,7 +13,7 @@ SRC_URI="https://github.com/tpapp/lla/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.
 LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -25,5 +25,13 @@ RDEPEND="${DEPEND}
 	dev-lisp/let-plus
 	virtual/blas
 	virtual/lapack
+	test? ( dev-lisp/clunit )
 "
 
+src_prepare() {
+	eapply_user
+	if ! use test ; then
+		sed -i '/defsystem lla-tests/,$d' ${PN}.asd
+		rm -r tests
+	fi
+}

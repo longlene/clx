@@ -1,8 +1,7 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
@@ -33,5 +32,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
+	sed -i 's#/usr/local/cuda/include#/opt/cuda/include#' ${PN}.asd
 	use test || rm -rf ${PN}-test.asd test
 }
