@@ -5,9 +5,9 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="da575f2f747ba87334db868dea2da5ee4f5b8dc3"
+EGIT_COMMIT="f696263e247515bd34b04dbd2eec92a42f1cc51d"
 
-DESCRIPTION="Cl-cuda is a library to use NVIDIA CUDA in Common Lisp programs"
+DESCRIPTION="cl-cuda is a library to use NVIDIA CUDA in Common Lisp programs"
 HOMEPAGE="https://github.com/takagi/cl-cuda"
 SRC_URI="https://github.com/takagi/cl-cuda/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -36,7 +36,10 @@ RDEPEND="${DEPEND}
 src_prepare() {
 	eapply_user
 	use test || rm -rf ${PN}-test.asd ${PN}-interop-test.asd t
-	use example || rm -rf ${PN}-examples.asd ${PN}-interop-example.asd examples
+	use example || rm -rf ${PN}-examples.asd ${PN}-interop-examples.asd examples
+	sed -e '/grovel-file/{s#"type-grovel"#"type-grovel" :cc-flags ("-I" "/opt/cuda/include")#}' \
+		-e "/defclass cuda-grovel-file/r ${FILESDIR}/patch.lisp" \
+		-i ${PN}.asd
 }
 
 src_install() {

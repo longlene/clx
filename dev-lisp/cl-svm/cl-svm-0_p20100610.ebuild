@@ -1,16 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="8294d61baadb06c39faaa3414b20dc9267f41468"
 
 DESCRIPTION="Scalar Vector Machine implementation in pure Common Lisp"
 HOMEPAGE="https://github.com/gonzojive/cl-svm"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/gonzojive/cl-svm.git"
+SRC_URI="https://github.com/gonzojive/cl-svm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

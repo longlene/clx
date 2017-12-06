@@ -13,12 +13,20 @@ SRC_URI="https://github.com/tpapp/cl-slice/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/anaphora
 	dev-lisp/let-plus
+	test? ( dev-lisp/clunit )
 "
 
+src_prepare() {
+	eapply_user
+	if ! use test; then
+		sed -i '/defsystem #:cl-slice-tests/,$d' ${PN}.asd
+		rm cl-slice-tests.lisp
+	fi
+}

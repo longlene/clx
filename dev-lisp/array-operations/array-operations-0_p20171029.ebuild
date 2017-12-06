@@ -5,16 +5,16 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7408f6c69a5218e608558c17751d2f8a53979a3c"
+EGIT_COMMIT="d5c21558d1b160558d8cb26d8d6c5e993fb41b31"
 
 DESCRIPTION="Common Lisp library that facilitates working with Common Lisp arrays"
 HOMEPAGE="https://github.com/tpapp/array-operations"
 SRC_URI="https://github.com/tpapp/array-operations/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Boost-1.0"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -22,5 +22,13 @@ RDEPEND="${DEPEND}
 	dev-lisp/anaphora
 	dev-lisp/let-plus
 	dev-lisp/optima
-	dev-lisp/clunit
+	test? ( dev-lisp/clunit )
 "
+
+src_prepare() {
+	eapply_user
+	if ! use test ; then
+		sed -i '/defsystem #:array-operations-tests/,$d' ${PN}.asd
+		rm -r tests
+	fi
+}

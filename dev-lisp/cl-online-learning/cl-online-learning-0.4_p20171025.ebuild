@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4f4281e4d62e3a617746f47af88e4655032564a7"
+EGIT_COMMIT="99fa888e629012a79903f785b6858ceaab89297c"
 
 DESCRIPTION="A collection of online learning algorithms for Linear classification written in pure Common Lisp"
 HOMEPAGE="https://github.com/masatoi/cl-online-learning"
