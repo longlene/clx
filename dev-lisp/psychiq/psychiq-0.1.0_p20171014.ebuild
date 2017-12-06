@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="afefdffa5aafd650af79ebac0249497b3d2b84b4"
+EGIT_COMMIT="c871e0db1c7dd7484c8f31af553c68bda88a04b6"
 
 DESCRIPTION="Background job processing for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/psychiq"

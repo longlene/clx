@@ -1,12 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a38a59f3bfeaf56615229963d0fc64e780053a82"
+EGIT_COMMIT="855258d5efebeeb33bfcd144bf49b4ba72e5de89"
 
 DESCRIPTION="S-expression to OpenCL C"
 HOMEPAGE="https://github.com/gos-k/oclcl"
@@ -28,9 +27,12 @@ RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 	dev-lisp/cl-reexport
 	dev-lisp/cl-ppcre
+	dev-lisp/lisp-namespace
+	test? ( dev-lisp/prove )
 "
 
 src_prepare() {
+	eapply_user
 	use example || rm -r examples ${PN}-examples.asd
 	use test || rm -r t ${PN}-test.asd
 }

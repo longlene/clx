@@ -14,7 +14,7 @@ SRC_URI="https://github.com/longlene/protobuf/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
+IUSE="example test"
 
 DEPEND="
 	dev-libs/protobuf
@@ -30,6 +30,7 @@ RDEPEND="${DEPEND}
 src_prepare() {
 	eapply_user
 	sed -i 's#c++0x#c++11#' protoc/lisp/Makefile || die
+	use example || rm -r example
 	use test || rm -r varint/varint-test.asd varint/varint_test.lisp protoc/protoc-test.asd protoc/protoc_test.lisp ${PN}-test.asd *-test.lisp
 }
 
