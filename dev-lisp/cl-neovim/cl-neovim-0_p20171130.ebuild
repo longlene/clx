@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/babel
 	dev-lisp/split-sequence
 	dev-lisp/form-fiddle
-	dev-lisp/cl-messsagepack-rpc
+	dev-lisp/cl-messagepack-rpc
 	dev-lisp/vom
 	test? ( dev-lisp/fiveam )
 "
