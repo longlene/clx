@@ -5,7 +5,7 @@ EAPI=6
 
 inherit user vcs-snapshot
 
-EGIT_COMMIT="8ac69726121831dedd0d8c7bad9b0829a13760e7"
+EGIT_COMMIT="21055550f3392235a1b41d71257e9dc9ead0dfa0"
 
 DESCRIPTION="A Layer Two Peer-to-Peer VPN"
 HOMEPAGE="http://www.ntop.org/n2n/"
