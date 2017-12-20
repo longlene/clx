@@ -1,9 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI=6
 
-inherit eutils java-utils-2 user
+inherit eutils java-vm-2 user
 
 MY_PN="hadoop"
 MY_P="${MY_PN}-${PV}"
@@ -19,7 +19,7 @@ IUSE="doc"
 
 DEPEND=""
 RDEPEND="
-	virtual/jre
+	>=virtual/jre-1.8.0
 	net-misc/openssh
 	net-misc/rsync
 "
@@ -66,7 +66,8 @@ src_install() {
 	if [ $replication -eq 0 ]; then
 		if [ $sandbox -ne 0 ]; then
 			replication=1
-		else replication=3
+		else
+			replication=3
 		fi
 	fi
 	javaheap=1024
@@ -75,17 +76,19 @@ src_install() {
 	# The hadoop-env.sh file
 	cat >tmpfile<<EOF
 # Add by Portage
-export JAVA_HOME=$(java-config -g JAVA_HOME)
+export JAVA_HOME=${JAVA_VM_SYSTEM}
 export HADOOP_PID_DIR=/var/run/hadoop
 export HADOOP_LOG_DIR=/var/log/hadoop
 export HADOOP_HEAPSIZE=$javaheap
+export HADOOP_COMMON_LIB_NATIVE_DIR="\$HADOOP_HOME/lib/native"
+export HADOOP_OPTS="-Djava.library.path=\$HADOOP_HOME/lib:\$HADOOP_COMMON_LIB_NATIVE_DIR"
 EOF
 	sed -i '/# Set Hadoop-specific/r tmpfile' etc/hadoop/hadoop-env.sh || die
 
 	# The yarn-env.sh file
 	cat >tmpfile<<EOF
 # Added by Portage
-export JAVA_HOME=$(java-config -g JAVA_HOME)
+export JAVA_HOME=${JAVA_VM_SYSTEM}
 export YARN_CONF_DIR=/etc/hadoop
 export YARN_LOG_DIR=/var/log/hadoop
 export YARN_PID_DIR=/var/run/hadoop
@@ -96,7 +99,7 @@ EOF
 	# The mapred-env.sh file
 	cat >tmpfile<<-EOF
 # Added by Portage
-export JAVA_HOME=$(java-config -g JAVA_HOME)
+export JAVA_HOME=${JAVA_VM_SYSTEM}
 export HADOOP_MAPRED_LOG_DIR=/var/log/hadoop
 export HADOOP_MAPRED_PID_DIR=/var/run/hadoop
 export HADOOP_JOB_HISTORYSERVER_HEAPSIZE=$javaheap
@@ -226,6 +229,7 @@ EOF
 		HADOOP_HOME="${INSTALL_DIR}"
 		HADOOP_YARN_HOME="${INSTALL_DIR}"
 		HADOOP_MAPRED_HOME="${INSTALL_DIR}"
+		HADOOP_CONF_DIR="${INSTALL_DIR}/etc/hadoop"
 		PATH="${INSTALL_DIR}/bin"
 		CONFIG_PROTECT="${INSTALL_DIR}/etc/hadoop"
 	EOF
@@ -237,9 +241,7 @@ EOF
 	# init scripts
 	for h in "hadoop" "mapred" "yarn"
 	do
-		cp "${FILESDIR}"/${h}.initd .
-		sed -e "/HADOOP_PREFIX/{s#hadoop-VERSION#hadoop-${PV}#}" -i ${h}.initd
-		newinitd ${h}.initd ${h}.init
+		newinitd "${FILESDIR}"/${h}.initd ${h}.init
 	done
 
 	# hdfs

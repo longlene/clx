@@ -3,7 +3,7 @@
 
 EAPI="6"
 
-inherit eutils java-utils-2 user
+inherit eutils java-vm-2 user
 
 MY_PN="hadoop"
 MY_P="${MY_PN}-${PV}"
@@ -75,7 +75,7 @@ src_install() {
 	# The hadoop-env.sh file
 	cat >tmpfile<<EOF
 # Add by Portage
-export JAVA_HOME=$(java-config -g JAVA_HOME)
+export JAVA_HOME=${JAVA_VM_SYSTEM}
 export HADOOP_PID_DIR=/var/run/hadoop
 export HADOOP_LOG_DIR=/var/log/hadoop
 export HADOOP_HEAPSIZE=$javaheap
@@ -85,7 +85,7 @@ EOF
 	# The yarn-env.sh file
 	cat >tmpfile<<EOF
 # Added by Portage
-export JAVA_HOME=$(java-config -g JAVA_HOME)
+export JAVA_HOME=${JAVA_VM_SYSTEM}
 export YARN_CONF_DIR=/etc/hadoop
 export YARN_LOG_DIR=/var/log/hadoop
 export YARN_PID_DIR=/var/run/hadoop
@@ -96,7 +96,7 @@ EOF
 	# The mapred-env.sh file
 	cat >tmpfile<<-EOF
 # Added by Portage
-export JAVA_HOME=$(java-config -g JAVA_HOME)
+export JAVA_HOME=${JAVA_VM_SYSTEM}
 export HADOOP_MAPRED_LOG_DIR=/var/log/hadoop
 export HADOOP_MAPRED_PID_DIR=/var/run/hadoop
 export HADOOP_JOB_HISTORYSERVER_HEAPSIZE=$javaheap
@@ -228,6 +228,7 @@ EOF
 		HADOOP_MAPRED_HOME="${INSTALL_DIR}"
 		PATH="${INSTALL_DIR}/bin"
 		CONFIG_PROTECT="${INSTALL_DIR}/etc/hadoop"
+		HADOOP_COMMON_LIB_NATIVE_DIR="${INSTALL_DIR}/lib/native"
 	EOF
 	doenvd 99hadoop
 
