@@ -61,7 +61,7 @@ format() {
 	if [ "${DAEMON}" == "namenode" ]; then
 		ebegin "Formatting Apache Hadoop ${DAEMON}"
 		init_env_vars
-		su ${DN_USER} --preserve-environment -- ${HADOOP_PREFIX}/bin/hdfs --config ${HADOOP_CONF_DIR} namenode -format
+		su ${DN_USER} --preserve-environment -- ${HADOOP_HOME}/bin/hdfs --config ${HADOOP_CONF_DIR} namenode -format
 	else
 		eerror "The format command is only available for the namenode daemon"
 		eend 1

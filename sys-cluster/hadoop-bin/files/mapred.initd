@@ -17,8 +17,6 @@ chk_initd() {
 }
 
 init_env_vars() {
-	export HADOOP_PREFIX="/opt/hadoop-2.7.3"
-
 	# source hadoop-env.sh
 	if test -f /etc/hadoop/hadoop-env.sh; then
 		. /etc/hadoop/hadoop-env.sh
@@ -40,7 +38,7 @@ start() {
 	init_env_vars
 	start-stop-daemon --start --quiet \
 		--pidfile ${HADOOP_MAPRED_PID_DIR}/mapred-${IDENT_USER}-${DAEMON}.pid \
-		-u ${DN_USER} -x ${HADOOP_PREFIX}/bin/mapred -- \
+		-u ${DN_USER} -x ${HADOOP_HOME}/bin/mapred -- \
 		--config ${HADOOP_CONF_DIR} start ${DAEMON}
 	eend $?
 }

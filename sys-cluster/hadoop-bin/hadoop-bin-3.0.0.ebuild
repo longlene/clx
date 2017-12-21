@@ -218,9 +218,12 @@ EOF
 	diropts -m770 -o root -g hadoop
 	dodir /var/log/hadoop
 
+	insinto /etc
+	doins -r etc/hadoop
+	rm -r etc/hadoop
+
 	# install dir
 	dodir "${INSTALL_DIR}"
-	fperms g+w etc/hadoop/*
 	mv "${S}"/* "${D}${INSTALL_DIR}" || die "install failed"
 	fowners -Rf root:hadoop "${INSTALL_DIR}"
 
@@ -236,25 +239,22 @@ EOF
 	doenvd 99hadoop
 
 	# conf symlink
-	dosym ${INSTALL_DIR}/etc/hadoop /etc/hadoop
+	dosym /etc/hadoop ${INSTALL_DIR}/etc/hadoop
 
 	# init scripts
-	for h in "hadoop" "mapred" "yarn"
-	do
+	for h in "hadoop" "mapred" "yarn" ; do
 		newinitd "${FILESDIR}"/${h}.initd ${h}.init
 	done
 
 	# hdfs
-	for i in "namenode" "datanode" "secondarynamenode" "journalnode"
-	do
+	for i in "namenode" "datanode" "secondarynamenode" "journalnode" ; do
 		if [ `egrep -c "^[0-9].*#.*namenode" /etc/hosts` -eq 0 ] || [ `egrep -c "^[0-9].*${hostname}.*#.* ${i}" /etc/hosts` -eq 1 ] ; then
 			dosym  /etc/init.d/hadoop.init /etc/init.d/hadoop-"${i}"
 		fi
 	done
 
 	# yarn
-	for i in "resourcemanager" "nodemanager"
-	do
+	for i in "resourcemanager" "nodemanager" ; do
 		if [ `egrep -c "^[0-9].*#.*namenode" /etc/hosts` -eq 0 ] || [ `egrep -c "^[0-9].*${hostname}.*#.* ${i}" /etc/hosts` -eq 1 ] ; then
 			dosym  /etc/init.d/yarn.init /etc/init.d/yarn-"${i}"
 		fi
