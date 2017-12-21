@@ -9,9 +9,8 @@ depend() {
 init_env_vars() {
 	export HBASE_HOME="/opt/hbase-VERSION"
 
-	# source hadoop-env.sh
-	if test -f ${HBASE_HOME}/conf/hbase-env.sh; then
-		. ${HBASE_HOME}/conf/hbase-env.sh
+	if test -f ${HBASE_HOME}/bin/hbase-config.sh; then
+		. ${HBASE_HOME}/bin/hbase-config.sh
 	fi
 
 	# check for the required paths

@@ -1,9 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit eutils java-utils-2 user
+inherit eutils java-vm-2 user
 
 MY_PN="hbase"
 MY_P=${MY_PN}-${PV}
@@ -40,49 +40,46 @@ src_prepare() {
 }
 
 src_install() {
+	hostname=`uname -n`
 	cat >tmpfile<<EOF
 # Add by Portage
-export JAVA_HOME=$(java-config -g JAVA_HOME)
+export JAVA_HOME=${JAVA_VM_SYSTEM}
 export HBASE_CONF_DIR=/etc/hbase
 export HBASE_PID_DIR=/var/run/hbase
 export HBASE_LOG_DIR=/var/log/hbase
-#export HBASE_MANAGES_ZK=false
+export HBASE_MANAGES_ZK=false
 EOF
 	sed -i '/# Set environment variables/r tmpfile' conf/hbase-env.sh || die
 	cat >tmpfile<<EOF
   <property>
     <name>hbase.rootdir</name>
-    <value>file:///var/lib/hbase</value>
+    <value>hdfs://$hostname:9000/hbase</value>
   </property>
   <property>
-    <name>hbase.zookeeper.property.dataDir</name>
-    <value>/var/lib/hbase/zookeeper</value>
+    <name>hbase.cluster.distributed</name>
+    <value>true</value>
   </property>
 EOF
 	sed -i '/<configuration>/r tmpfile' conf/hbase-site.xml || die
 
 	sed -i '/\$0/cbin="$0"\nwhile [ -L "$bin" ]; do\n\tbin=`readlink -e "$bin"`\ndone\nbin=`dirname "$bin"`' bin/hbase || die
 
+	insinto /etc/hbase
+	doins conf/*
+	mv conf conf-templates
+
 	dodir "${INSTALL_DIR}"
 	mv "${S}"/* "${D}${INSTALL_DIR}" || die "install failed"
 
 	dosym ${INSTALL_DIR}/bin/hbase /usr/bin/hbase
 
-	## env file
-	#cat > 99"${PN}" <<-EOF
-	#	PATH=${INSTALL_DIR}/bin
-	#	CONFIG_PROTECT=${INSTALL_DIR}/conf
-	#EOF
-	#doenvd 99"${PN}"
-
-	 keepdir /var/log/hbase
-	 fowners -R hbase:hadoop /var/log/hbase
-
+	keepdir /var/log/hbase
+	fowners -R hbase:hadoop /var/log/hbase
 
 	cp "${FILESDIR}"/${MY_PN}.initd .
 	sed -e "/HBASE_HOME/{s#hbase-VERSION#hbase-${PV}#}" -i ${MY_PN}.initd
 	newinitd ${MY_PN}.initd hbase
 
-	dosym ${INSTALL_DIR}/conf /etc/hbase
+	dosym /etc/hbase ${INSTALL_DIR}/conf
 }
 
