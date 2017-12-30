@@ -5,7 +5,7 @@ EAPI=6
 
 inherit cmake-utils lua vcs-snapshot
 
-EGIT_COMMIT="cccb5c67fe4a7939a9023853b126224f4aea9290"
+EGIT_COMMIT="1a4441ef09a7e9e1f2a7fbe9a60c60d1b07dc65c"
 
 DESCRIPTION="OpenCV bindings for Torch"
 HOMEPAGE="https://github.com/VisionLabs/torch-opencv"
@@ -24,6 +24,11 @@ DEPEND="
 	cuda? ( >=dev-util/nvidia-cuda-toolkit-7.0 )
 "
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	eapply_user
+	sed -i '/FIND_PACKAGE/{s#3.1#3.3.0#}' CMakeLists.txt
+}
 
 src_configure() {
 	local mycmakeargs=(
