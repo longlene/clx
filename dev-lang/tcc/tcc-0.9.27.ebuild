@@ -1,22 +1,20 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tcc/tcc-0.9.26_pre1.ebuild,v 1.2 2013/04/16 09:35:47 patrick Exp $
 
-EAPI="5"
+EAPI=6
 
 inherit eutils toolchain-funcs
 
-IUSE=""
+IUSE="static-libs"
 DESCRIPTION="A very small C compiler for ix86/amd64"
 HOMEPAGE="http://bellard.org/tcc/"
-SRC_URI="http://dev.gentoo.org/~patrick/${P}.tar.bz2"
+SRC_URI="http://download.savannah.nongnu.org/releases/tinycc/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="app-text/texi2html" # doc generation
-# Both tendra and tinycc install /usr/bin/tcc
 RDEPEND="!dev-lang/tendra"
 
 # Testsuite is broken, relies on gcc to compile
@@ -24,6 +22,7 @@ RDEPEND="!dev-lang/tendra"
 RESTRICT="test"
 
 src_prepare() {
+	eapply_user
 	# Don't strip
 	sed -i -e 's|$(INSTALL) -s|$(INSTALL)|' Makefile || die
 
@@ -42,20 +41,23 @@ src_configure() {
 	local myopts
 	use x86 && myopts="--cpu=x86"
 	use amd64 && myopts="--cpu=x86-64"
-	econf ${myopts} --cc="$(tc-getCC)"
+	if use static-libs ; then
+		econf ${myopts} --cc="$(tc-getCC)"
+	else
+		econf ${myopts} --cc="$(tc-getCC)" --disable-static
+	fi
 }
 
 src_install() {
 	emake \
 		DESTDIR="${D}" \
 		bindir="${D}"/usr/bin \
-		libdir="${D}"/usr/lib \
-		tccdir="${D}"/usr/lib/tcc \
+		libdir="${D}"/usr/$(get_libdir) \
+		tccdir="${D}"/usr/$(get_libdir)/tcc \
 		includedir="${D}"/usr/include \
 		docdir="${D}"/usr/share/doc/${PF} \
 		mandir="${D}"/usr/share/man install || die "make install failed"
-	dodoc Changelog README TODO VERSION
-	dohtml tcc-doc.html
+	dodoc Changelog README TODO VERSION tcc-doc.html
 	exeinto /usr/share/doc/${PF}/examples
 	doexe examples/ex*.c
 }

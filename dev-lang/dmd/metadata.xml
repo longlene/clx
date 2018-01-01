@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer>
+  <email>maintainer-wanted@gentoo.org</email>
+</maintainer>
+
+<use>
+  <flag name="tools">Install optional, precompiled tools (rdmd, obj2asm and dumpobj);
+    leave disabled if you use "dmd-common" from d-overlay</flag>
+</use>
+</pkgmetadata>

@@ -1,0 +1,162 @@
+diff -Nurp a/src/dmd/declaration.c b/src/dmd/declaration.c
+--- a/src/dmd/declaration.c	2012-04-17 12:02:10.231883129 +0200
++++ b/src/dmd/declaration.c	2012-04-17 12:37:45.585187488 +0200
+@@ -1361,11 +1361,17 @@ Lnomatch:
+                                         e->op = TOKblit;
+                                     }
+                                     e->type = t;
+-                                    (*pinit) = new CommaExp(loc, e, (*pinit));
+ 
+-                                    /* Replace __ctmp being constructed with e1
++                                    /* Replace __ctmp being constructed with e1.
++                                     * We need to copy constructor call expression,
++                                     * because it may be used in other place.
+                                      */
+-                                    dve->e1 = e1;
++                                    DotVarExp *dvx = (DotVarExp *)dve->copy();
++                                    dvx->e1 = e1;
++                                    CallExp *cx = (CallExp *)ce->copy();
++                                    cx->e1 = dvx;
++
++                                    (*pinit) = new CommaExp(loc, e, cx);
+                                     (*pinit) = (*pinit)->semantic(sc);
+                                     goto Ldtor;
+                                 }
+diff -Nurp a/src/dmd/opover.c b/src/dmd/opover.c
+--- a/src/dmd/opover.c	2012-04-17 12:02:10.226883191 +0200
++++ b/src/dmd/opover.c	2012-04-17 12:37:45.585187488 +0200
+@@ -354,9 +354,11 @@ Expression *UnaExp::op_overload(Scope *s
+             /* Rewrite op(e1) as:
+              *  op(e1.aliasthis)
+              */
+-            UnaExp *e = (UnaExp *)syntaxCopy();
+-            e->e1 = new DotIdExp(loc, e->e1, ad->aliasthis->ident);
+-            return e->trySemantic(sc);
++            Expression *e1 = new DotIdExp(loc, this->e1, ad->aliasthis->ident);
++            Expression *e = copy();
++            ((UnaExp *)e)->e1 = e1;
++            e = e->trySemantic(sc);
++            return e;
+         }
+ #endif
+     }
+@@ -411,9 +413,11 @@ Expression *ArrayExp::op_overload(Scope
+             /* Rewrite op(e1) as:
+              *  op(e1.aliasthis)
+              */
+-            UnaExp *e = (UnaExp *)syntaxCopy();
+-            e->e1 = new DotIdExp(loc, e->e1, ad->aliasthis->ident);
+-            return e->trySemantic(sc);
++            Expression *e1 = new DotIdExp(loc, this->e1, ad->aliasthis->ident);
++            Expression *e = copy();
++            ((UnaExp *)e)->e1 = e1;
++            e = e->trySemantic(sc);
++            return e;
+         }
+     }
+     return NULL;
+@@ -456,9 +460,11 @@ Expression *CastExp::op_overload(Scope *
+             /* Rewrite op(e1) as:
+              *  op(e1.aliasthis)
+              */
+-            UnaExp *e = (UnaExp *)syntaxCopy();
+-            e->e1 = new DotIdExp(loc, e->e1, ad->aliasthis->ident);
+-            return e->trySemantic(sc);
++            Expression *e1 = new DotIdExp(loc, this->e1, ad->aliasthis->ident);
++            Expression *e = copy();
++            ((UnaExp *)e)->e1 = e1;
++            e = e->trySemantic(sc);
++            return e;
+         }
+     }
+     return NULL;
+@@ -714,9 +720,11 @@ L1:
+         /* Rewrite (e1 op e2) as:
+          *      (e1.aliasthis op e2)
+          */
+-        BinExp *e = (BinExp *)syntaxCopy();
+-        e->e1 = new DotIdExp(loc, e->e1, ad1->aliasthis->ident);
+-        return e->trySemantic(sc);
++        Expression *e1 = new DotIdExp(loc, this->e1, ad1->aliasthis->ident);
++        Expression *e = copy();
++        ((BinExp *)e)->e1 = e1;
++        e = e->trySemantic(sc);
++        return e;
+     }
+ 
+     // Try alias this on second operand
+@@ -729,9 +737,11 @@ L1:
+         /* Rewrite (e1 op e2) as:
+          *      (e1 op e2.aliasthis)
+          */
+-        BinExp *e = (BinExp *)syntaxCopy();
+-        e->e2 = new DotIdExp(loc, e->e2, ad2->aliasthis->ident);
+-        return e->trySemantic(sc);
++        Expression *e2 = new DotIdExp(loc, this->e2, ad2->aliasthis->ident);
++        Expression *e = copy();
++        ((BinExp *)e)->e2 = e2;
++        e = e->trySemantic(sc);
++        return e;
+     }
+ #endif
+     return NULL;
+@@ -883,9 +893,11 @@ Expression *BinExp::compare_overload(Sco
+         /* Rewrite (e1 op e2) as:
+          *      (e1.aliasthis op e2)
+          */
+-        BinExp *e = (BinExp *)syntaxCopy();
+-        e->e1 = new DotIdExp(loc, e->e1, ad1->aliasthis->ident);
+-        return e->trySemantic(sc);
++        Expression *e1 = new DotIdExp(loc, this->e1, ad1->aliasthis->ident);
++        Expression *e = copy();
++        ((BinExp *)e)->e1 = e1;
++        e = e->trySemantic(sc);
++        return e;
+     }
+ 
+     // Try alias this on second operand
+@@ -894,9 +906,11 @@ Expression *BinExp::compare_overload(Sco
+         /* Rewrite (e1 op e2) as:
+          *      (e1 op e2.aliasthis)
+          */
+-        BinExp *e = (BinExp *)syntaxCopy();
+-        e->e2 = new DotIdExp(loc, e->e2, ad2->aliasthis->ident);
+-        return e->trySemantic(sc);
++        Expression *e2 = new DotIdExp(loc, this->e2, ad2->aliasthis->ident);
++        Expression *e = copy();
++        ((BinExp *)e)->e2 = e2;
++        e = e->trySemantic(sc);
++        return e;
+     }
+ 
+     return NULL;
+@@ -1131,9 +1145,11 @@ L1:
+         /* Rewrite (e1 op e2) as:
+          *      (e1.aliasthis op e2)
+          */
+-        BinExp *e = (BinExp *)syntaxCopy();
+-        e->e1 = new DotIdExp(loc, e->e1, ad1->aliasthis->ident);
+-        return e->trySemantic(sc);
++        Expression *e1 = new DotIdExp(loc, this->e1, ad1->aliasthis->ident);
++        Expression *e = copy();
++        ((BinExp *)e)->e1 = e1;
++        e = e->trySemantic(sc);
++        return e;
+     }
+ 
+     // Try alias this on second operand
+@@ -1143,9 +1159,11 @@ L1:
+         /* Rewrite (e1 op e2) as:
+          *      (e1 op e2.aliasthis)
+          */
+-        BinExp *e = (BinExp *)syntaxCopy();
+-        e->e2 = new DotIdExp(loc, e->e2, ad2->aliasthis->ident);
+-        return e->trySemantic(sc);
++        Expression *e2 = new DotIdExp(loc, this->e2, ad2->aliasthis->ident);
++        Expression *e = copy();
++        ((BinExp *)e)->e2 = e2;
++        e = e->trySemantic(sc);
++        return e;
+     }
+ #endif
+     return NULL;
