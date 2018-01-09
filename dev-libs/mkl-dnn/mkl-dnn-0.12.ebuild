@@ -16,3 +16,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	eapply_user
+	sed -i "/install/{s#DESTINATION lib#DESTINATION $(get_libdir)#}" src/CMakeLists.txt
+}
