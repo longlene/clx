@@ -9,15 +9,15 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="CZMQ binding for Ruby"
 HOMEPAGE="https://github.com/paddor/cztop"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/czmq-ffi-gen-0.8.3"
+ruby_add_rdepend ">=dev-ruby/czmq-ffi-gen-0.13.0"
 ruby_add_rdepend ">=dev-ruby/bundler-1.10"
 ruby_add_rdepend ">=dev-ruby/rake-10.0"
 ruby_add_rdepend ">=dev-ruby/rspec-0"

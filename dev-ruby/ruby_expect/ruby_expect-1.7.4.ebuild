@@ -1,7 +1,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-USE_RUBY="ruby21 ruby22 ruby23 ruby24"
+EAPI=6
+USE_RUBY="ruby22 ruby23 ruby24"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="README.md"
@@ -9,12 +9,10 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="A gem for 2D graphics in Ruby"
-HOMEPAGE="https://github.com/blacktm/ruby2d"
+DESCRIPTION="Ruby implementation for send/expect interaction"
+HOMEPAGE="https://github.com/abates/ruby_expect"
 
-LICENSE="MIT"
+LICENSE=""
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
-
-

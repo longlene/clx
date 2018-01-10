@@ -18,7 +18,6 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rake-10.4"
-ruby_add_rdepend ">=dev-ruby/minitest-5.6"
 ruby_add_rdepend ">=dev-ruby/bond-0.5"
 ruby_add_rdepend ">=dev-ruby/multi_json-1.11"
 ruby_add_rdepend ">=dev-ruby/mimemagic-0.3"

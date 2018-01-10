@@ -9,13 +9,11 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Ruby implementation for send/expect interaction"
-HOMEPAGE="https://github.com/abates/ruby_expect"
+DESCRIPTION="Calling Python functions from the Ruby language"
+HOMEPAGE="https://github.com/mrkn/pycall"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
-
-ruby_add_rdepend ">=dev-ruby/minitest-5.3"
 
