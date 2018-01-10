@@ -27,3 +27,7 @@ RDEPEND="${DEPEND}"
 
 CMAKE_USE_DIR="${S}"/cmake
 
+src_prepare() {
+	eapply_user
+	sed -i "s#DESTINATION\ lib#DESTINATION $(get_libdir)#" cmake/Installation.cmake
+}
