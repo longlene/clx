@@ -3,7 +3,7 @@
 
 EAPI=6
 
-DESCRIPTION=""
+DESCRIPTION="File Transfer Library for URLs"
 HOMEPAGE=""
 SRC_URI="https://sources.archlinux.org/other/libfetch/${P}.tar.gz"
 
