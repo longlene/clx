@@ -18,5 +18,3 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/opal-0.10"
-ruby_add_rdepend ">=dev-ruby/rspec-3.5"
-

@@ -24,6 +24,3 @@ ruby_add_rdepend ">=dev-ruby/pry-0"
 ruby_add_rdepend ">=dev-ruby/nio4r-0"
 ruby_add_rdepend ">=dev-ruby/distribution-0"
 ruby_add_rdepend ">=dev-ruby/rjb-0"
-ruby_add_rdepend ">=dev-ruby/bundler-1.6"
-ruby_add_rdepend ">=dev-ruby/rake-0"
-
