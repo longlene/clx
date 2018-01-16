@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+	<pkgmetadata>
+		<maintainer>
+			<email>longlene@gmail.com</email>
+			<name>loong0</name>
+		</maintainer>
+		<longdescription>
+A Ruby gem to parse HTML containing one or more microformats and microformats2 and return a collection of dynamically defined Ruby objects, a Ruby hash or a JSON hash
+		</longdescription>
+	</pkgmetadata>
