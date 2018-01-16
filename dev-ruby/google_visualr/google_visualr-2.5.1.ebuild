@@ -14,10 +14,6 @@ HOMEPAGE="https://github.com/winston/google_visualr"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
-
-ruby_add_rdepend ">=dev-ruby/bundler-1.3.5"
-ruby_add_rdepend ">=dev-ruby/rspec-2.14.1"
-ruby_add_rdepend ">=dev-ruby/rails-3.2"
 

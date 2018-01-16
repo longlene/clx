@@ -16,7 +16,7 @@ HOMEPAGE="http://github.com/cjheath/geoip"
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 

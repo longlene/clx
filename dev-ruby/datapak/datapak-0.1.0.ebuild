@@ -9,8 +9,8 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="feedparser - web feed parser and normalizer (RSS, Atom, JSON Feed, HTML h-entry, etc"
-HOMEPAGE="https://github.com/feedparser/feedparser"
+DESCRIPTION="datapak - yet another library to work with tabular data packages (*"
+HOMEPAGE="https://github.com/textkit/datapak"
 
 LICENSE="Public Domain"
 SLOT="0"
@@ -18,7 +18,8 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/logutils-0.6.1"
-ruby_add_rdepend ">=dev-ruby/textutils-1.0.0"
+ruby_add_rdepend ">=dev-ruby/fetcher-0.4.5"
+ruby_add_rdepend ">=dev-ruby/activerecord-0"
 ruby_add_rdepend ">=dev-ruby/rdoc-4.0"
-ruby_add_rdepend ">=dev-ruby/hoe-3.16"
+ruby_add_rdepend ">=dev-ruby/hoe-3.13"
 

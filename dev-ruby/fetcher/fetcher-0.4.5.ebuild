@@ -14,10 +14,7 @@ HOMEPAGE="https://github.com/rubylibs/fetcher"
 
 LICENSE="Public Domain"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/logutils-0.6"
-ruby_add_rdepend ">=dev-ruby/rdoc-4.0"
-ruby_add_rdepend ">=dev-ruby/hoe-3.13"
-

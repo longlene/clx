@@ -9,16 +9,12 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="This gem wraps the ZeroMQ networking library using the ruby FFI (foreign
-function interface)"
-HOMEPAGE="http://github.com/chuckremes/ffi-rzmq"
+DESCRIPTION="ftpd is a pure Ruby FTP server library"
+HOMEPAGE="http://github.com/wconrad/ftpd"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/ffi-rzmq-core-1.0.1"
-ruby_add_rdepend ">=dev-ruby/rspec-2.14"
-ruby_add_rdepend ">=dev-ruby/rake-0"
-
+ruby_add_rdepend ">=dev-ruby/memoizer-1.0"
