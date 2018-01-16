@@ -14,10 +14,10 @@ HOMEPAGE="https://github.com/evanphx/benchmark-ips"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/minitest-5.8"
+ruby_add_rdepend ">=dev-ruby/minitest-5.9"
 ruby_add_rdepend ">=dev-ruby/rdoc-4.0"
 ruby_add_rdepend ">=dev-ruby/hoe-3.15"
 

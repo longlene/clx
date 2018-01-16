@@ -9,16 +9,14 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Reliable, distributed cron"
-HOMEPAGE="https://www.github.com/nickelser/zhong"
+DESCRIPTION="Daru (Data Analysis in RUby) is a library for analysis, manipulation and visualization
+of data"
+HOMEPAGE="http://github.com/v0dro/daru"
 
-LICENSE="MIT"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/suo-0"
-ruby_add_rdepend ">=dev-ruby/redis-0"
-ruby_add_rdepend ">=dev-ruby/tzinfo-0"
-ruby_add_rdepend ">=dev-ruby/activesupport-0"
-
+ruby_add_rdepend ">=dev-ruby/backports-0"
+ruby_add_rdepend ">=dev-ruby/packable-1.3.9"

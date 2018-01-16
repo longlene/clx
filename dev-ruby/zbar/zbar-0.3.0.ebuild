@@ -9,12 +9,12 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Fast and easy syntax highlighting for selected languages, written in Ruby"
-HOMEPAGE="http://coderay.rubychan.de"
+DESCRIPTION="Ruby bindings for ZBar, a barcode recognition library"
+HOMEPAGE="http://github.com/willglynn/ruby-zbar"
 
-LICENSE="MIT"
+LICENSE=""
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
-
+ruby_add_rdepend ">=dev-ruby/ffi-1.0.0"

@@ -17,8 +17,6 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/bundler-1.5"
-ruby_add_rdepend ">=dev-ruby/rake-0"
 ruby_add_rdepend ">=dev-ruby/google-api-client-0"
 ruby_add_rdepend ">=dev-ruby/rainbow-0"
 ruby_add_rdepend ">=dev-ruby/ruby-progressbar-0"

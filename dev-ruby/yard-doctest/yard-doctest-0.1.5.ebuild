@@ -19,7 +19,3 @@ IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/yard-0"
 ruby_add_rdepend ">=dev-ruby/minitest-0"
-ruby_add_rdepend ">=dev-ruby/bundler-0"
-ruby_add_rdepend ">=dev-ruby/rake-0"
-ruby_add_rdepend ">=dev-ruby/aruba-0"
-

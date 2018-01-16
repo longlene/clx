@@ -9,14 +9,13 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Read text and metadata from files and documents"
-HOMEPAGE="http://erol.github.com/yomu"
+DESCRIPTION="Manage your daily working list in Ruby"
+HOMEPAGE="https://github.com/huynhquancam/worque"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/mime-types-1.23"
-ruby_add_rdepend ">=dev-ruby/json-1.8"
+ruby_add_rdepend "dev-ruby/thor"
 

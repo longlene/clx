@@ -9,12 +9,12 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="A iterations per second enhancement to Benchmark"
-HOMEPAGE="http://github.com/evanphx/benchmark-ips"
+DESCRIPTION="Ruby gem for the jQuery Javascript library Datatables"
+HOMEPAGE="https://github.com/shekharrajak/data_tables"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-
+ruby_add_rdepend "dev-ruby/daru"

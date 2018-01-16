@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Hoe is a rake/rubygems helper for project Rakefiles
+  Daru-IO is a plugin-gem to Daru gem, which stands for Data Analysis in RUby
 		</longdescription>
 	</pkgmetadata>

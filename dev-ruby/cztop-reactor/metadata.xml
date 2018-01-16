@@ -6,6 +6,7 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Zabby is a Zabby API and CLI
+This is an implementation of the Reactor pattern described in [Pattern-Oriented
+Software Architecture (Volume 2)][POSA2]
 		</longdescription>
 	</pkgmetadata>

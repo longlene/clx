@@ -17,6 +17,3 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/bundler-1.3"
-ruby_add_rdepend ">=dev-ruby/rake-0"
-

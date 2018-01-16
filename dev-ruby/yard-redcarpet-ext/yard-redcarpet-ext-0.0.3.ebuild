@@ -18,6 +18,3 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/yard-0.8.0"
-ruby_add_rdepend ">=dev-ruby/bundler-1.3"
-ruby_add_rdepend ">=dev-ruby/rake-0"
-

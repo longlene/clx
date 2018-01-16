@@ -17,8 +17,3 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64 ~arm"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/bundler-1.10"
-ruby_add_rdepend ">=dev-ruby/rake-10.0"
-ruby_add_rdepend ">=dev-ruby/minitest-5.8"
-ruby_add_rdepend ">=dev-ruby/coveralls-0"
-

@@ -9,15 +9,14 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Manage your daily working list in Ruby"
-HOMEPAGE="https://github.com/huynhquancam/worque"
+DESCRIPTION="ActiveRecord SQL Server Adapter"
+HOMEPAGE="http://github.com/rails-sqlserver/activerecord-sqlserver-adapter"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/bundler-1.12"
-ruby_add_rdepend ">=dev-ruby/rake-10.0"
-ruby_add_rdepend ">=dev-ruby/minitest-5.0"
+ruby_add_rdepend ">=dev-ruby/activerecord-5.1.0"
+ruby_add_rdepend ">=dev-ruby/tiny_tds-0"
 
