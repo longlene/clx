@@ -25,6 +25,7 @@ src_prepare() {
 	eapply_user
 	sed -e 's/ldconfig/true/' \
 		-e 's/$(Q) $(STRIP)/#$(Q) $(STRIP)/' \
+		-e "s#\$(prefix)/lib#\$(prefix)/$(get_libdir)#" \
 		-i Makefile
 }
 
