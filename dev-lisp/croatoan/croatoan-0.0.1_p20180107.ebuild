@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="be915bb9d29ce10dc6e746cf5fc8b4ba4bb82c55"
+EGIT_COMMIT="e6801c6ae31f2987404d3c1a95704ec7b91bb5ee"
 
 DESCRIPTION="Common Lisp bindings for the ncurses terminal library"
 HOMEPAGE="https://github.com/McParen/croatoan"

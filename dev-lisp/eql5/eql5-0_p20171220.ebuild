@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 qmake-utils vcs-snapshot kde5-functions
 
-EGIT_COMMIT="955734e192438235c04e044b01955cb6295f3414"
+EGIT_COMMIT="021b44a56e1191ea5e25e6de96bce5a9d6d23b11"
 
 DESCRIPTION="Embedded Qt Lisp"
 HOMEPAGE="https://gitlab.com/eql/eql5"
