@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="902900ddba28e99b20a78d31f372a3a391cd9938"
+EGIT_COMMIT="c1c4447b3121f3e41efc982f539ad38cf028e2c0"
 
 DESCRIPTION="A Common Lisp Wrapper for the SDL 2.0 C Library"
 HOMEPAGE="https://github.com/lispgames/cl-sdl2"
