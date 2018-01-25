@@ -1,12 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="bdf7818d16312bf6958c640ea8396a3e9d43f57d"
+EGIT_COMMIT="c22c86e6bbc71eabf512379db1a26b5aa236a558"
 
 DESCRIPTION="SDL2 host for cepl"
 HOMEPAGE="https://github.com/cbaggers/cepl.sdl2"
