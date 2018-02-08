@@ -5,7 +5,7 @@ EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="1e729804f61c8627eb257fba8b83f74e04945db7"
+EGIT_COMMIT="80d9bec20f0a44ab07616215c6eadb2d633492fe"
 
 DESCRIPTION="Convolutional Neural Networks"
 HOMEPAGE="http://pjreddie.com/darknet/"
@@ -14,18 +14,18 @@ SRC_URI="https://github.com/pjreddie/darknet/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="cuda"
 
 DEPEND="
-	dev-util/nvidia-cuda-toolkit
+	cuda? ( dev-util/nvidia-cuda-toolkit )
 	media-libs/opencv
 "
 RDEPEND="${DEPEND}"
 
 src_prepare() {
 	eapply_user
-	sed -e '1s/GPU=0/GPU=1/' \
-		-e '3s/OPENCV=0/OPENCV=1/' \
+	use cuda && sed -i '1s/GPU=0/GPU=1/' Makefile
+	sed -e '3s/OPENCV=0/OPENCV=1/' \
 		-e 's#/usr/local/cuda/#/opt/cuda/#' \
 		-i Makefile || die
 }
