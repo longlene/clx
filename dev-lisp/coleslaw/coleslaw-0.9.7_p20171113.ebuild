@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9cc9eaf241d3260f912fc760a89e5f0719a4587a"
+EGIT_COMMIT="7b8c5bb2aeff720087f8fc41a37550e43095ef37"
 
 DESCRIPTION="Flexible Lisp Blogware"
 HOMEPAGE="https://github.com/kingcons/coleslaw"
