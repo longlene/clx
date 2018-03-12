@@ -9,12 +9,13 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Simple, feature rich ascii table generation library"
-HOMEPAGE="http://github.com/visionmedia/terminal-table"
+DESCRIPTION=""
+HOMEPAGE="https://github.com/tj/terminal-table"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
+ruby_add_rdepend ">=dev-ruby/unicode-display_width-1.1"
 

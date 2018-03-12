@@ -9,12 +9,14 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="Universal Ruby library to handle WebSocket protocol"
-HOMEPAGE="http://github.com/imanel/websocket-ruby"
+DESCRIPTION="Sow is a flexible and straightforward project file generation system"
+HOMEPAGE="http://sow.rubyforge.org"
 
-LICENSE="MIT"
+LICENSE=""
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
+ruby_add_rdepend ">=dev-ruby/facets-2.4.3"
+ruby_add_rdepend ">=dev-ruby/xdg-0"
 

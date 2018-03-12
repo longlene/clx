@@ -10,12 +10,11 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 inherit ruby-fakegem
 
 DESCRIPTION="Spidr is a versatile Ruby web spidering library that can spider a site, multiple domains, certain links or infinitely"
-HOMEPAGE="http://github.com/postmodern/spidr"
+HOMEPAGE="https://github.com/postmodern/spidr#readme"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/nokogiri-1.3"
-

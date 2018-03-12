@@ -9,7 +9,7 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="SpreadsheetArchitect lets you turn any activerecord relation or ruby object collection into a XLSX, ODS, or CSV spreadsheets"
+DESCRIPTION="Spreadsheet Architect is a library that allows you to create XLSX, ODS, or CSV spreadsheets easily from ActiveRecord relations, Plain Ruby classes, or predefined data"
 HOMEPAGE="https://github.com/westonganger/spreadsheet_architect"
 
 LICENSE=""
@@ -18,10 +18,5 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/axlsx-2.0"
-ruby_add_rdepend "=dev-ruby/rodf-0.3.7"
-ruby_add_rdepend ">=dev-ruby/rake-0"
-ruby_add_rdepend ">=dev-ruby/minitest-0"
-ruby_add_rdepend ">=dev-ruby/bundler-0"
-ruby_add_rdepend ">=dev-ruby/sqlite3-0"
-ruby_add_rdepend ">=dev-ruby/activerecord-0"
-
+ruby_add_rdepend ">=dev-ruby/axlsx_styler-0.1.7"
+ruby_add_rdepend ">=dev-ruby/rodf-1.0.0"

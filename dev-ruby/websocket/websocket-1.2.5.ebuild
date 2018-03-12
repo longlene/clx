@@ -12,9 +12,9 @@ inherit ruby-fakegem
 DESCRIPTION="Universal Ruby library to handle WebSocket protocol"
 HOMEPAGE="http://github.com/imanel/websocket-ruby"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 
