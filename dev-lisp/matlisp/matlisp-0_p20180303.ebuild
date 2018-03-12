@@ -1,11 +1,11 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="844a64e3cceebab1b4b5c756fc0d26aa8655cdab"
+EGIT_COMMIT="8fc897f986956522fa881f869f8aba42927b2c96"
 
 DESCRIPTION="A base library for scientific computation in Lisp"
 HOMEPAGE="https://github.com/matlisp/matlisp"

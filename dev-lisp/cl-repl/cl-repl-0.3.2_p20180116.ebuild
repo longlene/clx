@@ -3,11 +3,13 @@
 
 EAPI=6
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="9600dc2052d69f46dc8f29ea9ea081bc6737690a"
 
 DESCRIPTION="A full-featured repl implementation designed to work with Roswell"
 HOMEPAGE="https://github.com/koji-kojiro/cl-repl"
-SRC_URI="https://github.com/koji-kojiro/cl-repl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/koji-kojiro/cl-repl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
