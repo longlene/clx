@@ -1,16 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit git-r3
+inherit vcs-snapshot
+
+EGIT_COMMIT="71d591419cbd62336e2a4506d03608ed1d4c9a95"
 
 DESCRIPTION="A mini lisp implementation"
 HOMEPAGE="https://github.com/rui314/minilisp"
-#SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/rui314/minilisp.git"
+SRC_URI="https://github.com/rui314/minilisp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
