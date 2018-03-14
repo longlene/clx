@@ -17,6 +17,8 @@ IUSE="example java static-libs test"
 DEPEND="java? ( >=virtual/jdk-1.5 )"
 RDENPEND="${DEPEND}"
 
+CMAKE_BUILD_TYPE=Release
+
 src_prepare() {
 	sed -i -e "s/DESTINATION lib/DESTINATION $(get_libdir)/" CMakeLists.txt || die
 
@@ -30,6 +32,8 @@ src_configure() {
 		-DFLATBUFFERS_BUILD_FLATLIB=$(usex static-libs)
 		-DFLATBUFFERS_BUILD_SHAREDLIB=ON
 		-DFLATBUFFERS_BUILD_TESTS=$(usex test)
+		-DFLATBUFFERS_BUILD_FLATC=ON
+		-DFLATBUFFERS_INSTALL=ON
 	)
 
 	cmake-utils_src_configure
