@@ -1,12 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d1e90ececc7d2e23668b1a4dbbd4017147dc5af1"
+EGIT_COMMIT="e24a9a806db265e39d0e564abffc51f891446fd2"
 
 DESCRIPTION="A Common Lisp logging framework using the piping library"
 HOMEPAGE="https://shinmera.github.io/verbose"

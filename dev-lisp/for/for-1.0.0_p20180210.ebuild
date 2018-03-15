@@ -1,16 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="6f8a1bf9f27c329b7c3a05f6685911c1fc72c5a9"
 
 DESCRIPTION="An extensible iteration macro library"
 HOMEPAGE="https://github.com/Shinmera/for"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/Shinmera/for.git"
+SRC_URI="https://github.com/Shinmera/for/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
