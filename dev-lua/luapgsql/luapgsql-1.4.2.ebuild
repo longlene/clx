@@ -7,8 +7,8 @@ EAPI=5
 inherit lua
 
 DESCRIPTION="Lua binding for PostgreSQL"
-HOMEPAGE="https://github.com/mbalmer/luapgsql"
-SRC_URI="https://github.com/mbalmer/luapgsql/archive/${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/arcapos/luapgsql"
+SRC_URI="https://github.com/arcapos/luapgsql/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

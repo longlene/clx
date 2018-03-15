@@ -7,10 +7,10 @@ EAPI=5
 inherit git-2 lua
 
 DESCRIPTION="nanomsg for lua"
-HOMEPAGE="https://github.com/mbalmer/luananomsg"
+HOMEPAGE="https://github.com/arcapos/luananomsg"
 SRC_URI=""
 
-EGIT_REPO_URI="https://github.com/mbalmer/luananomsg.git"
+EGIT_REPO_URI="https://github.com/arcapos/luananomsg.git"
 
 LICENSE="as-is"
 SLOT="0"

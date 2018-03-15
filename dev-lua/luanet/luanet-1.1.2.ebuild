@@ -7,7 +7,7 @@ EAPI=5
 inherit lua
 
 DESCRIPTION="Network access for Lua"
-HOMEPAGE="https://github.com/mbalmer/luanet"
+HOMEPAGE="https://github.com/arcapos/luanet"
 SRC_URI="https://github.com/arcapos/luanet/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"

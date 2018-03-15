@@ -7,7 +7,7 @@ EAPI=5
 inherit lua
 
 DESCRIPTION="A WebSocket implementation for Lua"
-HOMEPAGE="https://github.com/mbalmer/luawebsocket"
+HOMEPAGE="https://github.com/arcapos/luawebsocket"
 SRC_URI="https://github.com/arcapos/luawebsocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"

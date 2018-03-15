@@ -1,15 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit lua vcs-snapshot
+inherit lua
 
 EGIT_COMMIT="1becd4d007727ebfcad8edfa267806452c8e981d"
 
 DESCRIPTION="Lua WSAPI Library"
 HOMEPAGE="https://github.com/keplerproject/wsapi"
-SRC_URI="https://github.com/keplerproject/wsapi/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/keplerproject/wsapi/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
