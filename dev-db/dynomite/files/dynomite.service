@@ -1,0 +1,14 @@
+[Unit]
+Description=A generic dynamo implementation for different k-v storage engines
+After=syslog.target network.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/dynomite/dynomite.pid
+ExecStart=/usr/sbin/dynomite -c /etc/dynomite/dynomite.yml
+User=dynomite
+Group=dynomite
+
+[Install]
+WantedBy=multi-user.target
+
