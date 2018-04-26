@@ -29,6 +29,7 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	eapply_user
+	sed -i "/SET(LIB_INSTALL_DIR/{s#\"lib\"#\"$(get_libdir)\"#}" CMakeLists.txt
 	sed -i '1,$d' WtInstall.cmake
 }
 
