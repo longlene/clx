@@ -22,3 +22,8 @@ DEPEND="
 	sys-libs/zlib
 "
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	eapply_user
+	sed -i "s#DESTINATION lib#DESTINATION $(get_libdir)#" src/CMakeLists.txt
+}
