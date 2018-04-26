@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="80d9bec20f0a44ab07616215c6eadb2d633492fe"
+EGIT_COMMIT="259be3217b0331d07c8c5c1995d90ab9f3b768c1"
 
 DESCRIPTION="Convolutional Neural Networks"
 HOMEPAGE="http://pjreddie.com/darknet/"
