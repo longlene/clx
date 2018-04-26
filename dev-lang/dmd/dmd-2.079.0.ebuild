@@ -7,7 +7,7 @@ inherit eutils multilib bash-completion-r1
 
 DESCRIPTION="Reference compiler for the D programming language"
 HOMEPAGE="http://www.digitalmars.com/d/"
-SRC_URI="http://ftp.digitalmars.com/${PN}.${PV}.zip"
+SRC_URI="https://github.com/dlang/dmd/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 # DMD supports amd64/x86 exclusively
 KEYWORDS="-* ~amd64 ~x86"
