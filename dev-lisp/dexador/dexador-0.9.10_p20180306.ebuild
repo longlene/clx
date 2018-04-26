@@ -1,12 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9ba25c0aa012953e0831223fafb61260ce5bbd69"
+EGIT_COMMIT="938572df889ea9fb46806d6c1d7953aaa14b876f"
 
 DESCRIPTION="Yet another HTTP client for Common Lisp"
 HOMEPAGE="http://ultra.wikia.com/wiki/Dexador"

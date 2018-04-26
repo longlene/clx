@@ -10,7 +10,7 @@ if [[ ${PV} = *9999* ]] ; then
 	EGIT_REPO_URI="https://github.com/fukamachi/jsonrpc.git"
 else
 	inherit vcs-snapshot
-	EGIT_COMMIT="248ae8c5223ed49de03838b7b84ceefad14d3e94"
+	EGIT_COMMIT="135ea73e14b74d2c84b0b55b876d19c8edce9050"
 	SRC_URI="https://github.com/fukamachi/jsonrpc/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 fi
 

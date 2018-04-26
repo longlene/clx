@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="505ac3b59e7971adff10bca752eaacbd8b6da5e4"
+EGIT_COMMIT="b8ef6863f6226f0673d38d8fb95da1cef482ea40"
 
 DESCRIPTION="WebSocket protocols implementation in Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/websocket-driver"

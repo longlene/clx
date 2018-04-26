@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ac1c4a0307fb9646e1044bdb665d4293d654d20a"
+EGIT_COMMIT="508abb3be457c3e7ceddf92f9f34d427e97f11b0"
 
 DESCRIPTION="Common Lisp Web crawling library based on Psychiq"
 HOMEPAGE="https://github.com/fukamachi/ragno"

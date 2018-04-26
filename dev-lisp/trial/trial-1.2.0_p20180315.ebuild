@@ -1,12 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d550bd8efef37725e340dd6918eb3cfc5c946481"
+EGIT_COMMIT="a1ba4df0ecf3b5e091d65c37a7c7b661d0b943b9"
 
 DESCRIPTION="Yet another Common Lisp game engine"
 HOMEPAGE="https://github.com/Shirakumo/trial"
