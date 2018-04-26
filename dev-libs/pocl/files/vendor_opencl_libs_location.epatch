@@ -1,0 +1,21 @@
+diff -Nurb a/pocl-0.14/CMakeLists.txt b/pocl-0.14/CMakeLists.txt
+--- a/CMakeLists.txt	2017-04-05 16:15:40.000000000 +0200
++++ b/CMakeLists.txt	2017-04-16 23:34:32.422414270 +0200
+@@ -125,7 +125,7 @@
+ endif()
+ 
+ # for libpocl.so
+-set(POCL_INSTALL_PUBLIC_LIBDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}" CACHE PATH "POCL public libdir")
++set(POCL_INSTALL_PUBLIC_LIBDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/OpenCL/vendors/pocl" CACHE PATH "POCL public libdir")
+ 
+ # for llvmopencl.so
+ set(POCL_INSTALL_PRIVATE_LIBDIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/pocl" CACHE PATH "POCL private libdir")
+@@ -134,7 +134,7 @@
+ if(UNIX AND NOT CMAKE_CROSSCOMPILING AND CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+   set(POCL_INSTALL_ICD_VENDORDIR "/etc/OpenCL/vendors" CACHE PATH "POCL ICD file destination")
+ else()
+-  set(POCL_INSTALL_ICD_VENDORDIR "${CMAKE_INSTALL_PREFIX}/etc/OpenCL/vendors" CACHE PATH "POCL ICD file destination")
++  set(POCL_INSTALL_ICD_VENDORDIR "${SYSCONFDIR}/etc/OpenCL/vendors" CACHE PATH "POCL ICD file destination")
+ endif()
+ 
+ # for kernel-<target>.bc
