@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 USE_RUBY="ruby22 ruby23 ruby24"
 
 RUBY_FAKEGEM_TASK_DOC=""
@@ -14,16 +14,13 @@ HOMEPAGE="https://github.com/ruby-grape/grape"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/rack-1.3.0"
-ruby_add_rdepend ">=dev-ruby/mustermann19-0.4.3"
+ruby_add_rdepend ">=dev-ruby/mustermann-grape-1.0.0"
 ruby_add_rdepend ">=dev-ruby/rack-accept-0"
 ruby_add_rdepend ">=dev-ruby/activesupport-0"
-ruby_add_rdepend ">=dev-ruby/multi_json-1.3.2"
-ruby_add_rdepend ">=dev-ruby/multi_xml-0.5.2"
-ruby_add_rdepend ">=dev-ruby/hashie-2.1.0"
 ruby_add_rdepend ">=dev-ruby/virtus-1.0.0"
 ruby_add_rdepend ">=dev-ruby/builder-0"
 

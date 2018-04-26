@@ -3,6 +3,8 @@
 
 EAPI=6
 
+PYTHON_COMPAT=( python3_4 )
+
 inherit cmake-utils lua vcs-snapshot
 
 DESCRIPTION="Doom-based AI Research Platform for Reinforcement Learning from Raw Visual Information"
@@ -12,7 +14,7 @@ SRC_URI="https://github.com/mwydmuch/ViZDoom/archive/${PV}.tar.gz -> ${P}.tar.gz
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+lua python"
+IUSE="+lua"
 
 DEPEND="
 	dev-libs/boost[threads]
@@ -38,9 +40,7 @@ src_prepare() {
 		-e "s#/usr/local/share/games/doom#/usr/share/games/doom-data/#" \
 		-e "s#/usr/share/games/doom#/usr/share/games/doom-data/freedoom#" \
 		-i src/vizdoom/src/gameconfigfile.cpp || die
-	sed -e '/#\ Freedoom\ 2/,$d' \
-		-e '/luabind/{s#libvizdoom_python#libvizdoom_lua#}' \
-		-i CMakeLists.txt || die
+	sed -e 's#libvizdoom_python luabind#libvizdoom_lua luabind#' -i CMakeLists.txt || die
 	sed -e '/workingExePath/{s#\.\/vizdoom#/usr/bin/vizdoom#}' \
 		-e '/workingFreedoom2Path\ =/{s#\.\/freedoom2.wad#/usr/share/games/doom-data/freedoom/freedoom2.wad#}' \
 		-i src/lib/ViZDoomController.cpp
@@ -48,8 +48,10 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-	"-DBUILD_PYTHON3=$(usex python)"
-	"-DBUILD_LUA=$(usex lua)"
+	-DBUILD_JAVA=OFF
+	-DBUILD_LUA=$(usex lua)
+	-DBUILD_PYTHON=OFF
+	-DDOWNLOAD_FREEDOOM=OFF
 	)
 	if use lua ; then
 		mycmakeargs+=( "-DLUADIR=$(lua_get_sharedir)" )
@@ -66,7 +68,7 @@ src_configure() {
 src_install() {
 	if use lua ; then
 		insinto $(lua_get_sharedir)/vizdoom
-		doins bin/lua/luarocks_shared_package/init.lua
+		doins src/lib_lua/src_lua/init.lua
 		lua_install_cmodule bin/lua/vizdoom.so
 	fi
 	insinto /usr

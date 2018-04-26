@@ -12,14 +12,17 @@ SRC_URI="https://github.com/mwydmuch/ViZDoom/archive/${PV}.tar.gz -> ${P}.tar.gz
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+lua"
 
 DEPEND="
 	dev-libs/boost[threads]
-	sci-libs/torch7
-	sci-libs/torch-image
-	sci-libs/torchffi
+	lua? (
+		sci-libs/torch7
+		sci-libs/torch-image
+		sci-libs/torchffi
+	)
 	media-libs/libsdl2
+	media-sound/fluidsynth
 "
 RDEPEND="${DEPEND}
 	games-fps/freedoom
@@ -35,7 +38,7 @@ src_prepare() {
 		-e "s#/usr/local/share/games/doom#/usr/share/games/doom-data/#" \
 		-e "s#/usr/share/games/doom#/usr/share/games/doom-data/freedoom#" \
 		-i src/vizdoom/src/gameconfigfile.cpp || die
-	sed -i '/#\ Freedoom\ 2/,$d' CMakeLists.txt
+	sed -e 's#libvizdoom_python luabind#libvizdoom_lua luabind#' -i CMakeLists.txt || die
 	sed -e '/workingExePath/{s#\.\/vizdoom#/usr/bin/vizdoom#}' \
 		-e '/workingFreedoom2Path\ =/{s#\.\/freedoom2.wad#/usr/share/games/doom-data/freedoom/freedoom2.wad#}' \
 		-i src/lib/ViZDoomController.cpp
@@ -43,22 +46,29 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-	"-DBUILD_LUA=ON"
-	"-DLUADIR=$(lua_get_sharedir)"
-	"-DLIBDIR=$(lua_get_libdir)"
-	"-DLUA_BINDIR=/usr/bin"
-	"-DLUA_INCDIR=/usr/include"
-	"-DLUA_LIBDIR=/usr/$(get_libdir)"
-	"-DLUALIB=/usr/lib/libluajit-5.1.so"
-	"-DLUA=/usr/bin/luajit"
+	"-DBUILD_JAVA=OFF"
+	"-DBUILD_LUA=$(usex lua)"
+	"-DBUILD_PYTHON=OFF"
+	"-DDOWNLOAD_FREEDOOM=OFF"
 	)
+	if use lua ; then
+		mycmakeargs+=( "-DLUADIR=$(lua_get_sharedir)" )
+		mycmakeargs+=( "-DLIBDIR=$(lua_get_libdir)" )
+		mycmakeargs+=( "-DLUA_BINDIR=/usr/bin" )
+		mycmakeargs+=( "-DLUA_INCDIR=/usr/include" )
+		mycmakeargs+=( "-DLUA_LIBDIR=/usr/$(get_libdir)" )
+		mycmakeargs+=( "-DLUALIB=/usr/lib/libluajit-5.1.so" )
+		mycmakeargs+=( "-DLUA=/usr/bin/luajit" )
+	fi
 	cmake-utils_src_configure
 }
 
 src_install() {
-	insinto $(lua_get_sharedir)/vizdoom
-	doins bin/lua/luarocks_shared_package/init.lua
-	lua_install_cmodule bin/lua/vizdoom.so
+	if use lua ; then
+		insinto $(lua_get_sharedir)/vizdoom
+		doins src/lib_lua/src_lua/init.lua
+		lua_install_cmodule bin/lua/vizdoom.so
+	fi
 	insinto /usr
 	doins -r include
 	insinto /usr/share/vizdoom
