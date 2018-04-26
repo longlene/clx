@@ -1,0 +1,1 @@
+ebuild build failure is due to broken configure script, fixed by Funtoo. Reference, FL-4019. Gentoo has 5.1.1 version which is perhaps fixed too. TO be included with next ddev-kit branch.
