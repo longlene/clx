@@ -3,6 +3,8 @@
 
 EAPI=6
 
+inherit user
+
 DESCRIPTION="FastDFS is an open source high performance distributed file system (DFS)"
 HOMEPAGE="https://github.com/happyfish100/fastdfs"
 SRC_URI="https://github.com/happyfish100/fastdfs/archive/V${PV}.tar.gz -> ${P}.tar.gz"
