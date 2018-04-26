@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
-
-EGIT_COMMIT="43c73a600f90b4bb042a1be6eae0cac455a66afd"
+inherit cmake-utils
 
 DESCRIPTION="PostgreSQL connector for sqlpp11 library"
 HOMEPAGE="https://github.com/matthijs/sqlpp11-connector-postgresql"
-SRC_URI="https://github.com/matthijs/sqlpp11-connector-postgresql/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/matthijs/sqlpp11-connector-postgresql/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
