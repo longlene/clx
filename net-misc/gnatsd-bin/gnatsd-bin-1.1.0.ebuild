@@ -9,12 +9,11 @@ HOMEPAGE="https://nats.io"
 SRC_URI="
 	amd64? ( https://github.com/nats-io/gnatsd/releases/download/v${PV}/gnatsd-v${PV}-linux-amd64.zip )
 	x86? ( https://github.com/nats-io/gnatsd/releases/download/v${PV}/gnatsd-v${PV}-linux-386.zip )
-	arm? ( https://github.com/nats-io/gnatsd/releases/download/v${PV}/gnatsd-v${PV}-linux-arm.zip )
 "
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="!net-misc/gnatsd"
@@ -27,8 +26,6 @@ src_unpack() {
 
 	if use amd64 ; then
 		S="${WORKDIR}"/gnatsd-v${PV}-linux-amd64
-	elif use arm ; then
-		S="${WORKDIR}"/gnatsd-v${PV}-linux-arm
 	elif use x86 ; then
 		S="${WORKDIR}"/gnatsd-v${PV}-linux-386
 	fi
