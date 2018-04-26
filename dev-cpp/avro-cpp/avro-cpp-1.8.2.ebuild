@@ -22,5 +22,7 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	eapply_user
-	sed -i '/enable_testing/d' CMakeLists.txt
+	sed -e '/enable_testing/d' \
+		-e "s#DESTINATION lib#DESTINATION $(get_libdir)#" \
+		-i CMakeLists.txt
 }
