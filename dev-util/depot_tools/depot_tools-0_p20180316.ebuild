@@ -1,17 +1,16 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
-inherit git-r3 python-single-r1 python-utils-r1
+inherit python-single-r1 python-utils-r1 vcs-snapshot
+
+EGIT_COMMIT="544b744621b7c60097788c38594ea44973d0c8eb"
 
 DESCRIPTION="Chromium uses a package of scripts, the depot_tools, to manage interaction with the Chromium source code repository and the Chromium development process"
 HOMEPAGE="https://dev.chromium.org/developers/how-tos/install-depot-tools"
-SRC_URI=""
-
-EGIT_REPO_URI="https://chromium.googlesource.com/chromium/tools/depot_tools.git"
+SRC_URI="https://chromium.googlesource.com/chromium/tools/depot_tools/+archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
