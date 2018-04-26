@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="218fdc9582971dca67f0425950aa81ca5c279c9d"
+EGIT_COMMIT="5ccef4a4175c2060df2ba090fbeaa64059f01d5d"
 
 DESCRIPTION="Code Evaluate Play Loop"
 HOMEPAGE="https://github.com/cbaggers/cepl"
@@ -18,13 +18,11 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-lisp/alexandria
 	dev-lisp/cffi
-	dev-lisp/cl-autowrap
-	dev-lisp/cl-fad
 	dev-lisp/cl-opengl
 	dev-lisp/cl-ppcre
 	dev-lisp/documentation-utils
-	dev-lisp/fn
 	dev-lisp/ieee-floats
 	dev-lisp/named-readtables
 	dev-lisp/rtg-math

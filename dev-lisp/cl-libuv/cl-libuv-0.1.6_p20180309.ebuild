@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="407b6aff367d3bf92e6b1197b66787f136c1b089"
+EGIT_COMMIT="84b2d3ded91a9769369237d2c5afc3327eb3ec6f"
 
 DESCRIPTION="Libuv bindings for Common Lisp"
 HOMEPAGE="https://github.com/orthecreedence/cl-libuv"

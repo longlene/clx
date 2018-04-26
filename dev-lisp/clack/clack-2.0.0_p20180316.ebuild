@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="df0947c05fd71a0acf7a8ed47aed607e9efa3d8d"
+EGIT_COMMIT="5e2f5ef08d69cc9e958b24092a1db47b29e55aff"
 
 DESCRIPTION="Web application environment for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/clack"

@@ -1,12 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="19d839e017dab6f7d6ef23a7256a438bd317c66b"
+EGIT_COMMIT="e8542b17fddd6340c1e237ce482a52327c8ead8e"
 
 DESCRIPTION="A Common Lisp implementation of the dataflow programming paradigm"
 HOMEPAGE="http://common-lisp.net/project/cells/
