@@ -1,11 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="791e9d8c104cb82bb5b353b4e579c05606102f9e"
+EGIT_COMMIT="8d64872ccffa58f1d1b0858246e233dd6d7fe0c5"
 
 DESCRIPTION="Redis FDW for PostgreSQL"
 HOMEPAGE="https://github.com/pg-redis-fdw/redis_fdw"
