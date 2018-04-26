@@ -7,8 +7,8 @@ EAPI=5
 inherit cmake-utils
 
 DESCRIPTION="A more flexible replacement for libevent's httpd API"
-HOMEPAGE="https://github.com/ellzey/libevhtp"
-SRC_URI="https://github.com/ellzey/libevhtp/archive/${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/criticalstack/libevhtp"
+SRC_URI="https://github.com/criticalstack/libevhtp/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
