@@ -3,9 +3,9 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake-utils llvm vcs-snapshot
 
-EGIT_COMMIT="014b635a690a6508679d60c9b719b2d32d039711"
+EGIT_COMMIT="91fb8ad3a071f8759928faeeb976595ac9003241"
 
 DESCRIPTION="Clang-based FFI wrapper generator"
 HOMEPAGE="https://github.com/rpav/c2ffi"
@@ -17,11 +17,15 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND="
-	>=sys-devel/llvm-3.9.0
+	>=sys-devel/llvm-6.0.0
 "
 RDEPEND="${DEPEND}"
 
+LLVM_MAX_SLOT=6
+
 src_prepare() {
 	eapply_user
-	sed '/find_package/{s#4.0#3.9#}' -i CMakeLists.txt
+	sed -e '/find_package/{s#5.0#6.0#}' \
+		-e "/link_directories/{s#lib#$(get_libdir)#}" \
+		-i CMakeLists.txt
 }

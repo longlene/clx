@@ -1,7 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/kde-meta.eclass,v 1.82 2007/03/18 21:39:30 carlo Exp $
-#
+
 # Author Anant Narayanan <anant@gentoo.org>
 #
 # This is the plan9-libs eclass which supports broken-up Plan9 libraries.
@@ -33,13 +32,13 @@ fi
 }
 
 function plan9-libs_src_compile() {
-set_path
-mk all || die "Build Failed!"
+	set_path
+	mk all || die "Build Failed!"
 }
 
 function plan9-libs_src_install() {
-set_path
-mk install || die "Install Failed!"
+	set_path
+	mk install || die "Install Failed!"
 
 if [[ -n "$PLIBNAME" ]]; then
 	dolib.a ${S}/lib/${PLIBNAME}.a
