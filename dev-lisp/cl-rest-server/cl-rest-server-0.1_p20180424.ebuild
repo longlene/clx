@@ -1,12 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7c60a26eda6b899d385349be27722ee32c1db456"
+EGIT_COMMIT="e81004370307927478988ebddb91011c6748a1af"
 
 DESCRIPTION="Common Lisp REST Server"
 HOMEPAGE="https://github.com/mmontone/cl-rest-server"
@@ -42,7 +41,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-oauth
 	dev-lisp/trivial-mimes
 	dev-lisp/access
-	dev-lisp/trivial-shell
+	dev-lisp/cl-algebraic-data-type
 	test? ( dev-lisp/fiveam dev-lisp/cl-html5-parser )
 "
 

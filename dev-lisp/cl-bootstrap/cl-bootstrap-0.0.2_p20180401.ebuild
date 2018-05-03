@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7587beaea6c2caccd5b10b55a79ad85151df99e1"
+EGIT_COMMIT="6fc7cd1a88e8f30d64904ed9ab0347f786fc6e0c"
 
 DESCRIPTION="Common Lisp web development widget library for Twitter's Bootstrap"
 HOMEPAGE="https://github.com/rajasegar/cl-bootstrap"

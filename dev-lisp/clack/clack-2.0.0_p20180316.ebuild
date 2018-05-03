@@ -20,29 +20,27 @@ RDEPEND="${DEPEND}
 	dev-lisp/lack
 	dev-lisp/bordeaux-threads
 	dev-lisp/alexandria
-	dev-lisp/uiop
-	dev-lisp/drakma
-	dev-lisp/local-time
-	dev-lisp/trivial-backtrace
-	dev-lisp/marshal
-	dev-lisp/cl-base64
-	dev-lisp/cl-ppcre
-	dev-lisp/quri
-	dev-lisp/trivial-mimes
-	dev-lisp/trivial-types
-	dev-lisp/http-body
 	dev-lisp/flexi-streams
-	dev-lisp/circular-streams
-	dev-lisp/ironclad
-	dev-lisp/cl-syntax
+	dev-lisp/usocket
+	dev-lisp/quri
 	dev-lisp/split-sequence
 	dev-lisp/anaphora
-	dev-lisp/cl-fad
-	dev-lisp/rfc2388
-	dev-lisp/multival-plist
-	dev-lisp/yason
+	dev-lisp/cl-ppcre
+	|| (
+		dev-lisp/hunchentoot
+		dev-lisp/toot
+		dev-lisp/cl-fastcgi
+		dev-lisp/wookie
+	)
+
 	test? ( dev-lisp/prove )
 "
+
+src_prepare() {
+	eapply_user
+	rm -r clack-v1-compat.asd v1-compat
+	use test || rm -r t-*.asd t ${PN}-test.asd
+}
 
 src_install() {
 	common-lisp-3_src_install

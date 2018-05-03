@@ -3,6 +3,8 @@
 
 EAPI=6
 
+inherit common-lisp-3 vcs-snapshot
+
 EGIT_COMMIT="a4432b537e8d1c4ed522cf2d977fba30add49aa8"
 
 DESCRIPTION="ゼロから作るDeep Learningのサンプルコード (Common Lisp版)"
