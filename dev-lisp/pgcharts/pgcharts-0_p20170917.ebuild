@@ -1,24 +1,24 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5cc3e342990375e0342f2b200e4486b1cacb06a4"
+EGIT_COMMIT="9a83c3d6344d53d0da69cec0ea9b41ee858f9f75"
 
-DESCRIPTION=""
+DESCRIPTION="Turn your PostgreSQL queries into Charts"
 HOMEPAGE="https://github.com/dimitri/pgcharts"
 SRC_URI="https://github.com/dimitri/pgcharts/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="POSTGRESQL"
+LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/uiop
+	dev-lisp/postmodern
 	dev-lisp/simple-date
 	dev-lisp/esrap
 	dev-lisp/py-configparser
@@ -36,7 +36,7 @@ RDEPEND="${DEPEND}
 "
 
 src_compile() {
-	emake
+	:
 }
 
 src_install() {

@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="855258d5efebeeb33bfcd144bf49b4ba72e5de89"
+EGIT_COMMIT="a0195dc1d827b9d6f3377dacfa5c41f201eaa1ee"
 
 DESCRIPTION="S-expression to OpenCL C"
 HOMEPAGE="https://github.com/gos-k/oclcl"
