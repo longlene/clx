@@ -28,3 +28,8 @@ src_prepare() {
 	use example || rm ${PN}-examples.asd examples.lisp
 	use test || rm -r ${PN}-tests.asd tests
 }
+
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all VERSION.txt
+}

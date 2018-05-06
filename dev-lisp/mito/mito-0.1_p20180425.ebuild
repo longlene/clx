@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="12ab9c2a889b95cadb8a1c0724c760b6516370ca"
+EGIT_COMMIT="c4aa1768cec64c1d2e79d291e45450fe8cfd6784"
 
 DESCRIPTION="An ORM for Common Lisp with migrations, relationships and PostgreSQL support"
 HOMEPAGE="https://github.com/fukamachi/mito"
@@ -22,12 +22,13 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-reexport
 	dev-lisp/cl-ppcre
 	dev-lisp/closer-mop
-	dev-lisp/dbi
+	dev-lisp/cl-dbi
 	dev-lisp/dissect
+	dev-lisp/esrap
 	dev-lisp/local-time
 	dev-lisp/optima
 	dev-lisp/sxql
-	dev-lisp/uiop
+	test? ( dev-lisp/prove )
 "
 
 src_prepare() {

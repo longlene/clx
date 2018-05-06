@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="8fc897f986956522fa881f869f8aba42927b2c96"
+EGIT_COMMIT="8eef2d577d8266c11c6bba4129bda2de7da20eee"
 
 DESCRIPTION="A base library for scientific computation in Lisp"
 HOMEPAGE="https://github.com/matlisp/matlisp"
@@ -23,19 +23,23 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivia
 	dev-lisp/named-readtables
 	dev-lisp/lambda-reader
+	dev-lisp/parse-float
+	dev-lisp/ieee-floats
 	dev-lisp/cl-yacc
 	dev-lisp/trivial-garbage
 	dev-lisp/trivial-types
 	dev-lisp/closer-mop
 	dev-lisp/external-program
 	dev-lisp/bordeaux-threads
-	dev-lisp/fiveam
+	test? ( dev-lisp/fiveam )
 "
 
 src_prepare() {
 	eapply_user
 	if ! use test ; then
 		rm -r t
-		sed -e '/defsystem\ :matlisp-tests/,$d' -i ${PN}.asd
+		sed -e '/defsystem\ :matlisp-tests/,$d' \
+			-e 's|#:fiveam||' \
+			-i ${PN}.asd
 	fi
 }
