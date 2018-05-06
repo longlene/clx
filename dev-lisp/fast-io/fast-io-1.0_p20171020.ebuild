@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="49e210fcfaa851d68c8cda27bed5c09ea2df4cd5"
+EGIT_COMMIT="dc3a71db7e9b756a88781ae9c342fe9d4bbab51c"
 
 DESCRIPTION="Fast octet-vector/stream I/O for Common Lisp"
 HOMEPAGE="https://github.com/rpav/fast-io"
