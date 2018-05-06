@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="95160342fabe6ac8cb93e56e10a045e3db68cd68"
+EGIT_COMMIT="fe96152458c8eb54d74751b3201db42dafe1708b"
 
 DESCRIPTION="Weblocks is a continuations-based web framework written in Common Lisp."
 HOMEPAGE="http://weblocks-framework.info/"
