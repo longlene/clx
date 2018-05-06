@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9c7357f76b88ce53aa188ff04fbbb492462814c8"
+EGIT_COMMIT="71ea6974bf0a5b58a3cfb1fd6c9f4aa00ee57e84"
 
 DESCRIPTION="Simple graph data structure and algorithms"
 HOMEPAGE="http://eschulte.github.io/graph"
@@ -22,18 +22,14 @@ RDEPEND="${DEPEND}
 	dev-lisp/metabang-bind
 	dev-lisp/curry-compose-reader-macros
 	dev-lisp/femlisp
-	dev-lisp/yason
 	dev-lisp/cl-ppcre
+	dev-lisp/yason
 	test? ( dev-lisp/stefil )
 "
 
 src_prepare() {
 	eapply_user
-	if ! use test ; then
-		sed '/defsystem\ :graph-test/,$d' -i ${PN}.asd
-		sed '/defsystem\ :graph-matrix-test/,$d' -i ${PN}-matrix.asd
-		rm -r test
-	fi
+	use test || rm matrix-test.lisp test.lisp
 }
 
 src_install() {
