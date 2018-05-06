@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ff1ea1e5e836a3a96d0ffc57e591def693d061b5"
+EGIT_COMMIT="c93f3ead3401e4103ae38c314b47f757930fb093"
 
 DESCRIPTION="Common Lisp binding for OpenCL API"
 HOMEPAGE="https://github.com/gos-k/cl-oclapi"

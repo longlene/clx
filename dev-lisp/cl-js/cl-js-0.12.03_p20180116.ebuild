@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="209f064bdafc112f85d67d7fb3fafb5424099e51"
+EGIT_COMMIT="5ffa5e9d113f2000bbbdccda634f09e272b1983d"
 
 DESCRIPTION="CL-JavaScript is a JavaScript programming language compiler for Common Lisp."
 HOMEPAGE="http://marijnhaverbeke.nl/cl-javascript/ http://github.com/akapav/js"

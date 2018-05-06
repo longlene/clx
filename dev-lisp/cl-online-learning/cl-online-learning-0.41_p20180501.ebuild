@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="99fa888e629012a79903f785b6858ceaab89297c"
+EGIT_COMMIT="771a570b331f412a40688284a77519ff4791e642"
 
 DESCRIPTION="A collection of online learning algorithms for Linear classification written in pure Common Lisp"
 HOMEPAGE="https://github.com/masatoi/cl-online-learning"
@@ -18,14 +18,14 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/split-sequence
-	dev-lisp/parse-number
+	dev-lisp/cl-libsvm-format
 	test? ( dev-lisp/prove )
 "
 
 src_prepare() {
 	eapply_user
 	use test || rm -f ${PN}-test.asd t
+	rm -r example
 }
 
 src_install() {

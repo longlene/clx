@@ -5,11 +5,11 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f584e3c9a3561aa8ee38d5ff8428ed30228ccf98"
+EGIT_COMMIT="eebb937ac4550a15dbedd8cfe92985d22cf4f63d"
 
-DESCRIPTION="Random forest in Common Lisp"
-HOMEPAGE="https://github.com/masatoi/cl-random-forest"
-SRC_URI="https://github.com/masatoi/cl-random-forest/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="ゼロから作るDeep Learningのサンプルコード (Common Lisp版)"
+HOMEPAGE="https://github.com/masatoi/cl-zerodl"
+SRC_URI="https://github.com/masatoi/cl-zerodl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -18,15 +18,18 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/cl-online-learning
+	dev-lisp/clgplot
+	dev-lisp/mgl-mat
+	dev-lisp/metabang-bind
+	dev-lisp/cl-libsvm-format
 	dev-lisp/alexandria
-	dev-lisp/lparallel
 	test? ( dev-lisp/prove )
 "
 
 src_prepare() {
 	eapply_user
 	use test || rm -r ${PN}-test.asd t
+	rm -r example
 }
 
 src_install() {

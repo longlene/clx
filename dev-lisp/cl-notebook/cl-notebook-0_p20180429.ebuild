@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="04b658fd89ff83cc2071d1df0e1687db7ee556f1"
+EGIT_COMMIT="2e693f1f6ef0eb375b13d23aaca25ed929836493"
 
 DESCRIPTION="A python notebook-esque thing for Common Lisp"
 HOMEPAGE="https://github.com/Inaimathi/cl-notebook"

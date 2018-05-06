@@ -5,9 +5,9 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4a84f67b7a026d6a67681af576a5333bbaec4ca2"
+EGIT_COMMIT="14401e17e637e1a6c4760dc816928b29823efa59"
 
-DESCRIPTION="Straight port of linenoise to Common Lisp"
+DESCRIPTION="A trivial line-input library for VT-like terminals"
 HOMEPAGE="https://github.com/jasom/clinenoise"
 SRC_URI="https://github.com/jasom/clinenoise/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 

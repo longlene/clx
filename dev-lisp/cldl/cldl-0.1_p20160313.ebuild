@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="065b48db353e94df50eb9b6c3d5d72a501a7b0ee"
 
 DESCRIPTION="Deep Learning in Common Lisp"
 HOMEPAGE="https://github.com/Rudolph-Miller/cldl"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/Rudolph-Miller/cldl.git"
+SRC_URI="https://github.com/Rudolph-Miller/cldl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

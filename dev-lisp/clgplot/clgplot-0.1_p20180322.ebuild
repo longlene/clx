@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d12fcf7b939fa7627292b68409cd1b5fa7cd8940"
+EGIT_COMMIT="bc2ca20074f4b3de6870c2f65e90b41ed4ae29ba"
 
 DESCRIPTION="A Gnuplot front-end on Common lisp"
 HOMEPAGE="https://github.com/masatoi/clgplot"
@@ -20,6 +19,7 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/external-program
+	dev-lisp/iterate
 	sci-visualization/gnuplot
 	test? ( dev-lisp/prove )
 "
