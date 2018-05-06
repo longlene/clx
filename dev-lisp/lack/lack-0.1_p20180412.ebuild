@@ -1,12 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="824436ac3c9bf93ed0afd83fcd18fc455c5d8a3b"
+EGIT_COMMIT="2c1c0df583f4b7cc9aba1d97cf9d1131a0fa0096"
 
 DESCRIPTION="Lack, the core of Clack"
 HOMEPAGE="https://github.com/fukamachi/lack"
@@ -31,18 +30,23 @@ RDEPEND="${DEPEND}
 	
 	dev-lisp/trivial-mimes
 	dev-lisp/uiop
-	dev-lisp/alexandria
 	
 	dev-lisp/quri
 	dev-lisp/http-body
+	dev-lisp/circular-streams
 	
 	dev-lisp/cl-dbi
 	dev-lisp/marshal
+	dev-lisp/trivial-utf8
+	dev-lisp/cl-redis
+	dev-lisp/trivial-gray-streams
+	dev-lisp/babel
 	test? ( dev-lisp/prove )
 "
 
 src_prepare() {
-	use test || rm -r ${PN}-test.asd t
+	eapply_user
+	use test || rm -r ${PN}-test.asd t t-*.asd
 }
 
 src_install() {
