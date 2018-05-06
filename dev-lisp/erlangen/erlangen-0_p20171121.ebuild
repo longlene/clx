@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a107a639e76220892fa1703c844ed688f0597271"
+EGIT_COMMIT="204166b33833c49841617bbc6ecfaf4dd77cf6d8"
 
 DESCRIPTION="Distributed, asychronous message passing system for Clozure Common Lisp"
 HOMEPAGE="https://github.com/eugeneia/erlangen"

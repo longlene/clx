@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="594837c585ee47b722663888192f40aa0f7ec2d2"
+EGIT_COMMIT="4d1162a535123cd6a7ac9586df2cb992820c39c8"
 
 DESCRIPTION="Common Lisp port of the Django templating language"
 HOMEPAGE="http://mmontone.github.io/djula"
@@ -14,7 +14,7 @@ SRC_URI="https://github.com/mmontone/djula/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="example test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -33,4 +33,11 @@ RDEPEND="${DEPEND}
 	dev-lisp/gettext
 	dev-lisp/parser-combinators
 	dev-lisp/iterate
+	example? ( dev-lisp/hunchentoot )
 "
+
+src_prepare() {
+	eapply_user
+	use example || rm -r ${PN}-demo.asd demo
+	use test || rm -r ${PN}-test.asd test
+}

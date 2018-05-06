@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5e7f84a9b0a09516593cbf1c5c864bb261b083bb"
+EGIT_COMMIT="5a2cad2c681f3d8244059cfe0aa3f3e750bfa1d5"
 
 DESCRIPTION="Reader macros for concise expression of function partial application and composition"
 HOMEPAGE="http://eschulte.github.io/curry-compose-reader-macros"
@@ -19,4 +19,5 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
+	dev-lisp/named-readtables
 "

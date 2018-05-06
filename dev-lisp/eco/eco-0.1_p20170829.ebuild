@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="214fe917394c93f199f120691fe4af3a1da5cd0b"
+EGIT_COMMIT="10d8fa06b9c5256e0ef840cf26bb1eb80d853ef2"
 
 DESCRIPTION="Fast, flexible, designer-friendly templates for Common Lisp"
 HOMEPAGE="https://github.com/eudoxia0/eco"

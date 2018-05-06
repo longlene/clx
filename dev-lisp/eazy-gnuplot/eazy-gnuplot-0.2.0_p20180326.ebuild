@@ -1,12 +1,11 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="04bdee453f6a9bfc3f30efe4ad170046b2d76f42"
+EGIT_COMMIT="b08836e750990f5522c6c9fc97393eb90b1e0484"
 
 DESCRIPTION="Super Duper Doopa Booka Lispy Gnuplot library"
 HOMEPAGE="https://github.com/guicho271828/eazy-gnuplot/"
@@ -22,11 +21,11 @@ RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/trivia
 	dev-lisp/alexandria
-	dev-lisp/uiop
 	test? ( dev-lisp/fiveam )
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -rf ${P}.test.asd t
 }
 
