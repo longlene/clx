@@ -1,29 +1,31 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="415a45506421c7737ed8e7edcf26600ff4a550aa"
 
 DESCRIPTION="A logic programming library for Common Lisp"
 HOMEPAGE="https://github.com/sjl/temperance"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/sjl/temperance.git"
+SRC_URI="https://github.com/sjl/temperance/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-arrows
 	dev-lisp/policy-cond
-	dev-lisp/lam
+	test? ( dev-lisp/lam )
 "
 
-src_compile() {
-	:
+src_prepare() {
+	eapply_user
+	rm Makefile
+	use test || rm ${PN}.test.asd test package.test.lisp
 }
+

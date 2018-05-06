@@ -1,6 +1,5 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -10,7 +9,7 @@ if [[ ${PV} = *9999* ]] ; then
 	EGIT_REPO_URI="https://github.com/ceramic/ceramic.git"
 else
 	inherit vcs-snapshot
-	EGIT_COMMIT="94551b4ba26c83314a1659e86ae2efdd841777cd"
+	EGIT_COMMIT="d625ebfd212aa0f82d30ee7ac0fb749e2fb46162"
 	SRC_URI="https://github.com/ceramic/ceramic/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 fi
 
@@ -19,7 +18,7 @@ HOMEPAGE="http://ceramic.github.io"
 
 LICENSE="MIT"
 SLOT="0"
-#KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="test"
 
 DEPEND=""
@@ -40,6 +39,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -r t ${PN}-test.asd
 }
 
