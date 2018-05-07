@@ -17,3 +17,4 @@ IUSE=""
 RDEPEND=">=net-libs/zeromq-3"
 DEPEND=""
 
+PATCHES=( "${FILESDIR}/cppzmq-4.2.3-cmakeConfig.patch" )

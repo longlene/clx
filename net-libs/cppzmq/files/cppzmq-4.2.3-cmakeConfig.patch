@@ -1,0 +1,26 @@
+diff -ur a/cppzmqConfig.cmake.in b/cppzmqConfig.cmake.in
+--- a/cppzmqConfig.cmake.in	2018-01-14 12:41:41.000000000 +0800
++++ b/cppzmqConfig.cmake.in	2018-05-07 17:51:26.339457372 +0800
+@@ -21,7 +21,9 @@
+ 
+ # libzmq autotools install: fallback to pkg-config
+ if(NOT ZeroMQ_FOUND)
+-    include(${CMAKE_CURRENT_LIST_DIR}/libzmqPkgConfigFallback.cmake)
++    # try again with pkg-config (normal install of zeromq)
++	list (INSERT CMAKE_MODULE_PATH 0 ${CMAKE_CURRENT_LIST_DIR}/libzmq-pkg-config)
++    find_package(ZeroMQ REQUIRED)
+ endif()
+ 
+ if(NOT ZeroMQ_FOUND)
+diff -ur a/libzmq-pkg-config/FindZeroMQ.cmake b/libzmq-pkg-config/FindZeroMQ.cmake
+--- a/libzmq-pkg-config/FindZeroMQ.cmake	2018-01-14 12:41:41.000000000 +0800
++++ b/libzmq-pkg-config/FindZeroMQ.cmake	2018-05-07 17:50:50.989901776 +0800
+@@ -7,7 +7,7 @@
+ find_library(ZeroMQ_STATIC_LIBRARY NAMES libzmq.a libzmq.dll.a
+              PATHS ${PC_LIBZMQ_LIBDIR} ${PC_LIBZMQ_LIBRARY_DIRS})
+ 
+-if(ZeroMQ_LIBRARY AND ZeroMQ_STATIC_LIBRARY)
++if(ZeroMQ_LIBRARY OR ZeroMQ_STATIC_LIBRARY)
+     set(ZeroMQ_FOUND ON)
+ endif()
+ 
