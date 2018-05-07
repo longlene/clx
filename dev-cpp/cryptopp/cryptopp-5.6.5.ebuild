@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit vcs-snapshot
+inherit cmake-utils vcs-snapshot
 
 MY_PV=${PV//./_}
 
@@ -14,14 +14,16 @@ SRC_URI="https://github.com/weidai11/cryptopp/archive/CRYPTOPP_${MY_PV}.tar.gz -
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="static-libs"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_install() {
-	insinto /usr/include/cryptopp
-	doins *.h
-	dolib.a libcryptopp.a
-	dodoc Readme.txt
+src_configure() {
+	local mycmakeargs=(
+	-DBUILD_STATIC=$(usex static-libs)
+	-DBUILD_TESTING=OFF
+	)
+	cmake-utils_src_configure
 }
+
