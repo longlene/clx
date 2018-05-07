@@ -3,6 +3,8 @@
 
 EAPI=6
 
+inherit cmake-utils
+
 DESCRIPTION="JSON for Modern C++"
 HOMEPAGE="http://nlohmann.github.io/json"
 SRC_URI="https://github.com/nlohmann/json/archive/v${PV}.tar.gz -> ${P}.tar.gz"
@@ -10,17 +12,15 @@ SRC_URI="https://github.com/nlohmann/json/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_compile(){
-	:
+src_configure() {
+	local mycmakeargs=(
+	-DBUILD_TESTING=$(usex test)
+	)
+	cmake-utils_src_configure
 }
 
-src_install() {
-	insinto /usr/include
-	doins src/json.hpp
-	dodoc README.md
-}
