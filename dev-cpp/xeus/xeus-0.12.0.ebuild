@@ -15,8 +15,21 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	dev-cpp/cryptopp
+	dev-cpp/json
+	=dev-cpp/cryptopp-5.6.5
 	dev-cpp/xtl
-	net-libs/cppzmq
+	>=net-libs/cppzmq-4.2.3
 "
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	eapply_user
+	sed -e 's#cryptopp-static#cryptopp#' -i CMakeLists.txt
+}
+
+src_configure() {
+	local mycmakeargs=(
+	-DCMAKE_MODULE_PATH=${FILESDIR}
+	)
+	cmake-utils_src_configure
+}
