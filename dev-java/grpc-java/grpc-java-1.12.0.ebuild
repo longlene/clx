@@ -39,7 +39,7 @@ src_prepare() {
 src_compile() {
 	#./gradlew build || die "compile failed"
 	#./gradlew java_pluginExecutable grpc-protobuf:jar grpc-netty:jar grpc-stub:jar || die "compile failed"
-	local mytask="java_pluginExecutable grpc-protobuf:jar grpc-netty:jar grpc-stub:jar"
+	local mytask="java_pluginExecutable grpc-core:jar grpc-protobuf:jar grpc-netty:jar grpc-stub:jar"
 	#use doc && mytask+=" grpc-protobuf:javadoc grpc-netty:javadoc grpc-stub:javadoc "
 	./gradlew ${mytask} || die "compile failed"
 }
@@ -47,6 +47,7 @@ src_compile() {
 src_install() {
 	dobin compiler/build/exe/java_plugin/protoc-gen-grpc-java
 	#java-pkg_newjar "${PN}.jar"
+	java-pkg_newjar core/build/libs/grpc-core-${PV}.jar grpc-core.jar
 	java-pkg_newjar stub/build/libs/grpc-stub-${PV}.jar grpc-stub.jar
 	java-pkg_newjar protobuf/build/libs/grpc-protobuf-${PV}.jar grpc-protobuf.jar
 	java-pkg_newjar netty/build/libs/grpc-netty-${PV}.jar grpc-netty.jar
