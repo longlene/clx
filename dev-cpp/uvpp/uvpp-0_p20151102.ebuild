@@ -1,20 +1,19 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=5
 
-inherit git-2
+inherit vcs-snapshot
+
+EGIT_COMMIT="3b8746f5f79e28b504497624e3b363bab7462e39"
 
 DESCRIPTION="C++11 libuv wrapper"
 HOMEPAGE="https://github.com/larroy/uvpp"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/larroy/uvpp.git"
+SRC_URI="https://github.com/larroy/uvpp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND=""
@@ -24,6 +23,6 @@ RDEPEND="${DEPEND}
 
 src_install() {
 	insinto /usr/include
-	doins *.hpp
+	doins -r include/uvpp
 	dodoc README.md
 }
