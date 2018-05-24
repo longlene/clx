@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="84bcd8db0be9eefd6c3f56c4eb4c6f7992c4c77a"
+inherit common-lisp-3
 
 DESCRIPTION="Simplified interface to cl-bodge"
 HOMEPAGE="https://github.com/borodust/trivial-gamekit"
-SRC_URI="https://github.com/borodust/trivial-gamekit/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/borodust/trivial-gamekit/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
@@ -20,4 +18,11 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/log4cl
 	dev-lisp/cl-bodge
+	dev-lisp/cl-muth
+	dev-lisp/cl-fad
 "
+
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all assets
+}

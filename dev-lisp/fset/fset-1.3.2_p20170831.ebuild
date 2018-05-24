@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="857336a39b6d31ef0ce12e47a7a5f846c35375a2"
+EGIT_COMMIT="2df6df7e39468075dcbbe7210a7b72dc99de03c7"
 
 DESCRIPTION="FSet, the functional collections library for Common Lisp"
 HOMEPAGE="https://github.com/slburson/fset"

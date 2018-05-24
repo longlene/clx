@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="6e97fef23648273789ec7e7ddacc53f0587c1b81"
+EGIT_COMMIT="7bd96ba3f88a424e03394de1adadf4a4993f849c"
 
 DESCRIPTION="Deployment tools for standalone Common Lisp applications"
 HOMEPAGE="https://github.com/Shinmera/deploy"
@@ -14,7 +14,7 @@ SRC_URI="https://github.com/Shinmera/deploy/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -22,3 +22,8 @@ RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/trivial-features
 "
+
+src_prepare() {
+	eapply_user
+	use test || rm -r ${PN}-test.asd test.lisp
+}
