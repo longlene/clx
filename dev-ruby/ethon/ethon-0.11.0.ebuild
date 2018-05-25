@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/typhoeus/ethon"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/ffi-1.3.0"
