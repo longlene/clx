@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-
+Rbplotly, a Ruby visualization library, allows you to create interactive plots
 		</longdescription>
 	</pkgmetadata>

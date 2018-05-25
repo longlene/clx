@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Ruby runtime and core library for JavaScript
+Opal is a Ruby to JavaScript compiler
 		</longdescription>
 	</pkgmetadata>
