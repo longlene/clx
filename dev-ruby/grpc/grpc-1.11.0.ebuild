@@ -12,12 +12,11 @@ inherit ruby-fakegem
 DESCRIPTION="Send RPCs from Ruby using GRPC"
 HOMEPAGE="https://github.com/google/grpc/tree/master/src/ruby"
 
-LICENSE="BSD-3-Clause"
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/google-protobuf-3.0.2"
+ruby_add_rdepend ">=dev-ruby/google-protobuf-3.1"
 ruby_add_rdepend ">=dev-ruby/googleauth-0.5.1"
-ruby_add_rdepend ">=dev-ruby/googleapis-common-prots-types-1.0.0"
-
+ruby_add_rdepend ">=dev-ruby/googleapis-common-protos-types-1.0.0"

@@ -12,13 +12,10 @@ inherit ruby-fakegem
 DESCRIPTION="Protocol Buffers are Google's data interchange format"
 HOMEPAGE="https://developers.google.com/protocol-buffers"
 
-LICENSE="BSD"
+LICENSE="BSD-3-Clause"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/rake-compiler-dock-0"
-ruby_add_rdepend ">=dev-ruby/rake-compiler-0"
-ruby_add_rdepend ">=dev-ruby/test-unit-0"
-ruby_add_rdepend ">=dev-ruby/rubygems-tasks-0"
-
+ruby_add_rdepend ">=dev-ruby/rake-compiler-dock-0.6.0"
+ruby_add_rdepend ">=dev-ruby/rake-compiler-0.9.5"

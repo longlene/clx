@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=5
 USE_RUBY="ruby22 ruby23 ruby24"
 
 RUBY_FAKEGEM_TASK_DOC=""
@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/rack-1.3.0"
-ruby_add_rdepend ">=dev-ruby/mustermann-grape-1.0.0"
-ruby_add_rdepend ">=dev-ruby/rack-accept-0"
 ruby_add_rdepend ">=dev-ruby/activesupport-0"
-ruby_add_rdepend ">=dev-ruby/virtus-1.0.0"
 ruby_add_rdepend ">=dev-ruby/builder-0"
+ruby_add_rdepend ">=dev-ruby/mustermann-grape-1.0.0"
+ruby_add_rdepend ">=dev-ruby/rack-1.3.0"
+ruby_add_rdepend ">=dev-ruby/rack-accept-0"
+ruby_add_rdepend ">=dev-ruby/virtus-1.0.0"
 
