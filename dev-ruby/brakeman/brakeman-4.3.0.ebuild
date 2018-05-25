@@ -14,7 +14,7 @@ HOMEPAGE="http://brakemanscanner.org"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 
