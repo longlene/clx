@@ -10,11 +10,10 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 inherit ruby-fakegem
 
 DESCRIPTION="Choice is a simple little gem for easily defining and parsing command line options with a friendly DSL"
-HOMEPAGE="http://choice.rubyforge.org/"
+HOMEPAGE="http://www.github.com/defunkt/choice"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
-
 
