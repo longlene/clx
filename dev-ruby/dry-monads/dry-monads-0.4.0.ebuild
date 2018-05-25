@@ -9,15 +9,13 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="High performance memcached client for Ruby"
-HOMEPAGE="http://github.com/mperham/dalli"
+DESCRIPTION="Common monads for Ruby"
+HOMEPAGE="https://github.com/dry-rb/dry-monads"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/minitest-4.2.0"
-ruby_add_rdepend ">=dev-ruby/mocha-0"
-ruby_add_rdepend ">=dev-ruby/rails-4"
-
+ruby_add_rdepend ">=dev-ruby/dry-equalizer-0"
+ruby_add_rdepend ">=dev-ruby/dry-core-0.3"
