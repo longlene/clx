@@ -14,11 +14,11 @@ HOMEPAGE="http://github.com/cucumber/aruba"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/cucumber-1.3.19"
-ruby_add_rdepend ">=dev-ruby/childprocess-0.5.6"
+ruby_add_rdepend ">=dev-ruby/childprocess-0.6.3"
 ruby_add_rdepend ">=dev-ruby/ffi-1.9.10"
 ruby_add_rdepend ">=dev-ruby/rspec-expectations-2.99"
 ruby_add_rdepend ">=dev-ruby/contracts-0.9"
