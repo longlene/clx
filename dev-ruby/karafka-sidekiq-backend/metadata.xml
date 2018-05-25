@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Framework used to simplify Apache Kafka based Ruby applications development
+Karafka Sidekiq backend for background messages processing
 		</longdescription>
 	</pkgmetadata>

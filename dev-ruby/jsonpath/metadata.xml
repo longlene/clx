@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Framework used to simplify Apache Kafka based Ruby applications development
+Ruby implementation of http://goessner
 		</longdescription>
 	</pkgmetadata>
