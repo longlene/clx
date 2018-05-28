@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit cmake-utils git-r3
+inherit cmake-utils vcs-snapshot
+
+EGIT_COMMIT="9d74f9f930117cbc7f8ee3566380dc290328dbba"
 
 DESCRIPTION="Simple and portable GUI library in C"
 HOMEPAGE="https://github.com/andlabs/libui"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/andlabs/libui.git"
+SRC_URI="https://github.com/andlabs/libui/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
