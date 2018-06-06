@@ -30,6 +30,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -rf ${PN}-test.asd test
 }
 	
