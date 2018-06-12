@@ -14,7 +14,7 @@ LICENSE="MIT"
 KEYWORDS="~amd64 ~arm x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
-RDEPEND=">=net-libs/zeromq-3"
+RDEPEND=">=net-libs/zeromq-4.2.1"
 DEPEND=""
 
 PATCHES=( "${FILESDIR}/cppzmq-4.2.3-cmakeConfig.patch" )

@@ -17,8 +17,8 @@ IUSE=""
 DEPEND="
 	dev-cpp/gflags
 	dev-libs/openssl
-	>=dev-libs/protobuf-3.5.0
 	dev-util/re2c
+	>=dev-libs/protobuf-3.5.0
 	>=net-dns/c-ares-1.14.0-r1
 	sys-libs/zlib
 "
