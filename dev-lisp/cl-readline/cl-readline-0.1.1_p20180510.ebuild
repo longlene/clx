@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2c6ccf80044b4ba60fccf74af0d21612cfcf3a17"
+EGIT_COMMIT="6f6d509d61c1d6a25734a28533afef27acbe7b72"
 
 DESCRIPTION="Common Lisp bindings to GNU Readline library"
 HOMEPAGE="https://mrkkrp.github.io/cl-readline/"
