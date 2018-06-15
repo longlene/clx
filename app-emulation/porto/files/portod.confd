@@ -1,0 +1,15 @@
+# /etc/conf.d/portod: config file for /etc/init.d/portod
+
+# where the portod daemon output gets piped
+# this contains both stdout and stderr. If  you need to separate them,
+# see the settings below
+#PORTOD_LOGFILE="/var/log/portod.log"
+
+# where portod's pid get stored
+#PORTOD_PIDFILE="/run/portod.pid"
+
+# where the portod daemon itself is run from
+#PORTODD_BINARY="/usr/sbin/portodd"
+
+# any other random options you want to pass to portod
+PORTOD_OPTS=""
