@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="10494fafd5f0aabcffd4d6b726517805b6ac2548"
+EGIT_COMMIT="4a39b762a0aa38850c88e0928486f75e55f15628"
 
 DESCRIPTION="Common Lisp package for generating graphviz (dot) files"
 HOMEPAGE="https://github.com/michaelw/cl-dot"
