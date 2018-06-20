@@ -1,16 +1,15 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit git-2
+inherit vcs-snapshot
+
+EGIT_COMMIT="524449cb30d48b56b37e5c7580accc1d66c355e4"
 
 DESCRIPTION="A small libc"
 HOMEPAGE="http://litcave.rudi.ir"
-SRC_URI=""
-
-EGIT_REPO_URI="http://repo.or.cz/neatlibc.git"
+SRC_URI="http://github.com/aligrudi/neatlibc/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
@@ -18,6 +17,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="
+	sys-devel/neatcc
 	amd64? ( dev-lang/fasm )
 	x86? ( dev-lang/fasm )
 	arm? ( sys-devel/neatas )

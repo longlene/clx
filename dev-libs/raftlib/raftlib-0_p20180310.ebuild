@@ -5,7 +5,7 @@ EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="8d536f1698065f307152aedf96636277d4afb60a"
+EGIT_COMMIT="5d18a309241dfd55be92ea00fb773be15f524407"
 
 DESCRIPTION="The RaftLib C++ library"
 HOMEPAGE="https://github.com/RaftLib/RaftLib/"

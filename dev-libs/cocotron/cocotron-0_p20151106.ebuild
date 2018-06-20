@@ -4,11 +4,11 @@ EAPI=4
 
 inherit mercurial multilib
 
-DESCRIPTION="The Cocotron is a cross-platform implementation of Objective-C API's similar to Foundation and AppKit"
-HOMEPAGE="http://code.google.com/p/cocotron/"
-SRC_URI=""
+EGIT_COMMIT="9cda7d719428a8ff940b134e391e511104ee0b5d"
 
-EHG_REPO_URI="https://code.google.com/p/cocotron/"
+DESCRIPTION="The Cocotron is a cross-platform implementation of Objective-C API's similar to Foundation and AppKit"
+HOMEPAGE="http://www.cocotron.org/"
+SRC_URI="https://github.com/cjwl/cocotron/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -17,13 +17,15 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-gnustep-base/libobjc2
-dev-libs/blocksruntime
-sys-devel/clang"
+	gnustep-base/libobjc2
+	dev-libs/blocksruntime
+	sys-devel/clang
+"
 
 ENVD="${T}"/51cocotron
 
 src_prepare() {
+	eapply_user
 	#sed -i 's/libobjc\.a/libobjc\.so/' makefiles/Foundation/Makefile
 	sed -i 's:local\/::' makefiles/Makefiles/Makefile.common
 }
