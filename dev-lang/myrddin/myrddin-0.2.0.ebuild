@@ -5,13 +5,11 @@ EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="cef2d4ebd48ab554330e49f8961547e05df47127"
+DESCRIPTION="Myrddin Compiler"
+HOMEPAGE="https://myrlang.org/"
+SRC_URI="https://myrlang.org/releases/${P}.tar.gz"
 
-DESCRIPTION=""
-HOMEPAGE="https://github.com/oridb/mc"
-SRC_URI="https://github.com/oridb/mc/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
