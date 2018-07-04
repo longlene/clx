@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="fff0fcfb03b4bda6b9b622c1acd32504f2bf3efc"
+EGIT_COMMIT="88b6c92dbbc80a6c9552435604f7b1ae6f2a4026"
 
 DESCRIPTION="Delicious conversations platform in Common Lisp and ClojureScript"
 HOMEPAGE="https://github.com/cicakhq/potato"
