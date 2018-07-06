@@ -17,6 +17,4 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/bundler-1.5"
-ruby_add_rdepend ">=dev-ruby/rake-0"
-
+ruby_add_rdepend ">=dev-ruby/jekyll-3.0"
