@@ -5,7 +5,7 @@ EAPI=6
 
 inherit eutils vcs-snapshot
 
-EGIT_COMMIT="279e1332c4f366d76d7a27016347fa951e3ba431"
+EGIT_COMMIT="7786ec11fd3e94e894d845975d3aded0391ff0f5"
 
 DESCRIPTION="Connect to Plan 9 CPU servers from other operating systems"
 HOMEPAGE="https://github.com/0intro/drawterm"
