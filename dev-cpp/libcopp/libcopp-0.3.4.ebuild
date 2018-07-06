@@ -7,9 +7,9 @@ inherit cmake-utils
 
 DESCRIPTION="cross-platform coroutine library in c++"
 HOMEPAGE="https://github.com/owt5008137/libcopp"
-SRC_URI="https://github.com/owt5008137/libcopp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/owt5008137/libcopp/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="example test"
