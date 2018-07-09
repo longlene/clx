@@ -1,15 +1,15 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3ce6b4dcbded8a107714128fc59f54ffa522b6c7"
+EGIT_COMMIT="526eaf232923daed8e9c23676599c3a1cb3e121c"
 
-DESCRIPTION="A logic programming library for Common Lisp"
-HOMEPAGE="https://github.com/carrotflakes/preil"
-SRC_URI="https://github.com/carrotflakes/preil/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Egison-like pattern-matching library for Common Lisp"
+HOMEPAGE="https://github.com/carrotflakes/cleson"
+SRC_URI="https://github.com/carrotflakes/cleson/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
@@ -18,6 +18,7 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-lisp/alexandria
 	test? ( dev-lisp/prove )
 "
 

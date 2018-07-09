@@ -17,5 +17,5 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/cl-walker
+	dev-lisp/cl-walker
 "
