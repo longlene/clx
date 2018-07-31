@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b5add9f6ada4d8f68368c6965c3ddd81c85dcfc6"
+EGIT_COMMIT="db8746513728fc025ffdfbe02924fad6a338e943"
 
 DESCRIPTION="A Common Lisp library for interacting with PostgreSQL databases."
 HOMEPAGE="http://marijnhaverbeke.nl/postmodern/"

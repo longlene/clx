@@ -4,11 +4,11 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4c1edb2367340cac7c9586aa76aaf26647c01547"
+EGIT_COMMIT="795ca3352ad981e6773fac89b3884d0eda701cee"
 
 DESCRIPTION="A Common Lisp library for manipulating ELF files"
-HOMEPAGE="https://github.com/eschulte/elf"
-SRC_URI="https://github.com/eschulte/elf/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/GrammaTech/elf"
+SRC_URI="https://github.com/GrammaTech/elf/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
