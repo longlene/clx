@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9d642a6c28245c7f8d146cf194b63f73cef838b5"
+EGIT_COMMIT="9691a6a5f8e798c383e289880c17222520db121d"
 
 DESCRIPTION="Database independent interface for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/cl-dbi"

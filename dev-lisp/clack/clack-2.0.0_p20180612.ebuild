@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5e2f5ef08d69cc9e958b24092a1db47b29e55aff"
+EGIT_COMMIT="f31eba7508da1b89b0cf10840307826d6b0edac7"
 
 DESCRIPTION="Web application environment for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/clack"
@@ -19,6 +19,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/lack
 	dev-lisp/bordeaux-threads
+	dev-lisp/cl-fastcgi
 	dev-lisp/alexandria
 	dev-lisp/flexi-streams
 	dev-lisp/usocket
@@ -38,7 +39,7 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	eapply_user
-	rm -r clack-v1-compat.asd v1-compat
+	rm -r v1-compat ${PN}-v1-compat.asd
 	use test || rm -r t-*.asd t ${PN}-test.asd
 }
 

@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="0fa793dd75beb3d8927cbcb20ea0cbb93c0c71dd"
+EGIT_COMMIT="2101afae90232904d70c1e23c419b114cdc4c840"
 
 DESCRIPTION="A common lisp library providing easy csv reading and writing"
 HOMEPAGE="https://github.com/blindglobe/cl-csv"

@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d9f1d400035db98b9c433be8dc70314527b1f416"
+EGIT_COMMIT="e118dbbd3f55813376c06c5e25d250a3744bc3c7"
 
 DESCRIPTION="The Wrapper of OpenCV for CommonLisp"
 HOMEPAGE="https://github.com/byulparan/common-cv"
