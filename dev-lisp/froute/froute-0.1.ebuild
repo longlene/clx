@@ -12,7 +12,7 @@ SRC_URI="https://github.com/FungusHumungus/froute/archive/v${PV}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
