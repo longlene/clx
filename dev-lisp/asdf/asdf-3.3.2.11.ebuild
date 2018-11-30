@@ -7,7 +7,7 @@ inherit eutils prefix common-lisp-3
 
 DESCRIPTION="ASDF is Another System Definition Facility for Common Lisp"
 HOMEPAGE="http://common-lisp.net/project/asdf/"
-SRC_URI="mirror://gentoo/${P}.tar.gz"
+SRC_URI="https://gitlab.common-lisp.net/asdf/asdf/-/archive/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
