@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="32b0d1ca3d9fa95327165b8090e1021bc563ed3e"
 
 DESCRIPTION="A Common Lisp binding for the Apache Thrift framework"
 HOMEPAGE="https://github.com/lisp/de.setf.thrift"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/lisp/de.setf.thrift.git"
+SRC_URI="https://github.com/lisp/de.setf.thrift/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"

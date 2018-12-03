@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Usocket is a universal socket library for Common Lisp."
 HOMEPAGE="http://common-lisp.net/project/usocket/"
-SRC_URI="http://common-lisp.net/project/${PN}/releases/${P}.tar.gz"
+SRC_URI="https://github.com/usocket/usocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -21,6 +21,11 @@ RDEPEND="
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -rf ${PN}-test.asd test
+}
+
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all version.sexp
 }
