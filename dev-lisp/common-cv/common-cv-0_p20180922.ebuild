@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e118dbbd3f55813376c06c5e25d250a3744bc3c7"
+EGIT_COMMIT="c9422353fdb465840225d8e4c1135b7b92d29a2a"
 
 DESCRIPTION="The Wrapper of OpenCV for CommonLisp"
 HOMEPAGE="https://github.com/byulparan/common-cv"

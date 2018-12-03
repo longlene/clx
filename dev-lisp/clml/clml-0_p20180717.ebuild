@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="eeac72b420a1475400fdcc87baf561eb961fd59e"
+EGIT_COMMIT="bac518cdeab6cc15d1de47186fd301177746b22a"
 
 DESCRIPTION="Common Lisp Machine Learning Library"
 HOMEPAGE="https://github.com/mmaul/clml"
@@ -37,6 +37,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -rf test
 }

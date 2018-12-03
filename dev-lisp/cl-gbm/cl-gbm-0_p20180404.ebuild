@@ -1,11 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b7e47e9611f3fa96d1fcfcaf662cfa5becfbe0b7"
+EGIT_COMMIT="95a25e89090a0abb232c37b0591f1cc0cb4a5e83"
 
 DESCRIPTION="Common Lisp wrapper to libgbm"
 HOMEPAGE="https://github.com/malcolmstill/cl-gbm"

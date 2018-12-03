@@ -4,11 +4,11 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2e693f1f6ef0eb375b13d23aaca25ed929836493"
+EGIT_COMMIT="2212d8b5319be2bfe495573ea367fe85b877308b"
 
 DESCRIPTION="A python notebook-esque thing for Common Lisp"
-HOMEPAGE="https://github.com/Inaimathi/cl-notebook"
-SRC_URI="https://github.com/Inaimathi/cl-notebook/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/inaimathi/cl-notebook"
+SRC_URI="https://github.com/inaimathi/cl-notebook/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
