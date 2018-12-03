@@ -4,9 +4,9 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="8ec91b67ca6ed891831d02fe9534bc22bc36fe85"
+EGIT_COMMIT="50bd4f09b5a03a7249bd4d78265d6451563b25ad"
 
-DESCRIPTION="A lightweight web application framework for Common Lisp"
+DESCRIPTION="Super micro framework for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/ningle"
 SRC_URI="https://github.com/fukamachi/ningle/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -24,11 +24,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
-	use test || rm -rf t ${PN}-test.asd
+	default
+	use test || rm -rf ${PN}-test.asd tests
 }
 
-src_install() {
-	common-lisp-3_src_install
-	common-lisp-install-sources -t all README.markdown
-}
