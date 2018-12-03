@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="2402a7c1ecc146b3f65fe9ee74958835e4d8f435"
 
 DESCRIPTION="Common Lisp implementation of the Erlang External Term Format"
 HOMEPAGE="https://github.com/flambard/cl-erlang-term"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/flambard/cl-erlang-term.git"
+SRC_URI="https://github.com/flambard/cl-erlang-term/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -26,5 +25,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	eapply_user
 	use test || rm -rf test erlang-term-test.asd
 }

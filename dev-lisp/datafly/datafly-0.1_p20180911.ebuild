@@ -1,12 +1,11 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d2b753e7fdd0dbeada9721380cf410186a85535b"
+EGIT_COMMIT="4f92a3a922272402e4c3f6bcbd46a9b35304ca8f"
 
 DESCRIPTION="A lightweight database library for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/datafly"
@@ -37,6 +36,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	default
 	use test || rm -rf ${PN}-test.asd t
 }
 

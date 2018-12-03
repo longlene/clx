@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="8411137131a99e379c477cb830b4d58c3228f4d6"
+EGIT_COMMIT="2fabb20ccc5ddfe60c91f5b500eb676bafbf4481"
 
 DESCRIPTION="Max’s Parser Combinators"
 HOMEPAGE="https://github.com/eugeneia/maxpc"

@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="9816f91c11590ad18d5422c41f81e0aef9573a0a"
 
 DESCRIPTION="Generative Programming and KBE system embedded in Common Lisp"
 HOMEPAGE="http://gendl.com/"
-SRC_URI=""
-
-EGIT_REPO_URI="https://gitlab.common-lisp.net/gendl/gendl.git"
+SRC_URI="https://github.com/lisp-mirror/gendl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="AGPL"
 SLOT="0"
@@ -18,8 +17,10 @@ KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	dev-lisp/gwl-graphics
+	dev-lisp/tasty
+	dev-lisp/robot
+	dev-lisp/yadd
+"
 
-src_prepare() {
-	rm "surf/source/box-intersection .lisp" "documentation/training/g102-tud/images/KBE practical slides v2.png"
-}
