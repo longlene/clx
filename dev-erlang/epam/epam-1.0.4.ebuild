@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit rebar
+inherit rebar user
 
 MY_PN="epam"
 MY_P="${MY_PN}-${PV}"
@@ -25,3 +25,6 @@ RDEPEND="${DEPEND}"
 DOCS=( README.md )
 
 S="${WORKDIR}/${MY_P}"
+pkg_setup() {
+	enewgroup "${PN}"
+}
