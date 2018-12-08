@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -10,8 +10,8 @@ HOMEPAGE="https://developers.google.com/protocol-buffers/ https://github.com/goo
 SRC_URI="https://github.com/google/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
-SLOT="0/14"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux ~x64-macos ~x86-macos"
+SLOT="0/17"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-linux ~x86-linux ~x64-macos ~x86-macos"
 IUSE="emacs examples static-libs test zlib"
 
 RDEPEND="emacs? ( virtual/emacs )
@@ -20,37 +20,39 @@ DEPEND="${RDEPEND}
 	test? ( >=dev-cpp/gtest-1.8.0[${MULTILIB_USEDEP}] )"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-3.4.0-disable_no-warning-test.patch"
-	"${FILESDIR}/${PN}-3.4.0-system_libraries.patch"
-	"${FILESDIR}/${PN}-3.4.0-protoc_input_output_files.patch"
+	"${FILESDIR}/${PN}-3.6.0-disable_no-warning-test.patch"
+	"${FILESDIR}/${PN}-3.6.0-system_libraries.patch"
+	"${FILESDIR}/${PN}-3.6.0-protoc_input_output_files.patch"
 )
 
 DOCS=(CHANGES.txt CONTRIBUTORS.txt README.md)
 
 src_prepare() {
-	append-cppflags -DGOOGLE_PROTOBUF_NO_RTTI
 	default
 	eautoreconf
 }
 
+src_configure() {
+	append-cppflags -DGOOGLE_PROTOBUF_NO_RTTI
+	multilib-minimal_src_configure
+}
+
 multilib_src_configure() {
-	local myeconfargs=(
+	local options=(
 		$(use_enable static-libs static)
 		$(use_with zlib)
 	)
 
 	if tc-is-cross-compiler; then
-		# The build system wants `protoc` when building, so we need a copy that
-		# runs on the host. This is more hermetic than relying on the version
-		# installed in the host being the exact same version.
+		# Build system uses protoc when building, so protoc copy runnable on host is needed.
 		mkdir -p "${WORKDIR}/build" || die
 		pushd "${WORKDIR}/build" > /dev/null || die
-		ECONF_SOURCE="${S}" econf_build "${myeconfargs[@]}"
-		myeconfargs+=(--with-protoc="${PWD}"/src/protoc)
+		ECONF_SOURCE="${S}" econf_build "${options[@]}"
+		options+=(--with-protoc="$(pwd)/src/protoc")
 		popd > /dev/null || die
 	fi
 
-	ECONF_SOURCE="${S}" econf "${myeconfargs[@]}"
+	ECONF_SOURCE="${S}" econf "${options[@]}"
 }
 
 src_compile() {
@@ -74,6 +76,8 @@ multilib_src_test() {
 }
 
 multilib_src_install_all() {
+	find "${D}" -name "*.la" -delete || die
+
 	insinto /usr/share/vim/vimfiles/syntax
 	doins editors/proto.vim
 	insinto /usr/share/vim/vimfiles/ftdetect
