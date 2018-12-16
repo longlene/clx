@@ -6,6 +6,6 @@
 			<name>loong0</name>
 		</maintainer>
 		<longdescription>
-Making it easy to serialize models for client-side use
+ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner
 		</longdescription>
 	</pkgmetadata>

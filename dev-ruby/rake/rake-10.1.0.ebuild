@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/rake/rake-0.9.6.ebuild,v 1.5 2013/09/05 15:46:18 jer Exp $
 
 EAPI=4
-USE_RUBY="ruby18 ruby22 ruby23 ruby24 jruby"
+USE_RUBY="ruby18 ruby23 ruby24 jruby"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="CHANGES README.rdoc TODO"

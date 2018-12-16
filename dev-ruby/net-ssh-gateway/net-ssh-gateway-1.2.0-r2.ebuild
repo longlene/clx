@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/net-ssh-gateway/net-ssh-gateway-1.2.0-r1.ebuild,v 1.2 2013/12/22 19:19:50 blueness Exp $
 
 EAPI=5
-USE_RUBY="ruby22 ruby23 ruby24"
+USE_RUBY="ruby23 ruby24"
 
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 
