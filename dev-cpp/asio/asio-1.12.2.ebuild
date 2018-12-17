@@ -12,8 +12,7 @@ SLOT="0"
 KEYWORDS="alpha amd64 ~arm ~arm64 ~hppa ia64 ppc ppc64 sparc x86"
 IUSE="doc examples ssl test"
 
-RDEPEND="dev-libs/boost
-	ssl? ( dev-libs/openssl:0= )"
+RDEPEND="ssl? ( dev-libs/openssl:0= )"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
