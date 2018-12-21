@@ -5,7 +5,7 @@ EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="05ad98aeb66fabc7c8126e6068d4a70134d4b80d"
+EGIT_COMMIT="cdeb59d5c82e5401445b4c051bb396f6738d4a19"
 
 DESCRIPTION="Collective communications library with various primitives for multi-machine training"
 HOMEPAGE="https://github.com/facebookincubator/gloo"
