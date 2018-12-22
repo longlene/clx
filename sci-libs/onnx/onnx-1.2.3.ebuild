@@ -19,3 +19,9 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+src_prepare() {
+	default
+	rm -r onnx/backend/test
+	cmake-utils_src_prepare
+}

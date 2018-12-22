@@ -3,9 +3,10 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 python3_4 python3_5 )
+#PYTHON_COMPAT=( python2_7 python3_4 python3_5 )
 
-inherit cmake-utils python-single-r1
+#inherit cmake-utils python-single-r1
+inherit cmake-utils
 
 DESCRIPTION="An open-source software library for Machine Intelligence"
 HOMEPAGE="https://www.tensorflow.org/"
@@ -17,11 +18,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE="contrib cuda python example"
 
 DEPEND="
+	sys-libs/zlib
 	cuda? ( dev-util/nvidia-cuda-toolkit dev-libs/nvidia-cuda-cudnn )
 "
 RDEPEND="${DEPEND}"
 
 CMAKE_USE_DIR="${S}"/tensorflow/contrib/cmake
+
+src_prepare() {
+	eapply_user
+	sed -i 's#-DGRPC_ARES=0#-DGRPC_ARES=1#' tensorflow/contrib/cmake/external/grpc.cmake
+}
 
 src_configure() {
 	local mycmakeargs=(
@@ -31,6 +38,8 @@ src_configure() {
 	-Dtensorflow_BUILD_CC_EXAMPLE=$(usex example)
 	-Dtensorflow_BUILD_PYTHON_BINDINGS=$(usex python)
 	-Dtensorflow_BUILD_CONTRIB_KERNELS=$(usex contrib)
+	-Dtensorflow_PATH_STATIC_LIB=/opt/cuda/lib64
+	-Dsystemlib_ALL=ON
 	)
 	cmake-utils_src_configure
 }
