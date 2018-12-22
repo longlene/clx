@@ -3,6 +3,8 @@
 
 EAPI=6
 
+PYTHON_COMPAT=( python3_4 )
+
 inherit cmake-utils lua vcs-snapshot
 
 DESCRIPTION="Doom-based AI Research Platform for Reinforcement Learning from Raw Visual Information"
@@ -31,7 +33,7 @@ RDEPEND="${DEPEND}
 CMAKE_IN_SOURCE_BUILD=true
 
 src_prepare() {
-	eapply_user
+	default
 	sed -e "s#/usr/local/share/#/usr/share/doom-data/#" \
 		-i src/vizdoom/src/posix/i_system.h || die
 	sed -e "s#/usr/local/share/doom#/usr/share/doom-data/#" \
@@ -46,10 +48,10 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-	"-DBUILD_JAVA=OFF"
-	"-DBUILD_LUA=$(usex lua)"
-	"-DBUILD_PYTHON=OFF"
-	"-DDOWNLOAD_FREEDOOM=OFF"
+	-DBUILD_JAVA=OFF
+	-DBUILD_LUA=$(usex lua)
+	-DBUILD_PYTHON=OFF
+	-DDOWNLOAD_FREEDOOM=OFF
 	)
 	if use lua ; then
 		mycmakeargs+=( "-DLUADIR=$(lua_get_sharedir)" )
