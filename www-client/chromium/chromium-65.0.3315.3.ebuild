@@ -16,7 +16,7 @@ SRC_URI="https://commondatastorage.googleapis.com/chromium-browser-official/${P}
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~arm64 ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="component-build cups gnome-keyring +hangouts jumbo-build kerberos neon pic +proprietary-codecs pulseaudio selinux +suid +system-ffmpeg +system-icu +system-libvpx +tcmalloc widevine"
 RESTRICT="!system-ffmpeg? ( proprietary-codecs? ( bindist ) )"
 
@@ -37,7 +37,7 @@ COMMON_DEPEND="
 	>=media-libs/alsa-lib-1.0.19:=
 	media-libs/fontconfig:=
 	media-libs/freetype:=
-	>=media-libs/harfbuzz-1.5.0:=[icu(-)]
+	>=media-libs/harfbuzz-1.6.0:=[icu(-)]
 	media-libs/libjpeg-turbo:=
 	media-libs/libpng:=
 	system-libvpx? ( media-libs/libvpx:=[postproc,svc] )
@@ -148,11 +148,10 @@ PATCHES=(
 	"${FILESDIR}/chromium-FORTIFY_SOURCE-r2.patch"
 	"${FILESDIR}/chromium-webrtc-r0.patch"
 	"${FILESDIR}/chromium-memcpy-r0.patch"
-	"${FILESDIR}/chromium-cups-r0.patch"
 	"${FILESDIR}/chromium-clang-r2.patch"
-	"${FILESDIR}/chromium-angle-r0.patch"
-	"${FILESDIR}/chromium-ffmpeg-r0.patch"
-    "${FILESDIR}/chromium-gcc5.patch"
+	"${FILESDIR}/chromium-gn-r0.patch"
+	"${FILESDIR}/chromium-vulkan-r0.patch"
+	"${FILESDIR}/chromium-gcc-r0.patch"
 )
 
 pre_build_checks() {
@@ -264,6 +263,8 @@ src_prepare() {
 		third_party/leveldatabase
 		third_party/libXNVCtrl
 		third_party/libaddressinput
+		third_party/libaom
+		third_party/libaom/source/libaom/third_party/x86inc
 		third_party/libjingle
 		third_party/libphonenumber
 		third_party/libsecret
@@ -298,6 +299,7 @@ src_prepare() {
 		third_party/protobuf
 		third_party/protobuf/third_party/six
 		third_party/qcms
+		third_party/s2cellid
 		third_party/sfntly
 		third_party/skia
 		third_party/skia/third_party/gif
@@ -320,6 +322,7 @@ src_prepare() {
 		third_party/zlib/google
 		url/third_party/mozilla
 		v8/src/third_party/valgrind
+		v8/src/third_party/utf8-decoder
 		v8/third_party/inspector_protocol
 
 		# gyp -> gn leftovers
@@ -386,7 +389,7 @@ src_configure() {
 	myconf_gn+=" enable_nacl=false"
 
 	# Use system-provided libraries.
-	# TODO: freetype (https://bugs.chromium.org/p/pdfium/issues/detail?id=733).
+	# TODO: freetype -- remove sources (https://bugs.chromium.org/p/pdfium/issues/detail?id=733).
 	# TODO: use_system_hunspell (upstream changes needed).
 	# TODO: use_system_libsrtp (bug #459932).
 	# TODO: use_system_protobuf (bug #525560).
@@ -396,6 +399,8 @@ src_configure() {
 	# libevent: https://bugs.gentoo.org/593458
 	local gn_system_libraries=(
 		flac
+		fontconfig
+		freetype
 		# Need harfbuzz_from_pkgconfig target
 		#harfbuzz-ng
 		libdrm
@@ -428,7 +433,6 @@ src_configure() {
 	myconf_gn+=" enable_hangout_services_extension=$(usex hangouts true false)"
 	myconf_gn+=" enable_widevine=$(usex widevine true false)"
 	myconf_gn+=" use_cups=$(usex cups true false)"
-	myconf_gn+=" use_gconf=false"
 	myconf_gn+=" use_gnome_keyring=$(usex gnome-keyring true false)"
 	myconf_gn+=" use_kerberos=$(usex kerberos true false)"
 	myconf_gn+=" use_pulseaudio=$(usex pulseaudio true false)"
@@ -629,10 +633,8 @@ src_install() {
 	doins -r out/Release/locales
 	doins -r out/Release/resources
 
-	if [[ -d out/Release/swiftshader ]]; then
-		insinto "${CHROMIUM_HOME}/swiftshader"
-		doins out/Release/swiftshader/*.so
-	fi
+	insinto "${CHROMIUM_HOME}/swiftshader"
+	doins out/Release/swiftshader/*.so
 
 	# Install icons and desktop entry.
 	local branding size
