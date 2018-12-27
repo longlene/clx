@@ -5,9 +5,9 @@ EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="1c08e80313fd487112c48346889cc57badeef751"
+EGIT_COMMIT="c83a84afbef2b24f960ddeda0b5e2ab01fba6981"
 
-DESCRIPTION="A general purpose library for the OpenWRT project."
+DESCRIPTION="C utility functions for OpenWrt"
 HOMEPAGE="http://wiki.openwrt.org/"
 SRC_URI="https://git.openwrt.org/?p=project/libubox.git;a=snapshot;h=${EGIT_COMMIT};sf=tgz -> ${P}.tar.gz"
 
