@@ -3,11 +3,13 @@
 
 EAPI=5
 
-inherit git-r3 cmake-utils
+inherit cmake-utils vcs-snapshot
 
-DESCRIPTION="A general purpose library for the OpenWRT project."
+EGIT_COMMIT="d6673547adc3768ce674799fa35952351866c9d0"
+
+DESCRIPTION="OpenWrt service/process manager"
 HOMEPAGE="http://wiki.openwrt.org/"
-EGIT_REPO_URI="git://nbd.name/luci2/${PN}.git"
+SRC_URI="https://git.openwrt.org/?p=project/procd.git;a=snapshot;h=${EGIT_COMMIT};sf=tgz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

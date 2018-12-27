@@ -3,11 +3,13 @@
 
 EAPI=5
 
-inherit git-2 cmake-utils
+inherit cmake-utils vcs-snapshot
+
+EGIT_COMMIT="ffaa6132cb968fbf9532bdb9cbd0780073b9e7cd"
 
 DESCRIPTION="OpenWrt ubus RPC backend server"
 HOMEPAGE="http://wiki.openwrt.org/"
-EGIT_REPO_URI="git://nbd.name/luci2/${PN}.git"
+SRC_URI="https://git.openwrt.org/?p=project/rpcd.git;a=snapshot;h=${EGIT_COMMIT};sf=tgz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

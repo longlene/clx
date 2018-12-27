@@ -3,11 +3,14 @@
 
 EAPI=5
 
-inherit git-2 cmake-utils
+inherit cmake-utils vcs-snapshot
 
-DESCRIPTION="A general purpose library for the OpenWRT project."
+EGIT_COMMIT="4c8b4d6efc8302b508d261573351fffb75bd98c2"
+
+DESCRIPTION="OpenWrt Unified Configuration Interface"
 HOMEPAGE="http://wiki.openwrt.org/"
-EGIT_REPO_URI="git://nbd.name/${PN}.git"
+SRC_URI="https://git.openwrt.org/?p=project/uci.git;a=snapshot;h=${EGIT_COMMIT};sf=tgz -> ${P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
