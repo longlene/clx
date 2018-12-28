@@ -3,11 +3,14 @@
 
 EAPI=5
 
-inherit git-2 cmake-utils
+inherit cmake-utils vcs-snapshot
+
+EGIT_COMMIT="3ba74ebc9363993ea2a83fd73b4c1b1a96e73940"
 
 DESCRIPTION="libubox http client library"
 HOMEPAGE="http://wiki.openwrt.org/"
-EGIT_REPO_URI="git://git.openwrt.org/project/uclient.git"
+SRC_URI="https://git.openwrt.org/?p=project/uclient.git;a=snapshot;h=${EGIT_COMMIT};sf=tgz -> ${P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
