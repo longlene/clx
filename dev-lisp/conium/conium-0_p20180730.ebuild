@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="1aea67b62980d735783b6d7f5f7840780e1238dc"
 
 DESCRIPTION="a portability library for debugger"
 HOMEPAGE="https://github.com/bluelisp/conium"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/bluelisp/conium.git"
+SRC_URI="https://github.com/bluelisp/conium/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
