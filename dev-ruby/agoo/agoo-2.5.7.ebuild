@@ -9,13 +9,11 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION="A fast HTTP server supporting rack"
+DESCRIPTION="A High Performance HTTP Server for Ruby"
 HOMEPAGE="https://github.com/ohler55/agoo"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
-
-ruby_add_rdepend ">=dev-ruby/oj-3.4"
 
