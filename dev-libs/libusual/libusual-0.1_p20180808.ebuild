@@ -1,16 +1,15 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 
-inherit multilib git-2
+inherit vcs-snapshot
+
+EGIT_COMMIT="843a524c975d74505ba027155d733ba757f9b5fb"
 
 DESCRIPTION="Modern C Environment"
 HOMEPAGE="http://libusual.github.io/"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/markokr/libusual.git"
+SRC_URI="https://github.com/libusual/libusual/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
@@ -20,7 +19,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_configure() {
-	./autogen.sh
-	econf || die "configure failed"
+src_prepare() {
+	default
+	./autogen.sh || die "prepare failed"
 }
