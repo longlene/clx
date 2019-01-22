@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vim-plugin
 
-EGIT_COMMIT="38d1e3fb6d77e76cdab0613d272d6b159e0ef0dd"
+EGIT_COMMIT="a52ce788431cfb6d2dda623e1ae2a4ca557e344d"
 
 DESCRIPTION="Common Lisp client for neovim"
 HOMEPAGE="https://github.com/adolenc/cl-neovim"
@@ -28,7 +28,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-tests.asd t
 }
 	

@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c1c4447b3121f3e41efc982f539ad38cf028e2c0"
+EGIT_COMMIT="4ddbbc0686e06650d46069720a995146b51fce43"
 
 DESCRIPTION="A Common Lisp Wrapper for the SDL 2.0 C Library"
 HOMEPAGE="https://github.com/lispgames/cl-sdl2"

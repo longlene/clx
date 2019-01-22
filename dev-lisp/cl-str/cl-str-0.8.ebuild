@@ -1,16 +1,13 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="ad126c6b12ba15669f55a315d98a040d4b829483"
+inherit common-lisp-3
 
 DESCRIPTION="Common Lisp string manipulation library"
 HOMEPAGE="https://github.com/vindarel/cl-str"
-SRC_URI="https://github.com/vindarel/cl-str/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/vindarel/cl-str/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

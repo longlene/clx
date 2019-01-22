@@ -1,12 +1,11 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a00696b073f5c0ef9e4cc81dda30e600985eae45"
+EGIT_COMMIT="5b01a093a82b76c9e200a1837acc0060df2c4e85"
 
 DESCRIPTION="A lightweight, async HTTP client"
 HOMEPAGE="https://github.com/orthecreedence/carrier"

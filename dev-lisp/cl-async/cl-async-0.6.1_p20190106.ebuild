@@ -4,7 +4,7 @@ EAPI=4
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="dbf7b34fd76d61286d181537fe7c51345da17a40"
+EGIT_COMMIT="e99289b306bc10f01e889dcc559163b27f97085c"
 
 DESCRIPTION="Asynchronous operations for Common Lisp"
 HOMEPAGE="https://github.com/orthecreedence/cl-async"
