@@ -1,12 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 
 DESCRIPTION="cpptoml is a header-only library for parsing TOML"
 HOMEPAGE="https://github.com/skystrife/cpptoml"
-SRC_URI="https://github.com/skystrife/cpptoml/archive/toml-v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/skystrife/cpptoml/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
