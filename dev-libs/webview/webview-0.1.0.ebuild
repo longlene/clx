@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
-
-EGIT_COMMIT="02aa1dcf62a15f2c1e2197a07642e9c474ac32fa"
+inherit cmake-utils
 
 DESCRIPTION="Tiny cross-platform webview library for C/C++/Golang"
 HOMEPAGE="https://github.com/zserge/webview"
-SRC_URI="https://github.com/zserge/webview/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/zserge/webview/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
