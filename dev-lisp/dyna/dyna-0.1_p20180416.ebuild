@@ -1,19 +1,19 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d8d47abba000e3444eceb5a1607aeeab05a088ff"
+EGIT_COMMIT="d8cf27bc7428e3ac578ed704ff72de98582d89e0"
 
-DESCRIPTION="Dyna is an AWS DynamoDB ORM for Common Lisp"
+DESCRIPTION="AWS DynamoDB ORM for Common Lisp"
 HOMEPAGE="https://github.com/Rudolph-Miller/dyna"
 SRC_URI="https://github.com/Rudolph-Miller/dyna/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 DEPEND=""
@@ -32,9 +32,10 @@ RDEPEND="${DEPEND}
 	dev-lisp/sxql
 	test? ( dev-lisp/prove )
 "
+BDEPEND=""
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-test.asd t
 }
 

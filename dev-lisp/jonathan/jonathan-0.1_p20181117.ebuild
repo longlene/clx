@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="199d28add1bce0d9c65087e5723f23ace087aaf5"
+EGIT_COMMIT="1f448b4f7ac8265e56e1c02b32ce383e65316300"
 
 DESCRIPTION="JSON encoder and decoder"
 HOMEPAGE="https://rudolph-miller.github.io/jonathan/overview.html"
@@ -29,7 +29,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -rf ${PN}-test.asd t
 }
 
