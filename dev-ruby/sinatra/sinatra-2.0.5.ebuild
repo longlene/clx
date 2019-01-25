@@ -4,7 +4,6 @@
 EAPI=5
 USE_RUBY="ruby23 ruby24"
 
-# no documentation is generable, it needs hanna, which is broken
 RUBY_FAKEGEM_TASK_DOC=""
 
 RUBY_FAKEGEM_EXTRADOC="README.md AUTHORS.md CHANGELOG.md"
@@ -22,13 +21,10 @@ IUSE=""
 ruby_add_rdepend "
 	>=dev-ruby/mustermann-1.0
 	dev-ruby/rack:2.0
-	=dev-ruby/rack-protection-2.0.0
+	=dev-ruby/rack-protection-2.0.5
 	dev-ruby/tilt:2
 "
 ruby_add_bdepend "test? ( >=dev-ruby/rack-test-0.5.6 dev-ruby/erubis dev-ruby/builder )"
-
-# haml tests are optional and not yet marked for ruby20.
-#USE_RUBY="ruby20" ruby_add_bdepend "test? ( >=dev-ruby/haml-3.0 )"
 
 all_ruby_prepare() {
 	# Remove implicit build dependency on git.
