@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
-
-EGIT_COMMIT="e2896b6fccccdb8c170c898d5218d3d25378836f"
+inherit cmake-utils
 
 DESCRIPTION="C++ dataframe"
 HOMEPAGE="https://github.com/QuantStack/xframe"
-SRC_URI="https://github.com/QuantStack/xframe/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/QuantStack/xframe/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

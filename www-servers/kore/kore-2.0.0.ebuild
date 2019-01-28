@@ -7,7 +7,7 @@ inherit vcs-snapshot
 
 DESCRIPTION="An easy to use web platform for writing scalable, concurrent APIs in C or Python"
 HOMEPAGE="https://kore.io"
-SRC_URI="https://github.com/jorisvink/kore/archive/${PV}-release.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://kore.io/releases/${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
@@ -20,6 +20,11 @@ DEPEND="
 	postgres? ( dev-db/postgresql )
 "
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	default
+	sed -i 's#-Werror##' Makefile
+}
 
 src_compile() {
 	local flags=""
