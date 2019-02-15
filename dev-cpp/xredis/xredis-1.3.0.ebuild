@@ -19,7 +19,6 @@ src_prepare() {
 	eapply_user
 	sed -e 's#$(ARCH)##' \
 		-e "/INSTALL_LIBRARY_PATH=/{s#/lib#/$(get_libdir)#}" \
-		-e "/OBJ=/{s#.cpp#.o#}" \
 		-i makefile
 }
 

@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	dev-cpp/xtensor
+	>=dev-cpp/xtensor-0.19.1
 	dev-cpp/xtl
 "
 RDEPEND="${DEPEND}"
