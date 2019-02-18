@@ -1,1 +1,0 @@
-/usr/portage/eclass/git-r3.eclass

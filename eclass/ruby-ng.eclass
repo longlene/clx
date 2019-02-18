@@ -1,1 +1,0 @@
-/usr/portage/eclass/ruby-ng.eclass
