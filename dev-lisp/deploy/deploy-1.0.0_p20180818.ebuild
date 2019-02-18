@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7bd96ba3f88a424e03394de1adadf4a4993f849c"
+EGIT_COMMIT="48770b8be6e5f6492884197550220a9f746df4c8"
 
 DESCRIPTION="Deployment tools for standalone Common Lisp applications"
 HOMEPAGE="https://github.com/Shinmera/deploy"

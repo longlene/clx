@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9816f91c11590ad18d5422c41f81e0aef9573a0a"
+EGIT_COMMIT="b18d6181a0c3587335664c76203290076cfc9975"
 
 DESCRIPTION="Generative Programming and KBE system embedded in Common Lisp"
 HOMEPAGE="http://gendl.com/"
