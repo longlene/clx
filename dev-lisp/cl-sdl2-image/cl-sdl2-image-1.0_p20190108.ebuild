@@ -1,11 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="919821eec0ad483015a4a4b405518b3775c9b4ee"
+EGIT_COMMIT="9c05c806286b66a5d9861ef829cfe68c4f3da077"
 
 DESCRIPTION="SDL_image wrapper"
 HOMEPAGE="https://github.com/lispgames/cl-sdl2-image"

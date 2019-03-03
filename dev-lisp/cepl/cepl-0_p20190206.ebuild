@@ -1,11 +1,11 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5ccef4a4175c2060df2ba090fbeaa64059f01d5d"
+EGIT_COMMIT="38d3bde137ecc4b0eb6da25e31485408c7965611"
 
 DESCRIPTION="Code Evaluate Play Loop"
 HOMEPAGE="https://github.com/cbaggers/cepl"

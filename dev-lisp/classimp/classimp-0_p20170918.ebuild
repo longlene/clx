@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="93c57ab4b70b65401ba528511949bffd089724b7"
+EGIT_COMMIT="1ed92f58f0c72123e58cf96ace2d30469b7e05a8"
 
 DESCRIPTION="common lisp/cffi bindings for Open Asset Import Library"
 HOMEPAGE="http://assimp.sourceforge.net/"
