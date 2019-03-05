@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="49035569941476e88bef6871e7545a1af40ac942"
+EGIT_COMMIT="719f19318c61351b6d3f95ffc555206ab4b34097"
 
 DESCRIPTION="An experimental port of clojure to common lisp"
 HOMEPAGE="https://github.com/joinr/clclojure"
