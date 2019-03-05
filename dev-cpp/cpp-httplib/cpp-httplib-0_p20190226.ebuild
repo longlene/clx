@@ -5,7 +5,7 @@ EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="0b00f3fba0e406703205ce3a5339a852b07a0745"
+EGIT_COMMIT="6afe7f164ee1f0b2f4409849ad8b639af9350e3f"
 
 DESCRIPTION="C++11 header-only HTTP sever library"
 HOMEPAGE="https://github.com/yhirose/cpp-httplib"

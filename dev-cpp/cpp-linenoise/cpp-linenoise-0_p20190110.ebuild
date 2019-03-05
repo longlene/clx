@@ -1,23 +1,24 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="d9c243f9f115ebfd7636b7ffa0f17c8e449847cb"
+EGIT_COMMIT="f9c6c645d099dc374b1e6bb628aadea4e067a605"
 
-DESCRIPTION="Multi-platform (Unix, Windows) C++ header-only linenoise-based readline library"
+DESCRIPTION="C++ header-only linenoise-based readline library"
 HOMEPAGE="https://github.com/yhirose/cpp-linenoise"
 SRC_URI="https://github.com/yhirose/cpp-linenoise/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+BDEPEND=""
 
 src_install() {
 	insinto /usr/include

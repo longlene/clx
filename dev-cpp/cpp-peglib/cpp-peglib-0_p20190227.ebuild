@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="1520849708743283d291c393cba4c7219a60d7bc"
+EGIT_COMMIT="bbeadfa937230d76f536cffc564997de9437842c"
 
 DESCRIPTION="C++ header-only PEG library"
 HOMEPAGE="https://github.com/yhirose/cpp-peglib"
