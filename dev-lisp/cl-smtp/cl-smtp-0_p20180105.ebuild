@@ -5,11 +5,11 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="04d7278fbf06e0b7a6532ffb5e61927f1a24190e"
+EGIT_COMMIT="a6be003b2bbe863a56494c32fe61d9769015c3b4"
 
-DESCRIPTION="A Common Lisp client library for the SMTP network protocol"
-HOMEPAGE="http://common-lisp.net/project/cl-smtp/ http://www.cliki.net/CL-SMTP"
-SRC_URI="https://github.com/deadtrickster/cl-smtp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Common Lisp smtp client"
+HOMEPAGE="http://common-lisp.net/project/cl-smtp/"
+SRC_URI="https://gitlab.common-lisp.net/cl-smtp/cl-smtp/repository/archive.tar.gz?ref=${EGIT_COMMIT} -> ${P}.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"

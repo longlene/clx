@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f31eba7508da1b89b0cf10840307826d6b0edac7"
+EGIT_COMMIT="c868f2d4314b722b8ebf95a51a67e025b12de947"
 
 DESCRIPTION="Web application environment for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/clack"

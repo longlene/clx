@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="6350ca755e071394f5f5e6f31c7ade75d12f7785"
+EGIT_COMMIT="b3410b59bfb443275f5618c09aaddc8e27f066cd"
 
 DESCRIPTION="Redis client for Common Lisp"
 HOMEPAGE="https://github.com/vseloved/cl-redis"
@@ -22,13 +22,11 @@ RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/flexi-streams
 	dev-lisp/babel
-	dev-lisp/bordeaux-threads
-	dev-lisp/flexi-streams
-	test? ( dev-lisp/should-test )
+	test? ( dev-lisp/should-test dev-lisp/bordeaux-threads )
 "
 
 src_prepare() {
-	eapply_user
+	default
 	if ! use test ; then
 		sed -i '/defsystem\ #:cl-redis-test/,$d' ${PN}.asd
 		rm test.lisp
