@@ -18,12 +18,13 @@ IUSE="test"
 RDEPEND="
 	dev-lisp/flexi-streams
 	dev-lisp/nibbles
+	dev-lisp/bordeaux-threads
 "
 
 src_prepare() {
-	eapply_user
+	default
 	if ! use test ; then
-		sed -i '/testing/,$d' ${PN}.asd
+		sed -i '/defsystem "ironclad\/tests/,$d' ${PN}.asd
 		rm -r testing
 	fi
 }
