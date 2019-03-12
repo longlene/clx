@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="8aff3a00dba96438d3d7c114d675d7db672ef266"
+EGIT_COMMIT="283cc9c902fd80924352419b2445eb00247d9fc4"
 
 DESCRIPTION="A collection of Common Lisp utilities to ratify, validate and parse inputs"
 HOMEPAGE="https://github.com/Shinmera/ratify"

@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7da1cbadac7fa57e500d3871b43ea4284a6a331c"
+EGIT_COMMIT="e96889fd58216d072ec420ccf899be97198b5a0a"
 
 DESCRIPTION="A SQL generator for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/sxql"
@@ -27,7 +27,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -rf ${PN}-test.asd t
 }
 

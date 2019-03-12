@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e1163934c98035b309d1d2840ab6d01550c0c2e5"
+EGIT_COMMIT="f390a18c023267c5b40d5d407fdffa1b2ab7d3b8"
 
 DESCRIPTION="A project-local library installer for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/qlot"
@@ -18,10 +18,17 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-lisp/archive
+	dev-lisp/salza2
+	dev-lisp/gzip-stream
+	dev-lisp/cl-ppcre
+	dev-lisp/split-sequence
+	dev-lisp/alexandria
+	dev-lisp/ironclad
 	test? ( dev-lisp/prove )
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-test.asd tests
 }

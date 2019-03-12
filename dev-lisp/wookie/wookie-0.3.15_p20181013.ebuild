@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1a07018011484ff1e16bb758644292edd0efe386"
+EGIT_COMMIT="d369b4bfde8a309470b571bdcd5391d8a2d2ae87"
 
 DESCRIPTION="An evented webserver for Common Lisp"
 HOMEPAGE="https://github.com/orthecreedence/wookie"

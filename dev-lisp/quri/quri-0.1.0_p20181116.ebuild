@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="83f3b8612be826b602f3584acac1b82691a141e6"
+EGIT_COMMIT="76b75103f21ead092c9f715512fa82441ef61185"
 
 DESCRIPTION="Yet another URI library for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/quri"
@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-test.asd t
 }
 

@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="764b62b7be3f6fcecf0385d5d9e910ed643ccc39"
+EGIT_COMMIT="648f1cbdaff0ff8b47b7c6c936349ccb8bf40fac"
 
 DESCRIPTION="A fast non-blocking HTTP server on top of libev"
 HOMEPAGE="https://github.com/fukamachi/woo/"
@@ -31,12 +31,11 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-utf8
 	dev-lisp/vom
 	dev-lisp/alexandria
-	dev-lisp/uiop
 	dev-lisp/cl-speedy-queue
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-test.asd t
 }
 

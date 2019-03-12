@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="508abb3be457c3e7ceddf92f9f34d427e97f11b0"
+EGIT_COMMIT="2f2a289a3b123fb93aa7787967e6e063931501a6"
 
 DESCRIPTION="Common Lisp Web crawling library based on Psychiq"
 HOMEPAGE="https://github.com/fukamachi/ragno"
@@ -19,7 +19,9 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/psychiq
+	dev-lisp/vom
 	dev-lisp/quri
 	dev-lisp/dexador
 	dev-lisp/alexandria
+	dev-lisp/bordeaux-threads
 "

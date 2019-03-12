@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit common-lisp-3 git-2
+EGIT_COMMIT="ebf1ec0ea26bdac4007e98e89f3a621dbfb4390a"
+
+inherit common-lisp-3 vcs-snapshot
 
 DESCRIPTION="Trivial WebSockets"
 HOMEPAGE="https://github.com/ceramic/trivial-ws"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/ceramic/trivial-ws.git"
+SRC_URI="https://github.com/ceramic/trivial-ws/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -24,6 +23,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	default
 	use test || rm -rf ${PN}-test.asd t
 }
 
