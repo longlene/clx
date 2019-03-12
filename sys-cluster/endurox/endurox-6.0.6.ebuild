@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
-
-EGIT_COMMIT="eb7ea13686523e7ea2803a2c9de8d3512716c209"
+inherit cmake-utils
 
 DESCRIPTION="Enduro/X Middleware Platform for Distributed Transaction Processing"
 HOMEPAGE="https://github.com/endurox-dev/endurox"
-SRC_URI="https://github.com/endurox-dev/endurox/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/endurox-dev/endurox/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2.0"
 SLOT="0"
