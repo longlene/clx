@@ -2,8 +2,8 @@
 
 EAPI=6
 
-#PYTHON_COMPAT=( python2_7 python3_4 python3_5 )
-PYTHON_COMPAT=( python3_4 )
+PYTHON_COMPAT=( python2_7 python3_4 python3_5 python3_6 )
+#PYTHON_COMPAT=( python3_4 )
 
 inherit distutils-r1 git-r3
 
@@ -29,7 +29,7 @@ RDEPEND="${DEPEND}"
 DOCS="README.md"
 
 src_prepare() {
-	eapply_user
+	default
 	if use cuda ; then
 		export CUDA_HOME=/opt/cuda
 	else
