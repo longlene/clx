@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="31f6c588eeb240f4d1e5a7f9d54e9a934926602e"
+EGIT_COMMIT="3aeb29bbfd0b0c9094280055b1210903774b7ebb"
 
 DESCRIPTION="Lisp binding to the GTK+-3"
 HOMEPAGE="http://gitorious.org/lisp-projects/cl-gtk"
