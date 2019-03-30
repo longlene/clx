@@ -15,6 +15,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	dev-cpp/xtl
+	>=dev-cpp/xtl-0.5.0
 "
 RDEPEND="${DEPEND}"

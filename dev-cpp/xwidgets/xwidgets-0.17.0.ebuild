@@ -5,9 +5,9 @@ EAPI=6
 
 inherit cmake-utils
 
-DESCRIPTION="Jupyter Kernel for C++ based on xeus and cling"
-HOMEPAGE="https://github.com/quantstack/xeus-cling"
-SRC_URI="https://github.com/QuantStack/xeus-cling/archive/${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="C++ backend for Jupyter interactive widgets"
+HOMEPAGE="https://github.com/QuantStack/xwidgets"
+SRC_URI="https://github.com/QuantStack/xwidgets/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
@@ -15,6 +15,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	dev-cpp/xeus
+	>=dev-cpp/xeus-0.19.1
 "
 RDEPEND="${DEPEND}"
