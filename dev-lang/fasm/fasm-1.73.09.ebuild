@@ -20,6 +20,7 @@ libc? ( virtual/libc )"
 
 S="${WORKDIR}/${PN}"
 
+QA_TEXTRELS="usr/bin/*"
 QA_EXECSTACK="
 	/usr/bin/fasm
 	/usr/bin/listing
