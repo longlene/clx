@@ -1,12 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7c1984167e8bf47ed1a5b5a7bd14b6406c0c6fca"
+EGIT_COMMIT="45db6aea47bcd59d8ba4d7657baca854a5ffeacd"
 
 DESCRIPTION="A test framework for Common Lisp"
 HOMEPAGE="https://github.com/capitaomorte/fiasco"

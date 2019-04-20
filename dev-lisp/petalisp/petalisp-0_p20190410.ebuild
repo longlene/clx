@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cf871652e1798e4bfc664671df2734f12d379d53"
+EGIT_COMMIT="2369ca893355db0e123e6ef50dd25624265939e1"
 
 DESCRIPTION="Elegant code generation for high-performance computing"
 HOMEPAGE="https://github.com/marcoheisig/Petalisp"
@@ -29,6 +29,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-test-suite.asd ${PN}-development.asd test-suite development examples
 }

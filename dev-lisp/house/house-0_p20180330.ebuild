@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="51ed4058c79d49d1eb95b48dbe10395b388c04b1"
+EGIT_COMMIT="ba30a381670c681fa722c22c5a03f329d4c67c2e"
 
 DESCRIPTION="Minimal asynchronous CL web server"
 HOMEPAGE="https://github.com/Inaimathi/house"

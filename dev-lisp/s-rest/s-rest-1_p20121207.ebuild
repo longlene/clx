@@ -22,3 +22,4 @@ RDEPEND="${DEPEND}
 	dev-lisp/s-http-server
 	dev-lisp/cl-who
 "
+BDEPEND=""

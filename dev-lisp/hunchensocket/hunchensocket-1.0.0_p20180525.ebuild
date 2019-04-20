@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="392a8a5e00019fba1eb13f33ecaeb3a289aee2bf"
+EGIT_COMMIT="ec8a28ab0182b9127ba61ad8ced01a9a7a44e2aa"
 
 DESCRIPTION="WebSockets for Hunchentoot"
 HOMEPAGE="https://github.com/joaotavora/hunchensocket"

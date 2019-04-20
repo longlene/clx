@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="be998d12ba45617fb112742553660d943dc3bf99"
+EGIT_COMMIT="649b9d7b8f1091700e5a54ed929a768318280546"
 
 DESCRIPTION="Common Lisp RESTful web development"
 HOMEPAGE="https://github.com/capitaomorte/snooze"
