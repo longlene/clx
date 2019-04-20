@@ -30,10 +30,10 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	default
-	use test || rm -r t ${PN}-test.asd
+	use test || rm -r t dbi-test.asd
 }
 
 src_install() {
 	common-lisp-3_src_install
-	common-lisp-install-soruces -t all README.markdown
+	common-lisp-install-sources -t all README.markdown
 }

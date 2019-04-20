@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7b8c5bb2aeff720087f8fc41a37550e43095ef37"
+EGIT_COMMIT="992f3aba7b489dc9b4420463ebaa6f357edcf80c"
 
 DESCRIPTION="Flexible Lisp Blogware"
 HOMEPAGE="https://github.com/kingcons/coleslaw"
@@ -30,7 +30,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r tests ${PN}-test.asd
 }
 

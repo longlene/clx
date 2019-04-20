@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="99e624f71bc04bb79ab7bee8c63a2cc787ac2c0f"
+EGIT_COMMIT="8c4888591cd4ef9062c6c066326acef1415460f1"
 
 DESCRIPTION="Stream classes for Common Lisp"
 HOMEPAGE="https://github.com/cl-stream/cl-stream"
