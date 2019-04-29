@@ -14,6 +14,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	app-accessibility/espeak
+	media-libs/libsndfile
+	media-sound/pulseaudio
+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
