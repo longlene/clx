@@ -2,13 +2,13 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="c2dcb3b5ec0e485484be681fe17c4e81e58790d9"
 
 DESCRIPTION="Common Lisp library for handling bit vectors, bit vector arithmetic, and type conversions"
 HOMEPAGE="https://github.com/thephoeron/bit-smasher/"
-SRC_URI=""
-
-EGIT_SRC_URI="https://github.com/thephoeron/bit-smasher.git"
+SRC_URI="https://github.com/thephoeron/bit-smasher/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -17,7 +17,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/cl-base58
-dev-lisp/cl-base64
-dev-lisp/ironclad"
+	dev-lisp/cl-base58
+	dev-lisp/cl-base64
+	dev-lisp/ironclad"
 

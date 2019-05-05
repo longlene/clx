@@ -2,11 +2,11 @@
 
 EAPI=4
 
-inherit eutils autotools
+inherit eutils autotools vcs-snapshot
 
 DESCRIPTION="ManKai Common Lisp"
 HOMEPAGE="http://common-lisp.net/project/mkcl/"
-SRC_URI="http://common-lisp.net/project/mkcl/releases/mkcl-${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jcbeaudoin/MKCL/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL"
 SLOT="0"
