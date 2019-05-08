@@ -3,8 +3,10 @@
 
 EAPI=6
 
-DESCRIPTION="Socket acceptor pool for TCP protocols"
-HOMEPAGE="https://github.com/ninenines/ranch"
+inherit rebar
+
+DESCRIPTION="Small, fast, modern HTTP server for Erlang/OTP"
+HOMEPAGE="https://github.com/ninenines/cowboy"
 SRC_URI="https://github.com/ninenines/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="ISC"
@@ -13,16 +15,14 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE="test"
 
 RDEPEND="
+	dev-erlang/cowlib
+	>=dev-erlang/ranch-1.6.1
 	>=dev-lang/erlang-17.1"
 DEPEND="${RDEPEND}"
 
-src_prepare() {
-	eapply_user
-	emake clean
-}
+DOCS=( CHANGELOG.md )
 
-src_install() {
-	insinto /usr/lib/erlang/lib/${P}
-	doins -r ebin
-	dodoc README.asciidoc
-}
+#src_prepare() {
+#	rebar_src_prepare
+#	rebar_fix_include_path cowlib
+#}
