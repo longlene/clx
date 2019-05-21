@@ -1,0 +1,5 @@
+# Please configure everything at /etc/mongooseim/mongooseim.cfg
+# Put here only command line arguments for mongooseimctl (if any are required)
+
+MONGOOSEIMCTL_OPTS=""
+
