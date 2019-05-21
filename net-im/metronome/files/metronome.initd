@@ -1,0 +1,46 @@
+#!/sbin/openrc-run
+# Copyright 1999-2018 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+description="Metronome IM, lightweight xmpp server with advanced microblogging features"
+description_reload="Reload configuration and reopen log files."
+extra_started_commands="reload"
+pidfile="/var/run/jabber/metronome.pid"
+
+depend() {
+	use dns
+	need net
+	provide jabber-server
+}
+
+checkconfig() {
+	if [ ! -e /etc/jabber/metronome.cfg.lua ] ; then
+		eerror "You need a /etc/jabber/metronome.cfg.lua file to run metronome"
+		return 1
+	fi
+	luac -p /etc/jabber/metronome.cfg.lua
+	return $?
+}
+
+start() {
+	checkconfig || return 1
+	checkpath -q -d -m 0770 -o jabber:jabber "$(dirname ${pidfile})"
+	checkpath -q -f -m 0770 -o jabber:jabber "${pidfile}"
+	checkpath -q -d -m 0750 -o jabber:jabber /var/log/jabber
+	ebegin "Starting Metronome XMPP Server"
+	metronomectl start
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping Metronome XMPP Server"
+	metronomectl stop
+	eend $?
+}
+
+reload() {
+	checkconfig || return 1
+	ebegin "Reloading configuration of Metronome XMPP Server"
+	metronomectl reload
+	eend $?
+}
