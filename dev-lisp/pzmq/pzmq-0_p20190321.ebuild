@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9b005deee3bce212cca582384262ff8297776b68"
+EGIT_COMMIT="8bd056d432d2cb16af4169fc4cf2e37126e76655"
 
 DESCRIPTION="ZeroMQ Common Lisp bindings"
 HOMEPAGE="https://github.com/orivej/pzmq"
