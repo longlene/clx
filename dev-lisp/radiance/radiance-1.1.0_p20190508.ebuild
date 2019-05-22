@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="41f674e6c573e72daf2dcdc7701dcb63d09ac195"
+EGIT_COMMIT="72a51245e99443f58fad94d27d5be0c58846da85"
 
 DESCRIPTION="A Common Lisp web application environment"
 HOMEPAGE="https://github.com/Shirakumo/radiance"

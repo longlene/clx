@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ae0de4f0969a50771e6d9b1351890843a14737ae"
+EGIT_COMMIT="027be7dba1a7e0b42a28b42ee843b3a58355dcbc"
 
 DESCRIPTION="A collection of utilities to help with pathname operations"
 HOMEPAGE="https://github.com/Shinmera/pathname-utils"
@@ -20,6 +20,6 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-test.asd test.lisp
 }
