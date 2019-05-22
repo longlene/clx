@@ -1,0 +1,18 @@
+[Unit]
+Description=MongooseIM XMPP service
+After=network.target
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+User=jabber
+Group=jabber
+Restart=on-failure
+RestartSec=5
+ExecStart=/usr/bin/mongooseimctl start
+ExecStop=/usr/bin/mongooseimctl stop
+#PrivateDevices=true
+#ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
