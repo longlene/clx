@@ -5,11 +5,9 @@ EAPI=7
 
 inherit toolchain-funcs vcs-snapshot
 
-EGIT_COMMIT="4a14b23692c346134754fd36c4f89577157d6ff1"
-
 DESCRIPTION="An Embedded Computer Vision & Machine Learning Library"
 HOMEPAGE="https://sod.pixlab.io/"
-SRC_URI="https://github.com/symisc/sod/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/symisc/sod/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3.0"
 SLOT="0"
