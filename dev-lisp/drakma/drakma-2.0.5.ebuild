@@ -25,5 +25,5 @@ RDEPEND="!dev-lisp/cl-${PN}
 
 src_install() {
 	common-lisp-3_src_install
-	dohtml doc/index.html
+	dohtml docs/index.html
 }

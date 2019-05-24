@@ -5,11 +5,11 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="771a570b331f412a40688284a77519ff4791e642"
+EGIT_COMMIT="0ba14ec7d91b650922d69d0551cd48ea5e809532"
 
-DESCRIPTION="A collection of online learning algorithms for Linear classification written in pure Common Lisp"
-HOMEPAGE="https://github.com/masatoi/cl-online-learning"
-SRC_URI="https://github.com/masatoi/cl-online-learning/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Random forest in Common Lisp"
+HOMEPAGE="https://github.com/masatoi/cl-random-forest"
+SRC_URI="https://github.com/masatoi/cl-random-forest/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,13 +19,15 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-libsvm-format
+	dev-lisp/cl-online-learning
+	dev-lisp/alexandria
+	dev-lisp/lparallel
 	test? ( dev-lisp/prove )
 "
 
 src_prepare() {
 	eapply_user
-	use test || rm -f ${PN}-test.asd t
-	rm -r example
+	use test || rm -r ${PN}-test.asd t
 }
 
 src_install() {

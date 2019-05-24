@@ -27,6 +27,6 @@ src_install() {
 	common-lisp-install-sources *.lisp test/
 	common-lisp-install-sources -t all build
 	common-lisp-install-asdf
-	dodoc CHANGELOG.txt
-	dohtml doc/index.html
+	dodoc CHANGELOG
+	dohtml docs/index.html
 }
