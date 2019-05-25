@@ -9,7 +9,7 @@
 #PORTOD_PIDFILE="/run/portod.pid"
 
 # where the portod daemon itself is run from
-#PORTODD_BINARY="/usr/sbin/portodd"
+#PORTODD_BINARY="/usr/sbin/portod"
 
 # any other random options you want to pass to portod
 PORTOD_OPTS=""

@@ -10,7 +10,7 @@ PORTO_ERRFILE="${PORTO_ERRFILE:-${PORTO_LOGFILE}}"
 PORTO_OUTFILE="${PORTO_OUTFILE:-${PORTO_LOGFILE}}"
 
 start_pre() {
-	checkpath -f -m 0644 -o root:docker "$PORTO_LOGFILE"
+	checkpath -f -m 0644 -o root:porto "$PORTO_LOGFILE"
 
 	return 0
 }
@@ -26,7 +26,6 @@ start() {
 
 stop() {
 	ebegin "Stopping portod"
-	init_env_vars
 	start-stop-daemon --stop --quiet \
 		--pidfile ${pidfile}
 	eend $?

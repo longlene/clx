@@ -17,6 +17,7 @@ IUSE="doc"
 DEPEND="
 	dev-libs/libnl
 	dev-libs/protobuf
+	sys-devel/ncurses[tinfo]
 	doc? ( app-text/pandoc )
 "
 RDEPEND="${DEPEND}"
@@ -64,9 +65,18 @@ pkg_setup() {
 }
 
 src_prepare() {
-	eapply_user
+	default
 	sed -e '/find_library/{s#libprotobuf.a#libprotobuf.so#}' \
 		-e '/set/{/test/d}' \
 		-i CMakeLists.txt
 	use doc || sed '/add_custom_target(man/,$d' -i src/CMakeLists.txt
+	sed -i 's#${CURSES_LIBRARIES}#ncurses tinfo#' src/CMakeLists.txt
 }
+
+src_install() {
+	cmake-utils_src_install
+
+	newconfd "${FILESDIR}/protod.confd" "${PN}"
+	newinitd "${FILESDIR}/protod.initd" "${PN}"
+}
+
