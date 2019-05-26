@@ -1,23 +1,30 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="14ce64bbdd97dcd725397cbd15e049d7f443551e"
 
 DESCRIPTION="The 32-bit version of Murmurhash3 for Common Lisp"
 HOMEPAGE="https://github.com/ruricolist/cl-murmurhash"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/ruricolist/cl-murmurhash.git"
+SRC_URI="https://github.com/ruricolist/cl-murmurhash/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/babel
 "
+
+src_prepare() {
+	default
+	if ! use test ; then
+		sed -i '/defsystem "cl-murmurhash\/test/,$d' ${PN}.asd
+		rm test.lisp
+	fi
+}

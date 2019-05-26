@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b7157c897c5d629a442132a0f3b7dceb2771558d"
+EGIT_COMMIT="f180b6c3c0b9a3614ae43f53a11bc500767307d0"
 
 DESCRIPTION="Lisp NLP tool-set"
 HOMEPAGE="https://github.com/vseloved/cl-nlp"

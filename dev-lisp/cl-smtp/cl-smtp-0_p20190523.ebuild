@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a6be003b2bbe863a56494c32fe61d9769015c3b4"
+EGIT_COMMIT="b67708b85c3c443f6c48a50f5489dbfc48f502d7"
 
 DESCRIPTION="Common Lisp smtp client"
 HOMEPAGE="http://common-lisp.net/project/cl-smtp/"
