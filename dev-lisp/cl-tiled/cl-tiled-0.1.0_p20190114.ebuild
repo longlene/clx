@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="82517f4dcfb07c545d776992ff53344a466f557b"
+EGIT_COMMIT="14d27dddf7162c4783e184a7bd4044b37b2d5945"
 
 DESCRIPTION="Tiled map library for CL"
 HOMEPAGE="https://github.com/Zulu-Inuoe/cl-tiled/"
