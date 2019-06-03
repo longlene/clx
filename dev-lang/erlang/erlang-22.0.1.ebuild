@@ -46,55 +46,30 @@ S="${WORKDIR}/otp-OTP-${PV}"
 
 PATCHES=(
 		"${FILESDIR}/18.2.1-wx3.0.patch"
-		"${FILESDIR}/${PN}-20.3.2-dont-ignore-LDFLAGS.patch"
 		"${FILESDIR}/${PN}-add-epmd-pid-file-creation-for-openrc.patch"
 	)
 
 SITEFILE=50"${PN}"-gentoo.el
 
-# Taken from the upstream build script, build_otp
-erlang_create_lib_configure_in() {
-	local bootstrap_apps="erts lib/asn1 lib/compiler lib/hipelib/ic lib/kernel
-			 lib/parsetools lib/sasl lib/snmp lib/stdlib lib/syntax_tools"
-	local sdirs=
-	for lib_app in ${bootstrap_apps}; do
-		case "${lib_app}" in
-			lib/*)
-				if [[ -f "${lib_app}/configure.in" ]]; then
-					mv "${lib_app}/configure.in" "${lib_app}/configure.ac" || die
-					app=`echo "${lib_app}" | sed "s|lib/\(.*\)|\1|"`
-					sdirs="${sdirs}test ! -f ${app}/configure || AC_CONFIG_SUBDIRS(${app}/.)\n" || die
-				fi;;
-			*)
-			;;
-		esac
+erlang_do_autoconf() {
+	erlang_distribute_config_helpers
+	local autoconf_subdirs="lib lib/* lib/common_test/test-server make erts"
+	for d in ${autoconf_subdirs} ; do
+		[ -f "${d}/configure.ac" ] || continue
+		pushd $d && eautoreconf && popd
 	done
+	cd ${S}
 
-	local sed_bootstrap="s%@BOOTSTRAP_CONFIGURE_APPS@%$sdirs%g"
+	local otp_version=`cat OTP_VERSION`
+	local bootstrap_lib_apps="lib/asn1 lib/compiler lib/erl_interface lib/hipe lib/kernel lib/jinterface lib/parsetools lib/sasl lib/snmp lib/stdlib lib/syntax_tools lib/wx"
 
-	sdirs=
-	for lib_app in lib/*; do
-		local is_bapp=false
-		for bapp in ${bootstrap_apps}; do
-			test "${bapp} != ${lib_app}" || { "${is_bapp}"=true; break; }
-		done
-		if [[ "${is_bapp}" = false ]] && [[ -f "${lib_app}/configure.in" ]]; then
-			mv "${lib_app}/configure.in" "${lib_app}/configure.ac" || die
-			app=`echo "${lib_app}" | sed "s|lib/\(.*\)|\1|"` || die
-			sdirs="${sdirs}    test ! -f ${app}/configure || AC_CONFIG_SUBDIRS(${app}/.)\n"
-		fi
-	done
-
-	local sed_non_bootstrap="s%@NON_BOOTSTRAP_CONFIGURE_APPS@%$sdirs%g"
-
-	rm -f lib/configure.in || die
-	sed "$sed_bootstrap;$sed_non_bootstrap" > lib/configure.ac < lib/configure.in.src || die "Failed to create lib/configure.ac"
-
+	sed "s|@OTP_VERSION@|$otp_version|g;s|@BOOTSTRAP_LIB_APP_DIRS@|$bootstrap_lib_apps|" > configure < configure.src || die "Failed to create configure"
+	chmod +x configure
 }
 
-# Taken from the upstream build script, build_otp
+# Taken from the upstream build scrip , otp_build
 erlang_distribute_config_helpers() {
-	local aclocal_dirs=". ./lib/erl_interface ./lib/odbc ./lib/wx ./lib/megaco"
+	local aclocal_dirs="make ./lib/crypto ./lib/erl_interface ./lib/odbc ./lib/wx ./lib/megaco"
 	local autoconf_aux_dirs="./lib/common_test/priv/auxdir ./lib/erl_interface/src/auxdir ./lib/common_test/test_server ./lib/wx/autoconf"
 
 	local aclocal_master="./erts/aclocal.m4"
@@ -117,15 +92,15 @@ erlang_distribute_config_helpers() {
 src_prepare() {
 	default
 
-	# Determines which directories to recurse into with autoconf
-	erlang_create_lib_configure_in
+	for lib_app in erts lib/asn1 lib/compiler lib/crypto lib/erl_interface lib/hipe lib/megaco lib/kernel lib/jinterface lib/common_test lib/common_test/test_server lib/odbc lib/parsetools lib/sasl lib/snmp lib/stdlib lib/syntax_tools lib/wx make ; do
+		if [[ -f "${lib_app}/configure.in" ]]; then
+			mv "${lib_app}/configure.in" "${lib_app}/configure.ac" || die
+		fi
+	done
 
-	# Move local autoconf files into the neccessary directories
-	erlang_distribute_config_helpers
+	erlang_do_autoconf
 
 	java-pkg-opt-2_src_prepare
-
-	eautoreconf
 }
 
 src_configure() {
