@@ -5,26 +5,25 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2a07af344b417f9873bbd4205f766a7133f124da"
+EGIT_COMMIT="42275e3606242ae91e9c8dfa30c18ced50a35b66"
 
-DESCRIPTION="Numpy clone in Common Lisp"
-HOMEPAGE="https://github.com/numcl/numcl"
-SRC_URI="https://github.com/numcl/numcl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="C++/Julia-like parametric types in CL"
+HOMEPAGE="https://github.com/numcl/gtype"
+SRC_URI="https://github.com/numcl/gtype/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="LGPL-3"
+LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-lisp/trivialib_type-unify
+	dev-lisp/trivial-cltl2
 	dev-lisp/trivia
 	dev-lisp/alexandria
 	dev-lisp/iterate
 	dev-lisp/type-r
-	dev-lisp/constantfold
-	dev-lisp/lisp-namespace
-	dev-lisp/cl-randist
 	test? ( dev-lisp/fiveam )
 "
 BDEPEND=""
@@ -32,5 +31,5 @@ BDEPEND=""
 src_prepare() {
 	default
 	rm asd-generator-data.asd
-	use test || rm -r numcl.test.asd t
+	use test || rm -r ${PN}.test.asd t
 }
