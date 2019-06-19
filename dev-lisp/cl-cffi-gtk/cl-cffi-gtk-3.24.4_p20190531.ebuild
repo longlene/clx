@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3aeb29bbfd0b0c9094280055b1210903774b7ebb"
+EGIT_COMMIT="88d257014a43e0e1e284da27cd7cdb54fc247c63"
 
 DESCRIPTION="Lisp binding to the GTK+-3"
 HOMEPAGE="http://gitorious.org/lisp-projects/cl-gtk"

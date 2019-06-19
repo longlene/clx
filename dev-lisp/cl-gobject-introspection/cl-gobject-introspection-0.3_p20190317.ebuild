@@ -2,7 +2,7 @@
 
 EAPI=6
 
-EGIT_COMMIT="7b39e82f6d56ca8f4ab9d13d2ba7338bed5aa951"
+EGIT_COMMIT="7b703e2384945ea0ac39d9b766de434a08d81560"
 
 DESCRIPTION="A bridge between Common Lisp and GObject"
 HOMEPAGE="https://github.com/andy128k/cl-gobject-introspection"
