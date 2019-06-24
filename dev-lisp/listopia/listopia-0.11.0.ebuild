@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="a35f7f47c77a33e94cbf32a8600a0a1b08661f49"
+inherit common-lisp-3
 
 DESCRIPTION="This is no official port of Haskell package Data.List"
 HOMEPAGE="https://github.com/Dimercel/listopia"
-SRC_URI="https://github.com/Dimercel/listopia/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Dimercel/listopia/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
@@ -20,7 +18,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-bench.asd bench ${PN}-test.asd tests
 }
 
