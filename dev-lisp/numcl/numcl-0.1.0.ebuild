@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="0378cd8b3a46519ae663da8fab25166df997abfc"
+inherit common-lisp-3
 
 DESCRIPTION="Numpy clone in Common Lisp"
 HOMEPAGE="https://github.com/numcl/numcl"
-SRC_URI="https://github.com/numcl/numcl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/numcl/numcl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-3"
 SLOT="0"
