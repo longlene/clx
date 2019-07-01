@@ -5,20 +5,24 @@ EAPI=7
 
 inherit flag-o-matic vcs-snapshot
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="The V Programming Language"
+HOMEPAGE="https://vlang.io/"
 SRC_URI="
 	https://github.com/vlang/v/archive/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/vlang/vc/archive/cbb870a8ae09ad099e40da0dc5848a4484d77d4b.tar.gz -> v.c-${PV}.tar.gz
 "
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	media-libs/glfw
+	net-misc/curl
+	media-libs/freetype
+"
 BDEPEND=""
 
 src_prepare() {
