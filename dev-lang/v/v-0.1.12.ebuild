@@ -9,7 +9,7 @@ DESCRIPTION="The V Programming Language"
 HOMEPAGE="https://vlang.io/"
 SRC_URI="
 	https://github.com/vlang/v/archive/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/vlang/vc/archive/b8cd2ac8060ef26fcf413509173264b31dd5a6f4.tar.gz -> v.c-${PV}.tar.gz
+	https://github.com/vlang/vc/archive/04e0746f7102b6b397081d9f98e4f52529d1d703.tar.gz -> v.c-${PV}.tar.gz
 "
 
 LICENSE="MIT"
