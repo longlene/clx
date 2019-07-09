@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7709927e41b4657348e4458e011f2f16162f49b8"
+EGIT_COMMIT="af85b028c3b2112701f94fa471d5788abd27cc13"
 
 DESCRIPTION="Lisp Augmented Style Sheets"
 HOMEPAGE="https://github.com/Shinmera/LASS"
