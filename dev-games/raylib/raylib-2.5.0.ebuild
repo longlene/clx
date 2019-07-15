@@ -7,7 +7,7 @@ inherit cmake-utils vcs-snapshot
 
 DESCRIPTION="A simple and easy-to-use library to learn videogames programming"
 HOMEPAGE="http://www.raylib.com"
-SRC_URI="https://github.com/raysan5/raylib/archive/${PV}-dev.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/raysan5/raylib/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

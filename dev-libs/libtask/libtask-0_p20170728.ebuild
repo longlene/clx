@@ -5,7 +5,7 @@ EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="cfc03960888a465787d51a41a498c625882f4730"
+EGIT_COMMIT="45a3ae1e11efae99685e85fe58de5c05a6ca2953"
 
 DESCRIPTION="a Coroutine Library for C and Unix"
 HOMEPAGE="http://swtch.com/libtask/"
