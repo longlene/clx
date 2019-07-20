@@ -1,11 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="4c8b4d6efc8302b508d261573351fffb75bd98c2"
+EGIT_COMMIT="f199b961c2970b63cc83947ad49b327b3f48f05f"
 
 DESCRIPTION="OpenWrt Unified Configuration Interface"
 HOMEPAGE="http://wiki.openwrt.org/"
@@ -17,17 +17,19 @@ KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="lua"
 
 DEPEND="
-dev-libs/libubox
+	dev-libs/libubox
 "
 
 src_prepare() {
 	default
-	sed -i 's/-Werror //' CMakeLists.txt
+	sed -e 's/-Werror //' \
+		-e "s/DESTINATION lib/DESTINATION $(get_libdir)/" \
+		-i CMakeLists.txt
 }
 
 src_configure() {
 	local mycmakeargs=(
-	$(cmake-utils_use_build lua LUA)
+	-DBUILD_LUA=$(usex lua)
 	)
 
 	cmake-utils_src_configure

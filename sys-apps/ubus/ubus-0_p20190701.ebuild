@@ -1,11 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="221ce7e7ff1bd1a0c9995fa9d32f58e865f7207f"
+EGIT_COMMIT="2e051f62899666805d477830ef790e1149bc6a89"
 
 DESCRIPTION="OpenWrt system message/RPC bus"
 HOMEPAGE="http://wiki.openwrt.org/"
