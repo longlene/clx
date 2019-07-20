@@ -1,11 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="3ba74ebc9363993ea2a83fd73b4c1b1a96e73940"
+EGIT_COMMIT="3b3e368dead01979e985cb167873fe9868b15d19"
 
 DESCRIPTION="libubox http client library"
 HOMEPAGE="http://wiki.openwrt.org/"
@@ -19,7 +19,7 @@ IUSE=""
 RDEPEND="dev-libs/ustream-ssl"
 
 src_prepare() {
-	sed -i 's/-Werror //' CMakeLists.txt
-#	sed -i '/PKG_CHECK_MODULES/ s|json-c json|json-c|' CMakeLists.txt
+		default
+		sed -i 's/-Werror //' CMakeLists.txt
 }
 
