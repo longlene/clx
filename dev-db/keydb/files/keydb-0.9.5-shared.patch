@@ -1,0 +1,32 @@
+--- keydb-0.9.5.orig/src/Makefile	2019-05-10 08:14:19.000000000 +0800
++++ keydb-0.9.5/src/Makefile	2019-07-19 20:38:37.298325767 +0800
+@@ -35,14 +35,7 @@
+ INSTALL=install
+ 
+ # Default allocator defaults to Jemalloc if it's not an ARM
+-MALLOC=libc
+-ifneq ($(uname_M),armv6l)
+-ifneq ($(uname_M),armv7l)
+-ifeq ($(uname_S),Linux)
+-	MALLOC=jemalloc
+-endif
+-endif
+-endif
++MALLOC?=jemalloc
+ 
+ USEASM?=true
+ # Do we use our assembly spinlock? X64 only
+@@ -163,10 +156,9 @@
+ endif
+ 
+ ifeq ($(MALLOC),jemalloc)
+-	DEPENDENCY_TARGETS+= jemalloc
+-	FINAL_CFLAGS+= -DUSE_JEMALLOC -I../deps/jemalloc/include
+-	FINAL_CXXFLAGS+= -DUSE_JEMALLOC -I../deps/jemalloc/include
+-	FINAL_LIBS := ../deps/jemalloc/lib/libjemalloc.a $(FINAL_LIBS)
++	FINAL_CFLAGS+= -DUSE_JEMALLOC -DJEMALLOC_NO_DEMANGLE
++	FINAL_CXXFLAGS+= -DUSE_JEMALLOC -DJEMALLOC_NO_DEMANGLE
++	FINAL_LIBS := -ljemalloc $(FINAL_LIBS)
+ endif
+ 
+ ifeq ($(MALLOC),memkind)

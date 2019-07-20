@@ -1,0 +1,38 @@
+--- keydb-0.9.5.orig/redis.conf	2019-05-10 08:14:19.000000000 +0800
++++ keydb-0.9.5/redis.conf	2019-07-19 20:26:08.446358131 +0800
+@@ -155,7 +155,7 @@
+ #
+ # Creating a pid file is best effort: if Redis is not able to create it
+ # nothing bad happens, the server will start and run normally.
+-pidfile /var/run/redis_6379.pid
++pidfile /var/run/redis.pid
+ 
+ # Specify the server verbosity level.
+ # This can be one of:
+@@ -168,7 +168,7 @@
+ # Specify the log file name. Also the empty string can be used to force
+ # Redis to log on the standard output. Note that if you use standard
+ # output for logging but daemonize, logs will be sent to /dev/null
+-logfile ""
++logfile "/var/log/keydb/keydb.log"
+ 
+ # To enable logging to the system logger, just set 'syslog-enabled' to yes,
+ # and optionally update the other syslog parameters to suit your needs.
+@@ -260,7 +260,7 @@
+ # The Append Only File will also be created inside this directory.
+ #
+ # Note that you must specify a directory here, not a file name.
+-dir ./
++dir /var/lib/keydb/
+ 
+ ################################# REPLICATION #################################
+ 
+@@ -681,7 +681,7 @@
+ # limit for maxmemory so that there is some free RAM on the system for replica
+ # output buffers (but this is not needed if the policy is 'noeviction').
+ #
+-# maxmemory <bytes>
++maxmemory 64MB
+ 
+ # MAXMEMORY POLICY: how Redis will select what to remove when maxmemory
+ # is reached. You can select among five behaviors:

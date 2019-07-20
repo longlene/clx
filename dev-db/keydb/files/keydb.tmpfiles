@@ -1,0 +1,2 @@
+# keydb runtime directory
+d /var/run/keydb 0755 keydb root -
