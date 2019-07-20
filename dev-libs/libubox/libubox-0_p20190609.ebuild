@@ -5,7 +5,7 @@ EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="c83a84afbef2b24f960ddeda0b5e2ab01fba6981"
+EGIT_COMMIT="ecf56174da9614a0b3107d33def463eefb4d7785"
 
 DESCRIPTION="C utility functions for OpenWrt"
 HOMEPAGE="http://wiki.openwrt.org/"
@@ -20,7 +20,7 @@ DEPEND="dev-libs/json-c"
 RDEPEND="lua? ( dev-lang/lua )"
 
 src_prepare() {
-	eapply_user
+	default
 	sed -i "s#LIBRARY DESTINATION lib#LIBRARY DESTINATION $(get_libdir)#" CMakeLists.txt
 }
 

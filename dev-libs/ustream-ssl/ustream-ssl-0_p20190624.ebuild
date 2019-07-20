@@ -1,11 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="23a3f2830341acd1db149175baf7315a33bd0edb"
+EGIT_COMMIT="738e8d2489fc64f782affd1292388c66f6d69e82"
 
 DESCRIPTION="library for SSL over ustream"
 HOMEPAGE="http://wiki.openwrt.org/"

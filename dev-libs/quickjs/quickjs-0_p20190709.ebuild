@@ -25,6 +25,7 @@ src_prepare() {
 	default
 	sed -e '/CONFIG_M32=y/d' \
 		-e '/CONFIG_LTO=y/d' \
+		-e '/prefix=/{s#/local##}' \
 		-i Makefile
 }
 
