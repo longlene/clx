@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="801a5b6e3a09286a393dae66eead99792ba4f965"
+EGIT_COMMIT="84ed4234ab1f580f668705433f1cde7b9711f3bf"
 
 DESCRIPTION="A Common Lisp implementation of Message Pack"
 HOMEPAGE="https://github.com/mbrezu/cl-messagepack"
