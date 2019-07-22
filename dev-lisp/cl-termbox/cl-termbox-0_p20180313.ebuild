@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d6124191e8b0140bfceb5c9f43d67be2080f7cee"
+EGIT_COMMIT="5dbfd0d473d9aabf0971c6eacd68a4971eb8899d"
 
 DESCRIPTION="A Common Lisp wrapper around nsf/termbox"
 HOMEPAGE="https://github.com/fouric/cl-termbox"
