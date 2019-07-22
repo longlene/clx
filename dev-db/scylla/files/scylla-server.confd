@@ -1,0 +1,16 @@
+# please check the defaults of scylla in the /etc/default/scylla-server file!
+#
+# you can configure the following options for the OpenRC init script:
+# - config_file
+# - run_dir
+
+# source scylla default env
+source /etc/default/scylla-server
+
+# source scylla additional configuration
+for i in /etc/scylla.d/*.conf; do
+	if [ "$i" = "/etc/scylla.d/*.conf" ]; then
+		break
+	fi
+	. "$i"
+done

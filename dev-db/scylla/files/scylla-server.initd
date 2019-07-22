@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+# Copyright 1999-2018 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+config_file=${config_file:-/etc/scylla/scylla.yaml}
+run_dir=${run_dir:-/run/scylla}
+
+command="/usr/bin/scylla"
+command_args="--options-file ${config_file} ${CPUSET} ${DEV_MODE} ${SEASTAR_IO} ${SCYLLA_ARGS}"
+command_background="true"
+command_progress="true"
+pidfile=${run_dir}/${SVCNAME}.pid
+user=${USER:-scylla}
+group=${GROUP:-scylla}
+retry="SIGTERM/120"
+start_stop_daemon_args="--user ${user} --group ${group} --wait 5000"
+
+depend() {
+	use net localmount logger
+}
+
+start_pre() {
+	checkpath -d -m 0750 -o "${user}":"${group}" "${run_dir}"
+	if [ ! -f ${config_file} ]; then
+		eerror "Missing configuration file ${config_file}"
+		return 1
+	fi
+	export SCYLLA_CONF SCYLLA_HOME
+	ebegin "Running scylla_prepare"
+	/usr/lib/scylla/scylla_prepare >/dev/null
+}
+
+stop_post() {
+	ebegin "Running scylla_stop"
+	/usr/lib/scylla/scylla_stop >/dev/null
+}

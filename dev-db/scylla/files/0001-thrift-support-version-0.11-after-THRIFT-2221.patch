@@ -1,0 +1,552 @@
+diff --git a/configure.py b/configure.py
+index 49796873a..00b046f16 100755
+--- a/configure.py
++++ b/configure.py
+@@ -1056,6 +1056,12 @@ if not os.path.exists(xxhash_dir) or not os.listdir(xxhash_dir):
+ if not args.staticboost:
+     args.user_cflags += ' -DBOOST_TEST_DYN_LINK'
+ 
++# thrift version detection, see #4538
++thrift_version = subprocess.check_output(["thrift", "-version"]).decode("utf-8").split(" ")[-1]
++if int(thrift_version.replace(".", "")) < 110:
++    print('Note: thrift version < 0.11.0 detected, using boost symbols')
++    args.user_cflags += ' -DTHRIFT_USES_BOOST'
++
+ for pkg in pkgs:
+     args.user_cflags += ' ' + pkg_config('--cflags', pkg)
+     libs += ' ' + pkg_config('--libs', pkg)
+diff --git a/thrift/handler.cc b/thrift/handler.cc
+index 31d1d789e..b6a58819c 100644
+--- a/thrift/handler.cc
++++ b/thrift/handler.cc
+@@ -54,6 +54,12 @@
+ #include "query-result-reader.hh"
+ #include "thrift/server.hh"
+ 
++#ifdef THRIFT_USES_BOOST
++namespace thrift_std = tcxx;
++#else
++namespace thrift_std = std;
++#endif
++
+ using namespace ::apache::thrift;
+ using namespace ::apache::thrift::protocol;
+ namespace thrift_transport = ::apache::thrift::transport;
+@@ -68,7 +74,7 @@ class unimplemented_exception : public std::exception {
+     virtual const char* what() const throw () override { return "sorry, not implemented"; }
+ };
+ 
+-void pass_unimplemented(const tcxx::function<void(::apache::thrift::TDelayedException* _throw)>& exn_cob) {
++void pass_unimplemented(const thrift_std::function<void(::apache::thrift::TDelayedException* _throw)>& exn_cob) {
+     exn_cob(::apache::thrift::TDelayedException::delayException(unimplemented_exception()));
+ }
+ 
+@@ -118,8 +124,8 @@ class delayed_exception_wrapper : public ::apache::thrift::TDelayedException {
+ 
+ template <typename Func, typename T>
+ void
+-with_cob(tcxx::function<void (const T& ret)>&& cob,
+-        tcxx::function<void (::apache::thrift::TDelayedException* _throw)>&& exn_cob,
++with_cob(thrift_std::function<void (const T& ret)>&& cob,
++        thrift_std::function<void (::apache::thrift::TDelayedException* _throw)>&& exn_cob,
+         Func&& func) {
+     // then_wrapped() terminates the fiber by calling one of the cob objects
+     futurize<noexcept_movable_t<T>>::apply([func = std::forward<Func>(func)] {
+@@ -136,8 +142,8 @@ with_cob(tcxx::function<void (const T& ret)>&& cob,
+ 
+ template <typename Func>
+ void
+-with_cob(tcxx::function<void ()>&& cob,
+-        tcxx::function<void (::apache::thrift::TDelayedException* _throw)>&& exn_cob,
++with_cob(thrift_std::function<void ()>&& cob,
++        thrift_std::function<void (::apache::thrift::TDelayedException* _throw)>&& exn_cob,
+         Func&& func) {
+     // then_wrapped() terminates the fiber by calling one of the cob objects
+     futurize<void>::apply(func).then_wrapped([cob = std::move(cob), exn_cob = std::move(exn_cob)] (future<> f) {
+@@ -153,7 +159,7 @@ with_cob(tcxx::function<void ()>&& cob,
+ 
+ template <typename Func>
+ void
+-with_exn_cob(tcxx::function<void (::apache::thrift::TDelayedException* _throw)>&& exn_cob, Func&& func) {
++with_exn_cob(thrift_std::function<void (::apache::thrift::TDelayedException* _throw)>&& exn_cob, Func&& func) {
+     // then_wrapped() terminates the fiber by calling one of the cob objects
+     futurize<void>::apply(func).then_wrapped([exn_cob = std::move(exn_cob)] (future<> f) {
+         try {
+@@ -202,7 +208,7 @@ class thrift_handler : public CassandraCobSvIf {
+     template <typename Cob, typename Func>
+     void
+     with_schema(Cob&& cob,
+-                tcxx::function<void (::apache::thrift::TDelayedException* _throw)>&& exn_cob,
++                thrift_std::function<void (::apache::thrift::TDelayedException* _throw)>&& exn_cob,
+                 const std::string& cf,
+                 Func&& func) {
+         with_cob(std::move(cob), std::move(exn_cob), [this, &cf, func = std::move(func)] {
+@@ -226,7 +232,7 @@ class thrift_handler : public CassandraCobSvIf {
+         return _query_state.get_client_state().validate_login();
+     };
+ 
+-    void login(tcxx::function<void()> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const AuthenticationRequest& auth_request) {
++    void login(thrift_std::function<void()> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const AuthenticationRequest& auth_request) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             auth::authenticator::credentials_map creds(auth_request.credentials.begin(), auth_request.credentials.end());
+             auto& auth_service = *_query_state.get_client_state().get_auth_service();
+@@ -236,13 +242,13 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void set_keyspace(tcxx::function<void()> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace) {
++    void set_keyspace(thrift_std::function<void()> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             _query_state.get_client_state().set_keyspace(_db, keyspace);
+         });
+     }
+ 
+-    void get(tcxx::function<void(ColumnOrSuperColumn const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnPath& column_path, const ConsistencyLevel::type consistency_level) {
++    void get(thrift_std::function<void(ColumnOrSuperColumn const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnPath& column_path, const ConsistencyLevel::type consistency_level) {
+         return get_slice([cob = std::move(cob), &column_path](auto&& results) {
+             if (results.empty()) {
+                 throw NotFoundException();
+@@ -251,7 +257,7 @@ class thrift_handler : public CassandraCobSvIf {
+         }, exn_cob, key, column_path_to_column_parent(column_path), column_path_to_slice_predicate(column_path), std::move(consistency_level));
+     }
+ 
+-    void get_slice(tcxx::function<void(std::vector<ColumnOrSuperColumn>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnParent& column_parent, const SlicePredicate& predicate, const ConsistencyLevel::type consistency_level) {
++    void get_slice(thrift_std::function<void(std::vector<ColumnOrSuperColumn>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnParent& column_parent, const SlicePredicate& predicate, const ConsistencyLevel::type consistency_level) {
+         return multiget_slice([cob = std::move(cob)](auto&& results) {
+             if (!results.empty()) {
+                 return cob(std::move(results.begin()->second));
+@@ -260,7 +266,7 @@ class thrift_handler : public CassandraCobSvIf {
+         }, exn_cob, {key}, column_parent, predicate, consistency_level);
+     }
+ 
+-    void get_count(tcxx::function<void(int32_t const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnParent& column_parent, const SlicePredicate& predicate, const ConsistencyLevel::type consistency_level) {
++    void get_count(thrift_std::function<void(int32_t const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnParent& column_parent, const SlicePredicate& predicate, const ConsistencyLevel::type consistency_level) {
+         return multiget_count([cob = std::move(cob)](auto&& results) {
+             if (!results.empty()) {
+                 return cob(results.begin()->second);
+@@ -269,7 +275,7 @@ class thrift_handler : public CassandraCobSvIf {
+         }, exn_cob, {key}, column_parent, predicate, consistency_level);
+     }
+ 
+-    void multiget_slice(tcxx::function<void(std::map<std::string, std::vector<ColumnOrSuperColumn> >  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::vector<std::string> & keys, const ColumnParent& column_parent, const SlicePredicate& predicate, const ConsistencyLevel::type consistency_level) {
++    void multiget_slice(thrift_std::function<void(std::map<std::string, std::vector<ColumnOrSuperColumn> >  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::vector<std::string> & keys, const ColumnParent& column_parent, const SlicePredicate& predicate, const ConsistencyLevel::type consistency_level) {
+         with_schema(std::move(cob), std::move(exn_cob), column_parent.column_family, [&](schema_ptr schema) {
+             if (!column_parent.super_column.empty()) {
+                 fail(unimplemented::cause::SUPER);
+@@ -297,7 +303,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void multiget_count(tcxx::function<void(std::map<std::string, int32_t>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::vector<std::string> & keys, const ColumnParent& column_parent, const SlicePredicate& predicate, const ConsistencyLevel::type consistency_level) {
++    void multiget_count(thrift_std::function<void(std::map<std::string, int32_t>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::vector<std::string> & keys, const ColumnParent& column_parent, const SlicePredicate& predicate, const ConsistencyLevel::type consistency_level) {
+         with_schema(std::move(cob), std::move(exn_cob), column_parent.column_family, [&](schema_ptr schema) {
+             if (!column_parent.super_column.empty()) {
+                 fail(unimplemented::cause::SUPER);
+@@ -326,7 +332,7 @@ class thrift_handler : public CassandraCobSvIf {
+      * don't know which partition keys in the specified range we should return back to the client. So for
+      * now our behavior differs from Origin.
+      */
+-    void get_range_slices(tcxx::function<void(std::vector<KeySlice>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const ColumnParent& column_parent, const SlicePredicate& predicate, const KeyRange& range, const ConsistencyLevel::type consistency_level) {
++    void get_range_slices(thrift_std::function<void(std::vector<KeySlice>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const ColumnParent& column_parent, const SlicePredicate& predicate, const KeyRange& range, const ConsistencyLevel::type consistency_level) {
+         with_schema(std::move(cob), std::move(exn_cob), column_parent.column_family, [&](schema_ptr schema) {
+             if (!column_parent.super_column.empty()) {
+                 fail(unimplemented::cause::SUPER);
+@@ -437,7 +443,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void get_paged_slice(tcxx::function<void(std::vector<KeySlice> const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& column_family, const KeyRange& range, const std::string& start_column, const ConsistencyLevel::type consistency_level) {
++    void get_paged_slice(thrift_std::function<void(std::vector<KeySlice> const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& column_family, const KeyRange& range, const std::string& start_column, const ConsistencyLevel::type consistency_level) {
+         with_schema(std::move(cob), std::move(exn_cob), column_family, [&](schema_ptr schema) {
+             return do_with(std::vector<KeySlice>(), [&](auto& output) {
+                 if (range.__isset.row_filter) {
+@@ -465,14 +471,14 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void get_indexed_slices(tcxx::function<void(std::vector<KeySlice>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const ColumnParent& column_parent, const IndexClause& index_clause, const SlicePredicate& column_predicate, const ConsistencyLevel::type consistency_level) {
++    void get_indexed_slices(thrift_std::function<void(std::vector<KeySlice>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const ColumnParent& column_parent, const IndexClause& index_clause, const SlicePredicate& column_predicate, const ConsistencyLevel::type consistency_level) {
+         std::vector<KeySlice>  _return;
+         warn(unimplemented::cause::INDEXES);
+         // FIXME: implement
+         return pass_unimplemented(exn_cob);
+     }
+ 
+-    void insert(tcxx::function<void()> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnParent& column_parent, const Column& column, const ConsistencyLevel::type consistency_level) {
++    void insert(thrift_std::function<void()> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnParent& column_parent, const Column& column, const ConsistencyLevel::type consistency_level) {
+         with_schema(std::move(cob), std::move(exn_cob), column_parent.column_family, [&](schema_ptr schema) {
+             if (column_parent.__isset.super_column) {
+                 fail(unimplemented::cause::SUPER);
+@@ -491,7 +497,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void add(tcxx::function<void()> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnParent& column_parent, const CounterColumn& column, const ConsistencyLevel::type consistency_level) {
++    void add(thrift_std::function<void()> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnParent& column_parent, const CounterColumn& column, const ConsistencyLevel::type consistency_level) {
+         with_schema(std::move(cob), std::move(exn_cob), column_parent.column_family, [&](schema_ptr schema) {
+             if (column_parent.__isset.super_column) {
+                 fail(unimplemented::cause::SUPER);
+@@ -506,14 +512,14 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void cas(tcxx::function<void(CASResult const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const std::string& column_family, const std::vector<Column> & expected, const std::vector<Column> & updates, const ConsistencyLevel::type serial_consistency_level, const ConsistencyLevel::type commit_consistency_level) {
++    void cas(thrift_std::function<void(CASResult const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const std::string& column_family, const std::vector<Column> & expected, const std::vector<Column> & updates, const ConsistencyLevel::type serial_consistency_level, const ConsistencyLevel::type commit_consistency_level) {
+         CASResult _return;
+         warn(unimplemented::cause::LWT);
+         // FIXME: implement
+         return pass_unimplemented(exn_cob);
+     }
+ 
+-    void remove(tcxx::function<void()> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnPath& column_path, const int64_t timestamp, const ConsistencyLevel::type consistency_level) {
++    void remove(thrift_std::function<void()> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnPath& column_path, const int64_t timestamp, const ConsistencyLevel::type consistency_level) {
+         with_schema(std::move(cob), std::move(exn_cob), column_path.column_family, [&](schema_ptr schema) {
+             if (schema->is_view()) {
+                 throw make_exception<InvalidRequestException>("Cannot modify Materialized Views directly");
+@@ -541,7 +547,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void remove_counter(tcxx::function<void()> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnPath& column_path, const ConsistencyLevel::type consistency_level) {
++    void remove_counter(thrift_std::function<void()> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& key, const ColumnPath& column_path, const ConsistencyLevel::type consistency_level) {
+         with_schema(std::move(cob), std::move(exn_cob), column_path.column_family, [&](schema_ptr schema) {
+             mutation m_to_apply(schema, key_from_thrift(*schema, to_bytes_view(key)));
+ 
+@@ -567,7 +573,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void batch_mutate(tcxx::function<void()> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::map<std::string, std::map<std::string, std::vector<Mutation> > > & mutation_map, const ConsistencyLevel::type consistency_level) {
++    void batch_mutate(thrift_std::function<void()> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::map<std::string, std::map<std::string, std::vector<Mutation> > > & mutation_map, const ConsistencyLevel::type consistency_level) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             auto p = prepare_mutations(_db.local(), current_keyspace(), mutation_map);
+             return parallel_for_each(std::move(p.second), [this](auto&& schema) {
+@@ -579,7 +585,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void atomic_batch_mutate(tcxx::function<void()> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::map<std::string, std::map<std::string, std::vector<Mutation> > > & mutation_map, const ConsistencyLevel::type consistency_level) {
++    void atomic_batch_mutate(thrift_std::function<void()> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::map<std::string, std::map<std::string, std::vector<Mutation> > > & mutation_map, const ConsistencyLevel::type consistency_level) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             auto p = prepare_mutations(_db.local(), current_keyspace(), mutation_map);
+             return parallel_for_each(std::move(p.second), [this](auto&& schema) {
+@@ -591,7 +597,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void truncate(tcxx::function<void()> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& cfname) {
++    void truncate(thrift_std::function<void()> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& cfname) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             if (current_keyspace().empty()) {
+                 throw make_exception<InvalidRequestException>("keyspace not set");
+@@ -606,7 +612,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void get_multi_slice(tcxx::function<void(std::vector<ColumnOrSuperColumn>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const MultiSliceRequest& request) {
++    void get_multi_slice(thrift_std::function<void(std::vector<ColumnOrSuperColumn>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const MultiSliceRequest& request) {
+         with_schema(std::move(cob), std::move(exn_cob), request.column_parent.column_family, [&](schema_ptr schema) {
+             if (!request.__isset.key) {
+                 throw make_exception<InvalidRequestException>("Key may not be empty");
+@@ -673,7 +679,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void describe_schema_versions(tcxx::function<void(std::map<std::string, std::vector<std::string> >  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob) {
++    void describe_schema_versions(thrift_std::function<void(std::map<std::string, std::vector<std::string> >  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob) {
+         with_cob(std::move(cob), std::move(exn_cob), [] {
+             return service::get_local_storage_service().describe_schema_versions().then([](auto&& m) {
+                 std::map<std::string, std::vector<std::string>> ret;
+@@ -685,7 +691,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void describe_keyspaces(tcxx::function<void(std::vector<KsDef>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob) {
++    void describe_keyspaces(thrift_std::function<void(std::vector<KsDef>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             validate_login();
+             std::vector<KsDef>  ret;
+@@ -696,15 +702,15 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void describe_cluster_name(tcxx::function<void(std::string const& _return)> cob) {
++    void describe_cluster_name(thrift_std::function<void(std::string const& _return)> cob) {
+         cob(_db.local().get_config().cluster_name());
+     }
+ 
+-    void describe_version(tcxx::function<void(std::string const& _return)> cob) {
++    void describe_version(thrift_std::function<void(std::string const& _return)> cob) {
+         cob(::cassandra::thrift_version);
+     }
+ 
+-    void do_describe_ring(tcxx::function<void(std::vector<TokenRange>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace, bool local) {
++    void do_describe_ring(thrift_std::function<void(std::vector<TokenRange>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace, bool local) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             auto& ks = _db.local().find_keyspace(keyspace);
+             if (ks.get_replication_strategy().get_type() == locator::replication_strategy_type::local) {
+@@ -735,15 +741,15 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void describe_ring(tcxx::function<void(std::vector<TokenRange>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace) {
++    void describe_ring(thrift_std::function<void(std::vector<TokenRange>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace) {
+         do_describe_ring(std::move(cob), std::move(exn_cob), keyspace, false);
+     }
+ 
+-    void describe_local_ring(tcxx::function<void(std::vector<TokenRange>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace) {
++    void describe_local_ring(thrift_std::function<void(std::vector<TokenRange>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace) {
+         do_describe_ring(std::move(cob), std::move(exn_cob), keyspace, true);
+     }
+ 
+-    void describe_token_map(tcxx::function<void(std::map<std::string, std::string>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob) {
++    void describe_token_map(thrift_std::function<void(std::map<std::string, std::string>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob) {
+         with_cob(std::move(cob), std::move(exn_cob), [] {
+             auto m = service::get_local_storage_service().get_token_to_endpoint_map();
+             std::map<std::string, std::string> ret;
+@@ -754,15 +760,15 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void describe_partitioner(tcxx::function<void(std::string const& _return)> cob) {
++    void describe_partitioner(thrift_std::function<void(std::string const& _return)> cob) {
+         cob(dht::global_partitioner().name());
+     }
+ 
+-    void describe_snitch(tcxx::function<void(std::string const& _return)> cob) {
++    void describe_snitch(thrift_std::function<void(std::string const& _return)> cob) {
+         cob(sprint("org.apache.cassandra.locator.%s", _db.local().get_snitch_name()));
+     }
+ 
+-    void describe_keyspace(tcxx::function<void(KsDef const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace) {
++    void describe_keyspace(thrift_std::function<void(KsDef const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             validate_login();
+             auto& ks = _db.local().find_keyspace(keyspace);
+@@ -770,7 +776,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void describe_splits(tcxx::function<void(std::vector<std::string>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& cfName, const std::string& start_token, const std::string& end_token, const int32_t keys_per_split) {
++    void describe_splits(thrift_std::function<void(std::vector<std::string>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& cfName, const std::string& start_token, const std::string& end_token, const int32_t keys_per_split) {
+         return describe_splits_ex([cob = std::move(cob)](auto&& results) {
+             std::vector<std::string> res;
+             res.reserve(results.size() + 1);
+@@ -782,13 +788,13 @@ class thrift_handler : public CassandraCobSvIf {
+         }, exn_cob, cfName, start_token, end_token, keys_per_split);
+     }
+ 
+-    void trace_next_query(tcxx::function<void(std::string const& _return)> cob) {
++    void trace_next_query(thrift_std::function<void(std::string const& _return)> cob) {
+         std::string _return;
+         // FIXME: implement
+         return cob("dummy trace");
+     }
+ 
+-    void describe_splits_ex(tcxx::function<void(std::vector<CfSplit>  const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& cfName, const std::string& start_token, const std::string& end_token, const int32_t keys_per_split) {
++    void describe_splits_ex(thrift_std::function<void(std::vector<CfSplit>  const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& cfName, const std::string& start_token, const std::string& end_token, const int32_t keys_per_split) {
+         with_cob(std::move(cob), std::move(exn_cob), [&]{
+             dht::token_range_vector ranges;
+             auto tstart = start_token.empty() ? dht::minimum_token() : dht::global_partitioner().from_sstring(sstring(start_token));
+@@ -811,7 +817,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void system_add_column_family(tcxx::function<void(std::string const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const CfDef& cf_def) {
++    void system_add_column_family(thrift_std::function<void(std::string const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const CfDef& cf_def) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             if (!_db.local().has_keyspace(cf_def.keyspace)) {
+                 throw NotFoundException();
+@@ -828,7 +834,7 @@ class thrift_handler : public CassandraCobSvIf {
+             });
+         });
+     }
+-    void system_drop_column_family(tcxx::function<void(std::string const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& column_family) {
++    void system_drop_column_family(thrift_std::function<void(std::string const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& column_family) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             return _query_state.get_client_state().has_column_family_access(current_keyspace(), column_family, auth::permission::DROP).then([=] {
+                 auto& cf = _db.local().find_column_family(current_keyspace(), column_family);
+@@ -845,7 +851,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void system_add_keyspace(tcxx::function<void(std::string const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const KsDef& ks_def) {
++    void system_add_keyspace(thrift_std::function<void(std::string const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const KsDef& ks_def) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             auto ksm = keyspace_from_thrift(ks_def);
+             return _query_state.get_client_state().has_all_keyspaces_access(auth::permission::CREATE).then([this, ksm = std::move(ksm)] {
+@@ -856,7 +862,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void system_drop_keyspace(tcxx::function<void(std::string const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace) {
++    void system_drop_keyspace(thrift_std::function<void(std::string const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& keyspace) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             thrift_validation::validate_keyspace_not_system(keyspace);
+             if (!_db.local().has_keyspace(keyspace)) {
+@@ -871,7 +877,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void system_update_keyspace(tcxx::function<void(std::string const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const KsDef& ks_def) {
++    void system_update_keyspace(thrift_std::function<void(std::string const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const KsDef& ks_def) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             thrift_validation::validate_keyspace_not_system(ks_def.name);
+ 
+@@ -891,7 +897,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void system_update_column_family(tcxx::function<void(std::string const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const CfDef& cf_def) {
++    void system_update_column_family(thrift_std::function<void(std::string const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const CfDef& cf_def) {
+         with_cob(std::move(cob), std::move(exn_cob), [&] {
+             auto& cf = _db.local().find_column_family(cf_def.keyspace, cf_def.name);
+             auto schema = cf.schema();
+@@ -922,7 +928,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void execute_cql_query(tcxx::function<void(CqlResult const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& query, const Compression::type compression) {
++    void execute_cql_query(thrift_std::function<void(CqlResult const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& query, const Compression::type compression) {
+         throw make_exception<InvalidRequestException>("CQL2 is not supported");
+     }
+ 
+@@ -952,7 +958,7 @@ class thrift_handler : public CassandraCobSvIf {
+         }
+     };
+ 
+-    void execute_cql3_query(tcxx::function<void(CqlResult const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& query, const Compression::type compression, const ConsistencyLevel::type consistency) {
++    void execute_cql3_query(thrift_std::function<void(CqlResult const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& query, const Compression::type compression, const ConsistencyLevel::type consistency) {
+         with_exn_cob(std::move(exn_cob), [&] {
+             if (compression != Compression::type::NONE) {
+                 throw make_exception<InvalidRequestException>("Compressed query strings are not supported");
+@@ -968,7 +974,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void prepare_cql_query(tcxx::function<void(CqlPreparedResult const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& query, const Compression::type compression) {
++    void prepare_cql_query(thrift_std::function<void(CqlPreparedResult const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& query, const Compression::type compression) {
+         throw make_exception<InvalidRequestException>("CQL2 is not supported");
+     }
+ 
+@@ -996,7 +1002,7 @@ class thrift_handler : public CassandraCobSvIf {
+         }
+     };
+ 
+-    void prepare_cql3_query(tcxx::function<void(CqlPreparedResult const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& query, const Compression::type compression) {
++    void prepare_cql3_query(thrift_std::function<void(CqlPreparedResult const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& query, const Compression::type compression) {
+         with_exn_cob(std::move(exn_cob), [&] {
+             validate_login();
+             if (compression != Compression::type::NONE) {
+@@ -1010,11 +1016,11 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void execute_prepared_cql_query(tcxx::function<void(CqlResult const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const int32_t itemId, const std::vector<std::string> & values) {
++    void execute_prepared_cql_query(thrift_std::function<void(CqlResult const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const int32_t itemId, const std::vector<std::string> & values) {
+         throw make_exception<InvalidRequestException>("CQL2 is not supported");
+     }
+ 
+-    void execute_prepared_cql3_query(tcxx::function<void(CqlResult const& _return)> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const int32_t itemId, const std::vector<std::string> & values, const ConsistencyLevel::type consistency) {
++    void execute_prepared_cql3_query(thrift_std::function<void(CqlResult const& _return)> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const int32_t itemId, const std::vector<std::string> & values, const ConsistencyLevel::type consistency) {
+         with_exn_cob(std::move(exn_cob), [&] {
+             cql3::prepared_cache_key_type cache_key(itemId);
+             bool needs_authorization = false;
+@@ -1047,7 +1053,7 @@ class thrift_handler : public CassandraCobSvIf {
+         });
+     }
+ 
+-    void set_cql_version(tcxx::function<void()> cob, tcxx::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& version) {
++    void set_cql_version(thrift_std::function<void()> cob, thrift_std::function<void(::apache::thrift::TDelayedException* _throw)> exn_cob, const std::string& version) {
+         // No-op.
+         cob();
+     }
+@@ -1122,7 +1128,7 @@ class thrift_handler : public CassandraCobSvIf {
+                 if (cell) {
+                     c.__set_value(bytes_to_string(*cell));
+                 }
+-                
++
+             }
+             void end_row() {
+                 CqlRow& r = _rows.emplace_back();
+diff --git a/thrift/server.cc b/thrift/server.cc
+index 3ca500c90..0fee12e3d 100644
+--- a/thrift/server.cc
++++ b/thrift/server.cc
+@@ -40,7 +40,14 @@
+ #include <limits>
+ #include <cctype>
+ #include <vector>
++
++#ifdef THRIFT_USES_BOOST
+ #include <boost/make_shared.hpp>
++namespace thrift_std = boost;
++#else
++#include <memory>
++namespace thrift_std = std;
++#endif
+ 
+ static logging::logger tlogger("thrift");
+ 
+@@ -96,9 +103,9 @@ struct thrift_server::connection::fake_transport : TTransport {
+ thrift_server::connection::connection(thrift_server& server, connected_socket&& fd, socket_address addr)
+         : _server(server), _fd(std::move(fd)), _read_buf(_fd.input())
+         , _write_buf(_fd.output())
+-        , _transport(boost::make_shared<thrift_server::connection::fake_transport>(this))
+-        , _input(boost::make_shared<TMemoryBuffer>())
+-        , _output(boost::make_shared<TMemoryBuffer>())
++        , _transport(thrift_std::make_shared<thrift_server::connection::fake_transport>(this))
++        , _input(thrift_std::make_shared<TMemoryBuffer>())
++        , _output(thrift_std::make_shared<TMemoryBuffer>())
+         , _in_proto(_server._protocol_factory->getProtocol(_input))
+         , _out_proto(_server._protocol_factory->getProtocol(_output))
+         , _processor(_server._processor_factory->getProcessor({ _in_proto, _out_proto, _transport })) {
+diff --git a/thrift/server.hh b/thrift/server.hh
+index cf713756a..e9c169819 100644
+--- a/thrift/server.hh
++++ b/thrift/server.hh
+@@ -31,6 +31,12 @@
+ #include <cstdint>
+ #include <boost/intrusive/list.hpp>
+ 
++#ifdef THRIFT_USES_BOOST
++namespace thrift_std = boost;
++#else
++namespace thrift_std = std;
++#endif
++
+ class thrift_server;
+ class thrift_stats;
+ class database;
+@@ -80,12 +86,12 @@ class thrift_server {
+         input_stream<char> _read_buf;
+         output_stream<char> _write_buf;
+         temporary_buffer<char> _in_tmp;
+-        boost::shared_ptr<fake_transport> _transport;
+-        boost::shared_ptr<apache::thrift::transport::TMemoryBuffer> _input;
+-        boost::shared_ptr<apache::thrift::transport::TMemoryBuffer> _output;
+-        boost::shared_ptr<apache::thrift::protocol::TProtocol> _in_proto;
+-        boost::shared_ptr<apache::thrift::protocol::TProtocol> _out_proto;
+-        boost::shared_ptr<apache::thrift::async::TAsyncProcessor> _processor;
++        thrift_std::shared_ptr<fake_transport> _transport;
++        thrift_std::shared_ptr<apache::thrift::transport::TMemoryBuffer> _input;
++        thrift_std::shared_ptr<apache::thrift::transport::TMemoryBuffer> _output;
++        thrift_std::shared_ptr<apache::thrift::protocol::TProtocol> _in_proto;
++        thrift_std::shared_ptr<apache::thrift::protocol::TProtocol> _out_proto;
++        thrift_std::shared_ptr<apache::thrift::async::TAsyncProcessor> _processor;
+         promise<> _processor_promise;
+     public:
+         connection(thrift_server& server, connected_socket&& fd, socket_address addr);
+@@ -101,9 +107,9 @@ class thrift_server {
+ private:
+     std::vector<server_socket> _listeners;
+     std::unique_ptr<thrift_stats> _stats;
+-    boost::shared_ptr<::cassandra::CassandraCobSvIfFactory> _handler_factory;
++    thrift_std::shared_ptr<::cassandra::CassandraCobSvIfFactory> _handler_factory;
+     std::unique_ptr<apache::thrift::protocol::TProtocolFactory> _protocol_factory;
+-    boost::shared_ptr<apache::thrift::async::TAsyncProcessorFactory> _processor_factory;
++    thrift_std::shared_ptr<apache::thrift::async::TAsyncProcessorFactory> _processor_factory;
+     uint64_t _total_connections = 0;
+     uint64_t _current_connections = 0;
+     uint64_t _requests_served = 0;
