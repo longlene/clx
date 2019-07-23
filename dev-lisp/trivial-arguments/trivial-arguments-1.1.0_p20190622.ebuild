@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f80407dd9a5a5d18fce2dafc205d296b17fac827"
+EGIT_COMMIT="5a81c3a6d39b0506189c69597fb22d3dd3590a52"
 
 DESCRIPTION="Tiny CL library to retrieve the arguments list of a function"
 HOMEPAGE="https://github.com/Shinmera/trivial-arguments"

@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="02d3754ebfef69469c8db4fbf0a00c45cfd14d9b"
+EGIT_COMMIT="3be23daf1139b38ff581e6cba5978693243d874c"
 
 DESCRIPTION="Auxiliary Utilities"
 HOMEPAGE="https://github.com/mfiano/golden-utils"

@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cd75839d2a83dc2570e987e7c225facf57201357"
+EGIT_COMMIT="d211f33daac3d1400804c2d2d8c854d6b86ed482"
 
 DESCRIPTION="RabbitMQ interface to Common Lisp"
 HOMEPAGE="https://github.com/lokedhs/cl-rabbit"

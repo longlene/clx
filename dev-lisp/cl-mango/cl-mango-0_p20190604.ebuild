@@ -1,11 +1,11 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cf04f5a72dfd8c105b48c83e28d03a19f9ff5046"
+EGIT_COMMIT="d0dc343e6406ebed59defc61e0fdd86a84c3f360"
 
 DESCRIPTION="A minimalist CouchDB database client"
 HOMEPAGE="https://github.com/cmoore/cl-mango/"

@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="32b11745f5b1d0f359761daef6977483fa586436"
+EGIT_COMMIT="238d8ec615cd92fb7fe485eb1c26ddf7fa832a91"
 
 DESCRIPTION="Osicat is a lightweight operating system interface for Common Lisp"
 HOMEPAGE="https://github.com/osicat/osicat"

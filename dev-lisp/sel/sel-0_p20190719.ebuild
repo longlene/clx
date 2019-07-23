@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7a7a59afc9121d0f2a82bcac0d0761d0f56b16bc"
+EGIT_COMMIT="c015e5a4d56d3ffdb6b7f5cc20d31cb00f059192"
 
 DESCRIPTION="Programmatic modification and evaluation of software"
 HOMEPAGE="https://github.com/GrammaTech/sel"

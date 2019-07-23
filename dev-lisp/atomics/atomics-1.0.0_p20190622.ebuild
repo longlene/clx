@@ -1,11 +1,11 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b4511acfd092db45b146291d901c0fcff0f38a13"
+EGIT_COMMIT="d6dd0e3494103348ed5581fcde00997bba7e0980"
 
 DESCRIPTION="Portability layer for atomic operations like compare-and-swap (CAS)"
 HOMEPAGE="https://github.com/Shinmera/atomics"

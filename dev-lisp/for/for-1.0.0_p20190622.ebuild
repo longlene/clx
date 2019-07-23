@@ -5,13 +5,13 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="6f8a1bf9f27c329b7c3a05f6685911c1fc72c5a9"
+EGIT_COMMIT="3315a562e794560fcf8be793aceb5deb2c0404a4"
 
 DESCRIPTION="An extensible iteration macro library"
 HOMEPAGE="https://github.com/Shinmera/for"
 SRC_URI="https://github.com/Shinmera/for/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Artistic"
+LICENSE="zlib"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""

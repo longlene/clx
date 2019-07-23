@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="21e926306ce0e6dd8dfeddd28136a541e3a2b3c0"
+EGIT_COMMIT="aa232fd81335208e8a0badc9064d4f3b2be41b61"
 
 DESCRIPTION="Common Lisp bindings to GLFW"
 HOMEPAGE="https://github.com/AlexCharlton/cl-glfw3"

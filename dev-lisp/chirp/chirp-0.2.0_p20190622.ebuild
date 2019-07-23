@@ -5,13 +5,13 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4b2607a7c8efa96bf1d4a963dd10923d52690dba"
+EGIT_COMMIT="846215e24e054c1ced50257bc7b2ef7763cf09fa"
 
 DESCRIPTION="A twitter client library for Common Lisp"
 HOMEPAGE="https://github.com/Shinmera/chirp"
 SRC_URI="https://github.com/Shinmera/chirp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Artistic"
+LICENSE="zlib"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""

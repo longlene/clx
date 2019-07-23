@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2454f573ed0cb08139b48115e6bf1c0d6361a6e7"
+EGIT_COMMIT="6faf5b0b85d8649c5f8bda4bd526895c353c20ab"
 
 DESCRIPTION="A set of CFFI bindings to the OpenGL, GLU and GLUT APIs."
 HOMEPAGE="http://common-lisp.net/project/cl-opengl/"

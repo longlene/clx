@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="454466edb89f5d9ab6a7e6e2dd66a0a234f8759d"
+inherit common-lisp-3
 
 DESCRIPTION="Common Lisp CFFI wrapper for librdkafka"
 HOMEPAGE="https://github.com/SahilKang/cl-rdkafka/"
-SRC_URI="https://github.com/SahilKang/cl-rdkafka/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/SahilKang/cl-rdkafka/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

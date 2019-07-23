@@ -5,11 +5,11 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3540ced67e609a0ab1ba64759b4806bece2d9242"
+EGIT_COMMIT="93bb339de3348ad211914f9b5aeb4c296f79477e"
 
 DESCRIPTION="CFFI bindings to FUSE (Filesystem in user space)"
-HOMEPAGE="https://github.com/ralt/cl-fuse/"
-SRC_URI="https://github.com/ralt/cl-fuse/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/fb08af68/cl-fuse/"
+SRC_URI="https://github.com/fb08af68/cl-fuse/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
