@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a64f0c377757ca5d9ac5d9e8c5683653a75b8516"
+EGIT_COMMIT="5226ef7ed479cac45bc9ba84d24bf41641d4211a"
 
 DESCRIPTION="A Common Lisp Spider for the Web"
 HOMEPAGE="https://github.com/VitoVan/cl-spider"
