@@ -5,11 +5,9 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="56bb022e7b5f84f0e403c77da2a9e078c8598148"
-
 DESCRIPTION="Parenscript is a small lispy language that can be compiled to JavaScript."
 HOMEPAGE="http://common-lisp.net/project/parenscript/"
-SRC_URI="https://github.com/vsedach/Parenscript/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://common-lisp.net/project/parenscript/release/${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"

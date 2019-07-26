@@ -1,11 +1,11 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e2a091ee9fa4d8d09affb6f25d2c333fb215e026"
+EGIT_COMMIT="2146b25ed87c9962d2de7a745bd8bb022ff9d7e1"
 
 DESCRIPTION="Common Lisp Voxel Game Engine"
 HOMEPAGE="https://github.com/terminal625/sucle"
