@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4d1162a535123cd6a7ac9586df2cb992820c39c8"
+EGIT_COMMIT="a70d17d20cb89b164f9241f46d83f52cf7620322"
 
 DESCRIPTION="Common Lisp port of the Django templating language"
 HOMEPAGE="http://mmontone.github.io/djula"
