@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
-
-EGIT_COMMIT="527ee8eace58427c7213d7ed0acc6c1628588b7a"
+inherit cmake-utils
 
 DESCRIPTION="Parsing gigabytes of JSON per second"
 HOMEPAGE="https://github.com/lemire/simdjson"
-SRC_URI="https://github.com/lemire/simdjson/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/lemire/simdjson/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
