@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="66970cf05a4138cf9e57846cdb9b2cfcd67aab80"
 
 DESCRIPTION="LevelDB bindings for Common Lisp"
-HOMEPAGE="https://github.com/death/level"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/death/level.git"
+HOMEPAGE="https://github.com/death/leveldb"
+SRC_URI="https://github.com/death/leveldb/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
