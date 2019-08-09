@@ -5,7 +5,7 @@ EAPI=6
 
 inherit autotools vcs-snapshot
 
-EGIT_COMMIT="301d2986b6890dcfee53d8bc8e14f28b27922989"
+EGIT_COMMIT="31e5edcc503a118dbd32ea3c78e80e7ec37e98af"
 
 DESCRIPTION="C-Mera is a very simple source-to-source compiler"
 HOMEPAGE="https://github.com/kiselgra/c-mera"
