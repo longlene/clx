@@ -7,11 +7,11 @@ inherit cmake-utils vcs-snapshot
 
 EGIT_COMMIT="6673a4c71fe35e077c6843a74017d9c25610c537"
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="pthread-based thread pool for C/C++"
+HOMEPAGE="https://github.com/Maratyszcza/pthreadpool"
 SRC_URI="https://github.com/Maratyszcza/pthreadpool/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
