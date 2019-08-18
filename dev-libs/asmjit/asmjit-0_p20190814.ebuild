@@ -5,7 +5,7 @@ EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="5d40561d14f93dc45613bfa03155d1dfb4f5825a"
+EGIT_COMMIT="4da474ac9aa2689e88d5e40a2f37628f302d7e3c"
 
 DESCRIPTION="Complete x86/x64 JIT and Remote Assembler for C++"
 HOMEPAGE="https://github.com/asmjit/asmjit"
