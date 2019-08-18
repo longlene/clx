@@ -12,8 +12,15 @@ SRC_URI="https://github.com/Hexstream/place-utils/archive/v${PV}.tar.gz -> ${P}.
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+test? ( dev-lisp/parachute )
+"
 BDEPEND=""
+
+src_prepare() {
+	default
+	use test || rm -r tests
+}

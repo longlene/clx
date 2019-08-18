@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2d5192641a43961a0d1506621d1b5396b286005f"
+EGIT_COMMIT="511ded39deecc9a67460472322741a194a3b3085"
 
 DESCRIPTION="Simplified interface to cl-bodge"
 HOMEPAGE="https://github.com/borodust/trivial-gamekit"
