@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 	dev-libs/libubox
 	lua? ( dev-lang/lua )
 	ubus? ( sys-apps/ubus )
-	ssl? ( net-libs/ustream-ssl )
+	ssl? ( dev-libs/ustream-ssl )
 "
 
 src_prepare() {
