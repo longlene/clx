@@ -34,7 +34,7 @@ RDEPEND=">=dev-libs/libpcre-8.13
 	odbc? ( iodbc? ( dev-db/libiodbc )
 		!iodbc? ( dev-db/unixODBC ) )
 	ssl? (
-		!libressl? ( <dev-libs/openssl-1.1.0:0 )
+		!libressl? ( dev-libs/openssl )
 		libressl? ( dev-libs/libressl )
 	)
 	sqlite? ( dev-db/sqlite:3 )

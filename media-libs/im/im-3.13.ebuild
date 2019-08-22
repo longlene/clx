@@ -19,7 +19,7 @@ IUSE="+openmp lua static-libs"
 DEPEND=""
 RDEPEND="${DEPEND}
 sys-libs/zlib
-sys-libs/jasper
+media-libs/jasper
 lua? ( >=dev-lang/lua-5.1 )"
 
 S="${WORKDIR}"/${PN}
