@@ -1,16 +1,15 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="afb3c3942212dd4e665c07cc4c04b15519b4f9a0"
 
 DESCRIPTION="Extensible text formatting facility for Common Lisp"
 HOMEPAGE="https://github.com/mmontone/fmt/"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/mmontone/fmt.git"
+SRC_URI="https://github.com/mmontone/fmt/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
