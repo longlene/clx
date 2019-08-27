@@ -19,7 +19,7 @@ IUSE="example"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/cl-alc
+	dev-lisp/cl-openal
 	dev-lisp/cl-opengl
 	dev-lisp/cl-openal
 	dev-lisp/imago

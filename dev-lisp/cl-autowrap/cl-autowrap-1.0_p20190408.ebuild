@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/defpackage-plus
 	dev-lisp/uiop
 	dev-lisp/trivial-features
-	dev-util/c2ffi
+	dev-lisp/c2ffi
 "
 
 src_prepare() {

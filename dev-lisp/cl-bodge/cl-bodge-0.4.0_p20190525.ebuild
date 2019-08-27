@@ -35,7 +35,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-main-thread
 	dev-lisp/cl-opengl
 	dev-lisp/cl-openal
-	dev-lisp/cl-alc
+	dev-lisp/cl-openal
 	dev-lisp/opticl
 	dev-lisp/cl-fad
 	dev-lisp/fiveam
