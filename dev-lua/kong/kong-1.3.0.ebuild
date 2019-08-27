@@ -1,14 +1,13 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit lua
 
 DESCRIPTION="The API Gateway & Microservice Management Layer"
-HOMEPAGE="https://getkong.org"
-SRC_URI="https://github.com/Mashape/kong/archive/${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://konghq.com/install"
+SRC_URI="https://github.com/Kong/kong/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
