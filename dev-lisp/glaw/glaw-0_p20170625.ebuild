@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="e678fc0c107ce4b1e3ff9921a6de7e32fd39bc37"
 
 DESCRIPTION="OpenGL based Common Lisp game toolkit"
 HOMEPAGE="https://github.com/patzy/glaw"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/patzy/glaw.git"
+SRC_URI="https://github.com/patzy/glaw/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -28,5 +27,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	default
 	use example || rm -rf examples ${PN}-examples.asd
 }
