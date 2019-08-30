@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit autotools common-lisp-3 vcs-snapshot
+inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="55621ac192d00fa7848c5a1b0c4d7a9944b795f6"
 
@@ -38,7 +38,3 @@ RDEPEND="${DEPEND}
 	app-emacs/slime
 "
 
-src_prepare() {
-	eapply_user
-	eautoreconf
-}

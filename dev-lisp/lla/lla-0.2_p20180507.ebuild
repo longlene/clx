@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b116166f5b4713df560aef8ff8087799161269b6"
+EGIT_COMMIT="ded805d1e9b1493e17b601116ba9bd8a3de3024f"
 
 DESCRIPTION="Lisp Linear Algebra"
 HOMEPAGE="https://github.com/tpapp/lla"
