@@ -1,13 +1,13 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="c938bf0bffd015f83832e10599a337d2c37359d5"
 
-DESCRIPTION=""
+DESCRIPTION="Call python from Common Lisp"
 HOMEPAGE="https://github.com/bendudson/py4cl/"
 SRC_URI="https://github.com/bendudson/py4cl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 

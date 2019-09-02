@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5b2232120e5b6dde8591cf45e2d75ade9e55b3eb"
+EGIT_COMMIT="6a15f6503ecd12328388341755ddb8fd954efa51"
 
 DESCRIPTION="Reasonable Utilities package for Common Lisp"
 HOMEPAGE="https://github.com/mabragor/rutils"
@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -rf rutils-test.asd rutilsx-test.asd test
 }
 
