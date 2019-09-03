@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="356a5f222aeaa792ae04f7503b1d0fe39d37bb8e"
+EGIT_COMMIT="ba92be06ec1dca74d0ca5256aa387d8a28c8ad86"
 
 DESCRIPTION="MPI bindings for Common Lisp with many useful extras"
 HOMEPAGE="https://github.com/marcoheisig/cl-mpi"
