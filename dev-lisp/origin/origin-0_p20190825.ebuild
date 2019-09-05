@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="507bac1f7742d1b081fd8093d2bc1f95c97ed685"
+EGIT_COMMIT="157037c8ee4958afca43a97594a77b030da552df"
 
 DESCRIPTION="A native Lisp graphics math library with an emphasis on performance and correctness"
 HOMEPAGE="https://github.com/mfiano/origin/"

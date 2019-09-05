@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="0ba14ec7d91b650922d69d0551cd48ea5e809532"
+EGIT_COMMIT="85fbdd4596d40e824f70f1b7cf239cf544e49d51"
 
 DESCRIPTION="Random forest in Common Lisp"
 HOMEPAGE="https://github.com/masatoi/cl-random-forest"
@@ -26,7 +26,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-test.asd t
 }
 
