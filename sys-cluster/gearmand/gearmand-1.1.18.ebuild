@@ -1,22 +1,18 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/gearmand/gearmand-0.14.ebuild,v 1.3 2010/10/15 14:59:29 flameeyes Exp $
 
-EAPI=5
+EAPI=6
 
 inherit flag-o-matic libtool
 
 DESCRIPTION="Generic framework to farm out work to other machines"
 HOMEPAGE="http://www.gearman.org/"
-SRC_URI="http://launchpad.net/gearmand/trunk/${PV}/+download/${P}.tar.gz"
+SRC_URI="https://github.com/gearman/gearmand/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug tcmalloc +memcache drizzle sqlite tokyocabinet postgres"
-
-# RESTRICT="test"
-# restricting tests because of failures, package runs fine
 
 RDEPEND="dev-libs/libevent
 	|| ( >=sys-apps/util-linux-2.16 <sys-libs/e2fsprogs-libs-1.41.8 )
@@ -33,6 +29,7 @@ pkg_setup() {
 }
 
 src_prepare() {
+	default
 	elibtoolize
 }
 
