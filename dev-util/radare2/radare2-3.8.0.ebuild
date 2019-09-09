@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit eutils
+inherit bash-completion-r1 eutils
 
 DESCRIPTION="unix-like reverse engineering framework and commandline tools"
 HOMEPAGE="http://www.radare.org"
@@ -13,35 +13,38 @@ if [[ ${PV} == *9999 ]]; then
 	EGIT_REPO_URI="https://github.com/radare/radare2"
 else
 	SRC_URI="https://github.com/radare/radare2/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~x86 ~arm ~arm64"
-	PATCHES=( "${FILESDIR}"/${PN}-0.9.9-nogit.patch )
+	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 fi
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="ssl +system-capstone zsh-completion"
+IUSE="ssl libressl"
 
 RDEPEND="
-	ssl? ( dev-libs/openssl:0= )
-	system-capstone? ( dev-libs/capstone:0= )
+	dev-libs/capstone:0=
+	ssl? (
+		!libressl? ( dev-libs/openssl:0= )
+		libressl? ( dev-libs/libressl:0= )
+	)
 "
-DEPEND="${RDEPEND}
-	virtual/pkgconfig
-"
+DEPEND="${RDEPEND}"
+BDEPEND="virtual/pkgconfig"
 
 src_configure() {
 	econf \
-		$(use_with ssl openssl) \
-		$(use_with system-capstone syscapstone)
+		--without-libuv \
+		--with-syscapstone \
+		$(use_with ssl openssl)
 }
 
 src_install() {
 	default
 
-	if use zsh-completion; then
-		insinto /usr/share/zsh/site-functions
-		doins doc/zsh/_*
-	fi
+	insinto /usr/share/zsh/site-functions
+	doins doc/zsh/_*
+
+	newbashcomp doc/bash_autocompletion.sh "${PN}"
+	bashcomp_alias "${PN}" rafind2 r2 rabin2 rasm2 radiff2
 
 	# a workaround for unstable $(INSTALL) call, bug #574866
 	local d
