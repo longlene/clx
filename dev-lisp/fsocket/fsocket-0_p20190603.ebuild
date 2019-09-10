@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c134f4a652c5eafd2f909f4607c09d9a073f7fb5"
+EGIT_COMMIT="793c32cf1223edd9b00a7c72d554b528f4eba526"
 
 DESCRIPTION="Yet another socket FFI"
 HOMEPAGE="https://github.com/fjames86/fsocket"

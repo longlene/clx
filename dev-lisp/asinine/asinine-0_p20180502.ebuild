@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="bb075565cc00906a36c1206d9e655ee270b1c379"
+EGIT_COMMIT="59e9aa5d0693aafd5012f350b9419a402c1b6f1e"
 
 DESCRIPTION="Common Lisp ASN1 parser"
 HOMEPAGE="https://github.com/fjames86/asinine"
