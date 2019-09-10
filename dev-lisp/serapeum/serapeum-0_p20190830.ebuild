@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7c8fd14df6c04517aa7d1013ff074ce903aca2c2"
+EGIT_COMMIT="cdf2cdb0421763fa7de84f487668073d83909592"
 
 DESCRIPTION="Utilities beyond Alexandria"
 HOMEPAGE="https://github.com/TBRSS/serapeum"

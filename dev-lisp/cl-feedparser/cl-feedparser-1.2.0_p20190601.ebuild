@@ -3,13 +3,13 @@
 
 EAPI=6
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="874087281b0a2fb5c97a45621fe30fe70855e7e5"
+EGIT_COMMIT="031d9f4ed580156bc85e52cf462f1a0355c5680e"
 
 DESCRIPTION="Common Lisp feed parser"
-HOMEPAGE="https://github.com/TBRSS/cl-feedparser"
-SRC_URI="https://github.com/TBRSS/cl-feedparser/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/ruricolist/cl-feedparser"
+SRC_URI="https://github.com/ruricolist/cl-feedparser/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
