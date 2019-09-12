@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="90f01fa17bdcdf12ad9d48f57c9d8c69c8a1c355"
+EGIT_COMMIT="718c761e33749e297cd2809c7ba3ade1985c49f7"
 
 DESCRIPTION="xcessive macro that generates decision trees for small sets of strings"
 HOMEPAGE="https://github.com/pkhuong/string-case"
