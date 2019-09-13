@@ -1,33 +1,33 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="3afe2b76f42f481f44a0a495256f7abeb69cef27"
 
 DESCRIPTION="Procedural vector parser"
 HOMEPAGE="https://github.com/fukamachi/proc-parse"
-SRC_URI=""
+SRC_URI="https://github.com/fukamachi/proc-parse/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-EGIT_REPO_URI="https://github.com/fukamachi/proc-parse.git"
-
-LICENSE=""
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/alexandria
-dev-lisp/babel
+	dev-lisp/alexandria
+	dev-lisp/babel
 "
 
+src_prepare() {
+	default
+	use test || rm -r ${PN}-test.asd t
+}
+
 src_install() {
+	common-lisp3_src_install
 	common-lisp-install-sources -t all src README.markdown
-	common-lisp-install-asdf ${PN}.asd
-	if use test ; then
-		common-lisp-install-sources t
-		common-lisp-install-asdf ${PN}-test.asd
-	fi
 }

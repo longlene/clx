@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="8dae9c06b15280052a38bd7a85542cae8b0d7fa8"
+inherit common-lisp-3
 
 DESCRIPTION="Small testing framework"
 HOMEPAGE="https://github.com/fukamachi/rove"
-SRC_URI="https://github.com/fukamachi/rove/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/fukamachi/rove/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

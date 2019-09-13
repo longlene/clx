@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="f390a18c023267c5b40d5d407fdffa1b2ab7d3b8"
+inherit common-lisp-3
 
 DESCRIPTION="A project-local library installer for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/qlot"
-SRC_URI="https://github.com/fukamachi/qlot/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/fukamachi/qlot/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
