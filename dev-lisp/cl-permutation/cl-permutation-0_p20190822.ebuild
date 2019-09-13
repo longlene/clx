@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ba6cd60eddbc8b39a571882f89dbcb1a44e092c1"
+EGIT_COMMIT="631b17541ad9fb5e2fbf89b09bc0d5a98d718e1c"
 
 DESCRIPTION="A library for operating on permutations and permutation groups"
 HOMEPAGE="https://github.com/stylewarning/cl-permutation"
@@ -21,6 +21,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/cl-algebraic-data-type
 	dev-lisp/closer-mop
+	dev-lisp/bordeaux-fft
 	test? ( dev-lisp/fiasco )
 "
 

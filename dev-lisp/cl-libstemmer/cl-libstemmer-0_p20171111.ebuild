@@ -5,11 +5,11 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d2fb137baf59d1b4981d1cadd3533d0d3f9ee9c3"
+EGIT_COMMIT="00be1bc089c0cc1fe6d64149f0a9b0a095614c10"
 
 DESCRIPTION="Snowball stemming algorithms"
-HOMEPAGE="https://github.com/TBRSS/cl-libstemmer"
-SRC_URI="https://github.com/TBRSS/cl-libstemmer/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/ruricolist/cl-libstemmer"
+SRC_URI="https://github.com/ruricolist/cl-libstemmer/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
