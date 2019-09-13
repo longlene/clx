@@ -3,20 +3,13 @@
 
 EAPI=6
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
 
-if [[ ${PV} = *9999* ]] ; then
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/fukamachi/jsonrpc.git"
-else
-	inherit vcs-snapshot
-	EGIT_COMMIT="135ea73e14b74d2c84b0b55b876d19c8edce9050"
-	SRC_URI="https://github.com/fukamachi/jsonrpc/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-fi
-
+EGIT_COMMIT="fd3b2ccffed900eaa804d7693013367b683183c3"
 
 DESCRIPTION="JSON-RPC 2.0 server/client for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/jsonrpc"
+SRC_URI="https://github.com/fukamachi/jsonrpc/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -31,10 +24,11 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-utf8
 	dev-lisp/alexandria
 	dev-lisp/uiop
+	test? ( dev-lisp/rove )
 "
 
 src_prepare() {
-	eapply_user
+	default
 	if ! use test ; then
 		sed -i '/defsystem "jsonrpc/tests"/,$d' ${PN}.asd
 		rm -r tests

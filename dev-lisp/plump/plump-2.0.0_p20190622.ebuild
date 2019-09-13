@@ -5,13 +5,13 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ae4fce50ffae373ccb019b72843ca8307cb5347e"
+EGIT_COMMIT="16f1231bf706cfbc54d9e55a853ca945e4452a08"
 
 DESCRIPTION="Practically Lenient and Unimpressive Markup Parser for Common Lisp"
 HOMEPAGE="https://github.com/Shinmera/plump"
 SRC_URI="https://github.com/Shinmera/plump/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Artistic"
+LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""

@@ -11,7 +11,7 @@ DESCRIPTION="A Common Lisp web application environment"
 HOMEPAGE="https://github.com/Shirakumo/radiance"
 SRC_URI="https://github.com/Shirakumo/radiance/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Artistic"
+LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="test"

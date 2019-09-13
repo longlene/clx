@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="50bd4f09b5a03a7249bd4d78265d6451563b25ad"
+EGIT_COMMIT="a9052827757c54a83c9648175c11530e79295513"
 
 DESCRIPTION="Super micro framework for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/ningle"
@@ -21,6 +21,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/clack
 	dev-lisp/cl-syntax
 	dev-lisp/alexandria
+	test? ( dev-lisp/prove )
 "
 
 src_prepare() {
