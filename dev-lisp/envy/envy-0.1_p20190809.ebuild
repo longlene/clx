@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="478056c096b9c19894cdaa1b813abf549cb0b2cc"
+EGIT_COMMIT="956321b2852d58ba71c6fe621f5c2924178e9f88"
 
 DESCRIPTION="Configuration switcher by an environment variable inspired by Config::ENV"
 HOMEPAGE="https://github.com/fukamachi/envy"
@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-test.asd t
 }
 
