@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="19548e5efdbdb365a49c66a36025ea7b19ccb767"
+inherit common-lisp-3
 
 DESCRIPTION="A web framework for Common Lisp never finished"
 HOMEPAGE="https://github.com/fukamachi/utopian"
-SRC_URI="https://github.com/fukamachi/utopian/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/fukamachi/utopian/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
