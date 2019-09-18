@@ -7,7 +7,7 @@ inherit cmake-utils
 
 DESCRIPTION="Io is a small, prototype-based programming language"
 HOMEPAGE="http://www.iolanguage.com"
-SRC_URI="https://github.com/stevedekorte/io/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/IoLanguage/io/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
