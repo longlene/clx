@@ -10,10 +10,11 @@ SLOT="0"
 KEYWORDS="amd64"
 IUSE=""
 
-RDEPEND=">=sys-devel/llvm-3.9
-         sys-devel/clang
-         sys-apps/hwloc
-         "
+RDEPEND="
+	>=sys-devel/llvm-3.9
+	sys-devel/clang
+	sys-apps/hwloc
+"
 
 DEPEND="${RDEPEND}"
 
