@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="A cargo-like buildsystem and package manager for C/C++"
 HOMEPAGE="https://github.com/SanderMertens/bake"
-SRC_URI="https://github.com/SanderMertens/bake/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/SanderMertens/bake/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3.0"
 SLOT="0"
