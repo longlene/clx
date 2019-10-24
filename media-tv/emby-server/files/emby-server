@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -z $PROGRAMDATA ]; then
+    export PROGRAMDATA=/var/lib/emby-server
+fi
+
+mono /opt/emby-server/MediaBrowser.Server.Mono.exe \
+    -programdata $PROGRAMDATA \
+    -ffmpeg /usr/bin/ffmpeg \
+    -ffprobe /usr/bin/ffprobe \
+    -restartexitcode 3

@@ -1,0 +1,13 @@
+[Unit]
+Description=Emby Server is a personal media server with apps on just about every device.
+After=network.target
+
+[Service]
+Environment="PROGRAMDATA=/var/lib/emby-server"
+WorkingDirectory=/opt/emby-server
+ExecStart=/opt/emby-server/emby-server
+RestartForceExitStatus=3
+User=emby
+
+[Install]
+WantedBy=multi-user.target
