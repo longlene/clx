@@ -1,26 +1,15 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 
-inherit versionator eutils user multilib toolchain-funcs
+inherit versionator eutils user multilib toolchain-funcs vcs-snapshot
 
-# build time dependency
-# fork of the google project with riak specific changes
-# is used to build the eleveldb lib and gets removed before install
-#LEVELDB_PV="${PV}"
-LEVELDB_PV="2.0.0"
-LEVELDB_URI="https://github.com/basho/leveldb/archive/${LEVELDB_PV}.tar.gz"
-LEVELDB_P="leveldb-${LEVELDB_PV}.tar.gz"
-LEVELDB_WD="${WORKDIR}/leveldb-${LEVELDB_PV}"
-LEVELDB_TARGET_LOCATION="${S}/deps/eleveldb/c_src/leveldb"
+MY_PV=${PV/_/}
 
 DESCRIPTION="An open source, distributed database"
-HOMEPAGE="http://www.basho.com/"
-SRC_URI="http://s3.amazonaws.com/downloads.basho.com/${PN}/$(get_version_component_range 1-2)/${PV}/${P}.tar.gz
-	${LEVELDB_URI} -> ${LEVELDB_P}
-"
+HOMEPAGE="https://riak.com/"
+SRC_URI="https://github.com/basho/riak/archive/riak-${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 # prestripped files
 # bootstrapped from existing dev-lang/erlang install
@@ -57,36 +46,24 @@ RDEPEND="
 	sys-libs/zlib
 "
 DEPEND="
->=dev-lang/erlang-17.3
-${RDEPEND}
+	>=dev-lang/erlang-17.3
+	${RDEPEND}
 "
 
-pkg_setup() {
-	ebegin "Creating riak user and group"
-	local riak_home="/var/$(get_libdir)/riak"
-	enewgroup riak
-	enewuser riak -1 -1 $riak_home riak
-	eend $?
-}
+#pkg_setup() {
+#	ebegin "Creating riak user and group"
+#	local riak_home="/var/$(get_libdir)/riak"
+#	enewgroup riak
+#	enewuser riak -1 -1 $riak_home riak
+#	eend $?
+#}
 
 src_prepare() {
-	# unpack source archives to patch with honor-cflags-patch
-	tar xfp "${S}"/deps/erlang_js/c_src/js-*.tar.gz -C "${S}"/deps/erlang_js/c_src/ || die
-	tar xfp "${S}"/deps/eleveldb/c_src/snappy-*.tar.gz -C "${S}"/deps/eleveldb/c_src/ || die
-
-	# avoid fetching deps via git that are already available
-	ln -s ${LEVELDB_WD} ${LEVELDB_TARGET_LOCATION} || die
-	mkdir -p "${S}"/deps/riaknostic/deps || die
-	ln -s "${S}"/deps/lager "${S}"/deps/riaknostic/deps || die
-	ln -s "${S}"/deps/meck "${S}"/deps/riaknostic/deps || die
-	ln -s "${S}"/deps/getopt "${S}"/deps/riaknostic/deps || die
-
-	epatch "${FILESDIR}/${PV}-fix-directories.patch" \
-		"${FILESDIR}/${PV}-honor-cflags.patch"
+	default
+	sed -i '/require_otp_vsn/d' rebar.config
 }
 
 src_compile() {
-	# build fails with MAKEOPTS > -j1
 	emake -j1 \
 		CC=$(tc-getCC) \
 		CXX=$(tc-getCXX) \

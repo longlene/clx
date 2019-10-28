@@ -25,5 +25,4 @@ S="${WORKDIR}/erlang-${P}"
 src_prepare() {
 	eapply_user
 	sed -i '/{deps/,$d' rebar.config
-	sed -i 's#erlang:get_stacktrace()#[]#' src/jose_public_key.erl
 }

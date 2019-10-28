@@ -7,7 +7,7 @@ inherit bash-completion-r1 vcs-snapshot
 
 DESCRIPTION="A fast monolithic-architecture web-framework of Scheme language"
 HOMEPAGE="http://web-artanis.com"
-SRC_URI="https://gitlab.com/NalaGinrut/artanis/-/archive/v${PV}/artanis-v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://gnu/artanis/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
