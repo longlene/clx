@@ -19,7 +19,7 @@ DESCRIPTION="A framework for 2D games in Lua"
 HOMEPAGE="http://love2d.org/"
 
 LICENSE="ZLIB"
-SLOT="0"
+SLOT="11"
 IUSE=""
 
 RDEPEND="dev-games/physfs
