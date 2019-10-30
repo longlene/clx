@@ -18,6 +18,10 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/numpy
+	sci-libs/scipy
 	dev-python/pytorch
+	sci-libs/scikits_learn
 	dev-python/tqdm
+	dev-python/pillow
+	dev-python/torchvision
 "
