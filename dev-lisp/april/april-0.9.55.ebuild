@@ -5,11 +5,9 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4dc3832ce3d9636b3cf94c7380987538b4dbc4b5"
-
 DESCRIPTION="The APL programming language compiling to Common Lisp"
 HOMEPAGE="https://github.com/phantomics/april"
-SRC_URI="https://github.com/phantomics/april/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/phantomics/april/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
