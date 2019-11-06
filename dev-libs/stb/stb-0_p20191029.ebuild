@@ -5,7 +5,7 @@ EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="9d9f75eb682dd98b34de08bb5c489c6c561c9fa6"
+EGIT_COMMIT="f67165c2bb2af3060ecae7d20d6f731173485ad0"
 
 DESCRIPTION="stb single-file public domain libraries for C/C++"
 HOMEPAGE="https://github.com/nothings/stb"
@@ -20,7 +20,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
-	insinto /usr/include
-	doins *.h
+	insinto /usr/include/stb
+	doins *.h *.c
 	dodoc README.md
 }
