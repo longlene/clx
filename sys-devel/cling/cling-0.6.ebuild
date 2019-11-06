@@ -3,13 +3,13 @@
 
 EAPI=6
 
-inherit cmake-utils git-r3
+inherit cmake-utils
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="The cling C++ interpreter"
+HOMEPAGE="https://github.com/root-project/cling"
 SRC_URI="https://github.com/root-project/cling/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
