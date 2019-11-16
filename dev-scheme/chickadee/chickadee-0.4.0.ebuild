@@ -14,6 +14,6 @@ IUSE=""
 
 DEPEND="
 	dev-scheme/guile-sdl2
-	dev-scheme/guile-openal
+	dev-scheme/guile-opengl
 "
 RDEPEND="${DEPEND}"
