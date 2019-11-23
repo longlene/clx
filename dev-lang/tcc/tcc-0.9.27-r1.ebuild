@@ -22,7 +22,7 @@ RDEPEND="!dev-lang/tendra"
 RESTRICT="test"
 
 src_prepare() {
-	eapply_user
+	default
 	# Don't strip
 	sed -i -e 's|$(INSTALL) -s|$(INSTALL)|' Makefile || die
 
