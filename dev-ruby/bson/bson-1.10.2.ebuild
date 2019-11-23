@@ -4,7 +4,7 @@
 
 EAPI=5
 # jruby → support needs to be written properly
-USE_RUBY="ruby23 ruby24"
+USE_RUBY="ruby25 ruby26"
 
 RUBY_FAKEGEM_TASK_DOC="moot" # we do it manually, but still declare it
 RUBY_FAKEGEM_DOCDIR="html"

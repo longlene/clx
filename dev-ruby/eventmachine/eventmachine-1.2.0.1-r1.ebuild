@@ -4,7 +4,7 @@
 EAPI=5
 
 # ruby20 crashes in test suite
-USE_RUBY="ruby21 ruby23 ruby24"
+USE_RUBY="ruby21 ruby25 ruby26"
 
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 RUBY_FAKEGEM_DOCDIR="rdoc"

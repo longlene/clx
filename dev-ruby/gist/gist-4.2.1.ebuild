@@ -3,7 +3,7 @@
 # $Header: Exp $
 
 EAPI=5
-USE_RUBY="ruby23 ruby24"
+USE_RUBY="ruby25 ruby26"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="README.md"

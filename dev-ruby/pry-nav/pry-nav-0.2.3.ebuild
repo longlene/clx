@@ -1,7 +1,7 @@
 # Copyright 1999-2013 Gentoo Foundation
 
 EAPI=4
-USE_RUBY="ruby23 ruby24 ree18 jruby"
+USE_RUBY="ruby25 ruby26 ree18 jruby"
 
 RUBY_FAKEGEM_TASK_DOC="rdoc"
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.md README.md"

@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/simplecov/simplecov-0.9.0.ebuild,v 1.1 2014/07/27 07:03:53 graaff Exp $
 
 EAPI=5
-USE_RUBY="ruby23 ruby24"
+USE_RUBY="ruby25 ruby26"
 
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.md README.md"
 
