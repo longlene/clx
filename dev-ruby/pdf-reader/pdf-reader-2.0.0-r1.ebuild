@@ -5,7 +5,7 @@ EAPI=5
 
 GITHUB_USER=yob
 
-USE_RUBY="ruby23 ruby24"
+USE_RUBY="ruby25 ruby26"
 
 RUBY_FAKEGEM_RECIPE_TEST="rspec3"
 
