@@ -12,9 +12,10 @@ SRC_URI="https://github.com/QuantStack/xtensor/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="simd"
 
 DEPEND="
-	>=dev-cpp/xtl-0.6.4
+	>=dev-cpp/xtl-0.6.7
+	simd? ( >=dev-cpp/xsimd-7.4.0 )
 "
 RDEPEND="${DEPEND}"

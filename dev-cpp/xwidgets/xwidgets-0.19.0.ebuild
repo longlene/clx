@@ -15,6 +15,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	>=dev-cpp/xeus-0.19.1
+	>dev-cpp/widgetsnbextension-3.0.0
+	>=dev-cpp/xtl-0.6.5
+	>=dev-cpp/xproperty-0.8.1
+	>=dev-cpp/xeus-0.21.1
+	>=dev-cpp/nlohmann_json-3.6.1
 "
 RDEPEND="${DEPEND}"
