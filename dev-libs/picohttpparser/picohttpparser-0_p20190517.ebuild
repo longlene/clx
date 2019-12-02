@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
-inherit git-2 toolchain-funcs
+inherit toolchain-funcs vcs-snapshot
+
+EGIT_COMMIT="81fe3d99fd90a55cafb993e53fd3000dbc4d564c"
 
 DESCRIPTION="Tiny HTTP parser written in C"
 HOMEPAGE="https://github.com/h2o/picohttpparser"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/h2o/picohttpparser.git"
+SRC_URI="https://github.com/h2o/picohttpparser/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
