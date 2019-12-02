@@ -1,0 +1,59 @@
+#!/sbin/runscript
+
+NAME=cassandra-{SLOT}
+DESC="Apache Cassandra v{PV}"
+PIDFILE=/var/run/$NAME/$NAME.pid
+
+_CASSANDRA_DIR="/opt/${NAME}"
+
+DAEMON=${_CASSANDRA_DIR}/bin/cassandra
+DAEMON_OPTS="-p $PIDFILE"
+USER="cassandra"
+
+. ${_CASSANDRA_DIR}/conf/cassandra-env.sh
+
+start() {
+    ebegin "Starting ${DESC}"
+    [ -e `dirname "$PIDFILE"` ] || \
+        install -d -ocassandra -gcassandra -m750 `dirname $PIDFILE`
+
+    start-stop-daemon \
+      --start \
+      --user $USER \
+      --exec $DAEMON \
+      --quiet \
+      --pidfile $PIDFILE \
+      --test >/dev/null || eend 1
+
+    start-stop-daemon \
+      --start \
+      --user $USER \
+      --exec $DAEMON \
+      --background \
+      --pidfile "$PIDFILE" \
+      -- $DAEMON_OPTS >/dev/null
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping ${DESC}"
+    start-stop-daemon --stop --quiet --oknodo --pidfile $PIDFILE
+    eend $?
+}
+
+restart() {
+    ebegin "Restarting cassandra"
+    start-stop-daemon \
+      --stop \
+      --quiet \
+      --oknodo \
+      --retry TERM/30/KILL/5 > /dev/null || eend 1
+    start-stop-daemon \
+      --start \
+      --quiet \
+      --pidfile $PIDFILE \
+      --chuid $USER \
+      --exec $DAEMON \
+      -- $DAEMON_OPTS > /dev/null
+    eend $?
+}
