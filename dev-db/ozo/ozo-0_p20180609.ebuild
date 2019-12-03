@@ -19,7 +19,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-db/postgresql
-	dev-cpp/resource_pool
+	dev-db/resource_pool
 "
 
 src_install() {

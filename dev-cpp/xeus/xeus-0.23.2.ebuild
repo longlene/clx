@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	>=dev-cpp/nlohmanh_json-3.2.0
+	>=dev-cpp/nlohmann_json-3.2.0
 	>=dev-cpp/xtl-0.5.0
 	>=net-libs/cppzmq-4.3.0
 	dev-libs/openssl
