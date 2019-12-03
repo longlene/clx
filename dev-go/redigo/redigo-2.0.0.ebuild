@@ -5,11 +5,11 @@ EAPI=6
 
 inherit golang-build golang-vcs-snapshot
 
-EGO_PN="github.com/garyburd/redigo/..."
+EGO_PN="github.com/gomodule/redigo/..."
 
 DESCRIPTION="Go client for Redis"
-HOMEPAGE="https://github.com/garyburd/redigo"
-SRC_URI="https://github.com/garyburd/redigo/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/gomodule/redigo"
+SRC_URI="https://github.com/gomodule/redigo/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
