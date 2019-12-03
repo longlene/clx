@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=6
-EGO_PN="github.com/sirupsen/logrus"
+EGO_PN="github.com/Sirupsen/logrus"
 
 inherit golang-build golang-vcs-snapshot
 

@@ -6,7 +6,7 @@ EAPI=6
 
 inherit golang-build golang-vcs-snapshot
 
-EGO_PN="github.com/sjwhitworth/golearn"
+EGO_PN="github.com/sjwhitworth/golearn/..."
 EGIT_COMMIT="9884cbc086ef4304cf269aa2a750581126025aa7"
 
 DESCRIPTION="Machine Learning for Go"
@@ -18,5 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	"github.com/gonum/floats" in any of:
+	 package "github.com/gonum/internal/asm/f32" in any of:
+	e "github.com/gonum/internal/asm/f64" in any of:
+"
 RDEPEND="${DEPEND}"

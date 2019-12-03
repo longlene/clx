@@ -6,7 +6,7 @@ EAPI=6
 
 inherit golang-build golang-vcs-snapshot
 
-EGO_PN="github.com/brutella/can"
+EGO_PN="github.com/brutella/can/..."
 EGIT_COMMIT="4e5f241355de3da474d17b24f5971fe2160b1eeb"
 
 DESCRIPTION="Connect to a CAN bus in Go"
@@ -20,3 +20,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+
+src_install() {
+	golang-build_src_install
+}

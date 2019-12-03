@@ -24,6 +24,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_install() {
-	dobin bin/${PN}
+	dobin ${PN}
 	dodoc src/${EGO_PN}/README.md
 }

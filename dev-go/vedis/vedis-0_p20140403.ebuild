@@ -9,8 +9,8 @@ inherit golang-build golang-vcs-snapshot
 EGO_PN="github.com/icholy/vedis"
 EGIT_COMMIT="c1fec7cb3c7d89fb0662b557e64f53bec588dd54"
 
-DESCRIPTION="GCO bindings to Vedis"
-HOMEPAGE=""
+DESCRIPTION="CGO bindings to Vedis"
+HOMEPAGE="https://github.com/icholy/vedis"
 SRC_URI="https://${EGO_PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
