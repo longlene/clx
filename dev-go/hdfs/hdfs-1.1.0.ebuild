@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit golang-build golang-vcs-snapshot
 
-EGO_PN="github.com/colinmarc/hdfs"
+EGO_PN="github.com/colinmarc/hdfs/..."
 
 DESCRIPTION="A native go client for HDFS"
 HOMEPAGE="https://github.com/colinmarc/hdfs"
@@ -19,3 +18,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+
+src_install() {
+	golang-build_src_install
+	newbin bin/hdfs gohdfs
+}

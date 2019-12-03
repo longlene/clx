@@ -6,11 +6,11 @@ EAPI=6
 
 inherit golang-build golang-vcs-snapshot
 
-EGO_PN="github.com/mattn/go-xmpp"
-EGIT_COMMIT="f4550b5399387339df5ce4c3f88c1ef85333bdd5"
+EGO_PN="github.com/op/go-nanomsg"
+EGIT_COMMIT="48d7bb6353dec050b3020e54028984eea4d350d1"
 
-DESCRIPTION="go xmpp library"
-HOMEPAGE="https://github.com/mattn/go-xmpp"
+DESCRIPTION="Language bindings for nanomsg in Go"
+HOMEPAGE="https://github.com/op/go-nanomsg"
 SRC_URI="https://${EGO_PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
@@ -18,5 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	dev-libs/nanomsg
+"
 RDEPEND="${DEPEND}"
