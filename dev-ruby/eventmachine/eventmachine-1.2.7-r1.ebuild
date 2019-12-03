@@ -1,10 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
-# ruby20 crashes in test suite
-USE_RUBY="ruby21 ruby25 ruby26"
+USE_RUBY="ruby25 ruby26"
 
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 RUBY_FAKEGEM_DOCDIR="rdoc"
@@ -14,10 +13,11 @@ inherit ruby-fakegem
 
 DESCRIPTION="EventMachine is a fast, simple event-processing library for Ruby programs"
 HOMEPAGE="http://rubyeventmachine.com"
+SRC_URI="https://github.com/eventmachine/eventmachine/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="|| ( GPL-2 Ruby )"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
+KEYWORDS="amd64 ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
 IUSE=""
 
 DEPEND="${DEPEND}
@@ -31,14 +31,13 @@ all_ruby_prepare() {
 	# Remove package tasks to avoid dependency on rake-compiler.
 	rm rakelib/package.rake || die
 
-	# fix test issue - upstream b96b736b39261f7d74f013633cc7cd619afa20c4
-	sed -i -e 's/DEBUG/BROADCAST/g' tests/test_set_sock_opt.rb || die
-	sed -i -e "/omit_/d" tests/test_*.rb || die
 	# Remove the resolver tests since they require network access and
 	# the localhost test fails with an IPv6 localhost.
 	rm tests/test_resolver.rb || die
+
 	# Needs a tty
 	rm tests/test_kb.rb || die
+
 	# Avoid tests that require network access
 	sed -i -e '/test_bind_connect/,/^  end/ s:^:#:' \
 		tests/test_basic.rb || die
@@ -51,6 +50,16 @@ all_ruby_prepare() {
 	sed -i -e '/test_for_real/,/^    end/ s:^:#:' \
 		tests/test_pending_connect_timeout.rb || die
 	rm -f tests/test_{get_sock_opt,set_sock_opt,idle_connection}.rb || die
+
+	# Avoid tests for insecure SSL versions that may not be available
+	sed -i -e '/test_any_to_v3/,/^    end/ s:^:#:' \
+		-e '/test_v3_/,/^    end/ s:^:#:' \
+		-e '/test_tlsv1_required_with_external_client/aomit "sslv3"' \
+		tests/test_ssl_protocols.rb || die
+
+	# Avoid test that deliberately triggers a C++ exception which causes
+	# a SEGFAULT. This does not appear to happen upstream (on travis).
+	rm -f tests/test_exc.rb || die
 }
 
 each_ruby_configure() {
@@ -72,7 +81,7 @@ each_ruby_compile() {
 }
 
 each_ruby_test() {
-	${RUBY} -Ilib -S testrb tests/test_*.rb || die
+	${RUBY} -Ilib -S testrb-2 tests/test_*.rb || die
 }
 
 all_ruby_install() {

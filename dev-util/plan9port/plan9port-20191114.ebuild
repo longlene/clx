@@ -5,7 +5,7 @@ EAPI=6
 
 inherit eutils multiprocessing toolchain-funcs vcs-snapshot
 
-EGIT_COMMIT="df2d9ec9d169626cdc2a23829bb2831738215722"
+EGIT_COMMIT="46606276c3fe20fa81597cf87378e18f7baf88a7"
 
 DESCRIPTION="Plan 9 from User Space"
 HOMEPAGE="http://swtch.com/plan9port/"
@@ -18,8 +18,7 @@ IUSE="X aqua truetype"
 REQUIRED_USE="?? ( X aqua )"
 
 DEPEND="X? ( x11-apps/xauth )
-	truetype? ( media-libs/freetype
-	            media-libs/fontconfig )"
+	truetype? ( media-libs/freetype media-libs/fontconfig )"
 RDEPEND="${DEPEND}"
 
 PLAN9=/usr/lib/plan9
@@ -27,8 +26,8 @@ EPLAN9="${EPREFIX}"${PLAN9}
 QA_MULTILIB_PATHS="${PLAN9}/.*/.*"
 
 src_prepare() {
-	eapply_user
-	epatch "${FILESDIR}/${PN}-"{noexecstack,cflags,builderr}".patch"
+	default
+	#epatch "${FILESDIR}/${PN}-"{noexecstack,cflags,builderr}".patch"
 	case ${CHOST} in
 		*freebsd10.*)  # patch 9l to use -pthread also on FreeBSD-10
 			epatch "${FILESDIR}/${PN}-freebsd-10.patch" ;;
@@ -93,14 +92,14 @@ src_install() {
 
 	cp -a * "${ED}/${PLAN9}"
 
-	# build the environment variables and install them in env.d
-	cat > "${T}/30plan9port" <<-EOF
-		PLAN9="${EPLAN9}"
-		PATH="${EPLAN9}/bin"
-		ROOTPATH="${EPLAN9}/bin"
-		MANPATH="${EPLAN9}/man"
-	EOF
-	doenvd "${T}/30plan9port"
+	## build the environment variables and install them in env.d
+	#cat > "${T}/30plan9port" <<-EOF
+	#	PLAN9="${EPLAN9}"
+	#	PATH="${EPLAN9}/bin"
+	#	ROOTPATH="${EPLAN9}/bin"
+	#	MANPATH="${EPLAN9}/man"
+	#EOF
+	#doenvd "${T}/30plan9port"
 
 	if use X ; then
 		insinto /usr/share/pixmaps
@@ -108,9 +107,7 @@ src_install() {
 		make_wrapper acme "${PLAN9}/bin/9 acme"
 		make_desktop_entry acme "Editor from Plan9" acme "Application;Development;TextEditor;"
 	fi
-
-	local x
-	#for x in 
+	dosym ${PLAN9}/bin/9 /usr/bin/9
 }
 
 pkg_postinst() {

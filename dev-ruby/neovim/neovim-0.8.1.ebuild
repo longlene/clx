@@ -9,7 +9,7 @@ RUBY_FAKEGEM_GEMSPEC=${PN}.gemspec
 
 inherit ruby-fakegem
 
-DESCRIPTION=""
+DESCRIPTION="A Ruby client for Neovim"
 HOMEPAGE="https://github.com/alexgenco/neovim-ruby"
 
 LICENSE="MIT"
