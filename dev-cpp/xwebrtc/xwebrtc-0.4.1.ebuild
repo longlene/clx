@@ -15,10 +15,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	dev-cpp/xtl
 	dev-cpp/xeus
 	dev-cpp/xwidgets
-	net-libs/cppzmq
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

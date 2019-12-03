@@ -15,6 +15,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	dev-cpp/xeus
+	=dev-cpp/xwidgets-0.19.0
+	>=dev-cpp/xeus-0.21.1
+	>=dev-cpp/xtensor-0.20.8
 "
 RDEPEND="${DEPEND}"
