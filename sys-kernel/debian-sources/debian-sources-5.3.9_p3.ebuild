@@ -1,26 +1,53 @@
 # Distributed under the terms of the GNU General Public License v2
 
+# Documentation for adding new kernels -- do not remove!
+#
+# Find latest stable kernel release for debian here:
+#   https://packages.debian.org/unstable/kernel/
+
 EAPI=5
 
 inherit check-reqs eutils mount-boot
 
-SLOT=$PV-LTS
+SLOT=$PF
 CKV=${PV}
 KV_FULL=${PN}-${PVR}
-EXTRAVERSION=-2
-MODVER=${CKV}${EXTRAVERSION}
-KERNEL_ARCHIVE="linux_${PV}.orig.tar.xz"
-PATCH_ARCHIVE="linux_${PV}${EXTRAVERSION}.debian.tar.xz"
+DEB_PV_BASE="5.3.9"
+DEB_EXTRAVERSION="-3"
+EXTRAVERSION="_p3"
+
+# install modules to /lib/modules/${DEB_PV_BASE}${EXTRAVERSION}-$MODULE_EXT
+MODULE_EXT=${EXTRAVERSION}
+[ "$PR" != "r0" ] && MODULE_EXT=$MODULE_EXT-$PR
+MODULE_EXT=$MODULE_EXT-${PN}
+# install sources to /usr/src/$LINUX_SRCDIR
+LINUX_SRCDIR=linux-${PF}
+DEB_PV="$DEB_PV_BASE${DEB_EXTRAVERSION}"
+KERNEL_ARCHIVE="linux_${DEB_PV_BASE}.orig.tar.xz"
+PATCH_ARCHIVE="linux_${DEB_PV}.debian.tar.xz"
 RESTRICT="binchecks strip mirror"
 LICENSE="GPL-2"
 KEYWORDS="*"
-IUSE="binary ec2 sign-modules"
-DEPEND="binary? ( >=sys-kernel/genkernel-3.4.40.7 )"
+IUSE="binary btrfs custom-cflags ec2 luks lvm sign-modules zfs"
+DEPEND="
+	virtual/libelf
+	binary? ( >=sys-kernel/genkernel-3.4.40.7 )
+	btrfs? ( sys-fs/btrfs-progs sys-kernel/genkernel[btrfs] )
+	zfs? ( sys-fs/zfs )
+	luks? ( sys-kernel/genkernel[cryptsetup] )"
+REQUIRED_USE="
+btrfs? ( binary )
+custom-cflags? ( binary )
+luks? ( binary )
+lvm? ( binary )
+sign-modules? ( binary )
+zfs? ( binary )
+"
 DESCRIPTION="Debian Sources (and optional binary kernel)"
-DEB_UPSTREAM="http://http.debian.net/debian/pool/main/l/linux/"
-HOMEPAGE="https://packages.debian.org/stable/kernel/linux-image-4.9.0-6-amd64"
+DEB_UPSTREAM="http://http.debian.net/debian/pool/main/l/linux"
+HOMEPAGE="https://packages.debian.org/unstable/kernel/"
 SRC_URI="$DEB_UPSTREAM/${KERNEL_ARCHIVE} $DEB_UPSTREAM/${PATCH_ARCHIVE}"
-S="$WORKDIR/linux-${CKV}"
+S="$WORKDIR/linux-${DEB_PV_BASE}"
 
 get_patch_list() {
 	[[ -z "${1}" ]] && die "No patch series file specified"
@@ -91,7 +118,7 @@ src_prepare() {
 	# do not include debian devs certificates
 	rm -rf "${WORKDIR}"/debian/certs
 
-	sed -i -e "s:^\(EXTRAVERSION =\).*:\1 ${EXTRAVERSION}:" Makefile || die
+	sed -i -e "s:^\(EXTRAVERSION =\).*:\1 ${MODULE_EXT}:" Makefile || die
 	sed	-i -e 's:#export\tINSTALL_PATH:export\tINSTALL_PATH:' Makefile || die
 	rm -f .config >/dev/null
 	cp -a "${WORKDIR}"/debian "${T}"
@@ -101,17 +128,19 @@ src_prepare() {
 	cp -aR "${WORKDIR}"/debian "${S}"/debian
 
 	## XFS LIBCRC kernel config fixes, FL-823
-	epatch "${FILESDIR}"/debian-sources-3.14.4-xfs-libcrc32c-fix.patch
+	epatch "${FILESDIR}"/${DEB_PV_BASE}/${PN}-${DEB_PV_BASE}-xfs-libcrc32c-fix.patch
+
+	## FL-4424: enable legacy support for MCELOG.
+	epatch "${FILESDIR}"/${DEB_PV_BASE}/${PN}-${DEB_PV_BASE}-mcelog.patch
 
 	## do not configure debian devs certs.
-	epatch "${FILESDIR}"/debian-sources-4.5.2-certs.patch
+	epatch "${FILESDIR}"/${DEB_PV_BASE}/${PN}-${DEB_PV_BASE}-nocerts.patch
 
 	## FL-3381. enable IKCONFIG
-	epatch "${FILESDIR}"/ikconfig.patch
+	epatch "${FILESDIR}"/${DEB_PV_BASE}/${PN}-${DEB_PV_BASE}-ikconfig.patch
 
-	# namespace version 3 support from upstream. See:
-	# https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8db6c34f1dbc8e06aa016a9b829b06902c3e1340 and FL-4725.
-	epatch "${FILESDIR}"/namespace-v3-upstream.patch
+	## increase bluetooth polling patch
+	epatch "${FILESDIR}"/${DEB_PV_BASE}/${PN}-${DEB_PV_BASE}-fix-bluetooth-polling.patch
 
 	local arch featureset subarch
 	featureset="standard"
@@ -162,6 +191,12 @@ src_prepare() {
 		ewarn "parameter (to params in /etc/boot.conf, and re-run boot-update.)"
 		echo
 	fi
+	if use custom-cflags; then
+		MARCH="$(python -c "import portage; print(portage.settings[\"CFLAGS\"])" | sed 's/ /\n/g' | grep "march")"
+		if [ -n "$MARCH" ]; then
+			sed -i -e 's/-mtune=generic/$MARCH/g' arch/x86/Makefile || die "Canna optimize this kernel anymore, captain!"
+		fi
+	fi
 	# get config into good state:
 	yes "" | make oldconfig >/dev/null 2>&1 || die
 	cp .config "${T}"/config || die
@@ -187,10 +222,11 @@ src_compile() {
 		--logfile="${WORKDIR}"/genkernel.log \
 		--bootdir="${WORKDIR}"/out/boot \
 		--disklabel \
-		--lvm \
-		--luks \
+		$(usex lvm --lvm --no-lvm ) \
+		$(usex luks --luks --no-luks ) \
 		--mdadm \
-		--iscsi \
+		$(usex btrfs --btrfs --no-btrfs) \
+		$(usex zfs --zfs --no-zfs) \
 		--module-prefix="${WORKDIR}"/out \
 		all || die
 }
@@ -198,8 +234,8 @@ src_compile() {
 src_install() {
 	# copy sources into place:
 	dodir /usr/src
-	cp -a "${S}" "${D}"/usr/src/linux-${P} || die
-	cd "${D}"/usr/src/linux-${P}
+	cp -a "${S}" "${D}"/usr/src/${LINUX_SRCDIR} || die
+	cd "${D}"/usr/src/${LINUX_SRCDIR}
 	# prepare for real-world use and 3rd-party module building:
 	make mrproper || die
 	cp "${T}"/config .config || die
@@ -220,20 +256,29 @@ src_install() {
 	rm -f "${D}"/lib/modules/*/build || die
 	cd "${D}"/lib/modules
 	local moddir="$(ls -d [234]*)"
-	ln -s /usr/src/linux-${P} "${D}"/lib/modules/${moddir}/source || die
-	ln -s /usr/src/linux-${P} "${D}"/lib/modules/${moddir}/build || die
+	ln -s /usr/src/${LINUX_SRCDIR} "${D}"/lib/modules/${moddir}/source || die
+	ln -s /usr/src/${LINUX_SRCDIR} "${D}"/lib/modules/${moddir}/build || die
 	# Fixes FL-14
-	cp "${WORKDIR}/build/System.map" "${D}/usr/src/linux-${P}/" || die
-	cp "${WORKDIR}/build/Module.symvers" "${D}/usr/src/linux-${P}/" || die
+	cp "${WORKDIR}/build/System.map" "${D}/usr/src/${LINUX_SRCDIR}/" || die
+	cp "${WORKDIR}/build/Module.symvers" "${D}/usr/src/${LINUX_SRCDIR}/" || die
 	if use sign-modules; then
 		for x in $(find "${D}"/lib/modules -iname *.ko); do
 			# $certs_dir defined previously in this function.
 			${WORKDIR}/build/scripts/sign-file sha512 $certs_dir/signing_key.pem $certs_dir/signing_key.x509 $x || die
 		done
 		# install the sign-file executable for future use.
-		exeinto /usr/src/linux-${P}/scripts
+		exeinto /usr/src/${LINUX_SRCDIR}/scripts
 		doexe ${WORKDIR}/build/scripts/sign-file
 	fi
+
+	# The new naming scheme leaves an extra -${PN} at the name of various things in /boot. This should fix that.
+	cd ${D}/boot
+	for x in $(ls *); do
+		xnew=${x%-${PN}}
+		mv $x ${xnew} || die
+	done
+
+
 }
 
 pkg_postinst() {
@@ -243,10 +288,13 @@ pkg_postinst() {
 	if use binary && [[ ! -e "${ROOT}"usr/src/linux ]]; then
 		ewarn "With binary use flag enabled /usr/src/linux"
 		ewarn "symlink automatically set to debian kernel"
-		ln -sf linux-${P} "${ROOT}"usr/src/linux
+		ln -sf ${LINUX_SRCDIR} "${ROOT}"usr/src/linux
 	fi
 
 	if [ -e ${ROOT}lib/modules ]; then
-		depmod -a $MODVER
+		depmod -a $DEP_PV
+	fi
+	if [ -e /etc/boot.conf ]; then
+		ego boot update
 	fi
 }

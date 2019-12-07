@@ -1,0 +1,18 @@
+# /etc/fstab: static file system information.
+#
+# The root filesystem should have a pass number of either 0 or 1.
+# All other filesystems should have a pass number of 0 or greater than 1.
+#
+# See the manpage fstab(5) for more information.
+#
+
+# IMPORTANT: The block devices/labels and filesystem types will need to be
+#            changed during installation to match those of your system.
+#            If you are using UEFI, your boot filesystem must be VFAT. 
+
+#<fs>          <mountpoint>        <type>      <opts>              <dump/pass>
+LABEL=boot     /boot               ext2        noauto,noatime      1 2
+LABEL=root     /                   ext4        noatime             0 1
+LABEL=swap     none                swap        sw                  0 0
+
+# vim: ts=4 sw=4 et
