@@ -3,9 +3,9 @@
 
 EAPI=7
 
-inherit rebar vcs-snapshot
+inherit vcs-snapshot
 
-EGIT_COMMIT="1d902af2abc46ec2233883d759e8187e12fe8bab"
+EGIT_COMMIT="be2a6f0a0fd5d1cf3bbbd28df4f2e55930fdee41"
 
 DESCRIPTION="The Erlang Language Server Protocol Implementation"
 HOMEPAGE="https://github.com/erlang-ls/erlang_ls"
@@ -17,11 +17,17 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	>=dev-erlang/ranch-1.5.0
-	>=dev-erlang/jsx-2.9.0
-	>=dev-erlang/cowlib-2.3.0
-	>=dev-erlang/redbug-1.2.0
-	>=dev-erlang/lager-3.6.3
+	dev-erlang/rebar3
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+src_prepare() {
+	default
+	rebar3 get-deps
+}
+
+src_install() {
+	dobin _build/default/bin/erlang_ls
+	dodoc README.md
+}
