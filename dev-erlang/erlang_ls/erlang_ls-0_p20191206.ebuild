@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	dev-erlang/rebar3
+	dev-util/rebar3
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
