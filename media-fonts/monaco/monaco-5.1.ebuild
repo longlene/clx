@@ -1,8 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="2"
+EAPI=7
 
 inherit font
 
@@ -23,5 +22,6 @@ FONT_S="${S}"
 FONT_SUFFIX="ttf"
 
 src_prepare() {
+	default
 	cp "${DISTDIR}"/${A} "${S}"/${A}
 }
