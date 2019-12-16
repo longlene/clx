@@ -16,6 +16,14 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	eapply_user
+	default
 	cp ${FILESDIR}/Makefile Makefile
 }
+
+src_install() {
+	insinto /usr/include
+	doins fetch.h
+	dolib.so libfetch.so
+	doman fetch.3
+}
+
