@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}"
 CMAKE_IN_SOURCE_BUILD=yes
 
 src_prepare() {
-	eapply_user
+	default
 	sed -i '/#\ Install\ bin,\ scripts/,$d' xadmin/CMakeLists.txt
 }
 
