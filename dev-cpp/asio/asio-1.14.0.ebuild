@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="alpha amd64 ~arm ~arm64 ~hppa ia64 ppc ppc64 sparc x86"
 IUSE="ssl"
 
-RDEPEND="ssl? ( dev-libs/openssl:0= )"
+RDEPEND="ssl? ( dev-libs/openssl )"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${P}/asio"
