@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_8 )
 inherit distutils-r1
 
 DESCRIPTION="A toolkit for developing and comparing reinforcement learning algorithms"
@@ -17,9 +17,10 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-python/numpy
-	dev-python/requests
+	>=dev-python/numpy-1.10.4
 	dev-python/six
 	dev-python/pyglet
 	sci-libs/scipy
+	dev-python/cloudpickle
+	media-libs/opencv[python]
 "

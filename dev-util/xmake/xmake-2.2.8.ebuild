@@ -16,12 +16,6 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-local target
-if use amd64 ; then
-	target=x86_64
-elif use x86 ; then
-	target=i386
-fi
 
 QA_PRESTRIPPED="/usr/share/xmake/xmake"
 
@@ -31,6 +25,12 @@ src_prepare() {
 }
 
 src_compile() {
+	local target
+	if use amd64 ; then
+		target=x86_64
+	elif use x86 ; then
+		target=i386
+	fi
 	ARCH=${target} emake -j1 build
 }
 
@@ -46,4 +46,4 @@ EOF
 	newbin xmake.sh xmake
 	dodoc README.md
 }
-	
+
