@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a893069f618938890dccc835033389d4b5ddb510"
+EGIT_COMMIT="e9d93e34c0df834ef4aa0f8b500018314237be3b"
 
 DESCRIPTION="Common Lisp implementation of Google's protocol buffers"
 HOMEPAGE="http://common-lisp.net/project/protobuf/"
@@ -28,10 +28,10 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
-	sed -i 's#c++0x#c++11#' protoc/lisp/Makefile || die
+	default
 	use example || rm -r example
 	use test || rm -r varint/varint-test.asd varint/varint_test.lisp protoc/protoc-test.asd protoc/protoc_test.lisp ${PN}-test.asd *-test.lisp
+	sed -i 's#strutil.h##' protoc/lisp/Makefile
 }
 
 src_compile() {
@@ -41,6 +41,5 @@ src_compile() {
 src_install() {
 	common-lisp-3_src_install
 	common-lisp-install-sources -t all COPYING README TODO
-	use test || common-lisp-install-sources -t all golden
 	dobin protoc/lisp/protoc-gen-lisp
 }
