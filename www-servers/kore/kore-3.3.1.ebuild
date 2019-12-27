@@ -36,8 +36,11 @@ src_compile() {
 }
 
 src_install() {
-	dobin kore
-	insinto /usr/include/kore
-	doins includes/*.h
+	dobin kore kodev/kodev
+	insinto /usr/include
+	doins -r include/kore
+	doman share/man/kodev.1
+	insinto /usr/share/kore
+	doins kore.features
 	dodoc README.md
 }
