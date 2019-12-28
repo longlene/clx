@@ -1,3 +1,0 @@
-DEVKITPRO=/opt/devkitpro
-DEVKITARM=/opt/devkitpro/devkitARM
-PATH=/opt/devkitpro/devkitARM/bin

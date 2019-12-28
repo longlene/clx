@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND="
 	dev-cpp/Kapok
-	dev-cpp/spdlog
+	dev-libs/spdlog
 	dev-cpp/thread-pool-cpp
 	dev-libs/boost[context]
 "

@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/cl-jpl-uti
+	dev-lisp/cl-jpl-util
 	dev-lisp/bordeaux-threads
 "
 BDEPEND=""

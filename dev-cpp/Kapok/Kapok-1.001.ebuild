@@ -17,7 +17,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/boost
 	dev-cpp/fmt
-	dev-cpp/rapidjson
+	dev-libs/rapidjson
 "
 
 src_install() {
