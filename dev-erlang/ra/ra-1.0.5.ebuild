@@ -5,11 +5,9 @@ EAPI=6
 
 inherit rebar vcs-snapshot
 
-EGIT_COMMIT="e6a9f6d55a60f92c20ddb86b22dca93c9b5a7a7b"
-
 DESCRIPTION="A Raft implementation for Erlang and Elixir"
 HOMEPAGE="https://github.com/rabbitmq/ra"
-SRC_URI="https://github.com/rabbitmq/ra/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/rabbitmq/ra/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
