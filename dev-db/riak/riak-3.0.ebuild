@@ -5,11 +5,9 @@ EAPI=6
 
 inherit versionator eutils user multilib toolchain-funcs vcs-snapshot
 
-MY_PV=${PV/_/}
-
 DESCRIPTION="An open source, distributed database"
 HOMEPAGE="https://riak.com/"
-SRC_URI="https://github.com/basho/riak/archive/riak-${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/basho/riak/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 # prestripped files
 # bootstrapped from existing dev-lang/erlang install
@@ -50,6 +48,8 @@ DEPEND="
 	${RDEPEND}
 "
 
+RESTRICT=network-sandbox
+
 #pkg_setup() {
 #	ebegin "Creating riak user and group"
 #	local riak_home="/var/$(get_libdir)/riak"
@@ -61,6 +61,7 @@ DEPEND="
 src_prepare() {
 	default
 	sed -i '/require_otp_vsn/d' rebar.config
+	#./rebar3 get-deps || die "prepare failed"
 }
 
 src_compile() {
