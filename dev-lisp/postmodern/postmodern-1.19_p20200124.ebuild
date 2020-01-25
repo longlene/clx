@@ -5,9 +5,9 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="db8746513728fc025ffdfbe02924fad6a338e943"
+EGIT_COMMIT="aa675f22a02f3d2123015389ca2503d25f6c7b9a"
 
-DESCRIPTION="A Common Lisp library for interacting with PostgreSQL databases."
+DESCRIPTION="A Common Lisp library for interacting with PostgreSQL databases"
 HOMEPAGE="http://marijnhaverbeke.nl/postmodern/"
 SRC_URI="https://github.com/marijnh/Postmodern/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -25,7 +25,7 @@ RDEPEND="
 "
 
 src_prepare() {
-	eapply_user
+	default
 	if ! use test ; then
 		sed -e '/defsystem\ :postmodern-tests/,$d' -i ${PN}.asd
 		sed -e '/defsystem\ :cl-postgres-tests/,$d' -i cl-postgres.asd

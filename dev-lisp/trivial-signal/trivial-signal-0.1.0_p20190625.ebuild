@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1349843a68537f02622a81bf6ca5267fa929044c"
+EGIT_COMMIT="bd123bf618e7c8e0dd489401944d7ce409aa8583"
 
 DESCRIPTION="UNIX signal handling library for Common Lisp"
 HOMEPAGE="https://github.com/guicho271828/trivial-signal"

@@ -5,11 +5,9 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4c9605561fa0faf2f6ca7590d1c332d802bf4d8c"
-
 DESCRIPTION="Fast and flexible base64 encoder/decoder in Lisp"
 HOMEPAGE="https://github.com/chaitanyagupta/qbase64/"
-SRC_URI="https://github.com/chaitanyagupta/qbase64/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/chaitanyagupta/qbase64/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
@@ -24,7 +22,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	rm -r benchmark
 	if ! use test ; then
 		sed -i '/defsystem "qbase64/test/,$d' ${PN}.asd
