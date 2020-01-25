@@ -1,0 +1,7 @@
+#!/bin/bash
+
+export ZOMP_DIR="${ZOMP_DIR:-/usr/lib/zomp}"
+export ZX_VERSION=$(cat "$ZOMP_DIR/etc/version.txt")
+export ZX_DIR="$ZOMP_DIR/lib/otpr/zx/$ZX_VERSION"
+
+erl -noshell -pa "$ZX_DIR/ebin" -run zx do -extra $@
