@@ -7,8 +7,7 @@ inherit rebar
 
 DESCRIPTION="Clojure for the Erlang VM"
 HOMEPAGE="http://try.clojerl.online/"
-SRC_URI="https://github.com/clojerl/${PN}/archive/${PV}.tar.gz
-	-> ${P}.tar.gz"
+SRC_URI="https://github.com/clojerl/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="EPL-1.0"
 SLOT="0"
