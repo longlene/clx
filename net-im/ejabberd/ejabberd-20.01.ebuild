@@ -28,42 +28,48 @@ RESTRICT="test"
 # TODO: 	>=dev-erlang/moka-1.0.5b
 # TODO: )
 CDEPEND="
-	>=dev-erlang/cache_tab-1.0.13
-	>=dev-erlang/eimp-1.0.3
-	>=dev-erlang/fast_tls-1.0.21
-	>=dev-erlang/fast_xml-1.1.29
-	>=dev-erlang/fast_yaml-1.0.13
+	>=dev-erlang/cache_tab-1.0.21
+	>=dev-erlang/eimp-1.0.13
+	>=dev-erlang/fast_tls-1.1.3
+	>=dev-erlang/fast_xml-1.1.38
+	>=dev-erlang/fast_yaml-1.0.22
+	>=dev-erlang/yconf-1.0.2
+	>=dev-erlang/idna-6.0.0
 	>=dev-erlang/jiffy-0.14.8
-	>=dev-erlang/jose-1.8.4
-	>=dev-erlang/lager-3.4.2
+	>=dev-erlang/jose-1.9.0
+	>=dev-erlang/lager-3.6.10
 	>=dev-erlang/luerl-0.3
-	>=dev-erlang/p1_oauth2-0.6.2
-	>=dev-erlang/p1_utils-1.0.11
-	>=dev-erlang/stringprep-1.0.11
-	>=dev-erlang/xmpp-1.1.20
+	>=dev-erlang/mqtree-1.0.6
+	>=dev-erlang/p1_acme-1.0.3
+	>=dev-erlang/base64url-1.0
+	>=dev-erlang/p1_oauth2-0.6.5
+	>=dev-erlang/p1_utils-1.0.17
+	>=dev-erlang/pkix-1.0.4
+	>=dev-erlang/stringprep-1.0.18
+	>=dev-erlang/xmpp-1.4.4
 	>=dev-lang/erlang-17.1[hipe?,odbc?,ssl]
 	>=net-im/jabber-base-0.01
 	ldap? ( =net-nds/openldap-2* )
-	mysql? ( >=dev-erlang/p1_mysql-1.0.5 )
+	mysql? ( >=dev-erlang/p1_mysql-1.0.12 )
 	nls? ( >=dev-erlang/iconv-1.0.7 )
 	odbc? ( dev-db/unixODBC )
-	pam? ( >=dev-erlang/epam-1.0.4 )
-	postgres? ( >=dev-erlang/p1_pgsql-1.1.5 )
+	pam? ( >=dev-erlang/epam-1.0.6 )
+	postgres? ( >=dev-erlang/p1_pgsql-1.1.8 )
 	redis? ( >=dev-erlang/eredis-1.0.8 )
 	riak? (
 		>=dev-erlang/hamcrest-0.1.0_p20150103
 		>=dev-erlang/riakc-2.5.3
 	)
-	sip? ( >=dev-erlang/esip-1.0.22 )
+	sip? ( >=dev-erlang/esip-1.0.31 )
 	sqlite? ( >=dev-erlang/sqlite3-1.1.6 )
-	stun? ( >=dev-erlang/stun-1.0.21 )
-	zlib? ( >=dev-erlang/ezlib-1.0.4 )"
+	stun? ( >=dev-erlang/stun-1.0.30 )
+	zlib? ( >=dev-erlang/ezlib-1.0.6 )"
 DEPEND="${CDEPEND}
 	>=sys-apps/gawk-4.1"
 RDEPEND="${CDEPEND}
 	captcha? ( media-gfx/imagemagick[truetype,png] )"
 
-DOCS=( README )
+DOCS=( README.md )
 PATCHES=( "${FILESDIR}/${P}-ejabberdctl.patch"
 	"${FILESDIR}/${P}-0002-Dont-overwrite-service-file.patch" )
 
