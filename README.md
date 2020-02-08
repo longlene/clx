@@ -1,30 +1,26 @@
-clx -- Overlay For Funtoo/Gentoo Linux
+clx -- Overlay For Gentoo Linux
 ==============================================
 
 ## DESCRIPTION
 
-To make Funtooo the best meta-platform for developers.
+To make Gentoo the best meta-platform for developer.
 
-This overlay stores fresh ebuilds for C, C++, Ruby, Common Lisp, Lua and other interesting stuff.
+This overlay stores fresh ebuilds for C, C++, Erlang, Ruby, Common Lisp, Lua and other interesting stuffs.
 
 
 ## INSTALLATION
-
-At first, install the layman
 ```bash
-emerge -v layman
+cat > /etc/portage/repos.conf/clx.conf <<EOF
+[clx]
+location = /var/db/repos/clx
+sync-type = git
+sync-uri = https://github.com/longlene/clx.git
+auto-sync = yes
+EOF
+
+emerge --sync
 ```
 
-```bash
-echo 'source /var/lib/layman/make.conf' >> /etc/portage/make.conf
-```
-
-Add this overlay with your layman: 
-
-```bash
-layman -f -a clx -o https://raw.github.com/longlene/clx/master/repo.xml
-```
-
-Some ebuilds may be on bleeing edge. Take care if you wanna use them.
-Please issue or mail me if you encounter a problem.
+Some ebuilds may be on bleeing edge. Take care if you try them.
+Please create an issue or mail me if you encounter a problem.
 
