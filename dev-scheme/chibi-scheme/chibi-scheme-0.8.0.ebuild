@@ -4,8 +4,8 @@
 EAPI=5
 
 DESCRIPTION="A very tiny Scheme implementation with decent speed and native hygienic macros."
-SRC_URI="http://abrek.synthcode.com/${P}.tgz"
 HOMEPAGE="http://synthcode.com/scheme/"
+SRC_URI="http://synthcode.com/scheme/chibi/${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
