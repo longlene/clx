@@ -1,13 +1,13 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit cmake-utils
 
-DESCRIPTION="nanomsg-next-generation"
+DESCRIPTION="light-weight brokerless messaging"
 HOMEPAGE="https://github.com/nanomsg/nng"
-SRC_URI="https://github.com/nanomsg/nng/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/nanomsg/nng/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
