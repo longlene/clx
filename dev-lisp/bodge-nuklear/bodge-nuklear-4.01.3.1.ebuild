@@ -6,11 +6,9 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="da3c2ae3d9d0134b9b2e5bc697f5372288b52d41"
-
 DESCRIPTION="Thin wrapper over nuklear for Common Lisp"
 HOMEPAGE="https://github.com/borodust/bodge-nuklear"
-SRC_URI="https://github.com/borodust/bodge-nuklear/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/borodust/bodge-nuklear/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -23,16 +21,23 @@ DEPEND="
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi
-	dev-lisp/cl-autowrap
+	dev-lisp/claw
+	dev-lisp/claw-utils
+	dev-lisp/cffi-c-ref
 "
 
+src_prepare() {
+	default
+	sed -i '/defsystem :bodge-nuklear\/example/,$d' ${PN}.asd
+}
+
 src_compile() {
-	emake -C lib
+	emake -C src/lib
 }
 
 src_install() {
 	common-lisp-3_src_install
-	exeinto ${CLSOURCEROOT}/${CLPACKAGE}/lib
-	doexe lib/libnuklear.so
-	common-lisp-install-sources -t all lib/bodge_nuklear.h spec
+	exeinto ${CLSOURCEROOT}/${CLPACKAGE}/src/lib
+	doexe src/lib/libnuklear.so
+	common-lisp-install-sources -t all src/bodge_nuklear.h src/spec
 }

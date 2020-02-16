@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7474c02caca559821fb801245d447f987b6f6f99"
+EGIT_COMMIT="cfbc1f482970221e80d445080a188fd5c755cd2c"
 
 DESCRIPTION="Lua-style Pattern Matching for Common Lisp"
 HOMEPAGE="https://github.com/massung/re"

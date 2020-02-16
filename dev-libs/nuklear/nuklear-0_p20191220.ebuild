@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="ef2dcd3b779647e0140bb78863cb8439774e277b"
+EGIT_COMMIT="d74ffc7157890fe1e16c09e3cb3e5103f5067720"
 
-DESCRIPTION="A small ANSI C GUI toolkit"
-HOMEPAGE="https://github.com/vurtun/nuklear"
-SRC_URI="https://github.com/vurtun/nuklear/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="A single-header ANSI C immediate mode cross-platform GUI library"
+HOMEPAGE="https://github.com/Immediate-Mode-UI/nuklear"
+SRC_URI="https://github.com/Immediate-Mode-UI/nuklear/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"

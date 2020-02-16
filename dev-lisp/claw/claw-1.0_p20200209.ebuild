@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2d2631079be104f52d7e58ffbd9905d6a0d8f6ef"
+EGIT_COMMIT="c7c3dfb1baf5aef1c6fb0c16052c8e4e527af6ff"
 
 DESCRIPTION="Autowrapping FFI"
 HOMEPAGE="https://github.com/borodust/claw"
@@ -14,7 +14,7 @@ SRC_URI="https://github.com/borodust/claw/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -22,6 +22,16 @@ RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/cl-json
 	dev-lisp/cl-ppcre
-	dev-lisp/uiop
+	dev-lisp/local-time
 	dev-lisp/trivial-features
+	dev-lisp/sha1
+	test? ( dev-lisp/fiveam )
 "
+
+src_prepare() {
+	default
+	if ! use test ; then
+		sed -i '/defsystem :claw\/tests/,$' ${PN}.asd
+		rm -r t
+	fi
+}
