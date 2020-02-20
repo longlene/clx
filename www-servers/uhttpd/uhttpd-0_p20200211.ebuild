@@ -4,7 +4,7 @@ EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="91fcac34ac014a565fdd6312de088d312b5ba7ec"
+EGIT_COMMIT="2ee323c01079248baa9465969df9e25b5fb68cdf"
 
 DESCRIPTION="Tiny single-threaded httpd"
 HOMEPAGE="http://wiki.openwrt.org/"
@@ -25,7 +25,6 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	default
-	sed -i 's|\<json/json.h\>|json-c/json.h|' uhttpd-ubus.c
 	sed -i 's/-Werror //' CMakeLists.txt
 }
 
