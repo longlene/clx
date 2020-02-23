@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cd01f2610d3360dc01ab972bd9317407aaea7745"
+EGIT_COMMIT="ebe6d0358f733932154ac60e51dff8f21848ae60"
 
 DESCRIPTION="CL-STORE is a Common Lisp library for serializing and deserializing Common Lisp objects."
 HOMEPAGE="http://common-lisp.net/project/cl-store/"
