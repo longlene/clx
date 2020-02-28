@@ -3,7 +3,7 @@
 
 EAPI=7
 
-MY_PV=2020-01-05
+MY_PV=2020-01-19
 MY_P=${PN}-${MY_PV}
 
 DESCRIPTION="QuickJS Javascript Engine"
@@ -30,7 +30,7 @@ src_prepare() {
 }
 
 src_install() {
-	dobin qjs qjsc qjsbn qjsbnc
+	dobin qjs qjsc
 	dosym qjsbn /usr/bin/qjscalc
 	insinto /usr/lib/quickjs
 	doins libquickjs*.a

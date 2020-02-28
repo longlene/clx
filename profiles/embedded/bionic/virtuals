@@ -1,9 +1,0 @@
-virtual/cron			sys-apps/busybox
-virtual/libc			sys-libs/bionic
-virtual/inetd			sys-apps/busybox
-virtual/linux-sources		sys-kernel/gentoo-sources
-virtual/logger			sys-apps/busybox
-virtual/modutils		sys-apps/busybox
-virtual/os-headers		sys-kernel/bionic-kernel-headers
-virtual/ssh			net-misc/dropbear
-virtual/dev-manager		sys-apps/busybox
