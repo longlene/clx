@@ -95,15 +95,12 @@ src_unpack() {
 }
 
 src_prepare() {
-	# bug #468482
-	eapply "${FILESDIR}"/concurrency-test-2.0.1.patch
 	# bugs #486552, #527666, #517004
 	eapply "${FILESDIR}"/${PN}-1.4.0-bsd-sockets-test.patch
 	# bugs #560276, #561018
 	eapply "${FILESDIR}"/sb-posix-test-1.2.15.patch
 
 	eapply "${FILESDIR}"/${PN}-1.2.11-solaris.patch
-	eapply "${FILESDIR}"/${PN}-1.4.0-verbose-build.patch
 
 	eapply_user
 
