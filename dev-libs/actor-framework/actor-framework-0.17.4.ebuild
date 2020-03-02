@@ -8,7 +8,6 @@ inherit cmake-multilib
 bench_ref="2c45d8c1c2b934e062baf378809201ac66d169a7"
 cash_ref="38bcdedf7df5536899dd4373969e6653380d2a86"
 sash_ref="75e68c37ccafbcb7b7da8c0afe564d59bcf10594"
-opencl_ref="200eb3f43fb243515d0652324e6d606dede3f676"
 riac_ref="83de14803c841a7113c4b13c94624a55f3eec984"
 nexus_ref="254fbf76f83bb06e6001943b78838644345211a4"
 
@@ -19,12 +18,11 @@ SRC_URI="https://github.com/actor-framework/actor-framework/archive/${PV}.tar.gz
 	cash? ( https://github.com/actor-framework/cash/archive/${cash_ref}.tar.gz -> CAF_${PV}-cash.tar.gz
 		https://github.com/Neverlord/sash/archive/${sash_ref}.tar.gz -> CAF_${PV}-sash_cash.tar.gz )
 	nexus? ( https://github.com/actor-framework/nexus/archive/${nexus_ref}.tar.gz -> CAF_${PV}-nexus.tar.gz )
-	opencl? ( https://github.com/actor-framework/opencl/archive/${opencl_ref}.tar.gz -> CAF_${PV}-opencl.tar.gz )
 	riac? ( https://github.com/actor-framework/riac/archive/${riac_ref}.tar.gz -> CAF_${PV}-riac.tar.gz )"
 LICENSE="|| ( Boost-1.0 BSD )"
-SLOT="0/14.5"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="boost benchmarks cash debug doc examples +mem_management nexus opencl riac static test"
+IUSE="boost benchmarks cash debug doc examples +mem_management nexus riac static test"
 
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen
@@ -33,7 +31,7 @@ DEPEND="${RDEPEND}
 	)"
 RDEPEND="boost? ( dev-libs/boost[${MULTILIB_USEDEP}] )
 	net-misc/curl[${MULTILIB_USEDEP}]
-	opencl? ( virtual/opencl[${MULTILIB_USEDEP}] )"
+"
 REQUIRED_USE="cash? ( riac )"
 
 src_unpack() {
@@ -70,7 +68,6 @@ src_prepare() {
 multilib_src_configure() {
 	local mycmakeargs=(
 		-DCAF_NO_EXAMPLES=ON
-		-DCAF_NO_BENCHMARKS=ON
 		-DCAF_USE_ASIO=$(usex boost)
 		-DCAF_NO_CASH=$(usex cash OFF ON)
 		-DCAF_LOG_LEVEL=$(usex debug 3 0)
@@ -78,7 +75,6 @@ multilib_src_configure() {
 		-DCAF_ENABLE_ADDRESS_SANITIZER=$(usex debug)
 		-DCAF_NO_MEM_MANAGEMENT=$(usex mem_management OFF ON)
 		-DCAF_NO_NEXUS=$(usex nexus OFF ON)
-		-DCAF_NO_OPENCL=$(usex opencl OFF ON)
 		-DCAF_NO_RIAC=$(usex riac OFF ON)
 		-DCAF_BUILD_STATIC=$(usex static)
 		-DCAF_NO_UNIT_TESTS=$(usex test OFF ON )
