@@ -5,11 +5,9 @@ EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="6afe7f164ee1f0b2f4409849ad8b639af9350e3f"
-
 DESCRIPTION="C++11 header-only HTTP sever library"
 HOMEPAGE="https://github.com/yhirose/cpp-httplib"
-SRC_URI="https://github.com/yhirose/cpp-httplib/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/yhirose/cpp-httplib/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Boost-1.0"
 SLOT="0"
