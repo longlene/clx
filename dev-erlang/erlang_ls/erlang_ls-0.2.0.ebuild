@@ -5,11 +5,9 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="be2a6f0a0fd5d1cf3bbbd28df4f2e55930fdee41"
-
 DESCRIPTION="The Erlang Language Server Protocol Implementation"
 HOMEPAGE="https://github.com/erlang-ls/erlang_ls"
-SRC_URI="https://github.com/erlang-ls/erlang_ls/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/erlang-ls/erlang_ls/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
