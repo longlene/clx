@@ -3,7 +3,7 @@
 
 EAPI=7
 
-MY_PV=2020-01-19
+MY_PV=2020-03-16
 MY_P=${PN}-${MY_PV}
 
 DESCRIPTION="QuickJS Javascript Engine"
