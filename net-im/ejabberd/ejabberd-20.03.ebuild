@@ -5,7 +5,7 @@ EAPI=6
 
 SSL_CERT_MANDATORY=1
 
-inherit eutils pam rebar ssl-cert systemd
+inherit autotools eutils pam rebar ssl-cert systemd
 
 DESCRIPTION="Robust, scalable and extensible XMPP server"
 HOMEPAGE="http://www.ejabberd.im/ https://github.com/processone/ejabberd/"
@@ -238,7 +238,7 @@ src_prepare() {
 
 	sed -e "s|\(AC_INIT(ejabberd, \)m4_esyscmd([^)]*)|\1[$PV]|" \
 		-i configure.ac || die "Failed to write correct version to configure"
-	# eautoreconf # required in case of download from github
+	eautoreconf # required in case of download from github
 }
 
 src_configure() {
