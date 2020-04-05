@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e94edf156a7db97f4a7ad70e1b4498ef2596f8dd"
+EGIT_COMMIT="df3ba7d9c020efed1f6563d15d20f1731316b922"
 
 DESCRIPTION="Common Lisp CFFI bindings to the IUP Portable User Interface library"
 HOMEPAGE="https://github.com/lispnik/iup"

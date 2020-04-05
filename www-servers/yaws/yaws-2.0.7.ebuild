@@ -22,3 +22,8 @@ src_prepare() {
 	default
 	eautoreconf
 }
+
+src_install() {
+	emake install
+	keepdir /var/log/yaws
+}

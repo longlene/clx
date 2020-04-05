@@ -18,6 +18,6 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/documenttion-utils
+	dev-lisp/documentation-utils
 "
 BDEPEND=""

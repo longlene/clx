@@ -5,11 +5,9 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="02c9aaf01f59fa4cb2677ba29625b986483298e5"
-
 DESCRIPTION="A framework to build readline applications out of existing code"
 HOMEPAGE="https://github.com/vindarel/replic/"
-SRC_URI="https://github.com/vindarel/replic/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/vindarel/replic/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
