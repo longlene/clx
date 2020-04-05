@@ -1,11 +1,11 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="157037c8ee4958afca43a97594a77b030da552df"
+EGIT_COMMIT="1d77982f9724665cebea6a26fefcf9c6faf3f9ea"
 
 DESCRIPTION="A native Lisp graphics math library with an emphasis on performance and correctness"
 HOMEPAGE="https://github.com/mfiano/origin/"

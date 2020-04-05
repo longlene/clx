@@ -1,11 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1832d3a0642348f0e039c5b377f2e3e0e92794cb"
+EGIT_COMMIT="141b022faf2b1c64b109bf12f1d93f6549a7820b"
 
 DESCRIPTION="A fast non-blocking HTTP server on top of libev"
 HOMEPAGE="https://github.com/fukamachi/woo/"

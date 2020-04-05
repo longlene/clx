@@ -1,11 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2fabb20ccc5ddfe60c91f5b500eb676bafbf4481"
+EGIT_COMMIT="58d14abc95a0696a4ac5f210c2ee1a442c6e0f77"
 
 DESCRIPTION="Max’s Parser Combinators"
 HOMEPAGE="https://github.com/eugeneia/maxpc"
@@ -20,6 +20,6 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-test.asd test.lisp bench.lisp example-sexp.lisp
 }

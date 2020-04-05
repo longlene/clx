@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="990c2f0b010db7beb158e2aa7596c7be48a8f657"
+EGIT_COMMIT="4375539002694d5cb9ae7e656bc5170139065a45"
 
 DESCRIPTION="Common Lisp and CXX interoperation"
 HOMEPAGE="https://github.com/Islam0mar/cl-cxx"
