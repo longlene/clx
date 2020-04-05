@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="fae2bab7191775735f1d2c921f448995acff7307"
+EGIT_COMMIT="539ae2d56a62516c739d0b25af694d7ef8759183"
 
 DESCRIPTION="Expose C++ libraries in common lisp"
 HOMEPAGE="https://github.com/Islam0mar/CLCXX"

@@ -5,11 +5,9 @@ EAPI=6
 
 inherit rebar vcs-snapshot
 
-EGIT_COMMIT="6486b1eea481965f1324e45bf31a04de453205d9"
-
 DESCRIPTION="Django templates for Erlang"
 HOMEPAGE="https://github.com/erlydtl/erlydtl"
-SRC_URI="https://github.com/erlydtl/erlydtl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/erlydtl/erlydtl/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 
 LICENSE="MIT"
