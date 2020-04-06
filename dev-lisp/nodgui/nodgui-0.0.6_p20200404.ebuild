@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-unicode
 	dev-lisp/cl-ppcre
 	dev-lisp/cl-lex
-	dev-lisp/yacc
+	dev-lisp/cl-yacc
 	dev-lisp/parse-number
 	dev-lisp/clunit2
 	dev-lisp/cl-colors2
