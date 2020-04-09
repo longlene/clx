@@ -20,16 +20,12 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	eapply_user
-	sed -i "s#LIBRARY DESTINATION lib#LIBRARY DESTINATION $(get_libdir)#" src/CMakeLists.txt
-}
-
 src_configure() {
 	local mycmakeargs=(
+	-DUSE_EXTERNAL_GLFW=ON
 	-DBUILD_EXAMPLES=OFF
 	-DBUILD_GAMES=OFF
-	-DSHARED_RAYLIB=$(usex !static-libs)
+	-DSHARED=ON
 	)
 	cmake-utils_src_configure
 }
