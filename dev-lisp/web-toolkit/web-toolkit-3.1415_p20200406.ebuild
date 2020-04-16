@@ -27,7 +27,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-gray-streams
 	dev-lisp/plump
 	dev-lisp/babel
-	dev-lisp/babel-streams
 	dev-lisp/cl-change-case
 	dev-lisp/cl-fad
 	dev-lisp/trivial-backtrace
