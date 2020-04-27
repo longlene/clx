@@ -4,8 +4,8 @@
 EAPI=6
 
 DESCRIPTION="simple and fast string based key-value database with support for arrays and json"
-HOMEPAGE="https://github.com/radare/sdb"
-SRC_URI="https://github.com/radare/sdb/archive/${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/radareorg/sdb"
+SRC_URI="https://github.com/radareorg/sdb/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -14,3 +14,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+
+src_prepare() {
+	default
+	sed -i "/LIBDIR=/{s#lib#$(get_libdir)#}" config.mk
+}
