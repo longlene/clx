@@ -1,11 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 elisp-common eutils vcs-snapshot
 
-EGIT_COMMIT="6bd57b4537f8429068fc7b92c4bec2091459bbb6"
+EGIT_COMMIT="4a45fea047127f801318c79ce1893ebcb083370e"
 
 DESCRIPTION="McCLIM is a free software implementation of CLIM."
 HOMEPAGE="http://common-lisp.net/project/mcclim
