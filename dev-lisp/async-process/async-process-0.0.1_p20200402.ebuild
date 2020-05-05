@@ -1,11 +1,11 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
+inherit common-lisp-3 vcs-snapshot autotools
 
-EGIT_COMMIT="b1ad6ab3a9b86feaabafb7b16839da595375c1b6"
+EGIT_COMMIT="a8d15f20f39a737c4d05c53980533cd399c63c55"
 
 DESCRIPTION="async process"
 HOMEPAGE="https://github.com/cxxxr/async-process"
@@ -21,7 +21,16 @@ RDEPEND="${DEPEND}
 	dev-lisp/cffi
 "
 
+src_prepare() {
+	default
+	eautoreconf
+}
+
+src_compile() {
+	emake
+}
+
 src_install() {
+	dolib.so .libs/libasyncprocess.so
 	common-lisp-3_src_install
-	common-lisp-install-sources -t all static
 }
