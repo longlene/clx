@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="00d51955c2098e4b8b1d95b9b32b685d7242dc63"
+EGIT_COMMIT="4ead6d3d3e349b34b98be59289af56359be30cdf"
 
 DESCRIPTION="Yet another routes handling utility on top of Hunchentoot"
 HOMEPAGE="https://github.com/mmontone/easy-routes"
