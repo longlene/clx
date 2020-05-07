@@ -5,12 +5,12 @@ EAPI=6
 
 SSL_CERT_MANDATORY=1
 
-inherit eutils pam rebar ssl-cert systemd
+inherit autotools eutils pam rebar ssl-cert systemd
 
 DESCRIPTION="Robust, scalable and extensible XMPP server"
 HOMEPAGE="http://www.ejabberd.im/ https://github.com/processone/ejabberd/"
-#SRC_URI="https://github.com/processone/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-SRC_URI="https://www.process-one.net/downloads/${PN}/${PV}/${P}.tgz"
+SRC_URI="https://github.com/processone/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+#SRC_URI="https://www.process-one.net/downloads/${PN}/${PV}/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -30,27 +30,27 @@ RESTRICT="test"
 CDEPEND="
 	>=dev-erlang/cache_tab-1.0.22
 	>=dev-erlang/eimp-1.0.14
-	>=dev-erlang/fast_tls-1.1.4
-	>=dev-erlang/fast_xml-1.1.38
-	>=dev-erlang/fast_yaml-1.0.23
-	>=dev-erlang/yconf-1.0.3
+	>=dev-erlang/fast_tls-1.1.5
+	>=dev-erlang/fast_xml-1.1.40
+	>=dev-erlang/fast_yaml-1.0.24
+	>=dev-erlang/yconf-1.0.4
 	>=dev-erlang/idna-6.0.0
 	>=dev-erlang/jiffy-1.0.1
 	>=dev-erlang/jose-1.9.0
 	>=dev-erlang/lager-3.6.10
 	>=dev-erlang/luerl-0.3
 	>=dev-erlang/mqtree-1.0.7
-	>=dev-erlang/p1_acme-1.0.4
+	>=dev-erlang/p1_acme-1.0.5
 	>=dev-erlang/base64url-1.0
 	>=dev-erlang/p1_oauth2-0.6.6
 	>=dev-erlang/p1_utils-1.0.18
 	>=dev-erlang/pkix-1.0.5
 	>=dev-erlang/stringprep-1.0.19
-	>=dev-erlang/xmpp-1.4.5
+	>=dev-erlang/xmpp-1.4.6
 	>=dev-lang/erlang-17.1[hipe?,odbc?,ssl]
 	>=net-im/jabber-base-0.01
 	ldap? ( =net-nds/openldap-2* )
-	mysql? ( >=dev-erlang/p1_mysql-1.0.12 )
+	mysql? ( >=dev-erlang/p1_mysql-1.0.15 )
 	nls? ( >=dev-erlang/iconv-1.0.7 )
 	odbc? ( dev-db/unixODBC )
 	pam? ( >=dev-erlang/epam-1.0.7 )
@@ -60,9 +60,9 @@ CDEPEND="
 		>=dev-erlang/hamcrest-0.1.0_p20150103
 		>=dev-erlang/riakc-2.5.3
 	)
-	sip? ( >=dev-erlang/esip-1.0.32 )
+	sip? ( >=dev-erlang/esip-1.0.33 )
 	sqlite? ( >=dev-erlang/sqlite3-1.1.6 )
-	stun? ( >=dev-erlang/stun-1.0.31 )
+	stun? ( >=dev-erlang/stun-1.0.32 )
 	zlib? ( >=dev-erlang/ezlib-1.0.7 )"
 DEPEND="${CDEPEND}
 	>=sys-apps/gawk-4.1"
@@ -238,7 +238,7 @@ src_prepare() {
 
 	sed -e "s|\(AC_INIT(ejabberd, \)m4_esyscmd([^)]*)|\1[$PV]|" \
 		-i configure.ac || die "Failed to write correct version to configure"
-	# eautoreconf # required in case of download from github
+	eautoreconf # required in case of download from github
 }
 
 src_configure() {
