@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="A libev-based high performance SSL/TLS proxy"
 HOMEPAGE="https://hitch-tls.org/"
-SRC_URI="https://hitch-tls.org/source/hitch-1.5.0.tar.gz"
+SRC_URI="https://hitch-tls.org/source/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
