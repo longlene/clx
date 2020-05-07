@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b7ee942513211d987a0e076387502c04ee2987ef"
+EGIT_COMMIT="2f28feb5f847406726b29cc2c0d42e3629f4aabd"
 
 DESCRIPTION="Yet another HTTP client for Common Lisp"
 HOMEPAGE="http://ultra.wikia.com/wiki/Dexador"

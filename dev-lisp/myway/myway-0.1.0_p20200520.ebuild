@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="286230082a11f879c18b93f17ca571c5f676bfb7"
+EGIT_COMMIT="172807db9a32617cd2a03fbc323a99e76badec8d"
 
 DESCRIPTION="Sinatra-compatible URL routing library for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/myway"
