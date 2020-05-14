@@ -5,11 +5,9 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c738e66d4266ef63a1debc4ef4a1b871a068c112"
-
 DESCRIPTION="A CommonLisp interface to the SQLite embedded relational database engine."
 HOMEPAGE="http://common-lisp.net/project/cl-sqlite/"
-SRC_URI="https://github.com/dmitryvk/cl-sqlite/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/dmitryvk/cl-sqlite/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"

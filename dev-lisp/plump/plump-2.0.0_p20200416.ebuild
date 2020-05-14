@@ -1,11 +1,11 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="16f1231bf706cfbc54d9e55a853ca945e4452a08"
+EGIT_COMMIT="34f890fe46efdebe7bb70d218f1937e98f632bf9"
 
 DESCRIPTION="Practically Lenient and Unimpressive Markup Parser for Common Lisp"
 HOMEPAGE="https://github.com/Shinmera/plump"

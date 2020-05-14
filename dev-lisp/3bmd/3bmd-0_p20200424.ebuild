@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5b301ade30d5cbaf76c5b53d35d2482850cdeb1b"
+EGIT_COMMIT="66f2cb8fed98925b37a89978c3dff26b85f3a5da"
 
 DESCRIPTION="markdown processor in CL using esrap parser"
 HOMEPAGE="https://github.com/3b/3bmd"

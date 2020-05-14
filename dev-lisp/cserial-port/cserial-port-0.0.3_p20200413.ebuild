@@ -1,11 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="191c808008d0d54d1dcd91162daa0b84813dd76c"
+EGIT_COMMIT="c3dbc8e38dbfd84c5bb5292cf165f3a7a0a5cf4b"
 
 DESCRIPTION="serial-port accessing library for Common Lisp"
 HOMEPAGE="https://github.com/snmsts/cserial-port"

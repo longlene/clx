@@ -1,11 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="659d18ec4f0965c79ac12a870013fca15ee1f498"
+EGIT_COMMIT="19c9d33f576e10715fd79cc1d4f688dab0f241d6"
 
 DESCRIPTION="Closer to MOP is a Common Lisp Metaobject Protocol compatibility layer."
 HOMEPAGE="http://common-lisp.net/project/closer/closer-mop.html"

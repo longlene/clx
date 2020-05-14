@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="dcbeb589c312119070f20edc85cdf3f4153bc60d"
+EGIT_COMMIT="a604cef79498009ebcc7dc14878473d4dbcf7cc5"
 
 DESCRIPTION="A Common Lisp HTTP Client"
 HOMEPAGE="https://github.com/svenvc/s-http-client"

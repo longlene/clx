@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e2c485685a25d9c6e80f3b77fe3396597879c482"
+EGIT_COMMIT="bce7f80b0c67d3c9f514556f2d14d098efecdde8"
 
 DESCRIPTION="An implementation of Python in Common Lisp"
 HOMEPAGE="http://common-lisp.net/project/clpython/"
@@ -26,7 +26,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	if ! use test ; then
 		sed -i '/defsystem\ "clpython\/test/,$d' clpython.asd
 		rm -r test

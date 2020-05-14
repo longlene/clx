@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="027be7dba1a7e0b42a28b42ee843b3a58355dcbc"
+EGIT_COMMIT="ed919ab37b0b9d2a7523a55d47c3f36d555223d4"
 
 DESCRIPTION="A collection of utilities to help with pathname operations"
 HOMEPAGE="https://github.com/Shinmera/pathname-utils"

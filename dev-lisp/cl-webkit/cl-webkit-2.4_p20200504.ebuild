@@ -4,7 +4,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cd2a9008e0c152e54755e8a7f07b050fe36bab31"
+EGIT_COMMIT="f93cb9697e8813068795fe4dc39ac950d814102d"
 
 DESCRIPTION="A binding to WebKitGtk+ for Common Lisp"
 HOMEPAGE="https://github.com/next-browser/cl-webkit"

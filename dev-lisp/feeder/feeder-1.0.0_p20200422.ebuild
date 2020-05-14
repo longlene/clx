@@ -11,7 +11,7 @@ DESCRIPTION="RSS, Atom and general feed parsing and generating"
 HOMEPAGE="https://github.com/Shinmera/feeder"
 SRC_URI="https://github.com/Shinmera/feeder/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="zlib"
+LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1d574c658a7ace855b0751665fb1e9a0385ed472"
+EGIT_COMMIT="df0c862d0d517a9d6e740382529e253043fb682e"
 
 DESCRIPTION="Common Lisp data analysis library with emphasis on modularity and conceptual clarity"
 HOMEPAGE="https://github.com/ghollisjr/cl-ana"

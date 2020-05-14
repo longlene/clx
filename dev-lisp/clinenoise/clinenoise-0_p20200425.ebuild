@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="14401e17e637e1a6c4760dc816928b29823efa59"
+EGIT_COMMIT="46e21f99d06a55d93eaa382cf652d55d457032ef"
 
 DESCRIPTION="A trivial line-input library for VT-like terminals"
 HOMEPAGE="https://github.com/jasom/clinenoise"

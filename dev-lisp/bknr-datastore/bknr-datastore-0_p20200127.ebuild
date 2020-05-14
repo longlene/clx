@@ -1,11 +1,11 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="dae42129afbf0b786da1a48c9a1279e6779e43a5"
+EGIT_COMMIT="3eb43346a13cd10d15149f6e8c55cb2d41a8c98d"
 
 DESCRIPTION="MOP-Based in-memory database with transactions for Common Lisp"
 HOMEPAGE="http://bknr.net/"
