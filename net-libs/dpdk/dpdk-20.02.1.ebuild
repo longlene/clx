@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit toolchain-funcs flag-o-matic linux-info linux-mod
+inherit toolchain-funcs flag-o-matic linux-info linux-mod vcs-snapshot
 
 DESCRIPTION="A set of libraries and drivers for fast packet processing"
 HOMEPAGE="http://dpdk.org/"
