@@ -21,6 +21,7 @@ DEPEND="
 	dev-libs/libfmt
 	dev-libs/protobuf
 	dev-util/ragel
+	sys-fs/xfsprogs
 	net-misc/lksctp-tools
 	hwloc? ( sys-apps/hwloc )
 	numa? ( sys-process/numactl )
