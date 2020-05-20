@@ -17,6 +17,7 @@ IUSE="hwloc numa"
 DEPEND="
 	dev-libs/crypto++
 	dev-libs/libfmt
+	app-arch/lz4
 	hwloc? ( sys-apps/hwloc )
 	numa? ( sys-process/numactl )
 "
