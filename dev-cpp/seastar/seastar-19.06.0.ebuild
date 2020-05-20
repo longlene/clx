@@ -15,6 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="hwloc numa"
 
 DEPEND="
+	dev-libs/crypto++
 	hwloc? ( sys-apps/hwloc )
 	numa? ( sys-process/numactl )
 "
