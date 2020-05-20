@@ -23,6 +23,7 @@ DEPEND="
 	dev-util/ragel
 	sys-fs/xfsprogs
 	net-misc/lksctp-tools
+	dev-util/valgrind
 	hwloc? ( sys-apps/hwloc )
 	numa? ( sys-process/numactl )
 "
