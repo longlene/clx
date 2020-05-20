@@ -18,6 +18,7 @@ DEPEND="
 	app-arch/lz4
 	dev-libs/crypto++
 	dev-libs/libfmt
+	net-misc/lksctp-tools
 	dev-libs/protobuf
 	hwloc? ( sys-apps/hwloc )
 	numa? ( sys-process/numactl )
