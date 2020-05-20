@@ -16,6 +16,7 @@ IUSE="hwloc numa"
 
 DEPEND="
 	app-arch/lz4
+	dev-cpp/yaml-cpp
 	dev-libs/crypto++
 	dev-libs/libfmt
 	net-misc/lksctp-tools
