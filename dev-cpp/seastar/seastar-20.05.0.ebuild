@@ -19,8 +19,9 @@ DEPEND="
 	dev-cpp/yaml-cpp
 	dev-libs/crypto++
 	dev-libs/libfmt
-	net-misc/lksctp-tools
 	dev-libs/protobuf
+	dev-util/ragel
+	net-misc/lksctp-tools
 	hwloc? ( sys-apps/hwloc )
 	numa? ( sys-process/numactl )
 "
