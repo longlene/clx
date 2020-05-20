@@ -15,9 +15,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE="hwloc numa"
 
 DEPEND="
+	app-arch/lz4
 	dev-libs/crypto++
 	dev-libs/libfmt
-	app-arch/lz4
+	dev-libs/protobuf
 	hwloc? ( sys-apps/hwloc )
 	numa? ( sys-process/numactl )
 "
