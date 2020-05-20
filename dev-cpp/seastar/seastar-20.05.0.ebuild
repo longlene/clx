@@ -24,6 +24,7 @@ DEPEND="
 	sys-fs/xfsprogs
 	net-misc/lksctp-tools
 	dev-util/valgrind
+	dev-util/systemtap
 	hwloc? ( sys-apps/hwloc )
 	numa? ( sys-process/numactl )
 "
