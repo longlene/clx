@@ -29,6 +29,7 @@ DEPEND="${RDEPEND}
 		)"
 
 src_prepare() {
+	default
 	sed -i \
 		-e "s:^LUA_LIBDIR.*$:LUA_LIBDIR = $($(tc-getPKG_CONFIG) --variable INSTALL_CMOD lua):" \
 		-e "s:^LUA_SHAREDIR.*$:LUA_SHAREDIR = $($(tc-getPKG_CONFIG) --variable INSTALL_LMOD lua):" \
