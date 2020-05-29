@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="870b5390d566e27c64c342e0afc27ec4ff439a5e"
+EGIT_COMMIT="e8434f3f5113967dc1868aabaf8fd1fbf0cd8533"
 
 DESCRIPTION="Common Lisp interface to WrodNet"
 HOMEPAGE="https://github.com/phoe/wordnet/"
