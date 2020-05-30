@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-fad
 	dev-lisp/perceptual-hashes
 	dev-lisp/vp-trees
-	dev-lisp/sqlite
+	dev-lisp/cl-sqlite
 	dev-lisp/eager-future2
 "
 BDEPEND=""

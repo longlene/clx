@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c7f6e350933afc34e4b1feb766cadb14d33b7bf2"
+EGIT_COMMIT="2f23302acac950aa72c9d5e989f956393e60ca3a"
 
 DESCRIPTION="Route multiple domains on a single hunchentoot acceptor using a single port"
 HOMEPAGE="https://github.com/moderninterpreters/hunchentoot-multi-acceptor/"
