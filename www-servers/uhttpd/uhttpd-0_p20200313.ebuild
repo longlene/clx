@@ -4,9 +4,9 @@ EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="2ee323c01079248baa9465969df9e25b5fb68cdf"
+EGIT_COMMIT="5e9c23c6f40ff26209ef22cfeeda4904a5918f3d"
 
-DESCRIPTION="Tiny single-threaded httpd"
+DESCRIPTION="Tiny HTTP httpd"
 HOMEPAGE="http://wiki.openwrt.org/"
 SRC_URI="https://git.openwrt.org/?p=project/uhttpd.git;a=snapshot;h=${EGIT_COMMIT};sf=tgz -> ${P}.tar.gz"
 
