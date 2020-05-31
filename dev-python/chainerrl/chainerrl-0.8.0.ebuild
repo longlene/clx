@@ -19,11 +19,8 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/cached-property
 	dev-python/chainer
-	dev-python/fastcache
-	dev-python/funcsigs
 	dev-python/gym
 	dev-python/numpy
 	dev-python/pillow
 	dev-python/scipy
-	dev-python/statistics
 "
