@@ -18,7 +18,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND="dev-erlang/rebar3"
+BDEPEND="dev-erlang/rebar:3"
 
 src_compile() {
 	rebar3 escriptize || die "build failed"
