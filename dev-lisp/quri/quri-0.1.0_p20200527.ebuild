@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="adb6d04f1b9ea99fa7f18044df4c86b6c68023af"
+EGIT_COMMIT="b39ec54a07062334cfa37b31d14e39115921ffe0"
 
 DESCRIPTION="Yet another URI library for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/quri"
