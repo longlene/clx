@@ -1,15 +1,13 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit cmake-utils vcs-snapshot
-
-EGIT_COMMIT="v2018.03.05.00"
+inherit cmake-utils
 
 DESCRIPTION="An open-source C++ library developed and used at Facebook"
 HOMEPAGE="https://github.com/facebook/folly/"
-SRC_URI="https://github.com/facebook/folly/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/facebook/folly/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -23,4 +21,5 @@ RDEPEND="${DEPEND}
 	dev-libs/boost[context,threads]
 	dev-libs/libevent
 	dev-libs/openssl
+	dev-libs/libfmt
 "
