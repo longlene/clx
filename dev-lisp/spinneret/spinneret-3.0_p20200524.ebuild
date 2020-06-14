@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="67c1c83729ff1e6215252ca8bf1e6284944822a3"
+EGIT_COMMIT="882ea2817bf196814a2b153acca41d599e345d81"
 
 DESCRIPTION="Common Lisp HTML5 generator"
 HOMEPAGE="https://github.com/ruricolist/spinneret"
