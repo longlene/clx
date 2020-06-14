@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit vcs-snapshot
-
-EGIT_COMMIT="b45da643b9cd700b0556f1174b117786cced0242"
+inherit cmake-utils
 
 DESCRIPTION="SQLite ORM light header only library for modern C++"
 HOMEPAGE="https://github.com/fnc12/sqlite_orm"
-SRC_URI="https://github.com/fnc12/sqlite_orm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/fnc12/sqlite_orm/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
@@ -21,8 +19,14 @@ RDEPEND="${DEPEND}
 	dev-db/sqlite
 "
 
-src_install() {
-	insinto /usr/include
-	doins -r include/sqlite_orm
-	dodoc README.md
+src_prepare() {
+	default
+	sed -i '/add_subdirectory/{/examples/d}' CMakeLists.txt
+}
+
+src_configure() {
+	local mycmakeargs=(
+	-DSqliteOrm_BuildTests=OFF
+	)
+	cmake-utils_src_configure
 }
