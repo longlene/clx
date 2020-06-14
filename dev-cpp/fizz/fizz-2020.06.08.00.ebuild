@@ -27,4 +27,4 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-CMAKE_USE_DIR="${S}"/fizz
+CMAKE_USE_DIR="fizz"
