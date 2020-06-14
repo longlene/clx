@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a93efe3a75469254abfdfa56be5ac1e6da81a596"
+EGIT_COMMIT="932da13c24f7537a5b9206620e8a93f8c88846ad"
 
 DESCRIPTION="SuperCollider client for Common Lisp"
 HOMEPAGE="https://github.com/byulparan/cl-collider"

@@ -1,11 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="511ded39deecc9a67460472322741a194a3b3085"
+EGIT_COMMIT="17e4be8ff69e711346dddda0680677ca5bafc61b"
 
 DESCRIPTION="Simplified interface to cl-bodge"
 HOMEPAGE="https://github.com/borodust/trivial-gamekit"

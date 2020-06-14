@@ -1,11 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="8c6a381d0b556d072bceea804402068c1798bf3e"
+EGIT_COMMIT="b0e85a465aec2dc899f69bbf6b4e3bff3cd90103"
 
 DESCRIPTION="An SSH client library for Common Lisp"
 HOMEPAGE="https://github.com/eudoxia0/trivial-ssh"

@@ -1,15 +1,13 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="67b33ca411a331e9eef440e97b3cf5759c5f5e7d"
-
 DESCRIPTION="A thread pool written in Common Lisp"
 HOMEPAGE="https://github.com/Frechmatz/cl-threadpool"
-SRC_URI="https://github.com/Frechmatz/cl-threadpool/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Frechmatz/cl-threadpool/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
