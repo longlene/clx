@@ -1,14 +1,14 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2bcef82a6ec761be946e484c2c9f9ce0a626dc1a"
+EGIT_COMMIT="2884850d90637b4b0096e57419c7fcbe39891d16"
 
 DESCRIPTION="Common Lisp interface to the Linux inotify API"
-HOMEPAGE="https://github.com/Ferada/cl-inotify"
-SRC_URI="https://github.com/Ferada/cl-inotify/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/ralt/cl-inotify"
+SRC_URI="https://github.com/ralt/cl-inotify/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -25,5 +25,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	default
 	use test || rm -rf ${PN}-tests.asd tests
 }
