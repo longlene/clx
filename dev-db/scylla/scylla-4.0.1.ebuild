@@ -58,7 +58,7 @@ RDEPEND="
 	>=virtual/jdk-1.8.0:*
 	app-arch/lz4
 	app-arch/snappy
-	dev-cpp/antlr-cpp:3.5
+	dev-cpp/antlr-cpp
 	dev-cpp/yaml-cpp
 	dev-java/antlr:3.5
 	dev-libs/boost[icu]
