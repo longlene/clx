@@ -5,7 +5,7 @@ EAPI=7
 
 inherit autotools vcs-snapshot
 
-EGIT_COMMIT="a5250fac1cba1cf2e505e2dd695c459fef9aecb1"
+EGIT_COMMIT="604d48fc99b1ae349d4ceb01176a1adf83cb1b31"
 
 DESCRIPTION="a plain C implementation of the Noise protocol"
 HOMEPAGE="https://github.com/rweather/noise-c"
