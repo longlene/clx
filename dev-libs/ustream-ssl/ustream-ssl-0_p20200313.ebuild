@@ -5,7 +5,7 @@ EAPI=6
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="738e8d2489fc64f782affd1292388c66f6d69e82"
+EGIT_COMMIT="5e1bc3429cbf9c3be4db65ef5dbf21ea99cf5b95"
 
 DESCRIPTION="library for SSL over ustream"
 HOMEPAGE="http://wiki.openwrt.org/"
@@ -25,7 +25,9 @@ RDEPEND="
 
 src_prepare() {
 	default
-	sed -i 's/-Werror //' CMakeLists.txt
+	sed -e 's/-Werror //' \
+		-e "/LIBRARY DESTINATION/{s#lib#$(get_libdir)#}" \
+		-i CMakeLists.txt
 	cmake-utils_src_prepare
 }
 
