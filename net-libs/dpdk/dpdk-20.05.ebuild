@@ -7,7 +7,7 @@ inherit toolchain-funcs flag-o-matic linux-info linux-mod vcs-snapshot
 
 DESCRIPTION="A set of libraries and drivers for fast packet processing"
 HOMEPAGE="http://dpdk.org/"
-SRC_URI="http://fast.${PN}.org/rel/${P}.tar.xz"
+SRC_URI="https://fast.${PN}.org/rel/${P}.tar.xz"
 
 LICENSE="BSD-2"
 SLOT="0"
