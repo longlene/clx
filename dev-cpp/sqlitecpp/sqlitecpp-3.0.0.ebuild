@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -13,9 +12,11 @@ SRC_URI="https://github.com/SRombauts/SQLiteCpp/archive/${PV}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="example test"
+IUSE="example +system-sqlite test"
 
-DEPEND=""
+DEPEND="
+	system-sqlite? ( dev-db/sqlite )
+"
 RDEPEND="${DEPEND}"
 
 src_configure() {
@@ -24,15 +25,8 @@ src_configure() {
 	-DSQLITECPP_RUN_CPPCHECK=OFF
 	-DSQLITECPP_BUILD_EXAMPLES=$(usex example)
 	-DSQLITECPP_BUILD_TESTS=$(usex test)
+	-DSQLITECPP_INTERNAL_SQLITE=$(usex !system-sqlite)
 	)
 	cmake-utils_src_configure
 }
 
-src_install() {
-	dolib.a ${BUILD_DIR}/libSQLiteCpp.a
-	insinto /usr/
-	doins -r include
-	insinto /usr/share/cmake/Modules
-	doins FindSQLiteCpp.cmake
-	einstalldocs
-}
