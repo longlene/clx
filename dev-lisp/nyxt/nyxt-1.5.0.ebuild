@@ -5,9 +5,9 @@ EAPI=6
 
 inherit common-lisp-3
 
-DESCRIPTION="nEXT Browser"
+DESCRIPTION="Nyxt web browser"
 HOMEPAGE="https://next-browser.github.io"
-SRC_URI="https://github.com/next-browser/next/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/atlas-engineer/nyxt/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
