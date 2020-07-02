@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="062ac9844de6dd03e342df23aa4b409ff445b887"
+EGIT_COMMIT="0e6a3a2651a3c8f7cf3c685432dae0ac0bb876d6"
 
 DESCRIPTION="Clath is single sign-on middleware for Clack"
 HOMEPAGE="https://github.com/BnMcGn/clath"
