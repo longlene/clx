@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e81004370307927478988ebddb91011c6748a1af"
+EGIT_COMMIT="6616fa357b6732f276464f4837a9bebeb93db00f"
 
 DESCRIPTION="Common Lisp REST Server"
 HOMEPAGE="https://github.com/mmontone/cl-rest-server"

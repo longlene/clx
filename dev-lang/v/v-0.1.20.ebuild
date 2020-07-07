@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit flag-o-matic vcs-snapshot
+inherit flag-o-matic
 
 DESCRIPTION="The V Programming Language"
 HOMEPAGE="https://vlang.io/"
