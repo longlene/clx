@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="8efe8cd5fe009732659fe7f6990842359c54242b"
+EGIT_COMMIT="5e47e70446b650c85a9810b9401bb2a4083d189c"
 
 DESCRIPTION="LuaVela is an interpreter and a Just-In-Time (JIT) compiler for Lua"
 HOMEPAGE="https://github.com/iponweb/luavela"
