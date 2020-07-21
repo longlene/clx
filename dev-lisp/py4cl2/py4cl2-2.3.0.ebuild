@@ -1,15 +1,13 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5fb5858d06454e9220d563fccdb840787c7457de"
-
 DESCRIPTION="https://github.com/digikar99/py4cl2"
 HOMEPAGE="https://github.com/digikar99/py4cl2"
-SRC_URI="https://github.com/digikar99/py4cl2/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/digikar99/py4cl2/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
