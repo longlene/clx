@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=stb single-file public domain libraries for C/C++
+EAPI=6
+HOMEPAGE=https://github.com/nothings/stb
+KEYWORDS=~amd64 ~x86
+LICENSE=public-domain
+SLOT=0
+SRC_URI=https://github.com/nothings/stb/archive/f67165c2bb2af3060ecae7d20d6f731173485ad0.tar.gz -> stb-0_p20191029.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=dc63563a71f8aefa0b50bf5981741d56

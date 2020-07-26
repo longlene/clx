@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=More powerful reference-counting smart pointers for C++
+EAPI=7
+HOMEPAGE=https://github.com/avdgrinten/libsmarter
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/avdgrinten/libsmarter/archive/bf8fd32dcc12e3c125940924e8466bb3a096be93.tar.gz -> libsmarter-0_p20200123.tar.gz
+_md5_=d511c0c4bdec7ed322a3ae792155594a

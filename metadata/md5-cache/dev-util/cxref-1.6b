@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install
-DESCRIPTION=C Cross Referencing & Documenting tool
-EAPI=0
-HOMEPAGE=http://www.gedanken.demon.co.uk/cxref/
-KEYWORDS=~x86
-LICENSE=GPL-2
-SLOT=0
-SRC_URI=http://www.gedanken.demon.co.uk/download-cxref/cxref-1.6b.tgz
-_md5_=09a55a4c85b51b6b2a7d93ad88ee8103

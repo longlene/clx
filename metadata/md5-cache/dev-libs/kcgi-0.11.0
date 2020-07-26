@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure install prepare unpack
+DEPEND=dev-libs/libbsd
+DESCRIPTION=minimal CGI and FastCGI library in C
+EAPI=6
+HOMEPAGE=https://kristaps.bsd.lv/kcgi
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=ISC
+RDEPEND=dev-libs/libbsd
+SLOT=0
+SRC_URI=https://github.com/kristapsdz/kcgi/archive/VERSION_0_11_0.tar.gz -> kcgi-0.11.0.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=6a7acda490e693c68c702a630d03b380

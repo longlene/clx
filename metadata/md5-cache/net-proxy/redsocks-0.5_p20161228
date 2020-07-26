@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install setup unpack
+DEPEND=dev-libs/libevent:0= virtual/pkgconfig
+DESCRIPTION=Transparent redirector of any TCP connection to proxy
+EAPI=6
+HOMEPAGE=http://darkk.net.ru/redsocks/
+IUSE=doc
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0 LGPL-2.1+ ZLIB
+RDEPEND=dev-libs/libevent:0= net-firewall/iptables
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/darkk/redsocks/archive/27b17889a43e32b0c1162514d00967e6967d41bb.tar.gz -> redsocks-0.5_p20161228.tar.gz
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	user	7b7fc6ec5eb1c1eee55b0609f01e7362	user-info	a2abd4e2f4c3b9b06d64bf1329359a02	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=0bef082b2101415cd42301e69370c6d9

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Erlang client for the etcd API v3
+EAPI=6
+HOMEPAGE=https://github.com/zhongwencool/eetcd
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-erlang/gun dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/zhongwencool/eetcd/archive/0.1.0.tar.gz -> eetcd-0.1.0.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=bd6324018bfb8195b4baba592bf3989c

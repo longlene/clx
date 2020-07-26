@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DESCRIPTION=A naive, persisted, in memory data store for Common Lisp
+EAPI=7
+HOMEPAGE=https://gitlab.com/Harag/cl-naive-store
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/cl-fad dev-lisp/split-sequence dev-lisp/uuid dev-lisp/local-time
+SLOT=0
+SRC_URI=https://gitlab.com/Harag/cl-naive-store/repository/archive.tar.gz?ref=34971cd3e33237acb3d1aab11705bd6b05fa83d5 -> cl-naive-store-2019.11.10_p20191204.tar.gz
+_md5_=f5a90275c76421b1d5ad52591c9d2071

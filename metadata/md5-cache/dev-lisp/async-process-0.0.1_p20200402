@@ -1,0 +1,13 @@
+BDEPEND=>=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=async process
+EAPI=7
+HOMEPAGE=https://github.com/cxxxr/async-process
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lisp/cffi
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/cxxxr/async-process/archive/a8d15f20f39a737c4d05c53980533cd399c63c55.tar.gz -> async-process-0.0.1_p20200402.tar.gz
+_eclasses_=autotools	7d999b62b8749fad43fff00620cedf47	common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=8164321b27b82e8d39eed6d9db5e32ef

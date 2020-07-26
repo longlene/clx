@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Simple C++ reader for MNIST dataset
+EAPI=6
+HOMEPAGE=https://github.com/wichtounet/mnist
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/wichtounet/mnist/archive/3fecc3d77b24adbe05cf19c8193af48488759f0f.tar.gz -> mnist-0_p20170602.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=f33b67437bf42f95c0b281afdcb6b0d6

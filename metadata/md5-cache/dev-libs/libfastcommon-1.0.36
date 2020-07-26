@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=c common functions library extracted from FastDFS
+EAPI=6
+HOMEPAGE=https://github.com/happyfish100/libfastcommon
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=LLGPL
+SLOT=0
+SRC_URI=https://github.com/happyfish100/libfastcommon/archive/V1.0.36.tar.gz -> libfastcommon-1.0.36.tar.gz
+_md5_=baad8939313448f672c364d24172b1b0

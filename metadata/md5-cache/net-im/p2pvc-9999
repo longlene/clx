@@ -1,11 +1,12 @@
 DEFINED_PHASES=install unpack
-DEPEND=media-libs/opencv media-libs/portaudio sys-libs/ncurses dev-vcs/git
+DEPEND=media-libs/opencv media-libs/portaudio sys-libs/ncurses >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=A point to point color terminal video chat
 EAPI=5
 HOMEPAGE=https://github.com/mofarrell/p2pvc
 KEYWORDS=~amd64 ~x86 ~arm
 LICENSE=MIT
+PROPERTIES=live
 RDEPEND=media-libs/opencv media-libs/portaudio sys-libs/ncurses
 SLOT=0
-_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
-_md5_=3604887ed30ff8b06ccfb637e554166d
+_eclasses_=git-r3	8ec5b53812bce105ae7943930e4660f8
+_md5_=01dd3c8b00b3d4b495c336b74fa0acaf

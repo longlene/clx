@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Common Lisp library to provide a universal configuration layer
+EAPI=7
+HOMEPAGE=https://github.com/Shinmera/universal-config
+KEYWORDS=~amd64 ~x86
+LICENSE=Artistic-2.0
+RDEPEND=dev-lisp/cl-ppcre dev-lisp/parse-float
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Shinmera/universal-config/archive/956f69fdb4f91d993c09865346e0e6e1c7c662b2.tar.gz -> universal-config-1.0.0_p20180425.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=661909e2a6afaa12be766787142fe2d8

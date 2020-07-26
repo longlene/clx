@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=universal serialization engine
+EAPI=6
+HOMEPAGE=https://github.com/qicosmos/iguana
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+SLOT=0
+SRC_URI=https://github.com/qicosmos/iguana/archive/v0.09.tar.gz -> iguana-0.09.tar.gz
+_md5_=274b6cba46bb5e82c2570046fabdc75e

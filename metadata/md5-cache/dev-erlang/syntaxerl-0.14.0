@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=dev-lang/erlang
+DESCRIPTION=Syntax checker for Erlang
+EAPI=7
+HOMEPAGE=https://github.com/ten0s/syntaxerl
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lang/erlang
+SLOT=0
+SRC_URI=https://github.com/ten0s/syntaxerl/archive/0.14.0.tar.gz -> syntaxerl-0.14.0.tar.gz
+_md5_=35d8afa431d6404ff05377cef4cddc9c

@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=PEDA - Python Exploit Development Assistance for GDB
+EAPI=6
+HOMEPAGE=https://github.com/longld/peda
+KEYWORDS=~amd64 ~x86
+LICENSE=CC-BY-SA-3.0
+SLOT=0
+SRC_URI=https://github.com/longld/peda/archive/e0eb0af4bcf3eebc85fbef8934eebf0849ff505e.tar.gz -> peda-1.1_p20180526.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=98aaeb180177b859404ab45c9809d63c

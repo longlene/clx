@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Common Lisp Bindings for Google's Farmhash
+EAPI=6
+HOMEPAGE=https://github.com/macdavid313/cl-libfarmhash
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-libs/farmhash dev-lisp/cffi
+SLOT=0
+SRC_URI=https://github.com/macdavid313/cl-libfarmhash/archive/14f0b9d9b49759b37e0924b9aabf8f4681337968.tar.gz -> cl-libfarmhash-0.1_p20161007.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=63fb62809fc067890d0173b2d4e95e66

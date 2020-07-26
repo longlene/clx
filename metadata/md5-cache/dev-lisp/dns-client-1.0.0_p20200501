@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=A pure-lisp DNs record client
+EAPI=7
+HOMEPAGE=https://github.com/Shinmera/dns-client
+KEYWORDS=~amd64 ~x86
+LICENSE=ZLIB
+RDEPEND=dev-lisp/usocket dev-lisp/documentation-utils
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Shinmera/dns-client/archive/46507870bb96838d6e4335b171033fd33323dd98.tar.gz -> dns-client-1.0.0_p20200501.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=7b794fd5a9bfaec93944195d02a9aafa

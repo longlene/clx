@@ -1,0 +1,10 @@
+DEFINED_PHASES=install prepare unpack
+DESCRIPTION=GENie - Project generator tool
+EAPI=6
+HOMEPAGE=https://github.com/bkaradzic/GENie
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/bkaradzic/GENie/archive/63cb86a33423bcd9a6af8a012202a07c498ef3ec.tar.gz -> genie-0_p20171215.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=5cfdcfdf3a8b10f8fd9746cf9cc913a4

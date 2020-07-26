@@ -1,12 +1,13 @@
 DEFINED_PHASES=compile install test unpack
-DEPEND=media-libs/openal >=dev-lang/go-1.7:=
+DEPEND=media-libs/openal >=dev-lang/go-1.10
 DESCRIPTION=OpenAL bindings for Go
 EAPI=6
 HOMEPAGE=https://github.com/hajimehoshi/go-openal/
 KEYWORDS=~amd64 ~x86
 LICENSE=as-is
 RDEPEND=media-libs/openal
+RESTRICT=strip
 SLOT=0
 SRC_URI=https://github.com/hajimehoshi/go-openal/archive/74c458dbab5523248e7557496af3ba46e10d7080.tar.gz -> go-openal-0_p20170218.tar.gz
-_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_eclasses_=golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-build	dc25bafa8fc1305a4de66a0a448472e7	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b
 _md5_=edfa68a926d707eceb01e02f2f8fb579

@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=a Coroutine Library for C and Unix
+EAPI=6
+HOMEPAGE=http://swtch.com/libtask/
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/0intro/libtask/archive/45a3ae1e11efae99685e85fe58de5c05a6ca2953.tar.gz -> libtask-0_p20170728.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=4943aa235c159030cf8957d7959f6eab

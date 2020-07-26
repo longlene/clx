@@ -8,5 +8,5 @@ LICENSE=as-is
 RDEPEND=dev-lisp/sbcl
 SLOT=0
 SRC_URI=https://github.com/burtonsamograd/sxc/archive/7cb07881565d005a2a46ca3a44d8330e44e09076.tar.gz -> sxc-0_p20161226.tar.gz
-_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
 _md5_=b6ecb994f335ab5223d9b9540d243a41

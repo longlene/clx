@@ -7,5 +7,5 @@ LICENSE=Apache-2.0
 RDEPEND=dev-cpp/picojson
 SLOT=0
 SRC_URI=https://github.com/longlene/stout/archive/f08657642fa3923923344008e35976386937b62f.tar.gz -> stout-0_p20170410.tar.gz
-_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
 _md5_=607b172ef36eef5b1c677b4049a6ec78

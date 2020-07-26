@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.10
+DESCRIPTION=Go package to make lightweight ASCII line graph
+EAPI=6
+HOMEPAGE=https://github.com/guptarohit/asciigraph
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD-3
+RESTRICT=strip
+SLOT=0
+SRC_URI=https://github.com/guptarohit/asciigraph/archive/ac93c63bf1bb3bcee769aa858208ff9f9327d4fe.tar.gz -> asciigraph-0_p20180626.tar.gz
+_eclasses_=golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-build	dc25bafa8fc1305a4de66a0a448472e7	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b
+_md5_=bc455772dd41117d0426db2b86d582a3

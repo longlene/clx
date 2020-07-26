@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=RocksDB for Erlang
+EAPI=6
+HOMEPAGE=https://gitlab.com/barrel-db/erlang-rocksdb/
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://gitlab.com/barrel-db/erlang-rocksdb/-/archive/1.5.0/erlang-rocksdb-1.5.0.tar.gz -> rocksdb-1.5.0.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=48a5831722f1cae5e658f4da80fcd94b

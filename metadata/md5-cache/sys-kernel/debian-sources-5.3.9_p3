@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install postinst postrm preinst prepare prerm pretend setup
+DEPEND=virtual/libelf binary? ( >=sys-kernel/genkernel-3.4.40.7 ) btrfs? ( sys-fs/btrfs-progs sys-kernel/genkernel[btrfs] ) zfs? ( sys-fs/zfs ) luks? ( sys-kernel/genkernel[cryptsetup] )
+DESCRIPTION=Debian Sources (and optional binary kernel)
+EAPI=5
+HOMEPAGE=https://packages.debian.org/unstable/kernel/
+IUSE=binary btrfs custom-cflags ec2 luks lvm sign-modules zfs
+KEYWORDS=*
+LICENSE=GPL-2
+REQUIRED_USE=btrfs? ( binary ) custom-cflags? ( binary ) luks? ( binary ) lvm? ( binary ) sign-modules? ( binary ) zfs? ( binary )
+RESTRICT=binchecks strip mirror
+SLOT=debian-sources-5.3.9_p3
+SRC_URI=http://http.debian.net/debian/pool/main/l/linux/linux_5.3.9.orig.tar.xz http://http.debian.net/debian/pool/main/l/linux/linux_5.3.9-3.debian.tar.xz
+_eclasses_=check-reqs	7e3fd1855a5e1b50bb9e80827b3f672d	desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ltprune	2729691420b6deeda2a90b1f1183fb55	mount-boot	20014ae7a3e81eb2c65a4d4d86d2560d	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=502a78faac04b90d1c226bd8f13a202a

@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DEPEND=dev-db/oracle-instantclient dev-db/postgresql
+DESCRIPTION=PostgreSQL Foreign Data Wrapper for Oracle
+EAPI=6
+HOMEPAGE=http://laurenz.github.io/oracle_fdw/
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-db/oracle-instantclient dev-db/postgresql
+SLOT=0
+SRC_URI=https://github.com/laurenz/oracle_fdw/archive/ORACLE_FDW_2_0_0.tar.gz
+_md5_=d1ce33ff6b3e8a5825e0cf428c59d627

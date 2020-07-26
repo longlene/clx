@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=dev-libs/libyaml
+DESCRIPTION=YAML Object Model Layer - a DOM-like interface for YAML
+EAPI=6
+HOMEPAGE=https://github.com/h2o/yoml
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-libs/libyaml
+SLOT=0
+SRC_URI=https://github.com/h2o/yoml/archive/5d78aa949c0ddea0cc842a64123e8c54fddc2856.tar.gz -> yoml-0_p20190115.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=2e1adcfe261b503d92367851f3ed6aea

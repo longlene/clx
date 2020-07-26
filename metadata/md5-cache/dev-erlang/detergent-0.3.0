@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=An emulsifying Erlang SOAP library
+EAPI=6
+HOMEPAGE=https://github.com/devinus/detergent
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-erlang/erlsom dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/devinus/detergent/archive/0.3.0.tar.gz -> detergent-0.3.0.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=e776ea85d2039b9789f023b020eb56c3

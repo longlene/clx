@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Common Lisp Microsoft XLSX (Microsoft Excel) loader
+EAPI=7
+HOMEPAGE=https://github.com/defunkydrummer/lisp-xl
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/zip dev-lisp/cxml dev-lisp/xmls dev-lisp/cl-csv
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/defunkydrummer/lisp-xl/archive/47147c5035de7c1a1dfdcdd9e524295f9ec45365.tar.gz -> lisp-xl-0_p20180707.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=13aa6dce8501f5c787df959f489f3b1d

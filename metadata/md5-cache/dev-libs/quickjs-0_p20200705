@@ -1,0 +1,9 @@
+DEFINED_PHASES=install prepare
+DESCRIPTION=QuickJS Javascript Engine
+EAPI=7
+HOMEPAGE=https://bellard.org/quickjs/
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://bellard.org/quickjs/quickjs-2020-07-05.tar.xz
+_md5_=9ff1de073141937d6cbe44df5b47347e

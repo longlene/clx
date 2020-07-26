@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Stack trace visualizer
+EAPI=6
+HOMEPAGE=https://github.com/brendangregg/FlameGraph/
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/brendangregg/FlameGraph/archive/15184018a0aaf8fc72d50800b46bd0c4d194ea38.tar.gz -> flamegraph-0_p20170525.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=89409951c4ad79de223677ed902c8ef1

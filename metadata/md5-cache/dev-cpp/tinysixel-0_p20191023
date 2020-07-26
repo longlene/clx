@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=A tiny header-only C++ library for Sixel
+EAPI=7
+HOMEPAGE=https://github.com/ushitora-anqou/tinysixel
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/ushitora-anqou/tinysixel/archive/68674729a232c0c31d404fe87ceef5cf1fea15a6.tar.gz -> tinysixel-0_p20191023.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=a44aae66c736514c7ffec2fd39333fed

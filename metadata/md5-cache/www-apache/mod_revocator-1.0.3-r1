@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install postinst prepare setup
-DEPEND=sys-devel/bison sys-devel/flex dev-util/pkgconfig dev-libs/nss[revocator] dev-libs/nspr net-nds/openldap www-apache/mod_nss =www-servers/apache-2.2* >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DEPEND=sys-devel/bison sys-devel/flex dev-util/pkgconfig dev-libs/nss[revocator] dev-libs/nspr net-nds/openldap www-apache/mod_nss =www-servers/apache-2.2* >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
 DESCRIPTION=Apache 2 module that lets the user configure remote CRL
 EAPI=2
 HOMEPAGE=http://directory.fedoraproject.org/wiki/Mod_revocator
@@ -8,5 +8,5 @@ LICENSE=Apache-2.0
 RDEPEND=dev-libs/nss[revocator] dev-libs/nspr net-nds/openldap www-apache/mod_nss =www-servers/apache-2.2*
 SLOT=0
 SRC_URI=http://directory.fedoraproject.org/sources/mod_revocator-1.0.3.tar.gz
-_eclasses_=apache-module	bd30ba4d834196e81cf2b76c52d26b93	autotools	07e71b3b5690738ef7e8bc097077e00c	depend.apache	0917334d570e07f9743a04ff85b3bf1b	libtool	e32ea84bf82cf8987965b574672dba93	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_eclasses_=apache-module	bd30ba4d834196e81cf2b76c52d26b93	autotools	7d999b62b8749fad43fff00620cedf47	depend.apache	05ca915dc22ea60059f85d8d9a34d3de	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=20deb5bcd1d250c8656bb482a0988e40

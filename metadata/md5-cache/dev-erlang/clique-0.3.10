@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=CLI Framework for Erlang
+EAPI=6
+HOMEPAGE=https://github.com/basho/clique
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-erlang/cuttlefish dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/basho/clique/archive/0.3.10.tar.gz -> clique-0.3.10.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=7854d621b21e122be220df8b8ef767a0

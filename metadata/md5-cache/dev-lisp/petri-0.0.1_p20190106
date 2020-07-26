@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Implementation of Petri nets in Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/phoe/petri/
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/alexandria dev-lisp/closer-mop dev-lisp/1am dev-lisp/split-sequence dev-lisp/phoe-toolbox
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/phoe/petri/archive/2717b8b15bb973220906c80fcc5da43900654596.tar.gz -> petri-0.0.1_p20190106.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=830b70e9efab4c6f5a17f05592246c39

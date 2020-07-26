@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=Open PacKaGe Management
-EAPI=5
-HOMEPAGE=https://code.google.com/p/opkg/
-KEYWORDS=~amd64 ~x86
-LICENSE=GPL-2
-SLOT=0
-SRC_URI=http://downloads.yoctoproject.org/releases/opkg/opkg-0.3.0-rc2.tar.gz
-_md5_=87484f5283d43df5ae4474cde72b167d

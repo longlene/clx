@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Common Lisp library for function, method & macro overloading by parameter count
+EAPI=7
+HOMEPAGE=https://github.com/show-matz/CL-OVERLOAD
+KEYWORDS=~amd64 ~x86
+LICENSE=LLGPL
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/show-matz/CL-OVERLOAD/archive/4a0196299b3e6afbf575dc119a1679d9c819df24.tar.gz -> cl-overload-0.9.0_p20161224.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=166a77b93d31eb453163a5cd19dce5de

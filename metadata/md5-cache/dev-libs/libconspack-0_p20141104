@@ -1,0 +1,10 @@
+DEFINED_PHASES=configure unpack
+DESCRIPTION=Conspack implementation for C
+EAPI=6
+HOMEPAGE=https://github.com/conspack/libconspack
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=LGPL-2
+SLOT=0
+SRC_URI=https://github.com/conspack/libconspack/archive/2b30e51107013f1e58bbcc008d33c1cc1116cd5e.tar.gz -> libconspack-0_p20141104.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=ebdfc53f6e43b3751157dcf872af35ab

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=serial-port accessing library for Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/snmsts/cserial-port
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/cffi dev-lisp/trivial-features dev-lisp/trivial-gray-streams dev-lisp/osicat
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/snmsts/cserial-port/archive/c3dbc8e38dbfd84c5bb5292cf165f3a7a0a5cf4b.tar.gz -> cserial-port-0.0.3_p20200413.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=c5cda3434633d54a68332a5a211aea29

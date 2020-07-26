@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Stores your data in ICMP ping packets
+EAPI=6
+HOMEPAGE=https://github.com/yarrick/pingfs
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/yarrick/pingfs/archive/7b95200eba3406b5f05bdfe5b2090bfc164c60c0.tar.gz -> pingfs-0_p20160414.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=fad0524eb3cffd8f197763756023fc0c

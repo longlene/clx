@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare setup
+DEPEND=dev-libs/libfastcommon
+DESCRIPTION=FastDFS is an open source high performance distributed file system (DFS)
+EAPI=6
+HOMEPAGE=https://github.com/happyfish100/fastdfs
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-libs/libfastcommon
+SLOT=0
+SRC_URI=https://github.com/happyfish100/fastdfs/archive/V5.11.tar.gz -> fastdfs-5.11.tar.gz
+_eclasses_=user	7b7fc6ec5eb1c1eee55b0609f01e7362	user-info	a2abd4e2f4c3b9b06d64bf1329359a02
+_md5_=a570e875f8b50897c0758125856ca134

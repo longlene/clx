@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=Common Lisp and CXX interoperation
+EAPI=7
+HOMEPAGE=https://github.com/Islam0mar/cl-cxx
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-cpp/clcxx dev-lisp/cffi dev-lisp/trivial-garbage test? ( dev-lisp/prove )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Islam0mar/cl-cxx/archive/4375539002694d5cb9ae7e656bc5170139065a45.tar.gz -> cxx-1.0_p20200218.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=086b79618ae61863a043e4f6aa957f25

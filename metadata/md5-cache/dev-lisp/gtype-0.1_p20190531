@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=C++/Julia-like parametric types in CL
+EAPI=7
+HOMEPAGE=https://github.com/numcl/gtype
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL
+RDEPEND=dev-lisp/trivialib_type-unify dev-lisp/trivial-cltl2 dev-lisp/trivia dev-lisp/alexandria dev-lisp/iterate dev-lisp/type-r test? ( dev-lisp/fiveam )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/numcl/gtype/archive/42275e3606242ae91e9c8dfa30c18ced50a35b66.tar.gz -> gtype-0.1_p20190531.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=93b0582b4875478300623722282c4aab

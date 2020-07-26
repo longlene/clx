@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=Convert strings between camelCase, param-case, snake_case and more
+EAPI=7
+HOMEPAGE=https://github.com/rudolfochrist/cl-change-case
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=LLGPL
+RDEPEND=dev-lisp/cl-ppcre test? ( dev-lisp/fiveam )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/rudolfochrist/cl-change-case/archive/5ceff2a5f8bd845b6cb510c6364176b27a238fd3.tar.gz -> cl-change-case-0.1.0_p20190827.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=6e7430f336e49501d21f6c88ac476618

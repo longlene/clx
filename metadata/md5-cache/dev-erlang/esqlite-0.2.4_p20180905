@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Erlang NIF for sqlite
+EAPI=6
+HOMEPAGE=https://github.com/mmzeeman/esqlite
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/mmzeeman/esqlite/archive/ab25c2d2b67cd4aa09545a33599821467f277240.tar.gz -> esqlite-0.2.4_p20180905.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=daabccc42ad32bb40cfa83243e830316

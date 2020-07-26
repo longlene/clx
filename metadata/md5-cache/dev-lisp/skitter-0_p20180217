@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=A small event system for games
+EAPI=7
+HOMEPAGE=https://github.com/cbaggers/skitter
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD-2
+RDEPEND=dev-lisp/rtg-math dev-lisp/structy-defclass dev-lisp/glop dev-lisp/cl-sdl2
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/cbaggers/skitter/archive/620772ae6146d510a8d58d07cae055c06e5c8620.tar.gz -> skitter-0_p20180217.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=4b4a4e17ecbf03dd874fb5115c6944eb

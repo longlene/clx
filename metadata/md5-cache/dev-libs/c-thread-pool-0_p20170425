@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=A minimal but powerful thread pool in ANSI C
+EAPI=6
+HOMEPAGE=https://github.com/Pithikos/C-Thread-Pool
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/Pithikos/C-Thread-Pool/archive/430251cb657f82c9a94d4ed72db6f5ea2e30f5d9.tar.gz -> c-thread-pool-0_p20170425.tar.gz
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=d21426a60781675e4875813498bdd84a

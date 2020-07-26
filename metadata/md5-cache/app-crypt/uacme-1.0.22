@@ -1,0 +1,10 @@
+DEFINED_PHASES=-
+DESCRIPTION=ACMEv2 client written in plain C code with minimal dependencies
+EAPI=7
+HOMEPAGE=https://github.com/ndilieto/uacme/
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3.0
+RDEPEND=dev-libs/openssl net-misc/curl
+SLOT=0
+SRC_URI=https://github.com/ndilieto/uacme/archive/v1.0.22.tar.gz -> uacme-1.0.22.tar.gz
+_md5_=319af76ae6f61272918898b65323d28b

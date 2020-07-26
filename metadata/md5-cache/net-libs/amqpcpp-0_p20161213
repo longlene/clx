@@ -1,0 +1,12 @@
+DEFINED_PHASES=install unpack
+DEPEND=net-libs/rabbitmq-c
+DESCRIPTION=rabbitcpp is a C++ library for Message Queue Server RabbitMQ
+EAPI=6
+HOMEPAGE=https://github.com/akalend/amqpcpp
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=net-libs/rabbitmq-c
+SLOT=0
+SRC_URI=https://github.com/akalend/amqpcpp/archive/5a9eaa45171b9bd07cc25319e8a2ab93c2e8c89a.tar.gz -> amqpcpp-0_p20161213.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=2328cf0318502e69ea9fd033d46c5702

@@ -1,9 +1,0 @@
-DEFINED_PHASES=install prepare unpack
-DEPEND=dev-vcs/git
-DESCRIPTION=simple C Compiler
-EAPI=5
-HOMEPAGE=http://git.suckless.org/scc/tree/
-LICENSE=MIT
-SLOT=0
-_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
-_md5_=b5a6b7839fa4aae02ae4d9b21ff15249

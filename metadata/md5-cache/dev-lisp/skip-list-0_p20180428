@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Skip List Implementations
+EAPI=7
+HOMEPAGE=https://github.com/Seteeri/skip-list
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Seteeri/skip-list/archive/61c4852798b84df7429cdd559ff464ce1162be42.tar.gz -> skip-list-0_p20180428.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=bc9aef5c5a8a3f1e64f83cc4c3168feb

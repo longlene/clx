@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DEPEND=dev-libs/json-gli1b net-im/pidgin
+DESCRIPTION=Libpurple protocol plugin for matrix
+EAPI=6
+HOMEPAGE=https://github.com/matrix-org/purple-matrix
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=GPL-2.0
+RDEPEND=dev-libs/json-gli1b net-im/pidgin
+SLOT=0
+SRC_URI=https://github.com/matrix-org/purple-matrix/archive/v0.0.0.tar.gz -> purple-matrix-0.0.0.tar.gz
+_md5_=cc1ca00f4b854f6560167f5d0762c772

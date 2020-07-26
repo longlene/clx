@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Execute Javascript from Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/LowH/exec-js
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lisp/alexandria dev-lisp/cl-json dev-lisp/external-program
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/LowH/exec-js/archive/ec54cbe16ade1e6ed1bbbfcf093cd311af19f545.tar.gz -> exec-js-0.1_p20121026.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=f167ee6359415819bd38a505f7534405

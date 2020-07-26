@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=cpptoml is a header-only library for parsing TOML
-EAPI=5
-HOMEPAGE=https://github.com/skystrife/cpptoml
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=as-is
-SLOT=0
-SRC_URI=https://github.com/skystrife/cpptoml/archive/toml-v0.4.0.tar.gz -> cpptoml-0.4.0.tar.gz
-_md5_=7620c4e11347c94b4f4855d6efdbce85

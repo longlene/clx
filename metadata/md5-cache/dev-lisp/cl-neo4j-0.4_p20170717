@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=interface to neo4j for Common Lisp
+EAPI=6
+HOMEPAGE=https://github.com/kraison/cl-neo4j
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-lisp/alexandria dev-lisp/anaphora dev-lisp/split-sequence dev-lisp/drakma dev-lisp/babel dev-lisp/cl-json dev-lisp/cl-ppcre dev-lisp/fiveam
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/kraison/cl-neo4j/archive/f74c835d81b5c41581ae8f80959a6a186413efc8.tar.gz -> cl-neo4j-0.4_p20170717.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=e06372be15dcdf2db30d8d66b8877f89

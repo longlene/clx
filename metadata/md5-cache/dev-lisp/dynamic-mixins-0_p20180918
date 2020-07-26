@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Simple, dynamic class combination for CLOS
+EAPI=7
+HOMEPAGE=https://github.com/rpav/dynamic-mixins
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD-2
+RDEPEND=dev-lisp/alexandria dev-lisp/closer-mop
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/rpav/dynamic-mixins/archive/7cc09bee7d68527f37406671fabe910e8235b746.tar.gz -> dynamic-mixins-0_p20180918.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=61bed153a2902489061faa2cf5048ee1

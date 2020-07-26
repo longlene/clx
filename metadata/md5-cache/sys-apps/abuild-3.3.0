@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=Build script to build Alpine packages
+EAPI=6
+HOMEPAGE=https://github.com/alpinelinux/abuild
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/alpinelinux/abuild/archive/v3.3.0.tar.gz -> abuild-3.3.0.tar.gz
+_md5_=dc0f3de6485b1f29e66c8135d76fdc56

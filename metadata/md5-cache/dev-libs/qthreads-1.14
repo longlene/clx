@@ -1,0 +1,11 @@
+DEFINED_PHASES=prepare
+DEPEND=>=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=Lightweight locally-aware user-level threading runtime
+EAPI=6
+HOMEPAGE=http://www.cs.sandia.gov/qthreads/
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/Qthreads/qthreads/archive/1.14.tar.gz -> qthreads-1.14.tar.gz
+_eclasses_=autotools	7d999b62b8749fad43fff00620cedf47	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
+_md5_=3846bf1771916b56f85e7f91dfa16ac4

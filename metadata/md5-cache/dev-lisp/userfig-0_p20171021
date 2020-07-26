@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=User settings management middleware for Clack
+EAPI=6
+HOMEPAGE=https://github.com/BnMcGn/userfig
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-lisp/alexandria dev-lisp/anaphora dev-lisp/gadgets dev-lisp/ubiquitous-concurrent dev-lisp/lack dev-lisp/parenscript dev-lisp/cl-react dev-lisp/ps-gadgets dev-lisp/cl-json dev-lisp/webhax-validate dev-lisp/webhax-core dev-lisp/webhax-route dev-lisp/webhax-widgets dev-lisp/http-body dev-lisp/cl-who
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/BnMcGn/userfig/archive/4643fe5c9aff54b1e59704c26312e4a060163ce0.tar.gz -> userfig-0_p20171021.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=ed76de9f24b715f49f6f870f1d823034

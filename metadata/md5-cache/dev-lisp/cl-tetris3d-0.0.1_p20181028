@@ -1,0 +1,12 @@
+BDEPEND=dev-lisp/cl-opengl dev-lisp/lispbuilder-sdl dev-lisp/cl-glu dev-lisp/iterate
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Yet another 3D Tetris clone
+EAPI=7
+HOMEPAGE=https://github.com/grouzen/cl-tetris3d
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/grouzen/cl-tetris3d/archive/0abcfca715456589b027aac20b875b00abdd5f18.tar.gz -> cl-tetris3d-0.0.1_p20181028.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=b31b069ecb53e27f418970bfeafd884e

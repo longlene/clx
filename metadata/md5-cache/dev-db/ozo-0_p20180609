@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=header-only library for asyncronous communication with PostgreSQL
+EAPI=6
+HOMEPAGE=https://github.com/yandex/ozo
+KEYWORDS=~amd64 ~x86
+LICENSE=PostgreSQL
+RDEPEND=dev-db/postgresql dev-db/resource_pool
+SLOT=0
+SRC_URI=https://github.com/yandex/ozo/archive/33d1aa06cf6b22e138921eb969873c25f2b3061d.tar.gz -> ozo-0_p20180609.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=7e2a8a4fad6c44687c857e9fe076849c

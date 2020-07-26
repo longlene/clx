@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=A web crawling framework in Common Lisp
+EAPI=5
+HOMEPAGE=https://github.com/eudoxia0/arachne
+IUSE=test
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/drakma dev-lisp/plump dev-lisp/clss dev-lisp/xpath dev-lisp/cxml-stp dev-lisp/trivial-types dev-lisp/local-time dev-lisp/cl-mop test? ( dev-lisp/fiveam dev-lisp/lucerne )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/eudoxia0/arachne/archive/5ad8f88101f491d169149afb047eefa44a39c8d6.tar.gz -> arachne-0.1_p20150127.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=f36c0216b3dabde458282f9e3aa9e07d

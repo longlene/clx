@@ -1,8 +1,0 @@
-DEFINED_PHASES=install unpack
-DEPEND=dev-vcs/git
-DESCRIPTION=The Wren Programming Language
-EAPI=5
-HOMEPAGE=https://github.com/munificent/wren
-SLOT=0
-_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
-_md5_=d67830b331d0b2880dbc697859a31d44

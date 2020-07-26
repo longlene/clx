@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=markdown processor in CL using esrap parser
+EAPI=7
+HOMEPAGE=https://github.com/3b/3bmd
+IUSE=test
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/alexandria dev-lisp/esrap dev-lisp/split-sequence dev-lisp/colorize dev-lisp/uiop test? ( dev-lisp/fiasco )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/3b/3bmd/archive/66f2cb8fed98925b37a89978c3dff26b85f3a5da.tar.gz -> 3bmd-0_p20200424.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=b404831523ce12697822f349a3f22718

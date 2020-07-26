@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Business Processes Engine
+EAPI=6
+HOMEPAGE=https://github.com/synrc/bpe
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=>=dev-erlang/bert-2.4 >=dev-erlang/nitro-4.4 dev-erlang/cowboy dev-erlang/n2o dev-erlang/forms dev-erlang/kvs >=dev-erlang/syn-1.5.0 dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/synrc/bpe/archive/4.12.tar.gz -> bpe-4.12.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=a57b35449385493af848d761a21c62ac

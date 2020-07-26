@@ -1,0 +1,11 @@
+BDEPEND=dev-lisp/sbcl
+DEFINED_PHASES=install unpack
+DESCRIPTION=A script to evaluate lisp expressions in multiple implementations
+EAPI=7
+HOMEPAGE=https://github.com/Shinmera/cl-all/
+KEYWORDS=~amd64 ~x86
+LICENSE=Artistic
+SLOT=0
+SRC_URI=https://github.com/Shinmera/cl-all/archive/ce0865009057b2b152d935caeea5acc3b9a7aaa9.tar.gz -> cl-all-1.0.0_p20190221.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=7cc46a8cc6835fc014789e1f9a8ce8e2

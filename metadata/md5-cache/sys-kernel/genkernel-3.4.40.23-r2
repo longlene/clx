@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install postinst prepare unpack
+DEPEND=sys-fs/e2fsprogs selinux? ( sys-libs/libselinux )
+DESCRIPTION=Gentoo automatic kernel building scripts
+EAPI=3
+HOMEPAGE=http://www.gentoo.org
+IUSE=btrfs cryptsetup ibm selinux
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=sys-fs/e2fsprogs selinux? ( sys-libs/libselinux ) btrfs? ( sys-fs/btrfs-progs ) cryptsetup? ( sys-fs/cryptsetup[static] ) sys-fs/lvm2[static] sys-fs/mdadm app-misc/pax-utils !<sys-apps/openrc-0.9.9
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://www.github.com/funtoo/genkernel/tarball/7b2034d877dd535012943ec3b6701ffb31bbc811 -> genkernel-7b2034d877dd535012943ec3b6701ffb31bbc811.tar.gz mirror://funtoo/dmraid-1.0.0.rc16-3.tar.bz2 mirror://funtoo/busybox-1.21.1.tar.bz2 https://github.com/open-iscsi/open-iscsi/archive/2.0.877.tar.gz -> open-iscsi-2.0.877.tar.gz mirror://funtoo/e2fsprogs-1.42.tar.gz mirror://funtoo/fuse-2.8.6.tar.gz mirror://funtoo/unionfs-fuse-0.24.tar.bz2 mirror://funtoo/gnupg-1.4.11.tar.bz2
+_eclasses_=bash-completion-r1	e5f9c3faab3ab3d1e7e007daa8c736ef	desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=a77a59c8459f39a353447b3b1b4c8a7b

@@ -1,0 +1,11 @@
+DEFINED_PHASES=unpack
+DESCRIPTION=Extremely simple yet powerful header-only C++ plotting library built on the popular matplotlib
+EAPI=6
+HOMEPAGE=https://github.com/lava/matplotlib-cpp
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-python/matplotlib
+SLOT=0
+SRC_URI=https://github.com/lava/matplotlib-cpp/archive/5dd719498b7c22c2c1f1aef839436bc5e6a8dfa4.tar.gz -> matplotlib-cpp-0_p20190703.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=489e3c2c050c263dc79e8b2d045021a2

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=AWS Lambda in Erlang
+EAPI=6
+HOMEPAGE=https://github.com/alertlogic/erllambda
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-erlang/jsone dev-erlang/lhttpc dev-erlang/erlcloud dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/alertlogic/erllambda/archive/2.2.0.tar.gz -> erllambda-2.2.0.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=bc7162df87e7def75d993efcb98ba298

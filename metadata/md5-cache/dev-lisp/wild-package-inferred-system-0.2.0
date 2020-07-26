@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=introduces wildcard into ASDF package-inferred-system
+EAPI=7
+HOMEPAGE=https://github.com/privet-kitty/wild-package-inferred-system
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=test? ( dev-lisp/fiveam )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/privet-kitty/wild-package-inferred-system/archive/v0.2.0.tar.gz -> wild-package-inferred-system-0.2.0.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=61a4604bd0d07d7bf3a142a8f1adcfd1

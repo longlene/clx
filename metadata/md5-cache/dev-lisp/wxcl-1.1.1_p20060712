@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Common Lisp bindings to wxWidgets Library
+EAPI=7
+HOMEPAGE=https://github.com/lisp-mirror/wxcl
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/lisp-mirror/wxcl/archive/46ddd151770965df87033805c249a2df4f40a65f.tar.gz -> wxcl-1.1.1_p20060712.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=b172f7be995d6a6e33aa8d1d9c80e2a6

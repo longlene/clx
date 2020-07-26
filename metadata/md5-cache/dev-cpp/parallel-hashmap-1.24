@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=A header-only, very fast and memory-friendly hash map
+EAPI=7
+HOMEPAGE=https://github.com/greg7mdp/parallel-hashmap
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+SLOT=0
+SRC_URI=https://github.com/greg7mdp/parallel-hashmap/archive/1.24.tar.gz -> parallel-hashmap-1.24.tar.gz
+_md5_=900b764dc52ba5845178d348be3458f5

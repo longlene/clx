@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare
+DESCRIPTION=Numpy clone in Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/numcl/numcl
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-3
+RDEPEND=dev-lisp/trivia dev-lisp/alexandria dev-lisp/iterate dev-lisp/type-r dev-lisp/constantfold dev-lisp/lisp-namespace dev-lisp/cl-randist dev-lisp/float-features dev-lisp/specialized-function dev-lisp/gtype test? ( dev-lisp/fiveam )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/numcl/numcl/archive/v0.1.0.tar.gz -> numcl-0.1.0.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5
+_md5_=aa86a59b800ad3fa9aa9eafa1e0e86b0

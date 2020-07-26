@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-erlang/bson dev-erlang/pbkdf2 dev-erlang/poolboy dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=MongoDB driver for Erlang
+EAPI=6
+HOMEPAGE=https://github.com/comtihon/mongodb-erlang
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-erlang/bson dev-erlang/pbkdf2 dev-erlang/poolboy dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/comtihon/mongodb-erlang/archive/v3.2.0.tar.gz -> mongodb-erlang-3.2.0.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=1b706d7cb5d26d13e2871ee6da3fb967

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare
+DESCRIPTION=Data validation library for common lisp
+EAPI=7
+HOMEPAGE=https://github.com/fisxoj/validate
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-3.0
+RDEPEND=dev-lisp/iterate dev-lisp/cl-ppcre dev-lisp/alexandria dev-lisp/local-time test? ( dev-lisp/prove )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/fisxoj/validate/archive/0.8.0.tar.gz -> validate-0.8.0.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5
+_md5_=c2d58d968987c98b54245ae3a862dedb

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Light Weight Event System Erlang library
+EAPI=6
+HOMEPAGE=https://github.com/lwes/lwes-erlang
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/lwes/lwes-erlang/archive/4.7.0.tar.gz -> lwes-4.7.0.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=a7904aa982334118a4a2a2d124cd0a5f

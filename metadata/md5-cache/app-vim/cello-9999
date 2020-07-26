@@ -1,9 +1,0 @@
-DEFINED_PHASES=install postinst postrm unpack
-DEPEND=|| ( >=app-editors/vim-7.3 >=app-editors/gvim-7.3 ) dev-vcs/git
-DESCRIPTION=vim plugin: syntax highlight for libCello
-EAPI=5
-HOMEPAGE=http://www.vim.org/scripts/script.php?script_id=
-RDEPEND=|| ( >=app-editors/vim-7.3 >=app-editors/gvim-7.3 )
-SLOT=0
-_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4	vim-doc	af2c81a1feeb0a99e91bee3e20769edb	vim-plugin	6f0171b0a2f2fce005c13b4c0685a0d8
-_md5_=05747c8aae28d13a6f2bf1b0328e7583

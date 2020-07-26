@@ -1,12 +1,13 @@
 DEFINED_PHASES=compile install unpack
-DEPEND=dev-vcs/git
+DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Common Lisp interface to unix rlimit
 EAPI=4
 HOMEPAGE=https://github.com/guicho271828/cl-rlimit
 KEYWORDS=~amd64 ~x86 ~arm
 LICENSE=as-is
+PROPERTIES=live
 RDEPEND=dev-lisp/cffi
 RESTRICT=mirror
 SLOT=0
-_eclasses_=common-lisp-3	e3b01fd04bd5f6e4c79e470ea00b97a8	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	git-2	7af5d170bfc02983b4bcd3167dc5edd4	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
-_md5_=570c4b2438bfd78d9b55d8fc008e6445
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	git-r3	8ec5b53812bce105ae7943930e4660f8	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=6512ed7b999b753e32137f89087fdf10

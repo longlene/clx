@@ -1,0 +1,10 @@
+DEFINED_PHASES=configure install unpack
+DESCRIPTION=Formatted C++17 stdlib man pages
+EAPI=6
+HOMEPAGE=https://github.com/jeaye/stdman
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/jeaye/stdman/archive/58843c4c43f618469f624bc135fba742984c227c.tar.gz -> stdman-0.2_p20170403.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=cf77ea3efc455c110f3d62aac9eba287

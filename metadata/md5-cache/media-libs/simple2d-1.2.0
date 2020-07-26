@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=media-libs/libsdl2 media-libs/sdl2-image media-libs/sdl2-mixer media-libs/sdl2-ttf
+DESCRIPTION=A simple 2D graphics engine
+EAPI=7
+HOMEPAGE=http://simple2d.com
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=media-libs/libsdl2 media-libs/sdl2-image media-libs/sdl2-mixer media-libs/sdl2-ttf
+SLOT=0
+SRC_URI=https://github.com/simple2d/simple2d/archive/v1.2.0.tar.gz -> simple2d-1.2.0.tar.gz
+_md5_=8738bf5f103fbcfaea34cfbb55863d92

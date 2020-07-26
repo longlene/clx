@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Charset encoding/decoding layer for cl-stream using babel
+EAPI=7
+HOMEPAGE=https://github.com/cl-stream/babel-stream
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lisp/babel dev-lisp/cl-stream
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/cl-stream/babel-stream/archive/146d70f643160ee5dbee1541572bd74487c8c979.tar.gz -> babel-stream-0.1_p20190306.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=beece4b462b2de9bddef96abcd1e4d22

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=A Doom like game made in Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/Th30n/cl-shake
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2.0
+RDEPEND=dev-lisp/cl-sdl2 dev-lisp/alexandria dev-lisp/iterate dev-lisp/metabang-bind dev-lisp/cl-opengl dev-lisp/cffi dev-lisp/cl-ppcre test? ( dev-lisp/prove )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Th30n/cl-shake/archive/80f1badd1a024bda04a5a91342a98ce1a7760772.tar.gz -> cl-shake-0.0.1_p20181216.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=a38731e99143d1c17fa77a1fb5d116d8

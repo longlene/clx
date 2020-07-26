@@ -1,0 +1,10 @@
+DEFINED_PHASES=install prepare setup unpack
+DESCRIPTION=A Layer Two Peer-to-Peer VPN
+EAPI=6
+HOMEPAGE=http://www.ntop.org/n2n/
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=GPL-3
+SLOT=0
+SRC_URI=https://github.com/ntop/n2n/archive/21055550f3392235a1b41d71257e9dc9ead0dfa0.tar.gz -> n2n-2.1_p20170704.tar.gz
+_eclasses_=user	7b7fc6ec5eb1c1eee55b0609f01e7362	user-info	a2abd4e2f4c3b9b06d64bf1329359a02	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=7cd98512e8457275d6326543ea5dcb3b

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=A Common Lisp client library for Mastodon instances
+EAPI=7
+HOMEPAGE=https://github.com/Shinmera/tooter
+KEYWORDS=~amd64 ~x86
+LICENSE=Artistic-2.0
+RDEPEND=dev-lisp/yason dev-lisp/cl-ppcre dev-lisp/drakma dev-lisp/documentation-utils
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Shinmera/tooter/archive/eece046ac5d8f819f286bbe0cd85170b988f0327.tar.gz -> tooter-1.0.0_p20180914.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=38ce0fc87d6c0a06ecefd4d6a81f9613

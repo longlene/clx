@@ -1,11 +1,12 @@
 DEFINED_PHASES=compile install test unpack
-DEPEND=>=dev-lang/go-1.7:=
+DEPEND=>=dev-lang/go-1.10
 DESCRIPTION=PopCount implementation for Go
 EAPI=6
 HOMEPAGE=https://github.com/hideo55/go-popcount
 KEYWORDS=~amd64 ~arm ~x86
 LICENSE=MIT
+RESTRICT=strip
 SLOT=0
 SRC_URI=https://github.com/hideo55/go-popcount/archive/595b756335658a52da3522b464ee1ef1f17679c2.tar.gz -> go-popcount-0_p20160106.tar.gz
-_eclasses_=golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db
+_eclasses_=golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-build	dc25bafa8fc1305a4de66a0a448472e7	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b
 _md5_=e5aafbd2498f603905276c13855b8d51

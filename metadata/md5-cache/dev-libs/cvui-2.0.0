@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DESCRIPTION=A (very) simple UI lib built on top of OpenCV drawing primitives
+EAPI=6
+HOMEPAGE=https://github.com/Dovyski/cvui
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=media-libs/opencv
+SLOT=0
+SRC_URI=https://github.com/Dovyski/cvui/archive/v2.0.0.tar.gz -> cvui-2.0.0.tar.gz
+_md5_=68013eab2eb5030b65b4b26b0bc22ca3

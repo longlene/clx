@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile install postinst preinst setup unpack
-DEPEND=sys-devel/gcc sys-devel/make net-www/apache dev-libs/libpcre net-analyzer/rrdtool media-libs/libpng ssl? ( dev-libs/openssl ) ldap? ( net-nds/openldap ) fping? ( net-analyzer/fping ) >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DEPEND=sys-devel/gcc sys-devel/make net-www/apache dev-libs/libpcre net-analyzer/rrdtool media-libs/libpng ssl? ( dev-libs/openssl ) ldap? ( net-nds/openldap ) fping? ( net-analyzer/fping ) >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.1 >=sys-devel/automake-1.15.1 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
 DESCRIPTION=Tool for monitoring servers, applications and networks.
 EAPI=0
 HOMEPAGE=http://hobbitmon.sourceforge.net/
@@ -8,5 +8,5 @@ KEYWORDS=~x86
 LICENSE=GPL-2
 SLOT=0
 SRC_URI=mirror://sourceforge/hobbitmon/hobbit-4.2.0.tar.gz
-_eclasses_=autotools	07e71b3b5690738ef7e8bc097077e00c	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	35067884fbff37bc0c8e7421c5315558	libtool	e32ea84bf82cf8987965b574672dba93	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_eclasses_=autotools	7d999b62b8749fad43fff00620cedf47	desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	f1194291b9a1baca337c1c89b5f7f365	libtool	f143db5a74ccd9ca28c1234deffede96	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
 _md5_=b1b72841fede593e1c8b4000429dfe2c

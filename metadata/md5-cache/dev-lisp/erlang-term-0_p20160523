@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=Common Lisp implementation of the Erlang External Term Format
+EAPI=7
+HOMEPAGE=https://github.com/flambard/cl-erlang-term
+IUSE=test
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=MIT
+RDEPEND=dev-lisp/alexandria dev-lisp/ieee-floats dev-lisp/nibbles dev-lisp/zlib
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/flambard/cl-erlang-term/archive/2402a7c1ecc146b3f65fe9ee74958835e4d8f435.tar.gz -> erlang-term-0_p20160523.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=33b148ef10e233dd57671f56ce565f39

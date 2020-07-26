@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=Simple CFFI Foreign Pointer Wrapper for Type Checking
+EAPI=7
+HOMEPAGE=https://github.com/lispnik/pffft
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/cffi dev-lisp/trivial-garbage test? ( dev-lisp/rt )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/lispnik/pffft/archive/a24a8cad2b6dd683fe2280bbc2016cbada3c83bf.tar.gz -> pffft-0.1_p20190523.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=9834527ce3f3175ec211ff6238bb6fd1

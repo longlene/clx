@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Provides convenient access to multiple values of an object
+EAPI=7
+HOMEPAGE=https://www.hexstreamsoft.com/libraries/its/
+KEYWORDS=~amd64 ~x86
+LICENSE=public-domain
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Hexstream/its/archive/v1.0.tar.gz -> its-1.0.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5
+_md5_=edf9737a1a0a379c891cd07c8a778b01

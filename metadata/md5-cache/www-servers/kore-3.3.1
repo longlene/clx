@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DEPEND=sys-libs/zlib ssl? ( dev-libs/openssl ) postgres? ( dev-db/postgresql )
+DESCRIPTION=An easy to use web platform for writing scalable, concurrent APIs in C or Python
+EAPI=6
+HOMEPAGE=https://kore.io
+IUSE=debug postgres +ssl +threads
+KEYWORDS=~amd64 ~x86 ~arm
+LICENSE=ISC
+RDEPEND=sys-libs/zlib ssl? ( dev-libs/openssl ) postgres? ( dev-db/postgresql )
+SLOT=0
+SRC_URI=https://kore.io/releases/kore-3.3.1.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=1b6bf9e962af47a2e83ad64403168d6f

@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=A bridge between Common Lisp and GObject
-EAPI=4
-HOMEPAGE=https://github.com/andy128k/cl-gobject-introspection
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=BSD
-RDEPEND=dev-lisp/cffi dev-lisp/iterate
-SLOT=0
-_md5_=f8b0d8b12571fb85b947fd0544fac54a

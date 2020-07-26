@@ -1,9 +1,0 @@
-DEFINED_PHASES=configure install
-DESCRIPTION=The Generic PreProcessor
-EAPI=5
-HOMEPAGE=http://www.owl-s.org/tools.en.html#gpp
-KEYWORDS=~x86
-LICENSE=LGPL-2.1
-SLOT=0
-SRC_URI=http://www.owl-s.org/zip/homepage/gpp-2.30.tar.gz
-_md5_=13e6962afba191e0546a98474dd4fc08

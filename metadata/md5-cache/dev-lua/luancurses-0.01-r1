@@ -9,5 +9,5 @@ LICENSE=as-is
 RDEPEND=>=dev-lang/lua-5.1
 SLOT=0
 SRC_URI=http://luaforge.net/frs/download.php/3224/LuaNcurses-0.01.tar.gz
-_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=21ba2cf634ebb1488eaedc59a1ecaf36

@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DEPEND=dev-scheme/guile
+DESCRIPTION=nyacc parser generator
+EAPI=7
+HOMEPAGE=http://www.nongnu.org/nyacc/
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL
+RDEPEND=dev-scheme/guile
+SLOT=0
+SRC_URI=mirror://nongnu/nyacc/nyacc-0.99.0.tar.gz
+_md5_=7d7e4f40d13b553b0685412d418be6f5

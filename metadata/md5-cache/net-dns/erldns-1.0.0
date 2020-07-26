@@ -1,0 +1,11 @@
+BDEPEND=|| ( dev-util/rebar:3 dev-util/rebar-bin )
+DEFINED_PHASES=compile install prepare
+DESCRIPTION=DNS server, in erlang
+EAPI=7
+HOMEPAGE=https://github.com/dnsimple/erldns
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RESTRICT=network-sandbox
+SLOT=0
+SRC_URI=https://github.com/dnsimple/erldns/archive/1.0.0.tar.gz -> erldns-1.0.0.tar.gz
+_md5_=893cdc350d06bb9a8ef115c8ad4bd891

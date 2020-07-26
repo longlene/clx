@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=Hypothetical Indexes for PostgreSQL
+EAPI=6
+HOMEPAGE=https://github.com/dalibo/hypopg
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/dalibo/hypopg/archive/1.1.0.tar.gz -> hypopg-1.1.0.tar.gz
+_md5_=0d91bd1951e652302db84d21f5c3523a

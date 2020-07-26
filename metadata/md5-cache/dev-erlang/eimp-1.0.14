@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=media-libs/gd[png,jpeg,webp] >=dev-lang/erlang-17.1 >=dev-erlang/p1_utils-1.0.11 dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Erlang Image Manipulation Process
+EAPI=6
+HOMEPAGE=https://github.com/processone/eimp
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=media-libs/gd[png,jpeg,webp] >=dev-lang/erlang-17.1 >=dev-erlang/p1_utils-1.0.11 dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/processone/eimp/archive/1.0.14.tar.gz -> eimp-1.0.14.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=f8bac38c2e87a7870bd8ff7cd25368d8

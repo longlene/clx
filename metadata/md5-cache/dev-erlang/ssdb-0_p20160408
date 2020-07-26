@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Erlang SSDB Client
+EAPI=6
+HOMEPAGE=https://github.com/kqqsysu/ssdb-erlang
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/kqqsysu/ssdb-erlang/archive/158b5b494794f241eded66a1ad04d97e9303975b.tar.gz -> ssdb-0_p20160408.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=270f4a12ec890f5c54e89552755d9495

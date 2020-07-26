@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Erlang REST framework that runs on top of Cowboy
+EAPI=6
+HOMEPAGE=https://sinasamavati.xyz/leptus
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lang/erlang >=dev-erlang/cowboy-2.4.0 >=dev-erlang/jiffy-0.15.2 dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/sinasamavati/leptus/archive/0.5.0.tar.gz -> leptus-0.5.0.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=f606d46ff0c2169b0a10fa3844c8c4bc

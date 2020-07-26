@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare
+DESCRIPTION=A macro that allows visual grouping of variables in calls to mapping operators
+EAPI=7
+HOMEPAGE=https://github.com/Hexstream/map-bind
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=public-domain
+RDEPEND=test? ( dev-lisp/parachute )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Hexstream/map-bind/archive/v1.0.tar.gz -> map-bind-1.0.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5
+_md5_=36c28763123a7c27bfc1213ebf4c5072

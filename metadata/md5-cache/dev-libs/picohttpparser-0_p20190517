@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Tiny HTTP parser written in C
+EAPI=5
+HOMEPAGE=https://github.com/h2o/picohttpparser
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/h2o/picohttpparser/archive/81fe3d99fd90a55cafb993e53fd3000dbc4d564c.tar.gz -> picohttpparser-0_p20190517.tar.gz
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=5aa5a410dd2a5c235285eeae9e7f525f

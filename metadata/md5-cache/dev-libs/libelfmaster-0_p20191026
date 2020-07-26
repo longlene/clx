@@ -1,0 +1,10 @@
+DEFINED_PHASES=unpack
+DESCRIPTION=Secure ELF parsing/loading library
+EAPI=7
+HOMEPAGE=https://github.com/elfmaster/libelfmaster
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/elfmaster/libelfmaster/archive/f7b1dda48a37ffd16129c68e219b7269563ef462.tar.gz -> libelfmaster-0_p20191026.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=b52fc13ba3ba24b7d50c967e0f454e9f

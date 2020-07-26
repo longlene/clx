@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=The all-language autocompleter
+EAPI=7
+HOMEPAGE=https://tabnine.com/
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=x86? ( https://update.tabnine.com/2.1.17/i686-unknown-linux-gnu/TabNine -> TabNine-x86-2.1.17 ) amd64? ( https://update.tabnine.com/2.1.17/x86_64-unknown-linux-gnu/TabNine -> TabNine-amd64-2.1.17 )
+_md5_=be940077a3f37056fd4d5445f6c5da3d

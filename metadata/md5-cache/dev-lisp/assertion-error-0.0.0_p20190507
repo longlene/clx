@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=Error pattern for assertion libraries in Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/noloop/assertion-error
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3.0
+RDEPEND=dev-lisp/dissect
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/noloop/assertion-error/archive/278cb4116d3f68d7051d81a784dbb564ef150d11.tar.gz -> assertion-error-0.0.0_p20190507.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=7a1a6f185f3aad325af8a48a12772b04

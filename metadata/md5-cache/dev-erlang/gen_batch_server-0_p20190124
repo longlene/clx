@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=A generic batching server for Erlang and Elixir
+EAPI=6
+HOMEPAGE=https://github.com/rabbitmq/gen-batch-server
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/rabbitmq/gen-batch-server/archive/b7cf2f9a9916d05ad93f341b70809caf0de8d551.tar.gz -> gen_batch_server-0_p20190124.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=a00c3ac17c89fc3bc9a794dd0fcd18e4

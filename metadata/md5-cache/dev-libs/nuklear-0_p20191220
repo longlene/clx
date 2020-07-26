@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=A single-header ANSI C immediate mode cross-platform GUI library
+EAPI=6
+HOMEPAGE=https://github.com/Immediate-Mode-UI/nuklear
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=public-domain
+SLOT=0
+SRC_URI=https://github.com/Immediate-Mode-UI/nuklear/archive/d74ffc7157890fe1e16c09e3cb3e5103f5067720.tar.gz -> nuklear-0_p20191220.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=f3e1dcdaf52846a15e3380eb72e9d76a

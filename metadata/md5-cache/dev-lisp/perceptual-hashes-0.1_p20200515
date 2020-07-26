@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=Perceptual image hashing for Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/shamazmazum/perceptual-hashes
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD-2
+RDEPEND=dev-lisp/imago dev-lisp/jpeg-turbo dev-lisp/array-operations test? ( dev-lisp/fiveam )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/shamazmazum/perceptual-hashes/archive/9316db77eea2a90f82d103e82b9299bd2da6427f.tar.gz -> perceptual-hashes-0.1_p20200515.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=51c68337d66999d23eb40cf342635b42

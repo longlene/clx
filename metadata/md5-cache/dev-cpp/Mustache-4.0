@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Mustache text templates in C++11
+EAPI=6
+HOMEPAGE=https://github.com/kainjow/Mustache
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/kainjow/Mustache/archive/v4.0.tar.gz -> Mustache-4.0.tar.gz
+_md5_=226f293ba410ced4ebe1a9685dcfbfac

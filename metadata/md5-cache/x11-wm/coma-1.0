@@ -1,0 +1,10 @@
+DEFINED_PHASES=install prepare unpack
+DESCRIPTION=minimalistic X11 window manager
+EAPI=7
+HOMEPAGE=https://github.com/jorisvink/coma
+KEYWORDS=~amd64 ~x86
+LICENSE=ISC
+SLOT=0
+SRC_URI=https://github.com/jorisvink/coma/archive/1.0-release.tar.gz -> coma-1.0.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=86cea08b5d832c6fdd7608b0630cf7aa

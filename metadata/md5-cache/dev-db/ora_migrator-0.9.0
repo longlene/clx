@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DEPEND=dev-db/postgresql
+DESCRIPTION=Tools for Oracle to PostgreSQL migration
+EAPI=6
+HOMEPAGE=https://github.com/cybertec-postgresql/ora_migrator
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-db/postgresql dev-db/oracle_fdw
+SLOT=0
+SRC_URI=https://github.com/cybertec-postgresql/ora_migrator/archive/ORA_MIGRATOR_0_9_0.tar.gz -> ora_migrator-0.9.0.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=5ecfc4b4be0f6f7901ed43e6b2e41fe3

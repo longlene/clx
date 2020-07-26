@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Common Lisp wrapper for Linux epoll syscall
+EAPI=7
+HOMEPAGE=https://github.com/cffi-posix/cffi-epoll
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lisp/cffi dev-lisp/cffi-errno dev-lisp/cffi-unistd
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/cffi-posix/cffi-epoll/archive/6ee36e99a66bd0246a6147b72e6f84673b3d0a41.tar.gz -> cffi-epoll-0.1_p20180629.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=66c95b85fff421d07e00d0ee26e0de65

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Cross-Platform Color Picker Written in Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/VitoVan/cl-pkr
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=dev-lisp/ltk dev-lisp/unix-opts dev-lisp/clx
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/VitoVan/cl-pkr/archive/1.1.0.tar.gz -> cl-pkr-1.1.0.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5
+_md5_=9aa144b07251eb9edc1f20e5c6763fb8

@@ -1,10 +1,11 @@
 DEFINED_PHASES=compile install unpack
-DEPEND=dev-vcs/git
+DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=A Lua C PreProcessor
 EAPI=5
 HOMEPAGE=https://github.com/willsteel/lcpp
 KEYWORDS=~amd64 ~x86 ~arm
 LICENSE=MIT
+PROPERTIES=live
 SLOT=0
-_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
-_md5_=46ce50e5b821f76b62d802565527a714
+_eclasses_=git-r3	8ec5b53812bce105ae7943930e4660f8
+_md5_=b22b0eb6a8ea5bb9acbef2764bf7a5d9

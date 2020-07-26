@@ -1,0 +1,10 @@
+DEFINED_PHASES=-
+DESCRIPTION=clsxwm
+EAPI=6
+HOMEPAGE=https://github.com/ikbenlike/clsxwm
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=dev-lisp/clx
+SLOT=0
+SRC_URI=https://github.com/ikbenlike/clsxwm/archive/e72ea630d28b123d541c0799014420f59ba91aae.tar.gz -> clsxwm-0.0.1_p20190714.tar.gz
+_md5_=3763a658020a33b9f56a94af7151c2ca

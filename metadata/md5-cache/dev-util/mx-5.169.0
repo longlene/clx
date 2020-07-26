@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=Command-line tool used for the development of Graal projects
+EAPI=6
+HOMEPAGE=https://github.com/graalvm/mx
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2.0
+SLOT=0
+SRC_URI=https://github.com/graalvm/mx/archive/5.169.0.tar.gz -> mx-5.169.0.tar.gz
+_md5_=dfd46270d23c0835bb2398c65cb5d95f

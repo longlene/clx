@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Termcolor is a header-only C++ library for printing colored messages to the terminal
+EAPI=6
+HOMEPAGE=https://github.com/ikalnytskyi/termcolor
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD-3
+SLOT=0
+SRC_URI=https://github.com/ikalnytskyi/termcolor/archive/83bc3fbc9e6440202eaf46141bca15ea5bd53757.tar.gz -> termcolor-0_p20171107.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=84f47f321e2714e88b75324bfc39b0fd

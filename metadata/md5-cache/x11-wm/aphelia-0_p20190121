@@ -1,0 +1,10 @@
+DEFINED_PHASES=install prepare unpack
+DESCRIPTION=A light, single-file, minimalist window manager for X11
+EAPI=7
+HOMEPAGE=https://github.com/vardy/aphelia
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/vardy/aphelia/archive/0ff76be2fd85831ede9b1bd04e1ccb6ec6216efb.tar.gz -> aphelia-0_p20190121.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=a4868de20708b77c9aafda4393a6f94d

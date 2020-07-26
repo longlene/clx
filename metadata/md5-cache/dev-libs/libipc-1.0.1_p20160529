@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install prepare unpack
+DEPEND=dev-libs/libkqueue
+DESCRIPTION=A lightweight IPC mechanism
+EAPI=6
+HOMEPAGE=https://github.com/mheily/libipc
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD-2
+RDEPEND=dev-libs/libkqueue
+SLOT=0
+SRC_URI=https://github.com/mheily/libipc/archive/ff5b1aa25fa5e7e65a1a8e4ca29944609b6cd17c.tar.gz -> libipc-1.0.1_p20160529.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=3c265a5fe6d62f93f4ac67c955570acb

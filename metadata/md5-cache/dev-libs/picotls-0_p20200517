@@ -1,0 +1,13 @@
+BDEPEND=dev-util/ninja >=dev-util/cmake-3.9.6
+DEFINED_PHASES=compile configure install prepare test unpack
+DEPEND=ssl? ( dev-libs/openssl )
+DESCRIPTION=TLS 1.3 implementation in C
+EAPI=7
+HOMEPAGE=https://github.com/h2o/picotls
+IUSE=ssl
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+SLOT=0
+SRC_URI=https://github.com/h2o/picotls/archive/89f71e94451e6ccfb2b97c43b13e3c34919ded4d.tar.gz -> picotls-0_p20200517.tar.gz https://github.com/h2o/picotest/archive/3808f02c507f4dfeeb785576d4e36971d1c97f83.tar.gz -> picotest-0_p20190324.tar.gz
+_eclasses_=cmake-utils	7555f0a45c22f33391d9c0c80f57cf23	eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	f1194291b9a1baca337c1c89b5f7f365	multilib	2477ebe553d3e4d2c606191fe6c33602	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	132cbb376048d079b5a012f5467c4e7f	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd	xdg-utils	ff2ff954e6b17929574eee4efc5152ba
+_md5_=24e8176b938efde4709a7991d585a2c6

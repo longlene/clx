@@ -8,5 +8,5 @@ LICENSE=PLAN9
 RDEPEND=dev-plan9/lib9
 SLOT=0
 SRC_URI=http://plan9port.googlecode.com/files/plan9port-20140306.tgz
-_eclasses_=plan9-libs	def1054c6c639deaa62aab5fc4953e73
+_eclasses_=plan9-libs	c679d0e310c20cd7bce006c68a540b84
 _md5_=785abb1e8b32396012ce3d9fc0951c06

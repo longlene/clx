@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=A portable Common Lisp condition system
+EAPI=7
+HOMEPAGE=https://github.com/phoe/portable-condition-system
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=CC0-1.0
+RDEPEND=dev-lisp/alexandria dev-lisp/split-sequence
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/phoe/portable-condition-system/archive/98b440731a0740c335b14d59372c4d09d0222a07.tar.gz -> portable-condition-system-1.1.0_p20200511.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=c79bea99a021f6cd0607a90095fce21f

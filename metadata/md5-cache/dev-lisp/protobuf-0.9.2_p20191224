@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install prepare unpack
+DEPEND=dev-libs/protobuf
+DESCRIPTION=Common Lisp implementation of Google's protocol buffers
+EAPI=7
+HOMEPAGE=http://common-lisp.net/project/protobuf/
+IUSE=example test
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-libs/protobuf dev-lisp/base dev-lisp/cl-ppcre dev-lisp/nibbles dev-lisp/trivial-utf8 test? ( dev-lisp/setfil )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/longlene/protobuf/archive/e9d93e34c0df834ef4aa0f8b500018314237be3b.tar.gz -> protobuf-0.9.2_p20191224.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=42619bd7c6c750ebb5e7245439f11845

@@ -1,10 +1,11 @@
 DEFINED_PHASES=install unpack
-DEPEND=dev-vcs/git
+DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Yet Another OpenCV eXtension
 EAPI=5
 HOMEPAGE=https://github.com/sonots/opencvx
 KEYWORDS=~amd64 ~x86 ~arm
 LICENSE=MIT
+PROPERTIES=live
 SLOT=0
-_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
-_md5_=0a83500a690f6a8d968aa979c73be8d8
+_eclasses_=git-r3	8ec5b53812bce105ae7943930e4660f8
+_md5_=f75f0b9d7b289079754171dca1e3846e

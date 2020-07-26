@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=A fast non-blocking HTTP server on top of libev
+EAPI=7
+HOMEPAGE=https://github.com/fukamachi/woo/
+IUSE=test
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/lev dev-lisp/clack[test?] dev-lisp/swap-bytes dev-lisp/cffi dev-lisp/static-vectors dev-lisp/bordeaux-threads dev-lisp/fast-http dev-lisp/quri dev-lisp/fast-io dev-lisp/smart-buffer dev-lisp/trivial-utf8 dev-lisp/vom dev-lisp/alexandria dev-lisp/cl-speedy-queue
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/fukamachi/woo/archive/141b022faf2b1c64b109bf12f1d93f6549a7820b.tar.gz -> woo-0.12.0_p20200219.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=9a4e766ed00b4384540e9739bdcee048

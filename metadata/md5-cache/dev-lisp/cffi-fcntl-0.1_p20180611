@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Common Lisp wrapper for fcntl.h
+EAPI=7
+HOMEPAGE=https://github.com/cffi-posix/cffi-fcntl
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lisp/cffi dev-lisp/cffi-errno
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/cffi-posix/cffi-fcntl/archive/5b53f2471ea449d8cec3a0262f1595b045271ca9.tar.gz -> cffi-fcntl-0.1_p20180611.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=6c1e624f84b12a516081da42192f3f6f

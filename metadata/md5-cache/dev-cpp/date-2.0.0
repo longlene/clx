@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=A date and time library based on the C++11
-EAPI=5
-HOMEPAGE=https://github.com/HowardHinnant/date
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/HowardHinnant/date/archive/v2.0.0.tar.gz -> date-2.0.0.tar.gz
-_md5_=08ad702eecbf40950f62c41aa278031d

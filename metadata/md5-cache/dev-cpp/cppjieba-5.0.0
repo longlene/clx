@@ -6,4 +6,4 @@ KEYWORDS=~amd64 ~arm ~x86
 LICENSE=MIT
 SLOT=0
 SRC_URI=https://github.com/yanyiwu/cppjieba/archive/v5.0.0.tar.gz -> cppjieba-5.0.0.tar.gz
-_md5_=43412dd9db01318d3f95273d56fbbbd0
+_md5_=83c395440ceadcfc6f76cff4b0cb368b

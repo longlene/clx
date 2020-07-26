@@ -8,5 +8,5 @@ LICENSE=MPL-1.1
 RDEPEND=dev-libs/atk dev-libs/glib media-libs/fontconfig media-libs/jpeg sys-libs/zlib x11-libs/gtk+:2 x11-libs/pango || ( www-client/mozilla-firefox-bin net-libs/xulrunner-bin )
 SLOT=2
 SRC_URI=x86? ( http://s3.amazonaws.com/viewer-source-downloads/install_pkgs/llmozlib-linux-20090304prfhk.tar.bz2 ) amd64? ( http://s3.amazonaws.com/viewer-source-downloads/install_pkgs/llmozlib-linux64-20080909.tar.bz2 )
-_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=2dbaee074ee550d492cccebd0e8d9d7a

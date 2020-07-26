@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Zero overhead utilities for preventing bugs at compile time
+EAPI=6
+HOMEPAGE=https://github.com/foonathan/type_safe
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/foonathan/type_safe/archive/4a80f404a07fda6a190e9ce90548b175df8e1379.tar.gz -> type_safe-0.1_p20170421.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=a2840f1d0ce5422a1b9e0b053098efcc

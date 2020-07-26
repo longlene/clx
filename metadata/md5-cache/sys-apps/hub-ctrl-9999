@@ -1,11 +1,12 @@
 DEFINED_PHASES=compile install unpack
-DEPEND=virtual/libusb dev-vcs/git
+DEPEND=virtual/libusb >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Control USB power on a port by port basis on some USB hubs
 EAPI=5
 HOMEPAGE=https://github.com/codazoda/hub-ctrl.c
 KEYWORDS=~amd64 ~x86 ~arm
 LICENSE=GPL-2
+PROPERTIES=live
 RDEPEND=virtual/libusb
 SLOT=0
-_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
-_md5_=e8665bcc82df6f91aa752f8a43157729
+_eclasses_=git-r3	8ec5b53812bce105ae7943930e4660f8
+_md5_=6255b47728b417463f17da234b5b7031

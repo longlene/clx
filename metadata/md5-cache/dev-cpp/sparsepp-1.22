@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=A fast, memory efficient hash map for C++
+EAPI=6
+HOMEPAGE=https://github.com/greg7mdp/sparsepp
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=BSD-3
+SLOT=0
+SRC_URI=https://github.com/greg7mdp/sparsepp/archive/1.22.tar.gz -> sparsepp-1.22.tar.gz
+_md5_=e02d04960e0b7bf09a12b495fa4acf86

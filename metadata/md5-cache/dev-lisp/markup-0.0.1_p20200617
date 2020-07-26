@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=markup provides a reader-macro to read HTML/XML tags inside of Common Lisp code
+EAPI=7
+HOMEPAGE=https://github.com/moderninterpreters/markup
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-lisp/str dev-lisp/alexandria dev-lisp/named-readtables
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/moderninterpreters/markup/archive/b3a159382117eba8397a7dfdf53beeff97e5ef37.tar.gz -> markup-0.0.1_p20200617.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=41990f3eb406b3218adcb06b3c2f4e3d

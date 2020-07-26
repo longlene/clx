@@ -7,5 +7,5 @@ LICENSE=MIT
 RDEPEND=dev-nodejs/has-flag
 SLOT=0
 SRC_URI=http://registry.npmjs.org/supports-color/-/supports-color-3.1.0.tgz
-_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=c94d20c6ab8ac90d3cbc3fb5a74d94b1

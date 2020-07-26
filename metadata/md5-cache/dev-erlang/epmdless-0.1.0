@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Erlang (and Elixir) distribution without epmd
+EAPI=6
+HOMEPAGE=https://github.com/oltarasenko/epmdless
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/oltarasenko/epmdless/archive/0.1.0.tar.gz -> epmdless-0.1.0.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=7cf571f8eb15ddc221ede4062b4ecdd6

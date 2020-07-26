@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Common lisp bindings for xkbcommon using cffi-grovel
+EAPI=7
+HOMEPAGE=https://github.com/sdilts/cl-xkbcommon
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/cffi
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/sdilts/cl-xkbcommon/archive/28a496444e971bf77f82dd9bf54aaef37289f0d1.tar.gz -> xkbcommon-0_p20180915.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=57b5d507e8796cbc160a5c0aae9983f3

@@ -1,0 +1,6 @@
+DEFINED_PHASES=-
+EAPI=6
+KEYWORDS=~amd64 ~x86
+SLOT=0
+SRC_URI=https://github.com/apache/incubator-dubbo/archive/dubbo-2.7.0.tar.gz -> dubbo-2.7.0.tar.gz
+_md5_=0b997eb317608a8e29028975f2fc8d19

@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Single file audio playback and capture library
+EAPI=6
+HOMEPAGE=https://github.com/dr-soft/mini_al
+KEYWORDS=~amd64 ~x86
+LICENSE=public-domain
+SLOT=0
+SRC_URI=https://github.com/dr-soft/mini_al/archive/891258a5b0c463ada17c544c438fb6fe6d4f148c.tar.gz -> mini_al-0.7_p20180225.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=343a5e1a4042447afa783b47fdf37dcc

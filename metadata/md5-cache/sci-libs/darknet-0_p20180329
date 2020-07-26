@@ -1,0 +1,13 @@
+DEFINED_PHASES=install prepare unpack
+DEPEND=cuda? ( dev-util/nvidia-cuda-toolkit ) media-libs/opencv
+DESCRIPTION=Convolutional Neural Networks
+EAPI=6
+HOMEPAGE=http://pjreddie.com/darknet/
+IUSE=cuda
+KEYWORDS=~amd64 ~x86
+LICENSE=public-domain
+RDEPEND=cuda? ( dev-util/nvidia-cuda-toolkit ) media-libs/opencv
+SLOT=0
+SRC_URI=https://github.com/pjreddie/darknet/archive/259be3217b0331d07c8c5c1995d90ab9f3b768c1.tar.gz -> darknet-0_p20180329.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=db914e2dfee5fdc24cac8ffe93aa3ba8

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=option parser for Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/ta2gch/trivial-argv
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/cl-ppcre dev-lisp/alexandria test? ( dev-lisp/1am )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/ta2gch/trivial-argv/archive/52d3d99b02f793d174a8058fd3daa6cb6cea35f6.tar.gz -> trivial-argv-1.0_p20180101.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=6964b507d01035281cf008f4ed64b179

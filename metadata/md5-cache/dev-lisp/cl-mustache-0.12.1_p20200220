@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=Common Lisp Mustache Template Renderer
+EAPI=7
+HOMEPAGE=https://github.com/kanru/cl-mustache
+IUSE=test
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/uiop
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/kanru/cl-mustache/archive/f5501e4372900813a9be4a557764b41636a7e250.tar.gz -> cl-mustache-0.12.1_p20200220.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=262a8c9b14bd6c593fd824e484148754

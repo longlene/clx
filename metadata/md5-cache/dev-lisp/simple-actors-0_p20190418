@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=The actor model implemented with closures
+EAPI=7
+HOMEPAGE=https://github.com/j3pic/simple-actors/
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD-2
+RDEPEND=dev-lisp/bordeaux-threads
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/j3pic/simple-actors/archive/1a0dd0528db6ccf30088f9bbbd575837735d2d8a.tar.gz -> simple-actors-0_p20190418.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=7e7db3b3d1cff6706ed694f85985a792

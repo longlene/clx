@@ -1,0 +1,11 @@
+BDEPEND=|| ( dev-util/rebar:3 dev-util/rebar-bin )
+DEFINED_PHASES=compile install
+DESCRIPTION=An automated code formatter for Erlang
+EAPI=7
+HOMEPAGE=https://github.com/WhatsApp/erlfmt
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RESTRICT=network-sandbox
+SLOT=0
+SRC_URI=https://github.com/WhatsApp/erlfmt/archive/v0.1.0.tar.gz -> erlfmt-0.1.0.tar.gz
+_md5_=2d3083bbbe57f63bc1b9af89f77af8c5

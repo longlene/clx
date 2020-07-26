@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=Porting Windows Dynamic Link Libraries to Linux
+EAPI=7
+HOMEPAGE=https://github.com/taviso/loadlibrary
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2.0
+SLOT=0
+SRC_URI=https://github.com/taviso/loadlibrary/archive/3cb541e025e5a58174c4a0d87a3038a79ddb5772.tar.gz -> loadlibrary-0_p20200310.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=e6b34ff5f54c9492fced229a2093b714

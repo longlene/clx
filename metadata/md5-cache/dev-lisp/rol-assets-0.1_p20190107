@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=RailsOnLisp asset pipeline
+EAPI=7
+HOMEPAGE=https://github.com/RailsOnLisp/rol-assets
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lisp/alexandria dev-lisp/cfg dev-lisp/cl-base64 dev-lisp/cl-debug dev-lisp/cl-fad dev-lisp/cl-uglify-js dev-lisp/closer-mop dev-lisp/cl-json dev-lisp/exec-js dev-lisp/external-program dev-lisp/ironclad dev-lisp/re dev-lisp/rol-files dev-lisp/rol-uri dev-lisp/cl-str
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/RailsOnLisp/rol-assets/archive/b83f38142add9a7ea1ccf9b2fa1eccd32e8a7dd3.tar.gz -> rol-assets-0.1_p20190107.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=02fca977b811e4a3a70a4906678a17d9

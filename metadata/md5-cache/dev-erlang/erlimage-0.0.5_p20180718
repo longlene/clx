@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=>=dev-lang/erlang-17.1 dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Image processing library implemented as Erlang NIF
+EAPI=6
+HOMEPAGE=https://github.com/eyedouble/erlimage
+IUSE=test
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=>=dev-lang/erlang-17.1 dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/eyedouble/erlimage/archive/cfef24124a2f10759db20d7595ea4d188e521b55.tar.gz -> erlimage-0.0.5_p20180718.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=28d275282cec168c5672c25bbca7a176

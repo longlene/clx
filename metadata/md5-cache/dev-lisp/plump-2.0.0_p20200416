@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Practically Lenient and Unimpressive Markup Parser for Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/Shinmera/plump
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=ZLIB
+RDEPEND=dev-lisp/array-utils dev-lisp/documentation-utils dev-lisp/trivial-indent dev-lisp/array-utils
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Shinmera/plump/archive/34f890fe46efdebe7bb70d218f1937e98f632bf9.tar.gz -> plump-2.0.0_p20200416.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=75fce646f516b4fbd098988ab9aa6a93

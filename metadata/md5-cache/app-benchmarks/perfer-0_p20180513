@@ -1,0 +1,10 @@
+DEFINED_PHASES=install prepare unpack
+DESCRIPTION=HTTP performance benchmark tool
+EAPI=6
+HOMEPAGE=https://github.com/ohler55/perfer
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/ohler55/perfer/archive/1f580f88640a95bf81a65a36e6420eeec0d03c31.tar.gz -> perfer-0_p20180513.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=59f37e6fe4746e5a20999a446102952e

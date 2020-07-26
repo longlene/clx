@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.10
+DESCRIPTION=A modern, performant 9P library for Go
+EAPI=6
+HOMEPAGE=https://github.com/docker/go-p9p
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=Apache-2.0
+RESTRICT=strip
+SLOT=0
+SRC_URI=https://github.com/docker/go-p9p/archive/87ae8514a3a2d9684994a6c319f96ba9e18a062e.tar.gz -> go-p9p-0_p20170224.tar.gz
+_eclasses_=golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-build	dc25bafa8fc1305a4de66a0a448472e7	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b
+_md5_=c655b2e5ca78b3cee7b68335ab94316b

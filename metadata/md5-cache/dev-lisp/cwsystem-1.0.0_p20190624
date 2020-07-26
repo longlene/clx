@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Print English numbers by The Conway-Wechsler System
+EAPI=7
+HOMEPAGE=https://github.com/nptcl/cwsystem
+KEYWORDS=~amd64 ~x86
+LICENSE=Unlicense
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/nptcl/cwsystem/archive/eece959061e08ee12e151a84e19ee9c94d06b0fc.tar.gz -> cwsystem-1.0.0_p20190624.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=fb740eaaf9369d1adf666a536578fb14

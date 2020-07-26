@@ -7,5 +7,5 @@ LICENSE=GPL-2
 RDEPEND=dev-lang/perl dev-perl/DBI dev-perl/DBD-mysql dev-perl/XML-Parser dev-perl/XML-RSS
 SLOT=0
 SRC_URI=http://www.zmanda.com/downloads/community/ZRM-MySQL/2.2/Source/MySQL-zrm-2.2.0-release.tar.gz
-_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=be8d202025769b6308fb0206969442aa

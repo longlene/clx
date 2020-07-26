@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=A mini lisp implementation
+EAPI=6
+HOMEPAGE=https://github.com/rui314/minilisp
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=public-domain
+SLOT=0
+SRC_URI=https://github.com/rui314/minilisp/archive/71d591419cbd62336e2a4506d03608ed1d4c9a95.tar.gz -> minilisp-0_p20141205.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=2e9cc5d6d6f5afbb6f510c1038f6142d

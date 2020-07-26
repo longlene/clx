@@ -7,5 +7,5 @@ KEYWORDS=~amd64 ~x86 ~arm
 LICENSE=MIT
 SLOT=0
 SRC_URI=https://github.com/creationix/nvm/archive/v0.24.0.tar.gz -> nvm-0.24.0.tar.gz
-_eclasses_=bash-completion-r1	acf715fa09463f043fbfdc1640f3fb85	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_eclasses_=bash-completion-r1	e5f9c3faab3ab3d1e7e007daa8c736ef	multilib	2477ebe553d3e4d2c606191fe6c33602	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=352d8345ca9cafd091ee33c5800c15db

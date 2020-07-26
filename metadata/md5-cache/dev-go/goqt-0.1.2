@@ -1,12 +1,13 @@
 DEFINED_PHASES=compile install test unpack
-DEPEND=dev-qt/qtgui:5 >=dev-lang/go-1.7:=
+DEPEND=dev-qt/qtgui:5 >=dev-lang/go-1.10
 DESCRIPTION=Golang bindings to the Qt cross-platform application framework
 EAPI=6
 HOMEPAGE=https://github.com/visualfc/goqt
 KEYWORDS=~amd64 ~arm ~x86
 LICENSE=BSD LGPL
 RDEPEND=dev-qt/qtgui:5
+RESTRICT=strip
 SLOT=0
 SRC_URI=https://github.com/visualfc/goqt/archive/0.1.2.tar.gz -> goqt-0.1.2.tar.gz
-_eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	golang-base	2983c8674b8e3b3a99ec61986356c76a	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	7fb5d554a7e656be19ec465fa5bb66db	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	165fc17c38d1b11dac2008280dab6e80	qmake-utils	0a242e7177789b0028b4045f336dd4db	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_eclasses_=estack	686eaab303305a908fd57b2fd7617800	golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-build	dc25bafa8fc1305a4de66a0a448472e7	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b	multilib	2477ebe553d3e4d2c606191fe6c33602	qmake-utils	4eb5e05ef7ee630c003e3f0edc094135	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=480e33f87b6e877fcb5a73d050e4530e

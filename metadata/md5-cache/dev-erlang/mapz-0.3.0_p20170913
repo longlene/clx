@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Additions to the Erlang maps module
+EAPI=6
+HOMEPAGE=https://github.com/eproxus/mapz
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/eproxus/mapz/archive/3943e5038c582083d87f79c5616ed82b149cf920.tar.gz -> mapz-0.3.0_p20170913.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=2dbfdc46d32bb12e87de1812f5a572f2

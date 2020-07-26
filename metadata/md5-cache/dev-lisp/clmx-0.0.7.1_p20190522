@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=Matrix manipulation library for Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/akai7000/clmx
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/akai7000/clmx/archive/d8ee3f54d1dfe688e214ed58c6d9a3e8e434cf56.tar.gz -> clmx-0.0.7.1_p20190522.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=01d3868b5a380149b2e2bb4fdc254bfa

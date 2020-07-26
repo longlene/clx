@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install postinst postrm prepare
+DEPEND=|| ( >=app-editors/vim-7.3 >=app-editors/gvim-7.3 )
+DESCRIPTION=Common Lisp client for neovim
+EAPI=6
+HOMEPAGE=https://github.com/adolenc/cl-neovim
+IUSE=test
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+RDEPEND=app-editors/neovim dev-lisp/babel dev-lisp/split-sequence dev-lisp/form-fiddle dev-lisp/cl-messagepack-rpc dev-lisp/vom test? ( dev-lisp/fiveam ) || ( >=app-editors/vim-7.3 >=app-editors/gvim-7.3 )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/adolenc/cl-neovim/archive/7212d305206aaae331a3e2d0d2597b671cec01f4.tar.gz -> cl-neovim-0_p20190325.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	vim-doc	af2c81a1feeb0a99e91bee3e20769edb	vim-plugin	3160d9cb05ef44497be1485db0fe7590
+_md5_=b40e2f08b5d9ca6ddd97a10ef995f819

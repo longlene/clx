@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test unpack
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=On-the-fly recompiling and reloading in Erlang. Code without friction
+EAPI=6
+HOMEPAGE=https://github.com/rustyio/sync
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/rustyio/sync/archive/d7ded2d221fb542b3417cffe77163206613daacb.tar.gz -> sync-0_p20181205.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=1e1f276cf3e760c5580d6b1d37357eb3

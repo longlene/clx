@@ -7,5 +7,5 @@ KEYWORDS=~amd64 ~x86 ~arm
 LICENSE=Apache
 SLOT=0
 SRC_URI=http://www.garret.ru/fastdb-3.76.tar.gz
-_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
 _md5_=8b19f4ce163f1516f2b3decfa5dd7651

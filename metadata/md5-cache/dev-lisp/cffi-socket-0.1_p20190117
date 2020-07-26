@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Common Lisp wrapper for BSD sockets
+EAPI=7
+HOMEPAGE=https://github.com/cffi-posix/cffi-socket
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lisp/cffi dev-lisp/cffi-errno dev-lisp/cffi-unistd
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/cffi-posix/cffi-socket/archive/dccd1f4ebb93763b664b482d031b4dcaf51d198b.tar.gz -> cffi-socket-0.1_p20190117.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=f423fd437e8b4dd3b85f5b2791d63c79

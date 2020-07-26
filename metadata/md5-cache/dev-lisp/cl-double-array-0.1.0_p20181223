@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=A double array implementation for Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/carrotflakes/cl-double-array
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=LLGPL
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/carrotflakes/cl-double-array/archive/973cef8357c8c9e5e5f85dceda7cb07e64648b20.tar.gz -> cl-double-array-0.1.0_p20181223.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=a493676b1bda7b5f6b47d22f114a29aa

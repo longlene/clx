@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=A Wayland compositor written in Common Lisp
-EAPI=6
-HOMEPAGE=https://github.com/malcolmstill/ulubis
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=BSD-3
-RDEPEND=dev-lisp/cffi dev-lisp/osicat dev-lisp/slime dev-lisp/cepl dev-lisp/easing dev-lisp/cl-xkb dev-lisp/cl-wayland dev-lisp/trivial-dump-core dev-lisp/uiop
-SLOT=0
-_md5_=83fb1672e0f3371a36246b171dd91969

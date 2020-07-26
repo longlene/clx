@@ -1,10 +1,11 @@
 DEFINED_PHASES=compile install unpack
-DEPEND=dev-vcs/git
+DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=grep for diffs
 EAPI=5
 HOMEPAGE=https://github.com/rsc/grepdiff
 KEYWORDS=~amd64 ~x86 ~arm
 LICENSE=BSD
+PROPERTIES=live
 SLOT=0
-_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
-_md5_=958061127c17f4d2e1c192eabc94a093
+_eclasses_=git-r3	8ec5b53812bce105ae7943930e4660f8
+_md5_=4fefe903e5f9eb9644c6b6ea6a37f9df

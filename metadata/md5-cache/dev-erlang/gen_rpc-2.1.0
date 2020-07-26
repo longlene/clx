@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=A scalable RPC library for Erlang-VM based languages
+EAPI=6
+HOMEPAGE=https://github.com/priestjim/gen_rpc
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=>=dev-erlang/hut-1.2 >=dev-erlang/ssl_verify_fun-1.1 dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/priestjim/gen_rpc/archive/2.1.0.tar.gz -> gen_rpc-2.1.0.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=d9f740a5d9eed32c1880f23605c5c472

@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=A Tiny Garbage Collector for C
+EAPI=6
+HOMEPAGE=https://github.com/orangeduck/tgc
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD-2
+SLOT=0
+SRC_URI=https://github.com/orangeduck/tgc/archive/e193133e43af0862f51edfb9b518e212ea084412.tar.gz -> tgc-0_p20170813.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=190ca1cc8b9956f7e8aedfd44821320b

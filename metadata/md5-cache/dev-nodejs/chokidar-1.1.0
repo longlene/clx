@@ -7,5 +7,5 @@ LICENSE=MIT
 RDEPEND=dev-nodejs/fsevents dev-nodejs/readdirp dev-nodejs/path-is-absolute dev-nodejs/is-glob dev-nodejs/is-binary-path dev-nodejs/glob-parent dev-nodejs/async-each dev-nodejs/arrify dev-nodejs/anymatch
 SLOT=0
 SRC_URI=http://registry.npmjs.org/chokidar/-/chokidar-1.1.0.tgz
-_eclasses_=multilib	165fc17c38d1b11dac2008280dab6e80	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	1b1da0c45c555989dc5d832b54880783
+_eclasses_=multilib	2477ebe553d3e4d2c606191fe6c33602	npm	f75c6584d599f6267b0cddd0b9ef3f3d	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
 _md5_=5f2d0d92a24226143e656f4218e16af7

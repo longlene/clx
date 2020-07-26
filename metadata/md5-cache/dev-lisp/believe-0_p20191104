@@ -1,0 +1,10 @@
+DEFINED_PHASES=install prepare unpack
+DEPEND=dev-libs/boehm-gc
+EAPI=7
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-libs/boehm-gc
+SLOT=0
+SRC_URI=https://github.com/luksamuk/believe/archive/98cf8689a75764ab485c78e82ba587cdd1c40c9e.tar.gz -> believe-0_p20191104.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=1d4a989e21d616af11fc39bc41a2e847

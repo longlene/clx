@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install prepare test
+DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
+DESCRIPTION=Collection of functions and scripts to debug Erlang in production
+EAPI=6
+HOMEPAGE=https://github.com/ferd/recon
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lang/erlang:=
+SLOT=0
+SRC_URI=https://github.com/ferd/recon/archive/2.5.0.tar.gz -> recon-2.5.0.tar.gz
+_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
+_md5_=c1ad01e2adf8f55a3390ff251473dbb5

@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DESCRIPTION=2D physics header-only library for videogames developed in C using raylib library
+EAPI=6
+HOMEPAGE=https://github.com/victorfisac/Physac
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-games/physac
+SLOT=0
+SRC_URI=https://github.com/victorfisac/Physac/archive/1.0.tar.gz -> physac-1.0.tar.gz
+_md5_=b83da1a25a7d7291b757d85fa0013e37

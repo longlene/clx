@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare unpack
+DESCRIPTION=Common Interface to Boolean Satisfiability Solvers from Common Lisp
+EAPI=7
+HOMEPAGE=https://github.com/guicho271828/cl-sat
+IUSE=test
+KEYWORDS=~amd64 ~x86
+LICENSE=LLGPL
+RDEPEND=dev-lisp/trivia dev-lisp/alexandria dev-lisp/iterate test? ( dev-lisp/fiveam )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/guicho271828/cl-sat/archive/17205d162ae73bf61cb663573f98d92ced3669f2.tar.gz -> cl-sat-0.1_p20190122.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=c4f424432bf31c39cdcfbb6f421f6306

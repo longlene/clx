@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=A collection of Common Lisp utilities
+EAPI=7
+HOMEPAGE=https://github.com/alex-gutev/agutil
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=dev-lisp/alexandria dev-lisp/trivia
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/alex-gutev/agutil/archive/0464a88a7d7450d31c842ad6302a75632866c50b.tar.gz -> agutil-0.0.1_p20190124.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=7f42063f61e4966df7915cae3bfabb63

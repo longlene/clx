@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Common Lisp CFFI bindings to the IUP Portable User Interface library
+EAPI=7
+HOMEPAGE=https://github.com/lispnik/iup
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=x11-libs/iup dev-lisp/cffi dev-lisp/cd dev-lisp/im dev-lisp/tecgraf-base dev-lisp/serapeum dev-lisp/trivial-features dev-lisp/alexandria dev-lisp/genhash dev-lisp/trivial-arguments dev-lisp/split-sequence dev-lisp/parse-number
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/lispnik/iup/archive/df3ba7d9c020efed1f6563d15d20f1731316b922.tar.gz -> iup-0.4_p20200106.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=68f1f2ce2e5b615fbe410bbb8ddf883a

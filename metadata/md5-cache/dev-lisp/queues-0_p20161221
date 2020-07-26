@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=A package of queue data structures
+EAPI=7
+HOMEPAGE=https://github.com/oconnore/queues
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/oconnore/queues/archive/47d4da65e9ea20953b74aeeab7e89a831b66bc94.tar.gz -> queues-0_p20161221.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=ba026022c36a5514f6e0903d2b961f34

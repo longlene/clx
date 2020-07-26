@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=A twitter client library for Common Lisp
+EAPI=6
+HOMEPAGE=https://github.com/Shinmera/chirp
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=zlib
+RDEPEND=dev-lisp/yason dev-lisp/split-sequence dev-lisp/uuid dev-lisp/ironclad dev-lisp/flexi-streams dev-lisp/local-time dev-lisp/cl-base64 dev-lisp/cl-ppcre dev-lisp/alexandria dev-lisp/babel dev-lisp/dexador dev-lisp/drakma
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Shinmera/chirp/archive/846215e24e054c1ced50257bc7b2ef7763cf09fa.tar.gz -> chirp-0.2.0_p20190622.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	2477ebe553d3e4d2c606191fe6c33602	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=1660a843f78f1e4d791e2889537a6183

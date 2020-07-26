@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install unpack
+EAPI=7
+HOMEPAGE=https://github.com/RailsOnLisp/thot
+KEYWORDS=~amd64 ~x86
+LICENSE=as-is
+RDEPEND=dev-lisp/babel dev-lisp/bordeaux-queue dev-lisp/bordeaux-set dev-lisp/bordeaux-threads dev-lisp/babel-stream dev-lisp/cffi-dirent dev-lisp/cffi-epoll dev-lisp/cffi-socket dev-lisp/cffi-stat dev-lisp/cl-debug dev-lisp/cl-stream dev-lisp/html-entities dev-lisp/rol-uri dev-lisp/cl-str dev-lisp/trivial-utf8 dev-lisp/unistd-stream
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/RailsOnLisp/thot/archive/9cfb6c228753a752d9326a8b39a77b77f790263c.tar.gz -> thot-0_p20190405.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=7594e74217314cc2668280143fb23a69

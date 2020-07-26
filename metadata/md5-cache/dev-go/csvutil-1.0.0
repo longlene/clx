@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=>=dev-lang/go-1.10
+DESCRIPTION=csvutil provides fast and idiomatic mapping between CSV and Go (golang) values
+EAPI=6
+HOMEPAGE=https://github.com/jszwec/csvutil
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RESTRICT=strip
+SLOT=0
+SRC_URI=https://github.com/jszwec/csvutil/archive/v1.0.0.tar.gz -> csvutil-1.0.0.tar.gz
+_eclasses_=golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-build	dc25bafa8fc1305a4de66a0a448472e7	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b
+_md5_=a47c0b82e25e9acfe8483f5619ce2a1e

@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=C++11 client library for PostgreSQL
+EAPI=6
+HOMEPAGE=https://github.com/taocpp/postgres
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/taocpp/postgres/archive/c430cc45fd4611093e6119caa5807810e8176231.tar.gz -> postgres-0_p20170330.tar.gz
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=f410f65648fc2becc2cf113571dd7e27

@@ -1,10 +1,11 @@
 DEFINED_PHASES=install unpack
-DEPEND=dev-vcs/git
+DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=A filesystem where the data is stored only in the Internet
 EAPI=5
 HOMEPAGE=https://github.com/yarrick/pingfs
 KEYWORDS=~amd64 ~x86 ~arm
 LICENSE=ISC
+PROPERTIES=live
 SLOT=0
-_eclasses_=git-2	7af5d170bfc02983b4bcd3167dc5edd4
-_md5_=ff6c65041b83c2c8b99dbc02098aceff
+_eclasses_=git-r3	8ec5b53812bce105ae7943930e4660f8
+_md5_=101fe81463703c856ccfbcafabe31bca

@@ -6,5 +6,5 @@ KEYWORDS=~amd64 ~arm ~x86
 LICENSE=MIT
 SLOT=0
 SRC_URI=https://github.com/hprose/hprose-cpp/archive/526541b2896517b821f2a47baa35c6359b14150f.tar.gz -> hprose-cpp-0_p20161228.tar.gz
-_eclasses_=vcs-snapshot	2b65ecb2d0f91e4322c2ac8d673993bd
+_eclasses_=vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
 _md5_=2e16c34c572cc9642a556510ca50f76d

@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=Scalaris, a distributed, transactional key-value store
+EAPI=7
+HOMEPAGE=https://github.com/scalaris-team/scalaris
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+SLOT=0
+SRC_URI=https://github.com/scalaris-team/scalaris/archive/0.9.0.tar.gz -> scalaris-0.9.0.tar.gz
+_md5_=bc9ffd71ab8ef156093ccf3ec4700b6e

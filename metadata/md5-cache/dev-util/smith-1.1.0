@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DEPEND=dev-lang/go
+DESCRIPTION=Smith: A microcontainer builder
+EAPI=6
+HOMEPAGE=https://github.com/oracle/smith
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=as-is
+RDEPEND=dev-lang/go
+SLOT=0
+SRC_URI=https://github.com/oracle/smith/archive/v1.1.0.tar.gz -> smith-1.1.0.tar.gz
+_md5_=1abc95bcc7ce740510a61d42e61bd758

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install unpack
+DESCRIPTION=Compatibility library to run things in the main thread
+EAPI=7
+HOMEPAGE=https://github.com/Shinmera/trivial-main-thread
+KEYWORDS=~amd64 ~arm ~x86
+LICENSE=ZLIB
+RDEPEND=dev-lisp/trivial-features dev-lisp/bordeaux-threads dev-lisp/simple-tasks
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/Shinmera/trivial-main-thread/archive/25f114973bb69eb63e01d0bbfead31f8e682846a.tar.gz -> trivial-main-thread-1.0.0_p20190622.tar.gz
+_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
+_md5_=7ed0c77444f5391ecd89eb67f7b671ca
