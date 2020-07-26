@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit git-2 common-lisp-3
+inherit git-r3 common-lisp-3
 
 DESCRIPTION="Search Engine Interface for Common Lisp"
 HOMEPAGE="https://github.com/tkych/quicksearch"

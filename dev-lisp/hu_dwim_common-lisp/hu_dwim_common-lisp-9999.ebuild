@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A redefinition of the standard Common Lisp package that includes a number of renames and shadows"
 HOMEPAGE="http://dwim.hu/project/hu.dwim.common-lisp"

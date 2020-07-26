@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit git-2 common-lisp-3
+inherit git-r3 common-lisp-3
 
 DESCRIPTION="A package to helpfully convert between keycodes and pretty names"
 HOMEPAGE="https://github.com/AeroNotix/cl-xkeysym"

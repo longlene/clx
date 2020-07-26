@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit lua git-2
+inherit lua git-r3
 
 DESCRIPTION="Tiny lua module to write shell scripts with lua"
 HOMEPAGE="https://github.com/zserge/luash"

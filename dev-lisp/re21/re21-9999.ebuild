@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 common-lisp-3
+inherit git-r3 common-lisp-3
 
 DESCRIPTION="CL21's spin-off project that provides neat API for regular expressions"
 HOMEPAGE="https://github.com/fukamachi/re21"

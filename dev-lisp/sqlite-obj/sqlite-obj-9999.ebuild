@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Simple document store database layered over SQLite"
 HOMEPAGE="https://github.com/orthecreedence/sqlite-obj"

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_4 )
+PYTHON_COMPAT=( python3_8 )
 inherit distutils-r1
 
 DESCRIPTION="Minimal Jupyter C kernel"

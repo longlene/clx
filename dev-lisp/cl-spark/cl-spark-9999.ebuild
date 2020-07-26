@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A common lisp implementation of spark"
 HOMEPAGE="https://github.com/tkych/cl-spark"

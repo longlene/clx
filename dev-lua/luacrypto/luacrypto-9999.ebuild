@@ -6,7 +6,7 @@ EAPI="4"
 
 LANGS=" en ru"
 
-inherit multilib toolchain-funcs flag-o-matic eutils git-2
+inherit multilib toolchain-funcs flag-o-matic eutils git-r3
 
 DESCRIPTION="Lua Crypto Library"
 HOMEPAGE="https://github.com/msva/lua-crypto"

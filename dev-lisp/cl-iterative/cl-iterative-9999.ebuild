@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Flexible general iterative algorithm for Common Lisp"
 HOMEPAGE="https://github.com/mobius-eng/cl-iterative"

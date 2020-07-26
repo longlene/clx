@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A Common lisp library providing collector macros"
 HOMEPAGE="https://github.com/AccelerationNet/collectors"

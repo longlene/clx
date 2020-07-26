@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Game engine with volume graphics written in Common Lisp"
 HOMEPAGE="https://github.com/afainer/cleven"

@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A Common Lisp Monad Library"
 HOMEPAGE="https://github.com/thezerobit/monads"

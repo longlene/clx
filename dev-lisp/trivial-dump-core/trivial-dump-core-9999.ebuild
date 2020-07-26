@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="save the current lisp image as a core or as an executable"
 HOMEPAGE="https://github.com/rolando2424/trivial-dump-core"

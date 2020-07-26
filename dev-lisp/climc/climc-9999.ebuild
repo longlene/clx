@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A Common Lisp Instant Messaging Client"
 HOMEPAGE="https://github.com/nlamirault/climc"

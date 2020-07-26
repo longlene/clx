@@ -3,7 +3,7 @@
 # $Header: $
 
 inherit distutils
-inherit git-2
+inherit git-r3
 
 EAPI=5
 

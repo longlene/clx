@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="System for semi-automatically documenting Common Lisp packages"
 HOMEPAGE="https://github.com/gigamonkey/manifest"

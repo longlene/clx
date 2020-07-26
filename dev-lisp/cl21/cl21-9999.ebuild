@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 elisp-common git-2
+inherit common-lisp-3 elisp-common git-r3
 
 DESCRIPTION="Common Lisp in the 21st Century"
 HOMEPAGE="http://cl21.org"

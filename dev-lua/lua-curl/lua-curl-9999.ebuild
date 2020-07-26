@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit autotools eutils git-2
+inherit autotools eutils git-r3
 
 DESCRIPTION="Lua cURL Library"
 HOMEPAGE="https://github.com/msva/lua-curl"

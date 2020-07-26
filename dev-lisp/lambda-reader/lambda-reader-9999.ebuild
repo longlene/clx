@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 DESCRIPTION="lambda-reader lets you use λ instead of LAMBDA to define anonymous functions."
 HOMEPAGE="http://cliki.net/lambda-reader"
 SRC_URI=""

@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 common-lisp-3
+inherit git-r3 common-lisp-3
 
 DESCRIPTION="Emails and Common Lisp"
 HOMEPAGE="https://github.com/deadtrickster/cl-mail"

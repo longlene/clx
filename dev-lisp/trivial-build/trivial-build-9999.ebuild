@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A tiny library to compile a system into an executable"
 HOMEPAGE="https://github.com/ceramic/trivial-build"

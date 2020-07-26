@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="A Lua C PreProcessor"
 HOMEPAGE="https://github.com/willsteel/lcpp"

@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A new operator for Common Lisp"
 HOMEPAGE="http://common-lisp.net/project/new-op/index.html"

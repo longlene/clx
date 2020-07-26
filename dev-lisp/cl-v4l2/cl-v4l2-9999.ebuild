@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 DESCRIPTION="Common Lisp bindings for Video4Linux2"
 HOMEPAGE="http://repo.or.cz/w/cl-v4l2.git"
 SRC_URI=""

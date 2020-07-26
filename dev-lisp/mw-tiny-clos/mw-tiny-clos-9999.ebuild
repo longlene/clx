@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Tiny-CLOS is a small object system with a metaobject protocol (MOP)"
 HOMEPAGE="http://www.foldr.org/~michaelw/lisp/mw-tiny-clos/"

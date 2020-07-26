@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Retrospectiff is a common lisp library for reading and writing images in the TIFF format"
 HOMEPAGE="https://github.com/slyrus/retrospectiff"

@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Wrapper layer for POSIX pthread on common lisp"
 HOMEPAGE="https://github.com/guicho271828/cl-pthread"

@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit git-2
+inherit git-r3
 
 DESCRIPTION=""
 HOMEPAGE="http://www.shr-project.org"

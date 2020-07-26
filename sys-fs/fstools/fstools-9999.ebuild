@@ -3,7 +3,7 @@
 
 EAPI=5
 
-inherit git-2 cmake-utils
+inherit git-r3 cmake-utils
 
 DESCRIPTION="OpenWrt filesystem tools"
 HOMEPAGE="http://wiki.openwrt.org/"

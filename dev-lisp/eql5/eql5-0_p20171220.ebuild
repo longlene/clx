@@ -1,9 +1,9 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit common-lisp-3 qmake-utils vcs-snapshot kde5-functions
+inherit common-lisp-3 qmake-utils vcs-snapshot
 
 EGIT_COMMIT="021b44a56e1191ea5e25e6de96bce5a9d6d23b11"
 
@@ -18,10 +18,8 @@ IUSE="qthelp multimedia"
 
 DEPEND="
 	dev-lisp/ecls[threads,unicode]
-	qthelp? ( $(add_qt_dep qthelp) )
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
-	multimedia? ( $(add_qt_dep qtmeltimedia) )
 	dev-qt/qtnetwork:5
 	dev-qt/qtquickcontrols:t
 	dev-qt/qtsql:5

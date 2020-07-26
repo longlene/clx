@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit lua git-2
+inherit lua git-r3
 
 DESCRIPTION="An Optional Type System for Lua"
 HOMEPAGE="https://github.com/andremm/typedlua"

@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="quark web server"
 HOMEPAGE="http://git.suckless.org/quark/"

@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Loosely-coupled collection of audio libraries in Common Lisp"
 HOMEPAGE="https://github.com/ahefner/mixalot"

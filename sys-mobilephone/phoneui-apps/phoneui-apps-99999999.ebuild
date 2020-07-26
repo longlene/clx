@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git-2 autotools
+inherit git-r3 autotools
 
 DESCRIPTION=""
 HOMEPAGE=""

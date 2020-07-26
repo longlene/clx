@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Generate random numbers in a cryptographically-acceptable way"
 HOMEPAGE="https://github.com/death/srandom"

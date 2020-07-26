@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="win32 ole library for common lisp"
 HOMEPAGE="https://github.com/quek/cl-win32ole"

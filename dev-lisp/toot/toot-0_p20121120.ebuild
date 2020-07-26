@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 EGIT_COMMIT="90f3854f2e548c9ad102c53caba834255dfabfa2"
 

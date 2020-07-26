@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 lua
+inherit git-r3 lua
 
 DESCRIPTION="A Vindinium starter kit for Lua"
 HOMEPAGE="https://github.com/mtdowling/vindinlua"

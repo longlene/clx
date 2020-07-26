@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit base git-2 autotools
+inherit base git-r3 autotools
 
 DESCRIPTION=""
 HOMEPAGE=""

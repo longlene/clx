@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A collection of utilities to aid development with CommonQt"
 HOMEPAGE="https://shinmera.github.io/qtools"

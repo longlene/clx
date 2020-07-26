@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp interface to Music Player Daemon"
 HOMEPAGE="https://github.com/stassats/mpd"

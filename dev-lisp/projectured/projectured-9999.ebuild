@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="ProjecturEd is a generic purpose projectional editor"
 HOMEPAGE="http://www.projectured.org/"

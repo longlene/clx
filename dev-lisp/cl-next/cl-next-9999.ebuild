@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A library to support Modern Common Lisp style"
 HOMEPAGE="https://github.com/thezerobit/cl-next"

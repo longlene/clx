@@ -1,8 +1,9 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lisp/cl-sdl/cl-sdl-0.2.2-r2.ebuild,v 1.2 2006/11/07 05:33:32 mr_bones_ Exp $
 
-inherit common-lisp eutils
+EAPI=6
+
+inherit common-lisp-3 eutils
 
 DESCRIPTION="Common Lisp bindings to the SDL graphics library, and OpenGL libraries"
 HOMEPAGE="http://cl-sdl.sourceforge.net/"

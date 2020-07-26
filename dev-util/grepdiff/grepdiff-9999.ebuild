@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="grep for diffs"
 HOMEPAGE="https://github.com/rsc/grepdiff"

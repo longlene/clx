@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="HTML generation on top of monkeylib-text-languages"
 HOMEPAGE="https://github.com/gigamonkey/monkeylib-html"

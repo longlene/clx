@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit lua git-2
+inherit lua git-r3
 
 DESCRIPTION="JSON4Lua and JSONRPC4Lua implement JSON encoding and decoding and a JSON-RPC-over-HTTP client for lua"
 HOMEPAGE="https://github.com/craigm/json4lua"

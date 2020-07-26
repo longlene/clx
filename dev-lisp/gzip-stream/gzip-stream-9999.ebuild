@@ -2,7 +2,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="GZIP-STREAM provides a few utilities for reading and writing streams in the gzip format"
 HOMEPAGE="http://common-lisp.net/project/gzip-stream/"

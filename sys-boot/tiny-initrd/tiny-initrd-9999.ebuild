@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="A minimalistic initrd implementation"
 HOMEPAGE="https://github.com/chris-se/tiny-initrd"

@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A common-lisp library providing python style generators"
 HOMEPAGE="https://github.com/AccelerationNet/generators"

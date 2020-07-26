@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp library to parse Atom and RSS feeds"
 HOMEPAGE="https://github.com/kisom/cl-feedparse"

@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit lua git-2
+inherit lua git-r3
 
 DESCRIPTION="A Lua bytecode compiler written in Lua itself"
 HOMEPAGE="https://github.com/franko/luajit-lang-toolkit"

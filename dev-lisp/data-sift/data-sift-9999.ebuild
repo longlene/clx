@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp library for validataion and transformation of string data"
 HOMEPAGE="https://github.com/archimag/data-sift"

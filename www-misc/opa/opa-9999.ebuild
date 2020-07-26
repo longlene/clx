@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit git-2 eutils
+inherit git-r3 eutils
 
 DESCRIPTION="Open source programming language for web application development"
 HOMEPAGE="http://opalang.org/"

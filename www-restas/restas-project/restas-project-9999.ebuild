@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A simple project skeleton generator for Restas projects"
 HOMEPAGE="https://github.com/pvlpenev/restas-project"

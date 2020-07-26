@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="a Common Lisp http library"
 HOMEPAGE="https://github.com/xach/zpb-http"

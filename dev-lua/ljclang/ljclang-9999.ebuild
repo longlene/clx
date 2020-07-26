@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit lua git-2
+inherit lua git-r3
 
 DESCRIPTION="A LuaJIT-based interface to libclang"
 HOMEPAGE="https://github.com/helixhorned/ljclang"

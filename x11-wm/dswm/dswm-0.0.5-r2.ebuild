@@ -1,12 +1,11 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/dswm/dswm-0.0.3.ebuild,v 1.2 2011/04/25 20:36:20 betelgeuse Exp $
 
-EAPI="2"
+EAPI=6
 
-inherit common-lisp autotools eutils
+inherit common-lisp-3 autotools eutils
 
-DESCRIPTION="DSWM is a tiling, keyboard driven X11 Window Manager written entirely in Common Lisp."
+DESCRIPTION="DSWM is a tiling, keyboard driven X11 Window Manager written entirely in Common Lisp"
 # HOMEPAGE="http://dss-project.org"
 SRC_URI="http://sourceforge.net/projects/dswm/files/0.0.5r2/dswm-0.0.5r2.tar.gz"
 LICENSE="GPL-2"

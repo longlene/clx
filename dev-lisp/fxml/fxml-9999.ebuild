@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Fork of CXML"
 HOMEPAGE="https://github.com/TBRSS/FXML"

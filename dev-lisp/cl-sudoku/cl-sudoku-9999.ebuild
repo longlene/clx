@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Norvig's sudoku solver in Common Lisp"
 HOMEPAGE="https://github.com/tkych/cl-sudoku"

@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 common-lisp-3
+inherit git-r3 common-lisp-3
 
 DESCRIPTION="Modular Arithmetic and Prime Number Library for Common Lisp"
 HOMEPAGE="https://github.com/tkych/cl-mod-prime"

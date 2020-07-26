@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit multilib eutils git-2
+inherit multilib eutils git-r3
 
 DESCRIPTION="Lua Rings Library"
 HOMEPAGE="https://github.com/keplerproject/rings"

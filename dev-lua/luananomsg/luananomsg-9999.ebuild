@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 lua
+inherit git-r3 lua
 
 DESCRIPTION="nanomsg for lua"
 HOMEPAGE="https://github.com/arcapos/luananomsg"

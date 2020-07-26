@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="SSE intrinsics implementation for ECL & SBCL"
 HOMEPAGE="https://github.com/angavrilov/cl-simd"

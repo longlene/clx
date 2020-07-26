@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 common-lisp-3
+inherit git-r3 common-lisp-3
 
 DESCRIPTION="A trivial read-macro for uiop:run-program"
 HOMEPAGE="https://github.com/tkych/shell-in-repl"

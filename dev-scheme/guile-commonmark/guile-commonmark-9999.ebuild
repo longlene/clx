@@ -1,10 +1,9 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
-inherit git-2 autotools
+inherit git-r3 autotools
 
 DESCRIPTION="Implementation of commonmark for Guile"
 HOMEPAGE="https://github.com/OrangeShark/guile-commonmark"
