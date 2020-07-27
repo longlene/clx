@@ -7,7 +7,7 @@ inherit lua
 
 DESCRIPTION="Database connectivity for the Lua programming language"
 HOMEPAGE="http://www.keplerproject.org/luasql/"
-SRC_URI="https://github.com/keplerproject/luasql/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/keplerproject/luasql/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Kepler"
 SLOT="0"
