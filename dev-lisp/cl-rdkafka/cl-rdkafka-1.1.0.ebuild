@@ -18,10 +18,10 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/librdkafka
 	dev-lisp/cffi
-	dev-lisp/babel
 	dev-lisp/trivial-garbage
 	dev-lisp/bordeaux-threads
-	test? ( dev-lisp/fiveam )
+	dev-lisp/lparallel
+	test? ( dev-lisp/fiveam dev-lisp/babel )
 "
 BDEPEND=""
 
