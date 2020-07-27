@@ -5,16 +5,16 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e27dbec74d060755c113850db5b372b72ebe712a"
+EGIT_COMMIT="18acbcc9c26732bd420e1325e652161f671da203"
 
-DESCRIPTION="Common Lisp library fro Avro"
+DESCRIPTION="Common Lisp library for Avro"
 HOMEPAGE="https://github.com/SahilKang/cl-avro"
 SRC_URI="https://github.com/SahilKang/cl-avro/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -22,5 +22,16 @@ RDEPEND="${DEPEND}
 	dev-lisp/babel
 	dev-lisp/ieee-floats
 	dev-lisp/st-json
+	dev-lisp/chipz
+	dev-lisp/salza2
+	test? ( dev-lisp/1am )
 "
 BDEPEND=""
+
+src_prepare() {
+	default
+	if ! use test ; then
+		sed -i '/defsystem #:cl-avro\/test/,$d' ${PN}.asd
+		rm -r test
+	fi
+}
