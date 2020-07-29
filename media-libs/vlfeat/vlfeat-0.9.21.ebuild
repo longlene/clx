@@ -1,11 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 DESCRIPTION="VisionLab Features Library"
-HOMEPAGE="http://www.vlfeat.org"
-SRC_URI="http://www.vlfeat.org/download/${P}.tar.gz"
+HOMEPAGE="https://www.vlfeat.org"
+SRC_URI="https://www.vlfeat.org/download/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
