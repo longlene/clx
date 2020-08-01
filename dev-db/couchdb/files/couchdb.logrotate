@@ -1,0 +1,10 @@
+/var/log/couchdb/*.log {
+	daily
+	rotate 30
+	dateext
+	delaycompress
+	compress
+	notifempty
+	sharedscripts
+	missingok
+}
