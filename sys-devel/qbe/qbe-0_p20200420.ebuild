@@ -5,7 +5,7 @@ EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="0da0930c1c2bd366780ecef13f846ad738b24bb9"
+EGIT_COMMIT="86b1c9af1324dae113910669caa6bff069e8631e"
 
 DESCRIPTION="Compiler Backend"
 HOMEPAGE="https://c9x.me/compile/"
