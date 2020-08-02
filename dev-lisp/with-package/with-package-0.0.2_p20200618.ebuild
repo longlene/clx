@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b8690438da8b3cbdc5ab5d2c027e1f161f3acb74"
+EGIT_COMMIT="09bce82226bfbd70ee53338c2e0e8b49dffa76ed"
 
 DESCRIPTION="Common Lisp utility library for using external package locally"
 HOMEPAGE="https://github.com/hyotang666/with-package"
