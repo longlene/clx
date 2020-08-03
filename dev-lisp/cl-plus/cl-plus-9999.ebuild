@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="((CL+)):Interface for Prototyping"
 HOMEPAGE="https://github.com/tkych/cl-plus"

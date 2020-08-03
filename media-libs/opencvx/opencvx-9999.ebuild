@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="Yet Another OpenCV eXtension"
 HOMEPAGE="https://github.com/sonots/opencvx"

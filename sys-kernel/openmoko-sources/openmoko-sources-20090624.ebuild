@@ -1,8 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=4
+EAPI=6
 
 DESCRIPTION="Andy-tracking kernel for Openmoko devices"
 HOMEPAGE="http://www.openmoko.org/"
@@ -21,7 +20,7 @@ K_NOUSENAME="yes"
 K_NOSETEXTRAVERSION="yes"
 K_SECURITY_UNSUPPORTED="yes"
 
-inherit git-2 kernel-2 toolchain-funcs
+inherit git-r3 kernel-2 toolchain-funcs
 detect_version
 
 LICENSE="GPL-2"

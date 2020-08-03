@@ -3,7 +3,7 @@
 
 EAPI=5
 
-inherit git-2 cmake-utils
+inherit git-r3 cmake-utils
 
 DESCRIPTION="A general purpose library for the OpenWRT project."
 HOMEPAGE="http://wiki.openwrt.org/"

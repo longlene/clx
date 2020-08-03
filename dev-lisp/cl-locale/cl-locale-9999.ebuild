@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Simple i18n library for Common Lisp"
 HOMEPAGE="https://github.com/arielnetworks/cl-locale"

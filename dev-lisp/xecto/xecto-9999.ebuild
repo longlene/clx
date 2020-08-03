@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Xecto is a simple parallel vector-processing library"
 HOMEPAGE="https://github.com/pkhuong/Xecto"

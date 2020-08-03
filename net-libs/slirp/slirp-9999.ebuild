@@ -1,10 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=3
+EAPI=6
 
-inherit git-2 autotools
+inherit git-r3 autotools
 
 DESCRIPTION="Library for  emulates a PPP or SLIP connection over a normal terminal."
 HOMEPAGE="http://cgit.freedesktop.org/spice/slir"

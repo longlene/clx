@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="A point to point color terminal video chat"
 HOMEPAGE="https://github.com/mofarrell/p2pvc"

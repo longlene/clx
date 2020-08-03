@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Library for reading and writing JSON-formatted data"
 HOMEPAGE="https://github.com/gigamonkey/monkeylib-json"

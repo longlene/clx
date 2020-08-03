@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Property List stores multiple values per one key"
 HOMEPAGE="https://github.com/fukamachi/multival-plist"

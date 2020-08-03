@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A compatability layer for dealing with package locks in a uniform manner"
 HOMEPAGE="https://github.com/elliottjohnson/cl-package-locks"

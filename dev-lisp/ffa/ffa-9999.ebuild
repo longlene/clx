@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Foreign friendly arrays for Common Lisp"
 HOMEPAGE="http://cliki.net/ffa"

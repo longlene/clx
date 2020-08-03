@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Interface to linux inotify(7)"
 HOMEPAGE="https://github.com/stassats/inotify"

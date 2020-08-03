@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit git-2 autotools
+inherit git-r3 autotools
 
 DESCRIPTION="Glib bindings for Freesmartphone Framework APIs."
 HOMEPAGE="http://www.freesmartphone.org/"

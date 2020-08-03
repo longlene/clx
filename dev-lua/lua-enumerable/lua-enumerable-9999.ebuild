@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit lua git-2
+inherit lua git-r3
 
 DESCRIPTION="A port of Ruby's Enumerable module to Lua"
 HOMEPAGE="https://github.com/mikelovesrobots/lua-enumerable"

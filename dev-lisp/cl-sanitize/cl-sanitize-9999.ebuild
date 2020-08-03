@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 DESCRIPTION="cl-sanitize is a whitelist-based HTML sanitizer."
 HOMEPAGE="https://github.com/archimag/cl-sanitize"
 SRC_URI=""

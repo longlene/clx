@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 DESCRIPTION="The Common Lisp wiki"
 HOMEPAGE="http://cliki.net/"
 SRC_URI=""

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_8 )
 inherit distutils-r1 vcs-snapshot
 
 EGIT_COMMIT="881f7e3b81ac83a365d7e6c1e96c8f94d22c2e65"

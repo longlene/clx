@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A generalized interface for array-like objects with views"
 HOMEPAGE="https://github.com/blindglobe/xarray"

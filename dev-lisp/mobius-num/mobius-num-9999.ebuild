@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Comon Lisp numerical library"
 HOMEPAGE="https://github.com/mobius-eng/mobius-num"

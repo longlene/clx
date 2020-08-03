@@ -8,7 +8,7 @@ MY_PN="liblastfm"
 
 EGIT_REPO_URI="git://${MY_PN}.git.sourceforge.net/gitroot/${MY_PN}/${MY_PN}"
 
-inherit base autotools git-2
+inherit base autotools git-r3
 
 DESCRIPTION="C-API for the Last.fm web service written with libcurl"
 HOMEPAGE="http://liblastfm.sourceforge.net"

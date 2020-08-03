@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit lua git-2
+inherit lua git-r3
 
 DESCRIPTION="FreeImage Luajit binding"
 HOMEPAGE="https://github.com/nyfair/fi-luajit"

@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="A tiny HTTP server for static sites"
 HOMEPAGE="https://github.com/dimkr/shus"

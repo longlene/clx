@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="MS Windows API from Common Lisp perspective"
 HOMEPAGE="https://github.com/Lovesan/doors"

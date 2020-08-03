@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="The personal URL shortener"
 HOMEPAGE="https://github.com/zkat/shortening"

@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Generates an index from a directory containing html files"
 HOMEPAGE="https://github.com/acieroid/clpages"

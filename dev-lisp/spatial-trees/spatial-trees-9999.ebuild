@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A set of dynamic index data structures for spatially-extended data"
 HOMEPAGE="https://github.com/rpav/spatial-trees"

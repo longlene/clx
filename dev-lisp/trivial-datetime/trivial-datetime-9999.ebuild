@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Simple date/time manipulation for CL"
 HOMEPAGE="https://github.com/ury-marshak/trivial-datetime"

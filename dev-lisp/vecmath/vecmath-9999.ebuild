@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Simple 2d and 3d vector and matrix math library"
 HOMEPAGE="https://github.com/anwyn/vecmath"

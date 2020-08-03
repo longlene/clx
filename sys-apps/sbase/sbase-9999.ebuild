@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="suckless unix tools"
 HOMEPAGE="http://git.2f30.org/sbase/"

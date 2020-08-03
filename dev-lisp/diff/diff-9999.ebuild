@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="DIFF is a Common Lisp library for computing the unified or context difference between two files."
 HOMEPAGE="http://www.cliki.net/DIFF"

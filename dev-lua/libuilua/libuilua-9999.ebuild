@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 lua
+inherit git-r3 lua
 
 DESCRIPTION="Lua binding for libui"
 HOMEPAGE="https://github.com/zevv/libuilua"

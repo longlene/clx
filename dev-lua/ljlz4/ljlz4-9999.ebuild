@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit lua git-2
+inherit lua git-r3
 
 DESCRIPTION="LZ4 library for LuaJIT"
 HOMEPAGE="https://github.com/CheyiLin/ljlz4"

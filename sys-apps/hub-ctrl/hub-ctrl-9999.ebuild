@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="Control USB power on a port by port basis on some USB hubs"
 HOMEPAGE="https://github.com/codazoda/hub-ctrl.c"

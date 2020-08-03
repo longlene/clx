@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 common-lisp-3
+inherit git-r3 common-lisp-3
 
 DESCRIPTION="Pure Common Lisp TrueType font renderer for CLX"
 HOMEPAGE="https://github.com/filonenko-mikhail/clx-truetype"

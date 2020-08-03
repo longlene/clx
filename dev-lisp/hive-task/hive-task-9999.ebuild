@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="STM-based concurrency for lazy"
 HOMEPAGE="https://github.com/HiTECNOLOGYs/hive-task"

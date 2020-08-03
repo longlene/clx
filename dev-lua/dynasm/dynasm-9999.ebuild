@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit lua git-2
+inherit lua git-r3
 
 DESCRIPTION="DynASM with Lua mode"
 HOMEPAGE="http://luapower.com/dynasm"

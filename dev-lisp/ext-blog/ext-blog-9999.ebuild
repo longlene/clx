@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A BLOG engine which supports custom theme"
 HOMEPAGE="https://github.com/kevinlynx/ext-blog"

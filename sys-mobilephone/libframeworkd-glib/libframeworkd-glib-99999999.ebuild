@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit base git-2 autotools
+inherit base git-r3 autotools
 
 DESCRIPTION="Glib bindings for Freesmartphone Framework APIs."
 HOMEPAGE="http://www.freesmartphone.org/"

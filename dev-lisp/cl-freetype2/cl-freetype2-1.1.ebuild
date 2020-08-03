@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp bindings for Freetype 2"
 HOMEPAGE="https://github.com/rpav/cl-freetype2"

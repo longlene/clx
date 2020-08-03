@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp CFFI bindings for the Chipmunk Physics library"
 HOMEPAGE="https://github.com/orthecreedence/clipmunk"

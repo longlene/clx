@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit lua git-2
+inherit lua git-r3
 
 DESCRIPTION="Lua Web API Toolkit"
 HOMEPAGE="https://github.com/akornatskyy/lucid"

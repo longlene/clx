@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Easy particle systems with fine grained control"
 HOMEPAGE="http://shinmera.github.io/flare"

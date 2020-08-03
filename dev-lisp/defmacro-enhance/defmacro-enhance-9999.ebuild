@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Enhancement of defmacro in spirit of let-over-lambda"
 HOMEPAGE="https://github.com/mabragor/defmacro-enhance"

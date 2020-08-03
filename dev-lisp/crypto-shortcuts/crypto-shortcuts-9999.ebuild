@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Collection of common cryptography functions"
 HOMEPAGE="http://shinmera.github.io/crypto-shortcuts/"

@@ -33,5 +33,6 @@ src_install() {
 	dobin src/proxysql
 	insinto /etc
 	doins etc/proxysql.cnf
+}
 
 

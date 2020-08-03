@@ -7,7 +7,7 @@ EAPI=5
 EGIT_REPO_URI="git://lug.rose-hulman.edu/proj/libgis"
 EGIT_BOOTSTRAP="gtkdocize && eautoreconf"
 
-inherit autotools gnome2 git-2
+inherit autotools gnome2 git-r3
 
 DESCRIPTION="Virtual Globe library"
 HOMEPAGE="http://lug.rose-hulman.edu/wiki/Libgis"

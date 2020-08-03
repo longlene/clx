@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_8 )
 inherit distutils-r1
 
 DESCRIPTION="Datasets, Transforms and Models specific to Computer Vision"

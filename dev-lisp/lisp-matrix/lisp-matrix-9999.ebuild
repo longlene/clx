@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit git-2 common-lisp-3
+inherit git-r3 common-lisp-3
 
 DESCRIPTION="A matrix package for common lisp"
 HOMEPAGE="http://github.com/blindglobe/lisp-matrix"

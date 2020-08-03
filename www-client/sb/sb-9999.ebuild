@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="sb - simple webkit browser"
 HOMEPAGE="https://github.com/mutantturkey/sb"

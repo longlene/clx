@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit toolchain-funcs git-2
+inherit toolchain-funcs git-r3
 
 DESCRIPTION="libevent bindings for Lua"
 HOMEPAGE="http://luaforge.net/projects/luaevent http://repo.or.cz/w/luaevent.git"

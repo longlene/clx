@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Computer graphics algebra library for SBCL"
 HOMEPAGE="http://nikodemus.github.com/sb-cga/"

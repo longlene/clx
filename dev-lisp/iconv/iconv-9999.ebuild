@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="iconv(man 3 iconv) library for Common Lisp"
 HOMEPAGE="https://github.com/quek/cl-iconv"

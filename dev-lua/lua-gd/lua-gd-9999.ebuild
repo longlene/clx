@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit eutils toolchain-funcs versionator git-2
+inherit eutils toolchain-funcs versionator git-r3
 
 DESCRIPTION="Lua bindings to Thomas Boutell's gd library"
 HOMEPAGE="http://lua-gd.luaforge.net/"

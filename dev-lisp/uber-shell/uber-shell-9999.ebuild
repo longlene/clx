@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="Ultimate POSIX-Shell Integration for Steel Bank Common Lisp"
 HOMEPAGE="https://github.com/thephoeron/uber-shell"

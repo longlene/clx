@@ -2,7 +2,7 @@
 
 EAPI=4
 
-inherit git-2 common-lisp-3
+inherit git-r3 common-lisp-3
 
 DESCRIPTION="A common lisp object / relational mapping library"
 HOMEPAGE="https://github.com/AccelerationNet/CLSQL-ORM"

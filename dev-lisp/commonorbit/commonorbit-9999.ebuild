@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="CORBIT: Object-oriented extension of Common Lisp based on a prototype (classless) model of OOP"
 HOMEPAGE="https://github.com/g000001/CommonORBIT"

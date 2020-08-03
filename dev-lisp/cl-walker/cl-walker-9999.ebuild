@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit common-lisp-3 git-2
+inherit common-lisp-3 git-r3
 
 DESCRIPTION="A code walker that parses a Common Lisp sexp into an AST"
 HOMEPAGE="http://dwim.hu/project/hu.dwim.walker"

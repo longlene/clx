@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="C-based/Cached/Core Computer Vision Library"
 HOMEPAGE="http://libccv.org"
