@@ -14,11 +14,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="static-libs"
 
+src_configure() {
+	append-cflags -fPIC
+}
+
 src_compile() {
 	# janet_build is the git hash of the commit related to the
 	# current release - it defines a constant which is then shown
 	# when starting janet
-	local janet_build='\"5b6b9f1\"'
+	local janet_build='\"4cc6809\"'
 	emake PREFIX="/usr" JANET_BUILD="${janet_build}"
 	emake PREFIX="/usr" build/janet.pc JANET_BUILD="${janet_build}"
 	emake PREFIX="/usr" docs JANET_BUILD="${janet_build}"
