@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c6ef2128a6ac44ba9e9cf0fb34c4ed429b988217"
+EGIT_COMMIT="ccb0285b456c4d6bb09b9f931cf0ac5e72353ae5"
 
 DESCRIPTION="A portable quasiquote implementation that plays well with pattern-matching"
 HOMEPAGE="http://cliki.net/fare-quasiquote"
