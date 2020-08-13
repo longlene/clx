@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2a428dc8d6c05dd773c1e58ce5c846c3aef9ff88"
+EGIT_COMMIT="7481aae3ca11a79c117dd6fbc4e3bf2122a89627"
 
 DESCRIPTION="A portable plotter for Common Lisp"
 HOMEPAGE="https://github.com/komi1230/kai"
@@ -25,5 +25,5 @@ BDEPEND=""
 
 src_prepare() {
 	default
-	use test || rm -r ${PN}-test.asd test
+	use test || rm -r ${PN}-test.asd test ${PN}-example.asd examples
 }
