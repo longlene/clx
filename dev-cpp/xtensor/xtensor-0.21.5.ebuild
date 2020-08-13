@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="simd"
 
 DEPEND="
-	>=dev-cpp/xtl-0.6.7
-	simd? ( >=dev-cpp/xsimd-7.4.0 )
+	>=dev-cpp/xtl-0.6.12
+	simd? ( >=dev-cpp/xsimd-7.4.6 )
 "
 RDEPEND="${DEPEND}"
