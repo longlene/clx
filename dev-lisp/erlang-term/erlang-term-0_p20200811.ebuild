@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2402a7c1ecc146b3f65fe9ee74958835e4d8f435"
+EGIT_COMMIT="8e4da084107c2a6a3778856fe554dc37e9bc46bb"
 
 DESCRIPTION="Common Lisp implementation of the Erlang External Term Format"
 HOMEPAGE="https://github.com/flambard/cl-erlang-term"

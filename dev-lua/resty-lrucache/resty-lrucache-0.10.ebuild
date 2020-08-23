@@ -11,7 +11,7 @@ SRC_URI="https://github.com/openresty/lua-resty-lrucache/archive/v${PV}.tar.gz -
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="

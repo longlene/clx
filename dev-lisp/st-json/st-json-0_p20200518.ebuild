@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d0f834f1f32d9386e23eae17d04e1ba4119e6ba5"
+EGIT_COMMIT="f5c5a4e220c666211aefbf6d8c3a5897a2f8e41f"
 
 DESCRIPTION="JSON for Common Lisp"
 HOMEPAGE="http://marijnhaverbeke.nl/st-json"
