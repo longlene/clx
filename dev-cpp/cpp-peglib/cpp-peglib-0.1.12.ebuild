@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
-
-EGIT_COMMIT="bbeadfa937230d76f536cffc564997de9437842c"
+inherit cmake-utils
 
 DESCRIPTION="C++ header-only PEG library"
 HOMEPAGE="https://github.com/yhirose/cpp-peglib"
-SRC_URI="https://github.com/yhirose/cpp-peglib/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/yhirose/cpp-peglib/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

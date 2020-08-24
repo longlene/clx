@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c7c3dfb1baf5aef1c6fb0c16052c8e4e527af6ff"
+EGIT_COMMIT="3cd4a96fca95eb9e8d5d069426694669f81b2250"
 
 DESCRIPTION="Autowrapping FFI"
 HOMEPAGE="https://github.com/borodust/claw"

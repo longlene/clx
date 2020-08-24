@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="318e8dbd3674b0c3b4e24aa9f47a0bc3a6aaed86"
+EGIT_COMMIT="8c7eae579bb24539dbd584a81a1049f3d3ff8bf8"
 
 DESCRIPTION="Python-like generators for Common Lisp"
 HOMEPAGE="https://github.com/BnMcGn/snakes"
@@ -23,4 +23,5 @@ RDEPEND="${DEPEND}
 	dev-lisp/fiveam
 	dev-lisp/iterate
 	dev-lisp/cl-utilities
+	dev-lisp/alexandria
 "
