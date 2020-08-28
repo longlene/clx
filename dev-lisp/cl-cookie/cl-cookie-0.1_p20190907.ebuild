@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cea55aed8b9ad25fafd13defbcb9fe8f41b29546"
+EGIT_COMMIT="9c077eb652dd108a30726154f46b9a7d482f5474"
 
 DESCRIPTION="HTTP cookie manager"
 HOMEPAGE="https://github.com/fukamachi/cl-cookie"
