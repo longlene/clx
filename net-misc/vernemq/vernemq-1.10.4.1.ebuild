@@ -40,8 +40,8 @@ src_install() {
 	doins -r _build/default/rel/vernemq/{bin,lib,releases,erts-*}
 
 	for xbin in vernemq vmq-admin vmq-passwd ; do
-		dosym _build/default/rel/vernemq/bin/$xbin /usr/bin/$xbin
-	done	
+		dosym /usr/lib/vernemq/bin/$xbin /usr/bin/$xbin
+	done
 
 	insinto /etc/vernemq
 	doins _build/default/rel/vernemq/etc/*

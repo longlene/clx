@@ -6,8 +6,8 @@ EAPI=6
 inherit cmake-utils
 
 DESCRIPTION="Jupyter Kernel for C++ based on xeus and cling"
-HOMEPAGE="https://github.com/quantstack/xeus-cling"
-SRC_URI="https://github.com/QuantStack/xeus-cling/archive/${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/jupyter-xeus/xeus-cling"
+SRC_URI="https://github.com/jupyter-xeus/xeus-cling/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

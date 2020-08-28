@@ -6,8 +6,8 @@ EAPI=6
 inherit cmake-utils
 
 DESCRIPTION="C++ backend for Jupyter interactive widgets"
-HOMEPAGE="https://github.com/QuantStack/xwidgets"
-SRC_URI="https://github.com/QuantStack/xwidgets/archive/${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/jupyter-xeus/xwidgets"
+SRC_URI="https://github.com/jupyter-xeus/xwidgets/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
