@@ -5,7 +5,7 @@ EAPI=6
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e2a1ac068e45fe9d8407a5fe9426b5eae2225780"
+EGIT_COMMIT="a12ac016e2d8e9e15094a898327b32b12022db6d"
 
 DESCRIPTION="BNF example generator"
 HOMEPAGE="https://github.com/hyotang666/bnf"
