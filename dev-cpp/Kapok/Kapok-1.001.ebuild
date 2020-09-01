@@ -16,7 +16,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/boost
-	dev-cpp/fmt
+	dev-libs/libfmt
 	dev-libs/rapidjson
 "
 
