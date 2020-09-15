@@ -21,5 +21,5 @@ RDEPEND="${DEPEND}
 	dev-python/pyyaml
 	dev-python/six
 	dev-python/h5py
-	media-gfx/pydot
+	dev-python/pydot
 "
