@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+# Copyright 2016-2019 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="Libreoffice-online webservice daemon"
+pidfile=${pidfile:-"/run/${SVCNAME}/${SVCNAME}.pid"}
+user=${user:-lool}
+group=${group:-lool}
+
+command="/usr/bin/loolwsd"
+command_args="$LOOL_ARGS"
+command_background="true"
+start_stop_daemon_args="--user ${user} --group ${group}"
+
+depend() {
+	need net
+	after net
+}
+
+start_pre() {
+	checkpath -d -m 0755 -o "${user}":"${group}" "${pidfile%/*}"
+}
