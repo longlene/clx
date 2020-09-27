@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit vcs-snapshot
+inherit cmake-utils vcs-snapshot
 
 DESCRIPTION="FullText Search module for redis"
 HOMEPAGE="https://github.com/RedisLabsModules/RediSearch"
@@ -15,12 +15,19 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND="
-	dev-db/redisearch
+	dev-db/redis
 "
 RDEPEND="${DEPEND}"
 
+src_configure() {
+	local mycmakeargs=(
+	-DRS_FORCE_NO_GITVERSION=Y
+	)
+	cmake-utils_src_configure
+}
+
 src_install() {
 	insinto /var/lib/redis/modules
-	doins src/redisearch.so
+	doins ${BUILD_DIR}/redisearch.so
 	dodoc README.md
 }
