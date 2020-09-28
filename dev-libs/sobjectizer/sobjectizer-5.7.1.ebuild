@@ -7,7 +7,7 @@ inherit cmake-utils vcs-snapshot
 
 DESCRIPTION="a framework for building solid multithreaded applications"
 HOMEPAGE="https://stiffstream.com/en/products/sobjectizer.html"
-SRC_URI="https://github.com/eao197/so-5-5/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Stiffstream/sobjectizer/archive/v.${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
