@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="systemd"
 
 DEPEND="
-	dev-erlang[odbc,ssl]
+	dev-lang/erlang[odbc,ssl]
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

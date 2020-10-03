@@ -5,7 +5,7 @@ EAPI=6
 
 inherit eutils multiprocessing toolchain-funcs vcs-snapshot
 
-EGIT_COMMIT="dd7c4e51044ce779cb695d6b52bbba0982a42e28"
+EGIT_COMMIT="291f7411783bf6871b253f3b15ce691eea7a257e"
 
 DESCRIPTION="Plan 9 from User Space"
 HOMEPAGE="http://swtch.com/plan9port/"

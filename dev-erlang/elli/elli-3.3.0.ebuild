@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit rebar3
+inherit rebar
 
 DESCRIPTION="Simple, robust and performant Erlang web server"
 HOMEPAGE="https://github.com/elli-lib/elli"
