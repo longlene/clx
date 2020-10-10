@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="264312a0fc9e1f945000b6c2920df28e2a8a641d"
+EGIT_COMMIT="c2dc88d0698ce157562378e8386060709e861a96"
 
 DESCRIPTION="Dafka is a decentralized distributed streaming platform"
 HOMEPAGE="https://github.com/zeromq/dafka"
