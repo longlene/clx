@@ -5,7 +5,7 @@ EAPI=5
 
 inherit toolchain-funcs vcs-snapshot
 
-EGIT_COMMIT="81fe3d99fd90a55cafb993e53fd3000dbc4d564c"
+EGIT_COMMIT="fe60579f28575def1db78f62f0e4232766c11104"
 
 DESCRIPTION="Tiny HTTP parser written in C"
 HOMEPAGE="https://github.com/h2o/picohttpparser"

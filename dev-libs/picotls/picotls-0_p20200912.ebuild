@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="89f71e94451e6ccfb2b97c43b13e3c34919ded4d"
+EGIT_COMMIT="2464adadf28c1b924416831d24ca62380936a209"
 
 DESCRIPTION="TLS 1.3 implementation in C"
 HOMEPAGE="https://github.com/h2o/picotls"
