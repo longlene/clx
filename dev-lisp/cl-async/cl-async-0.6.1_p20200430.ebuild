@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cc83f0f9ddc39fd152df15521188b57162c4669f"
+EGIT_COMMIT="f5eb6a3d32c29764cfc55273dcf1f9b5e9ede187"
 
 DESCRIPTION="Asynchronous operations for Common Lisp"
 HOMEPAGE="https://github.com/orthecreedence/cl-async"

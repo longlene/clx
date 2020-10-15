@@ -5,11 +5,11 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e9d93e34c0df834ef4aa0f8b500018314237be3b"
+EGIT_COMMIT="38ac10aa7e1999684d985b031bf2dcbfe63d1ca7"
 
 DESCRIPTION="Common Lisp implementation of Google's protocol buffers"
 HOMEPAGE="http://common-lisp.net/project/protobuf/"
-SRC_URI="https://github.com/longlene/protobuf/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/brown/protobuf/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

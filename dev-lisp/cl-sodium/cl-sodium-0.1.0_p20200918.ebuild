@@ -1,12 +1,11 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="8223e0a958f59e991140a08a15cd4b7bc0a15b8e"
+EGIT_COMMIT="aaef0a9f83abba8cda1d58c97c4086a5ae2a420e"
 
 DESCRIPTION="A wrapper around libsodium, providing easy, correct, safe crypto for common lisp"
 HOMEPAGE="https://github.com/orthecreedence/cl-sodium"
