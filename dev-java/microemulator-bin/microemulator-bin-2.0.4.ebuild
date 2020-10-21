@@ -1,6 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+
+EAPI=6
 
 inherit eutils java-utils-2
 
@@ -10,7 +11,7 @@ HOMEPAGE="http://www.microemu.org/"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE="examples"
 
 RDEPEND=">=virtual/jre-1.4"

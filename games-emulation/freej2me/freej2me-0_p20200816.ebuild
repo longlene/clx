@@ -5,7 +5,7 @@ EAPI=6
 
 inherit java-pkg-2 java-ant-2 vcs-snapshot
 
-EGIT_COMMIT="f3b6f0533b97153e6665aad2b1cad5cb47f019ff"
+EGIT_COMMIT="189f7d6f3b5065986032bf70369d3677261e7d8f"
 
 DESCRIPTION="A free J2ME emulator with libretro, awt, sdl2 and javafx frontends"
 HOMEPAGE="https://github.com/hex007/freej2me"

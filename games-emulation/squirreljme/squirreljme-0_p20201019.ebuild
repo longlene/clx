@@ -5,7 +5,7 @@ EAPI=6
 
 inherit java-pkg-2 vcs-snapshot
 
-EGIT_COMMIT="fdc4c2d1db510be93c9c12f216a4780d11effbcf"
+EGIT_COMMIT="5f8596497429adaf5ff3adcaa348c0372e2f0c23"
 
 DESCRIPTION="SquirrelJME intends to be a Java ME 8 compatible JVM"
 HOMEPAGE="https://github.com/XerTheSquirrel/SquirrelJME"
