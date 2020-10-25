@@ -9,7 +9,7 @@ DESCRIPTION="The open-source database for the realtime web."
 HOMEPAGE="https://www.rethinkdb.com"
 LICENSE="AGPL-3"
 SLOT="0"
-SRC_URI="https://download.rethinkdb.com/dist/${P}.tgz"
+SRC_URI="https://github.com/rethinkdb/rethinkdb/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 KEYWORDS="~amd64 ~x86"
 IUSE="doc +jemalloc tcmalloc"
