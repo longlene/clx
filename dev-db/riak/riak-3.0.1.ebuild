@@ -7,7 +7,7 @@ inherit versionator eutils user multilib toolchain-funcs vcs-snapshot
 
 DESCRIPTION="An open source, distributed database"
 HOMEPAGE="https://riak.com/"
-SRC_URI="https://github.com/basho/riak/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/basho/riak/archive/${P}.tar.gz -> ${P}.tar.gz"
 
 # prestripped files
 # bootstrapped from existing dev-lang/erlang install
@@ -60,18 +60,11 @@ RESTRICT=network-sandbox
 
 src_prepare() {
 	default
-	sed -i '/require_otp_vsn/d' rebar.config
-	#./rebar3 get-deps || die "prepare failed"
+	sed -e '/require_otp_vsn/d' -i rebar.config
 }
 
 src_compile() {
-	emake -j1 \
-		CC=$(tc-getCC) \
-		CXX=$(tc-getCXX) \
-		AR=$(tc-getAR) \
-		LD=$(tc-getLD) \
-		RANLIB=$(tc-getRANLIB) \
-		STRIP="" rel
+	rebar3 as rel release
 }
 
 src_install() {
@@ -120,6 +113,3 @@ src_install() {
 	# TODO logrotate
 }
 
-pkg_postinst() {
-	ewarn "To use kernel polling build erlang with the 'kpoll' useflag"
-}

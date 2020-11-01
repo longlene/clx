@@ -5,11 +5,9 @@ EAPI=6
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="33d1aa06cf6b22e138921eb969873c25f2b3061d"
-
 DESCRIPTION="header-only library for asyncronous communication with PostgreSQL"
 HOMEPAGE="https://github.com/yandex/ozo"
-SRC_URI="https://github.com/yandex/ozo/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/yandex/ozo/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="PostgreSQL"
 SLOT="0"
