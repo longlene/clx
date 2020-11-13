@@ -7,7 +7,7 @@ inherit cmake-utils
 
 DESCRIPTION="C/C++ Performance Profiler"
 HOMEPAGE="https://orbitprofiler.com"
-SRC_URI="https://github.com/google/orbit/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/google/orbit/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
