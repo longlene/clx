@@ -48,7 +48,6 @@ REQUIRED_USE="
 DEPEND="
 	dev-libs/protobuf
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	virtual/python-typing[${PYTHON_USEDEP}]
 	atlas? ( sci-libs/atlas )
 	cuda? ( dev-libs/cudnn
 		dev-cpp/eigen[cuda] )
