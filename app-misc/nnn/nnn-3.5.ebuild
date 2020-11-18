@@ -1,7 +1,7 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit bash-completion-r1 toolchain-funcs
 
@@ -11,7 +11,7 @@ SRC_URI="https://github.com/jarun/nnn/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc64 ~x86"
 
 DEPEND="sys-libs/ncurses:0=
 	sys-libs/readline:0="
@@ -27,13 +27,13 @@ src_prepare() {
 src_install() {
 	emake PREFIX="/usr" DESTDIR="${D}" install
 
-	newbashcomp scripts/auto-completion/bash/nnn-completion.bash nnn
+	newbashcomp misc/auto-completion/bash/nnn-completion.bash nnn
 
 	insinto /usr/share/fish/vendor_completions.d
-	doins scripts/auto-completion/fish/nnn.fish
+	doins misc/auto-completion/fish/nnn.fish
 
 	insinto /usr/share/zsh/site-functions
-	doins scripts/auto-completion/zsh/_nnn
+	doins misc/auto-completion/zsh/_nnn
 
 	einstalldocs
 }
