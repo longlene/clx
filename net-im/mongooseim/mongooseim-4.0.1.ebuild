@@ -20,6 +20,8 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+RESTRICT=network-sandbox
+
 src_configure() {
 	./tools/configure with-all without-jingle-sip prefix="" system=true user=jabber || die "configure failed"
 }
