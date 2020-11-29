@@ -21,8 +21,9 @@ RDEPEND="${DEPEND}
 	dev-lua/argcheck
 "
 
-src_install() {
-	insinto $(lua_get_sharedir)/class
+DOCS=( README.md )
+
+each_lua_install() {
+	insinto $(lua_get_lmoddir)/class
 	doins init.lua
-	dodoc README.md
 }

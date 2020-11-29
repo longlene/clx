@@ -1,8 +1,7 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 inherit lua
 
@@ -20,7 +19,8 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}"/${PN}.lua-${PV}
 
-src_install() {
-	lua_install_module ansicolors.lua
-	dodoc README.textile
+DOCS=( README.textile )
+
+each_lua_install() {
+	dolua ansicolors.lua
 }

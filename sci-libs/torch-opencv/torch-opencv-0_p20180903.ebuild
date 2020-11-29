@@ -5,7 +5,7 @@ EAPI=6
 
 inherit cmake-utils lua vcs-snapshot
 
-EGIT_COMMIT="1a4441ef09a7e9e1f2a7fbe9a60c60d1b07dc65c"
+EGIT_COMMIT="389fe4f029ef790b4ed22b1ac7abef3f210ebc0f"
 
 DESCRIPTION="OpenCV bindings for Torch"
 HOMEPAGE="https://github.com/VisionLabs/torch-opencv"

@@ -19,8 +19,9 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_install() {
-	insinto $(lua_get_sharedir)/buffer
+DOCS=( README.md )
+
+each_lua_install() {
+	insinto $(lua_get_lmoddir)/buffer
 	doins init.lua
-	dodoc README.md
 }

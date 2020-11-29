@@ -17,7 +17,8 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_install() {
-	lua_install_module src/argparse.lua
-	dodoc README.md
+DOCS=( README.md )
+
+each_lua_install() {
+	dolua src/argparse.lua
 }

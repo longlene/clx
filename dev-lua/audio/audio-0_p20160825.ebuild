@@ -3,6 +3,8 @@
 
 EAPI=6
 
+LUA_COMPAT="luajit2"
+
 inherit cmake-utils lua vcs-snapshot
 
 EGIT_COMMIT="d61eab4ffd9b3ef8218d367689236566e44e8f82"
@@ -25,12 +27,12 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	eapply_user
+each_lua_prepare() {
+	default
 	sed -i 's#/usr/include/sox/#/usr/include#' CMakeLists.txt
 }
 
-src_configure() {
+each_lua_configure() {
 	local mycmakeargs=(
 		"-DLUADIR=$(lua_get_sharedir)"
 		"-DLIBDIR=$(lua_get_libdir)"
@@ -44,10 +46,6 @@ src_configure() {
 	cmake-utils_src_configure
 }
 
-src_install() {
+each_lua_install() {
 	cmake-utils_src_install
-	dodir $(lua_get_sharedir) $(lua_get_libdir)
-	mv "${D}"/usr/lua/* "${D}"/$(lua_get_sharedir)
-	mv "${D}"/usr/lib/* "${D}"/$(lua_get_libdir)
-	rm -rf "${D}"/usr/lua
 }

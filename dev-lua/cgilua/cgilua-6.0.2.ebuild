@@ -1,8 +1,7 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=7
 
 inherit lua
 
@@ -10,20 +9,18 @@ DESCRIPTION="CGILua is a tool for creating dynamic HTML pages and manipulating i
 HOMEPAGE="http://keplerproject.github.com/cgilua"
 SRC_URI="https://github.com/keplerproject/cgilua/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lua/luafilesystem
+	dev-lua/luafilesystem
 "
 
-src_prepare() {
-	mv src/cgilua/cgilua.lua src
-}
+DOCS=( doc README.md )
 
-src_install() {
-	lua_install_module -r src/cgilua*
+each_lua_install() {
+	dolua src/cgilua
 }

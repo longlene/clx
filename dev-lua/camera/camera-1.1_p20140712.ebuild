@@ -3,6 +3,8 @@
 
 EAPI=6
 
+LUA_COMPAT="luajit2"
+
 inherit cmake-utils lua vcs-snapshot
 
 EGIT_COMMIT="6a202afe647a7a763f9d5c414ac2e0fd53e6b08a"
@@ -26,10 +28,10 @@ RDEPEND="${DEPEND}
 	media-libs/opencv
 "
 
-src_configure() {
+each_lua_configure() {
 	local mycmakeargs=(
-		"-DLUADIR=$(lua_get_sharedir)"
-		"-DLIBDIR=$(lua_get_libdir)"
+		"-DLUADIR=$(lua_get_lmoddir)"
+		"-DLIBDIR=$(lua_get_cmoddir)"
 		"-DLUA_BINDIR=/usr/bin"
 		"-DLUA_INCDIR=/usr/include"
 		"-DLUA_LIBDIR=/usr/$(get_libdir)"
@@ -40,7 +42,7 @@ src_configure() {
 	cmake-utils_src_configure
 }
 
-src_install() {
+each_lua_install() {
 	cmake-utils_src_install
 	dodir $(lua_get_libdir) $(lua_get_sharedir)
 	mv "${D}"/usr/lib/* "${D}"/$(lua_get_libdir)

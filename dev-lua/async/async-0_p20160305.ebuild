@@ -1,8 +1,7 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
 EGIT_COMMIT="293348b5aef029b8ca29269f96c8a8fe9bde33ce"
 
@@ -23,8 +22,8 @@ RDEPEND="${DEPEND}
 	sci-libs/torch7
 "
 
-src_install() {
-	lua_install_module -r async
-	lua_install_cmodule luv/luv.so lhttp_parser/lhttp_parser.so
-	dodoc README.md
+DOCS=( README.md )
+
+each_lua_install() {
+	dolua async luv/luv.so lhttp_parser/lhttp_parser.so
 }

@@ -19,8 +19,8 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_install() {
-	insinto $(lua_get_sharedir)/argcheck
-	doins *.lua
-	dodoc README.md
+DOCS=( README.md )
+
+each_lua_install() {
+	dolua *.lua
 }

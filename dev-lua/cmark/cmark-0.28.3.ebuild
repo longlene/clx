@@ -17,12 +17,10 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_compile() {
+each_lua_compile() {
 	emake cmark.so
 }
 
-src_install() {
-	lua_install_cmodule cmark.so
-	lua_install_module -r cmark
-	dodoc README.md
+each_lua_install() {
+	dolua cmark cmark.so
 }

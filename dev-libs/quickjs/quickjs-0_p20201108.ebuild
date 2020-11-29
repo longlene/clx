@@ -30,8 +30,7 @@ src_prepare() {
 }
 
 src_install() {
-	dobin qjs qjsc
-	dosym qjsbn /usr/bin/qjscalc
+	dobin qjs qjsc qjscalc
 	insinto /usr/lib/quickjs
 	doins libquickjs*.a
 	insinto /usr/include/quickjs

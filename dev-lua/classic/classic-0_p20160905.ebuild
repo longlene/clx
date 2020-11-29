@@ -22,15 +22,8 @@ RDEPEND="${DEPEND}
 	dev-lua/torch-totem
 "
 
-src_prepare() {
-	eapply_user
-	mv classic/init.lua classic.lua
-	mv classic/torch/init.lua classic/torch.lua
-}
+DOCS=( README.md )
 
-src_install() {
-	lua_install_module classic.lua
-	insinto $(lua_get_sharedir)/classic
-	doins classic/{Class,Module,torch}.lua
-	dodoc README.md
+each_lua_install() {
+	dolua classic
 }
