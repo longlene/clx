@@ -7,7 +7,7 @@ inherit multilib eutils flag-o-matic pax-utils toolchain-funcs
 
 #same order as http://www.sbcl.org/platform-table.html
 BV_X86=1.4.3
-BV_AMD64=2.0.4
+BV_AMD64=2.0.10
 BV_PPC=1.2.7
 BV_SPARC=1.0.28
 BV_ALPHA=1.0.28
@@ -42,7 +42,7 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~amd64-linux ~x86-linux ~x64-macos ~x86-macos ~x86-solaris"
 IUSE="debug doc source +threads +unicode pax_kernel zlib"
 
-CDEPEND=">=dev-lisp/asdf-3.1:="
+CDEPEND=">=dev-lisp/asdf-3.3:="
 DEPEND="${CDEPEND}
 		doc? ( sys-apps/texinfo >=media-gfx/graphviz-2.26.0 )
 		pax_kernel? ( sys-apps/elfix )"
@@ -95,10 +95,13 @@ src_unpack() {
 }
 
 src_prepare() {
+	# bug #468482
+	eapply "${FILESDIR}"/concurrency-test-2.0.1.patch
+	# bugs #486552, #527666, #517004
+	eapply "${FILESDIR}"/bsd-sockets-test-2.0.5.patch
 	# bugs #560276, #561018
 	eapply "${FILESDIR}"/sb-posix-test-1.2.15.patch
 
-	eapply "${FILESDIR}"/${PN}-1.2.11-solaris.patch
 	eapply "${FILESDIR}"/verbose-build-2.0.3.patch
 
 	eapply_user
