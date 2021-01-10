@@ -1,7 +1,9 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
+
+LUA_COMPAT=( lua5-{1..3} luajit )
 
 inherit lua vcs-snapshot
 
@@ -16,11 +18,20 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="${DEPEND}"
+REQUIRED_USE="${LUA_REQUIRED_USE}"
+
+RDEPEND="${LUA_DEPS}"
+DEPEND="${RDEPEND}"
+BDEPEND="virtual/pkgconfig"
 
 DOCS=( README.md )
 
-each_lua_install() {
-	dolua *.lua
+lua_src_install() {
+	insinto $(lua_get_lmod_dir)/argcheck
+	doins {init,env,utils,doc,dump}.lua
+}
+
+src_install() {
+	lua_foreach_impl lua_src_install
+	einstalldocs
 }

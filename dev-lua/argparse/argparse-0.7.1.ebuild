@@ -3,6 +3,8 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-{1..3} luajit )
+
 inherit lua
 
 DESCRIPTION="Feature-rich command line parser for Lua"
@@ -14,11 +16,20 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
-DEPEND=""
-RDEPEND="${DEPEND}"
+REQUIRED_USE="${LUA_REQUIRED_USE}"
+
+RDEPEND="${LUA_DEPS}"
+DEPEND="${RDEPEND}"
+BDEPEND="virtual/pkgconfig"
 
 DOCS=( README.md )
 
-each_lua_install() {
-	dolua src/argparse.lua
+lua_src_install() {
+	insinto $(lua_get_lmod_dir)
+	doins src/argparse.lua
+}
+
+src_install() {
+	lua_foreach_impl lua_src_install
+	einstalldocs
 }

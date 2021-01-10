@@ -1,7 +1,9 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
+
+LUA_COMPAT=( lua5-{1..3} luajit )
 
 inherit lua
 
@@ -14,17 +16,25 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
+REQUIRED_USE="${LUA_REQUIRED_USE}"
+
+RDEPEND="${LUA_DEPS}"
+DEPEND="${RDEPEND}"
+BDEPEND="virtual/pkgconfig"
+
 DOCS=( README )
 
-S="${WORKDIR}/all/lua-${P}"
-LUA_S="lua-alt-getopt"
+S="${WORKDIR}/lua-${P}"
 
-each_lua_compile() { :; }
+src_compile() { :; }
 
-each_lua_install() {
-	dolua alt_getopt.lua
+lua_src_install() {
+	insinto $(lua_get_lmod_dir)
+	doins alt_getopt.lua
 }
 
-all_lua_install() {
-	dobin alt_getopt
+src_install() {
+	lua_foreach_impl lua_src_install
+
+	einstalldocs
 }
