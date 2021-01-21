@@ -17,7 +17,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_install() {
-	dobin ${BUILD_DIR}/${PN}
-	dodoc README.md
-}
+#src_install() {
+#	dobin ${BUILD_DIR}/bin/${PN}
+#	dodoc README.md
+#}
