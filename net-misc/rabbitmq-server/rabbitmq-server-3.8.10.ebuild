@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_8 )
 
 inherit python-any-r1 systemd user
 
@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 RESTRICT="test"
 
-RDEPEND=">=dev-lang/erlang-19.3[ssl]"
+RDEPEND=">=dev-lang/erlang-22.3[ssl]"
 DEPEND="${RDEPEND}
 	app-arch/zip
 	app-arch/unzip
