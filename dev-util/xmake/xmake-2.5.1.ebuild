@@ -9,7 +9,7 @@ DESCRIPTION="A cross-platform build utility based on Lua"
 HOMEPAGE="https://xmake.io"
 SRC_URI="
 	https://github.com/tboox/xmake/archive/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/tboox/tbox/archive/2c31b4f94a6a225248ea993080a30b98947c4b3c.tar.gz -> tbox-1.6.5_p20200920.tar.gz
+	https://github.com/tboox/tbox/archive/v1.6.6.tar.gz -> tbox-1.6.6.tar.gz
 	https://github.com/LuaJIT/LuaJIT/archive/1d8b747c161db457e032a023ebbff511f5de5ec2.tar.gz -> luajit-2.1_p20201012.tar.gz
 	https://github.com/xmake-io/xmake-core-sv/archive/9a3cf7c8e589de4f70378824329882c4a047fffc.tar.gz -> xmake-core-sv-1.0_p20190825.tar.gz
 	https://github.com/wmcbrine/PDCurses/archive/3.9.tar.gz -> pdcurses-3.9.tar.gz
@@ -32,7 +32,7 @@ src_prepare() {
 	default
 	sed -i '/RANLIB/d' core/suffix.mak
 	rmdir core/src/tbox/tbox
-	mv ${WORKDIR}/tbox-1.6.5_p20200920 core/src/tbox/tbox
+	mv ${WORKDIR}/tbox-1.6.6 core/src/tbox/tbox
 	rmdir core/src/luajit/luajit
 	mv ${WORKDIR}/luajit-2.1_p20201012 core/src/luajit/luajit
 	rmdir core/src/sv/sv
