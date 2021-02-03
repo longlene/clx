@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 elisp-common eutils vcs-snapshot
 
-EGIT_COMMIT="4a45fea047127f801318c79ce1893ebcb083370e"
+EGIT_COMMIT="72ba01ace230ad7e06ba579c1e78601fda2ff0c8"
 
 DESCRIPTION="McCLIM is a free software implementation of CLIM."
 HOMEPAGE="http://common-lisp.net/project/mcclim
