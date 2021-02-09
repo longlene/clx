@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ba902847370daf8a7a07297ca225f96ab079394b"
+EGIT_COMMIT="af654821c9ffb034109459a242989c79a7f6f394"
 
 DESCRIPTION="General-purpose connection pooling library for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/anypool"
