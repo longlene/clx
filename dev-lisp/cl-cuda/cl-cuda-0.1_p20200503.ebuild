@@ -1,17 +1,17 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f696263e247515bd34b04dbd2eec92a42f1cc51d"
+EGIT_COMMIT="8aaf319303cca78cd999fc5defb2793e6fb76a18"
 
 DESCRIPTION="cl-cuda is a library to use NVIDIA CUDA in Common Lisp programs"
 HOMEPAGE="https://github.com/takagi/cl-cuda"
 SRC_URI="https://github.com/takagi/cl-cuda/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="LLGPL"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example test"
@@ -34,7 +34,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -rf ${PN}-test.asd ${PN}-interop-test.asd t
 	use example || rm -rf ${PN}-examples.asd ${PN}-interop-examples.asd examples
 	sed -e '/grovel-file/{s#"type-grovel"#"type-grovel" :cc-flags ("-I" "/opt/cuda/include")#}' \

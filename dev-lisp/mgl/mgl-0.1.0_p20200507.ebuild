@@ -1,11 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7c44fe86e82d28889f9d8e57cdd6e06dd5767ff3"
+EGIT_COMMIT="27a2552632a6a9330c1a133e519e676d9c6ca714"
 
 DESCRIPTION="Common Lisp machine learning library"
 HOMEPAGE="https://github.com/melisgl/mgl"
@@ -23,15 +23,18 @@ RDEPEND="${DEPEND}
 	dev-lisp/array-operations
 	dev-lisp/lla
 	dev-lisp/cl-reexport
-	dev-lisp/mgl-mat
+	dev-lisp/mgl-gnuplot
+	dev-lisp/mgl-mat[test]
 	dev-lisp/mgl-pax
 	dev-lisp/named-readtables
 	dev-lisp/pythonic-string-reader
-	test? ( dev-lisp/mgl-mat[test] )
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use example || rm -rf ${PN}-example.asd example
-	use test || rm -rf ${PN}-test.asd test
+	if ! use test ; then
+		sed -i '/defsystem #:mgl\/test/,$d' ${PN}.asd
+		rm -r test
+	fi
 }

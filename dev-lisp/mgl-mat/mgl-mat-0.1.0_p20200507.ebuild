@@ -1,11 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="10be6a8ff5c7300da7267977111f8f9a2d86e76a"
+EGIT_COMMIT="550369aaac5aeafe563b6dc8e3cc6bf4b74a1cc5"
 
 DESCRIPTION="MAT is library for working with multi-dimensional arrays which supports efficient interfacing to foreign and CUDA code"
 HOMEPAGE="https://github.com/melisgl/mgl-mat"
@@ -32,7 +32,10 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	sed -i 's#/usr/local/cuda/include#/opt/cuda/include#' ${PN}.asd
-	use test || rm -rf ${PN}-test.asd test
+	if ! use test ; then
+		sed -i '/defsystem mgl-mat\/test/,$d' ${PN}.asd
+		rm -r test
+	fi
 }

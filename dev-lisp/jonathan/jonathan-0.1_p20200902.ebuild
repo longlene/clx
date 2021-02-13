@@ -1,11 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1f448b4f7ac8265e56e1c02b32ce383e65316300"
+EGIT_COMMIT="fb83ff094d330b2208b0febc8b25983c6050e378"
 
 DESCRIPTION="JSON encoder and decoder"
 HOMEPAGE="https://rudolph-miller.github.io/jonathan/overview.html"

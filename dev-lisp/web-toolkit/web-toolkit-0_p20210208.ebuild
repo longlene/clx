@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ae02832f82daf4977abd667299b1f1fcc5481a8b"
+EGIT_COMMIT="c6daccae2c025f49d486355cef2ec3df60acbc8d"
 
 DESCRIPTION="Lisp Web Toolkit"
 HOMEPAGE="https://github.com/xh4/web-toolkit"

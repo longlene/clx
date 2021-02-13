@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="2e60d31559a6b1d7241e64e22c8e291216f12477"
 
 DESCRIPTION="LMDB bindings for Common Lisp"
 HOMEPAGE="https://github.com/antimer/lmdb"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/antimer/lmdb.git"
+SRC_URI="https://github.com/antimer/lmdb/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,13 +19,21 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
-	dev-lisp/bit-smasher
-	dev-lisp/liblmdb
 	dev-lisp/trivial-utf8
+	dev-lisp/mgl-pax
+	dev-lisp/bordeaux-threads
+	dev-lisp/osicat
+	dev-lisp/trivial-features
+	dev-lisp/trivial-garbage
+	dev-lisp/cffi
 "
 
 src_prepare() {
-	use test || rm -rf ${PN}-test.asd t
+	default
+	if ! use test ; then
+		sed -i '/defsystem :lmdb\/test/,$d' ${PN}.asd
+		rm -r test
+	fi
 }
 
 src_install() {
