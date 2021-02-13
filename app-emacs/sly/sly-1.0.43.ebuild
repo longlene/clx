@@ -5,11 +5,9 @@ EAPI=6
 
 inherit common-lisp-3 elisp eutils vcs-snapshot
 
-EGIT_COMMIT="affc61adfe5d23db0b326735a9576660df7cd16f"
-
 DESCRIPTION="Sylvester the Cat's Common Lisp IDE"
 HOMEPAGE="https://github.com/joaotavora/sly"
-SRC_URI="https://github.com/joaotavora/sly/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/joaotavora/sly/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
