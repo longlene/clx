@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_7 )
+PYTHON_COMPAT=( python3_8 )
 
 inherit distutils-r1 cmake-utils cuda
 
@@ -49,8 +49,7 @@ DEPEND="
 	dev-libs/protobuf
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	atlas? ( sci-libs/atlas )
-	cuda? ( dev-libs/cudnn
-		dev-cpp/eigen[cuda] )
+	cuda? ( dev-libs/cudnn dev-cpp/eigen[cuda] )
 	ffmpeg? ( virtual/ffmpeg )
 	gflags? ( dev-cpp/gflags )
 	glog? ( dev-cpp/glog )

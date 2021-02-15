@@ -1,10 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
-inherit cmake-utils lua vcs-snapshot
+LUA_COMPAT=( luajit )
+
+inherit cmake-utils lua-single vcs-snapshot
 
 EGIT_COMMIT="dbd0a623dc4dfb4b8169d5aecc6dd9aec2f22792"
 
@@ -17,22 +18,23 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="
-	>=dev-lang/lua-5.1:=
-	dev-lang/luajit:2
-"
+REQUIRED_USE="${LUA_REQUIRED_USE}"
+
+DEPEND="${LUA_DEPS}"
 RDEPEND="${DEPEND}"
+BDEPEND="virtual/pkgconfig"
 
 src_configure() {
 	local mycmakeargs=(
-		"-DLUADIR=$(lua_get_sharedir)"
-		"-DLIBDIR=$(lua_get_libdir)"
+		"-DLUADIR=$(lua_get_lmod_dir)"
+		"-DLIBDIR=$(lua_get_cmod_dir)"
 		"-DLUA_BINDIR=/usr/bin"
 		"-DLUA_INCDIR=/usr/include"
 		"-DLUA_LIBDIR=/usr/$(get_libdir)"
-		"-DLUALIB=/usr/lib/libluajit-5.1.so"
-		"-DLUA=/usr/bin/luajit"
+		"-DLUALIB=$(lua_get_shared_lib)"
+		"-DLUA=${LUA}"
 	)
 
 	cmake-utils_src_configure
 }
+

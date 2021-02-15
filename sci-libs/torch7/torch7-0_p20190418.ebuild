@@ -1,11 +1,13 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit cmake-utils lua vcs-snapshot
+LUA_COMPAT=( luajit )
 
-EGIT_COMMIT="89ede3ba90c906a8ec6b9a0f4bef188ba5bb2fd8"
+inherit cmake-utils lua-single vcs-snapshot
+
+EGIT_COMMIT="dde9e56fb61eee040d7f3dba2331c6d6c095aee8"
 
 DESCRIPTION="Torch is a Lua-based suite for scientific computations based on multidimensional tensors."
 HOMEPAGE="https://github.com/torch/torch7"
@@ -17,8 +19,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE="minimal cuda cudnn opencl"
 
 DEPEND="
-	>=dev-lang/lua-5.1:=
-	dev-lang/luajit:2
+	${LUA_DEPS}
 	virtual/blas
 	virtual/lapack
 	dev-lua/luafilesystem
@@ -51,21 +52,20 @@ opencl? (
 
 REQUIRED_USE="cudnn? ( cuda )"
 
-src_prepare() {
-	eapply_user
-	sed -i '/FILE(RELATIVE_PATH\ Torch_INSTALL_INCLUDE_SUBDIR/{s#${LUA_INCDIR}#/usr/include#}' cmake/TorchPaths.cmake || die
-}
+#src_prepare() {
+#	eapply_user
+#	sed -i '/FILE(RELATIVE_PATH\ Torch_INSTALL_INCLUDE_SUBDIR/{s#${LUA_INCDIR}#/usr/include#}' cmake/TorchPaths.cmake || die
+#}
 
 src_configure() {
 	local mycmakeargs=(
-		"-DLUADIR=$(lua_get_sharedir)"
-		"-DLIBDIR=$(lua_get_libdir)"
+		"-DLUADIR=$(lua_get_lmod_dir)"
+		"-DLIBDIR=$(lua_get_cmod_dir)"
 		"-DLUA_BINDIR=/usr/bin"
-		"-DLUA_INCDIR=/usr/include/luajit-2.0"
+		"-DLUA_INCDIR=$(lua_get_include_dir)"
 		"-DLUA_LIBDIR=/usr/$(get_libdir)"
-		"-DLUALIB=/usr/lib/libluajit-5.1.so"
-		"-DLUA=/usr/bin/luajit"
+		"-DLUALIB=$(lua_get_shared_lib)"
+		"-DLUA=${LUA}"
 	)
-
 	cmake-utils_src_configure
 }

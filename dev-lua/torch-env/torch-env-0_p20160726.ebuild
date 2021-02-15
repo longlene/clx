@@ -1,10 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
-inherit lua vcs-snapshot
+LUA_COMPAT=( luajit )
+
+inherit lua-single vcs-snapshot
 
 EGIT_COMMIT="d28424ac5b638686410304c60c31693849f3d1dd"
 
@@ -24,6 +25,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_install() {
-	insinto $(lua_get_sharedir)/env
+	insinto $(lua_get_lmod_dir)/env
 	doins init.lua
 }

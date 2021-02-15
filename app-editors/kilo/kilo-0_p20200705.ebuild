@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-inherit git-r3
+inherit vcs-snapshot
+
+EGIT_COMMIT="69c3ce609d1e8df3956cba6db3d296a7cf3af3de"
 
 DESCRIPTION="A text editor in less than 1000 LOC with syntax highlight and search"
 HOMEPAGE="https://github.com/antirez/kilo"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/antirez/kilo.git"
+SRC_URI="https://github.com/antirez/kilo/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
