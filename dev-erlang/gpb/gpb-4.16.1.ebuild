@@ -3,8 +3,6 @@
 
 EAPI=6
 
-#inherit rebar
-
 DESCRIPTION="A Google Protobuf implementation for Erlang"
 HOMEPAGE="https://github.com/tomas-abrahamsson/gpb"
 SRC_URI="https://github.com/tomas-abrahamsson/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
@@ -18,10 +16,10 @@ RDEPEND="
 	>=dev-lang/erlang-17.1"
 DEPEND="${RDEPEND}"
 
-DOCS=( CHANGELOG )
+DOCS=( README.md )
 
 src_prepare() {
-	eapply_user
+	default
 	sed -i "s#@vsn@#${PV}#" include/gpb_version.hrl.in
 	cp include/gpb_version.hrl.in include/gpb_version.hrl
 }
@@ -31,7 +29,6 @@ src_install() {
 	doins -r ebin include priv
 	exeinto /usr/lib/erlang/lib/${P}/bin
 	doexe bin/protoc-erl
-	#dosym /usr/lib/erlang/lib/${P}/bin/protoc-erl /usr/bin/protoc-erl
 	dosym ../lib/erlang/lib/${P}/bin/protoc-erl /usr/bin/protoc-erl
-	dodoc README.md
+	einstalldocs
 }
