@@ -6,7 +6,7 @@ EAPI=6
 inherit cmake-utils
 
 DESCRIPTION="modern, simple, easy to use rpc framework"
-HOMEPAGE="https://github.com/topcpporg/rest_rpc"
+HOMEPAGE="https://github.com/qicosmos/rest_rpc"
 SRC_URI="https://github.com/qicosmos/rest_rpc/archive/V${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"

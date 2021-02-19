@@ -16,8 +16,8 @@ IUSE=""
 
 DEPEND="
 	>=dev-cpp/nlohmann_json-3.2.0
-	>=dev-cpp/xtl-0.5.0
-	>=net-libs/cppzmq-4.3.0
+	>=dev-cpp/xtl-0.7.0
+	>=net-libs/cppzmq-4.7.1
 	dev-libs/openssl
 "
 RDEPEND="${DEPEND}"

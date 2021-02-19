@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	>=dev-cpp/xtensor-0.21.4
+	>=dev-cpp/xtensor-0.23.0
 	virtual/blas
 	virtual/lapack
 "

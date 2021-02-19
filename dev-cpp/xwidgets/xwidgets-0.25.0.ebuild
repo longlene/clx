@@ -16,9 +16,9 @@ IUSE=""
 
 DEPEND="
 	>dev-cpp/widgetsnbextension-3.0.0
-	>=dev-cpp/xtl-0.6.5
-	>=dev-cpp/xproperty-0.8.1
-	>=dev-cpp/xeus-0.21.1
+	>=dev-cpp/xtl-0.7.0
+	>=dev-cpp/xproperty-0.11.0
+	>=dev-cpp/xeus-1.0
 	>=dev-cpp/nlohmann_json-3.6.1
 "
 RDEPEND="${DEPEND}"

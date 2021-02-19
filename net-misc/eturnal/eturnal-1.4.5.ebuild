@@ -14,16 +14,16 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-libs/libyaml
-	dev-libs/openssl
 	acct-user/eturnal
 	acct-group/eturnal
+	>=dev-erlang/stun-1.0.42
+	>=dev-erlang/conf-0.2.1
+	>=dev-erlang/recon-2.5.1
+	>=dev-erlang/influx_udp-1.1.1
 "
 BDEPEND="
 	dev-util/rebar:3
 "
-
-RESTRICT=network-sandbox
 
 src_prepare() {
 	default
@@ -31,7 +31,7 @@ src_prepare() {
 }
 
 src_compile() {
-	rebar3 as distro release
+	SKIP_DEPS=true rebar3 as distro release
 }
 
 src_install() {
