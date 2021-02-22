@@ -19,7 +19,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/six
 	dev-python/tqdm
-	dev-python/pytorch
+	sci-libs/pytorch
 	dev-python/torchtext
 	dev-python/future
 	dev-python/configargparse
