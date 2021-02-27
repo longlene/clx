@@ -1,11 +1,11 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="3285a2dfb966fda7639391c43ec823fa88d70267"
+EGIT_COMMIT="e82d1a7b8bca94cca68e0000e866289e2cf29ccc"
 
 DESCRIPTION="A hybrid thread / fiber task scheduler"
 HOMEPAGE="https://github.com/google/marl"

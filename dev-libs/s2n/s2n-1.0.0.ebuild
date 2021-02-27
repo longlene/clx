@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake-utils vcs-snapshot
 
 DESCRIPTION="An implementation of the TLS/SSL protocols"
 HOMEPAGE="https://github.com/awslabs/s2n"
