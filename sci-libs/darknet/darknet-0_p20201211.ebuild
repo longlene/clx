@@ -5,7 +5,7 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="bc5ea7cca8c770ebdacd2c792ddd96f6904ee23a"
+EGIT_COMMIT="a3714d0a2bf92c3dea84c4bea65b2b0c64dbc6b1"
 
 DESCRIPTION="Convolutional Neural Networks"
 HOMEPAGE="http://pjreddie.com/darknet/"
