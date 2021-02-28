@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake-utils
 
-DESCRIPTION="C++17 `std::variant` for C++11/14/17"
+DESCRIPTION="C++17 std::variant for C++11/14/17"
 HOMEPAGE="https://github.com/mpark/variant"
 SRC_URI="https://github.com/mpark/variant/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 

@@ -5,7 +5,7 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="f9c6c645d099dc374b1e6bb628aadea4e067a605"
+EGIT_COMMIT="a927043cdd5bfe203560802e56a7e7ed43156ed3"
 
 DESCRIPTION="C++ header-only linenoise-based readline library"
 HOMEPAGE="https://github.com/yhirose/cpp-linenoise"
