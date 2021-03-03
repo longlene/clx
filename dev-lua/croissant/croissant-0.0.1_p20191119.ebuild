@@ -3,6 +3,8 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-{1..3} luajit )
+
 inherit lua vcs-snapshot
 
 EGIT_COMMIT="65f2d3d61b9b13bdc380afc2eaf0c7c6ef461be7"
@@ -15,22 +17,27 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
+REQUIRED_USE="${LUA_REQUIRED_USE}"
+
 DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-lua/sirocco-0.0.1
 	>=dev-lua/hump-0.4
 	>=dev-lua/lpeg-1.0.1
 	>=dev-lua/argparse-0.6.0
-	>=dev-lua/compat53-0.7
 "
 BDEPEND=""
 
 DOCS=( READM.md )
 
-each_lua_install() {
-	dolua croissant
+lua_src_install() {
+	insinto $(lua_get_lmod_dir)
+	doins -r croissant
 }
 
-all_lua_install() {
+src_install() {
+	lua_foreach_impl lua_src_install
 	dobin bin/croissant
+	einstalldocs
 }
+
