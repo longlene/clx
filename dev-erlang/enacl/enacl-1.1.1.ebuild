@@ -7,15 +7,15 @@ inherit rebar
 
 DESCRIPTION="Erlang bindings for NaCl / libsodium"
 HOMEPAGE="https://github.com/jlouis/enacl"
-SRC_URI="https://github.com/jlouis/enacl/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jlouis/enacl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="${DEPEND}
+DEPEND="
 	dev-libs/libsodium
 "
+RDEPEND="${DEPEND}"
 BDEPEND=""
