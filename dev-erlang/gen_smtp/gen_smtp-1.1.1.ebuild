@@ -6,14 +6,17 @@ EAPI=6
 inherit rebar
 
 DESCRIPTION="A generic Erlang SMTP server and client that can be extended via callback modules"
-HOMEPAGE="https://github.com/Vagabond/gen_smtp"
-SRC_URI="https://github.com/Vagabond/gen_smtp/archive/${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/gen-smtp/gen_smtp"
+SRC_URI="https://github.com/gen-smtp/gen_smtp/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	dev-erlang/hut
+	dev-erlang/ranch
+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
