@@ -3,8 +3,6 @@
 
 EAPI=7
 
-inherit vcs-snapshot
-
 DESCRIPTION="The Erlang Language Server Protocol Implementation"
 HOMEPAGE="https://github.com/erlang-ls/erlang_ls"
 SRC_URI="https://github.com/erlang-ls/erlang_ls/archive/${PV}.tar.gz -> ${P}.tar.gz"
@@ -20,9 +18,10 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-src_prepare() {
-	default
-	rebar3 get-deps
+RESTRICT=network-sandbox
+
+src_compile() {
+	rebar3 escriptize || die "compile failed"
 }
 
 src_install() {
