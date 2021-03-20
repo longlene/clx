@@ -16,7 +16,7 @@ IUSE="go haskell java javascript ocaml perl php python ruby"
 
 DEPEND="
 	dev-lang/erlang
-	dev-libs/boost[thread]
+	dev-libs/boost[threads]
 	go? ( dev-lang/go )
 	haskell? ( dev-lang/ghc )
 	java? ( virtual/jdk )
