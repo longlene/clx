@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="32f30e2793ea1d31e3d43524ab1e09169cf4f911"
+EGIT_COMMIT="38f5b54a985bb27b771bb249d77bcfbf22dfbd20"
 
 DESCRIPTION="Lake is a GNU make like build utility in Common Lisp"
 HOMEPAGE="https://github.com/takagi/lake"
@@ -27,6 +26,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	default
 	use test || rm -rf t ${PN}-test.asd
 }
 

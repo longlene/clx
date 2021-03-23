@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit rebar3
+inherit rebar
 
 DESCRIPTION="Erlang NIF bindings for the RE2 regex library"
 HOMEPAGE="https://github.com/dukesoferl/re2"
