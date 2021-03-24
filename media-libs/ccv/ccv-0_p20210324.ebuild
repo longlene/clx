@@ -1,12 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="121980abafe4a843a79b50af4d341865360eca85"
+EGIT_COMMIT="ea423d0110e3849bc0e2ff0589ac1e563489a50f"
 
 DESCRIPTION="C-based/Cached/Core Computer Vision Library"
 HOMEPAGE="https://libccv.org"
@@ -17,7 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	sys-devel/clang
+"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}"/${P}/lib
+

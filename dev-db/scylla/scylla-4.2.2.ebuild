@@ -29,7 +29,7 @@ else
 	S="${WORKDIR}/scylla-${MY_P}"
 fi
 
-PYTHON_COMPAT=( python3_{4,5,6} )
+PYTHON_COMPAT=( python3_{8,9} )
 
 inherit autotools flag-o-matic linux-info python-r1 toolchain-funcs systemd user
 
