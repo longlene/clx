@@ -9,7 +9,7 @@ EGO_PN="gocv.io/x/gocv/..."
 
 DESCRIPTION="Go package for computer vision using OpenCV 3.3+"
 HOMEPAGE="https://gocv.io"
-SRC_URI="https://github.com/hybridgroup/gocv/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/hybridgroup/gocv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
