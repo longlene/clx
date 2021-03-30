@@ -2,13 +2,11 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="b39ec54a07062334cfa37b31d14e39115921ffe0"
+inherit common-lisp-3
 
 DESCRIPTION="Yet another URI library for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/quri"
-SRC_URI="https://github.com/fukamachi/quri/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/fukamachi/quri/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

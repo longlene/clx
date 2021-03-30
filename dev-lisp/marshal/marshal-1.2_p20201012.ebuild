@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9369672b6e30bf189a68c73b049fe926625c7aeb"
+EGIT_COMMIT="79c518bfb1431e8d1bcac462fa23ae2d206a38c2"
 
 DESCRIPTION="Simple and fast serialization of all kinds of Common Lisp data structures"
 HOMEPAGE="https://github.com/wlbr/cl-marshal"
@@ -21,6 +20,6 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	eapply_user
-	rm tests.lisp
+	default
+	rm ${PN}-tests.asd tests.lisp
 }

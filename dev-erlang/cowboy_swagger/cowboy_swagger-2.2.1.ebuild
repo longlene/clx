@@ -19,6 +19,6 @@ RDEPEND="${DEPEND}
 	>=dev-erlang/jsx-2.9.0
 	>=dev-erlang/cowboy-2.3.0
 	>=dev-erlang/ranch-1.4.0
-	>=dev-erlang/cowboy-trails-2.1.0
+	>=dev-erlang/trails-2.1.0
 "
 BDEPEND=""

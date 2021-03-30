@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit rebar
+inherit rebar vcs-snapshot
 
 DESCRIPTION="A couple of improvements over Cowboy Routes"
 HOMEPAGE="https://github.com/inaka/cowboy-trails"

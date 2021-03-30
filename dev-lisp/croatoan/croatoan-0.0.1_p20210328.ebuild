@@ -1,11 +1,11 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e6801c6ae31f2987404d3c1a95704ec7b91bb5ee"
+EGIT_COMMIT="0e4555604608c4716fe5006610cc686719753ebe"
 
 DESCRIPTION="Common Lisp bindings for the ncurses terminal library"
 HOMEPAGE="https://github.com/McParen/croatoan"
@@ -18,7 +18,13 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-lisp/bordeaux-threads
 	dev-lisp/cffi
 	dev-lisp/trivial-gray-streams
 	sys-libs/ncurses
 "
+
+src_prepare() {
+	default
+	rm -rf ${PN}-test.asd test ansi-escape-test.asd
+}
