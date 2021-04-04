@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="204ef6ed78d51470f97f40c7180e66fe487b9168"
+EGIT_COMMIT="5916273f79a21551890fd3d56fc5375a78d1598d"
 
 DESCRIPTION="CPU INFOrmation library (x86/x86-64/ARM/ARM64, Linux/Windows/Android/macOS/iOS)"
 HOMEPAGE="https://github.com/pytorch/cpuinfo"
