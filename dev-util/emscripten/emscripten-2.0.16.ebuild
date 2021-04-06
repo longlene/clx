@@ -3,15 +3,17 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 python3_6 python3_7 python3_8 )
+PYTHON_COMPAT=( python3_{8,9} )
 inherit cmake-utils python-any-r1
+
+MY_PV=1.40.1
 
 DESCRIPTION="LLVM-to-JavaScript Compiler"
 HOMEPAGE="http://emscripten.org/"
 SRC_URI="
-	https://github.com/kripken/emscripten/archive/${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/kripken/emscripten-fastcomp/archive/${PV}.tar.gz -> ${PN}-fastcomp-${PV}.tar.gz
-	https://github.com/kripken/emscripten-fastcomp-clang/archive/${PV}.tar.gz -> ${PN}-fastcomp-clang-${PV}.tar.gz
+	https://github.com/emscripten-core/emscripten/archive/${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/emscripten-core/emscripten-fastcomp/archive/${MY_PV}.tar.gz -> ${PN}-fastcomp-${MY_PV}.tar.gz
+	https://github.com/emscripten-core/emscripten-fastcomp-clang/archive/${MY_PV}.tar.gz -> ${PN}-fastcomp-clang-${MY_PV}.tar.gz
 "
 
 LICENSE="as-is"
@@ -28,11 +30,11 @@ CMAKE_USE_DIR="${WORKDIR}"/emscripten-fastcomp-${PV}
 CMAKE_BUILD_TYPE=Release
 
 src_prepare() {
-	eapply_user
-	ln -s "${WORKDIR}"/emscripten-fastcomp-clang-${PV} "${WORKDIR}"/emscripten-fastcomp-${PV}/tools/clang
+	default
+	ln -s "${WORKDIR}"/emscripten-fastcomp-clang-${MY_PV} "${WORKDIR}"/emscripten-fastcomp-${MY_PV}/tools/clang
 	sed -e "s|#include \"../../../../emscripten-version.txt\"|\"${PV}\"|" \
 		-e "s|#include \"../../../../tools/clang/emscripten-version.txt\"|\"${PV}\"|" \
-		-i ${WORKDIR}/emscripten-fastcomp-${PV}/tools/clang/lib/Basic/Version.cpp || die
+		-i ${WORKDIR}/emscripten-fastcomp-${MY_PV}/tools/clang/lib/Basic/Version.cpp || die
 
 	sed -e "s|getenv('LLVM'|getenv('EMSCRIPTEN_FASTCOMP'|" \
 		-e "s|{{{ LLVM_ROOT }}}|/usr/$(get_libdir)/emscripten-fastcomp|" \

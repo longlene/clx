@@ -1,11 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="524449cb30d48b56b37e5c7580accc1d66c355e4"
+EGIT_COMMIT="1255949b94e0eb999f2e9c29efe1df60ea951a03"
 
 DESCRIPTION="A small libc"
 HOMEPAGE="http://litcave.rudi.ir"

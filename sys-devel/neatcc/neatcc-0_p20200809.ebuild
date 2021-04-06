@@ -1,11 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="3b04b7f9afcda20ee7864724da4dd462229c17e9"
+EGIT_COMMIT="906fbf5b4bbffbc764bb1237241d25e8f1096b29"
 
 DESCRIPTION="A small C compiler"
 HOMEPAGE="http://litcave.rudi.ir/"
