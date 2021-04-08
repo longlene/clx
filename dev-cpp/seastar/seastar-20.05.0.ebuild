@@ -12,7 +12,7 @@ SRC_URI="https://github.com/scylladb/seastar/archive/${P}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="hwloc numa"
+IUSE="dpdk +hwloc +numa"
 
 DEPEND="
 	app-arch/lz4
@@ -25,6 +25,7 @@ DEPEND="
 	net-misc/lksctp-tools
 	dev-util/valgrind
 	dev-util/systemtap
+	dpdk? ( net-libs/dpdk )
 	hwloc? ( sys-apps/hwloc )
 	numa? ( sys-process/numactl )
 "
@@ -33,12 +34,12 @@ BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(
-	-DSeastar_DEMOS=OFF
-	-DSeastar_DOCS=OFF
-	-DSeastar_TESTING=OFF
-	-DSeastar_APPS=OFF
-	-DSeastar_HWLOC=$(usex hwloc)
-	-DSeastar_NUMA=$(usex numa)
+			-DSeastar_APPS=OFF
+			-DSeastar_DEMOS=OFF
+			-DSeastar_DOCS=OFF
+			-DSeastar_TESTING=OFF
+			-DSeastar_HWLOC=$(usex hwloc)
+			-DSeastar_NUMA=$(usex numa)
 	)
 	cmake-utils_src_configure
 }
