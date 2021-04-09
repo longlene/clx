@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_7 )
+PYTHON_COMPAT=( python3_8 )
 
 inherit java-pkg-2 python-r1 systemd user vcs-snapshot
 
