@@ -69,6 +69,8 @@ src_configure() {
 		--exec-prefix="${EPREFIX}"/usr \
 		--with-qt5=no \
 		--with-qt5=no \
+		--with-cl=no \
+		--enable-tests=no \
 		${myconf}
 }
 
