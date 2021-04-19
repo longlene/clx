@@ -5,11 +5,11 @@ EAPI=6
 
 inherit rebar
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="An Erlang/Elixir/BEAM profiler tool"
+HOMEPAGE="https://github.com/rabbitmq/looking_glass"
 SRC_URI="https://github.com/rabbitmq/looking_glass/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -18,6 +18,3 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-src_prepare() {
-	default
-}

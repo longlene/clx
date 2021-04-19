@@ -7,7 +7,7 @@ inherit cmake-utils
 
 DESCRIPTION="C++ client library for ClickHouse"
 HOMEPAGE="https://github.com/ClickHouse/clickhouse-cpp"
-SRC_URI="https://github.com/ClickHouse/clickhouse-cpp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/ClickHouse/clickhouse-cpp/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

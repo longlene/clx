@@ -15,7 +15,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
-|| ( dev-util/rebar:3 dev-util/rebar-bin )
+	|| ( dev-util/rebar:3 dev-util/rebar-bin )
 "
 
 RESTRICT=network-sandbox

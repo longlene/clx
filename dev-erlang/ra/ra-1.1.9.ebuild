@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit rebar vcs-snapshot
+inherit rebar
 
 DESCRIPTION="A Raft implementation for Erlang and Elixir"
 HOMEPAGE="https://github.com/rabbitmq/ra"
@@ -14,6 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	dev-erlang/aten
+	dev-erlang/gen_batch_server
+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
