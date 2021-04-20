@@ -6,8 +6,8 @@ EAPI=6
 inherit rebar
 
 DESCRIPTION="A scalable RPC library for Erlang-VM based languages"
-HOMEPAGE="https://github.com/priestjim/gen_rpc"
-SRC_URI="https://github.com/priestjim/gen_rpc/archive/2.1.0.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/fastdgiot/gen_rpc"
+SRC_URI="https://github.com/fastdgiot/gen_rpc/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

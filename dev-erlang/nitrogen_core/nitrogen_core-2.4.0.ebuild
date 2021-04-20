@@ -3,13 +3,11 @@
 
 EAPI=6
 
-inherit rebar vcs-snapshot
-
-EGIT_COMMIT="50e2011daaaf8de116af906a0708b3359ede04bc"
+inherit rebar
 
 DESCRIPTION="The core Nitrogen library"
 HOMEPAGE="https://github.com/nitrogen/nitrogen_core"
-SRC_URI="https://github.com/nitrogen/nitrogen_core/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/nitrogen/nitrogen_core/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,6 +17,10 @@ IUSE=""
 DEPEND="
 	dev-erlang/rekt
 	dev-erlang/stacktrace_compat
+	dev-erlang/simple_bridge
+	dev-erlang/nitro_cache
+	dev-erlang/nprocreg
+	dev-erlang/qdate
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

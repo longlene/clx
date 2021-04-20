@@ -26,6 +26,6 @@ src_prepare() {
 }
 
 src_install() {
-	ETCDIR=/etc/lux DESTDIR=${D}/usr/lib/lux emake install
-	dosym /usr/lib/lux/bin/lux /usr/bin/lux
+	ETCDIR=/etc/lux DESTDIR=${D}/usr/$(get_libdir)/lux emake install
+	dosym /usr/$(get_libdir)/lux/bin/lux /usr/bin/lux
 }
