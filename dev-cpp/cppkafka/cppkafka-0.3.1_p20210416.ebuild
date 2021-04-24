@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="5e4b350806d561473138ce7a982e8f6cf2e77733"
+EGIT_COMMIT="01bd066d57b1f02b33a8b4a34f52813efc60ada1"
 
 DESCRIPTION="C++11 wrapper for rdkafka"
 HOMEPAGE="https://github.com/mfontanini/cppkafka"
