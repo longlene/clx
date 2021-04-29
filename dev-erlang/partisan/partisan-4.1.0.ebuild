@@ -16,11 +16,11 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-erlang/uuid_erl
-	dev-erlang/time_compat
-	dev-erlang/rand_compat
 	>=dev-erlang/acceptor_pool-1.0.0
+	dev-erlang/goldrush
+	dev-erlang/lager
+	dev-erlang/quickrand
 	>=dev-erlang/types-0.1
-	>=dev-erlang/lager-3.5
+	dev-erlang/uuid_erl
 "
 BDEPEND=""
