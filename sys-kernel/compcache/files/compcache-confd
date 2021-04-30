@@ -1,5 +1,0 @@
-COMPCACHE_PRIORITY=100
-
-# You can use this to set how much memory will be used for compcache
-# Default is 25% of available RAM.
-# COMPCACHE_PARAM="compache_size_kbytes="

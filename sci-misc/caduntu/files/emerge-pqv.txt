@@ -1,3 +1,0 @@
-lenovo-funtoo jean-luc # emerge -pqv =media-gfx/librecad-9999
-[ebuild  N    ] media-gfx/librecad-9999  USE="-debug -doc" 
-lenovo-funtoo jean-luc # 
