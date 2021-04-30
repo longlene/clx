@@ -1,4 +1,5 @@
-EAPI="6"
+EAPI=7
+
 inherit cmake-utils cmake-multilib
 
 DESCRIPTION="Portable Computing Language"
