@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=Replacement for /sbin/init that launches an Erlang/OTP Release
-EAPI=7
-HOMEPAGE=https://github.com/nerves-project/erlinit
-KEYWORDS=~amd64 ~x86
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/nerves-project/erlinit/archive/v1.6.0.tar.gz -> erlinit-1.6.0.tar.gz
-_md5_=d7d551b912e5588ca71759d2e3cc90b1

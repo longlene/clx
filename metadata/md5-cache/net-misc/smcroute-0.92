@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install unpack
-DESCRIPTION=command line tool to manipulate the multicast routes of the Linux kernel
-EAPI=0
-HOMEPAGE=http://www.cschill.de/smcroute/
-KEYWORDS=x86
-LICENSE=GPL
-SLOT=0
-SRC_URI=http://www.cschill.de/smcroute/smcroute-0.92.tgz
-_md5_=b3d97ed012c532f1040a73f29ce30031

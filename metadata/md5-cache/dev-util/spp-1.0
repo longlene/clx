@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=simple preprocessor
-EAPI=6
-HOMEPAGE=https://github.com/radare/spp
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/radare/spp/archive/1.0.tar.gz -> spp-1.0.tar.gz
-_md5_=41ae14275e0f89ebe5ffc11a6b19ff72

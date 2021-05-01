@@ -1,7 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=A Lightweight Durable HTTP Key-Value Pair Database in C
-EAPI=6
-HOMEPAGE=https://github.com/willemt/pearldb
-SLOT=0
-SRC_URI=https://github.com/willemt/pearldb/archive/0.1.0.tar.gz -> pearldb-0.1.0.tar.gz
-_md5_=9e9c20579567a4beebbbd76eb6b16edc

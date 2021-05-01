@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=serialconsole (sc) is a minimal terminal program allowing to use one machine to access the serial console of another machine
-EAPI=5
-HOMEPAGE=http://sourceforge.net/projects/serialconsole/
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=BSD
-SLOT=0
-SRC_URI=mirror://sourceforge/serialconsole/sc-0.95.tar.gz
-_md5_=39f6732e9d32db78642eced66dd507da

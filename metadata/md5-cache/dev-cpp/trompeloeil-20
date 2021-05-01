@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=Header only C++14 mocking framework
-EAPI=6
-HOMEPAGE=https://github.com/rollbear/trompeloeil
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=Boost
-SLOT=0
-SRC_URI=https://github.com/rollbear/trompeloeil/archive/v20.tar.gz -> trompeloeil-20.tar.gz
-_md5_=4c59d5ca418017208c2d306d662eca31

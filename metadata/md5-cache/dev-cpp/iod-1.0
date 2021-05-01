@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=Meta programming utilities for C++14
-EAPI=6
-HOMEPAGE=https://github.com/matt-42/iod
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/matt-42/iod/archive/1.0.tar.gz -> iod-1.0.tar.gz
-_md5_=147c43399cb0a00b8e1b1c2c3c217dfe

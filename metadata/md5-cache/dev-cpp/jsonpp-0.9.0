@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=C++11 JSON parser and writer
-EAPI=5
-HOMEPAGE=http://rapptz.github.com/jsonpp
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/Rapptz/jsonpp/archive/v0.9.0.tar.gz -> jsonpp-0.9.0.tar.gz
-_md5_=9b444b96dd099fd45560b4067facb8ef

@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=posix compatible lex utility
-EAPI=7
-HOMEPAGE=https://github.com/sabotage-linux/lex
-KEYWORDS=~amd64 ~x86
-LICENSE=CDDL
-SLOT=0
-SRC_URI=https://github.com/sabotage-linux/lex/archive/v2.15.tar.gz -> lex-2.15.tar.gz
-_md5_=095b602b98e1c95147793c68e2efb265

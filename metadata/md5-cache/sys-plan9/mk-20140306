@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install prepare
-DESCRIPTION=Make equivalent for the Plan9 System
-EAPI=5
-HOMEPAGE=http://cm.bell-labs.com/magic/man2html/1/mk
-KEYWORDS=~x86 ~amd64
-LICENSE=PLAN9
-SLOT=0
-SRC_URI=http://plan9port.googlecode.com/files/plan9port-20140306.tgz
-_md5_=8490589c072dcf3fddd13eadada94b88

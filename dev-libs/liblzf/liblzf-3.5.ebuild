@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="2"
+EAPI=7
+
 inherit autotools
 
 DESCRIPTION="LibLZF is a very small, very fast data compression library"
@@ -17,6 +17,7 @@ IUSE=""
 DEPEND=""
 
 src_prepare() {
+	default
 	sed -i -e 's/^   CFLAGS=.*$/   :/' configure.ac || die "sed failed"
 	sed -i -e 's/\(\$([a-z]*dir)\)/$(DESTDIR)\1/' Makefile.in || die "sed failed"
 	eautoreconf

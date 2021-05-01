@@ -1,9 +1,0 @@
-DEFINED_PHASES=configure
-DESCRIPTION=ISC dhcp shared network and pool range usage analysis
-EAPI=4
-HOMEPAGE=http://dhcpd-pools.sourceforge.net/
-KEYWORDS=~amd64 ~x86
-LICENSE=BSD
-SLOT=0
-SRC_URI=mirror://sourceforge/project/dhcpd-pools/dhcpd-pools-2.16.tar.gz
-_md5_=6f098ef1f0675bbcc85961fd46a1acfd

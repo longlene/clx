@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install prepare
-DESCRIPTION=A JSON document store on PostgreSQL
-EAPI=6
-HOMEPAGE=http://bedquiltdb.github.io/
-KEYWORDS=~amd64 ~x86
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/BedquiltDB/bedquilt-core/archive/v0.6.0.tar.gz -> bedquilt-core-0.6.0.tar.gz
-_md5_=a4924215ee8e3abea9306e48c5564379

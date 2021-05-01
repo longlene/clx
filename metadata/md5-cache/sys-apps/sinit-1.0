@@ -1,9 +1,0 @@
-DEFINED_PHASES=install prepare
-DESCRIPTION=suckless init
-EAPI=5
-HOMEPAGE=http://git.2f30.org/sinit/
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=MIT
-SLOT=0
-SRC_URI=http://dl.2f30.org/releases/sinit-1.0.tar.gz
-_md5_=b0a8fad297d80d89ce270d5be86bf874

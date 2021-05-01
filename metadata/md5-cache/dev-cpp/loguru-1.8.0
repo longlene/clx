@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=A lightweight C++ logging library
-EAPI=6
-HOMEPAGE=https://github.com/emilk/loguru
-KEYWORDS=~amd64 ~x86
-LICENSE=as-is
-SLOT=0
-SRC_URI=https://github.com/emilk/loguru/archive/v1.8.0.tar.gz -> loguru-1.8.0.tar.gz
-_md5_=4c82890bbafb676caf21df3a4eada5e3

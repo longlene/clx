@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install prepare
-DESCRIPTION=HA-archiver, an arithmetic/Markov coder.
-EAPI=3
-HOMEPAGE=I HAVE NO HOME!
-KEYWORDS=~amd64 ~x86
-LICENSE=GPL-2
-SLOT=0
-SRC_URI=ftp://sunsite.unc.edu/pub/Linux/utils/compress/ha0999p-linux.tar.gz
-_md5_=301fa256742da7f982d33751cfde1714

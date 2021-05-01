@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=A minimal init system for Linux containers
-EAPI=5
-HOMEPAGE=https://github.com/Yelp/dumb-init
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/Yelp/dumb-init/archive/v0.5.0.tar.gz -> dumb-init-0.5.0.tar.gz
-_md5_=3ea6c18eff3f9a83ddd39c1fab1e262c

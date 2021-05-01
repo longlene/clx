@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=header only log inherited from Nanolog
-EAPI=6
-HOMEPAGE=https://github.com/qicosmos/nanolog
-KEYWORDS=~amd64 ~x86
-LICENSE=Apache-2.0
-SLOT=0
-SRC_URI=https://github.com/qicosmos/nanolog/archive/ded4b7f5b4e0b942e875f4b74b46df038c3c10f6.tar.gz -> nanolog-0_p20171213.tar.gz
-_md5_=e22b7c19d1be988d22f8b15b160c2c56

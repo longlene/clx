@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install
-DESCRIPTION=A simple, little-overhead, allocation-free and extensible C++ JSON writer
-EAPI=5
-HOMEPAGE=https://github.com/giacomodrago/minijson_writer
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=BSD
-SLOT=0
-SRC_URI=https://github.com/giacomodrago/minijson_writer/archive/v0.9-beta.tar.gz -> minijson_writer-0.9_beta.tar.gz
-_md5_=8068e8b5520161b1b7bc64305afea3ba

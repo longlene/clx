@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install
-DESCRIPTION=OORexx - Object Oriented Rexx
-EAPI=0
-HOMEPAGE=http://oorexx.sourceforge.net/
-KEYWORDS=x86
-LICENSE=CPL-1.0
-SLOT=0
-SRC_URI=mirror://sourceforge/oorexx/ooRexx-3.0.0.tar.gz
-_md5_=cb3ddadb0da786a6b65804c0074cce7c

@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=Peter Seibel's collection of 'utilities'
-EAPI=4
-HOMEPAGE=Peter Seibel's collection of 'utilities'
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=as-is
-RDEPEND=dev-lisp/alexandria dev-lisp/split-sequence
-SLOT=0
-_md5_=35f2493190cfad88c3eb072db933a2ae

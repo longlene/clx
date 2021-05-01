@@ -1,9 +1,0 @@
-DEFINED_PHASES=prepare
-DESCRIPTION=A concurrent user-level thread library implemented in C++
-EAPI=6
-HOMEPAGE=https://github.com/samanbarghi/uThreads
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=GPL-3
-SLOT=0
-SRC_URI=https://github.com/samanbarghi/uThreads/archive/v0.3.0.tar.gz -> uThreads-0.3.0.tar.gz
-_md5_=0202226495020f53f1044b339aeec699

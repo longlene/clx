@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=C code for bit arrays
-EAPI=6
-HOMEPAGE=https://github.com/noporpoise/BitArray
-KEYWORDS=~amd64 ~x86
-LICENSE=public-domain
-SLOT=0
-SRC_URI=https://github.com/noporpoise/BitArray/archive/2.0.tar.gz -> bitarray-2.0.tar.gz
-_md5_=c48045570f9228d5743ddf1af696e4dc

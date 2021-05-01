@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=Guile-Lint checks syntax and semantics in a Guile program or module
-EAPI=5
-HOMEPAGE=http://user42.tuxfamily.org/guile-lint/index.html
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=GPL-3
-SLOT=0
-SRC_URI=ftp://download.tuxfamily.org/user42/guile-lint-14.tar.bz2
-_md5_=c501fa267b66ccd078066f5000bd5dfe

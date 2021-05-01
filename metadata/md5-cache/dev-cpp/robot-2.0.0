@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install
-DESCRIPTION=Native cross-platform system automation
-EAPI=6
-HOMEPAGE=http://getrobot.net
-KEYWORDS=~amd64 ~x86
-LICENSE=ZLIB
-SLOT=0
-SRC_URI=https://github.com/Robot/robot/archive/2.0.0.tar.gz -> robot-2.0.0.tar.gz
-_md5_=f843a7517d2362e4722c32796872581a

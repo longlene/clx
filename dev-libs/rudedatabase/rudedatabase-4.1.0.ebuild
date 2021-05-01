@@ -1,4 +1,4 @@
-EAPI="2"
+EAPI=7
 
 inherit eutils
 
@@ -15,7 +15,7 @@ DEPEND="${RDEPEND}
 	>=sys-devel/gcc-3"
 
 src_install() {
-	emake DESTDIR="${D}" install LIBRARY_PATH="${D}/usr/$(get_libdir)" || die "install failed"
+	emake DESTDIR="${D}" install LIBRARY_PATH="${D}/usr/$(get_libdir)"
 	dodoc README
 	doman "${S}"/man/*
 }

@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=A C++ smart-pointer with value-semantics
-EAPI=7
-HOMEPAGE=https://github.com/LoopPerfect/valuable
-KEYWORDS=~amd64 ~x86
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/LoopPerfect/valuable/archive/v0.2.0.tar.gz -> valuable-0.2.0.tar.gz
-_md5_=824b3427aaaae43dc557848dcec723d9

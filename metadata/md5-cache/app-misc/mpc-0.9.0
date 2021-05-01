@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install
-DESCRIPTION=A Parser Combinator library for C
-EAPI=6
-HOMEPAGE=https://github.com/orangeduck/mpc
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=BSD
-SLOT=0
-SRC_URI=https://github.com/orangeduck/mpc/archive/0.8.7.tar.gz -> mpc-0.9.0.tar.gz
-_md5_=9465f636866391c2004abe2302c99805

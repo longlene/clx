@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install prepare test
-DEPEND=dev-lang/erlang:= dev-util/rebar >=sys-apps/gawk-4.1
-EAPI=6
-KEYWORDS=~amd64 ~x86
-RDEPEND=dev-lang/erlang:=
-SLOT=0
-SRC_URI=https://github.com/rabbitmq/looking_glass/archive/0.2.0.tar.gz -> looking_glass-0.2.0.tar.gz
-_eclasses_=rebar	43c151aeda0dc4bf44b59e949df136aa
-_md5_=6a0c3714bce52817637cfe09484e4814

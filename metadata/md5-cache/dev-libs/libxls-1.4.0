@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=A library which can read Excel (xls) files
-EAPI=5
-HOMEPAGE=http://libxls.sourceforge.net/
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=GPL-2
-SLOT=0
-SRC_URI=mirror://sourceforge/libxls/libxls-1.4.0.zip
-_md5_=54ecec1e56d6cbb40a30ce4db012d669

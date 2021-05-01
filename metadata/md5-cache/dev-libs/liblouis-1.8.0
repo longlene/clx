@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=An open-source braille translator and back-translator
-EAPI=2
-HOMEPAGE=http://code.google.com/p/liblouis/
-KEYWORDS=~x86
-LICENSE=LGPL-3
-SLOT=0
-SRC_URI=http://liblouis.googlecode.com/files/liblouis-1.8.0.tar.gz
-_md5_=8ac9c8748ffc6f3580341d0363939a10

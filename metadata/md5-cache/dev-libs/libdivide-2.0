@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=optimized integer division
-EAPI=7
-HOMEPAGE=http://libdivide.com
-KEYWORDS=~amd64 ~x86
-LICENSE=ZLIB
-SLOT=0
-SRC_URI=https://github.com/ridiculousfish/libdivide/archive/v2.0.tar.gz -> libdivide-2.0.tar.gz
-_md5_=8a3013873fe3f386760b41c54190558b

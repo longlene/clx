@@ -1,6 +1,0 @@
-DEFINED_PHASES=-
-EAPI=5
-KEYWORDS=~amd64
-SLOT=0
-SRC_URI=mirror://sourceforge/hd-idle/hd-idle-1.04.tgz
-_md5_=3169e872020752d611a55efc6a1de9c4

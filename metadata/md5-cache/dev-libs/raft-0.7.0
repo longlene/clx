@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=C implementation of the Raft Consensus protocol
-EAPI=6
-HOMEPAGE=https://github.com/willemt/raft
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=BSD
-SLOT=0
-SRC_URI=https://github.com/willemt/raft/archive/v0.7.0.tar.gz -> raft-0.7.0.tar.gz
-_md5_=a1eb963e2630c10a0791898d9db9ec48

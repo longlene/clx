@@ -1,8 +1,0 @@
-DEFINED_PHASES=compile install
-DESCRIPTION=easy object serialization in C++
-EAPI=4
-HOMEPAGE=http://s11n.sourceforge.net
-LICENSE=BSD
-SLOT=0
-SRC_URI=mirror://sourceforge/s11n/libs11n-1.2.10.tar.bz2
-_md5_=dd42cfb3a850dffd0d2371a4f7c35fd5

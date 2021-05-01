@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install unpack
-EAPI=7
-HOMEPAGE=https://github.com/jfmcbrayer/germinal
-KEYWORDS=~amd64 ~x86
-RESTRICT=mirror
-SLOT=0
-SRC_URI=https://git.carcosa.net/jmcbray/germinal/archive/fc76df612958de873a80448925f401a2c609956e.tar.gz -> germinal-0.1_p20200619.tar.gz
-_eclasses_=common-lisp-3	ebc6df0ae02fefc95615b4b987ede32b	eutils	fcb2aa98e1948b835b5ae66ca52868c5	vcs-snapshot	b1abf460a493fc59ebb25de0df3f09dd
-_md5_=79f9f7140e746081d71fc49e00582a21

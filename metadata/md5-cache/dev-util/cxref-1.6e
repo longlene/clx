@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=C Cross Referencing & Documenting tool
-EAPI=6
-HOMEPAGE=http://www.gedanken.demon.co.uk/cxref/
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=GPL-2
-SLOT=0
-SRC_URI=https://www.gedanken.org.uk/software/cxref/download/cxref-1.6e.tgz
-_md5_=9b461ab37dcdd03757cf6c0e18f0420d

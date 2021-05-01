@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="4"
-USE_RUBY="ruby19 ruby20 ree18 jruby ruby22 ruby23"
+EAPI=7
+USE_RUBY="ruby30"
 
 RUBY_FAKEGEM_EXTRADOC="README.rdoc CHANGELOG"
 

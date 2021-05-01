@@ -1,9 +1,0 @@
-DEFINED_PHASES=prepare
-DESCRIPTION=simple battery monitor
-EAPI=5
-HOMEPAGE=http://git.2f30.org/xbattmon/
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=MIT
-SLOT=0
-SRC_URI=http://dl.2f30.org/releases/xbattmon-1.0.tar.gz
-_md5_=e4003d82bca89025a26eee66620c148c

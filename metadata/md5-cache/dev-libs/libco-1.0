@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install
-DESCRIPTION=libco is a coroutine library which is widely used in wechat back-end service
-EAPI=6
-HOMEPAGE=https://github.com/Tencent/libco
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=as-is
-SLOT=0
-SRC_URI=https://github.com/Tencent/libco/archive/v1.0.tar.gz -> libco-1.0.tar.gz
-_md5_=3545340a986e07b151ac725c5d25d0bb

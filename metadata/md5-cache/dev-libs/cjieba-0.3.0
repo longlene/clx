@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=C API of CppJieba
-EAPI=6
-HOMEPAGE=https://github.com/yanyiwu/cjieba
-KEYWORDS=~amd64 ~arm ~x86
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/yanyiwu/cjieba/archive/v0.3.0.tar.gz -> cjieba-0.3.0.tar.gz
-_md5_=0b59b678790fb969e130fcd6814e8ca9

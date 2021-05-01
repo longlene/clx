@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=|| ( =dev-java/jamvm-1.4.2* =dev-java/kaffe-1.1* =dev-java/blackdown-jdk-1.4.2* =dev-java/sun-jdk-1.4.2* =dev-java/ibm-jdk-bin-1.4.2* =dev-java/jrockit-jdk-bin-1.4.2* =dev-java/apple-jdk-bin-1.4.2* )
-DESCRIPTION=Virtual for JDK
-EAPI=0
-KEYWORDS=~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos
-RDEPEND=|| ( =dev-java/jamvm-1.4.2* =dev-java/kaffe-1.1* =dev-java/blackdown-jdk-1.4.2* =dev-java/sun-jdk-1.4.2* =dev-java/ibm-jdk-bin-1.4.2* =dev-java/jrockit-jdk-bin-1.4.2* =dev-java/apple-jdk-bin-1.4.2* )
-SLOT=1.4
-_md5_=4b0fabb15731320c2815ce107cf36c65

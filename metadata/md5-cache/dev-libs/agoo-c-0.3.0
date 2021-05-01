@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install
-DESCRIPTION=Agoo webserver in C
-EAPI=7
-HOMEPAGE=https://github.com/ohler55/agoo-c
-KEYWORDS=~amd64 ~x86
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/ohler55/agoo-c/archive/v0.3.0.tar.gz -> agoo-c-0.3.0.tar.gz
-_md5_=6d0510442414a41894db90f6c92166b0

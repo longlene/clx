@@ -1,9 +1,0 @@
-DEFINED_PHASES=compile install
-DESCRIPTION=Depacker for amiga archive formats
-EAPI=0
-HOMEPAGE=http://zakalwe.fi/~shd/foss/amigadepacker/
-KEYWORDS=~amd64 ~x86
-LICENSE=GPL-2
-SLOT=0
-SRC_URI=http://zakalwe.fi/~shd/foss/amigadepacker/amigadepacker-0.03.tar.bz2
-_md5_=fd855814ccd2573da00ed85c975e9291

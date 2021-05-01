@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=Allegro Common Lisp interface to Solr
-EAPI=5
-HOMEPAGE=https://github.com/franzinc/solr
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=EPL-1.0
-SLOT=0
-SRC_URI=https://github.com/franzinc/solr/archive/release5.1_rc2.tar.gz -> solr-5.1_rc2.tar.gz
-_md5_=297f8f84492486e801a5dad50eec31f9

@@ -1,9 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=An asynchronous version of drakma that runs off of cl-async
-EAPI=4
-HOMEPAGE=https://github.com/orthecreedence/drakma-async
-KEYWORDS=~amd64 ~x86 ~arm
-LICENSE=MIT
-RDEPEND=dev-lisp/drakma dev-lisp/cl-async dev-lisp/flexi-streams
-SLOT=0
-_md5_=73693ca8548ac99f88f3ec4d4618662b
