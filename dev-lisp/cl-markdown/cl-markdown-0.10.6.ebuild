@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=7
 inherit common-lisp-3 eutils vcs-snapshot
 
 DESCRIPTION="CL-Markdown is a Common Lisp rewrite of Markdown."

@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="ACL2 is both a programming language in which you can model computer systems and a tool to help you prove properties of those models"
 HOMEPAGE="http://www.cs.utexas.edu/users/moore/acl2/"

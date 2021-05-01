@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=7
 
 DESCRIPTION="Formatted text output"
 HOMEPAGE="https://github.com/gigamonkey/monkeylib-text-output/"

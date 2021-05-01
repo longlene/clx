@@ -1,7 +1,7 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="A Wayland compositor written in Common Lisp"
 HOMEPAGE="https://github.com/malcolmstill/ulubis"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 inherit common-lisp-3 git-r3
 
 DESCRIPTION="DIFF is a Common Lisp library for computing the unified or context difference between two files."

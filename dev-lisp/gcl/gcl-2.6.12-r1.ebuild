@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lisp/gcl/gcl-2.6.12.ebuild,v 1.1 2014/11/04 17:25:51 grozin Exp $
 
-EAPI=5
+EAPI=7
 inherit elisp-common eutils flag-o-matic
 
 DESCRIPTION="GNU Common Lisp"

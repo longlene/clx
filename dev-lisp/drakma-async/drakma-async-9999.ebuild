@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=7
 
 DESCRIPTION="An asynchronous version of drakma that runs off of cl-async"
 HOMEPAGE="https://github.com/orthecreedence/drakma-async"
