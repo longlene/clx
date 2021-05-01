@@ -1,8 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="2"
+EAPI=7
 
 inherit libtool
 
@@ -32,8 +31,8 @@ src_unpack() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install
 
-	doman doc/man*/*.[13] || die "doman failed"
-	dodoc AUTHORS ChangeLog COPYING FAQ NEWS README THANKS TODO || die "dodoc failed"
+	doman doc/man*/*.[13]
+	dodoc AUTHORS ChangeLog COPYING FAQ NEWS README THANKS TODO
 }

@@ -1,8 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="3"
+EAPI=7
 
 inherit autotools
 
@@ -15,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="x11-libs/gtk+:2"
+RDEPEND="x11-libs/gtk+:3"
 DEPEND="${RDEPEND}
 	virutal/pkgconfig
 	>=sys-devel/autoconf-2.65"
@@ -23,6 +22,7 @@ DEPEND="${RDEPEND}
 S=$WORKDIR/$PF
 
 src_prepare() {
+	default
 	eautoreconf
 }
 

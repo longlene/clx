@@ -1,8 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="4"
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
@@ -12,7 +11,7 @@ DESCRIPTION="More powerful and prettier way of text matching in Common Lisp."
 HOMEPAGE="http://common-lisp.net/projects/cl-irregsexp/"
 SRC_URI="https://github.com/vii/cl-irregsexp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Unknown"
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
@@ -23,5 +22,6 @@ RDEPEND="
 "
 
 src_prepare() {
+	default
 	use test || rm ${PN}-test.asd t
 }

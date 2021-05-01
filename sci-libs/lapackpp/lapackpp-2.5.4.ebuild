@@ -1,8 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="2"
+EAPI=7
 
 DESCRIPTION="A C++ wrapper for the lapack libraries"
 HOMEPAGE="http://lapackpp.sourceforge.net/"
@@ -19,7 +18,7 @@ DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen[latex] )"
 
 src_prepare() {
-	#Parallel build issues
+	default
 	sed -i 's/\bmake\b/$(MAKE)/' Makefile.in
 }
 
@@ -31,11 +30,11 @@ src_configure() {
 
 src_compile() {
 	default_src_compile
-	use doc && emake srcdoc || die "Documentation creation failed"
+	use doc && emake srcdoc
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "Install failed"
-	dodoc AUTHORS MAINTAINER NEWS README RELEASE.NOTES  || die
-	use doc && dohtml -r api-doc/html/ || die
+	emake DESTDIR="${D}" install
+	dodoc AUTHORS MAINTAINER NEWS README RELEASE.NOTES
+	use doc && dodoc -r api-doc/html/
 }

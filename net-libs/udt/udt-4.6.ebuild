@@ -1,8 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI="2"
+EAPI=7
 
 DESCRIPTION="UDT is a UDP based data transport protocol"
 HOMEPAGE="http://udt.sourceforge.net"
@@ -38,7 +37,7 @@ src_compile(){
 		*)                                             OSNAME="LINUX" ;;
 	esac
 
-	emake os="${OSNAME}" arch="${PLATFORM}" || die 'make failed'
+	emake os="${OSNAME}" arch="${PLATFORM}"
 }
 
 src_install(){

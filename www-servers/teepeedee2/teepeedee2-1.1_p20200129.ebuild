@@ -1,12 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="4"
+EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1b12505b70d11ad0722a603b69e761193bd12488"
+EGIT_COMMIT="a2ed78c51d782993591c3284562daeed3aba3d40"
 
 DESCRIPTION="A fast webapplication framework for dynamic webpages in Common Lisp."
 HOMEPAGE="http://github.com/vii/teepeedee2"
@@ -30,6 +29,7 @@ RDEPEND="
 "
 
 src_prepare() {
+	default
 	use test || rm -rf ${PN}-test.asd t
 }
 
