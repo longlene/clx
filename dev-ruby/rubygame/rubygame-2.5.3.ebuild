@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 
-EAPI=4
+EAPI=7
 
 USE_RUBY="ruby20"
 inherit ruby-fakegem

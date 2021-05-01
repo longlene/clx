@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/actionpack/actionpack-3.2.14.ebuild,v 1.1 2013/08/17 10:31:42 graaff Exp $
 
-EAPI=4
+EAPI=7
 
 USE_RUBY="ruby18 ruby19"
 

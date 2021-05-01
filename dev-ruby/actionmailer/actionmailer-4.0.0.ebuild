@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/actionmailer/actionmailer-3.2.14.ebuild,v 1.1 2013/08/17 10:32:07 graaff Exp $
 
-EAPI=4
+EAPI=7
 USE_RUBY="ruby18 ruby19"
 
 RUBY_FAKEGEM_TASK_DOC=""
