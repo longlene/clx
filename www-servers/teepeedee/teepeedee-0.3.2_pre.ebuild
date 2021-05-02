@@ -1,12 +1,12 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=7
 
 DESCRIPTION="teepeedee is a small, hopefully scalable, single-threaded file server"
 HOMEPAGE="http://john.fremlin.org/programs/teepeedee/"
 SRC_URI="http://john.fremlin.org/programs/teepeedee/download/teepeedee-${PV}pre.tar.gz -> ${P}.tar.gz"
 
-LICENSE="GPLv2"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

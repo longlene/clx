@@ -1,8 +1,7 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=4
+EAPI=7
 
 inherit toolchain-funcs eutils
 
@@ -19,6 +18,7 @@ DEPEND="virtual/jpeg"
 RDEPEND=""
 
 src_prepare () {
+	default
 	sed -i "s:videodev.h:videodev2.h:" uvccapture.c v4l2uvc.c || die
 	epatch "${FILESDIR}/Makefile.patch"
 }

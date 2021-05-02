@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d41f0877ca4fbb52e197b1dd8b7b83023012a34e"
+EGIT_COMMIT="5df7af35a21503d468a878fc6029caa527a7d204"
 
 DESCRIPTION="Common Lisp port of the Django templating language"
 HOMEPAGE="http://mmontone.github.io/djula"
@@ -37,7 +37,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use example || rm -r ${PN}-demo.asd demo
 	use test || rm -r ${PN}-test.asd test
 }

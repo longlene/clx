@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=7
 
 DESCRIPTION="a port of Plan 9's support library for UTF-8 and Unicode."
 HOMEPAGE="http://swtch.com/plan9port/unix/"
