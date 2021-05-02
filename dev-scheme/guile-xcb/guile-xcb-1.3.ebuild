@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="A guile implementation of the X protocol using xml/xcb"
 HOMEPAGE="https://github.com/mwitmer/guile-xcb"

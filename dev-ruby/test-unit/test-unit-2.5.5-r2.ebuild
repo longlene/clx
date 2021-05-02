@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/test-unit/test-unit-2.5.5-r2.ebuild,v 1.3 2014/05/16 05:16:01 graaff Exp $
 
-EAPI=5
+EAPI=7
 USE_RUBY="ruby25 ruby26 jruby"
 
 RUBY_FAKEGEM_TASK_DOC=""

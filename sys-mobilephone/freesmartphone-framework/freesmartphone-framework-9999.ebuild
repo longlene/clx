@@ -5,7 +5,7 @@
 inherit distutils
 inherit git-r3
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="The FreeSmartPhone.org framework APIs."
 HOMEPAGE="http://www.freesmartphone.org/"

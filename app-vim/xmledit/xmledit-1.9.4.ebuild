@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=4
+EAPI=7
 
 #VIM_PLUGIN_VIM_VERSION="7.0"
 inherit vim-plugin

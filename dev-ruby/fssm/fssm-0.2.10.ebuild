@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/fssm/fssm-0.2.10.ebuild,v 1.1 2014/05/11 22:20:35 vikraman Exp $
 
-EAPI=5
+EAPI=7
 
 USE_RUBY="ruby25 ruby26"
 RUBY_FAKEGEM_RECIPE_TEST="rspec"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/gnustep-base/libobjc2/libobjc2-1.7.ebuild,v 1.2 2013/09/27 20:09:55 voyageur Exp $
 
-EAPI=5
+EAPI=7
 inherit cmake-utils
 
 DESCRIPTION="GNUstep Objective-C runtime"

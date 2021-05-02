@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/games-strategy/freecol/freecol-0.8.4.ebuild,v 1.2 2009/10/25 12:20:32 maekke Exp $
 
-EAPI=5
+EAPI=7
 WANT_ANT_TASKS="ant-nodeps"
 inherit eutils java-pkg-2 java-ant-2 games
 

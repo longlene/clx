@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 USE_RUBY="ruby20 ruby22"
 
 inherit ruby-fakegem

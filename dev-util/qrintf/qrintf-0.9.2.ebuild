@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="sprintf accelerator for GCC and Clang"
 HOMEPAGE="https://github.com/h2o/qrintf"

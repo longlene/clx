@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/test-unit/test-unit-1.2.3.ebuild,v 1.15 2013/12/26 14:48:28 maekke Exp $
 
-EAPI=5
+EAPI=7
 
 # This is only useful for Ruby 1.9 for testsuites using the old
 # test/unit

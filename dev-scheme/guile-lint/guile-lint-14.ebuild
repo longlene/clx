@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="Guile-Lint checks syntax and semantics in a Guile program or module"
 HOMEPAGE="http://user42.tuxfamily.org/guile-lint/index.html"

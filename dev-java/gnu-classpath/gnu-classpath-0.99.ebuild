@@ -1,8 +1,7 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/gnu-classpath/gnu-classpath-0.98-r3.ebuild,v 1.9 2013/03/02 19:55:16 hwoarang Exp $
 
-EAPI=4
+EAPI=7
 
 inherit eutils java-pkg-2 base multilib
 

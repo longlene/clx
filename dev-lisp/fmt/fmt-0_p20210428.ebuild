@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="afb3c3942212dd4e665c07cc4c04b15519b4f9a0"
+EGIT_COMMIT="ecb0443fe595638e46c06a5dfea9a3e8c353d7df"
 
 DESCRIPTION="Extensible text formatting facility for Common Lisp"
 HOMEPAGE="https://github.com/mmontone/fmt/"
@@ -17,14 +17,16 @@ KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="test"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	dev-lisp/alexandria
+"
+
+src_prepare() {
+	default
+	use test || rm -r ${PN}-test.asd t
+}
 
 src_install() {
-	common-lisp-install-sources *.lisp
-	common-lisp-install-asdf ${PN}.asd ${PN}-time.asd
-	if use test ; then
-		common-lisp-install-sources t
-		common-lisp-install-asdf ${PN}-test.asd
-	fi
-	dodoc README.md
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all README.md
 }

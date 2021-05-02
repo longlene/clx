@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/celluloid-io/celluloid-io-0.16.2.ebuild,v 1.1 2015/02/01 22:59:08 mrueg Exp $
 
-EAPI=5
+EAPI=7
 USE_RUBY="ruby25 ruby26"
 
 RUBY_FAKEGEM_RECIPE_TEST="rspec"

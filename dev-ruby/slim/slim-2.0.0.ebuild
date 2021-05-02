@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 USE_RUBY="ruby18 ruby19"
 
 RUBY_FAKEGEM_RECIPE_TEST="rake"

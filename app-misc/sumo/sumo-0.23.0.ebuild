@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="Simulation of Urban MObility"
 HOMEPAGE="http://www.dlr.de/ts/en/desktopdefault.aspx/tabid-9883/16931_read-41000/"

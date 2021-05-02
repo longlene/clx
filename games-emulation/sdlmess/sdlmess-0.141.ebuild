@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/games-emulation/sdlmame/sdlmame-0.141_p2.ebuild,v 1.1 2011/02/11 06:06:50 mr_bones_ Exp $
 
-EAPI=5
+EAPI=7
 inherit eutils flag-o-matic games
 
 MY_PV=${PV/.}

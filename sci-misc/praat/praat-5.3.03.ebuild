@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 inherit versionator
 # FIXME: for versions with last part < 10 pad with zeroes

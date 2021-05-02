@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="guile-dbi provides a simple, generic, easy-to-use scheme/guile interface to SQL databases"
 HOMEPAGE="http://home.gna.org/guile-dbi/"

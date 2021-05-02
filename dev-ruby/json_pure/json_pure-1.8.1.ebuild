@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/json_pure/json_pure-1.8.1.ebuild,v 1.1 2013/12/27 01:13:22 naota Exp $
 
-EAPI=5
+EAPI=7
 
 USE_RUBY="ruby25 ruby26"
 RUBY_FAKEGEM_RECIPE_TEST="rake"

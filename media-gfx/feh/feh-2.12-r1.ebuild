@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/media-gfx/feh/feh-2.12.ebuild,v 1.3 2014/09/10 19:53:27 hwoarang Exp $
 
-EAPI=5
+EAPI=7
 inherit eutils toolchain-funcs
 
 DESCRIPTION="A fast, lightweight imageviewer using imlib2"

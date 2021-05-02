@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="pianod2 is an open-source, multi-source network-controlled music player for use as central music server"
 HOMEPAGE="http://deviousfish.com/pianod2/"

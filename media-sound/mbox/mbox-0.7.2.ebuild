@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="mBox is program intended to help you with organizing your music files."
 HOMEPAGE="http://www.mbox.wz.cz/"

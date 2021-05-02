@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="serialconsole (sc) is a minimal terminal program allowing to use one machine to access the serial console of another machine"
 HOMEPAGE="http://sourceforge.net/projects/serialconsole/"

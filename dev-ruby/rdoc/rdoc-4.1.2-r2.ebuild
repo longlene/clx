@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/rdoc/rdoc-4.1.2.ebuild,v 1.2 2014/12/27 21:05:21 graaff Exp $
 
-EAPI=5
+EAPI=7
 USE_RUBY="ruby25 ruby26"
 
 RUBY_FAKEGEM_TASK_DOC=""

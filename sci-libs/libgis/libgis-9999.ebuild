@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 EGIT_REPO_URI="git://lug.rose-hulman.edu/proj/libgis"
 EGIT_BOOTSTRAP="gtkdocize && eautoreconf"

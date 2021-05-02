@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/origin/origin-1.1.0.ebuild,v 1.1 2013/05/10 06:47:02 graaff Exp $
 
-EAPI=5
+EAPI=7
 
 # does not support Ruby 1.8 syntax
 USE_RUBY="ruby25 ruby26" #jruby

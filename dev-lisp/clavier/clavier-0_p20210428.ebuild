@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ee6d60e47e3fdd57957af356aab8291a6d925396"
+EGIT_COMMIT="048bea40cac0a89480f8c41ae542be45945f3268"
 
 DESCRIPTION="General purpose validation library for Common Lisp"
 HOMEPAGE="https://github.com/mmontone/clavier"
@@ -27,6 +27,11 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm ${PN}.test.asd test.lisp
+}
+
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all README.md
 }

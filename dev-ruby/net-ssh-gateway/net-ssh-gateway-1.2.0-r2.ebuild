@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/net-ssh-gateway/net-ssh-gateway-1.2.0-r1.ebuild,v 1.2 2013/12/22 19:19:50 blueness Exp $
 
-EAPI=5
+EAPI=7
 USE_RUBY="ruby25 ruby26"
 
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"

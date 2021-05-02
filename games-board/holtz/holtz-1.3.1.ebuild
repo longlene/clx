@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 WX_GTK_VER=2.8
 
 inherit autotools eutils games wxwidgets

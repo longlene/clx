@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/bson/bson-1.6.2-r1.ebuild,v 1.2 2014/05/26 05:21:43 mrueg Exp $
 
-EAPI=5
+EAPI=7
 # jruby → support needs to be written properly
 USE_RUBY="ruby25 ruby26"
 

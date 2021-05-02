@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="Make equivalent for the Plan9 System"
 HOMEPAGE="http://cm.bell-labs.com/magic/man2html/1/mk"

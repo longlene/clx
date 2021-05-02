@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="Plan compatible C89 UTF-8 library"
 HOMEPAGE="https://github.com/cls/libutf"

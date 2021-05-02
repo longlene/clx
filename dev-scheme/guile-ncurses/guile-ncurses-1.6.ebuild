@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="A library for the Guile Scheme interpreter that provides functions for creating text user interfaces"
 HOMEPAGE="https://www.gnu.org/software/guile-ncurses/"

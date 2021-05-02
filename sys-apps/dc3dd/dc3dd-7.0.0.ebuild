@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="patched version of GNU dd to include a number of features useful for computer forensics"
 HOMEPAGE="http://dc3dd.sourceforge.net/"

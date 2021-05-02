@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 PHEADERS="9pclient"
 DEPEND="dev-plan9/lib9"

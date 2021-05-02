@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=4
+EAPI=7
 
 inherit apache-module eutils
 
@@ -33,27 +32,21 @@ APACHE2_MOD_DEFINE="AUTH_SHIB"
 
 need_apache2_2
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-}
-
 src_configure() {
 	econf \
-	    $(use_enable odbc) \
-	    $(use_enable ads adfs) \
-	    --enable-apache-22 \
-	    --with-apxs22=/usr/sbin/apxs2 \
-	    --localstatedir=/var \
-	    || die "Configuration failed."
+		$(use_enable odbc) \
+		$(use_enable ads adfs) \
+		--enable-apache-22 \
+		--with-apxs22=/usr/sbin/apxs2 \
+		--localstatedir=/var
 }
 
 src_compile() {
-	emake || die "Compilation failed."
+	emake
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "install failed"
+	emake DESTDIR="${D}" install
 	apache-module_src_install
 	newinitd "${FILESDIR}"/shibd-init.d shibd
 	newconfd "${FILESDIR}"/shibd-conf.d shibd

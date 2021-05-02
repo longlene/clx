@@ -1,8 +1,7 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=4
+EAPI=7
 
 DESCRIPTION="A diff program that ignores small numeric differences (actually called ndiff)"
 HOMEPAGE="http://www.math.utah.edu/~beebe/software/ndiff/"

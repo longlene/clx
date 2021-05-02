@@ -5,7 +5,7 @@
 # Find latest stable kernel release for debian here:
 #   https://packages.debian.org/unstable/kernel/
 
-EAPI=5
+EAPI=7
 
 inherit check-reqs eutils mount-boot
 

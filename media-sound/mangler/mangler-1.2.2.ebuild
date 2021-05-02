@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/media-sound/mangler/mangler-1.2.1.ebuild,v 1.1 2010/10/31 11:01:56 ssuominen Exp $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="Open source VOIP client capable of connecting to Ventrilo 3.x servers"
 HOMEPAGE="http://www.mangler.org/"

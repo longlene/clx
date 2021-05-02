@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/nokogiri/nokogiri-1.6.0.ebuild,v 1.6 2014/08/05 16:00:54 mrueg Exp $
 
-EAPI=5
+EAPI=7
 
 USE_RUBY="ruby25 ruby26 jruby"
 

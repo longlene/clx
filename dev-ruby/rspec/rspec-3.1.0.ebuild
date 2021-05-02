@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec/rspec-2.99.0.ebuild,v 1.2 2014/07/22 15:58:21 klausman Exp $
 
-EAPI=5
+EAPI=7
 USE_RUBY="ruby25 ruby26 jruby"
 
 RUBY_FAKEGEM_TASK_TEST=""

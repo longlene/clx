@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="A driver for guile-dbi to use a postgresql database"
 HOMEPAGE="http://home.gna.org/guile-dbi/"

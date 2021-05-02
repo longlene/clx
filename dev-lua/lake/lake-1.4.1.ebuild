@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="A Lua-based Build Tool"
 HOMEPAGE="https://github.com/stevedonovan/Lake"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=7
 
 DESCRIPTION="A small library that implements a \"channel\" construct for inter-thread communication in C"
 HOMEPAGE="http://repo.hu/projects/cchan"
