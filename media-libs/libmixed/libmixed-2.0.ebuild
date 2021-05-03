@@ -1,17 +1,15 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit cmake-utils vcs-snapshot
-
-EGIT_COMMIT="53c300749941a5e0b53cd0b3924bedacd931928f"
+inherit cmake-utils
 
 DESCRIPTION="A low-level audio mixer pipeline library"
 HOMEPAGE="https://github.com/Shirakumo/libmixed"
-SRC_URI="https://github.com/Shirakumo/libmixed/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Shirakumo/libmixed/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Artistic-2"
+LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
@@ -22,8 +20,17 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	eapply_user
+	default
 	sed -i "/install/{s#/usr/local/lib#/usr/$(get_libdir)#}" CMakeLists.txt
+	cmake-utils_src_prepare
+}
+
+src_configure() {
+	local mycmakeargs=(
+		-DBUILD_EXAMPLES=OFF
+		-DBUILD_TESTER=OFF
+	)
+	cmake-utils_src_configure
 }
 	
 src_install() {

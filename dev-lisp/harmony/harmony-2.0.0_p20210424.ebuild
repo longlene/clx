@@ -5,13 +5,13 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cc3b26573f0b05cc8259f2500e7469c010fe3f1f"
+EGIT_COMMIT="f2ae9b8039d523f58b1ce8fd2ecefb5387316de0"
 
 DESCRIPTION="A Common Lisp sound system"
 HOMEPAGE="https://shirakumo.github.io/harmony"
 SRC_URI="https://github.com/Shirakumo/harmony/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Artistic"
+LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
@@ -19,6 +19,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-mixed
-	dev-lisp/flow
+	dev-lisp/atomics
 	dev-lisp/bordeaux-threads
+	dev-lisp/stealth-mixin
 "

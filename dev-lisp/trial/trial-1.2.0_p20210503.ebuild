@@ -5,13 +5,13 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="187152deefbebe9bc4ce121b371970973f06bcb1"
+EGIT_COMMIT="5a0755b848bde32b33981a1b277b028d652277cb"
 
 DESCRIPTION="Yet another Common Lisp game engine"
 HOMEPAGE="https://github.com/Shirakumo/trial"
 SRC_URI="https://github.com/Shirakumo/trial/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Artistic"
+LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
@@ -20,16 +20,36 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/3d-vectors
+	dev-lisp/3d-matrices
 	dev-lisp/verbose
-	dev-lisp/qtools
+	dev-lisp/deploy
 	dev-lisp/cl-opengl
 	dev-lisp/closer-mop
 	dev-lisp/trivial-garbage
+	dev-lisp/trivial-indent
 	dev-lisp/bordeaux-threads
-	dev-lisp/wavefront-loader
+	dev-lisp/cl-opengl
 	dev-lisp/cl-gamepad
-	dev-lisp/cl-monitors
+	dev-lisp/cl-ppcre
 	dev-lisp/pathname-utils
 	dev-lisp/flare
 	dev-lisp/for
+	dev-lisp/flow
+	dev-lisp/glsl-toolkit
+	dev-lisp/fast-io
+	dev-lisp/ieee-floats
+	dev-lisp/float-features
+	dev-lisp/lquery
+	dev-lisp/static-vectors
+	dev-lisp/pngload
+	dev-lisp/cl-tga
+	dev-lisp/cl-jepg
+	dev-lisp/retrospectiff
+	dev-lisp/terrable
+	dev-lisp/mmap
+	dev-lisp/messagebox
+	dev-lisp/form-fiddle
+	dev-lisp/lambda-fiddle
+	dev-lisp/jsown
+	dev-lisp/zpng
 "
