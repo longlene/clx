@@ -7,7 +7,7 @@ inherit common-lisp-3 vcs-snapshot
 
 DESCRIPTION="A Common Lisp library for interacting with PostgreSQL databases"
 HOMEPAGE="http://marijnhaverbeke.nl/postmodern/"
-SRC_URI="https://github.com/marijnh/Postmodern/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/marijnh/Postmodern/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
