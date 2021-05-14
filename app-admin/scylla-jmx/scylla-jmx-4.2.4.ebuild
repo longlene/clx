@@ -23,6 +23,7 @@ RDEPEND="
 	${CDEPEND}
 	${PYTHON_DEPS}
 	dev-python/pystache[${PYTHON_USEDEP}]
+	dev-db/scylla
 	>=virtual/jre-1.8"
 
 DEPEND="

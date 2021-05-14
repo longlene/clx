@@ -53,14 +53,12 @@ RDEPEND="
 	>=dev-libs/thrift-0.11.0
 	<dev-util/ragel-7.0
 	<sys-apps/hwloc-2.0.0
-	~app-admin/scylla-jmx-${PV}
 	~app-admin/scylla-tools-${PV}
 	>=virtual/jdk-1.8.0:*
 	app-arch/lz4
 	app-arch/snappy
 	dev-cpp/antlr-cpp
 	dev-cpp/yaml-cpp
-	dev-java/antlr:3.5
 	dev-libs/boost[icu]
 	dev-libs/crypto++
 	dev-libs/jsoncpp
