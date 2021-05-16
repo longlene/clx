@@ -3,8 +3,6 @@
 
 EAPI=7
 
-#inherit vcs-snapshot
-
 TBOX_PV="1.6.6"
 LUAJIT_COMMIT="e9af1abec542e6f9851ff2368e7f196b6382a44c"
 SV_COMMIT="9a3cf7c8e589de4f70378824329882c4a047fffc"
