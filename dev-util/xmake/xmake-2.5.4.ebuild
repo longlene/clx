@@ -41,10 +41,11 @@ src_prepare() {
 	rmdir core/src/lua-cjson/lua-cjson || die
 	mv ${WORKDIR}/xmake-core-lua-cjson-${LUA_CJSON_COMMIT} core/src/lua-cjson/lua-cjson
 	sed -i '/chmod 777/d' makefile
+	sed -i '/LDFLAGS_RELEASE/{s#-s##}' core/plat/linux/prefix.mak
 }
 
 src_compile() {
-	emake debug=y build
+	emake build
 }
 
 src_install() {
