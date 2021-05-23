@@ -18,4 +18,11 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-CMAKE_BUILD_TYPE=Release
+CMAKE_BUILD_TYPE="Release"
+
+src_configure() {
+	local mycmakeargs=(
+		-DMI_BUILD_TESTS=OFF
+	)
+	cmake-utils_src_configure
+}

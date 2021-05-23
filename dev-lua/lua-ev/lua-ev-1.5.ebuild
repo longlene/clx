@@ -1,8 +1,9 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=7
+
+LUA_COMPAT=( lua5-{1..3} luajit )
 
 inherit lua cmake-utils
 
@@ -20,8 +21,8 @@ RDEPEND="${DEPEND}
 dev-libs/libev"
 
 src_configure() {
-	mycmakeargs+=(
-	"-DINSTALL_CMOD=$(lua_get_libdir)"
+	local mycmakeargs=(
+		-DINSTALL_CMOD=$(lua_get_libdir)
 	)
 	cmake-utils_src_configure
 }
