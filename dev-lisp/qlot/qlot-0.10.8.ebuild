@@ -28,5 +28,8 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	default
-	use test || rm -r ${PN}-test.asd tests
+	if ! use  test ; then
+		sed -i '/defsystem "qlot\/tests/,$d' ${PN}.asd
+	fi
+}
 }
