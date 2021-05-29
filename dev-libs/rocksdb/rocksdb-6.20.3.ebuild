@@ -1,4 +1,4 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2020-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -14,18 +14,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
 IUSE="cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_sse4_2 jemalloc static-libs"
 
-COMMON_DEPEND="
+DEPEND="
 	app-arch/bzip2:=
 	app-arch/lz4:=
 	app-arch/snappy:=
+	dev-cpp/gflags
 	dev-python/zstandard:=
 	sys-libs/zlib:=
 	jemalloc? ( dev-libs/jemalloc:= )
 "
-DEPEND="${COMMON_DEPEND}
-	dev-cpp/gflags
-"
-RDEPEND="${COMMON_DEPEND}"
+RDEPEND="${DEPEND}"
 
 src_configure() {
 	mycmakeargs=(
@@ -44,6 +42,6 @@ src_install() {
 	cmake_src_install
 
 	if ! use static-libs; then
-		rm ${ED}/usr/$(get_libdir)/*.a || die
+		rm "${ED}"/usr/$(get_libdir)/*.a || die
 	fi
 }
