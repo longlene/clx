@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="aa232fd81335208e8a0badc9064d4f3b2be41b61"
+EGIT_COMMIT="32c3f34d592d55ee7ce932ed85804c1a9c4158c6"
 
 DESCRIPTION="Common Lisp bindings to GLFW"
 HOMEPAGE="https://github.com/AlexCharlton/cl-glfw3"
@@ -25,6 +25,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use example || rm -rf ${PN}-examples.asd examples
 }
