@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="37698b47a14c2007630468de7a993694ef7bd475"
+EGIT_COMMIT="103d04eafd9786aff103dcef37fa8c06a4fb35df"
 
 DESCRIPTION="Pattern Matcher Compatible with Optima"
 HOMEPAGE="https://github.com/guicho271828/trivia"
