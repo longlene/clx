@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2e60d31559a6b1d7241e64e22c8e291216f12477"
+EGIT_COMMIT="4d639aa5996af963a612e72145d2c01bcef99027"
 
 DESCRIPTION="LMDB bindings for Common Lisp"
 HOMEPAGE="https://github.com/antimer/lmdb"
@@ -20,6 +20,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/trivial-utf8
+	dev-lisp/cl-reexport
 	dev-lisp/mgl-pax
 	dev-lisp/bordeaux-threads
 	dev-lisp/osicat

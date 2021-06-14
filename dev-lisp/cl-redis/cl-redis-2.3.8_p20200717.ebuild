@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b3410b59bfb443275f5618c09aaddc8e27f066cd"
+EGIT_COMMIT="7d592417421cf7cd1cffa96043b457af0490df7d"
 
 DESCRIPTION="Redis client for Common Lisp"
 HOMEPAGE="https://github.com/vseloved/cl-redis"
