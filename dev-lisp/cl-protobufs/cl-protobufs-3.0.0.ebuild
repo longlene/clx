@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Common Lisp protocol buffer implementation"
 HOMEPAGE="https://gitlab.common-lisp.net/qitab/cl-protobufs"
-SRC_URI="https://github.com/qitab/cl-protobufs/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/qitab/cl-protobufs/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
