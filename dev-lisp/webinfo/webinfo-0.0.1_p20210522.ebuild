@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/cxml
 	dev-lisp/xpath
 	dev-lisp/trivia
-	dev-lisp/groupby
+	dev-lisp/group-by
 	dev-lisp/access
 	dev-lisp/cl-forms
 	dev-lisp/metabang-bind
