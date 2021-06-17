@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b08836e750990f5522c6c9fc97393eb90b1e0484"
+EGIT_COMMIT="e2517923fb33d5395d176eb4c54c610a1272ff9a"
 
 DESCRIPTION="Super Duper Doopa Booka Lispy Gnuplot library"
 HOMEPAGE="https://github.com/guicho271828/eazy-gnuplot/"

@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d333fa917f33eb32fa310e059131f2dbdef4144a"
+EGIT_COMMIT="1a7013b9824b36c6d6b10b912e69d20b963f7280"
 
 DESCRIPTION="Yet Another Portable Library for Process Handling / Subshell Invokation"
 HOMEPAGE="https://github.com/guicho271828/eazy-process"
@@ -22,7 +21,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/alexandria
 	dev-lisp/cffi
-	dev-lisp/optima
+	dev-lisp/trivia
 	dev-lisp/iolib
 	dev-lisp/trivial-garbage
 	dev-lisp/cl-ppcre
@@ -31,6 +30,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -rf ${PN}.test.asd t testscr.lisp
 }
