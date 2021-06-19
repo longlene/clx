@@ -6,8 +6,8 @@ EAPI=7
 inherit common-lisp-3
 
 DESCRIPTION="Matrix Algebra proGrams In Common Lisp"
-HOMEPAGE="https://github.com/rigetticomputing/magicl"
-SRC_URI="https://github.com/rigetticomputing/magicl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/quil-lang/magicl"
+SRC_URI="https://github.com/quil-lang/magicl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

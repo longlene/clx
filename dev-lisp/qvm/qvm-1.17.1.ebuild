@@ -5,9 +5,9 @@ EAPI=7
 
 inherit common-lisp-3
 
-DESCRIPTION="The @rigetti high-performance quantum virtual machine"
-HOMEPAGE="https://github.com/rigetti/qvm"
-SRC_URI="https://github.com/rigetti/qvm/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="The high-performance and featureful Quil simulator"
+HOMEPAGE="https://github.com/quil-lang/qvm"
+SRC_URI="https://github.com/quil-lang/qvm/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

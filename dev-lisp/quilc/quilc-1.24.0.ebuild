@@ -6,8 +6,8 @@ EAPI=7
 inherit common-lisp-3
 
 DESCRIPTION="The optimizing Quil compiler"
-HOMEPAGE="https://github.com/rigetti/quilc"
-SRC_URI="https://github.com/rigetti/quilc/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/quil-lang/quilc"
+SRC_URI="https://github.com/quil-lang/quilc/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
