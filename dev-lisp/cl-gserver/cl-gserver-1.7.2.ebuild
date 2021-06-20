@@ -16,7 +16,7 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lis/alexandria
+	dev-lisp/alexandria
 	dev-lisp/bordeaux-threads
 	dev-lisp/lparallel
 	dev-lisp/cl-speedy-queue
