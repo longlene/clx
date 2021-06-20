@@ -5,11 +5,11 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="53c4f7884a24cd06e135c2aea5f1392dc58745cd"
+EGIT_COMMIT="bc7f54b3a9b901d5648d7e9de358e29d3b794c78"
 
 DESCRIPTION="A Common Lisp production-rule system"
 HOMEPAGE="http://lisa.sourceforge.net"
-SRC_URI="https://github.com/johanlindberg/lisa/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/gpwwjr/lisa/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL"
 SLOT="0"

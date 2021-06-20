@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="34f890fe46efdebe7bb70d218f1937e98f632bf9"
+EGIT_COMMIT="3584275f0be9d06c0c51b5c08f89005deafc4ada"
 
 DESCRIPTION="Practically Lenient and Unimpressive Markup Parser for Common Lisp"
 HOMEPAGE="https://github.com/Shinmera/plump"

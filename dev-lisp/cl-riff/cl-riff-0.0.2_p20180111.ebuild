@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="536eae2c852ab2efb4e272bb89f1b1dc70cd38f4"
+EGIT_COMMIT="2d1191c236095fd5a86daeb61a7fc4d4eee95f04"
 
 DESCRIPTION="Reads Resource Interchange File Format (RIFF) files from Common Lisp"
 HOMEPAGE="https://github.com/RobBlackwell/cl-riff"

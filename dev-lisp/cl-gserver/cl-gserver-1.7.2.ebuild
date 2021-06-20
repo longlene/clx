@@ -5,22 +5,26 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4f42b14a84c7a6de9e958a5b7fe6f65b0b4ef967"
-
 DESCRIPTION="Erlang GenServer inspired library for common lisp based on lparallel"
 HOMEPAGE="https://github.com/mdbergmann/cl-gserver/"
-SRC_URI="https://github.com/mdbergmann/cl-gserver/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/mdbergmann/cl-gserver/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="MIT"
+LICENSE="AGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-lis/alexandria
+	dev-lisp/bordeaux-threads
 	dev-lisp/lparallel
+	dev-lisp/cl-speedy-queue
 	dev-lisp/log4cl
-	dev-lisp/iterate
+	dev-lisp/str
+	dev-lisp/blackbird
+	dev-lisp/binding-arrows
+	dev-lisp/atomics
 	test? ( dev-lisp/fiveam dev-lisp/trivia )
 "
 BDEPEND=""

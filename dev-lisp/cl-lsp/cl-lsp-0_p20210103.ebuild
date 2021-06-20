@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b33c44830610f1dc912f578d8aebe65180154665"
+EGIT_COMMIT="7f2f8ef0feefe4f6889fe12ae18b6da6123546d7"
 
 DESCRIPTION="An implementation of the Language Server Protocol for Common Lisp"
 HOMEPAGE="https://github.com/cxxxr/cl-lsp"
@@ -33,3 +33,9 @@ RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/cl-annot
 "
+
+src_prepare() {
+	default
+	sed -i '/defsystem "cl-lsp\/test/,$d' ${PN}.asd
+	rm -rf test
+}

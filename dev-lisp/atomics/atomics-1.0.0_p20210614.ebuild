@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d6dd0e3494103348ed5581fcde00997bba7e0980"
+EGIT_COMMIT="9ee0bdebcd2bb9b242671a75460db13fbf45454c"
 
 DESCRIPTION="Portability layer for atomic operations like compare-and-swap (CAS)"
 HOMEPAGE="https://github.com/Shinmera/atomics"

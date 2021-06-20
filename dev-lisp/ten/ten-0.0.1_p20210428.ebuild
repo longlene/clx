@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 elisp-common vcs-snapshot
 
-EGIT_COMMIT="ee4717960dc7d4695a211e7363b812da10127f61"
+EGIT_COMMIT="a92d392f1c3cd21a36012641e7c1057ca326502f"
 
 DESCRIPTION="Yet another template system for Common Lisp"
 HOMEPAGE="https://github.com/mmontone/ten/"

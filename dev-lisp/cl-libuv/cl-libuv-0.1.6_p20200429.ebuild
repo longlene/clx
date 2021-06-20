@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="32100c023c518038d0670a103eaa4d50dd785d29"
+EGIT_COMMIT="f811e50027e882eae5523c73798fbf6554a15850"
 
 DESCRIPTION="Libuv bindings for Common Lisp"
 HOMEPAGE="https://github.com/orthecreedence/cl-libuv"

@@ -5,11 +5,11 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1aea67b62980d735783b6d7f5f7840780e1238dc"
+EGIT_COMMIT="089adfd8759ec7973bb6f67b98d7a246e67aeb05"
 
 DESCRIPTION="a portability library for debugger"
-HOMEPAGE="https://github.com/bluelisp/conium"
-SRC_URI="https://github.com/bluelisp/conium/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/sharplispers/conium"
+SRC_URI="https://github.com/sharplispers/conium/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
