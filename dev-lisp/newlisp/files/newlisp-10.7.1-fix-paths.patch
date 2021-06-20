@@ -1,0 +1,345 @@
+diff -Nuar a/configure b/configure
+--- a/configure	2017-01-25 17:42:21.000000000 +0100
++++ b/configure	2018-03-17 23:38:36.303015016 +0100
+@@ -90,7 +90,7 @@
+ 	fi
+ elif [ ${os_type} = _BSD ] ; then
+ 	if [ ${memory_model} = LP64 ] ; then
+-		if [ -f /usr/local/include/ffi.h ] ; then
++		if [ -f /usr/include/ffi.h ] ; then
+ 			cp makefile_bsdLP64_utf8_ffi makefile_build
+ 		else
+ 			cp makefile_bsdLP64_utf8 makefile_build
+diff -Nuar a/configure-alt b/configure-alt
+--- a/configure-alt	2017-01-25 17:42:21.000000000 +0100
++++ b/configure-alt	2018-03-17 23:38:42.193014991 +0100
+@@ -328,7 +328,7 @@
+ esac
+ done
+ 
+-if [ -z "$prefix" ] ; then prefix="/usr/local"; fi
++if [ -z "$prefix" ] ; then prefix="/usr"; fi
+ if [ -z "$exec_prefix" ] ; then exec_prefix="$prefix"; fi
+ if [ -z "$bindir" ] ; then bindir="${exec_prefix}/bin"; fi
+ if [ -z "$datarootdir" ] ; then datarootdir="${prefix}/share"; fi
+diff -Nuar a/guiserver/allfonts-demo.lsp b/guiserver/allfonts-demo.lsp
+--- a/guiserver/allfonts-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/allfonts-demo.lsp	2018-03-17 23:38:47.253014969 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; allfonts-demo.lsp - show all fonts on the system
+ ;; this program also demonstrates that strings can be used instead 
+diff -Nuar a/guiserver/animation-demo.lsp b/guiserver/animation-demo.lsp
+--- a/guiserver/animation-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/animation-demo.lsp	2018-03-17 23:38:53.323014943 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; animation-demo.lsp - demonstrate gs:move-tag for making animations
+ ;; and the mouse-wheel moving a text object
+diff -Nuar a/guiserver/border-layout-demo.lsp b/guiserver/border-layout-demo.lsp
+--- a/guiserver/border-layout-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/border-layout-demo.lsp	2018-03-17 23:38:57.043014927 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; border-layout-demo.lsp - demonstrate the border layout
+ 
+diff -Nuar a/guiserver/button-demo.lsp b/guiserver/button-demo.lsp
+--- a/guiserver/button-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/button-demo.lsp	2018-03-17 23:39:01.623014908 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ; button-demo.lsp - demonstrate the button control
+ 
+diff -Nuar a/guiserver/clipboard-demo.lsp b/guiserver/clipboard-demo.lsp
+--- a/guiserver/clipboard-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/clipboard-demo.lsp	2018-03-17 23:39:15.393014849 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; clipboard-demo.lsp - demonstrate the gs:paste-text function
+ 
+diff -Nuar a/guiserver/cursor-demo.lsp b/guiserver/cursor-demo.lsp
+--- a/guiserver/cursor-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/cursor-demo.lsp	2018-03-17 23:39:20.653014826 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; cursor-demo - demonstrate cursor shapes with gs:set-cursor
+ 
+diff -Nuar a/guiserver/drag-demo.lsp b/guiserver/drag-demo.lsp
+--- a/guiserver/drag-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/drag-demo.lsp	2018-03-17 23:39:25.043014808 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; drag-demo.lsp - demonstrate dragging of objects with the mouse
+ ;;
+diff -Nuar a/guiserver/font-demo.lsp b/guiserver/font-demo.lsp
+--- a/guiserver/font-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/font-demo.lsp	2018-03-17 23:39:27.153014798 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; font-demo.lsp - show all built-in Java fonts (available on all platforms)
+ 
+diff -Nuar a/guiserver/frameless-demo.lsp b/guiserver/frameless-demo.lsp
+--- a/guiserver/frameless-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/frameless-demo.lsp	2018-03-17 23:39:30.313014785 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ 
+ ;; frameless-demo.lsp - frameless and transparent (on MacOS X)
+ 
+diff -Nuar a/guiserver/guiserver.lsp b/guiserver/guiserver.lsp
+--- a/guiserver/guiserver.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/guiserver.lsp	2018-03-17 23:40:13.003014602 +0100
+@@ -41,7 +41,7 @@
+ ;; <h2>Usage</h2>
+ ;; At the beginning of the program file, include a 'load' statement for the module:
+ ;; <pre>
+-;; (load "/usr/local/share/newlisp/guiserver.lsp")
++;; (load "/usr/share/newlisp/guiserver.lsp")
+ ;; </pre>
+ ;; or on MS Windows:
+ ;; <pre>
+@@ -50,7 +50,7 @@
+ ;; 'guiserver.lsp' expects the server 'guiserver.jar' to be
+ ;; in the directoey specified in the environment variable NEWLISPDIR.
+ ;; When newLISP starts up and this variable is not set yet, it sets it
+-;; to a default value of '/usr/local/share/newlisp' on MacOS X and Unix OSs, and 
++;; to a default value of '/usr/share/newlisp' on MacOS X and Unix OSs, and 
+ ;; to 'C:\Program Files\newlisp' or whatever it finds in the 'PROGRAMFILES'
+ ;; environment variable on MS Windows systems and adding '/newlisp' to it.
+ ;; This can be overwritten by specifying system wide  setting for the environment 
+@@ -132,12 +132,12 @@
+ ;; A second method to start a newLISP-GS application starts the 'guiserver.jar' first, which then
+ ;; starts the newLISP application:
+ ;; <pre>
+-;;     java -jar /usr/local/share/newlisp/guiserver.jar 64001 /usr/home/aUser/MyApplication.lsp
++;;     java -jar /usr/share/newlisp/guiserver.jar 64001 /usr/home/aUser/MyApplication.lsp
+ ;; </pre>
+ ;; A different port number can be used. Port numbers below 1024 need administrator
+ ;; permissions. Optionally a splash screen can be specified as the last parameter:
+ ;; <pre>
+-;;     java -jar /usr/local/share/newlisp/guiserver.jar 64001 /home/apps/myapp.lsp /local/newLISP128.png
++;;     java -jar /usr/share/newlisp/guiserver.jar 64001 /home/apps/myapp.lsp /local/newLISP128.png
+ ;; </pre>
+ ;; The example specifies an image inside 'guiserver.jar'. Any other image path on the local file system
+ ;; can be used.
+@@ -718,7 +718,7 @@
+ ;; instrument for all 128 different keys/notes.
+ ;;
+ ;; Basic capabilities of the sound API are shown in the demo files <tt>midi-demo.lsp</tt>
+-;; and <tt>midi2-demo.lsp</tt> in the <tt>/usr/local/share/newlisp/guiserver/</tt> or 
++;; and <tt>midi2-demo.lsp</tt> in the <tt>/usr/share/newlisp/guiserver/</tt> or 
+ ;; <tt>c:\Program files\newlisp\guiserver\</tt> directory.
+ ;; <pre>
+ ;;    (gs:add-track <int channel><list-notes>)
+diff -Nuar a/guiserver/html-demo.lsp b/guiserver/html-demo.lsp
+--- a/guiserver/html-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/html-demo.lsp	2018-03-17 23:40:20.683014569 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; html-demo.lsp - demonstrate  the text pane with HTML
+ 
+diff -Nuar a/guiserver/image-demo.lsp b/guiserver/image-demo.lsp
+--- a/guiserver/image-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/image-demo.lsp	2018-03-17 23:40:23.003014559 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; image-demo.lsp - demonstrate images rotating and zooming
+ ;; and the mouse-wheel rotating an object
+diff -Nuar a/guiserver/midi2-demo.lsp b/guiserver/midi2-demo.lsp
+--- a/guiserver/midi2-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/midi2-demo.lsp	2018-03-17 23:40:36.173014503 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ 
+ (load (append (env "NEWLISPDIR") "/guiserver.lsp"))
+ (gs:init)
+diff -Nuar a/guiserver/mouse-demo.lsp b/guiserver/mouse-demo.lsp
+--- a/guiserver/mouse-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/mouse-demo.lsp	2018-03-17 23:40:40.033014487 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; mouse-demo.lsp - demonstrate mouse handlers and gs:delete-tag
+ ;; v.1.1
+diff -Nuar a/guiserver/move-resize-demo.lsp b/guiserver/move-resize-demo.lsp
+--- a/guiserver/move-resize-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/move-resize-demo.lsp	2018-03-17 23:40:43.283014473 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ; move-resize-demo.lsp - demonstrate gs:window-moved and hs:window-resized events
+ 
+diff -Nuar a/guiserver/newlisp-edit.lsp b/guiserver/newlisp-edit.lsp
+--- a/guiserver/newlisp-edit.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/newlisp-edit.lsp	2018-03-17 23:40:50.823014440 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ 
+ ; newlisp-edit.lsp - multiple tab LISP editor and support for running code from the editor
+ ; needs 9.9.2 version minimum to run
+diff -Nuar a/guiserver/pinballs-demo.lsp b/guiserver/pinballs-demo.lsp
+--- a/guiserver/pinballs-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/pinballs-demo.lsp	2018-03-17 23:40:59.453014403 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;; pinballs-demo.lsp - demos animations and gs:check-event function
+ 
+ ;; GS 1.05+
+diff -Nuar a/guiserver/properties-demo.lsp b/guiserver/properties-demo.lsp
+--- a/guiserver/properties-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/properties-demo.lsp	2018-03-17 23:41:01.723014394 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; property-demo.lsp - demonstrate gs:get-screen and gs:get-version
+ 
+diff -Nuar a/guiserver/rotation-demo.lsp b/guiserver/rotation-demo.lsp
+--- a/guiserver/rotation-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/rotation-demo.lsp	2018-03-17 23:41:04.653014381 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; rotationn-demo.lsp - demonstrate gs:rotate-tag, gs:translate-tag and  gs:scale-tag
+ ;; and the mouse-wheel rotating an object
+diff -Nuar a/guiserver/shapes-demo.lsp b/guiserver/shapes-demo.lsp
+--- a/guiserver/shapes-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/shapes-demo.lsp	2018-03-17 23:41:08.783014364 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; shapes-demo.lsp - demonstrate different lines, outlines and shapes
+ ;; v.1.1
+diff -Nuar a/guiserver/sound-demo.lsp b/guiserver/sound-demo.lsp
+--- a/guiserver/sound-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/sound-demo.lsp	2018-03-17 23:41:15.463014335 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ; button-demo.lsp - demonstrate the button control
+ 
+diff -Nuar a/guiserver/stroke-demo.lsp b/guiserver/stroke-demo.lsp
+--- a/guiserver/stroke-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/stroke-demo.lsp	2018-03-17 23:41:17.533014326 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; strokes-demo.lsp - demonstrate strokes with round endings in different lines and outlines
+ ;; v. 1.1
+diff -Nuar a/guiserver/table-demo.lsp b/guiserver/table-demo.lsp
+--- a/guiserver/table-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/table-demo.lsp	2018-03-17 23:41:19.933014316 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ 
+ ; table-demo.lsp - demo of the table UI
+ 
+diff -Nuar a/guiserver/tabs-demo.lsp b/guiserver/tabs-demo.lsp
+--- a/guiserver/tabs-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/tabs-demo.lsp	2018-03-17 23:41:22.553014305 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; tabs-demo.lsp - demonstrate tabs and icons
+ ;; for 10.6.3 ideprecated gs:table-set-row-number was replaced with gs:table-show-row-number
+diff -Nuar a/guiserver/textfield-demo.lsp b/guiserver/textfield-demo.lsp
+--- a/guiserver/textfield-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/textfield-demo.lsp	2018-03-17 23:41:24.663014296 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ; textfield-demo.lsp - demonstrate the test-field widget
+ 
+diff -Nuar a/guiserver/textrot-demo.lsp b/guiserver/textrot-demo.lsp
+--- a/guiserver/textrot-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/textrot-demo.lsp	2018-03-17 23:41:27.363014284 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; textrot-demo.lsp - demonstrate gs:rotate-tag on text
+ ;; and the mouse-wheel rotating an object
+diff -Nuar a/guiserver/widgets-demo-jp.lsp b/guiserver/widgets-demo-jp.lsp
+--- a/guiserver/widgets-demo-jp.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/widgets-demo-jp.lsp	2018-03-17 23:41:33.983014256 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; widgets-demo.lsp - demonstrate all widgets
+ 
+diff -Nuar a/guiserver/widgets-demo.lsp b/guiserver/widgets-demo.lsp
+--- a/guiserver/widgets-demo.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/widgets-demo.lsp	2018-03-17 23:41:37.023014243 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; widgets-demo.lsp - demonstrate all widgets
+ 
+diff -Nuar a/guiserver/widgets-demo-ru.lsp b/guiserver/widgets-demo-ru.lsp
+--- a/guiserver/widgets-demo-ru.lsp	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/widgets-demo-ru.lsp	2018-03-17 23:41:40.463014228 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/newlisp
++#!/usr/bin/newlisp
+ ;;
+ ;; widgets-demo.lsp - demonstrate all widgets
+ 
+diff -Nuar a/newlisp.h b/newlisp.h
+--- a/newlisp.h	2017-01-25 17:42:21.000000000 +0100
++++ b/newlisp.h	2018-03-17 23:43:10.193013844 +0100
+@@ -37,7 +37,7 @@
+ #ifdef NEWCONFIG
+ #include "config.h"
+ #else
+-#define NEWLISPDIR "/usr/local/share/newlisp"
++#define NEWLISPDIR "/usr/share/newlisp"
+ #endif
+ 
+ /* force ISO_C90 restrictions */
+diff -Nuar a/README b/README
+--- a/README	2017-01-25 17:42:21.000000000 +0100
++++ b/README	2018-03-17 23:38:31.183015038 +0100
+@@ -100,7 +100,7 @@
+ Note that for a minumum install only the executable newlisp or newlisp.exe
+ in Win32 is necessary.
+ 
+-On Mac OS X or other UNIX copy  newlisp to /usr/local/bin or /usr/bin or ~/bin 
++On Mac OS X or other UNIX copy  newlisp to /usr/bin or /usr/bin or ~/bin 
+ and give it executable permissions.
+ 
+ 

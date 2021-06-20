@@ -19,7 +19,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/magicffi
 	dev-lisp/cl-wav
-	dev-lisp/png
+	dev-lisp/cl-png
 	dev-lisp/cl-jpeg
 	dev-lisp/retrospectiff
 	dev-lisp/cl-csv

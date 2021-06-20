@@ -1,0 +1,126 @@
+diff -Nuar a/guiserver/Makefile b/guiserver/Makefile
+--- a/guiserver/Makefile	2017-01-25 17:42:21.000000000 +0100
++++ b/guiserver/Makefile	2018-03-17 23:35:34.393015795 +0100
+@@ -9,10 +9,10 @@
+ 	rm *.class
+ 
+ install:
+-	-install -d  /usr/local/share/newlisp/guiserver
+-	-install -d  /usr/local/share/doc/newlisp/guiserver
+-	-install -m 644 guiserver.jar /usr/local/share/newlisp/
+-	-install -m 644 guiserver.lsp /usr/local/share/newlisp/
+-	-install -m 644 index.html /usr/local/share/doc/newlisp/guiserver/
+-	-install -m 644 guiserver.lsp.html /usr/local/share/doc/newlisp/guiserver/
+-	-install -m 755 newlisp-edit.lsp /usr/local/bin/newlisp-edit
++	-install -d  /usr/share/newlisp/guiserver
++	-install -d  /usr/share/doc/newlisp/guiserver
++	-install -m 644 guiserver.jar /usr/share/newlisp/
++	-install -m 644 guiserver.lsp /usr/share/newlisp/
++	-install -m 644 index.html /usr/share/doc/newlisp/guiserver/
++	-install -m 644 guiserver.lsp.html /usr/share/doc/newlisp/guiserver/
++	-install -m 755 newlisp-edit.lsp /usr/bin/newlisp-edit
+diff -Nuar a/Makefile b/Makefile
+--- a/Makefile	2017-01-25 17:42:21.000000000 +0100
++++ b/Makefile	2018-03-17 23:35:23.273015842 +0100
+@@ -9,7 +9,7 @@
+ #
+ # for 'make install' you have to login as 'root' else do 'make install_home'
+ # note that 'make install_home' will not install guiserver files which
+-# must be in /usr/local/share/newlisp in MacOX X and UNIX machines
++# must be in /usr/share/newlisp in MacOX X and UNIX machines
+ #
+ # to make the distribution archive:  'make dist'
+ #
+@@ -39,8 +39,8 @@
+ 	@echo "\nDo one of the following:"
+ 	@echo "  make                 # auto-select one of the predefined makefiles and build newLISP"
+ 	@echo "  make help            # display this help"
+-	@echo "  make install         # install on LINUX/UNIX in /usr/local/bin and /usr/local/share (need to be root)"
+-	@echo "  make uninstall       # uninstall on LINUX/UNIX from /usr/local/bin and /usr/local/share (need to be root)"
++	@echo "  make install         # install on LINUX/UNIX in /usr/bin and /usr/share (need to be root)"
++	@echo "  make uninstall       # uninstall on LINUX/UNIX from /usr/bin and /usr/share (need to be root)"
+ 	@echo "  make install_home    # install on LINUX/UNIX in users home directory "
+ 	@echo "  make uninstall_home  # uninstall on LINUX/UNIX from users home directory "
+ 	@echo
+diff -Nuar a/makefile_linux_ffi b/makefile_linux_ffi
+--- a/makefile_linux_ffi	2017-01-25 17:42:21.000000000 +0100
++++ b/makefile_linux_ffi	2018-03-17 23:35:48.053015736 +0100
+@@ -6,7 +6,7 @@
+ OBJS = newlisp.o nl-symbol.o nl-math.o nl-list.o nl-liststr.o nl-string.o nl-filesys.o \
+ 	nl-sock.o nl-import.o nl-xml-json.o nl-web.o nl-matrix.o nl-debug.o pcre.o
+ 
+-CFLAGS = -m32 -Wall -Wno-strict-aliasing -Wno-long-long -c -O2 -g -DREADLINE -DLINUX -DFFI -I/usr/local/lib/libffi-3.0.13/include 
++CFLAGS = -m32 -Wall -Wno-strict-aliasing -Wno-long-long -c -O2 -g -DREADLINE -DLINUX -DFFI -I/usr/lib/libffi-3.0.13/include 
+ 
+ CC = gcc
+ 
+diff -Nuar a/makefile_linuxLP64_ffi b/makefile_linuxLP64_ffi
+--- a/makefile_linuxLP64_ffi	2017-01-25 17:42:21.000000000 +0100
++++ b/makefile_linuxLP64_ffi	2018-03-17 23:35:41.953015762 +0100
+@@ -6,7 +6,7 @@
+ OBJS = newlisp.o nl-symbol.o nl-math.o nl-list.o nl-liststr.o nl-string.o nl-filesys.o \
+ 	nl-sock.o nl-import.o nl-xml-json.o nl-web.o nl-matrix.o nl-debug.o pcre.o
+ 
+-CFLAGS = -fPIC -m64 -Wall -Wno-uninitialized -Wno-strict-aliasing -Wno-long-long -c -O2 -g -DREADLINE -DNEWLISP64 -DLINUX -DFFI -I/usr/local/lib/libffi-3.0.13/include 
++CFLAGS = -fPIC -m64 -Wall -Wno-uninitialized -Wno-strict-aliasing -Wno-long-long -c -O2 -g -DREADLINE -DNEWLISP64 -DLINUX -DFFI -I/usr/lib/libffi-3.0.13/include 
+ 
+ CC = gcc
+ 
+diff -Nuar a/makefile_linuxLP64_utf8_ffi b/makefile_linuxLP64_utf8_ffi
+--- a/makefile_linuxLP64_utf8_ffi	2017-01-25 17:42:21.000000000 +0100
++++ b/makefile_linuxLP64_utf8_ffi	2018-03-17 23:35:44.993015749 +0100
+@@ -6,7 +6,7 @@
+ OBJS = newlisp.o nl-symbol.o nl-math.o nl-list.o nl-liststr.o nl-string.o nl-filesys.o \
+ 	nl-sock.o nl-import.o nl-xml-json.o nl-web.o nl-matrix.o nl-debug.o nl-utf8.o pcre.o
+ 
+-CFLAGS = -fPIC -m64 -Wall -Wno-uninitialized -Wno-strict-aliasing -Wno-long-long -c -O2 -g -DREADLINE -DSUPPORT_UTF8 -DNEWLISP64 -DLINUX -DFFI -I/usr/local/lib/libffi-3.0.13/include 
++CFLAGS = -fPIC -m64 -Wall -Wno-uninitialized -Wno-strict-aliasing -Wno-long-long -c -O2 -g -DREADLINE -DSUPPORT_UTF8 -DNEWLISP64 -DLINUX -DFFI -I/usr/lib/libffi-3.0.13/include 
+ 
+ # replace -O2 with -Oz when using clang/llvm
+ #CC = clang 
+diff -Nuar a/makefile_linux_utf8_ffi b/makefile_linux_utf8_ffi
+--- a/makefile_linux_utf8_ffi	2017-01-25 17:42:21.000000000 +0100
++++ b/makefile_linux_utf8_ffi	2018-03-17 23:35:51.193015723 +0100
+@@ -6,7 +6,7 @@
+ OBJS = newlisp.o nl-symbol.o nl-math.o nl-list.o nl-liststr.o nl-string.o nl-filesys.o \
+ 	nl-sock.o nl-import.o nl-xml-json.o nl-web.o nl-matrix.o nl-debug.o nl-utf8.o pcre.o
+ 
+-CFLAGS = -fPIC -m32 -Wall -Wno-strict-aliasing -Wno-long-long -c -O2 -g -DREADLINE -DSUPPORT_UTF8 -DLINUX -DFFI -I/usr/local/lib/libffi-3.0.13/include
++CFLAGS = -fPIC -m32 -Wall -Wno-strict-aliasing -Wno-long-long -c -O2 -g -DREADLINE -DSUPPORT_UTF8 -DLINUX -DFFI -I/usr/lib/libffi-3.0.13/include
+ 
+ CC = gcc
+ 
+diff -Nuar a/makefile_original_install b/makefile_original_install
+--- a/makefile_original_install	2017-01-25 17:42:21.000000000 +0100
++++ b/makefile_original_install	2018-03-17 23:36:45.533015490 +0100
+@@ -6,16 +6,16 @@
+ # run in an environment, where NEWLISPDIR is predefined,
+ # else NEWLISPDIR will be defined during newlisp startup
+ # as /usr/share/newlisp which is hardcoded in newlisp.c
+-prefix=/usr/local
++prefix=/usr
+ datadir=$(prefix)/share
+ bindir=$(prefix)/bin
+ mandir=$(prefix)/share/man
+ 
+-# if prefix is not /usr/local then several places in the file 
++# if prefix is not /usr then several places in the file 
+ # guiserver/newlisp-edit.lsp must change too
+ GUISERVER = $(prefix)/share/newlisp/guiserver
+ 
+-# this is the standard install in /usr/local/bin and /usr/local/share
++# this is the standard install in /usr/bin and /usr/share
+ # which as to be done as 'root' with supersuser permissions
+ # for an install in your home directory use make install_home
+ #
+@@ -31,7 +31,9 @@
+ 	-install -d $(datadir)/newlisp/modules
+ 	-install -d $(datadir)/newlisp/util
+ 	-install -d $(datadir)/doc/newlisp
+-	-rm $(bindir)/newlisp
++	-install -d $(datadir)/man
++	-install -d $(datadir)/man/man1
++	-install -d $(bindir)
+ 	-install -m 755  newlisp $(bindir)/newlisp-$(VERSION)
+ 	-ln -s $(bindir)/newlisp-$(VERSION) $(bindir)/newlisp
+ 	-install -m 755 util/newlispdoc $(bindir)/newlispdoc
