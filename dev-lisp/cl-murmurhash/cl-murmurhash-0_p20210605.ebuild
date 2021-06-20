@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="14ce64bbdd97dcd725397cbd15e049d7f443551e"
+EGIT_COMMIT="5433f5e95f1cce63a81259a471150834c6a59364"
 
 DESCRIPTION="The 32-bit version of Murmurhash3 for Common Lisp"
 HOMEPAGE="https://github.com/ruricolist/cl-murmurhash"

@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="caf2e511e157fa4edc5244cb9ba0f030ebe1cbef"
+EGIT_COMMIT="af221ae691e62f03af13d5b557448fa3bbd91be6"
 
 DESCRIPTION="SSDB client for Common Lisp"
 HOMEPAGE="https://github.com/muyinliu/cl-ssdb"
@@ -23,6 +23,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/flexi-streams
 	dev-lisp/parse-number
+	dev-lisp/babel
 	test? ( dev-lisp/prove )
 "
 

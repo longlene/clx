@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="983d6b9350d9802daaf16aee25881d3a672dbaeb"
+EGIT_COMMIT="64aba59d89f85bc5c9402e445873965338a66a02"
 
 DESCRIPTION="CFFI bindings to libcurses"
 HOMEPAGE="http://gitorious.org/cl-charms"
@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use example || rm -r ${PN}-paint.asd ${PN}-timer.asdf examples
 }
 
