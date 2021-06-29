@@ -19,7 +19,7 @@ DEPEND="
 	>=dev-cpp/sqlitecpp-3.0.0
 	>=dev-cpp/tabulate-1.3.0
 	>=dev-cpp/nlohmann_json-3.0.0
-	>=dev-cpp/xvgea-0.0.10
+	>=dev-cpp/xvega-0.0.10
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

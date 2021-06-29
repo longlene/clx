@@ -17,7 +17,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	sci-libs/scipy
+	dev-python/scipy
 	>=dev-python/numpy-1.10.4
 	>=dev-python/pyglet-1.4.0
 	dev-python/pillow

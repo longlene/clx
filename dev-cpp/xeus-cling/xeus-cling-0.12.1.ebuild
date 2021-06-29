@@ -20,7 +20,7 @@ DEPEND="
 	>=sys-devel/cling-0.6
 	>=dev-libs/pugixml-1.8.1
 	>=net-libs/cppzmq-4.3.0
-	>=dev-cpp/cxxopts-2.1.1
+	>=dev-libs/cxxopts-2.1.1
 	>=dev-cpp/nlohmann_json-3.6.1
 "
 RDEPEND="${DEPEND}"
