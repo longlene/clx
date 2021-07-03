@@ -1,7 +1,9 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
+
+LUA_COMPAT=( lua5-{1..3} luajit )
 
 inherit lua
 
@@ -14,18 +16,22 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="${LUA_DEPS}"
 RDEPEND="${DEPEND}
-	dev-lua/bit32
 	dev-lua/cqueues
 	dev-lua/luaossl
 	dev-lua/basexx
 	dev-lua/lpeg
 	dev-lua/lpeg_patterns
+	dev-lua/binaryheap
 	dev-lua/fifo
 "
 
+lua_src_install() {
+	insinto $(lua_get_lmod_dir)
+	doins -r http
+}
+
 src_install() {
-	lua_install_module -r http
-	dodoc README.md
+	lua_foreach_impl lua_src_install
 }
