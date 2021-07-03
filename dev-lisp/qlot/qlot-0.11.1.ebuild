@@ -32,4 +32,3 @@ src_prepare() {
 		sed -i '/defsystem "qlot\/tests/,$d' ${PN}.asd
 	fi
 }
-}

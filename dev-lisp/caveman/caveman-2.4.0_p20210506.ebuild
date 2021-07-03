@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f3964d4a4eb6daa66aefaff2ba8169f2dc0cbc7b"
+EGIT_COMMIT="f6ae0fe20bca5ba75a8bc5dcaea8cf59f12c2da5"
 
 DESCRIPTION="A micro web framework for Common Lisp based on Clack"
 HOMEPAGE="http://fukamachi.github.io/caveman/"

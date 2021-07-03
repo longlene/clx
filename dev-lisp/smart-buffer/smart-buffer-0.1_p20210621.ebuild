@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
-inherit git-r3 common-lisp-3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="b622a2b624201701b834e940bafb01685a2603c1"
 
 DESCRIPTION="Smart octets buffer"
 HOMEPAGE="https://github.com/fukamachi/smart-buffer"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/fukamachi/smart-buffer.git"
+SRC_URI="https://github.com/fukamachi/smart-buffer/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
@@ -23,6 +22,11 @@ RDEPEND="${DEPEND}
 	dev-lisp/flexi-streams
 	dev-lisp/uiop
 "
+
+src_prepare() {
+	default
+	rm -rf ${PN}-test.asd t
+}
 
 src_install() {
 	common-lisp-3_src_install
