@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
-
-EGIT_COMMIT="01bd066d57b1f02b33a8b4a34f52813efc60ada1"
+inherit cmake-utils
 
 DESCRIPTION="C++11 wrapper for rdkafka"
 HOMEPAGE="https://github.com/mfontanini/cppkafka"
-SRC_URI="https://github.com/mfontanini/cppkafka/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/mfontanini/cppkafka/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
@@ -22,3 +20,13 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+src_configure() {
+	local mycmakeargs=(
+	-DCPPKAFKA_BUILD_SHARED=OFF
+	-DCPPKAFKA_RDKAFKA_STATIC_LIB=ON
+	-DCPPKAFKA_BOOST_STATIC_LIBS=OFF
+	-DCPPKAFKA_DISABLE_EXAMPLES=ON
+	-DCPPKAFKA_DISABLE_TESTS=ON
+	)
+	cmake-utils_src_configure
+}
