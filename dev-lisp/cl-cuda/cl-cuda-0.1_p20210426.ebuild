@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="8aaf319303cca78cd999fc5defb2793e6fb76a18"
+EGIT_COMMIT="34a14496f72612e77b77485731e192760dd57df7"
 
 DESCRIPTION="cl-cuda is a library to use NVIDIA CUDA in Common Lisp programs"
 HOMEPAGE="https://github.com/takagi/cl-cuda"
