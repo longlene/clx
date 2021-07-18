@@ -1,11 +1,13 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit cmake-utils lua vcs-snapshot
+LUA_COMPAT=( lua5-{1..4} luajit )
 
-EGIT_COMMIT="6df26c7c24d34fdedf1b1d6557adfa06d740f50f"
+inherit cmake-utils lua lua vcs-snapshot
+
+EGIT_COMMIT="49ba0848402644a5075d3ce7222bb248dfb49bd1"
 
 DESCRIPTION="A pure C binding of SDL 2.0 for Lua"
 HOMEPAGE="https://github.com/Tangent128/luasdl2"

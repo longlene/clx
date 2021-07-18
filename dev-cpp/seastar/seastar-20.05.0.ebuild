@@ -34,10 +34,13 @@ BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(
+			-DSeastar_CXX_FLAGS="-fPIC"
 			-DSeastar_APPS=OFF
 			-DSeastar_DEMOS=OFF
 			-DSeastar_DOCS=OFF
 			-DSeastar_TESTING=OFF
+			-DSeastar_STD_OPTIONAL_VARIANT_STRINGVIEW=ON
+			-DSeastar_DPDK=$(usex dpdk)
 			-DSeastar_HWLOC=$(usex hwloc)
 			-DSeastar_NUMA=$(usex numa)
 	)

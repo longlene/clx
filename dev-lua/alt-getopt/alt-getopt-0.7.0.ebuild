@@ -3,7 +3,7 @@
 
 EAPI=7
 
-LUA_COMPAT=( lua5-{1..3} luajit )
+LUA_COMPAT=( lua5-{1..4} luajit )
 
 inherit lua
 
@@ -18,8 +18,8 @@ IUSE=""
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
-RDEPEND="${LUA_DEPS}"
-DEPEND="${RDEPEND}"
+DEPEND="${LUA_DEPS}"
+RDEPEND="${DEPEND}"
 BDEPEND="virtual/pkgconfig"
 
 DOCS=( README )
