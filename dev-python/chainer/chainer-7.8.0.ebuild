@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 python3_8 )
+PYTHON_COMPAT=( python3_9 )
 inherit distutils-r1
 
 DESCRIPTION="A flexible framework of neural networks for deep learning"
