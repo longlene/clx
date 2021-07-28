@@ -7,7 +7,7 @@ inherit cmake-utils
 
 DESCRIPTION="Lexbor is development of an open source HTML Renderer library"
 HOMEPAGE="https://lexbor.com"
-SRC_URI="https://github.com/lexbor/lexbor/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/lexbor/lexbor/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"

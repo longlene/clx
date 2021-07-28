@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="fefd97988bd558ca94d0b0db9de932fb3203ad77"
+EGIT_COMMIT="cc7ba6a54cea6ef63b17dcc6e653d91d9907f59e"
 
 DESCRIPTION="Portable Websocket Server for Common Lisp"
 HOMEPAGE="https://github.com/charJe/portal/"

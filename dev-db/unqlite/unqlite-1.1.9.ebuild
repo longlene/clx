@@ -1,16 +1,13 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=6
+EAPI=7
 
 inherit toolchain-funcs
 
-MY_PV=${PV//./}
-
 DESCRIPTION="An Embeddable NoSQL Database Engine"
 HOMEPAGE="https://unqlite.org"
-SRC_URI="https://unqlite.org/db/unqlite-db-${MY_PV}.zip"
+SRC_URI="https://github.com/symisc/unqlite/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
