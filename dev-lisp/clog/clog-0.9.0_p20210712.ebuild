@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="198c25d4d825cf42a1d4ee41d41aa99519cbfe3b"
+EGIT_COMMIT="0767c0354a2756410ba46f28821b45c7893a08a4"
 
 DESCRIPTION="The Common Lisp Omnificent GUI"
 HOMEPAGE="https://github.com/rabbibotton/clog"
