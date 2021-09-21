@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="cc7ba6a54cea6ef63b17dcc6e653d91d9907f59e"
+inherit common-lisp-3
 
 DESCRIPTION="Portable Websocket Server for Common Lisp"
 HOMEPAGE="https://github.com/charJe/portal/"
-SRC_URI="https://github.com/charJe/portal/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/charJe/portal/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

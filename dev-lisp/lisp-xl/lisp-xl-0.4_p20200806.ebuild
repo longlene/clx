@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="47147c5035de7c1a1dfdcdd9e524295f9ec45365"
+EGIT_COMMIT="d02681363c2380cb653411a63924a6b74951595c"
 
 DESCRIPTION="Common Lisp Microsoft XLSX (Microsoft Excel) loader"
 HOMEPAGE="https://github.com/defunkydrummer/lisp-xl"
