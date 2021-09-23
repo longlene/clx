@@ -3,12 +3,12 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 python3_8 )
+PYTHON_COMPAT=( python3_8 python3_9 )
 inherit distutils-r1
 
 DESCRIPTION="Deep Learning library for Python"
 HOMEPAGE="http://keras.io/"
-SRC_URI="https://github.com/fchollet/keras/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/fchollet/keras/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
