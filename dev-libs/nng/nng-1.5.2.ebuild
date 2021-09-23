@@ -21,7 +21,8 @@ RDEPEND="${DEPEND}"
 
 src_configure() {
 	local mycmakeargs=(
-	-DNNG_ENABLE_TLS=$(usex tls)
+		-DNNG_ENABLE_TLS=$(usex tls)
+		-DNNG_TESTS=OFF
 	)
 	cmake-utils_src_configure
 }
