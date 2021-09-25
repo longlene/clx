@@ -8,7 +8,7 @@ inherit distutils-r1
 
 DESCRIPTION="A toolkit for developing and comparing reinforcement learning algorithms"
 HOMEPAGE="https://github.com/openai/gym"
-SRC_URI="https://github.com/openai/gym/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/openai/gym/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

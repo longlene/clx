@@ -5,11 +5,11 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f376eca03156785742aa5e90c4417dec1113d6fd"
+EGIT_COMMIT="43729d03d7760654c0ce70d01852694d85d7cf51"
 
 DESCRIPTION="A dialect of ML embedded in Common Lisp"
-HOMEPAGE="https://github.com/stylewarning/coalton"
-SRC_URI="https://github.com/stylewarning/coalton/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/coalton-lang/coalton"
+SRC_URI="https://github.com/coalton-lang/coalton/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
