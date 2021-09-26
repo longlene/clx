@@ -20,10 +20,10 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/global-vars
-	dev-lisp/trivial-garbage
-	dev-lisp/optima
-	dev-lisp/abstract-classes
-	dev-lisp/singleton-classes
+	dev-lisp/trivia
+	dev-lisp/serapeum
+	dev-lisp/fset
+	dev-lisp/float-features
 	test? ( dev-lisp/fiasco )
 "
 BDEPEND=""
@@ -32,6 +32,6 @@ src_prepare() {
 	default
 	if ! use test ; then
 		sed -i '/defsystem #:coalton\/tests/,$d' ${PN}.asd
-		rm package.lisp
+		rm -rf tests
 	fi
 }
