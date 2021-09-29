@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="a4dd0b2d8b0fdbcda777e4d6dae0e76636080113"
+EGIT_COMMIT="d0d14ac774977d0060a351f66e35cb57ba0bf59c"
 
 DESCRIPTION="Machine code generation for C++"
 HOMEPAGE="https://github.com/asmjit/asmjit"
