@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="e82d1a7b8bca94cca68e0000e866289e2cf29ccc"
+EGIT_COMMIT="49602432d97222eec1e6c8e4f70723c3864c49c1"
 
 DESCRIPTION="A hybrid thread / fiber task scheduler"
 HOMEPAGE="https://github.com/google/marl"
@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_install() {
-	dolib.a ${BUILD_DIR}/libmarl.a
+	dolib.so ${BUILD_DIR}/libmarl.so*
 	insinto /usr/include
 	doins -r include/marl
 	dodoc README.md

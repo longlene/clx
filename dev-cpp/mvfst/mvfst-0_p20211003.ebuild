@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-EGIT_COMMIT="3af87c825ecfa79ee010829272dd96ec9e7a98b4"
+EGIT_COMMIT="c098e24dae44f7ef23e47ef026726176c12f5176"
 
 DESCRIPTION="An implementation of the QUIC transport protocol"
 HOMEPAGE="https://github.com/facebookincubator/mvfst"
