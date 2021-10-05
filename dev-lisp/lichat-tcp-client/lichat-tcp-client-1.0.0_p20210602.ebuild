@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4bf4799675d4176c5e78f600ba3683d6a20a449c"
+EGIT_COMMIT="b37cc4740a738e3885aa4ce162baadcc9315b1e3"
 
 DESCRIPTION="A simple TCP client implementation for lichat"
 HOMEPAGE="https://github.com/Shirakumo/lichat-tcp-client"

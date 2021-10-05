@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a841bf30af8b477eb7b964147d87c31910ba9bf4"
+EGIT_COMMIT="2dd03eb2c534083726b5de1241e88df1b2a4cdae"
 
 DESCRIPTION="An extensible and highly modular bot framework"
 HOMEPAGE="https://github.com/Shirakumo/maiden"
