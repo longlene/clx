@@ -1,11 +1,11 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit cmake-utils flag-o-matic vcs-snapshot
 
-EGIT_COMMIT="55e22b3f8d694379c699e3d8fbf07580ba94be3d"
+EGIT_COMMIT="d7e3281372549860e60c4b97b9943c58da2b0c90"
 
 DESCRIPTION="High performance server-side application framework"
 HOMEPAGE="http://seastar.io/"
@@ -37,15 +37,15 @@ BDEPEND=""
 src_configure() {
 	append-cxxflags "-fcoroutines"
 	local mycmakeargs=(
-			-DSeastar_CXX_FLAGS="-fPIC"
-			-DSeastar_APPS=OFF
-			-DSeastar_DEMOS=OFF
-			-DSeastar_DOCS=OFF
-			-DSeastar_TESTING=OFF
-			-DSeastar_STD_OPTIONAL_VARIANT_STRINGVIEW=ON
-			-DSeastar_DPDK=$(usex dpdk)
-			-DSeastar_HWLOC=$(usex hwloc)
-			-DSeastar_NUMA=$(usex numa)
+		-DSeastar_CXX_DIALECT=c++20
+		-DSeastar_CXX_FLAGS="-fPIC"
+		-DSeastar_APPS=OFF
+		-DSeastar_DEMOS=OFF
+		-DSeastar_DOCS=OFF
+		-DSeastar_TESTING=OFF
+		-DSeastar_DPDK=$(usex dpdk)
+		-DSeastar_HWLOC=$(usex hwloc)
+		-DSeastar_NUMA=$(usex numa)
 	)
 	cmake-utils_src_configure
 }
