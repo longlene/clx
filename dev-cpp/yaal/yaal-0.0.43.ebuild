@@ -5,11 +5,11 @@ EAPI=7
 
 inherit cmake-utils vcs-snapshot
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="Yet another abstraction layer"
+HOMEPAGE="https://github.com/AmokHuginnsson/yaal"
 SRC_URI="https://github.com/AmokHuginnsson/yaal/archive/refs/tags/release-${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 

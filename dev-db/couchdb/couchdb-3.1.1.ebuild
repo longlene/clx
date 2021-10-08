@@ -14,14 +14,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="libressl selinux test"
 
-RDEPEND=">=dev-libs/icu-4.3.1:=
-		<dev-lang/erlang-19[ssl]
-		~dev-lang/spidermonkey-1.8.5
-		!libressl? ( dev-libs/openssl:0 )
-		libressl? ( dev-libs/libressl )
-		net-misc/curl
-		selinux? ( sec-policy/selinux-couchdb )
-		sys-process/psmisc
+RDEPEND="
+	>=dev-libs/icu-4.3.1:=
+	dev-lang/erlang[ssl]
+	~dev-lang/spidermonkey-1.8.5
+	!libressl? ( dev-libs/openssl:0 )
+	libressl? ( dev-libs/libressl )
+	net-misc/curl
+	selinux? ( sec-policy/selinux-couchdb )
+	sys-process/psmisc
 "
 
 DEPEND="${RDEPEND}

@@ -12,7 +12,7 @@ SRC_URI="https://github.com/pantor/inja/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="system-json"
+IUSE="+system-json"
 
 DEPEND="
 	system-json? ( dev-cpp/nlohmann_json )
@@ -22,9 +22,9 @@ BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(
-	-DINJA_USE_EMBEDDED_JSON=$(usex ! system-json)
-	-DBUILD_TESTING=OFF
-	-DBUILD_BENCHMARK=OFF
+		-DINJA_USE_EMBEDDED_JSON=$(usex !system-json)
+		-DBUILD_TESTING=OFF
+		-DBUILD_BENCHMARK=OFF
 	)
 	cmake-utils_src_configure
 }
