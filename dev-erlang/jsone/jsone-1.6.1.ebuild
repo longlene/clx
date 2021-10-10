@@ -7,7 +7,7 @@ inherit rebar
 
 DESCRIPTION="Erlang JSON library"
 HOMEPAGE="https://github.com/sile/jsone"
-SRC_URI="https://github.com/sile/jsone/archive/1.4.7.tar.gz"
+SRC_URI="https://github.com/sile/jsone/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

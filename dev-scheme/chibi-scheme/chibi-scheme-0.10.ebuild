@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="A very tiny Scheme implementation with decent speed and native hygienic macros."
 HOMEPAGE="http://synthcode.com/scheme/"
-SRC_URI="http://synthcode.com/scheme/chibi/${P}.tgz"
+SRC_URI="https://github.com/ashinn/chibi-scheme/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

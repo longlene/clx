@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cdf2cdb0421763fa7de84f487668073d83909592"
+EGIT_COMMIT="22107acf48f0650654d4b8c8c2ffecfcb1500ca3"
 
 DESCRIPTION="Utilities beyond Alexandria"
 HOMEPAGE="https://github.com/TBRSS/serapeum"
