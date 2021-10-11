@@ -1,11 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit toolchain-funcs vcs-snapshot
 
-EGIT_COMMIT="430251cb657f82c9a94d4ed72db6f5ea2e30f5d9"
+EGIT_COMMIT="b259a6e29a76d756f68c3665a3d841e5848e928b"
 
 DESCRIPTION="A minimal but powerful thread pool in ANSI C"
 HOMEPAGE="https://github.com/Pithikos/C-Thread-Pool"
