@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="457990a00ed72c4b0b75c4bf8936e95591b4cb1b"
+EGIT_COMMIT="79be179e9ada423b3ec41d2a1ea6f6e0266ed21f"
 
 DESCRIPTION="Module system for languages embedded in Common Lisp"
 HOMEPAGE="https://github.com/ruricolist/vernacular"

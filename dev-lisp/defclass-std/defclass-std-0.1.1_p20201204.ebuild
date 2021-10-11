@@ -5,16 +5,16 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1e2bcd765ebb92048fb850ff190dd29e0d887fdf"
+EGIT_COMMIT="c142b3243e030cbf2caadbc5975b485434537d8d"
 
 DESCRIPTION="A shortcut macro to write DEFCLASS forms quickly"
-HOMEPAGE="https://github.com/EuAndreh/defclass-std"
-SRC_URI="https://github.com/EuAndreh/defclass-std/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/ruricolist/defclass-std"
+SRC_URI="https://github.com/ruricolist/defclass-std/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}

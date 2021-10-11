@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ad7095b6f752fa73b369c0e19c34ba47ed050b13"
+EGIT_COMMIT="c3202be9a753c51f3bc79538a5a498a8865192aa"
 
 DESCRIPTION="A YAML parser and emitter"
 HOMEPAGE="https://github.com/eudoxia0/cl-yaml"

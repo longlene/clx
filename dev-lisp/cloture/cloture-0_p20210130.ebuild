@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="27537102e29213f57158bc75314bcfe28c289139"
+EGIT_COMMIT="623c15c8d2e5e91eb87f46e3ecb3975880109948"
 
 DESCRIPTION="Clojure in Common Lisp"
 HOMEPAGE="https://github.com/ruricolist/cloture"
