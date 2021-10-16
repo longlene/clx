@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit games cmake-utils flag-o-matic
+inherit games cmake flag-o-matic
 
 DESCRIPTION="Freeminer is an open source sandbox game inspired by Minecraft"
 HOMEPAGE="http://freeminer.org/"
@@ -52,5 +52,5 @@ src_configure() {
 		-DCMAKE_INSTALL_PREFIX="${EPREFIX}"/usr
 		-DRUN_IN_PLACE=false
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

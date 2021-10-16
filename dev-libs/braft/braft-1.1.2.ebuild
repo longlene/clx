@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="An industrial-grade C++ implementation of RAFT consensus algorithm"
 HOMEPAGE="https://github.com/brpc/braft"

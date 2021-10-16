@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Cross-platform STL-styled and STL-compatible library"
 HOMEPAGE="https://github.com/agruzdev/Yato"
@@ -24,7 +24,7 @@ src_configure() {
 		#-DYATO_ACTORS_WITH_IO=ON
 		-DYATO_BUILD_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

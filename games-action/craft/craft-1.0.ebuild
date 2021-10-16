@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A simple Minecraft clone written in C using modern OpenGL"
 HOMEPAGE="http://www.michaelfogleman.com/craft/"

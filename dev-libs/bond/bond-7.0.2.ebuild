@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Bond is a cross-platform framework for working with schematized data"
 HOMEPAGE="https://github.com/Microsoft/bond"
@@ -24,5 +24,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DBOND_ENABLE_GRPC=$(usex grpc)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="OpenNMT C++ tokenizer"
 HOMEPAGE="https://github.com/OpenNMT/Tokenizer"

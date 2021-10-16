@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Gravity Programming Language"
 HOMEPAGE="http://gravity-lang.org"

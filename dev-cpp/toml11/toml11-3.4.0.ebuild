@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="TOML for Modern C++"
 HOMEPAGE="https://github.com/ToruNiina/toml11"
@@ -22,5 +22,5 @@ src_configure() {
 	local mycmakeargs=(
 	-Dtoml11_BUILD_TEST=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

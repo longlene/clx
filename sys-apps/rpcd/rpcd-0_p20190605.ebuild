@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="89bfaa42460696fb3c37c232f69c2afd5c6d909e"
 
@@ -32,10 +32,10 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-	$(cmake-utils_use file FILE_SUPPORT)
-	$(cmake-utils_use iwinfo IWINFO_SUPPORT)
+	$(cmake_use file FILE_SUPPORT)
+	$(cmake_use iwinfo IWINFO_SUPPORT)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 #src_install # may need init.d

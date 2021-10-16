@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Colobot Data Files"
 HOMEPAGE="https://github.com/colobot/colobot-data"
@@ -23,5 +23,5 @@ src_configure() {
 	-DTRANSLATIONS=OFF
 	-DMUSIC=$(usex music)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

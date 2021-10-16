@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit lua cmake-utils
+inherit lua cmake
 
 DESCRIPTION="LuaCURL is a module providing Internet browsing capabilities based on the cURL library"
 HOMEPAGE="http://luaforge.net/projects/luacurl/"

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="YAML parser and emitter in C++"
 HOMEPAGE="https://github.com/jbeder/yaml-cpp"
@@ -22,7 +22,7 @@ src_prepare() {
 		-e 's:INCLUDE_INSTALL_ROOT_DIR:INCLUDE_INSTALL_DIR:g' \
 		yaml-cpp.pc.cmake || die
 
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
@@ -30,5 +30,5 @@ src_configure() {
 		-DYAML_CPP_BUILD_TESTS=OFF
 		-DBUILD_SHARED_LIBS=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

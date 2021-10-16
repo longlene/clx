@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A C logging library based on Python's logbook"
 HOMEPAGE="http://clogger.readthedocs.org/"

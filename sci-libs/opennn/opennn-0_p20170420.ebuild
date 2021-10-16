@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="7e50ba93600a143e8ed03cb18cf577c954a0cdcb"
 
@@ -28,7 +28,7 @@ src_configure() {
 	local mycmakeargs=(
 	-D__OPENNN_MPI__=$(usex mpi)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Industrial-grade RPC framework"
 HOMEPAGE="https://github.com/apache/incubator-brpc"
@@ -28,5 +28,5 @@ src_configure() {
 		-DDOWNLOAD_GTEST=OFF
 		-DWITH_THRIFT=$(usex thrift)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

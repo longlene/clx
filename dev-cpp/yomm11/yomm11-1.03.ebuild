@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Open multi-methods for C++11"
 HOMEPAGE="http://www.yorel.be/mm/"

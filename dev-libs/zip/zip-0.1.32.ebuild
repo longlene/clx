@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A portable, simple zip library written in C"
 HOMEPAGE="https://github.com/kuba--/zip"
@@ -22,5 +22,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DCMAKE_DISABLE_TESTING=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

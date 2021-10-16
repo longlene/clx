@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="C Foreign Function Interface and JIT using Clang/LLVM"
 HOMEPAGE="https://github.com/aguinet/dragonffi"

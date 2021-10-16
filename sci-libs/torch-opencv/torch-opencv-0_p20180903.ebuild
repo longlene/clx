@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils lua vcs-snapshot
+inherit cmake lua vcs-snapshot
 
 EGIT_COMMIT="389fe4f029ef790b4ed22b1ac7abef3f210ebc0f"
 
@@ -42,11 +42,11 @@ src_configure() {
 		-DBUILD_CUDA=$(usex cuda)
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	dodir $(lua_get_sharedir)
 	mv "${D}"/usr/lua/* "${D}"/$(lua_get_sharedir)
 	rm -rf "${D}"/usr/lua

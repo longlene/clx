@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="2e051f62899666805d477830ef790e1149bc6a89"
 
@@ -25,15 +25,15 @@ DEPEND="
 src_prepare() {
 	default
 	sed -i 's/-Werror //' CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
 	local mycmakeargs=(
-	$(cmake-utils_use_build lua LUA)
-	$(cmake-utils_use_build examples EXAMPLES)
-	$(cmake-utils_use_enable systemd SYSTEMD)
+	$(cmake_use_build lua LUA)
+	$(cmake_use_build examples EXAMPLES)
+	$(cmake_use_enable systemd SYSTEMD)
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }

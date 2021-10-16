@@ -62,7 +62,7 @@ src_prepare() {
 	append-cxxflags "-std=c++11 -pthread -Wextra -Wall -pedantic"
 	append-cflags "-std=c11 -pthread -Wextra -Wall -pedantic"
 
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 multilib_src_configure() {
@@ -81,11 +81,11 @@ multilib_src_configure() {
 		-DLIBRARY_OUTPUT_PATH="$(get_libdir)"
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 multilib_src_compile() {
-	cmake-utils_src_compile
+	cmake_src_compile
 
 	if use doc; then
 		emake doc
@@ -105,5 +105,5 @@ multilib_src_install() {
 		done
 	fi
 
-	cmake-utils_src_install
+	cmake_src_install
 }

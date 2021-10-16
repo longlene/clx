@@ -5,7 +5,7 @@
 EAPI=7
 CMAKE_VERBOSE=1
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A flexible OpenVPN authentication and access control plug-in"
 HOMEPAGE="http://www.eurephia.net/"
@@ -42,11 +42,11 @@ src_prepare() {
 }
 
 src_compile() {
-	cmake-utils_src_make -j1
+	cmake_src_make -j1
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	dodoc LICENSE.txt CREDITS.txt
 	if use eurephiainit; then
 		ebegin "Installing eurephia_init"

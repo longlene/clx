@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="FUSE module for .dmg files"
 HOMEPAGE="https://github.com/darlinghq/darling-dmg"

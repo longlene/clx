@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="An implementation of the Arc programming language"
 HOMEPAGE="https://github.com/kimtg/arcadia"

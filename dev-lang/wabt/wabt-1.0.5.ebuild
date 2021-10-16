@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="The WebAssembly Binary Toolkit"
 HOMEPAGE="https://github.com/WebAssembly/wabt"
@@ -21,5 +21,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DBUILD_TESTS=$(usex test)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

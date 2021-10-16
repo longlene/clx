@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C99 library implementation of AWS client-side authentication: standard credentials providers and signing."
 HOMEPAGE="https://github.com/awslabs/aws-c-auth"

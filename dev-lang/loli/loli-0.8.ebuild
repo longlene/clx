@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="The Loli programming language"
 HOMEPAGE="http://loli-lang.ml/"

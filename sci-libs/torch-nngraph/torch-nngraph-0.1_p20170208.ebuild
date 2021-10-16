@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils lua vcs-snapshot
+inherit cmake lua vcs-snapshot
 
 EGIT_COMMIT="3ed3b9ba9d1adf72c1fe15291a1e50b843cf04f9"
 
@@ -37,11 +37,11 @@ src_configure() {
 		"-DLUA=/usr/bin/luajit"
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	dodir $(lua_get_sharedir)
 	mv "${D}"/usr/lua/* "${D}"/$(lua_get_sharedir)
 	rm -rf "${D}"/usr/lua

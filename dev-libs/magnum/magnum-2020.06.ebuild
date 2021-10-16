@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Lightweight and modular C++11 graphics middleware for games and data visualization"
 HOMEPAGE="https://magnum.graphics/"
@@ -49,5 +49,5 @@ src_configure() {
 		-DWITH_GL_INFO=ON
 		-DWITH_AL_INFO=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

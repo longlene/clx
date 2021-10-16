@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="gesture recognition toolkit"
 HOMEPAGE="https://github.com/nickgillian/grt"
@@ -26,5 +26,5 @@ src_configure() {
 	-DBUILD_EXAMPLES=$(usex example)
 	-DBUILD_TESTS=$(usex test)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

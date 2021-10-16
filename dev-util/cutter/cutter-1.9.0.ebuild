@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A Qt and C++ GUI for radare2 reverse engineering framework"
 HOMEPAGE="https://github.com/radareorg/cutter"
@@ -31,7 +31,7 @@ src_configure() {
 	local mycmakeargs=(
 	-DCUTTER_ENABLE_JUPYTER=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

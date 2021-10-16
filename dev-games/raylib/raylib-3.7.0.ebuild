@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="A simple and easy-to-use library to learn videogames programming"
 HOMEPAGE="http://www.raylib.com"
@@ -27,5 +27,5 @@ src_configure() {
 	-DBUILD_GAMES=OFF
 	-DSHARED=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

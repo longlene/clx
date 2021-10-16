@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A real-time physically based rendering engine"
 HOMEPAGE="https://github.com/google/filament"
@@ -22,5 +22,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DENABLE_JAVA=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

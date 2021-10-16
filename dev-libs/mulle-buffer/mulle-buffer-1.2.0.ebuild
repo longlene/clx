@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A growable C char array and also a stream"
 HOMEPAGE="https://github.com/mulle-c/mulle-buffer"

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Aws Crypto Abstraction Layer"
 HOMEPAGE="https://github.com/awslabs/aws-c-cal"

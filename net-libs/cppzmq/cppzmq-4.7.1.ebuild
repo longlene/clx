@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="High-level CPP Binding for ZeroMQ"
 HOMEPAGE="https://github.com/zeromq/cppzmq"
@@ -21,7 +21,7 @@ DEPEND=""
 
 src_prepare() {
 	default
-	cmake-utils_src_prepare
+	cmake_src_prepare
 	sed -i 's#ZeroMQ_LIBRARY AND#ZeroMQ_LIBRARY OR#' libzmq-pkg-config/FindZeroMQ.cmake
 }
 
@@ -29,5 +29,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DCPPZMQ_BUILD_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

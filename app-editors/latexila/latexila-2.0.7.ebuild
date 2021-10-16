@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit base eutils gnome2 cmake-utils
+inherit base eutils gnome2 cmake
 
 DESCRIPTION="LaTeXila is an Integrated LaTeX Environment for the GNOME desktop,
 written in Vala."
@@ -38,18 +38,18 @@ src_prepare() {
 }
 
 #src_configure() {
-#	cmake-utils_src_configure
+#	cmake_src_configure
 #}
 
 src_compile() {
 	mycmakeargs="${mycmakeargs} -DCMAKE_INSTALL_GCONF_SCHEMA_DIR=/etc/gconf/schemas"
-	cmake-utils_src_compile
+	cmake_src_compile
 }
 
 src_install() {
 	einfo "Skipping data/cmake-compile-schemas"
 	echo "" > data/cmake-compile-schemas
 	export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL="1"
-	cmake-utils_src_install
+	cmake_src_install
 	unset GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Open Neural Network Exchange"
 HOMEPAGE="https://onnx.ai"
@@ -23,5 +23,5 @@ BDEPEND=""
 src_prepare() {
 	default
 	rm -r onnx/backend/test
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }

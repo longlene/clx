@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="2D game develop library"
 HOMEPAGE="http://www.libgosu.org"

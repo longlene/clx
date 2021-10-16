@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit lua cmake-utils
+inherit lua cmake
 
 DESCRIPTION="Integrate the yajl JSON library with Lua"
 HOMEPAGE="https://github.com/brimworks/lua-yajl"
@@ -22,5 +22,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DINSTALL_CMOD=$(lua_get_libdir)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Fast C/C++ HTML 5 Parser"
 HOMEPAGE="https://github.com/lexborisov/myhtml"

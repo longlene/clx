@@ -5,7 +5,7 @@ EAPI=6
 
 LUA_COMPAT="luajit2"
 
-inherit cmake-utils lua vcs-snapshot
+inherit cmake lua vcs-snapshot
 
 EGIT_COMMIT="6a202afe647a7a763f9d5c414ac2e0fd53e6b08a"
 
@@ -39,11 +39,11 @@ each_lua_configure() {
 		"-DLUA=/usr/bin/luajit"
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 each_lua_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	dodir $(lua_get_libdir) $(lua_get_sharedir)
 	mv "${D}"/usr/lib/* "${D}"/$(lua_get_libdir)
 	mv "${D}"/usr/lua/* "${D}"/$(lua_get_sharedir)

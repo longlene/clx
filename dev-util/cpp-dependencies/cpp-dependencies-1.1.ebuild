@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Tool to check C++ #include dependencies"
 HOMEPAGE="https://github.com/tomtom-international/cpp-dependencies"

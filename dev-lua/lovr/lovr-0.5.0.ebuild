@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Virtual Reality for Lua"
 HOMEPAGE="https://github.com/bjornbytes/lovr"

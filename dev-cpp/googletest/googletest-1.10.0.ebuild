@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Google C++ Testing Framework"
 HOMEPAGE="http://code.google.com/p/googletest/wiki/GoogleTestPrimer"

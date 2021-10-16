@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="The C++ Database Access Library"
 HOMEPAGE="http://soci.sourceforge.net/"
@@ -36,5 +36,5 @@ src_configure() {
 		-DWITH_POSTGRESQL=$(usex postgres)
 		-DWITH_SQLITE3=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

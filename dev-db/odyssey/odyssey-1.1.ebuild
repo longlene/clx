@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Scalable PostgreSQL connection pooler"
 HOMEPAGE="https://github.com/yandex/odyssey"

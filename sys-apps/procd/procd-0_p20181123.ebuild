@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="d6673547adc3768ce674799fa35952351866c9d0"
 
@@ -31,11 +31,11 @@ src_prepare() {
 }
 
 src_configure() {
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 
 	install -d "${D}/etc/config"
 }

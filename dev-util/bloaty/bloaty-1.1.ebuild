@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A size profiler for binaries"
 HOMEPAGE="https://github.com/google/bloaty"

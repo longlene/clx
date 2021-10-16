@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="The fastest WebAssembly interpreter, and the most universal runtime"
 HOMEPAGE="https://github.com/wasm3/wasm3"
@@ -21,7 +21,7 @@ src_configure() {
 	local mycmakeargs=(
 		-DBUILD_WASI=simple
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

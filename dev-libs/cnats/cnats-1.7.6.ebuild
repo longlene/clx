@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A C client for NATS"
 HOMEPAGE="http://www.nats.io"
@@ -28,5 +28,5 @@ src_configure() {
 	local mycmakears=(
 	-DNATS_BUILD_WITH_TLS=$(usex ssl)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Cross-platform C compiler glue"
 HOMEPAGE="https://github.com/mulle-c/mulle-c11"

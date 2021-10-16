@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Potluck with different functions for different purposes that can be shared among C programs"
 HOMEPAGE="https://github.com/babelouest/orcania"

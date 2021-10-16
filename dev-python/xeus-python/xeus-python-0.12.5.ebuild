@@ -4,7 +4,7 @@
 EAPI=7
 
 PYTHON_COMPAT=( python3_8 )
-inherit cmake-utils python-any-r1
+inherit cmake python-any-r1
 
 DESCRIPTION="Jupyter kernel for the Python programming language"
 HOMEPAGE="https://github.com/jupyter-xeus/xeus-python"

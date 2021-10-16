@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="UTF8-16-32 analysis, conversion, classification library"
 HOMEPAGE="https://github.com/mulle-c/mulle-utf"

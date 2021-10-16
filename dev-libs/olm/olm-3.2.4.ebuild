@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Implementation of the olm and megolm cryptographic ratchets"
 HOMEPAGE="https://gitlab.matrix.org/matrix-org/olm"
@@ -21,5 +21,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DOLM_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

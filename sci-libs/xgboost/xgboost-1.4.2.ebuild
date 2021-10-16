@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Scalable, Portable and Distributed Gradient Boosting (GBDT, GBRT or GBM) Library"
 HOMEPAGE="https://xgboost.ai/"
@@ -23,5 +23,5 @@ BDEPEND=""
 src_prepare() {
 	default
 	rmdir dmlc-core && mv "${WORKDIR}"/dmlc-core-0.5 dmlc-core
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }

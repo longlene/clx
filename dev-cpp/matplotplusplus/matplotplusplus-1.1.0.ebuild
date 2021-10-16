@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A C++ Graphics Library for Data Visualization"
 HOMEPAGE="https://github.com/alandefreitas/matplotplusplus"
@@ -22,5 +22,5 @@ src_configure() {
 		-DBUILD_EXAMPLES=OFF
 		-DBUILD_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

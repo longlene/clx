@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Optimized inference engine for OpenNMT models"
 HOMEPAGE="https://github.com/OpenNMT/CTranslate2"
@@ -38,7 +38,7 @@ src_prepare() {
 		rmdir thrid_party/thrust
 		mv ${WORKDIR}/thrust-1.11.0 third_party/thrust
 	fi
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
@@ -48,6 +48,6 @@ src_configure() {
 		-DWITH_OPENBLAS=$(usex blas)
 		-DOPENMP_RUNTIME=NONE
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

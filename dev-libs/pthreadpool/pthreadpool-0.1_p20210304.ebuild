@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="b8374f80e42010941bda6c85b0e3f1a1bd77a1e0"
 
@@ -25,7 +25,7 @@ src_configure() {
 	-DPTHREADPOOL_BUILD_TESTS=OFF
 	-DPTHREADPOOL_BUILD_BENCHMARKS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

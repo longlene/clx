@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils eutils pam
+inherit cmake eutils pam
 
 DESCRIPTION="One-Time Passwords auth module for PAM"
 HOMEPAGE="http://savannah.nongnu.org/projects/otpasswd"
@@ -21,7 +21,7 @@ DEPEND="${RDEPEND} dev-util/cmake"
 RESTRICT=test
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	dodoc README INSTALL || die "unable to install docs"
 
 	# Change utility and directory owner

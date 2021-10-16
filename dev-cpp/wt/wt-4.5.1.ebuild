@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Wt, C++ Web Toolkit"
 HOMEPAGE="http://www.webtoolkit.eu/wt"
@@ -46,5 +46,5 @@ src_configure() {
 	-DENABLE_QT4=$(usex qt4)
 	-DENABLE_OPENGL=$(usex opengl)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

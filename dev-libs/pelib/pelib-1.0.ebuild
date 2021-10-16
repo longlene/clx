@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="PE file manipulation library"
 HOMEPAGE="https://github.com/avast-tl/pelib"

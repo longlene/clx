@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="72b06b4f62689663f9a52a566c9ad7d49a0258a0"
 
@@ -27,7 +27,7 @@ src_prepare() {
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	insinto /usr/include
 	doins src/fond.h
 }

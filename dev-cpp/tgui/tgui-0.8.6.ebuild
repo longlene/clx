@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="An easy to use cross-platform c++ GUI for SFML"
 HOMEPAGE="https://github.com/texus/TGUI"

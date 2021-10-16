@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="optional lite"
 HOMEPAGE="https://github.com/martinmoene/optional-lite"
@@ -22,5 +22,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DOPTIONAL_LITE_OPT_BUILD_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

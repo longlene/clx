@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A fast, portable Objective-C runtime written 100% in C11"
 HOMEPAGE="https://github.com/mulle-objc/mulle-objc-runtime"

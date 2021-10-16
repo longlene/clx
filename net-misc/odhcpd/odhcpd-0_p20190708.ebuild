@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="f6c2242c7af2de8f40f5b6b8e50c350a138bc183"
 
@@ -29,7 +29,7 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-	$(cmake-utils_use ubus UBUS)
+	$(cmake_use ubus UBUS)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

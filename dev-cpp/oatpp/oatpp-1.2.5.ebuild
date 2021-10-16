@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Light, zero-dependency framework"
 HOMEPAGE="https://oatpp.io"
@@ -22,5 +22,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DOATPP_BUILD_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

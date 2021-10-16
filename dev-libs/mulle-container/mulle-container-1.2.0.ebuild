@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Sets, hashtables, arrays and more"
 HOMEPAGE="https://github.com/mulle-c/mulle-container"

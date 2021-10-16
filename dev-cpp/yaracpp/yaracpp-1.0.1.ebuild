@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ wrapper for YARA"
 HOMEPAGE="https://github.com/avast-tl/yaracpp"

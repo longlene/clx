@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Embeddable JSON Database engine"
 HOMEPAGE="http://ejdb.org"
@@ -22,10 +22,10 @@ src_configure() {
 	-DPACKAGE_TGZ=OFF
 	-DPACKAGE_ZIP=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	doman doc/man/libejdb.3
 }

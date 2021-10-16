@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Woboq CodeBrowser"
 HOMEPAGE="http://woboq.com/codebrowser.html"

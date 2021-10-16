@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)"
 HOMEPAGE="https://01.org/mkl-dnn"

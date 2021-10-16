@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils toolchain-funcs
+inherit cmake toolchain-funcs
 
 DESCRIPTION="Kokkos C++ Performance Portability Programming EcoSystem"
 HOMEPAGE="https://github.com/kokkos"
@@ -41,5 +41,5 @@ src_configure() {
 		-DBUILD_SHARED_LIBS=ON
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }

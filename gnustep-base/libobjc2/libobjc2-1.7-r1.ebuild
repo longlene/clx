@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/gnustep-base/libobjc2/libobjc2-1.7.ebuild,v 1.2 2013/09/27 20:09:55 voyageur Exp $
 
 EAPI=7
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="GNUstep Objective-C runtime"
 HOMEPAGE="http://www.gnustep.org"
@@ -34,10 +34,10 @@ src_configure() {
 	export PREFIX=/usr
 	local mycmakeargs=(
 		-DGNUSTEP_CONFIG=GNUSTEP_CONFIG-NOTFOUND
-		$(cmake-utils_use boehm-gc BOEHM_GC)
-		$(cmake-utils_use static BUILD_STATIC_LIBOBJC)
-		$(cmake-utils_use_enable cxx OBJCXX)
-		$(cmake-utils_use test TESTS)
+		$(cmake_use boehm-gc BOEHM_GC)
+		$(cmake_use static BUILD_STATIC_LIBOBJC)
+		$(cmake_use_enable cxx OBJCXX)
+		$(cmake_use test TESTS)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

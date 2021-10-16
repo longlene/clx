@@ -5,7 +5,7 @@ EAPI=7
 
 LUA_COMPAT=( lua5-{1..4} luajit )
 
-inherit cmake-utils lua lua vcs-snapshot
+inherit cmake lua lua vcs-snapshot
 
 EGIT_COMMIT="49ba0848402644a5075d3ce7222bb248dfb49bd1"
 

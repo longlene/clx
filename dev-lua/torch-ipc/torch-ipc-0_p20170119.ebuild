@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils lua vcs-snapshot
+inherit cmake lua vcs-snapshot
 
 EGIT_COMMIT="258e80bd55ce8515b1307f874adfcb786947dd65"
 
@@ -29,5 +29,5 @@ src_configure() {
 	local CUDA=YES
 	use cuda || CUDA=NO
 
-	CUDA=${CUDA} cmake-utils_src_configure
+	CUDA=${CUDA} cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils lua
+inherit cmake lua
 
 DESCRIPTION="Lua binding to ZeroMQ"
 HOMEPAGE="https://github.com/zeromq/lzmq"

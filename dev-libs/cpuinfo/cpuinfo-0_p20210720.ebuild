@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="866ae6e5ffe93a1f63be738078da94cf3005cce2"
 
@@ -28,7 +28,7 @@ src_configure() {
 	-DCPUINFO_BUILD_BENCHMARKS=OFF
 	-DCPUINFO_RUNTIME_TYPE=shared
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

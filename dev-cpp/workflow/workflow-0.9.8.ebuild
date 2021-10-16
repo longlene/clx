@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Sogou framework for C++ backend development"
 HOMEPAGE="https://github.com/sogou/workflow"

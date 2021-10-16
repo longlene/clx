@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A modern C++ tweening library"
 HOMEPAGE="http://mobius3.github.io/tweeny"
@@ -22,5 +22,5 @@ src_configure() {
 	-DTWEENY_BUILD_EXAMPLESA=$(usex example)
 	-DTWEENY_BUILD_DOCUMENTATION=$(usex doc)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

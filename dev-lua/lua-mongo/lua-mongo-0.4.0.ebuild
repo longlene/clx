@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="MongoDB Driver for Lua"
 HOMEPAGE="https://github.com/neoxic/lua-mongo"

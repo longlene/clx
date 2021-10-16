@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Yet another abstraction layer"
 HOMEPAGE="https://github.com/AmokHuginnsson/yaal"
@@ -25,7 +25,7 @@ CMAKE_BUILD_TYPE=release
 src_prepare() {
 	default
 	sed -i "s#DESTINATION lib#DESTINATION $(get_libdir)#g" _aux/cmake/yaal.cmake
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
@@ -33,6 +33,6 @@ src_configure() {
 		-DCURSES_NEED_NCURSES=ON
 		-DCMAKE_INSTALL_LOCALSTATEDIR=/var
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

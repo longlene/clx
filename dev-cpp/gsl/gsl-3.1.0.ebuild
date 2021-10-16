@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Guidelines Support Library"
 HOMEPAGE="https://github.com/Microsoft/GSL"
@@ -21,7 +21,7 @@ src_configure() {
 	local mycmakeargs=(
 		-DGSL_TEST=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 

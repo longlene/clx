@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="An open-source framework for proximity-based peer-to-peer applications"
 HOMEPAGE="https://github.com/zeromq/zyre"

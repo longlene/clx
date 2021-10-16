@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils lua vcs-snapshot
+inherit cmake lua vcs-snapshot
 
 EGIT_COMMIT="a29e8a72c12db6a10fa37828d906e7afad14a98e"
 
@@ -37,5 +37,5 @@ src_configure() {
 		"-DCONFDIR=/usr/$(get_libdir)/cmake/qtlua"
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }

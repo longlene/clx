@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="a modern C++ GUI library"
 HOMEPAGE="http://nanapro.org"
@@ -30,5 +30,5 @@ src_configure() {
 	-DNANA_CMAKE_STD_FILESYSTEM_FORCE=ON
 	)
 	#-DNANA_CMAKE_ENABLE_AUDIO=$(usex alsa)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

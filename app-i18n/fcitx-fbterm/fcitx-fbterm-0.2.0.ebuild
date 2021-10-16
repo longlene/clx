@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="fcitx-fbterm, add fbterm support to fcitx"
 HOMEPAGE="http://fcitx.googlecode.com"

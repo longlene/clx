@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="A non-blocking I/O TCP network library"
 HOMEPAGE="https://github.com/an-tao/trantor"

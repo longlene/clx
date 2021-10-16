@@ -6,7 +6,7 @@ EAPI=7
 LUA_COMPAT=( lua5-1 )
 PYTHON_COMPAT=( python3_8 )
 
-inherit cmake-utils lua vcs-snapshot
+inherit cmake lua vcs-snapshot
 
 DESCRIPTION="Doom-based AI Research Platform for Reinforcement Learning from Raw Visual Information"
 HOMEPAGE="https://github.com/mwydmuch/ViZDoom"
@@ -63,7 +63,7 @@ src_configure() {
 		mycmakeargs+=( "-DLUALIB=/usr/lib/libluajit-5.1.so" )
 		mycmakeargs+=( "-DLUA=/usr/bin/luajit" )
 	fi
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

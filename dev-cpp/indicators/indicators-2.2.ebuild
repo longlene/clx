@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Activity Indicators for Modern C++"
 HOMEPAGE="https://github.com/p-ranav/indicators"

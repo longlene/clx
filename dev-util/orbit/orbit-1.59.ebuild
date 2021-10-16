@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C/C++ Performance Profiler"
 HOMEPAGE="https://orbitprofiler.com"
@@ -25,6 +25,6 @@ src_configure() {
 	local mycmakeargs=(
 	-DWITH_GUI=$(usex qt)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="A RESTful Search Engine"
 HOMEPAGE="https://kronuz.io/Xapiand"

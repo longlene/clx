@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils git-r3
+inherit cmake git-r3
 
 DESCRIPTION=""
 HOMEPAGE=""

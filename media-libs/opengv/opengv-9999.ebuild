@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit git-r3 cmake-utils
+inherit git-r3 cmake
 
 DESCRIPTION="A collection of compute vision methods for solving geometric vision problems"
 HOMEPAGE="http://laurentkneip.github.io/opengv/page_installation.html"

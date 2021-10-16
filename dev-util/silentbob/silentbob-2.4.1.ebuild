@@ -6,7 +6,7 @@
 # $Header: $ 
 
 EAPI=7 
-inherit cmake-utils 
+inherit cmake 
 
 DESCRIPTION="The SilentBob is yet another indexing tool helping you to find your way through the software source code"
 HOMEPAGE="http://silentbob.sf.net" 

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A better c++filt"
 HOMEPAGE="https://github.com/nico/demumble"

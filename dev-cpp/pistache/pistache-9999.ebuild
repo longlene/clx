@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils git-r3
+inherit cmake git-r3
 
 DESCRIPTION="A high-performance REST Toolkit written in C++"
 HOMEPAGE="http://pistache.io"

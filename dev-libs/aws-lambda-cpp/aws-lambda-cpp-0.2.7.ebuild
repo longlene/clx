@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ implementation of the AWS Lambda runtime"
 HOMEPAGE="https://github.com/awslabs/aws-lambda-cpp"

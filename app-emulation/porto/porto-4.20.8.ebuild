@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils linux-info user
+inherit cmake linux-info user
 
 DESCRIPTION="Yet another Linux container management system"
 HOMEPAGE="https://github.com/yandex/porto"
@@ -74,7 +74,7 @@ src_prepare() {
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 
 	newconfd "${FILESDIR}/protod.confd" "${PN}"
 	newinitd "${FILESDIR}/protod.initd" "${PN}"

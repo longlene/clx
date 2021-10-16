@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Discord RPC"
 HOMEPAGE="https://github.com/discord/discord-rpc"
@@ -23,5 +23,5 @@ src_configure() {
 	local mycmakeargs=(
 		-DBUILD_EXAMPLES=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

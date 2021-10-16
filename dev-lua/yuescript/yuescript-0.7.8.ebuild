@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils lua-utils vcs-snapshot
+inherit cmake lua-utils vcs-snapshot
 
 DESCRIPTION="Yuescript is a Moonscript dialect"
 HOMEPAGE="https://github.com/pigpigyyy/Yuescript"

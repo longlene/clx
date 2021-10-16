@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A Template Engine for Modern C++"
 HOMEPAGE="https://pantor.github.io/inja/"
@@ -26,5 +26,5 @@ src_configure() {
 		-DBUILD_TESTING=OFF
 		-DBUILD_BENCHMARK=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

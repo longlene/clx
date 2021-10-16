@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="usbtop is a top-like utility that shows an estimated instantaneous bandwidth on USB buses and devices"
 HOMEPAGE="https://github.com/aguinet/usbtop"

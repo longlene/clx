@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Ravi Programming Language"
 HOMEPAGE="https://github.com/dibyendumajumdar/ravi"
@@ -22,7 +22,7 @@ src_configure() {
 	local mycmakeargs=(
 	-DSTATIC_BUILD=$(usex static)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 

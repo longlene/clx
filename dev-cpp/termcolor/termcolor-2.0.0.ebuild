@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Termcolor is a header-only C++ library for printing colored messages to the terminal"
 HOMEPAGE="https://github.com/ikalnytskyi/termcolor"

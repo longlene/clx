@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit eutils cmake-utils
+inherit eutils cmake
 
 MY_P="${PN}-source-${PV}"
 
@@ -105,5 +105,5 @@ src_configure() {
 		$(k3d_use_module tiff TIFF_IO)
 		$(k3d_use_module truetype FREETYPE2)"
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }

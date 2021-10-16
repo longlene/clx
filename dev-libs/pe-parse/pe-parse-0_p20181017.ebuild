@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="724247d321598a50bb9223997c3f297c444228d7"
 
@@ -29,5 +29,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DBUILD_SHARED_LIBS=$(usex !static)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

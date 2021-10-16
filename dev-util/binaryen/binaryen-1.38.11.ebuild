@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Compiler infrastructure and toolchain library for WebAssembly"
 HOMEPAGE="https://github.com/WebAssembly/binaryen"
@@ -21,5 +21,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DENABLE_WERROR=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

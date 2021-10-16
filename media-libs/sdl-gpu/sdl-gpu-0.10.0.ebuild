@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A library for high-performance, modern 2D graphics with SDL written in C"
 HOMEPAGE="https://github.com/grimfang4/sdl-gpu"

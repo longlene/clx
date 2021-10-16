@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A lock-free, cross-platform solution to the ABA problem, written in C"
 HOMEPAGE="https://github.com/mulle-concurrent/mulle-aba"

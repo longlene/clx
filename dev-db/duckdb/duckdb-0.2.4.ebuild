@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="DuckDB is an embeddable SQL OLAP Database Management System"
 HOMEPAGE="http://www.duckdb.org"

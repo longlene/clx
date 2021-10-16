@@ -2,7 +2,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Lua bindings for wxWidgets cross-platform GUI toolkit"
 HOMEPAGE="https://github.com/pkulchenko/wxlua"

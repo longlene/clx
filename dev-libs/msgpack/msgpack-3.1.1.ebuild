@@ -43,10 +43,10 @@ src_configure() {
 }
 
 multilib_src_compile() {
-	cmake-utils_src_compile
+	cmake_src_compile
 
 	if multilib_is_native_abi && use doc; then
-		cmake-utils_src_make doxygen
+		cmake_src_make doxygen
 	fi
 }
 
@@ -70,5 +70,5 @@ multilib_src_install() {
 		fi
 	fi
 
-	cmake-utils_src_install
+	cmake_src_install
 }

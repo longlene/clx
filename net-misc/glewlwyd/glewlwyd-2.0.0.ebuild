@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Single Sign On server"
 HOMEPAGE="https://github.com/babelouest/glewlwyd"

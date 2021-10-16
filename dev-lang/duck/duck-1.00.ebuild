@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Duck Programming Language"
 HOMEPAGE="http://www.ducklang.org"

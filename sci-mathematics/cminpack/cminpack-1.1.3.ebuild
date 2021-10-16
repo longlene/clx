@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit toolchain-funcs cmake-utils
+inherit toolchain-funcs cmake
 
 DESCRIPTION="Software for solving nonlinear equations and nonlinear least squares problems"
 HOMEPAGE="http://devernay.free.fr/hacks/cminpack.html"
@@ -27,7 +27,7 @@ local mycmakeargs=(
 	-DUSE_FPIC=ON
 	)
 	
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_compile() {
@@ -35,5 +35,5 @@ src_compile() {
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 }

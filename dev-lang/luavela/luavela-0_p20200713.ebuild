@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="5e47e70446b650c85a9810b9401bb2a4083d189c"
 
@@ -27,5 +27,5 @@ src_prepare() {
 	sed -e "/DESTINATION lib/{s#lib#$(get_libdir)#}" \
 		-e 's#${UJIT_ETC_DIR}/ujit.1.gz#${PROJECT_SOURCE_DIR}/etc/ujit.1#' \
 		-i src/CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }

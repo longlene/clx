@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A lock- and wait-free hashtable (and an array too), written in C"
 HOMEPAGE="https://github.com/mulle-concurrent/mulle-concurrent"

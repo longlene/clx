@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A tiny JSON library for C++11"
 HOMEPAGE="https://github.com/dropbox/json11"

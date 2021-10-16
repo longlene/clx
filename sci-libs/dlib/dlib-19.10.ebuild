@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils cuda
+inherit cmake cuda
 
 DESCRIPTION="Numerical and networking C++ library"
 HOMEPAGE="http://dlib.net/"
@@ -30,7 +30,7 @@ DEPEND="test? ( ${RDEPEND} )"
 
 src_prepare() {
 	use cuda && cuda_src_prepare
-	cmake-utils_src_prepare
+	cmake_src_prepare
 	sed -i -e '/LICENSE.txt/d' dlib/CMakeLists.txt || die
 }
 
@@ -48,7 +48,7 @@ src_configure() {
 		-DDLIB_USE_CUDA="$(usex cuda)"
 		-DDLIB_USE_LAPACK="$(usex lapack)"
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_test() {
@@ -60,7 +60,7 @@ src_test() {
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	dodoc docs/README.txt
 	use static-libs || rm -f "${ED}"/usr/$(get_libdir)/*.a
 	if use examples; then

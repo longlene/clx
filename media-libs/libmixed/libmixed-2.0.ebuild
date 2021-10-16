@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A low-level audio mixer pipeline library"
 HOMEPAGE="https://github.com/Shirakumo/libmixed"
@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}"
 src_prepare() {
 	default
 	sed -i "/install/{s#/usr/local/lib#/usr/$(get_libdir)#}" CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
@@ -30,11 +30,11 @@ src_configure() {
 		-DBUILD_EXAMPLES=OFF
 		-DBUILD_TESTER=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 	
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	insinto /usr/include
 	doins src/{encoding,mixed}.h
 }

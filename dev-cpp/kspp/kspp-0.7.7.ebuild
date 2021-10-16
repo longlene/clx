@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A high performance/ real-time C++ Kafka streams framework"
 HOMEPAGE="https://github.com/bitbouncer/kspp"
@@ -32,5 +32,5 @@ src_configure() {
 	-DBUILD_SAMPLES=OFF
 	-DBUILD_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Table Maker for Modern C++"
 HOMEPAGE="https://github.com/p-ranav/tabulate"

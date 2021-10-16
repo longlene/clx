@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Optimized BLAS library based on GotoBLAS2"
 HOMEPAGE="http://xianyi.github.com/OpenBLAS/"
@@ -23,6 +23,6 @@ src_configure() {
 	local mycmakeargs=(
 	-DDYNAMIC_ARCH=$(usex dynamic)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils lua vcs-snapshot
+inherit cmake lua vcs-snapshot
 
 EGIT_COMMIT="dbf7779d943a4fc9884d8ac7c7c7a7c11abc0604"
 
@@ -33,7 +33,7 @@ src_configure() {
 	local mycmakeargs=(
 	-DPOCO_INSTALL_DIR=/usr
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

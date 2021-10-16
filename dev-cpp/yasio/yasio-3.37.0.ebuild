@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Yet Another Socket IO service"
 HOMEPAGE="https://github.com/simdsoft/yasio"
@@ -22,7 +22,7 @@ src_configure() {
 	local mycmakeargs=(
 	-DYASIO_BUILD_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

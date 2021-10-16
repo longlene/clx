@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="MQTT client for C++14 based on Boost.Asio"
 HOMEPAGE="https://github.com/redboltz/mqtt_cpp"
@@ -26,5 +26,5 @@ src_configure() {
 	-DBoost_USE_STATIC_LIBS=OFF
 	-DMQTT_BEAST_INCLUDE_DIR=/usr/include
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

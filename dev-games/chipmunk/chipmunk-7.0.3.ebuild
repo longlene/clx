@@ -2,7 +2,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A fast and lightweight 2D game physics library"
 HOMEPAGE="https://github.com/slembcke/Chipmunk-Physics http://chipmunk-physics.net/"

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="mimalloc is a compact general purpose allocator with excellent performance"
 HOMEPAGE="https://github.com/microsoft/mimalloc"
@@ -24,5 +24,5 @@ src_configure() {
 	local mycmakeargs=(
 		-DMI_BUILD_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

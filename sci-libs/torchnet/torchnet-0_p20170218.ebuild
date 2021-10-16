@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils lua vcs-snapshot
+inherit cmake lua vcs-snapshot
 
 EGIT_COMMIT="0ae574470e6f8ee492fc944aeca0bcb634805bdc"
 
@@ -41,6 +41,6 @@ src_configure() {
 		"-DLUA=/usr/bin/luajit"
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

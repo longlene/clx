@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="FlatBuffers Compiler and Library in C for C"
 HOMEPAGE="https://github.com/dvidelabs/flatcc/"

@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Asynchronous logger with Dynamic Sinks"
 HOMEPAGE="http://github.com/KjellKod/g3log"

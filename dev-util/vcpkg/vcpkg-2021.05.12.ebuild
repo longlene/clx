@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ Library Manager"
 HOMEPAGE="https://github.com/microsoft/vcpkg"
@@ -25,7 +25,7 @@ src_configure() {
 		-DBUILD_TESTING=OFF
 		-DVCPKG_WARNINGS_AS_ERRORS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

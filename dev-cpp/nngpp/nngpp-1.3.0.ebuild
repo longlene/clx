@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="C++ wrapper around the nanomsg NNG API"
 HOMEPAGE="https://github.com/cwzx/nngpp"

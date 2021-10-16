@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Library for efficient text classification and representation learning"
 HOMEPAGE="https://fasttext.cc/"
@@ -21,5 +21,5 @@ BDEPEND=""
 src_prepare() {
 	default
 	sed -i "s#DESTINATION lib#DESTINATION $(get_libdir)#" CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }

@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="The Shark Machine Leaning Library"
 HOMEPAGE="http://image.diku.dk/shark/"

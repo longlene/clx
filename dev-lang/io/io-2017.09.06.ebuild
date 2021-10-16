@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Io is a small, prototype-based programming language"
 HOMEPAGE="http://www.iolanguage.com"
@@ -83,16 +83,16 @@ src_configure() {
 		-DENABLE_ZLIB=$(usex zlib)
 		-DCMAKE_SKIP_RPATH=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_compile() {
 	# Fix bug #414421
-	cmake-utils_src_compile -j1
+	cmake_src_compile -j1
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	if use doc; then
 		dodoc docs/docs.css docs/*.html
 	fi

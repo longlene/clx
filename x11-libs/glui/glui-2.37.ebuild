@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="GLUI User Interface Library"
 HOMEPAGE="https://github.com/libglui/glui"

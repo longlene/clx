@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A C++ non-blocking network library for multi-threaded server in Linux"
 HOMEPAGE="http://code.google.com/p/muduo"

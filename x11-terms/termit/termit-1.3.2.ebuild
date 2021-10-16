@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 SRC_URI="http://termit.googlecode.com/files/${P}.tar.bz2"
 HOMEPAGE="http://code.google.com/p/termit/"

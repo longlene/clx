@@ -5,7 +5,7 @@ EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 
-inherit cmake-utils python-r1 vcs-snapshot
+inherit cmake python-r1 vcs-snapshot
 
 DESCRIPTION="Caffe: a fast open framework for deep learning"
 HOMEPAGE="http://caffe.berkeleyvision.org/"
@@ -33,5 +33,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DCPU_ONLY=$(usex !cuda)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

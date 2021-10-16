@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A header only library for creating and validating json web tokens in c++"
 HOMEPAGE="https://github.com/Thalhammer/jwt-cpp"
@@ -20,12 +20,12 @@ BDEPEND=""
 src_prepare() {
 	default
 	sed -i "/set(JWT_CMAKE_FILES_INSTALL_DIR/{s#cmake#$(get_libdir)/cmake#}" CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
 	local mycmakeargs=(
 		-DJWT_BUILD_EXAMPLES=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

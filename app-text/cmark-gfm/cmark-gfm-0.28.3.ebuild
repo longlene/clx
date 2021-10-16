@@ -5,7 +5,7 @@ EAPI=7
 
 PYTHON_COMPAT=( python3_{8,9} )
 
-inherit cmake-utils python-any-r1 vcs-snapshot
+inherit cmake python-any-r1 vcs-snapshot
 
 DESCRIPTION="CommonMark parsing and rendering library and program in C"
 HOMEPAGE="https://github.com/github/cmark-gfm"
@@ -29,5 +29,5 @@ src_configure() {
 		-DCMARK_STATIC=OFF
 		-DCMARK_TESTS="$(usex test)"
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

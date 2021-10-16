@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="466d85ab565887dde8c0664f2334cc6d9847fef0"
 
@@ -27,7 +27,7 @@ src_prepare() {
 		-e '/add_subdirectory/{/examples/d}' \
 		-e '/add_subdirectory/{/doc/d}' \
 		-i CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_install() {

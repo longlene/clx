@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="The webcam-tools package"
 HOMEPAGE="http://sourceforge.net/projects/libwebcam/"

@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="mstch is a complete implementation of mustache templates using modern C++"
 HOMEPAGE="https://github.com/no1msd/mstch"

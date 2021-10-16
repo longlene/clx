@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Fast and easy C++ RESTful WebServices framework"
 HOMEPAGE="https://github.com/loentar/ngrest"
@@ -18,5 +18,5 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	cmake-utils_src_compile -j1
+	cmake_src_compile -j1
 }

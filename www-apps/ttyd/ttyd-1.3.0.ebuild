@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Share your terminal over the web"
 HOMEPAGE="https://github.com/tsl0922/ttyd"

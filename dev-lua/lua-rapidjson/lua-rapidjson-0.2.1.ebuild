@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit lua cmake-utils
+inherit lua cmake
 
 DESCRIPTION="Very fast json module for Lua based on RapidJSON"
 HOMEPAGE="https://github.com/xpol/lua-rapidjson"

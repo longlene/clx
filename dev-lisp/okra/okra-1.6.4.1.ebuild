@@ -2,7 +2,7 @@
 
 EAPI=7
 
-inherit cmake-utils common-lisp-3
+inherit cmake common-lisp-3
 
 DESCRIPTION="CFFI bindings to Ogre"
 HOMEPAGE="https://github.com/aerique/okra"
@@ -26,6 +26,6 @@ RDEPEND="${DEPEND}
 "
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	common-lisp-3_src_install
 }

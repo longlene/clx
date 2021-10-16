@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Highly scalable WebSocket server library"
 HOMEPAGE="https://github.com/uWebSockets/uWebSockets/"

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Abstraction Library for Parallel Kernel Acceleration"
 HOMEPAGE="https://github.com/alpaka-group/alpaka"

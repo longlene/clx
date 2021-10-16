@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Colobot: Gold Edition"
 HOMEPAGE="http://colobot.info/"
@@ -29,5 +29,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DOPENAL_SOUND=$(usex openal)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

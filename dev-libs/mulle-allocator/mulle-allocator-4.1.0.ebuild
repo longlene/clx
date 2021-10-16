@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Flexible C memory allocation scheme"
 HOMEPAGE="https://github.com/mulle-c/mulle-allocator"

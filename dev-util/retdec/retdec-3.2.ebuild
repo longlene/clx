@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="RetDec is a retargetable machine-code decompiler based on LLVM"
 HOMEPAGE="https://retdec.com/"

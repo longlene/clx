@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils flag-o-matic
+inherit cmake flag-o-matic
 
 DESCRIPTION="Nano MQTT Broker"
 HOMEPAGE="https://nanomq.io/"
@@ -24,7 +24,7 @@ src_prepare() {
 	default
 	rmdir nng
 	ln -sv "${WORKDIR}"/nng-a29379751139bd1739627196f51bcdd8da72640b nng
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
@@ -35,7 +35,7 @@ src_configure() {
 		-DNNG_TOOLS=OFF
 		-DNNG_ENABLE_NNGCAT=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Postmodern immutable and persistent data structures for C++"
 HOMEPAGE="https://sinusoid.es/immer"

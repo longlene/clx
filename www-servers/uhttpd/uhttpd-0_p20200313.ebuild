@@ -2,7 +2,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="5e9c23c6f40ff26209ef22cfeeda4904a5918f3d"
 
@@ -34,5 +34,5 @@ src_configure() {
 		-DLUA_SUPPORT=$(usex lua)
 		-DUBUS_SUPPORT=$(usex ubus)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Using nlohmann::json with pybind11"
 HOMEPAGE="https://github.com/pybind/pybind11_json"

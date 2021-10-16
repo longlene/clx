@@ -3,7 +3,7 @@
 
 EAPI=6
 
-#inherit cmake-utils lua vcs-snapshot
+#inherit cmake lua vcs-snapshot
 inherit lua vcs-snapshot
 
 EGIT_COMMIT="c65ab4ceda001a847c4caa4cf43cf10ebaeedaab"

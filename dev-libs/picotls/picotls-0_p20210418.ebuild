@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="ea3e079d1616114b81a2d964e78cf7274e5d795b"
 
@@ -28,7 +28,7 @@ BDEPEND=""
 src_prepare() {
 	default
 	mv "${WORKDIR}"/picotest-0_p20190324/picotest.{c,h} deps/picotest/
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_install() {

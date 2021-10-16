@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Roaring bitmaps in C (and C++)"
 HOMEPAGE="http://roaringbitmap.org/"
@@ -21,5 +21,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DENABLE_ROARING_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

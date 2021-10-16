@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Enduro/X Middleware Platform for Distributed Transaction Processing"
 HOMEPAGE="https://github.com/endurox-dev/endurox"
@@ -35,5 +35,5 @@ src_configure() {
 	-DDEFINE_DISABLEDOC=$(usex !doc)
 	-DDEFINE_DISABLEPSCRIPT=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

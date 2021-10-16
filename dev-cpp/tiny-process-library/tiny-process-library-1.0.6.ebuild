@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A small platform independent library making it simple to create and stop new processes in C++"
 HOMEPAGE="https://github.com/eidheim/tiny-process-library/"

@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils common-lisp-3 vcs-snapshot
+inherit cmake common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="cc25d9f54c736e48a6644b1df5689866c36103c2"
 
@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}
 "
 
 src_compile() {
-	cmake-utils_src_compile
+	cmake_src_compile
 }
 
 src_install() {

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A FAST drop-in replacement for the conda command-line utility"
 HOMEPAGE="https://github.com/mamba-org/mamba"

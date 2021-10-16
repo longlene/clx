@@ -5,7 +5,7 @@ EAPI=7
 
 LUA_COMPAT=( luajit )
 
-inherit cmake-utils lua-single vcs-snapshot
+inherit cmake lua-single vcs-snapshot
 
 EGIT_COMMIT="dbd0a623dc4dfb4b8169d5aecc6dd9aec2f22792"
 
@@ -35,6 +35,6 @@ src_configure() {
 		"-DLUA=${LUA}"
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

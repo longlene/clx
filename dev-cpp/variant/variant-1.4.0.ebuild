@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++17 std::variant for C++11/14/17"
 HOMEPAGE="https://github.com/mpark/variant"

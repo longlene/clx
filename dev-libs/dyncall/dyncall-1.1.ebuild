@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A Generic Dynamic FFI package"
 HOMEPAGE="http://www.dyncall.org"

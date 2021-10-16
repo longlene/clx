@@ -4,7 +4,7 @@
 EAPI=7
 
 CMAKE_IN_SOURCE_BUILD=1
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Dynamic-playlist will search for similar songs/artists on last.fm"
 HOMEPAGE="http://gmpc.wikia.com/wiki/GMPC_PLUGIN_DYNAMIC_PLAYLIST"

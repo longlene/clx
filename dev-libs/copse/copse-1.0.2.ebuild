@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Continuation-Passing-Style(CPS) in C"
 HOMEPAGE="https://github.com/redjack/copse"

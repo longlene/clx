@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A portable and fast pairing-based cryptography library"
 HOMEPAGE="https://github.com/herumi/mcl"
@@ -22,5 +22,5 @@ BDEPEND=""
 src_prepare() {
 	default
 	sed -i "/DESTINATION/{s#DESTINATION lib#DESTINATION $(get_libdir)#}" CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Access variable arguments in struct layout fashion in C"
 HOMEPAGE="https://github.com/mulle-c/mulle-vararg"

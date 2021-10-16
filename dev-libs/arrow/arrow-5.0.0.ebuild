@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 MY_PN=apache-${PN}
 MY_P=${MY_PN}-${PV}
@@ -47,5 +47,5 @@ src_configure() {
 	-DARROW_BUILD_TESTS=OFF
 	-DARROW_GPU=$(usex cuda)
 	)
-	ARROW_BUILD_TOOLCHAIN=/usr cmake-utils_src_configure
+	ARROW_BUILD_TOOLCHAIN=/usr cmake_src_configure
 }

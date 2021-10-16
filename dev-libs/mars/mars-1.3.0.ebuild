@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Mars is a cross-platform network component developed by WeChat"
 HOMEPAGE="https://github.com/Tencent/mars"
@@ -23,11 +23,11 @@ CMAKE_USE_DIR="${S}/mars"
 src_prepare() {
 	default
 	sed -i "s#\${CMAKE_SYSTEM_NAME}.out#$(get_libdir)#" mars/*/CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	local dir
 	for dir in app baseevent boost comm log sdt stn ; do
 		insinto /usr/include/mars/${dir}

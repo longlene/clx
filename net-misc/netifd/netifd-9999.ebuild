@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit git-r3 cmake-utils
+inherit git-r3 cmake
 
 DESCRIPTION="A general purpose library for the OpenWRT project."
 HOMEPAGE="http://wiki.openwrt.org/"
@@ -27,14 +27,14 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-	$(cmake-utils_use_build lua LUA)
+	$(cmake_use_build lua LUA)
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 
 	install -d "${D}/etc/config"
 	touch "${D}/etc/config/network"

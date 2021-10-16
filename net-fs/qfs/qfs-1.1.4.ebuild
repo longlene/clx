@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Quantcast File System"
 HOMEPAGE="https://quantcast.atlassian.net/"

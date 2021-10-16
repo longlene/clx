@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C/C++/ObjC language server supporting cross references, hierarchies, completion and semantic highlighting"
 HOMEPAGE="https://github.com/MaskRay/ccls"
@@ -26,6 +26,6 @@ src_configure() {
 	-DSYSTEM_CLANG=ON
 	-DCMAKE_PREFIX_PATH="/usr/lib/llvm/7"
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

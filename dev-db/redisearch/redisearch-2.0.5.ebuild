@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="FullText Search module for redis"
 HOMEPAGE="https://github.com/RedisLabsModules/RediSearch"
@@ -23,7 +23,7 @@ src_configure() {
 	local mycmakeargs=(
 	-DRS_FORCE_NO_GITVERSION=Y
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

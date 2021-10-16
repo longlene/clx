@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils lua
+inherit cmake lua
 
 DESCRIPTION="A self contained Lua MessagePack C implementation"
 HOMEPAGE="https://github.com/antirez/lua-cmsgpack"

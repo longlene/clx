@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="A tiling window manager using space partitioning tree"
 HOMEPAGE="https://github.com/aesophor/Wmderland"

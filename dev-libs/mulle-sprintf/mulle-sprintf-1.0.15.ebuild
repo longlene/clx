@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="An extensible sprintf function supporting stdarg and mulle-vararg"
 HOMEPAGE="https://github.com/mulle-core/mulle-sprintf"

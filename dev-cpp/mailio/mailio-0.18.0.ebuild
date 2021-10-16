@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 MY_PV="${PV//./-}"
 
@@ -25,5 +25,5 @@ src_configure() {
 	-DMAILIO_BUILD_DOCUMENTATION=OFF
 	-DMAILIO_BUILD_EXAMPLES=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

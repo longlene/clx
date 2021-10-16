@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A fast and reliable entity component system"
 HOMEPAGE="https://github.com/skypjack/entt"

@@ -5,7 +5,7 @@ EAPI=7
 
 LUA_COMPAT=( lua5-{1..3} luajit )
 
-inherit lua cmake-utils
+inherit lua cmake
 
 DESCRIPTION="Lua integration with libev"
 HOMEPAGE="https://github.com/brimworks/lua-ev"
@@ -24,5 +24,5 @@ src_configure() {
 	local mycmakeargs=(
 		-DINSTALL_CMOD=$(lua_get_libdir)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

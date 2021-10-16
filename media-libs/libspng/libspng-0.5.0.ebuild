@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Simple, modern libpng alternative"
 HOMEPAGE="https://libspng.org/"
@@ -29,5 +29,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DSPNG_STATIC=$(usex static-libs)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

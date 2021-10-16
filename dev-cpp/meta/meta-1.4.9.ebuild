@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Header-only, non-intrusive and macro-free runtime reflection system in C++"
 HOMEPAGE="https://github.com/skypjack/meta"

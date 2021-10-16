@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils lua
+inherit cmake lua
 
 DESCRIPTION="Light userdata queue"
 HOMEPAGE="https://github.com/moteus/lua-luq"
@@ -23,6 +23,6 @@ src_configure() {
 	-DINSTALL_LMOD=$(lua_get_sharedir)
 	-DINSTALL_CMOD=$(lua_get_libdir)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

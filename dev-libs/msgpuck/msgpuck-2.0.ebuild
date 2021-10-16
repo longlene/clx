@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A simple and efficient MsgPack binary serialization in a self-contained header file"
 HOMEPAGE="https://github.com/rtsisyk/msgpuck"

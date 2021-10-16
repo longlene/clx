@@ -4,7 +4,7 @@
 EAPI=6
 
 PYTHON_COMPAT=( python3_{8,9} )
-inherit cmake-utils python-any-r1
+inherit cmake python-any-r1
 
 MY_PV=1.40.1
 
@@ -50,7 +50,7 @@ src_configure() {
 	-DLLVM_INCLUDE_TESTS=OFF
 	-DCLANG_INCLUDE_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

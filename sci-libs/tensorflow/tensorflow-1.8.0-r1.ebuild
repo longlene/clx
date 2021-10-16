@@ -5,8 +5,8 @@ EAPI=6
 
 #PYTHON_COMPAT=( python2_7 python3_4 python3_5 )
 
-#inherit cmake-utils python-single-r1
-inherit cmake-utils
+#inherit cmake python-single-r1
+inherit cmake
 
 DESCRIPTION="An open-source software library for Machine Intelligence"
 HOMEPAGE="https://www.tensorflow.org/"
@@ -41,7 +41,7 @@ src_configure() {
 	-Dtensorflow_PATH_STATIC_LIB=/opt/cuda/lib64
 	-Dsystemlib_ALL=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

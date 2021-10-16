@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Experimental, scalable, high performance HTTP server"
 HOMEPAGE="https://lwan.ws"

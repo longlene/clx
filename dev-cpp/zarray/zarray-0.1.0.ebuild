@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Dynamically typed N-D expression system based on xtensor"
 HOMEPAGE="https://github.com/xtensor-stack/zarray"
@@ -26,5 +26,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DZARRAY_USE_XSIMD=$(usex simd)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Cross-platform thread/mutex/tss/atomic operations in C"
 HOMEPAGE="https://github.com/mulle-concurrent/mulle-thread"

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ JSON-RPC 2.0 library"
 HOMEPAGE="https://github.com/badaix/jsonrpcpp"
