@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Avro C++ implementations"
 HOMEPAGE="http://www.apache.org/dyn/closer.cgi/avro"

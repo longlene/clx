@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ wrapper around libcURL"
 HOMEPAGE="http://www.curlpp.org/"

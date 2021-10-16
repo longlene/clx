@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++11 and boost based implementation of the DICOM standard"
 HOMEPAGE="https://github.com/mariusherzog/dicom"

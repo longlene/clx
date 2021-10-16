@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Traitlets-like C++ properties and implementation of the observer pattern"
 HOMEPAGE="https://github.com/QuantStack/xproperty"

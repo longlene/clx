@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++14 implementation of the TLS-1.3 standard"
 HOMEPAGE="https://github.com/facebookincubator/fizz"

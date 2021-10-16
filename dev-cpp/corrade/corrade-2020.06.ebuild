@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++11/C++14 multiplatform utility library"
 HOMEPAGE="http://mosra.cz/blog/corrade.php"

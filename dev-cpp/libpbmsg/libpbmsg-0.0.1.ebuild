@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Message header defines"
 HOMEPAGE="http://10.20.16.48/acct/libpbmsg"

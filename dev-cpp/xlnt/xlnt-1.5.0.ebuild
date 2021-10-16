@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Cross-platform user-friendly xlsx library for C++14"
 HOMEPAGE="https://github.com/tfussell/xlnt"

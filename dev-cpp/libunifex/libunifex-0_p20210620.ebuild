@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="797690d386dbf36f169a5c77a29f7e600fb45417"
 
@@ -27,7 +27,7 @@ src_configure() {
 		-DUNIFEX_BUILD_EXAMPLES=OFF
 		-DUNIFEX_NO_LIBURING=$(usex ! uring)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

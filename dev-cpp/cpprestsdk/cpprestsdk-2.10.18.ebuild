@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="The C++ REST SDK"
 HOMEPAGE="https://github.com/Microsoft/cpprestsdk"

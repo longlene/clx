@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Micro http server and client written in C++"
 HOMEPAGE="https://github.com/daedric/httpp/"

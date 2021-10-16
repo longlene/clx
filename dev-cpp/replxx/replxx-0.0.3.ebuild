@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="A readline and libedit replacement"
 HOMEPAGE="https://github.com/AmokHuginnsson/replxx"

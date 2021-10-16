@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit multilib cmake-utils
+inherit multilib cmake
 
 DESCRIPTION="Small, safe and fast formatting library for C++"
 HOMEPAGE="http://cppformat.github.io"

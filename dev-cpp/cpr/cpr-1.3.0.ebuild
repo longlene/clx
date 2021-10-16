@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ Requests: Curl for People"
 HOMEPAGE="https://github.com/whoshuu/cpr"
@@ -23,10 +23,10 @@ RDEPEND="${DEPEND}"
 src_configure() {
 	local mycmakeargs=(
 	-DUSE_SYSTEM_CURL=ON
-	$(cmake-utils_use_build test CPR_TESTS)
-	$(cmake-utils_use_use test SYSTEM_GTEST)
+	$(cmake_use_build test CPR_TESTS)
+	$(cmake_use_use test SYSTEM_GTEST)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

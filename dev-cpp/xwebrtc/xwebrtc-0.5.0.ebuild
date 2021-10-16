@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ backend for the jupyter webrtc widget"
 HOMEPAGE="https://github.com/QuantStack/xwebrtc"

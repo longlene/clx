@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="C++ coroutine library"
 HOMEPAGE="https://github.com/yyzybb537/libgo"
@@ -27,6 +27,6 @@ src_configure() {
 	local mycmakeargs=(
 	-DBUILD_DYNAMIC=$(usex shared)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

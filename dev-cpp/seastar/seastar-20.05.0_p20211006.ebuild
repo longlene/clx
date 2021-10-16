@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils flag-o-matic vcs-snapshot
+inherit cmake flag-o-matic vcs-snapshot
 
 EGIT_COMMIT="d7e3281372549860e60c4b97b9943c58da2b0c90"
 
@@ -47,5 +47,5 @@ src_configure() {
 		-DSeastar_HWLOC=$(usex hwloc)
 		-DSeastar_NUMA=$(usex numa)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

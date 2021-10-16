@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="xtensor plugin to read and write images, audio files and numpy (compressed) npz"
 HOMEPAGE="https://github.com/QuantStack/xtensor-io"
@@ -23,5 +23,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DDOWNLOAD_GBENCHMARK=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

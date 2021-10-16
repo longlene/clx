@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="C++11 port of docopt"
 HOMEPAGE="https://github.com/docopt/docopt.cpp"
@@ -28,5 +28,5 @@ src_configure() {
 	-DWITH_TESTS=$(usex test)
 	-DWITH_EXAMPLE=$(usex example)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

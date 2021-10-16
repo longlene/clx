@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="C++ driver for Cassandra/Scylla based on seastar framework"
 HOMEPAGE="https://github.com/cpv-project/cpv-cql-driver"

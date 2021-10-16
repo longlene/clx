@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ implementation of RSocket"
 HOMEPAGE="http://rsocket.io/"
@@ -32,5 +32,5 @@ src_configure() {
 	-DBUILD_EXAMPLES=OFF
 	-DBUILD_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

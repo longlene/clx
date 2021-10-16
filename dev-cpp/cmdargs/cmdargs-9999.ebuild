@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils git-r3
+inherit cmake git-r3
 
 DESCRIPTION="Command Args"
 HOMEPAGE="https://github.com/RaftLib/cmdargs"

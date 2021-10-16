@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A high performance, middleware oriented C++14 http web framework"
 HOMEPAGE="http://siliconframework.org"

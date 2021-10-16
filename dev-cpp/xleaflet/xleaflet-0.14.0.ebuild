@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ backend for the jupyter leaflet widget"
 HOMEPAGE="https://github.com/QuantStack/xleaflet"

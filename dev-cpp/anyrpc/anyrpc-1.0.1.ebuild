@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Support for multiple RPC protocols in a single library"
 HOMEPAGE="https://github.com/sgieseking/anyrpc"
@@ -27,5 +27,5 @@ src_configure() {
 	-DBUILD_EXAMPLES=OFF
 	-DBUILD_WITH_LOG4CPLUS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ header-only library for validation of variables, objects and containers"
 HOMEPAGE="https://github.com/evgeniums/cpp-validator"

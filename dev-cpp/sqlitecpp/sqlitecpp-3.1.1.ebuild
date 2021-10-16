@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="SQLiteC++ (SQLiteCpp) is a smart and easy to use C++ SQLite3 wrapper"
 HOMEPAGE="https://github.com/SRombauts/SQLiteCpp"
@@ -27,6 +27,6 @@ src_configure() {
 	-DSQLITECPP_BUILD_TESTS=$(usex test)
 	-DSQLITECPP_INTERNAL_SQLITE=$(usex !system-sqlite)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A PostgreSQL client library written in Modern C++"
 HOMEPAGE="https://github.com/pferdinand/libpqmxx"

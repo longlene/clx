@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ dataframe"
 HOMEPAGE="https://github.com/QuantStack/xframe"

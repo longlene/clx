@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ implementation of the Jupyter kernel protocol"
 HOMEPAGE="https://github.com/QuantStack/xeus"
@@ -26,5 +26,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DCMAKE_MODULE_PATH=${FILESDIR}
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

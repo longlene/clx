@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Fruit, a dependency injection framework for C++"
 HOMEPAGE="https://github.com/google/fruit"

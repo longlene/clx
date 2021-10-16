@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="QuantStack tools library"
 HOMEPAGE="https://github.com/QuantStack/xtl"

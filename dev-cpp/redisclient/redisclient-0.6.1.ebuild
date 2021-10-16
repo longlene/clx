@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Boost.asio based Redis-client library"
 HOMEPAGE="https://github.com/nekipelov/redisclient"
@@ -23,5 +23,5 @@ src_configure() {
 	-DBUILD_TEST=OFF
 	-DBUILD_EXAMPLES=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

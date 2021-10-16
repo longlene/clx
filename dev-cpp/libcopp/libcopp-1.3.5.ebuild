@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="cross-platform coroutine library in c++"
 HOMEPAGE="https://github.com/owt5008137/libcopp"
@@ -24,5 +24,5 @@ src_configure() {
 	-DPROJECT_ENABLE_SAMPLE=$(usex example)
 	-DPROJECT_ENABLE_UNITTEST=$(usex test)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

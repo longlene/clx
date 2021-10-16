@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="rpclib is a modern C++ msgpack-RPC server and client library"
 HOMEPAGE="http://rpclib.net"
@@ -22,6 +22,6 @@ src_configure() {
 	-DRPCLIB_BUILD_TESTS=$(usex test)
 	-DRPCLIB_ENABLE_EXAMPLES=$(usex example)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Fiber and async I/O based network library"
 HOMEPAGE="http://fiberized.io"
@@ -25,5 +25,5 @@ src_configure() {
 	-DWITH_CASSANDRA=OFF
 	-DWITH_VALGRIND=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

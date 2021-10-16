@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="aebcba5e01f7d2d42a0d1bddc1bcaf24436c6540"
 
@@ -22,12 +22,12 @@ BDEPEND=""
 src_prepare() {
 	default
 	sed -i '/DESTINATION/{s#man/man3#share/man/man3#}' CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
 	local mycmakeargs=(
 		-DBUILD_I18N_DLLS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

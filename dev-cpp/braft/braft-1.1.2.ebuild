@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="An industrial-grade C++ implementation of RAFT consensus algorithm based on brpc"
 HOMEPAGE="https://github.com/baidu/braft"
@@ -31,5 +31,5 @@ src_configure() {
 	local mycmakeargs=(
 		-DLIBSUFFIX=${suffix}
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

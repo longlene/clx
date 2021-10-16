@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A web framework written in c++ based on seastar framework"
 HOMEPAGE="https://github.com/cpv-project/cpv-framework"

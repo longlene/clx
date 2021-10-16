@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++11 evented IO for realtime video streaming and high performance networking applications"
 HOMEPAGE="http://sourcey.com/libsourcey"

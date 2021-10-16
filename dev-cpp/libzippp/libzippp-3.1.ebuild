@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="C++ wrapper for libzip"
 HOMEPAGE="https://github.com/ctabin/libzippp"

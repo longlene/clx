@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A C++ wrapper for mysql meant to be used in combination with sqlpp11"
 HOMEPAGE="https://github.com/rbock/sqlpp11-connector-mysql"
@@ -31,5 +31,5 @@ src_configure() {
 	-DDATE_INCLUDE_DIR=/usr/include
 	-DSQLPP11_INCLUDE_DIR/usr/include
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

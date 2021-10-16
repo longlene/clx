@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Message definition in MQ"
 HOMEPAGE="http://10.20.16.48/acct/libpbmq"

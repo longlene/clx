@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Small header only C++ library for writing multiplatform terminal applications"
 HOMEPAGE="https://github.com/jupyter-xeus/cpp-terminal"

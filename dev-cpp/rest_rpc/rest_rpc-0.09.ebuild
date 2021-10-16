@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="modern, simple, easy to use rpc framework"
 HOMEPAGE="https://github.com/qicosmos/rest_rpc"

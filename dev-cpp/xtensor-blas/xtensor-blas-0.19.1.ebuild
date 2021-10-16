@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="BLAS extension to xtensor"
 HOMEPAGE="https://github.com/QuantStack/xtensor-blas"

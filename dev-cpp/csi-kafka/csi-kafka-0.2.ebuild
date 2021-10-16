@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++11 producer/consumer library for Apache Kafka"
 HOMEPAGE="https://github.com/bitbouncer/csi-kafka"

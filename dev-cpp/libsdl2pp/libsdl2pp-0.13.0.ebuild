@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="C++11 bindings/wrapper for SDL2"
 HOMEPAGE="http://sdl2pp.amdmi3.ru"

@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A C++11 RESTful web server library"
 HOMEPAGE="https://github.com/datasift/served"
@@ -27,5 +27,5 @@ src_configure() {
 	-DSERVED_BUILD_TESTS=$(usex test)
 	-DSERVED_BUILD_EXAMPLES=$(usex example)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ Reflection Library"
 HOMEPAGE="http://www.rttr.org"
@@ -26,5 +26,5 @@ src_configure() {
 	-DBUILD_PACKAGE=OFF
 	-DBUILD_PCH=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

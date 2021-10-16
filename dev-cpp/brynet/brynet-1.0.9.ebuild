@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A Header-Only cross-platform C++ TCP network library"
 HOMEPAGE="https://github.com/IronsDu/brynet"

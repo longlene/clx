@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="RPC based on C++ Workflow"
 HOMEPAGE="https://github.com/sogou/srpc"
@@ -29,5 +29,5 @@ src_prepare() {
 	default
 	rmdir third_party/snappy && ln -sv "${WORKDIR}"/snappy-1.1.9 third_party/snappy
 	rmdir third_party/lz4 && ln -sv "${WORKDIR}"/lz4-1.9.3 third_party/lz4
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }

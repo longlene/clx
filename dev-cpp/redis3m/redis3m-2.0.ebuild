@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A C++ Redis client"
 HOMEPAGE="https://github.com/luca3m/redis3m"

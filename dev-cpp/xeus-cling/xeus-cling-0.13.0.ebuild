@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Jupyter Kernel for C++ based on xeus and cling"
 HOMEPAGE="https://github.com/jupyter-xeus/xeus-cling"

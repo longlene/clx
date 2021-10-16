@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ language bindings library integrating ZeroMQ with Boost Asio"
 HOMEPAGE="https://github.com/zeromq/azmq"

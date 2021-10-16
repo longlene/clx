@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="modern c++, cross-platform, header-only, easy to use http framework"
 HOMEPAGE="https://github.com/qicosmos/cinatra"

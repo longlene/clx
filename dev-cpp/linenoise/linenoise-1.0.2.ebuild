@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A small self-contained alternative to readline and libedit"
 HOMEPAGE="https://github.com/taktoa/linenoise"

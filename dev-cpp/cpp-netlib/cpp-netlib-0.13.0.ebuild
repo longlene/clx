@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A collection of open-source libraries for high level network programming"
 HOMEPAGE="http://cpp-netlib.org"
@@ -25,9 +25,9 @@ S="${WORKDIR}"/${P}-final
 
 src_configure() {
 	local mycmakeargs=(
-	$(cmake-utils_use example CPP-NETLIB_BUILD_EXAMPLES)
-	$(cmake-utils_use ssl CPP-NETLIB_BUILD_HTTPS)
-	$(cmake-utils_use test CPP-NETLIB_BUILD_TESTS)
+	$(cmake_use example CPP-NETLIB_BUILD_EXAMPLES)
+	$(cmake_use ssl CPP-NETLIB_BUILD_HTTPS)
+	$(cmake_use test CPP-NETLIB_BUILD_TESTS)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

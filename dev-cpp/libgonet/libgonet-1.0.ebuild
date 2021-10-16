@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ network library based on libgo"
 HOMEPAGE="https://github.com/yyzybb537/libgonet"
@@ -35,5 +35,5 @@ src_configure() {
 	-DENABLE_SSL=$(usex ssl)
 	-DNO_SUB=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

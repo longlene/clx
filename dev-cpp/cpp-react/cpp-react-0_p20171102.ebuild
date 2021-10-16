@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="a8be8637db642a68727dd1fb57c2fa79af3cf900"
 
@@ -25,5 +25,5 @@ src_configure() {
 	local mycmakeargs=(
 	-Dbuild_examples=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

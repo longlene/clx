@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Fastest RPC in the west"
 HOMEPAGE="https://github.com/smfrpc/smf"
@@ -32,6 +32,6 @@ src_configure() {
 		-DSMF_ENABLE_TESTS=OFF
 		-DSMF_MANAGE_DEPS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

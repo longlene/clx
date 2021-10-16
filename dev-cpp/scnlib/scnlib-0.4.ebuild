@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="scanf for modern C++"
 HOMEPAGE="https://github.com/eliaskosunen/scnlib"

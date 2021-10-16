@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="PostgreSQL connector for sqlpp11 library"
 HOMEPAGE="https://github.com/matthijs/sqlpp11-connector-postgresql"
@@ -25,5 +25,5 @@ src_configure() {
 	-DSQLPP11_INCLUDE_DIR=/usr/include
 	-DDATE_INCLUDE_DIR=/usr/include
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

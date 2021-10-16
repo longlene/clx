@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A C++ library of Concurrent Data Structures"
 HOMEPAGE="http://libcds.sourceforge.net/doc/cds-api/index.html"

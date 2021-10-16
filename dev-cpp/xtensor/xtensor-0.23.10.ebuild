@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Multi-dimensional arrays with broadcasting and lazy computing"
 HOMEPAGE="https://github.com/QuantStack/xtensor/"

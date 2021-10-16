@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ argument parsing library"
 HOMEPAGE="https://github.com/mmahnic/argumentum"

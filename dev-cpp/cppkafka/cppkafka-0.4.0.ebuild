@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++11 wrapper for rdkafka"
 HOMEPAGE="https://github.com/mfontanini/cppkafka"
@@ -28,5 +28,5 @@ src_configure() {
 	-DCPPKAFKA_DISABLE_EXAMPLES=ON
 	-DCPPKAFKA_DISABLE_TESTS=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ backend for Jupyter interactive widgets"
 HOMEPAGE="https://github.com/jupyter-xeus/xwidgets"

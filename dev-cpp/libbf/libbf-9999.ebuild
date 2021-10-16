@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils git-r3
+inherit cmake git-r3
 
 DESCRIPTION="Bloom filters for C++11"
 HOMEPAGE="http://mavam.github.io/libbf"

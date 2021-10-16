@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="The Civil-Time and Time-Zone Library"
 HOMEPAGE="https://github.com/google/cctz"
@@ -24,5 +24,5 @@ src_configure() {
 	-DBUILD_EXAMPLES=OFF
 	-DBUILD_TESTING=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

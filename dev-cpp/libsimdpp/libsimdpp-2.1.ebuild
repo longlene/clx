@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ wrapper for SIMD intrinsics of multiple instruction sets"
 HOMEPAGE="https://github.com/p12tic/libsimdpp"

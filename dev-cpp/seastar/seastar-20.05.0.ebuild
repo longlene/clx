@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="High performance server-side application framework"
 HOMEPAGE="http://seastar.io/"
@@ -44,5 +44,5 @@ src_configure() {
 			-DSeastar_HWLOC=$(usex hwloc)
 			-DSeastar_NUMA=$(usex numa)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++11 Redis Client"
 HOMEPAGE="https://github.com/Cylix/cpp_redis"
@@ -26,5 +26,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DUSE_CUSTOM_TCP_CLIENT=true
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

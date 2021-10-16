@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A microbenchmark support library"
 HOMEPAGE="https://github.com/google/benchmark"

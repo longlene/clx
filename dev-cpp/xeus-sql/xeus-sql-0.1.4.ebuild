@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="xeus-sql is a Jupyter kernel for general SQL implementations"
 HOMEPAGE="https://github.com/jupyter-xeus/xeus-sql"

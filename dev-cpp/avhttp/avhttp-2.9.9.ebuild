@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="avhttp is concurrent http downloader"
 HOMEPAGE="https://github.com/avplayer/avhttp"

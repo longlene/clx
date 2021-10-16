@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="C++ Benchmark Authoring Library/Framework"
 HOMEPAGE="https://github.com/DigitalInBlue/Celero"

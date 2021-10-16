@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="SAX-style TOML parser for C++11"
 HOMEPAGE="https://github.com/andrusha97/loltoml"
@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}"
 
 src_configure() {
 	local mycmakeargs=(
-	$(cmake-utils_use_enable test TESTING)
+	$(cmake_use_enable test TESTING)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

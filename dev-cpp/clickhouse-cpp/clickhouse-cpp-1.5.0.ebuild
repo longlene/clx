@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ client library for ClickHouse"
 HOMEPAGE="https://github.com/ClickHouse/clickhouse-cpp"

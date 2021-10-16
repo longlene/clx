@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="An easy to use C++-wrapper for libclang"
 HOMEPAGE="https://github.com/cppit/libclangmm/"

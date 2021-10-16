@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ benchmarking framework"
 HOMEPAGE="https://github.com/nickbruun/hayai"

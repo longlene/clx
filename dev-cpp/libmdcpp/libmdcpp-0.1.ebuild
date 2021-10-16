@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="implementation of the Markdown markup language in CPP"
 HOMEPAGE="https://github.com/sadhen/libmdcpp"

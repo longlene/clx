@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="An open-source C++ library developed and used at Facebook"
 HOMEPAGE="https://github.com/facebook/folly/"

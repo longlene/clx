@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ header-only PEG library"
 HOMEPAGE="https://github.com/yhirose/cpp-peglib"

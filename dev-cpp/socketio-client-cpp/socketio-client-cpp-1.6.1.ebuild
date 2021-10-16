@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="C++11 implementation of Socket.IO client"
 HOMEPAGE="https://github.com/socketio/socket.io-client-cpp"
@@ -27,5 +27,5 @@ src_configure() {
 	-DBUILD_SHARED_LIBS=$(usex !static)
 	-DBoost_USE_STATIC_LIBS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

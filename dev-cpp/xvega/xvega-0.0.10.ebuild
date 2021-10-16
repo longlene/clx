@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A C++ API to Vega-Lite"
 HOMEPAGE="https://github.com/Quantstack/xvega"

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ backend for the bqplot 2-D plotting library"
 HOMEPAGE="https://github.com/QuantStack/xplot"
