@@ -1,7 +1,9 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
+
+inherit cmake
 
 DESCRIPTION="Performance-portable, length-agnostic SIMD with runtime dispatch"
 HOMEPAGE="https://github.com/google/highway"

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="C port of the HdrHistogram"
 HOMEPAGE="https://github.com/HdrHistogram/HdrHistogram_c"
@@ -23,5 +23,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DHDR_HISTOGRAM_BUILD_PROGRAMS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

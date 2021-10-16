@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C Database abstraction library with json based language"
 HOMEPAGE="https://github.com/babelouest/hoel"
@@ -30,6 +30,6 @@ src_configure() {
 	-DWITH_MARIADB=$(usex mariadb)
 	-DWITH_PGSQL=$(usex postgres)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

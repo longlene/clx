@@ -4,7 +4,7 @@
 EAPI=7
 
 RESTRICT="test"
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ library for collecting user-defined in-process runtime statistics"
 HOMEPAGE="https://github.com/yandex/handystats"
