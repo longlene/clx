@@ -2,7 +2,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A multicore enabled coroutine library written in C"
 HOMEPAGE="http://github.com/halayli/lthread"

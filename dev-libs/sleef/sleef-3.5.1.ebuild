@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="SIMD Library for Evaluating Elementary Functions"
 HOMEPAGE="https://sleef.org/"
@@ -22,12 +22,12 @@ src_prepare() {
 	default
 	sed -i "/install/{s#lib#$(get_libdir)#}" src/dft/CMakeLists.txt
 	sed -i "/install/{s#lib#$(get_libdir)#}" src/libm/CMakeLists.txt
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_configure() {
 	local mycmakeargs=(
 	-DBUILD_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

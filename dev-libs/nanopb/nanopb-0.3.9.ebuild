@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Protocol Buffers with small code size"
 HOMEPAGE="https://jpa.kapsi.fi/nanopb/"

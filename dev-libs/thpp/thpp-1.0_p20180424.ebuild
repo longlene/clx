@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="0a4c745f2c2c195c34846446e925f748288ff849"
 
@@ -30,6 +30,6 @@ src_configure() {
 	-DNO_FOLLY=TRUE
 	-DNO_TESTS=$(usex !test)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

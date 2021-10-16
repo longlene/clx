@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Simple-WebSocket-Server"
 HOMEPAGE="https://github.com/eidheim/Simple-WebSocket-Server"

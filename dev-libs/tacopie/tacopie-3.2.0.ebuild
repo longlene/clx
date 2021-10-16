@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="C++ TCP Library"
 HOMEPAGE="https://github.com/Cylix/tacopie"
@@ -32,5 +32,5 @@ src_configure() {
 	-DBUILD_EXAMPLES=$(usex example)
 	-DBUILD_TESTS=$(usex test)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

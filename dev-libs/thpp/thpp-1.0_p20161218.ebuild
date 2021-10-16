@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="899817dd545921ad1fae5a3b015ec7b93f8e0c18"
 
@@ -30,6 +30,6 @@ src_configure() {
 	-DNO_FOLLY=TRUE
 	-DNO_TESTS=TRUE
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

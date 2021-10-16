@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Cross-platform library for building Telegram clients"
 HOMEPAGE="https://github.com/tdlib/td"
@@ -24,5 +24,5 @@ src_configure() {
 	-DTD_ENABLE_JNI=OFF
 	-DTD_ENABLE_DOTNET=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Unsupervised text tokenizer for Neural Network-based text generation"
 HOMEPAGE="https://github.com/google/sentencepiece"

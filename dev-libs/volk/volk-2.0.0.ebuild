@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="The Vector Optimized Library of Kernels"
 HOMEPAGE="http://libvolk.org"
@@ -22,5 +22,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DENABLE_TESTING=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

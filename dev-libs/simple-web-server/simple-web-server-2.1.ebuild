@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Simple-Web-Server"
 HOMEPAGE="https://github.com/eidheim/Simple-Web-Server"

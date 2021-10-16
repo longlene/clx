@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Asynchronous Low Latency Logging Library"
 HOMEPAGE="https://github.com/odygrd/quill"

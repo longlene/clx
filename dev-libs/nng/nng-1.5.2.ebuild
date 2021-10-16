@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="light-weight brokerless messaging"
 HOMEPAGE="https://github.com/nanomsg/nng"
@@ -24,5 +24,5 @@ src_configure() {
 		-DNNG_ENABLE_TLS=$(usex tls)
 		-DNNG_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

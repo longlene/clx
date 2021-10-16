@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A fast and compact format for serialization and storage"
 HOMEPAGE="https://github.com/arangodb/velocypack"
@@ -21,5 +21,5 @@ src_configure() {
 	local mycmakeargs=(
 		-DBuildVelocyPackExamples=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

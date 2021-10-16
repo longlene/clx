@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="The Universal Storage Engine"
 HOMEPAGE="https://tiledb.com/"
@@ -30,5 +30,5 @@ src_configure() {
 		-DTILEDB_SUPERBUILD=OFF
 		-DTILEDB_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

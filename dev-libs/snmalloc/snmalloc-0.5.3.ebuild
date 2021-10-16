@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Message passing based allocator"
 HOMEPAGE="https://github.com/microsoft/snmalloc"

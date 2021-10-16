@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="a framework for building solid multithreaded applications"
 HOMEPAGE="https://stiffstream.com/en/products/sobjectizer.html"
@@ -23,5 +23,5 @@ CMAKE_USE_DIR="${S}"/dev
 src_prepare() {
 	default
 	sed -i "s#DESTINATION lib#DESTINATION $(get_libdir)#" dev/so_5/CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }

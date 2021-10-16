@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A small self-contained alternative to readline and libedit that supports UTF-8"
 HOMEPAGE="https://github.com/arangodb/linenoise-ng"

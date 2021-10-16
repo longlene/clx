@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="6957fc8383d6c7db25b60b8c849b29caab1caaee"
 
@@ -25,6 +25,6 @@ src_configure() {
 	-DTINYCTHREAD_DISABLE_TESTS=$(usex !test)
 	-DTINYCTHREAD_INSTALL=ON
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 

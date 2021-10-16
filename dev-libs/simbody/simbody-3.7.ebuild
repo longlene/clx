@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="High-performance C++ multibody dynamics/physics library"
 HOMEPAGE="https://simtk.org/home/simbody"
