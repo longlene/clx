@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="The ultimate socket library for C and C++"
 HOMEPAGE="https://github.com/dermesser/libsocket"

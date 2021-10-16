@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="The HTML/CSS User Interface library evolved"
 HOMEPAGE="https://github.com/mikke89/RmlUi"

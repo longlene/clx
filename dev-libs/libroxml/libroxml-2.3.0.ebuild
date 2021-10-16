@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="very light C xml parser library"
 HOMEPAGE="http://www.libroxml.net/"

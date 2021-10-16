@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="XXTEA encryption algorithm library for C"
 HOMEPAGE="https://github.com/xxtea/xxtea-c"

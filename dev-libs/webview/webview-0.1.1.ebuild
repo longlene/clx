@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Tiny cross-platform webview library for C/C++/Golang"
 HOMEPAGE="https://github.com/zserge/webview"

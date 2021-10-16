@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="5e1bc3429cbf9c3be4db65ef5dbf21ea99cf5b95"
 
@@ -28,12 +28,12 @@ src_prepare() {
 	sed -e 's/-Werror //' \
 		-e "/LIBRARY DESTINATION/{s#lib#$(get_libdir)#}" \
 		-i CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
 	local mycmakeargs=(
 	-DMBEDTLS=$(usex mbedtls)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="Efficient RPCs for datacenter networks"
 HOMEPAGE="https://erpc.io/"

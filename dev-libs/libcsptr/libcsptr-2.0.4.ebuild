@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Smart pointers for the (GNU) C programming language"
 HOMEPAGE="https://snai.pe/c/c-smart-pointers/"
@@ -22,6 +22,6 @@ src_configure() {
 	-DCOVERALLS_UPLOAD=OFF
 	-DTESTS=$(usex test)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 	

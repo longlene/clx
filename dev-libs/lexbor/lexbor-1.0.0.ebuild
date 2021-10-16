@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Lexbor is development of an open source HTML Renderer library"
 HOMEPAGE="https://lexbor.com"
@@ -23,5 +23,5 @@ src_configure() {
 	-DLEXBOR_WITHOUT_THREADS=OFF
 	-DLEXBOR_BUILD_TESTS_CPP=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

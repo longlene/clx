@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Gherkin parser/compiler in C"
 HOMEPAGE="https://github.com/cucumber/gherkin-c"

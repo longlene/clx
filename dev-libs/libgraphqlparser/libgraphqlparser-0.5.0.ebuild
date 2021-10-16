@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A GraphQL query parser in C++ with C and C++ APIs"
 HOMEPAGE="https://github.com/graphql/libgraphqlparser"

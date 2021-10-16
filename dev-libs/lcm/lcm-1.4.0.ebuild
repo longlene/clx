@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Lightweight Communications and Marshalling"
 HOMEPAGE="https://github.com/lcm-proj/lcm"
@@ -28,5 +28,5 @@ src_configure() {
 	-DLCM_ENABLE_PYTHON=OFF
 	-DLCM_ENABLE_TESTS=OFF
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="a library to manipulate biological sequences"
 HOMEPAGE="https://github.com/rega-cev/libseq"

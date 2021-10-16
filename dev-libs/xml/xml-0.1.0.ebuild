@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A simple, small and self contained xml parser"
 HOMEPAGE="https://github.com/ooxi/xml.c"

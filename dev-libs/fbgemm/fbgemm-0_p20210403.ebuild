@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="9c0408d0b161533cf031bb30c19ac2dfd3cbd21a"
 
@@ -31,7 +31,7 @@ src_configure() {
 		-DCPUINFO_SOURCE_DIR="${WORKDIR}"/cpuinfo-0_p20181217
 		-DASMJIT_SRC_DIR="${WORKDIR}"/asmjit-0_p20210321
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_install() {

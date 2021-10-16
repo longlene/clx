@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="JWT C Library"
 HOMEPAGE="https://github.com/benmcollins/libjwt"
@@ -24,5 +24,5 @@ BDEPEND=""
 src_prepare() {
 	default
 	sed -i "/DESTINATION lib/{s#lib#$(get_libdir)#}" libjwt/CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }

@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Logging library written in C"
 HOMEPAGE="https://github.com/babelouest/yder"
@@ -25,5 +25,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DWITH_JOURNALD=$(usex systemd)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="82c1301e7e2195ca7d0e86cd700e91b84c1c8ad7"
 
@@ -22,7 +22,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 	insinto /usr/include
 	doins src/{monitors,export}.h
 }

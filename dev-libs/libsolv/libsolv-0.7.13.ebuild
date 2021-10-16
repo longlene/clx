@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Library for solving packages and reading repositories"
 HOMEPAGE="https://github.com/openSUSE/libsolv"

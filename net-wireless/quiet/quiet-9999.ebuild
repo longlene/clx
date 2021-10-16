@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Transmit with sound"
 HOMEPAGE="https://github.com/quiet/quiet"

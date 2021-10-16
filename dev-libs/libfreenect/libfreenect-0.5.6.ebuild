@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Drivers and libraries for the Xbox Kinect device"
 HOMEPAGE="http://openkinect.org"
@@ -28,5 +28,5 @@ src_configure() {
 	local mycmakeargs=(
 	-DBUILD_EXAMPLES=$(usex example)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

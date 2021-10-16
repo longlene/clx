@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 EGIT_COMMIT="0cfd42964b1a65d1f0b4637bb125d60b0af3b64f"
 

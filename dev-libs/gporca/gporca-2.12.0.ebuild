@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A modular query optimizer for big data"
 HOMEPAGE="https://github.com/greenplum-db/gporca"

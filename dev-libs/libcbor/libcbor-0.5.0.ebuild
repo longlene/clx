@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A C library for parsing and generating CBOR"
 HOMEPAGE="https://github.com/PJK/libcbor"
@@ -25,5 +25,5 @@ CMAKE_MAKEFILE_GENERATOR=emake
 src_prepare() {
 	default
 	sed -i '/subdirs/{/examples/d}' CMakeLists.txt
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }

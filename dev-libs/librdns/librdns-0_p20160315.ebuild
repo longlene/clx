@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 EGIT_COMMIT="a8ee174c8cefe8781eb3453c7e1b3b9c22ae4213"
 

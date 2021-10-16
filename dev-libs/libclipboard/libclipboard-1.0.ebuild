@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Lightweight cross-platform clipboard library"
 HOMEPAGE="https://github.com/jtanx/libclipboard"

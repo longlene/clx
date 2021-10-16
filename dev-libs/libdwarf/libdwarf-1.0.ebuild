@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Library to provide access to DWARF debugging information"
 HOMEPAGE="https://github.com/avast-tl/libdwarf"

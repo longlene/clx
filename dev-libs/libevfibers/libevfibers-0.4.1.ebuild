@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Small C fiber library that uses libev based event loop and libcoro based coroutine context switching"
 HOMEPAGE="https://github.com/Lupus/libevfibers"

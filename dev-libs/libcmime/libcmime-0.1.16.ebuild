@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="libcmime is a lightweight mime library"
 HOMEPAGE="http://libcmime.org"

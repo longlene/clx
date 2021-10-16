@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A modern C++ network library for developing high performance network services in TCP/UDP/HTTP protocols"
 HOMEPAGE="https://github.com/Qihoo360/evpp"

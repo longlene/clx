@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Portable, user-land SquashFS that can be easily linked and embedded within your application"
 HOMEPAGE="https://github.com/pmq20/libsquash"

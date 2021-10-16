@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Cross-platform C library for reading values from and writing values to .xlsx files"
 HOMEPAGE="https://github.com/brechtsanders/xlsxio"
@@ -27,5 +27,5 @@ src_configure() {
 	-DBUILD_TOOLS=$(usex tools)
 	-DBUILD_EXAMPLES=$(usex example)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

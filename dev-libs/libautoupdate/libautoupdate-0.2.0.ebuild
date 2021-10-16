@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Cross-platform C library that enables your application to auto-update itself in place"
 HOMEPAGE="https://github.com/pmq20/libautoupdate"

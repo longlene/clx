@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="Linux port of Apple's open-source concurrency library"
 HOMEPAGE="https://github.com/nickhutchinson/libdispatch"
