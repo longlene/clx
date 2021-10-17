@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A more flexible replacement for libevent's httpd API"
 HOMEPAGE="https://github.com/criticalstack/libevhtp"
@@ -23,12 +23,12 @@ regex? ( dev-libs/oniguruma )"
 
 src_configure() {
 	local mycmakeargs=(
-	$(cmake-utils_useno ssl EVHTP_DISABLE_SSL)
-	$(cmake-utils_useno thread EVHTP_DISABLE_EVTHR)
-	$(cmake-utils_useno regex EVHTP_DISABLE_REGEX)
-	$(cmake-utils_useno shared EVHTP_DISABLE_SHARED)
-	$(cmake-utils_use_use defer DEFER_ACCEPT)
+	$(cmake_useno ssl EVHTP_DISABLE_SSL)
+	$(cmake_useno thread EVHTP_DISABLE_EVTHR)
+	$(cmake_useno regex EVHTP_DISABLE_REGEX)
+	$(cmake_useno shared EVHTP_DISABLE_SHARED)
+	$(cmake_use_use defer DEFER_ACCEPT)
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 
 }

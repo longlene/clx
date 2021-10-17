@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Guile Scheme bindings for the SDL2 C shared library"
 HOMEPAGE="https://dthompson.us/projects/guile-sdl2.html"

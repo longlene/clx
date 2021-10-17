@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="A fast, memory efficient hash map for C++"
 HOMEPAGE="https://github.com/greg7mdp/sparsepp"

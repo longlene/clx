@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Thrust is a parallel algorithms library which resembles the C++ Standard Template Library"
 HOMEPAGE="http://thrust.github.com/"

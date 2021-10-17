@@ -1,7 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 SRC_URI="http://www.owl-s.org/zip/homepage/${P}.tar.gz"
 DESCRIPTION="The Generic PreProcessor"

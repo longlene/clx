@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="A simple header-only C++ argument parser library"
 HOMEPAGE="https://github.com/Taywee/args"

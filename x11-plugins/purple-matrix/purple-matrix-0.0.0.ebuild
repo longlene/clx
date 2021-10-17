@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Libpurple protocol plugin for matrix"
 HOMEPAGE="https://github.com/matrix-org/purple-matrix"

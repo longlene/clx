@@ -2,7 +2,7 @@
 
 EAPI=7
 
-inherit cmake-utils vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="libnode is a C++ implementation of Node.js"
 HOMEPAGE="https://github.com/plenluno/libnode"

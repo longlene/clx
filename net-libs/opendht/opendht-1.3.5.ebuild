@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A lightweight C++11 Distributed Hash Table implementation"
 HOMEPAGE="https://github.com/savoirfairelinux/opendht"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="POSIX termios interface for GNU Guile"
 HOMEPAGE="https://github.com/ft/guile-termios"

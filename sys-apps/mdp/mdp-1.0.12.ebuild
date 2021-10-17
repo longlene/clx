@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="A command-line based markdown presentation tool"
 HOMEPAGE="https://github.com/visit1985/mdp"

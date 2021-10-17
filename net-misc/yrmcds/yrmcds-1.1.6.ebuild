@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="memcached compatible KVS with master/slave replication"
 HOMEPAGE="http://cybozu.github.io/yrmcds/"

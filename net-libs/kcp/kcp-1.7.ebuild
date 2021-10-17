@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="A Fast and Reliable ARQ Protocol"
 HOMEPAGE="https://github.com/skywind3000/kcp"
