@@ -1,7 +1,7 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Listen to postgres events and forward them as JSON payloads to a webhook"
 HOMEPAGE="https://github.com/hasura/skor"

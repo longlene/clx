@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="header only, dependency-free deep learning framework in C++11"
 HOMEPAGE="https://github.com/tiny-dnn/tiny-dnn"

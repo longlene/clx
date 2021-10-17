@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Super fast, zero configuration command line HTTP Server"
 HOMEPAGE="https://github.com/sdogruyol/fast-http-server"

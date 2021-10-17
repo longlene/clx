@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="a library for the creation of embedded web servers"
 HOMEPAGE="http://www.hughes.com.au/products/libhttpd/"

@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="simple and fast string based key-value database with support for arrays and json"
 HOMEPAGE="https://github.com/radareorg/sdb"

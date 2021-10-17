@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Meta programming utilities for C++14"
 HOMEPAGE="https://github.com/matt-42/iod"

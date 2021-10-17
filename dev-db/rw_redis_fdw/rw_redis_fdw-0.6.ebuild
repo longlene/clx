@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Writable Foreign Data Wrapper for Redis"
 HOMEPAGE="https://github.com/nahanni/rw_redis_fdw"

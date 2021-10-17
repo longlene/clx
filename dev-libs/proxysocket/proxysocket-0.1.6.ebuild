@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Portable C library for proxy support, designed to be used as a drop-in replacement for connect()"
 HOMEPAGE="https://github.com/brechtsanders/proxysocket"

@@ -1,11 +1,11 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 CMAKE_MAKEFILE_GENERATOR="ninja"
 
-inherit cmake-utils systemd toolchain-funcs user
+inherit cmake systemd toolchain-funcs user
 
 DESCRIPTION="An OSS column-oriented database management system for real-time data analysis"
 HOMEPAGE="https://clickhouse.yandex"
@@ -142,7 +142,7 @@ src_unpack() {
 
 src_prepare() {
 	eapply_user
-		cmake-utils_src_prepare
+		cmake_src_prepare
 }
 src_configure() {
 	local mycmakeargs=(
@@ -169,11 +169,11 @@ src_configure() {
 			-DUNBUNDLED=ON
 			)
 
-			cmake-utils_src_configure
+			cmake_src_configure
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 
 	if ! use test; then
 		rm -rf "${D}/usr/share/clickhouse-test" || die "failed to remove tests"
