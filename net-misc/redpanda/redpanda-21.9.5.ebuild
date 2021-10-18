@@ -5,14 +5,14 @@ EAPI=7
 
 inherit cmake flag-o-matic
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="Redpanda is the real-time engine for modern apps"
+HOMEPAGE="https://vectorized.io/"
 SRC_URI="
 	https://github.com/vectorizedio/redpanda/archive/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/aklomp/base64/archive/refs/tags/v0.4.0.tar.gz -> base64-0.4.0.tar.gz
 "
 
-LICENSE=""
+LICENSE="BSL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="ccache"

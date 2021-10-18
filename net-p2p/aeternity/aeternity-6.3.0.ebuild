@@ -3,11 +3,11 @@
 
 EAPI=7
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="solving scalability problems by making sense of state-channels"
+HOMEPAGE="https://github.com/aeternity/aeternity"
 SRC_URI="https://github.com/aeternity/aeternity/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
