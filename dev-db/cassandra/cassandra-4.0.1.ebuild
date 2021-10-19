@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit eutils java-pkg-2 user versionator
+inherit eutils java-pkg-2 user
 
 DESCRIPTION="A highly scalable second-generation distributed database"
 HOMEPAGE="http://cassandra.apache.org/"
@@ -11,7 +11,7 @@ SRC_URI="mirror://apache/cassandra/${PV}/apache-cassandra-${PV}-bin.tar.gz"
 S="${WORKDIR}/apache-cassandra-${PV}"
 
 LICENSE="Apache-2.0"
-SLOT="$(get_version_component_range 1-2)"
+SLOT="$(ver_cut 1-2)"
 KEYWORDS="~x86 ~amd64"
 RDEPEND=">=virtual/jre-1.7"
 
