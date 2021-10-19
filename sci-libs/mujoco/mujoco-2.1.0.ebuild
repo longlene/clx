@@ -19,9 +19,15 @@ BDEPEND=""
 
 S="${WORKDIR}"/${PN}${MY_PV}
 
+QA_PRESTRIPPED="
+	/usr/lib64/libmujoco210.so
+	/usr/lib64/libmujoco210nogl.so
+"
+
 src_install() {
-	insinto /usr/include
-	doins include{mjmodel,mjui,mjxmacro,mjdata,mjrender,mjvisualize,mujoco}.h
 	dolib.so bin/libmujoco210.so bin/libmujoco210nogl.so
+	insinto /usr/include
+	doins include/{mjmodel,mjui,mjxmacro,mjdata,mjrender,mjvisualize,mujoco}.h
+	insinto /usr/share/${P}
 	doins -r model sample
 }
