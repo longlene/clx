@@ -23,5 +23,6 @@ RDEPEND="${DEPEND}
 	>=dev-python/imageio-2.1.2
 	>=dev-python/cffi-1.10
 	dev-python/fasteners
+	sci-libs/mujoco
 "
 BDEPEND=""
