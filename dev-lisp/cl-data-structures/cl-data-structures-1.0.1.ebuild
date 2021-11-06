@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="91b3ceb88135ef3cdc0672059ac67903ff89e1ec"
+inherit common-lisp-3
 
 DESCRIPTION="Data Structures and streaming algorithms for Common Lisp"
 HOMEPAGE="https://github.com/sirherrbatka/cl-data-structures"
-SRC_URI="https://github.com/sirherrbatka/cl-data-structures/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/sirherrbatka/cl-data-structures/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

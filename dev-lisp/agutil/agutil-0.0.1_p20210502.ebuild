@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="0464a88a7d7450d31c842ad6302a75632866c50b"
+EGIT_COMMIT="996745638385a29f413f1760f79ff72744485110"
 
 DESCRIPTION="A collection of Common Lisp utilities"
 HOMEPAGE="https://github.com/alex-gutev/agutil"

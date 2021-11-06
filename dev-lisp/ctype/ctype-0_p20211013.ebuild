@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3fdf1bc61cc6b33680abf920d534149906d4e7fd"
+EGIT_COMMIT="977f4bfce65c721ac1bb545ae52ec3873068831e"
 
 DESCRIPTION="CL type system implementation"
 HOMEPAGE="https://github.com/Bike/ctype"

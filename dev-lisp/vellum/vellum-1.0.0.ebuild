@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="24881421720932fcf113066eb915e644def9f0cc"
+inherit common-lisp-3
 
 DESCRIPTION="Data Frames for Common Lisp"
 HOMEPAGE="https://github.com/sirherrbatka/vellum"
-SRC_URI="https://github.com/sirherrbatka/vellum/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/sirherrbatka/vellum/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"

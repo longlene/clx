@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="c5422111021489f7993c5b18670d3fd2609ac175"
+inherit common-lisp-3
 
 DESCRIPTION="support for constructing vellum tables from the queries to the postgres database"
 HOMEPAGE="https://github.com/sirherrbatka/vellum-postmodern"
-SRC_URI="https://github.com/sirherrbatka/vellum-postmodern/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/sirherrbatka/vellum-postmodern/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

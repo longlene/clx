@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="8a8259e5c93605e9c68cc697efee71d09d6fc873"
+EGIT_COMMIT="b62b48a30b6501398863cf27f7ae2f260fbd4aac"
 
 DESCRIPTION="A common lisp library to unify access to common dictionary-like data-structures"
 HOMEPAGE="https://github.com/AccelerationNet/access"

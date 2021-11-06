@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1843374a3e6f86be30017df4d8e69ebd1d033147"
+EGIT_COMMIT="76131f1767da8280ce8b9079bddf8073507cc78a"
 
 DESCRIPTION="C language syntax in Common Lisp"
 HOMEPAGE="https://github.com/y2q-actionman/with-c-syntax"
