@@ -93,6 +93,7 @@ src_configure() {
 		tools=yes
 		progress=false
 		verbose=true
+		colored=yes
 		pulseaudio=$(usex pulseaudio)
 		udev=$(usex udev)
 		use_static_cpp=false
@@ -106,18 +107,7 @@ src_compile() {
 
 src_install() {
 	newicon icon.svg ${PN}.svg
-	dobin bin/godot.*
-	if [[ "${ARCH}" == "amd64" ]]; then
-		make_desktop_entry godot.x11.tools.64 Godot
-		with_desktop_entry=1
-	fi
-
-	if [[ "${ARCH}" == "x86" ]]; then
-		make_desktop_entry godot.x11.tools.32 Godot
-		with_desktop_entry=1
-	fi
-
-	if ! [[ "${with_desktop_entry}" == "1" ]]; then
-		elog "Couldn't detect running architecture to create a desktop file."
-	fi
+	newbin bin/godot.* godot
+	domenu misc/dist/linux/org.godotengine.Godot.desktop
+	doman misc/dist/linux/godot.6
 }
