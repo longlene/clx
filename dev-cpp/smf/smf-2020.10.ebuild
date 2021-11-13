@@ -19,7 +19,7 @@ DEPEND="
 	dev-cpp/gflags
 	dev-cpp/glog
 	dev-libs/boost
-	dev-libs/hdr-histogram-c
+	dev-libs/hdrhistogram-c
 	dev-libs/xxhash
 	app-arch/zstd
 "
