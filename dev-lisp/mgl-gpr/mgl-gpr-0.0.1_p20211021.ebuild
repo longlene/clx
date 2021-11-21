@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e5bfebd119aea2288c4e5718a3da0dd0d5aa4e0a"
+EGIT_COMMIT="cb6ce51e2f87bf1d589f3703c13eea6e25780afe"
 
 DESCRIPTION="MGL-GPR is a library of evolutionary algorithms"
 HOMEPAGE="https://github.com/melisgl/mgl-gpr"

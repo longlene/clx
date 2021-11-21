@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="eece046ac5d8f819f286bbe0cd85170b988f0327"
+EGIT_COMMIT="ec97bee3431c55913078e532daae81eb0fd90372"
 
 DESCRIPTION="A Common Lisp client library for Mastodon instances"
 HOMEPAGE="https://github.com/Shinmera/tooter"

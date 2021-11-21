@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d58a80a91377fb3f14bf29d86bb586a4ab541432"
+EGIT_COMMIT="ec3164d42b86869357dc185b747c5dfba25c0a3c"
 
 DESCRIPTION="Common Lisp to JavaScript compiler"
 HOMEPAGE="https://github.com/cxxxr/valtan"

@@ -3,11 +3,13 @@
 
 EAPI=7
 
-inherit font
+inherit font vcs-snapshot
+
+EGIT_COMMIT="d258639b562cab674da79e9e3316998e709e8960"
 
 DESCRIPTION="A monospaced sans-serif typeface, used in Mac OS X"
-HOMEPAGE="http://www.gringod.com/2006/11/01/new-version-of-monaco-font/"
-SRC_URI="http://www.gringod.com/wp-upload/software/Fonts/Monaco_Linux.ttf"
+HOMEPAGE="https://github.com/todylu/monaco.ttf"
+SRC_URI="https://github.com/todylu/monaco.ttf/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
@@ -17,11 +19,5 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}"
-FONT_S="${S}"
 FONT_SUFFIX="ttf"
 
-src_prepare() {
-	default
-	cp "${DISTDIR}"/${A} "${S}"/${A}
-}

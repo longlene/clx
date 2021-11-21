@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="93d656ce3ae218bd9250de70620902f872f34767"
+EGIT_COMMIT="3a6d0ceb1968fcfa9687585fba69ee5aa68cc31b"
 
 DESCRIPTION="A Common Lisp library for logging, tracing, testing and persistence"
 HOMEPAGE="https://github.com/melisgl/journal"

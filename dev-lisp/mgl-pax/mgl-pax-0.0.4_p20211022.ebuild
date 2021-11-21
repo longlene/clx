@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="818448418d6b9de74620f606f5b23033c6082769"
+EGIT_COMMIT="a7f904784ae59bbeeeb15a14348cda46ed9bdeb3"
 
 DESCRIPTION="Exploratory programming environment and documentation generator"
 HOMEPAGE="https://github.com/melisgl/mgl-pax"

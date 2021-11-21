@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="6425ce5d3ae4da5df4a7ea9042fb86cc37b30125"
+EGIT_COMMIT="8d34d75cdf2d2830cf6bde067d7f5ad4ffb97eef"
 
 DESCRIPTION="Create and manage virtual machines from Common Lisp"
 HOMEPAGE="http://eudoxia.me/corona"

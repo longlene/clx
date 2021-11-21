@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="558c8ed63bc0eec55400fa2ca5af5ab549f0285b"
+EGIT_COMMIT="86563473dc23fb1277d35a3ad2c911a6c8e5b0da"
 
 DESCRIPTION="An extensible and cross-compatible testing framework"
 HOMEPAGE="https://github.com/Shinmera/parachute"

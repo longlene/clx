@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d78c880f65f2e2d0fa15427b6778ed68433fd41b"
+EGIT_COMMIT="c8e3466d0ffb638938168dd8800db10aa3f730d6"
 
 DESCRIPTION="WITH- group with- macros, allocate objects and rebind slots"
 HOMEPAGE="https://github.com/stacksmith/cl-with"

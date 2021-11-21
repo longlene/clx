@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f2960436aafbe718fe2b42443c6fe6a5cf1f0273"
+EGIT_COMMIT="c196f25d943e7194137f5315ed9719f20856383b"
 
 DESCRIPTION="Simple Common Lisp REPL"
 HOMEPAGE="https://github.com/fukamachi/mondo"

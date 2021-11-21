@@ -5,11 +5,11 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f9886fcba2c641e5035312bf2585080bb50a7565"
+EGIT_COMMIT="7de469636b4d7c47e9a61ee05065360d3365fb0d"
 
 DESCRIPTION="A mostly-text-based UI bridges Common Lisp objects and runs of text"
-HOMEPAGE="https://github.com/stacksmith/subtext"
-SRC_URI="https://github.com/stacksmith/subtext/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/cl-fui/subtext"
+SRC_URI="https://github.com/cl-fui/subtext/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

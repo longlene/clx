@@ -5,11 +5,11 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5dbfd0d473d9aabf0971c6eacd68a4971eb8899d"
+EGIT_COMMIT="ac630f696090b84af0da42996727dd4864683c21"
 
 DESCRIPTION="A Common Lisp wrapper around nsf/termbox"
-HOMEPAGE="https://github.com/fouric/cl-termbox"
-SRC_URI="https://github.com/fouric/cl-termbox/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/cl-fui/cl-termbox"
+SRC_URI="https://github.com/cl-fui/cl-termbox/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"

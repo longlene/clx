@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="27a2552632a6a9330c1a133e519e676d9c6ca714"
+EGIT_COMMIT="1bd0b43cbc1d152cf69a1d854112026d56c9b0b2"
 
 DESCRIPTION="Common Lisp machine learning library"
 HOMEPAGE="https://github.com/melisgl/mgl"

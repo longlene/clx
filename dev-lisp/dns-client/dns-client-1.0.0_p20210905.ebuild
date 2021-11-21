@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="46507870bb96838d6e4335b171033fd33323dd98"
+EGIT_COMMIT="9f252e9c2bb61c57a6cd367e21ad366b0d3e87e0"
 
 DESCRIPTION="A pure-lisp DNs record client"
 HOMEPAGE="https://github.com/Shinmera/dns-client"

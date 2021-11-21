@@ -16,13 +16,17 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/clack
-	dev-lisp/lack
 	dev-lisp/websocket-driver
 	dev-lisp/alexandria
 	dev-lisp/hunchentoot
 	dev-lisp/cl-ppcre
 	dev-lisp/bordeaux-threads
 	dev-lisp/trivial-open-browser
+	dev-lisp/parse-float
+	dev-lisp/3bmd
+	dev-lisp/colorize
+	dev-lisp/cl-sqlite
+	dev-lisp/lack
 	dev-lisp/mgl-pax
 	dev-lisp/quri
 "
