@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-annot
 	dev-lisp/cl-syntax
-	test? ( dev-lisp/cl-test-more )
+	test? ( dev-lisp/prove )
 "
 
 src_prepare() {
