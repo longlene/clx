@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
@@ -20,7 +19,7 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
-	test? ( dev-lisp/cl-test-more )
+	test? ( dev-lisp/prove )
 "
 
 src_prepare() {

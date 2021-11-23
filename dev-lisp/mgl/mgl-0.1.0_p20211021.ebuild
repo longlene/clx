@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/array-operations
 	dev-lisp/lla
 	dev-lisp/cl-reexport
-	dev-lisp/mgl-mat[test]
+	dev-lisp/mgl-mat[test?]
 	dev-lisp/mgl-pax
 	dev-lisp/named-readtables
 	dev-lisp/pythonic-string-reader
