@@ -5,7 +5,7 @@ EAPI=7
 
 inherit java-pkg-2 java-ant-2 vcs-snapshot
 
-EGIT_COMMIT="189f7d6f3b5065986032bf70369d3677261e7d8f"
+EGIT_COMMIT="6f10cd6910e466935b129585e57f35f537fe795f"
 
 DESCRIPTION="A free J2ME emulator with libretro, awt, sdl2 and javafx frontends"
 HOMEPAGE="https://github.com/hex007/freej2me"
@@ -30,6 +30,7 @@ src_prepare() {
 src_compile() {
 	java-pkg_gen-cp EANT_GENTOO_CLASSPATH
 	eant
+	#emake -C src/sdl2
 }
 
 

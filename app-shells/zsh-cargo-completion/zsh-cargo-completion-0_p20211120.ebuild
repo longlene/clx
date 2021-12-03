@@ -1,7 +1,9 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=8
+EAPI=7
+
+inherit vcs-snapshot
 
 EGIT_COMMIT="da01da70de98631254d4406332670c39456fa757"
 
