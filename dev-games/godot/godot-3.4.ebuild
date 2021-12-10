@@ -4,7 +4,7 @@
 EAPI=7
 PYTHON_COMPAT=( python3_9 )
 
-inherit eutils python-any-r1 scons-utils flag-o-matic desktop
+inherit eutils python-any-r1 scons-utils flag-o-matic desktop xdg-utils
 
 DESCRIPTION="Multi-platform 2D and 3D game engine"
 HOMEPAGE="http://godotengine.org"
@@ -110,4 +110,16 @@ src_install() {
 	newbin bin/godot.* godot
 	domenu misc/dist/linux/org.godotengine.Godot.desktop
 	doman misc/dist/linux/godot.6
+}
+
+pkg_postinst() {
+	xdg_desktop_database_update
+	xdg_mimeinfo_database_update
+	xdg_icon_cache_update
+}
+
+pkg_postrm() {
+	xdg_desktop_database_update
+	xdg_mimeinfo_database_update
+	xdg_icon_cache_update
 }
