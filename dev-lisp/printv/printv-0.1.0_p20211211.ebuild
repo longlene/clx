@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="646d31978dbbb460fffb160fd65bb2be9a5a434e"
+EGIT_COMMIT="e717a7fe076dae861a96117b2f9af29db8d2294d"
 
 DESCRIPTION="A batteries-included tracing and debug-logging macro"
 HOMEPAGE="https://github.com/danlentz/printv"

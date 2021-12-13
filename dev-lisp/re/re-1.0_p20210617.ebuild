@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cfbc1f482970221e80d445080a188fd5c755cd2c"
+EGIT_COMMIT="2e27ba8500944460ebec5121eef982399db80e2a"
 
 DESCRIPTION="Lua-style Pattern Matching for Common Lisp"
 HOMEPAGE="https://github.com/massung/re"

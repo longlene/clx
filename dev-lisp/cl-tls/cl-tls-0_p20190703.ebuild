@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="0dfb3b7e209231d40ab73e8e4a52d0032334bbf7"
+EGIT_COMMIT="dd8d73e9b77d15e3e1a0a9e8ecace83352aac359"
 
 DESCRIPTION="An implementation of TLS and related specifications in Common Lisp"
 HOMEPAGE="https://github.com/shrdlu68/cl-tls"
