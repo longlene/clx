@@ -3,6 +3,8 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-{1..4} luajit )
+
 inherit lua
 
 DESCRIPTION="Pure Lua driver for Apache Cassandra"
@@ -19,11 +21,17 @@ RDEPEND="${DEPEND}
 	dev-lua/LuaBitOp
 "
 
+
 src_compile() {
 	:
 }
 
+lua_src_install() {
+	insinto $(lua_get_lmod_dir)
+	doins -r lib/{cassandra,resty}
+}
+
 src_install() {
-	lua_install_module -r lib/{cassandra,resty}
+	lua_foreach_impl lua_src_install
 	dodoc README.md
 }
