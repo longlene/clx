@@ -18,8 +18,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-strings
 	dev-lisp/cl-string-match
-	dev-lisp/prui
-	dev-lisp/simple-queue
+	dev-lisp/puri
 	dev-lisp/cl-sqlite
 	dev-lisp/parenscript
 	dev-lisp/cl-json
