@@ -23,6 +23,7 @@ DEPEND="
 	dev-libs/libfmt
 	dev-libs/libsodium
 	dev-libs/openssl
+	app-arch/zstd
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

@@ -20,6 +20,8 @@ BDEPEND="
 	dev-lang/erlang
 "
 
+RESTRICT=network-sandbox
+
 pkg_setup() {
 	enewgroup vernemq
 	enewuser vernemq -1 /bin/sh /var/lib/vernemq vernemq
