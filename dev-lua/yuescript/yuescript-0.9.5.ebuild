@@ -3,7 +3,9 @@
 
 EAPI=7
 
-inherit cmake lua-utils vcs-snapshot
+LUA_COMPAT=( lua5-{1..4} luajit )
+
+inherit cmake lua-single vcs-snapshot
 
 DESCRIPTION="Yuescript is a Moonscript dialect"
 HOMEPAGE="https://github.com/pigpigyyy/Yuescript"
