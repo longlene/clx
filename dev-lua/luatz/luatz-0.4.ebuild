@@ -1,8 +1,9 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=7
+EAPI=8
+
+LUA_COMPAT=( lua5-{1..4} luajit )
 
 inherit lua
 
@@ -18,7 +19,12 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
+lua_src_install() {
+	insinto $(lua_get_lmod_dir)
+	doins -r luatz
+}
+
 src_install() {
-	lua_install_module -r luatz
+	lua_foreach_impl lua_src_install
 	dodoc README.md
 }

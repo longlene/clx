@@ -3,6 +3,10 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-{1..4} luajit )
+
+inherit lua
+
 DESCRIPTION="LibYAML binding for Lua"
 HOMEPAGE="http://gvvaughan.github.io/lyaml"
 SRC_URI="https://github.com/gvvaughan/lyaml/archive/v${PV}.tar.gz -> ${P}.tar.gz"
@@ -15,15 +19,24 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/libyaml
-	dev-lua/ldoc
 "
 
+lua_src_compile() {
+	${ELUA} build-aux/luke || die
+}
+
 src_compile() {
-	lua build-aux/luke || die
+	lua_foreach_impl lua_src_compile
+}
+
+lua_src_install() {
+	insinto $(lua_get_cmod_dir)
+	doins linux/yaml.so
+	insinto $(lua_get_lmod_dir)
+	doins -r lib/lyaml
 }
 
 src_install() {
-	lua_install_cmodule linux/yaml.so
-	lua_install_module -r lib/lyaml
+	lua_foreach_impl lua_src_install
 	dodoc README.md
 }
