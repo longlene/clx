@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="205fa1fc8ab9c75faba27c7debdd0001fa928917"
+EGIT_COMMIT="3e3a3c6b36183b63a3f473cb1fb30da9f775a078"
 
 DESCRIPTION="A Common Lisp library to allow jQuery-like HTML/DOM manipulation"
 HOMEPAGE="https://shinmera.github.io/lquery"
