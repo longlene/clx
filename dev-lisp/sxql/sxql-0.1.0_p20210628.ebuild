@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ca3e737bd32df6c910d3d46bc57057fa65184d40"
+EGIT_COMMIT="cc3478cacb0557475a59cf619dad66c5dc8080ba"
 
 DESCRIPTION="A SQL generator for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/sxql"

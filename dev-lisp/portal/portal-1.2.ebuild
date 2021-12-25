@@ -7,7 +7,7 @@ inherit common-lisp-3
 
 DESCRIPTION="Portable Websocket Server for Common Lisp"
 HOMEPAGE="https://github.com/charJe/portal/"
-SRC_URI="https://github.com/charJe/portal/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/charJe/portal/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"

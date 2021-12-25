@@ -3,13 +3,13 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="cb0334aef37fad5fa03e92ec6c5e512ce458496e"
+inherit common-lisp-3
 
 DESCRIPTION="A reverse proxy server written in and configurable in Common Lisp"
 HOMEPAGE="https://github.com/charJe/cl-yxorp"
-SRC_URI="https://github.com/charJe/cl-yxorp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="
+https://github.com/charJe/cl-yxorp/archive/refs/tags/${PV}.tar.gz
+-> ${P}.tar.gz"
 
 LICENSE="AGPL-3.0"
 SLOT="0"

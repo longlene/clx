@@ -3,7 +3,7 @@
 
 EAPI=7
 
-EGIT_COMMIT="2a0e2c73218ff6b325d783264813a44a1681eb1c"
+EGIT_COMMIT="42d76733dd2e873471c6f1e27d39113293f7dd5c"
 
 inherit common-lisp-3 vcs-snapshot
 
