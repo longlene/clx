@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="543c980443e65ae2c382e8e2c26b78c038e7f15e"
 
 DESCRIPTION="This library introduces throttles to Common Lisp"
 HOMEPAGE="https://github.com/vydd/cl-throttle"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/vydd/cl-throttle.git"
+SRC_URI="https://github.com/vydd/cl-throttle/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

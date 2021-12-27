@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="52ae9603d323d676dcf47149188d56ebba09c5fa"
+EGIT_COMMIT="4cc00b08e202c7adda41391463096cf9df1705c3"
 
 DESCRIPTION="Sketch is a Common Lisp framework for the creation of electronic art, computer graphics, visual design, game making and more"
 HOMEPAGE="https://github.com/vydd/sketch"

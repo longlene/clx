@@ -5,11 +5,13 @@ EAPI=7
 
 inherit cmake flag-o-matic
 
+NNG_COMMIT="9a6fdb08d3c0fa6f71c00085ed9c731a1eeaf869"
+
 DESCRIPTION="Nano MQTT Broker"
 HOMEPAGE="https://nanomq.io/"
 SRC_URI="
 	https://github.com/nanomq/nanomq/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/nanomq/nng/archive/a29379751139bd1739627196f51bcdd8da72640b.tar.gz -> nng-a29379751139bd1739627196f51bcdd8da72640b.tar.gz
+	https://github.com/nanomq/nng/archive/${NNG_COMMIT}.tar.gz -> nng-${NNG_COMMIT}.tar.gz
 "
 
 LICENSE="MIT"
@@ -23,7 +25,7 @@ BDEPEND=""
 src_prepare() {
 	default
 	rmdir nng
-	ln -sv "${WORKDIR}"/nng-a29379751139bd1739627196f51bcdd8da72640b nng
+	ln -sv "${WORKDIR}"/nng-${NNG_COMMIT} nng
 	cmake_src_prepare
 }
 

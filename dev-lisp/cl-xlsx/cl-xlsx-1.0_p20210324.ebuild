@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3439c6a1514950a0e4539ae8bf0f5ae27fa6236f"
+EGIT_COMMIT="68537a6517f5ded86137840aa60d2fced859459f"
 
 DESCRIPTION="Read XLSX files with Common Lisp"
 HOMEPAGE="https://github.com/a1b10/cl-xlsx"

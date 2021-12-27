@@ -1,12 +1,11 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="85178a9204d40b53a41b0743f7bbf93027dd285f"
+EGIT_COMMIT="ee4904d19ce22d00eb2fe17a4fe42e5df8ac8701"
 
 DESCRIPTION="CFFI Bindings for Common Lisp"
 HOMEPAGE="https://github.com/BradWBeer/cl-pango"
