@@ -6,8 +6,8 @@ EAPI=7
 inherit rebar
 
 DESCRIPTION="Erlang Redis client"
-HOMEPAGE="https://github.com/wooga/eredis"
-SRC_URI="https://github.com/wooga/${PN}/archive/v${PV}.tar.gz
+HOMEPAGE="https://github.com/Nordix/eredis"
+SRC_URI="https://github.com/Nordix/${PN}/archive/v${PV}.tar.gz
 	-> ${P}.tar.gz"
 
 LICENSE="MIT"

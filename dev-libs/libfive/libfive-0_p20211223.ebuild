@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="9687c9dc60f7bc32dcaaec7de50a6823113c3572"
+EGIT_COMMIT="b7f2baa5390082691cbd09d90170b9a72e369e3b"
 
 DESCRIPTION="Infrastructure for solid modeling"
 HOMEPAGE="https://github.com/libfive/libfive"

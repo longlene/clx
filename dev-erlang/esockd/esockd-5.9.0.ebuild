@@ -7,7 +7,7 @@ inherit rebar
 
 DESCRIPTION="Erlang General Non-blocking TCP/SSL Socket Server"
 HOMEPAGE="https://emqx.io/"
-SRC_URI="https://github.com/emqx/esockd/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/emqx/esockd/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
