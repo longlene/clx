@@ -5,7 +5,7 @@ EAPI=7
 
 inherit rebar vcs-snapshot
 
-EGIT_COMMIT="3cbc455c103b8885401f161fd765a9b2f18203f2"
+EGIT_COMMIT="7eeda6c129577723e968735ee5495e00dd2e47da"
 
 DESCRIPTION="gen_tcp acceptor pool"
 HOMEPAGE="https://github.com/fishcakez/acceptor_pool"

@@ -34,6 +34,7 @@ src_unpack() {
 }
 
 src_prepare() {
+	default
 	find examples -name '*.o' -exec rm {} \;
 	find examples -type f -a -perm -o=rx -exec rm {} \;
 }
