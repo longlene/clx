@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d39af02625cd8434e7dcf70d38b9b5aacce05a22"
+EGIT_COMMIT="a792a2bcca62216f8d3041127261686940e3d6a5"
 
 DESCRIPTION="Utility for running external programs"
 HOMEPAGE="https://github.com/ruricolist/cmd"
