@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c196f25d943e7194137f5315ed9719f20856383b"
+EGIT_COMMIT="8cf040408c5feca2e4b1092ccf45b20562ddb13f"
 
 DESCRIPTION="Simple Common Lisp REPL"
 HOMEPAGE="https://github.com/fukamachi/mondo"
@@ -24,6 +24,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/babel
 	dev-lisp/usocket
 	dev-lisp/yason
+	app-emacs/slime
 "
 BDEPEND=""
 

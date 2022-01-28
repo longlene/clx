@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="dda7ab224052d3e5041303f1f229e211d6c6042b"
+EGIT_COMMIT="dddc0859c48461948bcf5f9738a81109c2de2f05"
 
 DESCRIPTION="Protocol definition and specification for the Lichat chat system"
 HOMEPAGE="https://github.com/Shirakumo/lichat-protocol"
