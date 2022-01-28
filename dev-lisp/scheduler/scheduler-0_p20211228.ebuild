@@ -5,9 +5,9 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="65b18a042789f582242fa53a47cf101ee0f2429e"
+EGIT_COMMIT="228a5e774b2e4df2b9f15651015c21e1188bac69"
 
-DESCRIPTION="Extensible Scheduler written in Common Lisp"
+DESCRIPTION="Common Lisp Scheduler"
 HOMEPAGE="https://github.com/endsec/scheduler"
 SRC_URI="https://github.com/endsec/scheduler/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 

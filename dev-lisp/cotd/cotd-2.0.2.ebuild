@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
+inherit common-lisp-3
 
 DESCRIPTION="A Common Lisp roguelike battle of Angels and Demons in the streets of a Human city"
 HOMEPAGE="https://github.com/gwathlobal/CotD"
@@ -16,8 +16,11 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/bordeaux-threads
 	dev-lisp/lispbuilder-sdl
+	dev-lisp/bordeaux-threads
+	dev-lisp/defenum
+	dev-lisp/cl-store
+	dev-lisp/log4cl
 "
 
 src_install() {

@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="cf875137a23ed4efbfde63e52691f1b544d55d17"
+EGIT_COMMIT="4df993ec2b0a361d776a18599ebd6153aea792c2"
 
 DESCRIPTION="Common Lisp bindings for the ncurses terminal library"
 HOMEPAGE="https://github.com/McParen/croatoan"

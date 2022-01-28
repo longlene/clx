@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="ACL2 is both a programming language in which you can model computer systems and a tool to help you prove properties of those models"
 HOMEPAGE="http://www.cs.utexas.edu/users/moore/acl2/"
-SRC_URI="https://github.com/acl2/acl2/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/acl2/acl2/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
