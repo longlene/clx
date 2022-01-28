@@ -1,0 +1,45 @@
+# Copyright 1999-2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=7
+
+inherit toolchain-funcs
+
+if [[ ${PV} == "9999" ]] ; then
+	EGIT_REPO_URI="https://github.com/graeme-hill/crossguid.git"
+	inherit git-r3
+else
+	SRC_URI="https://github.com/graeme-hill/crossguid/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+fi
+
+DESCRIPTION="Lightweight cross platform C++ GUID/UUID library"
+HOMEPAGE="https://github.com/graeme-hill/crossguid"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="amd64 ~arm arm64 x86"
+
+# We use libuuid from util-linux.
+DEPEND="sys-apps/util-linux"
+RDEPEND="${DEPEND}"
+
+RESTRICT="test" #575544
+
+e() { echo "$@"; "$@"; }
+
+src_compile() {
+	e $(tc-getCXX) \
+		${CXXFLAGS} ${CPPFLAGS} ${LDFLAGS} \
+		-std=c++11 \
+		-c guid.cpp -o guid.o \
+		-DGUID_LIBUUID \
+		|| die
+
+	e $(tc-getAR) rs libcrossguid.a guid.o || die
+}
+
+src_install() {
+	insinto /usr/include
+	doins guid.h
+	dolib.a libcrossguid.a
+}
