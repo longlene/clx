@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="17e4be8ff69e711346dddda0680677ca5bafc61b"
+EGIT_COMMIT="2555cedca7c24b155feb0cb8daa79f142d062e16"
 
 DESCRIPTION="Simplified interface to cl-bodge"
 HOMEPAGE="https://github.com/borodust/trivial-gamekit"
@@ -19,9 +19,13 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/log4cl
+	dev-lisp/bodge-utilities
 	dev-lisp/cl-bodge
 	dev-lisp/cl-muth
 	dev-lisp/cl-fad
+	dev-lisp/doxy
+	dev-lisp/alexandria
+	dev-lisp/cl-mustache
 "
 
 src_install() {

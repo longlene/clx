@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a7f904784ae59bbeeeb15a14348cda46ed9bdeb3"
+EGIT_COMMIT="aa3a226216b8078bed7b632bd9465a25eef89398"
 
 DESCRIPTION="Exploratory programming environment and documentation generator"
 HOMEPAGE="https://github.com/melisgl/mgl-pax"
@@ -30,7 +30,8 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
-	use test || rm -rf ${PN}-test.asd test
+	default
+	rm -rf test
+	sed -i '/defsystem #:mgl-pax\/test/,$' ${PN}.asd
 }
-	
+
