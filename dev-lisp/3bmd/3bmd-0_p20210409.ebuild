@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="66f2cb8fed98925b37a89978c3dff26b85f3a5da"
+EGIT_COMMIT="4e08d82d7c8fb1b8fc708c87f4d9d13a1ab490cb"
 
 DESCRIPTION="markdown processor in CL using esrap parser"
 HOMEPAGE="https://github.com/3b/3bmd"
@@ -26,5 +26,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	default
 	use test || rm -rf ${PN}-youtube-tests.asd youtube-tests.lisp
 }
