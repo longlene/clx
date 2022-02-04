@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="466d85ab565887dde8c0664f2334cc6d9847fef0"
+EGIT_COMMIT="dd8247e53d4d58ddb24e2efb2cfd5d5b4e127876"
 
 DESCRIPTION="Tiny Erlang VM"
 HOMEPAGE="https://github.com/bettio/AtomVM"
