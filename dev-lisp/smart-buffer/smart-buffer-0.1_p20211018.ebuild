@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b622a2b624201701b834e940bafb01685a2603c1"
+EGIT_COMMIT="619759d8a6f821773bbc65c0bda553d30e51e6f3"
 
 DESCRIPTION="Smart octets buffer"
 HOMEPAGE="https://github.com/fukamachi/smart-buffer"

@@ -7,7 +7,7 @@ inherit rebar
 
 DESCRIPTION="Erlang Process Pool as a Supervisor"
 HOMEPAGE="https://github.com/okeuday/supool"
-SRC_URI="https://github.com/okeuday/supool/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/okeuday/supool/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
