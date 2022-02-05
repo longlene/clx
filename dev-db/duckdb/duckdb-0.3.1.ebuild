@@ -6,7 +6,7 @@ EAPI=7
 inherit cmake
 
 DESCRIPTION="DuckDB is an embeddable SQL OLAP Database Management System"
-HOMEPAGE="http://www.duckdb.org"
+HOMEPAGE="https://duckdb.org"
 SRC_URI="https://github.com/cwida/duckdb/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
@@ -22,5 +22,7 @@ src_install() {
 	insinto /usr/include/duckdb
 	doins -r src/include/*
 	dolib.so ${BUILD_DIR}/src/libduckdb.so
+	dolib.a ${BUILD_DIR}/src/libduckdb_static.a
+	dobin ${BUILD_DIR}/duckdb
 	dodoc README.md
 }
