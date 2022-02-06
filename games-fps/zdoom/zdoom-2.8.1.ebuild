@@ -2,7 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit cmake eutils versionator unpacker
+
+inherit cmake eutils unpacker
 
 DESCRIPTION="ZDoom is an enhanced port of the official DOOM source code"
 HOMEPAGE="http://www.zdoom.org"
