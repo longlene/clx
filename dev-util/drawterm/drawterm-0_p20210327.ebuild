@@ -3,13 +3,13 @@
 
 EAPI=7
 
-inherit eutils vcs-snapshot
+inherit desktop eutils vcs-snapshot
 
-EGIT_COMMIT="7786ec11fd3e94e894d845975d3aded0391ff0f5"
+EGIT_COMMIT="fa5671bcef0970e0b143745d9fbac195cb7626e6"
 
 DESCRIPTION="Connect to Plan 9 CPU servers from other operating systems"
-HOMEPAGE="https://github.com/0intro/drawterm"
-SRC_URI="https://github.com/0intro/drawterm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/9fans/drawterm"
+SRC_URI="https://github.com/9fans/drawterm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
