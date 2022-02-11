@@ -15,7 +15,7 @@ LICENSE="GPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
+DEPEND="sys-firmware/facetimehd-firmware"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
