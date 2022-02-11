@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="47c19fcf21656270d6d36812f48a70d5c86e2c78"
+EGIT_COMMIT="e842b5b6583db11dcd7caeca914356b325f4cb40"
 
 DESCRIPTION="A new user interface protocol and toolkit implementation"
 HOMEPAGE="https://github.com/Shirakumo/alloy"

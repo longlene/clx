@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e889591e0ba7de80c8beafab898c88d7b617364a"
+EGIT_COMMIT="c1fc2f1c3661f9d30a6556029f542de4c9a961e4"
 
 DESCRIPTION="A Common Lisp sound system"
 HOMEPAGE="https://shirakumo.github.io/harmony"
