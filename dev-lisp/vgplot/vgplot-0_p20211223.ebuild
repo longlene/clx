@@ -1,12 +1,11 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5c55c5599e2cdf151bb619c4b1b2d12c4fb02ea7"
+EGIT_COMMIT="847abec1fdfb8ad6c8e735d568444688a9f5b693"
 
 DESCRIPTION="Common lisp library interfacing to the gnuplot utility"
 HOMEPAGE="https://github.com/volkers/vgplot"

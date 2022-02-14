@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2eaf15951cf98d3c4709350c68db1341dade55e6"
+EGIT_COMMIT="d9a9ecae6e1a52834cbbc50c22cbcaa975d19e75"
 
 DESCRIPTION="A Common Lisp Wrapper for the SDL 2.0 C Library"
 HOMEPAGE="https://github.com/lispgames/cl-sdl2"
@@ -20,10 +20,8 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-autowrap
 	dev-lisp/cl-ppcre
-	dev-lisp/trivial-garbage
 	dev-lisp/trivial-channels
 	dev-lisp/trivial-features
-	dev-lisp/cl-opengl
 	media-libs/libsdl2
 "
 

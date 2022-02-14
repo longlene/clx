@@ -5,9 +5,9 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1d5a962530f044030b3d294d11d755b234edff1e"
+EGIT_COMMIT="665a3bcdefabc824d56bd4613bc34f5e78cd1cf1"
 
-DESCRIPTION="Futures and Promises for ClozureCL"
+DESCRIPTION="Futures and Promises for SBCL"
 HOMEPAGE="https://github.com/massung/future"
 SRC_URI="https://github.com/massung/future/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 

@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="22107acf48f0650654d4b8c8c2ffecfcb1500ca3"
+EGIT_COMMIT="3e327de9def28dd763fd9be995dc54ce7edbb364"
 
 DESCRIPTION="Utilities beyond Alexandria"
 HOMEPAGE="https://github.com/TBRSS/serapeum"
@@ -20,17 +20,21 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/trivia
-	dev-lisp/uiop
 	dev-lisp/split-sequence
 	dev-lisp/string-case
 	dev-lisp/parse-number
 	dev-lisp/trivial-garbage
 	dev-lisp/bordeaux-threads
-	dev-lisp/named-readtables
-	dev-lisp/fare-quasiquote
 	dev-lisp/parse-declarations
 	dev-lisp/introspect-environment
+	dev-lisp/trivial-cltl2
 	dev-lisp/global-vars
-	dev-lisp/cl-algebraic-data-type
-	dev-lisp/fiveam
+	dev-lisp/trivial-file-size
+	dev-lisp/trivial-macroexpand-all
 "
+
+src_prepare() {
+	default
+	sed -i '/defsystem "serapeum\/tests/,$d' ${PN}.asd
+	rm -r tests
+}
