@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="80b4a18f53cfd1d82eca5b5cedcb4b7e0a98e2d6"
+EGIT_COMMIT="76540be6ad6f3e0f56bf3532e59a2f9dfd5c32e8"
 
 DESCRIPTION="A parser for OpenGL Shader Language source files"
 HOMEPAGE="https://shirakumo.github.io/glsl-toolkit/"
