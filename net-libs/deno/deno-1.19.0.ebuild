@@ -16,7 +16,7 @@ CRATES="
 	alloc-no-stdlib-2.0.3
 	alloc-stdlib-0.2.1
 	ansi_term-0.12.1
-	anyhow-1.0.52
+	anyhow-1.0.53
 	arrayvec-0.5.2
 	arrayvec-0.7.2
 	ash-0.34.0+1.2.203
@@ -39,9 +39,10 @@ CRATES="
 	bitflags_serde_shim-0.2.2
 	block-0.1.6
 	block-buffer-0.9.0
+	block-buffer-0.10.0
 	block-modes-0.8.1
 	block-padding-0.2.1
-	brotli-3.3.2
+	brotli-3.3.3
 	brotli-decompressor-2.3.2
 	build_const-0.2.2
 	bumpalo-3.9.1
@@ -55,10 +56,9 @@ CRATES="
 	chrono-0.4.19
 	cipher-0.3.0
 	clap-3.0.7
-	clap_complete-3.0.3
+	clap_complete-3.0.5
 	clap_complete_fig-3.0.2
 	clipboard-win-4.3.0
-	cloudabi-0.1.0
 	codespan-reporting-0.11.1
 	const-oid-0.6.2
 	convert_case-0.4.0
@@ -72,6 +72,7 @@ CRATES="
 	crossbeam-channel-0.5.2
 	crossbeam-utils-0.8.6
 	crypto-bigint-0.2.11
+	crypto-common-0.1.1
 	crypto-mac-0.11.1
 	ctor-0.1.20
 	ctr-0.8.0
@@ -84,23 +85,24 @@ CRATES="
 	data-encoding-2.3.2
 	data-url-0.1.1
 	debug_unreachable-0.1.1
-	deno_ast-0.9.0
-	deno_doc-0.26.0
-	deno_graph-0.18.0
-	deno_lint-0.22.0
-	deno_tls-0.23.0
+	deno_ast-0.11.0
+	deno_doc-0.31.0
+	deno_graph-0.23.0
+	deno_lint-0.25.0
+	deno_tls-0.24.0
 	der-0.4.5
 	derive_more-0.99.17
 	diff-0.1.12
 	digest-0.9.0
+	digest-0.10.1
 	dissimilar-1.0.2
 	dlopen-0.1.8
 	dlopen_derive-0.1.4
-	dprint-core-0.49.0
-	dprint-plugin-json-0.14.0
-	dprint-plugin-markdown-0.12.1
-	dprint-plugin-typescript-0.62.0
-	dprint-swc-ecma-ast-view-0.48.2
+	dprint-core-0.50.0
+	dprint-plugin-json-0.14.1
+	dprint-plugin-markdown-0.12.2
+	dprint-plugin-typescript-0.64.1
+	dprint-swc-ecma-ast-view-0.49.0
 	dyn-clone-1.0.4
 	ecdsa-0.12.4
 	either-1.6.1
@@ -112,6 +114,7 @@ CRATES="
 	env_logger-0.8.4
 	errno-0.1.8
 	error-code-2.3.0
+	eszip-0.16.0
 	fallible-iterator-0.2.0
 	fallible-streaming-iterator-0.1.9
 	fancy-regex-0.7.1
@@ -168,7 +171,7 @@ CRATES="
 	ident_case-1.0.1
 	idna-0.2.3
 	if_chain-1.0.2
-	import_map-0.6.0
+	import_map-0.9.0
 	indexmap-1.8.0
 	inotify-0.9.6
 	inotify-sys-0.1.5
@@ -181,7 +184,7 @@ CRATES="
 	itoa-1.0.1
 	jobserver-0.1.24
 	js-sys-0.3.55
-	jsonc-parser-0.17.1
+	jsonc-parser-0.19.0
 	kernel32-sys-0.2.2
 	khronos-egl-4.1.0
 	kqueue-1.0.4
@@ -192,7 +195,7 @@ CRATES="
 	libc-0.2.106
 	libffi-2.0.0
 	libffi-sys-1.3.0
-	libloading-0.7.2
+	libloading-0.7.3
 	libm-0.2.1
 	libsqlite3-sys-0.22.2
 	linked-hash-map-0.5.4
@@ -237,8 +240,8 @@ CRATES="
 	owning_ref-0.4.1
 	p256-0.9.0
 	p384-0.8.0
-	parking_lot-0.11.1
-	parking_lot_core-0.8.0
+	parking_lot-0.11.2
+	parking_lot_core-0.8.5
 	pem-rfc7468-0.2.4
 	percent-encoding-2.1.0
 	pest-2.1.3
@@ -283,7 +286,6 @@ CRATES="
 	rand_pcg-0.2.1
 	range-alloc-0.1.2
 	raw-window-handle-0.4.2
-	redox_syscall-0.1.57
 	redox_syscall-0.2.10
 	regex-1.5.4
 	regex-syntax-0.6.25
@@ -320,16 +322,17 @@ CRATES="
 	serde-1.0.133
 	serde_bytes-0.11.5
 	serde_derive-1.0.133
-	serde_json-1.0.74
+	serde_json-1.0.75
 	serde_repr-0.1.7
 	serde_urlencoded-0.7.0
-	serde_v8-0.29.0
+	serde_v8-0.30.0
 	sha-1-0.9.8
 	sha2-0.9.9
+	sha2-0.10.1
 	shell-escape-0.1.5
 	signal-hook-registry-1.4.0
 	signature-1.3.2
-	siphasher-0.3.7
+	siphasher-0.3.9
 	slab-0.4.5
 	slotmap-1.0.6
 	smallvec-1.8.0
@@ -349,25 +352,25 @@ CRATES="
 	strsim-0.10.0
 	subtle-2.4.1
 	swc_atoms-0.2.9
-	swc_bundler-0.101.0
-	swc_common-0.17.0
-	swc_ecma_ast-0.65.1
-	swc_ecma_codegen-0.89.0
+	swc_bundler-0.104.0
+	swc_common-0.17.2
+	swc_ecma_ast-0.65.3
+	swc_ecma_codegen-0.89.1
 	swc_ecma_codegen_macros-0.6.0
 	swc_ecma_dep_graph-0.58.0
-	swc_ecma_loader-0.27.0
-	swc_ecma_parser-0.87.0
-	swc_ecma_transforms-0.111.1
-	swc_ecma_transforms_base-0.56.0
-	swc_ecma_transforms_classes-0.43.0
+	swc_ecma_loader-0.28.0
+	swc_ecma_parser-0.87.1
+	swc_ecma_transforms-0.114.4
+	swc_ecma_transforms_base-0.57.1
+	swc_ecma_transforms_classes-0.44.0
 	swc_ecma_transforms_macros-0.3.0
-	swc_ecma_transforms_optimization-0.81.0
-	swc_ecma_transforms_proposal-0.73.0
-	swc_ecma_transforms_react-0.75.0
-	swc_ecma_transforms_typescript-0.77.1
-	swc_ecma_utils-0.63.0
-	swc_ecma_visit-0.51.0
-	swc_ecmascript-0.108.2
+	swc_ecma_transforms_optimization-0.84.0
+	swc_ecma_transforms_proposal-0.75.1
+	swc_ecma_transforms_react-0.77.0
+	swc_ecma_transforms_typescript-0.79.0
+	swc_ecma_utils-0.64.0
+	swc_ecma_visit-0.51.1
+	swc_ecmascript-0.111.10
 	swc_eq_ignore_macros-0.1.0
 	swc_fast_graph-0.4.0
 	swc_graph_analyzer-0.4.0
@@ -430,7 +433,7 @@ CRATES="
 	utf-8-0.7.6
 	utf8parse-0.2.0
 	uuid-0.8.2
-	v8-0.38.1
+	v8-0.40.0
 	vcpkg-0.2.15
 	version_check-0.9.4
 	void-1.0.2
@@ -468,7 +471,7 @@ CRATES="
 	winreg-0.7.0
 	winres-0.1.11
 	zeroize-1.4.3
-	zeroize_derive-1.2.2
+	zeroize_derive-1.3.1
 	zstd-0.9.2+zstd.1.5.1
 	zstd-safe-4.1.3+zstd.1.5.1
 	zstd-sys-1.6.2+zstd.1.5.1
