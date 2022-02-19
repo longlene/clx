@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ef3a7e52cf5dfaf48e20aebe05db40d8e7f0a8b1"
+EGIT_COMMIT="11025f8776737b360b782ae9816f89b5bebebf0e"
 
 DESCRIPTION="Common Lisp library for using SQL"
 HOMEPAGE="https://github.com/ruricolist/cl-yesql"
