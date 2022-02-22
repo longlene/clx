@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="793c32cf1223edd9b00a7c72d554b528f4eba526"
+EGIT_COMMIT="499a0c4e3abe3defdc9b5af765d77f81426fd914"
 
 DESCRIPTION="Yet another socket FFI"
 HOMEPAGE="https://github.com/fjames86/fsocket"

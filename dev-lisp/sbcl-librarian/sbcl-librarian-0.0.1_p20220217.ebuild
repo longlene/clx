@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a31feefcdf028cfea1a7d3e108308bace3af03bb"
+EGIT_COMMIT="0293fa4610c28ccb6f43b86d684e79f980f4166c"
 
 DESCRIPTION="Dynamic library delivery tools for SBCL"
 HOMEPAGE="https://github.com/quil-lang/sbcl-librarian"

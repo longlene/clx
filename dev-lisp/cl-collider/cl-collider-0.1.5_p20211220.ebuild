@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="932da13c24f7537a5b9206620e8a93f8c88846ad"
+EGIT_COMMIT="93fc3b7e655d4b917bca1bcc5a232206c2ffd8aa"
 
 DESCRIPTION="SuperCollider client for Common Lisp"
 HOMEPAGE="https://github.com/byulparan/cl-collider"

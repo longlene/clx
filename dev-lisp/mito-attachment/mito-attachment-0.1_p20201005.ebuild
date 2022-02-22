@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e60fc7a90b78027cc3effe7563654080942b957c"
+EGIT_COMMIT="6be49ca0fd1faf4cf6d37cb7c2c813be44454eac"
 
 DESCRIPTION="Mito mixin class for file management outside of RDBMS"
 HOMEPAGE="https://github.com/fukamachi/mito-attachment"

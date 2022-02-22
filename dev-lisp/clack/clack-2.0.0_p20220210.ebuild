@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9f4e89183662b25ac00c85965ba429a70067416d"
+EGIT_COMMIT="6fd0279424f7ba5fd4f92d69a1970846b0b11222"
 
 DESCRIPTION="Web application environment for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/clack"
@@ -27,6 +27,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 	dev-lisp/anaphora
 	dev-lisp/cl-ppcre
+	dev-lisp/ironclad
 	|| (
 		dev-lisp/hunchentoot
 		dev-lisp/toot

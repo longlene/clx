@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="8e4da084107c2a6a3778856fe554dc37e9bc46bb"
+EGIT_COMMIT="e2dd56f7ece57d16ff13e7b142490a0ea9a0b21e"
 
 DESCRIPTION="Common Lisp implementation of the Erlang External Term Format"
 HOMEPAGE="https://github.com/flambard/cl-erlang-term"
@@ -22,9 +22,10 @@ RDEPEND="${DEPEND}
 	dev-lisp/ieee-floats
 	dev-lisp/nibbles
 	dev-lisp/zlib
+	dev-lisp/trivia
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -rf test erlang-term-test.asd
 }

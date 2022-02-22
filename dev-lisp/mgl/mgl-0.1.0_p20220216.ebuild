@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1096cd70cfd57b7f96b771b083301ee73c5beb98"
+EGIT_COMMIT="4b1800a6dcbdf290a66b5f952fe3bd81641b0b5c"
 
 DESCRIPTION="Common Lisp machine learning library"
 HOMEPAGE="https://github.com/melisgl/mgl"
@@ -27,6 +27,8 @@ RDEPEND="${DEPEND}
 	dev-lisp/mgl-pax
 	dev-lisp/named-readtables
 	dev-lisp/pythonic-string-reader
+	app-emacs/slime
+	dev-lisp/external-program
 "
 
 src_prepare() {

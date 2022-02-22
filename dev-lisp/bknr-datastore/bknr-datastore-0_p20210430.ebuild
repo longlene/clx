@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3eb43346a13cd10d15149f6e8c55cb2d41a8c98d"
+EGIT_COMMIT="c98d44f47cc88d19ff91ca3eefbd9719a8ace022"
 
 DESCRIPTION="MOP-Based in-memory database with transactions for Common Lisp"
 HOMEPAGE="http://bknr.net/"

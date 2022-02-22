@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d2aa50bbbe1a6625f363f7e1c32e7a886da04ac3"
+EGIT_COMMIT="c78ccbcc76df3c32004d18084d885c7cbe3618bc"
 
 DESCRIPTION="MAT is library for working with multi-dimensional arrays which supports efficient interfacing to foreign and CUDA code"
 HOMEPAGE="https://github.com/melisgl/mgl-mat"
