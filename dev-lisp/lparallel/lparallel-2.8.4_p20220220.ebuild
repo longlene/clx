@@ -2,11 +2,13 @@
 
 EAPI=7
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="a9db7a764e142ebd2a5bb8c31090855cc13acff2"
 
 DESCRIPTION="Parallelism for Common Lisp"
 HOMEPAGE="https://github.com/lmj/lparallel"
-SRC_URI="https://github.com/lmj/lparallel/archive/lparallel-${PV}.tar.gz"
+SRC_URI="https://github.com/sharplispers/lparallel/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
