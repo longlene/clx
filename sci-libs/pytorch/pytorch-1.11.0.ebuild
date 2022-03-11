@@ -11,12 +11,14 @@ DESCRIPTION="Tensors and Dynamic neural networks in Python with strong GPU accel
 HOMEPAGE="https://pytorch.org/"
 SRC_URI="https://github.com/pytorch/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 https://github.com/google/benchmark/archive/e991355c02b93fe17713efe04cbc2e278e00fdbd.tar.gz -> benchmark-e991355c02b93fe17713efe04cbc2e278e00fdbd.tar.gz
-https://github.com/pytorch/cpuinfo/archive/63b25457.tar.gz -> cpuinfo-63b25457.tar.gz
+https://github.com/driazati/breakpad/archive/edbb99f95c75be27d038fffb1d969cdacf705db2.tar.gz -> breakpad-edbb99f95c75be27d038fffb1d969cdacf705db2.tar.gz
+https://github.com/pytorch/cpuinfo/archive/ed8b86a2.tar.gz -> cpuinfo-ed8b86a2.tar.gz
 https://github.com/NVlabs/cub/archive/d106ddb991a56c3df1b6d51b2409e36ba8181ce4.tar.gz -> cub-d106ddb991a56c3df1b6d51b2409e36ba8181ce4.tar.gz
-https://github.com/pytorch/fbgemm/archive/7794b2950b35ddfa7426091e7fb2f991b1407557.tar.gz -> fbgemm-7794b2950b35ddfa7426091e7fb2f991b1407557.tar.gz
+https://github.com/pytorch/fbgemm/archive/1280f817bf89153ed51642ff47b22955228f0050.tar.gz -> fbgemm-1280f817bf89153ed51642ff47b22955228f0050.tar.gz
+https://github.com/google/flatbuffers/archive/d0cede9c90c5257537c293517a21376408b549fa.tar.gz -> flatbuffers-d0cede9c90c5257537c293517a21376408b549fa.tar.gz
 https://github.com/asmjit/asmjit/archive/8b35b4cf.tar.gz -> asmjit-8b35b4cf.tar.gz
 https://github.com/pytorch/cpuinfo/archive/5916273f79a21551890fd3d56fc5375a78d1598d.tar.gz -> cpuinfo-5916273f79a21551890fd3d56fc5375a78d1598d.tar.gz
-https://github.com/google/googletest/archive/0fc5466d.tar.gz -> googletest-0fc5466d.tar.gz
+https://github.com/google/googletest/archive/cbf019de.tar.gz -> googletest-cbf019de.tar.gz
 https://github.com/fmtlib/fmt/archive/cd4af11efc9c622896a3e4cb599fa28668ca3d05.tar.gz -> fmt-cd4af11efc9c622896a3e4cb599fa28668ca3d05.tar.gz
 https://github.com/houseroad/foxi/archive/c278588e34e535f0bb8f00df3880d26928038cad.tar.gz -> foxi-c278588e34e535f0bb8f00df3880d26928038cad.tar.gz
 https://github.com/Maratyszcza/FP16/archive/4dfe081cf6bcd15db339cf2680b9281b8451eeb3.tar.gz -> FP16-4dfe081cf6bcd15db339cf2680b9281b8451eeb3.tar.gz
@@ -24,13 +26,15 @@ https://github.com/Maratyszcza/FXdiv/archive/b408327ac2a15ec3e43352421954f5b1967
 https://github.com/google/gemmlowp/archive/3fb5c176.tar.gz -> gemmlowp-3fb5c176.tar.gz
 https://github.com/facebookincubator/gloo/archive/c22a5cfba94edf8ea4f53a174d38aa0c629d070f.tar.gz -> gloo-c22a5cfba94edf8ea4f53a174d38aa0c629d070f.tar.gz
 https://github.com/google/googletest/archive/e2239ee6043f73722e7aa812a459f54a28552929.tar.gz -> googletest-e2239ee6043f73722e7aa812a459f54a28552929.tar.gz
-https://github.com/intel/ideep/archive/9ca27bbfd88fa1469cbf0467bd6f14cd1738fa40.tar.gz -> ideep-9ca27bbfd88fa1469cbf0467bd6f14cd1738fa40.tar.gz
+https://github.com/intel/ideep/archive/4a56ab2c3f61c44e0f8ea241beeb732b7d70dc5b.tar.gz -> ideep-4a56ab2c3f61c44e0f8ea241beeb732b7d70dc5b.tar.gz
 https://github.com/intel/mkl-dnn/archive/5ef631a0.tar.gz -> mkl-dnn-5ef631a0.tar.gz
 cuda? ( https://github.com/NVIDIA/nccl/archive/033d7995.tar.gz -> nccl-033d7995.tar.gz )
+https://github.com/kaiostech/linux-syscall-support/archive/e1e7b0ad.tar.gz -> linux-syscall-support-e1e7b0ad.tar.gz
 https://github.com/Maratyszcza/NNPACK/archive/c07e3a0400713d546e0dea2d5466dd22ea389c73.tar.gz -> NNPACK-c07e3a0400713d546e0dea2d5466dd22ea389c73.tar.gz
 https://github.com/onnx/onnx/archive/765f5ee8.tar.gz -> onnx-765f5ee8.tar.gz
 https://github.com/onnx/onnx-tensorrt/archive/c153211418a7c57ce071d9ce2a41f8d1c85a878f.tar.gz -> onnx-tensorrt-c153211418a7c57ce071d9ce2a41f8d1c85a878f.tar.gz
-https://github.com/onnx/onnx/archive/54c38e6eaf557b844e70cebc00f39ced3321e9ad.tar.gz -> onnx-54c38e6eaf557b844e70cebc00f39ced3321e9ad.tar.gz
+https://github.com/mreineck/pocketfft/archive/ea778e37710c07723435b1be58235996d1d43a5a.tar.gz -> pocketfft-ea778e37710c07723435b1be58235996d1d43a5a.tar.gz
+https://github.com/onnx/onnx/archive/85546f8c44e627f8ff1181725d03cc49f675e44f.tar.gz -> onnx-85546f8c44e627f8ff1181725d03cc49f675e44f.tar.gz
 https://github.com/google/benchmark/archive/e776aa02.tar.gz -> benchmark-e776aa02.tar.gz
 https://github.com/google/benchmark/archive/5b7683f4.tar.gz -> benchmark-5b7683f4.tar.gz
 https://github.com/google/googletest/archive/5ec7f0c4.tar.gz -> googletest-5ec7f0c4.tar.gz
@@ -39,12 +43,12 @@ https://github.com/Maratyszcza/pthreadpool/archive/a134dd5d4cee80cce15db81a72e7f
 https://github.com/Maratyszcza/PeachPy/archive/07d8fde8ac45d7705129475c0f94ed8925b93473.tar.gz -> PeachPy-07d8fde8ac45d7705129475c0f94ed8925b93473.tar.gz
 https://github.com/pytorch/QNNPACK/archive/7d2a4e9931a82adc3814275b6219a03e24e36b4c.tar.gz -> QNNPACK-7d2a4e9931a82adc3814275b6219a03e24e36b4c.tar.gz
 https://github.com/shibatch/sleef/archive/e0a003ee838b75d11763aa9c3ef17bf71a725bff.tar.gz -> sleef-e0a003ee838b75d11763aa9c3ef17bf71a725bff.tar.gz
-https://github.com/pytorch/tensorpipe/archive/c0e7623adb05f36311c7cde6dac8fc4c290419d9.tar.gz -> tensorpipe-c0e7623adb05f36311c7cde6dac8fc4c290419d9.tar.gz
+https://github.com/pytorch/tensorpipe/archive/52791a2fd214b2a9dc5759d36725909c1daa7f2e.tar.gz -> tensorpipe-52791a2fd214b2a9dc5759d36725909c1daa7f2e.tar.gz
 https://github.com/google/googletest/archive/2fe3bd99.tar.gz -> googletest-2fe3bd99.tar.gz
 https://github.com/google/libnop/archive/aa95422e.tar.gz -> libnop-aa95422e.tar.gz
-https://github.com/libuv/libuv/archive/02a9e1be.tar.gz -> libuv-02a9e1be.tar.gz
+https://github.com/libuv/libuv/archive/1dff88e5.tar.gz -> libuv-1dff88e5.tar.gz
 https://github.com/google/XNNPACK/archive/79cd5f9e18ad0925ac9a050b00ea5a36230072db.tar.gz -> XNNPACK-79cd5f9e18ad0925ac9a050b00ea5a36230072db.tar.gz
-https://github.com/pytorch/kineto/archive/a631215ac294805d5360e0ecceceb34de6557ba8.tar.gz -> kineto-a631215ac294805d5360e0ecceceb34de6557ba8.tar.gz
+https://github.com/pytorch/kineto/archive/b5bb62d25be75c381dbbd975276602f021982ef2.tar.gz -> kineto-b5bb62d25be75c381dbbd975276602f021982ef2.tar.gz
 "
 
 # git clone git@github.com:pytorch/pytorch.git && cd pytorch
@@ -125,18 +129,24 @@ src_prepare() {
 
 	rmdir third_party/benchmark || die
 	ln -sv "${WORKDIR}"/benchmark-e991355c02b93fe17713efe04cbc2e278e00fdbd third_party/benchmark || die
+	rmdir third_party/breakpad || die
+	ln -sv "${WORKDIR}"/breakpad-edbb99f95c75be27d038fffb1d969cdacf705db2 third_party/breakpad || die
+	rmdir third_party/breakpad/src/third_party/lss || die
+	ln -sv "${WORKDIR}"/linux-syscall-support-e1e7b0ad8ee99a875b272c8e33e308472e897660 third_party/breakpad/src/third_party/lss
 	rmdir third_party/cpuinfo || die
 	ln -sv "${WORKDIR}"/cpuinfo-5916273f79a21551890fd3d56fc5375a78d1598d third_party/cpuinfo || die
 	rmdir third_party/cub || die
 	ln -sv "${WORKDIR}"/cub-d106ddb991a56c3df1b6d51b2409e36ba8181ce4 third_party/cub || die
 	rmdir third_party/fbgemm || die
-	ln -sv "${WORKDIR}"/FBGEMM-7794b2950b35ddfa7426091e7fb2f991b1407557 third_party/fbgemm || die
+	ln -sv "${WORKDIR}"/FBGEMM-1280f817bf89153ed51642ff47b22955228f0050 third_party/fbgemm || die
+	rmdir third_party/flatbuffers || die
+	ln -sv "${WORKDIR}"/flatbuffers-d0cede9c90c5257537c293517a21376408b549fa third_party/flatbuffers || die
 	rmdir third_party/fbgemm/third_party/asmjit || die
 	ln -sv "${WORKDIR}"/asmjit-8b35b4cffb62ecb58a903bf91cb7537d7a672211 third_party/fbgemm/third_party/asmjit || die
 	rmdir third_party/fbgemm/third_party/cpuinfo || die
-	ln -sv "${WORKDIR}"/cpuinfo-d5e37adf1406cf899d7d9ec1d317c47506ccb970 third_party/fbgemm/third_party/cpuinfo || die
+	ln -sv "${WORKDIR}"/cpuinfo-ed8b86a253800bafdb7b25c5c399f91bff9cb1f3 third_party/fbgemm/third_party/cpuinfo || die
 	rmdir third_party/fbgemm/third_party/googletest || die
-	ln -sv "${WORKDIR}"/googletest-0fc5466dbb9e623029b1ada539717d10bd45e99e third_party/fbgemm/third_party/googletest || die
+	ln -sv "${WORKDIR}"/googletest-cbf019de22c8dd37b2108da35b2748fd702d1796 third_party/fbgemm/third_party/googletest || die
 	rmdir third_party/fmt || die
 	ln -sv "${WORKDIR}"/fmt-cd4af11efc9c622896a3e4cb599fa28668ca3d05 third_party/fmt || die
 	rmdir third_party/foxi || die
@@ -152,7 +162,7 @@ src_prepare() {
 	rmdir third_party/googletest || die
 	ln -sv "${WORKDIR}"/googletest-e2239ee6043f73722e7aa812a459f54a28552929 third_party/googletest || die
 	rmdir third_party/ideep || die
-	ln -sv "${WORKDIR}"/ideep-9ca27bbfd88fa1469cbf0467bd6f14cd1738fa40 third_party/ideep || die
+	ln -sv "${WORKDIR}"/ideep-4a56ab2c3f61c44e0f8ea241beeb732b7d70dc5b third_party/ideep || die
 	rmdir third_party/ideep/mkl-dnn || die
 	ln -sv "${WORKDIR}"/mkl-dnn-5ef631a030a6f73131c77892041042805a06064f third_party/ideep/mkl-dnn || die
 	rmdir third_party/nccl/nccl || die
@@ -160,9 +170,11 @@ src_prepare() {
 	rmdir third_party/NNPACK || die
 	ln -sv "${WORKDIR}"/NNPACK-c07e3a0400713d546e0dea2d5466dd22ea389c73 third_party/NNPACK || die
 	rmdir third_party/onnx || die
-	ln -sv "${WORKDIR}"/onnx-54c38e6eaf557b844e70cebc00f39ced3321e9ad third_party/onnx || die
+	ln -sv "${WORKDIR}"/onnx-85546f8c44e627f8ff1181725d03cc49f675e44f third_party/onnx || die
 	rmdir third_party/onnx-tensorrt || die
 	ln -sv "${WORKDIR}"/onnx-tensorrt-c153211418a7c57ce071d9ce2a41f8d1c85a878f third_party/onnx-tensorrt || die
+	rmdir third_party/pocketfft || die
+	ln -sv "${WORKDIR}"/pocketfft-ea778e37710c07723435b1be58235996d1d43a5a third_party/pocketfft || die
 	rmdir third_party/onnx-tensorrt/third_party/onnx || die
 	ln -sv "${WORKDIR}"/onnx-765f5ee823a67a866f4bd28a9860e81f3c811ce8 third_party/onnx-tensorrt/third_party/onnx || die
 	rmdir third_party/onnx/third_party/benchmark || die
@@ -178,17 +190,17 @@ src_prepare() {
 	rmdir third_party/sleef || die
 	ln -sv "${WORKDIR}"/sleef-e0a003ee838b75d11763aa9c3ef17bf71a725bff third_party/sleef || die
 	rmdir third_party/tensorpipe || die
-	ln -sv "${WORKDIR}"/tensorpipe-c0e7623adb05f36311c7cde6dac8fc4c290419d9 third_party/tensorpipe || die
+	ln -sv "${WORKDIR}"/tensorpipe-52791a2fd214b2a9dc5759d36725909c1daa7f2e third_party/tensorpipe || die
 	rmdir third_party/tensorpipe/third_party/googletest || die
 	ln -sv "${WORKDIR}"/googletest-2fe3bd994b3189899d93f1d5a881e725e046fdc2 third_party/tensorpipe/third_party/googletest || die
 	rmdir third_party/tensorpipe/third_party/libnop || die
 	ln -sv "${WORKDIR}"/libnop-aa95422ea8c409e3f078d2ee7708a5f59a8b9fa2 third_party/tensorpipe/third_party/libnop || die
 	rmdir third_party/tensorpipe/third_party/libuv || die
-	ln -sv "${WORKDIR}"/libuv-02a9e1be252b623ee032a3137c0b0c94afbe6809 third_party/tensorpipe/third_party/libuv || die
+	ln -sv "${WORKDIR}"/libuv-1dff88e5161cba5c59276d2070d2e304e4dcb242 third_party/tensorpipe/third_party/libuv || die
 	rmdir third_party/XNNPACK || die
 	ln -sv "${WORKDIR}"/XNNPACK-79cd5f9e18ad0925ac9a050b00ea5a36230072db third_party/XNNPACK || die
 	rmdir third_party/kineto || die
-	ln -sv "${WORKDIR}"/kineto-a631215ac294805d5360e0ecceceb34de6557ba8 third_party/kineto || die
+	ln -sv "${WORKDIR}"/kineto-b5bb62d25be75c381dbbd975276602f021982ef2 third_party/kineto || die
 
 	if use cuda; then
 		cd third_party/nccl/nccl || die
@@ -221,6 +233,7 @@ src_configure() {
 		-DTORCH_BUILD_VERSION=${PV}
 		-DTORCH_INSTALL_LIB_DIR=$(get_libdir)
 		-DBUILD_BINARY=$(usex tools ON OFF)
+		-DBUILD_CAFFE2=OFF
 		-DBUILD_CUSTOM_PROTOBUF=OFF
 		-DBUILD_PYTHON=$(usex python ON OFF)
 		-DBUILD_SHARED_LIBS=$(usex static OFF ON)
