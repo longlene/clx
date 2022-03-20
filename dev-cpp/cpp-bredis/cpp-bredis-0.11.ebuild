@@ -19,6 +19,6 @@ RDEPEND="${DEPEND}
 
 src_install() {
 	insinto /usr/include
-	doins -r bredis
+	doins -r include/bredis
 	dodoc README.md
 }
