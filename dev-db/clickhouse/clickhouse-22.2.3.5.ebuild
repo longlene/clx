@@ -141,8 +141,8 @@ src_unpack() {
 }
 
 src_prepare() {
-	eapply_user
-		cmake_src_prepare
+	default
+	cmake_src_prepare
 }
 src_configure() {
 	local mycmakeargs=(
@@ -150,7 +150,6 @@ src_configure() {
 			-DENABLE_RDKAFKA="$(usex kafka)"
 			-DENABLE_TESTS="$(usex test)"
 			-DUSE_STATIC_LIBRARIES="$(usex static)"
-			-DMAKE_STATIC_LIBRARIES="$(usex static)"
 			-DUSE_MYSQL="$(usex mysql)"
 			-DENABLE_CLICKHOUSE_SERVER="$(usex server)"
 			-DENABLE_CLICKHOUSE_CLIENT="$(usex client)"

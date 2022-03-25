@@ -16,3 +16,9 @@ KEYWORDS="~amd64 ~x86"
 DEPEND="dev-libs/boost"
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+src_prepare() {
+	default
+	sed -e "s#DESTINATION lib#DESTINATION $(get_libdir)#" -i CMakeLists.txt
+	cmake_src_prepare
+}
