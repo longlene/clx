@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="6d004b23af496fdb76dca06b808c19715a387437"
+EGIT_COMMIT="121a42ba0a6452d943b14d57f545c0c2167c1ebe"
 
 DESCRIPTION="Random forest in Common Lisp"
 HOMEPAGE="https://github.com/masatoi/cl-random-forest"

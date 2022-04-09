@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="bc2ca20074f4b3de6870c2f65e90b41ed4ae29ba"
+EGIT_COMMIT="8183576c7fb716ed2159248d70739b63bf6abfb7"
 
 DESCRIPTION="A Gnuplot front-end on Common lisp"
 HOMEPAGE="https://github.com/masatoi/clgplot"

@@ -5,11 +5,11 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="87fbef8a340219e853adb3a5bf44a0470da76964"
+EGIT_COMMIT="5ba334423b5e5411fd0fff59af5f0cda16f67646"
 
-DESCRIPTION="A collection of online learning algorithms for Linear classification written in pure Common Lisp"
-HOMEPAGE="https://github.com/masatoi/cl-online-learning"
-SRC_URI="https://github.com/masatoi/cl-online-learning/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="ゼロから作るDeep Learningのサンプルコード (Common Lisp版)"
+HOMEPAGE="https://github.com/masatoi/cl-zerodl"
+SRC_URI="https://github.com/masatoi/cl-zerodl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -18,13 +18,15 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-lisp/mgl-mat
 	dev-lisp/cl-libsvm-format
-	test? ( dev-lisp/prove )
+	dev-lisp/alexandria
+	test? ( dev-lisp/rove )
 "
 
 src_prepare() {
-	eapply_user
-	use test || rm -f ${PN}-test.asd t
+	default
+	use test || rm -r ${PN}-test.asd t
 	rm -r example
 }
 
