@@ -10,9 +10,9 @@ if [[ ${PV} == 9999 ]] ; then
 	EGIT_REPO_URI="https://github.com/ngtcp2/nghttp3.git"
 	inherit git-r3
 else
-	GIT_COMMIT="d741fb91b30405c50851eea89b1d6522ba230f12"
-	SRC_URI="https://github.com/ngtcp2/nghttp3/archive/${GIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-	S="${WORKDIR}/${PN}-${GIT_COMMIT}"
+	#GIT_COMMIT="d741fb91b30405c50851eea89b1d6522ba230f12"
+	SRC_URI="https://github.com/ngtcp2/nghttp3/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	#S="${WORKDIR}/${PN}-${GIT_COMMIT}"
 	KEYWORDS="~amd64 ~hppa"
 fi
 
