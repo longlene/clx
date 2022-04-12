@@ -10,7 +10,7 @@ if [[ ${PV} = *9999* ]] ; then
 	EGIT_REPO_URI="https://github.com/slyrus/opticl.git"
 else
 	inherit vcs-snapshot
-	EGIT_COMMIT="7836cb04bebbadb2311656f5e6607251859cf1b7"
+	EGIT_COMMIT="f6fc4dc5fa61ae3f2527b77e4bda99001ba37dcb"
 	SRC_URI="https://github.com/slyrus/opticl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 fi
 

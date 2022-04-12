@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="bce7f80b0c67d3c9f514556f2d14d098efecdde8"
+EGIT_COMMIT="66eb75edd0506fc1a22819a4f15546c35ac429c7"
 
 DESCRIPTION="An implementation of Python in Common Lisp"
 HOMEPAGE="http://common-lisp.net/project/clpython/"
