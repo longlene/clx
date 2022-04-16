@@ -5,8 +5,8 @@ EAPI=7
 
 inherit flag-o-matic multilib systemd
 
-DESCRIPTION="Prosody is a flexible communications server for Jabber/XMPP written in Lua"
-HOMEPAGE="https://prosody.im/"
+DESCRIPTION="Lightweight xmpp server with advanced microblogging features"
+HOMEPAGE="https://metronome.im/"
 SRC_URI="https://github.com/maranda/metronome/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
