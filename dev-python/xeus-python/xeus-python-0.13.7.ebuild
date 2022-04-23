@@ -8,7 +8,7 @@ inherit cmake python-any-r1
 
 DESCRIPTION="Jupyter kernel for the Python programming language"
 HOMEPAGE="https://github.com/jupyter-xeus/xeus-python"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/jupyter-xeus/xeus-python/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

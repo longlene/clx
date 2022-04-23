@@ -16,7 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	dev-libs/zug
+	dev-libs/boost
+"
 BDEPEND=""
 
 src_install() {

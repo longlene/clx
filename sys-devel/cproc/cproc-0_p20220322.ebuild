@@ -5,7 +5,7 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="489c853ed75f71ef435b695b2a51229d28292c7c"
+EGIT_COMMIT="cff37cf15a35cd833d33f26591d99344574a79f0"
 
 DESCRIPTION="C11 compiler"
 HOMEPAGE="https://github.com/michaelforney/cproc"

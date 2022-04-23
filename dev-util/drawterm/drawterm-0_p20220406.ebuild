@@ -5,7 +5,7 @@ EAPI=7
 
 inherit desktop eutils vcs-snapshot
 
-EGIT_COMMIT="fa5671bcef0970e0b143745d9fbac195cb7626e6"
+EGIT_COMMIT="b485166240a66e1aee0a38d80f941936a663f4f1"
 
 DESCRIPTION="Connect to Plan 9 CPU servers from other operating systems"
 HOMEPAGE="https://github.com/9fans/drawterm"

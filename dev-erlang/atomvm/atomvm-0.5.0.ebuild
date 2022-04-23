@@ -5,11 +5,9 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="dd8247e53d4d58ddb24e2efb2cfd5d5b4e127876"
-
 DESCRIPTION="Tiny Erlang VM"
 HOMEPAGE="https://github.com/bettio/AtomVM"
-SRC_URI="https://github.com/bettio/AtomVM/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/bettio/AtomVM/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -19,6 +17,8 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+CMAKE_SYSTEM_NAME=Linux
 
 src_prepare() {
 	default

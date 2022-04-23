@@ -5,11 +5,9 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="8970ce0d53a8ab55e4f27a6b73e50019a00ffb8f"
-
 DESCRIPTION="Small-Fast-Embeddable GUI library"
 HOMEPAGE="https://github.com/idea4good/GuiLite"
-SRC_URI="https://github.com/idea4good/GuiLite/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/idea4good/GuiLite/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -20,21 +18,20 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+CMAKE_USE_DIR="${S}"/workspace
+
 src_prepare() {
 	default
 	sed -e '/execute_process/d' \
-		-e '/ADD_LIBRARY/{s#STATIC#SHARED#}' \
-		-i CMakeLists.txt
+		-i workspace/CMakeLists.txt
+	cmake_src_prepare
 }
 
 src_install() {
-	dolib.so libGuiLite.so
+	dolib.a workspace/libGuiLite.a
 
-	insinto /usr/include/GuiLite/core
-	doins -r core_include/*
-
-	insinto /usr/include/GuiLite/widgets
-	doins -r widgets_include/*
+	insinto /usr/include
+	doins GuiLite.h
 
 	dodoc README*.md
 }
