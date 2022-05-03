@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="6f2044d4b1ff7e1e4cc6a93edf2757b083c6af1a"
+EGIT_COMMIT="9d095a48756d32845435794a7fb160779d5d2187"
 
 DESCRIPTION="Yet another Common Lisp game engine"
 HOMEPAGE="https://github.com/Shirakumo/trial"

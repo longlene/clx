@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="115f734e3e978222425be24362c2b8f04af00ef6"
+EGIT_COMMIT="f5df54eac79b58a34030e0eb8acf3952c788410d"
 
 DESCRIPTION="Deeds is an Extensible Event Delivery System"
 HOMEPAGE="https://github.com/Shinmera/deeds"
