@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake vcs-snapshot
+inherit cmake
 
 MY_PN=apache-${PN}
 MY_P=${MY_PN}-${PV}
@@ -34,18 +34,19 @@ CMAKE_BUILD_TYPE=Release
 CMAKE_USE_DIR="${S}"/cpp
 
 src_prepare() {
-	eapply_user
+	default
 	sed -e '/BROTLI_STATIC_LIBRARY_DEC/{s#dec#dec-static#g}' \
 		-e '/BROTLI_STATIC_LIBRARY_ENC/{s#enc#enc-static#g}' \
 		-e '/BROTLI_STATIC_LIBRARY_COMMON/{s#common#common-static#g}' \
 		-i cpp/cmake_modules/FindBrotli.cmake
+	cmake_src_prepare
 }
 
 src_configure() {
 	local mycmakeargs=(
-	-DARROW_BUILD_STATIC=OFF
-	-DARROW_BUILD_TESTS=OFF
-	-DARROW_GPU=$(usex cuda)
+		-DARROW_BUILD_STATIC=OFF
+		-DARROW_BUILD_TESTS=OFF
+		-DARROW_GPU=$(usex cuda)
 	)
 	ARROW_BUILD_TOOLCHAIN=/usr cmake_src_configure
 }
