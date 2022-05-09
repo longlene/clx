@@ -5,7 +5,7 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="025ede86a45ee1cfd4d0b7b63f8bc054444614bf"
+EGIT_COMMIT="1d77ec7adf7184a3a672307a950431ecb0aad0e0"
 
 DESCRIPTION="A small and fast programming language"
 HOMEPAGE="https://github.com/ThakeeNathees/pocketlang"
@@ -22,6 +22,6 @@ BDEPEND=""
 DOCS=( README.md )
 
 src_install() {
-	dobin build/debug/pocket
+	dobin build/Debug/bin/pocket
 	einstalldocs
 }
