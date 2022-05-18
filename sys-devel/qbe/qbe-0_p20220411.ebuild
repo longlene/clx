@@ -1,15 +1,15 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="4420727667b915042050b9bfa6eb381ce7a97ba5"
+EGIT_COMMIT="2caa26e388b1c904d2f12fb09f84df7e761d8331"
 
 DESCRIPTION="Compiler Backend"
 HOMEPAGE="https://c9x.me/compile/"
-SRC_URI="https://github.com/michaelforney/qbe/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://c9x.me/git/qbe.git/snapshot/qbe-${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
