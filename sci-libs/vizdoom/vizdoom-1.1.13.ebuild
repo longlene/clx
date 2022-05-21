@@ -3,7 +3,7 @@
 
 EAPI=7
 
-LUA_COMPAT=( lua5-1 )
+LUA_COMPAT=( lua5-3 )
 PYTHON_COMPAT=( python3_8 )
 
 inherit cmake lua vcs-snapshot
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+lua"
 
 DEPEND="
-	dev-libs/boost[threads]
+	dev-libs/boost
 	lua? (
 		sci-libs/torch7
 		sci-libs/torch-image
