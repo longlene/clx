@@ -1,0 +1,84 @@
+diff --git a/tools/create_entry_points.py b/tools/create_entry_points.py
+index 7991155..1317986 100755
+--- a/tools/create_entry_points.py
++++ b/tools/create_entry_points.py
+@@ -69,7 +69,7 @@ def main():
+     for entry_point in cmd:
+       sh_data = sh_file
+       bat_data = bat_file
+-      if entry_point in entry_remap:
++      if False and entry_point in entry_remap:
+         sh_data = sh_data.replace('$0', '$(dirname $0)/' + entry_remap[entry_point])
+         bat_data = bat_data.replace('%~n0', entry_remap[entry_point].replace('/', '\\'))
+ 
+@@ -78,8 +78,9 @@ def main():
+-        f.write(sh_data)
++        f.write(sh_data.replace('GENTOO_EMSCRIPTEN_SCRIPT', entry_point))
+       os.chmod(out_sh_file, stat.S_IMODE(os.stat(out_sh_file).st_mode) | stat.S_IXUSR)
+ 
+-      with open(os.path.join(root_dir, entry_point + '.bat'), 'w') as f:
+-        f.write(bat_data)
++      if not entry_point.startswith('tools') and not entry_point.startswith('tests'):
++        with open(os.path.join(os.environ['ED'], 'usr/bin', entry_point), 'w') as f:
++          f.write(sh_data.replace('GENTOO_EMSCRIPTEN_SCRIPT', entry_point))
+ 
+   generate_entry_points(entry_points, os.path.join(tools_dir, 'run_python'))
+   generate_entry_points(compiler_entry_points, os.path.join(tools_dir, 'run_python_compiler'))
+diff --git a/tools/run_python.sh b/tools/run_python.sh
+index 8464d36..3db7c5f 100755
+--- a/tools/run_python.sh
++++ b/tools/run_python.sh
+@@ -11,21 +11,4 @@
+ # To make modifications to this file, edit `tools/run_python.sh` and then run
+ # `tools/create_entry_points.py`
+ 
+-if [ -z "$PYTHON" ]; then
+-  PYTHON=$EMSDK_PYTHON
+-fi
+-
+-if [ -z "$PYTHON" ]; then
+-  PYTHON=$(command -v python3 2> /dev/null)
+-fi
+-
+-if [ -z "$PYTHON" ]; then
+-  PYTHON=$(command -v python 2> /dev/null)
+-fi
+-
+-if [ -z "$PYTHON" ]; then
+-  echo 'unable to find python in $PATH'
+-  exit 1
+-fi
+-
+-exec "$PYTHON" "$0.py" "$@"
++exec GENTOO_PYTHON "GENTOO_PREFIX/usr/GENTOO_LIB/emscripten/GENTOO_EMSCRIPTEN_SCRIPT.py" "$@"
+diff --git a/tools/run_python_compiler.sh b/tools/run_python_compiler.sh
+index 0085101..e94015c 100644
+--- a/tools/run_python_compiler.sh
++++ b/tools/run_python_compiler.sh
+@@ -11,25 +11,8 @@
+ # To make modifications to this file, edit `tools/run_python_compiler.sh` and
+ # then run `tools/create_entry_points.py`
+ 
+-if [ -z "$PYTHON" ]; then
+-  PYTHON=$EMSDK_PYTHON
+-fi
+-
+-if [ -z "$PYTHON" ]; then
+-  PYTHON=$(command -v python3 2> /dev/null)
+-fi
+-
+-if [ -z "$PYTHON" ]; then
+-  PYTHON=$(command -v python 2> /dev/null)
+-fi
+-
+-if [ -z "$PYTHON" ]; then
+-  echo 'unable to find python in $PATH'
+-  exit 1
+-fi
+-
+ if [ -z "$_EMCC_CCACHE" ]; then
+-  exec "$PYTHON" "$0.py" "$@"
++  exec GENTOO_PYTHON "GENTOO_PREFIX/usr/GENTOO_LIB/emscripten/GENTOO_EMSCRIPTEN_SCRIPT.py" "$@"
+ else
+   unset _EMCC_CCACHE
+   exec ccache "$0" "$@"
