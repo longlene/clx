@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="de0d2e7d9af67b4a31f9dda5da2f3fbb0cb1099b"
+EGIT_COMMIT="5c1af30c30fe99365866194572f8e6f9dc2ab1ea"
 
 DESCRIPTION="A plotting system for Common Lisp"
 HOMEPAGE="https://github.com/Lisp-Stat/plot"
@@ -19,13 +19,8 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/lass
 	dev-lisp/cl-who
+	dev-lisp/clppcre
 	dev-lisp/alexandria
-	dev-lisp/select
-	dev-lisp/iterate
-	dev-lisp/cl-spark
-	dev-lisp/yason
-	dev-lisp/let-plus
-	dev-lisp/dfio
 "
 BDEPEND=""
 
