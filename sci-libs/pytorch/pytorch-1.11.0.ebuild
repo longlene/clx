@@ -111,7 +111,6 @@ DEPEND="${RDEPEND}
 	app-arch/zstd
 	dev-python/pybind11[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
-	sys-fabric/libibverbs
 	sys-process/numactl
 "
 
