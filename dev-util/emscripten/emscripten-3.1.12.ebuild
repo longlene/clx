@@ -18,7 +18,7 @@ RESTRICT="network-sandbox test"
 MY_LLVM_VERSION=13
 
 RDEPEND="
-	>=dev-util/binaryen-101
+	dev-util/binaryen
 	net-libs/nodejs
 	sys-devel/clang:${MY_LLVM_VERSION}[llvm_targets_WebAssembly]
 	>=sys-devel/lld-${MY_LLVM_VERSION}
