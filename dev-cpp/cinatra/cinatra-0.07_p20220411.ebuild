@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="2ad8d03a2317ae7509113c417ffb2a052c58564d"
+EGIT_COMMIT="573f80cd56bc98fadb6fa7088600af01d353deda"
 
 DESCRIPTION="modern c++, cross-platform, header-only, easy to use http framework"
 HOMEPAGE="https://github.com/qicosmos/cinatra"
