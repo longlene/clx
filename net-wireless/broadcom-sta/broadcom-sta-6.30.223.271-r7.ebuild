@@ -36,6 +36,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-6.30.223.271-r5-linux-5.6.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r6-linux-5.9.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r6-linux-5.17.patch"
+	"${FILESDIR}/${PN}-6.30.223.271-r7-linux-5.18.patch"
 )
 
 MODULE_NAMES="wl(net/wireless)"
