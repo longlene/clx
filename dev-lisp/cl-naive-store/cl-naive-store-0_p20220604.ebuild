@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ba78faf7ac4e6e2af5e4589b718bacf289bd6759"
+EGIT_COMMIT="8a02b8d698468c4f9523d322b1d2c136f7c9fd99"
 
 DESCRIPTION="A naive persisted, in memory, indexed, document store for Common Lisp"
 HOMEPAGE="https://gitlab.com/Harag/cl-naive-store"

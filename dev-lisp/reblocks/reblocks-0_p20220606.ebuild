@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="09a3a4a38846fd00dcd9bf2d637c6280abcb4dd2"
+EGIT_COMMIT="c760ab5ea98051cbd6ee79b0d2b9d305431cdd0c"
 
 DESCRIPTION="Reblocks Common Lisp web framework "
 HOMEPAGE="https://github.com/40ants/reblocks"
