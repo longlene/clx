@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="19c9d33f576e10715fd79cc1d4f688dab0f241d6"
+EGIT_COMMIT="91941fb24bffa116ce0271c2184988c33fbedf19"
 
 DESCRIPTION="Closer to MOP is a Common Lisp Metaobject Protocol compatibility layer."
 HOMEPAGE="http://common-lisp.net/project/closer/closer-mop.html"

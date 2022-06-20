@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2369ca893355db0e123e6ef50dd25624265939e1"
+EGIT_COMMIT="2460e9a71dd9d39bacd3a51f02414071e6f76b61"
 
 DESCRIPTION="Elegant code generation for high-performance computing"
 HOMEPAGE="https://github.com/marcoheisig/Petalisp"

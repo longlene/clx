@@ -3,10 +3,10 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python2_7 )
-PYTHON_REQ_USE="threads"
-
-inherit llvm python-single-r1 vcs-snapshot waf-utils toolchain-funcs
+PYTHON_COMPAT=( python3_9 )
+PYTHON_REQ_USE="threads(+)"
+#inherit llvm vcs-snapshot toolchain-funcs
+inherit python-any-r1 waf-utils
 
 DESCRIPTION=""
 HOMEPAGE=""
@@ -23,15 +23,15 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-LLVM_MAX_SLOT=6
-
-LLVM_BIN_DIR=${EPREFIX}/usr/lib/llvm/${LLVM_MAX_SLOT}/bin
-
-CXX=${LLVM_BIN_DIR}/clang++
-CC=${LLVM_BIN_DIR}/clang
+#LLVM_MAX_SLOT=6
+#
+#LLVM_BIN_DIR=${EPREFIX}/usr/lib/llvm/${LLVM_MAX_SLOT}/bin
+#
+#CXX=${LLVM_BIN_DIR}/clang++
+#CC=${LLVM_BIN_DIR}/clang
 
 pkg_setup() {
-	llvm_pkg_setup
-	python-single-r1_pkg_setup
+#	llvm_pkg_setup
+	python-any-r1_pkg_setup
 }
 

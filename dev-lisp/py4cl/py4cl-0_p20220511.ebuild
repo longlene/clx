@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c938bf0bffd015f83832e10599a337d2c37359d5"
+EGIT_COMMIT="b019b0c20b40fb65d295c9d0545674454c99c5da"
 
 DESCRIPTION="Call python from Common Lisp"
 HOMEPAGE="https://github.com/bendudson/py4cl/"
