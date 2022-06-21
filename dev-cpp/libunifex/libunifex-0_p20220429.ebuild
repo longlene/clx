@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="797690d386dbf36f169a5c77a29f7e600fb45417"
+EGIT_COMMIT="c359fd8e7d97d91359cf4a6c1dbef99b0b1767b6"
 
 DESCRIPTION="Unified Executors"
 HOMEPAGE="https://github.com/facebookexperimental/libunifex"

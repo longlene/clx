@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="68537a6517f5ded86137840aa60d2fced859459f"
+EGIT_COMMIT="2c57a6e64c41fed702483b7d24e6634bc2698851"
 
 DESCRIPTION="Read XLSX files with Common Lisp"
 HOMEPAGE="https://github.com/a1b10/cl-xlsx"
@@ -21,5 +21,9 @@ RDEPEND="${DEPEND}
 	dev-lisp/cxml
 	dev-lisp/zip
 	dev-lisp/babel
+	dev-lisp/xpath
+	dev-lisp/fxml
+	dev-lisp/parse-number
+	dev-lisp/local-time
 "
 BDEPEND=""
