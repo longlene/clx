@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7f2f8ef0feefe4f6889fe12ae18b6da6123546d7"
+EGIT_COMMIT="7fa8642956d75281ace2722956a3040c235a2cfc"
 
 DESCRIPTION="An implementation of the Language Server Protocol for Common Lisp"
 HOMEPAGE="https://github.com/cxxxr/cl-lsp"

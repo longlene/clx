@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="046d698cf65539faf9aba0a5ccd086a9d6f53eef"
+EGIT_COMMIT="c0d59ae2cd42a458101f6ad2ee3bf3bd91a22eef"
 
 DESCRIPTION="A simple Common Lisp interface to OpenSSL."
 HOMEPAGE="http://common-lisp.net/project/cl-plus-ssl/"

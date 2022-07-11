@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="58e8421debc019314fb69b36b72a7788fe2e5928"
+EGIT_COMMIT="181a838bc92d9fe224219bdd7e833f13159d5f95"
 
 DESCRIPTION="A fast non-blocking HTTP server on top of libev"
 HOMEPAGE="https://github.com/fukamachi/woo/"

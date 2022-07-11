@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5ce553b8764b26a23b0052272a255f35f93776fa"
+EGIT_COMMIT="2ab460316752ac1c5359e90cf40edab308eb5ecb"
 
 DESCRIPTION="A general, modular build system"
 HOMEPAGE="https://github.com/Shinmera/forge"

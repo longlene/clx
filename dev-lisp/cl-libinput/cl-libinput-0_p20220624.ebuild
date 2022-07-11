@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="fdc6b88c3619491bf10ba476837ef8f8692352b2"
+EGIT_COMMIT="098e0dd615118dc030a8220ce7d4fd4970457c52"
 
 DESCRIPTION="Common Lisp wrapper for libinput"
 HOMEPAGE="https://github.com/malcolmstill/cl-libinput"
@@ -20,4 +20,5 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-libs/libinput
+	dev-lisp/osicat
 "

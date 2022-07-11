@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake flag-o-matic vcs-snapshot
 
-EGIT_COMMIT="16ef0d53f2f776d28ea5021c7c0bfd8133d01e17"
+EGIT_COMMIT="1dc616a5220187dd331048fd209157a9a9af3a7a"
 
 DESCRIPTION="High performance server-side application framework"
 HOMEPAGE="http://seastar.io/"
@@ -27,6 +27,7 @@ DEPEND="
 	net-misc/lksctp-tools
 	dev-util/valgrind
 	dev-util/systemtap
+	sys-libs/liburing
 	dpdk? ( net-libs/dpdk )
 	hwloc? ( sys-apps/hwloc )
 	numa? ( sys-process/numactl )
@@ -37,7 +38,6 @@ BDEPEND=""
 src_configure() {
 	append-cxxflags "-fcoroutines"
 	local mycmakeargs=(
-		-DSeastar_CXX_DIALECT=c++20
 		-DSeastar_CXX_FLAGS="-fPIC"
 		-DSeastar_APPS=OFF
 		-DSeastar_DEMOS=OFF

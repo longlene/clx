@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="24c0217e7c0d25b6ef6ab799452cba0b9fb58f44"
+EGIT_COMMIT="baeeaddf1447015863d708f840ef9dfc5ff5b7a2"
 
 DESCRIPTION="Optimized low-level websocket protocol parser written in Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/fast-websocket"

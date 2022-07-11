@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="956321b2852d58ba71c6fe621f5c2924178e9f88"
+EGIT_COMMIT="26a7faadc981f2a047daa36f715a44faec5dd00c"
 
 DESCRIPTION="Configuration switcher by an environment variable inspired by Config::ENV"
 HOMEPAGE="https://github.com/fukamachi/envy"
