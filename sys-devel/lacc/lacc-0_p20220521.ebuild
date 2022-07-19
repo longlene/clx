@@ -5,7 +5,7 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="59d77424ee268344e5e79dc198f7ca3963296dfc"
+EGIT_COMMIT="30839843daaff9d87574b5854854c9ee4610cdcd"
 
 DESCRIPTION="A simple, self-hosting C compiler"
 HOMEPAGE="https://github.com/larmel/lacc"
