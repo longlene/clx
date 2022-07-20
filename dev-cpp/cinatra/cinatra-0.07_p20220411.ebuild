@@ -17,6 +17,6 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
 DEPEND="
-	|| ( dev-libs/boost[context,threads] dev-libs/asio )
+	|| ( dev-libs/boost[context] dev-libs/asio )
 "
 RDEPEND="${DEPEND}"
