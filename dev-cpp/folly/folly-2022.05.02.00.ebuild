@@ -18,7 +18,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-cpp/gflags
 	dev-cpp/glog
-	dev-libs/boost[context,threads]
+	dev-libs/boost[context]
 	dev-libs/libevent
 	dev-libs/openssl
 	dev-libs/libfmt

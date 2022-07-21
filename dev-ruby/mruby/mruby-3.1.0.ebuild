@@ -5,7 +5,7 @@ EAPI=7
 
 inherit multilib savedconfig
 
-DESCRIPTION="mruby is the lightweight implementation of the Ruby language complying to (part of) the ISO standard."
+DESCRIPTION="mruby is the lightweight implementation of the Ruby language complying to (part of) the ISO standard"
 HOMEPAGE="https://github.com/mruby/mruby"
 SRC_URI="https://github.com/mruby/mruby/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
