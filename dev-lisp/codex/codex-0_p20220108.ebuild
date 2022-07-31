@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="bc1c1d17e1df5e7d6ecc759256b9d396008824bc"
 
 DESCRIPTION="A documentation system for Common Lisp"
 HOMEPAGE="http://commondoc.github.io/codex/"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/CommonDoc/codex.git"
+SRC_URI="https://github.com/shamazmazum/codex/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -35,7 +34,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -rf ${PN}-test.asd t
 }
 
