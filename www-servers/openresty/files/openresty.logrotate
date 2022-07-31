@@ -1,0 +1,11 @@
+# Copyright 1999-2014 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+/var/log/openresty/*_log {
+	missingok
+	delaycompress
+	sharedscripts
+	postrotate
+		test -r /run/openresty.pid && kill -USR1 `cat /run/openresty.pid`
+	endscript
+}

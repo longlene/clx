@@ -6,7 +6,7 @@ EAPI=7
 
 DESCRIPTION="C++ library for parsing and serializing JSON text"
 HOMEPAGE="http://danielaparker.github.io/jsoncons"
-SRC_URI="https://github.com/danielaparker/jsoncons/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/danielaparker/jsoncons/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Boost-1.0"
 SLOT="0"
