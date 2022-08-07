@@ -6,7 +6,7 @@ EAPI=7
 #VIM_PLUGIN_VIM_VERSION="7.0"
 inherit vcs-snapshot vim-plugin
 
-EGIT_COMMIT="7c2ae8a714a71956297cb291dbaefb6a0ce47da3"
+EGIT_COMMIT="63af6e72dd3fa840bffb3ebcb8c96970c02e0913"
 
 DESCRIPTION="vim plugin: Personal Wiki for Vim"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=2332"
