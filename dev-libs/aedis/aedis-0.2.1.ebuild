@@ -9,7 +9,7 @@ DESCRIPTION="An async redis client designed for simplicity and reliability"
 HOMEPAGE="https://github.com/mzimbres/aedis"
 SRC_URI="https://github.com/mzimbres/aedis/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="MPL-2.0"
+LICENSE="BSL-1.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
