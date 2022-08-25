@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="622910e37fbbfa957fbf3c8fa2d5f19c64753af6"
+EGIT_COMMIT="234e78c52a057e273dea0bffc94e3c04f4bec2c8"
 
 DESCRIPTION="Security for Clack-based Common Lisp web applications"
 HOMEPAGE="https://github.com/eudoxia0/hermetic"
