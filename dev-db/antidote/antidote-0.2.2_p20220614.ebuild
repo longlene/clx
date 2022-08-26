@@ -5,7 +5,7 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="a9b4ddc146ad9d7dd61fb2b4c7cc86ad9ac22976"
+EGIT_COMMIT="251920a445c2ab17f45c10cae5c4bf9aa3da3b69"
 
 DESCRIPTION="A planet scale, highly available, transactional database"
 HOMEPAGE="https://www.antidotedb.eu"
