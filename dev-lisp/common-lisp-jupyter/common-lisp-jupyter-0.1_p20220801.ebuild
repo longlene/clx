@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c5531f60da0ec288a187a55ba699e38548233819"
+EGIT_COMMIT="c69f3047c22492937702b953b39ff63143e1e1e0"
 
 DESCRIPTION="A Common Lisp kernel for Jupyter"
 HOMEPAGE="https://github.com/yitzchak/common-lisp-jupyter/"
@@ -26,6 +26,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/dissect
 	dev-lisp/eclector
+	dev-lisp/ironclad
 	dev-lisp/multilang-documentation
 	dev-lisp/pzmq
 	dev-lisp/puri
@@ -34,6 +35,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-garbage
 	dev-lisp/trivial-gray-streams
 	dev-lisp/trivial-mimes
+	dev-lisp/trivial-features
 	dev-lisp/shasht
 	dev-python/jupyter
 "

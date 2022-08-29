@@ -3,11 +3,11 @@
 
 EAPI=7
 
-EGIT_COMMIT="ecfb925f017379c555d53cd3fe1e82b1ee02df75"
+EGIT_COMMIT="7059b2548512b1ff238cb1fb732932b224e96cea"
 
 DESCRIPTION="A simple web system framework"
-HOMEPAGE="https://gitlab.com/Harag/cl-wfx"
-SRC_URI="https://gitlab.com/Harag/cl-wfx/repository/archive.tar.gz?ref=${EGIT_COMMIT} -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/lisp-mirror/cl-wfx"
+SRC_URI="https://github.com/lisp-mirror/cl-wfx/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

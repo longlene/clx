@@ -5,11 +5,11 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3670c75691801867cc58680d135ef4ba930a6319"
+EGIT_COMMIT="84e95d635a5196bac0e4db3f0f4426c867eb59f1"
 
 DESCRIPTION="Parsing, AST and \"walking\" for Common Lisp code"
 HOMEPAGE="https://sourceforge.net/projects/clast/"
-SRC_URI="https://sourceforge.net/code-snapshots/git/c/cl/clast/code.git/clast-code-${EGIT_COMMIT}.zip -> ${P}.zip"
+SRC_URI="https://github.com/lisp-mirror/clast/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -19,4 +19,9 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}"/clast-code-${EGIT_COMMIT}
+src_prepare() {
+	default
+	sed -e '/defsystem :clast\/tests/,$d' \
+		-i ${PN}.asd
+	rm -rf tests
+}
