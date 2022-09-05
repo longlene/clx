@@ -1,9 +1,11 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit lua
+LUA_COMPAT=( luajit )
+
+inherit lua vcs-snapshot
 
 DESCRIPTION="A simple LRU cache for OpenResty and the ngx_lua module (based on LuaJIT FFI)"
 HOMEPAGE="https://github.com/openresty/lua-resty-lrucache"
@@ -14,15 +16,23 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+REQUIRED_USE="${LUA_REQUIRED_USE}"
 RDEPEND="
+	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
 "
 DEPEND="
 	${RDEPEND}
 "
 
-DOCS=(README.markdown)
+DOCS=( README.markdown )
 
 each_lua_install() {
-	dolua_jit lib/resty
+	insinto "$(lua_get_lmod_dir)"
+	doins -r lib/resty
+}
+
+src_install() {
+	lua_foreach_impl each_lua_install
+	einstalldocs
 }

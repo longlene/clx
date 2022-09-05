@@ -3,7 +3,9 @@
 
 EAPI=7
 
-inherit lua
+LUA_COMPAT=( luajit )
+
+inherit lua vcs-snapshot
 
 DESCRIPTION="Health Checker for Nginx Upstream Servers in Pure Lua"
 HOMEPAGE="https://github.com/openresty/lua-resty-upstream-healthcheck"
@@ -24,5 +26,12 @@ DEPEND="
 DOCS=(README.markdown)
 
 each_lua_install() {
-	dolua lib/resty
+	insinto "$(lua_get_lmod_dir)"
+	doins -r lib/resty
 }
+
+src_install() {
+	lua_foreach_impl each_lua_install
+	einstalldocs
+}
+

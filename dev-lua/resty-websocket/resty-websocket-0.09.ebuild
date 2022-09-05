@@ -1,9 +1,11 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit lua
+LUA_COMPAT=( luajit )
+
+inherit lua vcs-snapshot
 
 DESCRIPTION="Lua WebSocket implementation for the NginX lua module"
 HOMEPAGE="https://github.com/openresty/lua-resty-websocket"
@@ -15,6 +17,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="
+	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
 "
 DEPEND="
@@ -24,5 +27,11 @@ DEPEND="
 DOCS=(README.markdown)
 
 each_lua_install() {
-	dolua lib/resty
+	insinto "$(lua_get_lmod_dir)"
+	doins -r lib/resty
+}
+
+src_install() {
+	lua_foreach_impl each_lua_install
+	einstalldocs
 }

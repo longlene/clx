@@ -3,9 +3,9 @@
 
 EAPI=7
 
-LUA_COMPAT="luajit2"
+LUA_COMPAT=( luajit )
 
-inherit lua
+inherit lua vcs-snapshot
 
 DESCRIPTION="New LuaJIT FFI based API for lua-nginx-module"
 HOMEPAGE="https://github.com/openresty/lua-resty-core"
@@ -16,17 +16,30 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+REQUIRED_USE="${LUA_REUIRED_USE}"
 RDEPEND="
-	virtual/lua[luajit]
+	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
-	dev-lua/resty-lrucache
+	dev-lua/resty-lrucache[${LUA_USEDEP}]
 "
 DEPEND="
 	${RDEPEND}
 "
 
-DOCS=(README.markdown)
+DOCS=( docs/. )
 
-each_lua_install() {
-	dolua_jit lib/resty
+src_prepare() {
+	default
+	mkdir docs
+	find . -type f -name '*.md' -exec mv -t docs {} ';'
+}
+
+lua_src_install() {
+	insinto $(lua_get_lmod_dir)
+	doins -r lib/resty lib/ngx
+}
+
+src_install() {
+	einstalldocs
+	lua_foreach_impl lua_src_install
 }

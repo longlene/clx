@@ -1,9 +1,9 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit lua
+inherit lua vcs-snapshot
 
 DESCRIPTION="Library for parsing HTTP Cookie header for Nginx"
 HOMEPAGE="https://github.com/cloudflare/lua-resty-cookie"

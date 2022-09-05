@@ -3,7 +3,9 @@
 
 EAPI=7
 
-inherit lua
+LUA_COMPAT=( luajit )
+
+inherit lua vcs-snapshot
 
 DESCRIPTION="String utilities and common hash functions for ngx_lua and LuaJIT"
 HOMEPAGE="https://github.com/openresty/lua-resty-string"
@@ -14,22 +16,30 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="native-random"
 
+REQUIRED_USE="${LUA_REQUIRED_USE}"
 RDEPEND="
+	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua,ssl]
 	dev-libs/openssl:0
+	!native-random? ( dev-lua/resty-random[${LUA_USEDEP}] )
 "
 DEPEND="
 	${RDEPEND}
 "
-PDEPEND="!native-random? ( dev-lua/resty-random )"
 
 DOCS=(README.markdown)
 
-all_lua_prepare() {
+src_prepare() {
+	default
 	use native-random || rm lib/resty/random.lua
-	lua_default
 }
 
 each_lua_install() {
-	dolua_jit lib/resty
+	insinto "$(lua_get_lmod_dir)"
+	doins -r lib/resty
+}
+
+src_install() {
+	lua_foreach_impl each_lua_install
+	einstalldocs
 }

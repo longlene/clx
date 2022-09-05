@@ -1,9 +1,11 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit lua
+LUA_COMPAT=( luajit )
+
+inherit lua vcs-snapshot
 
 DESCRIPTION="Session library for OpenResty implementing Secure Cookie Protocol"
 HOMEPAGE="https://github.com/bungle/lua-resty-session"
@@ -14,17 +16,30 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
+REQUIRED_USE="${LUA_REQUIRED_USE}"
+
 RDEPEND="
+	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
-	dev-lua/lua-cjson
-	dev-lua/resty-string
+	dev-lua/lua-cjson[${LUA_USEDEP}]
+	dev-lua/resty-string[${LUA_USEDEP}]
 "
 DEPEND="
 	${RDEPEND}
 "
 
-DOCS=(README.md)
+DOCS=( README.md )
+
+src_compile() {
+	:
+}
 
 each_lua_install() {
-	dolua_jit lib/resty
+	insinto "$(lua_get_lmod_dir)"
+	doins -r lib/resty
+}
+
+src_install() {
+	lua_foreach_impl each_lua_install
+	einstalldocs
 }
