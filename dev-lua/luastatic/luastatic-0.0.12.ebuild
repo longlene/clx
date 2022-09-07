@@ -3,6 +3,10 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-{1..4} )
+
+inherit lua-single
+
 DESCRIPTION="Build a standalone executable from a Lua program"
 HOMEPAGE="https://github.com/ers35/luastatic"
 SRC_URI="https://github.com/ers35/luastatic/archive/${PV}.tar.gz -> ${P}.tar.gz"
@@ -15,7 +19,17 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
+DOCS=( readme.md )
+
+src_compile() {
+	emake LUA=${ELUA} LIBLUA_A=$(lua_get_LIBS)
+}
+
+src_test() {
+	emake run_test LUA=${ELUA} LIBLUA_A=$(lua_get_LIBS)
+}
+
 src_install() {
-	newbin luastatic.lua luastatic
-	dodoc readme.md
+	dobin luastatic
+	einstalldocs
 }

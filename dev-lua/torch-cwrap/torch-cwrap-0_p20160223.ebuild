@@ -27,12 +27,6 @@ BDEPEND="virtual/pkgconfig"
 src_configure() {
 	local mycmakeargs=(
 		"-DLUADIR=$(lua_get_lmod_dir)"
-		"-DLIBDIR=$(lua_get_cmod_dir)"
-		"-DLUA_BINDIR=/usr/bin"
-		"-DLUA_INCDIR=/usr/include"
-		"-DLUA_LIBDIR=/usr/$(get_libdir)"
-		"-DLUALIB=$(lua_get_shared_lib)"
-		"-DLUA=${LUA}"
 	)
 
 	cmake_src_configure

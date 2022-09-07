@@ -3,6 +3,8 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-{1..4} luajit )
+
 inherit lua
 
 DESCRIPTION="Chat bot engine based on Markov chains"
@@ -16,8 +18,8 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lua/lsqlite3
-dev-lua/luautf8
+	dev-lua/lsqlite3[${LUA_USEDEP}]
+	dev-lua/luautf8[${LUA_USEDEP}]
 "
 
 S="${WORKDIR}"/lua_${P}
@@ -25,5 +27,11 @@ S="${WORKDIR}"/lua_${P}
 DOCS=( README.md )
 
 each_lua_install() {
-	dolua src/{brain,brain.lua}
+	insinto "$(lua_get_lmod_dir)"
+	doins -r src/{brain,brain.lua}
+}
+
+src_install() {
+	lua_foreach_impl each_lua_install
+	einstalldocs
 }

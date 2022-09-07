@@ -35,6 +35,5 @@ lua_src_install() {
 
 src_install() {
 	lua_foreach_impl lua_src_install
-
 	einstalldocs
 }
