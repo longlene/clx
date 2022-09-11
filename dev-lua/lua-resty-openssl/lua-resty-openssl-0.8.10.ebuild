@@ -7,11 +7,11 @@ LUA_COMPAT=( luajit )
 
 inherit lua
 
-DESCRIPTION="Extended timers for OpenResty"
-HOMEPAGE="https://github.com/Kong/lua-resty-timer"
-SRC_URI="https://github.com/Kong/lua-resty-timer/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="FFI-based OpenSSL binding for OpenResty"
+HOMEPAGE="https://github.com/fffonion/lua-resty-openssl"
+SRC_URI="https://github.com/fffonion/lua-resty-openssl/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Apache-2.0"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
@@ -23,6 +23,7 @@ RDEPEND="
 	${DEPEND}
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
+	dev-libs/openssl
 "
 BDEPEND=""
 

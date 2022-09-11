@@ -3,6 +3,8 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-{1..4} luajit )
+
 inherit lua
 
 DESCRIPTION="Object-orientation for Lua"
@@ -15,8 +17,19 @@ KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${LUA_DEPS}
+	${DEPEND}
+"
+
+DOCS=( README.md )
+
+each_src_install() {
+	insinto "$(lua_get_lmod_dir)"
+	doins middleclass.lua
+}
 
 src_install() {
-	lua_install_module middleclass.lua
+	lua_foreach_impl each_src_install
+	einstalldocs
 }

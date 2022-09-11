@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,23 +7,24 @@ LUA_COMPAT=( luajit )
 
 inherit lua
 
-DESCRIPTION="WebSocket support for the ngx_lua module"
-HOMEPAGE="https://github.com/openresty/lua-resty-websocket"
-SRC_URI="https://github.com/openresty/lua-resty-websocket/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Library for parsing HTTP Cookie header for Nginx"
+HOMEPAGE="https://github.com/cloudflare/lua-resty-cookie"
+SRC_URI="https://github.com/cloudflare/lua-resty-cookie/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
+IUSE=""
 
-DEPEND=""
 RDEPEND="
-	${DEPEND}
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
 "
-BDEPEND=""
+DEPEND="
+	${RDEPEND}
+"
 
-DOCS=(README.markdown)
+DOCS=(README.md)
 
 each_lua_install() {
 	insinto "$(lua_get_lmod_dir)"

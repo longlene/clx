@@ -3,7 +3,7 @@
 
 EAPI=8
 
-LUA_COMPAT=( lua5-{1..4} luajit )
+LUA_COMPAT=( luajit )
 
 inherit lua
 
@@ -14,17 +14,26 @@ SRC_URI="https://github.com/Kong/lua-resty-worker-events/archive/refs/tags/${PV}
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
+IUSE=""
+
+REQUIRED_USE="${LUA_REQUIRED_USE}"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	${LUA_DEPS}
+	www-servers/nginx:*[nginx_modules_http_lua]
+"
 BDEPEND=""
 
-lua_src_install() {
-	insinto $(lua_get_lmod_dir)
+DOCS=( README.markdown )
+
+each_lua_install() {
+	insinto "$(lua_get_lmod_dir)"
 	doins -r lib/resty
 }
 
 src_install() {
-	lua_foreach_impl lua_src_install
-	dodoc README.markdown
+	lua_foreach_impl each_lua_install
+	einstalldocs
 }

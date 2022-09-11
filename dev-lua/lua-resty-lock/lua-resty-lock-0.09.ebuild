@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,26 +7,24 @@ LUA_COMPAT=( luajit )
 
 inherit lua
 
-DESCRIPTION="Extended timers for OpenResty"
-HOMEPAGE="https://github.com/Kong/lua-resty-timer"
-SRC_URI="https://github.com/Kong/lua-resty-timer/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Simple shm-based nonblocking lock API"
+HOMEPAGE="https://github.com/openresty/lua-resty-lock"
+SRC_URI="https://github.com/openresty/lua-resty-lock/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Apache-2.0"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-REQUIRED_USE="${LUA_REQUIRED_USE}"
-
-DEPEND=""
 RDEPEND="
-	${DEPEND}
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
 "
-BDEPEND=""
+DEPEND="
+	${RDEPEND}
+"
 
-DOCS=( README.md )
+DOCS=(README.markdown)
 
 each_lua_install() {
 	insinto "$(lua_get_lmod_dir)"
