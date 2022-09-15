@@ -3,7 +3,7 @@
 
 EAPI=8
 
-LUA_COMPAT=( lua5-{1..4} luajit )
+LUA_COMPAT=( luajit )
 
 inherit  lua
 
@@ -15,16 +15,30 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
+REQUIRED_USE="${LUA_REQUIRED_USE}"
+
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	${LUA_DEPS}
+	www-servers/nginx:*[nginx_modules_http_lua]
+	dev-lua/lua-cjson[${LUA_USEDEP}]
+	dev-lua/lua-resty-string[${LUA_USEDEP}]
+"
 BDEPEND=""
 
-lua_src_install() {
-	insinto $(lua_get_lmod_dir)
+DOCS=( README.md )
+
+src_compile() {
+	:
+}
+
+each_lua_install() {
+	insinto "$(lua_get_lmod_dir)"
 	doins -r lib/resty
 }
 
 src_install() {
-	lua_foreach_impl lua_src_install
-	dodoc README.md
+	lua_foreach_impl each_lua_install
+	einstalldocs
 }

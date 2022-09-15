@@ -7,11 +7,11 @@ LUA_COMPAT=( luajit )
 
 inherit lua
 
-DESCRIPTION="Extended timers for OpenResty"
-HOMEPAGE="https://github.com/Kong/lua-resty-timer"
-SRC_URI="https://github.com/Kong/lua-resty-timer/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Lua kafka client driver for the OpenResty based on the cosocket API"
+HOMEPAGE="https://github.com/Kong/lua-resty-kafka"
+SRC_URI="https://github.com/Kong/lua-resty-kafka/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="Apache-2.0"
+LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
@@ -20,9 +20,9 @@ REQUIRED_USE="${LUA_REQUIRED_USE}"
 
 DEPEND=""
 RDEPEND="
-	${DEPEND}
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
+	dev-lua/lua-resty-openssl[${LUA_USEDEP}]
 "
 BDEPEND=""
 

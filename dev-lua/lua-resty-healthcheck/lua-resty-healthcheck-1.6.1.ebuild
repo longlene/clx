@@ -7,22 +7,24 @@ LUA_COMPAT=( luajit )
 
 inherit lua
 
-DESCRIPTION="Lua HTTP client cosocket driver for OpenResty/ngx_lua"
-HOMEPAGE="https://github.com/ledgetech/lua-resty-http"
-SRC_URI="https://github.com/ledgetech/lua-resty-http/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Healthcheck library for OpenResty to validate upstream service status"
+HOMEPAGE="https://github.com/Kong/lua-resty-healthcheck"
+SRC_URI="https://github.com/Kong/lua-resty-healthcheck/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="BSD-2"
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
-RDEPEND="${DEPEND}
+RDEPEND="
 	${LUA_DEPS}
+	dev-lua/lua-resty-worker-events[${LUA_USEDEP}]
 	www-servers/nginx:*[nginx_modules_http_lua,nginx_modules_http_lua_upstream]
+	dev-lua/penlight[${LUA_USEDEP}]
+	dev-lua/lua-resty-timer[${LUA_USEDEP}]
 "
 BDEPEND=""
 
-DOCS=( README.md )
+DOCS=( readme.md )
 
 each_lua_install() {
 	insinto "$(lua_get_lmod_dir)"
