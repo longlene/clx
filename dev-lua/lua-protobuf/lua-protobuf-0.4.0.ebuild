@@ -16,7 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	${LUA_DEPS}
+"
 BDEPEND=""
 
 lua_src_compile() {

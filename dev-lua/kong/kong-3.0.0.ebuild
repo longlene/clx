@@ -27,7 +27,7 @@ RDEPEND="${DEPEND}
 	dev-lua/lua-ffi-zlib[${LUA_USEDEP}]
 	dev-lua/multipart[${LUA_USEDEP}]
 	dev-lua/version[${LUA_USEDEP}]
-	dev-lua/lapis[${LUA_USEDEP}]
+	dev-lua/kong-lapis[${LUA_USEDEP}]
 	dev-lua/lua-cassandra[${LUA_USEDEP}]
 	dev-lua/pgmoon[${LUA_USEDEP}]
 	dev-lua/luatz[${LUA_USEDEP}]
@@ -47,6 +47,7 @@ RDEPEND="${DEPEND}
 	dev-lua/lua-resty-ipmatcher[${LUA_USEDEP}]
 	dev-lua/lua-resty-acme[${LUA_USEDEP}]
 	dev-lua/lua-resty-session[${LUA_USEDEP}]
+	dev-lua/lua-resty-timer-ng[${LUA_USEDEP}]
 "
 src_compile() {
 	:
