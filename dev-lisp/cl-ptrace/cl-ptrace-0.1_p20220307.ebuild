@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="34596f57d7d15615d96524661d221871a6e9818f"
+EGIT_COMMIT="10b95e226d21e0059e0ce0ff6130895522ec64b4"
 
 DESCRIPTION="lisp bindings to ptrace"
 HOMEPAGE="https://github.com/k-stz/cl-ptrace"

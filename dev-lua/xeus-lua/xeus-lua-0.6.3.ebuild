@@ -12,12 +12,21 @@ SRC_URI="https://github.com/jupyter-xeus/xeus-lua/archive/refs/tags/${PV}.tar.gz
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="luajit"
 
 DEPEND="
 	dev-cpp/xeus
 	dev-cpp/xtl
 	dev-cpp/xwidgets
-	dev-lang/lua
+	luajit? ( dev-lang/luajit )
+	!luajit? ( dev-lang/lua )
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+src_configure() {
+	local mycmakeargs=(
+		-DXEUS_LUA_USE_LUAJIT=$(usex luajit)
+	)
+	cmake_src_configure
+}

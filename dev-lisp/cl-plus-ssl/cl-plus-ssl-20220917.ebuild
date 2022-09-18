@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c0d59ae2cd42a458101f6ad2ee3bf3bd91a22eef"
+EGIT_COMMIT="e846d84b106e3535531441d1e560ac46fb91627e"
 
 DESCRIPTION="A simple Common Lisp interface to OpenSSL."
 HOMEPAGE="http://common-lisp.net/project/cl-plus-ssl/"
@@ -24,6 +24,10 @@ RDEPEND="
 "
 
 src_prepare() {
-	rm Makefile
+	default
 	use test || rm -r cl+ssl.test.asd test
+}
+
+src_compile() {
+	:
 }
