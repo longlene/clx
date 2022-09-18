@@ -3,10 +3,10 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_{8,9,10,11} )
 inherit python-single-r1 python-utils-r1 vcs-snapshot
 
-EGIT_COMMIT="544b744621b7c60097788c38594ea44973d0c8eb"
+EGIT_COMMIT="18bdadc98ab6f94912ad97e9b9fda170777c5b7f"
 
 DESCRIPTION="Chromium uses a package of scripts, the depot_tools, to manage interaction with the Chromium source code repository and the Chromium development process"
 HOMEPAGE="https://dev.chromium.org/developers/how-tos/install-depot-tools"

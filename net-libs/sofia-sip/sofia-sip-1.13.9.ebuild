@@ -1,28 +1,32 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit autotools
 
 DESCRIPTION="RFC3261 compliant SIP User-Agent library"
-HOMEPAGE="http://sofia-sip.sourceforge.net/"
-SRC_URI="https://github.com/freeswitch/sofia-sip/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/freeswitch/sofia-sip"
+SRC_URI="https://github.com/freeswitch/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-2.1+ BSD public-domain" # See COPYRIGHT
 SLOT="0"
 KEYWORDS="~alpha amd64 ~arm arm64 ~ia64 ppc ~ppc64 sparc x86 ~x86-linux"
-IUSE="ssl"
-# tests are broken, see bugs 304607 and 330261
-RESTRICT="test"
+IUSE="ssl test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	dev-libs/glib:2
 	ssl? (
 		dev-libs/openssl:0=
 	)"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	test? ( dev-libs/check )"
 BDEPEND="virtual/pkgconfig"
+
+PATCHES=(
+	"${FILESDIR}"/${PV}-Fix-array-size.patch
+)
 
 src_prepare() {
 	default
