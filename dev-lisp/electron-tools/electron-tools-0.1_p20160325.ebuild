@@ -1,16 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="25242b7cb19e28f136caf2c27708b7d0f1662694"
 
 DESCRIPTION="Tools for working with Electron"
 HOMEPAGE="https://github.com/ceramic/electron-tools"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/ceramic/electron-tools.git"
+SRC_URI="https://github.com/ceramic/electron-tools/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -27,6 +26,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	default
 	use test || rm -rf ${PN}-test.asd t
 }
 
