@@ -5,7 +5,7 @@ EAPI=7
 
 inherit linux-mod vcs-snapshot
 
-EGIT_COMMIT="8431504df5a1d058fc5888f6bb695de859dbf22f"
+EGIT_COMMIT="75a2a5800aa46cbd679847b4d0863a5e3cef3b9e"
 
 DESCRIPTION="Reverse engineered Linux driver for the FacetimeHD"
 HOMEPAGE="https://github.com/patjak/facetimehd"
@@ -21,5 +21,5 @@ BDEPEND=""
 
 BUILD_TARGETS="all"
 MODULE_NAMES="facetimehd()"
-CONFIG_CHECK="VIDEO_V4L2 VIDEOBUF2_CORE VIDEOBUF2_DMA_SG"
+CONFIG_CHECK="VIDEO_V4L2_SUBDEV_API VIDEOBUF2_CORE VIDEOBUF2_DMA_SG"
 
