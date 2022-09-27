@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit linux-mod vcs-snapshot
+inherit linux-info linux-mod vcs-snapshot
 
 EGIT_COMMIT="75a2a5800aa46cbd679847b4d0863a5e3cef3b9e"
 
@@ -15,11 +15,23 @@ LICENSE="GPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="sys-firmware/facetimehd-firmware"
+DEPEND="
+	virtual/linux-sources
+	sys-firmware/facetimehd-firmware
+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
 BUILD_TARGETS="all"
 MODULE_NAMES="facetimehd()"
-CONFIG_CHECK="VIDEO_V4L2_SUBDEV_API VIDEOBUF2_CORE VIDEOBUF2_DMA_SG"
+
+pkg_setup() {
+	CONFIG_CHECK="VIDEOBUF2_CORE VIDEOBUF2_DMA_SG"
+	if kernel_is ge 5 18 ; then
+		CONFIG_CHECK="${CONFIG_CHECK} VIDEO_DEV"
+	else
+		CONFIG_CHECK="${CONFIG_CHECK} VIDEO_V4L2"
+	fi
+	linux-mod_pkg_setup
+}
 
