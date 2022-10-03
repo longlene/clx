@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake
 
-DESCRIPTION="optional lite"
+DESCRIPTION="A C++17-like optional, a nullable object for C++98, C++11 and later"
 HOMEPAGE="https://github.com/martinmoene/optional-lite"
 SRC_URI="https://github.com/martinmoene/optional-lite/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -20,7 +20,7 @@ BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(
-	-DOPTIONAL_LITE_OPT_BUILD_TESTS=OFF
+		-DOPTIONAL_LITE_OPT_BUILD_TESTS=OFF
 	)
 	cmake_src_configure
 }
