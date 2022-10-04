@@ -59,7 +59,8 @@ HTTP_FANCYINDEX_MODULE_URI="https://github.com/aperezdc/ngx-fancyindex/archive/v
 HTTP_FANCYINDEX_MODULE_WD="${WORKDIR}/ngx-fancyindex-${HTTP_FANCYINDEX_MODULE_PV}"
 
 # http_lua (https://github.com/openresty/lua-nginx-module, BSD license)
-HTTP_LUA_MODULE_PV="b6d167cf1a93c0c885c28db5a439f2404874cb26"
+#HTTP_LUA_MODULE_PV="b6d167cf1a93c0c885c28db5a439f2404874cb26"
+HTTP_LUA_MODULE_PV="4bbb57aa4a6995bd3efaf35c01e826de6f3cdf3a"
 HTTP_LUA_MODULE_P="ngx_http_lua-${HTTP_LUA_MODULE_PV}"
 HTTP_LUA_MODULE_URI="https://github.com/openresty/lua-nginx-module/archive/${HTTP_LUA_MODULE_PV}.tar.gz"
 HTTP_LUA_MODULE_WD="${WORKDIR}/lua-nginx-module-${HTTP_LUA_MODULE_PV}"
@@ -161,6 +162,13 @@ NJS_MODULE_P="njs-${NJS_MODULE_PV}"
 NJS_MODULE_URI="https://github.com/nginx/njs/archive/${NJS_MODULE_PV}.tar.gz"
 NJS_MODULE_WD="${WORKDIR}/njs-${NJS_MODULE_PV}"
 
+# stream_lua (https://github.com/openresty/stream-lua-nginx-module, BSD license)
+STREAM_LUA_MODULE_PV="a07f317548e1d9eb0580ee7c5d833e99fa9c4cc5"
+STREAM_LUA_MODULE_P="ngx_stream_lua-${STREAM_LUA_MODULE_PV}"
+STREAM_LUA_MODULE_URI="https://github.com/openresty/stream-lua-nginx-module/archive/${STREAM_LUA_MODULE_PV}.tar.gz"
+STREAM_LUA_MODULE_WD="${WORKDIR}/stream-lua-nginx-module-${STREAM_LUA_MODULE_PV}"
+LUA_COMPAT=( luajit )
+
 # We handle deps below ourselves
 SSL_DEPS_SKIP=1
 AUTOTOOLS_AUTO_DEPEND="no"
@@ -195,6 +203,7 @@ SRC_URI="https://nginx.org/download/${P}.tar.gz
 	nginx_modules_http_vhost_traffic_status? ( ${HTTP_VHOST_TRAFFIC_STATUS_MODULE_URI} -> ${HTTP_VHOST_TRAFFIC_STATUS_MODULE_P}.tar.gz )
 	nginx_modules_stream_geoip2? ( ${GEOIP2_MODULE_URI} -> ${GEOIP2_MODULE_P}.tar.gz )
 	nginx_modules_stream_javascript? ( ${NJS_MODULE_URI} -> ${NJS_MODULE_P}.tar.gz )
+	nginx_modules_stream_lua? ( ${STREAM_LUA_MODULE_URI} -> ${STREAM_LUA_MODULE_P}.tar.gz )
 	rtmp? ( ${RTMP_MODULE_URI} -> ${RTMP_MODULE_P}.tar.gz )"
 
 LICENSE="BSD-2 BSD SSLeay MIT GPL-2 GPL-2+
@@ -244,6 +253,7 @@ NGINX_MODULES_3RD="
 	http_vhost_traffic_status
 	stream_geoip2
 	stream_javascript
+	stream_lua
 "
 
 IUSE="aio debug +http +http2 +http-cache +ipv6 libatomic pcre +pcre2
@@ -311,7 +321,8 @@ CDEPEND="
 	nginx_modules_http_security? ( dev-libs/modsecurity )
 	nginx_modules_http_auth_ldap? ( net-nds/openldap:=[ssl?] )
 	nginx_modules_stream_geoip? ( dev-libs/geoip )
-	nginx_modules_stream_geoip2? ( dev-libs/libmaxminddb:= )"
+	nginx_modules_stream_geoip2? ( dev-libs/libmaxminddb:= )
+	nginx_modules_stream_lua? ( ${LUA_DEPS} )"
 RDEPEND="${CDEPEND}
 	selinux? ( sec-policy/selinux-nginx )
 	!www-servers/nginx:0"
@@ -334,7 +345,12 @@ REQUIRED_USE="pcre-jit? ( pcre )
 	nginx_modules_http_dav_ext? ( nginx_modules_http_dav nginx_modules_http_xslt )
 	nginx_modules_http_metrics? ( nginx_modules_http_stub_status )
 	nginx_modules_http_security? ( pcre )
-	nginx_modules_http_push_stream? ( ssl )"
+	nginx_modules_http_push_stream? ( ssl )
+	nginx_modules_stream_lua? (
+		${LUA_REQUIRED_USE}
+		pcre
+		!pcre2
+	)"
 
 pkg_setup() {
 	NGINX_HOME="/var/lib/nginx"
@@ -364,7 +380,9 @@ pkg_setup() {
 		die "Can't compile mogilefs with threads support"
 	fi
 
-	use nginx_modules_http_lua && lua-single_pkg_setup
+	if use nginx_modules_http_lua || use nginx_modules_stream_lua; then
+		lua-single_pkg_setup
+	fi
 }
 
 src_prepare() {
@@ -416,6 +434,12 @@ src_prepare() {
 	if use nginx_modules_http_lua; then
 		cd "${HTTP_LUA_MODULE_WD}"
 		eapply "${FILESDIR}"/lua-nginx-module.patch
+		cd "${S}" || die
+	fi
+
+	if use nginx_modules_stream_lua; then
+		cd "${STREAM_LUA_MODULE_WD}"
+		eapply "${FILESDIR}"/stream-lua-nginx-module.patch
 		cd "${S}" || die
 	fi
 
@@ -479,11 +503,15 @@ src_configure() {
 		myconf+=( --add-module=${HTTP_FANCYINDEX_MODULE_WD} )
 	fi
 
+	if use nginx_modules_http_lua || use nginx_modules_stream_lua; then
+		myconf+=( --add-module=${DEVEL_KIT_MODULE_WD} )
+	fi
+
+
 	if use nginx_modules_http_lua; then
 		http_enabled=1
 		export LUAJIT_LIB=$(dirname $(lua_get_shared_lib))
 		export LUAJIT_INC=$(lua_get_include_dir)
-		myconf+=( --add-module=${DEVEL_KIT_MODULE_WD} )
 		myconf+=( --add-module=${HTTP_LUA_MODULE_WD} )
 	fi
 
@@ -597,8 +625,14 @@ src_configure() {
 		fi
 	done
 
-	if use nginx_modules_stream_geoip2 || use nginx_modules_stream_javascript; then
+	if use nginx_modules_stream_geoip2 || use nginx_modules_stream_javascript || use nginx_modules_stream_lua; then
 		stream_enabled=1
+	fi
+
+	if use nginx_modules_stream_lua; then
+		export LUAJIT_LIB=$(dirname $(lua_get_shared_lib))
+		export LUAJIT_INC=$(lua_get_include_dir)
+		myconf+=( --add-module=${STREAM_LUA_MODULE_WD} )
 	fi
 
 	if [ $stream_enabled ]; then
@@ -801,6 +835,11 @@ src_install() {
 	if use nginx_modules_http_auth_ldap; then
 		docinto ${HTTP_LDAP_MODULE_P}
 		dodoc "${HTTP_LDAP_MODULE_WD}"/example.conf
+	fi
+
+	if use nginx_modules_stream_lua; then
+		docinto ${STREAM_LUA_MODULE_P}
+		dodoc "${STREAM_LUA_MODULE_WD}"/README.md
 	fi
 }
 

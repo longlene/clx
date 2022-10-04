@@ -1,0 +1,24 @@
+diff -pNura stream-lua-nginx-module.orig/src/ngx_stream_lua_module.c stream-lua-nginx-module/src/ngx_stream_lua_module.c
+--- stream-lua-nginx-module.orig/src/ngx_stream_lua_module.c	2022-09-29 22:37:04.000000000 -0700
++++ stream-lua-nginx-module/src/ngx_stream_lua_module.c	2022-10-04 09:08:28.219994590 -0700
+@@ -568,20 +568,6 @@ ngx_stream_lua_init(ngx_conf_t *cf)
+     if (lmcf->lua == NULL) {
+         dd("initializing lua vm");
+ 
+-#ifndef OPENRESTY_LUAJIT
+-        if (ngx_process != NGX_PROCESS_SIGNALLER && !ngx_test_config) {
+-            ngx_log_error(NGX_LOG_ALERT, cf->log, 0,
+-                          "detected a LuaJIT version which is not OpenResty's"
+-                          "; many optimizations will be disabled and "
+-                          "performance will be compromised (see "
+-                          "https://github.com/openresty/luajit2 for "
+-                          "OpenResty's LuaJIT or, even better, consider using "
+-                          "the OpenResty releases from https://openresty.org/"
+-                          "en/download.html)");
+-        }
+-#endif
+-
+-
+         rc = ngx_stream_lua_init_vm(&lmcf->lua, NULL, cf->cycle, cf->pool,
+                                     lmcf, cf->log, NULL);
+         if (rc != NGX_OK) {

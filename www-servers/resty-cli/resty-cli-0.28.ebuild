@@ -13,11 +13,17 @@ KEYWORDS="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	www-servers/nginx[nginx_modules_http_lua]
+	www-servers/nginx[nginx_modules_http_lua,nginx_modules_stream_lua]
 "
 BDEPEND=""
 
 DOCS=( README.md )
+
+src_prepare() {
+	default
+	sed -e '/my \$nginx_path/{s#nginx_path;#nginx_path="/usr/sbin/nginx";#}' \
+		-i bin/resty
+}
 
 src_install() {
 	dobin bin/resty

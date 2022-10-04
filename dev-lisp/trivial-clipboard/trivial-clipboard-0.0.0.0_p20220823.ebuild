@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e9cdcaf52b3f91cc5a5b7ac8dc985d1619f0b514"
+EGIT_COMMIT="13b53720306c0e6a13eccf4674d28ee5361127ae"
 
 DESCRIPTION="trivial-clipboard let access system clipboard"
 HOMEPAGE="https://github.com/snmsts/trivial-clipboard"
