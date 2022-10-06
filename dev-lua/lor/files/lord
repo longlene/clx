@@ -1,0 +1,9 @@
+#!/usr/bin/env resty
+package.path = '/usr/share/lor/?.lua;' .. package.path
+
+if arg[1] and arg[1] == "path" then
+        print("/usr/share/lor")
+        return
+end
+
+require('bin.lord')(arg)
