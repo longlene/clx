@@ -8,8 +8,8 @@ LUA_COMPAT=( luajit )
 inherit lua
 
 DESCRIPTION="Lua kafka client driver for the OpenResty based on the cosocket API"
-HOMEPAGE="https://github.com/Kong/lua-resty-kafka"
-SRC_URI="https://github.com/Kong/lua-resty-kafka/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/doujiang24/lua-resty-kafka"
+SRC_URI="https://github.com/doujiang24/lua-resty-kafka/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

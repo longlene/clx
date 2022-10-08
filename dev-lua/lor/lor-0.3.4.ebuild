@@ -17,6 +17,7 @@ KEYWORDS="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	www-servers/resty-cli
 	dev-lua/lua-resty-template[${LUA_USEDEP}]
 	dev-lua/lua-resty-cookie[${LUA_USEDEP}]
 "
