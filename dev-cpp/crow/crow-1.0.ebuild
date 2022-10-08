@@ -4,8 +4,8 @@
 EAPI=7
 
 DESCRIPTION="Crow is very fast and easy to use C++ micro web framework"
-HOMEPAGE="https://github.com/ipkn/crow"
-SRC_URI="https://github.com/ipkn/crow/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/CrowCpp/crow"
+SRC_URI="https://github.com/CrowCpp/crow/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

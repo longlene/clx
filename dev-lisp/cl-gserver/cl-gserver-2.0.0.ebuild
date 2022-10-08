@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
+inherit common-lisp-3
 
 DESCRIPTION="Erlang GenServer inspired library for common lisp based on lparallel"
 HOMEPAGE="https://github.com/mdbergmann/cl-gserver/"
