@@ -13,7 +13,7 @@ SRC_URI="https://github.com/cloudflare/lua-resty-cookie/archive/v${PV}.tar.gz ->
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="

@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="luajit +inotify"
 
 RDEPEND="
+	${LUA_DEPS}
 	dev-lua/lpeg[${LUA_USEDEP}]
 	dev-lua/argparse[${LUA_USEDEP}]
 	dev-lua/luafilesystem[${LUA_USEDEP}]
@@ -26,7 +27,6 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 "
-
 
 lua_src_install() {
 	insinto $(lua_get_lmod_dir)
