@@ -3,8 +3,8 @@
 
 EAPI=7
 
-DISTUTILS_USE_SETUPTOOLS=pyproject.toml
-PYTHON_COMPAT=( python3_9 )
+DISTUTILS_USE_PEP517=flit
+PYTHON_COMPAT=( python3_{9..11} )
 inherit distutils-r1
 
 DESCRIPTION="A library and tool for generating .pex (Python EXecutable) files"
@@ -18,3 +18,5 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+RESTRICT="test"
