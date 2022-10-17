@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="5e1bc3429cbf9c3be4db65ef5dbf21ea99cf5b95"
+EGIT_COMMIT="2ce1d482e9445a97e44a42ddf393597d23dab97c"
 
 DESCRIPTION="library for SSL over ustream"
 HOMEPAGE="http://wiki.openwrt.org/"
