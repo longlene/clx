@@ -4,7 +4,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="5e9c23c6f40ff26209ef22cfeeda4904a5918f3d"
+EGIT_COMMIT="e3395cd90bed9b7b9fc319e79528fedcc0d947fe"
 
 DESCRIPTION="Tiny HTTP httpd"
 HOMEPAGE="http://wiki.openwrt.org/"

@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="4df34a4d0d5183135217fc8280faae8e697147bc"
+EGIT_COMMIT="4c7b720b9c63b826fb9404e454ae54f2ef5649d5"
 
 DESCRIPTION="OpenWrt core utilities"
 HOMEPAGE="https://git.openwrt.org/?p=project/ubox.git"

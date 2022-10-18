@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="d6198906fbb0e3cfa5fae313c7126a78d8321801"
+EGIT_COMMIT="727e454840df95fa792624251b70afa939186aa3"
 
 DESCRIPTION=""
 HOMEPAGE="https://github.com/kaldi-asr/kaldi"

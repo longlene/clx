@@ -5,7 +5,7 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="f613153dcbb78c82689ba99c18fad20fd0aa5dd6"
+EGIT_COMMIT="e316d53fa73509a6c647b355273b1c5be1ed5ecb"
 
 DESCRIPTION="A small and fast programming language"
 HOMEPAGE="https://github.com/ThakeeNathees/pocketlang"

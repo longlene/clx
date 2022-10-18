@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="af585dbd1d444faafa370a73c1db43aece731f85"
+EGIT_COMMIT="644d3c7e13c6a64bf5cb628137ee5bd4dada4b74"
 
 DESCRIPTION="libubox http client library"
 HOMEPAGE="http://wiki.openwrt.org/"

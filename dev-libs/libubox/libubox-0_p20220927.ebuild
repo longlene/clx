@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="e85cb739766d00977a08cce98f161976da5fbefc"
+EGIT_COMMIT="ea56013409d5823001b47a9bba6f74055a6d76a5"
 
 DESCRIPTION="C utility functions for OpenWrt"
 HOMEPAGE="http://wiki.openwrt.org/"

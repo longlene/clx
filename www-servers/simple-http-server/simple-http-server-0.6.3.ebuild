@@ -4,137 +4,140 @@
 EAPI=8
 
 CRATES="
-	adler-0.2.3
-	aho-corasick-0.7.13
-	ansi_term-0.11.0
+	adler-1.0.2
+	ansi_term-0.12.1
 	antidote-1.0.0
-	ascii-0.8.7
 	atty-0.2.14
-	autocfg-0.1.7
-	autocfg-1.0.0
+	autocfg-0.1.8
+	autocfg-1.1.0
 	base64-0.9.3
-	bitflags-1.2.1
+	bitflags-1.3.2
 	buf_redux-0.8.4
-	byteorder-1.3.4
-	cc-1.0.58
-	cfg-if-0.1.10
-	chrono-0.4.13
-	chunked_transfer-0.3.1
-	clap-2.33.1
+	byteorder-1.4.3
+	cc-1.0.73
+	cfg-if-1.0.0
+	chrono-0.4.19
+	clap-2.34.0
 	cloudabi-0.0.3
-	core-foundation-0.7.0
-	core-foundation-sys-0.7.0
-	crc32fast-1.2.0
-	filetime-0.2.10
-	flate2-1.0.16
+	core-foundation-0.9.3
+	core-foundation-sys-0.8.0
+	crc32fast-1.3.2
+	fastrand-1.7.0
+	filetime-0.2.17
+	flate2-1.0.24
 	foreign-types-0.3.2
 	foreign-types-shared-0.1.1
+	form_urlencoded-1.0.1
 	fuchsia-cprng-0.1.1
 	getopts-0.2.21
-	getrandom-0.1.14
-	groupable-0.2.0
-	hermit-abi-0.1.15
+	getrandom-0.2.7
+	hermit-abi-0.1.19
 	htmlescape-0.3.1
-	httparse-1.3.4
+	httparse-1.7.1
 	hyper-0.10.16
 	hyper-native-tls-0.3.0
 	idna-0.1.5
-	idna-0.2.0
+	idna-0.2.3
+	instant-0.1.12
 	iron-0.6.1
 	iron-cors-0.8.0
-	itoa-0.4.6
 	language-tags-0.2.2
 	lazy_static-1.4.0
-	libc-0.2.72
+	libc-0.2.126
 	log-0.3.9
-	log-0.4.11
-	matches-0.1.8
-	memchr-2.3.3
+	log-0.4.17
+	matches-0.1.9
+	memchr-2.5.0
 	mime-0.2.6
 	mime-0.3.16
 	mime_guess-1.8.8
-	mime_guess-2.0.3
-	miniz_oxide-0.4.0
+	mime_guess-2.0.4
+	miniz_oxide-0.5.3
 	modifier-0.1.0
 	multipart-0.16.1
-	mustache-0.9.0
-	native-tls-0.2.4
-	nickel-0.11.0
-	num-integer-0.1.43
-	num-traits-0.2.12
-	num_cpus-1.13.0
-	open-1.4.0
-	openssl-0.10.30
-	openssl-probe-0.1.2
-	openssl-sys-0.9.58
+	native-tls-0.2.10
+	num-integer-0.1.45
+	num-traits-0.2.15
+	num_cpus-1.13.1
+	once_cell-1.13.0
+	open-1.7.1
+	openssl-0.10.41
+	openssl-macros-0.1.0
+	openssl-probe-0.1.5
+	openssl-sys-0.9.75
 	path-dedot-1.2.4
+	pathdiff-0.2.1
 	percent-encoding-1.0.1
 	percent-encoding-2.1.0
 	phf-0.7.24
 	phf_codegen-0.7.24
 	phf_generator-0.7.24
 	phf_shared-0.7.24
-	pkg-config-0.3.18
+	pkg-config-0.3.25
 	plugin-0.2.6
-	ppv-lite86-0.2.8
+	ppv-lite86-0.2.16
 	pretty-bytes-0.2.2
+	proc-macro2-1.0.40
 	quick-error-1.2.3
+	quote-1.0.20
 	rand-0.6.5
-	rand-0.7.3
+	rand-0.8.5
 	rand_chacha-0.1.1
-	rand_chacha-0.2.2
+	rand_chacha-0.3.1
 	rand_core-0.3.1
 	rand_core-0.4.2
-	rand_core-0.5.1
+	rand_core-0.6.3
 	rand_hc-0.1.0
-	rand_hc-0.2.0
 	rand_isaac-0.1.1
 	rand_jitter-0.1.4
 	rand_os-0.1.3
 	rand_pcg-0.1.2
 	rand_xorshift-0.1.1
 	rdrand-0.4.0
-	redox_syscall-0.1.57
-	regex-1.3.9
-	regex-syntax-0.6.18
+	redox_syscall-0.2.13
 	remove_dir_all-0.5.3
-	ryu-1.0.5
 	safemem-0.3.3
-	schannel-0.1.19
-	security-framework-0.4.4
-	security-framework-sys-0.4.3
-	serde-1.0.114
-	serde_json-1.0.56
-	siphasher-1.2.3
+	schannel-0.1.20
+	security-framework-2.6.1
+	security-framework-sys-2.6.1
+	siphasher-0.2.3
 	strsim-0.8.0
-	tempfile-3.1.0
-	termcolor-1.1.0
+	syn-1.0.98
+	tempfile-3.3.0
+	termcolor-1.1.3
 	textwrap-0.11.0
-	thread_local-1.0.1
-	time-0.1.43
-	tiny_http-0.6.2
-	tinyvec-0.3.3
+	time-0.1.44
+	tinyvec-1.6.0
+	tinyvec_macros-0.1.0
 	traitobject-0.1.0
 	twoway-0.1.8
 	typeable-0.1.2
 	typemap-0.3.3
 	unicase-1.4.2
 	unicase-2.6.0
-	unicode-bidi-0.3.4
-	unicode-normalization-0.1.13
-	unicode-width-0.1.8
+	unicode-bidi-0.3.8
+	unicode-ident-1.0.2
+	unicode-normalization-0.1.21
+	unicode-width-0.1.9
 	unsafe-any-0.4.2
 	url-1.7.2
-	url-2.1.1
-	vcpkg-0.2.10
+	url-2.2.2
+	vcpkg-0.2.15
 	vec_map-0.8.2
 	version_check-0.1.5
-	version_check-0.9.2
-	wasi-0.9.0+wasi-snapshot-preview1
+	version_check-0.9.4
+	wasi-0.10.0+wasi-snapshot-preview1
+	wasi-0.11.0+wasi-snapshot-preview1
 	winapi-0.3.9
 	winapi-i686-pc-windows-gnu-0.4.0
 	winapi-util-0.1.5
 	winapi-x86_64-pc-windows-gnu-0.4.0
+	windows-sys-0.36.1
+	windows_aarch64_msvc-0.36.1
+	windows_i686_gnu-0.36.1
+	windows_i686_msvc-0.36.1
+	windows_x86_64_gnu-0.36.1
+	windows_x86_64_msvc-0.36.1
 "
 
 inherit cargo

@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="89bfaa42460696fb3c37c232f69c2afd5c6d909e"
+EGIT_COMMIT="8c852b656bf1622dee1ae2cfa4c083f730c1c539"
 
 DESCRIPTION="OpenWrt ubus RPC backend server"
 HOMEPAGE="http://wiki.openwrt.org/"

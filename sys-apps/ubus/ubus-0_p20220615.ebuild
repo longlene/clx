@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="2e051f62899666805d477830ef790e1149bc6a89"
+EGIT_COMMIT="9913aa61de739e3efe067a2d186021c20bcd65e2"
 
 DESCRIPTION="OpenWrt system message/RPC bus"
 HOMEPAGE="http://wiki.openwrt.org/"

@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="344fb02397315af69246febd3536984f84a3731a"
+EGIT_COMMIT="b34029f34206ab712998bdeb7fd33544d35c48ec"
 
 DESCRIPTION="Common Lisp wrapper for libxkb"
 HOMEPAGE="https://github.com/malcolmstill/cl-xkb"

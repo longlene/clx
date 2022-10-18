@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2e502ad2a70a0f88a3f306e3e12e3bdc9c83096e"
+EGIT_COMMIT="483a22ef42995f84fac00d11fb27ace671480153"
 
 DESCRIPTION="Utilities for manipulating association lists"
 HOMEPAGE="https://github.com/fukamachi/assoc-utils"
