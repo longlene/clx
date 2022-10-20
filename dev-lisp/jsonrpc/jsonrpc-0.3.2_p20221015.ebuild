@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9f7708a9bc8d6f1a9e3a946188c4772adf752058"
+EGIT_COMMIT="d971f3dc5f3e1b952b36c413d1d48367935af2a6"
 
 DESCRIPTION="JSON-RPC 2.0 server/client for Common Lisp"
 HOMEPAGE="https://github.com/cxxxr/jsonrpc"

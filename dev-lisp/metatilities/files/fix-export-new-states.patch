@@ -1,0 +1,20 @@
+Author: Stelian Ionescu <sionescu@common-lisp.net>
+Date: 2008-09-029
+Status: Pending
+Description: Add missing export of NEW-STATES function.
+
+diff -rN -u old-metatilities/dev/utilities/package-additional.lisp new-metatilities/dev/utilities/package-additional.lisp
+--- old-metatilities/dev/utilities/package-additional.lisp	2008-09-29 20:52:46.000000000 +0200
++++ new-metatilities/dev/utilities/package-additional.lisp	2008-09-29 20:52:46.000000000 +0200
+@@ -214,7 +214,9 @@
+ 	    same-length-p
+ 	    percent-overlap
+ 
+-	    tree-search)))
++	    tree-search
++
++        new-states)))
+     (mapc (lambda (s)
+ 	    (intern (symbol-name s) 
+ 		    (load-time-value (find-package :metatilities))))
+
