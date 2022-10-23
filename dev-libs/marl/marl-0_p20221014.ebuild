@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="f936d9438b2b0d92512075ea4dd5e0d47f80094a"
+EGIT_COMMIT="e007bd3dd1b2e0eab1ace6048eace7c901f33c7b"
 
 DESCRIPTION="A hybrid thread / fiber task scheduler"
 HOMEPAGE="https://github.com/google/marl"
