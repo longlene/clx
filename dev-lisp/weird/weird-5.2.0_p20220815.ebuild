@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="52102b856ebb4b21d833071ffbdcca17c7ef057c"
+EGIT_COMMIT="106d154ec2cd0e4ec977c3672ba717d6305c1056"
 
 DESCRIPTION="A System for Making Generative Systems"
 HOMEPAGE="https://github.com/inconvergent/weird"

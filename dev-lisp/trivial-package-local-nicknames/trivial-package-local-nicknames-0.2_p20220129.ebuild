@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a3c5e3bd87d227d94975c89bda0ef033a21b3326"
+EGIT_COMMIT="8a4d09c1c5cb2b5349aecbd796164433df7a6cc5"
 
 DESCRIPTION="Common Lisp PLN compatibility library"
 HOMEPAGE="https://github.com/phoe/trivial-package-local-nicknames/"

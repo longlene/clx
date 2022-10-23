@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e8434f3f5113967dc1868aabaf8fd1fbf0cd8533"
+EGIT_COMMIT="8cd0db8f5e84e7a930fa74e590ecddf75cd8e5d6"
 
 DESCRIPTION="Common Lisp interface to WrodNet"
 HOMEPAGE="https://github.com/phoe/wordnet/"
@@ -21,3 +21,8 @@ RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 "
 BDEPEND=""
+
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all dict
+}
