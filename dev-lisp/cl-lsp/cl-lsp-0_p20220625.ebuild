@@ -18,20 +18,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	app-emacs/slime
-	dev-lisp/bordeaux-threads
-	dev-lisp/trivial-gray-streams
-	dev-lisp/cl-ppcre
-	dev-lisp/optima
-	dev-lisp/alexandria
-	dev-lisp/trivial-types
-	dev-lisp/closer-mop
-	dev-lisp/quri
-	dev-lisp/jsonrpc
-	dev-lisp/yason
-	dev-lisp/uiop
-	dev-lisp/iterate
-	dev-lisp/cl-annot
+	dev-lisp/lem
 "
 
 src_prepare() {
