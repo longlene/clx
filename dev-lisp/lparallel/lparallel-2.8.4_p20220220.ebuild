@@ -17,19 +17,14 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/alexandria
-dev-lisp/bordeaux-threads
-test? ( dev-lisp/trivial-garbage )
+	dev-lisp/alexandria
+	dev-lisp/bordeaux-threads
+	test? ( dev-lisp/trivial-garbage )
 "
 
-S="${WORKDIR}"/lparallel-lparallel-${PV}
-
-src_install() {
-	common-lisp-install-sources src
-	common-lisp-install-asdf ${PN}.asd
-	if use test ; then
-		common-lisp-install-sources test bench
-		common-lisp-install-asdf ${PN}-test.asd ${PN}-bench.asd
-	fi
-	dodoc README.md
+src_prepare() {
+	default
+	rm -rf ${PN}-bench.asd bench
+	use test || rm -rf ${PN}-test.asd test
 }
+
