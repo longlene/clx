@@ -3,11 +3,13 @@
 
 EAPI=7
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="d6d7c9aa985b22f747f63b0cf4a941cada6c66c1"
 
 DESCRIPTION="The Common Foreign Function Interface (CFFI)"
 HOMEPAGE="http://common-lisp.net/project/cffi/"
-SRC_URI="https://github.com/cffi/cffi/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/cffi/cffi/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,14 +21,16 @@ RDEPEND="
 	dev-lisp/alexandria
 	dev-lisp/babel
 	dev-lisp/trivial-features
+	dev-lisp/cl-ppcre
+	dev-lisp/cl-json
 	test? ( dev-lisp/bordeaux-threads )
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-tests.asd tests
 	use example || rm -r ${PN}-examples.asd examples
-	rm -r scripts uffi-compat/uffi.asd
+	rm -r ${PN}-uffi-compat.asd uffi-compat scripts
 }
 
 src_compile() {

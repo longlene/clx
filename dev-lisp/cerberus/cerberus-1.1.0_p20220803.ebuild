@@ -1,14 +1,15 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-DESCRIPTION="Common Lisp Kerberos v5 implementation"
+EGIT_COMMIT="64d145a53478a8a0604d2ba38d0c3f2e0a818a6a"
+
+DESCRIPTION="A Common Lisp Kerberos v5 implementation"
 HOMEPAGE="https://github.com/fjames86/cerberus"
-SRC_URI="https://github.com/fjames86/cerberus/archive/${P}.tar.gz"
+SRC_URI="https://github.com/fjames86/cerberus/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

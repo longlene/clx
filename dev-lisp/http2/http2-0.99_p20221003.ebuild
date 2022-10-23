@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="305d648d7ef7efd8dea5bc825f402fd43b79c920"
+EGIT_COMMIT="ff71acfd20173cd4732781216ce534d0c2ef2edf"
 
 DESCRIPTION="HTTP/2 implementation in Common Lisp"
 HOMEPAGE="https://github.com/zellerin/http2/"

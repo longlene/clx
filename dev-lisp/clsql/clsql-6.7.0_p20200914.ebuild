@@ -1,15 +1,16 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=7
 
-inherit common-lisp-3 flag-o-matic multilib toolchain-funcs
+inherit common-lisp-3 flag-o-matic multilib toolchain-funcs vcs-snapshot
+
+EGIT_COMMIT="c791fb3f1e5b69ae539177ea48a9b5eca86f7afd"
 
 DESCRIPTION="A multi-platform SQL interface for Common Lisp"
 HOMEPAGE="http://clsql.b9.com/
 		http://www.cliki.net/CLSQL"
-SRC_URI="http://files.kpe.io/clsql/${P}.tar.gz"
+SRC_URI="https://github.com/UnwashedMeme/clsql/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
@@ -26,6 +27,7 @@ RDEPEND="!dev-lisp/cl-sql
 	sqlite? ( dev-db/sqlite:3 )"
 
 src_prepare() {
+	default
 	sed -i "s,/usr/lib,/usr/$(get_libdir),g" "${S}"/${PN}-{mysql,uffi}.asd
 	sed -i 's,"usr" "lib","usr" "'$(get_libdir)'",g' "${S}"/${PN}-{mysql,uffi}.asd
 }

@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1af6ffba08411dcc6855a693009f26b9c6d6e71e"
+EGIT_COMMIT="0fa94eb72865f7a0b4ee395128731925ddd5755d"
 
 DESCRIPTION="Jumptables Common Lisp library"
 HOMEPAGE="https://github.com/Hexstream/trivial-jumptables"
@@ -19,3 +19,8 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+src_prepare() {
+	default
+	rm -rf tests
+}
