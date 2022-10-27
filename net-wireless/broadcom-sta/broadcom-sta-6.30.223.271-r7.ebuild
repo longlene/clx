@@ -29,32 +29,23 @@ PATCHES=(
 	"${FILESDIR}/${PN}-6.30.223.271-r2-linux-4.3-v2.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r4-linux-4.7.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r4-linux-4.8.patch"
+	"${FILESDIR}/${PN}-6.30.223.271-r4-fix-warnings.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r4-linux-4.11.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r4-linux-4.12.patch"
+	"${FILESDIR}/${PN}-6.30.223.271-r4-linux-4.14.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r4-linux-4.15.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r5-linux-5.1.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r5-linux-5.6.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r6-linux-5.9.patch"
 	"${FILESDIR}/${PN}-6.30.223.271-r6-linux-5.17.patch"
-	"${FILESDIR}/${PN}-6.30.223.271-r7-linux-5.18.patch"
+	"${FILESDIR}/${PN}-6.30.223.271-r6-linux-5.18.patch"
+	"${FILESDIR}/${PN}-6.30.223.271-r6-linux-6.0.patch"
 )
+	#"${FILESDIR}/${PN}-6.30.223.271-r6-linux-5.17.patch"
+	#"${FILESDIR}/${PN}-6.30.223.271-r7-linux-5.18.patch"
 
 MODULE_NAMES="wl(net/wireless)"
 MODULESD_WL_ALIASES=("wlan0 wl")
-
-pkg_pretend() {
-	ewarn
-	ewarn "If you are stuck using this unmaintained driver (likely in a MacBook),"
-	ewarn "you may be interested to know that a newer compatible wireless card"
-	ewarn "is supported by the in-tree brcmfmac driver. It has a model number "
-	ewarn "BCM943602CS and is for sale on the second hand market for less than "
-	ewarn "20 USD."
-	ewarn
-	ewarn "See https://wikidevi.com/wiki/Broadcom_Wireless_Adapters and"
-	ewarn "    https://wikidevi.com/wiki/Broadcom_BCM943602CS"
-	ewarn "for more information."
-	ewarn
-}
 
 pkg_setup() {
 	# bug #300570
