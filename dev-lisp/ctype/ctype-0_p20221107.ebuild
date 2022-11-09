@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="977f4bfce65c721ac1bb545ae52ec3873068831e"
+EGIT_COMMIT="b62480f412935fefed5ec9bc11158de8d8e29e96"
 
 DESCRIPTION="CL type system implementation"
 HOMEPAGE="https://github.com/s-expressionists/ctype"
