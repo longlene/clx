@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	app-i18n/fcitx5
+	app-i18n/fcitx
 "
 BDEPEND=""
 
