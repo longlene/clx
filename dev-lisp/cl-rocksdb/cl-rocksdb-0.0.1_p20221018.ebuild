@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="41f526846a87c3329b7a49f85e1b8091fc802095"
+EGIT_COMMIT="ccb75b3f33448733680c4d32b826d58647afad6f"
 
 DESCRIPTION="RocksDB binding for Common Lisp"
 HOMEPAGE="https://github.com/veer66/cl-rocksdb"

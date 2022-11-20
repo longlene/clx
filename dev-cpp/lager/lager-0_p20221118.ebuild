@@ -5,7 +5,7 @@ EAPI=8
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="9ae6527703de3a5514da8d7cb08a6678155ab9c5"
+EGIT_COMMIT="24887ac1fcafbdbbec0f2500fec9ff245fc4f84d"
 
 DESCRIPTION="Redux for C++"
 HOMEPAGE="https://github.com/arximboldi/lager"

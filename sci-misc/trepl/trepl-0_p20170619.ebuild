@@ -3,7 +3,9 @@
 
 EAPI=7
 
-inherit lua vcs-snapshot
+LUA_COMPAT=( luajit )
+
+inherit cmake lua-single vcs-snapshot
 
 EGIT_COMMIT="e5e17e3a56997123bd6c66cb8575175d3a6945bb"
 
@@ -17,30 +19,26 @@ KEYWORDS="~amd64 ~arm"
 IUSE=""
 
 DEPEND="
-	>=dev-lang/lua-5.1:=
-	dev-lang/luajit:2
 	sys-libs/readline
 	sci-libs/torch7
 "
 RDEPEND="${DEPEND}"
 
-src_compile() {
-	$(tc-getCC) -shared -fPIC ${CFLAGS} -I/usr/include/luajit-2.0 -o readline.so readline.c -lluajit-5.1 -lreadline
-	$(tc-getCC) -shared -fPIC ${CFLAGS} -I/usr/include/luajit-2.0 -o treplutils.so utils.c -lluajit-5.1
+src_prepare() {
+	default
+	sed -e "/FIND_LIBRARY/{s#Readline#Readline readline#}" \
+		-i CMakeLists.txt
+	cmake_src_prepare
 }
 
-src_install() {
-	for name in readline treplutils ; do
-		lua_install_cmodule "${name}.so"
-	done
-
-	insinto $(lua_get_sharedir)/trepl
-	for name in init colors colorize ; do
-		doins "${name}.lua"
-	done
-
-	exeinto /usr/bin
-	doexe th
-
-	dodoc README.md
+src_configure() {
+	local mycmakeargs=(
+		-DLUA_INCDIR=$(lua_get_include_dir)
+		-DLUA_INCDIR=$(lua_get_include_dir)
+		-DLUA_BINDIR=/usr/bin
+		-DLUADIR=$(lua_get_lmod_dir)
+		-DLUALIB=$(lua_get_shared_lib)
+		-DLUA_LIBDIR=$(lua_get_cmod_dir)
+	)
+	cmake_src_configure
 }
