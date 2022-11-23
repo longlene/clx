@@ -35,9 +35,9 @@ HTTP_UPLOAD_PROGRESS_MODULE_URI="https://github.com/masterzen/nginx-upload-progr
 HTTP_UPLOAD_PROGRESS_MODULE_WD="${WORKDIR}/nginx-upload-progress-module-${HTTP_UPLOAD_PROGRESS_MODULE_PV}"
 
 # http_headers_more (https://github.com/openresty/headers-more-nginx-module, BSD license)
-HTTP_HEADERS_MORE_MODULE_PV="d502e41996d24a382bd9c632e3ae3efa0a5fca66"
+HTTP_HEADERS_MORE_MODULE_PV="0.34"
 HTTP_HEADERS_MORE_MODULE_P="ngx_http_headers_more-${HTTP_HEADERS_MORE_MODULE_PV}"
-HTTP_HEADERS_MORE_MODULE_URI="https://github.com/openresty/headers-more-nginx-module/archive/${HTTP_HEADERS_MORE_MODULE_PV}.tar.gz"
+HTTP_HEADERS_MORE_MODULE_URI="https://github.com/openresty/headers-more-nginx-module/archive/v${HTTP_HEADERS_MORE_MODULE_PV}.tar.gz"
 HTTP_HEADERS_MORE_MODULE_WD="${WORKDIR}/headers-more-nginx-module-${HTTP_HEADERS_MORE_MODULE_PV}"
 
 # http_cache_purge (http://labs.frickle.com/nginx_ngx_cache_purge/, https://github.com/FRiCKLE/ngx_cache_purge, BSD-2 license)
@@ -59,8 +59,7 @@ HTTP_FANCYINDEX_MODULE_URI="https://github.com/aperezdc/ngx-fancyindex/archive/v
 HTTP_FANCYINDEX_MODULE_WD="${WORKDIR}/ngx-fancyindex-${HTTP_FANCYINDEX_MODULE_PV}"
 
 # http_lua (https://github.com/openresty/lua-nginx-module, BSD license)
-#HTTP_LUA_MODULE_PV="b6d167cf1a93c0c885c28db5a439f2404874cb26"
-HTTP_LUA_MODULE_PV="4bbb57aa4a6995bd3efaf35c01e826de6f3cdf3a"
+HTTP_LUA_MODULE_PV="6e3b1c4fde47039f0ce2ee75fc678dab27944667"
 HTTP_LUA_MODULE_P="ngx_http_lua-${HTTP_LUA_MODULE_PV}"
 HTTP_LUA_MODULE_URI="https://github.com/openresty/lua-nginx-module/archive/${HTTP_LUA_MODULE_PV}.tar.gz"
 HTTP_LUA_MODULE_WD="${WORKDIR}/lua-nginx-module-${HTTP_LUA_MODULE_PV}"
@@ -85,19 +84,22 @@ HTTP_METRICS_MODULE_URI="https://github.com/madvertise/ngx_metrics/archive/v${HT
 HTTP_METRICS_MODULE_WD="${WORKDIR}/ngx_metrics-${HTTP_METRICS_MODULE_PV}"
 
 # http_vhost_traffic_status (https://github.com/vozlt/nginx-module-vts, BSD license)
-HTTP_VHOST_TRAFFIC_STATUS_MODULE_PV="46d85558e344dfe2b078ce757fd36c69a1ec2dd3"
+HTTP_VHOST_TRAFFIC_STATUS_MODULE_PV="0.2.1"
 HTTP_VHOST_TRAFFIC_STATUS_MODULE_P="ngx_http_vhost_traffic_status-${HTTP_VHOST_TRAFFIC_STATUS_MODULE_PV}"
-HTTP_VHOST_TRAFFIC_STATUS_MODULE_URI="https://github.com/vozlt/nginx-module-vts/archive/${HTTP_VHOST_TRAFFIC_STATUS_MODULE_PV}.tar.gz"
+HTTP_VHOST_TRAFFIC_STATUS_MODULE_URI="https://github.com/vozlt/nginx-module-vts/archive/v${HTTP_VHOST_TRAFFIC_STATUS_MODULE_PV}.tar.gz"
 HTTP_VHOST_TRAFFIC_STATUS_MODULE_WD="${WORKDIR}/nginx-module-vts-${HTTP_VHOST_TRAFFIC_STATUS_MODULE_PV}"
 
-# naxsi-core (https://github.com/nbs-system/naxsi, GPLv2+)
-HTTP_NAXSI_MODULE_PV="0.56"
+# naxsi-core (https://github.com/wargio/naxsi, GPL-3)
+HTTP_NAXSI_MODULE_PV="4140b2ded624eb36f04c783c460379b9403012d0"
 HTTP_NAXSI_MODULE_P="ngx_http_naxsi-${HTTP_NAXSI_MODULE_PV}"
-HTTP_NAXSI_MODULE_URI="https://github.com/nbs-system/naxsi/archive/${HTTP_NAXSI_MODULE_PV}.tar.gz"
+HTTP_NAXSI_MODULE_URI="https://github.com/wargio/naxsi/archive/${HTTP_NAXSI_MODULE_PV}.tar.gz"
 HTTP_NAXSI_MODULE_WD="${WORKDIR}/naxsi-${HTTP_NAXSI_MODULE_PV}/naxsi_src"
+HTTP_NAXSI_LIBINJECTION_MODULE_PV="49904c42a6e68dc8f16c022c693e897e4010a06c"
+HTTP_NAXSI_LIBINJECTION_MODULE_P="ngx_http_naxsi_libinjection-${HTTP_NAXSI_LIBINJECTION_MODULE_PV}"
+HTTP_NAXSI_LIBINJECTION_MODULE_URI="https://github.com/libinjection/libinjection/archive/${HTTP_NAXSI_LIBINJECTION_MODULE_PV}.tar.gz"
 
 # nginx-rtmp-module (https://github.com/arut/nginx-rtmp-module, BSD license)
-RTMP_MODULE_PV="1.2.1"
+RTMP_MODULE_PV="1.2.2"
 RTMP_MODULE_P="ngx_rtmp-${RTMP_MODULE_PV}"
 RTMP_MODULE_URI="https://github.com/arut/nginx-rtmp-module/archive/v${RTMP_MODULE_PV}.tar.gz"
 RTMP_MODULE_WD="${WORKDIR}/nginx-rtmp-module-${RTMP_MODULE_PV}"
@@ -109,7 +111,7 @@ HTTP_DAV_EXT_MODULE_URI="https://github.com/arut/nginx-dav-ext-module/archive/v$
 HTTP_DAV_EXT_MODULE_WD="${WORKDIR}/nginx-dav-ext-module-${HTTP_DAV_EXT_MODULE_PV}"
 
 # echo-nginx-module (https://github.com/openresty/echo-nginx-module, BSD license)
-HTTP_ECHO_MODULE_PV="0.62"
+HTTP_ECHO_MODULE_PV="0.63"
 HTTP_ECHO_MODULE_P="ngx_http_echo-${HTTP_ECHO_MODULE_PV}"
 HTTP_ECHO_MODULE_URI="https://github.com/openresty/echo-nginx-module/archive/v${HTTP_ECHO_MODULE_PV}.tar.gz"
 HTTP_ECHO_MODULE_WD="${WORKDIR}/echo-nginx-module-${HTTP_ECHO_MODULE_PV}"
@@ -157,13 +159,13 @@ GEOIP2_MODULE_URI="https://github.com/leev/ngx_http_geoip2_module/archive/${GEOI
 GEOIP2_MODULE_WD="${WORKDIR}/ngx_http_geoip2_module-${GEOIP2_MODULE_PV}"
 
 # njs-module (https://github.com/nginx/njs, as-is)
-NJS_MODULE_PV="0.7.7"
+NJS_MODULE_PV="0.7.8"
 NJS_MODULE_P="njs-${NJS_MODULE_PV}"
 NJS_MODULE_URI="https://github.com/nginx/njs/archive/${NJS_MODULE_PV}.tar.gz"
 NJS_MODULE_WD="${WORKDIR}/njs-${NJS_MODULE_PV}"
 
 # stream_lua (https://github.com/openresty/stream-lua-nginx-module, BSD license)
-STREAM_LUA_MODULE_PV="a07f317548e1d9eb0580ee7c5d833e99fa9c4cc5"
+STREAM_LUA_MODULE_PV="ae02d9ac1f1dda4aeb36184dc2a5d2436c23ecd0"
 STREAM_LUA_MODULE_P="ngx_stream_lua-${STREAM_LUA_MODULE_PV}"
 STREAM_LUA_MODULE_URI="https://github.com/openresty/stream-lua-nginx-module/archive/${STREAM_LUA_MODULE_PV}.tar.gz"
 STREAM_LUA_MODULE_WD="${WORKDIR}/stream-lua-nginx-module-${STREAM_LUA_MODULE_PV}"
@@ -193,7 +195,10 @@ SRC_URI="https://nginx.org/download/${P}.tar.gz
 	nginx_modules_http_memc? ( ${HTTP_MEMC_MODULE_URI} -> ${HTTP_MEMC_MODULE_P}.tar.gz )
 	nginx_modules_http_metrics? ( ${HTTP_METRICS_MODULE_URI} -> ${HTTP_METRICS_MODULE_P}.tar.gz )
 	nginx_modules_http_mogilefs? ( ${HTTP_MOGILEFS_MODULE_URI} -> ${HTTP_MOGILEFS_MODULE_P}.tar.gz )
-	nginx_modules_http_naxsi? ( ${HTTP_NAXSI_MODULE_URI} -> ${HTTP_NAXSI_MODULE_P}.tar.gz )
+	nginx_modules_http_naxsi? (
+		${HTTP_NAXSI_MODULE_URI} -> ${HTTP_NAXSI_MODULE_P}.tar.gz
+		${HTTP_NAXSI_LIBINJECTION_MODULE_URI} -> ${HTTP_NAXSI_LIBINJECTION_MODULE_P}.tar.gz
+	)
 	nginx_modules_http_push_stream? ( ${HTTP_PUSH_STREAM_MODULE_URI} -> ${HTTP_PUSH_STREAM_MODULE_P}.tar.gz )
 	nginx_modules_http_security? ( ${HTTP_SECURITY_MODULE_URI} -> ${HTTP_SECURITY_MODULE_P}.tar.gz )
 	nginx_modules_http_slowfs_cache? ( ${HTTP_SLOWFS_CACHE_MODULE_URI} -> ${HTTP_SLOWFS_CACHE_MODULE_P}.tar.gz )
@@ -323,6 +328,7 @@ CDEPEND="
 	nginx_modules_stream_geoip2? ( dev-libs/libmaxminddb:= )
 	nginx_modules_stream_lua? ( ${LUA_DEPS} )"
 RDEPEND="${CDEPEND}
+	app-misc/mime-types[nginx]
 	selinux? ( sec-policy/selinux-nginx )
 	!www-servers/nginx:0"
 DEPEND="${CDEPEND}
@@ -340,7 +346,7 @@ REQUIRED_USE="pcre-jit? ( pcre )
 		pcre
 		!pcre2
 	)
-	nginx_modules_http_naxsi? ( pcre )
+	nginx_modules_http_naxsi? ( nginx_modules_http_rewrite pcre )
 	nginx_modules_http_dav_ext? ( nginx_modules_http_dav nginx_modules_http_xslt )
 	nginx_modules_http_metrics? ( nginx_modules_http_stub_status )
 	nginx_modules_http_security? ( pcre )
@@ -391,6 +397,13 @@ src_prepare() {
 	if use nginx_modules_http_sticky; then
 		cd "${HTTP_STICKY_MODULE_WD}" || die
 		eapply "${FILESDIR}"/http_sticky-nginx-1.23.0.patch
+		cd "${S}" || die
+	fi
+
+	if use nginx_modules_http_naxsi; then
+		cd "${HTTP_NAXSI_MODULE_WD}" || die
+		rm -r libinjection || die
+		mv ../../libinjection-${HTTP_NAXSI_LIBINJECTION_MODULE_PV} libinjection || die
 		cd "${S}" || die
 	fi
 
@@ -667,11 +680,6 @@ src_configure() {
 		myconf+=( --group=${PN} )
 	fi
 
-	local WITHOUT_IPV6=
-	if ! use ipv6; then
-		WITHOUT_IPV6=" -DNGX_HAVE_INET6=0"
-	fi
-
 	if [[ -n "${EXTRA_ECONF}" ]]; then
 		myconf+=( ${EXTRA_ECONF} )
 		ewarn "EXTRA_ECONF applied. Now you are on your own, good luck!"
@@ -683,7 +691,7 @@ src_configure() {
 		--error-log-path="${EPREFIX}"/var/log/${PN}/error_log \
 		--pid-path="${EPREFIX}"/run/${PN}.pid \
 		--lock-path="${EPREFIX}"/run/lock/${PN}.lock \
-		--with-cc-opt="-I${ESYSROOT}/usr/include${WITHOUT_IPV6}" \
+		--with-cc-opt="-I${ESYSROOT}/usr/include" \
 		--with-ld-opt="-L${ESYSROOT}/usr/$(get_libdir)" \
 		--http-log-path="${EPREFIX}"/var/log/${PN}/access_log \
 		--http-client-body-temp-path="${EPREFIX}${NGINX_HOME_TMP}"/client \
@@ -709,7 +717,7 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install
 
-	cp "${FILESDIR}"/nginx.conf-r2 "${ED}"/etc/nginx/nginx.conf || die
+	cp "${FILESDIR}"/nginx.conf-r3 "${ED}"/etc/nginx/nginx.conf || die
 
 	newinitd "${FILESDIR}"/nginx.initd-r4 nginx
 	newconfd "${FILESDIR}"/nginx.confd nginx
@@ -792,8 +800,11 @@ src_install() {
 	fi
 
 	if use nginx_modules_http_naxsi; then
-		insinto /etc/nginx
-		doins "${HTTP_NAXSI_MODULE_WD}"/../naxsi_config/naxsi_core.rules
+		insinto /etc/nginx/naxsi
+		doins "${HTTP_NAXSI_MODULE_WD}"/../distros/nginx/*
+		doins "${HTTP_NAXSI_MODULE_WD}"/../naxsi_rules/naxsi_core.rules
+		doins -r "${HTTP_NAXSI_MODULE_WD}"/../naxsi_rules/blocking
+		doins -r "${HTTP_NAXSI_MODULE_WD}"/../naxsi_rules/whitelists
 	fi
 
 	if use rtmp; then

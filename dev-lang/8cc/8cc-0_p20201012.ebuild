@@ -5,7 +5,7 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="b8a46abdb5f0633bdbff314820daf560cb987377"
+EGIT_COMMIT="b480958396f159d3794f0d4883172b21438a8597"
 
 DESCRIPTION="A Small C Compiler"
 HOMEPAGE="https://github.com/rui314/8cc"
