@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="5a25b1724e16ac1448045f5dd2fb11ba5694c83b"
+EGIT_COMMIT="9ab6e64a30261df109549d21ee7940df87db66bb"
 
 DESCRIPTION="Bind extends the idea of of let and destructing in a uniform syntax"
 HOMEPAGE="https://github.com/gwkkwg/metabang-bind"
@@ -21,6 +21,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	default
 	use test || rm -rf ${PN}-test.asd unit-tests
 }
 

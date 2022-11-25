@@ -35,6 +35,20 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-charms
 	dev-lisp/jsonrpc
 	dev-lisp/esrap
+	dev-lisp/inquisitor
+	dev-lisp/trivia
+	dev-lisp/cl-setlocale
+	dev-lisp/cl-package-locks
+	dev-lisp/st-json
+	dev-lisp/cl-change-case
+	dev-lisp/trivial-package-local-nicknames
 	app-emacs/slime
 "
 
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all lib/encodings/*.table \
+		modes/go-mode/go.json \
+		modes/lsp-mode/client-capabilities.json \
+		modes/sql-mode/sql.tmLanguage.json
+}

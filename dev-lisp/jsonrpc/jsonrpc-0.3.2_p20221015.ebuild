@@ -19,18 +19,26 @@ IUSE="test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/yason
+	dev-lisp/alexandria
 	dev-lisp/usocket
+	dev-lisp/bordeaux-threads
+	dev-lisp/event-emitter
 	dev-lisp/fast-io
 	dev-lisp/trivial-utf8
-	dev-lisp/alexandria
-	dev-lisp/uiop
+	dev-lisp/quri
+	dev-lisp/websocket-driver
+	dev-lisp/clack
+	dev-lisp/cl-plus-ssl
+	dev-lisp/dissect
+	dev-lisp/chanl
+	dev-lisp/vom
 	test? ( dev-lisp/rove )
 "
 
 src_prepare() {
 	default
 	if ! use test ; then
-		sed -i '/defsystem "jsonrpc/tests"/,$d' ${PN}.asd
+		sed -i '/defsystem "jsonrpc\/tests"/,$d' ${PN}.asd
 		rm -r tests
 	fi
 }

@@ -3,9 +3,9 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
+inherit common-lisp-3
 
-DESCRIPTION="A CommonLisp interface to the SQLite embedded relational database engine."
+DESCRIPTION="A CommonLisp interface to the SQLite embedded relational database engine"
 HOMEPAGE="http://common-lisp.net/project/cl-sqlite/"
 SRC_URI="https://github.com/dmitryvk/cl-sqlite/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -22,7 +22,7 @@ RDEPEND="
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm sqlite-tests.asd sqlite-tests.lisp
 }
 

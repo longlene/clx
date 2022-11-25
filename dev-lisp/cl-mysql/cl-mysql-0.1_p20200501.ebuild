@@ -2,13 +2,13 @@
 
 EAPI=7
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="3fbf6e1421484f64c5bcf2ff3c4b96c6f0414f09"
 
 DESCRIPTION="Common Lisp MySQL library"
 HOMEPAGE="http://hackinghat.com/index.php/cl-mysql"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/hackinghat/cl-mysql.git"
+SRC_URI="https://github.com/hackinghat/cl-mysql/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,3 +19,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cffi"
 
+src_prepare() {
+	default
+	rm ${PN}-test.asd test*.lisp integration-test.lisp
+}

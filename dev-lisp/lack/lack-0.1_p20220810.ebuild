@@ -34,6 +34,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/quri
 	dev-lisp/http-body
 	dev-lisp/circular-streams
+	dev-lisp/trivial-rfc1123
 	
 	dev-lisp/cl-dbi
 	dev-lisp/marshal

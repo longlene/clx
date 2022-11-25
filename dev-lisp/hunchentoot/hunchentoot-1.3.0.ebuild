@@ -37,6 +37,6 @@ src_install() {
 	common-lisp-install-sources *.lisp url-rewrite
 	common-lisp-install-sources -t all www test
 	common-lisp-install-asdf
-	dodoc CHANGELOG* README
+	dodoc CHANGELOG* README.md
 	use doc && dodoc -r doc/*
 }

@@ -10,6 +10,7 @@ EGIT_COMMIT="f660d07dac72bc3e99caae1c6c8a789991e2694c"
 DESCRIPTION="A wrapper around setlocale(3) for Common Lisp"
 HOMEPAGE="https://github.com/shamazmazum/cl-setlocale/"
 SRC_URI="https://github.com/shamazmazum/cl-setlocale/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+IUSE="test"
 
 LICENSE="BSD-2"
 SLOT="0"
