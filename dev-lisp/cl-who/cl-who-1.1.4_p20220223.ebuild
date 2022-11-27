@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="ab4c8ca5244197b02e308406e5a154d2cb938f5a"
+EGIT_COMMIT="07dafe9b351c32326ce20b5804e798f10d4f273d"
 
 DESCRIPTION='CL-WHO (is yet another Lisp Markup Language).'
 HOMEPAGE="http://weitz.de/cl-who/"

@@ -7,7 +7,7 @@ inherit vcs-snapshot
 
 DESCRIPTION="Opensource macOS Cursors"
 HOMEPAGE="https://github.com/ful1e5/apple_cursor"
-SRC_URI="https://github.com/ful1e5/apple_cursor/releases/download/v${PV}/macOSMonterey.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/ful1e5/apple_cursor/releases/download/v${PV}/macOS-Monterey.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3.0"
 SLOT="0"
@@ -18,7 +18,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_install() {
-	insinto /usr/share/icons/macOSMonterey
+	insinto /usr/share/icons/macOS-Monterey
 	doins -r cursors cursor.theme index.theme
 	einstalldocs
 }
