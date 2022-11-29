@@ -3,9 +3,11 @@
 
 EAPI=8
 
+inherit autotools
+
 DESCRIPTION="Chinese text-to-speech software"
 HOMEPAGE="https://www.eguidedog.net/ekho.php"
-SRC_URI="https://sourceforge.net/projects/e-guidedog/files/Ekho/${PV}/${P}.tar.xz"
+SRC_URI="https://github.com/hgneng/ekho/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,3 +21,8 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+src_prepare() {
+	default
+	eautoreconf
+}
