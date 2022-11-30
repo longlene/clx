@@ -18,6 +18,8 @@ IUSE=""
 
 src_prepare() {
 	default
+	sed -e '/defsystem :trivial-utf-8-tests/,$d' \
+		-i trivial-utf-8.asd
 	rm tests.lisp
 }
 

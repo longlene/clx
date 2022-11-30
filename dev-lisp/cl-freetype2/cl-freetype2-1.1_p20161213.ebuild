@@ -25,5 +25,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
+	default
 	use test || rm -rf ${PN}-tests.asd t
 }

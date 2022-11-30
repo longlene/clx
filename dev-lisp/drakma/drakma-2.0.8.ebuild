@@ -23,7 +23,12 @@ RDEPEND="!dev-lisp/cl-${PN}
 		>=dev-lisp/usocket-0.4.0
 		dev-lisp/cl-plus-ssl"
 
+src_prepare() {
+	default
+	rm -rf ${PN}-test.asd test
+}
+
 src_install() {
 	common-lisp-3_src_install
-	dohtml docs/index.html
+	dodoc docs/index.html
 }

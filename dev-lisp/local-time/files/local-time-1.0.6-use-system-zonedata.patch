@@ -1,0 +1,27 @@
+diff -Nuar a/src/local-time.lisp b/src/local-time.lisp
+--- a/src/local-time.lisp	2015-05-27 13:13:43.000000000 +0200
++++ b/src/local-time.lisp	2016-12-01 17:00:46.440002481 +0100
+@@ -91,22 +91,7 @@
+ (defvar *default-timezone*)
+ 
+ (defparameter *default-timezone-repository-path*
+-  (flet ((try (project-home-directory)
+-           (when project-home-directory
+-             (ignore-errors
+-               (truename
+-                (merge-pathnames "zoneinfo/"
+-                                 (make-pathname :directory (pathname-directory project-home-directory))))))))
+-    (or (when (find-package "ASDF")
+-          (let ((path (eval (read-from-string
+-                             "(let ((system (asdf:find-system :local-time nil)))
+-                                (when system
+-                                  (asdf:component-pathname system)))"))))
+-            (try path)))
+-        (let ((path (or #.*compile-file-truename*
+-                        *load-truename*)))
+-          (when path
+-            (try (merge-pathnames "../" path)))))))
++  #p"/usr/share/zoneinfo/") 
+ 
+ ;;; Month information
+ (defparameter +month-names+

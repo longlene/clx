@@ -16,7 +16,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE=""
 
-RDEPEND="dev-lisp/alexandria"
+RDEPEND="
+	dev-lisp/alexandria
+	dev-lisp/global-vars
+	dev-lisp/trivial-features
+	dev-lisp/trivial-garbage
+"
 
 src_prepare() {
 	default
@@ -27,5 +32,5 @@ src_prepare() {
 
 src_install() {
 	common-lisp-3_src_install
-	common-lisp-install -t all version.sexp
+	common-lisp-install-sources -t all version.sexp
 }

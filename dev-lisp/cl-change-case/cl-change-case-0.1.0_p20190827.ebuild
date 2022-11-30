@@ -25,5 +25,5 @@ BDEPEND=""
 
 src_prepare() {
 	default
-	use test || ${PN}-test.asd t
+	use test || rm -rf ${PN}-test.asd t
 }
