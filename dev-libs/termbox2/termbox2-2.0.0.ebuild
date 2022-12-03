@@ -3,13 +3,9 @@
 
 EAPI=8
 
-inherit vcs-snapshot
-
-EGIT_COMMIT="bac17e4f86f76940f282a591e0ced0ba4db329d8"
-
 DESCRIPTION="suckless terminal rendering library"
 HOMEPAGE="https://github.com/termbox/termbox2"
-SRC_URI="https://github.com/termbox/termbox2/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/termbox/termbox2/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
