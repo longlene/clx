@@ -5,11 +5,9 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="0b163bea45248413d02abc67b5edd57d7db92e6f"
-
 DESCRIPTION="Common Lisp editor/IDE with high expansibility"
 HOMEPAGE="https://github.com/cxxxr/lem"
-SRC_URI="https://github.com/cxxxr/lem/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/cxxxr/lem/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
