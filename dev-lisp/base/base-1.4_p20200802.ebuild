@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="498fd7224748a1cceaa6127edcedab6e3563aa84"
+EGIT_COMMIT="e7a1233771c00fe4e178427872968d5a849df525"
 
 DESCRIPTION="Universally useful Lisp code that lives in package com.google.base"
 HOMEPAGE="https://github.com/brown/base"
@@ -23,6 +23,10 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
-	use test || rm -r com.google.base-test.asd base_test.lisp
+	default
+	if ! use test ; then
+		sed -e '/defsystem com.google.base\/test/,$d' \
+			-i com.google.base.asd
+		rm base-test.lisp
+	fi
 }

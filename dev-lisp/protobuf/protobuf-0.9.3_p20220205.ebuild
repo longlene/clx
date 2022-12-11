@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="38ac10aa7e1999684d985b031bf2dcbfe63d1ca7"
+EGIT_COMMIT="aa0914253f659c22d6043dce22c9a0b2b5471e6d"
 
 DESCRIPTION="Common Lisp implementation of Google's protocol buffers"
 HOMEPAGE="http://common-lisp.net/project/protobuf/"

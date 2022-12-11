@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="1974f34baba99febb384ff121714f2fe370a8f9b"
+EGIT_COMMIT="ee904a118a0f060279ad9d253a3e8e3997609213"
 
 DESCRIPTION="Common Lisp PDF Generation Library"
 HOMEPAGE="https://github.com/mbattyani/cl-pdf"
