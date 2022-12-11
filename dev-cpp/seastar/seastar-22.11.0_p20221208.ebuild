@@ -3,9 +3,8 @@
 
 EAPI=7
 
+EGIT_COMMIT="ed7a0f54964920578434359b05b9a320676a8550"
 inherit cmake flag-o-matic vcs-snapshot
-
-EGIT_COMMIT="3c88c17d480c54c7d8160e060d106bd640f864e8"
 
 DESCRIPTION="High performance server-side application framework"
 HOMEPAGE="http://seastar.io/"
