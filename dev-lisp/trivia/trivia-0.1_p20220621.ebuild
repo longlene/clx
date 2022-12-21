@@ -22,6 +22,8 @@ RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/alexandria
 	dev-lisp/fare-quasiquote
+	dev-lisp/trivial-cltl2
+	dev-lisp/type-i
 	test? ( dev-lisp/fiveam )
 "
 

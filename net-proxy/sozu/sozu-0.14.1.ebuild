@@ -1,0 +1,243 @@
+# Copyright 2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	adler-1.0.2
+	aho-corasick-0.7.19
+	android_system_properties-0.1.5
+	anyhow-1.0.65
+	ascii-1.1.0
+	asn1-rs-0.5.1
+	asn1-rs-derive-0.4.0
+	asn1-rs-impl-0.1.0
+	async-channel-1.7.1
+	async-dup-1.2.2
+	async-executor-1.4.1
+	async-fs-1.6.0
+	async-io-1.9.0
+	async-lock-2.5.0
+	async-net-1.7.0
+	async-process-1.5.0
+	async-task-4.3.0
+	atomic-waker-1.0.0
+	atty-0.2.14
+	autocfg-1.1.0
+	base64-0.13.0
+	bitflags-1.3.2
+	block-buffer-0.10.3
+	blocking-1.2.0
+	bumpalo-3.11.0
+	byteorder-1.4.3
+	cache-padded-1.2.0
+	cc-1.0.73
+	cfg-if-1.0.0
+	chrono-0.4.22
+	chunked_transfer-1.4.0
+	clap-4.0.14
+	clap_derive-4.0.13
+	clap_lex-0.3.0
+	codespan-reporting-0.11.1
+	concurrent-queue-1.2.4
+	cookie-factory-0.3.2
+	core-foundation-sys-0.8.3
+	cpufeatures-0.2.5
+	crc32fast-1.3.2
+	crossbeam-channel-0.5.6
+	crossbeam-utils-0.8.12
+	crypto-common-0.1.6
+	cxx-1.0.78
+	cxx-build-1.0.78
+	cxxbridge-flags-1.0.78
+	cxxbridge-macro-1.0.78
+	data-encoding-2.3.2
+	der-parser-8.1.0
+	digest-0.10.5
+	dirs-next-2.0.0
+	dirs-sys-next-0.1.2
+	displaydoc-0.2.3
+	doc-comment-0.3.3
+	encode_unicode-1.0.0
+	env_logger-0.8.4
+	event-listener-2.5.3
+	fastrand-1.8.0
+	flate2-1.0.24
+	foreign-types-0.3.2
+	foreign-types-shared-0.1.1
+	form_urlencoded-1.1.0
+	fs_extra-1.2.0
+	futures-0.3.24
+	futures-channel-0.3.24
+	futures-core-0.3.24
+	futures-executor-0.3.24
+	futures-io-0.3.24
+	futures-lite-1.12.0
+	futures-macro-0.3.24
+	futures-sink-0.3.24
+	futures-task-0.3.24
+	futures-util-0.3.24
+	generic-array-0.14.6
+	getrandom-0.2.7
+	hdrhistogram-7.5.2
+	heck-0.4.0
+	hermit-abi-0.1.19
+	hex-0.4.3
+	hpack-0.3.0
+	httpdate-1.0.2
+	iana-time-zone-0.1.51
+	iana-time-zone-haiku-0.1.0
+	idna-0.3.0
+	instant-0.1.12
+	itoa-1.0.4
+	jemalloc-sys-0.5.2+5.3.0-patched
+	jemallocator-0.5.0
+	js-sys-0.3.60
+	lazy_static-1.4.0
+	lazycell-1.3.0
+	libc-0.2.135
+	link-cplusplus-1.0.7
+	log-0.3.9
+	log-0.4.17
+	memchr-2.5.0
+	memoffset-0.6.5
+	minimal-lexical-0.2.1
+	miniz_oxide-0.5.4
+	mio-0.8.4
+	nix-0.25.0
+	nom-7.1.1
+	num-bigint-0.4.3
+	num-integer-0.1.45
+	num-traits-0.2.15
+	num_cpus-1.13.1
+	num_threads-0.1.6
+	numtoa-0.1.0
+	oid-registry-0.6.0
+	once_cell-1.15.0
+	openssl-0.10.42
+	openssl-macros-0.1.0
+	openssl-sys-0.9.76
+	os_str_bytes-6.3.0
+	parking-2.0.0
+	paw-1.0.0
+	paw-attributes-1.0.2
+	paw-raw-1.0.0
+	pem-1.1.0
+	percent-encoding-2.2.0
+	pin-project-lite-0.2.9
+	pin-utils-0.1.0
+	pkg-config-0.3.25
+	polling-2.3.0
+	pool-0.1.4
+	poule-0.3.2
+	ppv-lite86-0.2.16
+	prettytable-rs-0.9.0
+	proc-macro-error-1.0.4
+	proc-macro-error-attr-1.0.4
+	proc-macro2-1.0.46
+	quickcheck-1.0.3
+	quote-1.0.21
+	rand-0.8.5
+	rand_chacha-0.3.1
+	rand_core-0.6.4
+	redox_syscall-0.2.16
+	redox_termios-0.1.2
+	redox_users-0.4.3
+	regex-1.6.0
+	regex-syntax-0.6.27
+	remove_dir_all-0.5.3
+	ring-0.16.20
+	rusticata-macros-4.1.0
+	rustls-0.20.6
+	rustls-pemfile-1.0.1
+	rustversion-1.0.9
+	rusty_ulid-1.0.0
+	ryu-1.0.11
+	scratch-1.0.2
+	sct-0.7.0
+	serde-1.0.145
+	serde_derive-1.0.145
+	serde_json-1.0.86
+	sha2-0.10.6
+	signal-hook-0.3.14
+	signal-hook-registry-1.4.0
+	simple-mutex-1.1.5
+	slab-0.4.7
+	smol-1.2.5
+	socket2-0.4.7
+	sozu-command-lib-0.14.1
+	sozu-lib-0.14.1
+	spin-0.5.2
+	strsim-0.10.0
+	syn-1.0.102
+	synstructure-0.12.6
+	tempfile-3.3.0
+	term-0.7.0
+	termcolor-1.1.3
+	termion-1.5.6
+	thiserror-1.0.37
+	thiserror-impl-1.0.37
+	time-0.3.15
+	time-macros-0.2.4
+	tiny_http-0.12.0
+	tinyvec-1.6.0
+	tinyvec_macros-0.1.0
+	toml-0.5.9
+	trailer-0.1.2
+	typenum-1.15.0
+	unicode-bidi-0.3.8
+	unicode-ident-1.0.5
+	unicode-normalization-0.1.22
+	unicode-width-0.1.10
+	unicode-xid-0.2.4
+	untrusted-0.7.1
+	ureq-2.5.0
+	url-2.3.1
+	vcpkg-0.2.15
+	version_check-0.9.4
+	waker-fn-1.1.0
+	wasi-0.11.0+wasi-snapshot-preview1
+	wasm-bindgen-0.2.83
+	wasm-bindgen-backend-0.2.83
+	wasm-bindgen-macro-0.2.83
+	wasm-bindgen-macro-support-0.2.83
+	wasm-bindgen-shared-0.2.83
+	web-sys-0.3.60
+	webpki-0.22.0
+	webpki-roots-0.22.5
+	wepoll-ffi-0.1.2
+	winapi-0.3.9
+	winapi-i686-pc-windows-gnu-0.4.0
+	winapi-util-0.1.5
+	winapi-x86_64-pc-windows-gnu-0.4.0
+	windows-sys-0.36.1
+	windows_aarch64_msvc-0.36.1
+	windows_i686_gnu-0.36.1
+	windows_i686_msvc-0.36.1
+	windows_x86_64_gnu-0.36.1
+	windows_x86_64_msvc-0.36.1
+	x509-parser-0.14.0
+"
+
+inherit cargo
+
+DESCRIPTION="A lightweight, fast, always-up reverse proxy server"
+HOMEPAGE="https://github.com/sozu-proxy/sozu"
+SRC_URI="
+	https://github.com/sozu-proxy/sozu/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+	$(cargo_crate_uris ${CRATES})"
+
+LICENSE="AGPL-3.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+BDEPEND="
+	|| ( >=virtual/rust-1.31.0 >=virtual/rust-bin-1.31.0 )
+"
+
+src_install() {
+	cargo_src_install
+	einstalldocs
+}

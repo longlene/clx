@@ -23,6 +23,6 @@ RDEPEND="
 
 src_prepare() {
 	default
-	rm -rf ${PN}-test.asd tests
+	rm -rf ${PN}-test.asd tests website
 }
 

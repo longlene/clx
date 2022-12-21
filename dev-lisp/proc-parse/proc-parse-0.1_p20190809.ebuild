@@ -28,6 +28,6 @@ src_prepare() {
 }
 
 src_install() {
-	common-lisp3_src_install
+	common-lisp-3_src_install
 	common-lisp-install-sources -t all src README.markdown
 }

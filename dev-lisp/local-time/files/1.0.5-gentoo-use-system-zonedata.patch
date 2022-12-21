@@ -1,0 +1,27 @@
+diff -Nuar a/src/local-time.lisp b/src/local-time.lisp
+--- a/src/local-time.lisp	2014-12-05 03:01:37.000000000 +0100
++++ b/src/local-time.lisp	2015-04-27 11:12:05.317886065 +0200
+@@ -91,22 +91,7 @@
+ (defvar *default-timezone*)
+ 
+ (defparameter *default-timezone-repository-path*
+-  (flet ((try (project-home-directory)
+-           (when project-home-directory
+-             (ignore-errors
+-               (truename
+-                (merge-pathnames "zoneinfo/"
+-                                 (make-pathname :directory (pathname-directory project-home-directory))))))))
+-    (or (when (find-package "ASDF")
+-          (let ((path (eval (read-from-string
+-                             "(let ((system (asdf:find-system :local-time nil)))
+-                                (when system
+-                                  (asdf:component-pathname system)))"))))
+-            (try path)))
+-        (let ((path (or #.*compile-file-truename*
+-                        *load-truename*)))
+-          (when path
+-            (try (merge-pathnames "../" path)))))))
++  #p"/usr/share/zoneinfo/")
+ 
+ ;;; Per Naggum we use the terms Political Time and Scientific Time to
+ ;;; distinguish between two ways to think about adjusting times around

@@ -9,7 +9,7 @@ inherit cmake lua-single vcs-snapshot
 
 EGIT_COMMIT="dde9e56fb61eee040d7f3dba2331c6d6c095aee8"
 
-DESCRIPTION="Torch is a Lua-based suite for scientific computations based on multidimensional tensors."
+DESCRIPTION="Torch is a Lua-based suite for scientific computations based on multidimensional tensors"
 HOMEPAGE="https://github.com/torch/torch7"
 SRC_URI="https://github.com/torch/torch7/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -51,11 +51,6 @@ opencl? (
 )"
 
 REQUIRED_USE="cudnn? ( cuda )"
-
-#src_prepare() {
-#	eapply_user
-#	sed -i '/FILE(RELATIVE_PATH\ Torch_INSTALL_INCLUDE_SUBDIR/{s#${LUA_INCDIR}#/usr/include#}' cmake/TorchPaths.cmake || die
-#}
 
 src_configure() {
 	local mycmakeargs=(

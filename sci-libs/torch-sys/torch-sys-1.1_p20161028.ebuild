@@ -19,8 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	>=dev-lang/lua-5.1:=
-	dev-lang/luajit:2
+	${LUA_DEPS}
 	sci-libs/torch7
 "
 RDEPEND="${DEPEND}"
@@ -32,8 +31,8 @@ src_configure() {
 		"-DLUA_BINDIR=/usr/bin"
 		"-DLUA_INCDIR=/usr/include"
 		"-DLUA_LIBDIR=/usr/lib"
-		"-DLUALIB=/usr/lib/libluajit-5.1.so"
-		"-DLUA=/usr/bin/luajit"
+		"-DLUALIB=$(lua_get_shared_lib)"
+		"-DLUA=${LUA}"
 	)
 
 	cmake_src_configure
