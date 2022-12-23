@@ -5,7 +5,7 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="78d13257be8094a71b65af401d4753281af2205a"
+EGIT_COMMIT="85c9ac18b59125b988cda40f40d8687e1ba88a7a"
 
 DESCRIPTION="Port of OpenAI's Whisper model in C/C++"
 HOMEPAGE="https://github.com/ggerganov/whisper.cpp"

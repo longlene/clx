@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake vcs-snapshot
+inherit cmake
 
 DESCRIPTION="A simple and easy-to-use library to learn videogames programming"
 HOMEPAGE="http://www.raylib.com"
@@ -14,18 +14,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="static-libs"
 
+#media-libs/glfw
 DEPEND="
-	media-libs/glfw
 	media-libs/openal
 "
 RDEPEND="${DEPEND}"
 
 src_configure() {
+	#-DUSE_EXTERNAL_GLFW=ON
 	local mycmakeargs=(
-	-DUSE_EXTERNAL_GLFW=ON
-	-DBUILD_EXAMPLES=OFF
-	-DBUILD_GAMES=OFF
-	-DSHARED=ON
+		-DBUILD_EXAMPLES=OFF
 	)
 	cmake_src_configure
 }

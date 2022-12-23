@@ -4,7 +4,8 @@
 EAPI=8
 inherit cmake
 
-CommitId=052b4430e93f021709d27d2b5d42694ce0c49ce6
+CommitId=45f3b764b309dfca79923187c52499d6894cd2af
+
 DESCRIPTION="Machine code generation for C++"
 HOMEPAGE="https://asmjit.com/"
 SRC_URI="https://github.com/asmjit/${PN}/archive/${CommitId}.tar.gz
