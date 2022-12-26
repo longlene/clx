@@ -3,8 +3,6 @@
 
 EAPI=7
 
-inherit user
-
 DESCRIPTION="A distributed MQTT message broker based on Erlang/OTP"
 HOMEPAGE="https://vernemq.com"
 SRC_URI="https://github.com/vernemq/vernemq/archive/${PV}.tar.gz -> ${P}.tar.gz"
@@ -21,11 +19,6 @@ BDEPEND="
 "
 
 RESTRICT=network-sandbox
-
-pkg_setup() {
-	enewgroup vernemq
-	enewuser vernemq -1 /bin/sh /var/lib/vernemq vernemq
-}
 
 src_prepare() {
 	default
