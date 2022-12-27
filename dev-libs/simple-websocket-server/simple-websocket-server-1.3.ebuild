@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	dev-libs/boost[threads]
+	dev-libs/boost
 "
 RDEPEND="${DEPEND}"
 
