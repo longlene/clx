@@ -8,7 +8,7 @@ inherit python-any-r1
 
 DESCRIPTION="V8 JavaScript Engine"
 HOMEPAGE="https://v8.dev"
-SRC_URI="https://github.com/v8/v8/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/v8/v8/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

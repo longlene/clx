@@ -3,8 +3,7 @@
 
 EAPI=7
 
-inherit autotools flag-o-matic toolchain-funcs user
-
+inherit autotools flag-o-matic toolchain-funcs
 
 DESCRIPTION="tiny/turbo/throttling HTTP server"
 HOMEPAGE="http://www.acme.com/software/thttpd/"
@@ -15,7 +14,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-RDEPEND=""
+RDEPEND="
+	acct-group/thttpd
+	acct-user/thttpd
+"
 DEPEND=""
 
 WEBROOT="/var/www/localhost"
@@ -35,7 +37,7 @@ pkg_setup() {
 src_prepare() {
 	#eapply "${FILESDIR}"/thttpd-renamed-htpasswd.patch
 	#mv "${S}"/extras/{htpasswd.c,th_htpasswd.c} || die
-	eapply_user
+	default
 	eautoreconf -f -i
 }
 
