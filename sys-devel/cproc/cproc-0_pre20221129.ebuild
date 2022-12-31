@@ -5,11 +5,11 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="b82a2315827553f8d1e7476b1261c5f1d00a7c7e"
+EGIT_COMMIT="9ae9aa6dce652ab62c1c9ca34e8419e5dc510de1"
 
 DESCRIPTION="C11 compiler"
 HOMEPAGE="https://github.com/michaelforney/cproc"
-SRC_URI="https://github.com/michaelforney/cproc/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://git.sr.ht/~mcf/cproc/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
