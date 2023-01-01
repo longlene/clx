@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit eutils java-pkg-2 user
+inherit eutils java-pkg-2
 
 DESCRIPTION="A highly scalable second-generation distributed database"
 HOMEPAGE="http://cassandra.apache.org/"
