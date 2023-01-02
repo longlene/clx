@@ -1,9 +1,9 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit versionator eutils user multilib toolchain-funcs vcs-snapshot
+inherit eutils multilib toolchain-funcs vcs-snapshot
 
 DESCRIPTION="An open source, distributed database"
 HOMEPAGE="https://riak.com/"
@@ -20,24 +20,17 @@ RDEPEND="
 	sys-libs/zlib
 "
 DEPEND="
+	dev-utils/rebar:3
 	>=dev-lang/erlang-20.0
 	${RDEPEND}
 "
 
 RESTRICT=network-sandbox
 
-#pkg_setup() {
-#	ebegin "Creating riak user and group"
-#	local riak_home="/var/$(get_libdir)/riak"
-#	enewgroup riak
-#	enewuser riak -1 -1 $riak_home riak
-#	eend $?
-#}
-
 src_prepare() {
 	default
 	sed -i '/warnings_as_errors/d' rebar.config
-	./rebar3 get-deps || die "prepare failed"
+	rebar3 get-deps || die "prepare failed"
 	sed -i '/warnings_as_errors/d' _build/default/lib/pbkdf2/rebar.config
 	sed -i 's/warnings_as_errors,//' _build/default/lib/riak_kv/rebar.config
 }
@@ -48,9 +41,8 @@ src_compile() {
 
 src_install() {
 	local libdir=/usr/$(get_libdir)
-
-	insinto ${libdir}
-	doins -r _build/rel/rel/riak
+	insinto ${libdir}/riak
+	doins -r _build/rel/rel/riak{data,erts-*,etc,lib,log,releases,share,usr}
 
 	dosym ${libdir}/riak/etc /etc/riak
 
@@ -58,7 +50,7 @@ src_install() {
 	keepdir /var/lib/riak/{bitcask,ring,leveldb} /var/log/riak/sasl
 
 	# change owner to riak
-	fowners -R riak:riak /var/lib/riak /var/log/riak
+	#fowners -R riak:riak /var/lib/riak /var/log/riak
 
 	# create doc
 	doman doc/man/man1/*
