@@ -1,9 +1,9 @@
-# Copyright 2020-2021 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8,9} )
+PYTHON_COMPAT=( python3_{9,10,11} )
 inherit python-single-r1
 
 DESCRIPTION="Emscripten is a complete compiler toolchain to WebAssembly, using LLVM"
@@ -30,7 +30,7 @@ BDEPEND="
 
 PATCHES=(
 	"${FILESDIR}"/emscripten-2.0.8-wasm-ld.patch
-	"${FILESDIR}"/emscripten-3.0.0-py-runner.patch
+	"${FILESDIR}"/emscripten-3.1.28-py-runner.patch
 )
 
 src_prepare() {
