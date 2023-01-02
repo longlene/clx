@@ -1,10 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=7
+EAPI=8
 
-DESCRIPTION="C++ library for parsing and serializing JSON text"
+inherit cmake
+
+DESCRIPTION="A C++, header-only library for constructing JSON and JSON-like data formats"
 HOMEPAGE="http://danielaparker.github.io/jsoncons"
 SRC_URI="https://github.com/danielaparker/jsoncons/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -16,8 +17,9 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_install() {
-	insinto /usr/include
-	doins -r src/${PN} src/${PN}_ext
-	dodoc README.md
+src_configure() {
+	local mycmakeargs=(
+		-DJSONCONS_BUILD_TESTS=OFF
+	)
+	cmake_src_configure
 }
