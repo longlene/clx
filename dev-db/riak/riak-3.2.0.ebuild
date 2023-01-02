@@ -20,7 +20,7 @@ RDEPEND="
 	sys-libs/zlib
 "
 DEPEND="
-	dev-utils/rebar:3
+	dev-util/rebar:3
 	>=dev-lang/erlang-20.0
 	${RDEPEND}
 "
