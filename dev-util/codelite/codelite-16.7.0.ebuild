@@ -1,20 +1,19 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=7
 
-WX_GTK_VER="2.9"
+WX_GTK_VER="3.0"
 
-inherit base eutils wxwidgets
+inherit eutils wxwidgets
 
 DESCRIPTION="Cross platform IDE for the C/C++ programming languages"
 HOMEPAGE="http://www.codelite.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P}-gtk.src.tar.gz"
+SRC_URI="https://github.com/eranif/codelite/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="debug mysql pch postgres"
 
 DEPEND="debug? ( x11-libs/wxGTK:${WX_GTK_VER}[debug] )
