@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e99341534381f12ee4cae88e776081d31f271086"
+EGIT_COMMIT="d601dccd9ddc71981473aa3a03d6e657a637b7c5"
 
 DESCRIPTION="Common Lisp/CFFI bindings for the Vulkan API"
 HOMEPAGE="https://github.com/JolifantoBambla/vk"

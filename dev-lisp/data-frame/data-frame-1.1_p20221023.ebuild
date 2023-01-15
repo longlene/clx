@@ -1,11 +1,11 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="696e9d1f9f5946b8611c1bc0bb4fde796320d9fd"
+EGIT_COMMIT="6f02e58312654ddf19d686f234dcf699fc4cd0f5"
 
 DESCRIPTION="Data frames for Common Lisp"
 HOMEPAGE="https://github.com/Lisp-Stat/data-frame"

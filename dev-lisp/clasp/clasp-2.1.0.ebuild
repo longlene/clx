@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit ninja-utils vcs-snapshot
-
-EGIT_COMMIT="fba47e89ea9e923e225130dbe638a1708b415a55"
+inherit ninja-utils
 
 DESCRIPTION=""
 HOMEPAGE=""
-SRC_URI="https://github.com/clasp-developers/clasp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/clasp-developers/clasp/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE=""
 SLOT="0"

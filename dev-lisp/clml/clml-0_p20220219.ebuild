@@ -23,7 +23,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/iterate
 	dev-lisp/lparallel
-	dev-lisp/clod
 	dev-lisp/cl-ppcre
 	dev-lisp/split-sequence
 	dev-lisp/introspect-environment
