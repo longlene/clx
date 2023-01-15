@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/anaphora
 	dev-lisp/array-operations
-	dev-lisp/num-utils
+	dev-lisp/numerical-utilities
 	dev-lisp/select
 	dev-lisp/let-plus
 "

@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="25bfad236e841e80a3bba6c888e607aec9b75dc7"
+EGIT_COMMIT="97f6ef29c49d126e49a71477b138bebcacdcaa49"
 
 DESCRIPTION="A dialogue system language implementation"
 HOMEPAGE="https://github.com/Shirakumo/speechless"

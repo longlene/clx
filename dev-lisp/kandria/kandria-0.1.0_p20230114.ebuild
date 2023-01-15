@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="aea9c728991a60f6bbeecbb39fc7a8de7731f437"
+EGIT_COMMIT="34255f847ebdc5a2d973c3c77140bba982311da2"
 
 DESCRIPTION="A detective game set in the post apocalypse"
 HOMEPAGE="https://kandria.com/"

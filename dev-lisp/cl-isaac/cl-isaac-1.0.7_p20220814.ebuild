@@ -2,13 +2,13 @@
 
 EAPI=7
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="9cd88f39733be753facbf361cb0e08b9e42ff8d5"
 
 DESCRIPTION="a fast cryptographic random number generator"
 HOMEPAGE="https://github.com/thephoeron/cl-isaac"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/thephoeron/cl-isaac.git"
+SRC_URI="https://github.com/thephoeron/cl-isaac/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -18,3 +18,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	default
+	rm -rf ${PN}-test.asd t
+}

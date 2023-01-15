@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9117990397b7d75fda35b50c724be7cd1c33085a"
+EGIT_COMMIT="357a0d2b5f68a5ff925776235c2b7455e12b78ba"
 
 DESCRIPTION="Lisp-Stat main system"
 HOMEPAGE="https://github.com/Lisp-Stat/lisp-stat"
@@ -18,27 +18,26 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
+	dev-lisp/alexandria-plus
 	dev-lisp/array-operations
-	dev-lisp/cl-semver
 	dev-lisp/data-frame
-	dev-lisp/dfio
-	dev-lisp/num-utils
-	dev-lisp/select
-	dev-lisp/split-sequence
-	dev-lisp/cl-csv
+	dev-lisp/distributions
 	dev-lisp/dexador
-	dev-lisp/make-hash
-	dev-lisp/cl-ascii-table
+	dev-lisp/dfio
+	dev-lisp/numerical-utilities
+	dev-lisp/select
+	dev-lisp/statistics
+	dev-lisp/conduit-packages
 "
 BDEPEND=""
 
 src_prepare() {
 	default
-	sed -i '/defsystem :lisp-stat\/tests/,$d' ${PN}.asd
+	sed -i '/#+ignore/,$d' ${PN}.asd
 	rm -r tests
 }
 
 src_install() {
 	common-lisp-3_src_install
-	common-lisp-install-sources -t all version.sexp LICENSE pkgdcls.lisp ls-init.lisp
+	common-lisp-install-sources -t all version.sexp LICENSE
 }

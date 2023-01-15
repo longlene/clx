@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="12ccaa7f3e2b2c3c337cd026506df8c55b011de4"
+EGIT_COMMIT="e2bb0e7b6dd913a368bba683c8be513e219ab23c"
 
 DESCRIPTION="A simple audio mixing and processing library based on libmixed"
 HOMEPAGE="https://github.com/Shirakumo/cl-mixed"

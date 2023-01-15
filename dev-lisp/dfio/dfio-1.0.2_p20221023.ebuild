@@ -5,9 +5,9 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="32908cf99b04d695c8bb34bda1b3c097f3266a72"
+EGIT_COMMIT="5caf473acb9bc464839e87395724cbd941167915"
 
-DESCRIPTION="Read tabular data into data frames"
+DESCRIPTION="Data Frame I/O"
 HOMEPAGE="https://github.com/Lisp-Stat/dfio"
 SRC_URI="https://github.com/Lisp-Stat/dfio/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -19,19 +19,22 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/anaphora
-	dev-lisp/cl-csv
 	dev-lisp/data-frame
+	dev-lisp/dexador
+	dev-lisp/fare-csv
 	dev-lisp/let-plus
 "
 BDEPEND=""
 
 src_prepare() {
 	default
-	sed -i '/defsystem :dfio\/tests/,$d' ${PN}.asd
+	sed -e '/defsystem :dfio\/tests/,$d' \
+		-i ${PN}.asd
 	rm tests.lisp
 }
 
 src_install() {
 	common-lisp-3_src_install
-	common-lisp-install-sources -t all version.sexp
+	common-lisp-install-sources -t all description.text
 }
+
