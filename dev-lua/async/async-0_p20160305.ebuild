@@ -3,9 +3,11 @@
 
 EAPI=7
 
-EGIT_COMMIT="293348b5aef029b8ca29269f96c8a8fe9bde33ce"
+LUA_COMPAT=( luajit )
 
 inherit lua vcs-snapshot
+
+EGIT_COMMIT="293348b5aef029b8ca29269f96c8a8fe9bde33ce"
 
 DESCRIPTION="An async framework for Lua/Torch"
 HOMEPAGE="https://github.com/clementfarabet/async"
@@ -18,12 +20,40 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lua/lua-cjson
-	sci-libs/torch7
+	dev-lua/lua-cjson[${LUA_USEDEP}]
+	sci-libs/torch7[${LUA_USEDEP}]
 "
 
-DOCS=( README.md )
+#DOCS=( README.md )
+
+src_prepare() {
+	default
+	sed -e '/luaL_newlib/d' \
+		-i lhttp_parser/lhttp_parser.h
+	sed -e '/luaL_newlib/d' \
+		-i luv/src/common.h
+	sed -e 's# -Werror##' \
+		-i	lhttp_parser/Makefile
+	sed -e 's# -Werror##' \
+		-i	lhttp_parser/http-parser/Makefile
+}
+
+lua_src_compile() {
+	LUA_INCDIR=$(lua_get_include_dir) emake
+}
+
+src_compile() {
+	lua_foreach_impl lua_src_compile
+}
 
 each_lua_install() {
-	dolua async luv/luv.so lhttp_parser/lhttp_parser.so
+	insinto $(lua_get_lmod_dir)
+	doins -r async
+	insinto $(lua_get_cmod_dir)
+	doins luv/luv.so lhttp_parser/lhttp_parser.so
+}
+
+src_install() {
+	lua_foreach_impl each_lua_install
+	einstalldocs
 }
