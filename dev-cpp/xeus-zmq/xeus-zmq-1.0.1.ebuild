@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 DEPEND="
 	dev-cpp/xeus
 	net-libs/zeromq
-	dev-cpp/cppzmq
+	net-libs/cppzmq
 	dev-cpp/nlohmann_json
 	dev-libs/openssl
 	dev-cpp/xtl

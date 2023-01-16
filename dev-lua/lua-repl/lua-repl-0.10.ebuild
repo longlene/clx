@@ -1,8 +1,9 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=7
+
+LUA_COMPAT=( lua5-{1..4} luajit )
 
 inherit lua
 
@@ -17,19 +18,20 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-|| ( dev-lua/lua-linenoise app-misc/rlwrap )
+	|| ( dev-lua/lua-linenoise[${LUA_USEDEP}] app-misc/rlwrap )
 "
-
-src_prepare() {
-	mv rep.lua ${PN}
-}
 
 src_compile() {
 	:
 }
 
+lua_src_install() {
+	insinto $(lua_get_lmod_dir)
+	doins -r repl
+}
+
 src_install() {
-	lua_install_module -r repl
-	dobin ${PN}
-	dodoc README.md
+	lua_foreach_impl lua_src_install
+	newbin rep.lua ${PN}
+	einstalldocs
 }

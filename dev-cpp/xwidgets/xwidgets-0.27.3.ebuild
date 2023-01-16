@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	>dev-cpp/widgetsnbextension-3.0.0
+	>dev-python/widgetsnbextension-3.0.0
 	>=dev-cpp/xtl-0.7.0
 	>=dev-cpp/xproperty-0.11.0
 	>=dev-cpp/xeus-1.0
