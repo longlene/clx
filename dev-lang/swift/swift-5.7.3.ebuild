@@ -4,7 +4,7 @@
 EAPI=7
 
 PYTHON_COMPAT=( python3_9 )
-inherit python-any-r1 vcs-snapshot
+inherit llvm python-any-r1 vcs-snapshot
 
 DESCRIPTION="The Swift programming language and debugger"
 HOMEPAGE="http://swift.org/"
@@ -26,7 +26,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	dev-libs/blocksruntime
+	sys-libs/blocksruntime
 	dev-libs/libbsd
 	dev-libs/libedit
 	dev-libs/libxml2
@@ -35,25 +35,34 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-S="${WORKDIR}"/swift
-#CMAKE_BUILD_TYPE="Release"
-
-src_unpack() {
-	vcs-snapshot_src_unpack
-	mv swift-${PV} swift
-	mv llvm-project-${PV} llvm-project
-	mv swift-corelibs-libdispatch-${PV} swift-corelibs-libdispatch
-	mv swift-corelibs-foundation-${PV} swift-corelibs-foundation
-	mv swift-corelibs-xctest-${PV} swift-corelibs-xctest
-	mv swift-llbuild-${PV} llbuild
-	mv swift-cmark-${PV} cmark
-	mv swift-package-manager-${PV} swiftpm
+pkg_setup() {
+	llvm_pkg_setup
 }
+
+src_prepare() {
+	default
+	ln -sv swift-${PV} swift
+	ln -sv llvm-project-${PV} llvm-project
+	ln -sv swift-corelibs-libdispatch-${PV} swift-corelibs-libdispatch
+	ln -sv swift-corelibs-foundation-${PV} swift-corelibs-foundation
+	ln -sv swift-corelibs-xctest-${PV} swift-corelibs-xctest
+	ln -sv swift-llbuild-${PV} llbuild
+	ln -sv swift-cmark-${PV} cmark
+	ln -sv swift-package-manager-${PV} swiftpm
+	sed -e '/Werror/d' \
+		-i swift-corelibs-libdispatch/cmake/modules/DispatchCompilerWarnings.cmake
+}
+
+swift_build_params=(
+	${MAKEOPTS}
+	--build-runtime-with-host-compiler
+	--install-destdir="${D}"
+	--install-prefix="/usr"
+)
 
 src_compile() {
 	./utils/build-script \
-		--install-prefix="/usr" \
-		--install-destdir="${D}" \
+		${swift_build_params[@]} \
 		--foundation \
 		--libdispatch || die "compile failed"
 }
@@ -66,24 +75,16 @@ src_compile() {
 #	cmake_src_configure
 #}
 
-#swift_build_params=(
-#	--preset=buildbot_linux,no_assertions,no_test
-#)
-#
-#src_compile() {
-#	./utils/build-script --preset=buildbot_linux,no_assertions,no_test install_destdir="${D}" || die "compile failed"
-#}
-#
-#src_install() {
-#	./utils/build-script "${swift_build_params[@]}" \
-#		--install-destdir="${D}" \
-#		--install-llbuild \
-#		--install-swiftpm \
-#		--install-xctest \
-#		--install-foundation \
-#		--install-libdispatch || die "install failed"
-#
-#	#dobin build/Ninja-ReleaseAssert/swift-linux-
-#	dosym swift /usr/bin/swiftc
-#	dosym swift /usr/bin/swift-autolink-extract
-#}
+src_install() {
+	./utils/build-script \
+		${swift_build_params[@]} \
+		--install-destdir="${D}" \
+		--install-llbuild \
+		--install-swiftpm \
+		--install-xctest \
+		--install-foundation \
+		--install-libdispatch || die "install failed"
+
+	dosym swift /usr/bin/swiftc
+	dosym swift /usr/bin/swift-autolink-extract
+}
