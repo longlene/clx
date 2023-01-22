@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/ctranslate2-2.24.0[${PYTHON_USEDEP}]
-	>=dev-python/senencepiece-0.1.96[${PYTHON_USEDEP}]
+	>=dev-python/sentencepiece-0.1.96[${PYTHON_USEDEP}]
 	>=dev-python/stanza-1.1.1[${PYTHON_USEDEP}]
 "
 BDEPEND="
