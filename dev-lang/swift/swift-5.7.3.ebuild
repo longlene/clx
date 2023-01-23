@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_9 )
+PYTHON_COMPAT=( python3_10 )
 inherit llvm python-any-r1 vcs-snapshot
 
 DESCRIPTION="The Swift programming language and debugger"
@@ -26,6 +26,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
+	sys-devel/binutils[gold]
 	sys-libs/blocksruntime
 	dev-libs/libbsd
 	dev-libs/libedit
@@ -35,56 +36,67 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-pkg_setup() {
-	llvm_pkg_setup
-}
+#pkg_setup() {
+#	llvm_pkg_setup
+#}
 
 src_prepare() {
 	default
-	ln -sv swift-${PV} swift
-	ln -sv llvm-project-${PV} llvm-project
-	ln -sv swift-corelibs-libdispatch-${PV} swift-corelibs-libdispatch
-	ln -sv swift-corelibs-foundation-${PV} swift-corelibs-foundation
-	ln -sv swift-corelibs-xctest-${PV} swift-corelibs-xctest
-	ln -sv swift-llbuild-${PV} llbuild
-	ln -sv swift-cmark-${PV} cmark
-	ln -sv swift-package-manager-${PV} swiftpm
+	ln -sv swift-${PV} "${WORKDIR}"/swift
+	ln -sv llvm-project-${PV} "${WORKDIR}"/llvm-project
+	ln -sv swift-corelibs-libdispatch-${PV} "${WORKDIR}"/swift-corelibs-libdispatch
+	ln -sv swift-corelibs-foundation-${PV} "${WORKDIR}"/swift-corelibs-foundation
+	ln -sv swift-corelibs-xctest-${PV} "${WORKDIR}"/swift-corelibs-xctest
+	ln -sv swift-llbuild-${PV} "${WORKDIR}"/llbuild
+	ln -sv swift-cmark-${PV} "${WORKDIR}"/cmark
+	ln -sv swift-package-manager-${PV} "${WORKDIR}"/swiftpm
 	sed -e '/Werror/d' \
-		-i swift-corelibs-libdispatch/cmake/modules/DispatchCompilerWarnings.cmake
+		-i "${WORKDIR}"/swift-corelibs-libdispatch-${PV}/cmake/modules/DispatchCompilerWarnings.cmake
+	sed -e "/DESTINATION/{s#share/swift#share/doc/${P}#}" \
+		-i CMakeLists.txt
+	sed -e "s#share/doc/swift#share/doc/${P}#" \
+		-i userdocs/CMakeLists.txt
 }
-
-swift_build_params=(
-	${MAKEOPTS}
-	--build-runtime-with-host-compiler
-	--install-destdir="${D}"
-	--install-prefix="/usr"
-)
 
 src_compile() {
+	local libdir=$(get_libdir)
+	local swift_options="-DLLVM_LIBDIR_SUFFIX=${libdir#lib} -DSWIFT_INCLUDE_TEST_BINARIES=OFF"
 	./utils/build-script \
-		${swift_build_params[@]} \
+		${MAKEOPTS} \
+		--install-destdir="${D}" \
+		--install-prefix="/usr" \
+		--swift-cmake-options="${swift_options}" \
 		--foundation \
-		--libdispatch || die "compile failed"
+		--skip-build-benchmarks \
+		--skip-build-libicu \
+		--skip-build-compiler-rt \
+		--skip-build-clang-tools-extra \
+		--skip-build-lld \
+		--build-swift-examples="0" \
+		--llvm-include-tests="0" \
+		--swift-include-tests="0" \
+		--skip-test-foundation \
+		--skip-test-libcxx \
+		--skip-test-libdispatch \
+		--skip-test-libicu \
+		--skip-test-llbuild \
+		--skip-test-lldb \
+		--skip-test-llvm \
+		--skip-test-sourcekit \
+		--skip-test-static-foundation \
+		--skip-test-static-libdispatch \
+		--skip-test-xctest \
+		--skip-test-swift \
+		|| die "compile failed"
 }
-
-#src_configure() {
-#	local mycmakeargs=(
-#		-DSWIFT_SOURCE_ROOT="${WORKDIR}"
-#		-DSWIFT_PATH_TO_LIBDISPATCH_SOURCE="${WORKDIR}"/swift-corelibs-libdispatch-5.6
-#	)
-#	cmake_src_configure
-#}
 
 src_install() {
 	./utils/build-script \
-		${swift_build_params[@]} \
+		${MAKEOPTS} \
 		--install-destdir="${D}" \
-		--install-llbuild \
-		--install-swiftpm \
-		--install-xctest \
-		--install-foundation \
-		--install-libdispatch || die "install failed"
+		--install-prefix="/usr" \
+		--install-swift || die "install failed"
 
-	dosym swift /usr/bin/swiftc
-	dosym swift /usr/bin/swift-autolink-extract
+	#dosym swift /usr/bin/swiftc
+	#dosym swift /usr/bin/swift-autolink-extract
 }
