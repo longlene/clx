@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="13124304185db75937b3274a9272843406d3a7ff"
+EGIT_COMMIT="840082bf4c2740ac043c7ea1f0814c53b8c6f0d7"
 
 DESCRIPTION="An ORM for Common Lisp with migrations, relationships and PostgreSQL support"
 HOMEPAGE="https://github.com/fukamachi/mito"

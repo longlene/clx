@@ -2,11 +2,13 @@
 
 EAPI=7
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="325c76dad69a48e9fe2ac68b50f195b00a00c805"
 
 DESCRIPTION="Database independent interface for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/cl-dbi"
-SRC_URI="https://github.com/fukamachi/cl-dbi/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/fukamachi/cl-dbi/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
