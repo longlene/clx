@@ -27,7 +27,6 @@ IUSE=""
 
 DEPEND="
 	sys-devel/binutils[gold]
-	sys-libs/blocksruntime
 	dev-libs/libbsd
 	dev-libs/libedit
 	dev-libs/libxml2
