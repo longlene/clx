@@ -1,25 +1,25 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 flag-o-matic multilib toolchain-funcs vcs-snapshot
 
-EGIT_COMMIT="c791fb3f1e5b69ae539177ea48a9b5eca86f7afd"
+EGIT_COMMIT="2c2a20b69856dd30873e209d6a2d797e0fa00846"
 
-DESCRIPTION="A multi-platform SQL interface for Common Lisp"
+DESCRIPTION="Common Lisp SQL interface library"
 HOMEPAGE="http://clsql.b9.com/
 		http://www.cliki.net/CLSQL"
-SRC_URI="https://github.com/UnwashedMeme/clsql/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="http://git.kpe.io/?p=clsql.git;a=snapshot;h=${EGIT_COMMIT};sf=tgz -> ${P}.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
 IUSE="doc examples mysql odbc oracle postgres sqlite"
 
-RDEPEND="!dev-lisp/cl-sql
+RDEPEND="
 	dev-lisp/md5
-	>=dev-lisp/uffi-2.0.0
+	dev-lisp/cffi
 	mysql? ( virtual/mysql )
 	odbc? ( dev-db/unixODBC )
 	oracle? ( dev-db/oracle-instantclient-basic )
