@@ -1,11 +1,11 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="6be49ca0fd1faf4cf6d37cb7c2c813be44454eac"
+EGIT_COMMIT="5022a07f667f41906ce3dced827258fed268c36d"
 
 DESCRIPTION="Mito mixin class for file management outside of RDBMS"
 HOMEPAGE="https://github.com/fukamachi/mito-attachment"

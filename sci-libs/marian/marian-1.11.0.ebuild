@@ -53,7 +53,7 @@ src_configure() {
 		-DUSE_DOXYGEN=OFF
 		-DUSE_MKL=$(usex mkl)
 		-DUSE_NCCL=OFF
-		-DUSE_SENTENCEPIECE=OFF
+		-DUSE_SENTENCEPIECE=ON
 	)
 	cmake_src_configure
 }
