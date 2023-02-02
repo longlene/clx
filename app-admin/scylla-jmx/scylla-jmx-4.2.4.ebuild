@@ -3,9 +3,9 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_8 )
+PYTHON_COMPAT=( python3_{9,10} )
 
-inherit java-pkg-2 python-r1 systemd user vcs-snapshot
+inherit java-pkg-2 python-r1 systemd vcs-snapshot
 
 DESCRIPTION="Scylla JMX"
 HOMEPAGE="https://github.com/scylladb/scylla-jmx"

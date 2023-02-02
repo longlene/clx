@@ -18,7 +18,7 @@ else
 fi
 
 EANT_BUILD_TARGET="jar"
-PYTHON_COMPAT=( python3_8 )
+PYTHON_COMPAT=( python3_{9,10} )
 JAVA_PKG_IUSE="source doc"
 
 inherit java-pkg-2 java-ant-2 python-single-r1
