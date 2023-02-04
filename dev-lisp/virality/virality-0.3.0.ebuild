@@ -1,4 +1,4 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -7,7 +7,7 @@ inherit common-lisp-3 vcs-snapshot
 
 DESCRIPTION="Virality Engine"
 HOMEPAGE="https://github.com/HackerTheory/ViralityEngine"
-SRC_URI="https://github.com/HackerTheory/ViralityEngine/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/HackerTheory/ViralityEngine/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
