@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit systemd toolchain-funcs user vcs-snapshot
+inherit systemd toolchain-funcs vcs-snapshot
 
 EGIT_COMMIT="27b17889a43e32b0c1162514d00967e6967d41bb"
 
@@ -18,13 +18,12 @@ IUSE="doc"
 RESTRICT="test"
 
 DEPEND="dev-libs/libevent:0="
-RDEPEND="${DEPEND}
-	net-firewall/iptables"
-
-pkg_setup() {
-	enewgroup redsocks
-	enewuser redsocks -1 -1 /run/redsocks redsocks
-}
+RDEPEND="
+	${DEPEND}
+	acct-group/redsocks
+	acct-user/redsocks
+	net-firewall/iptables
+"
 
 src_compile() {
 	CC="$(tc-getCC)" emake
