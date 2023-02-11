@@ -15,7 +15,7 @@ SRC_URI="http://code.matthewwild.co.uk/verse/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="

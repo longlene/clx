@@ -6,7 +6,7 @@ EAPI=7
 inherit cmake
 
 DESCRIPTION="Industrial-grade RPC framework"
-HOMEPAGE="https://github.com/apache/incubator-brpc"
+HOMEPAGE="https://brpc.apache.org"
 SRC_URI="mirror://apache/brpc/${PV}/apache-${P}-src.tar.gz"
 
 LICENSE="Apache-2.0"
