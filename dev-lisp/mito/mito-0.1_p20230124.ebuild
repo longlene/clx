@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="840082bf4c2740ac043c7ea1f0814c53b8c6f0d7"
+EGIT_COMMIT="6835d2c8120454e93c69d4f22cccb10d9ee24526"
 
 DESCRIPTION="An ORM for Common Lisp with migrations, relationships and PostgreSQL support"
 HOMEPAGE="https://github.com/fukamachi/mito"
