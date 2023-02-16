@@ -18,15 +18,9 @@ DEPEND="
 	dev-cpp/xeus
 	dev-cpp/xtl
 	dev-cpp/xwidgets
-	luajit? ( dev-lang/luajit )
-	!luajit? ( dev-lang/lua )
+	dev-lang/lua
+	net-libs/cppzmq
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-src_configure() {
-	local mycmakeargs=(
-		-DXEUS_LUA_USE_LUAJIT=$(usex luajit)
-	)
-	cmake_src_configure
-}
