@@ -18,7 +18,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	gnustep-base/libobjc2
-	dev-libs/blocksruntime
+	sys-libs/blocksruntime
 	sys-devel/clang
 "
 

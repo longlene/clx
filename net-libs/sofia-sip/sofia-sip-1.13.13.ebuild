@@ -24,10 +24,6 @@ DEPEND="${RDEPEND}
 	test? ( dev-libs/check )"
 BDEPEND="virtual/pkgconfig"
 
-PATCHES=(
-	"${FILESDIR}"/${PV}-Fix-array-size.patch
-)
-
 src_prepare() {
 	default
 	eautoreconf

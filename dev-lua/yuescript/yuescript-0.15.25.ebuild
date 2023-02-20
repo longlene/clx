@@ -22,8 +22,6 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_install() {
-	insinto $(lua_get_cmod_dir)
-	doins ${BUILD_DIR}/yue.so
 	dobin ${BUILD_DIR}/yue
-	dodoc README.md
+	einstalldocs
 }
