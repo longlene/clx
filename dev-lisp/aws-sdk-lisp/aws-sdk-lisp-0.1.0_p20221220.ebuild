@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3b5fbd7cdd1bc01ac860e37dcb66aadccc0b0ae4"
+EGIT_COMMIT="403c5a0a293f52d8d66d2c26b3ed6064cbcb1091"
 
 DESCRIPTION="AWS SDK for Common Lisp"
 HOMEPAGE="https://github.com/pokepay/aws-sdk-lisp"
