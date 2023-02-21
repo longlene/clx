@@ -1,11 +1,11 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="0cb37c75450fb0199ab0187e23e0ec9157dc5c73"
+EGIT_COMMIT="0f53ca731e6b2673ab6839daa6a68f47a42e42c1"
 
 DESCRIPTION="Tree-Sitter bindings for Common Lisp"
 HOMEPAGE="https://github.com/death/cl-tree-sitter"
@@ -22,3 +22,12 @@ RDEPEND="${DEPEND}
 	dev-libs/tree-sitter
 "
 BDEPEND=""
+
+src_compile() {
+	emake
+}
+
+src_install() {
+	common-lisp-3_src_install
+	common-lisp-install-sources -t all tree-sitter-wrapper.so
+}
