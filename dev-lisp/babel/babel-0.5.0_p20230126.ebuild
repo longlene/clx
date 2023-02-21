@@ -1,11 +1,11 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="f892d0587c7f3a1e6c0899425921b48008c29ee3"
+EGIT_COMMIT="627d6a60d0ffc82a3687b39ba8a99128031504d9"
 
 DESCRIPTION="A charset conversion library"
 HOMEPAGE="https://github.com/cl-babel/babel"
