@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="9db014abca69617530c009f2a61b0baee7702bf1"
+EGIT_COMMIT="f523172b23d84df81500c6b2ef92e35e1832e43c"
 
 DESCRIPTION="Common Lisp HTML5 generator"
 HOMEPAGE="https://github.com/ruricolist/spinneret"
