@@ -1,11 +1,11 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="106d154ec2cd0e4ec977c3672ba717d6305c1056"
+EGIT_COMMIT="ffb8734a0dee24940e1adabeddb0371a6d424aec"
 
 DESCRIPTION="A System for Making Generative Systems"
 HOMEPAGE="https://github.com/inconvergent/weird"

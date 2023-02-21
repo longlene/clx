@@ -1,11 +1,11 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b9b23029b7e57a2be36c9c92ca294d0c463c7679"
+EGIT_COMMIT="353bd1e5d3602550b7f589cabd74cbf7c2f4d884"
 
 DESCRIPTION="Common Lisp CFFI bindings to the IUP Portable User Interface library"
 HOMEPAGE="https://github.com/lispnik/iup"

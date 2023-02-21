@@ -1,13 +1,15 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
 
-DESCRIPTION=""
-HOMEPAGE=""
-SRC_URI="https://github.com/lispnik/im/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+EGIT_COMMIT="c4b9bd9a576d27f0ef3a6284973bd546567cf187"
+
+DESCRIPTION="Lisp CFFI bindings for IM"
+HOMEPAGE="https://github.com/lispnik/im"
+SRC_URI="https://github.com/lispnik/im/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

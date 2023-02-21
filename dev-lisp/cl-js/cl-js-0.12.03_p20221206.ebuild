@@ -2,11 +2,13 @@
 
 EAPI=7
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="3a9a1a887bef6b571922f2820f871935121052a5"
 
 DESCRIPTION="CL-JavaScript is a JavaScript programming language compiler for Common Lisp."
 HOMEPAGE="http://marijnhaverbeke.nl/cl-javascript/ http://github.com/akapav/js"
-SRC_URI="https://github.com/akapav/js/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/akapav/js/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -15,6 +17,6 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-dev-lisp/parse-js"
+	dev-lisp/parse-js
+"
 
-S="${WORKDIR}/js-${PV}"

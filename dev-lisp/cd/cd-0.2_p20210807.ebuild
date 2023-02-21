@@ -1,11 +1,11 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7eb13a95eb0ea0202ee8f491e785d0d5546ab43e"
+EGIT_COMMIT="32fe0e0a98f5cbe2de2a92fa107d03a7be681497"
 
 DESCRIPTION="CFFI bindings to CD, a 2D Graphics Library"
 HOMEPAGE="https://github.com/lispnik/cd"

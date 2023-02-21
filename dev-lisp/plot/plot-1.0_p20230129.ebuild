@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="71c4166b545fbaac61ceba74b450a206c84fb19e"
+EGIT_COMMIT="a26cb0ed92245d06d531ffe14d8ebf01f9e86506"
 
 DESCRIPTION="A plotting system for Common Lisp"
 HOMEPAGE="https://github.com/Lisp-Stat/plot"
