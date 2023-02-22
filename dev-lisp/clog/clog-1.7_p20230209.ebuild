@@ -1,13 +1,15 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit common-lisp-3
+inherit common-lisp-3 vcs-snapshot
+
+EGIT_COMMIT="04d6df5d0b736f968cb0b838b38a8a517569d2f8"
 
 DESCRIPTION="The Common Lisp Omnificent GUI"
 HOMEPAGE="https://github.com/rabbibotton/clog"
-SRC_URI="https://github.com/rabbibotton/clog/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/rabbibotton/clog/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

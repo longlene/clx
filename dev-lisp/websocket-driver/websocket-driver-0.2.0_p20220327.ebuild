@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="83e29abadb7c32ea425f1b30e155809c1204603d"
+EGIT_COMMIT="0ef31fce279c1cc02f8a020a285047180649bcc6"
 
 DESCRIPTION="WebSocket protocols implementation in Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/websocket-driver"

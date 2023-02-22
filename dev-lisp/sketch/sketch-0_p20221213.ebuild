@@ -1,11 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4cc00b08e202c7adda41391463096cf9df1705c3"
+EGIT_COMMIT="aea3f9509182749fa80bcc993dc0f284559b2392"
 
 DESCRIPTION="Sketch is a Common Lisp framework for the creation of electronic art, computer graphics, visual design, game making and more"
 HOMEPAGE="https://github.com/vydd/sketch"

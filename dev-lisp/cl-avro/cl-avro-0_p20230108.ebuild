@@ -1,11 +1,11 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="18acbcc9c26732bd420e1325e652161f671da203"
+EGIT_COMMIT="4de2db85efa10953bf640eb6661873200a913a31"
 
 DESCRIPTION="Common Lisp library for Avro"
 HOMEPAGE="https://github.com/SahilKang/cl-avro"

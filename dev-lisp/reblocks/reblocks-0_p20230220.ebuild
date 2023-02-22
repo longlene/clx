@@ -1,11 +1,11 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c124dec2bd5cb37925eab843e55a3c4abc6c202b"
+EGIT_COMMIT="3d6aad7fb561ad416f225933f45493ed9ddbbc36"
 
 DESCRIPTION="Reblocks Common Lisp web framework "
 HOMEPAGE="https://github.com/40ants/reblocks"
