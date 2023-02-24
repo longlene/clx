@@ -1,11 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3e6c28e4c28d42bbe55ccccd6baad7b60577149d"
+EGIT_COMMIT="c50cd061c25216a736f684e45101f5c0188a384f"
 
 DESCRIPTION="Common Lisp bindings to portaudio library"
 HOMEPAGE="https://github.com/filonenko-mikhail/cl-portaudio"
