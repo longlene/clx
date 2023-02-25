@@ -3,8 +3,9 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{8,9,10,11} )
-inherit python-single-r1 python-utils-r1 vcs-snapshot
+PYTHON_COMPAT=( python3_{8..11} )
+
+inherit python-r1
 
 EGIT_COMMIT="18bdadc98ab6f94912ad97e9b9fda170777c5b7f"
 
