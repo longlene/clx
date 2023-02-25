@@ -1,11 +1,11 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="fc8473bc6f929696b03b43820596b7c976c4678e"
+EGIT_COMMIT="6e529d7b3a7223ef1bb5c7b9f18384ba67b50b09"
 
 DESCRIPTION="CONSPACK implementation for Common Lisp"
 HOMEPAGE="https://github.com/conspack/cl-conspack"
