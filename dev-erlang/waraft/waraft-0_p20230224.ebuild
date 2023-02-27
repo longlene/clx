@@ -5,13 +5,13 @@ EAPI=7
 
 inherit rebar vcs-snapshot
 
-EGIT_COMMIT="3f08f3ca60c063dd07fd6044aa6f38149129f74b"
+EGIT_COMMIT="85b60d927faaf7038cd6b79a0edfa5b0bab315a4"
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="An Erlang implementation of RAFT from WhatsApp"
+HOMEPAGE="https://github.com/WhatsApp/waraft"
 SRC_URI="https://github.com/WhatsApp/waraft/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
