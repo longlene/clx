@@ -3,6 +3,8 @@
 
 EAPI=7
 
+LUA_COMPAT=( luajit )
+
 inherit cmake lua vcs-snapshot
 
 EGIT_COMMIT="bc7ac16944341ab59e3912ab1166f36719492b15"

@@ -1,11 +1,11 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="251920a445c2ab17f45c10cae5c4bf9aa3da3b69"
+EGIT_COMMIT="1482b81515e894dc4c81997b2c183cc36db63f0f"
 
 DESCRIPTION="A planet scale, highly available, transactional database"
 HOMEPAGE="https://www.antidotedb.eu"
