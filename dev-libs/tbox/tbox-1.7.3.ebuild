@@ -14,14 +14,13 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND="
-	dev-util/xmake
-"
+BDEPEND=""
 
-src_compile() {
-	xmake || die "compile failed"
+src_configure() {
+	./configure --prefix=/usr --mode=debug || die "configure failed"
 }
 
 src_install() {
-	xmake install || die "install failed"
+	emake DESTDIR="${D}" install
+	rm -rf "${D}"/usr/bin
 }

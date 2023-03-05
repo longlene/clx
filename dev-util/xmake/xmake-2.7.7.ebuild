@@ -15,17 +15,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-S="${WORKDIR}"
-
-DOCS=( README.md )
-
-src_prepare() {
-	default
-	sed -i '/chmod 777/d' makefile
-	sed -i '/LDFLAGS_RELEASE/{s#-s##}' core/plat/linux/prefix.mak
+src_configure() {
+	./configure --prefix=/usr --mode=debug || die "configure failed"
 }
 
-src_install() {
-	einstalldocs
-	emake DESTDIR="${D}" PREFIX=/usr install
-}

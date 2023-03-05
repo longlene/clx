@@ -1,11 +1,11 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d601dccd9ddc71981473aa3a03d6e657a637b7c5"
+EGIT_COMMIT="b6a275486d5a8a7dd5640ba65f0c024db6127669"
 
 DESCRIPTION="Common Lisp/CFFI bindings for the Vulkan API"
 HOMEPAGE="https://github.com/JolifantoBambla/vk"
