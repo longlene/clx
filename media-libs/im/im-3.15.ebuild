@@ -1,8 +1,9 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=7
+
+LUA_COMPAT=( lua5-{1..4} luajit )
 
 inherit multilib lua
 
@@ -24,9 +25,9 @@ lua? ( >=dev-lang/lua-5.1 )"
 
 S="${WORKDIR}"/${PN}
 
-src_prepare() {
-	find . -type d -exec chmod 755 {} \;
-}
+#src_prepare() {
+#	find . -type d -exec chmod 755 {} \;
+#}
 
 src_compile() {
 	local target=" im "

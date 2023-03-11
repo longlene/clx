@@ -3,6 +3,8 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-{1..4} luajit )
+
 inherit multilib lua
 
 DESCRIPTION="IUP is a multi-platform toolkit for building graphical user interfaces"
