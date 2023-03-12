@@ -1,9 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit cmake linux-info user
+inherit cmake linux-info
 
 DESCRIPTION="Yet another Linux container management system"
 HOMEPAGE="https://github.com/yandex/porto"
@@ -18,6 +18,7 @@ DEPEND="
 	dev-libs/libnl
 	dev-libs/protobuf
 	sys-devel/ncurses[tinfo]
+	dev-lang/go
 	doc? ( app-text/pandoc )
 "
 RDEPEND="${DEPEND}"
@@ -61,7 +62,6 @@ CONFIG_CHECK="
 
 pkg_setup() {
 	linux-info_pkg_setup
-	enewgroup porto
 }
 
 src_prepare() {
@@ -71,11 +71,11 @@ src_prepare() {
 		-i CMakeLists.txt
 	use doc || sed '/add_custom_target(man/,$d' -i src/CMakeLists.txt
 	sed -i 's#${CURSES_LIBRARIES}#ncurses tinfo#' src/CMakeLists.txt
+	cmake_src_prepare
 }
 
 src_install() {
 	cmake_src_install
-
 	newconfd "${FILESDIR}/protod.confd" "${PN}"
 	newinitd "${FILESDIR}/protod.initd" "${PN}"
 }
