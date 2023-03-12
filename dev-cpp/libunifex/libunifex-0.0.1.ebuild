@@ -1,15 +1,13 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit cmake vcs-snapshot
-
-EGIT_COMMIT="c359fd8e7d97d91359cf4a6c1dbef99b0b1767b6"
+inherit cmake
 
 DESCRIPTION="Unified Executors"
 HOMEPAGE="https://github.com/facebookexperimental/libunifex"
-SRC_URI="https://github.com/facebookexperimental/libunifex/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/facebookexperimental/libunifex/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -24,8 +22,9 @@ BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(
+		-DBUILD_TESTING=OFF
 		-DUNIFEX_BUILD_EXAMPLES=OFF
-		-DUNIFEX_NO_LIBURING=$(usex ! uring)
+		-DUNIFEX_NO_LIBURING=$(usex !uring)
 	)
 	cmake_src_configure
 }
