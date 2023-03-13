@@ -23,7 +23,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-DOCS=( configs README.md )
+DOCS=( config.proto configs README.md )
 
 src_prepare() {
 	default

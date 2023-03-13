@@ -27,3 +27,8 @@ src_prepare() {
 	rm "${WORKDIR}"/${P}/CMakeLists.txt # use system lib
 	distutils-r1_src_prepare
 }
+
+src_install() {
+	distutils-r1_src_install
+	rm "${D}"/usr/share/doc/${P}/README.md*
+}
