@@ -1,0 +1,24 @@
+Don't hardcode the library path. Leave it to the dynamic loader.
+
+Index: pytorch-2.0.0/torch/__init__.py
+===================================================================
+--- a/torch/__init__.py	2023-03-09 14:42:00.000000000 -0800
++++ b/torch/__init__.py	2023-03-15 21:30:37.790079535 -0700
+@@ -165,7 +165,7 @@
+     lib_path = os.path.join(os.path.dirname(here), 'lib', lib_name)
+ 
+     try:
+-        ctypes.CDLL(lib_path, mode=ctypes.RTLD_GLOBAL)
++        ctypes.CDLL(lib_name, mode=ctypes.RTLD_GLOBAL)
+     except OSError as err:
+         # Can only happen for wheel with cuda libs as PYPI deps
+         # As PyTorch is not purelib, but nvidia-*-cu11 is
+@@ -187,7 +187,7 @@
+             raise err
+         for lib_folder, lib_name in cuda_libs.items():
+             _preload_cuda_deps(lib_folder, lib_name)
+-        ctypes.CDLL(lib_path, mode=ctypes.RTLD_GLOBAL)
++        ctypes.CDLL(lib_name, mode=ctypes.RTLD_GLOBAL)
+ 
+ 
+ if (USE_RTLD_GLOBAL_WITH_LIBTORCH or os.getenv('TORCH_USE_RTLD_GLOBAL')) and \

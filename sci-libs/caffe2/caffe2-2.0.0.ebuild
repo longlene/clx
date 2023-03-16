@@ -76,11 +76,10 @@ DEPEND="
 S="${WORKDIR}"/${MYP}
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-1.13.0-gentoo.patch
+	"${FILESDIR}"/${PN}-2.0.0-gentoo.patch
 	"${FILESDIR}"/${PN}-1.13.0-install-dirs.patch
 	"${FILESDIR}"/${PN}-1.12.0-glog-0.6.0.patch
-	"${FILESDIR}"/${PN}-1.12.0-clang.patch
-	"${FILESDIR}"/${P}-tensorpipe.patch
+	"${FILESDIR}"/${PN}-1.13.1-tensorpipe.patch
 )
 
 src_prepare() {
@@ -170,6 +169,7 @@ src_configure() {
 		mycmakeargs+=(
 			-DBLAS="MKL"
 			-DINTEL_MKL_DIR="/opt/intel/oneapi/mkl/latest"
+			-DINTEL_OMP_DIR="/opt/intel/oneapi/mkl/latest"
 		)
 	fi
 	cmake_src_configure
