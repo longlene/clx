@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit eutils multilib pax-utils user
+inherit eutils multilib pax-utils
 
 DESCRIPTION="Distributed, fault-tolerant and schema-free document-oriented database"
 HOMEPAGE="https://couchdb.apache.org/"
@@ -34,11 +34,6 @@ DEPEND="${RDEPEND}
 RESTRICT=test
 
 S="${WORKDIR}/apache-${P}"
-
-pkg_setup() {
-	enewgroup couchdb
-	enewuser couchdb -1 -1 /var/lib/couchdb couchdb
-}
 
 src_configure() {
 	econf \

@@ -1,9 +1,9 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit autotools flag-o-matic toolchain-funcs user vcs-snapshot
+inherit autotools flag-o-matic toolchain-funcs vcs-snapshot
 
 DESCRIPTION="A Multithreaded For of Redis"
 HOMEPAGE="https://github.com/JohnSully/KeyDB"
@@ -26,19 +26,13 @@ BDEPEND=""
 
 REQUIRED_USE="?? ( tcmalloc jemalloc )"
 
-pkg_setup() {
-	enewgroup keydb
-	enewuser keydb -1 /bin/sh /var/lib/keydb keydb
-}
-
 src_prepare() {
+	default
 	eapply \
 		"${FILESDIR}"/${PN}-0.9.5-config.patch \
 		"${FILESDIR}"/${PN}-0.9.5-shared.patch \
 		"${FILESDIR}"/${PN}-0.9.5-sharedlua.patch \
 		"${FILESDIR}"/${PN}-sentinel-0.9.5-config.patch
-
-	eapply_user
 
 	cp "${S}"/deps/lua/src/{fpconv,lua_bit,lua_cjson,lua_cmsgpack,lua_struct,strbuf}.c "${S}"/src || die
 	cp "${S}"/deps/lua/src/{fpconv,strbuf}.h "${S}"/src || die
