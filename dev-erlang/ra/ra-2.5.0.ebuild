@@ -1,7 +1,7 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit rebar
 
@@ -17,6 +17,7 @@ IUSE=""
 DEPEND="
 	dev-erlang/aten
 	dev-erlang/gen_batch_server
+	dev-erlang/seshat
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
