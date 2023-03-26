@@ -1,15 +1,15 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit rebar
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="Lazy sequences for Erlang"
+HOMEPAGE="https://github.com/hnc-agency/lazy"
 SRC_URI="https://github.com/hnc-agency/lazy/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64"
 
