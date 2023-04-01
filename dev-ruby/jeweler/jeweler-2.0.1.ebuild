@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/jeweler/jeweler-2.0.1.ebuild,v 1.1 2014/05/25 07:57:44 graaff Exp $
 
 EAPI=7
-USE_RUBY="ruby25 ruby26"
+USE_RUBY="ruby31 ruby32"
 
 RUBY_FAKEGEM_TASK_DOC="-Ilib yard"
 RUBY_FAKEGEM_DOCDIR="doc"

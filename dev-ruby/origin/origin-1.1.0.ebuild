@@ -5,7 +5,7 @@
 EAPI=7
 
 # does not support Ruby 1.8 syntax
-USE_RUBY="ruby25 ruby26" #jruby
+USE_RUBY="ruby31 ruby32" #jruby
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_RECIPE_TEST="rspec"

@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=7
-USE_RUBY="ruby25 ruby26"
+USE_RUBY="ruby31 ruby32"
 
 inherit ruby-fakegem
 

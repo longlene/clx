@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/turbolinks/turbolinks-2.2.2.ebuild,v 1.1 2014/05/04 07:21:01 graaff Exp $
 
 EAPI=7
-USE_RUBY="ruby25 ruby26"
+USE_RUBY="ruby31 ruby32"
 
 # The gem does not contain runnable tests.
 RUBY_FAKEGEM_TASK_TEST=""
