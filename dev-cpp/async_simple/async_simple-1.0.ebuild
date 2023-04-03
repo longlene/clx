@@ -3,13 +3,11 @@
 
 EAPI=8
 
-inherit cmake vcs-snapshot
-
-EGIT_COMMIT="1acf15efedf527f0b1f00893b762bdee702d96cb"
+inherit cmake
 
 DESCRIPTION="A Simple, Light-Weight Asynchronous C++ Framework"
 HOMEPAGE="https://github.com/alibaba/async_simple"
-SRC_URI="https://github.com/alibaba/async_simple/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/alibaba/async_simple/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -30,6 +28,7 @@ src_prepare() {
 src_configure() {
 	local mycmakeargs=(
 		-DASYNC_SIMPLE_ENABLE_TESTS=OFF
+		-DASYNC_SIMPLE_BUILD_DEMO_EXAMPLE=OFF
 	)
 	cmake_src_configure
 }
