@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/acts_as_list/acts_as_list-0.5.0.ebuild,v 1.1 2014/11/11 06:16:22 graaff Exp $
 
 EAPI=7
-USE_RUBY="ruby25 ruby26"
+USE_RUBY="ruby31 ruby32"
 
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 

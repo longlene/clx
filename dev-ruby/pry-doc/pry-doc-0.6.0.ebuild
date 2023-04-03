@@ -1,7 +1,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-USE_RUBY="ruby25 ruby26 jruby"
+USE_RUBY="ruby31 ruby32 jruby"
 
 inherit ruby-fakegem
 

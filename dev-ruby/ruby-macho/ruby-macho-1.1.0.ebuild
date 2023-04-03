@@ -3,7 +3,7 @@
 
 EAPI=7
 
-USE_RUBY="ruby25 ruby26 ruby25"
+USE_RUBY="ruby31 ruby32 ruby25"
 
 inherit ruby-fakegem
 

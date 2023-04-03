@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/gherkin/gherkin-2.12.0-r2.ebuild,v 1.5 2014/08/05 16:00:53 mrueg Exp $
 
 EAPI=7
-USE_RUBY="ruby25 ruby26"
+USE_RUBY="ruby31 ruby32"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_TASK_TEST=""

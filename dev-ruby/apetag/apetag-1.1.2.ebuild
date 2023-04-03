@@ -4,7 +4,7 @@
 
 EAPI=7
 
-USE_RUBY="ruby25 ruby26"
+USE_RUBY="ruby31 ruby32"
 inherit ruby-fakegem
 
 DESCRIPTION="A pure Ruby library for manipulating APEv2 tags"
