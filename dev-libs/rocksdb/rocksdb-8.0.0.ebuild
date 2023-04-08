@@ -26,10 +26,6 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-7.9.2-gcc-13.patch
-)
-
 src_configure() {
 	sed -i -e '/find_program(CCACHE_FOUND ccache)/d' CMakeLists.txt || die
 
