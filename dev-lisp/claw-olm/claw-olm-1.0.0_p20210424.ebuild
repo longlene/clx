@@ -7,7 +7,7 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="0adcbc0f5f8e51d5bb94d7e5827b63129f536a38"
 
-DESCRIPTION=""
+DESCRIPTION="Thin wrapper over Matrix OLM"
 HOMEPAGE="https://github.com/borodust/claw-olm"
 SRC_URI="https://github.com/borodust/claw-olm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -21,5 +21,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/claw
 	dev-lisp/claw-utils
+	dev-libs/olm
 "
 BDEPEND=""

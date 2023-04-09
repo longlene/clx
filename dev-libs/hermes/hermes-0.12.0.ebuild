@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -22,4 +22,5 @@ BDEPEND=""
 src_prepare() {
 	default
 	sed -e "s#DESTINATION lib#DESTINATION $(get_libdir)#" -i API/hermes/CMakeLists.txt
+	cmake_src_prepare
 }

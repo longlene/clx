@@ -1,11 +1,11 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7c9e0cccda6848b854a7e8d292307645f0eaae3d"
+EGIT_COMMIT="7cec5780f94ad61623b7f0a13cfbf3aa4dcd3b1b"
 
 DESCRIPTION="A Common Lisp kernel for Jupyter"
 HOMEPAGE="https://github.com/yitzchak/common-lisp-jupyter/"

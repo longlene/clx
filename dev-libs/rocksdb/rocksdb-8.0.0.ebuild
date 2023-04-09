@@ -12,12 +12,12 @@ SRC_URI="https://github.com/facebook/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
-IUSE="cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_sse4_2 jemalloc static-libs"
+IUSE="cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_sse4_2 jemalloc snappy static-libs"
 
 DEPEND="
 	app-arch/bzip2:=
 	app-arch/lz4:=
-	app-arch/snappy:=
+	snappy? ( app-arch/snappy:= )
 	app-arch/zstd:=
 	dev-cpp/gflags:=
 	sys-libs/liburing:=
@@ -35,7 +35,10 @@ src_configure() {
 		-DFORCE_AVX=$(usex cpu_flags_x86_avx ON OFF)
 		-DFORCE_SSE42=$(usex cpu_flags_x86_sse4_2 ON OFF)
 		-DPORTABLE=ON
-		-DWITH_JEMALLOC=$(usex jemalloc ON OFF)
+		-DWITH_JEMALLOC=$(usex jemalloc)
+		-DWITH_SNAPPY=$(usex snappy)
+		-DWITH_ZLIB=ON
+		-DWITH_ZSTD=ON
 		# They're just examples/benchmarks.
 		-DWITH_TESTS=OFF
 	)
