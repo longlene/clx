@@ -1,11 +1,11 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="21d84f35c2822af066c4ff37483b51e18517f5c8"
+EGIT_COMMIT="164e8df1b513fcbf097315b51242d337c183a5ef"
 
 DESCRIPTION="An extensible and highly modular bot framework"
 HOMEPAGE="https://github.com/Shirakumo/maiden"

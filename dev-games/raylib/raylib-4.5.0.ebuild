@@ -1,7 +1,7 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit cmake
 
@@ -14,16 +14,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="static-libs"
 
-#media-libs/glfw
 DEPEND="
-	media-libs/openal
+	media-libs/glfw
+	virtual/opengl
 "
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	#-DUSE_EXTERNAL_GLFW=ON
 	local mycmakeargs=(
 		-DBUILD_EXAMPLES=OFF
+		-DUSE_EXTERNAL_GLFW=ON
 	)
 	cmake_src_configure
 }

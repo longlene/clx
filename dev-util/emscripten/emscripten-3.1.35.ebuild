@@ -1,9 +1,9 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9,10,11} )
+PYTHON_COMPAT=( python3_{10,11} )
 inherit python-single-r1
 
 DESCRIPTION="Emscripten is a complete compiler toolchain to WebAssembly, using LLVM"
