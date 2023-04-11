@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 RESTRICT="network-sandbox test"
-MY_LLVM_VERSION=13
+MY_LLVM_VERSION=16
 
 RDEPEND="
 	dev-util/binaryen
