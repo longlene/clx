@@ -19,6 +19,7 @@ RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
+	dev-python/tqdm[${PYTHON_USEDEP}]
 	dev-python/networkx[${PYTHON_USEDEP}]
 "
 BDEPEND="

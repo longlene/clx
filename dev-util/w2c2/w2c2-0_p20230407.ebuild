@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="c8b141e456efb4bce66bfd3664c3ebf6bcaf2fdf"
+EGIT_COMMIT="63969fbbe6bc3c38dd9be7c1130bac6533651836"
 
 DESCRIPTION="Translates WebAssembly modules to C"
 HOMEPAGE="https://github.com/turbolent/w2c2"
