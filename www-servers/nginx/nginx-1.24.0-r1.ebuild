@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -59,7 +59,7 @@ HTTP_FANCYINDEX_MODULE_URI="https://github.com/aperezdc/ngx-fancyindex/archive/v
 HTTP_FANCYINDEX_MODULE_WD="${WORKDIR}/ngx-fancyindex-${HTTP_FANCYINDEX_MODULE_PV}"
 
 # http_lua (https://github.com/openresty/lua-nginx-module, BSD license)
-HTTP_LUA_MODULE_PV="6e3b1c4fde47039f0ce2ee75fc678dab27944667"
+HTTP_LUA_MODULE_PV="68acad14e4a8f42e31d4a4bb5ed44d6f5b55fc1c"
 HTTP_LUA_MODULE_P="ngx_http_lua-${HTTP_LUA_MODULE_PV}"
 HTTP_LUA_MODULE_URI="https://github.com/openresty/lua-nginx-module/archive/${HTTP_LUA_MODULE_PV}.tar.gz"
 HTTP_LUA_MODULE_WD="${WORKDIR}/lua-nginx-module-${HTTP_LUA_MODULE_PV}"
@@ -165,7 +165,7 @@ NJS_MODULE_URI="https://github.com/nginx/njs/archive/${NJS_MODULE_PV}.tar.gz"
 NJS_MODULE_WD="${WORKDIR}/njs-${NJS_MODULE_PV}"
 
 # stream_lua (https://github.com/openresty/stream-lua-nginx-module, BSD license)
-STREAM_LUA_MODULE_PV="ae02d9ac1f1dda4aeb36184dc2a5d2436c23ecd0"
+STREAM_LUA_MODULE_PV="309198abf26266f1a3e53c71388ed7bb9d1e5ea2"
 STREAM_LUA_MODULE_P="ngx_stream_lua-${STREAM_LUA_MODULE_PV}"
 STREAM_LUA_MODULE_URI="https://github.com/openresty/stream-lua-nginx-module/archive/${STREAM_LUA_MODULE_PV}.tar.gz"
 STREAM_LUA_MODULE_WD="${WORKDIR}/stream-lua-nginx-module-${STREAM_LUA_MODULE_PV}"
@@ -215,7 +215,7 @@ LICENSE="BSD-2 BSD SSLeay MIT GPL-2 GPL-2+
 	nginx_modules_http_security? ( Apache-2.0 )
 	nginx_modules_http_push_stream? ( GPL-3 )"
 
-SLOT="mainline"
+SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~x86 ~amd64-linux ~x86-linux"
 
 # Package doesn't provide a real test suite
@@ -330,7 +330,7 @@ CDEPEND="
 RDEPEND="${CDEPEND}
 	app-misc/mime-types[nginx]
 	selinux? ( sec-policy/selinux-nginx )
-	!www-servers/nginx:0"
+	!www-servers/nginx:mainline"
 DEPEND="${CDEPEND}
 	arm? ( dev-libs/libatomic_ops )
 	libatomic? ( dev-libs/libatomic_ops )"
