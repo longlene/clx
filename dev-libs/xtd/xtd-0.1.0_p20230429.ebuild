@@ -1,11 +1,11 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="d5b6fbc6831a55caec0b04819b8f4f4e41ed7a75"
+EGIT_COMMIT="591f0e36e8e56cb6df54b31ca15e53032f33c6dd"
 
 DESCRIPTION="Free open-source modern C++ framework to create console and forms applications"
 HOMEPAGE="https://github.com/gammasoft71/xtd"
