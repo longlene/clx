@@ -1,9 +1,10 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-EGIT_COMMIT="ed7a0f54964920578434359b05b9a320676a8550"
+EGIT_COMMIT="02d5a0d7ca334334e8b235d7a695f270444aef34"
+
 inherit cmake flag-o-matic vcs-snapshot
 
 DESCRIPTION="High performance server-side application framework"
