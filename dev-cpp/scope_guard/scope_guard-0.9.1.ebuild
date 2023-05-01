@@ -5,8 +5,8 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="A modern C++ scope guard that is easy to use but hard to misuse"
+HOMEPAGE="https://github.com/ricab/scope_guard"
 SRC_URI="https://github.com/Neargye/scope_guard/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
