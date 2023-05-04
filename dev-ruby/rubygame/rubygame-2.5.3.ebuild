@@ -2,7 +2,7 @@
 
 EAPI=7
 
-USE_RUBY="ruby20"
+USE_RUBY="ruby32"
 inherit ruby-fakegem
 
 DESCRIPTION="A cross-platform multimedia library for ruby"
