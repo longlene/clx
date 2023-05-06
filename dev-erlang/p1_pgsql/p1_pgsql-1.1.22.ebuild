@@ -1,16 +1,16 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit rebar
 
-DESCRIPTION="Pure Erlang MySQL driver"
-HOMEPAGE="https://github.com/processone/p1_mysql"
+DESCRIPTION="Pure Erlang PostgreSQL driver"
+HOMEPAGE="https://github.com/processone/p1_pgsql"
 SRC_URI="https://github.com/processone/${PN}/archive/${PV}.tar.gz
 	-> ${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="ErlPL-1.1"
 SLOT="0"
 KEYWORDS="amd64 ~arm ~ia64 ppc ~sparc x86"
 

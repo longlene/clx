@@ -16,10 +16,10 @@ KEYWORDS="~amd64"
 DEPEND=""
 RDEPEND="${DEPEND}
 	|| (
-	>=sys-cluster/openmpi-4.1.2[${MULTILIB_USEDEP},cxx?,fortran?,romio?,threads(+)?]
-	>=sys-cluster/mpich-3.4.3[${MULTILIB_USEDEP},cxx?,fortran?,romio?,threads?]
+	>=sys-cluster/openmpi-4.1.2
+	>=sys-cluster/mpich-3.4.3
 	sys-cluster/native-mpi
-	nullmpi? ( sys-cluster/nullmpi[${MULTILIB_USEDEP},cxx(-)?,fortran(-)?,romio(-)?,threads(-)?] )
+	sys-cluster/nullmpi
 )
 "
 BDEPEND=""
