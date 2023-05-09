@@ -17,13 +17,14 @@ SRC_URI="https://github.com/pytorch/${MYPN}/archive/refs/tags/v${PV}.tar.gz
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="cuda distributed fbgemm ffmpeg mkl mpi nnpack +numpy opencl opencv openmp qnnpack tensorpipe xnnpack"
+IUSE="cuda distributed fbgemm ffmpeg gloo mkl mpi nnpack +numpy opencl opencv openmp qnnpack tensorpipe xnnpack"
 RESTRICT="test"
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
 	ffmpeg? ( opencv )
 	mpi? ( distributed )
 	tensorpipe? ( distributed )
+	gloo? ( distributed )
 " # ?? ( cuda rocm )
 
 # CUDA 12 not supported yet: https://github.com/pytorch/pytorch/issues/91122
@@ -46,6 +47,7 @@ RDEPEND="
 	)
 	fbgemm? ( dev-libs/FBGEMM )
 	ffmpeg? ( media-video/ffmpeg:= )
+	gloo? ( sci-libs/gloo )
 	mkl? ( sci-libs/mkl )
 	mpi? ( sys-cluster/openmpi )
 	nnpack? ( sci-libs/NNPACK )
@@ -81,10 +83,16 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-1.13.0-install-dirs.patch
 	"${FILESDIR}"/${PN}-1.12.0-glog-0.6.0.patch
 	"${FILESDIR}"/${PN}-1.13.1-tensorpipe.patch
+	"${FILESDIR}"/${P}-gcc13.patch
+	"${FILESDIR}"/${P}-cudnn_include_fix.patch
 )
 
 src_prepare() {
 	filter-lto #bug 862672
+	sed -i \
+		-e "/third_party\/gloo/d" \
+		cmake/Dependencies.cmake \
+		|| die
 	cmake_src_prepare
 	pushd torch/csrc/jit/serialization || die
 	flatc --cpp --gen-mutable --scoped-enums mobile_bytecode.fbs || die
@@ -114,6 +122,7 @@ src_configure() {
 		-DUSE_CUDNN=$(usex cuda)
 		-DUSE_FAST_NVCC=$(usex cuda)
 		-DTORCH_CUDA_ARCH_LIST="${TORCH_CUDA_ARCH_LIST:-3.5 7.0}"
+		-DBUILD_NVFUSER=OFF
 		-DUSE_DISTRIBUTED=$(usex distributed)
 		-DUSE_MPI=$(usex mpi)
 		-DUSE_FAKELOWP=OFF
@@ -121,7 +130,7 @@ src_configure() {
 		-DUSE_FFMPEG=$(usex ffmpeg)
 		-DUSE_GFLAGS=ON
 		-DUSE_GLOG=ON
-		-DUSE_GLOO=OFF
+		-DUSE_GLOO=$(usex gloo)
 		-DUSE_KINETO=OFF # TODO
 		-DUSE_LEVELDB=OFF
 		-DUSE_MAGMA=OFF # TODO: In GURU as sci-libs/magma
@@ -142,7 +151,6 @@ src_configure() {
 		-DUSE_SYSTEM_PYBIND11=ON
 		-DUSE_UCC=OFF
 		-DUSE_VALGRIND=OFF
-		-DUSE_VULKAN=OFF
 		-DPYBIND11_PYTHON_VERSION="${EPYTHON#python}"
 		-DPYTHON_EXECUTABLE="${PYTHON}"
 		-DUSE_ITT=OFF
@@ -161,6 +169,7 @@ src_configure() {
 
 	if use cuda; then
 		addpredict "/dev/nvidiactl" # bug 867706
+		addpredict "/dev/char"
 
 		mycmakeargs+=(
 			-DCMAKE_CUDA_FLAGS="$(cuda_gccdir -f | tr -d \")"
@@ -187,7 +196,7 @@ src_install() {
 	mv "${ED}"/usr/lib/python*/site-packages/caffe2 python/ || die
 	#mv "${ED}"/usr/include/torch python/torch/include || die
 	cp torch/version.py python/torch/ || die
-	rm -r "${ED}"/var/tmp || die
+	rm -rf "${ED}"/var/tmp || die
 	python_domodule python/caffe2
 	python_domodule python/torch
 }
