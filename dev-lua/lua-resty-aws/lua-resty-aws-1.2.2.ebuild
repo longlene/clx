@@ -23,6 +23,8 @@ RDEPEND="${DEPEND}
 	www-servers/nginx:*[nginx_modules_http_lua]
 	dev-lua/penlight[${LUA_USEDEP}]
 	dev-lua/lua-resty-http[${LUA_USEDEP}]
+	dev-lua/lua-resty-luasocket[${LUA_USEDEP}]
+	dev-lua/lua-resty-openssl[${LUA_USEDEP}]
 "
 BDEPEND=""
 
