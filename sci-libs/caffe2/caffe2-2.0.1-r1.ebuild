@@ -24,6 +24,7 @@ REQUIRED_USE="
 	ffmpeg? ( opencv )
 	mpi? ( distributed )
 	tensorpipe? ( distributed )
+	distributed? ( tensorpipe )
 	gloo? ( distributed )
 " # ?? ( cuda rocm )
 
@@ -47,7 +48,7 @@ RDEPEND="
 	)
 	fbgemm? ( dev-libs/FBGEMM )
 	ffmpeg? ( media-video/ffmpeg:= )
-	gloo? ( sci-libs/gloo )
+	gloo? ( sci-libs/gloo[cuda?] )
 	mkl? ( sci-libs/mkl )
 	mpi? ( sys-cluster/openmpi )
 	nnpack? ( sci-libs/NNPACK )
@@ -79,12 +80,12 @@ DEPEND="
 S="${WORKDIR}"/${MYP}
 
 PATCHES=(
-	"${FILESDIR}"/${P}-gentoo.patch
+	"${FILESDIR}"/${PN}-2.0.0-gentoo.patch
 	"${FILESDIR}"/${PN}-1.13.0-install-dirs.patch
 	"${FILESDIR}"/${PN}-1.12.0-glog-0.6.0.patch
 	"${FILESDIR}"/${PN}-1.13.1-tensorpipe.patch
-	"${FILESDIR}"/${P}-gcc13.patch
-	"${FILESDIR}"/${P}-cudnn_include_fix.patch
+	"${FILESDIR}"/${PN}-2.0.0-gcc13.patch
+	"${FILESDIR}"/${PN}-2.0.0-cudnn_include_fix.patch
 )
 
 src_prepare() {
