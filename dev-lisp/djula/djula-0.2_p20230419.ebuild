@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="0ac1bd7fd2b5d4d8ef3b37c268dd5f360da63cf8"
+EGIT_COMMIT="cd2c9e33d4ee265597f4cc9eab2f23bc0640f2b5"
 
 DESCRIPTION="Common Lisp port of the Django templating language"
 HOMEPAGE="http://mmontone.github.io/djula"

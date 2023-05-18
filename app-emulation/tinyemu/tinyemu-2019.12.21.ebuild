@@ -3,9 +3,11 @@
 
 EAPI=7
 
+MY_PV="${PV//./-}"
+
 DESCRIPTION="TinyEMU is a system emulator for the RISC-V and x86 architectures"
 HOMEPAGE="https://bellard.org/tinyemu/"
-SRC_URI="https://bellard.org/tinyemu/tinyemu-2019-12-21.tar.gz"
+SRC_URI="https://bellard.org/tinyemu/tinyemu-${MY_PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

@@ -1,9 +1,9 @@
 # Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-EGIT_COMMIT="02d5a0d7ca334334e8b235d7a695f270444aef34"
+EGIT_COMMIT="f4616417696b77664899cecc912f4deec892a2ef"
 
 inherit cmake flag-o-matic vcs-snapshot
 

@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="434652adfecbcc50abe78e67a1a423b63717c986"
+EGIT_COMMIT="e7602f5e6068ca97fc573321c02c10960f3b8dfd"
 
 DESCRIPTION="Web forms handling library for Common lisp"
 HOMEPAGE="https://github.com/mmontone/cl-forms/"
