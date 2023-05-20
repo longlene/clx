@@ -21,6 +21,7 @@ CRATES="
 	asn1-rs-impl-0.1.0
 	ast_node-0.9.3
 	async-compression-0.3.15
+	async-compression-0.4.0
 	async-stream-0.3.4
 	async-stream-impl-0.3.4
 	async-trait-0.1.68
@@ -82,38 +83,38 @@ CRATES="
 	data-encoding-2.3.3
 	data-url-0.2.0
 	deno_ast-0.26.0
-	deno_bench_util-0.95.0
-	deno_broadcast_channel-0.95.0
-	deno_cache-0.33.0
-	deno_console-0.101.0
-	deno_core-0.183.0
-	deno_crypto-0.115.0
+	deno_bench_util-0.99.0
+	deno_broadcast_channel-0.99.0
+	deno_cache-0.37.0
+	deno_console-0.105.0
+	deno_core-0.187.0
+	deno_crypto-0.119.0
 	deno_doc-0.62.0
 	deno_emit-0.20.0
-	deno_fetch-0.125.0
-	deno_ffi-0.88.0
-	deno_fs-0.11.0
+	deno_fetch-0.129.0
+	deno_ffi-0.92.0
+	deno_fs-0.15.0
 	deno_graph-0.48.1
-	deno_http-0.96.0
-	deno_io-0.11.0
-	deno_kv-0.9.0
+	deno_http-0.100.0
+	deno_io-0.15.0
+	deno_kv-0.13.0
 	deno_lint-0.45.0
-	deno_lockfile-0.13.0
+	deno_lockfile-0.14.0
 	deno_media_type-0.1.0
-	deno_napi-0.31.0
-	deno_net-0.93.0
-	deno_node-0.38.0
-	deno_npm-0.3.0
-	deno_ops-0.61.0
-	deno_runtime-0.109.0
+	deno_napi-0.35.0
+	deno_net-0.97.0
+	deno_node-0.42.0
+	deno_npm-0.4.0
+	deno_ops-0.65.0
+	deno_runtime-0.113.0
 	deno_semver-0.2.2
 	deno_task_shell-0.11.0
-	deno_tls-0.88.0
-	deno_url-0.101.0
-	deno_web-0.132.0
-	deno_webidl-0.101.0
-	deno_websocket-0.106.0
-	deno_webstorage-0.96.0
+	deno_tls-0.92.0
+	deno_url-0.105.0
+	deno_web-0.136.0
+	deno_webidl-0.105.0
+	deno_websocket-0.110.0
+	deno_webstorage-0.100.0
 	der-0.6.1
 	der-0.7.3
 	der-parser-8.2.0
@@ -128,9 +129,9 @@ CRATES="
 	dlopen_derive-0.1.4
 	dotenv-0.15.0
 	dprint-core-0.60.0
-	dprint-plugin-json-0.17.0
+	dprint-plugin-json-0.17.2
 	dprint-plugin-markdown-0.15.2
-	dprint-plugin-typescript-0.84.2
+	dprint-plugin-typescript-0.84.4
 	dprint-swc-ext-0.9.0
 	dsa-0.6.1
 	dyn-clone-1.0.11
@@ -155,7 +156,7 @@ CRATES="
 	fallible-streaming-iterator-0.1.9
 	fancy-regex-0.10.0
 	fastrand-1.9.0
-	fastwebsockets-0.2.6
+	fastwebsockets-0.3.1
 	fd-lock-3.0.10
 	ff-0.12.1
 	ff-0.13.0
@@ -208,7 +209,7 @@ CRATES="
 	humantime-2.1.0
 	hyper-0.14.26
 	hyper-1.0.0-rc.3
-	hyper-rustls-0.23.2
+	hyper-rustls-0.24.0
 	idna-0.2.3
 	idna-0.3.0
 	if_chain-1.0.2
@@ -228,7 +229,7 @@ CRATES="
 	itoa-1.0.6
 	jobserver-0.1.26
 	js-sys-0.3.61
-	jsonc-parser-0.21.0
+	jsonc-parser-0.21.1
 	junction-0.2.0
 	keccak-0.1.3
 	kqueue-1.0.7
@@ -268,10 +269,10 @@ CRATES="
 	minimal-lexical-0.2.1
 	miniz_oxide-0.5.4
 	mio-0.8.6
-	monch-0.4.1
+	monch-0.4.2
 	napi-build-1.2.1
 	napi-sys-2.2.3
-	napi_sym-0.31.0
+	napi_sym-0.35.0
 	netif-0.1.6
 	new_debug_unreachable-1.0.4
 	nibble_vec-0.1.0
@@ -353,7 +354,7 @@ CRATES="
 	regex-1.7.1
 	regex-syntax-0.6.28
 	relative-path-1.8.0
-	reqwest-0.11.14
+	reqwest-0.11.18
 	resolv-conf-0.7.0
 	rfc6979-0.3.1
 	rfc6979-0.4.0
@@ -366,9 +367,10 @@ CRATES="
 	rustc_version-0.4.0
 	rusticata-macros-4.1.0
 	rustix-0.36.9
-	rustls-0.20.8
+	rustls-0.21.0
 	rustls-native-certs-0.6.2
 	rustls-pemfile-1.0.2
+	rustls-webpki-0.100.1
 	rustversion-1.0.12
 	rustyline-10.0.0
 	rustyline-derive-0.7.0
@@ -396,7 +398,7 @@ CRATES="
 	serde_json-1.0.94
 	serde_repr-0.1.9
 	serde_urlencoded-0.7.1
-	serde_v8-0.94.0
+	serde_v8-0.98.0
 	sha-1-0.10.0
 	sha1-0.10.5
 	sha2-0.10.6
@@ -460,16 +462,18 @@ CRATES="
 	testing_macros-0.2.8
 	text-size-1.1.0
 	text_lines-0.6.0
-	thiserror-1.0.38
-	thiserror-impl-1.0.38
+	thiserror-1.0.40
+	thiserror-impl-1.0.40
+	tikv-jemalloc-sys-0.5.3+5.3.0-patched
+	tikv-jemallocator-0.5.0
 	time-0.3.20
 	time-core-0.1.0
 	time-macros-0.2.8
 	tinyvec-1.6.0
 	tinyvec_macros-0.1.1
-	tokio-1.25.0
-	tokio-macros-1.8.2
-	tokio-rustls-0.23.4
+	tokio-1.28.1
+	tokio-macros-2.1.0
+	tokio-rustls-0.24.0
 	tokio-socks-0.5.1
 	tokio-stream-0.1.12
 	tokio-util-0.7.7
@@ -515,7 +519,7 @@ CRATES="
 	utf-8-0.7.6
 	utf8parse-0.2.1
 	uuid-1.3.0
-	v8-0.71.0
+	v8-0.71.2
 	vcpkg-0.2.15
 	version_check-0.9.4
 	vsimd-0.8.0
@@ -543,14 +547,23 @@ CRATES="
 	winapi-x86_64-pc-windows-gnu-0.4.0
 	windows-sys-0.42.0
 	windows-sys-0.45.0
+	windows-sys-0.48.0
 	windows-targets-0.42.2
+	windows-targets-0.48.0
 	windows_aarch64_gnullvm-0.42.2
+	windows_aarch64_gnullvm-0.48.0
 	windows_aarch64_msvc-0.42.2
+	windows_aarch64_msvc-0.48.0
 	windows_i686_gnu-0.42.2
+	windows_i686_gnu-0.48.0
 	windows_i686_msvc-0.42.2
+	windows_i686_msvc-0.48.0
 	windows_x86_64_gnu-0.42.2
+	windows_x86_64_gnu-0.48.0
 	windows_x86_64_gnullvm-0.42.2
+	windows_x86_64_gnullvm-0.48.0
 	windows_x86_64_msvc-0.42.2
+	windows_x86_64_msvc-0.48.0
 	winnow-0.3.6
 	winreg-0.10.1
 	winres-0.1.12
@@ -565,7 +578,7 @@ CRATES="
 	zstd-sys-2.0.7+zstd.1.5.4
 "
 
-V8_VER="0.71.0"
+V8_VER="0.71.2"
 
 inherit cargo
 
