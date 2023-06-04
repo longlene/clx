@@ -17,7 +17,7 @@ DEPEND="
 	dev-cpp/xeus-zmq
 	dev-cpp/xtl
 	dev-cpp/nlohmann_json
-	dev-cpp/cppzmq
+	net-libs/cppzmq
 	dev-cpp/argparse
 "
 RDEPEND="${DEPEND}"
