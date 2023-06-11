@@ -3,13 +3,9 @@
 
 EAPI=8
 
-inherit vcs-snapshot
-
-EGIT_COMMIT="5121185f92628f2d27c71f85a7df50ed18b8263a"
-
 DESCRIPTION="tiniest x86-64-linux emulator"
 HOMEPAGE="https://github.com/jart/blink"
-SRC_URI="https://github.com/jart/blink/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jart/blink/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
@@ -24,6 +20,7 @@ src_configure() {
 }
 
 src_install() {
-	dobin o/blink/blink{,enlights}
-	einstalldocs
+	#dobin o/blink/blink{,enlights}
+	#einstalldocs
+	emake PREFIX="${D}"/usr install
 }
