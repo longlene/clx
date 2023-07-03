@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -18,10 +18,10 @@ RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/serapeum
 	dev-lisp/lparallel
-	dev-lisp/cl-data-structures
+	dev-lisp/closer-mop
 	dev-lisp/metabang-bind
 	dev-lisp/alexandria
-	dev-lisp/closer-mop
+	>=dev-lisp/cl-data-structures-1.4.0
 	dev-lisp/documentation-utils-extensions
 "
 BDEPEND=""

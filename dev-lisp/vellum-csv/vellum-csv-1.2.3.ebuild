@@ -18,9 +18,9 @@ RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/serapeum
 	dev-lisp/vellum
+	dev-lisp/parse-float
 	dev-lisp/alexandria
 	dev-lisp/documentation-utils-extensions
-	dev-lisp/fare-csv
 "
 BDEPEND=""
 

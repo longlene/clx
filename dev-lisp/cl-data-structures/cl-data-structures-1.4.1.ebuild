@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -25,8 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/flexichain
 	dev-lisp/metabang-bind
 	dev-lisp/bordeaux-threads
-	dev-lisp/scribble
-	dev-lisp/osicat
 	dev-lisp/cl-ppcre
 	dev-lisp/trivial-garbage
 "

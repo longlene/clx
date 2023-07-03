@@ -58,7 +58,7 @@ RDEPEND="
 	opencl? ( virtual/opencl )
 	opencv? ( media-libs/opencv:= )
 	qnnpack? ( sci-libs/QNNPACK )
-	tensorpipe? ( sci-libs/tensorpipe )
+	tensorpipe? ( sci-libs/tensorpipe[cuda?] )
 	xnnpack? ( >=sci-libs/XNNPACK-2022.12.22 )
 "
 DEPEND="
@@ -107,7 +107,7 @@ src_configure() {
 		ewarn ""
 		ewarn "To configure caffe2 with the CUDA compute capability that is optimal for your GPU,"
 		ewarn "set TORCH_CUDA_ARCH_LIST in your make.conf, and re-emerge caffe2."
-		ewarn "For example, to use CUDA capability 7.5 & 3.5, add: TORCH_CUDA_ARCH_LIST=7.5,3.5"
+		ewarn "For example, to use CUDA capability 7.5 & 3.5, add: TORCH_CUDA_ARCH_LIST=7.5 3.5"
 		ewarn "For a Maxwell model GPU, an example value would be: TORCH_CUDA_ARCH_LIST=Maxwell"
 		ewarn ""
 		ewarn "You can look up your GPU's CUDA compute capability at https://developer.nvidia.com/cuda-gpus"
@@ -155,6 +155,7 @@ src_configure() {
 		-DPYBIND11_PYTHON_VERSION="${EPYTHON#python}"
 		-DPYTHON_EXECUTABLE="${PYTHON}"
 		-DUSE_ITT=OFF
+		-DBLAS=Eigen # avoid the use of MKL, if found on the system
 		-DUSE_SYSTEM_EIGEN_INSTALL=ON
 		-DUSE_SYSTEM_PTHREADPOOL=ON
 		-DUSE_SYSTEM_FXDIV=ON

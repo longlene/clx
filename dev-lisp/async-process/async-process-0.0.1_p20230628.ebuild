@@ -1,11 +1,11 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot autotools
 
-EGIT_COMMIT="8f059c6f937be2caad6392d90f685bf35a92a5f2"
+EGIT_COMMIT="859db12e7f8bf3546487ea4fd7681d07c767306a"
 
 DESCRIPTION="async process"
 HOMEPAGE="https://github.com/lem-project/async-process"
