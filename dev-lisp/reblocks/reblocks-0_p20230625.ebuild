@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3d6aad7fb561ad416f225933f45493ed9ddbbc36"
+EGIT_COMMIT="c4248dae21e27aaadcce1404cc4ba033e6584548"
 
 DESCRIPTION="Reblocks Common Lisp web framework "
 HOMEPAGE="https://github.com/40ants/reblocks"
@@ -29,5 +29,5 @@ BDEPEND=""
 
 src_prepare() {
 	default
-	rm -r ${PN}-test.asd t
+	rm -r ${PN}-tests.asd t
 }
