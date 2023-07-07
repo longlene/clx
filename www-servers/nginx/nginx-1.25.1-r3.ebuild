@@ -59,9 +59,9 @@ HTTP_FANCYINDEX_MODULE_URI="https://github.com/aperezdc/ngx-fancyindex/archive/v
 HTTP_FANCYINDEX_MODULE_WD="${WORKDIR}/ngx-fancyindex-${HTTP_FANCYINDEX_MODULE_PV}"
 
 # http_lua (https://github.com/openresty/lua-nginx-module, BSD license)
-HTTP_LUA_MODULE_PV="68acad14e4a8f42e31d4a4bb5ed44d6f5b55fc1c"
+HTTP_LUA_MODULE_PV="0.10.25"
 HTTP_LUA_MODULE_P="ngx_http_lua-${HTTP_LUA_MODULE_PV}"
-HTTP_LUA_MODULE_URI="https://github.com/openresty/lua-nginx-module/archive/${HTTP_LUA_MODULE_PV}.tar.gz"
+HTTP_LUA_MODULE_URI="https://github.com/openresty/lua-nginx-module/archive/v${HTTP_LUA_MODULE_PV}.tar.gz"
 HTTP_LUA_MODULE_WD="${WORKDIR}/lua-nginx-module-${HTTP_LUA_MODULE_PV}"
 LUA_COMPAT=( luajit )
 
@@ -159,15 +159,15 @@ GEOIP2_MODULE_URI="https://github.com/leev/ngx_http_geoip2_module/archive/${GEOI
 GEOIP2_MODULE_WD="${WORKDIR}/ngx_http_geoip2_module-${GEOIP2_MODULE_PV}"
 
 # njs-module (https://github.com/nginx/njs, as-is)
-NJS_MODULE_PV="0.7.8"
+NJS_MODULE_PV="5b463b8050377216ad4197cd1e35bb69b35b77e9"
 NJS_MODULE_P="njs-${NJS_MODULE_PV}"
 NJS_MODULE_URI="https://github.com/nginx/njs/archive/${NJS_MODULE_PV}.tar.gz"
 NJS_MODULE_WD="${WORKDIR}/njs-${NJS_MODULE_PV}"
 
 # stream_lua (https://github.com/openresty/stream-lua-nginx-module, BSD license)
-STREAM_LUA_MODULE_PV="309198abf26266f1a3e53c71388ed7bb9d1e5ea2"
+STREAM_LUA_MODULE_PV="0.0.13"
 STREAM_LUA_MODULE_P="ngx_stream_lua-${STREAM_LUA_MODULE_PV}"
-STREAM_LUA_MODULE_URI="https://github.com/openresty/stream-lua-nginx-module/archive/${STREAM_LUA_MODULE_PV}.tar.gz"
+STREAM_LUA_MODULE_URI="https://github.com/openresty/stream-lua-nginx-module/archive/v${STREAM_LUA_MODULE_PV}.tar.gz"
 STREAM_LUA_MODULE_WD="${WORKDIR}/stream-lua-nginx-module-${STREAM_LUA_MODULE_PV}"
 LUA_COMPAT=( luajit )
 
@@ -215,7 +215,7 @@ LICENSE="BSD-2 BSD SSLeay MIT GPL-2 GPL-2+
 	nginx_modules_http_security? ( Apache-2.0 )
 	nginx_modules_http_push_stream? ( GPL-3 )"
 
-SLOT="0"
+SLOT="mainline"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~x86 ~amd64-linux ~x86-linux"
 
 # Package doesn't provide a real test suite
@@ -261,7 +261,7 @@ NGINX_MODULES_3RD="
 	stream_lua
 "
 
-IUSE="aio debug +http +http2 +http-cache libatomic pcre +pcre2 pcre-jit rtmp selinux ssl threads vim-syntax"
+IUSE="aio debug +http +http2 http3 +http-cache libatomic pcre +pcre2 pcre-jit rtmp selinux ssl threads vim-syntax"
 
 for mod in $NGINX_MODULES_STD; do
 	IUSE="${IUSE} +nginx_modules_http_${mod}"
@@ -330,7 +330,7 @@ CDEPEND="
 RDEPEND="${CDEPEND}
 	app-misc/mime-types[nginx]
 	selinux? ( sec-policy/selinux-nginx )
-	!www-servers/nginx:mainline"
+	!www-servers/nginx:0"
 DEPEND="${CDEPEND}
 	arm? ( dev-libs/libatomic_ops )
 	libatomic? ( dev-libs/libatomic_ops )"
@@ -470,6 +470,7 @@ src_configure() {
 	use aio       && myconf+=( --with-file-aio )
 	use debug     && myconf+=( --with-debug )
 	use http2     && myconf+=( --with-http_v2_module )
+	use http3     && myconf+=( --with-http_v3_module )
 	use libatomic && myconf+=( --with-libatomic )
 	use pcre      && myconf+=( --with-pcre --without-pcre2 )
 	use pcre-jit  && myconf+=( --with-pcre-jit )
@@ -616,7 +617,7 @@ src_configure() {
 		myconf+=( --add-module=${HTTP_BROTLI_MODULE_WD} )
 	fi
 
-	if use http || use http-cache || use http2 || use nginx_modules_http_javascript; then
+	if use http || use http-cache || use http2 || use http3 || use nginx_modules_http_javascript; then
 		http_enabled=1
 	fi
 

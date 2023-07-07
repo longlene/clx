@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -25,5 +25,5 @@ src_prepare() {
 
 src_install() {
 	emake install DESTDIR="${D}"
-	dodoc Changes LICENSE README 
+	einstalldocs
 }

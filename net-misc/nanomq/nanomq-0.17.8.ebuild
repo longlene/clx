@@ -5,7 +5,7 @@ EAPI=7
 
 inherit cmake flag-o-matic
 
-NNG_COMMIT="da813bff126bc48f111154a0de6d29cca3f0e0ef"
+NNG_COMMIT="c0f5ca0c95f4454fbc3c52acf5f41aa9eded5b34"
 
 DESCRIPTION="Nano MQTT Broker"
 HOMEPAGE="https://nanomq.io/"
