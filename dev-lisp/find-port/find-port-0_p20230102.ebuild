@@ -1,11 +1,11 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="811727f88d7f000623bf92fdb0e64678a7112a28"
+EGIT_COMMIT="666040f72abda155a87576652f0e0fae98b27c13"
 
 DESCRIPTION="Find open ports programmatically"
 HOMEPAGE="https://github.com/eudoxia0/find-port"

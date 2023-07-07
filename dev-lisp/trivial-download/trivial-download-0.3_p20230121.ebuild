@@ -1,11 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d2472061d86b1cf3d32f388daacd4e32a13af699"
+EGIT_COMMIT="95e5471475bbe94ea631ad997b30dfc495ae28d0"
 
 DESCRIPTION="Download files from Common Lisp trhough Drakma"
 HOMEPAGE="https://github.com/eudoxia0/trivial-download"

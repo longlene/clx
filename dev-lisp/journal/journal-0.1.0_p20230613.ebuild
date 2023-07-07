@@ -1,11 +1,11 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b3849b38b52b6d90d21f74acef1e0ca20ac5fda4"
+EGIT_COMMIT="0c81b2877e41c4b24ff2764d19857c16cd1670da"
 
 DESCRIPTION="A Common Lisp library for logging, tracing, testing and persistence"
 HOMEPAGE="https://github.com/melisgl/journal"

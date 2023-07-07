@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="291b513193540ab8e328c919e5e9126a483e52cc"
+EGIT_COMMIT="f0fd1ab5af0cefed2edd98d5b2288270b2180b0a"
 
 DESCRIPTION="Exploratory programming environment and documentation generator"
 HOMEPAGE="https://github.com/melisgl/mgl-pax"

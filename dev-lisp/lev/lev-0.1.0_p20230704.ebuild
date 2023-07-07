@@ -1,11 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7d03c68dad44f1cc4ac2aeeab2d24eb525ad941a"
+EGIT_COMMIT="b43e700c726da8cf0bd1d9123eb324b65c8ddf8e"
 
 DESCRIPTION="libev bindings for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/lev"

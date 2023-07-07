@@ -1,11 +1,11 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c2edb842247ced0071dc21987f97629575667fe8"
+EGIT_COMMIT="3745924e4682523b0969a7042bcdb39aa8f73e8f"
 
 DESCRIPTION="Lack, the core of Clack"
 HOMEPAGE="https://github.com/fukamachi/lack"

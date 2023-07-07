@@ -1,11 +1,11 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2095301b3c5b58cdf3b15a8490034080f8458340"
+EGIT_COMMIT="37e5d93f7b55d49b039ecd711bdb512994f607fb"
 
 DESCRIPTION="MAT is library for working with multi-dimensional arrays which supports efficient interfacing to foreign and CUDA code"
 HOMEPAGE="https://github.com/melisgl/mgl-mat"

@@ -5,7 +5,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="e7602f5e6068ca97fc573321c02c10960f3b8dfd"
+EGIT_COMMIT="e828875ddae5e2e01e2b8bf04d7c57d0115564f7"
 
 DESCRIPTION="Web forms handling library for Common lisp"
 HOMEPAGE="https://github.com/mmontone/cl-forms/"

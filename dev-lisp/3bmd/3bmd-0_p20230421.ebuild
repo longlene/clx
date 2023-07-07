@@ -4,7 +4,7 @@ EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4e08d82d7c8fb1b8fc708c87f4d9d13a1ab490cb"
+EGIT_COMMIT="20a53fb740eac727ecabd439f2580cf483c98f4d"
 
 DESCRIPTION="markdown processor in CL using esrap parser"
 HOMEPAGE="https://github.com/3b/3bmd"

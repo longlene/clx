@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4b1800a6dcbdf290a66b5f952fe3bd81641b0b5c"
+EGIT_COMMIT="46d47949278e163463834aca572649b996f28419"
 
 DESCRIPTION="Common Lisp machine learning library"
 HOMEPAGE="https://github.com/melisgl/mgl"
