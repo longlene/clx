@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7fa8642956d75281ace2722956a3040c235a2cfc"
+EGIT_COMMIT="f06e9b8bb8111f9643f7988dcb9b98705887e1ed"
 
 DESCRIPTION="An implementation of the Language Server Protocol for Common Lisp"
 HOMEPAGE="https://github.com/cxxxr/cl-lsp"

@@ -1,11 +1,11 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="4f68223be0ea62eb5783918545431a17767e4d26"
+EGIT_COMMIT="5b0b02e59f90964baf5737abd13300fa82f27667"
 
 DESCRIPTION="A fast regular expression compiler in Common Lisp"
 HOMEPAGE="https://github.com/telekons/one-more-re-nightmare"

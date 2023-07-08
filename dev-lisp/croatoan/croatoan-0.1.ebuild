@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="c38cca13706d597b6276b7c466dd64f733aaef5e"
+inherit common-lisp-3
 
 DESCRIPTION="Common Lisp bindings for the ncurses terminal library"
 HOMEPAGE="https://github.com/McParen/croatoan"
-SRC_URI="https://github.com/McParen/croatoan/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/McParen/croatoan/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
