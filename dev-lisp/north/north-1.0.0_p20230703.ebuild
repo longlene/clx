@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="89a2d1946b1d8c008b255ab868191df366da8f40"
+EGIT_COMMIT="c128cb0b7976417307a387ea6c1c30228d58cd50"
 
 DESCRIPTION="An oAuth 1.0a Server & Client"
 HOMEPAGE="https://github.com/Shinmera/north"

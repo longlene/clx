@@ -1,11 +1,11 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="b57ba7f5cf449fc07c0ccc86dbcc38daa5b88be0"
+EGIT_COMMIT="21e81002e1141ed35d7d45038bb9688251f12eb1"
 
 DESCRIPTION="RSS, Atom and general feed parsing and generating"
 HOMEPAGE="https://github.com/Shinmera/feeder"

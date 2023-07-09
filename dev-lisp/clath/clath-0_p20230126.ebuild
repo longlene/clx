@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="0e6a3a2651a3c8f7cf3c685432dae0ac0bb876d6"
+EGIT_COMMIT="8e1787a9819386dceea45b45f753b81c28a5f575"
 
 DESCRIPTION="Clath is single sign-on middleware for Clack"
 HOMEPAGE="https://github.com/BnMcGn/clath"

@@ -1,11 +1,11 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="031d9f4ed580156bc85e52cf462f1a0355c5680e"
+EGIT_COMMIT="74422b5fefab00970238148bb5f7354a482e8396"
 
 DESCRIPTION="Common Lisp feed parser"
 HOMEPAGE="https://github.com/ruricolist/cl-feedparser"

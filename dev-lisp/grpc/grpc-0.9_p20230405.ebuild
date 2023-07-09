@@ -1,11 +1,11 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="a265eb228d7a47b003e358a1cb66d86bbc503a4d"
+EGIT_COMMIT="c27be163a6a350c12040323c25d3d1833f45213e"
 
 DESCRIPTION="gRPC implementation for Common Lisp"
 HOMEPAGE="https://github.com/qitab/grpc"
