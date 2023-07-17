@@ -1,7 +1,7 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit cmake
 
@@ -15,12 +15,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	dev-libs/mulle-aba
-	dev-libs/mulle-allocator
-	dev-libs/mulle-c11
 	dev-libs/mulle-concurrent
-	dev-libs/mulle-thread
 	dev-libs/mulle-vararg
+	dev-libs/mulle-atinit
+	dev-libs/mulle-atexit
+	dev-libs/mulle-dlfcn
+	dev-libs/mulle-data
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

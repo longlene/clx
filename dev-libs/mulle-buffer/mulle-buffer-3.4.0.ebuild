@@ -1,4 +1,4 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,6 +16,7 @@ IUSE=""
 
 DEPEND="
 	dev-libs/mulle-allocator
+	dev-libs/mulle-data
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
