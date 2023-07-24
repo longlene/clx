@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="14d27dddf7162c4783e184a7bd4044b37b2d5945"
+EGIT_COMMIT="c48ebf75b918fc3a557c8823a965c28509379cea"
 
 DESCRIPTION="Tiled map library for CL"
 HOMEPAGE="https://github.com/Zulu-Inuoe/cl-tiled/"
