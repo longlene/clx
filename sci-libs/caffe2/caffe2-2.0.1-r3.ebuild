@@ -4,7 +4,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{9..11} )
-inherit python-single-r1 cmake cuda flag-o-matic
+inherit python-single-r1 cmake cuda flag-o-matic prefix
 
 MYPN=pytorch
 MYP=${MYPN}-${PV}
@@ -50,7 +50,7 @@ RDEPEND="
 	ffmpeg? ( media-video/ffmpeg:= )
 	gloo? ( sci-libs/gloo[cuda?] )
 	mkl? ( sci-libs/mkl )
-	mpi? ( sys-cluster/openmpi )
+	mpi? ( virtual/mpi )
 	nnpack? ( sci-libs/NNPACK )
 	numpy? ( $(python_gen_cond_dep '
 		dev-python/numpy[${PYTHON_USEDEP}]
@@ -98,6 +98,20 @@ src_prepare() {
 	pushd torch/csrc/jit/serialization || die
 	flatc --cpp --gen-mutable --scoped-enums mobile_bytecode.fbs || die
 	popd
+	# prefixify the hardcoded paths, after all patches are applied
+	hprefixify \
+		aten/CMakeLists.txt \
+		caffe2/CMakeLists.txt \
+		cmake/Metal.cmake \
+		cmake/Modules/*.cmake \
+		cmake/Modules_CUDA_fix/FindCUDNN.cmake \
+		cmake/Modules_CUDA_fix/upstream/FindCUDA/make2cmake.cmake \
+		cmake/Modules_CUDA_fix/upstream/FindPackageHandleStandardArgs.cmake \
+		cmake/public/LoadHIP.cmake \
+		cmake/public/cuda.cmake \
+		cmake/Dependencies.cmake \
+		torch/CMakeLists.txt \
+		CMakeLists.txt
 }
 
 src_configure() {
