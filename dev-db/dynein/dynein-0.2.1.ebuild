@@ -1,0 +1,232 @@
+# Copyright 2023 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	adler-1.0.2
+	aho-corasick-0.7.18
+	ansi_term-0.12.1
+	assert_cmd-2.0.4
+	async-trait-0.1.56
+	atty-0.2.14
+	autocfg-1.1.0
+	base64-0.13.0
+	bitflags-1.3.2
+	block-buffer-0.9.0
+	bstr-0.2.17
+	bumpalo-3.10.0
+	byteorder-1.4.3
+	bytes-1.1.0
+	bzip2-0.4.3
+	bzip2-sys-0.1.11+1.0.8
+	cc-1.0.73
+	cfg-if-1.0.0
+	chrono-0.4.19
+	clap-2.34.0
+	console-0.15.0
+	core-foundation-0.9.3
+	core-foundation-sys-0.8.3
+	cpufeatures-0.2.2
+	crc32fast-1.3.2
+	crypto-mac-0.11.1
+	dialoguer-0.9.0
+	difflib-0.4.0
+	digest-0.9.0
+	dirs-4.0.0
+	dirs-next-2.0.0
+	dirs-sys-0.3.7
+	dirs-sys-next-0.1.2
+	doc-comment-0.3.3
+	either-1.6.1
+	encode_unicode-0.3.6
+	encoding_rs-0.8.31
+	env_logger-0.9.0
+	fastrand-1.7.0
+	flate2-1.0.24
+	float-cmp-0.9.0
+	fnv-1.0.7
+	foreign-types-0.3.2
+	foreign-types-shared-0.1.1
+	form_urlencoded-1.0.1
+	futures-0.3.21
+	futures-channel-0.3.21
+	futures-core-0.3.21
+	futures-executor-0.3.21
+	futures-io-0.3.21
+	futures-macro-0.3.21
+	futures-sink-0.3.21
+	futures-task-0.3.21
+	futures-util-0.3.21
+	generic-array-0.14.5
+	getrandom-0.2.7
+	h2-0.3.13
+	hashbrown-0.12.1
+	heck-0.3.3
+	hermit-abi-0.1.19
+	hex-0.4.3
+	hmac-0.11.0
+	http-0.2.8
+	http-body-0.4.5
+	httparse-1.7.1
+	httpdate-1.0.2
+	humantime-2.1.0
+	hyper-0.14.19
+	hyper-tls-0.5.0
+	idna-0.2.3
+	indexmap-1.9.0
+	instant-0.1.12
+	ipnet-2.5.0
+	itertools-0.10.3
+	itoa-1.0.2
+	js-sys-0.3.58
+	lazy_static-1.4.0
+	libc-0.2.126
+	linked-hash-map-0.5.4
+	lock_api-0.4.7
+	log-0.4.17
+	matches-0.1.9
+	md-5-0.9.1
+	memchr-2.5.0
+	mime-0.3.16
+	miniz_oxide-0.5.3
+	mio-0.8.3
+	native-tls-0.2.10
+	normalize-line-endings-0.3.0
+	num-integer-0.1.45
+	num-traits-0.2.15
+	num_cpus-1.13.1
+	once_cell-1.12.0
+	opaque-debug-0.3.0
+	openssl-0.10.40
+	openssl-macros-0.1.0
+	openssl-probe-0.1.5
+	openssl-sys-0.9.74
+	parking_lot-0.12.1
+	parking_lot_core-0.9.3
+	percent-encoding-2.1.0
+	pin-project-lite-0.2.9
+	pin-utils-0.1.0
+	pkg-config-0.3.25
+	predicates-2.1.1
+	predicates-core-1.0.3
+	predicates-tree-1.0.5
+	proc-macro-error-1.0.4
+	proc-macro-error-attr-1.0.4
+	proc-macro2-1.0.39
+	quote-1.0.19
+	redox_syscall-0.2.13
+	redox_users-0.4.3
+	regex-1.5.6
+	regex-automata-0.1.10
+	regex-syntax-0.6.26
+	remove_dir_all-0.5.3
+	reqwest-0.11.11
+	rusoto_core-0.47.0
+	rusoto_credential-0.47.0
+	rusoto_dynamodb-0.47.0
+	rusoto_ec2-0.47.0
+	rusoto_signature-0.47.0
+	rustc_version-0.4.0
+	ryu-1.0.10
+	schannel-0.1.20
+	scopeguard-1.1.0
+	security-framework-2.6.1
+	security-framework-sys-2.6.1
+	semver-1.0.10
+	serde-1.0.137
+	serde_derive-1.0.137
+	serde_json-1.0.81
+	serde_urlencoded-0.7.1
+	serde_yaml-0.8.24
+	sha2-0.9.9
+	shlex-1.1.0
+	signal-hook-registry-1.4.0
+	slab-0.4.6
+	smallvec-1.8.0
+	socket2-0.4.4
+	strsim-0.8.0
+	structopt-0.3.26
+	structopt-derive-0.4.18
+	subtle-2.4.1
+	syn-1.0.98
+	tabwriter-1.2.1
+	tempfile-3.3.0
+	termcolor-1.1.3
+	terminal_size-0.1.17
+	termtree-0.2.4
+	textwrap-0.11.0
+	thiserror-1.0.31
+	thiserror-impl-1.0.31
+	time-0.1.44
+	tinyvec-1.6.0
+	tinyvec_macros-0.1.0
+	tokio-1.19.2
+	tokio-macros-1.8.0
+	tokio-native-tls-0.3.0
+	tokio-util-0.7.3
+	tower-service-0.3.2
+	tracing-0.1.35
+	tracing-core-0.1.27
+	try-lock-0.2.3
+	typenum-1.15.0
+	unicode-bidi-0.3.8
+	unicode-ident-1.0.1
+	unicode-normalization-0.1.19
+	unicode-segmentation-1.9.0
+	unicode-width-0.1.9
+	url-2.2.2
+	vcpkg-0.2.15
+	vec_map-0.8.2
+	version_check-0.9.4
+	wait-timeout-0.2.0
+	want-0.3.0
+	wasi-0.10.0+wasi-snapshot-preview1
+	wasi-0.11.0+wasi-snapshot-preview1
+	wasm-bindgen-0.2.81
+	wasm-bindgen-backend-0.2.81
+	wasm-bindgen-futures-0.4.31
+	wasm-bindgen-macro-0.2.81
+	wasm-bindgen-macro-support-0.2.81
+	wasm-bindgen-shared-0.2.81
+	web-sys-0.3.58
+	winapi-0.3.9
+	winapi-i686-pc-windows-gnu-0.4.0
+	winapi-util-0.1.5
+	winapi-x86_64-pc-windows-gnu-0.4.0
+	windows-sys-0.36.1
+	windows_aarch64_msvc-0.36.1
+	windows_i686_gnu-0.36.1
+	windows_i686_msvc-0.36.1
+	windows_x86_64_gnu-0.36.1
+	windows_x86_64_msvc-0.36.1
+	winreg-0.10.1
+	xml-rs-0.8.4
+	yaml-rust-0.4.5
+	zeroize-1.5.5
+	zip-0.5.13
+"
+
+inherit cargo
+
+DESCRIPTION="DynamoDB CLI written in Rust"
+HOMEPAGE="https://github.com/awslabs/dynein"
+SRC_URI="
+	https://github.com/awslabs/dynein/archive/v${PV}.tar.gz -> ${P}.tar.gz
+	$(cargo_crate_uris ${CRATES})
+"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+BDEPEND="
+	>=virtual/rust-1.31.0
+"
+
+src_install() {
+	cargo_src_install
+	einstalldocs
+}
