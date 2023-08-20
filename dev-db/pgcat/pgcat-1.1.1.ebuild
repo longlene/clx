@@ -1,0 +1,256 @@
+# Copyright 2023 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	addr2line-0.20.0
+	adler-1.0.2
+	aho-corasick-1.0.2
+	android-tzdata-0.1.1
+	android_system_properties-0.1.5
+	anstream-0.3.2
+	anstyle-1.0.1
+	anstyle-parse-0.2.1
+	anstyle-query-1.0.0
+	anstyle-wincon-1.0.1
+	arc-swap-1.6.0
+	async-stream-0.3.5
+	async-stream-impl-0.3.5
+	async-trait-0.1.71
+	atomic_enum-0.2.0
+	autocfg-1.1.0
+	backtrace-0.3.68
+	base64-0.21.2
+	bb8-0.8.1
+	bitflags-1.3.2
+	bitflags-2.3.3
+	block-buffer-0.10.4
+	bumpalo-3.13.0
+	byteorder-1.4.3
+	bytes-1.4.0
+	cc-1.0.79
+	cfg-if-1.0.0
+	chrono-0.4.26
+	clap-4.3.15
+	clap_builder-4.3.15
+	clap_derive-4.3.12
+	clap_lex-0.5.0
+	colorchoice-1.0.0
+	core-foundation-sys-0.8.4
+	cpufeatures-0.2.9
+	crypto-common-0.1.6
+	data-encoding-2.4.0
+	digest-0.10.7
+	either-1.8.1
+	enum-as-inner-0.5.1
+	equivalent-1.0.1
+	errno-0.3.1
+	errno-dragonfly-0.1.2
+	exitcode-1.1.2
+	fallible-iterator-0.2.0
+	fnv-1.0.7
+	form_urlencoded-1.2.0
+	futures-0.3.28
+	futures-channel-0.3.28
+	futures-core-0.3.28
+	futures-executor-0.3.28
+	futures-io-0.3.28
+	futures-macro-0.3.28
+	futures-sink-0.3.28
+	futures-task-0.3.28
+	futures-util-0.3.28
+	generic-array-0.14.7
+	getrandom-0.2.10
+	gimli-0.27.3
+	h2-0.3.20
+	hashbrown-0.12.3
+	hashbrown-0.14.0
+	heck-0.4.1
+	hermit-abi-0.3.2
+	hmac-0.12.1
+	hostname-0.3.1
+	http-0.2.9
+	http-body-0.4.5
+	httparse-1.8.0
+	httpdate-1.0.2
+	hyper-0.14.27
+	iana-time-zone-0.1.57
+	iana-time-zone-haiku-0.1.2
+	idna-0.2.3
+	idna-0.4.0
+	indexmap-1.9.3
+	indexmap-2.0.0
+	ipconfig-0.3.2
+	ipnet-2.8.0
+	is-terminal-0.4.9
+	itertools-0.10.5
+	itoa-1.0.9
+	jemalloc-sys-0.5.3+5.3.0-patched
+	jemallocator-0.5.0
+	js-sys-0.3.64
+	lazy_static-1.4.0
+	libc-0.2.147
+	linked-hash-map-0.5.6
+	linux-raw-sys-0.4.3
+	lock_api-0.4.10
+	log-0.4.19
+	lru-cache-0.1.2
+	match_cfg-0.1.0
+	matchers-0.1.0
+	matches-0.1.10
+	md-5-0.10.5
+	memchr-2.5.0
+	memoffset-0.7.1
+	miniz_oxide-0.7.1
+	mio-0.8.8
+	nix-0.26.2
+	nu-ansi-term-0.46.0
+	num-traits-0.2.15
+	num_cpus-1.16.0
+	object-0.31.1
+	once_cell-1.18.0
+	overload-0.1.1
+	parking_lot-0.12.1
+	parking_lot_core-0.9.8
+	percent-encoding-2.3.0
+	phf-0.11.2
+	phf_generator-0.11.2
+	phf_macros-0.11.2
+	phf_shared-0.11.2
+	pin-project-1.1.2
+	pin-project-internal-1.1.2
+	pin-project-lite-0.2.10
+	pin-utils-0.1.0
+	postgres-protocol-0.6.5
+	ppv-lite86-0.2.17
+	proc-macro2-1.0.66
+	quick-error-1.2.3
+	quote-1.0.31
+	rand-0.8.5
+	rand_chacha-0.3.1
+	rand_core-0.6.4
+	redox_syscall-0.3.5
+	regex-1.9.1
+	regex-automata-0.1.10
+	regex-automata-0.3.3
+	regex-syntax-0.6.29
+	regex-syntax-0.7.4
+	resolv-conf-0.7.0
+	ring-0.16.20
+	rustc-demangle-0.1.23
+	rustix-0.38.4
+	rustls-0.21.5
+	rustls-pemfile-1.0.3
+	rustls-webpki-0.100.1
+	rustls-webpki-0.101.1
+	ryu-1.0.15
+	scopeguard-1.2.0
+	sct-0.7.0
+	serde-1.0.171
+	serde_derive-1.0.171
+	serde_json-1.0.103
+	serde_spanned-0.6.3
+	sha-1-0.10.1
+	sha2-0.10.7
+	sharded-slab-0.1.4
+	signal-hook-registry-1.4.1
+	siphasher-0.3.10
+	slab-0.4.8
+	smallvec-1.11.0
+	socket2-0.4.9
+	socket2-0.5.3
+	spin-0.5.2
+	sqlparser-0.34.0
+	sqlparser_derive-0.1.1
+	static_assertions-1.1.0
+	stringprep-0.1.3
+	strsim-0.10.0
+	subtle-2.5.0
+	syn-1.0.109
+	syn-2.0.26
+	thiserror-1.0.43
+	thiserror-impl-1.0.43
+	thread_local-1.1.7
+	time-0.1.45
+	tinyvec-1.6.0
+	tinyvec_macros-0.1.1
+	tokio-1.29.1
+	tokio-macros-2.1.0
+	tokio-rustls-0.24.1
+	tokio-stream-0.1.14
+	tokio-test-0.4.2
+	tokio-util-0.7.8
+	toml-0.7.6
+	toml_datetime-0.6.3
+	toml_edit-0.19.14
+	tower-service-0.3.2
+	tracing-0.1.37
+	tracing-attributes-0.1.26
+	tracing-core-0.1.31
+	tracing-log-0.1.3
+	tracing-serde-0.1.3
+	tracing-subscriber-0.3.17
+	trust-dns-proto-0.22.0
+	trust-dns-resolver-0.22.0
+	try-lock-0.2.4
+	typenum-1.16.0
+	unicode-bidi-0.3.13
+	unicode-ident-1.0.11
+	unicode-normalization-0.1.22
+	untrusted-0.7.1
+	url-2.4.0
+	utf8parse-0.2.1
+	valuable-0.1.0
+	version_check-0.9.4
+	want-0.3.1
+	wasi-0.10.0+wasi-snapshot-preview1
+	wasi-0.11.0+wasi-snapshot-preview1
+	wasm-bindgen-0.2.87
+	wasm-bindgen-backend-0.2.87
+	wasm-bindgen-macro-0.2.87
+	wasm-bindgen-macro-support-0.2.87
+	wasm-bindgen-shared-0.2.87
+	web-sys-0.3.64
+	webpki-roots-0.23.1
+	widestring-1.0.2
+	winapi-0.3.9
+	winapi-i686-pc-windows-gnu-0.4.0
+	winapi-x86_64-pc-windows-gnu-0.4.0
+	windows-0.48.0
+	windows-sys-0.48.0
+	windows-targets-0.48.1
+	windows_aarch64_gnullvm-0.48.0
+	windows_aarch64_msvc-0.48.0
+	windows_i686_gnu-0.48.0
+	windows_i686_msvc-0.48.0
+	windows_x86_64_gnu-0.48.0
+	windows_x86_64_gnullvm-0.48.0
+	windows_x86_64_msvc-0.48.0
+	winnow-0.5.0
+	winreg-0.50.0
+"
+
+inherit cargo
+
+DESCRIPTION="PostgreSQL pooler with sharding, load balancing and failover support"
+HOMEPAGE="https://github.com/postgresml/pgcat"
+SRC_URI="
+	https://github.com/postgresml/pgcat/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	$(cargo_crate_uris ${CRATES})
+"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~amd64"
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+BDEPEND="
+	>=virtual/rust-1.31.0
+"
+
+src_install() {
+	cargo_src_install
+	einstalldocs
+}

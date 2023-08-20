@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -21,3 +21,9 @@ DOCS=( AUTHORS  CHANGELOG.md  README.md )
 
 # Needs running redis instance at 127.0.0.1:6379.
 RESTRICT=test
+
+src_prepare() {
+	default
+	sed -e '/plugins/d' \
+		-i rebar.config
+}
