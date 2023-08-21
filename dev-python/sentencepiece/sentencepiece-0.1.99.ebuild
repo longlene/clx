@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND=""
-BDEPEND="dev-libs/sentencepiece"
+BDEPEND="sci-libs/sentencepiece"
 
 distutils_enable_tests pytest
 
