@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -6,7 +6,7 @@ EAPI=7
 
 inherit vcs-snapshot
 
-EGIT_COMMIT="8feae63a46fdf8ed83613b6a46da25d44adde07f"
+EGIT_COMMIT="7544c114e83db7cf67bd1c9e012349b70caacc2f"
 
 DESCRIPTION="Antialiased 2D vector drawing library on top of OpenGL for UI and visualizations"
 HOMEPAGE="https://github.com/memononen/nanovg"
