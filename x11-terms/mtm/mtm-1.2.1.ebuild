@@ -1,7 +1,7 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Perhaps the smallest useful terminal multiplexer in the world"
 HOMEPAGE="https://github.com/deadpixi/mtm"
@@ -12,7 +12,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	sys-libs/ncurses-compat
+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
