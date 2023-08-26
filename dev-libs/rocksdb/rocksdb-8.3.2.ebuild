@@ -12,7 +12,7 @@ SRC_URI="https://github.com/facebook/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
-IUSE="cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_sse4_2 jemalloc snappy static-libs"
+IUSE="jemalloc snappy static-libs"
 
 DEPEND="
 	app-arch/bzip2:=
@@ -31,10 +31,6 @@ src_configure() {
 
 	local mycmakeargs=(
 		-DFAIL_ON_WARNINGS=OFF
-		-DFORCE_AVX2=$(usex cpu_flags_x86_avx2 ON OFF)
-		-DFORCE_AVX=$(usex cpu_flags_x86_avx ON OFF)
-		-DFORCE_SSE42=$(usex cpu_flags_x86_sse4_2 ON OFF)
-		-DPORTABLE=ON
 		-DWITH_JEMALLOC=$(usex jemalloc)
 		-DWITH_SNAPPY=$(usex snappy)
 		-DWITH_ZLIB=ON

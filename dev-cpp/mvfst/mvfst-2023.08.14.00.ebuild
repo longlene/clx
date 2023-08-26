@@ -3,13 +3,11 @@
 
 EAPI=7
 
-inherit cmake vcs-snapshot
-
-EGIT_COMMIT="6beae9d280e6bb1e83ab61cce6581250fa9874e4"
+inherit cmake
 
 DESCRIPTION="An implementation of the QUIC transport protocol"
 HOMEPAGE="https://github.com/facebookincubator/mvfst"
-SRC_URI="https://github.com/facebookincubator/mvfst/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/facebook/mvfst/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
