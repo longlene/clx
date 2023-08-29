@@ -1,9 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit eutils prefix common-lisp-3
+inherit prefix common-lisp-3
 
 DESCRIPTION="ASDF is Another System Definition Facility for Common Lisp"
 HOMEPAGE="http://common-lisp.net/project/asdf/"
@@ -16,9 +16,7 @@ IUSE="doc"
 
 SLOT="0/${PVR}"
 
-DEPEND="!dev-lisp/cl-${PN}
-		!<dev-lisp/asdf-2.33-r3
-		doc? ( virtual/texi2dvi )"
+DEPEND="doc? ( virtual/texi2dvi )"
 PDEPEND="virtual/commonlisp
 		~dev-lisp/uiop-${PV}"
 
