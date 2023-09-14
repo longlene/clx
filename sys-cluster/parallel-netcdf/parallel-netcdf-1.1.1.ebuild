@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Parallel extension to netCDF"
 HOMEPAGE="http://www-unix.mcs.anl.gov/parallel-netcdf/"

@@ -1,7 +1,7 @@
 # Copyright 2019 Haelwenn (lanodan) Monnier <contact@hacktivis.me>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( python2_7 python3_{8,9,10} )
 

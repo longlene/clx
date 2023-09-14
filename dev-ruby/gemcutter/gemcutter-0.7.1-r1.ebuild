@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/gemcutter/gemcutter-0.7.1.ebuild,v 1.3 2014/08/05 16:00:41 mrueg Exp $
 
-EAPI=7
+EAPI=8
 
 USE_RUBY="ruby31 ruby32"
 

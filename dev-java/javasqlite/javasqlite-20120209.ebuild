@@ -1,4 +1,4 @@
-EAPI=7
+EAPI=8
 
 JAVA_PKG_IUSE="doc"
 

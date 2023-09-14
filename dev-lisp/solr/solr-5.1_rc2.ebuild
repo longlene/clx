@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Allegro Common Lisp interface to Solr"
 HOMEPAGE="https://github.com/franzinc/solr"

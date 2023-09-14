@@ -1,7 +1,7 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="A high performance and fully featured proxy for redis"
 HOMEPAGE="https://github.com/joyieldInc/predixy"

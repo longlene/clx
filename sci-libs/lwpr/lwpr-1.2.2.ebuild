@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: 2009/10/06 florent.teichteil@onera.fr Exp $
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="The Locally Weighted Projection Regression Library"
 HOMEPAGE="http://www.ipab.inf.ed.ac.uk/slmc/software/lwpr/"

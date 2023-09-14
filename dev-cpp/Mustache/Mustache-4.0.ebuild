@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Mustache text templates in C++11"
 HOMEPAGE="https://github.com/kainjow/Mustache"

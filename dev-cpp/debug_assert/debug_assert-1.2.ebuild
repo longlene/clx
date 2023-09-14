@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Simple, flexible and modular assertion macro"
 HOMEPAGE="https://github.com/foonathan/debug_assert"

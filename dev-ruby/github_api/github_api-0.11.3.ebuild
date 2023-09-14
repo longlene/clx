@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/github_api/github_api-0.10.2.ebuild,v 1.1 2013/12/25 13:08:09 graaff Exp $
 
-EAPI=7
+EAPI=8
 USE_RUBY="ruby31 ruby32"
 
 RUBY_FAKEGEM_RECIPE_TEST="rspec"

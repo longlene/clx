@@ -1,7 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Open Source file and archive manager: flexible, portable, secure, and free as in freedom"
 HOMEPAGE="http://www.peazip.org"

@@ -1,7 +1,7 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Crow is very fast and easy to use C++ micro web framework"
 HOMEPAGE="https://github.com/CrowCpp/crow"

@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="A (very) simple UI lib built on top of OpenCV drawing primitives"
 HOMEPAGE="https://github.com/Dovyski/cvui"

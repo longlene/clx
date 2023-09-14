@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Monitor a group of processes with mon"
 HOMEPAGE="https://github.com/jgallen23/mongroup"

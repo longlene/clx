@@ -1,7 +1,7 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="A lightweight full-text index server with a focus on speed and efficiency"
 HOMEPAGE="https://github.com/f-prime/fist"

@@ -1,7 +1,7 @@
 # Copyright 2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 EGIT_COMMIT="24b9564f76ff2a85a1b6b62f9182697f17f144ab"
 

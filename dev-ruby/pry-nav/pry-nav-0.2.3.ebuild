@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 
-EAPI=7
+EAPI=8
 USE_RUBY="ruby31 ruby32 ree18 jruby"
 
 RUBY_FAKEGEM_TASK_DOC="rdoc"

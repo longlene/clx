@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v3
 # $Header: $
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="A Python/GTK application to play free music from Jamendo"
 HOMEPAGE="https://launchpad.net/pyjama"

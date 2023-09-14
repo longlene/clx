@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-guest-additions/virtualbox-guest-additions-4.1.4.ebuild,v 1.2 2011/10/04 19:30:04 polynomial-c Exp $
 
-EAPI=7
+EAPI=8
 
 inherit eutils linux-mod
 

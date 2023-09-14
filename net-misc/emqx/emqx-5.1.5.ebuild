@@ -1,7 +1,7 @@
 # Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="An Open-Source, Cloud-Native, Distributed MQTT Message Broker for IoT"
 HOMEPAGE="https://www.emqx.io/"

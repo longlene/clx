@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:
 
-EAPI=7
+EAPI=8
 ESVN_REPO_URI="https://lincetorrent.svn.sourceforge.net/svnroot/lincetorrent/trunk"
 
 inherit subversion

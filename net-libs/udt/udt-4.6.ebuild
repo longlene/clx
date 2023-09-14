@@ -1,7 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="UDT is a UDP based data transport protocol"
 HOMEPAGE="http://udt.sourceforge.net"

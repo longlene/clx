@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="a simple http server for mostly static content"
 HOMEPAGE="http://linux.bytesex.org/misc/webfs.html"

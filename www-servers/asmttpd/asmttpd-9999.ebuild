@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Web server for Linux written in amd64 assembly"
 HOMEPAGE="https://github.com/nemasu/asmttpd"

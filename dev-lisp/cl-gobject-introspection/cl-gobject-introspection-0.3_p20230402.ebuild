@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 EGIT_COMMIT="c4fef07d01cec7c830ce84ef150ed8e4da5959c4"
 

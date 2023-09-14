@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 CLING_COMMIT="da247bd77a92f0793abe95e10b373dbca7a7e5f1"
 LLVM_COMMIT="ac712f0f44b45a1455a302dd6cbb7b6cce269d2d"

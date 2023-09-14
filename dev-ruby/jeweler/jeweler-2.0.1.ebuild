@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/jeweler/jeweler-2.0.1.ebuild,v 1.1 2014/05/25 07:57:44 graaff Exp $
 
-EAPI=7
+EAPI=8
 USE_RUBY="ruby31 ruby32"
 
 RUBY_FAKEGEM_TASK_DOC="-Ilib yard"

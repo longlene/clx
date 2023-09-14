@@ -5,7 +5,7 @@
 # Distributed under the terms of the GNU General Public License v2 
 # $Header: $ 
 
-EAPI=7 
+EAPI=8 
 inherit cmake 
 
 DESCRIPTION="The SilentBob is yet another indexing tool helping you to find your way through the software source code"

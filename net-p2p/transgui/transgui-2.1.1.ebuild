@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 inherit eutils
 
 DESCRIPTION="A GUI for Transmission which tries to look as much as uTorrent as

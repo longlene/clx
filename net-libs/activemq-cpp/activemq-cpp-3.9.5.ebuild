@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="C++ Messaging Service is a JMS-like API for C++"
 HOMEPAGE="http://activemq.apache.org/cms/"

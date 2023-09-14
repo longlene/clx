@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 inherit base
 
 DESCRIPTION="GSM 07.10 Protocol Engine library"

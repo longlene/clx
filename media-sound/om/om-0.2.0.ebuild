@@ -1,7 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Modular audio synthesizer using Jack, LADSPA, DSSI etc."
 HOMEPAGE="http://www.nongnu.org/om-synth/"

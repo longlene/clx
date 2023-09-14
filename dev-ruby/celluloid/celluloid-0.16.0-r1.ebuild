@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/celluloid/celluloid-0.16.0.ebuild,v 1.1 2014/11/02 11:05:58 graaff Exp $
 
-EAPI=7
+EAPI=8
 # rbx or jruby recommended, but only in 1.9 mode.
 USE_RUBY="ruby31 ruby32"
 

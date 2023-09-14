@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="SQLite3++ - C++ wrapper of SQLite3 API"
 HOMEPAGE="https://github.com/iwongu/sqlite3pp"

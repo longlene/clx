@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/ipaddress/ipaddress-0.8.0.ebuild,v 1.4 2014/05/06 06:03:05 graaff Exp $
 
-EAPI=7
+EAPI=8
 
 # ruby20, ruby21 → fails tests
 USE_RUBY="ruby19 jruby ruby31 ruby32"

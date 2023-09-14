@@ -1,7 +1,7 @@
 # Copyright 1999-2021 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Redis C++ client, support the data slice storage, support the connection pool"
 HOMEPAGE="https://github.com/0xsky/xredis"

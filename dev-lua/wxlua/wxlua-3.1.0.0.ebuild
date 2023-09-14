@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 
-EAPI=7
+EAPI=8
 
 inherit cmake
 

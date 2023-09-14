@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="C++ functions matching the interface and behavior of python string methods with std::string"
 HOMEPAGE="https://github.com/imageworks/pystring"

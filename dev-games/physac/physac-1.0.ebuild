@@ -1,7 +1,7 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="2D physics header-only library for videogames developed in C using raylib library"
 HOMEPAGE="https://github.com/victorfisac/Physac"

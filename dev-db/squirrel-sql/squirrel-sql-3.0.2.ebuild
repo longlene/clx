@@ -5,7 +5,7 @@
 #   EBD 2008-03-13 changing to gnu-classpath per Gentoo Bug 139218
 #		rather than dev-java/gnu-jaxp
 
-EAPI=7
+EAPI=8
 
 inherit java-pkg-2 java-ant-2
 

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="PL/Lua is an implementation of Lua as a loadable procedural language for PostgreSQL"
 HOMEPAGE="https://github.com/pllua/pllua"

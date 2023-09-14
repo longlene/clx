@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Common Lisp wrapper of ZLib compression library"
 HOMEPAGE="https://github.com/andy128k/cl-z"

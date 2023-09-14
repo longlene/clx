@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 inherit cornucopia_git
 EGIT_COMMIT="1f9281ac4320eed66411fde8fe21ea87ee138e78"
 

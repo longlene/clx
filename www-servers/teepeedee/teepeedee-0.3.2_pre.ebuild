@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="teepeedee is a small, hopefully scalable, single-threaded file server"
 HOMEPAGE="http://john.fremlin.org/programs/teepeedee/"

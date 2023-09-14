@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="port scanner with HTTP and FTP tunneling support"
 HOMEPAGE="http://aconole.brad-x.com/programs/"

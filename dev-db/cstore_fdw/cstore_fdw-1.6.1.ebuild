@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Columnar store for analytics with PostgreSQL"
 HOMEPAGE="https://github.com/citusdata/cstore_fdw"

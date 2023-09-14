@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Vim-like Interactive CRystal"
 HOMEPAGE="https://github.com/veelenga/vicr"

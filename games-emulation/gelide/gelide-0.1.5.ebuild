@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 inherit autotools eutils games
 
 DESCRIPTION="A flexible frontend for video game emulators"

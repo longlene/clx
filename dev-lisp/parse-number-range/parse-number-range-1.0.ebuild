@@ -1,7 +1,7 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Parses LOOP's convenient \"for-as-arithmetic\" syntax"
 HOMEPAGE="https://github.com/Hexstream/parse-number-range"

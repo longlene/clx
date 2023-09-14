@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 USE_RUBY="ruby31 ruby32"
 
 RUBY_FAKEGEM_TASK_TEST="spec"

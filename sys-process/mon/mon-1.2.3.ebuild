@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Simple single-process process monitoring program written in C"
 HOMEPAGE="https://github.com/tj/mon"

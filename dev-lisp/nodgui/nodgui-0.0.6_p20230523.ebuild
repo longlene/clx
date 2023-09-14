@@ -1,7 +1,7 @@
 # Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 EGIT_COMMIT="58e9718bc9446e6246670608362589f812812e96"
 

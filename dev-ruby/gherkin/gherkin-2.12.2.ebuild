@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/gherkin/gherkin-2.12.0-r2.ebuild,v 1.5 2014/08/05 16:00:53 mrueg Exp $
 
-EAPI=7
+EAPI=8
 USE_RUBY="ruby31 ruby32"
 
 RUBY_FAKEGEM_TASK_DOC=""

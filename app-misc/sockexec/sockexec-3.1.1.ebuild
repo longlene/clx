@@ -1,7 +1,7 @@
 # Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="A small daemon for running programs via UNIX socket"
 HOMEPAGE="https://github.com/jprjr/sockexec"

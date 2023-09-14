@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 
-EAPI=7
+EAPI=8
 
 USE_RUBY="ruby32"
 inherit ruby-fakegem

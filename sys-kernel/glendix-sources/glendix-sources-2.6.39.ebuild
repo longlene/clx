@@ -1,7 +1,7 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 K_SECURITY_UNSUPPORTED="1"
 K_DEBLOB_AVAILABLE="1"

@@ -1,6 +1,6 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit common-lisp-3
 DESCRIPTION="Common Lisp bindings for Video4Linux2"

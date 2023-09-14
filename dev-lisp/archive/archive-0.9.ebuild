@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=7
+EAPI=8
 inherit common-lisp-3
 
 DESCRIPTION="Archive is Nathan Froyd's tar/cpio package for CL."

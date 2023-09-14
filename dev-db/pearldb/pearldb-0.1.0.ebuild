@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="A Lightweight Durable HTTP Key-Value Pair Database in C"
 HOMEPAGE="https://github.com/willemt/pearldb"

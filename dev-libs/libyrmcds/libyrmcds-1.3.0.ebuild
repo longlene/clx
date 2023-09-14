@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="A memcached client library for C/C++"
 HOMEPAGE="https://github.com/cybozu/libyrmcds"
