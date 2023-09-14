@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit common-lisp-3 eutils
+inherit common-lisp-3
 
 DESCRIPTION="Elephant is an object database for Common Lisp"
 HOMEPAGE="http://common-lisp.net/project/elephant/"

@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils autotools
+inherit autotools
 
 DESCRIPTION="Drivers for Epson printers"
 HOMEPAGE="http://www.avasys.jp/lx-bin2/linux_e/spc/DL1.do"

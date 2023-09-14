@@ -6,7 +6,7 @@ CVS_MONTH="Dec"
 CVS_YEAR="2005"
 MY_P="tinyos"
 
-inherit eutils java-pkg-2 toolchain-funcs
+inherit java-pkg-2 toolchain-funcs
 
 DESCRIPTION="TinyOS JNI getenv support library"
 HOMEPAGE="http://www.tinyos.net/"

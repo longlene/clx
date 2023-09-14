@@ -8,7 +8,7 @@ USE_RUBY="ruby30"
 RUBY_FAKEGEM_EXTRADOC="README SPECS ROADMAP TODO"
 RUBY_FAKEGEM_DOCDIR="doc"
 
-inherit ruby-fakegem eutils
+inherit ruby-fakegem
 
 DESCRIPTION="A library to do Behavior Driven Development with Test::Unit"
 HOMEPAGE="http://chneukirchen.org/blog/"

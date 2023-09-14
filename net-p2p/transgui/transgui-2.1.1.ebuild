@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI=8
-inherit eutils
 
 DESCRIPTION="A GUI for Transmission which tries to look as much as uTorrent as
 possible"

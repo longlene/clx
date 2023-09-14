@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/xbomber/xbomber-101.ebuild,v 1.13 2006/12/01 20:10:47 wolf31o2 Exp $
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="Bomberman clone w/multiplayer support"
 HOMEPAGE="http://www.linuxmotors.com/SDL_bomber/"

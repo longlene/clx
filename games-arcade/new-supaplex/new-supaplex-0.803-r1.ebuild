@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/games-arcade/new-supaplex/new-supaplex-0.721.ebuild, v1 2010/11/30 20:18:30 oschtan Exp $
 
 EAPI=8
-inherit eutils games toolchain-funcs
+inherit games toolchain-funcs
 
 DESCRIPTION="Clone of the game Supaplex"
 HOMEPAGE="http://www.newsupaplex.pp.ru/sup_news_eng.html"

@@ -1,8 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils autotools
+inherit autotools
 
 DESCRIPTION="Radar Software Library"
 HOMEPAGE="http://trmm-fc.gsfc.nasa.gov/trmm_gv/software/rsl/index.html"

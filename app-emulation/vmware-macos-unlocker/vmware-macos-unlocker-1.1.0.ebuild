@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="Workstation 8 and Fusion 4 Mac OS X Unlocker"
 HOMEPAGE="http://www.insanelymac.com/forum/index.php?showtopic=268531"
 SRC_URI=""

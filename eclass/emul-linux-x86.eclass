@@ -8,9 +8,8 @@
 # Original Author: Mike Doty <kingtaco@gentoo.org>
 # Adapted from emul-libs.eclass
 # Purpose: Providing a template for the app-emulation/emul-linux-* packages
-#
 
-inherit eutils multilib
+inherit multilib
 
 case "${EAPI:-0}" in
 	3|4|5)

@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
-
 DESCRIPTION="This is an interpreter for the rule-based programming language ELAN."
 HOMEPAGE="http://elan.loria.fr/"
 SRC_URI="http://elan.loria.fr/Soft/${P}.tar.gz"

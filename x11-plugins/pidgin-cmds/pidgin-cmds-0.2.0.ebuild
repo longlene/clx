@@ -1,8 +1,5 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="Adds grep and shout slash commands to Pidgin"
 HOMEPAGE="http://code.google.com/p/pidgin-cmds/"

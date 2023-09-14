@@ -1,8 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="Touche: The Adventures of the Fifth Musketeer (interactive demo)"
 HOMEPAGE="http://wiki.scummvm.org/index.php/Touch%C3%A9:_The_Adventures_of_the_Fifth_Musketeer"

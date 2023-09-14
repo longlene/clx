@@ -1,8 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="I Have No Mouth, and I Must Scream (interactive demo)"
 HOMEPAGE="http://harlanellison.com/herc.htm#ihnm"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit games eutils flag-o-matic
+inherit games flag-o-matic
 append-flags -I../include -I/usr/X11R6/include
 
 SE_VER="0.0.7E6"

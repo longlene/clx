@@ -2,7 +2,7 @@
 
 EAPI=8
 
-inherit eutils multilib
+inherit multilib
 
 DESCRIPTION="LispWorks installer"
 HOMEPAGE="http://www.lispworks.com"

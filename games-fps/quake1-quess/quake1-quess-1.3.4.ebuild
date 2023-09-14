@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils versionator games
+inherit versionator games
 
 BASE_PV="13"
 MY_PV=$(delete_all_version_separators)

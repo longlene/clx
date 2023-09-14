@@ -1,8 +1,5 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="A collection of tools for executing commands on cluster nodes"
 HOMEPAGE="http://clusterit.sourceforge.net/"

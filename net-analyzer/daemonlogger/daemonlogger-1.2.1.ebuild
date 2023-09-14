@@ -1,8 +1,5 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="Libpcap-based packet logger and soft tap"
 HOMEPAGE="http://www.snort.org/users/roesch/Site/Daemonlogger/Daemonlogger.html"

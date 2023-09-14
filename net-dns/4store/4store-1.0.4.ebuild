@@ -4,8 +4,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="4store is an efficient, scalable and stable RDF database"
 HOMEPAGE="http://4store.org/"
 # http://4store.org/download/4store-v1.0.4.tar.gz

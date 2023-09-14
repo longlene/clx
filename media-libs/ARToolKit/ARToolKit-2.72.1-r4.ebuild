@@ -1,8 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils linux-mod
+inherit linux-mod
 
 DESCRIPTION="The ARToolKit library"
 HOMEPAGE="http://www.hitl.washington.edu/artoolkit/"

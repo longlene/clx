@@ -5,8 +5,6 @@ EAPI=8
 
 PYTHON_DEPEND="2"
 
-inherit eutils
-
 DESCRIPTION="Software to make a video slideshow from pictures"
 HOMEPAGE="http://www.videoporama.tuxfamily.org"
 SRC_URI="http://download.tuxfamily.org/videoporama/src/Videoporama_0.8.2-1.tar.gz"

@@ -9,7 +9,7 @@ RUBY_FAKEGEM_VERSION="${RUBY_FAKEGEM_VERSION//rc/rc.}"
 RUBY_FAKEGEM_GEMSPEC="feedzirra.gemspec"
 RUBY_FAKEGEM_DOCDIR="rdoc"
 
-inherit ruby-fakegem eutils
+inherit ruby-fakegem
 
 DESCRIPTION="A feed fetching and parsing library for Ruby."
 HOMEPAGE="https://github.com/pauldix/feedzirra"

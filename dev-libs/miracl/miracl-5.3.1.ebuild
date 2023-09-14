@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils toolchain-funcs
+inherit toolchain-funcs
 
 DESCRIPTION="MIRACL crypto library"
 

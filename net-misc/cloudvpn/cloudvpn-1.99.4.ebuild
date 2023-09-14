@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=8
-inherit eutils autotools
+inherit autotools
 
 DESCRIPTION="secure mesh networking VPN"
 HOMEPAGE="http://exa.czweb.org/"

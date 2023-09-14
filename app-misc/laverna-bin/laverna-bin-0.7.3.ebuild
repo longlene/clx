@@ -4,8 +4,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="note taking web app"
 HOMEPAGE="https://laverna.cc/"
 SRC_URI="

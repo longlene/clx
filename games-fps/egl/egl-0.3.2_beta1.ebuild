@@ -4,7 +4,7 @@
 
 # ***** Test audacious ******
 
-inherit eutils flag-o-matic multilib toolchain-funcs games
+inherit flag-o-matic multilib toolchain-funcs games
 
 DESCRIPTION="Enhanced Quake 2 engine with Gloom effects"
 HOMEPAGE="http://egl.quakedev.com/

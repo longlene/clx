@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-#EAPI=0
+EAPI=8
 
-inherit eutils flag-o-matic
+inherit flag-o-matic
 
 DESCRIPTION="A CGI library written in C"
 HOMEPAGE="http://libcgi.sourceforge.net/"

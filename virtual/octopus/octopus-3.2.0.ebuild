@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=8
-inherit eutils flag-o-matic
+inherit flag-o-matic
 
 DESCRIPTION="Scientific program aimed at the ab initio virtual experimentation on a hopefully ever-increasing range of system types."
 HOMEPAGE="http://www.tddft.org/programs/octopus/wiki/index.php/Main_Page"

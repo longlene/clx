@@ -3,8 +3,6 @@
 # $Header: $
 REV="1"
 
-inherit eutils
-
 DESCRIPTION="Laptop mode attempts to determine whether it is being run on a laptop."
 HOMEPAGE="http://packages.ubuntu.com/en/hardy/laptop-detect"
 SRC_URI="mirror://ubuntu/pool/main/l/${PN}/${PN}_${PV}ubuntu$REV.tar.gz"

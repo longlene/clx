@@ -5,13 +5,13 @@
 EAPI=8
 
 ESVN_REPO_URI="svn://svn.berlios.de/irate/trunk/irate"
-inherit subversion eutils
+inherit subversion
 
 IUSE=""
 
 MY_P="irate"
 DESCRIPTION="iRATE radio is a collaborative filtering system for music. You rate the tracks it downloads and the server uses your ratings and other people's to guess what you'll like. (SVN version)"
-DESCRIPTION_FR="T閘閏hargement de musique gratuite suivant vos gouts  (Version SVN)"
+DESCRIPTION_FR="T闁橀枏hargement de musique gratuite suivant vos gouts  (Version SVN)"
 
 HOMEPAGE="http://irate.sf.net"
 SLOT="0"

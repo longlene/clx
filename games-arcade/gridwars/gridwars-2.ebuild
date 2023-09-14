@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="Your small ship sits in a one-screen grid and vectorized enemies spawn to attack."
 HOMEPAGE="http://gridwars.marune.de/"

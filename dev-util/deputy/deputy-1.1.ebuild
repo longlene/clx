@@ -1,7 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-inherit eutils
+
 DESCRIPTION="Deputy is a C compiler that is capable of preventing common C programming errors"
 
 # Homepage, not used by Portage directly but handy for developer reference

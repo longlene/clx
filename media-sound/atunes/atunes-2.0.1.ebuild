@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI=8
-inherit eutils
 
 MY_PN="atunes"
 DESCRIPTION="aTunes is a full-featured audio player and manager."

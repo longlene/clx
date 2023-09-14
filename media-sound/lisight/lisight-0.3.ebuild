@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils linux-mod
+inherit linux-mod
 
 DESCRIPTION="Linux ALSA driver for the ieee1394 Apple iSight audio unit"
 HOMEPAGE="http://lisight.sourceforge.net/"

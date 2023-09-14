@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils games
+inherit games
 
 # "100" means "100% quick", rather than the version number.
 # The menu in Qd100Q.zip doesn't work, so ignore that collection.

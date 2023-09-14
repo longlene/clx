@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils mercurial
+inherit mercurial
 
 DESCRIPTION="Tiny media scanner / internet grabber library"
 

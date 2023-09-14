@@ -4,8 +4,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="Small library used to parse and write NFO files."
 
 HOMEPAGE="http://${PN}.geexbox.org/"

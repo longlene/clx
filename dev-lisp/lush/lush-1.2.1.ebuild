@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lisp/lush/lush-1.2.1.ebuild,v 1.1 2007/09/18 17:28:55 hkbst Exp $
 
-inherit eutils autotools
+inherit autotools
 
 DESCRIPTION="Lush is the Lisp User Shell"
 HOMEPAGE="http://lush.sourceforge.net/"

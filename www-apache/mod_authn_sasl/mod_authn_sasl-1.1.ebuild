@@ -1,8 +1,7 @@
 # Copyright 2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils apache-module
+inherit apache-module
 
 DESCRIPTION="Cyrus SASL authentication module for Apache."
 HOMEPAGE="http://mod-authn-sasl.sourceforge.net/"

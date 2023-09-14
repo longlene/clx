@@ -1,8 +1,5 @@
 # Copyright 2007 Angelo "sYdRo" D'Autilia
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="Pidgin plugin that reverses any word on all conversation. "
 HOMEPAGE="https://sourceforge.net/projects/convreverse/"

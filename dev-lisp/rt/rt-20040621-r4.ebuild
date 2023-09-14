@@ -1,9 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=8
-inherit common-lisp-3 eutils
+inherit common-lisp-3
 
 DEB_PV=4
 

@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=8
-inherit eutils multilib
+inherit multilib
 
 DESCRIPTION="EDB \"Evan's Debugger\" (OllyDbg workalike for Linux)"
 HOMEPAGE="http://www.codef00.com/projects.php#debugger"

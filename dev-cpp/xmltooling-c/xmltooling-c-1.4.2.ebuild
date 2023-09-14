@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="Internet2 lower-level library that provides a higher level interface to XML processing, particularly in light of signing and encryption."
 HOMEPAGE="http://wiki.shibboleth.net/confluence/display/OpenSAML/XMLTooling-C"
 SRC_URI="http://www.shibboleth.net/downloads/c++-opensaml/latest/xmltooling-${PV}.tar.gz"

@@ -1,8 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils versionator
+inherit versionator
 
 MY_PV=$(replace_version_separator 2 '-')
 

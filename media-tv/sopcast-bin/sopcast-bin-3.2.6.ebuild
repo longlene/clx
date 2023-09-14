@@ -4,8 +4,6 @@
 
 EAPI=8
 
-inherit eutils
-
 MY_P="sp-auth"
 
 DESCRIPTION="SopCast free P2P Internet TV binary"

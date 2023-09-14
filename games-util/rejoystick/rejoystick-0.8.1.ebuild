@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="translate gamepad/joystick input into key strokes/mouse actions in X"
 HOMEPAGE="http://rejoystick.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"

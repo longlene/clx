@@ -7,8 +7,6 @@
 -IUSE="alsa doc gtk mmx mysql pri zaptel uclibc resperl"
 +IUSE="alsa doc gtk mmx pri zaptel uclibc resperl mysql postgres vmdbmysql vmdbpostgres"
  
- inherit eutils
- 
 +ADDONS_VERSION="1.0.4"
 +SOUNDS_VERSION="1.0.1"
 +ASTCFG_VERSION="0.0.2"

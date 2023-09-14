@@ -7,7 +7,7 @@
 
 EAPI=8
 
-inherit check-reqs eutils mount-boot
+inherit check-reqs mount-boot
 
 SLOT=$PF
 CKV=${PV}

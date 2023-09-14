@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils toolchain-funcs multilib
+inherit toolchain-funcs multilib
 
 DESCRIPTION="It's a complete cross development package for 65(C)02 systems."
 HOMEPAGE="http://www.cc65.org"

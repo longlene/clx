@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils multilib toolchain-funcs vcs-snapshot
+inherit multilib toolchain-funcs vcs-snapshot
 
 DESCRIPTION="An open source, distributed database"
 HOMEPAGE="https://riak.com/"

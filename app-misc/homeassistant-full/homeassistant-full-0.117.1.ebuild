@@ -4,7 +4,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{7,8} )
-inherit readme.gentoo-r1 eutils distutils-r1
+inherit readme.gentoo-r1 distutils-r1
 
 MY_PN=homeassistant
 

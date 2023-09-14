@@ -3,7 +3,6 @@
 
 EAPI=8
 
-inherit eutils
 MY_PN="xulrunner"
 
 SRC_BASE="https://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/${PV}/runtimes/${MY_PN}-${PV}.en-US.linux"

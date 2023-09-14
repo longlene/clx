@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit bash-completion-r1 eutils
+inherit bash-completion-r1
 
 DESCRIPTION="Static Code Analyzer for C, C++ and C#"
 HOMEPAGE="https://www.viva64.com/en/pvs-studio/"

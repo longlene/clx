@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit cmake eutils unpacker
+inherit cmake unpacker
 
 DESCRIPTION="ZDoom is an enhanced port of the official DOOM source code"
 HOMEPAGE="http://www.zdoom.org"

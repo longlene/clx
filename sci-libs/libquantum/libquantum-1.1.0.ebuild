@@ -4,8 +4,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="C library for quantum computing and quantum simulation"
 HOMEPAGE="http://www.libquantum.de/"
 SRC_URI="http://www.libquantum.de/files/${P}.tar.gz"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit versionator eutils webapp multilib autotools
+inherit versionator webapp multilib autotools
 
 DESCRIPTION="A feature-rich open source mailing list software"
 HOMEPAGE="http://www.sympa.org/"

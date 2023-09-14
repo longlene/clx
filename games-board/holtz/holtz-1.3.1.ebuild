@@ -5,7 +5,7 @@
 EAPI=8
 WX_GTK_VER=2.8
 
-inherit autotools eutils games wxwidgets
+inherit autotools games wxwidgets
 
 DESCRIPTION="A program to play the abstract board games Zertz, Dvonn and Relax."
 HOMEPAGE="http://holtz.sourceforge.net/"

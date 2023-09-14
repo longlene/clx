@@ -1,8 +1,5 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="KDVD-RAM is a tool collection for DVD, DVD-RAM and BD."
 HOMEPAGE="http://www.multimedia4linux.de/dvd-ram/index.html"

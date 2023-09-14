@@ -15,7 +15,7 @@
 
 JAVA_PKG_IUSE="doc source test examples debug"
 
-inherit eutils java-pkg-2 java-ant-2
+inherit java-pkg-2 java-ant-2
 
 DESCRIPTION="Sun J3D: The Java 3D API Core"
 HOMEPAGE="https://java3d.dev.java.net/"

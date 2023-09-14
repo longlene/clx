@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils multilib pax-utils
+inherit multilib pax-utils
 
 DESCRIPTION="Distributed, fault-tolerant and schema-free document-oriented database"
 HOMEPAGE="https://couchdb.apache.org/"

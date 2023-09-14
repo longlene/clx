@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="X11 Window Manager inspired by Plan 9's rio"
 HOMEPAGE="https://github.com/9wm/9wm"
 SRC_URI="https://github.com/9wm/9wm/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"

@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
-
 MY_P="id${P}"
 
 DESCRIPTION="Zebra is a high-performance, general-purpose structured text indexing and retrieval engine"

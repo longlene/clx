@@ -1,8 +1,5 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="A powerful command-line tool that eases the process of renaming and \
 tagging MP3 and Ogg files."

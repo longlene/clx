@@ -1,8 +1,5 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="CursorXP to X11 Mouse Theme Converter"
 HOMEPAGE="http://xfce-look.org/content/download.php?content=72405&id=1&tan=46400477"

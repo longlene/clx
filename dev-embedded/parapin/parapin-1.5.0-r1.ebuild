@@ -3,7 +3,6 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-embedded/parapin/parapin-1.5.0-r1.ebuild,v 1.1 2005/01/30 03:50:15 TopoMorto Exp $
 
 inherit toolchain-funcs
-inherit eutils
 inherit versionator
 
 DESCRIPTION="A parallel port pin programming library"

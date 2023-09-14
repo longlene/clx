@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="Postal 2: Share the Pain (Multiplayer)"
 HOMEPAGE="http://www.gopostal.com/"

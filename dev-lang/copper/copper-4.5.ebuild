@@ -2,8 +2,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="Copper is a simple imperative language statically typed with tpe inference and genericity"
 HOMEPAGE="http://tibleiz.net/copper"
 SRC_URI="http://tibleiz.net/download/copper-${PV}-src.tar.gz -> ${P}.tar.gz"

@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # net-ftp/bftpd/bftpd-1.5.ebuild
 
-inherit eutils
-
 KEYWORDS="~x86 ~amd64"
 
 DESCRIPTION="easy configurable FTP server"

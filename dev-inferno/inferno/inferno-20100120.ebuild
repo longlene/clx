@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit flag-o-matic eutils
+inherit flag-o-matic
 
 DESCRIPTION="OS Inferno Fourth Edition"
 HOMEPAGE="http://inferno-os.googlecode.com/"

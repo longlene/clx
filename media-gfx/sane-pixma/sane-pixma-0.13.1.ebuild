@@ -1,8 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils flag-o-matic
+inherit flag-o-matic
 
 DESCRIPTION="Scanner utility and SANE backend for Canon PIXMA MP series"
 HOMEPAGE="http://home.arcor.de/wittawat/pixma/"

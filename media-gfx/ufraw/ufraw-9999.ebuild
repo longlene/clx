@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/media-gfx/ufraw/ufraw-0.17.ebuild,v 1.3 2010/06/21 11:55:48 ssuominen Exp $
 
 EAPI=8
-inherit fdo-mime gnome2-utils eutils autotools cvs
+inherit fdo-mime gnome2-utils autotools cvs
 
 DESCRIPTION="RAW Image format viewer and GIMP plugin"
 HOMEPAGE="http://ufraw.sourceforge.net/"

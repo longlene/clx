@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
 DESCRIPTION="Solver for large, sparse linear systems on parallel computers"
 HOMEPAGE="http://www-unix.mcs.anl.gov/sumaa3d/BlockSolve/"
 SRC_URI="ftp://ftp.mcs.anl.gov/pub/BlockSolve95/BlockSolve95.tar.Z"

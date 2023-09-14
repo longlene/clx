@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit elisp eutils vcs-snapshot
+inherit elisp vcs-snapshot
 
 EGIT_COMMIT="4c2e2805540dea700130607fa235018a87e4a070"
 

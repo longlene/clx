@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils java-pkg-2 java-ant-2
+inherit java-pkg-2 java-ant-2
 
 DESCRIPTION="Java Simple Arguments Parser (JSAP)"
 HOMEPAGE="http://sourceforge.net/projects/jsap"

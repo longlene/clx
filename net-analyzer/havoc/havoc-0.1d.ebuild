@@ -1,8 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit eutils
-
 DESCRIPTION="Random ARP traffic generator, BOFH style."
 HOMEPAGE="http://www.0xdeadbeef.info/"
 SRC_URI="http://www.0xdeadbeef.info/code/havoc-0.1d.tgz"

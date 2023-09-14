@@ -1,8 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit eutils
-
 DESCRIPTION="Translate X11 selection to other langauges"
 HOMEPAGE="http://xtranslate.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit common-lisp-3 eutils
+inherit common-lisp-3
 
 DESCRIPTION="Common Lisp bindings to the SDL graphics library, and OpenGL libraries"
 HOMEPAGE="http://cl-sdl.sourceforge.net/"

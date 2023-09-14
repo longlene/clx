@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils games
+inherit games
 
 MY_PN="${PN//-/_}"
 

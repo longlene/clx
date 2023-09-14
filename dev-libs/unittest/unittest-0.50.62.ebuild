@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils versionator
+inherit versionator
 
 MY_P=${PN}-$(replace_version_separator 2 '-')
 DESCRIPTION="C++ unit test framework"

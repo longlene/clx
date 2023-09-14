@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit linux-mod eutils multilib versionator linux-info
+inherit linux-mod multilib versionator linux-info
 
 S="${WORKDIR}/${PN}_${PV}"
 

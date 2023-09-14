@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
-
 DESCRIPTION="MGE UPS SYSTEMS Personal Solution Pac"
 HOMEPAGE="http://www.mgeups.com/products/pdt230/software/sp97/solpaclinux.htm"
 SRC_URI="http://opensource.mgeups.com/projects/mgeups-psp/${P}.tar.gz"

@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-benchmarks/cleanbench/cleanbench-1.0.ebuild,v 1.0 2008/12/11 11:58:01 mattst88 Exp $
 
-inherit eutils toolchain-funcs
+inherit toolchain-funcs
 
 DESCRIPTION="clean nbench Benchmark utility for Linux/UNIX"
 HOMEPAGE="http://mattst88.com/programming/cleanbench/"

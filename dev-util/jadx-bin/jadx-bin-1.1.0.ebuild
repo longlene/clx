@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils java-vm-2 user vcs-snapshot
+inherit java-vm-2 user vcs-snapshot
 
 MY_PN="jadx"
 MY_P="${MY_PN}-${PV}"

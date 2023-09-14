@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils cmake
+inherit cmake
 
 MY_P="${PN}-source-${PV}"
 

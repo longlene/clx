@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
-
 DESCRIPTION="Graphical management tool for Xen virtualization platform."
 HOMEPAGE="http://xenman.sourceforge.net"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"

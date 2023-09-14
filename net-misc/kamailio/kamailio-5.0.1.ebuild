@@ -5,7 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python2_7 )
 
-inherit eutils flag-o-matic python-single-r1 toolchain-funcs multilib user systemd vcs-snapshot
+inherit flag-o-matic python-single-r1 toolchain-funcs multilib user systemd vcs-snapshot
 
 DESCRIPTION="Sip-Router (Kamailio/SER) is an Open Source SIP Server"
 HOMEPAGE="http://kamailio.org/"

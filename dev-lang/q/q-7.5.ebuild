@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
 DESCRIPTION="Q is a functional language based on term rewriting."
 HOMEPAGE="http://q-lang.sourceforge.net"
 SRC_URI="http://prdownloads.sourceforge.net/q-lang/${P}.tar.gz"

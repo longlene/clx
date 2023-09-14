@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake4-demo/quake4-demo-1.0.ebuild,v 1.13 2007/03/12 15:03:33 genone Exp $
 
-inherit eutils games
+inherit games
 
 MY_P="quake4-multiplayer-demo"
 DESCRIPTION="Sequel to Quake 2, an Id 3D first-person shooter"

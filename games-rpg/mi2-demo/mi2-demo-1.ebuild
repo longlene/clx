@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="LeChuck's Revenge: Monkey Island 2 (interactive demo)"
 HOMEPAGE="http://www.worldofmi.com/thegames/monkey2/"

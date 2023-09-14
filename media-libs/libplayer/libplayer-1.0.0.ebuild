@@ -4,8 +4,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="Generic A/V API that relies on various multimedia players for Linux systems"
 
 HOMEPAGE="http://${PN}.geexbox.org/"

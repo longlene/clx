@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit apache-module eutils
+inherit apache-module
 
 DESCRIPTION="Standards-based middleware which provides Web Single SignOn (SSO) across or within organizational boundaries."
 HOMEPAGE="http://www.shibboleth.net"

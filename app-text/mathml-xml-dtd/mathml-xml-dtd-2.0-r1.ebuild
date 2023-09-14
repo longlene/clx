@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils versionator
+inherit versionator
 
 DESCRIPTION="MathML DTD and entity files"
 HOMEPAGE="http://www.w3.org/1998/Math/MathML"

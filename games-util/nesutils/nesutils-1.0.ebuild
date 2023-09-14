@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils games
+inherit games
 DESCRIPTION="Utilities for messing with ROMs in the .NES format"
 HOMEPAGE="http://www.raphnet.net/electronique/nes_cart/nes_cart_en.php"
 SRC_URI="http://www.raphnet.net/electronique/nes_cart/nesutils-${PV}.tar.gz"

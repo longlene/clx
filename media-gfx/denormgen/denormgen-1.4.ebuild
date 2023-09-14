@@ -1,8 +1,5 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 inherit autotools
 
 DESCRIPTION="creates normal/height maps from high resolution meshes for games or 3d applications"

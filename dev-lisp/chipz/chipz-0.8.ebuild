@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=8
-inherit common-lisp-3 eutils
+inherit common-lisp-3
 
 #MY_P=${PN}_${PV}
 

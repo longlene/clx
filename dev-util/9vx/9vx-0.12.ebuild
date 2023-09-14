@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="9vx is a port of the plan 9 operating system to freebsd, linux, and os x, using the vx32 sandboxing library to run user programs. "
 HOMEPAGE="http://swtch.com/9vx/"
 LICENSE="Lucent"

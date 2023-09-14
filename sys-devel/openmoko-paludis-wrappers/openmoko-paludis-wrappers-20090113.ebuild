@@ -1,8 +1,7 @@
 # Copyright 2008-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $
 
-inherit toolchain-funcs eutils
+inherit toolchain-funcs
 
 DESCRIPTION="paludis wrappers for openmoko"
 HOMEPAGE="http://embedded.gentoo.org/"

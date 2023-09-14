@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils multilib common-lisp-3
+inherit multilib common-lisp-3
 
 #MY_P="${P/./-}"
 DESCRIPTION="100% Common Lisp X11 window manager (based on Tinywm and Stumpwm)"

@@ -1,8 +1,7 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/soundtracker/soundtracker-0.6.8.ebuild,v 1.7 2008/05/15 21:02:22 drac Exp $
 
-inherit eutils libtool
+inherit libtool
 
 DESCRIPTION="SoundTracker is a music tracking tool for UNIX/X11 (MOD tracker)"
 SRC_URI="http://www.soundtracker.org/dl/v0.6/${P/_/-}.tar.gz"

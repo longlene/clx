@@ -4,8 +4,6 @@
 
 RESTRICT="primaryuri"
 
-inherit eutils
-
 DESCRIPTION="Plain text formatting tools"
 HOMEPAGE="http://w3.cs.upt.ro/~gseba"
 SRC_URI=" http://w3.cs.upt.ro/~gseba/dev/${P}.tar.bz2"

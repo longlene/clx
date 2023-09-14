@@ -15,7 +15,6 @@
 # inherit eutils, as a large amount of important functionality has been
 # moved there. For example, the $(get_libdir) mentioned below wont work
 # without the following line:
-inherit eutils
 # A well-used example of an eclass function that needs eutils is epatch. If
 # your source needs patches applied, it's suggested to put your patch in the
 # 'files' directory and use:

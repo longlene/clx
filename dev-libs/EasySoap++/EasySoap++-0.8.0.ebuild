@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 
-inherit eutils
-
 SRC_URI="mirror://sourceforge/easysoap/${P}.tar.gz"
 DESCRIPTION="a C++ library for SOAP, the Simple Object Access Protocol"
 HOMEPAGE="http://easysoap.sourceforge.net/"

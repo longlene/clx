@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/games-emulation/sdlmame/sdlmame-0.141_p2.ebuild,v 1.1 2011/02/11 06:06:50 mr_bones_ Exp $
 
 EAPI=8
-inherit eutils flag-o-matic games
+inherit flag-o-matic games
 
 MY_PV=${PV/.}
 MY_CONF_PN=${PN/sdl}

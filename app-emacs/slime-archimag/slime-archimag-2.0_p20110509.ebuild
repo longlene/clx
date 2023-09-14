@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit common-lisp-3 elisp eutils
+inherit common-lisp-3 elisp
 
 DESCRIPTION="SLIME, the Superior Lisp Interaction Mode (Extended)"
 HOMEPAGE="http://common-lisp.net/project/slime/"

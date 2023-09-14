@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit toolchain-funcs eutils
+inherit toolchain-funcs
 
 DESCRIPTION="Decrypt and extract passwords from windows registry"
 HOMEPAGE="http://ophcrack.sourceforge.net/bkhive.php"

@@ -1,8 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit eutils
-
 DESCRIPTION="Bash script for split audio CD image files with cue sheet to tracks and write tags."
 HOMEPAGE="http://cyberdungeon.org.ru/~killy/projects/${PN}/"
 SRC_URI="http://cyberdungeon.org.ru/~killy/files/projects/${PN}/${P}.tar.bz2"

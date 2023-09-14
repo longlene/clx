@@ -1,6 +1,5 @@
-# $Header
 
-inherit eutils toolchain-funcs
+inherit toolchain-funcs
 
 DESCRIPTION="Multi-threaded compressor, many times faster than lzop"
 HOMEPAGE="http://blogs.sun.com/timc"

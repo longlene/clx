@@ -1,4 +1,3 @@
-inherit eutils
 
 DESCRIPTION="Listens to key press/release events from a keyboard or a mouse and allows sending fake key events to an X display."
 HOMEPAGE="http://home.orange.nl/aromanov/crolix/${PN}/"

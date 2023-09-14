@@ -4,8 +4,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="GNU common networking utilities and servers"
 HOMEPAGE="https://www.gnu.org/software/inetutils/"
 SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"

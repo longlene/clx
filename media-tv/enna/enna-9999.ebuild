@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils mercurial
+inherit mercurial
 
 DESCRIPTION="Media Center app using (EFL) for the GUI and GeeXboX libs for playback and information retrieval"
 

@@ -1,8 +1,5 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="Gdivelog is a SCUBA dive logging application for GNOME with an extendable plugin interface to allow data to be downloaded from various dive computers and imported from various other dive logging software."
 HOMEPAGE="http://gdivelog.sourceforge.net/"

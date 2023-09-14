@@ -2,7 +2,7 @@
 
 EAPI=8
 
-inherit elisp eutils
+inherit elisp
 
 DESCRIPTION="Highlight surrounding parentheses"
 HOMEPAGE="https://github.com/nschum/highlight-parentheses.el"

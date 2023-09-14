@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils autotools
+inherit autotools
 
 DESCRIPTION="Open Source Security Assertion Markup Language implementation"
 HOMEPAGE="http://www.opensaml.org/"

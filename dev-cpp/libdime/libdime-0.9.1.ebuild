@@ -1,7 +1,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils versionator
+inherit versionator
 
 MY_P="accdb2d6152a"
 DESCRIPTION="Dime library for manage dxf files"

@@ -1,4 +1,4 @@
-inherit eutils games
+inherit games
 DESCRIPTION="Ankh a Adventure like Monkey Island"
 HOMEPAGE="http://www.ankh-game.de/ankh.html"
 

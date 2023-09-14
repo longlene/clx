@@ -1,8 +1,5 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="Very simple Gnome druid for selecting, configuring and scheduling s tv_grab task for XMLTV."
 HOMEPAGE="http://gshowtv.sourceforge.net/xmltv-druid.html"

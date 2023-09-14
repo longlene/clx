@@ -1,8 +1,7 @@
 # Copyright 2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils autotools
+inherit autotools
 
 WANT_AUTOCONF="2.61"
 

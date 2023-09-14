@@ -4,7 +4,7 @@
 
 IUSE="perl"
 
-inherit eutils gnuconfig
+inherit gnuconfig
 
 DESCRIPTION="Caudium Web Server"
 HOMEPAGE="http://www.caudium.net/"

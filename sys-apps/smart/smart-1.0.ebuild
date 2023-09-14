@@ -4,8 +4,6 @@
 
 # TODO slackware support
 
-inherit eutils
-
 DESCRIPTION="Smart Package Manager is a next generation package handling tool"
 HOMEPAGE="http://smartpm.org"
 SRC_URI="http://labix.org/download/smart/${P}.tar.bz2"

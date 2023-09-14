@@ -1,8 +1,7 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils gnuconfig
+inherit gnuconfig
 
 DESCRIPTION="Driver for Minolta PagePro 1[23]xxW printers"
 HOMEPAGE="http://www.hinterbergen.de/mala/min12xxw/"

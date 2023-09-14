@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
-
 DESCRIPTION="Plain text formatting tools"
 HOMEPAGE="http://www.cs.upt.ro/~gseba"
 SRC_URI="mirror://gentoo/${P}.tgz

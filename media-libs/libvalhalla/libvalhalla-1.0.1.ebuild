@@ -4,8 +4,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="Tiny media scanner / internet grabber library"
 
 HOMEPAGE="http://${PN}.geexbox.org/"

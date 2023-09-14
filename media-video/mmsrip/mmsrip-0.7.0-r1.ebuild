@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # Aurelien Requiem
 
-inherit eutils
-
 DESCRIPTION="Command line utility to rip MMS streams"
 HOMEPAGE="http://nbenoit.tuxfamily.org/projects.php?rq=mmsrip"
 SRC_URI="http://nbenoit.tuxfamily.org/projects/mmsrip/${P}.tar.gz"

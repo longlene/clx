@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils mercurial
+inherit mercurial
 
 DESCRIPTION="Small library used to parse and write NFO files."
 

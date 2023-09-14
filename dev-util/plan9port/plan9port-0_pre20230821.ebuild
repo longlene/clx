@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils multiprocessing toolchain-funcs vcs-snapshot
+inherit multiprocessing toolchain-funcs vcs-snapshot
 
 EGIT_COMMIT="a36e66f0d200f99802ad32171c55d26ad44f501d"
 

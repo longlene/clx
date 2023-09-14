@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-dotnet/db4o/db4o-6.1.ebuild,v 1.1 2007/06/24 17:58:59 jurek Exp $
 
-inherit mono multilib eutils
+inherit mono multilib
 
 DESCRIPTION="Object database for .NET"
 HOMEPAGE="http://www.db4o.com/"

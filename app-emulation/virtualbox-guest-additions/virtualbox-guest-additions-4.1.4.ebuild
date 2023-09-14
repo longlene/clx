@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils linux-mod
+inherit linux-mod
 
 MY_P=VirtualBox-${PV}
 DESCRIPTION="VirtualBox kernel modules and user-space tools for Linux guests"

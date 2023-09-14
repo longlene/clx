@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit autotools eutils gnome2
+inherit autotools gnome2
 
 DESCRIPTION="Switch GNOME window management and effects between metacity, gnome-shell, compiz"
 HOMEPAGE="http://git.fedoraproject.org/git/desktop-effects.git"

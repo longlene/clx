@@ -4,8 +4,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="Media Center app using (EFL) for the GUI and GeeXboX libs for playback and information retrieval"
 
 HOMEPAGE="http://${PN}.geexbox.org/"

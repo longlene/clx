@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils autotools
+inherit autotools
 
 DESCRIPTION="ELF (Executable and Linkable Format) reader and producer implemented as a C++ library"
 HOMEPAGE="http://elfio.sourceforge.net/"

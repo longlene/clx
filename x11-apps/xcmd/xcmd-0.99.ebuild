@@ -1,8 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-#inherit eutils
 DESCRIPTION="A simple one-line command tool for X"
 HOMEPAGE="http://www.pgpnet.dk/"
 SRC_URI="http://www.pgpnet.dk/downloads/${P}.tar.gz"

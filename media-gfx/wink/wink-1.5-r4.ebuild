@@ -1,8 +1,7 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit libtool eutils
+inherit libtool
 
 DESCRIPTION="A flash,pdf and html tutorial and presentation creation program"
 HOMEPAGE="http://www.debugmode.com/wink"

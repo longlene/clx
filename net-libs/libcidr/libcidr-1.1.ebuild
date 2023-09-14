@@ -1,8 +1,5 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="A library for manipulating CIDR notations; IPv6 enabled ipcalc (cidrcalc)"
 HOMEPAGE="http://www.over-yonder.net/~fullermd/projects/libcidr/"

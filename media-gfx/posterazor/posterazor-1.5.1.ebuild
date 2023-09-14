@@ -1,8 +1,5 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="The PosteRazor cuts a raster image into pieces which can afterwards
 be printed out and assembled to a poster."

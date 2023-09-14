@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit desktop eutils vcs-snapshot
+inherit desktop vcs-snapshot
 
 EGIT_COMMIT="b485166240a66e1aee0a38d80f941936a663f4f1"
 

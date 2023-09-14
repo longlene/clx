@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/asuka/asuka-1.2.1.ebuild,v 1.7 2007/05/06 12:19:41 genone Exp $
 
-inherit eutils flag-o-matic
+inherit flag-o-matic
 
 DESCRIPTION="Undernet IRC Server Development"
 HOMEPAGE="http://coder-com.undernet.org/"

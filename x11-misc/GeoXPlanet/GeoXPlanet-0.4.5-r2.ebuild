@@ -1,8 +1,5 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="Wrapper script to draw traceroutes of current network connections on xplanet images"
 HOMEPAGE="http://geoxplanet.sourceforge.net"

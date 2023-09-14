@@ -4,8 +4,6 @@
 
 EAPI=8
 
-inherit eutils
-
 MY_P="${PN}_${PV}"
 
 DESCRIPTION="Advanced color picker written in C++ using GTK+ toolkit"

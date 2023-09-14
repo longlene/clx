@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit perl-module eutils
+inherit perl-module
 
 DESCRIPTION="rabak is a backup utility for files and databases based on rsync."
 HOMEPAGE="http://www.raisin.de/rabak"

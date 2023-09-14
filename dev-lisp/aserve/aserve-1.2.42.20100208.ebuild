@@ -1,7 +1,7 @@
 # Distributed under the terms of the GNU General Public License v2 EAPI=8
 EAPI=8
 
-inherit common-lisp-3 eutils
+inherit common-lisp-3
 
 MY_PV=${PV:0:6}
 CVS_PV=${PV:7:4}.${PV:11:2}.${PV:13}

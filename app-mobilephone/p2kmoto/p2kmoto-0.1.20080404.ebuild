@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit autotools eutils toolchain-funcs
+inherit autotools toolchain-funcs
 
 DESCRIPTION="Library to work with P2K mobile phones"
 HOMEPAGE="http://sourceforge.net/projects/moto4lin/"

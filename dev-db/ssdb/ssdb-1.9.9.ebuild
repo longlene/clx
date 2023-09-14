@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils user
+inherit user
 
 DESCRIPTION="A fast NoSQL database, an alternative to Redis"
 HOMEPAGE="http://ssdb.io"

@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="crypto library"
 HOMEPAGE="http://www.shamus.ie"
 SRC_URI="http://chaox.net/~jens/${P}.zip"

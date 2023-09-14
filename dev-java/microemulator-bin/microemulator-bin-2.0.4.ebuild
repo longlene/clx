@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils java-utils-2
+inherit java-utils-2
 
 DESCRIPTION="Pure Java implementation of J2ME in J2SE"
 SRC_URI="mirror://sourceforge/microemulator/microemulator-${PV}.zip"

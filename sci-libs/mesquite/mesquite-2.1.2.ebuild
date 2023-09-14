@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit autotools eutils
+inherit autotools
 
 DESCRIPTION="Mesh Quality Improvement Toolkit"
 HOMEPAGE="http://www.cs.sandia.gov/optimization/knupp/Mesquite.html"

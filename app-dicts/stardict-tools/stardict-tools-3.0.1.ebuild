@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils autotools
+inherit autotools
 
 IUSE="+editor +tools"
 DESCRIPTION="Stardict tools"

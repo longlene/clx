@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# Header: $
 
-inherit eutils games
+inherit games
 
 MY_P="TuxFighter49"
 DESCRIPTION="A side scrolling shooter game starring a steamboat on the sea."

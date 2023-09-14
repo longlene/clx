@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils flag-o-matic systemd toolchain-funcs user vcs-snapshot
+inherit flag-o-matic systemd toolchain-funcs user vcs-snapshot
 
 EGIT_COMMIT="0192ba7e1cda157024229962b7bee1c6e86d771b"
 

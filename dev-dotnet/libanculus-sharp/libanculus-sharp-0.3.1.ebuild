@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils mono
+inherit mono
 
 DESCRIPTION="Reusable utility library for Mono and .NET"
 HOMEPAGE="http://code.google.com/p/libanculus-sharp/"

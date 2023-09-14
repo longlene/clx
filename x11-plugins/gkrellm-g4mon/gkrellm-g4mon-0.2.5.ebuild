@@ -10,8 +10,6 @@ SLOT="0"
 KEYWORDS="~ppc"
 IUSE=""
 
-inherit eutils
-
 S=${WORKDIR}/g4mon-${PV}
 
 DEPEND=" >=x11-libs/gtk+-2.0

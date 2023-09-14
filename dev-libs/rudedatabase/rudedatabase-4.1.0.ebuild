@@ -1,7 +1,5 @@
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="Use MySQL servers"
 HOMEPAGE="http://rudeserver.com/config/index.html"
 SRC_URI="http://www.rudeserver.com/database/download/${PF}.tar.gz"

@@ -1,8 +1,5 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="Yet Another Proxy Hunter: Uses nmap to find proxies"
 HOMEPAGE="http://yaph.sourceforge.net"

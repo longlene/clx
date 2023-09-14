@@ -2,7 +2,7 @@
 
 EAPI=8
 
-inherit eutils autotools vcs-snapshot
+inherit autotools vcs-snapshot
 
 DESCRIPTION="ManKai Common Lisp"
 HOMEPAGE="http://common-lisp.net/project/mkcl/"

@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=8
-inherit elisp-common eutils
+inherit elisp-common
 RESTRICT="mirror"
 
 SUBVERSION_REVISION="r=${PV}"

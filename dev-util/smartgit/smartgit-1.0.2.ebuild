@@ -1,8 +1,7 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils java-utils-2 versionator
+inherit java-utils-2 versionator
 
 MY_PV="$(replace_all_version_separators _)"
 

@@ -1,6 +1,6 @@
 EAPI=8
 
-inherit eutils user
+inherit user
 
 DESCRIPTION="Apache ActiveMQ is the most popular and powerful open source messaging and Integration Patterns server"
 HOMEPAGE="http://activemq.apache.org/"

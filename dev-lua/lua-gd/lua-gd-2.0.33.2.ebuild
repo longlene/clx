@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils toolchain-funcs versionator
+inherit toolchain-funcs versionator
 
 MY_P=${PN}-$(replace_version_separator 3 'r' )
 

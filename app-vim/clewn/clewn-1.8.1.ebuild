@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils vim-doc
+inherit vim-doc
 
 DESCRIPTION="A small utility which allows debugging from within vim"
 HOMEPAGE="http://clewn.sourceforge.net"

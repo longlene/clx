@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils mercurial
+inherit mercurial
 
 DESCRIPTION="${PN} - interface library to allow C programs to interact with a running VDR, via SVDRP protocol."
 

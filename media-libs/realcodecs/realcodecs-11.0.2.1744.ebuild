@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils rpm multilib
+inherit rpm multilib
 
 DESCRIPTION="Real Player audio and video binary codecs"
 HOMEPAGE="http://www.real.com/ http://player.helixcommunity.org/"

@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils flag-o-matic
+inherit flag-o-matic
 
 DESCRIPTION="A small self-contained alternative to readline and libedit"
 HOMEPAGE="https://github.com/antirez/linenoise"

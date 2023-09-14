@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="Tile World is an emulation of the game \"Chip's Challenge\""
 HOMEPAGE="http://www.muppetlabs.com/~breadbox/software/tworld/"

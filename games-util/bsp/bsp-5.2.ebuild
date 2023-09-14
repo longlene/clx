@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
  
-inherit autotools eutils flag-o-matic games
+inherit autotools flag-o-matic games
  
 DESCRIPTION="BSP nodebuilder for DooM engine games."
 HOMEPAGE="http://games.moria.org.uk/doom/bsp"

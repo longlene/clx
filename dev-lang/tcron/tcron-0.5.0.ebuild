@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils
-
 DESCRIPTION="Tcron integrates 'cron' with ATX power-up capability"
 HOMEPAGE="http://tcron.sourceforge.net"
 SRC_URI="mirror://sourceforge/tcron/${P}.tar.bz2"

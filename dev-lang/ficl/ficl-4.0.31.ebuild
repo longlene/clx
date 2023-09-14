@@ -1,8 +1,5 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="Ficl is a programming language interpreter designed to be embedded into other systems as a command, macro, and development prototyping language."
 SRC_URI="http://downloads.sourceforge.net/ficl/ficl4.0.31.tar.gz"

@@ -1,9 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=8
-inherit autotools eutils games
+inherit autotools games
 
 DESCRIPTION="A flexible frontend for video game emulators"
 HOMEPAGE="http://gelide.sourceforge.net/"

@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit autotools eutils toolchain-funcs
+inherit autotools toolchain-funcs
 
 MY_PN=${PN#gimp-}
 MY_P=${MY_PN}-${PV}

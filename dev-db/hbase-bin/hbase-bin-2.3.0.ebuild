@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils java-vm-2 user
+inherit java-vm-2 user
 
 MY_PN="hbase"
 MY_P=${MY_PN}-${PV}

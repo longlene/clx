@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI=8
-inherit eutils
 
 DESCRIPTION="A uTorrent-like frontend for Transmission daemon"
 HOMEPAGE="http://code.google.com/p/transmisson-remote-gui/"

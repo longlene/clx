@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $                                                                                                         
 
-inherit eutils java-pkg-2 java-ant-2 java-utils-2 games
+inherit java-pkg-2 java-ant-2 java-utils-2 games
 
 DESCRIPTION="a simple MMORPG"
 HOMEPAGE="http://arianne.sourceforge.net"

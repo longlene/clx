@@ -4,7 +4,7 @@
 
 # Doesn't save to user's homedir, so game crashes immediately
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="Sick and addictive, squash the bodies with a ball on a rope"
 HOMEPAGE="http://kimboot.sourceforge.net/"

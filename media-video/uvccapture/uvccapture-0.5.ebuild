@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit toolchain-funcs eutils
+inherit toolchain-funcs
 
 DESCRIPTION="Take a photo from webcam on your shell"
 HOMEPAGE="http://staticwave.ca/source/uvccapture/"

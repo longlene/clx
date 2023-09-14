@@ -1,4 +1,3 @@
-inherit eutils
 
 DESCRIPTION="OSM map viewing, routing and simple editing program"
 HOMEPAGE="http://www.mumpot.org/"

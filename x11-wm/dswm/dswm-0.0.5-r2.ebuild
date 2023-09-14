@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit common-lisp-3 autotools eutils
+inherit common-lisp-3 autotools
 
 DESCRIPTION="DSWM is a tiling, keyboard driven X11 Window Manager written entirely in Common Lisp"
 # HOMEPAGE="http://dss-project.org"

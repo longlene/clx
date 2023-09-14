@@ -1,8 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils
 DESCRIPTION="Port of OpenBSD rpcgen compiler for uclibc"
 HOMEPAGE="http://dev.alpinelinux.org/openrpcgen"
 SRC_URI="http://dev.alpinelinux.org/openrpcgen/${P}.tar.gz"

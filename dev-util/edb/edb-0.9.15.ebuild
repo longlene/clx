@@ -1,8 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils multilib
+inherit multilib
 
 DESCRIPTION="EDB \"Evan's Debugger\" (OllyDbg workalike for Linux)"
 HOMEPAGE="http://www.codef00.com/projects.php#Debugger"

@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: Exp $
 
-inherit eutils linux-mod
+inherit linux-mod
 
 DESCRIPTION="Intel (R) PRO/Wireless 3945ABG Network Drivers"
 HOMEPAGE="http://homepages.tu-darmstadt.de/~p_larbig/wlan/"

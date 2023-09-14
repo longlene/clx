@@ -1,8 +1,6 @@
 ## Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils
 DESCRIPTION="message board and file sharing client for freenet network"
 HOMEPAGE="http://jtcfrost.sourceforge.net/"
 MY_V="19-Jul-2007"

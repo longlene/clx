@@ -1,8 +1,7 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit games eutils
+inherit games
 
 DESCRIPTION="snake like game"
 HOMEPAGE="http://www.hs.no-ip.info/software/snake.html"

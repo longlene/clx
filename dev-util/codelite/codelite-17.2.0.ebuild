@@ -5,7 +5,7 @@ EAPI=8
 
 WX_GTK_VER="3.0"
 
-inherit eutils wxwidgets
+inherit wxwidgets
 
 DESCRIPTION="Cross platform IDE for the C/C++ programming languages"
 HOMEPAGE="http://www.codelite.org/"

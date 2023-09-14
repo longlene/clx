@@ -2,7 +2,7 @@ EAPI=8
 
 JAVA_PKG_IUSE="doc"
 
-inherit eutils versionator java-pkg-2 multilib
+inherit versionator java-pkg-2 multilib
 
 MY_P="${PN}-${PV}"
 

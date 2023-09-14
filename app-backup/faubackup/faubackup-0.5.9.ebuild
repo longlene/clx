@@ -1,4 +1,3 @@
-inherit eutils
 
 DESCRIPTION="A tool to create hard-linked incremental backups on an existing filesystem."
 

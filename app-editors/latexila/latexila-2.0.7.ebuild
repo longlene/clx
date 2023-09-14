@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit base eutils gnome2 cmake
+inherit base gnome2 cmake
 
 DESCRIPTION="LaTeXila is an Integrated LaTeX Environment for the GNOME desktop,
 written in Vala."

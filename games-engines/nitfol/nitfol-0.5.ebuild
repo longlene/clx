@@ -1,8 +1,5 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils games
 
 DESCRIPTION="a z-machine interpreter using Glk for its input and output"
 HOMEPAGE="http://www.ifarchive.org/indexes/if-archiveXinfocomXinterpretersXnitfol.html"

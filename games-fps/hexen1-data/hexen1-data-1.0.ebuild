@@ -1,7 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="Hexen 1 data files"
 HOMEPAGE="http://www.ravensoft.com/"

@@ -1,8 +1,5 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/ztcl/ztcl-1.0_beta4.ebuild, v 1.00 2008/01/12 14:30:00 gtlinux Exp $
-
-inherit eutils
 
 DESCRIPTION="ZTCL is an extension library for TCL that implements an interface to the ZLIB compression and decompression library"
 HOMEPAGE="http://gna.org/projects/ztcl"

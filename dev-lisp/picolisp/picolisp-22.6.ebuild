@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils bash-completion-r1 toolchain-funcs
+inherit bash-completion-r1 toolchain-funcs
 
 URI_FILENAME="picoLisp"
 URI_DOMAIN="http://software-lab.de/"

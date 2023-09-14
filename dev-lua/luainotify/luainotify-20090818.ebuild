@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit multilib eutils
+inherit multilib
 
 DESCRIPTION="A Lua interface to the Linux inotify subsystem"
 HOMEPAGE="http://www3.telus.net/taj_khattra/luainotify.html"

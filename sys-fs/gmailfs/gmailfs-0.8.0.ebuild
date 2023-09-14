@@ -1,8 +1,5 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 KEYWORDS="~x86"
 DESCRIPTION="GmailFS provides a mountable Linux filesystem which uses your Gmail account as its storage medium."

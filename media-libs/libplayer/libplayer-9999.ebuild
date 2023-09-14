@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils mercurial
+inherit mercurial
 
 DESCRIPTION="Generic A/V API that relies on various multimedia players for Linux systems"
 

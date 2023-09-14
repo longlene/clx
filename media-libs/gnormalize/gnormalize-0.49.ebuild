@@ -1,8 +1,5 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="Gtk2-Perl front-end to various audio utilities"
 HOMEPAGE="http://gnormalize.sourceforge.net/"

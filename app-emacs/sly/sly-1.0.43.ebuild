@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit common-lisp-3 elisp eutils vcs-snapshot
+inherit common-lisp-3 elisp vcs-snapshot
 
 DESCRIPTION="Sylvester the Cat's Common Lisp IDE"
 HOMEPAGE="https://github.com/joaotavora/sly"

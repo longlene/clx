@@ -6,7 +6,7 @@ EAPI=8
 JAVA_PKG_IUSE="doc source"
 WANT_ANT_TASKS="ant-nodeps ant-junit4"
 
-inherit eutils java-pkg-2 java-ant-2 
+inherit java-pkg-2 java-ant-2 
 
 DESCRIPTION="A set of java bindings for the gstreamer multimedia framework."
 HOMEPAGE="http://code.google.com/p/gstreamer-java/"

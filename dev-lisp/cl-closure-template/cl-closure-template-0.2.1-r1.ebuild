@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit common-lisp-3 elisp-common eutils vcs-snapshot
+inherit common-lisp-3 elisp-common vcs-snapshot
 
 DESCRIPTION="Common Lisp implementation of Google's Closure Templates."
 HOMEPAGE="http://code.google.com/p/cl-closure-template/"

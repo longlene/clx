@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit cmake eutils pam
+inherit cmake pam
 
 DESCRIPTION="One-Time Passwords auth module for PAM"
 HOMEPAGE="http://savannah.nongnu.org/projects/otpasswd"

@@ -1,8 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils flag-o-matic games
+inherit flag-o-matic games
 
 MYSDL_PV="1.0"
 MY_P=${PN}_${PV}

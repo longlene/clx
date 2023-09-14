@@ -12,9 +12,8 @@
 # changed license from "???" to "UNKNOWN"
 # fixed dependency syntax
 # preserve library symlinks
-#
 
-inherit eutils rpm flag-o-matic multilib
+inherit rpm flag-o-matic multilib
 
 DESCRIPTION="Canon Bubble Jet Printer Driver for Linux (Pixus/Pixma-Series)."
 HOMEPAGE="ftp://download.canon.jp/pub/driver/bj/linux/"

@@ -4,7 +4,7 @@
 EAPI=6
 AUTOTOOLS_AUTO_DEPEND="no"
 
-inherit autotools eutils flag-o-matic java-pkg-2 java-vm-2
+inherit autotools flag-o-matic java-pkg-2 java-vm-2
 
 DESCRIPTION="Cacao Java Virtual Machine"
 HOMEPAGE="http://www.cacaojvm.org/"

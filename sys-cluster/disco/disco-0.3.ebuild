@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="A distributed computing map/reduce framework."
 HOMEPAGE="http://discoproject.org"
 SRC_URI="http://github.com/tuulos/disco/tarball/${PV} -> ${P}.tgz"

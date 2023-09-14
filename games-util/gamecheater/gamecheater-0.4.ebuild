@@ -1,8 +1,5 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="A Gtk+ Game Cheater. It use ptrace system call to edit other process' memory"
 HOMEPAGE="http://gamecheater.sourceforge.net/"

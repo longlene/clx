@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils toolchain-funcs flag-o-matic games
+inherit toolchain-funcs flag-o-matic games
 
 MY_PV="${PV/_beta/b}"
 MY_SRC="${PN}-v${MY_PV}-source.zip"

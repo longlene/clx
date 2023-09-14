@@ -1,8 +1,5 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-
-inherit eutils
 
 DESCRIPTION="Cisco Discovery Protocol Reporter"
 HOMEPAGE="http://cdpr.sourceforge.net/"

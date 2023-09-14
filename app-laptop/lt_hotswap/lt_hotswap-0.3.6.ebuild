@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit eutils linux-mod
+inherit linux-mod
 
 DESCRIPTION="Hotswap for IBM-Thinkpad Laptops"
 HOMEPAGE="http://www.sourceforge.net/projects/lths"

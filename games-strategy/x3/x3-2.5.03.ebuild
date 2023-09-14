@@ -1,8 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="Open-ended space opera with trading, building & fighting"
 HOMEPAGE="http://www.linuxgamepublishing.com/info.php?id=x3"

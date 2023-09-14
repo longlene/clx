@@ -4,7 +4,7 @@
 
 EAPI=8
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="Decode the secrets within as you discover a true sense"
 HOMEPAGE="http://www.wegroup.org/games/hidden-object/between-the-worlds.html"

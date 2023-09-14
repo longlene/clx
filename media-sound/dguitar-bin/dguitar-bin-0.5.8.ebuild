@@ -1,8 +1,7 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils versionator
+inherit versionator
 
 DESCRIPTION="DGuitar is a Guitar Pro (*.GP4,*.GP3,*.GTP) viewer and player"
 HOMEPAGE="http://dguitar.sourceforge.net/"

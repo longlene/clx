@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit eutils multilib toolchain-funcs
+inherit multilib toolchain-funcs
 
 DESCRIPTION="newLISP - a new generation of Lisp!"
 HOMEPAGE="http://www.newlisp.org/"

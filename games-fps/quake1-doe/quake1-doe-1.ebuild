@@ -1,7 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-inherit eutils games
+inherit games
 
 DESCRIPTION="Dissolution of Eternity mission pack for Quake 1"
 HOMEPAGE="http://www.idsoftware.com/games/quake/quake-mp1/"

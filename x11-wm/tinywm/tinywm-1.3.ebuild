@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit eutils
-
 DESCRIPTION="TinyWM is a ridiculously tiny window manager implemender nearly as few lines of C as possible"
 HOMEPAGE="http://incise.org/tinywm.html"
 SRC_URI="http://incise.org/files/dev/tinywm-${PV}.tgz"

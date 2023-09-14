@@ -1,8 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-inherit eutils
 DESCRIPTION="Plug-in for The GIMP that stitches individual images together to a panorama."
 HOMEPAGE="http://stitchpanorama.sourceforge.net/"
 SRC_URI="mirror://sourceforge/stitchpanorama/stitch_${PV}.py"
