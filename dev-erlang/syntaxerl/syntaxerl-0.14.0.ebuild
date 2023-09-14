@@ -1,7 +1,7 @@
 # Copyright 2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Syntax checker for Erlang"
 HOMEPAGE="https://github.com/ten0s/syntaxerl"
