@@ -159,7 +159,7 @@ GEOIP2_MODULE_URI="https://github.com/leev/ngx_http_geoip2_module/archive/${GEOI
 GEOIP2_MODULE_WD="${WORKDIR}/ngx_http_geoip2_module-${GEOIP2_MODULE_PV}"
 
 # njs-module (https://github.com/nginx/njs, as-is)
-NJS_MODULE_PV="5b463b8050377216ad4197cd1e35bb69b35b77e9"
+NJS_MODULE_PV="0.8.0"
 NJS_MODULE_P="njs-${NJS_MODULE_PV}"
 NJS_MODULE_URI="https://github.com/nginx/njs/archive/${NJS_MODULE_PV}.tar.gz"
 NJS_MODULE_WD="${WORKDIR}/njs-${NJS_MODULE_PV}"
@@ -261,7 +261,7 @@ NGINX_MODULES_3RD="
 	stream_lua
 "
 
-IUSE="aio debug +http +http2 http3 +http-cache libatomic pcre +pcre2 pcre-jit rtmp selinux ssl threads vim-syntax"
+IUSE="aio debug +http +http2 http3 +http-cache ktls libatomic pcre +pcre2 pcre-jit rtmp selinux ssl threads vim-syntax"
 
 for mod in $NGINX_MODULES_STD; do
 	IUSE="${IUSE} +nginx_modules_http_${mod}"
@@ -307,6 +307,9 @@ CDEPEND="
 	http-cache? (
 		dev-libs/openssl:0=
 	)
+	ktls? (
+		>=dev-libs/openssl-3:0=[ktls]
+	)
 	nginx_modules_http_brotli? ( app-arch/brotli:= )
 	nginx_modules_http_geoip? ( dev-libs/geoip )
 	nginx_modules_http_geoip2? ( dev-libs/libmaxminddb:= )
@@ -338,6 +341,7 @@ BDEPEND="nginx_modules_http_brotli? ( virtual/pkgconfig )"
 PDEPEND="vim-syntax? ( app-vim/nginx-syntax )"
 
 REQUIRED_USE="pcre-jit? ( pcre )
+	ktls? ( ssl )
 	nginx_modules_http_fancyindex? ( nginx_modules_http_addition )
 	nginx_modules_http_grpc? ( http2 )
 	nginx_modules_http_lua? (
@@ -397,6 +401,12 @@ src_prepare() {
 	if use nginx_modules_http_auth_ldap; then
 		cd "${HTTP_LDAP_MODULE_WD}" || die
 		eapply "${FILESDIR}/${PN}-1.23.2-mod_auth_ldap-fix.patch"
+		cd "${S}" || die
+	fi
+
+	if use nginx_modules_http_javascript; then
+		cd "${NJS_MODULE_WD}" || die
+		sed -e 's/-Werror//g' -i auto/cc || die
 		cd "${S}" || die
 	fi
 
@@ -471,6 +481,7 @@ src_configure() {
 	use debug     && myconf+=( --with-debug )
 	use http2     && myconf+=( --with-http_v2_module )
 	use http3     && myconf+=( --with-http_v3_module )
+	use ktls      && myconf+=( --with-openssl-opt=enable-ktls )
 	use libatomic && myconf+=( --with-libatomic )
 	use pcre      && myconf+=( --with-pcre --without-pcre2 )
 	use pcre-jit  && myconf+=( --with-pcre-jit )
