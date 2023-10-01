@@ -5,7 +5,7 @@ EAPI=8
 
 inherit multiprocessing toolchain-funcs vcs-snapshot
 
-EGIT_COMMIT="a36e66f0d200f99802ad32171c55d26ad44f501d"
+EGIT_COMMIT="984c2824e3569479bace65bdaf9e78a2eb36dd58"
 
 DESCRIPTION="Plan 9 from User Space"
 HOMEPAGE="http://swtch.com/plan9port/"

@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,10 +17,10 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-src_install() {
-	dobin ${BUILD_DIR}/md2html/md2html
-	dolib.a ${BUILD_DIR}/md4c/libmd4c.a
-	insinto /usr/include
-	doins md4c/md4c.h
-	dodoc README.md
-}
+#src_install() {
+#	dobin ${BUILD_DIR}/md2html/md2html
+#	dolib.a ${BUILD_DIR}/md4c/libmd4c.a
+#	insinto /usr/include
+#	doins md4c/md4c.h
+#	dodoc README.md
+#}

@@ -7,19 +7,19 @@ LUA_COMPAT=( lua5-{1..4} luajit )
 
 inherit lua
 
-EGIT_COMMIT="98dc175058"
-
 DESCRIPTION="XMPP client library written in Lua"
 HOMEPAGE="http://code.mathewwild.co.uk/"
-SRC_URI="http://code.matthewwild.co.uk/verse/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="http://code.matthewwild.co.uk/verse/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND="
+BDEPEND="
 	dev-lua/squish[${LUA_USEDEP}]
+"
+RDEPEND="
 	dev-lua/luasocket[${LUA_USEDEP}]
 	dev-lua/luaexpat[${LUA_USEDEP}]
 	dev-lua/luafilesystem[${LUA_USEDEP}]
