@@ -13,6 +13,7 @@ CRATES="
 	base64-0.9.3
 	bitflags-1.3.2
 	buf_redux-0.8.4
+	bumpalo-3.12.0
 	byteorder-1.4.3
 	cc-1.0.73
 	cfg-if-1.0.0
@@ -20,7 +21,7 @@ CRATES="
 	clap-2.34.0
 	cloudabi-0.0.3
 	core-foundation-0.9.3
-	core-foundation-sys-0.8.0
+	core-foundation-sys-0.8.3
 	crc32fast-1.3.2
 	fastrand-1.7.0
 	filetime-0.2.17
@@ -41,6 +42,7 @@ CRATES="
 	instant-0.1.12
 	iron-0.6.1
 	iron-cors-0.8.0
+	js-sys-0.3.60
 	language-tags-0.2.2
 	lazy_static-1.4.0
 	libc-0.2.126
@@ -64,6 +66,7 @@ CRATES="
 	openssl-0.10.41
 	openssl-macros-0.1.0
 	openssl-probe-0.1.5
+	openssl-src-111.22.0+1.1.1q
 	openssl-sys-0.9.75
 	path-dedot-1.2.4
 	pathdiff-0.2.1
@@ -96,11 +99,15 @@ CRATES="
 	rdrand-0.4.0
 	redox_syscall-0.2.13
 	remove_dir_all-0.5.3
+	ring-0.16.20
+	rustls-0.20.8
 	safemem-0.3.3
 	schannel-0.1.20
+	sct-0.7.0
 	security-framework-2.6.1
 	security-framework-sys-2.6.1
 	siphasher-0.2.3
+	spin-0.5.2
 	strsim-0.8.0
 	syn-1.0.98
 	tempfile-3.3.0
@@ -120,6 +127,7 @@ CRATES="
 	unicode-normalization-0.1.21
 	unicode-width-0.1.9
 	unsafe-any-0.4.2
+	untrusted-0.7.1
 	url-1.7.2
 	url-2.2.2
 	vcpkg-0.2.15
@@ -128,6 +136,13 @@ CRATES="
 	version_check-0.9.4
 	wasi-0.10.0+wasi-snapshot-preview1
 	wasi-0.11.0+wasi-snapshot-preview1
+	wasm-bindgen-0.2.83
+	wasm-bindgen-backend-0.2.83
+	wasm-bindgen-macro-0.2.83
+	wasm-bindgen-macro-support-0.2.83
+	wasm-bindgen-shared-0.2.83
+	web-sys-0.3.60
+	webpki-0.22.0
 	winapi-0.3.9
 	winapi-i686-pc-windows-gnu-0.4.0
 	winapi-util-0.1.5
