@@ -4,7 +4,7 @@ EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="502a37715dcb8544cc8528b78143a942de662c5a"
+EGIT_COMMIT="3d1535b397ba69e3b8f79c7aac8fbdc5a3c7c8f5"
 
 DESCRIPTION="A fast HTTP request/response parser for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/fast-http"

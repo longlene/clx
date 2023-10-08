@@ -5,7 +5,7 @@ EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3745924e4682523b0969a7042bcdb39aa8f73e8f"
+EGIT_COMMIT="2c6a93acd983b1fe476671707ce7ec920eb10613"
 
 DESCRIPTION="Lack, the core of Clack"
 HOMEPAGE="https://github.com/fukamachi/lack"

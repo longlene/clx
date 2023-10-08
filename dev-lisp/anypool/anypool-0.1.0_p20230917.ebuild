@@ -1,11 +1,11 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="655cdeedc842025917987c457cc5fa6f2e8c03aa"
+EGIT_COMMIT="2e0e387bce6b57e9d36b4e0382f109d5d292362e"
 
 DESCRIPTION="General-purpose connection pooling library for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/anypool"

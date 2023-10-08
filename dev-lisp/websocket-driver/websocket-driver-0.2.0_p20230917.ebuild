@@ -5,7 +5,7 @@ EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="0ef31fce279c1cc02f8a020a285047180649bcc6"
+EGIT_COMMIT="ff606c1ff373b6b07380978f848cf6b6aa192977"
 
 DESCRIPTION="WebSocket protocols implementation in Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/websocket-driver"
@@ -21,13 +21,14 @@ RDEPEND="${DEPEND}
 	dev-lisp/fast-websocket
 	dev-lisp/fast-io
 	dev-lisp/event-emitter
-	dev-lisp/ironclad
+	dev-lisp/sha1
 	dev-lisp/cl-base64
 	dev-lisp/split-sequence
 	dev-lisp/bordeaux-threads
 	dev-lisp/usocket
 	dev-lisp/cl-plus-ssl
 	dev-lisp/fast-http
+	dev-lisp/babel
 	dev-lisp/quri
 	dev-lisp/clack
 "
