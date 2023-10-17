@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10,11} )
+PYTHON_COMPAT=( python3_{11..12} )
 inherit distutils-r1
 
 DESCRIPTION="For something in between a pytorch and a karpathy/micrograd"
@@ -21,6 +21,8 @@ RDEPEND="
 	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	dev-python/networkx[${PYTHON_USEDEP}]
+	dev-python/pyopencl[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
 "
 BDEPEND="
 	test? ( dev-python/pytest )
