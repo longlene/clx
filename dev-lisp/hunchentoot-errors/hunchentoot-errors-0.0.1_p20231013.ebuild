@@ -1,11 +1,11 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="3d1ced2f632eb9236361518998825b091ed08ee6"
+EGIT_COMMIT="69eb3bcea59ed1ccf3dd1960e6d48fb21f1dadab"
 
 DESCRIPTION="Augments Hunchentoot error pages and logs with request and session information"
 HOMEPAGE="https://github.com/mmontone/hunchentoot-errors"
