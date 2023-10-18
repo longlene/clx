@@ -60,7 +60,7 @@ CDEPEND="
 	angie_modules_http_gunzip? ( sys-libs/zlib )
 	angie_modules_http_gzip? ( sys-libs/zlib )
 	angie_modules_http_gzip_static? ( sys-libs/zlib )
-	angie_modules_http_rewrite? ( dev-libs/pcre:= )
+	angie_modules_http_rewrite? ( dev-libs/libpcre:= )
 	angie_modules_stream_geoip? ( dev-libs/geoip )
 "
 DEPEND="${CDEPEND}"
