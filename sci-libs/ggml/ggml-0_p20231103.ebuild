@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="47b297224eb4c62c0679e2f8db623ee3cef4819b"
+EGIT_COMMIT="239defe61dbe9dddc6304942e8a3d03d6a3c69ab"
 
 DESCRIPTION="Tensor library for machine learning"
 HOMEPAGE="https://github.com/ggerganov/ggml"
@@ -14,8 +14,11 @@ SRC_URI="https://github.com/ggerganov/ggml/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
+IUSE="blas"
 
-DEPEND=""
+DEPEND="
+	blas? ( sci-libs/openblas )
+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
@@ -30,6 +33,7 @@ src_configure() {
 	local mycmakeargs=(
 		-DGGML_BUILD_TESTS=OFF
 		-DGGML_BUILD_EXAMPLES=OFF
+		-DGGML_OPENBLAS=$(usex blas)
 	)
 	cmake_src_configure
 }
