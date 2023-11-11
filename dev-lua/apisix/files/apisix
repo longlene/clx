@@ -1,0 +1,19 @@
+#!/bin/bash
+
+APISIX_LUA=/usr/share/lua/5.1/apisix/cli/apisix.lua
+
+OR_BIN=/usr/bin/nginx
+OR_EXEC=${OR_BIN}
+OR_VER=$(nginx -v 2>&1 | awk -F '/' '{print $2}' | awk -F '.' '{print $1 * 100 + $2}')
+LUA_VERSION=$(lua -v 2>&1| grep -E -o  "Lua [0-9]+.[0-9]+")
+
+if [[ -e $OR_EXEC && "$OR_VER" -ge 119 ]]; then
+    # OpenResty version is >= 1.19, use luajit by default
+    LUAJIT_BIN=/usr/bin/luajit
+
+    # use the luajit of openresty
+    echo "$LUAJIT_BIN $APISIX_LUA $*"
+    exec $LUAJIT_BIN $APISIX_LUA $*
+else
+    echo "ERROR: Please check the version of OpenResty and Lua, OpenResty 1.19+ + LuaJIT is required for Apache APISIX."
+fi

@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7ca5abc00e830a68238fe866f87938222a3ac04d"
+EGIT_COMMIT="d7e41f5e4533a10e8bc74d36f970f929e001a1e9"
 
 DESCRIPTION="ALSA bindings for Common Lisp"
 HOMEPAGE="https://github.com/varjagg/also-alsa/"

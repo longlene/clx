@@ -17,9 +17,9 @@ KEYWORDS="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lua/lua-resty-http
-	dev-lua/lua-resty-lrucache
-	dev-lua/lua-resty-openssl
+	dev-lua/lua-resty-http[${LUA_USEDEP}]
+	dev-lua/lua-resty-lrucache[${LUA_USEDEP}]
+	dev-lua/lua-resty-openssl[${LUA_USEDEP}]
 "
 BDEPEND=""
 
