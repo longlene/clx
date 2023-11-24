@@ -59,23 +59,6 @@ CRATES="
 	console-0.15.0
 	cpp_demangle-0.3.5
 	cpufeatures-0.2.7
-	cranelift-0.101.0
-	cranelift-bforest-0.101.0
-	cranelift-codegen-0.101.0
-	cranelift-codegen-meta-0.101.0
-	cranelift-codegen-shared-0.101.0
-	cranelift-control-0.101.0
-	cranelift-entity-0.101.0
-	cranelift-frontend-0.101.0
-	cranelift-interpreter-0.101.0
-	cranelift-isle-0.101.0
-	cranelift-jit-0.101.0
-	cranelift-module-0.101.0
-	cranelift-native-0.101.0
-	cranelift-object-0.101.0
-	cranelift-reader-0.101.0
-	cranelift-serde-0.101.0
-	cranelift-wasm-0.101.0
 	crc32fast-1.3.2
 	criterion-0.5.1
 	criterion-plot-0.5.0
@@ -299,9 +282,9 @@ CRATES="
 	walkdir-2.3.3
 	want-0.3.0
 	wasi-0.11.0+wasi-snapshot-preview1
-	wasi-cap-std-sync-14.0.0
-	wasi-common-14.0.0
-	wasi-tokio-14.0.0
+	wasi-cap-std-sync-14.0.4
+	wasi-common-14.0.4
+	wasi-tokio-14.0.4
 	wasm-bindgen-0.2.87
 	wasm-bindgen-backend-0.2.87
 	wasm-bindgen-macro-0.2.87
@@ -317,21 +300,20 @@ CRATES="
 	wasmparser-0.115.0
 	wasmparser-nostd-0.91.0
 	wasmprinter-0.2.70
-	wasmtime-cli-14.0.0
 	wast-35.0.2
 	wast-66.0.2
 	wat-1.0.77
 	web-sys-0.3.57
 	webpki-roots-0.25.2
 	which-4.2.5
-	wiggle-14.0.0
-	wiggle-generate-14.0.0
-	wiggle-macro-14.0.0
+	wiggle-14.0.4
+	wiggle-generate-14.0.4
+	wiggle-macro-14.0.4
 	winapi-0.3.9
 	winapi-i686-pc-windows-gnu-0.4.0
 	winapi-util-0.1.5
 	winapi-x86_64-pc-windows-gnu-0.4.0
-	winch-codegen-0.12.0
+	winch-codegen-0.12.4
 	windows-sys-0.48.0
 	windows-targets-0.48.0
 	windows_aarch64_gnullvm-0.48.0

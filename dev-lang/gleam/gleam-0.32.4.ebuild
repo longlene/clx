@@ -4,36 +4,37 @@
 EAPI=8
 
 CRATES="
+	addr2line-0.21.0
 	adler-1.0.2
-	ahash-0.7.6
-	aho-corasick-0.7.20
-	aho-corasick-1.0.2
-	android-tzdata-0.1.1
-	arrayvec-0.5.2
-	askama-0.10.5
-	askama_derive-0.10.5
+	aho-corasick-1.1.2
+	askama-0.12.1
+	askama_derive-0.12.2
 	askama_escape-0.10.3
-	askama_shared-0.11.2
-	async-trait-0.1.68
+	askama_parser-0.1.1
+	asn1-rs-0.5.2
+	asn1-rs-derive-0.4.0
+	asn1-rs-impl-0.1.0
+	async-trait-0.1.74
 	atty-0.2.14
 	autocfg-1.1.0
+	backtrace-0.3.69
 	base16-0.2.1
 	base64-0.13.1
-	base64-0.21.2
+	base64-0.21.5
+	basic-toml-0.1.7
 	bincode-1.3.3
 	bitflags-1.3.2
+	bitflags-2.4.1
 	bitmaps-2.1.0
-	bitvec-0.19.6
 	block-buffer-0.9.0
-	bstr-1.5.0
-	bumpalo-3.13.0
-	bytes-1.4.0
+	bstr-1.7.0
+	bumpalo-3.14.0
+	bytes-1.5.0
 	camino-1.1.6
 	capnp-0.14.11
 	capnpc-0.14.9
-	cc-1.0.79
+	cc-1.0.83
 	cfg-if-1.0.0
-	chrono-0.4.26
 	clap-3.2.25
 	clap_derive-3.2.25
 	clap_lex-0.2.4
@@ -43,250 +44,262 @@ CRATES="
 	console_error_panic_hook-0.1.7
 	core-foundation-0.9.3
 	core-foundation-sys-0.8.4
-	cpufeatures-0.2.7
+	cpufeatures-0.2.11
 	crc32fast-1.3.2
 	crossbeam-channel-0.5.8
 	crossbeam-utils-0.8.16
-	ctor-0.1.26
-	ctrlc-3.4.0
+	ctrlc-3.4.1
 	data-encoding-2.4.0
 	debug-ignore-1.0.5
-	der-oid-macro-0.4.0
-	der-parser-5.1.2
+	der-parser-8.2.0
+	deranged-0.3.9
 	diff-0.1.13
 	digest-0.9.0
 	dirs-next-2.0.0
 	dirs-sys-next-0.1.2
-	either-1.8.1
+	displaydoc-0.2.4
+	ecow-0.2.0
+	either-1.9.0
 	encode_unicode-0.3.6
-	encoding_rs-0.8.32
-	errno-0.3.1
-	errno-dragonfly-0.1.2
-	fastrand-1.9.0
-	filetime-0.2.21
+	encoding_rs-0.8.33
+	equivalent-1.0.1
+	errno-0.3.5
+	fastrand-2.0.1
+	filetime-0.2.22
 	fixedbitset-0.4.2
-	flate2-1.0.26
+	flate2-1.0.28
 	fnv-1.0.7
 	form_urlencoded-1.2.0
 	fs_extra-1.3.0
 	fslock-0.2.1
-	funty-1.1.0
-	futures-0.3.28
-	futures-channel-0.3.28
-	futures-core-0.3.28
-	futures-executor-0.3.28
-	futures-io-0.3.28
-	futures-macro-0.3.28
-	futures-sink-0.3.28
-	futures-task-0.3.28
-	futures-util-0.3.28
+	futures-0.3.29
+	futures-channel-0.3.29
+	futures-core-0.3.29
+	futures-executor-0.3.29
+	futures-io-0.3.29
+	futures-macro-0.3.29
+	futures-sink-0.3.29
+	futures-task-0.3.29
+	futures-util-0.3.29
 	generic-array-0.14.7
 	getrandom-0.2.10
-	globset-0.4.10
-	h2-0.3.19
+	gimli-0.28.0
+	globset-0.4.13
+	h2-0.3.21
 	hashbrown-0.12.3
+	hashbrown-0.14.2
 	heck-0.4.1
 	hermit-abi-0.1.19
-	hermit-abi-0.2.6
-	hermit-abi-0.3.1
-	hexpm-2.0.0
+	hermit-abi-0.3.3
+	hexpm-2.1.1
 	hostname-0.3.1
 	http-0.2.9
 	http-auth-basic-0.3.3
 	http-body-0.4.5
 	httparse-1.8.0
-	httpdate-1.0.2
-	humansize-1.1.1
-	hyper-0.14.26
-	hyper-rustls-0.24.0
+	httpdate-1.0.3
+	humansize-2.1.3
+	hyper-0.14.27
+	hyper-rustls-0.24.2
 	idna-0.4.0
 	ignore-0.4.20
 	im-15.1.0
 	indexmap-1.9.3
-	insta-1.29.0
-	instant-0.1.12
-	io-lifetimes-1.0.11
-	ipnet-2.7.2
+	indexmap-2.1.0
+	insta-1.34.0
+	ipnet-2.9.0
 	itertools-0.10.5
-	itoa-1.0.6
-	js-sys-0.3.64
+	itoa-1.0.9
+	js-sys-0.3.65
 	kstring-1.0.6
 	lazy_static-1.4.0
-	lexical-core-0.7.6
-	libc-0.2.146
+	libc-0.2.149
+	libm-0.2.8
 	linked-hash-map-0.5.6
-	linux-raw-sys-0.3.8
-	log-0.4.19
-	lsp-server-0.5.2
-	lsp-types-0.92.1
+	linux-raw-sys-0.4.10
+	log-0.4.20
+	lsp-server-0.7.4
+	lsp-types-0.94.1
 	match_cfg-0.1.0
 	matchers-0.1.0
-	memchr-2.5.0
+	memchr-2.6.4
 	mime-0.3.17
+	mime_guess-2.0.4
+	minimal-lexical-0.2.1
 	miniz_oxide-0.7.1
-	mio-0.8.8
-	nix-0.26.2
-	nom-6.1.2
+	mio-0.8.9
+	nix-0.27.1
+	nom-7.1.3
 	normpath-1.1.1
 	nu-ansi-term-0.46.0
-	num-bigint-0.4.3
+	num-bigint-0.4.4
 	num-integer-0.1.45
-	num-traits-0.2.15
-	num_cpus-1.15.0
-	oid-registry-0.1.5
+	num-traits-0.2.17
+	num_cpus-1.16.0
+	object-0.32.1
+	oid-registry-0.6.1
 	once_cell-1.18.0
 	opaque-debug-0.3.0
 	opener-0.6.1
 	openssl-probe-0.1.5
-	os_str_bytes-6.5.1
-	output_vt100-0.1.3
+	os_str_bytes-6.6.1
 	overload-0.1.1
+	pathdiff-0.2.1
 	percent-encoding-2.3.0
-	petgraph-0.6.3
-	pin-project-lite-0.2.9
+	petgraph-0.6.4
+	pin-project-lite-0.2.13
 	pin-utils-0.1.0
+	powerfmt-0.2.0
 	ppv-lite86-0.2.17
-	pretty_assertions-1.3.0
+	pretty_assertions-1.4.0
 	proc-macro-error-1.0.4
 	proc-macro-error-attr-1.0.4
-	proc-macro2-1.0.60
+	proc-macro2-1.0.69
 	protobuf-2.28.0
 	protobuf-codegen-2.28.0
 	protobuf-codegen-pure-2.28.0
 	pubgrub-0.2.1
 	pulldown-cmark-0.8.0
-	quote-1.0.28
-	radium-0.5.3
+	quote-1.0.33
 	rand-0.8.5
 	rand_chacha-0.3.1
 	rand_core-0.6.4
 	rand_xoshiro-0.6.0
 	redox_syscall-0.2.16
 	redox_syscall-0.3.5
+	redox_syscall-0.4.1
 	redox_users-0.4.3
-	regex-1.8.4
+	regex-1.10.2
 	regex-automata-0.1.10
+	regex-automata-0.4.3
 	regex-syntax-0.6.29
-	regex-syntax-0.7.2
-	reqwest-0.11.18
+	regex-syntax-0.8.2
+	reqwest-0.11.22
 	ring-0.16.20
+	ring-0.17.5
 	rpassword-5.0.1
+	rustc-demangle-0.1.23
 	rustc-hash-1.1.0
-	rusticata-macros-3.2.0
-	rustix-0.37.20
-	rustls-0.21.1
-	rustls-native-certs-0.6.2
-	rustls-pemfile-1.0.2
-	rustls-webpki-0.100.1
-	rustversion-1.0.12
-	ryu-1.0.13
+	rusticata-macros-4.1.0
+	rustix-0.38.21
+	rustls-0.21.8
+	rustls-native-certs-0.6.3
+	rustls-pemfile-1.0.3
+	rustls-webpki-0.101.7
+	rustversion-1.0.14
+	ryu-1.0.15
 	same-file-1.0.6
-	schannel-0.1.21
+	schannel-0.1.22
 	scoped-tls-1.0.1
-	sct-0.7.0
-	security-framework-2.9.1
-	security-framework-sys-2.9.0
-	serde-1.0.164
+	sct-0.7.1
+	security-framework-2.9.2
+	security-framework-sys-2.9.1
+	serde-1.0.190
 	serde-wasm-bindgen-0.4.5
-	serde_derive-1.0.164
-	serde_json-1.0.96
-	serde_repr-0.1.12
+	serde_derive-1.0.190
+	serde_json-1.0.108
+	serde_repr-0.1.17
 	serde_urlencoded-0.7.1
 	sha2-0.9.9
-	sharded-slab-0.1.4
-	similar-2.2.1
+	sharded-slab-0.1.7
+	similar-2.3.0
 	sized-chunks-0.6.5
-	slab-0.4.8
-	smallvec-1.10.0
-	smawk-0.3.1
-	smol_str-0.1.24
-	socket2-0.4.9
+	slab-0.4.9
+	smallvec-1.11.1
+	smawk-0.3.2
+	socket2-0.4.10
+	socket2-0.5.5
 	spdx-0.8.1
 	spin-0.5.2
-	static_assertions-1.1.0
+	spin-0.9.8
 	strsim-0.10.0
 	strum-0.24.1
 	strum_macros-0.24.3
 	symlink-0.1.0
 	syn-1.0.109
-	syn-2.0.18
-	tap-1.0.1
-	tar-0.4.38
-	tempfile-3.6.0
-	termcolor-1.2.0
+	syn-2.0.38
+	synstructure-0.12.6
+	system-configuration-0.5.1
+	system-configuration-sys-0.5.0
+	tar-0.4.40
+	tempfile-3.8.1
+	termcolor-1.3.0
 	terminal_size-0.1.17
 	textwrap-0.15.0
 	textwrap-0.16.0
-	thiserror-1.0.40
-	thiserror-impl-1.0.40
+	thiserror-1.0.50
+	thiserror-impl-1.0.50
 	thread_local-1.1.7
+	time-0.3.30
+	time-core-0.1.2
+	time-macros-0.2.15
 	tinyvec-1.6.0
 	tinyvec_macros-0.1.1
-	tokio-1.28.2
+	tokio-1.33.0
 	tokio-rustls-0.24.1
-	tokio-util-0.7.8
+	tokio-util-0.7.10
 	toml-0.5.11
 	toml_edit-0.9.1
 	tower-service-0.3.2
-	tracing-0.1.37
-	tracing-attributes-0.1.24
-	tracing-core-0.1.31
-	tracing-log-0.1.3
+	tracing-0.1.40
+	tracing-attributes-0.1.27
+	tracing-core-0.1.32
+	tracing-log-0.1.4
 	tracing-subscriber-0.3.17
 	tracing-wasm-0.2.1
 	try-lock-0.2.4
-	typenum-1.16.0
-	unicase-2.6.0
+	typenum-1.17.0
+	unicase-2.7.0
 	unicode-bidi-0.3.13
-	unicode-ident-1.0.9
-	unicode-linebreak-0.1.4
+	unicode-ident-1.0.12
+	unicode-linebreak-0.1.5
 	unicode-normalization-0.1.22
-	unicode-width-0.1.10
+	unicode-width-0.1.11
+	unicode-xid-0.2.4
 	untrusted-0.7.1
-	url-2.4.0
+	untrusted-0.9.0
+	url-2.4.1
 	valuable-0.1.0
 	vec1-1.10.1
 	version_check-0.9.4
-	walkdir-2.3.3
-	want-0.3.0
+	walkdir-2.4.0
+	want-0.3.1
 	wasi-0.11.0+wasi-snapshot-preview1
-	wasm-bindgen-0.2.87
-	wasm-bindgen-backend-0.2.87
-	wasm-bindgen-futures-0.4.37
-	wasm-bindgen-macro-0.2.87
-	wasm-bindgen-macro-support-0.2.87
-	wasm-bindgen-shared-0.2.87
-	wasm-bindgen-test-0.3.37
-	wasm-bindgen-test-macro-0.3.37
-	web-sys-0.3.64
+	wasm-bindgen-0.2.88
+	wasm-bindgen-backend-0.2.88
+	wasm-bindgen-futures-0.4.38
+	wasm-bindgen-macro-0.2.88
+	wasm-bindgen-macro-support-0.2.88
+	wasm-bindgen-shared-0.2.88
+	wasm-bindgen-test-0.3.38
+	wasm-bindgen-test-macro-0.3.38
+	web-sys-0.3.65
 	winapi-0.3.9
 	winapi-i686-pc-windows-gnu-0.4.0
-	winapi-util-0.1.5
+	winapi-util-0.1.6
 	winapi-x86_64-pc-windows-gnu-0.4.0
-	windows-sys-0.42.0
 	windows-sys-0.45.0
 	windows-sys-0.48.0
 	windows-targets-0.42.2
-	windows-targets-0.48.0
+	windows-targets-0.48.5
 	windows_aarch64_gnullvm-0.42.2
-	windows_aarch64_gnullvm-0.48.0
+	windows_aarch64_gnullvm-0.48.5
 	windows_aarch64_msvc-0.42.2
-	windows_aarch64_msvc-0.48.0
+	windows_aarch64_msvc-0.48.5
 	windows_i686_gnu-0.42.2
-	windows_i686_gnu-0.48.0
+	windows_i686_gnu-0.48.5
 	windows_i686_msvc-0.42.2
-	windows_i686_msvc-0.48.0
+	windows_i686_msvc-0.48.5
 	windows_x86_64_gnu-0.42.2
-	windows_x86_64_gnu-0.48.0
+	windows_x86_64_gnu-0.48.5
 	windows_x86_64_gnullvm-0.42.2
-	windows_x86_64_gnullvm-0.48.0
+	windows_x86_64_gnullvm-0.48.5
 	windows_x86_64_msvc-0.42.2
-	windows_x86_64_msvc-0.48.0
-	winreg-0.10.1
-	wyz-0.2.0
-	x509-parser-0.9.2
-	xattr-0.2.3
-	xxhash-rust-0.8.6
+	windows_x86_64_msvc-0.48.5
+	winreg-0.50.0
+	x509-parser-0.15.1
+	xattr-1.0.1
+	xxhash-rust-0.8.7
 	yaml-rust-0.4.5
 	yansi-0.5.1
 "
