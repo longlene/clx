@@ -5,7 +5,7 @@ EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="371460820867ee32a0968d709ab10c3a378ff705"
+EGIT_COMMIT="6c94f61c1b0a2cb1115d89f0305a938e699e6148"
 
 DESCRIPTION="Yet another Common Lisp game engine"
 HOMEPAGE="https://github.com/Shirakumo/trial"
@@ -19,7 +19,8 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
-	dev-lisp/3d-vectors
+	dev-lisp/atomics
+	dev-lisp/3d-math
 	dev-lisp/3d-matrices
 	dev-lisp/verbose
 	dev-lisp/deploy

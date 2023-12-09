@@ -3,7 +3,7 @@
 
 EAPI=8
 
-EGIT_COMMIT="f8cf9a1060b0971346d13c6f8e1eda071de6691d"
+EGIT_COMMIT="2afc313b9d2ad269b497919c7044df6ee2493ba3"
 
 inherit cmake flag-o-matic vcs-snapshot
 
