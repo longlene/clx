@@ -31,8 +31,8 @@ src_prepare() {
 src_configure() {
 	local mycmakeargs=(
 		-DWHISPER_BUILD_TESTS=OFF
-		-DWHISPER_SUPPORT_SDL2=$(usex sdl2)
-		-DWHISPER_SUPPORT_OPENBLAS=$(usex blas)
+		-DWHISPER_SDL2=$(usex sdl2)
+		-DWHISPER_OPENBLAS=$(usex blas)
 	)
 	cmake_src_configure
 }

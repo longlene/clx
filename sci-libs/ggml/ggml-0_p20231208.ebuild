@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="239defe61dbe9dddc6304942e8a3d03d6a3c69ab"
+EGIT_COMMIT="95cdaf9d7c9be73ada13fc20cbbbecba0f23f1a3"
 
 DESCRIPTION="Tensor library for machine learning"
 HOMEPAGE="https://github.com/ggerganov/ggml"

@@ -70,7 +70,7 @@ DEPEND="
 	dev-libs/FXdiv
 	dev-libs/pocketfft
 	dev-libs/flatbuffers
-	sci-libs/kineto
+	>=sci-libs/kineto-0.4.0_p20231031
 	$(python_gen_cond_dep '
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 		dev-python/pybind11[${PYTHON_USEDEP}]
@@ -80,12 +80,13 @@ DEPEND="
 S="${WORKDIR}"/${MYP}
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-2.0.0-gentoo.patch
+	"${FILESDIR}"/${P}-gentoo.patch
 	"${FILESDIR}"/${PN}-1.13.0-install-dirs.patch
 	"${FILESDIR}"/${PN}-1.12.0-glog-0.6.0.patch
 	"${FILESDIR}"/${PN}-1.13.1-tensorpipe.patch
 	"${FILESDIR}"/${PN}-2.0.0-gcc13.patch
 	"${FILESDIR}"/${PN}-2.0.0-cudnn_include_fix.patch
+	"${FILESDIR}"/${P}-cudaExtra.patch
 )
 
 src_prepare() {
@@ -135,7 +136,6 @@ src_configure() {
 		-DUSE_CCACHE=OFF
 		-DUSE_CUDA=$(usex cuda)
 		-DUSE_CUDNN=$(usex cuda)
-		-DUSE_FAST_NVCC=$(usex cuda)
 		-DTORCH_CUDA_ARCH_LIST="${TORCH_CUDA_ARCH_LIST:-3.5 7.0}"
 		-DBUILD_NVFUSER=$(usex cuda)
 		-DUSE_DISTRIBUTED=$(usex distributed)
@@ -204,8 +204,6 @@ src_configure() {
 src_install() {
 	cmake_src_install
 
-	use cuda && dolib.so "${BUILD_DIR}"/lib/libnvfuser_codegen.so
-
 	insinto "/var/lib/${PN}"
 	doins "${BUILD_DIR}"/CMakeCache.txt
 
@@ -213,8 +211,12 @@ src_install() {
 	mkdir -p python/torch/include || die
 	mv "${ED}"/usr/lib/python*/site-packages/caffe2 python/ || die
 	#mv "${ED}"/usr/include/torch python/torch/include || die
+	mv "${ED}${S}"/nvfuser python/nvfuser || die
+	rm -r "${ED}${S}"/test || die
+	rm -r "${ED}${S}"/third_party || die
 	cp torch/version.py python/torch/ || die
-	rm -rf "${ED}"/var/tmp || die
 	python_domodule python/caffe2
 	python_domodule python/torch
+	python_domodule python/nvfuser
+	find "${ED}" -empty -delete
 }
