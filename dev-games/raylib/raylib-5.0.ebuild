@@ -12,18 +12,20 @@ SRC_URI="https://github.com/raysan5/raylib/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="static-libs"
+#IUSE="static-libs"
 
 DEPEND="
-	media-libs/glfw
 	virtual/opengl
 "
+#media-libs/glfw
 RDEPEND="${DEPEND}"
 
 src_configure() {
 	local mycmakeargs=(
 		-DBUILD_EXAMPLES=OFF
-		-DUSE_EXTERNAL_GLFW=ON
+		-DWITH_PIC=ON
+		-DBUILD_SHARED_LIBS=ON
 	)
+	#-DUSE_EXTERNAL_GLFW=ON
 	cmake_src_configure
 }

@@ -1,4 +1,4 @@
-# Copyright 2022-2023 Gentoo Authors
+#Copyright 2022-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -40,13 +40,14 @@ RDEPEND="
 	dev-libs/sleef
 	sci-libs/lapack
 	>=sci-libs/onnx-1.12.0
+	<sci-libs/onnx-1.15.0
 	sci-libs/foxi
 	cuda? (
 		=dev-libs/cudnn-8*
-		dev-libs/cudnn-frontend:0/8
-		<dev-util/nvidia-cuda-toolkit-12:=[profiler]
+		>=dev-libs/cudnn-frontend-0.9.2:0/8
+		dev-util/nvidia-cuda-toolkit:=[profiler]
 	)
-	fbgemm? ( dev-libs/FBGEMM )
+	fbgemm? ( >=dev-libs/FBGEMM-2023.11.02 )
 	ffmpeg? ( media-video/ffmpeg:= )
 	gloo? ( sci-libs/gloo[cuda?] )
 	mkl? ( sci-libs/mkl )
@@ -64,7 +65,7 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 	dev-cpp/eigen
-	cuda? ( dev-libs/cutlass )
+	cuda? ( >=dev-libs/cutlass-3.1.0 )
 	dev-libs/psimd
 	dev-libs/FP16
 	dev-libs/FXdiv
@@ -80,13 +81,13 @@ DEPEND="
 S="${WORKDIR}"/${MYP}
 
 PATCHES=(
-	"${FILESDIR}"/${P}-gentoo.patch
+	"${FILESDIR}"/${PN}-2.1.1-gentoo.patch
 	"${FILESDIR}"/${PN}-1.13.0-install-dirs.patch
 	"${FILESDIR}"/${PN}-1.12.0-glog-0.6.0.patch
 	"${FILESDIR}"/${PN}-1.13.1-tensorpipe.patch
 	"${FILESDIR}"/${PN}-2.0.0-gcc13.patch
 	"${FILESDIR}"/${PN}-2.0.0-cudnn_include_fix.patch
-	"${FILESDIR}"/${P}-cudaExtra.patch
+	"${FILESDIR}"/${PN}-2.1.1-cudaExtra.patch
 )
 
 src_prepare() {
@@ -211,12 +212,17 @@ src_install() {
 	mkdir -p python/torch/include || die
 	mv "${ED}"/usr/lib/python*/site-packages/caffe2 python/ || die
 	#mv "${ED}"/usr/include/torch python/torch/include || die
-	mv "${ED}${S}"/nvfuser python/nvfuser || die
-	rm -r "${ED}${S}"/test || die
-	rm -r "${ED}${S}"/third_party || die
+	if use cuda; then
+		mv "${ED}${S}"/nvfuser python/nvfuser || die
+		mv "${ED}"/usr/$(get_libdir)/nvfuser.so python/nvfuser/_C.so || die
+	fi
+	rm -rf "${ED}${S}"/test
+	rm -rf "${ED}${S}"/third_party
 	cp torch/version.py python/torch/ || die
 	python_domodule python/caffe2
 	python_domodule python/torch
-	python_domodule python/nvfuser
+	if use cuda; then
+		python_domodule python/nvfuser
+	fi
 	find "${ED}" -empty -delete
 }
