@@ -29,6 +29,6 @@ src_install() {
 	dobin drawterm
 	insinto /usr/share/pixmaps
 	newins 9ball.png drawterm.png
-	make_desktop_entry drawterm "Connect to Plan 9 CPU servers" drawterm
+	make_desktop_entry drawterm
 	dodoc README.md
 }
