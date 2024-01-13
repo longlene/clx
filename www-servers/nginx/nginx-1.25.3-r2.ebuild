@@ -11,6 +11,7 @@ EAPI=8
 #	* sane packaging
 #	* builds cleanly
 #	* does not need a patch for nginx core
+# - Update NGINX_TESTS_REV to the current available revision and run tests.
 # - TODO: test the google-perftools module (included in vanilla tarball)
 
 # prevent perl-module from adding automagic perl DEPENDs
@@ -59,7 +60,7 @@ HTTP_FANCYINDEX_MODULE_URI="https://github.com/aperezdc/ngx-fancyindex/archive/v
 HTTP_FANCYINDEX_MODULE_WD="${WORKDIR}/ngx-fancyindex-${HTTP_FANCYINDEX_MODULE_PV}"
 
 # http_lua (https://github.com/openresty/lua-nginx-module, BSD license)
-HTTP_LUA_MODULE_PV="0.10.25"
+HTTP_LUA_MODULE_PV="0.10.26"
 HTTP_LUA_MODULE_P="ngx_http_lua-${HTTP_LUA_MODULE_PV}"
 HTTP_LUA_MODULE_URI="https://github.com/openresty/lua-nginx-module/archive/v${HTTP_LUA_MODULE_PV}.tar.gz"
 HTTP_LUA_MODULE_WD="${WORKDIR}/lua-nginx-module-${HTTP_LUA_MODULE_PV}"
@@ -164,6 +165,9 @@ NJS_MODULE_P="njs-${NJS_MODULE_PV}"
 NJS_MODULE_URI="https://github.com/nginx/njs/archive/${NJS_MODULE_PV}.tar.gz"
 NJS_MODULE_WD="${WORKDIR}/njs-${NJS_MODULE_PV}"
 
+# nginx-tests (http://hg.nginx.org/nginx-tests, BSD-2)
+NGINX_TESTS_REV="24482e311749"
+
 # stream_lua (https://github.com/openresty/stream-lua-nginx-module, BSD license)
 STREAM_LUA_MODULE_PV="0.0.13"
 STREAM_LUA_MODULE_P="ngx_stream_lua-${STREAM_LUA_MODULE_PV}"
@@ -175,7 +179,7 @@ LUA_COMPAT=( luajit )
 SSL_DEPS_SKIP=1
 AUTOTOOLS_AUTO_DEPEND="no"
 
-inherit autotools lua-single ssl-cert toolchain-funcs perl-module systemd pax-utils
+inherit autotools lua-single multiprocessing ssl-cert toolchain-funcs perl-module systemd pax-utils
 
 DESCRIPTION="Robust, small and high performance http and reverse proxy server"
 HOMEPAGE="https://nginx.org"
@@ -337,7 +341,17 @@ RDEPEND="${CDEPEND}
 DEPEND="${CDEPEND}
 	arm? ( dev-libs/libatomic_ops )
 	libatomic? ( dev-libs/libatomic_ops )"
-BDEPEND="nginx_modules_http_brotli? ( virtual/pkgconfig )"
+BDEPEND="
+	nginx_modules_http_brotli? ( virtual/pkgconfig )
+	test? (
+		dev-lang/perl
+		dev-perl/Cache-Memcached
+		dev-perl/Cache-Memcached-Fast
+		dev-perl/CryptX
+		dev-perl/FCGI
+		dev-perl/GD
+		dev-perl/Net-SSLeay
+	)"
 PDEPEND="vim-syntax? ( app-vim/nginx-syntax )"
 
 REQUIRED_USE="pcre-jit? ( pcre )
@@ -537,11 +551,11 @@ src_configure() {
 		myconf+=( --add-module=${DEVEL_KIT_MODULE_WD} )
 	fi
 
-
 	if use nginx_modules_http_lua; then
 		http_enabled=1
 		export LUAJIT_LIB=$(dirname $(lua_get_shared_lib))
 		export LUAJIT_INC=$(lua_get_include_dir)
+		myconf+=( --add-module=${DEVEL_KIT_MODULE_WD} )
 		myconf+=( --add-module=${HTTP_LUA_MODULE_WD} )
 	fi
 
@@ -869,6 +883,19 @@ src_install() {
 		docinto ${STREAM_LUA_MODULE_P}
 		dodoc "${STREAM_LUA_MODULE_WD}"/README.md
 	fi
+}
+
+src_test() {
+	pushd "${WORKDIR}"/nginx-tests-"${NGINX_TESTS_REV}" > /dev/null || die
+
+	# FIXME: unsure why uwsgi fails to start
+	rm uwsgi*.t || die
+
+	local -x TEST_NGINX_BINARY="${S}/objs/nginx"
+	local -x TEST_NGINX_VERBOSE=1
+
+	prove -v -j $(makeopts_jobs) . || die
+	popd > /dev/null || die
 }
 
 pkg_postinst() {
