@@ -5,9 +5,11 @@ EAPI=8
 
 inherit autotools
 
+MY_PV=${PV//./-}
+
 DESCRIPTION="Asynchronous Network Library"
 HOMEPAGE="https://think-async.com https://github.com/chriskohlhoff/asio"
-SRC_URI="mirror://sourceforge/${PN}/${PN}/${P}.tar.bz2"
+SRC_URI="https://github.com/chriskohlhoff/asio/archive/refs/tags/asio-${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Boost-1.0"
 SLOT="0"
@@ -22,6 +24,8 @@ DEPEND="
 	)
 "
 BDEPEND="virtual/pkgconfig"
+
+S="${WORKDIR}"/asio-asio-${MY_PV}/asio
 
 src_prepare() {
 	default
