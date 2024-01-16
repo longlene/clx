@@ -1,7 +1,7 @@
 diff -pNura stream-lua-nginx-module.orig/src/ngx_stream_lua_module.c stream-lua-nginx-module/src/ngx_stream_lua_module.c
---- stream-lua-nginx-module.orig/src/ngx_stream_lua_module.c	2022-09-29 22:37:04.000000000 -0700
-+++ stream-lua-nginx-module/src/ngx_stream_lua_module.c	2022-10-04 09:08:28.219994590 -0700
-@@ -568,20 +568,6 @@ ngx_stream_lua_init(ngx_conf_t *cf)
+--- stream-lua-nginx-module.orig/src/ngx_stream_lua_module.c	2023-12-27 00:51:50.000000000 -0000
++++ stream-lua-nginx-module/src/ngx_stream_lua_module.c	2024-01-16 18:47:11.613333303 -0000
+@@ -594,27 +594,6 @@ ngx_stream_lua_init(ngx_conf_t *cf)
      if (lmcf->lua == NULL) {
          dd("initializing lua vm");
  
@@ -16,9 +16,16 @@ diff -pNura stream-lua-nginx-module.orig/src/ngx_stream_lua_module.c stream-lua-
 -                          "the OpenResty releases from https://openresty.org/"
 -                          "en/download.html)");
 -        }
+-#else
+-#   if !defined(HAVE_LUA_EXDATA2)
+-        ngx_log_error(NGX_LOG_ALERT, cf->log, 0,
+-                      "detected an old version of OpenResty's LuaJIT missing "
+-                      "the exdata2 API and thus the "
+-                      "performance will be compromised; please upgrade to the "
+-                      "latest version of OpenResty's LuaJIT: "
+-                      "https://github.com/openresty/luajit2");
+-#   endif
 -#endif
--
--
+ 
+ 
          rc = ngx_stream_lua_init_vm(&lmcf->lua, NULL, cf->cycle, cf->pool,
-                                     lmcf, cf->log, NULL);
-         if (rc != NGX_OK) {

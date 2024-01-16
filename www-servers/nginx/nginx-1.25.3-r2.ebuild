@@ -169,7 +169,7 @@ NJS_MODULE_WD="${WORKDIR}/njs-${NJS_MODULE_PV}"
 NGINX_TESTS_REV="24482e311749"
 
 # stream_lua (https://github.com/openresty/stream-lua-nginx-module, BSD license)
-STREAM_LUA_MODULE_PV="0.0.13"
+STREAM_LUA_MODULE_PV="0.0.14"
 STREAM_LUA_MODULE_P="ngx_stream_lua-${STREAM_LUA_MODULE_PV}"
 STREAM_LUA_MODULE_URI="https://github.com/openresty/stream-lua-nginx-module/archive/v${STREAM_LUA_MODULE_PV}.tar.gz"
 STREAM_LUA_MODULE_WD="${WORKDIR}/stream-lua-nginx-module-${STREAM_LUA_MODULE_PV}"
@@ -265,7 +265,7 @@ NGINX_MODULES_3RD="
 	stream_lua
 "
 
-IUSE="aio debug +http +http2 http3 +http-cache ktls libatomic pcre +pcre2 pcre-jit rtmp selinux ssl threads vim-syntax"
+IUSE="aio debug +http +http2 http3 +http-cache ktls libatomic pcre +pcre2 pcre-jit rtmp selinux ssl test threads vim-syntax"
 
 for mod in $NGINX_MODULES_STD; do
 	IUSE="${IUSE} +nginx_modules_http_${mod}"
