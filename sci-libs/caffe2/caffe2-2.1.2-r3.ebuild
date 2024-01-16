@@ -1,23 +1,25 @@
-#Copyright 2022-2023 Gentoo Authors
+# Copyright 2022-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{9..12} )
 inherit python-single-r1 cmake cuda flag-o-matic prefix
 
 MYPN=pytorch
 MYP=${MYPN}-${PV}
+IDEEP_VERSION="6f4d653802bd43bc4eda515460df9f90353dbebe"
 
 DESCRIPTION="A deep learning framework"
 HOMEPAGE="https://pytorch.org/"
-SRC_URI="https://github.com/pytorch/${MYPN}/archive/refs/tags/v${PV}.tar.gz
-	-> ${MYP}.tar.gz"
+SRC_URI="https://github.com/pytorch/${MYPN}/archive/refs/tags/v${PV}.tar.gz -> ${MYP}.tar.gz
+onednn? ( https://github.com/intel/ideep/archive/${IDEEP_VERSION}.tar.gz -> ideep-${IDEEP_VERSION}.tar.gz )
+"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="cuda distributed fbgemm ffmpeg gloo mkl mpi nnpack +numpy opencl opencv openmp qnnpack tensorpipe xnnpack"
+IUSE="cuda distributed fbgemm ffmpeg gloo mkl mpi nnpack +numpy onednn opencl opencv openmp qnnpack tensorpipe xnnpack"
 RESTRICT="test"
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
@@ -38,7 +40,7 @@ RDEPEND="
 	dev-libs/protobuf:=
 	dev-libs/pthreadpool
 	dev-libs/sleef
-	sci-libs/lapack
+	virtual/lapack
 	>=sci-libs/onnx-1.12.0
 	<sci-libs/onnx-1.15.0
 	sci-libs/foxi
@@ -50,21 +52,21 @@ RDEPEND="
 	fbgemm? ( >=dev-libs/FBGEMM-2023.11.02 )
 	ffmpeg? ( media-video/ffmpeg:= )
 	gloo? ( sci-libs/gloo[cuda?] )
-	mkl? ( sci-libs/mkl )
 	mpi? ( virtual/mpi )
 	nnpack? ( sci-libs/NNPACK )
 	numpy? ( $(python_gen_cond_dep '
 		dev-python/numpy[${PYTHON_USEDEP}]
 		') )
+	onednn? ( dev-libs/oneDNN )
 	opencl? ( virtual/opencl )
 	opencv? ( media-libs/opencv:= )
 	qnnpack? ( sci-libs/QNNPACK )
 	tensorpipe? ( sci-libs/tensorpipe[cuda?] )
 	xnnpack? ( >=sci-libs/XNNPACK-2022.12.22 )
+	mkl? ( sci-libs/mkl )
 "
 DEPEND="
 	${RDEPEND}
-	dev-cpp/eigen
 	cuda? ( >=dev-libs/cutlass-3.1.0 )
 	dev-libs/psimd
 	dev-libs/FP16
@@ -88,6 +90,8 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-2.0.0-gcc13.patch
 	"${FILESDIR}"/${PN}-2.0.0-cudnn_include_fix.patch
 	"${FILESDIR}"/${PN}-2.1.1-cudaExtra.patch
+	"${FILESDIR}"/${PN}-2.1.2-fix-rpath.patch
+	"${FILESDIR}"/${PN}-2.1.2-fix-openmp-link.patch
 )
 
 src_prepare() {
@@ -150,12 +154,11 @@ src_configure() {
 		-DUSE_KINETO=OFF # TODO
 		-DUSE_LEVELDB=OFF
 		-DUSE_MAGMA=OFF # TODO: In GURU as sci-libs/magma
-		-DUSE_MKLDNN=OFF
+		-DUSE_MKLDNN=$(usex onednn)
 		-DUSE_NCCL=OFF # TODO: NVIDIA Collective Communication Library
 		-DUSE_NNPACK=$(usex nnpack)
 		-DUSE_QNNPACK=$(usex qnnpack)
 		-DUSE_XNNPACK=$(usex xnnpack)
-		-DUSE_SYSTEM_XNNPACK=$(usex xnnpack)
 		-DUSE_TENSORPIPE=$(usex tensorpipe)
 		-DUSE_PYTORCH_QNNPACK=OFF
 		-DUSE_NUMPY=$(usex numpy)
@@ -163,26 +166,24 @@ src_configure() {
 		-DUSE_OPENCV=$(usex opencv)
 		-DUSE_OPENMP=$(usex openmp)
 		-DUSE_ROCM=OFF # TODO
-		-DUSE_SYSTEM_CPUINFO=ON
-		-DUSE_SYSTEM_PYBIND11=ON
 		-DUSE_UCC=OFF
 		-DUSE_VALGRIND=OFF
 		-DPYBIND11_PYTHON_VERSION="${EPYTHON#python}"
 		-DPYTHON_EXECUTABLE="${PYTHON}"
 		-DUSE_ITT=OFF
-		-DBLAS=Eigen # avoid the use of MKL, if found on the system
-		-DUSE_SYSTEM_EIGEN_INSTALL=ON
-		-DUSE_SYSTEM_PTHREADPOOL=ON
-		-DUSE_SYSTEM_FXDIV=ON
-		-DUSE_SYSTEM_FP16=ON
-		-DUSE_SYSTEM_GLOO=ON
-		-DUSE_SYSTEM_ONNX=ON
-		-DUSE_SYSTEM_SLEEF=ON
+		-DUSE_SYSTEM_LIBS=ON
+		-DUSE_METAL=OFF
 
 		-Wno-dev
 		-DTORCH_INSTALL_LIB_DIR="${EPREFIX}"/usr/$(get_libdir)
 		-DLIBSHM_INSTALL_LIB_SUBDIR="${EPREFIX}"/usr/$(get_libdir)
 	)
+
+	if use mkl; then
+		mycmakeargs+=(-DBLAS=MKL)
+	else
+		mycmakeargs+=(-DBLAS=Generic -DBLAS_LIBRARIES=)
+	fi
 
 	if use cuda; then
 		addpredict "/dev/nvidiactl" # bug 867706
@@ -192,13 +193,16 @@ src_configure() {
 			-DCMAKE_CUDA_FLAGS="$(cuda_gccdir -f | tr -d \")"
 		)
 	fi
-	if use mkl; then
+
+	if use onednn; then
 		mycmakeargs+=(
-			-DBLAS="MKL"
-			-DINTEL_MKL_DIR="/opt/intel/oneapi/mkl/latest"
-			-DINTEL_OMP_DIR="/opt/intel/oneapi/mkl/latest"
+			-DUSE_MKLDNN=ON
+			-DMKLDNN_FOUND=ON
+			-DMKLDNN_LIBRARIES=dnnl
+			-DMKLDNN_INCLUDE_DIR="${ESYSROOT}/usr/include/oneapi/dnnl;${WORKDIR}/ideep-${IDEEP_VERSION}/include"
 		)
 	fi
+
 	cmake_src_configure
 }
 
