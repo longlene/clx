@@ -20,6 +20,8 @@ BDEPEND=""
 src_configure() {
 	local mycmakeargs=(
 		-DLIB_INSTALL_DIR=$(get_libdir)
+		-DLV_CONF_BUILD_DISABLE_THORVG_INTERNAL=ON
+		-DLV_CONF_BUILD_DISABLE_DEMOS=ON
 	)
 	cmake_src_configure
 }
