@@ -17,15 +17,10 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
-	dev-python/networkx[${PYTHON_USEDEP}]
-	dev-python/pyopencl[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
+	dev-python/gpuctypes[${PYTHON_USEDEP}]
 "
 BDEPEND="
-	test? ( dev-python/pytest )
 "
 
-distutils_enable_tests pytest
+RESTRICT="test"

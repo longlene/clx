@@ -1,0 +1,266 @@
+# Copyright 2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	addr2line@0.21.0
+	adler@1.0.2
+	aho-corasick@0.7.20
+	aho-corasick@1.0.5
+	anyhow@1.0.75
+	async-trait@0.1.73
+	auto_impl@1.1.0
+	autocfg@1.1.0
+	axum@0.6.20
+	axum-core@0.3.4
+	backtrace@0.3.69
+	base64@0.13.1
+	base64@0.21.3
+	bitflags@1.3.2
+	bumpalo@3.13.0
+	byteorder@1.4.3
+	bytes@1.4.0
+	cc@1.0.83
+	cfg-if@1.0.0
+	crc32fast@1.3.2
+	crossbeam-channel@0.5.8
+	crossbeam-deque@0.8.3
+	crossbeam-epoch@0.9.15
+	crossbeam-utils@0.8.16
+	darling@0.14.4
+	darling_core@0.14.4
+	darling_macro@0.14.4
+	dashmap@5.5.3
+	deranged@0.3.8
+	derive_builder@0.12.0
+	derive_builder_core@0.12.0
+	derive_builder_macro@0.12.0
+	either@1.9.0
+	encoding_rs@0.8.33
+	esaxx-rs@0.1.8
+	flate2@1.0.27
+	fnv@1.0.7
+	form_urlencoded@1.2.0
+	futures@0.3.28
+	futures-channel@0.3.28
+	futures-core@0.3.28
+	futures-io@0.3.28
+	futures-macro@0.3.28
+	futures-sink@0.3.28
+	futures-task@0.3.28
+	futures-util@0.3.28
+	getrandom@0.2.10
+	gimli@0.28.0
+	h2@0.3.21
+	hashbrown@0.12.3
+	hashbrown@0.14.0
+	hermit-abi@0.3.2
+	home@0.5.5
+	http@0.2.9
+	http-body@0.4.5
+	httparse@1.8.0
+	httpdate@1.0.3
+	hyper@0.14.27
+	hyper-rustls@0.24.1
+	ident_case@1.0.1
+	idna@0.4.0
+	indexmap@1.9.3
+	ipnet@2.8.0
+	itertools@0.8.2
+	itertools@0.9.0
+	itoa@1.0.9
+	js-sys@0.3.64
+	lazy_static@1.4.0
+	libc@0.2.147
+	lock_api@0.4.10
+	log@0.4.20
+	lsp-types@0.94.1
+	macro_rules_attribute@0.1.3
+	macro_rules_attribute-proc_macro@0.1.3
+	matchers@0.1.0
+	matchit@0.7.2
+	memchr@2.6.3
+	memoffset@0.9.0
+	mime@0.3.17
+	minimal-lexical@0.2.1
+	miniz_oxide@0.7.1
+	mio@0.8.8
+	monostate@0.1.9
+	monostate-impl@0.1.9
+	nom@7.1.3
+	nu-ansi-term@0.46.0
+	num_cpus@1.16.0
+	object@0.32.1
+	once_cell@1.18.0
+	onig@6.4.0
+	onig_sys@69.8.1
+	overload@0.1.1
+	parking_lot@0.12.1
+	parking_lot_core@0.9.8
+	paste@1.0.14
+	percent-encoding@2.3.0
+	pin-project@1.1.3
+	pin-project-internal@1.1.3
+	pin-project-lite@0.2.13
+	pin-utils@0.1.0
+	pkg-config@0.3.27
+	ppv-lite86@0.2.17
+	proc-macro-error@1.0.4
+	proc-macro-error-attr@1.0.4
+	proc-macro2@1.0.66
+	quote@1.0.33
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	rayon@1.7.0
+	rayon-cond@0.1.0
+	rayon-core@1.11.0
+	redox_syscall@0.3.5
+	regex@1.9.5
+	regex-automata@0.1.10
+	regex-automata@0.3.8
+	regex-syntax@0.6.29
+	regex-syntax@0.7.5
+	reqwest@0.11.20
+	ring@0.16.20
+	ropey@1.6.0
+	rustc-demangle@0.1.23
+	rustls@0.21.7
+	rustls-pemfile@1.0.3
+	rustls-webpki@0.101.4
+	rustversion@1.0.14
+	ryu@1.0.15
+	scopeguard@1.2.0
+	sct@0.7.0
+	serde@1.0.188
+	serde_derive@1.0.188
+	serde_json@1.0.105
+	serde_path_to_error@0.1.14
+	serde_repr@0.1.16
+	serde_urlencoded@0.7.1
+	sharded-slab@0.1.4
+	signal-hook-registry@1.4.1
+	slab@0.4.9
+	smallvec@1.11.0
+	socket2@0.4.9
+	socket2@0.5.3
+	spin@0.5.2
+	spm_precompiled@0.1.4
+	str_indices@0.4.1
+	strsim@0.10.0
+	syn@1.0.109
+	syn@2.0.31
+	sync_wrapper@0.1.2
+	thiserror@1.0.48
+	thiserror-impl@1.0.48
+	thread_local@1.1.7
+	time@0.3.28
+	time-core@0.1.1
+	time-macros@0.2.14
+	tinyvec@1.6.0
+	tinyvec_macros@0.1.1
+	tokenizers@0.13.4
+	tokio@1.32.0
+	tokio-macros@2.1.0
+	tokio-rustls@0.24.1
+	tokio-util@0.7.8
+	tower@0.4.13
+	tower-layer@0.3.2
+	tower-lsp@0.20.0
+	tower-lsp-macros@0.9.0
+	tower-service@0.3.2
+	tracing@0.1.37
+	tracing-appender@0.2.2
+	tracing-attributes@0.1.26
+	tracing-core@0.1.31
+	tracing-log@0.1.3
+	tracing-serde@0.1.3
+	tracing-subscriber@0.3.17
+	tree-sitter@0.20.10
+	tree-sitter-bash@0.20.3
+	tree-sitter-c@0.20.6
+	tree-sitter-c-sharp@0.20.0
+	tree-sitter-cpp@0.20.3
+	tree-sitter-elixir@0.1.0
+	tree-sitter-erlang@0.2.0
+	tree-sitter-go@0.20.0
+	tree-sitter-html@0.19.0
+	tree-sitter-java@0.20.2
+	tree-sitter-javascript@0.20.1
+	tree-sitter-json@0.20.1
+	tree-sitter-lua@0.0.19
+	tree-sitter-md@0.1.5
+	tree-sitter-objc@3.0.0
+	tree-sitter-python@0.20.4
+	tree-sitter-r@0.19.5
+	tree-sitter-ruby@0.20.0
+	tree-sitter-rust@0.20.4
+	tree-sitter-scala@0.20.2
+	tree-sitter-swift@0.3.6
+	tree-sitter-typescript@0.20.3
+	try-lock@0.2.4
+	unicode-bidi@0.3.13
+	unicode-ident@1.0.11
+	unicode-normalization@0.1.22
+	unicode-normalization-alignments@0.1.12
+	unicode-segmentation@1.10.1
+	unicode_categories@0.1.1
+	untrusted@0.7.1
+	url@2.4.1
+	uuid@1.4.1
+	valuable@0.1.0
+	version_check@0.9.4
+	want@0.3.1
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasm-bindgen@0.2.87
+	wasm-bindgen-backend@0.2.87
+	wasm-bindgen-futures@0.4.37
+	wasm-bindgen-macro@0.2.87
+	wasm-bindgen-macro-support@0.2.87
+	wasm-bindgen-shared@0.2.87
+	web-sys@0.3.64
+	webpki-roots@0.25.2
+	winapi@0.3.9
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	windows-sys@0.48.0
+	windows-targets@0.48.5
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_msvc@0.48.5
+	windows_i686_gnu@0.48.5
+	windows_i686_msvc@0.48.5
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_msvc@0.48.5
+	winreg@0.50.0
+	write-json@0.1.2
+	xflags@0.3.1
+	xflags-macros@0.3.1
+	xshell@0.2.5
+	xshell-macros@0.2.5
+	xtask@0.1.0
+	zip@0.6.6
+"
+
+inherit cargo
+
+DESCRIPTION="LSP server leveraging LLMs for code completion"
+HOMEPAGE="https://github.com/huggingface/llm-ls"
+SRC_URI="
+	https://github.com/huggingface/llm-ls/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+	$(cargo_crate_uris ${CRATES})
+"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+BDEPEND=""
+
+src_install() {
+	cargo_src_install --path ./crates/llm-ls
+	einstalldocs
+}

@@ -1,9 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="High-Performance Erlang Network Client Framework"
 HOMEPAGE="https://github.com/lpgauth/shackle"

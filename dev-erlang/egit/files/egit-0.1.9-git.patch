@@ -1,0 +1,13 @@
+diff -pNura egit-0.1.9.orig/c_src/Makefile egit-0.1.9/c_src/Makefile
+--- egit-0.1.9.orig/c_src/Makefile	2023-06-30 18:05:06.000000000 -0700
++++ egit-0.1.9/c_src/Makefile	2024-01-27 01:30:22.383129031 -0800
+@@ -74,9 +74,4 @@ $(SO_OUTPUT): $(OBJECTS)
+ 	$(CXX) $(OBJECTS) $(LDFLAGS) -o $(SO_OUTPUT)
+ 
+ %.o: %.cpp $(wildcard *.hpp)
+-	@if [ -z $(findstring $(HAVE_FORMAT),1) ]; then \
+-	  echo "==> Updating fmt submodule"; \
+-		[ -z "$(shell git config --global safe.directory)" ] && git config --global --add safe.directory '*' || true; \
+-		git submodule update --init --recursive; \
+-	fi
+ 	$(COMPILE_CPP) $(OUTPUT_OPTION) $<
