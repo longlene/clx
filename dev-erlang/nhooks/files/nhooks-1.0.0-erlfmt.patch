@@ -1,0 +1,15 @@
+diff -pNura nhooks-1.0.0.orig/rebar.config nhooks-1.0.0/rebar.config
+--- nhooks-1.0.0.orig/rebar.config	2022-04-07 03:23:15.000000000 -0700
++++ nhooks-1.0.0/rebar.config	2024-01-27 02:12:03.083644798 -0800
+@@ -4,11 +4,6 @@
+     {i, "include"}
+ ]}.
+ 
+-{plugins, [
+-    {erlfmt, {git, "git@github.com:nomasystems/erlfmt.git", {tag, "v1.0.0"}}}
+-]}.
+-{erlfmt, [write]}.
+-
+ {alias, [
+     {check, [
+         {fmt, "--check"},

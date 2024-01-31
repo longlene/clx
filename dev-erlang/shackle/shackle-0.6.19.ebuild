@@ -15,9 +15,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	>=dev-erlang/fail-0.1.1
+	>=dev-erlang/fail-0.1.3
 	>=dev-erlang/granderl-0.1.5
 	>=dev-erlang/metal-0.1.1
+	>=dev-erlang/telemetry-1.2.1
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
