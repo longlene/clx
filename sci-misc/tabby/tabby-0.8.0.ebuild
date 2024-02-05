@@ -6,7 +6,7 @@ EAPI=8
 CRATES="
 	addr2line@0.19.0
 	adler@1.0.2
-	ahash@0.8.3
+	ahash@0.8.7
 	aho-corasick@1.1.2
 	allocator-api2@0.2.16
 	android-tzdata@0.1.1
@@ -30,11 +30,10 @@ CRATES="
 	axum@0.6.20
 	axum-core@0.3.4
 	axum-prometheus@0.4.0
-	axum-streams@0.9.1
 	axum-tracing-opentelemetry@0.10.0
 	backtrace@0.3.67
 	base64@0.13.1
-	base64@0.21.2
+	base64@0.21.5
 	base64ct@1.6.0
 	bincode@1.3.3
 	bitflags@1.3.2
@@ -46,13 +45,13 @@ CRATES="
 	bstr@1.7.0
 	bumpalo@3.13.0
 	byteorder@1.4.3
-	bytes@1.4.0
-	cargo-husky@1.5.0
+	bytes@1.5.0
 	cargo-lock@9.0.0
 	cc@1.0.83
 	census@0.4.1
 	cfg-if@1.0.0
 	chrono@0.4.31
+	chumsky@0.9.3
 	clap@4.4.11
 	clap_builder@4.4.11
 	clap_derive@4.4.7
@@ -98,6 +97,8 @@ CRATES="
 	dotenvy@0.15.7
 	downcast-rs@1.2.0
 	either@1.8.1
+	email-encoding@0.2.0
+	email_address@0.2.4
 	encode_unicode@0.3.6
 	encoding_rs@0.8.32
 	equivalent@1.0.1
@@ -108,6 +109,7 @@ CRATES="
 	fallible-streaming-iterator@0.1.9
 	fastdivide@0.4.0
 	fastrand@1.9.0
+	fastrand@2.0.1
 	file-rotate@0.7.5
 	filenamify@0.1.0
 	fixedbitset@0.4.2
@@ -115,7 +117,7 @@ CRATES="
 	fnv@1.0.7
 	foreign-types@0.3.2
 	foreign-types-shared@0.1.1
-	form_urlencoded@1.1.0
+	form_urlencoded@1.2.1
 	fs4@0.6.6
 	futures@0.3.28
 	futures-channel@0.3.29
@@ -139,7 +141,7 @@ CRATES="
 	h2@0.3.19
 	hashbrown@0.12.3
 	hashbrown@0.13.1
-	hashbrown@0.14.0
+	hashbrown@0.14.3
 	hashlink@0.8.4
 	headers@0.3.8
 	headers-core@0.2.0
@@ -148,6 +150,7 @@ CRATES="
 	hermit-abi@0.3.1
 	hex@0.4.3
 	home@0.5.5
+	hostname@0.3.1
 	htmlescape@0.3.1
 	http@0.2.11
 	http-body@0.4.5
@@ -161,13 +164,16 @@ CRATES="
 	iana-time-zone@0.1.57
 	iana-time-zone-haiku@0.1.2
 	ident_case@1.0.1
-	idna@0.3.0
 	idna@0.4.0
+	idna@0.5.0
 	if_chain@1.0.2
 	ignore@0.4.20
+	include_dir@0.7.3
+	include_dir_macros@0.7.3
 	indexmap@1.9.3
 	indexmap@2.0.1
 	indicatif@0.17.7
+	insta@1.34.0
 	instant@0.1.12
 	io-lifetimes@1.0.11
 	ipnet@2.7.2
@@ -184,6 +190,7 @@ CRATES="
 	juniper_subscriptions@0.16.0
 	kdam@0.5.0
 	lazy_static@1.4.0
+	lettre@0.11.3
 	levenshtein_automata@0.2.1
 	libc@0.2.149
 	libloading@0.7.4
@@ -198,6 +205,7 @@ CRATES="
 	lru@0.11.1
 	lz4_flex@0.11.1
 	mach2@0.4.1
+	match_cfg@0.1.0
 	matchers@0.0.1
 	matchers@0.1.0
 	matchit@0.7.0
@@ -240,6 +248,7 @@ CRATES="
 	openssl@0.10.61
 	openssl-macros@0.1.1
 	openssl-probe@0.1.5
+	openssl-src@300.2.1+3.2.0
 	openssl-sys@0.9.97
 	opentelemetry@0.18.0
 	opentelemetry-otlp@0.11.0
@@ -253,7 +262,7 @@ CRATES="
 	password-hash@0.5.0
 	paste@1.0.12
 	pem@3.0.2
-	percent-encoding@2.2.0
+	percent-encoding@2.3.1
 	pest@2.7.5
 	pest_derive@2.7.5
 	pest_generator@2.7.5
@@ -274,8 +283,10 @@ CRATES="
 	prost-build@0.11.9
 	prost-derive@0.11.9
 	prost-types@0.11.9
+	psm@0.1.21
 	quanta@0.11.1
 	quote@1.0.32
+	quoted_printable@0.5.0
 	rand@0.7.3
 	rand@0.8.5
 	rand_chacha@0.2.2
@@ -333,13 +344,16 @@ CRATES="
 	serde_urlencoded@0.7.1
 	serdeconv@0.4.1
 	serial_test@2.0.0
+	serial_test@3.0.0
 	serial_test_derive@2.0.0
+	serial_test_derive@3.0.0
 	sha1@0.10.6
 	sha2@0.10.8
 	sha256@1.4.0
 	sharded-slab@0.1.4
 	shellexpand@2.1.2
 	signal-hook-registry@1.4.1
+	similar@2.3.0
 	simple_asn1@0.6.2
 	sketches-ddsketch@0.2.1
 	slab@0.4.8
@@ -349,6 +363,7 @@ CRATES="
 	socket2@0.5.5
 	spin@0.9.8
 	stable_deref_trait@1.2.0
+	stacker@0.1.15
 	static_assertions@1.1.0
 	strfmt@0.2.4
 	strsim@0.9.3
@@ -357,7 +372,7 @@ CRATES="
 	strum_macros@0.24.3
 	subtle@2.5.0
 	syn@1.0.109
-	syn@2.0.28
+	syn@2.0.32
 	sync_wrapper@0.1.2
 	sysinfo@0.29.8
 	system-configuration@0.5.1
@@ -440,7 +455,7 @@ CRATES="
 	unicode-width@0.1.10
 	unreachable@1.0.0
 	untrusted@0.9.0
-	url@2.3.1
+	url@2.5.0
 	url-parse@1.0.7
 	utf-8@0.7.6
 	utf8-ranges@1.0.5
@@ -499,11 +514,19 @@ CRATES="
 	winnow@0.4.6
 	winreg@0.50.0
 	wrapcenum-derive@0.4.0
+	yaml-rust@0.4.5
+	zerocopy@0.7.32
+	zerocopy-derive@0.7.32
 	zip@0.6.6
 	zstd@0.12.4
 	zstd-safe@6.0.6
 	zstd-sys@2.0.8+zstd.1.5.5
 "
+
+declare -A GIT_CRATES=(
+	[tree-sitter-c]="https://github.com/tree-sitter/tree-sitter-c;212a80f86452bb1316324fa0db730cf52f29e05a"
+	[tree-sitter-cpp]="https://github.com/tree-sitter/tree-sitter-cpp;a71474021410973b29bfe99440d57bcd750246b1"
+)
 
 inherit cargo
 

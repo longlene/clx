@@ -1,11 +1,11 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="95cdaf9d7c9be73ada13fc20cbbbecba0f23f1a3"
+EGIT_COMMIT="6b14d738d9100c50c199a3b1aaa960f633904476"
 
 DESCRIPTION="Tensor library for machine learning"
 HOMEPAGE="https://github.com/ggerganov/ggml"
