@@ -1,0 +1,211 @@
+# Copyright 2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	addr2line@0.21.0
+	adler@1.0.2
+	aho-corasick@1.1.2
+	anyhow@1.0.77
+	async-recursion@1.0.5
+	async-trait@0.1.75
+	autocfg@1.1.0
+	backtrace@0.3.69
+	base64@0.21.5
+	bitflags@1.3.2
+	bitflags@2.4.1
+	blake2@0.10.6
+	block-buffer@0.10.4
+	bytes@1.5.0
+	cc@1.0.83
+	cfg-if@1.0.0
+	chrono@0.4.31
+	cpufeatures@0.2.11
+	crypto-common@0.1.6
+	data-encoding@2.5.0
+	die@0.2.0
+	digest@0.10.7
+	dirs@5.0.1
+	dirs-sys@0.4.1
+	enum-as-inner@0.5.1
+	env_logger@0.10.1
+	equivalent@1.0.1
+	errno@0.3.8
+	finl_unicode@1.2.0
+	form_urlencoded@1.2.1
+	futures@0.3.30
+	futures-channel@0.3.30
+	futures-core@0.3.30
+	futures-executor@0.3.30
+	futures-io@0.3.30
+	futures-macro@0.3.30
+	futures-sink@0.3.30
+	futures-task@0.3.30
+	futures-util@0.3.30
+	generic-array@0.14.7
+	getrandom@0.2.11
+	gimli@0.28.1
+	hashbrown@0.14.3
+	heck@0.4.1
+	hermit-abi@0.3.3
+	hmac@0.12.1
+	hostname@0.3.1
+	humantime@2.1.0
+	idna@0.2.3
+	idna@0.4.0
+	idna@0.5.0
+	indexmap@2.1.0
+	ipconfig@0.3.2
+	ipnet@2.9.0
+	is-terminal@0.4.10
+	jid@0.10.0
+	keccak@0.1.4
+	lazy_static@1.4.0
+	libc@0.2.151
+	libredox@0.0.1
+	linked-hash-map@0.5.6
+	linux-raw-sys@0.4.12
+	lock_api@0.4.11
+	log@0.4.20
+	lru-cache@0.1.2
+	match_cfg@0.1.0
+	matches@0.1.10
+	memchr@2.7.1
+	minidom@0.15.2
+	miniz_oxide@0.7.1
+	mio@0.8.10
+	num-traits@0.2.17
+	num_cpus@1.16.0
+	object@0.32.2
+	once_cell@1.19.0
+	option-ext@0.2.0
+	parking_lot@0.12.1
+	parking_lot_core@0.9.9
+	pbkdf2@0.12.2
+	percent-encoding@2.3.1
+	pin-project-lite@0.2.13
+	pin-utils@0.1.0
+	ppv-lite86@0.2.17
+	proc-macro2@1.0.71
+	quick-error@1.2.3
+	quote@1.0.33
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	redox_syscall@0.4.1
+	redox_users@0.4.4
+	regex@1.10.2
+	regex-automata@0.4.3
+	regex-syntax@0.8.2
+	resolv-conf@0.7.0
+	ring@0.17.7
+	rustc-demangle@0.1.23
+	rustc_version@0.4.0
+	rustix@0.38.28
+	rustls@0.21.10
+	rustls-webpki@0.101.7
+	rxml@0.9.1
+	rxml_validation@0.9.1
+	sasl@0.5.1
+	scopeguard@1.2.0
+	sct@0.7.1
+	semver@1.0.20
+	serde@1.0.193
+	serde_derive@1.0.193
+	serde_spanned@0.6.5
+	sha-1@0.10.1
+	sha1@0.10.6
+	sha2@0.10.8
+	sha3@0.10.8
+	slab@0.4.9
+	smallvec@1.11.2
+	smartstring@1.0.1
+	socket2@0.5.5
+	spin@0.9.8
+	static_assertions@1.1.0
+	stringprep@0.1.4
+	subtle@2.5.0
+	syn@1.0.109
+	syn@2.0.43
+	termcolor@1.4.0
+	thiserror@1.0.52
+	thiserror-impl@1.0.52
+	tinyvec@1.6.0
+	tinyvec_macros@0.1.1
+	tokio@1.35.1
+	tokio-macros@2.2.0
+	tokio-rustls@0.24.1
+	tokio-stream@0.1.14
+	tokio-util@0.7.10
+	tokio-xmpp@3.5.0
+	toml@0.8.8
+	toml_datetime@0.6.5
+	toml_edit@0.21.0
+	tracing@0.1.40
+	tracing-attributes@0.1.27
+	tracing-core@0.1.32
+	trust-dns-proto@0.22.0
+	trust-dns-resolver@0.22.0
+	typenum@1.17.0
+	unicode-bidi@0.3.14
+	unicode-ident@1.0.12
+	unicode-normalization@0.1.22
+	untrusted@0.9.0
+	url@2.5.0
+	version_check@0.9.4
+	wasi@0.11.0+wasi-snapshot-preview1
+	webpki-roots@0.25.3
+	widestring@1.0.2
+	winapi@0.3.9
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.6
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	windows-sys@0.48.0
+	windows-sys@0.52.0
+	windows-targets@0.48.5
+	windows-targets@0.52.0
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_gnullvm@0.52.0
+	windows_aarch64_msvc@0.48.5
+	windows_aarch64_msvc@0.52.0
+	windows_i686_gnu@0.48.5
+	windows_i686_gnu@0.52.0
+	windows_i686_msvc@0.48.5
+	windows_i686_msvc@0.52.0
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnu@0.52.0
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_gnullvm@0.52.0
+	windows_x86_64_msvc@0.48.5
+	windows_x86_64_msvc@0.52.0
+	winnow@0.5.31
+	winreg@0.50.0
+	xmpp-parsers@0.20.0
+"
+
+inherit cargo
+
+EGIT_COMMIT="4a56a0ebee3601da32cfebca462064c6bd5086c7"
+
+DESCRIPTION="XMPP client that keeps it simple, stupid"
+HOMEPAGE="https://github.com/moparisthebest/kiss-xmpp"
+SRC_URI="
+	https://github.com/moparisthebest/kiss-xmpp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
+	$(cargo_crate_uris ${CRATES})
+"
+
+LICENSE="AGPL-3.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+BDEPEND=""
+
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
+
+src_install() {
+	cargo_src_install
+	einstalldocs
+}

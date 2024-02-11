@@ -1,9 +1,9 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A simple, standardized interface library to Erlang HTTP Servers"
 HOMEPAGE="https://github.com/nitrogen/simple_bridge"
