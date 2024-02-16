@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -213,17 +213,17 @@ SRC_URI="https://nginx.org/download/${P}.tar.gz
 	nginx_modules_stream_geoip2? ( ${GEOIP2_MODULE_URI} -> ${GEOIP2_MODULE_P}.tar.gz )
 	nginx_modules_stream_javascript? ( ${NJS_MODULE_URI} -> ${NJS_MODULE_P}.tar.gz )
 	nginx_modules_stream_lua? ( ${STREAM_LUA_MODULE_URI} -> ${STREAM_LUA_MODULE_P}.tar.gz )
-	rtmp? ( ${RTMP_MODULE_URI} -> ${RTMP_MODULE_P}.tar.gz )"
+	rtmp? ( ${RTMP_MODULE_URI} -> ${RTMP_MODULE_P}.tar.gz )
+	test? ( https://hg.nginx.org/nginx-tests/archive/${NGINX_TESTS_REV}.tar.gz -> nginx-tests-${NGINX_TESTS_REV}.tar.gz )"
 
 LICENSE="BSD-2 BSD SSLeay MIT GPL-2 GPL-2+
 	nginx_modules_http_security? ( Apache-2.0 )
 	nginx_modules_http_push_stream? ( GPL-3 )"
 
 SLOT="mainline"
-KEYWORDS="~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~ppc64 ~riscv ~x86 ~amd64-linux ~x86-linux"
 
-# Package doesn't provide a real test suite
-RESTRICT="test"
+RESTRICT="!test? ( test )"
 
 NGINX_MODULES_STD="access auth_basic autoindex browser charset empty_gif
 	fastcgi geo grpc gzip limit_req limit_conn map memcached mirror
@@ -352,6 +352,13 @@ BDEPEND="
 		dev-perl/GD
 		dev-perl/Net-SSLeay
 	)"
+# Unpackaged perl modules which would be used by tests
+# Protocol::WebSocket
+# SCGI
+
+# Uwsgi doesn't start in tests
+# www-servers/uwsgi
+
 PDEPEND="vim-syntax? ( app-vim/nginx-syntax )"
 
 REQUIRED_USE="pcre-jit? ( pcre )

@@ -1,7 +1,7 @@
 diff -pNura stream-lua-nginx-module.orig/src/ngx_stream_lua_module.c stream-lua-nginx-module/src/ngx_stream_lua_module.c
 --- stream-lua-nginx-module.orig/src/ngx_stream_lua_module.c	2023-12-27 00:51:50.000000000 -0000
-+++ stream-lua-nginx-module/src/ngx_stream_lua_module.c	2024-01-16 18:47:11.613333303 -0000
-@@ -594,27 +594,6 @@ ngx_stream_lua_init(ngx_conf_t *cf)
++++ stream-lua-nginx-module/src/ngx_stream_lua_module.c	2024-02-16 08:06:10.213332057 -0000
+@@ -594,29 +594,6 @@ ngx_stream_lua_init(ngx_conf_t *cf)
      if (lmcf->lua == NULL) {
          dd("initializing lua vm");
  
@@ -26,6 +26,8 @@ diff -pNura stream-lua-nginx-module.orig/src/ngx_stream_lua_module.c stream-lua-
 -                      "https://github.com/openresty/luajit2");
 -#   endif
 -#endif
- 
- 
+-
+-
          rc = ngx_stream_lua_init_vm(&lmcf->lua, NULL, cf->cycle, cf->pool,
+                                     lmcf, cf->log, NULL);
+         if (rc != NGX_OK) {
