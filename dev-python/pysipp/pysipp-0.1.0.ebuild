@@ -9,9 +9,7 @@ PYTHON_COMPAT=( python3_1{1..2} )
 inherit distutils-r1
 
 DESCRIPTION="A SIPp scenario launcher"
-HOMEPAGE="
-	https://pypi.org/project/pysipp/
-"
+HOMEPAGE="https://github.com/SIPp/pysipp"
 SRC_URI="https://github.com/SIPp/pysipp/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"

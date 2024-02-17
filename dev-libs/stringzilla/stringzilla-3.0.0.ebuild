@@ -1,9 +1,9 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit vcs-snapshot
+inherit cmake vcs-snapshot
 
 DESCRIPTION="StringZilla"
 HOMEPAGE="https://github.com/ashvardanian/StringZilla"
@@ -17,8 +17,13 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-src_install() {
-	insinto /usr/include
-	doins stringzilla/stringzilla.h
-	einstalldocs
+src_configure() {
+	local mycmakeargs=(
+		-DSTRINGZILLA_INSTALL=ON
+		-DSTRINGZILLA_BUILD_TEST=OFF
+		-DSTRINGZILLA_BUILD_BENCHMARK=OFF
+		-DSTRINGZILLA_INCLUDE_INSTALL_DIR=/usr/include
+	)
+	#-DSTRINGZILLA_BUILD_SHARED=ON
+	cmake_src_configure
 }

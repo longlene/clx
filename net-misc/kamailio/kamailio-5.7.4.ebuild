@@ -3,9 +3,9 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_1{1..2} )
 
-inherit flag-o-matic python-single-r1 toolchain-funcs multilib user systemd vcs-snapshot
+inherit flag-o-matic python-single-r1 toolchain-funcs multilib systemd vcs-snapshot
 
 DESCRIPTION="Sip-Router (Kamailio/SER) is an Open Source SIP Server"
 HOMEPAGE="http://kamailio.org/"
@@ -333,11 +333,6 @@ src_install () {
 }
 
 pkg_preinst() {
-	ebegin "Creating ${PN} user and group"
-	enewgroup ${PN}
-	enewuser  ${PN} -1 -1 /var/run/${PN} ${PN}
-	eend $?
-
 	chown -R root:${PN}  ${D}/etc/${PN}
 	chmod -R u=rwX,g=rX,o= ${D}/etc/${PN}
 
