@@ -358,7 +358,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 BDEPEND="
-	dev-util/cmake
+	dev-build/cmake
 	>=virtual/rust-1.37.0
 "
 
