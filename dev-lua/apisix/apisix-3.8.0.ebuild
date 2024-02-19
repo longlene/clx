@@ -9,7 +9,7 @@ inherit lua
 
 DESCRIPTION="The Cloud-Native API Gateway"
 HOMEPAGE="https://apisix.apache.org/blog/"
-SRC_URI="mirror://apache/apisix/${PV}/apache-apisix-${PV}-src.tgz"
+SRC_URI="https://github.com/apache/apisix/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -27,6 +27,7 @@ RDEPEND="${DEPEND}
 	>=dev-lua/lua-resty-balancer-0.04[${LUA_USEDEP}]
 	>=dev-lua/lua-resty-ngxvar-0.5.2[${LUA_USEDEP}]
 	>=dev-lua/lua-resty-jit-uuid-0.0.7[${LUA_USEDEP}]
+	>=dev-lua/lua-resty-worker-events-1.0.0[${LUA_USEDEP}]
 	>=dev-lua/lua-resty-healthcheck-api7-3.0.0[${LUA_USEDEP}]
 	>=dev-lua/api7-lua-resty-jwt-0.2.5[${LUA_USEDEP}]
 	>=dev-lua/lua-resty-hmac-ffi-0.06[${LUA_USEDEP}]
@@ -52,7 +53,7 @@ RDEPEND="${DEPEND}
 	>=dev-lua/graphql-0.0.2[${LUA_USEDEP}]
 	>=dev-lua/argparse-0.7.1[${LUA_USEDEP}]
 	>=dev-lua/luasocket-3.1.0[${LUA_USEDEP}]
-	>=dev-lua/luasec-0.9[${LUA_USEDEP}]
+	>=dev-lua/luasec-1.3.2[${LUA_USEDEP}]
 	>=dev-lua/lua-resty-consul-0.3[${LUA_USEDEP}]
 	>=dev-lua/penlight-1.13.1[${LUA_USEDEP}]
 	>=dev-lua/ext-plugin-proto-0.6.1[${LUA_USEDEP}]
@@ -67,6 +68,8 @@ RDEPEND="${DEPEND}
 	>=dev-lua/lua-resty-mediador-0.1.2[${LUA_USEDEP}]
 	>=dev-lua/lua-resty-ldap-0.1.0[${LUA_USEDEP}]
 	>=dev-lua/lua-resty-t1k-1.1.0[${LUA_USEDEP}]
+	>=dev-lua/brotli-ffi-0.3[${LUA_USEDEP}]
+	>=dev-lua/lua-ffi-zlib-0.6[${LUA_USEDEP}]
 "
 BDEPEND=""
 

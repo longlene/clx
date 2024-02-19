@@ -5,7 +5,7 @@ EAPI=8
 
 inherit meson vcs-snapshot
 
-EGIT_COMMIT="9b5a0871c1a8771dbe204e60f437653a67abd42a"
+EGIT_COMMIT="e33b2f6b0cea6d6263990aa9abe6a69fdfba5973"
 
 DESCRIPTION="PlUgin Graphics Library"
 HOMEPAGE="https://github.com/lv2/pugl"
@@ -14,7 +14,7 @@ SRC_URI="https://gitlab.com/lv2/pugl/-/archive/${EGIT_COMMIT}/pugl-${EGIT_COMMIT
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="cairo example opengl test vulkan"
+IUSE="cairo doc example opengl test vulkan"
 
 DEPEND="
 	x11-libs/libX11
@@ -28,6 +28,7 @@ BDEPEND=""
 src_configure() {
 	local emesonargs=(
 		$(meson_feature cairo)
+		$(meson_feature doc docs)
 		$(meson_feature example examples)
 		$(meson_feature opengl)
 		$(meson_feature test tests)

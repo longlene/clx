@@ -1,9 +1,9 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit rebar vcs-snapshot
+inherit rebar
 
 DESCRIPTION="Additions to the Erlang maps module"
 HOMEPAGE="https://github.com/eproxus/mapz"
