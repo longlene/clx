@@ -28,7 +28,7 @@ BDEPEND="
 
 DOCS=( HISTORY )
 HTML_DOCS=( lpeg.html re.html )
-PATCHES=( "${FILESDIR}"/${PN}-1.0.2-makefile.patch )
+PATCHES=( "${FILESDIR}"/${PN}-1.1.0-makefile.patch )
 
 lua_src_prepare() {
 	if ! test -d "${S}.${ELUA}/" ; then
