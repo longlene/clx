@@ -4,8 +4,8 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_10 )
-inherit distutils-r1 vcs-snapshot
+PYTHON_COMPAT=( python3_{10..12} )
+inherit distutils-r1
 
 DESCRIPTION="Fast inference engine for Transformer models"
 HOMEPAGE="https://gitter.im/OpenNMT/CTranslate2"
@@ -23,4 +23,4 @@ BDEPEND="dev-libs/ctranslate2"
 
 distutils_enable_tests pytest
 
-S="${WORKDIR}"/${P}/python
+S="${WORKDIR}"/CTranslate2-${PV}/python

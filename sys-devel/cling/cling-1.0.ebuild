@@ -1,10 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=8
+EAPI=7
 
-CLING_COMMIT="da247bd77a92f0793abe95e10b373dbca7a7e5f1"
-LLVM_COMMIT="ac712f0f44b45a1455a302dd6cbb7b6cce269d2d"
+#LLVM_COMMIT="ac712f0f44b45a1455a302dd6cbb7b6cce269d2d"
+LLVM_COMMIT="3253e78008eef8b776c56ec1724977b4859370a9"
 CLANG_COMMIT="25f804797f80b69d8c56794e3e0300acd9458958"
 
 #inherit cmake flag-o-matic
@@ -13,10 +13,10 @@ inherit cmake
 DESCRIPTION="The cling C++ interpreter"
 HOMEPAGE="https://github.com/root-project/cling"
 SRC_URI="
-	https://github.com/root-project/cling/archive/${CLING_COMMIT}.tar.gz -> cling-${CLING_COMMIT}.tar.gz
-	https://github.com/vgvassilev/llvm/archive/${LLVM_COMMIT}.tar.gz -> llvm-${LLVM_COMMIT}.tar.gz
-	https://github.com/vgvassilev/clang/archive/${CLANG_COMMIT}.tar.gz -> clang-${CLANG_COMMIT}.tar.gz
+	https://github.com/vgvassilev/cling/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/root-project/llvm-project/archive/${LLVM_COMMIT}.tar.gz -> llvm-${LLVM_COMMIT}.tar.gz
 "
+#https://github.com/vgvassilev/clang/archive/${CLANG_COMMIT}.tar.gz -> clang-${CLANG_COMMIT}.tar.gz
 
 LICENSE="LGPL"
 SLOT="0"
@@ -26,19 +26,18 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}"/cling-${CLING_COMMIT}
-CMAKE_USE_DIR="${WORKDIR}"/llvm-${LLVM_COMMIT}
+CMAKE_USE_DIR="${WORKDIR}"/llvm-project-${LLVM_COMMIT}/llvm
 CMAKE_BUILD_TYPE=Release
 #CMAKE_MAKEFILE_GENERATOR=emake
 
-src_prepare() {
-	default
-	ln -sv "${WORKDIR}"/clang-${CLANG_COMMIT} "${WORKDIR}"/llvm-${LLVM_COMMIT}/tools/clang
-	ln -sv "${WORKDIR}"/cling-${CLING_COMMIT} "${WORKDIR}"/llvm-${LLVM_COMMIT}/tools/cling
-	sed -e '/add_subdirectory/{/demo/d}' \
-		-i tools/CMakeLists.txt
-	cmake_src_prepare
-}
+#src_prepare() {
+#	default
+#	#ln -sv "${WORKDIR}"/clang-${CLANG_COMMIT} "${WORKDIR}"/llvm-project-${LLVM_COMMIT}/tools/clang
+#	#ln -sv "${WORKDIR}"/cling-${PV} "${WORKDIR}"/llvm-project-${LLVM_COMMIT}/tools/cling
+#	sed -e '/add_subdirectory/{/demo/d}' \
+#		-i tools/CMakeLists.txt
+#	cmake_src_prepare
+#}
 
 src_configure() {
 	#append-cxxflags -DLLVM_ENABLE_ABI_BREAKING_CHECKS=0
@@ -54,6 +53,9 @@ src_configure() {
 		-DLLVM_ENABLE_SPHINX=OFF
 		-DLLVM_ENABLE_DOXYGEN=OFF
 		-DFFI_INCLUDE_DIR=$(pkg-config --cflags libffi | cut -c3-)
+		-DLLVM_EXTERNAL_PROJECTS=cling
+		-DLLVM_EXTERNAL_CLING_SOURCE_DIR=${S}
+		-DLLVM_ENABLE_PROJECTS="clang"
 	)
 	cmake_src_configure
 }
