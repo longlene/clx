@@ -3,13 +3,11 @@
 
 EAPI=8
 
-inherit common-lisp-3 vcs-snapshot
-
-EGIT_COMMIT="04d6df5d0b736f968cb0b838b38a8a517569d2f8"
+inherit common-lisp-3
 
 DESCRIPTION="The Common Lisp Omnificent GUI"
 HOMEPAGE="https://github.com/rabbibotton/clog"
-SRC_URI="https://github.com/rabbibotton/clog/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/rabbibotton/clog/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -27,6 +25,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/parse-float
 	dev-lisp/quri
 	dev-lisp/lack
+	dev-lisp/closer-mop
 	dev-lisp/mgl-pax
 	dev-lisp/cl-template
 	dev-lisp/atomics
