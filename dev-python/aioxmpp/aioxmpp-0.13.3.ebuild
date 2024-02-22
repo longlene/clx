@@ -9,7 +9,10 @@ PYTHON_COMPAT=( python3_{11..12} )
 inherit distutils-r1
 
 DESCRIPTION="An XMPP library for use with Python asyncio"
-HOMEPAGE="https://codeberg.org/jssfr/aioxmpp"
+HOMEPAGE="
+	https://github.com/horazont/aioxmpp
+	https://codeberg.org/jssfr/aioxmpp
+"
 SRC_URI="https://github.com/horazont/aioxmpp/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-3+"
@@ -19,7 +22,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/aiosasl-0.3[${PYTHON_USEDEP}]
 	>=dev-python/aioopenssl-0.1[${PYTHON_USEDEP}]
-	>=dev-python/babel-2.3[${PYTHON_USEDEP}]
+	>=dev-python/Babel-2.3[${PYTHON_USEDEP}]
 	>=dev-python/dnspython-1.0[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.0[${PYTHON_USEDEP}]
 	>=dev-python/multidict-2.0[${PYTHON_USEDEP}]
