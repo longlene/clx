@@ -1,11 +1,11 @@
-# Copyright 2023 Gentoo Foundation
+# Copyright 2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit toolchain-funcs vcs-snapshot
 
-EGIT_COMMIT="066d2b1e9ab820703db0837a7255d92d30f0c9f5"
+EGIT_COMMIT="f8d0513f1a7a111f2597d643b073935a8afaf9e5"
 
 DESCRIPTION="Tiny HTTP parser written in C"
 HOMEPAGE="https://github.com/h2o/picohttpparser"

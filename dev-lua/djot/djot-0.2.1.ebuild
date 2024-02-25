@@ -9,7 +9,7 @@ inherit  lua
 
 DESCRIPTION="A light markup language"
 HOMEPAGE="https://djot.net"
-SRC_URI="https://github.com/jgm/djot/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jgm/djot.lua/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,6 +20,8 @@ REQUIRED_USE="${LUA_REQUIRED_USE}"
 DEPEND="${LUA_DEPS}"
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+S="${WORKDIR}"/djot.lua-${PV}
 
 src_prepare() {
 	default
