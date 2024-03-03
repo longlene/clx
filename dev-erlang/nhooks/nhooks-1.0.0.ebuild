@@ -5,11 +5,11 @@ EAPI=8
 
 inherit rebar
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="Erlang hooks library"
+HOMEPAGE="https://github.com/nomasystems/nhooks"
 SRC_URI="https://github.com/nomasystems/nhooks/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 

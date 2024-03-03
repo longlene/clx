@@ -1,0 +1,202 @@
+# Copyright 2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	addr2line@0.20.0
+	adler@1.0.2
+	aho-corasick@1.0.2
+	async-broadcast@0.5.1
+	async-channel@1.8.0
+	async-io@1.13.0
+	async-lock@2.7.0
+	async-process@1.7.0
+	async-recursion@1.0.4
+	async-signals@0.4.0
+	async-task@4.4.0
+	async-trait@0.1.71
+	atomic-waker@1.1.1
+	autocfg@1.1.0
+	backtrace@0.3.68
+	bitflags@1.3.2
+	bitflags@2.4.1
+	block-buffer@0.10.4
+	blocking@1.3.1
+	bytemuck@1.13.1
+	byteorder@1.4.3
+	bytes@1.4.0
+	cc@1.0.79
+	cfg-if@1.0.0
+	color-eyre@0.6.2
+	color-spantrace@0.2.0
+	concurrent-queue@2.2.0
+	cpufeatures@0.2.9
+	crossbeam-utils@0.8.16
+	crypto-common@0.1.6
+	derivative@2.2.0
+	digest@0.10.7
+	either@1.9.0
+	enumflags2@0.7.7
+	enumflags2_derive@0.7.7
+	equivalent@1.0.0
+	errno@0.3.1
+	errno-dragonfly@0.1.2
+	event-listener@2.5.3
+	eyre@0.6.8
+	fastrand@1.9.0
+	futures-core@0.3.28
+	futures-io@0.3.28
+	futures-lite@1.13.0
+	futures-macro@0.3.28
+	futures-sink@0.3.28
+	futures-task@0.3.28
+	futures-util@0.3.28
+	generic-array@0.14.7
+	getrandom@0.2.10
+	gimli@0.27.3
+	hashbrown@0.14.0
+	hermit-abi@0.3.2
+	hex@0.4.3
+	indenter@0.3.3
+	indexmap@2.0.0
+	instant@0.1.12
+	io-lifetimes@1.0.11
+	itertools@0.12.0
+	itoa@1.0.8
+	lazy_static@1.4.0
+	libc@0.2.147
+	linux-raw-sys@0.3.8
+	linux-raw-sys@0.4.11
+	lock_api@0.4.10
+	log@0.4.19
+	log-panics@2.1.0
+	matchers@0.1.0
+	memchr@2.5.0
+	memoffset@0.6.5
+	memoffset@0.7.1
+	miniz_oxide@0.7.1
+	mio@0.8.8
+	nix@0.23.2
+	nix@0.26.2
+	nu-ansi-term@0.46.0
+	object@0.31.1
+	once_cell@1.18.0
+	ordered-stream@0.2.0
+	overload@0.1.1
+	owo-colors@3.5.0
+	parking@2.1.0
+	parking_lot@0.12.1
+	parking_lot_core@0.9.8
+	pin-project-lite@0.2.10
+	pin-utils@0.1.0
+	polling@2.8.0
+	ppv-lite86@0.2.17
+	proc-macro-crate@1.3.1
+	proc-macro2@1.0.63
+	quote@1.0.29
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	redox_syscall@0.3.5
+	regex@1.9.0
+	regex-automata@0.1.10
+	regex-automata@0.3.0
+	regex-syntax@0.6.29
+	regex-syntax@0.7.3
+	rustc-demangle@0.1.23
+	rustix@0.37.23
+	rustix@0.38.13
+	ryu@1.0.14
+	scopeguard@1.1.0
+	sendfd@0.4.3
+	serde@1.0.166
+	serde_derive@1.0.166
+	serde_json@1.0.100
+	serde_repr@0.1.14
+	sha1@0.10.5
+	sharded-slab@0.1.4
+	signal-hook@0.3.15
+	signal-hook-registry@1.4.1
+	slab@0.4.8
+	slotmap@1.0.6
+	smallvec@1.11.0
+	socket2@0.4.9
+	static_assertions@1.1.0
+	syn@1.0.109
+	syn@2.0.23
+	tempfile@3.6.0
+	thiserror@1.0.41
+	thiserror-impl@1.0.41
+	thread_local@1.1.7
+	tokio@1.29.1
+	tokio-macros@2.1.0
+	tokio-util@0.7.8
+	toml_datetime@0.6.3
+	toml_edit@0.19.12
+	tracing@0.1.37
+	tracing-attributes@0.1.26
+	tracing-core@0.1.31
+	tracing-error@0.2.0
+	tracing-journald@0.3.0
+	tracing-log@0.1.3
+	tracing-subscriber@0.3.17
+	typenum@1.16.0
+	uds_windows@1.0.2
+	unicode-ident@1.0.10
+	valuable@0.1.0
+	version_check@0.9.4
+	waker-fn@1.1.0
+	wasi@0.11.0+wasi-snapshot-preview1
+	winapi@0.3.9
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	windows-sys@0.48.0
+	windows-targets@0.48.1
+	windows_aarch64_gnullvm@0.48.0
+	windows_aarch64_msvc@0.48.0
+	windows_i686_gnu@0.48.0
+	windows_i686_msvc@0.48.0
+	windows_x86_64_gnu@0.48.0
+	windows_x86_64_gnullvm@0.48.0
+	windows_x86_64_msvc@0.48.0
+	winnow@0.4.7
+	xdg-home@1.0.0
+	zbus@3.14.1
+	zbus_macros@3.14.1
+	zbus_names@2.6.0
+	zvariant@3.15.0
+	zvariant_derive@3.15.0
+	zvariant_utils@1.0.1
+"
+
+declare -A GIT_CRATES=(
+	[cosmic-notifications-util]="https://github.com/pop-os/cosmic-notifications;bca2352c1fa22c52bff33a46968735909f8f6888;cosmic-notifications-%commit%/cosmic-notifications-util"
+	[launch-pad]="https://github.com/pop-os/launch-pad;699fd1801260cd4425dfd472d0e36fdf17bb7f36"
+)
+
+inherit cargo
+
+EGIT_COMMIT="8e73c0f6940288c4a24a102a7ba9f20eb6bd754f"
+
+DESCRIPTION="Session manager for the COSMIC desktop environment"
+HOMEPAGE="https://github.com/pop-os/cosmic-session"
+SRC_URI="
+	https://github.com/pop-os/cosmic-session/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
+	$(cargo_crate_uris ${CRATES})
+"
+
+LICENSE="GPL-3"
+SLOT="0"
+KEYWORDS="~amd64"
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+BDEPEND=""
+
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
+
+src_install() {
+	cargo_src_install
+	einstalldocs
+}

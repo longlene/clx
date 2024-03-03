@@ -25,7 +25,7 @@ DEPEND="
 	dev-util/ragel
 	sys-fs/xfsprogs
 	net-misc/lksctp-tools
-	dev-util/valgrind
+	dev-debug/valgrind
 	dev-util/systemtap
 	sys-libs/liburing
 	dpdk? ( net-libs/dpdk )
