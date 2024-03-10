@@ -1,11 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="2e0f648efe52cb3128c12dd060b576404c4060de"
+EGIT_COMMIT="46dc64d9ad698fc1c0204da27b0bf0c61b3b8e3b"
 
 DESCRIPTION="Allegro 5 game programming library bindings for Common Lisp"
 HOMEPAGE="https://github.com/resttime/cl-liballegro"

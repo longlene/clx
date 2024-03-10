@@ -5,7 +5,7 @@ EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="03871d3d482b3f6600cc01cb2f80ed7917b0b4f7"
+EGIT_COMMIT="23f52d5349382d3d50c855b75a665f3158286390"
 
 DESCRIPTION="Micro slime/swank with forked SLIME"
 HOMEPAGE="https://github.com/lem-project/micros"
