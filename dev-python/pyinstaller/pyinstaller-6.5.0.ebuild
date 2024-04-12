@@ -35,7 +35,7 @@ RESTRICT="test"
 QA_PREBUILT="usr/lib/python*/site-packages/PyInstaller/bootloader/Linux-*"
 
 RDEPEND="${PYTHON_DEPS}
-		sys-libs/zlib
+	sys-libs/zlib
 	dev-python/altgraph[${PYTHON_USEDEP}]
 	>=dev-python/pefile-2022.5.30[${PYTHON_USEDEP}]
 	>=dev-python/macholib-1.8[${PYTHON_USEDEP}]
