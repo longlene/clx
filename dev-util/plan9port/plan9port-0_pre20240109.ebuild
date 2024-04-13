@@ -1,11 +1,11 @@
-# Copyright 2023 Gentoo Foundation
+# Copyright 2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit multiprocessing toolchain-funcs vcs-snapshot
 
-EGIT_COMMIT="f8681acb374fa0d5ed1568dbedb00a4abe1ca6f1"
+EGIT_COMMIT="be7c68f6954f7dcaa53403e0f600716f65a13d32"
 
 DESCRIPTION="Plan 9 from User Space"
 HOMEPAGE="http://swtch.com/plan9port/"

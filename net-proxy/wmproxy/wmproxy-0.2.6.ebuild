@@ -1,0 +1,266 @@
+# Copyright 2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	addr2line@0.21.0
+	adler@1.0.2
+	ahash@0.8.11
+	aho-corasick@1.1.3
+	alloc-no-stdlib@2.0.4
+	alloc-stdlib@0.2.2
+	allocator-api2@0.2.16
+	android-tzdata@0.1.1
+	android_system_properties@0.1.5
+	anstream@0.6.13
+	anstyle@1.0.6
+	anstyle-parse@0.2.3
+	anstyle-query@1.0.2
+	anstyle-wincon@3.0.2
+	anyhow@1.0.81
+	arc-swap@1.7.1
+	async-channel@1.9.0
+	async-channel@2.2.0
+	async-executor@1.9.1
+	async-global-executor@2.4.1
+	async-io@1.13.0
+	async-io@2.3.2
+	async-lock@2.8.0
+	async-lock@3.3.0
+	async-recursion@1.1.0
+	async-std@1.12.0
+	async-task@4.7.0
+	async-trait@0.1.79
+	atomic-waker@1.1.2
+	autocfg@1.2.0
+	backtrace@0.3.71
+	base64@0.21.7
+	bitflags@1.3.2
+	bitflags@2.5.0
+	block-buffer@0.10.4
+	blocking@1.5.1
+	bpaf@0.9.11
+	bpaf_derive@0.5.10
+	brotli@3.5.0
+	brotli-decompressor@2.5.1
+	bumpalo@3.15.4
+	bytes@1.6.0
+	cc@1.0.90
+	cfg-if@1.0.0
+	chrono@0.4.37
+	colorchoice@1.0.0
+	commander@0.1.5
+	concurrent-queue@2.4.0
+	core-foundation-sys@0.8.6
+	cpufeatures@0.2.12
+	crc32fast@1.4.0
+	crossbeam-utils@0.8.19
+	crypto-common@0.1.6
+	darling@0.20.8
+	darling_core@0.20.8
+	darling_macro@0.20.8
+	deranged@0.3.11
+	derivative@2.2.0
+	destructure_traitobject@0.2.0
+	digest@0.10.7
+	env_filter@0.1.0
+	env_logger@0.11.3
+	equivalent@1.0.1
+	errno@0.3.8
+	event-listener@2.5.3
+	event-listener@4.0.3
+	event-listener@5.2.0
+	event-listener-strategy@0.4.0
+	event-listener-strategy@0.5.1
+	fastrand@1.9.0
+	fastrand@2.0.2
+	flate2@1.0.28
+	fnv@1.0.7
+	forever-rs@0.1.2
+	futures@0.3.30
+	futures-channel@0.3.30
+	futures-core@0.3.30
+	futures-executor@0.3.30
+	futures-io@0.3.30
+	futures-lite@1.13.0
+	futures-lite@2.3.0
+	futures-macro@0.3.30
+	futures-sink@0.3.30
+	futures-task@0.3.30
+	futures-util@0.3.30
+	generic-array@0.14.7
+	getrandom@0.2.12
+	gimli@0.28.1
+	gloo-timers@0.2.6
+	hashbrown@0.12.3
+	hashbrown@0.14.3
+	hermit-abi@0.3.9
+	hex@0.4.3
+	humantime@2.1.0
+	iana-time-zone@0.1.60
+	iana-time-zone-haiku@0.1.2
+	ident_case@1.0.1
+	indexmap@1.9.3
+	indexmap@2.2.6
+	instant@0.1.12
+	io-lifetimes@1.0.11
+	is_ci@1.2.0
+	itoa@1.0.11
+	js-sys@0.3.69
+	kv-log-macro@1.0.7
+	lazy_static@1.4.0
+	libc@0.2.153
+	linux-raw-sys@0.3.8
+	linux-raw-sys@0.4.13
+	lock_api@0.4.11
+	log@0.4.21
+	log-mdc@0.1.0
+	log4rs@1.3.0
+	memchr@2.7.2
+	miniz_oxide@0.7.2
+	mio@0.8.11
+	num-conv@0.1.0
+	num-traits@0.2.18
+	num_cpus@1.16.0
+	object@0.32.2
+	once_cell@1.19.0
+	ordered-float@2.10.1
+	owo-colors@4.0.0
+	parking@2.2.0
+	parking_lot@0.12.1
+	parking_lot_core@0.9.9
+	pin-project-lite@0.2.14
+	pin-utils@0.1.0
+	piper@0.2.1
+	polling@2.8.0
+	polling@3.6.0
+	powerfmt@0.2.0
+	ppv-lite86@0.2.17
+	proc-macro2@1.0.79
+	quote@1.0.35
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	rbtree@0.2.0
+	redox_syscall@0.4.1
+	regex@1.10.4
+	regex-automata@0.4.6
+	regex-syntax@0.8.3
+	ring@0.17.8
+	rustc-demangle@0.1.23
+	rustix@0.37.27
+	rustix@0.38.32
+	rustls@0.22.3
+	rustls-pemfile@2.1.1
+	rustls-pki-types@1.4.1
+	rustls-webpki@0.102.2
+	ryu@1.0.17
+	scopeguard@1.2.0
+	serde@1.0.197
+	serde-value@0.7.0
+	serde_derive@1.0.197
+	serde_json@1.0.115
+	serde_spanned@0.6.5
+	serde_with@3.7.0
+	serde_with_macros@3.7.0
+	serde_yaml@0.9.34+deprecated
+	sha1@0.10.6
+	signal-hook-registry@1.4.1
+	slab@0.4.9
+	smallvec@1.13.2
+	socket2@0.4.10
+	socket2@0.5.6
+	spin@0.9.8
+	strsim@0.10.0
+	subtle@2.5.0
+	supports-color@3.0.0
+	syn@1.0.109
+	syn@2.0.57
+	thiserror@1.0.58
+	thiserror-impl@1.0.58
+	thread-id@4.2.1
+	time@0.3.34
+	time-core@0.1.2
+	time-macros@0.2.17
+	tokio@1.37.0
+	tokio-macros@2.2.0
+	tokio-rustls@0.25.0
+	tokio-stream@0.1.15
+	tokio-util@0.7.10
+	toml@0.8.12
+	toml_datetime@0.6.5
+	toml_edit@0.22.9
+	tracing@0.1.40
+	tracing-core@0.1.32
+	typemap-ors@1.0.0
+	typenum@1.17.0
+	unicode-ident@1.0.12
+	unsafe-any-ors@1.0.0
+	unsafe-libyaml@0.2.11
+	untrusted@0.9.0
+	utf8parse@0.2.1
+	value-bag@1.8.1
+	version_check@0.9.4
+	waker-fn@1.1.1
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasm-bindgen@0.2.92
+	wasm-bindgen-backend@0.2.92
+	wasm-bindgen-futures@0.4.42
+	wasm-bindgen-macro@0.2.92
+	wasm-bindgen-macro-support@0.2.92
+	wasm-bindgen-shared@0.2.92
+	web-sys@0.3.69
+	webparse@0.2.7
+	webpki@0.22.4
+	webpki-roots@0.26.1
+	wenmeng@0.2.7
+	winapi@0.3.9
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	windows-core@0.52.0
+	windows-sys@0.48.0
+	windows-sys@0.52.0
+	windows-targets@0.48.5
+	windows-targets@0.52.4
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_gnullvm@0.52.4
+	windows_aarch64_msvc@0.48.5
+	windows_aarch64_msvc@0.52.4
+	windows_i686_gnu@0.48.5
+	windows_i686_gnu@0.52.4
+	windows_i686_msvc@0.48.5
+	windows_i686_msvc@0.52.4
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnu@0.52.4
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_gnullvm@0.52.4
+	windows_x86_64_msvc@0.48.5
+	windows_x86_64_msvc@0.52.4
+	winnow@0.6.5
+	zerocopy@0.7.32
+	zerocopy-derive@0.7.32
+	zeroize@1.7.0
+"
+
+inherit cargo
+
+DESCRIPTION="http https proxy by rust"
+HOMEPAGE="https://github.com/tickbh/wmproxy"
+SRC_URI="
+	https://github.com/tickbh/wmproxy/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	$(cargo_crate_uris ${CRATES})
+"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+BDEPEND=""
+
+src_install() {
+	cargo_src_install
+	einstalldocs
+}
