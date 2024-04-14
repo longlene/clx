@@ -3,13 +3,11 @@
 
 EAPI=8
 
-inherit vcs-snapshot
-
-EGIT_COMMIT="e1d758a292e5b0070812fea55577248e7b95f5d7"
+inherit common-lisp-3
 
 DESCRIPTION="An OCI-based ASDF system distribution and management tool for Common Lisp"
 HOMEPAGE="https://github.com/ocicl/ocicl"
-SRC_URI="https://github.com/ocicl/ocicl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/ocicl/ocicl/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -26,6 +24,7 @@ src_compile() {
 }
 
 src_install() {
+	common-lisp-3_src_install
 	dobin ocicl
-	einstalldocs
+	#einstalldocs
 }
