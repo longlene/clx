@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	sys-libs/ncurses[tinfo]
+	sys-libs/ncurses
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
