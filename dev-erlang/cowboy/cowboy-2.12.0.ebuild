@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Small, fast, modern HTTP server for Erlang/OTP"
 HOMEPAGE="https://github.com/ninenines/cowboy"
@@ -22,7 +22,7 @@ DEPEND="${RDEPEND}"
 
 DOCS=( CHANGELOG.md )
 
-#src_prepare() {
-#	rebar_src_prepare
-#	rebar_fix_include_path cowlib
-#}
+src_prepare() {
+	default
+	rebar_remove_deps
+}

@@ -1,15 +1,13 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit vcs-snapshot
-
-EGIT_COMMIT="96a309acfe52544c4bbef5e5720b48dfad56200b"
+inherit rebar3
 
 DESCRIPTION="Zotonic - The Erlang Web Framework & CMS"
 HOMEPAGE="http://zotonic.com"
-SRC_URI="https://github.com/zotonic/zotonic/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/zotonic/zotonic/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -22,8 +20,3 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-RESTRICT=network-sandbox
-
-src_compile() {
-	rebar3 compile
-}

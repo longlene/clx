@@ -3,7 +3,7 @@
 
 EAPI=8
 
-#inherit rebar
+inherit rebar3
 
 DESCRIPTION="HTTP/1.1, HTTP/2 and Websocket client for Erlang/OTP"
 HOMEPAGE="https://github.com/ninenines/gun"
@@ -20,12 +20,7 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-	eapply_user
-	emake clean
+	default
+	rebar_remove_deps
 }
 
-src_install() {
-	insinto /usr/lib/erlang/lib/${P}
-	doins -r ebin
-	dodoc README.asciidoc
-}
