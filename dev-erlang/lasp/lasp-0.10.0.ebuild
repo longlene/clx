@@ -26,6 +26,6 @@ RDEPEND="${DEPEND}
 	dev-erlang/quickrand
 	dev-erlang/time_compat
 	dev-erlang/types
-	dev-erlang/uuid_erl
+	dev-erlang/uuid
 "
 BDEPEND=""

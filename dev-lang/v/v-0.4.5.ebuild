@@ -1,11 +1,11 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit flag-o-matic
 
-VC_COMMIT="06cae1fc20bc121f21377b279b58bfdd450b32c9"
+VC_COMMIT="2386fe9a0d8cc92d0d013ecd81456f2831433a71"
 
 DESCRIPTION="The V Programming Language"
 HOMEPAGE="https://vlang.io/"

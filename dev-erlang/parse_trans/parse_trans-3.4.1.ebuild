@@ -7,7 +7,7 @@ inherit rebar
 
 DESCRIPTION="Parse transform utilities for Erlang"
 HOMEPAGE="https://github.com/uwiger/parse_trans"
-SRC_URI="https://github.com/uwiger/parse_trans/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/uwiger/parse_trans/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

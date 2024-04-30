@@ -5,6 +5,8 @@ EAPI=8
 
 inherit rebar
 
+EGIT_COMMIT="117dc1e081585d675d56970f254480175dd75556"
+
 DESCRIPTION="High-performance, high-scalability distributed computing with Erlang and Elixir"
 HOMEPAGE="https://github.com/lasp-lang/partisan"
 SRC_URI="https://github.com/lasp-lang/partisan/archive/v${PV}.tar.gz -> ${P}.tar.gz"
@@ -16,11 +18,15 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	>=dev-erlang/uuid-2.0.5
 	>=dev-erlang/acceptor_pool-1.0.0
-	dev-erlang/goldrush
-	dev-erlang/lager
-	dev-erlang/quickrand
-	>=dev-erlang/types-0.1
-	dev-erlang/uuid_erl
+	>=dev-erlang/types-0.1.8
+	>=dev-erlang/lager-3.5
 "
 BDEPEND=""
+
+src_prepare() {
+	default
+	rm -rf bin
+	rebar_src_prepare
+}

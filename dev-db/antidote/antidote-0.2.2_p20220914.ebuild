@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit vcs-snapshot
+inherit rebar3 vcs-snapshot
 
 EGIT_COMMIT="1482b81515e894dc4c81997b2c183cc36db63f0f"
 
@@ -21,8 +21,13 @@ BDEPEND=""
 
 RESTRICT=network-sandbox
 
-src_compile() {
-	rebar3 release
+src_prepare() {
+	default
+	rebar_remove_deps
+	erebar3 get-deps
+	sed -e 's#-s init stop##' \
+		-e 's#.")#." -s init stop)#' \
+		-i _build/default/lib/prometheus_process_collector/c_src/Makefile
 }
 
 src_install() {

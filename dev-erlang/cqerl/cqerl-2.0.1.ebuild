@@ -19,7 +19,7 @@ DEPEND="
 	dev-erlang/re2
 	dev-erlang/semver_erl
 	dev-erlang/snappyer
-	dev-erlang/uuid_erl
+	dev-erlang/uuid
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

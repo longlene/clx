@@ -12,7 +12,7 @@ SRC_URI="https://github.com/facebook/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
-IUSE="jemalloc numa static-libs tbb test"
+IUSE="jemalloc numa static-libs tbb test zstd"
 
 RESTRICT="!test? ( test )"
 
@@ -20,7 +20,7 @@ DEPEND="
 	app-arch/bzip2:=
 	app-arch/lz4:=
 	app-arch/snappy:=
-	app-arch/zstd:=
+	zstd? ( app-arch/zstd:= )
 	dev-cpp/gflags:=
 	sys-libs/liburing:=
 	sys-libs/zlib:=
@@ -64,7 +64,7 @@ src_configure() {
 		-DWITH_TRACE_TOOLS=ON
 		-DWITH_TSAN=OFF
 		-DWITH_ZLIB=ON
-		-DWITH_ZSTD=ON
+		-DWITH_ZSTD=$(usex zstd)
 	)
 	# -DWITH_TESTS option works only with debug build, needs to be set here
 	# to not be overriden by cmake.eclass
