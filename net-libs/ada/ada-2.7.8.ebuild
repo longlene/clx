@@ -19,8 +19,9 @@ BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(
-		-DBUILD_TESTING=OFF
 		-DADA_BENCHMARKS=OFF
+		-DADA_TESTING=OFF
+		-DADA_TOOLS=OFF
 	)
 	cmake_src_configure
 }
