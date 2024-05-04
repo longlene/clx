@@ -1,11 +1,11 @@
-# Copyright 2023 Gentoo Foundation
+# Copyright 2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="37e5d93f7b55d49b039ecd711bdb512994f607fb"
+EGIT_COMMIT="94a6351f259fa6d0e0c34e266f72e0cd6bf9881f"
 
 DESCRIPTION="MAT is library for working with multi-dimensional arrays which supports efficient interfacing to foreign and CUDA code"
 HOMEPAGE="https://github.com/melisgl/mgl-mat"
@@ -22,6 +22,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/cffi
 	dev-lisp/cl-cuda
+	dev-lisp/num-utils
 	dev-lisp/flexi-streams
 	dev-lisp/ieee-floats
 	dev-lisp/lla
