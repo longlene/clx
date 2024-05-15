@@ -36,7 +36,7 @@ RESTRICT="!test? ( test )"
 PATCHES=(
 	"${FILESDIR}/simdjson-1.0.0-dont-bundle-cxxopts.patch"
 	"${FILESDIR}/simdjson-0.9.0-tests.patch"
-	"${FILESDIR}/simdjson-1.0.0-dont-fetch-data-tarball.patch"
+	"${FILESDIR}/simdjson-3.9.2-dont-fetch-data-tarball.patch"
 	"${FILESDIR}/simdjson-1.0.0-install-tools.patch"
 	"${FILESDIR}/simdjson-1.0.0-tests.patch"
 )

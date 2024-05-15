@@ -1,17 +1,18 @@
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 235222a8..8532183a 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -221,9 +221,10 @@ add_subdirectory(singleheader)
+diff -Nur simdjson-3.9.2.orig/CMakeLists.txt simdjson-3.9.2/CMakeLists.txt
+--- simdjson-3.9.2.orig/CMakeLists.txt	2024-05-07 16:15:43.000000000 -0700
++++ simdjson-3.9.2/CMakeLists.txt	2024-05-12 00:59:36.374665802 -0700
+@@ -294,11 +294,10 @@
  #
  # Compile tools / tests / benchmarks
  #
 -add_subdirectory(tests)
+-add_subdirectory(examples)
+-if(CMAKE_SIZEOF_VOID_P EQUAL 8) # we only include the benchmarks on 64-bit systems.
+-  add_subdirectory(benchmark)
 +if (SIMDJSON_TESTS)
 +  add_subdirectory(tests)
-+endif()
- add_subdirectory(examples)
--add_subdirectory(benchmark)
+ endif()
++add_subdirectory(examples)
  add_subdirectory(fuzz)
  
  #
