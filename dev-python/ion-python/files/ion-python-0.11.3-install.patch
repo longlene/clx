@@ -1,0 +1,22 @@
+--- a/install.py	2023-11-30 14:38:20.000000000 -0800
++++ b/install.py	2024-01-15 12:15:23.806180003 -0800
+@@ -79,19 +79,8 @@ def readonly_handler(func, path, execinf
+ 
+ def _download_ionc():
+     try:
+-        # Install ion-c.
+-        if isdir(_CURRENT_ION_C_DIR):
+-            shutil.rmtree(_CURRENT_ION_C_DIR, onerror=readonly_handler)
+-
+-        # TODO submodule does not work, need to be fixed.
+-        # check_call(['git', 'submodule', 'update', '--init', '--recursive'])
+-        check_call(['git', 'clone', '--recurse-submodules', _IONC_REPO_URL, 'ion-c'])
+-
+         os.chdir(_CURRENT_ION_C_DIR)
+ 
+-        # Initialize submodule.
+-        check_call(['git', 'submodule', 'update', '--init'])
+-
+         # Build ion-c.
+         _build_ionc()
+ 

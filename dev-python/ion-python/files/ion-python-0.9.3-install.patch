@@ -1,0 +1,26 @@
+diff -pNura a/install.py b/install.py
+--- a/install.py	2023-07-05 16:02:34.000000000 -0700
++++ b/install.py	2023-07-06 18:18:33.859990048 -0700
+@@ -79,22 +79,7 @@ def readonly_handler(func, path, execinf
+ 
+ def _download_ionc():
+     try:
+-        # Install ion-c.
+-        if isdir(_CURRENT_ION_C_DIR):
+-            shutil.rmtree(_CURRENT_ION_C_DIR, onerror=readonly_handler)
+-
+-        # TODO submodule does not work, need to be fixed.
+-        # check_call(['git', 'submodule', 'update', '--init', '--recursive'])
+-        check_call(['git', 'clone', '--recurse-submodules', _IONC_REPO_URL, 'ion-c'])
+-
+         os.chdir(_CURRENT_ION_C_DIR)
+-
+-        # TODO Use ion-c 1.1.0 for now - https://github.com/amazon-ion/ion-python/issues/249
+-        check_call(['git', 'reset', '--hard', 'v1.1.0'])
+-
+-        # Initialize submodule.
+-        check_call(['git', 'submodule', 'update', '--init'])
+-
+         # Build ion-c.
+         _build_ionc()
+ 
