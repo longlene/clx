@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/certifi-2020.12.05[${PYTHON_USEDEP}]
-	>=dev-python/babel-2.9.0[${PYTHON_USEDEP}]
+	>=dev-python/Babel-2.9.0[${PYTHON_USEDEP}]
 	>=dev-python/flask-babel-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/flask-1.1.2[${PYTHON_USEDEP}]
 	>=dev-python/idna-2.10[${PYTHON_USEDEP}]
