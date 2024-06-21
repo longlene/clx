@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-python/flask[${PYTHON_USEDEP}]
+	>=dev-python/flask-2[${PYTHON_USEDEP}]
 	>=dev-python/limits-2.8[${PYTHON_USEDEP}]
 	>=dev-python/ordered-set-4[${PYTHON_USEDEP}]
 	>=dev-python/rich-12[${PYTHON_USEDEP}]
