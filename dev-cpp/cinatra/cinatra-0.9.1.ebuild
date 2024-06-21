@@ -7,7 +7,7 @@ EAPI=8
 
 DESCRIPTION="modern c++, cross-platform, header-only, easy to use http framework"
 HOMEPAGE="https://github.com/qicosmos/cinatra"
-SRC_URI="https://github.com/qicosmos/cinatra/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/qicosmos/cinatra/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL-3"
 SLOT="0"

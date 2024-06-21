@@ -5,7 +5,7 @@ EAPI=8
 
 DESCRIPTION="universal serialization engine"
 HOMEPAGE="https://github.com/qicosmos/iguana"
-SRC_URI="https://github.com/qicosmos/iguana/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/qicosmos/iguana/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
