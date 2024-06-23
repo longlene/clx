@@ -6,8 +6,9 @@ EAPI=8
 MY_PN=PyAV
 MY_P=${MY_PN}-${PV}
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11,12} )
+PYTHON_COMPAT=( python3_{12..13} )
 inherit distutils-r1
 
 DESCRIPTION="Pythonic bindings for FFmpeg's libraries"

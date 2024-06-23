@@ -23,7 +23,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-python/python-xlib[${PYTHON_USEDEP}]
-	dev-python/pymsgbox[${PYTHON_USEDEP}]
+	dev-python/PyMsgBox[${PYTHON_USEDEP}]
 	>=dev-python/pytweening-1.0.4[${PYTHON_USEDEP}]
 	>=dev-python/pyscreeze-0.1.21[${PYTHON_USEDEP}]
 	>=dev-python/pygetwindow-0.0.5[${PYTHON_USEDEP}]
