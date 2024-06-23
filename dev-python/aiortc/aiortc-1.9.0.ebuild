@@ -1,14 +1,13 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11,12} )
-
 DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{11..13} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
 
 DESCRIPTION="WebRTC and ORTC implementation for Python using asyncio"
 HOMEPAGE="https://github.com/aiortc/aiortc"
@@ -22,11 +21,11 @@ RDEPEND="
 	>=dev-python/aioice-0.9.0[${PYTHON_USEDEP}]
 	>=dev-python/av-9.0.0[${PYTHON_USEDEP}]
 	>=dev-python/cffi-1.0.0[${PYTHON_USEDEP}]
-	>=dev-python/cryptography-2.2[${PYTHON_USEDEP}]
+	>=dev-python/cryptography-42.0.0[${PYTHON_USEDEP}]
 	>=dev-python/google-crc32c-1.1[${PYTHON_USEDEP}]
 	>=dev-python/pyee-9.0.0[${PYTHON_USEDEP}]
-	>=dev-python/pylibsrtp-0.5.6[${PYTHON_USEDEP}]
-	>=dev-python/pyopenssl-23.1.0[${PYTHON_USEDEP}]
+	>=dev-python/pylibsrtp-0.10.0[${PYTHON_USEDEP}]
+	>=dev-python/pyopenssl-24.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND=""
 

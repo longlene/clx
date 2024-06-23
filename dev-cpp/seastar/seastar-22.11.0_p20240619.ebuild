@@ -1,9 +1,10 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-EGIT_COMMIT="2afc313b9d2ad269b497919c7044df6ee2493ba3"
+#EGIT_COMMIT="f305841432eb815ecdf5776d3fb7a4df939a2df2"
+EGIT_COMMIT="908ccd936a63a37cd98470ad8bf44a20d969c51e"
 
 inherit cmake flag-o-matic vcs-snapshot
 
@@ -26,7 +27,7 @@ DEPEND="
 	sys-fs/xfsprogs
 	net-misc/lksctp-tools
 	dev-debug/valgrind
-	dev-util/systemtap
+	dev-debug/systemtap
 	sys-libs/liburing
 	dpdk? ( net-libs/dpdk )
 	hwloc? ( sys-apps/hwloc )
