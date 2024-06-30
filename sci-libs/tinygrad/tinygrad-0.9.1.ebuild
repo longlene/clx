@@ -1,10 +1,10 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..13} )
 inherit distutils-r1
 
 DESCRIPTION="For something in between a pytorch and a karpathy/micrograd"
@@ -18,7 +18,6 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
-	dev-python/gpuctypes[${PYTHON_USEDEP}]
 "
 BDEPEND="
 "
