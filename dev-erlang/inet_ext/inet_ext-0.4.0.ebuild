@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="inet extensions library"
 HOMEPAGE="https://github.com/benoitc/inet_ext"

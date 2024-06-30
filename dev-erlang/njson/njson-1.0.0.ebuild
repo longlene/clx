@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="OTP library to pragmatically and efficiently encode and decode JSON to Erlang terms"
 HOMEPAGE="https://github.com/nomasystems/njson"

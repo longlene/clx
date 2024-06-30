@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An emulsifying Erlang SOAP library"
 HOMEPAGE="https://github.com/devinus/detergent"

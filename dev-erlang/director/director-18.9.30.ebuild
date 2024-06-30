@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="supervisor and manager for Erlang/Elixir processes"
 HOMEPAGE="https://github.com/Pouriya-Jahanbakhsh/director"

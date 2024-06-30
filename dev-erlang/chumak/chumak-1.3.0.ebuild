@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Pure Erlang implementation of ZeroMQ Message Transport Protocol"
 HOMEPAGE="https://github.com/zeromq/chumak"

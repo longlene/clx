@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Binary pattern match Based Mustache template engine for Erlang/OTP"
 HOMEPAGE="https://github.com/soranoba/bbmustache"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang worker pool"
 HOMEPAGE="https://github.com/inaka/worker_pool"

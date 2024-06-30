@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="a drop-in replacement for lists module, making most list operations parallel"
 HOMEPAGE="https://github.com/silviucpp/plists"

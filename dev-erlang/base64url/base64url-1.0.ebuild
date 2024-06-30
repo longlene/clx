@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="URL safe base64-compatible codec"
 HOMEPAGE="https://github.com/dvv/base64url"

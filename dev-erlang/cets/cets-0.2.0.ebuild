@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A library to synchronise records from the ETS tables between nodes"
 HOMEPAGE="https://github.com/esl/cets"

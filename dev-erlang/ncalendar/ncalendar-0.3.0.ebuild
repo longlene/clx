@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An OTP library for the manipulation of a binary representation of dates and times"
 HOMEPAGE="https://github.com/nomasystems/ncalendar"

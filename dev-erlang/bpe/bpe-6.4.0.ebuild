@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Business Processes Engine"
 HOMEPAGE="https://github.com/synrc/bpe"

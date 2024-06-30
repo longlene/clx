@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A high performant Erlang pool for eredis based on erlpool"
 HOMEPAGE="https://github.com/silviucpp/redis_pool"

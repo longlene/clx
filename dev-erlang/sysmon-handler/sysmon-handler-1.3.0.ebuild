@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Simple OTP app for managing Erlang VM system_monitor event messages"
 HOMEPAGE="https://github.com/rabbitmq/sysmon-handler"

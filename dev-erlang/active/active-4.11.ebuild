@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Filesystem Activities"
 HOMEPAGE="https://github.com/synrc/active"

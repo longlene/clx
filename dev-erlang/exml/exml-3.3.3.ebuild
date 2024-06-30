@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="XML parsing library in Erlang"
 HOMEPAGE="https://github.com/esl/exml"

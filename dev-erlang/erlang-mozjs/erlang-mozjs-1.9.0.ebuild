@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A NIF module for Erlang to Mozilla's Spidermonkey Javascript runtime"
 HOMEPAGE="https://github.com/erlang-mozjs/erlang-mozjs"

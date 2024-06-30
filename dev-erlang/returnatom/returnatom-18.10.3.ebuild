@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang library for creating dynamic modules that their functions always yield atom type"
 HOMEPAGE="https://github.com/Pouriya-Jahanbakhsh/returnatom"

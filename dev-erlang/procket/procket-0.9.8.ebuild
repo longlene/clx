@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang interface to low level socket operations"
 HOMEPAGE="https://github.com/msantos/procket"

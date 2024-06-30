@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="an erlang wrapper for eredis to support cluster mode of redis 3.0.0+"
 HOMEPAGE="https://github.com/adrienmo/eredis_cluster"

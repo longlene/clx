@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A behaviour/support library for writing plain Erlang FSMs"
 HOMEPAGE="https://github.com/uwiger/plain_fsm"

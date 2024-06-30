@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="N2O: WebSocket Application Server"
 HOMEPAGE="http://n2o.space"

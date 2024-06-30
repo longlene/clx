@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 EGIT_COMMIT="117dc1e081585d675d56970f254480175dd75556"
 

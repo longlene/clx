@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Dynamic dispatching library for metrics and instrumentations"
 HOMEPAGE="https://github.com/beam-telemetry/telemetry"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="sqlite3 NIF bindings for Erlang"
 HOMEPAGE="https://github.com/max-au/sqlite"

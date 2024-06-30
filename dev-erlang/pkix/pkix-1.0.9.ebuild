@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="PKIX certificates management for Erlang"
 HOMEPAGE="https://github.com/processone/pkix"

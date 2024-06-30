@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="HTTP client for Erlang based on libcurl and libevent"
 HOMEPAGE="https://github.com/puzza007/katipo"

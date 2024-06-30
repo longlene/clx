@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang HTTP client"
 HOMEPAGE="https://github.com/cmullaparthi/ibrowse"

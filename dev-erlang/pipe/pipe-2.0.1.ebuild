@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="process pipeline library"
 HOMEPAGE="https://github.com/kfsm/pipe"

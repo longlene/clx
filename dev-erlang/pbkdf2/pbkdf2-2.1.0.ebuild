@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A PBKDF2 implementation for Erlang"
 HOMEPAGE="https://github.com/basho/erlang-pbkdf2"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang's best pbkdf2 implementation"
 HOMEPAGE="https://github.com/esl/fast_pbkdf2"

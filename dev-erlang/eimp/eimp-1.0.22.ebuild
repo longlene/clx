@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Image Manipulation Process"
 HOMEPAGE="https://github.com/processone/eimp"

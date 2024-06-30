@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Logging framework for Erlang/OTP"
 HOMEPAGE="https://github.com/erlang-lager/lager"

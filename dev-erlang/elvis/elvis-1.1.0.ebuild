@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Style Reviewer"
 HOMEPAGE="https://github.com/inaka/elvis"

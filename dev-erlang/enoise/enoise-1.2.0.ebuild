@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang implementation of the Noise protocol"
 HOMEPAGE="https://github.com/aeternity/enoise"

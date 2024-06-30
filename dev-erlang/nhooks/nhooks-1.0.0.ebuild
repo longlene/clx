@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang hooks library"
 HOMEPAGE="https://github.com/nomasystems/nhooks"

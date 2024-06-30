@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="lhttpc is a lightweight HTTP/1.1 client implemented in Erlang"
 HOMEPAGE="https://github.com/erlcloud/lhttpc"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A scalable RPC library for Erlang-VM based languages"
 HOMEPAGE="https://github.com/fastdgiot/gen_rpc"

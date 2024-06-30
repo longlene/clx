@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Conflict-free Replicated Data Types in Erlang/OTP"
 HOMEPAGE="https://github.com/shiguredo/crdt"

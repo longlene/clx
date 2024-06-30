@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang cronish system"
 HOMEPAGE="https://github.com/erlware/erlcron"

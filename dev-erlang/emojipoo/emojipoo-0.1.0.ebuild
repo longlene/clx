@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Log-Structured Merge-Tree in pure Erlang"
 HOMEPAGE="https://github.com/zadean/emojipoo"

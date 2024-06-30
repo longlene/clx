@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang OAuth 2.0 implementation"
 HOMEPAGE="https://github.com/processone/p1_oauth2"

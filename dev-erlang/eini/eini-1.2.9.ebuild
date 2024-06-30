@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An Erlang INI parser"
 HOMEPAGE="https://github.com/erlcloud/eini"

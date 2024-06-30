@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Swagger integration for Cowboy"
 HOMEPAGE="https://github.com/inaka/cowboy_swagger"

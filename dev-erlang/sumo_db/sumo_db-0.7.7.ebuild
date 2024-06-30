@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Persistency Framework"
 HOMEPAGE="https://github.com/inaka/sumo_db"

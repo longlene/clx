@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="GraphQL implementation in Erlang"
 HOMEPAGE="https://github.com/shopgun/graphql-erlang"

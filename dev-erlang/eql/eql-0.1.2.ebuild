@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang with SQL"
 HOMEPAGE="https://github.com/artemeff/eql"

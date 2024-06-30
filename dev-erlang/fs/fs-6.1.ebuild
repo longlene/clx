@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="FS: Native Filesystem Listeners"
 HOMEPAGE="https://github.com/synrc/fs"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="DataBase Interface for Erlang/Elixir to use MySQL"
 HOMEPAGE="https://github.com/dbi-beam/dbi_mysql"

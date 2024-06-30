@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Prototype implementation of Lasp in Erlang"
 HOMEPAGE="http://lasp-lang.org/"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Job scheduler for load regulation"
 HOMEPAGE="https://github.com/uwiger/jobs"

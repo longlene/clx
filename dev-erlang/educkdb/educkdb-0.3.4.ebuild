@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="DuckDB NIF for Erlang"
 HOMEPAGE="https://github.com/mmzeeman/educkdb"

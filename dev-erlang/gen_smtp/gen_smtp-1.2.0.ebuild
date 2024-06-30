@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A generic Erlang SMTP server and client that can be extended via callback modules"
 HOMEPAGE="https://github.com/gen-smtp/gen_smtp"

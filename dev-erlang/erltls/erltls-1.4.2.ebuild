@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="TLS/SSL/DTLS BoringSSL/OpenSSL-based NIF implementation of Erlang ssl module"
 HOMEPAGE="https://github.com/silviucpp/erltls"

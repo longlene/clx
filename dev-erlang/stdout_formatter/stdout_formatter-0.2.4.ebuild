@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang library to format paragraphs, lists and tables as plain text"
 HOMEPAGE="https://github.com/rabbitmq/stdout_formatter"

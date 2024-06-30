@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="NITRO: HTML5 Elements and Templates"
 HOMEPAGE="https://github.com/synrc/nitro"

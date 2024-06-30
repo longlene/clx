@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang 2-way map"
 HOMEPAGE="https://github.com/okeuday/key2value"

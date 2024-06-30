@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit rebar
+inherit rebar3
 
 FMT_COMMIT="e4c8cfe38ed3ae595aab58460f543c2f23a7f670"
 

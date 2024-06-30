@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An adaptive accrual node failure detection library for Elixir and Erlang"
 HOMEPAGE="https://github.com/rabbitmq/aten"

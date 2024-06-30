@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Universal and extensible data structure library for interacting with Erlang maps, proplists, dicts"
 HOMEPAGE="https://github.com/choptastic/erlang_ds"

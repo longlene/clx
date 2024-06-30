@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Lightweight Erlang server behaviour"
 HOMEPAGE="https://github.com/lpgauth/metal"

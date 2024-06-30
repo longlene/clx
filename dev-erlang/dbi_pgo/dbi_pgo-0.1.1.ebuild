@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="DBI PostgreSQL extension using PGO"
 HOMEPAGE="https://github.com/dbi-beam/dbi_pgo"

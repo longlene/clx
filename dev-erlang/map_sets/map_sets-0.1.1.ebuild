@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="s/sets/map_sets/g"
 HOMEPAGE="https://github.com/k32/map_sets"

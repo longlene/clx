@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An Erlang library for building lightweight HTTP servers."
 HOMEPAGE="https://github.com/mochi/mochiweb"

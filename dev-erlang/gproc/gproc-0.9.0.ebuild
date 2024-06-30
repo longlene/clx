@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Extended process registry for Erlang"
 HOMEPAGE="https://github.com/uwiger/gproc"

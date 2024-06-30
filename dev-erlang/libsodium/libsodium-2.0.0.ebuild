@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="libsodium asynchronous port driver for Erlang and Elixir"
 HOMEPAGE="https://github.com/potatosalad/erlang-libsodium"

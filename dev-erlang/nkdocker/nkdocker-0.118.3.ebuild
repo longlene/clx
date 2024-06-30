@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Docker client"
 HOMEPAGE="https://github.com/NetComposer/nkdocker"

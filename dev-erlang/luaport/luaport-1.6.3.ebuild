@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An Erlang/Elixir port for scripting application logic in Lua"
 HOMEPAGE="https://github.com/asciibeats/luaport"

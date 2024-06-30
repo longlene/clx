@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Alternative Erlang Pre-Processor"
 HOMEPAGE="https://github.com/ErlyORM/aleppo"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Generic Erlang CoAP Client/Server"
 HOMEPAGE="https://github.com/gotthardp/gen_coap"

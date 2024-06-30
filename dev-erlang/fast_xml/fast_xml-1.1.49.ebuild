@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Fast Expat based Erlang XML parsing library"
 HOMEPAGE="https://github.com/processone/fast_xml"

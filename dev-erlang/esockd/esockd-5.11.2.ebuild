@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang General Non-blocking TCP/SSL Socket Server"
 HOMEPAGE="https://emqx.io/"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Pure Erlang PostgreSQL driver"
 HOMEPAGE="https://github.com/processone/p1_pgsql"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An ISO 8601 date formating and parsing library for Erlang"
 HOMEPAGE="https://github.com/erlsci/iso8601"

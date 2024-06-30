@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="AWS APIs library for Erlang"
 HOMEPAGE="https://github.com/erlcloud/erlcloud"

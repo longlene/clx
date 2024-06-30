@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Generic Hooks system for Erlang and Elixir applications"
 HOMEPAGE="https://github.com/benoitc/hooks"

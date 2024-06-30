@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="High-Performance Erlang Cache Compiler"
 HOMEPAGE="https://github.com/lpgauth/foil"

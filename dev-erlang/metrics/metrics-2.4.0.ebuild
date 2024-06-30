@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A generic interface to different metrics systems in Erlang"
 HOMEPAGE="https://github.com/benoitc/erlang-metrics"

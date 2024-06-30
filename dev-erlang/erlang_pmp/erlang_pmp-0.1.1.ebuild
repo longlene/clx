@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="FlameGraph compatible, Poor Man's Profiler inspired Erlang profiler"
 HOMEPAGE="https://github.com/kzemek/erlang_pmp"

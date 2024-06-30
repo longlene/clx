@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Native UUID Generation"
 HOMEPAGE="https://github.com/okeuday/uuid"

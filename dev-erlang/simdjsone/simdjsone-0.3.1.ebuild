@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Fast JSON parser"
 HOMEPAGE="https://github.com/saleyn/simdjsone"

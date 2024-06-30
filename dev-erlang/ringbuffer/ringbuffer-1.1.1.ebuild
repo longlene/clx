@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Ring buffer implementation for Erlang using ETS tables"
 HOMEPAGE="https://github.com/zotonic/ringbuffer"

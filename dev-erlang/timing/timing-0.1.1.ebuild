@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Micro benchmarking Erlang library"
 HOMEPAGE="https://github.com/lpgauth/timing"

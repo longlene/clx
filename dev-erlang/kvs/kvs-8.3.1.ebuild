@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="KVS: Abstract Term Database"
 HOMEPAGE="https://github.com/synrc/kvs"

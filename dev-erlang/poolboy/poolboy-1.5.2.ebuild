@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A hunky Erlang worker pool factory"
 HOMEPAGE="https://github.com/devinus/poolboy"

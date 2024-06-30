@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Native Erlang CQL client for Cassandra"
 HOMEPAGE="https://github.com/cqerl/cqerl"

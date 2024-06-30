@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang (and Elixir) distribution without epmd"
 HOMEPAGE="https://github.com/oltarasenko/epmdless"

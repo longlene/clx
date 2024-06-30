@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An ETS-based throttling application"
 HOMEPAGE="https://github.com/nomasystems/nthrottle"

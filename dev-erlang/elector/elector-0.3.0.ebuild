@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Elects master node from Erlang/Elixir cluster that is agreed by all nodes"
 HOMEPAGE="https://github.com/alfetahe/elector"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang interface to eBPF"
 HOMEPAGE="https://github.com/oskardrums/ebpf"

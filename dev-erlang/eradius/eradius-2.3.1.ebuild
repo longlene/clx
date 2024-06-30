@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang RADIUS server framework"
 HOMEPAGE="https://github.com/travelping/eradius"

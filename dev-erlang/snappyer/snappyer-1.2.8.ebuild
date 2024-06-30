@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A fast compressor/decompressor"
 HOMEPAGE="https://github.com/zmstone/snappyer"

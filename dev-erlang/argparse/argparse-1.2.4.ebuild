@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="simple framework to create complex CLI"
 HOMEPAGE="https://github.com/max-au/argparse"

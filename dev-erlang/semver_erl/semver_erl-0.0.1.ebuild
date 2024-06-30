@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Semantic Versioning Support Library"
 HOMEPAGE="https://hex.pm/packages/semver_erl"

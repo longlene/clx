@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Push Notifications"
 HOMEPAGE="https://github.com/vkatsuba/epns"

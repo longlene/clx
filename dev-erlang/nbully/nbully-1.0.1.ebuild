@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An OTP application for leader election"
 HOMEPAGE="https://github.com/nomasystems/nbully"

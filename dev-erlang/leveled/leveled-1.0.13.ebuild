@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An Erlang Key-Value Store"
 HOMEPAGE="https://github.com/martinsumner/leveled"

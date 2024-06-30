@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="HTTP/2 Server for Erlang"
 HOMEPAGE="https://github.com/joedevivo/chatterbox"

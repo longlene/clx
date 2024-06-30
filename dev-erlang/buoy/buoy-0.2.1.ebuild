@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="High-Performance Erlang HTTP 1.1 Client"
 HOMEPAGE="https://github.com/lpgauth/buoy"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A high performant Erlang NIF Priority Queue implemented using a binary heap"
 HOMEPAGE="https://github.com/silviucpp/epqueue"

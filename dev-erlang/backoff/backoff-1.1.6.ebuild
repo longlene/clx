@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Simple exponential backoffs in Erlang"
 HOMEPAGE="https://github.com/ferd/backoff"

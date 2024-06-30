@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="DataBase Interface for Erlang/Elixir to use PostgreSQL"
 HOMEPAGE="https://github.com/dbi-beam/dbi_pgsql"

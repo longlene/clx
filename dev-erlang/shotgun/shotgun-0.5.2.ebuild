@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="For the times you need more than just a gun"
 HOMEPAGE="https://github.com/inaka/shotgun"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang bindings to RocksDB datastore"
 HOMEPAGE="https://github.com/leo-project/erocksdb"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Cassandra driver for Erlang"
 HOMEPAGE="https://github.com/exosite/ecql"

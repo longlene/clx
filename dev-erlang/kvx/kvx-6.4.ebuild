@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Abstract Chain Database"
 HOMEPAGE="https://github.com/synrc/kvx"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="MessagePack (de)serializer implementation for Erlang"
 HOMEPAGE="http://msgpack.org/"

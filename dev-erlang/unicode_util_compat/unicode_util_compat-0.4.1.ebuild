@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="unicode_util compatibility library for Erlang"
 HOMEPAGE="https://github.com/benoitc/unicode_util_compat"

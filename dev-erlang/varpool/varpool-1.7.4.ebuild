@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Process Pools as a Local Variable"
 HOMEPAGE="https://github.com/okeuday/varpool"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Webmachine for Zotonic and Cowboy"
 HOMEPAGE="https://github.com/zotonic/cowmachine"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang utils modules"
 HOMEPAGE="https://github.com/palkan/ulitos"

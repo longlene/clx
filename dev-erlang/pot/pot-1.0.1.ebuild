@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An Erlang library for generating Google Authenticator compatible one time passwords"
 HOMEPAGE="https://github.com/yuce/pot"

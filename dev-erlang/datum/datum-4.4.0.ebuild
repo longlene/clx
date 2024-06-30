@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="pure functional and generic programming for Erlang"
 HOMEPAGE="https://github.com/fogfish/datum"

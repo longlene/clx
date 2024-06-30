@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Quick Erlang Random Number Generation"
 HOMEPAGE="https://github.com/okeuday/quickrand"

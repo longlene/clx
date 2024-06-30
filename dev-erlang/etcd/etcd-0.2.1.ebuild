@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="erlang driver for etcd"
 HOMEPAGE="https://github.com/yunba/erl-etcd"

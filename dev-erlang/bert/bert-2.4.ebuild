@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="BERT: Type Driven Parser Generator"
 HOMEPAGE="https://github.com/synrc/bert"

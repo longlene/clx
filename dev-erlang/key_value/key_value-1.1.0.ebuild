@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="key value"
 HOMEPAGE="https://github.com/Leapsight/key_value"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="gen_stage for Erlang"
 HOMEPAGE="https://github.com/longlene/stage"

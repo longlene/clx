@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Thrift encoder/decoder library optimized for efficiency"
 HOMEPAGE="https://github.com/openx/ox-thrift"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An implementation of the CBOR data encoding format in Erlang"
 HOMEPAGE="https://github.com/miniclip/erl_cbor"

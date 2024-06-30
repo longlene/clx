@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang implementation of multihash"
 HOMEPAGE="https://github.com/helium/erlang-multihash"

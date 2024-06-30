@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Messaging Protocol"
 HOMEPAGE="https://github.com/synrc/chat"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Declarative Documents"
 HOMEPAGE="https://github.com/synrc/forms"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="simple persistent queues for Erlang"
 HOMEPAGE="https://github.com/fogfish/esq"

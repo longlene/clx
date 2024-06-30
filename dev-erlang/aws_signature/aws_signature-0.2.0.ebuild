@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Request signature implementation for authorizing AWS API calls"
 HOMEPAGE="https://github.com/aws-beam/aws_signature"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Shared inter-process queues"
 HOMEPAGE="https://github.com/hnc-agency/shq"

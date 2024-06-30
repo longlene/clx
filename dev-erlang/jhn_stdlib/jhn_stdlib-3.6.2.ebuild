@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A few thought experiments solidified as code"
 HOMEPAGE="https://github.com/JanHenryNystrom/jhn_stdlib"

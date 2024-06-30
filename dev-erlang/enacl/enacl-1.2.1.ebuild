@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang bindings for NaCl / libsodium"
 HOMEPAGE="https://github.com/jlouis/enacl"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An XMPP client library in Erlang for conveniently testing XMPP servers"
 HOMEPAGE="https://github.com/esl/escalus"

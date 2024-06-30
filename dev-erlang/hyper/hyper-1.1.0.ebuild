@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang implementation of HyperLogLog"
 HOMEPAGE="https://github.com/basho/hyper"

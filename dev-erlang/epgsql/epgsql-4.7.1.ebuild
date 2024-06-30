@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang PostgreSQL client library"
 HOMEPAGE="https://github.com/epgsql/epgsql"

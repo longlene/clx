@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Sortable Erlang Term Serialization"
 HOMEPAGE="https://github.com/uwiger/sext"

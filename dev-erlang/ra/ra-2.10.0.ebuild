@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A Raft implementation for Erlang and Elixir"
 HOMEPAGE="https://github.com/rabbitmq/ra"

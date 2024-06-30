@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang kafka driver based on librdkafka"
 HOMEPAGE="https://github.com/silviucpp/erlkaf"

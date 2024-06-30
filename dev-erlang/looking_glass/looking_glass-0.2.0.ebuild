@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An Erlang/Elixir/BEAM profiler tool"
 HOMEPAGE="https://github.com/rabbitmq/looking_glass"

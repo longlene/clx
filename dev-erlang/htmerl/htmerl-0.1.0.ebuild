@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="HTML Parser in Erlang"
 HOMEPAGE="https://github.com/zadean/htmerl"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang JavaScript Compiler"
 HOMEPAGE="https://github.com/synrc/shen"

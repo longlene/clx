@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang round-robin load balancer for Erlang processes based on ETS"
 HOMEPAGE="https://github.com/silviucpp/erlpool"

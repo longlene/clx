@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="YAML 1.2 and JSON parser in pure Erlang"
 HOMEPAGE="https://github.com/yakaz/yamerl"

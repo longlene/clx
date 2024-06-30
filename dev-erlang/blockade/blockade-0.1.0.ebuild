@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Provides a simple way to queue and dispatch events to subscribers"
 HOMEPAGE="https://github.com/alfetahe/blockade"

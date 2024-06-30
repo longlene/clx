@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An erlang application for consuming, producing and manipulating json."
 HOMEPAGE="https://github.com/talentdeficit/jsx"

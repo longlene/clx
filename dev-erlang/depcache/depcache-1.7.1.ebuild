@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An in-memory caching server for Erlang"
 HOMEPAGE="https://github.com/zotonic/depcache"

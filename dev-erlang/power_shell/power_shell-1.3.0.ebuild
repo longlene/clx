@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Advanced system-wide Erlang shell capabilities"
 HOMEPAGE="https://github.com/WhatsApp/power_shell"

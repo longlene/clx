@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="CRDT implementations to use with Antidote"
 HOMEPAGE="https://github.com/AntidoteDB/antidote_crdt"

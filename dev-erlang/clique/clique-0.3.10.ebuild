@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="CLI Framework for Erlang"
 HOMEPAGE="https://github.com/basho/clique"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Prolog interpreter in and for Erlang"
 HOMEPAGE="https://github.com/rvirding/erlog"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="get_stacktrace() compatibility in Erlang/OTP 21+"
 HOMEPAGE="https://github.com/g-andrade/stacktrace_compat"

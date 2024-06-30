@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Use Erlang typespecs in the runtime"
 HOMEPAGE="https://github.com/k32/typerefl"

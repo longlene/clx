@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="an erlang/elixir rfc3339 lib"
 HOMEPAGE="https://github.com/talentdeficit/rfc3339"

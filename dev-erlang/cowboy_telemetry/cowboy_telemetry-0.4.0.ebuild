@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Telemetry instrumentation for Cowboy"
 HOMEPAGE="https://github.com/beam-telemetry/cowboy_telemetry"

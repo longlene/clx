@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Trooper is easy library for send remote commands"
 HOMEPAGE="https://github.com/army-cat/trooper"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Postgres client and connection pool"
 HOMEPAGE="https://github.com/erleans/pgo"

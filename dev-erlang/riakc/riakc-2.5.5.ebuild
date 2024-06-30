@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 MY_PN="riak-erlang-client"
 MY_P="${MY_PN}-${PV}"

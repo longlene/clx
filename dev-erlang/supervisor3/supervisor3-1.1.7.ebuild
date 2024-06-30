@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Library to abstract supervisor2.erl from rabbitmq/rabbitmq-common"
 HOMEPAGE="https://github.com/klarna/supervisor3"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A global Process Registry and Process Group manager for Erlang"
 HOMEPAGE="https://github.com/ostinelli/syn"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="SH: Shell Exec"
 HOMEPAGE="https://github.com/synrc/sh"

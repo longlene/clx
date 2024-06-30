@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang ETS Based TTL Cache"
 HOMEPAGE="https://github.com/Ledest/ecache"

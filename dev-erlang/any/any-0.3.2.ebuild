@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Convert a string or binary representing an integer, float or atom into an integer, float or atom"
 HOMEPAGE="https://github.com/shortishly/any"

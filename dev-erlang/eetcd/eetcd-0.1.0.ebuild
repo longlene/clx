@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang client for the etcd API v3"
 HOMEPAGE="https://github.com/zhongwencool/eetcd"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Kafka protocol erlang library"
 HOMEPAGE="https://github.com/klarna/kafka_protocol"

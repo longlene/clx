@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Simple, Distributed and Scalable PubSub Message Bus written in Erlang"
 HOMEPAGE="https://github.com/cabol/erlbus"

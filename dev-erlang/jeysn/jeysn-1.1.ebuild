@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Yet another JSON parser for Erlang"
 HOMEPAGE="https://github.com/sstrollo/jeysn"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A counters registry that maintains counter references with associated meta data"
 HOMEPAGE="https://github.com/rabbitmq/seshat"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Base16 encoding and decoding"
 HOMEPAGE="https://github.com/esl/base16"

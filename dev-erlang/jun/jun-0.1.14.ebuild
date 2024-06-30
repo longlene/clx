@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="python pandas, plotly, seaborn support & dataframes manipulation over erlang"
 HOMEPAGE="https://github.com/zgbjgg/jun"

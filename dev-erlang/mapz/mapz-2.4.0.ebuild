@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Additions to the Erlang maps module"
 HOMEPAGE="https://github.com/eproxus/mapz"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Fast encoding conversion library for Erlang and Elixir"
 HOMEPAGE="https://github.com/processone/iconv"

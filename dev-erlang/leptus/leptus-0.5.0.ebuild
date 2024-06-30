@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang REST framework that runs on top of Cowboy"
 HOMEPAGE="https://sinasamavati.xyz/leptus"

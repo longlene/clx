@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A blazing fast JSON parser and generator in pure Erlang"
 HOMEPAGE="https://github.com/lpil/thoas"

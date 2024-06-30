@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Chess representation written in Erlang using Bitboards"
 HOMEPAGE="https://github.com/DOBRO/binbo"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Jump Consistent Hash NIF library for Erlang/Elixir"
 HOMEPAGE="https://github.com/cabol/jchash"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Transparent and out-of-box Sharding support for Erlang/Elixir ETS tables"
 HOMEPAGE="https://github.com/cabol/shards"

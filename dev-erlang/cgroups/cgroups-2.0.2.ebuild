@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang native cgroups interface"
 HOMEPAGE="https://github.com/okeuday/cgroups"

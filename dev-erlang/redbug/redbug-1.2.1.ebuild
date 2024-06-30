@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="erlang tracing debugger"
 HOMEPAGE="https://github.com/massemanet/redbug"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Lazy sequences for Erlang"
 HOMEPAGE="https://github.com/hnc-agency/lazy"

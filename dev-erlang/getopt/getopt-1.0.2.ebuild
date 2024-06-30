@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang module to parse command line arguments using the GNU getopt syntax"
 HOMEPAGE="https://github.com/jcomellas/getopt"

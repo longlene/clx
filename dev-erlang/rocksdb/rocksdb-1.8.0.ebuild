@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="RocksDB for Erlang"
 HOMEPAGE="https://gitlab.com/barrel-db/erlang-rocksdb/"

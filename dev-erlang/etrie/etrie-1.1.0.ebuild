@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 HAT_TRIE_COMMIT="906e6abd1e7063f1dacd3a6b270aa654b525eb0a"
 

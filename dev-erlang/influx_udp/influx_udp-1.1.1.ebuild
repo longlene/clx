@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang InfluxDB UDP writer"
 HOMEPAGE="https://github.com/palkan/influx_udp"

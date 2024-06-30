@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Pure Erlang MySQL driver"
 HOMEPAGE="https://github.com/processone/p1_mysql"

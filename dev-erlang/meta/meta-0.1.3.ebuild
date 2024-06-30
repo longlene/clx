@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A metaprogramming library for Erlang"
 HOMEPAGE="https://github.com/efcasado/meta"

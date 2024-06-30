@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Libsodium bindings for Erlang"
 HOMEPAGE="https://github.com/starbelly/soda"

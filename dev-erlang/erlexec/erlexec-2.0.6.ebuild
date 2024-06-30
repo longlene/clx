@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Execute and control OS processes from Erlang/OTP"
 HOMEPAGE="https://github.com/saleyn/erlexec"

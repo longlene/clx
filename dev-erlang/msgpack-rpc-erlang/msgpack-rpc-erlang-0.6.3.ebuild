@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="RPC with MessagePack in Erlang/OTP"
 HOMEPAGE="https://github.com/msgpack-rpc/msgpack-rpc-erlang"

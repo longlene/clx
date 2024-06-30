@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Collection of functions and scripts to debug Erlang in production"
 HOMEPAGE="https://github.com/ferd/recon"

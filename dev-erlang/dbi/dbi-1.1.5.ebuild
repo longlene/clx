@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang and Elixir DataBase Interface"
 HOMEPAGE="https://github.com/dbi-beam/dbi"

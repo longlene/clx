@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="JSON encode/decode library written in Erlang"
 HOMEPAGE="https://github.com/crownedgrouse/jason"

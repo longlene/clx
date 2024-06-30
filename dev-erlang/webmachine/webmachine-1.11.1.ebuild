@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A REST-based system for building web applications"
 HOMEPAGE="https://github.com/webmachine/webmachine"

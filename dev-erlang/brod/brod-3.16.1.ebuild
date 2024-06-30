@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Apache Kafka client library for Erlang/Elixir"
 HOMEPAGE="https://github.com/klarna/brod"

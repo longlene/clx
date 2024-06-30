@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Apple Push Notification Server for Erlang"
 HOMEPAGE="https://github.com/inaka/apns4erl"

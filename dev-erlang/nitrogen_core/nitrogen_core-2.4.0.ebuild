@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="The core Nitrogen library"
 HOMEPAGE="https://github.com/nitrogen/nitrogen_core"

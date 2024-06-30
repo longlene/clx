@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A NIF wrapper around a basic bloom filter"
 HOMEPAGE="https://github.com/SemanticSugar/ebloom"

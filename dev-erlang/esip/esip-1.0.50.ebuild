@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="ProcessOne SIP server component"
 HOMEPAGE="https://github.com/processone/esip"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang XML parsing library based on pugixml"
 HOMEPAGE="https://github.com/silviucpp/erlxml"

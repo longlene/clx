@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Strategies For Automatic Node Discovery"
 HOMEPAGE="https://github.com/okeuday/nodefinder"

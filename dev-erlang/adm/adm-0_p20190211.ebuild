@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar vcs-snapshot
+inherit rebar3 vcs-snapshot
 
 EGIT_COMMIT="e19fda9855c7300f388bd774a189a35eef4e9f91"
 

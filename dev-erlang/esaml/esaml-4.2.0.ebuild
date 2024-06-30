@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang SAML library, SSO and SLO, with Cowboy integration"
 HOMEPAGE="https://github.com/handnot2/esaml"

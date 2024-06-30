@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="BERT Encoder/Decoder"
 HOMEPAGE="https://github.com/yuce/bert.erl"

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="walk the fine line between Erlang app.configs and a sysctl-like syntax"
 HOMEPAGE="https://github.com/Kyorai/cuttlefish"

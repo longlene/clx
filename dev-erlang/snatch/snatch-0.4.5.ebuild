@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="An Erlang Lightweight XMPP Client library"
 HOMEPAGE="https://github.com/snatch-xmpp/snatch"

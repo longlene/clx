@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang network protocol library"
 HOMEPAGE="https://github.com/msantos/pkt"

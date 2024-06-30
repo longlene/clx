@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Zstd binding for Erlang/Elixir"
 HOMEPAGE="https://github.com/AdRoll/zstd-erlang"

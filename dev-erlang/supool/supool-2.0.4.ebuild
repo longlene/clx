@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Process Pool as a Supervisor"
 HOMEPAGE="https://github.com/okeuday/supool"

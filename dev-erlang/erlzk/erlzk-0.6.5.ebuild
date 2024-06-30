@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="A Pure Erlang ZooKeeper Client"
 HOMEPAGE="https://github.com/huaban/erlzk"

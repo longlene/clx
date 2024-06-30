@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="YAML validator"
 HOMEPAGE="https://github.com/processone/yval"

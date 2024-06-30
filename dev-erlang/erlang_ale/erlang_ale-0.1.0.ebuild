@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Erlang Actor Library for Embedded"
 HOMEPAGE="https://github.com/esl/erlang_ale"

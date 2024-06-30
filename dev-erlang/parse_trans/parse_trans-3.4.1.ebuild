@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar
+inherit rebar3
 
 DESCRIPTION="Parse transform utilities for Erlang"
 HOMEPAGE="https://github.com/uwiger/parse_trans"
