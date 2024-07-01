@@ -16,7 +16,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-games/raylib
+	media-libs/raylib
 	dev-lisp/cffi
 "
 BDEPEND=""
