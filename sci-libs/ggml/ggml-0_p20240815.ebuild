@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="e3b3846976c94163f2b3dd128cc959782653edbb"
+EGIT_COMMIT="9ad0906ffca1758f29270f59938d78740808ba93"
 
 DESCRIPTION="Tensor library for machine learning"
 HOMEPAGE="https://github.com/ggerganov/ggml"
@@ -14,21 +14,15 @@ SRC_URI="https://github.com/ggerganov/ggml/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="blas cuda curl vulkan"
+IUSE="blas cuda vulkan"
 
 DEPEND="
 	blas? ( sci-libs/openblas )
-	vulkan? ( media-libs/mesa[vulkan] )
+	cuda? ( dev-util/nvidia-cuda-toolkit )
+	vulkan? ( media-libs/vulkan-loader )
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
-
-#src_prepare() {
-#	default
-#	sed -e "s#DESTINATION lib#DESTINATION $(get_libdir)#" \
-#		-i src/CMakeLists.txt
-#	cmake_src_prepare
-#}
 
 src_configure() {
 	local mycmakeargs=(
@@ -36,7 +30,7 @@ src_configure() {
 		-DGGML_BUILD_EXAMPLES=OFF
 		-DGGML_BLAS=$(usex blas)
 		-DGGML_CUDA=$(usex cuda)
-		-DGGML_CURL=$(usex curl)
+		-DGGML_CURL=ON
 		-DGGML_VULKAN=$(usex vulkan)
 		-DGGML_CCACHE=OFF
 	)
