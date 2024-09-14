@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="9ad0906ffca1758f29270f59938d78740808ba93"
+EGIT_COMMIT="d3a58b079f50b43e3fed852ccffa6b3fb6baac78"
 
 DESCRIPTION="Tensor library for machine learning"
 HOMEPAGE="https://github.com/ggerganov/ggml"
@@ -30,7 +30,6 @@ src_configure() {
 		-DGGML_BUILD_EXAMPLES=OFF
 		-DGGML_BLAS=$(usex blas)
 		-DGGML_CUDA=$(usex cuda)
-		-DGGML_CURL=ON
 		-DGGML_VULKAN=$(usex vulkan)
 		-DGGML_CCACHE=OFF
 	)

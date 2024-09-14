@@ -1,0 +1,194 @@
+# Copyright 2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{12..13} )
+
+CRATES="
+	addr2line@0.22.0
+	adler@1.0.2
+	atomic-waker@1.1.2
+	autocfg@1.3.0
+	backtrace@0.3.73
+	base64@0.22.1
+	bitflags@1.3.2
+	bitflags@2.6.0
+	bumpalo@3.16.0
+	bytes@1.6.1
+	cc@1.1.6
+	cfg-if@1.0.0
+	core-foundation@0.9.4
+	core-foundation-sys@0.8.6
+	encoding_rs@0.8.34
+	equivalent@1.0.1
+	errno@0.3.9
+	fastrand@2.1.0
+	fnv@1.0.7
+	foreign-types@0.3.2
+	foreign-types-shared@0.1.1
+	form_urlencoded@1.2.1
+	futures@0.3.30
+	futures-channel@0.3.30
+	futures-core@0.3.30
+	futures-executor@0.3.30
+	futures-io@0.3.30
+	futures-macro@0.3.30
+	futures-sink@0.3.30
+	futures-task@0.3.30
+	futures-util@0.3.30
+	getrandom@0.2.15
+	gimli@0.29.0
+	h2@0.4.5
+	hashbrown@0.14.5
+	heck@0.5.0
+	hermit-abi@0.3.9
+	http@1.1.0
+	http-body@1.0.1
+	http-body-util@0.1.2
+	httparse@1.9.4
+	hyper@1.4.1
+	hyper-rustls@0.27.2
+	hyper-tls@0.6.0
+	hyper-util@0.1.6
+	idna@0.5.0
+	indexmap@2.2.6
+	indoc@2.0.5
+	ipnet@2.9.0
+	itoa@1.0.11
+	js-sys@0.3.69
+	libc@0.2.155
+	linux-raw-sys@0.4.14
+	log@0.4.22
+	memchr@2.7.4
+	memoffset@0.9.1
+	mime@0.3.17
+	miniz_oxide@0.7.4
+	mio@0.8.11
+	native-tls@0.2.12
+	num_cpus@1.16.0
+	object@0.36.1
+	once_cell@1.19.0
+	openssl@0.10.66
+	openssl-macros@0.1.1
+	openssl-probe@0.1.5
+	openssl-src@300.3.1+3.3.1
+	openssl-sys@0.9.103
+	percent-encoding@2.3.1
+	pin-project@1.1.5
+	pin-project-internal@1.1.5
+	pin-project-lite@0.2.14
+	pin-utils@0.1.0
+	pkg-config@0.3.30
+	portable-atomic@1.7.0
+	ppv-lite86@0.2.17
+	proc-macro2@1.0.86
+	pyo3@0.22.2
+	pyo3-build-config@0.22.2
+	pyo3-ffi@0.22.2
+	pyo3-macros@0.22.2
+	pyo3-macros-backend@0.22.2
+	quote@1.0.36
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	reqwest@0.12.5
+	ring@0.17.8
+	rustc-demangle@0.1.24
+	rustix@0.38.34
+	rustls@0.23.11
+	rustls-pemfile@2.1.2
+	rustls-pki-types@1.7.0
+	rustls-webpki@0.102.5
+	ryu@1.0.18
+	schannel@0.1.23
+	security-framework@2.11.1
+	security-framework-sys@2.11.1
+	serde@1.0.204
+	serde_derive@1.0.204
+	serde_json@1.0.120
+	serde_urlencoded@0.7.1
+	slab@0.4.9
+	smallvec@1.13.2
+	socket2@0.5.7
+	spin@0.9.8
+	subtle@2.6.1
+	syn@2.0.72
+	sync_wrapper@1.0.1
+	system-configuration@0.5.1
+	system-configuration-sys@0.5.0
+	target-lexicon@0.12.15
+	tempfile@3.10.1
+	tinyvec@1.8.0
+	tinyvec_macros@0.1.1
+	tokio@1.38.1
+	tokio-native-tls@0.3.1
+	tokio-rustls@0.26.0
+	tokio-util@0.7.11
+	tower@0.4.13
+	tower-layer@0.3.2
+	tower-service@0.3.2
+	tracing@0.1.40
+	tracing-core@0.1.32
+	try-lock@0.2.5
+	unicode-bidi@0.3.15
+	unicode-ident@1.0.12
+	unicode-normalization@0.1.23
+	unindent@0.2.3
+	untrusted@0.9.0
+	url@2.5.2
+	vcpkg@0.2.15
+	want@0.3.1
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasm-bindgen@0.2.92
+	wasm-bindgen-backend@0.2.92
+	wasm-bindgen-futures@0.4.42
+	wasm-bindgen-macro@0.2.92
+	wasm-bindgen-macro-support@0.2.92
+	wasm-bindgen-shared@0.2.92
+	wasm-streams@0.4.0
+	web-sys@0.3.69
+	windows-sys@0.48.0
+	windows-sys@0.52.0
+	windows-targets@0.48.5
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.48.5
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.48.5
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.48.5
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.48.5
+	windows_x86_64_msvc@0.52.6
+	winreg@0.52.0
+	zeroize@1.8.1
+"
+
+inherit cargo distutils-r1
+
+DESCRIPTION="Speed up file transfers with the Hugging Face Hub"
+HOMEPAGE="https://github.com/huggingface/hf_transfer"
+SRC_URI="
+	https://github.com/huggingface/hf_transfer/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND=""
+BDEPEND=""
+
+#distutils_enable_tests pytest
+RESTRICT="test"
+

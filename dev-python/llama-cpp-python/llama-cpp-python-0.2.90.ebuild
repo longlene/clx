@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
-LLAMA_CPP_COMMIT="0df0aa8e43c3378975269a51f9b876c8692e70da"
+LLAMA_CPP_COMMIT="1d1ccce67613674c75c9c7e3fa4c1e24e428ba48"
 
 DESCRIPTION="Python bindings for the llama.cpp library"
 HOMEPAGE="https://github.com/abetlen/llama-cpp-python"
