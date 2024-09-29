@@ -60,7 +60,7 @@ HTTP_FANCYINDEX_MODULE_URI="https://github.com/aperezdc/ngx-fancyindex/archive/v
 HTTP_FANCYINDEX_MODULE_WD="${WORKDIR}/ngx-fancyindex-${HTTP_FANCYINDEX_MODULE_PV}"
 
 # http_lua (https://github.com/openresty/lua-nginx-module, BSD license)
-HTTP_LUA_MODULE_PV="0.10.26"
+HTTP_LUA_MODULE_PV="0.10.27"
 HTTP_LUA_MODULE_P="ngx_http_lua-${HTTP_LUA_MODULE_PV}"
 HTTP_LUA_MODULE_URI="https://github.com/openresty/lua-nginx-module/archive/v${HTTP_LUA_MODULE_PV}.tar.gz"
 HTTP_LUA_MODULE_WD="${WORKDIR}/lua-nginx-module-${HTTP_LUA_MODULE_PV}"
@@ -153,6 +153,12 @@ HTTP_LDAP_MODULE_P="nginx-auth-ldap-${HTTP_LDAP_MODULE_PV}"
 HTTP_LDAP_MODULE_URI="https://github.com/kvspb/nginx-auth-ldap/archive/${HTTP_LDAP_MODULE_PV}.tar.gz"
 HTTP_LDAP_MODULE_WD="${WORKDIR}/nginx-auth-ldap-${HTTP_LDAP_MODULE_PV}"
 
+# nginx-vod-module (https://github.com/kaltura/nginx-vod-module, AGPL-3+)
+HTTP_VOD_MODULE_PV="1.33"
+HTTP_VOD_MODULE_P="nginx-vod-module-${HTTP_VOD_MODULE_PV}"
+HTTP_VOD_MODULE_URI="https://github.com/kaltura/nginx-vod-module/archive/${HTTP_VOD_MODULE_PV}.tar.gz"
+HTTP_VOD_MODULE_WD="${WORKDIR}/nginx-vod-module-${HTTP_VOD_MODULE_PV}"
+
 # geoip2 (https://github.com/leev/ngx_http_geoip2_module, BSD-2)
 GEOIP2_MODULE_PV="3.4"
 GEOIP2_MODULE_P="ngx_http_geoip2_module-${GEOIP2_MODULE_PV}"
@@ -160,16 +166,16 @@ GEOIP2_MODULE_URI="https://github.com/leev/ngx_http_geoip2_module/archive/${GEOI
 GEOIP2_MODULE_WD="${WORKDIR}/ngx_http_geoip2_module-${GEOIP2_MODULE_PV}"
 
 # njs-module (https://github.com/nginx/njs, as-is)
-NJS_MODULE_PV="0.8.2"
+NJS_MODULE_PV="0.8.5"
 NJS_MODULE_P="njs-${NJS_MODULE_PV}"
 NJS_MODULE_URI="https://github.com/nginx/njs/archive/${NJS_MODULE_PV}.tar.gz"
 NJS_MODULE_WD="${WORKDIR}/njs-${NJS_MODULE_PV}"
 
 # nginx-tests (http://hg.nginx.org/nginx-tests, BSD-2)
-NGINX_TESTS_REV="24482e311749"
+NGINX_TESTS_REV="0b5ec15c62ed"
 
 # stream_lua (https://github.com/openresty/stream-lua-nginx-module, BSD license)
-STREAM_LUA_MODULE_PV="0.0.14"
+STREAM_LUA_MODULE_PV="0.0.15"
 STREAM_LUA_MODULE_P="ngx_stream_lua-${STREAM_LUA_MODULE_PV}"
 STREAM_LUA_MODULE_URI="https://github.com/openresty/stream-lua-nginx-module/archive/v${STREAM_LUA_MODULE_PV}.tar.gz"
 STREAM_LUA_MODULE_WD="${WORKDIR}/stream-lua-nginx-module-${STREAM_LUA_MODULE_PV}"
@@ -210,6 +216,7 @@ SRC_URI="https://nginx.org/download/${P}.tar.gz
 	nginx_modules_http_upload_progress? ( ${HTTP_UPLOAD_PROGRESS_MODULE_URI} -> ${HTTP_UPLOAD_PROGRESS_MODULE_P}.tar.gz )
 	nginx_modules_http_upstream_check? ( ${HTTP_UPSTREAM_CHECK_MODULE_URI} -> ${HTTP_UPSTREAM_CHECK_MODULE_P}.tar.gz )
 	nginx_modules_http_vhost_traffic_status? ( ${HTTP_VHOST_TRAFFIC_STATUS_MODULE_URI} -> ${HTTP_VHOST_TRAFFIC_STATUS_MODULE_P}.tar.gz )
+	nginx_modules_http_vod? ( ${HTTP_VOD_MODULE_URI} -> ${HTTP_VOD_MODULE_P}.tar.gz )
 	nginx_modules_stream_geoip2? ( ${GEOIP2_MODULE_URI} -> ${GEOIP2_MODULE_P}.tar.gz )
 	nginx_modules_stream_javascript? ( ${NJS_MODULE_URI} -> ${NJS_MODULE_P}.tar.gz )
 	nginx_modules_stream_lua? ( ${STREAM_LUA_MODULE_URI} -> ${STREAM_LUA_MODULE_P}.tar.gz )
@@ -221,7 +228,7 @@ LICENSE="BSD-2 BSD SSLeay MIT GPL-2 GPL-2+
 	nginx_modules_http_push_stream? ( GPL-3 )"
 
 SLOT="mainline"
-KEYWORDS="~amd64 ~ppc64 ~riscv ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm ~arm64 ~loong ~ppc ~ppc64 ~riscv ~x86 ~amd64-linux ~x86-linux"
 
 RESTRICT="!test? ( test )"
 
@@ -260,6 +267,7 @@ NGINX_MODULES_3RD="
 	http_upload_progress
 	http_upstream_check
 	http_vhost_traffic_status
+	http_vod
 	stream_geoip2
 	stream_javascript
 	stream_lua
@@ -331,6 +339,7 @@ CDEPEND="
 	nginx_modules_http_dav_ext? ( dev-libs/libxml2 )
 	nginx_modules_http_security? ( dev-libs/modsecurity )
 	nginx_modules_http_auth_ldap? ( net-nds/openldap:=[ssl?] )
+	nginx_modules_http_vod? ( media-video/ffmpeg:0= )
 	nginx_modules_stream_geoip? ( dev-libs/geoip )
 	nginx_modules_stream_geoip2? ( dev-libs/libmaxminddb:= )
 	nginx_modules_stream_lua? ( ${LUA_DEPS} )"
@@ -376,6 +385,7 @@ REQUIRED_USE="pcre-jit? ( pcre )
 	nginx_modules_http_metrics? ( nginx_modules_http_stub_status )
 	nginx_modules_http_security? ( pcre )
 	nginx_modules_http_push_stream? ( ssl )
+	nginx_modules_http_vod? ( threads )
 	nginx_modules_stream_lua? (
 		${LUA_REQUIRED_USE}
 		pcre
@@ -463,6 +473,12 @@ src_prepare() {
 	if use nginx_modules_http_upload_progress; then
 		cd "${HTTP_UPLOAD_PROGRESS_MODULE_WD}" || die
 		eapply "${FILESDIR}"/http_uploadprogress-nginx-1.23.0.patch
+		cd "${S}" || die
+	fi
+
+	if use nginx_modules_http_security ; then
+		cd "${HTTP_SECURITY_MODULE_WD}" || die
+		eapply "${FILESDIR}/http_security-nginx-1.26.2.patch"
 		cd "${S}" || die
 	fi
 
@@ -651,6 +667,11 @@ src_configure() {
 
 	if use http || use http-cache || use http2 || use http3 || use nginx_modules_http_javascript; then
 		http_enabled=1
+	fi
+
+	if use nginx_modules_http_vod; then
+		http_enabled=1
+		myconf+=( --add-module=${HTTP_VOD_MODULE_WD} )
 	fi
 
 	if [ $http_enabled ]; then
@@ -884,6 +905,11 @@ src_install() {
 	if use nginx_modules_http_auth_ldap; then
 		docinto ${HTTP_LDAP_MODULE_P}
 		dodoc "${HTTP_LDAP_MODULE_WD}"/example.conf
+	fi
+
+	if use nginx_modules_http_vod; then
+		docinto ${HTTP_VOD_MODULE_P}
+		dodoc "${HTTP_VOD_MODULE_WD}"/{CHANGELOG,README}.md
 	fi
 
 	if use nginx_modules_stream_lua; then
