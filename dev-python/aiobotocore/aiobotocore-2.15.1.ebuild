@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/botocore-1.34.70[${PYTHON_USEDEP}]
+	>=dev-python/botocore-1.35.16[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.10.10[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
