@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/huggingface_hub-0.8.0[${PYTHON_USEDEP}]
+	>=sci-libs/huggingface_hub-0.8.0[${PYTHON_USEDEP}]
 	>=dev-python/hyperpyyaml-0.0.1[${PYTHON_USEDEP}]
 	>=dev-python/joblib-0.14.1[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
