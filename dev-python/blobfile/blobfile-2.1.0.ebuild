@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/pycryptodomex-3.8[${PYTHON_USEDEP}]
+	>=dev-python/pycryptodome-3.8[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.25.3[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.9[${PYTHON_USEDEP}]
 	>=dev-python/filelock-3.0[${PYTHON_USEDEP}]
