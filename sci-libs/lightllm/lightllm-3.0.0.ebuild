@@ -8,13 +8,11 @@ PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
-DESCRIPTION=""
-HOMEPAGE="
-	https://pypi.org/project/lightllm/
-"
+DESCRIPTION="A light and fast inference service for LLM"
+HOMEPAGE="https://github.com/ModelTC/lightllm"
 SRC_URI="https://github.com/ModelTC/lightllm/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
@@ -30,9 +28,9 @@ RDEPEND="
 	dev-python/safetensors[${PYTHON_USEDEP}]
 	dev-python/triton[${PYTHON_USEDEP}]
 "
-BDEPEND="
-	test? (
-	)
-"
+#BDEPEND="
+#	test? (
+#	)
+#"
 
 distutils_enable_tests pytest

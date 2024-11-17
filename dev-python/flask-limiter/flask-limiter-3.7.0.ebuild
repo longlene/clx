@@ -21,7 +21,7 @@ RDEPEND="
 	>=dev-python/limits-2.8[${PYTHON_USEDEP}]
 	>=dev-python/ordered-set-4[${PYTHON_USEDEP}]
 	>=dev-python/rich-12[${PYTHON_USEDEP}]
-	>=dev-python/typing_extensions-4[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND=""
 

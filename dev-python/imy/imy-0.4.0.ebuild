@@ -4,17 +4,14 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_12 )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION="Hyperspeed Python Web Framework"
-HOMEPAGE="
-	https://pypi.org/project/velocem/
-"
-SRC_URI="https://github.com/nickelpro/velocem/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Random utilities I can't go without"
+HOMEPAGE="https://gitlab.com/Vivern/i-miss-you"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
