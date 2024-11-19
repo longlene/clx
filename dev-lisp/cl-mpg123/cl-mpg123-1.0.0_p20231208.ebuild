@@ -1,11 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="c1cdec8518650ce6460c37ac7c6d2860af116a92"
+EGIT_COMMIT="3557553f4a0989cfc1f74b9ce2592119c8800aae"
 
 DESCRIPTION="Bindings to libmpg123, allowing fast MPG1/2/3 decoding"
 HOMEPAGE="http://shirakumo.github.io/cl-mpg123/"
@@ -26,7 +26,7 @@ RDEPEND="${DEPEND}
 #media-sound/mpg123
 
 src_prepare() {
-	eapply_user
+	default
 	use example || rm -rf example.lisp ${PN}-example.asd
 }
 

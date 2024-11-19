@@ -23,7 +23,7 @@ RDEPEND="
 	>=dev-python/aiohttp-3.8.5[${PYTHON_USEDEP}]
 	>=dev-python/click-8.0[${PYTHON_USEDEP}]
 	>=dev-python/janus-1.0[${PYTHON_USEDEP}]
-	>=dev-python/jinja-3.1.2[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
 	dev-python/terminaltables[${PYTHON_USEDEP}]
 	>=dev-python/trafaret-2.1.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.1[${PYTHON_USEDEP}]

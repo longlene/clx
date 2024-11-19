@@ -9,8 +9,11 @@ PYTHON_COMPAT=( python3_{11..13} )
 inherit distutils-r1
 
 DESCRIPTION="HTTP security headers for Flask"
-HOMEPAGE="https://github.com/GoogleCloudPlatform/flask-talisman"
-SRC_URI="https://github.com/GoogleCloudPlatform/flask-talisman/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="
+	https://github.com/GoogleCloudPlatform/flask-talisman
+	https://github.com/wntrblm/flask-talisman
+"
+SRC_URI="https://github.com/wntrblm/flask-talisman/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

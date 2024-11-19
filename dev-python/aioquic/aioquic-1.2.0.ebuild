@@ -3,10 +3,10 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
-DISTUTILS_EXT=1
 inherit distutils-r1
 
 DESCRIPTION="QUIC and HTTP/3 implementation in Python"

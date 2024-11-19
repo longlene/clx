@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-DESCRIPTION=""
+DESCRIPTION="An efficient, small mobile key-value storage framework developed by WeChat"
 HOMEPAGE="https://github.com/Tencent/MMKV"
 SRC_URI="https://github.com/Tencent/MMKV/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -20,5 +20,7 @@ BDEPEND=""
 CMAKE_USE_DIR="${S}"/POSIX
 
 src_install() {
+	doheader Core/{MMKV,MMKVPredef,MiniPBCoder}.h
 	dolib.so "${BUILD_DIR}"/src/libmmkv.so
+	einstalldocs
 }

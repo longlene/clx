@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/aiohttp-3.10.8[${PYTHON_USEDEP}]
 	>=dev-python/alabaster-0.6.2[${PYTHON_USEDEP}]
-	>=dev-python/jinja-3.1.4[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.1.4[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.13.1[${PYTHON_USEDEP}]
 "
 #BDEPEND="

@@ -3,13 +3,11 @@
 
 EAPI=8
 
-inherit cmake vcs-snapshot
-
-EGIT_COMMIT="8387ff8945fc010e7c4203c021943ce4ca12a276"
+inherit cmake
 
 DESCRIPTION="Tiny cross-platform webview library for C/C++/Golang"
-HOMEPAGE="https://github.com/zserge/webview"
-SRC_URI="https://github.com/zserge/webview/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/webview/webview"
+SRC_URI="https://github.com/webview/webview/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -20,3 +18,11 @@ DEPEND="
 	net-libs/webkit-gtk:4
 "
 RDEPEND="${DEPEND}"
+
+src_configure() {
+	local mycmakeargs=(
+		-DWEBVIEW_BUILD=ON
+		-DWEBVIEW_INSTALL_TARGETS=ON
+	)
+	cmake_src_configure
+}

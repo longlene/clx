@@ -19,6 +19,7 @@ IUSE="test"
 
 RDEPEND="
 	>=dev-python/flask-2.2[${PYTHON_USEDEP}]
+	>=dev-python/msgspec-0.18.6[${PYTHON_USEDEP}]
 	dev-python/cachelib[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}"

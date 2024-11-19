@@ -25,7 +25,7 @@ RDEPEND="
 	>=dev-python/typing-extensions-4.5.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
 	>=dev-python/diskcache-5.6.1[${PYTHON_USEDEP}]
-	>=dev-python/jinja-2.11.3[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-2.11.3[${PYTHON_USEDEP}]
 "
 BDEPEND="
 	test? (
