@@ -1,0 +1,282 @@
+commit 544bf807bf506927872b7b837c6e1514e80419ab
+Author: Konstantin Chernyshev <k4black@ya.ru>
+Date:   Thu Nov 16 19:40:54 2023 +0100
+
+    fix(bleu): add Fraction with 3.12 support
+
+diff --git a/nltk/test/unit/translate/test_bleu.py b/nltk/test/unit/translate/test_bleu.py
+index 990b76406..b472d785f 100644
+--- a/nltk/test/unit/translate/test_bleu.py
++++ b/nltk/test/unit/translate/test_bleu.py
+@@ -2,7 +2,6 @@
+ Tests for BLEU translation evaluation metric
+ """
+ 
+-import io
+ import unittest
+ 
+ import numpy as np
+diff --git a/nltk/translate/bleu_score.py b/nltk/translate/bleu_score.py
+index da445bc3e..9647202e6 100644
+--- a/nltk/translate/bleu_score.py
++++ b/nltk/translate/bleu_score.py
+@@ -7,16 +7,40 @@
+ # For license information, see LICENSE.TXT
+ 
+ """BLEU score implementation."""
++from __future__ import annotations
+ 
+ import math
+ import sys
+ import warnings
+ from collections import Counter
+-from fractions import Fraction
++from dataclasses import dataclass
+ 
+ from nltk.util import ngrams
+ 
+ 
++@dataclass
++class Fraction:
++    """
++    This class is used to represent a fraction with both the numerator and denominator saved for later retrieval.
++    Python 3.12 removed _normalize=False from the standard lib Fraction constructor.
++    """
++
++    numerator: int | float
++    denominator: int = 1
++
++    def __float__(self):
++        return self.numerator / self.denominator
++
++    def __lt__(self, other):
++        return float(self) < float(other)
++
++    def __eq__(self, other):
++        return self.numerator == other.numerator and self.denominator == other.denominator
++
++    def __gt__(self, other):
++        return float(self) > float(other)
++
++
+ def sentence_bleu(
+     references,
+     hypothesis,
+@@ -222,7 +246,7 @@ def corpus_bleu(
+ 
+     # Collects the various precision values for the different ngram orders.
+     p_n = [
+-        Fraction(p_numerators[i], p_denominators[i], _normalize=False)
++        Fraction(p_numerators[i], p_denominators[i])
+         for i in range(1, max_weight_length + 1)
+     ]
+ 
+@@ -365,7 +389,7 @@ def modified_precision(references, hypothesis, n):
+     # Usually this happens when the ngram order is > len(reference).
+     denominator = max(1, sum(counts.values()))
+ 
+-    return Fraction(numerator, denominator, _normalize=False)
++    return Fraction(numerator, denominator)
+ 
+ 
+ def closest_ref_length(references, hyp_len):
+@@ -577,7 +601,7 @@ class SmoothingFunction:
+         In COLING 2004.
+         """
+         return [
+-            Fraction(p_n[i].numerator + 1, p_n[i].denominator + 1, _normalize=False)
++            Fraction(p_n[i].numerator + 1, p_n[i].denominator + 1)
+             if i != 0
+             else p_n[0]
+             for i in range(len(p_n))
+
+commit eab59d7ceac5dc64e34ca04ee0143fa8998af204
+Author: Konstantin Chernyshev <k4black@ya.ru>
+Date:   Thu Nov 16 19:46:47 2023 +0100
+
+    style: fix pre-commit style checks
+
+diff --git a/nltk/translate/bleu_score.py b/nltk/translate/bleu_score.py
+index 9647202e6..aab519521 100644
+--- a/nltk/translate/bleu_score.py
++++ b/nltk/translate/bleu_score.py
+@@ -35,7 +35,9 @@ class Fraction:
+         return float(self) < float(other)
+ 
+     def __eq__(self, other):
+-        return self.numerator == other.numerator and self.denominator == other.denominator
++        return (
++            self.numerator == other.numerator and self.denominator == other.denominator
++        )
+ 
+     def __gt__(self, other):
+         return float(self) > float(other)
+@@ -601,10 +603,7 @@ class SmoothingFunction:
+         In COLING 2004.
+         """
+         return [
+-            Fraction(p_n[i].numerator + 1, p_n[i].denominator + 1)
+-            if i != 0
+-            else p_n[0]
+-            for i in range(len(p_n))
++            Fraction(p_n[i].numerator + 1, p_n[i].denominator + 1) if i != 0 else p_n[0] for i in range(len(p_n))
+         ]
+ 
+     def method3(self, p_n, *args, **kwargs):
+
+commit 8f06fa4b1da4a390d53010e56bc6ab5d5cb32a3a
+Author: Konstantin Chernyshev <k4black@ya.ru>
+Date:   Thu Nov 16 19:48:06 2023 +0100
+
+    style: fix pre-commit style checks
+
+diff --git a/nltk/translate/bleu_score.py b/nltk/translate/bleu_score.py
+index aab519521..f32743ecc 100644
+--- a/nltk/translate/bleu_score.py
++++ b/nltk/translate/bleu_score.py
+@@ -603,7 +603,8 @@ class SmoothingFunction:
+         In COLING 2004.
+         """
+         return [
+-            Fraction(p_n[i].numerator + 1, p_n[i].denominator + 1) if i != 0 else p_n[0] for i in range(len(p_n))
++            Fraction(p_n[i].numerator + 1, p_n[i].denominator + 1) if i != 0 else p_n[0]
++            for i in range(len(p_n))
+         ]
+ 
+     def method3(self, p_n, *args, **kwargs):
+
+commit b72a4bdbaf99a2bdb6a99454a1eb8804051bf644
+Author: Konstantin Chernyshev <k4black@ya.ru>
+Date:   Thu Nov 16 21:49:32 2023 +0100
+
+    fix: Fraction
+
+diff --git a/nltk/translate/bleu_score.py b/nltk/translate/bleu_score.py
+index f32743ecc..72f5b548d 100644
+--- a/nltk/translate/bleu_score.py
++++ b/nltk/translate/bleu_score.py
+@@ -42,6 +42,14 @@ class Fraction:
+     def __gt__(self, other):
+         return float(self) > float(other)
+ 
++    def __add__(self, other):
++        if isinstance(other, int):
++            other = Fraction(other, 1)
++        return Fraction(
++            self.numerator * other.denominator + other.numerator * self.denominator,
++            self.denominator * other.denominator,
++        )
++
+ 
+ def sentence_bleu(
+     references,
+
+commit 86fa0832f0f4b366f96867f59ae05d744d68b513
+Author: Konstantin Chernyshev <k4black@ya.ru>
+Date:   Thu Nov 16 23:26:42 2023 +0100
+
+    fix: use Fraction override
+
+diff --git a/nltk/translate/bleu_score.py b/nltk/translate/bleu_score.py
+index 72f5b548d..ddb54dba8 100644
+--- a/nltk/translate/bleu_score.py
++++ b/nltk/translate/bleu_score.py
+@@ -7,48 +7,39 @@
+ # For license information, see LICENSE.TXT
+ 
+ """BLEU score implementation."""
+-from __future__ import annotations
+-
+ import math
+ import sys
+ import warnings
+ from collections import Counter
+-from dataclasses import dataclass
++from fractions import Fraction as _Fraction
+ 
+ from nltk.util import ngrams
+ 
+ 
+-@dataclass
+-class Fraction:
+-    """
+-    This class is used to represent a fraction with both the numerator and denominator saved for later retrieval.
+-    Python 3.12 removed _normalize=False from the standard lib Fraction constructor.
+-    """
+-
+-    numerator: int | float
+-    denominator: int = 1
+-
+-    def __float__(self):
+-        return self.numerator / self.denominator
+-
+-    def __lt__(self, other):
+-        return float(self) < float(other)
++class Fraction(_Fraction):
++    """Fraction with _normalize=False support for 3.12"""
+ 
+-    def __eq__(self, other):
+-        return (
+-            self.numerator == other.numerator and self.denominator == other.denominator
+-        )
++    def __new__(cls, numerator=0, denominator=None, _normalize=False):
++        if sys.version_info >= (3, 12):
++            self = super().__new__(cls, numerator, denominator)
++        else:
++            self = super().__new__(cls, numerator, denominator, _normalize=_normalize)
++        self._normalize = _normalize
++        self._original_numerator = numerator
++        self._original_denominator = denominator
++        return self
+ 
+-    def __gt__(self, other):
+-        return float(self) > float(other)
++    @property
++    def numerator(self):
++        if self._normalize:
++            return self._numerator
++        return self._original_numerator
+ 
+-    def __add__(self, other):
+-        if isinstance(other, int):
+-            other = Fraction(other, 1)
+-        return Fraction(
+-            self.numerator * other.denominator + other.numerator * self.denominator,
+-            self.denominator * other.denominator,
+-        )
++    @property
++    def denominator(self):
++        if self._normalize:
++            return self._denominator
++        return self._original_denominator
+ 
+ 
+ def sentence_bleu(
+@@ -256,7 +247,7 @@ def corpus_bleu(
+ 
+     # Collects the various precision values for the different ngram orders.
+     p_n = [
+-        Fraction(p_numerators[i], p_denominators[i])
++        Fraction(p_numerators[i], p_denominators[i], _normalize=False)
+         for i in range(1, max_weight_length + 1)
+     ]
+ 
+@@ -399,7 +390,7 @@ def modified_precision(references, hypothesis, n):
+     # Usually this happens when the ngram order is > len(reference).
+     denominator = max(1, sum(counts.values()))
+ 
+-    return Fraction(numerator, denominator)
++    return Fraction(numerator, denominator, _normalize=False)
+ 
+ 
+ def closest_ref_length(references, hyp_len):
+@@ -611,7 +602,8 @@ class SmoothingFunction:
+         In COLING 2004.
+         """
+         return [
+-            Fraction(p_n[i].numerator + 1, p_n[i].denominator + 1) if i != 0 else p_n[0]
++            Fraction(p_n[i].numerator + 1, p_n[i].denominator + 1, _normalize=False)
++            if i != 0 else p_n[0]
+             for i in range(len(p_n))
+         ]
+ 

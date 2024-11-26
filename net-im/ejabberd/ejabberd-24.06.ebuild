@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -23,26 +23,26 @@ RESTRICT="test"
 
 # TODO: Add dependencies for 'tools' flag enabled.
 # TODO: tools? (
-# TODO:		>=dev-erlang/luerl-0.3
+# TODO:		>=dev-erlang/luerl-1.2.0
 # TODO: )
 DEPEND="
 	>=dev-lang/erlang-19.3[odbc?,ssl]
 	>=dev-erlang/cache_tab-1.0.30
 	>=dev-erlang/eimp-1.0.22
-	>=dev-erlang/fast_tls-1.1.16
-	>=dev-erlang/fast_xml-1.1.49
+	>=dev-erlang/fast_tls-1.1.19
+	>=dev-erlang/fast_xml-1.1.51
 	>=dev-erlang/fast_yaml-1.0.36
 	>=dev-erlang/yconf-1.0.15
-	>=dev-erlang/jiffy-1.0.5
-	>=dev-erlang/jose-1.11.5
+	>=dev-erlang/jiffy-1.1.1
+	>=dev-erlang/jose-1.11.10
 	>=dev-erlang/lager-3.9.1
-	>=dev-erlang/p1_oauth2-0.6.11
+	>=dev-erlang/p1_oauth2-0.6.14
 	>=dev-erlang/p1_utils-1.0.25
 	>=dev-erlang/stringprep-1.0.29
 	>=dev-erlang/xmpp-1.7.0
 	>=dev-erlang/pkix-1.0.9
-	>=dev-erlang/mqtree-1.0.15
-	>=dev-erlang/idna-6.0.0-r1
+	>=dev-erlang/mqtree-1.0.16
+	>=dev-erlang/idna-6.1.1
 	>=dev-erlang/p1_acme-1.0.22
 	>=dev-erlang/base64url-1.0.1
 	ldap? ( =net-nds/openldap-2* )
@@ -51,9 +51,9 @@ DEPEND="
 	pam? ( >=dev-erlang/epam-1.0.14 )
 	postgres? ( >=dev-erlang/p1_pgsql-1.1.23 )
 	redis? ( >=dev-erlang/eredis-1.2.0 )
-	sip? ( >=dev-erlang/esip-1.0.50 )
+	sip? ( >=dev-erlang/esip-1.0.52 )
 	sqlite? ( >=dev-erlang/sqlite3-1.1.14 )
-	stun? ( >=dev-erlang/stun-1.2.10 )
+	stun? ( >=dev-erlang/stun-1.2.12 )
 	zlib? ( >=dev-erlang/ezlib-1.0.12 )
 "
 RDEPEND="
