@@ -20,6 +20,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/cffi-1.15.0[${PYTHON_USEDEP}]
+	dev-libs/wgpu-native
 "
 #BDEPEND="
 #	test? (

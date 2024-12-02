@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="21a85fef159f9942f636a43b14c64b481c2a05b2"
+EGIT_COMMIT="9889171210b81138fd15fb57dd06e98fe6d37b3c"
 
 DESCRIPTION="The ruy matrix multiplication library"
 HOMEPAGE="https://github.com/google/ruy"
