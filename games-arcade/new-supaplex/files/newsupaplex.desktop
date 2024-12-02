@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=New Supaplex
-Type=Application
-Comment=Clone of the game Supaplex
-Exec=newsupaplex
-TryExec=newsupaplex
-Icon=supaplex
-Categories=Game;ArcadeGame;
