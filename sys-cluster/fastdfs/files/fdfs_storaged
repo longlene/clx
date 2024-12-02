@@ -1,7 +1,0 @@
-#!/sbin/openrc-run
-# Copyright 1999-2017 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-
-command=/usr/sbin/fdfs_storaged
-command_args=/etc/fdfs/storage.conf
- 

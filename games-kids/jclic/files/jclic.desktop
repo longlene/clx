@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=Jclic
-Comment=Programa Educativo
-Exec=java -jar /usr/games/JClic/jclicplayer.jar
-Icon=jclic_aqua.png
-Terminal=0
-Type=Application
-Categories=Education;Application
