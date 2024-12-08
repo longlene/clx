@@ -7,36 +7,47 @@ inherit unpacker
 
 VER="$(ver_cut 1-2)"
 MY_PV="${VER}-$(ver_cut 1-3)-$(ver_cut 4)"
+DPCPP_PV="2025.0-2025.0.3-1401"
 
 DESCRIPTION="Intel Math Kernel Library"
 HOMEPAGE="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html"
 SRC_URI="
-	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-classic-${MY_PV}_amd64.deb
 	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-classic-devel-${MY_PV}_amd64.deb
 	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-classic-include-${MY_PV}_amd64.deb
-	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-${MY_PV}_amd64.deb
-	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-devel-${MY_PV}_amd64.deb
+
 	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-core-${MY_PV}_amd64.deb
 	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-core-devel-${MY_PV}_amd64.deb
 	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-devel-${MY_PV}_amd64.deb
+	
+	!minimal? (
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-devel-${MY_PV}_amd64.deb
+
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-blas-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-data-fitting-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-devel-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-dft-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-include-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-lapack-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-rng-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-sparse-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-stats-${MY_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-vm-${MY_PV}_amd64.deb
+
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-compiler-dpcpp-cpp-runtime-${DPCPP_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-compiler-shared-runtime-${DPCPP_PV}_amd64.deb
+		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-openmp-${DPCPP_PV}_amd64.deb
+	)
 "
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-${MY_PV}_amd64.deb
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-blas-${MY_PV}_amd64.deb
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-data-fitting-${MY_PV}_amd64.deb
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-devel-${MY_PV}_amd64.deb
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-dft-${MY_PV}_amd64.deb
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-include-${MY_PV}_amd64.deb
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-lapack-${MY_PV}_amd64.deb
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-rng-${MY_PV}_amd64.deb
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-sparse-${MY_PV}_amd64.deb
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-stats-${MY_PV}_amd64.deb
-#https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-vm-${MY_PV}_amd64.deb
 
 S="${WORKDIR}"
 
 LICENSE="ISSL"
 SLOT="0"
 KEYWORDS="~amd64"
+IUSE="+minimal"
+
 RESTRICT="strip"
 
 # MKL uses Intel/LLVM OpenMP by default.
