@@ -16,6 +16,7 @@ SRC_URI="https://github.com/pytorch/vision/archive/refs/tags/v${PV}.tar.gz -> ${
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
+IUSE="cuda rocm"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -26,17 +27,24 @@ RDEPEND="${DEPEND}
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 	')
+	sci-libs/caffe2[cuda?,rocm?]
 	sci-libs/pytorch[${PYTHON_SINGLE_USEDEP}]
 	media-libs/libjpeg-turbo
 	media-libs/libpng
 	media-libs/libwebp
 	media-video/ffmpeg
-	dev-qt/qtcore:5
 "
 BDEPEND=""
 
 distutils_enable_tests pytest
 
-export MAKEOPTS=-j1
 
 S="${WORKDIR}"/vision-${PV}
+
+src_compile() {
+	export MAKEOPTS=-j1
+	use cuda && export NVCC_FLAGS="$(cuda_gccdir -f | tr -d \")"
+	use rocm && addpredict /dev/kfd
+
+	distutils-r1_src_compile
+}

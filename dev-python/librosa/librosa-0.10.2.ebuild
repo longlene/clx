@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_1{1..3} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
 
 DESCRIPTION="Python module for audio and music processing"
 HOMEPAGE="https://librosa.org/"
@@ -27,8 +27,8 @@ RDEPEND="
 	>=dev-python/soundfile-0.12.1[${PYTHON_USEDEP}]
 	>=dev-python/pooch-1.0[${PYTHON_USEDEP}]
 	>=dev-python/soxr-0.3.2[${PYTHON_USEDEP}]
-	>=dev-python/typing_extensions-4.1.1[${PYTHON_USEDEP}]
-	>=dev-python/lazy_loader-0.1[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.1.1[${PYTHON_USEDEP}]
+	>=dev-python/lazy-loader-0.1[${PYTHON_USEDEP}]
 	>=dev-python/msgpack-1.0[${PYTHON_USEDEP}]
 "
 BDEPEND="

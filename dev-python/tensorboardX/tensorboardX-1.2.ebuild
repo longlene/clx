@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python2_7 python3_8 )
+PYTHON_COMPAT=( python3_{11..13} )
 inherit distutils-r1
 
 DESCRIPTION="TensorBoardX lets you watch Tensors Flow without Tensorflow"
@@ -17,7 +17,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-python/numpy
-	dev-python/protobuf
-	dev-python/six
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/protobuf[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
 "
