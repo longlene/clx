@@ -5,11 +5,11 @@ EAPI=8
 
 inherit rebar3
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="Erlang MessagePack MsgPack library"
+HOMEPAGE="https://github.com/Ledest/emsgpack"
 SRC_URI="https://github.com/Ledest/emsgpack/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
+LICENSE="GPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
