@@ -3,11 +3,13 @@
 
 EAPI=8
 
+inherit cmake
+
 DESCRIPTION="JIT assembler for x86(IA-32)/x64(AMD64, x86-64)"
 HOMEPAGE="https://github.com/herumi/xbyak"
-SRC_URI="https://github.com/herumi/xbyak/archive/v5.73.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/herumi/xbyak/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
@@ -15,9 +17,3 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
-
-src_compile() { :; }
-
-src_install() {
-	emake install PREFIX="${D}/usr"
-}

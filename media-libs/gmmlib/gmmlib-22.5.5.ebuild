@@ -33,6 +33,7 @@ PATCHES=(
 
 multilib_src_configure() {
 	local mycmakeargs=(
+		-DRUN_TEST_SUITE="$(usex test)"
 		-DBUILD_TESTING="$(usex test)"
 		-DOVERRIDE_COMPILER_FLAGS="$(usex !custom-cflags)"
 	)
