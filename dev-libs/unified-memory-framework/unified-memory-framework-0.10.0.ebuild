@@ -5,18 +5,23 @@ EAPI=8
 
 inherit cmake
 
+CUDART_PV="12.6.2"
+
 DESCRIPTION="Unified Memory Framework"
 HOMEPAGE="
 	https://github.com/oneapi-src/unified-memory-framework
-	https://oneapi-src.github.io/unified-memory-framework/
 "
-SRC_URI="https://github.com/oneapi-src/unified-memory-framework/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+SRC_URI="
+	https://github.com/oneapi-src/unified-memory-framework/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	cuda? (
+		https://gitlab.com/nvidia/headers/cuda-individual/cudart/-/archive/cuda-${CUDART_PV}/cudart-cuda-${CUDART_PV}.tar.gz
+	)
+"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+hwloc jemalloc l0"
-#level-zero not support yet
+IUSE="cuda +hwloc jemalloc l0"
 
 DEPEND="
 	dev-cpp/tbb
@@ -38,7 +43,10 @@ src_configure() {
 	local mycmakeargs=(
 		-DUMF_BUILD_SHARED_LIBRARY=ON
 		-DUMF_BUILD_LEVEL_ZERO_PROVIDER=$(usex l0)
-		#-DUMF_LEVEL_ZERO_INCLUDE_DIR="/usr/include/level_zero"
+		-DUMF_LEVEL_ZERO_INCLUDE_DIR="/usr/include/level_zero"
+		-DUMF_BUILD_CUDA_PROVIDER=$(usex cuda)
+		-DUMF_CUDA_INCLUDE_DIR="${WORKDIR}/cudart-cuda-${CUDART_PV}"
+		-DUMF_BUILD_LIBUMF_POOL_DISJOINT=ON
 		-DUMF_BUILD_LIBUMF_POOL_JEMALLOC=$(usex jemalloc)
 		-DUMF_BUILD_TESTS=OFF
 		-DUMF_BUILD_EXAMPLES=OFF
