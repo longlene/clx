@@ -5,13 +5,12 @@ EAPI=8
 
 inherit cmake
 
-EGIT_COMMIT="e37f75ffad5ad22e96c46eb70ab1757be7cc5afc"
 OPENCL_HEADERS_COMMIT="1e193332d02e27e15812d24ff2a3a7a908eb92a3"
 
 DESCRIPTION="Unified Runtime"
 HOMEPAGE="https://oneapi-src.github.io/unified-runtime/"
 SRC_URI="
-	https://github.com/oneapi-src/unified-runtime/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz
+	https://github.com/oneapi-src/unified-runtime/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
 "
 #	opencl? (
 #		https://github.com/KhronosGroup/OpenCL-Headers/archive/${OPENCL_HEADERS_COMMIT}.tar.gz -> OpenCL-Headers-${OPENCL_HEADERS_COMMIT}.gh.tar.gz
@@ -23,6 +22,7 @@ KEYWORDS="~amd64"
 IUSE="cuda l0 opencl rocm"
 
 DEPEND="
+	>=dev-util/opencl-headers-2024.10.24
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	l0? ( dev-libs/level-zero )
 	opencl? ( virtual/opencl )
@@ -30,12 +30,10 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-S="${WORKDIR}"/unified-runtime-${EGIT_COMMIT}
-
 src_prepare() {
 	default
 	eapply "${FILESDIR}"/system-umf.patch
-	eapply "${FILESDIR}"/umf-fix.patch
+	#eapply "${FILESDIR}"/umf-fix.patch
 	cmake_src_prepare
 }
 
