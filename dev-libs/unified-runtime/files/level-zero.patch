@@ -1,0 +1,42 @@
+diff -Nur a/cmake/FetchLevelZero.cmake b/cmake/FetchLevelZero.cmake
+--- a/cmake/FetchLevelZero.cmake	2024-12-11 07:14:14.000000000 -0800
++++ b/cmake/FetchLevelZero.cmake	2024-12-12 23:32:58.745572138 -0800
+@@ -97,21 +97,25 @@
+               "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
+ )
+ 
+-if (UR_COMPUTE_RUNTIME_REPO STREQUAL "")
+-set(UR_COMPUTE_RUNTIME_REPO "https://github.com/intel/compute-runtime.git")
+-endif()
+-if (UR_COMPUTE_RUNTIME_TAG STREQUAL "")
+-set(UR_COMPUTE_RUNTIME_TAG 24.39.31294.12)
+-endif()
+-include(FetchContent)
+-# Sparse fetch only the dir with level zero headers for experimental features to avoid pulling in the entire compute-runtime.
+-FetchContentSparse_Declare(exp-headers ${UR_COMPUTE_RUNTIME_REPO} "${UR_COMPUTE_RUNTIME_TAG}" "level_zero/include")
+-FetchContent_GetProperties(exp-headers)
+-if(NOT exp-headers_POPULATED)
+-  FetchContent_Populate(exp-headers)
++if(NOT DEFINED UR_COMPUTE_RUNTIME_DIR)
++    if (UR_COMPUTE_RUNTIME_REPO STREQUAL "")
++        set(UR_COMPUTE_RUNTIME_REPO "https://github.com/intel/compute-runtime.git")
++    endif()
++    if (UR_COMPUTE_RUNTIME_TAG STREQUAL "")
++        set(UR_COMPUTE_RUNTIME_TAG 24.39.31294.12)
++    endif()
++    include(FetchContent)
++    # Sparse fetch only the dir with level zero headers for experimental features to avoid pulling in the entire compute-runtime.
++    FetchContentSparse_Declare(exp-headers ${UR_COMPUTE_RUNTIME_REPO} "${UR_COMPUTE_RUNTIME_TAG}" "level_zero/include")
++    FetchContent_GetProperties(exp-headers)
++    if(NOT exp-headers_POPULATED)
++        FetchContent_Populate(exp-headers)
++    endif()
++    set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${exp-headers_SOURCE_DIR}/../..")
++else()
++    set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${UR_COMPUTE_RUNTIME_DIR}")
+ endif()
+ add_library(ComputeRuntimeLevelZero-Headers INTERFACE)
+-set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${exp-headers_SOURCE_DIR}/../..")
+ message(STATUS "Level Zero Adapter: Using Level Zero headers from ${COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE}")
+ target_include_directories(ComputeRuntimeLevelZero-Headers
+     INTERFACE "$<BUILD_INTERFACE:${COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE}>"
