@@ -1,6 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=8
+
 inherit common-lisp-3
 
 DESCRIPTION="Common Lisp library that allows to run a child process and have its input, output and error avaliable as Gray streams."

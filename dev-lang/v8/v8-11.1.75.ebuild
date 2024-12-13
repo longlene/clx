@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{7,8,9} )
+PYTHON_COMPAT=( python3_{11..13} )
 inherit python-any-r1
 
 DESCRIPTION="V8 JavaScript Engine"

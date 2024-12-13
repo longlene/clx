@@ -1,0 +1,308 @@
+From 1b03f066db68a890cb1932501399a3b4a8d730ae Mon Sep 17 00:00:00 2001
+From: Anokhov <artyom.anokhov@intel.com>
+Date: Fri, 22 Nov 2024 11:38:48 +0100
+Subject: [PATCH 1/5] ocl_ext.hpp: Fix to evade redefinition errors in Homebrew
+
+---
+ .../intel_gpu/src/runtime/ocl/ocl_ext.hpp     | 39 ++++++++++++++++---
+ 1 file changed, 33 insertions(+), 6 deletions(-)
+
+diff --git a/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp b/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
+index 759d796a5e87e8..92fdc2633fd277 100644
+--- a/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
++++ b/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
+@@ -40,16 +40,21 @@ typedef cl_va_api_device_set_intel    cl_device_set_intel;
+ #if !defined(cl_intel_required_subgroup_size)
+ #define cl_intel_required_subgroup_size 1
+ 
++#endif // cl_intel_required_subgroup_size
++
+ // cl_intel_required_subgroup_size
++#ifndef CL_DEVICE_SUB_GROUP_SIZES_INTEL
+ #define CL_DEVICE_SUB_GROUP_SIZES_INTEL           0x4108
++#endif
+ 
+-#endif // cl_intel_required_subgroup_size
+-
++#ifndef OV_CL_HPP_NO_REDECLARE_TRAITS
+ namespace cl {
+ namespace detail {
+ CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_SUB_GROUP_SIZES_INTEL, vector<size_type>)
+ }  // namespace detail
+ }  // namespace cl
++#endif // OV_CL_HPP_NO_REDECLARE_TRAITS
++
+ 
+ /***************************************************************
+ * cl_intel_command_queue_families
+@@ -249,16 +254,36 @@ typedef cl_bitfield         cl_device_feature_capabilities_intel;
+ #define CL_DEVICE_FEATURE_FLAG_DP4A_INTEL                   (1 << 0)
+ #define CL_DEVICE_FEATURE_FLAG_DPAS_INTEL                   (1 << 1)
+ 
++#endif // cl_intel_device_attribute_query
++
+ /* cl_device_info */
++#ifndef CL_DEVICE_IP_VERSION_INTEL
+ #define CL_DEVICE_IP_VERSION_INTEL                          0x4250
++#endif
++
++#ifndef CL_DEVICE_ID_INTEL
+ #define CL_DEVICE_ID_INTEL                                  0x4251
++#endif
++
++#ifndef CL_DEVICE_NUM_SLICES_INTEL
+ #define CL_DEVICE_NUM_SLICES_INTEL                          0x4252
++#endif
++
++#ifndef CL_DEVICE_NUM_SUB_SLICES_PER_SLICE_INTEL
+ #define CL_DEVICE_NUM_SUB_SLICES_PER_SLICE_INTEL            0x4253
+-#define CL_DEVICE_NUM_EUS_PER_SUB_SLICE_INTEL               0x4254
+-#define CL_DEVICE_NUM_THREADS_PER_EU_INTEL                  0x4255
+-#define CL_DEVICE_FEATURE_CAPABILITIES_INTEL                0x4256
++#endif
+ 
+-#endif // cl_intel_device_attribute_query
++#ifndef CL_DEVICE_NUM_EUS_PER_SUB_SLICE_INTEL
++#define CL_DEVICE_NUM_EUS_PER_SUB_SLICE_INTEL            0x4254
++#endif
++
++#ifndef CL_DEVICE_NUM_THREADS_PER_EU_INTEL
++#define CL_DEVICE_NUM_THREADS_PER_EU_INTEL            0x4255
++#endif
++
++#ifndef CL_DEVICE_FEATURE_CAPABILITIES_INTEL
++#define CL_DEVICE_FEATURE_CAPABILITIES_INTEL            0x4256
++#endif
+ 
+ #define CL_HPP_PARAM_NAME_CL_INTEL_COMMAND_QUEUE_FAMILIES_(F) \
+     F(cl_device_info, CL_DEVICE_QUEUE_FAMILY_PROPERTIES_INTEL, cl::vector<cl_queue_family_properties_intel>) \
+@@ -266,6 +291,7 @@ typedef cl_bitfield         cl_device_feature_capabilities_intel;
+     F(cl_command_queue_info, CL_QUEUE_FAMILY_INTEL, cl_uint) \
+     F(cl_command_queue_info, CL_QUEUE_INDEX_INTEL, cl_uint)
+ 
++#ifndef OV_CL_HPP_NO_REDECLARE_TRAITS
+ namespace cl {
+ namespace detail {
+ CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_IP_VERSION_INTEL, cl_uint)
+@@ -278,6 +304,7 @@ CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_FEATURE_CAPABILITIES_INTE
+ CL_HPP_PARAM_NAME_CL_INTEL_COMMAND_QUEUE_FAMILIES_(CL_HPP_DECLARE_PARAM_TRAITS_)
+ }  // namespace detail
+ }  // namespace cl
++#endif // OV_CL_HPP_NO_REDECLARE_TRAITS
+ 
+ #include <memory>
+ 
+
+From 7c8fad86156d58768f5e0d230ed2751db490e6f0 Mon Sep 17 00:00:00 2001
+From: Anokhov <artyom.anokhov@intel.com>
+Date: Mon, 25 Nov 2024 13:29:49 +0100
+Subject: [PATCH 2/5] ocl_ext.hpp: Fix to evade redefinition errors in Homebrew
+
+---
+ .../intel_gpu/src/runtime/ocl/ocl_ext.hpp        | 16 ++++------------
+ 1 file changed, 4 insertions(+), 12 deletions(-)
+
+diff --git a/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp b/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
+index 92fdc2633fd277..d288981e20a059 100644
+--- a/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
++++ b/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
+@@ -39,22 +39,16 @@ typedef cl_va_api_device_set_intel    cl_device_set_intel;
+ 
+ #if !defined(cl_intel_required_subgroup_size)
+ #define cl_intel_required_subgroup_size 1
+-
+-#endif // cl_intel_required_subgroup_size
+-
+ // cl_intel_required_subgroup_size
+-#ifndef CL_DEVICE_SUB_GROUP_SIZES_INTEL
+-#define CL_DEVICE_SUB_GROUP_SIZES_INTEL           0x4108
+-#endif
+ 
+-#ifndef OV_CL_HPP_NO_REDECLARE_TRAITS
++#define CL_DEVICE_SUB_GROUP_SIZES_INTEL           0x4108
+ namespace cl {
+ namespace detail {
+ CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_SUB_GROUP_SIZES_INTEL, vector<size_type>)
+ }  // namespace detail
+ }  // namespace cl
+-#endif // OV_CL_HPP_NO_REDECLARE_TRAITS
+ 
++#endif // cl_intel_required_subgroup_size
+ 
+ /***************************************************************
+ * cl_intel_command_queue_families
+@@ -254,8 +248,6 @@ typedef cl_bitfield         cl_device_feature_capabilities_intel;
+ #define CL_DEVICE_FEATURE_FLAG_DP4A_INTEL                   (1 << 0)
+ #define CL_DEVICE_FEATURE_FLAG_DPAS_INTEL                   (1 << 1)
+ 
+-#endif // cl_intel_device_attribute_query
+-
+ /* cl_device_info */
+ #ifndef CL_DEVICE_IP_VERSION_INTEL
+ #define CL_DEVICE_IP_VERSION_INTEL                          0x4250
+@@ -291,7 +283,6 @@ typedef cl_bitfield         cl_device_feature_capabilities_intel;
+     F(cl_command_queue_info, CL_QUEUE_FAMILY_INTEL, cl_uint) \
+     F(cl_command_queue_info, CL_QUEUE_INDEX_INTEL, cl_uint)
+ 
+-#ifndef OV_CL_HPP_NO_REDECLARE_TRAITS
+ namespace cl {
+ namespace detail {
+ CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_IP_VERSION_INTEL, cl_uint)
+@@ -304,7 +295,8 @@ CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_FEATURE_CAPABILITIES_INTE
+ CL_HPP_PARAM_NAME_CL_INTEL_COMMAND_QUEUE_FAMILIES_(CL_HPP_DECLARE_PARAM_TRAITS_)
+ }  // namespace detail
+ }  // namespace cl
+-#endif // OV_CL_HPP_NO_REDECLARE_TRAITS
++#endif // cl_intel_device_attribute_query
++
+ 
+ #include <memory>
+ 
+
+From b19d384012b2bd38cb926fd84d86fd324135d0d8 Mon Sep 17 00:00:00 2001
+From: Anokhov <artyom.anokhov@intel.com>
+Date: Wed, 27 Nov 2024 11:56:17 +0100
+Subject: [PATCH 3/5] Bump clhpp_headers to newest release 2024.10.24
+
+Removed duplicates in our ocl_ext.hpp
+---
+ .../intel_gpu/src/runtime/ocl/ocl_ext.hpp     | 25 -------------------
+ thirdparty/ocl/clhpp_headers                  |  2 +-
+ 2 files changed, 1 insertion(+), 26 deletions(-)
+
+diff --git a/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp b/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
+index d288981e20a059..8accacc92f8509 100644
+--- a/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
++++ b/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
+@@ -40,14 +40,7 @@ typedef cl_va_api_device_set_intel    cl_device_set_intel;
+ #if !defined(cl_intel_required_subgroup_size)
+ #define cl_intel_required_subgroup_size 1
+ // cl_intel_required_subgroup_size
+-
+ #define CL_DEVICE_SUB_GROUP_SIZES_INTEL           0x4108
+-namespace cl {
+-namespace detail {
+-CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_SUB_GROUP_SIZES_INTEL, vector<size_type>)
+-}  // namespace detail
+-}  // namespace cl
+-
+ #endif // cl_intel_required_subgroup_size
+ 
+ /***************************************************************
+@@ -277,24 +270,6 @@ typedef cl_bitfield         cl_device_feature_capabilities_intel;
+ #define CL_DEVICE_FEATURE_CAPABILITIES_INTEL            0x4256
+ #endif
+ 
+-#define CL_HPP_PARAM_NAME_CL_INTEL_COMMAND_QUEUE_FAMILIES_(F) \
+-    F(cl_device_info, CL_DEVICE_QUEUE_FAMILY_PROPERTIES_INTEL, cl::vector<cl_queue_family_properties_intel>) \
+-    \
+-    F(cl_command_queue_info, CL_QUEUE_FAMILY_INTEL, cl_uint) \
+-    F(cl_command_queue_info, CL_QUEUE_INDEX_INTEL, cl_uint)
+-
+-namespace cl {
+-namespace detail {
+-CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_IP_VERSION_INTEL, cl_uint)
+-CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_ID_INTEL, cl_uint)
+-CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_NUM_SLICES_INTEL, cl_uint)
+-CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_NUM_SUB_SLICES_PER_SLICE_INTEL, cl_uint)
+-CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_NUM_EUS_PER_SUB_SLICE_INTEL, cl_uint)
+-CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_NUM_THREADS_PER_EU_INTEL, cl_uint)
+-CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_FEATURE_CAPABILITIES_INTEL, cl_device_feature_capabilities_intel)
+-CL_HPP_PARAM_NAME_CL_INTEL_COMMAND_QUEUE_FAMILIES_(CL_HPP_DECLARE_PARAM_TRAITS_)
+-}  // namespace detail
+-}  // namespace cl
+ #endif // cl_intel_device_attribute_query
+ 
+
+diff --git a/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp b/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
+index 8accacc92f8509..4f8a145d439029 100644
+--- a/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
++++ b/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
+@@ -39,8 +39,17 @@ typedef cl_va_api_device_set_intel    cl_device_set_intel;
+ 
+ #if !defined(cl_intel_required_subgroup_size)
+ #define cl_intel_required_subgroup_size 1
++
+ // cl_intel_required_subgroup_size
++#ifndef CL_DEVICE_SUB_GROUP_SIZES_INTEL
+ #define CL_DEVICE_SUB_GROUP_SIZES_INTEL           0x4108
++#endif
++
++namespace cl {
++namespace detail {
++CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_SUB_GROUP_SIZES_INTEL, vector<size_type>)
++}  // namespace detail
++}  // namespace cl
+ #endif // cl_intel_required_subgroup_size
+ 
+ /***************************************************************
+@@ -270,6 +279,27 @@ typedef cl_bitfield         cl_device_feature_capabilities_intel;
+ #define CL_DEVICE_FEATURE_CAPABILITIES_INTEL            0x4256
+ #endif
+ 
++#ifndef CL_HPP_PARAM_NAME_CL_INTEL_COMMAND_QUEUE_FAMILIES_
++#define CL_HPP_PARAM_NAME_CL_INTEL_COMMAND_QUEUE_FAMILIES_(F) \
++    F(cl_device_info, CL_DEVICE_QUEUE_FAMILY_PROPERTIES_INTEL, cl::vector<cl_queue_family_properties_intel>) \
++    \
++    F(cl_command_queue_info, CL_QUEUE_FAMILY_INTEL, cl_uint) \
++    F(cl_command_queue_info, CL_QUEUE_INDEX_INTEL, cl_uint)
++#endif
++
++namespace cl {
++namespace detail {
++CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_IP_VERSION_INTEL, cl_uint)
++CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_ID_INTEL, cl_uint)
++CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_NUM_SLICES_INTEL, cl_uint)
++CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_NUM_SUB_SLICES_PER_SLICE_INTEL, cl_uint)
++CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_NUM_EUS_PER_SUB_SLICE_INTEL, cl_uint)
++CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_NUM_THREADS_PER_EU_INTEL, cl_uint)
++CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_FEATURE_CAPABILITIES_INTEL, cl_device_feature_capabilities_intel)
++CL_HPP_PARAM_NAME_CL_INTEL_COMMAND_QUEUE_FAMILIES_(CL_HPP_DECLARE_PARAM_TRAITS_)
++}  // namespace detail
++}  // namespace cl
++
+ #endif // cl_intel_device_attribute_query
+ 
+
+From efe8676eb7a18fc967cb67b1cb3ac0b103acee62 Mon Sep 17 00:00:00 2001
+From: Anokhov <artyom.anokhov@intel.com>
+Date: Fri, 29 Nov 2024 13:55:40 +0100
+Subject: [PATCH 5/5] ocl_ext.hpp: Updated CL_HPP_DECLARE_PARAM_TRAITS_ for
+ CL_DEVICE_SUB_GROUP_SIZES_INTEL
+
+---
+ src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp b/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
+index 4f8a145d439029..2dd28b49d654a3 100644
+--- a/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
++++ b/src/plugins/intel_gpu/src/runtime/ocl/ocl_ext.hpp
+@@ -44,14 +44,14 @@ typedef cl_va_api_device_set_intel    cl_device_set_intel;
+ #ifndef CL_DEVICE_SUB_GROUP_SIZES_INTEL
+ #define CL_DEVICE_SUB_GROUP_SIZES_INTEL           0x4108
+ #endif
+-
+ namespace cl {
+ namespace detail {
+-CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_SUB_GROUP_SIZES_INTEL, vector<size_type>)
++CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_SUB_GROUP_SIZES_INTEL, cl::vector<size_type>)
+ }  // namespace detail
+ }  // namespace cl
+ #endif // cl_intel_required_subgroup_size
+ 
++
+ /***************************************************************
+ * cl_intel_command_queue_families
+ ***************************************************************/
+@@ -299,10 +299,8 @@ CL_HPP_DECLARE_PARAM_TRAITS_(cl_device_info, CL_DEVICE_FEATURE_CAPABILITIES_INTE
+ CL_HPP_PARAM_NAME_CL_INTEL_COMMAND_QUEUE_FAMILIES_(CL_HPP_DECLARE_PARAM_TRAITS_)
+ }  // namespace detail
+ }  // namespace cl
+-
+ #endif // cl_intel_device_attribute_query
+ 
+-
+ #include <memory>
+ 
+ namespace {

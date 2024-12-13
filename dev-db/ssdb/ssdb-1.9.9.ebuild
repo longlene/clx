@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit user
-
 DESCRIPTION="A fast NoSQL database, an alternative to Redis"
 HOMEPAGE="http://ssdb.io"
 SRC_URI="https://github.com/ideawu/ssdb/archive/${PV}.tar.gz -> ${P}.tar.gz"
@@ -16,11 +14,6 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-
-pkg_setup() {
-	enewgroup ssdb 75
-	enewuser ssdb 75 -1 /var/lib/ssdb ssdb
-}
 
 src_prepare() {
 	epatch \

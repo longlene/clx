@@ -1,6 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-j2me-bin/sun-j2me-bin-2.5.2.01.ebuild,v 1.3 2010/06/24 22:00:09 pacho Exp $
+
+EAPI=8
 
 inherit java-pkg-2
 

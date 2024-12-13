@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python2_7 python3_6 )
+PYTHON_COMPAT=( python3_{11..13} )
 inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Erlang node implemented in Python"

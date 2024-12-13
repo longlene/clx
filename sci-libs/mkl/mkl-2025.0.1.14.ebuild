@@ -58,7 +58,7 @@ RDEPEND="
 	app-eselect/eselect-lapack
 	dev-cpp/tbb
 	dev-libs/opencl-icd-loader
-	sys-libs/libomp
+	llvm-runtimes/openmp
 "
 #sys-cluster/mpich[fortran]
 

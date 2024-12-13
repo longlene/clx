@@ -1,7 +1,7 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 if [[ ${PV} == "9999" ]] ; then
 	#EGIT_COMMIT="scylla-"
@@ -29,9 +29,9 @@ else
 	S="${WORKDIR}/scylla-${MY_P}"
 fi
 
-PYTHON_COMPAT=( python3_{8,9} )
+PYTHON_COMPAT=( python3_{11..13} )
 
-inherit autotools flag-o-matic linux-info python-r1 toolchain-funcs systemd user
+inherit autotools flag-o-matic linux-info python-r1 toolchain-funcs systemd
 
 DESCRIPTION="NoSQL data store using the seastar framework, compatible with Apache Cassandra"
 HOMEPAGE="http://scylladb.com/"

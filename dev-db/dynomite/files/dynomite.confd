@@ -1,7 +1,0 @@
-DYNOMITE_CONF="/etc/dynomite/dynomite.conf"
-
-DYNOMITE_DIR="/var/lib/dynomite"
-
-DYNOMITE_OPTS="${DYNOMITE_CONF}"
-
-rc_need="net.lo"

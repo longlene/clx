@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit python-utils-r1 systemd user
+inherit python-utils-r1 systemd
 
 DESCRIPTION="The open-source database for the realtime web."
 HOMEPAGE="https://www.rethinkdb.com"

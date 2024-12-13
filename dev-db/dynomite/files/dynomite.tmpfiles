@@ -1,2 +1,0 @@
-# redis runtime directory
-d /var/run/dynomite 0755 dynomite root -
