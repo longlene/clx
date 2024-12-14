@@ -20,10 +20,10 @@ KEYWORDS="~amd64"
 IUSE="cuda l0 opencl rocm"
 
 DEPEND="
-	>=dev-libs/opencl-icd-loader-2024.10.24
 	cuda? ( dev-util/nvidia-cuda-toolkit )
-	l0? ( dev-libs/level-zero )
+	l0? ( dev-libs/level-zero:= )
 	opencl? ( virtual/opencl )
+	rocm? ( dev-util/rocm-smi:= )
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
@@ -31,7 +31,8 @@ BDEPEND=""
 src_prepare() {
 	default
 	eapply "${FILESDIR}"/system-umf.patch
-	eapply "${FILESDIR}"/level-zero.patch
+	eapply "${FILESDIR}"/system-l0.patch
+	rm include/.clang-format
 	cmake_src_prepare
 }
 
@@ -39,7 +40,9 @@ src_configure() {
 	local mycmakeargs=(
 		-DUR_BUILD_EXAMPLES=OFF
 		-DUR_BUILD_TESTS=OFF
+		-DUR_BUILD_TOOLS=ON
 		-DUR_BUILD_ADAPTER_L0=$(usex l0)
+		-DUR_BUILD_ADAPTER_L0_V2=$(usex l0)
 		-DUR_LEVEL_ZERO_LOADER_LIBRARY=/usr/$(get_libdir)/libze_loader.so
 		-DUR_LEVEL_ZERO_INCLUDE_DIR=/usr/include/level_zero
 		-DUR_COMPUTE_RUNTIME_DIR="${WORKDIR}"/compute-runtime-${COMPUTE_RUNTIME_PV}

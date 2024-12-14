@@ -25,6 +25,7 @@ IUSE="cuda +hwloc jemalloc l0"
 
 DEPEND="
 	dev-cpp/tbb
+	cuda? ( dev-util/nvidia-cuda-toolkit )
 	hwloc? ( sys-apps/hwloc )
 	jemalloc? ( dev-libs/jemalloc )
 	l0? ( dev-libs/level-zero )

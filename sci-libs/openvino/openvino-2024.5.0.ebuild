@@ -48,7 +48,7 @@ src_prepare() {
 	eapply "${FILESDIR}"/openvino-disable-werror.patch
 	eapply "${FILESDIR}"/install-path.patch
 	eapply "${FILESDIR}"/opencl-fix.patch
-	eapply "${FILESDIR}"/system-level-zero.patch
+	eapply "${FILESDIR}"/system-l0.patch
 	sed -e '/target_include_directories(openvino_core_dev SYSTEM INTERFACE/{s#SYSTEM ##}' \
 		-i src/core/CMakeLists.txt
 	sed -e '/target_include_directories/{s#SYSTEM PRIVATE#PRIVATE#}' \
@@ -69,9 +69,8 @@ src_configure() {
 		-DENABLE_CLANG_FORMAT=OFF
 		-DENABLE_NCC_STYLE=OFF
 		-DENABLE_TESTS=OFF
-		#-DENABLE_INTEL_NPU=$(usex l0)
-		#-DENABLE_SYSTEM_LEVEL_ZERO=ON
-		-DENABLE_INTEL_NPU=OFF
+		-DENABLE_SYSTEM_LEVEL_ZERO=ON
+		-DENABLE_INTEL_NPU=$(usex l0)
 		-DENABLE_INTEL_GPU=$(usex opencl)
 		-DENABLE_ONEDNN_FOR_GPU=$(usex onednn)
 		-DENABLE_FUNCTIONAL_TESTS=OFF

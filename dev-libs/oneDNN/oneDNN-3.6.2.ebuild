@@ -21,13 +21,14 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="test mkl cblas static-libs +openmp"
+IUSE="test mkl cblas opencl static-libs +openmp"
 
 RESTRICT="!test? ( test )"
 
 DEPEND="
 	mkl? ( sci-libs/mkl )
 	cblas? ( !mkl? ( virtual/cblas ) )
+	opencl? ( virtual/opencl )
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -54,10 +55,13 @@ src_configure() {
 		ewarn "Conside enabling \"openmp\" USE flag."
 	fi
 
+	local gpu_runtime=NONE
+	use opencl && gpu_runtime=OCL
+
 	local mycmakeargs=(
 		-DDNNL_LIBRARY_TYPE=$(usex static-libs STATIC SHARED)
 		-DDNNL_CPU_RUNTIME=$(usex openmp OMP SEQ)
-		-DDNNL_GPU_RUNTIME=NONE
+		-DDNNL_GPU_RUNTIME=${gpu_runtime}
 		-DDNNL_BUILD_EXAMPLES=OFF
 		-DDNNL_BUILD_TESTS="$(usex test)"
 		-DDNNL_ENABLE_CONCURRENT_EXEC=OFF

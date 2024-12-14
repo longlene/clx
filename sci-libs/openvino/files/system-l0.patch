@@ -1,6 +1,6 @@
 diff -Nur a/thirdparty/dependencies.cmake b/thirdparty/dependencies.cmake
 --- a/thirdparty/dependencies.cmake	2024-11-08 22:14:37.000000000 -0800
-+++ b/thirdparty/dependencies.cmake	2024-12-13 01:17:21.302457262 -0800
++++ b/thirdparty/dependencies.cmake	2024-12-14 13:55:32.910456023 -0800
 @@ -18,7 +18,7 @@
  # cmake older than 3.18 cannot create an alias for imported non-GLOBAL targets
  # so, we have to use 'IMPORTED_GLOBAL' property
@@ -48,6 +48,21 @@ diff -Nur a/thirdparty/dependencies.cmake b/thirdparty/dependencies.cmake
              # need to set GLOBAL visibility in order to create ALIAS for this target
              set_target_properties(${pugixml_target} PROPERTIES IMPORTED_GLOBAL ON)
          endif()
+@@ -284,10 +291,10 @@
+ # Gflags
+ #
+ 
+-if(ENABLE_SAMPLES OR ENABLE_TESTS OR ENABLE_INTEL_NPU_INTERNAL)
+-    add_subdirectory(thirdparty/gflags EXCLUDE_FROM_ALL)
+-    ov_developer_package_export_targets(TARGET gflags)
+-endif()
++#if(ENABLE_SAMPLES OR ENABLE_TESTS OR ENABLE_INTEL_NPU_INTERNAL)
++#    add_subdirectory(thirdparty/gflags EXCLUDE_FROM_ALL)
++#    ov_developer_package_export_targets(TARGET gflags)
++#endif()
+ 
+ #
+ # Google Tests framework
 @@ -299,7 +306,7 @@
  
      if(GTest_FOUND)
@@ -57,6 +72,15 @@ diff -Nur a/thirdparty/dependencies.cmake b/thirdparty/dependencies.cmake
                  # need to set GLOBAL visibility in order to create ALIAS for this target
                  set_target_properties(GTest::${gtest_target} PROPERTIES IMPORTED_GLOBAL ON)
              endif()
+@@ -406,7 +413,7 @@
+ 
+         # on new Ubuntu versions like 23.04 we have config called FlatBuffersConfig.cmake
+         # so, we need to provide alternative names
+-        find_host_package(Flatbuffers QUIET NAMES Flatbuffers FlatBuffers NO_CMAKE_FIND_ROOT_PATH)
++        find_host_package(Flatbuffers QUIET NAMES flatbuffers Flatbuffers FlatBuffers NO_CMAKE_FIND_ROOT_PATH)
+ 
+         ov_cross_compile_define_debian_arch_reset()
+     endif()
 @@ -448,7 +455,7 @@
              set(ov_snappy_lib Snappy::snappy-static)
          endif()

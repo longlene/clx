@@ -1,0 +1,76 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2024-12-14 14:39:28.800548952 -0800
++++ b/CMakeLists.txt	2024-12-14 14:46:54.227231494 -0800
+@@ -88,7 +88,7 @@
+ endif()
+ 
+ include(GNUInstallDirs)
+-set(CAL_OPT_INSTALL_PATH "/opt/compute-aggregation-layer/")
++set(CAL_OPT_INSTALL_PATH "/etc/OpenCL/vendors/")
+ 
+ if(ENABLE_BLOATED_VERBOSITY)
+   add_definitions(-DENABLE_BLOATED_VERBOSITY=1)
+@@ -149,21 +149,23 @@
+   set_target_properties(run_unit_tests PROPERTIES EXCLUDE_FROM_ALL TRUE)
+ endif()
+ 
+-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/gtest)
+-macro(macro_add_run_gtest_for target)
+-  get_target_property(target_sources ${target} SOURCES)
+-  if(NOT ${CMAKE_CXX_COMPILER} MATCHES "aarch64")
+-    add_custom_target(run_${target} DEPENDS ${target})
+-    add_custom_command(TARGET run_${target}
+-                       POST_BUILD
+-                       WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+-                       COMMENT Running ${target} tests
+-                       COMMAND ${target} --gtest_repeat=1
+-    )
+-    add_dependencies(run_unit_tests run_${target})
+-    add_test(NAME ${target} COMMAND ${target} --gtest_repeat=1)
+-  endif()
+-endmacro()
++if(ENABLE_TEST)
++    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/gtest)
++    macro(macro_add_run_gtest_for target)
++        get_target_property(target_sources ${target} SOURCES)
++        if(NOT ${CMAKE_CXX_COMPILER} MATCHES "aarch64")
++            add_custom_target(run_${target} DEPENDS ${target})
++            add_custom_command(TARGET run_${target}
++                POST_BUILD
++                WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
++                COMMENT Running ${target} tests
++                COMMAND ${target} --gtest_repeat=1
++            )
++            add_dependencies(run_unit_tests run_${target})
++            add_test(NAME ${target} COMMAND ${target} --gtest_repeat=1)
++        endif()
++    endmacro()
++endif()
+ 
+ macro(add_subdirectories)
+   file(GLOB subdirectories RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/*)
+@@ -175,4 +177,8 @@
+   endforeach()
+ endmacro()
+ 
+-add_subdirectories()
++add_subdirectory(client)
++add_subdirectory(generated)
++add_subdirectory(scripts)
++add_subdirectory(service)
++add_subdirectory(shared)
+diff -Nur a/scripts/CMakeLists.txt b/scripts/CMakeLists.txt
+--- a/scripts/CMakeLists.txt	2024-04-03 05:49:37.000000000 -0700
++++ b/scripts/CMakeLists.txt	2024-12-14 14:47:30.910566139 -0800
+@@ -9,11 +9,5 @@
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/generate_ninja_test_file.sh ${cal_binary_root_dir} COPYONLY)
+ 
+ install(FILES "cal.icd" DESTINATION ${CAL_OPT_INSTALL_PATH})
+-install(PROGRAMS
+-        "packaging/aggregation_layer/cal_setvars.sh"
+-        "packaging/aggregation_layer/cal_setvars_l0.sh"
+-        "packaging/aggregation_layer/cal_setvars_ocl.sh"
+-        DESTINATION ${CAL_OPT_INSTALL_PATH}
+-)
+ 
+ add_subdirectories()
