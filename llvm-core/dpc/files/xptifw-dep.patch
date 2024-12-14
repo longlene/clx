@@ -1,0 +1,65 @@
+diff -Nur a/xptifw/src/CMakeLists.txt b/xptifw/src/CMakeLists.txt
+--- a/xptifw/src/CMakeLists.txt	2024-12-09 16:51:36.000000000 -0800
++++ b/xptifw/src/CMakeLists.txt	2024-12-13 14:57:51.477532130 -0800
+@@ -1,29 +1,37 @@
+-# Fetch third party headers
+-set(EMHASH_REPO https://github.com/ktprime/emhash)
+-message(STATUS "Will fetch emhash from ${EMHASH_REPO}")
+-FetchContent_Declare(emhash-headers
+-  GIT_REPOSITORY    ${EMHASH_REPO}
+-  GIT_TAG           96dcae6fac2f5f90ce97c9efee61a1d702ddd634
+-)
+-
+-FetchContent_GetProperties(emhash-headers)
+-if(NOT emhash-headers_POPULATED)
+-  FetchContent_Populate(emhash-headers)
++if(NOT DEFINED EMHASH_SOURCE_DIR)
++    # Fetch third party headers
++    set(EMHASH_REPO https://github.com/ktprime/emhash)
++    message(STATUS "Will fetch emhash from ${EMHASH_REPO}")
++    FetchContent_Declare(emhash-headers
++        GIT_REPOSITORY    ${EMHASH_REPO}
++        GIT_TAG           96dcae6fac2f5f90ce97c9efee61a1d702ddd634
++    )
++
++    FetchContent_GetProperties(emhash-headers)
++    if(NOT emhash-headers_POPULATED)
++        FetchContent_Populate(emhash-headers)
++    endif()
++
++    set(XPTIFW_EMHASH_HEADERS "${emhash-headers_SOURCE_DIR}")
++else()
++    set(XPTIFW_EMHASH_HEADERS "${EMHASH_SOURCE_DIR}")
+ endif()
+ 
+-set(XPTIFW_EMHASH_HEADERS "${emhash-headers_SOURCE_DIR}")
+-
+-set(PARALLEL_HASHMAP_REPO https://github.com/greg7mdp/parallel-hashmap.git)
+-message(STATUS "Will fetch parallel-hashmap from ${PARALLEL_HASHMAP_REPO}")
+-FetchContent_Declare(parallel-hashmap
+-  GIT_REPOSITORY    ${PARALLEL_HASHMAP_REPO}
+-  GIT_TAG           8a889d3699b3c09ade435641fb034427f3fd12b6
+-)
+-
+-FetchContent_GetProperties(parallel-hashmap)
+-FetchContent_MakeAvailable(parallel-hashmap)
+-
+-set(XPTIFW_PARALLEL_HASHMAP_HEADERS "${parallel-hashmap_SOURCE_DIR}")
++if(NOT DEFINED PARALLEL_HASHMAP_SOURCE_DIR)
++    set(PARALLEL_HASHMAP_REPO https://github.com/greg7mdp/parallel-hashmap.git)
++    message(STATUS "Will fetch parallel-hashmap from ${PARALLEL_HASHMAP_REPO}")
++    FetchContent_Declare(parallel-hashmap
++        GIT_REPOSITORY    ${PARALLEL_HASHMAP_REPO}
++        GIT_TAG           8a889d3699b3c09ade435641fb034427f3fd12b6
++    )
++
++    FetchContent_GetProperties(parallel-hashmap)
++    FetchContent_MakeAvailable(parallel-hashmap)
++
++    set(XPTIFW_PARALLEL_HASHMAP_HEADERS "${parallel-hashmap_SOURCE_DIR}")
++else()
++    set(XPTIFW_PARALLEL_HASHMAP_HEADERS "${PARALLEL_HASHMAP_SOURCE_DIR}")
++endif()
+ 
+ file(GLOB SOURCES *.cpp)
+ 
