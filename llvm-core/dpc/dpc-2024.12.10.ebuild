@@ -9,19 +9,7 @@ inherit toolchain-funcs
 MY_PV=${PV//./-}
 
 VC_INTRINSICS_COMMIT="4e51b2467104a257c22788e343dafbdde72e28bb"
-#UNIFIED_RUNTIME_COMMIT="098deca1f9f3b9f3f0563ee823ac424d8db30668"
-UNIFIED_RUNTIME_PV="0.11.0"
-COMPUTE_RUNTIME_PV="24.39.31294.12"
 BOOST_MP11_COMMIT="863d8b8d2b20f2acd0b5870f23e553df9ce90e6c"
-BOOST_UNORDERED_COMMIT="5e6b9291deb55567d41416af1e77c2516dc1250f"
-BOOST_ASSERT_COMMIT="447e0b3a331930f8708ade0e42683d12de9dfbc3"
-BOOST_CONFIG_COMMIT="11385ec21012926e15a612e3bf9f9a71403c1e5b"
-BOOST_CONTAINER_HASH_COMMIT="6d214eb776456bf17fbee20780a034a23438084f"
-BOOST_CORE_COMMIT="083b41c17e34f1fc9b43ab796b40d0d8bece685c"
-BOOST_DESCRIBE_COMMIT="50719b212349f3d1268285c586331584d3dbfeb5"
-BOOST_PREDEF_COMMIT="0fdfb49c3a6789e50169a44e88a07cc889001106"
-BOOST_STATIC_ASSERT_COMMIT="ba72d3340f3dc6e773868107f35902292f84b07e"
-BOOST_THROW_EXCEPTION_COMMIT="7c8ec2114bc1f9ab2a8afbd629b96fbdd5901294"
 EMHASH_COMMIT="96dcae6fac2f5f90ce97c9efee61a1d702ddd634"
 PARALLEL_HASHMAP_COMMIT="8a889d3699b3c09ade435641fb034427f3fd12b6"
 
@@ -33,22 +21,10 @@ HOMEPAGE="
 SRC_URI="
 	https://github.com/intel/llvm/archive/refs/tags/nightly-${MY_PV}.tar.gz -> ${P}.gh.tar.gz
 	https://github.com/intel/vc-intrinsics/archive/${VC_INTRINSICS_COMMIT}.tar.gz -> vc-intrinsics-${VC_INTRINSICS_COMMIT}.gh.tar.gz
-	https://github.com/oneapi-src/unified-runtime/archive/refs/tags/v${UNIFIED_RUNTIME_PV}.tar.gz -> unified-runtime-${UNIFIED_RUNTIME_PV}.gh.tar.gz
-	https://github.com/intel/compute-runtime/archive/${COMPUTE_RUNTIME_PV}.tar.gz -> intel-compute-runtime-${COMPUTE_RUNTIME_PV}.tar.gz
 	https://github.com/boostorg/mp11/archive/${BOOST_MP11_COMMIT}.tar.gz -> boost-mp11-${BOOST_MP11_COMMIT}.gh.tar.gz
-	https://github.com/boostorg/unordered/archive/${BOOST_UNORDERED_COMMIT}.tar.gz -> boost-unordered-${BOOST_UNORDERED_COMMIT}.gh.tar.gz
-	https://github.com/boostorg/assert/archive/${BOOST_ASSERT_COMMIT}.tar.gz -> boost-assert-${BOOST_ASSERT_COMMIT}.gh.tar.gz
-	https://github.com/boostorg/config/archive/${BOOST_CONFIG_COMMIT}.tar.gz -> boost-config-${BOOST_CONFIG_COMMIT}.gh.tar.gz
-	https://github.com/boostorg/container_hash/archive/${BOOST_CONTAINER_HASH_COMMIT}.tar.gz -> boost-container_hash-${BOOST_CONTAINER_HASH_COMMIT}.tar.gz
-	https://github.com/boostorg/core/archive/${BOOST_CORE_COMMIT}.tar.gz -> boost-core-${BOOST_CORE_COMMIT}.gh.tar.gz
-	https://github.com/boostorg/describe/archive/${BOOST_DESCRIBE_COMMIT}.tar.gz -> boost-describe-${BOOST_DESCRIBE_COMMIT}.gh.tar.gz
-	https://github.com/boostorg/predef/archive/${BOOST_PREDEF_COMMIT}.tar.gz -> boost-predef-${BOOST_PREDEF_COMMIT}.gh.tar.gz
-	https://github.com/boostorg/static_assert/archive/${BOOST_STATIC_ASSERT_COMMIT}.tar.gz -> static_assert-${BOOST_STATIC_ASSERT_COMMIT}.gh.tar.gz
-	https://github.com/boostorg/throw_exception/archive/${BOOST_THROW_EXCEPTION_COMMIT}.tar.gz -> boost-throw_exception-${BOOST_THROW_EXCEPTION_COMMIT}.gh.tar.gz
 	https://github.com/ktprime/emhash/archive/${EMHASH_COMMIT}.tar.gz -> emhash-${EMHASH_COMMIT}.gh.tar.gz
-	https://github.com/greg7mdp/parallel-hashmap/archive/${PARALLEL_HASHMAP_COMMIT}.tar.gz -> parallel-hashmap-${PARALLEL_HASHMAP_COMMIT}.gh.tar.gz
 "
-#https://github.com/oneapi-src/unified-runtime/archive/${UNIFIED_RUNTIME_COMMIT}.tar.gz -> unified-runtime-${UNIFIED_RUNTIME_COMMIT}.gh.tar.gz
+#	https://github.com/greg7mdp/parallel-hashmap/archive/${PARALLEL_HASHMAP_COMMIT}.tar.gz -> parallel-hashmap-${PARALLEL_HASHMAP_COMMIT}.gh.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -57,6 +33,9 @@ KEYWORDS="~amd64"
 IUSE="cuda jit l0 opencl rocm"
 
 DEPEND="
+	dev-libs/boost
+	dev-libs/level-zero
+	dev-libs/unified-runtime
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	l0? ( dev-libs/level-zero )
 	opencl? ( >=dev-libs/opencl-icd-loader-2024.10.24 )
@@ -73,19 +52,18 @@ CMAKE_USE_DIR="${S}"/llvm
 src_prepare() {
 	default
 	eapply "${FILESDIR}"/system-opencl.patch
-	eapply "${FILESDIR}"/umf-install.patch
 	eapply "${FILESDIR}"/xptifw-dep.patch
-	pushd "${WORKDIR}"/unified-runtime-${UNIFIED_RUNTIME_PV} \
-	&& eapply "${FILESDIR}"/unified-runtime-system-umf.patch \
-	&& eapply "${FILESDIR}"/unified-runtime-level-zero.patch \
-	&& popd
+	eapply "${FILESDIR}"/system-unified-runtime.patch
+	eapply "${FILESDIR}"/system-boost.patch
 	cmake_src_prepare
 }
 
 multilib_src_configure() {
 	local targets="host"
-	local external_projects="sycl;llvm-spirv;opencl;xpti;xptifw;libdevice"
-	local enable_projects="clang;${external_projects};libclc"
+	#local external_projects="sycl;llvm-spirv;opencl;xpti;xptifw;libdevice"
+	local external_projects="sycl;llvm-spirv;opencl;libdevice"
+	#local enable_projects="clang;${external_projects};libclc"
+	local enable_projects="clang;${external_projects}"
 	local sycl_backends="clang"
 
 	if use cuda ; then
@@ -108,7 +86,6 @@ multilib_src_configure() {
 		-DXPTI_SOURCE_DIR="${S}"/xpti
 		-DLLVM_EXTERNAL_XPTIFW_SOURCE_DIR="${S}"/xptifw
 		-DLLVM_EXTERNAL_LIBDEVICE_SOURCE_DIR="${S}"/libdevice
-		#-DLLVM_EXTERNAL_SYCL_JIT_SOURCE_DIR="${S}"/sycl-jit
 		-DLLVM_ENABLE_PROJECTS="clang;${external_projects}"
 		-DSYCL_BUILD_PI_HIP_PLATFORM="AMD"
 		-DLLVM_BUILD_TOOLS=ON
@@ -130,34 +107,14 @@ multilib_src_configure() {
 		-DBUG_REPORT_URL="https://github.com/intel/llvm/issues"
 		-DOCAMLFIND=NO
 		-DLLVMGenXIntrinsics_SOURCE_DIR="${WORKDIR}/vc-intrinsics-${VC_INTRINSICS_COMMIT}"
-		-DSYCL_UR_USE_FETCH_CONTENT=OFF
-		-DSYCL_UR_SOURCE_DIR="${WORKDIR}/unified-runtime-${UNIFIED_RUNTIME_PV}"
-		-DUR_BUILD_EXAMPLES=OFF
-		-DUR_BUILD_TESTS=OFF
-		-DUR_BUILD_ADAPTER_L0=$(usex l0)
-		-DUR_LEVEL_ZERO_LOADER_LIBRARY=/usr/$(get_libdir)/libze_loader.so
-		-DUR_LEVEL_ZERO_INCLUDE_DIR=/usr/include/level_zero
-		-DUR_COMPUTE_RUNTIME_DIR="${WORKDIR}"/compute-runtime-${COMPUTE_RUNTIME_PV}
-		-DUR_BUILD_ADAPTER_OPENCL=$(usex opencl)
-		-DUR_BUILD_ADAPTER_CUDA=$(usex cuda)
-		-DUR_BUILD_ADAPTER_HIP=$(usex rocm)
-		-DUR_BUILD_ADAPTER_NATIVE_CPU=ON
 		-DBOOST_MP11_SOURCE_DIR="${WORKDIR}/mp11-${BOOST_MP11_COMMIT}"
-		-DBOOST_UNORDERED_SOURCE_DIR=${WORKDIR}/unordered-${BOOST_UNORDERED_COMMIT}
-		-DBOOST_ASSERT_SOURCE_DIR=${WORKDIR}/assert-${BOOST_ASSERT_COMMIT}
-		-DBOOST_CONFIG_SOURCE_DIR=${WORKDIR}/config-${BOOST_CONFIG_COMMIT}
-		-DBOOST_CONTAINER_HASH_SOURCE_DIR=${WORKDIR}/container_hash-${BOOST_CONTAINER_HASH_COMMIT}
-		-DBOOST_CORE_SOURCE_DIR=${WORKDIR}/core-${BOOST_CORE_COMMIT}
-		-DBOOST_DESCRIBE_SOURCE_DIR=${WORKDIR}/describe-${BOOST_DESCRIBE_COMMIT}
-		-DBOOST_PREDEF_SOURCE_DIR=${WORKDIR}/predef-${BOOST_PREDEF_COMMIT}
-		-DBOOST_STATIC_ASSERT_SOURCE_DIR=${WORKDIR}/static_assert-${BOOST_STATIC_ASSERT_COMMIT}
-		-DBOOST_THROW_EXCEPTION_SOURCE_DIR=${WORKDIR}/throw_exception-${BOOST_THROW_EXCEPTION_COMMIT}
 		-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR="/usr/include"
 		-DEMHASH_SOURCE_DIR=${WORKDIR}/emhash-${EMHASH_COMMIT}
-		-DPARALLEL_HASHMAP_SOURCE_DIR=${WORKDIR}/parallel-hashmap-${PARALLEL_HASHMAP_COMMIT}
+		#-DPARALLEL_HASHMAP_SOURCE_DIR=${WORKDIR}/parallel-hashmap-${PARALLEL_HASHMAP_COMMIT}
+		-DPARALLEL_HASHMAP_SOURCE_DIR="/usr/include"
 		-DSYCL_ENABLE_XPTI_TRACING=OFF
 	)
-	use opencl && mycmakeargs+=( -DUR_OPENCL_INCLUDE_DIR="/usr/include" )
+	#use opencl && mycmakeargs+=( -DUR_OPENCL_INCLUDE_DIR="/usr/include" )
 	cmake_src_configure
 }
 

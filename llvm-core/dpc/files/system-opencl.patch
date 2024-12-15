@@ -168,3 +168,21 @@ diff -Nur a/opencl/CMakeLists.txt b/opencl/CMakeLists.txt
 -add_library(OpenCL-ICD ALIAS OpenCL)
 -
  add_subdirectory(opencl-aot)
+diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
+--- a/sycl/CMakeLists.txt	2024-12-09 16:51:36.000000000 -0800
++++ b/sycl/CMakeLists.txt	2024-12-14 18:15:04.517672354 -0800
+@@ -157,10 +157,10 @@
+ # e.g. when run LIT tests
+ file(COPY ${OpenCL_INCLUDE_DIR}/CL DESTINATION ${SYCL_INCLUDE_BUILD_DIR})
+ 
+-# Include OpenCL Headers into final bundle.
+-install(DIRECTORY ${OpenCL_INCLUDE_DIR}/CL
+-        DESTINATION ${SYCL_INCLUDE_DIR}
+-        COMPONENT OpenCL-Headers)
++## Include OpenCL Headers into final bundle.
++#install(DIRECTORY ${OpenCL_INCLUDE_DIR}/CL
++#        DESTINATION ${SYCL_INCLUDE_DIR}
++#        COMPONENT OpenCL-Headers)
+ 
+ # Option for enabling building the SYCL major release preview library.
+ option(SYCL_ENABLE_MAJOR_RELEASE_PREVIEW_LIB "Enable build of the SYCL major release preview library" ON)
