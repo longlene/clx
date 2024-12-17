@@ -3,8 +3,8 @@
 
 EAPI=8
 
-inherit cmake multilib-minimal
-inherit toolchain-funcs
+PYTHON_COMPAT=( python3_{11..13} )
+inherit cmake multilib-minimal python-any-r1
 
 MY_PV=${PV//./-}
 
@@ -13,7 +13,7 @@ BOOST_MP11_COMMIT="863d8b8d2b20f2acd0b5870f23e553df9ce90e6c"
 EMHASH_COMMIT="96dcae6fac2f5f90ce97c9efee61a1d702ddd634"
 PARALLEL_HASHMAP_COMMIT="8a889d3699b3c09ade435641fb034427f3fd12b6"
 
-DESCRIPTION="oneAPI DPC++ compiler"
+DESCRIPTION="oneAPI Data Parallel C++ compiler"
 HOMEPAGE="
 	https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html
 	https://github.com/intel/llvm
@@ -29,21 +29,24 @@ SRC_URI="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-#IUSE="cuda jit l0 opencl rocm zstd"
-IUSE="cuda jit l0 opencl rocm"
+#IUSE="cuda hip jit l0 opencl rocm zstd"
+IUSE="cuda hip jit l0 rocm zstd"
 
 DEPEND="
 	dev-libs/boost
 	dev-libs/level-zero
 	dev-libs/unified-runtime
-	cuda? ( dev-util/nvidia-cuda-toolkit )
+	>=dev-libs/opencl-icd-loader-2024.10.24
+	cuda? ( dev-util/nvidia-cuda-toolkit:= )
+	hip? ( dev-util/rocm-smi:= )
 	l0? ( dev-libs/level-zero )
-	opencl? ( >=dev-libs/opencl-icd-loader-2024.10.24 )
 "
 RDEPEND="${DEPEND}
 "
-#zstd? ( app-arch/zstd:=[${MULTILIB_USEDEP}] )
-BDEPEND=""
+#zstd? ( app-arch/zstd:= )
+BDEPEND="
+	${PYTHON_DEPS}
+"
 
 S="${WORKDIR}"/llvm-nightly-${MY_PV}
 
@@ -60,9 +63,7 @@ src_prepare() {
 
 multilib_src_configure() {
 	local targets="host"
-	#local external_projects="sycl;llvm-spirv;opencl;xpti;xptifw;libdevice"
-	local external_projects="sycl;llvm-spirv;opencl;libdevice"
-	#local enable_projects="clang;${external_projects};libclc"
+	local external_projects="sycl;llvm-spirv;opencl;libdevice;xpti;xptifw"
 	local enable_projects="clang;${external_projects}"
 	local sycl_backends="clang"
 
@@ -76,8 +77,14 @@ multilib_src_configure() {
 
 	local libdir=$(get_libdir)
 	local mycmakeargs=(
+		-DLLVM_APPEND_VC_REV=OFF
 		-DCMAKE_INSTALL_PREFIX="${EPREFIX}"/usr/lib/llvm/intel
 		-DLLVM_LIBDIR_SUFFIX=${libdir#lib}
+
+		#-DBUILD_SHARED_LIBS=OFF
+		#-DLLVM_BUILD_LLVM_DYLIB=ON
+		#-DLLVM_LINK_LLVM_DYLIB=ON
+
 		-DLLVM_TARGETS_TO_BUILD=${targets}
 		-DLLVM_EXTERNAL_PROJECTS=${external_projects}
 		-DLLVM_EXTERNAL_SYCL_SOURCE_DIR="${S}"/sycl
@@ -92,6 +99,11 @@ multilib_src_configure() {
 		#-DLLVM_ENABLE_ZSTD=$(usex zstd)
 		-DLLVM_ENABLE_ZSTD=OFF
 		-DLLVM_USE_STATIC_ZSTD=OFF
+
+		-DLLVM_HOST_TRIPLE="${CHOST}"
+
+		-DPython3_EXECUTABLE="${PYTHON}"
+
 		-DSYCL_ENABLE_WERROR=OFF
 		-DSYCL_INCLUDE_TESTS=OFF
 		-DLLVM_ENABLE_DOXYGEN=OFF
@@ -100,60 +112,62 @@ multilib_src_configure() {
 		-DSYCL_ENABLE_XPTI_TRACING=ON
 		-DLLVM_ENABLE_LLD=OFF
 		-DXPTI_ENABLE_WERROR=OFF
-		#-DSYCL_CLANG_EXTRA_FLAGS=""
 		-DSYCL_ENABLE_BACKENDS=${sycl_backends}
 		-DSYCL_ENABLE_EXTENSION_JIT=$(usex jit)
 		-DSYCL_ENABLE_MAJOR_RELEASE_PREVIEW_LIB=ON
+
 		-DBUG_REPORT_URL="https://github.com/intel/llvm/issues"
 		-DOCAMLFIND=NO
+
 		-DLLVMGenXIntrinsics_SOURCE_DIR="${WORKDIR}/vc-intrinsics-${VC_INTRINSICS_COMMIT}"
 		-DBOOST_MP11_SOURCE_DIR="${WORKDIR}/mp11-${BOOST_MP11_COMMIT}"
 		-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR="/usr/include"
 		-DEMHASH_SOURCE_DIR=${WORKDIR}/emhash-${EMHASH_COMMIT}
-		#-DPARALLEL_HASHMAP_SOURCE_DIR=${WORKDIR}/parallel-hashmap-${PARALLEL_HASHMAP_COMMIT}
 		-DPARALLEL_HASHMAP_SOURCE_DIR="/usr/include"
 		-DSYCL_ENABLE_XPTI_TRACING=OFF
 	)
-	#use opencl && mycmakeargs+=( -DUR_OPENCL_INCLUDE_DIR="/usr/include" )
+	local suffix=
+	if [[ $(tc-get-cxx-stdlib) == libc++ ]]; then
+		suffix+="+libcxx"
+		mycmakeargs+=(
+			-DLLVM_ENABLE_LIBCXX=ON
+		)
+	fi
+	mycmakeargs+=(
+		-DLLVM_VERSION_SUFFIX="${suffix}"
+	)
+
 	cmake_src_configure
 }
 
 multilib_src_compile() {
-	tc-env_build cmake_build
+	tc-env_build cmake_build sycl-toolchain
 }
 
-src_install() {
-	local MULTILIB_CHOST_TOOLS=(
-		/usr/lib/llvm/intel/bin/llvm-config
-	)
-
-	#local MULTILIB_WRAPPED_HEADERS=(
-	#	/usr/include/llvm/Config/llvm-config.h
-	#)
-
-	local LLVM_LDPATHS=()
-	multilib-minimal_src_install
-
-	# move wrapped headers back
-	#mv "${ED}"/usr/include "${ED}"/usr/lib/llvm/intel/include || die
+multilib_src_test() {
+	# respect TMPDIR!
+	local -x LIT_PRESERVES_TMP=1
+	cmake_build check
 }
 
 multilib_src_install() {
-	DESTDIR=${D} cmake_build install
-
-	## move headers to /usr/include for wrapping
-	#rm -rf "${ED}"/usr/include || die
-	#mv "${ED}"/usr/lib/llvm/intel/include "${ED}"/usr/include || die
-
-	LLVM_LDPATHS+=( "${EPREFIX}/usr/lib/llvm/intel/$(get_libdir)" )
+	DESTDIR=${D} cmake_build deploy-sycl-toolchain
 }
 
 multilib_src_install_all() {
-	newenvd - "60llvm-intel" <<-_EOF_
-		PATH="${EPREFIX}/usr/lib/llvm/intel/bin"
-		# we need to duplicate it in ROOTPATH for Portage to respect...
-		ROOTPATH="${EPREFIX}/usr/lib/llvm/intel/bin"
-		MANPATH="${EPREFIX}/usr/lib/llvm/intel/share/man"
-		LDPATH="$( IFS=:; echo "${LLVM_LDPATHS[*]}" )"
-	_EOF_
+	local INTEL_DIR="/usr/lib/llvm/intel"
+#	local revord=intel
+#	newenvd - "60llvm-${revord}" <<-_EOF_
+#		PATH="${EPREFIX}/usr/lib/llvm/intel/bin"
+#		# we need to duplicate it in ROOTPATH for Portage to respect...
+#		ROOTPATH="${EPREFIX}/usr/lib/llvm/intel/bin"
+#		MANPATH="${EPREFIX}/usr/lib/llvm/intel/share/man"
+#		LDPATH="$( IFS=:; echo "${LLVM_LDPATHS[*]}" )"
+#	_EOF_
+
+	dodir /usr/include
+	mv "${ED}"${INTEL_DIR}/include/{sycl,CL,std,syclcompat,syclcompat.hpp} "${ED}/usr/include"
+	dosym "${INTEL_DIR}"/lib64/libsycl.so /usr/$(get_libdir)/libsycl.so
+	dosym "${INTEL_DIR}"/bin/clang /usr/bin/icx
+	dosym "${INTEL_DIR}"/bin/clang++ /usr/bin/icpx
 }

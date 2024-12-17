@@ -82,6 +82,7 @@ src_install() {
 	pushd "opt/intel/oneapi/mkl/${VER}/lib/pkgconfig" || die
 	for file in *.pc; do
 		dosym "../../../opt/intel/oneapi/mkl/${VER}/lib/pkgconfig/${file}" "/usr/share/pkgconfig/${file}"
+		sed -e 's@prefix=.*@prefix=/opt/intel/oneapi/mkl/latest@g' -i ${file}
 	done
 	popd || die
 	pushd "opt/intel/oneapi/mkl/${VER}/lib/cmake/mkl" || die

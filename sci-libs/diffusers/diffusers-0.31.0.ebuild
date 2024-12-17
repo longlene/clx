@@ -22,13 +22,13 @@ RESTRICT="test" # Need some modules, not yet packaged
 
 RDEPEND="
 	$(python_gen_cond_dep '
-		dev-python/importlib_metadata[${PYTHON_USEDEP}]
+		dev-python/importlib-metadata[${PYTHON_USEDEP}]
 		dev-python/filelock[${PYTHON_USEDEP}]
-		>=sci-libs/huggingface-hub-0.23.2[${PYTHON_USEDEP}]
+		>=sci-libs/huggingface_hub-0.23.2[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/regex[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
-		>=dev-python/safetensors-0.3.1[${PYTHON_USEDEP}]
+		>=sci-libs/safetensors-0.3.1[${PYTHON_USEDEP}]
 		dev-python/pillow[${PYTHON_USEDEP}]
 	')
 "
