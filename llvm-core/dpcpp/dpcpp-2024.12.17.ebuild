@@ -165,9 +165,12 @@ multilib_src_install_all() {
 #		LDPATH="$( IFS=:; echo "${LLVM_LDPATHS[*]}" )"
 #	_EOF_
 
+	local libdir=$(get_libdir)
+
 	dodir /usr/include
 	mv "${ED}"${INTEL_DIR}/include/{sycl,CL,std,syclcompat,syclcompat.hpp} "${ED}/usr/include"
-	dosym "${INTEL_DIR}"/lib64/libsycl.so /usr/$(get_libdir)/libsycl.so
+	dosym "${INTEL_DIR}"/${libdir}/libsycl.so /usr/$(get_libdir)/libsycl.so
+	dosym "${INTEL_DIR}"/${libdir}/libsycl-devicelib-host.a /usr/$(get_libdir)/libsycl-devicelib-host.a
 	dosym "${INTEL_DIR}"/bin/clang /usr/bin/icx
 	dosym "${INTEL_DIR}"/bin/clang++ /usr/bin/icpx
 }
