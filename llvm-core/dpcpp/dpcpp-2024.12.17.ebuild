@@ -29,8 +29,8 @@ SRC_URI="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-#IUSE="cuda hip jit l0 opencl rocm zstd"
-IUSE="cuda hip jit l0 rocm zstd"
+#IUSE="cuda hip +jit l0 opencl rocm zstd"
+IUSE="cuda hip +jit l0 rocm"
 
 DEPEND="
 	dev-libs/boost
@@ -156,21 +156,14 @@ multilib_src_install() {
 
 multilib_src_install_all() {
 	local INTEL_DIR="/usr/lib/llvm/intel"
-#	local revord=intel
-#	newenvd - "60llvm-${revord}" <<-_EOF_
-#		PATH="${EPREFIX}/usr/lib/llvm/intel/bin"
-#		# we need to duplicate it in ROOTPATH for Portage to respect...
-#		ROOTPATH="${EPREFIX}/usr/lib/llvm/intel/bin"
-#		MANPATH="${EPREFIX}/usr/lib/llvm/intel/share/man"
-#		LDPATH="$( IFS=:; echo "${LLVM_LDPATHS[*]}" )"
-#	_EOF_
-
 	local libdir=$(get_libdir)
 
 	dodir /usr/include
-	mv "${ED}"${INTEL_DIR}/include/{sycl,CL,std,syclcompat,syclcompat.hpp} "${ED}/usr/include"
-	dosym "${INTEL_DIR}"/${libdir}/libsycl.so /usr/$(get_libdir)/libsycl.so
-	dosym "${INTEL_DIR}"/${libdir}/libsycl-devicelib-host.a /usr/$(get_libdir)/libsycl-devicelib-host.a
+	mv "${ED}"${INTEL_DIR}/include/{sycl,CL,std,syclcompat,syclcompat.hpp} "${ED}"/usr/include
+	local f=
+	for f in libsycl.so libsycl-jit.so libsycl-devicelib-host.a ; do
+		dosym "${INTEL_DIR}"/${libdir}/${f} /usr/${libdir}/${f}
+	done
 	dosym "${INTEL_DIR}"/bin/clang /usr/bin/icx
 	dosym "${INTEL_DIR}"/bin/clang++ /usr/bin/icpx
 }
