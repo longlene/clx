@@ -45,7 +45,7 @@ diff -Nur a/cmake/developer_package/packaging/archive.cmake b/cmake/developer_pa
 -        set(build_type $<CONFIG>)
 +    ov_get_pyversion(pyversion)
 +    if(pyversion)
-+        set(OV_CPACK_PYTHONDIR ${CMAKE_INSTALL_LIBDIR}/${pyversion}/site-packages)
++        set(OV_CPACK_PYTHONDIR /usr/lib/${pyversion}/site-packages)
      endif()
  
      if(WIN32)

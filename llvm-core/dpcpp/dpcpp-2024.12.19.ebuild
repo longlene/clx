@@ -160,10 +160,8 @@ multilib_src_install_all() {
 
 	dodir /usr/include
 	mv "${ED}"${INTEL_DIR}/include/{sycl,CL,std,syclcompat,syclcompat.hpp} "${ED}"/usr/include
-	local f=
-	for f in libsycl.so libsycl-jit.so libsycl-devicelib-host.a ; do
-		dosym "${INTEL_DIR}"/${libdir}/${f} /usr/${libdir}/${f}
-	done
+	mv "${ED}"${INTEL_DIR}/${libdir}/libsycl*.{a,so*} "${ED}"/usr/${libdir}
 	dosym "${INTEL_DIR}"/bin/clang /usr/bin/icx
 	dosym "${INTEL_DIR}"/bin/clang++ /usr/bin/icpx
+	einstalldocs
 }

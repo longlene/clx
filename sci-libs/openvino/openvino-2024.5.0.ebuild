@@ -3,7 +3,9 @@
 
 EAPI=8
 
-inherit cmake
+PYTHON_COMPAT=( python3_{11..13} )
+
+inherit cmake python-single-r1
 
 MLAS_COMMIT="d1bc25ec4660cddd87804fcf03b2411b5dfb2e94"
 ONEDNN_CPU_COMMIT="c60a9946aa2386890e5c9f5587974facb7624227"
@@ -24,7 +26,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 #IUSE="l0 onednn +opencl python"
-IUSE="onednn opencl"
+IUSE="onednn opencl +python"
 
 DEPEND="
 	sys-libs/zlib
@@ -40,7 +42,13 @@ DEPEND="
 #	l0? ( dev-libs/level-zero )
 #	onednn? ( dev-libs/oneDNN )
 #   python? ( dev-python/pybind11 )
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	${PYTHON_DEPS}
+	$(python_gen_cond_dep '
+		dev-python/pybind11[${PYTHON_USEDEP}]
+	')
+"
 BDEPEND=""
 
 src_prepare() {
@@ -49,6 +57,7 @@ src_prepare() {
 	eapply "${FILESDIR}"/install-path.patch
 	eapply "${FILESDIR}"/opencl-fix.patch
 	eapply "${FILESDIR}"/system-l0.patch
+	eapply "${FILESDIR}"/python-install-path.patch
 	sed -e '/target_include_directories(openvino_core_dev SYSTEM INTERFACE/{s#SYSTEM ##}' \
 		-i src/core/CMakeLists.txt
 	sed -e '/target_include_directories/{s#SYSTEM PRIVATE#PRIVATE#}' \
@@ -84,8 +93,12 @@ src_configure() {
 		-DENABLE_SYSTEM_SNAPPY=ON
 		-DENABLE_OV_ONNX_FRONTEND=OFF
 		-DENABLE_JS=OFF
-		#-DENABLE_PYTHON=$(usex python)
-		-DENABLE_PYTHON=OFF
+		-DENABLE_PYTHON=$(usex python)
 	)
 	cmake_src_configure
+}
+
+src_install() {
+	cmake_src_install
+	python_optimize
 }

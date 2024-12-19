@@ -1,0 +1,49 @@
+diff -Nur a/src/bindings/python/CMakeLists.txt b/src/bindings/python/CMakeLists.txt
+--- a/src/bindings/python/CMakeLists.txt	2024-12-17 23:08:32.896720551 -0800
++++ b/src/bindings/python/CMakeLists.txt	2024-12-18 20:57:44.937332085 -0800
+@@ -270,12 +270,8 @@
+         endif()
+     endforeach()
+ 
+-    file(GLOB_RECURSE openvino_py_files ${OpenVINOPython_SOURCE_DIR}/src/openvino/*.py)
+-
+     list(APPEND ov_setup_py_deps
+-        ${openvino_py_files}
+         "${CMAKE_CURRENT_SOURCE_DIR}/wheel/setup.py"
+-        "${OpenVINOPython_SOURCE_DIR}/requirements.txt"
+         "${OpenVINOPython_SOURCE_DIR}/wheel/readme.txt"
+         "${OpenVINO_SOURCE_DIR}/LICENSE"
+         "${OpenVINO_SOURCE_DIR}/licensing/onednn_third-party-programs.txt"
+diff -Nur a/src/bindings/python/src/pyopenvino/CMakeLists.txt b/src/bindings/python/src/pyopenvino/CMakeLists.txt
+--- a/src/bindings/python/src/pyopenvino/CMakeLists.txt	2024-12-17 23:08:32.900053884 -0800
++++ b/src/bindings/python/src/pyopenvino/CMakeLists.txt	2024-12-18 21:48:51.687348646 -0800
+@@ -91,7 +91,6 @@
+ add_custom_command(TARGET ${PROJECT_NAME}
+         POST_BUILD
+         COMMAND ${CMAKE_COMMAND} -E copy_directory ${OpenVINOPython_SOURCE_DIR}/src/openvino ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}
+-        COMMAND ${CMAKE_COMMAND} -E copy ${OpenVINOPython_SOURCE_DIR}/requirements.txt ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/../requirements.txt
+         )
+ 
+ ov_python_minimal_api(${PROJECT_NAME})
+@@ -124,21 +123,6 @@
+ 
+ ov_cpack_add_component(${OV_CPACK_COMP_OPENVINO_REQ_FILES} HIDDEN)
+ 
+-install(FILES ${OpenVINOPython_SOURCE_DIR}/requirements.txt
+-        DESTINATION ${OV_CPACK_PYTHONDIR}
+-        COMPONENT ${OV_CPACK_COMP_OPENVINO_REQ_FILES}
+-        ${OV_CPACK_COMP_OPENVINO_REQ_FILES_EXCLUDE_ALL})
+-
+-install(FILES ${OpenVINOPython_SOURCE_DIR}/src/openvino/preprocess/torchvision/requirements.txt
+-        DESTINATION ${OV_CPACK_PYTHONDIR}/openvino/preprocess/torchvision
+-        COMPONENT ${OV_CPACK_COMP_OPENVINO_REQ_FILES}
+-        ${OV_CPACK_COMP_OPENVINO_REQ_FILES_EXCLUDE_ALL})
+-
+-install(DIRECTORY ${OpenVINOPython_SOURCE_DIR}/tests
+-        DESTINATION tests/${PROJECT_NAME}
+-        COMPONENT tests
+-        EXCLUDE_FROM_ALL)
+-
+ if(TARGET ie_wheel)
+     add_dependencies(ie_wheel ${PROJECT_NAME})
+ endif()
