@@ -22,8 +22,9 @@ RDEPEND="
 	$(python_gen_cond_dep '
 		>=dev-python/av-11.0.0[${PYTHON_USEDEP}]
 		>=dev-python/ctranslate2-4.0.0[${PYTHON_USEDEP}]
-		>=sci-libs/onnxruntime-1.14[python]
+		>=sci-libs/onnxruntime-1.14[${PYTHON_USEDEP}]
 		>=sci-libs/huggingface_hub-0.13[${PYTHON_USEDEP}]
+		dev-python/tqdm[${PYTHON_USEDEP}]
 	')
 "
 BDEPEND="

@@ -18,6 +18,9 @@ SRC_URI="
 	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-core-${MY_PV}_amd64.deb
 	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-core-devel-${MY_PV}_amd64.deb
 	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-devel-${MY_PV}_amd64.deb
+
+	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-dft-${MY_PV}_amd64.deb
+	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-include-${MY_PV}_amd64.deb
 	
 	!minimal? (
 		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-${MY_PV}_amd64.deb

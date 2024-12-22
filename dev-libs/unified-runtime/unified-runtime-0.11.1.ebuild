@@ -20,6 +20,7 @@ KEYWORDS="~amd64"
 IUSE="cuda l0 opencl rocm"
 
 DEPEND="
+	dev-libs/unified-memory-framework
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	l0? ( dev-libs/level-zero:= )
 	opencl? ( virtual/opencl )
