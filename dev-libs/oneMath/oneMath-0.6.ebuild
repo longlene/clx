@@ -16,6 +16,7 @@ IUSE="cuda rocm tbb"
 
 DEPEND="
 	llvm-core/dpcpp
+	sci-libs/mkl
 	virtual/opencl
 	tbb? ( dev-cpp/tbb )
 "

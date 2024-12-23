@@ -21,7 +21,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="test mkl cblas opencl static-libs +openmp"
+IUSE="test mkl cblas opencl static-libs sycl openmp"
 
 RESTRICT="!test? ( test )"
 
@@ -38,6 +38,7 @@ BDEPEND="
 			sys-devel/clang-runtime[openmp]
 		)
 	)
+	sycl? ( llvm-core/dpcpp )
 "
 
 pkg_pretend() {
@@ -49,18 +50,29 @@ pkg_setup() {
 }
 
 src_configure() {
-	if ! use openmp ; then
-		ewarn "WARNING: oneDNN is being built with sequential runtime."
-		ewarn "Proceeding might lead to highly sub-optimal performance."
-		ewarn "Conside enabling \"openmp\" USE flag."
+	if use sycl ; then
+		export CC=icx
+		export CXX=icpx
+	fi
+	local cpu_runtime=SEQ
+	if use sycl ; then
+		cpu_runtime=SYCL
+	elif use tbb ; then
+		cpu_runtime=TBB
+	elif use openmp ; then
+		cpu_runtime=OMP
+	fi
+	local gpu_runtime=NONE
+	if use sycl ; then
+		gpu_runtime=SYCL
+	elif use opencl ; then
+		gpu_runtime=OCL
 	fi
 
-	local gpu_runtime=NONE
-	use opencl && gpu_runtime=OCL
-
 	local mycmakeargs=(
+		-DCMAKE_CXX_STANDARD=17 # for sycl
 		-DDNNL_LIBRARY_TYPE=$(usex static-libs STATIC SHARED)
-		-DDNNL_CPU_RUNTIME=$(usex openmp OMP SEQ)
+		-DDNNL_CPU_RUNTIME=${cpu_runtime}
 		-DDNNL_GPU_RUNTIME=${gpu_runtime}
 		-DDNNL_BUILD_EXAMPLES=OFF
 		-DDNNL_BUILD_TESTS="$(usex test)"
