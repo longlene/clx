@@ -3,9 +3,9 @@
 
 EAPI=8
 
-inherit cmake vcs-snapshot
+inherit cmake flag-o-matic vcs-snapshot
 
-EGIT_COMMIT="193fc2110ade37b3c96fae7a3eebcb61adda3d8b"
+EGIT_COMMIT="6a7a034e117f189df4d13665b9b604638ddca468"
 KOMPUTE_COMMIT="4565194ed7c32d1d2efa32ceab4d3c6cae006306"
 
 DESCRIPTION="Tensor library for machine learning"
@@ -18,6 +18,7 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
+#IUSE="cuda mkl kompute opencl +openmp rocm sycl vulkan"
 IUSE="cuda mkl kompute +openmp rocm vulkan"
 
 DEPEND="
@@ -26,6 +27,7 @@ DEPEND="
 	rocm? ( dev-util/rocm-smi )
 	vulkan? ( media-libs/vulkan-loader )
 "
+#	sycl? ( llvm-core/dpcpp )
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
@@ -39,6 +41,13 @@ src_prepare() {
 }
 
 src_configure() {
+	#if use sycl ; then
+	#	export CC=icx
+	#	export CXX=icpx
+	#	filter-flags '-mabm'
+	#	filter-flags '--param=l1-cache-*'
+	#	filter-flags '--param=l2-cache-*'
+	#fi
 	local blas_vendor="Generic"
 	if use cuda ; then
 		blas_vendor="NVHPC"
@@ -47,7 +56,6 @@ src_configure() {
 	fi
 	local mycmakeargs=(
 		-DBUILD_SHARED_LIBS=ON
-		#-DGGML_BACKEND_DL=ON
 		-DGGML_BLAS=ON
 		-DGGML_BLAS_VENDOR=${blas_vendor}
 		-DGGML_CUDA=$(usex cuda)
@@ -55,6 +63,8 @@ src_configure() {
 		-DGGML_VULKAN=$(usex vulkan)
 		-DGGML_KOMPUTE=$(usex kompute)
 		-DGGML_OPENMP=$(usex openmp)
+		#-DGGML_SYCL=$(usex sycl)
+		#-DGGML_OPENCL=$(usex opencl)
 		-DGGML_BUILD_TESTS=OFF
 		-DGGML_BUILD_EXAMPLES=OFF
 	)

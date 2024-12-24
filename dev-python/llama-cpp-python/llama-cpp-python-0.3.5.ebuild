@@ -6,9 +6,9 @@ EAPI=8
 DISTUTILS_USE_PEP517=scikit-build-core
 PYTHON_COMPAT=( python3_{11..13} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
 
-LLAMA_CPP_COMMIT="c919d5db39c8a7fcb64737f008e4b105ee0acd20"
+LLAMA_CPP_COMMIT="26a8406ba9198eb6fdd8329fa717555b4f77f05f"
 
 DESCRIPTION="Python bindings for the llama.cpp library"
 HOMEPAGE="https://github.com/abetlen/llama-cpp-python"

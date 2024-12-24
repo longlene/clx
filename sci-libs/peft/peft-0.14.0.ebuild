@@ -18,8 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-libs/pytorch-1.13.0[${PYTHON_SINGLE_USEDEP}]
 	sci-libs/accelerate[${PYTHON_SINGLE_USEDEP}]
+	>=sci-libs/pytorch-1.13.0[${PYTHON_SINGLE_USEDEP}]
 	sci-libs/transformers[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/numpy-1.17[${PYTHON_USEDEP}]

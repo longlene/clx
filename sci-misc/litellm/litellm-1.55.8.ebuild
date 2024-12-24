@@ -24,7 +24,8 @@ KEYWORDS="~amd64"
 RDEPEND="
 	sci-libs/tokenizers[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		>=dev-python/openai-1.54.0[${PYTHON_USEDEP}]
+		>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]
+		>=dev-python/openai-1.55.3[${PYTHON_USEDEP}]
 		>=dev-python/python-dotenv-0.2.0[${PYTHON_USEDEP}]
 		>=dev-python/tiktoken-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/importlib-metadata-6.8.0[${PYTHON_USEDEP}]
