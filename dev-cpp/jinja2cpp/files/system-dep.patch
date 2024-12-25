@@ -1,0 +1,21 @@
+diff -Nur a/thirdparty/thirdparty-external.cmake b/thirdparty/thirdparty-external.cmake
+--- a/thirdparty/thirdparty-external.cmake	2024-06-23 12:31:22.000000000 -0700
++++ b/thirdparty/thirdparty-external.cmake	2024-12-24 19:55:41.985363172 -0800
+@@ -27,7 +27,7 @@
+ 
+     if(${PKG_NAME}_FOUND)
+         if (NOT TARGET ${PKG_NAME})
+-            imported_target_alias(${PKG_NAME} ALIAS "${PKG_NAME}::${PKG_NAME}")
++            imported_target_alias(${PKG_NAME} ALIAS "nonstd::${PKG_NAME}")
+         endif ()
+     else()
+         message(FATAL_ERROR "${PKG_NAME} not found!")
+@@ -38,7 +38,7 @@
+ find_hdr_package(variant-lite nonstd/variant.hpp)
+ find_hdr_package(optional-lite nonstd/optional.hpp)
+ find_hdr_package(string-view-lite nonstd/string_view.hpp)
+-find_hdr_package(fmt-header-only fmt/format.h)
++FindHeaderOnlyLib(fmt/format.h fmt-header-only)
+ 
+ find_package(RapidJSON)
+ add_library(RapidJson INTERFACE)

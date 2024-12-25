@@ -1,0 +1,30 @@
+diff -Nur a/src/error_info.cpp b/src/error_info.cpp
+--- a/src/error_info.cpp	2024-06-23 12:31:22.000000000 -0700
++++ b/src/error_info.cpp	2024-12-25 00:54:41.202662485 -0800
+@@ -90,8 +90,7 @@
+ };
+ } // namespace
+ 
+-namespace fmt
+-{
++FMT_BEGIN_NAMESPACE
+ template<typename CharT>
+ struct formatter<jinja2::Value, CharT>
+ {
+@@ -102,13 +101,14 @@
+     }
+ 
+     template<typename FormatContext>
+-    auto format(const jinja2::Value& val, FormatContext& ctx)
++    auto format(const jinja2::Value& val, FormatContext& ctx) const
+     {
+         nonstd::visit(ValueRenderer<FormatContext>(&ctx), val.data());
+         return fmt::format_to(ctx.out(), UNIVERSAL_STR("").GetValue<CharT>());
+     }
+ };
+-} // namespace fmt
++FMT_END_NAMESPACE
++// namespace fmt
+ 
+ namespace jinja2
+ {

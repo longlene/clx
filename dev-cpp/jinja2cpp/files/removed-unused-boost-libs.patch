@@ -1,0 +1,95 @@
+From 355a1d9fc502519b035827320a8822d6425b08ba Mon Sep 17 00:00:00 2001
+From: Christian Goll <cgoll@suse.com>
+Date: Wed, 18 Dec 2024 11:04:55 +0100
+Subject: [PATCH] removed unused boost libs
+
+Signed-off-by: Christian Goll <cgoll@suse.com>
+---
+ thirdparty/CMakeLists.txt            |  6 +++---
+ thirdparty/external_boost_deps.cmake | 27 ++++-----------------------
+ 2 files changed, 7 insertions(+), 26 deletions(-)
+
+diff --git a/thirdparty/CMakeLists.txt b/thirdparty/CMakeLists.txt
+index 57c8f8e..bf74a50 100644
+--- a/thirdparty/CMakeLists.txt
++++ b/thirdparty/CMakeLists.txt
+@@ -70,15 +70,15 @@ endif()
+ 
+ if (NOT DEFINED JINJA2_PRIVATE_LIBS_INT)
+     set(JINJA2CPP_PRIVATE_LIBS ${JINJA2CPP_PRIVATE_LIBS}
+-        Boost::variant Boost::filesystem Boost::algorithm Boost::lexical_cast Boost::json
+-        Boost::regex Boost::numeric_conversion fmt RapidJson)
++        Boost::filesystem Boost::json
++        Boost::regex fmt RapidJson)
+ else ()
+     set (JINJA2CPP_PRIVATE_LIBS ${JINJA2_PRIVATE_LIBS_INT})
+ endif ()
+ 
+ if (NOT DEFINED JINJA2_PUBLIC_LIBS_INT)
+     set (JINJA2CPP_PUBLIC_LIBS ${JINJA2CPP_PUBLIC_LIBS}
+-        expected-lite variant-lite optional-lite string-view-lite)
++        variant-lite optional-lite string-view-lite)
+ else ()
+     set (JINJA2CPP_PUBLIC_LIBS ${JINJA2_PUBLIC_LIBS_INT})
+ endif ()
+diff --git a/thirdparty/external_boost_deps.cmake b/thirdparty/external_boost_deps.cmake
+index e6305d2..6bf4cf7 100644
+--- a/thirdparty/external_boost_deps.cmake
++++ b/thirdparty/external_boost_deps.cmake
+@@ -19,42 +19,23 @@ if (MSVC)
+ 	endif ()
+ endif ()
+ 
+-find_package(boost_algorithm          ${FIND_BOOST_PACKAGE_QUIET})
+ find_package(boost_filesystem         ${FIND_BOOST_PACKAGE_QUIET})
+-find_package(boost_numeric_conversion ${FIND_BOOST_PACKAGE_QUIET})
+ find_package(boost_json               ${FIND_BOOST_PACKAGE_QUIET})
+-find_package(boost_optional           ${FIND_BOOST_PACKAGE_QUIET})
+-find_package(boost_variant            ${FIND_BOOST_PACKAGE_QUIET})
+ find_package(boost_regex              ${FIND_BOOST_PACKAGE_QUIET})
+-find_package(boost_lexical_cast       ${FIND_BOOST_PACKAGE_QUIET})
+ 
+-if (boost_algorithm_FOUND AND
+-   boost_filesystem_FOUND AND
+-   boost_numeric_conversion_FOUND AND
+-   boost_json_FOUND AND
+-   boost_optional_FOUND AND
+-   boost_variant_FOUND AND boost_regex_FOUND)
+-   imported_target_alias(boost_algorithm          ALIAS boost_algorithm::boost_algorithm)
++if ( boost_filesystem_FOUND AND
++   boost_json_FOUND)
+    imported_target_alias(boost_filesystem         ALIAS boost_filesystem::boost_filesystem)
+-   imported_target_alias(boost_numeric_conversion ALIAS numeric_conversion::numeric_conversion)
+    imported_target_alias(boost_json               ALIAS boost_json::boost_json)
+-   imported_target_alias(boost_optional           ALIAS boost_optional::boost_optional)
+-   imported_target_alias(boost_variant            ALIAS boost_variant::boost_variant)
+    imported_target_alias(boost_regex              ALIAS boost_regex::boost_regex)
+-   imported_target_alias(boost_lexical_cast       ALIAS boost_regex::lexical_cast)
+    
+ else ()
+-    find_package(Boost COMPONENTS system filesystem numeric_conversion json regex optional variant algorithm lexical_cast ${FIND_BOOST_PACKAGE_QUIET} REQUIRED)
++    find_package(Boost COMPONENTS system filesystem json ${FIND_BOOST_PACKAGE_QUIET} REQUIRED)
+ 
+     if (Boost_FOUND)
+-        imported_target_alias(boost_algorithm          ALIAS Boost::boost)
+         imported_target_alias(boost_filesystem         ALIAS Boost::filesystem)
+-        imported_target_alias(boost_numeric_conversion ALIAS Boost::numeric_conversion)
+         imported_target_alias(boost_json               ALIAS Boost::json)
+-        imported_target_alias(boost_optional           ALIAS Boost::boost)
+-        imported_target_alias(boost_variant            ALIAS Boost::boost)
+         imported_target_alias(boost_regex              ALIAS Boost::regex)
+-        imported_target_alias(boost_lexical_cast       ALIAS Boost::lexical_cast)
+     endif ()
+ endif ()
+ 
+@@ -64,7 +45,7 @@ if ("${JINJA2CPP_USE_REGEX}" STREQUAL "boost")
+ endif()
+ 
+ if(JINJA2CPP_INSTALL)
+-    install(TARGETS boost_algorithm boost_filesystem boost_numeric_conversion boost_json boost_optional boost_variant ${_additional_boost_install_targets}
++    install(TARGETS boost_filesystem boost_json ${_additional_boost_install_targets}
+             EXPORT InstallTargets
+             RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+             LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-- 
+2.43.0
