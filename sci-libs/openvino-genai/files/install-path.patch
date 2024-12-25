@@ -1,0 +1,117 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2024-12-24 18:34:26.448525965 -0800
++++ b/CMakeLists.txt	2024-12-25 12:05:47.500753764 -0800
+@@ -59,6 +59,7 @@
+                  PATHS "${OpenVINO_DIR_PY}")
+ endif()
+ 
++include(GNUInstallDirs)
+ include(cmake/features.cmake)
+ 
+ if(ENABLE_PYTHON)
+@@ -81,18 +82,22 @@
+ 
+ add_subdirectory(thirdparty)
+ add_subdirectory(src)
+-if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/samples")
+-    add_subdirectory(samples)
+-endif()
+-if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/tools/continuous_batching")
+-    add_subdirectory(tools/continuous_batching)
++if(ENABLE_EXAMPLE)
++    if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/samples")
++        add_subdirectory(samples)
++    endif()
+ endif()
+-if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/tests/cpp")
+-    add_subdirectory(tests/cpp)
++if(ENABLE_TOOL)
++    if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/tools/continuous_batching")
++        add_subdirectory(tools/continuous_batching)
++    endif()
++    if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/tests/cpp")
++        add_subdirectory(tests/cpp)
++    endif()
+ endif()
+ 
+-install(FILES LICENSE DESTINATION docs/licensing COMPONENT licensing_genai RENAME LICENSE-GENAI)
+-install(FILES third-party-programs.txt DESTINATION docs/licensing COMPONENT licensing_genai RENAME third-party-programs-genai.txt)
++install(FILES LICENSE DESTINATION ${CMAKE_INSTALL_DOCDIR} COMPONENT licensing_genai RENAME LICENSE-GENAI)
++install(FILES third-party-programs.txt DESTINATION ${CMAKE_INSTALL_DOCDIR} COMPONENT licensing_genai RENAME third-party-programs-genai.txt)
+ if(NOT DEFINED CPACK_ARCHIVE_COMPONENT_INSTALL)
+     set(CPACK_ARCHIVE_COMPONENT_INSTALL ON)
+ endif()
+diff -Nur a/src/cpp/CMakeLists.txt b/src/cpp/CMakeLists.txt
+--- a/src/cpp/CMakeLists.txt	2024-12-24 18:34:26.431859298 -0800
++++ b/src/cpp/CMakeLists.txt	2024-12-25 12:08:12.770758933 -0800
+@@ -134,23 +143,23 @@
+ endif()
+ 
+ install(TARGETS ${TARGET_NAME} EXPORT OpenVINOGenAITargets
+-        LIBRARY DESTINATION runtime/lib/${ARCH_DIR} COMPONENT core_genai
+-            NAMELINK_COMPONENT core_genai_dev
+-        ARCHIVE DESTINATION runtime/lib/${ARCH_DIR} COMPONENT core_genai_dev
++        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT core_genai
++        NAMELINK_COMPONENT core_genai_dev
++        ARCHIVE DESTINATION ${CAMKE_INSTALL_LIBDIR} COMPONENT core_genai_dev
+         RUNTIME DESTINATION runtime/bin/${ARCH_DIR} COMPONENT core_genai
+-        INCLUDES DESTINATION runtime/include)
++        INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+ 
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
+-        DESTINATION runtime/include COMPONENT core_genai_dev)
++        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} COMPONENT core_genai_dev)
+ install(EXPORT OpenVINOGenAITargets FILE OpenVINOGenAITargets.cmake
+-        NAMESPACE openvino:: DESTINATION runtime/cmake
++        NAMESPACE openvino:: DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cmake/${PROJECT_NAME}
+         COMPONENT core_genai_dev)
+ 
+ include(CMakePackageConfigHelpers)
+ configure_package_config_file("${OpenVINOGenAI_SOURCE_DIR}/cmake/templates/OpenVINOGenAIConfig.cmake.in"
+-                              "${CMAKE_BINARY_DIR}/OpenVINOGenAIConfig.cmake" INSTALL_DESTINATION runtime/cmake)
++    "${CMAKE_BINARY_DIR}/OpenVINOGenAIConfig.cmake" INSTALL_DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cmake)
+ write_basic_package_version_file("${CMAKE_BINARY_DIR}/OpenVINOGenAIConfigVersion.cmake"
+                                  VERSION ${OpenVINOGenAI_VERSION} COMPATIBILITY AnyNewerVersion)
+ install(FILES "${CMAKE_BINARY_DIR}/OpenVINOGenAIConfig.cmake" "${CMAKE_BINARY_DIR}/OpenVINOGenAIConfigVersion.cmake"
+-        DESTINATION runtime/cmake COMPONENT core_genai_dev)
++        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cmake/${PROJECT_NAME} COMPONENT core_genai_dev)
+ export(EXPORT OpenVINOGenAITargets FILE "${CMAKE_BINARY_DIR}/OpenVINOGenAITargets.cmake" NAMESPACE openvino::)
+diff -Nur a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
+--- a/src/python/CMakeLists.txt	2024-12-24 18:34:26.431859298 -0800
++++ b/src/python/CMakeLists.txt	2024-12-25 12:37:12.020820924 -0800
+@@ -70,29 +73,29 @@
+               "${CMAKE_CURRENT_SOURCE_DIR}/openvino_genai/__init__.pyi"
+               "${CMAKE_CURRENT_SOURCE_DIR}/openvino_genai/py_openvino_genai.pyi"
+               "${CMAKE_BINARY_DIR}/openvino_genai/__version__.py"
+-        DESTINATION python/openvino_genai
++              DESTINATION ${Python3_SITELIB}/openvino_genai
+         COMPONENT pygenai_${Python3_VERSION_MAJOR}_${Python3_VERSION_MINOR})
+ install(TARGETS ${TARGET_NAME}
+-        LIBRARY DESTINATION python/openvino_genai
++        LIBRARY DESTINATION ${Python3_SITELIB}/openvino_genai
+         COMPONENT pygenai_${Python3_VERSION_MAJOR}_${Python3_VERSION_MINOR})
+ 
+ install(FILES "${CMAKE_BINARY_DIR}/openvino_genai/__version__.py"
+-        DESTINATION openvino_genai
++        DESTINATION ${Python3_SITELIB}/openvino_genai
+         COMPONENT wheel_genai
+         EXCLUDE_FROM_ALL)
+ 
+ install(FILES "${OpenVINOGenAI_SOURCE_DIR}/LICENSE"
+               "${OpenVINOGenAI_SOURCE_DIR}/third-party-programs.txt"
+               "${OpenVINOGenAI_SOURCE_DIR}/SECURITY.md"
+-        DESTINATION "${PY_BUILD_CMAKE_PACKAGE_NAME}-${PY_BUILD_CMAKE_PACKAGE_VERSION}.dist-info"
++              DESTINATION "${Python3_SITELIB}/${PY_BUILD_CMAKE_PACKAGE_NAME}-${PY_BUILD_CMAKE_PACKAGE_VERSION}.dist-info"
+         COMPONENT wheel_genai
+         EXCLUDE_FROM_ALL)
+ 
+ # wheel_genai component is used for wheel generation in pyproject.toml.
+ # Exclude wheel_genai from normal packaging because there's pygenai_X_Y component for that.
+ install(TARGETS openvino_genai ${TARGET_NAME}
+-        LIBRARY DESTINATION openvino_genai COMPONENT wheel_genai EXCLUDE_FROM_ALL
+-        RUNTIME DESTINATION openvino_genai COMPONENT wheel_genai EXCLUDE_FROM_ALL)
++        LIBRARY DESTINATION ${Python3_SITEARCH}/openvino_genai COMPONENT wheel_genai EXCLUDE_FROM_ALL
++        RUNTIME DESTINATION ${Python3_SITEARCH}/openvino_genai COMPONENT wheel_genai EXCLUDE_FROM_ALL)
+ 
+ # Generate or check .pyi stub files generated by pybind11-stub
+ 
