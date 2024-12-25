@@ -1,0 +1,16 @@
+diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
+--- a/src/CMakeLists.txt	2024-12-23 12:31:37.274798563 -0800
++++ b/src/CMakeLists.txt	2024-12-24 17:24:10.288378358 -0800
+@@ -498,12 +498,6 @@
+   install(FILES ${extra_libs} DESTINATION ${extra_libs_location} COMPONENT openvino_tokenizers)
+ endif()
+ 
+-install(FILES "${openvino_tokenizers_SOURCE_DIR}/LICENSE"
+-              "${openvino_tokenizers_SOURCE_DIR}/third-party-programs.txt"
+-              "${openvino_tokenizers_SOURCE_DIR}/README.md"
+-        DESTINATION "docs/openvino_tokenizers"
+-        COMPONENT openvino_tokenizers_docs)
+-
+ #
+ # Cpack configuration
+ #
