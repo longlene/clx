@@ -1,0 +1,48 @@
+diff -Nur a/src/cmake/openvino.cmake b/src/cmake/openvino.cmake
+--- a/src/cmake/openvino.cmake	2024-12-12 05:05:10.000000000 -0800
++++ b/src/cmake/openvino.cmake	2024-12-25 14:48:17.977765174 -0800
+@@ -180,9 +180,9 @@
+     list(APPEND BUILD_PATH_VARS "FIND_ACL_PATH;CMAKE_ARCHIVE_OUTPUT_DIRECTORY")
+     set(FIND_ACL_PATH "${intel_cpu_thirdparty_SOURCE_DIR}")
+ endif()
+-if(ENABLE_ONEDNN_FOR_GPU)
+-    list(APPEND BUILD_PATH_VARS "ONEDNN_GPU_LIB_PATH")
+-endif()
++#if(ENABLE_ONEDNN_FOR_GPU)
++#    list(APPEND BUILD_PATH_VARS "ONEDNN_GPU_LIB_PATH")
++#endif()
+ 
+ set(OV_TBB_DIR "${TBB_DIR}")
+ 
+diff -Nur a/src/plugins/intel_gpu/thirdparty/CMakeLists.txt b/src/plugins/intel_gpu/thirdparty/CMakeLists.txt
+--- a/src/plugins/intel_gpu/thirdparty/CMakeLists.txt	2024-12-12 05:05:10.000000000 -0800
++++ b/src/plugins/intel_gpu/thirdparty/CMakeLists.txt	2024-12-25 16:23:14.641299634 -0800
+@@ -172,5 +172,27 @@
+                     COMPONENT ${OV_CPACK_COMP_CORE})
+         endif()
+     endfunction()
+-    build_onednn_gpu()
++    find_package(DNNL REQUIRED)
++    if(DNNL_FOUND)
++        list(APPEND LIB_INCLUDE_DIRS ${DNNL_INCLUDE_DIRS})
++        set(LIB_DEFINITIONS ENABLE_ONEDNN_FOR_GPU
++                            DNNL_DLL
++                            DNNL_DLL_EXPORTS
++                            DNNL_ENABLE_CPU_ISA_HINTS
++                            DNNL_ENABLE_MAX_CPU_ISA
++                            DNNL_X64=1
++                            NGEN_CPP11
++                            NGEN_NEO_INTERFACE
++                            NGEN_NO_OP_NAMES
++                            NGEN_SAFE
++                            NGEN_WINDOWS_COMPAT)
++        add_library(onednn_gpu_tgt INTERFACE)
++        set_target_properties(onednn_gpu_tgt PROPERTIES
++            INTERFACE_LINK_LIBRARIES $<BUILD_INTERFACE:${DNNL_LIBRARIES}>
++            INTERFACE_INCLUDE_DIRECTORIES "$<BUILD_INTERFACE:${LIB_INCLUDE_DIRS}>"
++            INTERFACE_COMPILE_DEFINITIONS "${LIB_DEFINITIONS}"
++        )
++    else()
++        build_onednn_gpu()
++    endif()
+ endif()

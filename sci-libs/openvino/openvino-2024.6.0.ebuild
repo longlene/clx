@@ -26,7 +26,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 #IUSE="l0 onednn +opencl python"
-IUSE="onednn opencl +python"
+IUSE="onednn opencl python"
 
 DEPEND="
 	sys-libs/zlib
@@ -57,6 +57,7 @@ src_prepare() {
 	eapply "${FILESDIR}"/install-path.patch
 	eapply "${FILESDIR}"/opencl-fix.patch
 	eapply "${FILESDIR}"/system-l0.patch
+	#eapply "${FILESDIR}"/system-dnnl.patch
 	eapply "${FILESDIR}"/python-install-path.patch
 	sed -e '/target_include_directories(openvino_core_dev SYSTEM INTERFACE/{s#SYSTEM ##}' \
 		-i src/core/CMakeLists.txt

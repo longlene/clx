@@ -1,0 +1,25 @@
+diff -Nur a/build_wheel.py b/build_wheel.py
+--- a/build_wheel.py	2024-11-26 15:33:13.000000000 -0800
++++ b/build_wheel.py	2024-12-25 23:15:44.462172568 -0800
+@@ -190,7 +190,6 @@
+             if not os.path.exists(os.path.join(FLAGS.whl_dir, "perf_client")):
+                 os.symlink("perf_analyzer", os.path.join(FLAGS.whl_dir, "perf_client"))
+ 
+-    shutil.copyfile("LICENSE.txt", os.path.join(FLAGS.whl_dir, "LICENSE.txt"))
+     shutil.copyfile("setup.py", os.path.join(FLAGS.whl_dir, "setup.py"))
+     cpdir("requirements", os.path.join(FLAGS.whl_dir, "requirements"))
+ 
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py	2024-11-26 15:33:13.000000000 -0800
++++ b/setup.py	2024-12-25 23:19:06.158846314 -0800
+@@ -77,9 +77,7 @@
+ 
+ platform_package_data = []
+ 
+-data_files = [
+-    ("", ["LICENSE.txt"]),
+-]
++data_files = []
+ if (PLATFORM_FLAG != "any") and ("@TRITON_PACKAGE_PERF_ANALYZER@" == "ON"):
+     data_files += [("bin", ["perf_analyzer", "perf_client"])]
+ 
