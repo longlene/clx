@@ -21,7 +21,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="test mkl cblas opencl static-libs sycl openmp"
+IUSE="test mkl cblas opencl static-libs sycl tbb openmp"
 
 RESTRICT="!test? ( test )"
 

@@ -1,0 +1,159 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2024-12-15 00:24:35.000000000 -0800
++++ b/CMakeLists.txt	2024-12-26 15:14:41.110070605 -0800
+@@ -1,60 +1,64 @@
+ cmake_minimum_required(VERSION 3.15)
+ 
+ project(NinjaPythonDistributions)
+-
+-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_MODULE_PATH})
+-
+-# Options
+-option(BUILD_VERBOSE "Display additional information while building (e.g download progress, ...)" OFF)
+-option(RUN_NINJA_TEST "Run Ninja test suite" ON)
+-set(ARCHIVE_DOWNLOAD_DIR "${CMAKE_BINARY_DIR}" CACHE PATH "Directory where to download archives")
+-
+-include(NinjaUrls)
+-
+-function(check_archive_var archive_var)
+-  if(NOT DEFINED "${archive_var}_url")
+-    message(FATAL_ERROR "Failed to determine which archive to download: '${archive_var}_url' variable is not defined")
++if(DEFINED ENV{ninja_SOURCE_DIR})
++  install(FILES "$ENV{ninja_SOURCE_DIR}/misc/ninja_syntax.py" COMPONENT python DESTINATION ninja)
++else()
++
++  set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_MODULE_PATH})
++
++  # Options
++  option(BUILD_VERBOSE "Display additional information while building (e.g download progress, ...)" OFF)
++  option(RUN_NINJA_TEST "Run Ninja test suite" ON)
++  set(ARCHIVE_DOWNLOAD_DIR "${CMAKE_BINARY_DIR}" CACHE PATH "Directory where to download archives")
++
++  include(NinjaUrls)
++
++  function(check_archive_var archive_var)
++    if(NOT DEFINED "${archive_var}_url")
++      message(FATAL_ERROR "Failed to determine which archive to download: '${archive_var}_url' variable is not defined")
++    endif()
++    if(NOT DEFINED "${archive_var}_sha256")
++      message(FATAL_ERROR "Could you make sure variable '${archive_var}_sha256' is defined ?")
++    endif()
++  endfunction()
++
++  set(src_archive "unix_source")
++  if(WIN32)
++    set(src_archive "windows_source")
+   endif()
+-  if(NOT DEFINED "${archive_var}_sha256")
+-    message(FATAL_ERROR "Could you make sure variable '${archive_var}_sha256' is defined ?")
+-  endif()
+-endfunction()
+-
+-set(src_archive "unix_source")
+-if(WIN32)
+-  set(src_archive "windows_source")
+-endif()
+-check_archive_var("${src_archive}")
++  check_archive_var("${src_archive}")
+ 
+-message(STATUS "*********************************************")
+-message(STATUS "Ninja Python Distribution")
+-message(STATUS "")
+-message(STATUS "  BUILD_VERBOSE             : ${BUILD_VERBOSE}")
+-message(STATUS "  RUN_NINJA_TEST            : ${RUN_NINJA_TEST}")
+-message(STATUS "")
+-message(STATUS "  ARCHIVE_DOWNLOAD_DIR      : ${ARCHIVE_DOWNLOAD_DIR}")
+-message(STATUS "")
+-message(STATUS "    src_archive             : ${src_archive}")
+-message(STATUS "    <src_archive>_url       : ${${src_archive}_url}")
+-message(STATUS "    <src_archive>_sha256    : ${${src_archive}_sha256}")
+-message(STATUS "*********************************************")
+-
+-set(ep_download_no_progress_args)
+-if(NOT BUILD_VERBOSE)
+-  set(ep_download_no_progress_args
+-    DOWNLOAD_NO_PROGRESS 1
++  message(STATUS "*********************************************")
++  message(STATUS "Ninja Python Distribution")
++  message(STATUS "")
++  message(STATUS "  BUILD_VERBOSE             : ${BUILD_VERBOSE}")
++  message(STATUS "  RUN_NINJA_TEST            : ${RUN_NINJA_TEST}")
++  message(STATUS "")
++  message(STATUS "  ARCHIVE_DOWNLOAD_DIR      : ${ARCHIVE_DOWNLOAD_DIR}")
++  message(STATUS "")
++  message(STATUS "    src_archive             : ${src_archive}")
++  message(STATUS "    <src_archive>_url       : ${${src_archive}_url}")
++  message(STATUS "    <src_archive>_sha256    : ${${src_archive}_sha256}")
++  message(STATUS "*********************************************")
++
++  set(ep_download_no_progress_args)
++  if(NOT BUILD_VERBOSE)
++    set(ep_download_no_progress_args
++      DOWNLOAD_NO_PROGRESS 1
+     )
+-endif()
++  endif()
+ 
+-include(FetchContent)
+-FetchContent_Declare(
+-  ninja
+-  URL ${${src_archive}_url}
+-  URL_HASH SHA256=${${src_archive}_sha256}
+-  DOWNLOAD_DIR ${ARCHIVE_DOWNLOAD_DIR}
+-  ${ep_download_no_progress_args}
+-)
+-FetchContent_MakeAvailable(ninja)
++  include(FetchContent)
++  FetchContent_Declare(
++    ninja
++    URL ${${src_archive}_url}
++    URL_HASH SHA256=${${src_archive}_sha256}
++    DOWNLOAD_DIR ${ARCHIVE_DOWNLOAD_DIR}
++    ${ep_download_no_progress_args}
++  )
++  FetchContent_MakeAvailable(ninja)
+ 
+-install(TARGETS ninja COMPONENT python DESTINATION "${SKBUILD_SCRIPTS_DIR}")
+-install(FILES "${ninja_SOURCE_DIR}/misc/ninja_syntax.py" COMPONENT python DESTINATION ninja)
++  install(TARGETS ninja COMPONENT python DESTINATION "${SKBUILD_SCRIPTS_DIR}")
++  install(FILES "${ninja_SOURCE_DIR}/misc/ninja_syntax.py" COMPONENT python DESTINATION ninja)
++endif()
+diff -Nur a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml	2024-12-15 00:24:35.000000000 -0800
++++ b/pyproject.toml	2024-12-26 14:13:15.344069347 -0800
+@@ -1,7 +1,6 @@
+ [build-system]
+ requires = ["scikit-build-core>=0.10"]
+-build-backend = "backend"
+-backend-path = ["_build_backend"]
++build-backend = "scikit_build_core.build"
+ 
+ [project]
+ name = "ninja"
+diff -Nur a/src/ninja/__init__.py b/src/ninja/__init__.py
+--- a/src/ninja/__init__.py	2024-12-15 00:24:35.000000000 -0800
++++ b/src/ninja/__init__.py	2024-12-26 15:17:19.236742838 -0800
+@@ -20,22 +20,7 @@
+ def _get_ninja_dir() -> str:
+     ninja_exe = "ninja" + sysconfig.get_config_var("EXE")
+ 
+-    # Default path
+-    path = os.path.join(sysconfig.get_path("scripts"), ninja_exe)
+-    if os.path.isfile(path):
+-        return os.path.dirname(path)
+-
+-    # User path
+-    if sys.version_info >= (3, 10):
+-        user_scheme = sysconfig.get_preferred_scheme("user")
+-    elif os.name == "nt":
+-        user_scheme = "nt_user"
+-    elif sys.platform.startswith("darwin") and getattr(sys, "_framework", None):
+-        user_scheme = "osx_framework_user"
+-    else:
+-        user_scheme = "posix_user"
+-
+-    path = sysconfig.get_path("scripts", scheme=user_scheme)
++    path = "/usr/bin/"
+ 
+     if os.path.isfile(os.path.join(path, ninja_exe)):
+         return path

@@ -10,7 +10,7 @@ PYTHON_COMPAT=( python3_{11..13} )
 inherit distutils-r1
 
 DESCRIPTION="A pytorch implementation of Weighted Prediction Error"
-HOMEPAGE="https://github.com/huggingface/tokenizers"
+HOMEPAGE="https://github.com/nttcslab-sp/dnn_wpe"
 SRC_URI="
 	https://github.com/nttcslab-sp/dnn_wpe/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
 "
