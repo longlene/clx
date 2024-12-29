@@ -1,0 +1,12 @@
+diff -Nur a/Makefile b/Makefile
+--- a/Makefile	2024-12-26 08:34:36.000000000 -0800
++++ b/Makefile	2024-12-29 03:16:27.887656395 -0800
+@@ -1367,7 +1367,7 @@
+   override ALIAS_PREFIX := $(PREFIX)
+ endif
+ ifneq ($(ALIAS_PREFIX),$(PREFIX))
+-  PPKGDIR := libdata/pkgconfig
++  PPKGDIR := lib/pkgconfig
+   PMODDIR := $(PSHRDIR)
+ endif
+ 

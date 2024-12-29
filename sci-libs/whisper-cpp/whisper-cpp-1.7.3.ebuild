@@ -12,33 +12,24 @@ SRC_URI="https://github.com/ggerganov/whisper.cpp/archive/v${PV}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="blas sdl2"
+IUSE="cuda +openvino sdl2"
 
 DEPEND="
-	blas? ( sci-libs/openblas )
+	net-misc/curl
+	cuda? ( dev-util/nvidia-cuda-toolkit )
+	openvino? ( sci-libs/openvino )
 	sdl2? ( media-libs/libsdl2 )
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-src_prepare() {
-	default
-	sed -e "/DESTINATION/{s#DESTINATION lib#DESTINATION $(get_libdir)#}" \
-		-i CMakeLists.txt
-	cmake_src_prepare
-}
-
 src_configure() {
 	local mycmakeargs=(
 		-DWHISPER_BUILD_TESTS=OFF
+		-DWHISPER_CURL=ON
 		-DWHISPER_SDL2=$(usex sdl2)
-		-DWHISPER_OPENBLAS=$(usex blas)
+		-DWHISPER_OPENVINO=$(usex openvino)
+		-DGGML_CUDA=$(usex cuda)
 	)
 	cmake_src_configure
-}
-
-src_install() {
-	insinto /usr/include
-	doins whisper.h
-	cmake_src_install
 }
