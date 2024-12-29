@@ -32,6 +32,7 @@ RDEPEND="
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		dev-python/pyclipper[${PYTHON_USEDEP}]
+		dev-python/ninja[${PYTHON_USEDEP}]
 		media-libs/opencv[${PYTHON_USEDEP}]
 	')
 "

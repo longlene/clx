@@ -32,7 +32,9 @@ BDEPEND="
 	python? (
 		${PYTHON_DEPS}
 		${DISTUTILS_DEPS}
-		dev-python/pybind11[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep '
+			dev-python/pybind11[${PYTHON_USEDEP}]
+		')
 	)
 "
 REQUIRED_USE="
