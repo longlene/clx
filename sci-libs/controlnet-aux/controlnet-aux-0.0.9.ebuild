@@ -29,7 +29,7 @@ RDEPEND="
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/filelock[${PYTHON_USEDEP}]
 		dev-python/importlib-metadata[${PYTHON_USEDEP}]
-		media-libs/opencv[${PYTHON_USEDEP}]
+		media-libs/opencv[python,${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		sci-libs/huggingface_hub[${PYTHON_USEDEP}]
 		dev-python/einops[${PYTHON_USEDEP}]
