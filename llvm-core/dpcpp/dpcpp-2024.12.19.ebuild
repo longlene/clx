@@ -20,11 +20,9 @@ HOMEPAGE="
 "
 SRC_URI="
 	https://github.com/intel/llvm/archive/refs/tags/nightly-${MY_PV}.tar.gz -> ${P}.gh.tar.gz
-	https://github.com/intel/vc-intrinsics/archive/${VC_INTRINSICS_COMMIT}.tar.gz -> vc-intrinsics-${VC_INTRINSICS_COMMIT}.gh.tar.gz
 	https://github.com/boostorg/mp11/archive/${BOOST_MP11_COMMIT}.tar.gz -> boost-mp11-${BOOST_MP11_COMMIT}.gh.tar.gz
 	https://github.com/ktprime/emhash/archive/${EMHASH_COMMIT}.tar.gz -> emhash-${EMHASH_COMMIT}.gh.tar.gz
 "
-#	https://github.com/greg7mdp/parallel-hashmap/archive/${PARALLEL_HASHMAP_COMMIT}.tar.gz -> parallel-hashmap-${PARALLEL_HASHMAP_COMMIT}.gh.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -33,7 +31,9 @@ KEYWORDS="~amd64"
 IUSE="cuda hip +jit l0 rocm"
 
 DEPEND="
+	dev-cpp/parallel-hashmap
 	dev-libs/boost
+	dev-libs/intel-vc-intrinsics
 	dev-libs/level-zero
 	dev-libs/unified-runtime
 	>=dev-libs/opencl-icd-loader-2024.10.24
@@ -41,9 +41,7 @@ DEPEND="
 	hip? ( dev-util/rocm-smi:= )
 	l0? ( dev-libs/level-zero )
 "
-RDEPEND="${DEPEND}
-"
-#zstd? ( app-arch/zstd:= )
+RDEPEND="${DEPEND}"
 BDEPEND="
 	${PYTHON_DEPS}
 "
@@ -58,6 +56,7 @@ src_prepare() {
 	eapply "${FILESDIR}"/xptifw-dep.patch
 	eapply "${FILESDIR}"/system-unified-runtime.patch
 	eapply "${FILESDIR}"/system-boost.patch
+	eapply "${FILESDIR}"/system-vc-intrinsics.patch
 	cmake_src_prepare
 }
 
@@ -119,7 +118,7 @@ multilib_src_configure() {
 		-DBUG_REPORT_URL="https://github.com/intel/llvm/issues"
 		-DOCAMLFIND=NO
 
-		-DLLVMGenXIntrinsics_SOURCE_DIR="${WORKDIR}/vc-intrinsics-${VC_INTRINSICS_COMMIT}"
+		#-DLLVMGenXIntrinsics_SOURCE_DIR="${WORKDIR}/vc-intrinsics-${VC_INTRINSICS_COMMIT}"
 		-DBOOST_MP11_SOURCE_DIR="${WORKDIR}/mp11-${BOOST_MP11_COMMIT}"
 		-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR="/usr/include"
 		-DEMHASH_SOURCE_DIR=${WORKDIR}/emhash-${EMHASH_COMMIT}

@@ -1,0 +1,10 @@
+diff -Nur a/llvm/lib/SYCLLowerIR/CMakeLists.txt b/llvm/lib/SYCLLowerIR/CMakeLists.txt
+--- a/llvm/lib/SYCLLowerIR/CMakeLists.txt	2024-12-18 10:27:49.000000000 -0800
++++ b/llvm/lib/SYCLLowerIR/CMakeLists.txt	2024-12-29 22:18:30.816746585 -0800
+@@ -1,5 +1,6 @@
+ # Lowering of SYCL ESIMD kernels depends on vc-intrinsics
+ # NOTE: could have been added earlier from llvm/projects
++find_package(LLVMGenXIntrinsics REQUIRED)
+ if (NOT TARGET LLVMGenXIntrinsics)
+   if (NOT DEFINED LLVMGenXIntrinsics_SOURCE_DIR)
+     set(LLVMGenXIntrinsics_GIT_REPO https://github.com/intel/vc-intrinsics.git)
