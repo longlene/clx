@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,31 +16,31 @@ IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/polymorphic-functions
-	dev-lisp/cl-form-types
-	dev-lisp/compiler-macro-notes
-	dev-lisp/ctype
-	dev-lisp/bmas
-	dev-lisp/magicl
-	dev-lisp/fiveam
 	dev-lisp/alexandria
-	dev-lisp/iterate
 	dev-lisp/cffi
-	dev-lisp/lparallel
+	dev-lisp/peltadot
+	dev-lisp/peltadot-traits-library
+	dev-lisp/iterate
 	dev-lisp/policy-cond
-	dev-lisp/specialized-function
-	app-emacs/slime
-	dev-lisp/trivial-coerce
-	dev-lisp/trivial-types
-	dev-lisp/trivial-package-local-nicknames
-	dev-lisp/introspect-environment
+	dev-lisp/bmas
+	dev-lisp/lparallel
+	dev-lisp/ceigen-lite
+	dev-lisp/magicl
+	test? (
+		dev-lisp/cl-ascii-table
+		dev-lisp/py4cl2
+		dev-lisp/fiveam
+		dev-lisp/jsown-utils
+	)
+
 "
 BDEPEND=""
 
 src_prepare() {
 	default
 	if ! use test ; then
-		sed -i '/defsystem "numericals\/benchmarks/,$d' ${PN}.asd
-		rm -r tests tests+array
+		sed -e '/defsystem "numericals\/benchmarks/,$d' \
+			-i ${PN}.asd
+		rm -r benchmarks
 	fi
 }

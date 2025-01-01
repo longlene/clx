@@ -6,10 +6,11 @@ EAPI=8
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{11..13} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
 
 DESCRIPTION="The official Python library for the openai API"
 HOMEPAGE="https://pypi.org/project/openai/"
+SRC_URI="https://github.com/openai/openai-python/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
