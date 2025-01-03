@@ -7,7 +7,7 @@ inherit cmake
 
 DESCRIPTION="Compute Aggregation Layer for oneAPI Level Zero and OpenCL(TM) Applications"
 HOMEPAGE="https://github.com/intel/compute-aggregation-layer?tab=readme-ov-file"
-SRC_URI="https://github.com/intel/compute-aggregation-layer/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/intel/compute-aggregation-layer/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -16,6 +16,8 @@ KEYWORDS="~amd64"
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+S="${WORKDIR}"/compute-aggregation-layer-${PV}
 
 PATCHES=(
 	"${FILESDIR}"/disable-test.patch
