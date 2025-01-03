@@ -1,0 +1,26 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2024-12-18 08:12:40.000000000 -0800
++++ b/CMakeLists.txt	2025-01-01 02:20:20.340015827 -0800
+@@ -119,8 +119,9 @@
+ #
+ # build the library
+ #
+-
+-if (NOT TARGET ggml)
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(ggml REQUIRED IMPORTED_TARGET ggml)
++if (NOT TARGET PkgConfig::ggml)
+     add_subdirectory(ggml)
+     # ... otherwise assume ggml is added by a parent CMakeLists.txt
+ endif()
+diff -Nur a/examples/CMakeLists.txt b/examples/CMakeLists.txt
+--- a/examples/CMakeLists.txt	2024-12-18 08:12:40.000000000 -0800
++++ b/examples/CMakeLists.txt	2025-01-01 02:31:41.663373147 -0800
+@@ -50,6 +50,7 @@
+     set(COMMON_SOURCES_FFMPEG ffmpeg-transcode.cpp)
+ endif()
+ 
++list(APPEND COMMON_EXTRA_LIBS ${ggml_LIBRARIES})
+ 
+ add_library(${TARGET} STATIC
+     common.h

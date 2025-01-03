@@ -18,7 +18,7 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="blas cuda mkl kompute +openmp rocm -sycl vulkan"
+IUSE="+blas cuda mkl kompute +openmp rocm -sycl vulkan"
 
 DEPEND="
 	blas? (
@@ -39,6 +39,7 @@ src_prepare() {
 	default
 	eapply "${FILESDIR}"/system-mkl.patch
 	eapply "${FILESDIR}"/system-sycl.patch
+	eapply "${FILESDIR}"/ggml-pc-fix.patch
 	if use kompute ; then
 		rmdir src/ggml-kompute/kompute
 		ln -sv "${WORKDIR}"/kompute-${KOMPUTE_COMMIT} src/ggml-kompute/kompute

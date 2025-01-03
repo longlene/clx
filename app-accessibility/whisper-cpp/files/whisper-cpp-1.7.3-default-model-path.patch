@@ -1,0 +1,12 @@
+diff -Nur a/examples/main/main.cpp b/examples/main/main.cpp
+--- a/examples/main/main.cpp	2024-12-18 08:12:40.000000000 -0800
++++ b/examples/main/main.cpp	2025-01-01 02:22:02.186686075 -0800
+@@ -74,7 +74,7 @@
+     std::string language  = "en";
+     std::string prompt;
+     std::string font_path = "/System/Library/Fonts/Supplemental/Courier New Bold.ttf";
+-    std::string model     = "models/ggml-base.en.bin";
++    std::string model     = "/usr/share/whisper/whisper-ggml-default.bin";
+     std::string grammar;
+     std::string grammar_rule;
+ 

@@ -18,11 +18,11 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="cblas cuda kompute mkl opencl openmp rocm vulkan"
+IUSE="blas cuda kompute mkl opencl openmp rocm vulkan"
 
 DEPEND="
 	net-misc/curl
-	cblas? (
+	blas? (
 		mkl? ( sci-libs/mkl )
 		!mkl? ( sci-libs/openblas:= )
 	)
