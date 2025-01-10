@@ -1,0 +1,9 @@
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py	2024-12-06 03:03:05.000000000 -0800
++++ b/setup.py	2025-01-06 01:04:51.008430459 -0800
+@@ -100,5 +100,4 @@
+     extras_require=EXTRAS_REQUIRE,
+     include_package_data=True,
+     zip_safe=False,
+-    entry_points={"console_scripts": ["optimum-cli=optimum.commands.optimum_cli:main"]},
+ )

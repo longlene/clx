@@ -52,7 +52,7 @@ BDEPEND="test? (
 	')
 )"
 
-PATCHES=( "${FILESDIR}"/${PN}-2.14.4-tests.patch )
+#PATCHES=( "${FILESDIR}"/${PN}-2.14.4-tests.patch )
 
 distutils_enable_tests pytest
 
