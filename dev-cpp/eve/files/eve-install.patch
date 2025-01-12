@@ -1,0 +1,14 @@
+diff -Nur a/cmake/config/eve-install.cmake b/cmake/config/eve-install.cmake
+--- a/cmake/config/eve-install.cmake	2023-02-15 01:54:38.000000000 -0800
++++ b/cmake/config/eve-install.cmake	2025-01-10 22:34:51.163428583 -0800
+@@ -5,8 +5,8 @@
+ ##==================================================================================================
+ include(GNUInstallDirs)
+ set(MAIN_DEST     "${CMAKE_INSTALL_LIBDIR}/eve-${PROJECT_VERSION}")
+-set(INSTALL_DEST  "${CMAKE_INSTALL_INCLUDEDIR}/eve-${PROJECT_VERSION}")
+-set(DOC_DEST      "${CMAKE_INSTALL_DOCDIR}-${PROJECT_VERSION}")
++set(INSTALL_DEST  "${CMAKE_INSTALL_INCLUDEDIR}")
++set(DOC_DEST      "${CMAKE_INSTALL_DOCDIR}")
+ 
+ ## =================================================================================================
+ ## Exporting target for external use
