@@ -25,7 +25,7 @@ RDEPEND="
 		>=dev-python/omegaconf-2.1.1[${PYTHON_USEDEP}]
 		>=dev-python/rich-13.5.2[${PYTHON_USEDEP}]
 		>=dev-python/jsonargparse-4.27.7[${PYTHON_USEDEP}]
-		dev-python/docstring_parser[${PYTHON_USEDEP}]
+		dev-python/docstring-parser[${PYTHON_USEDEP}]
 		dev-python/rich-argparse[${PYTHON_USEDEP}]
 	')
 "

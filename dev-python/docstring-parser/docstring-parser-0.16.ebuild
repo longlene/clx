@@ -28,3 +28,5 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
+
+S="${WORKDIR}"/docstring_parser-${PV}
