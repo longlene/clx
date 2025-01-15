@@ -29,17 +29,17 @@ RDEPEND="
 		>=dev-python/soundfile-0.12.1[${PYTHON_USEDEP}]
 		>=dev-python/kaldiio-2.17.0[${PYTHON_USEDEP}]
 		sci-libs/torch-complex[${PYTHON_USEDEP}]
-		dev-python/sentencepiece[${PYTHON_USEDEP}]
+		sci-libs/sentencepiece[${PYTHON_USEDEP}]
 		dev-python/jieba[${PYTHON_USEDEP}]
 		>=dev-python/editdistance-0.5.2[${PYTHON_USEDEP}]
 		dev-python/oss2[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
-		dev-python/umap_learn[${PYTHON_USEDEP}]
+		dev-python/umap-learn[${PYTHON_USEDEP}]
 		dev-python/jaconv[${PYTHON_USEDEP}]
 		>=dev-python/hydra-1.3.2[${PYTHON_USEDEP}]
 		dev-python/tensorboardX[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
-		dev-python/modelscope[${PYTHON_USEDEP}]
+		sci-libs/modelscope[${PYTHON_USEDEP}]
 	')
 "
 #BDEPEND="
