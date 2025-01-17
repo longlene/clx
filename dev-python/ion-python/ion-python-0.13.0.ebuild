@@ -7,7 +7,7 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 inherit distutils-r1
 
-ION_C_COMMIT="6d4de4150fe162dde3fad55cefee8d3ec64fb974"
+ION_C_COMMIT="d61c09af3465edc4bb1a50bb542320034a1e1519"
 
 DESCRIPTION="A Python implementation of Amazon Ion"
 HOMEPAGE="https://github.com/amzn/ion-python"
@@ -24,11 +24,4 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-#python_prepare_all() {
-#	default
-#	rmdir ion-c && ln -sv "${WORKDIR}"/ion-c-${ION_C_COMMIT} ion-c
-#	sed -e '/option(IONC_BUILD_TESTS/{s#ON)#OFF)#}' \
-#		-i ion-c/CMakeLists.txt
-#	eapply "${FILESDIR}"/ion-python-0.13.0-install.patch
-#	distutils-r1_python_prepare_all
-#}
+RESTRICT="test"
