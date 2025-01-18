@@ -21,14 +21,16 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="test mkl cblas opencl static-libs sycl tbb openmp"
+IUSE="test mkl cblas cuda opencl rocm static-libs sycl tbb openmp"
 
 RESTRICT="!test? ( test )"
 
 DEPEND="
 	mkl? ( sci-libs/mkl )
 	cblas? ( !mkl? ( virtual/cblas ) )
+	cuda? ( dev-util/nvidia-cuda-toolkit )
 	opencl? ( virtual/opencl )
+	rocm? ( sci-libs/hipBLAS )
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -68,12 +70,19 @@ src_configure() {
 	elif use opencl ; then
 		gpu_runtime=OCL
 	fi
+	local gpu_vendor=NONE
+	if use cuda ; then
+		gpu_vendor=NVIDIA
+	elif use rocm ; then
+		gpu_vendor=AMD
+	fi
 
 	local mycmakeargs=(
 		-DCMAKE_CXX_STANDARD=17 # for sycl
 		-DDNNL_LIBRARY_TYPE=$(usex static-libs STATIC SHARED)
 		-DDNNL_CPU_RUNTIME=${cpu_runtime}
 		-DDNNL_GPU_RUNTIME=${gpu_runtime}
+		-DDNNL_GPU_VENDOR=${gpu_vendor}
 		-DDNNL_BUILD_EXAMPLES=OFF
 		-DDNNL_BUILD_TESTS="$(usex test)"
 		-DDNNL_ENABLE_CONCURRENT_EXEC=OFF

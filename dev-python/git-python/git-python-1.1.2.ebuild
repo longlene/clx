@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-python/GitPython[${PYTHON_USEDEP}]
+	dev-python/gitpython[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

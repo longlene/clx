@@ -1,0 +1,20 @@
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py	2024-07-23 00:04:10.000000000 -0700
++++ b/setup.py	2025-01-15 00:01:37.937997007 -0800
+@@ -15,15 +15,12 @@
+ 
+ from setuptools import setup, find_packages
+ 
+-version = sys.argv[-1].split('=')[1]
+-sys.argv = sys.argv[0:len(sys.argv) - 1]
+-
+ with open("README.md", "r", encoding="utf8") as fh:
+     long_description = fh.read()
+ 
+ setup(
+     name="WeTextProcessing",
+-    version=version,
++    version="1.0.4",
+     author="Zhendong Peng, Xingchen Song",
+     author_email="pzd17@tsinghua.org.cn, sxc19@tsinghua.org.cn",
+     long_description=long_description,
