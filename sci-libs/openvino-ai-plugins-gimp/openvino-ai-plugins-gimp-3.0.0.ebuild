@@ -13,7 +13,7 @@ EGIT_COMMIT="e7395e31d703af884293df533a6a49cce39bdc43"
 
 DESCRIPTION="OpenVINO AI Plugins for GIMP"
 HOMEPAGE="https://github.com/intel/openvino-ai-plugins-gimp"
-SRC_URI="https://github.com/intel/openvino-ai-plugins-gimp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
+SRC_URI="https://github.com/intel/openvino-ai-plugins-gimp/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -39,5 +39,3 @@ RDEPEND="${DEPEND}
 "
 
 RESTRICT="test"
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

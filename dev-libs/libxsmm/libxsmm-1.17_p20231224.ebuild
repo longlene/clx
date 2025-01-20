@@ -3,7 +3,7 @@
 
 EAPI=8
 
-EGIT_COMMIT="ffabf6eaa7547a46a2b191c2bf170470a3fd2c4a"
+EGIT_COMMIT="54707b52939c9d04dc760ac44fc17c82a1bd4e80"
 
 DESCRIPTION="Library for specialized dense and sparse matrix operations, and deep learning primitives"
 HOMEPAGE="https://github.com/libxsmm/libxsmm"
@@ -39,6 +39,7 @@ src_install() {
 		DESTDIR="${D}" \
 		PREFIX="/usr" \
 		OUTDIR=$(get_libdir) \
+		PPKGDIR="share/pkgconfig" \
 		SYM=1 \
-		install
+		install-minimal
 }

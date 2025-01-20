@@ -1,0 +1,23 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2024-12-19 19:33:09.000000000 -0800
++++ b/CMakeLists.txt	2024-12-28 23:02:47.070453094 -0800
+@@ -30,6 +30,8 @@
+ # relocatable binary with automatically rpath of depend libraries
+ set(CMAKE_INSTALL_RPATH $ORIGIN)
+ 
++find_package(Python COMPONENTS Interpreter Development)
++
+ # Need the torch package
+ set(Torch_COMP_VERION "${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}")
+ find_package(Torch ${Torch_COMP_VERION} REQUIRED)
+diff -Nur a/csrc/cpu/CMakeLists.txt b/csrc/cpu/CMakeLists.txt
+--- a/csrc/cpu/CMakeLists.txt	2024-12-19 19:33:09.000000000 -0800
++++ b/csrc/cpu/CMakeLists.txt	2024-12-28 23:40:05.547198834 -0800
+@@ -232,6 +232,7 @@
+ endif()
+ 
+ target_include_directories(${PLUGIN_NAME_CPU} PUBLIC ${TORCH_INCLUDE_DIRS})
++target_include_directories(${PLUGIN_NAME_CPU} PUBLIC ${Python_INCLUDE_DIRS})
+ 
+ target_link_directories(${PLUGIN_NAME_CPU} PRIVATE ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR})
+ target_link_libraries(${PLUGIN_NAME_CPU} PUBLIC torch_cpu)

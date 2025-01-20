@@ -1,0 +1,58 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2024-12-15 02:42:10.145415141 -0800
++++ b/CMakeLists.txt	2024-12-15 03:08:42.685471989 -0800
+@@ -1,5 +1,5 @@
+ cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+-project(${IPEX_PROJ_NAME} VERSION ${CMAKE_PROJECT_VERSION})
++project(${IPEX_PROJ_NAME} VERSION "2.5.0")
+ 
+ # Platform
+ set(LINUX False)
+@@ -31,8 +31,8 @@
+ set(CMAKE_INSTALL_RPATH $ORIGIN)
+ 
+ # Need the torch package
+-set(Torch_COMP_VERION "${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}")
+-find_package(Torch ${Torch_COMP_VERION} REQUIRED)
++set(Torch_COMP_VERION "2.5" CACHE STRING "")
++find_package(Torch REQUIRED)
+ 
+ if(NOT EXISTS ${TORCH_INSTALL_PREFIX})
+   message(FATAL_ERROR "Can NOT find torch install path at ${TORCH_INSTALL_PREFIX}!")
+diff -Nur a/csrc/CMakeLists.txt b/csrc/CMakeLists.txt
+--- a/csrc/CMakeLists.txt	2024-12-15 02:42:10.132081808 -0800
++++ b/csrc/CMakeLists.txt	2024-12-15 13:43:39.366827034 -0800
+@@ -1,5 +1,4 @@
+ set(IPEX_CSRC_INCLUDE_DIR "${IPEX_CSRC_ROOT_DIR}/include")
+-set(LIBRARIES_INSTALL_FILE_PREFIX "${CMAKE_BINARY_DIR}/../libraries_install")
+ 
+ if(BUILD_MODULE_TYPE STREQUAL "GPU")
+   add_subdirectory(${IPEX_CSRC_ROOT_DIR}/gpu)
+@@ -37,16 +36,6 @@
+ # library files
+ # XXX: All variables with prefix LIBIPEX_ will be used to set in LIBIPEX installation scripts
+ if(BUILD_MODULE_TYPE STREQUAL "CPPSDK")
+-  if(BUILD_WITH_CPU)
+-    file(READ "${LIBRARIES_INSTALL_FILE_PREFIX}_cpu" LIBRARIES_INSTALL)
+-    file(REMOVE "${LIBRARIES_INSTALL_FILE_PREFIX}_cpu")
+-    foreach(op_lib ${LIBRARIES_INSTALL})
+-      set(LIB_FILE "${CMAKE_INSTALL_LIBDIR}/${CMAKE_SHARED_LIBRARY_PREFIX}${op_lib}${CMAKE_SHARED_LIBRARY_SUFFIX}")
+-      install(FILES "${CMAKE_INSTALL_PREFIX}/${LIB_FILE}" DESTINATION ${CMAKE_INSTALL_LIBDIR})
+-      list(APPEND LIBIPEX_COMP_LIST "${LIB_FILE}")
+-    endforeach()
+-  endif()
+-
+   if(BUILD_WITH_XPU)
+     file(READ "${LIBRARIES_INSTALL_FILE_PREFIX}_gpu" LIBRARIES_INSTALL)
+     file(REMOVE "${LIBRARIES_INSTALL_FILE_PREFIX}_gpu")
+@@ -76,9 +65,7 @@
+   endif()
+   set(CPACK_OUTPUT_CONFIG_FILE "${CPACK_CONFIG_FILE}")
+ 
+-  if(NOT CPACK_OUTPUT_DIR)
+-    message(FATAL_ERROR "Please set correct CPACK_OUTPUT_DIR!")
+-  endif()
++  set(CPACK_PACKAGE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/Packaging")
+   set(CPACK_PACKAGE_DIRECTORY "${CPACK_OUTPUT_DIR}")
+ 
+   include(CPack)

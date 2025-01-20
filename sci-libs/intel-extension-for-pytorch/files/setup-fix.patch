@@ -1,0 +1,141 @@
+diff -Nur a/intel_extension_for_pytorch/csrc/CMakeLists.txt b/intel_extension_for_pytorch/csrc/CMakeLists.txt
+--- a/intel_extension_for_pytorch/csrc/CMakeLists.txt	2024-11-04 19:40:58.000000000 -0800
++++ b/intel_extension_for_pytorch/csrc/CMakeLists.txt	2025-01-19 20:18:23.119316140 -0800
+@@ -18,10 +18,11 @@
+     message(STATUS "pybind11 found")
+ endif()
+ 
++find_package(Python COMPONENTS Interpreter Development)
++
+ if (WINDOWS)
+   # handling python linking
+   # TODO: precise python finding for conda env
+-  find_package(Python COMPONENTS Interpreter Development)
+ 
+   if(NOT DEFINED ${TORCH_PATH})
+     # query torch path from python
+@@ -53,16 +54,18 @@
+ 
+ add_library(intel-ext-pt-python SHARED ${PY_CPP_OBJS} init_python_bindings.cpp)
+ 
+-include(${IPEX_ROOT_DIR}/cmake/ClangFormat.cmake)
+ if(CLANG_FORMAT)
++  include(${IPEX_ROOT_DIR}/cmake/ClangFormat.cmake)
+   file(GLOB_RECURSE ALL_NATIVE_CSRC_FILES ${IPEX_FRONT_END_ROOT_DIR}/**.[ch] ${IPEX_FRONT_END_ROOT_DIR}/**.[ch]pp)
+   add_custom_target(CL_FORMAT_FRONT_END_NATIVE_CSRC COMMAND ${CLANG_FORMAT_EXEC} -i -style=file ${ALL_NATIVE_CSRC_FILES})
+   add_dependencies(intel-ext-pt-python CL_FORMAT_FRONT_END_NATIVE_CSRC)
+ endif()
+ include_directories(${IPEX_CPU_CPP_THIRD_PARTY_ROOT}/libxsmm/include)
+ 
++message(INFO "include ${Python_INCLUDE_DIRS}")
++
+ target_include_directories(intel-ext-pt-python PUBLIC ${TORCH_INCLUDE_DIRS})
+-target_include_directories(intel-ext-pt-python PUBLIC ${PYTHON_INCLUDE_DIR})
++target_include_directories(intel-ext-pt-python PUBLIC ${Python_INCLUDE_DIRS})
+ target_include_directories(intel-ext-pt-python PUBLIC ${pybind11_INCLUDE_DIRS})
+ 
+ target_link_directories(intel-ext-pt-python PRIVATE ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR})
+@@ -87,7 +90,7 @@
+ endif()
+ 
+ function (print_python_config_summary)
+-  get_target_property(PYTHON_LINK_LIBRARIES intel-ext-pt-python LINK_LIBRARIES)
++  get_target_property(Python_LINK_LIBRARIES intel-ext-pt-python LINK_LIBRARIES)
+ 
+   print_config_summary()
+   message(STATUS "******** Summary on Python ********")
+@@ -102,7 +105,7 @@
+   message(STATUS "  CXX standard          : ${CMAKE_CXX_STANDARD}")
+   message(STATUS "  CXX flags             : ${CMAKE_CXX_FLAGS}")
+   message(STATUS "  CXX Linker options    : ${CMAKE_SHARED_LINKER_FLAGS}")
+-  message(STATUS "  Link libraries        : ${PYTHON_LINK_LIBRARIES}")
++  message(STATUS "  Link libraries        : ${Python_LINK_LIBRARIES}")
+ 
+   message(STATUS "  Torch version         : ${Torch_VERSION}")
+   message(STATUS "  Torch include         : ${TORCH_INCLUDE_DIRS}")
+@@ -111,7 +114,7 @@
+   message(STATUS "  Python version        : ${Python_VERSION}")
+   message(STATUS "  Python development    : ${Python_Development_FOUND}")
+   message(STATUS "  Python libraries      : ${Python_LIBRARIES}")  
+-  message(STATUS "  Python include        : ${PYTHON_INCLUDE_DIR}")
++  message(STATUS "  Python include        : ${Python_INCLUDE_DIRS}")
+   message(STATUS "  pybind11 include      : ${pybind11_INCLUDE_DIRS}")
+ 
+   message(STATUS "")
+diff -Nur a/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt b/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt
+--- a/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt	2024-11-04 19:40:58.000000000 -0800
++++ b/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt	2025-01-19 20:20:52.042654712 -0800
+@@ -18,5 +18,5 @@
+ 
+ target_include_directories(PY_CPU_OBJ PUBLIC ${TORCH_INCLUDE_DIRS})
+ 
+-target_include_directories(PY_CPU_OBJ PUBLIC ${PYTHON_INCLUDE_DIR})
++target_include_directories(PY_CPU_OBJ PUBLIC ${Python_INCLUDE_DIRS})
+ target_include_directories(PY_CPU_OBJ PUBLIC ${pybind11_INCLUDE_DIRS})
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py	2024-11-04 19:40:58.000000000 -0800
++++ b/setup.py	2025-01-20 03:14:56.056865141 -0800
+@@ -81,6 +81,7 @@
+ from setuptools.command.build_clib import build_clib
+ from setuptools.command.egg_info import egg_info
+ from setuptools import setup, distutils
++from setuptools import find_packages
+ from pathlib import Path
+ from typing import Any, Optional
+ 
+@@ -509,10 +510,10 @@
+ base_dir = os.path.dirname(os.path.abspath(__file__))
+ # Generate version info (ipex.__version__)
+ torch_git_sha = get_torch_git_head_sha()
+-ipex_git_sha = get_ipex_git_head_sha(base_dir)
++ipex_git_sha = "6973d574b0"
+ ipex_build_version = get_build_version(ipex_git_sha)
+-ipex_gpu_onednn_git_sha = get_submodule_commit(base_dir, "third_party/oneDNN")
+-ipex_cpu_ideep_git_sha = get_submodule_commit(base_dir, "third_party/ideep")
++ipex_gpu_onednn_git_sha = "unknown"
++ipex_cpu_ideep_git_sha = "unknown"
+ create_version_files(
+     base_dir,
+     ipex_build_version,
+@@ -802,7 +803,7 @@
+             else:
+                 build_option_cpu = {**build_option_common, "BUILD_MODULE_TYPE": "CPU"}
+                 if _get_build_target() in ["develop", "python"]:
+-                    build_option_cpu["BUILD_CPU_WITH_ONECCL"] = "ON"
++                    build_option_cpu["BUILD_CPU_WITH_ONECCL"] = "OFF"
+                     build_option_cpu["USE_SHM"] = "ON"
+                     build_option_cpu["ENABLE_MPI_TESTS"] = "OFF"
+                     build_option_cpu["BUILD_REG_TESTS"] = "OFF"
+@@ -1080,6 +1081,8 @@
+ 
+     if not IS_WINDOWS:
+         library_dirs = ["lib", os.path.join(pytorch_install_dir, "lib")]
++        if 'EXT_DIR' in os.environ:
++            library_dirs.append(os.environ['EXT_DIR'])
+ 
+         extra_compile_args = [
+             "-Wall",
+@@ -1275,6 +1278,9 @@
+     ]
+ }
+ 
++packages=find_packages(include=[PACKAGE_NAME, PACKAGE_NAME+'.*'])
++packages.append(PACKAGE_NAME+'.utils')
++
+ setup(
+     name=PACKAGE_NAME,
+     version=ipex_build_version,
+@@ -1284,11 +1290,11 @@
+     url="https://github.com/intel/intel-extension-for-pytorch",
+     author="Intel Corp.",
+     install_requires=_build_installation_dependency(),
+-    packages=[PACKAGE_NAME],
++    packages=packages,
+     package_data={PACKAGE_NAME: ["*.so", "lib/*.so", "bin/*.dll", "lib/*.lib"]},
+     zip_safe=False,
+     ext_modules=ext_modules,
+-    cmdclass=cmdclass,
++    #cmdclass=cmdclass,
+     entry_points=entry_points,
+     license="https://www.apache.org/licenses/LICENSE-2.0",
+     classifiers=[

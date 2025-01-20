@@ -1,0 +1,52 @@
+diff -Nur a/csrc/CMakeLists.txt b/csrc/CMakeLists.txt
+--- a/csrc/CMakeLists.txt	2024-11-04 19:40:58.000000000 -0800
++++ b/csrc/CMakeLists.txt	2025-01-20 01:15:51.756615171 -0800
+@@ -11,28 +11,29 @@
+   print_cpu_config_summary()
+ endif()
+ 
+-set(LIBIPEX_COMP_LIST)
+-include(CMakePackageConfigHelpers)
+-# CMake config file for the external project.
+-configure_package_config_file(
+-  ${IPEX_ROOT_DIR}/cmake/IPEXConfig.cmake.in
+-  ${PROJECT_BINARY_DIR}/IPEXConfig.cmake
+-  INSTALL_DESTINATION share/cmake/IPEX)
++if(BUILD_MODULE_TYPE STREQUAL "GPU" OR BUILD_MODULE_TYPE STREQUAL "CPU")
++  set(LIBIPEX_COMP_LIST)
++  include(CMakePackageConfigHelpers)
++  # CMake config file for the external project.
++  configure_package_config_file(
++    ${IPEX_ROOT_DIR}/cmake/IPEXConfig.cmake.in
++    ${PROJECT_BINARY_DIR}/IPEXConfig.cmake
++    INSTALL_DESTINATION share/cmake/IPEX)
+ 
+-write_basic_package_version_file(
+-  ${PROJECT_BINARY_DIR}/IPEXVersionConfig.cmake
+-  VERSION ${CMAKE_PROJECT_VERSION}
+-  COMPATIBILITY SameMinorVersion)
++  write_basic_package_version_file(
++    ${PROJECT_BINARY_DIR}/IPEXVersionConfig.cmake
++    VERSION ${CMAKE_PROJECT_VERSION}
++    COMPATIBILITY SameMinorVersion)
+ 
+-install(FILES
+-  ${PROJECT_BINARY_DIR}/IPEXConfig.cmake
+-  ${PROJECT_BINARY_DIR}/IPEXVersionConfig.cmake
+-  DESTINATION share/cmake/IPEX)
+-list(APPEND LIBIPEX_COMP_LIST "share/cmake/IPEX/IPEXConfig.cmake")
+-list(APPEND LIBIPEX_COMP_LIST "share/cmake/IPEX/IPEXVersionConfig.cmake")
++  install(FILES
++    ${PROJECT_BINARY_DIR}/IPEXConfig.cmake
++    ${PROJECT_BINARY_DIR}/IPEXVersionConfig.cmake
++    DESTINATION share/cmake/IPEX)
++  list(APPEND LIBIPEX_COMP_LIST "share/cmake/IPEX/IPEXConfig.cmake")
++  list(APPEND LIBIPEX_COMP_LIST "share/cmake/IPEX/IPEXVersionConfig.cmake")
+ 
+-set(CPACK_RESOURCE_FILE_LICENSE "${IPEX_ROOT_DIR}/LICENSE")
+-install(FILES ${CPACK_RESOURCE_FILE_LICENSE} DESTINATION .)
++  set(CPACK_RESOURCE_FILE_LICENSE "${IPEX_ROOT_DIR}/LICENSE")
++endif()
+ 
+ # library files
+ # XXX: All variables with prefix LIBIPEX_ will be used to set in LIBIPEX installation scripts

@@ -1,0 +1,17 @@
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py	2024-11-04 19:40:58.000000000 -0800
++++ b/setup.py	2025-01-19 00:22:03.613475194 -0800
+@@ -509,10 +509,10 @@
+ base_dir = os.path.dirname(os.path.abspath(__file__))
+ # Generate version info (ipex.__version__)
+ torch_git_sha = get_torch_git_head_sha()
+-ipex_git_sha = get_ipex_git_head_sha(base_dir)
++ipex_git_sha = "6973d574b0"
+ ipex_build_version = get_build_version(ipex_git_sha)
+-ipex_gpu_onednn_git_sha = get_submodule_commit(base_dir, "third_party/oneDNN")
+-ipex_cpu_ideep_git_sha = get_submodule_commit(base_dir, "third_party/ideep")
++ipex_gpu_onednn_git_sha = "unknown"
++ipex_cpu_ideep_git_sha = "unknown"
+ create_version_files(
+     base_dir,
+     ipex_build_version,

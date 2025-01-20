@@ -1,0 +1,12 @@
+diff -Nur a/cmake/gpu/SYCL.cmake b/cmake/gpu/SYCL.cmake
+--- a/cmake/gpu/SYCL.cmake	2024-12-19 19:33:09.000000000 -0800
++++ b/cmake/gpu/SYCL.cmake	2024-12-22 22:25:36.563007422 -0800
+@@ -53,7 +53,7 @@
+ endif()
+ 
+ set(IGC_OCLOC_VERSION)
+-find_program(OCLOC_EXEC ocloc)
++find_program(OCLOC_EXEC ocloc ocloc-24.45.1)
+ if(OCLOC_EXEC)
+   set(drv_ver_file "${PROJECT_BINARY_DIR}/OCL_DRIVER_VERSION")
+   file(REMOVE ${drv_ver_file})
