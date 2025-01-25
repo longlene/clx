@@ -13,9 +13,8 @@ MY_P=${MY_PN}-${PV}
 DESCRIPTION="Intel Extension for PyTorch"
 HOMEPAGE="https://github.com/intel/intel-extension-for-pytorch"
 SRC_URI="
-	https://github.com/intel/intel-extension-for-pytorch/archive/refs/tags/v${PV}+cpu.tar.gz -> ${MY_P}+cpu.tar.gz
+	https://github.com/intel/intel-extension-for-pytorch/archive/refs/tags/v${PV}+xpu.tar.gz -> ${MY_P}+xpu.tar.gz
 "
-#	https://github.com/libxsmm/libxsmm/archive/${LIBXSMM_COMMIT}.tar.gz -> libxsmm-${LIBXSMM_COMMIT}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -24,15 +23,16 @@ IUSE="sycl"
 
 DEPEND="
 	dev-libs/sleef
+	sci-libs/ideep
 	dev-libs/libxsmm
 	dev-libs/oneDNN
-	sci-libs/caffe2[${PYTHON_SINGLE_USEDEP}]
+	sci-libs/caffe2[distributed,${PYTHON_SINGLE_USEDEP}]
 	sci-libs/mkl
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-S="${WORKDIR}"/${MY_P}-cpu
+S="${WORKDIR}"/${MY_P}-xpu
 
 IPEX_VERSION="${PV}"
 
@@ -61,8 +61,8 @@ src_configure() {
 	local mycmakeargs=(
 		-DIPEX_PROJ_NAME="${PN}"
 		-DCMAKE_PROJECT_VERSION="$(ver_cut 1-3)"
-		-DBUILD_MODULE_TYPE="${mode}"
 		-DCMAKE_INSTALL_LIBDIR=$(get_libdir)
+		-DBUILD_MODULE_TYPE="${mode}"
 		-DBUILD_STATIC_ONEMKL=OFF
 	)
 	cmake_src_configure

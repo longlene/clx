@@ -1,0 +1,43 @@
+diff -Nur a/src/plugins/intel_cpu/CMakeLists.txt b/src/plugins/intel_cpu/CMakeLists.txt
+--- a/src/plugins/intel_cpu/CMakeLists.txt	2024-12-12 05:05:10.000000000 -0800
++++ b/src/plugins/intel_cpu/CMakeLists.txt	2025-01-20 16:44:43.858588125 -0800
+@@ -260,7 +260,7 @@
+ target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+ if (ENABLE_MLAS_FOR_CPU)
+     target_link_libraries(${TARGET_NAME} PRIVATE mlas)
+-    target_include_directories(${TARGET_NAME} SYSTEM PRIVATE $<TARGET_PROPERTY:mlas,INCLUDE_DIRECTORIES>)
++    #target_include_directories(${TARGET_NAME} SYSTEM PRIVATE $<TARGET_PROPERTY:mlas,INCLUDE_DIRECTORIES>)
+     add_definitions(-DOV_CPU_WITH_MLAS)
+ endif()
+ if (ENABLE_SNIPPETS_LIBXSMM_TPP)
+@@ -366,9 +366,9 @@
+         target_include_directories(${TARGET_NAME}_obj SYSTEM PUBLIC $<TARGET_PROPERTY:xsmm,INCLUDE_DIRECTORIES>)
+     endif()
+ 
+-    if(ENABLE_MLAS_FOR_CPU)
+-        target_include_directories(${TARGET_NAME}_obj SYSTEM PUBLIC $<TARGET_PROPERTY:mlas,INCLUDE_DIRECTORIES>)
+-    endif()
++    #if(ENABLE_MLAS_FOR_CPU)
++    #    target_include_directories(${TARGET_NAME}_obj SYSTEM PUBLIC $<TARGET_PROPERTY:mlas,INCLUDE_DIRECTORIES>)
++    #endif()
+ 
+     if(ENABLE_SHL_FOR_CPU)
+         target_include_directories(${TARGET_NAME}_obj SYSTEM PUBLIC $<TARGET_PROPERTY:shl,INTERFACE_INCLUDE_DIRECTORIES>)
+diff -Nur a/src/plugins/intel_cpu/thirdparty/CMakeLists.txt b/src/plugins/intel_cpu/thirdparty/CMakeLists.txt
+--- a/src/plugins/intel_cpu/thirdparty/CMakeLists.txt	2024-12-12 05:05:10.000000000 -0800
++++ b/src/plugins/intel_cpu/thirdparty/CMakeLists.txt	2025-01-20 16:41:44.958581821 -0800
+@@ -159,10 +159,10 @@
+     ov_install_static_lib(libxsmm ${OV_CPACK_COMP_CORE})
+ endif()
+ 
+-if(ENABLE_MLAS_FOR_CPU)
+-    add_subdirectory(mlas)
+-    ov_install_static_lib(mlas ${OV_CPACK_COMP_CORE})
+-endif()
++#if(ENABLE_MLAS_FOR_CPU)
++#    add_subdirectory(mlas)
++#    ov_install_static_lib(mlas ${OV_CPACK_COMP_CORE})
++#endif()
+ 
+ if(ENABLE_SHL_FOR_CPU)
+     add_subdirectory(shl)

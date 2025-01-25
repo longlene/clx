@@ -50,3 +50,27 @@ diff -Nur a/csrc/CMakeLists.txt b/csrc/CMakeLists.txt
  
  # library files
  # XXX: All variables with prefix LIBIPEX_ will be used to set in LIBIPEX installation scripts
+@@ -92,11 +92,11 @@
+       endif()
+     endif()
+   endforeach()
+-  install(FILES "${header_file}" DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
+   if(NOT "${CMAKE_INSTALL_INCLUDEDIR}/ipex.h" IN_LIST LIBIPEX_COMP_LIST)
+     list(APPEND LIBIPEX_COMP_LIST "${CMAKE_INSTALL_INCLUDEDIR}/ipex.h")
+   endif()
+ endif()
++install(FILES "${header_file}" DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
+ 
+ # library files
+ # XXX: All variables with prefix LIBIPEX_ will be used to set in LIBIPEX installation scripts
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2024-12-19 19:33:09.000000000 -0800
++++ b/CMakeLists.txt	2025-01-20 06:00:37.827216118 -0800
+@@ -42,6 +42,7 @@
+   message(FATAL_ERROR "Not compatible Torch version ${Torch_VERSION} at ${TORCH_INSTALL_PREFIX}!\nTorch ${Torch_COMP_VERION} is needed!")
+ endif()
+ 
++include(GNUInstallDirs)
+ include(${IPEX_ROOT_DIR}/cmake/Options.cmake)
+ include(${IPEX_ROOT_DIR}/cmake/BuildFlags.cmake)
+ 

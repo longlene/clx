@@ -15,7 +15,7 @@ HOMEPAGE="
 	https://pypi.org/project/intel-extension-for-pytorch/
 	https://github.com/intel/intel-extension-for-pytorch
 "
-SRC_URI="https://github.com/intel/intel-extension-for-pytorch/archive/refs/tags/v${PV}+cpu.tar.gz -> ipex-${PV}+cpu.tar.gz"
+SRC_URI="https://github.com/intel/intel-extension-for-pytorch/archive/refs/tags/v${PV}+xpu.tar.gz -> ${P}+xpu.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -38,10 +38,10 @@ RDEPEND="
 
 distutils_enable_tests pytest
 
-S="${WORKDIR}"/${P}-cpu
+S="${WORKDIR}"/${P}-xpu
 
 IPEX_VERSION="${PV}"
-export EXT_DIR="${WORKDIR}"/${P}-cpu_build/intel_extension_for_pytorch/csrc/
+export EXT_DIR="${WORKDIR}"/${P}-xpu_build/intel_extension_for_pytorch/csrc/
 
 src_prepare() {
 	default
