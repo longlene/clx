@@ -1,11 +1,11 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit cmake flag-o-matic vcs-snapshot
 
-EGIT_COMMIT="6a7a034e117f189df4d13665b9b604638ddca468"
+EGIT_COMMIT="32f0b85987396945afea2291d5f4c5862434292b"
 KOMPUTE_COMMIT="4565194ed7c32d1d2efa32ceab4d3c6cae006306"
 
 DESCRIPTION="Tensor library for machine learning"
@@ -18,7 +18,7 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+blas cuda mkl kompute +openmp rocm -sycl vulkan"
+IUSE="+blas cuda mkl kompute opencl +openmp rocm -sycl vulkan"
 
 DEPEND="
 	blas? (
@@ -75,7 +75,7 @@ src_configure() {
 		-DGGML_KOMPUTE=$(usex kompute)
 		-DGGML_OPENMP=$(usex openmp)
 		-DGGML_SYCL=$(usex sycl)
-		#-DGGML_OPENCL=$(usex opencl)
+		-DGGML_OPENCL=$(usex opencl)
 		-DGGML_BUILD_TESTS=OFF
 		-DGGML_BUILD_EXAMPLES=OFF
 		-DGGML_RPC=ON
