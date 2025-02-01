@@ -1,0 +1,30 @@
+diff -Nur a/src/reference/binary-elementwise.cc b/src/reference/binary-elementwise.cc
+--- a/src/reference/binary-elementwise.cc	2024-11-08 14:56:11.000000000 -0800
++++ b/src/reference/binary-elementwise.cc	2025-01-31 16:36:36.506337532 -0800
+@@ -36,7 +36,7 @@
+   const size_t batch_size = batch_size_bytes / sizeof(T);
+   Operator op;
+   for (size_t i = 0; i < batch_size; ++i) {
+-    output[i] = op(a[i], b[i]);
++    output[i] = static_cast<T>(op(a[i], b[i]));
+   }
+ }
+ 
+@@ -48,7 +48,7 @@
+   const T b_0 = *b;
+   Operator op;
+   for (size_t i = 0; i < batch_size; ++i) {
+-    output[i] = op(a[i], b_0);
++    output[i] = static_cast<T>(op(a[i], b_0));
+   }
+ }
+ 
+@@ -60,7 +60,7 @@
+   const T b_0 = *b;
+   Operator op;
+   for (size_t i = 0; i < batch_size; ++i) {
+-    output[i] = op(b_0, a[i]);
++    output[i] = static_cast<T>(op(b_0, a[i]));
+   }
+ }
+ 

@@ -1,0 +1,26 @@
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py	2025-01-28 16:09:34.000000000 -0800
++++ b/setup.py	2025-02-01 11:40:25.952085246 -0800
+@@ -483,14 +483,14 @@
+     check_submodules()
+     check_pydep("yaml", "pyyaml")
+     build_python = not BUILD_LIBTORCH_WHL
+-    build_pytorch(
+-        version=version,
+-        cmake_python_library=cmake_python_library,
+-        build_python=build_python,
+-        rerun_cmake=RERUN_CMAKE,
+-        cmake_only=CMAKE_ONLY,
+-        cmake=cmake,
+-    )
++    #build_pytorch(
++    #    version=version,
++    #    cmake_python_library=cmake_python_library,
++    #    build_python=build_python,
++    #    rerun_cmake=RERUN_CMAKE,
++    #    cmake_only=CMAKE_ONLY,
++    #    cmake=cmake,
++    #)
+ 
+     if CMAKE_ONLY:
+         report(
