@@ -28,10 +28,7 @@ DEPEND="
 	)
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	opencl? ( virtual/opencl )
-	rocm? (
-		dev-util/hip
-		dev-util/rocm-smi
-	)
+	rocm? ( sci-libs/rocBLAS )
 	vulkan? ( media-libs/vulkan-loader )
 "
 #	kompute? ( dev-libs/kompute )
@@ -73,7 +70,7 @@ src_configure() {
 		-DGGML_BLAS=${blas}
 		-DGGML_BLAS_VENDOR=${blas_vendor}
 		-DGGML_CUDA=$(usex cuda)
-		-DGGML_HIP=$(usex rocm)
+		-DGGML_HIPBLAS=$(usex rocm)
 		-DGGML_KOMPUTE=$(usex kompute)
 		-DGGML_OPENCL=$(usex opencl)
 		-DGGML_OPENMP=$(usex openmp)
