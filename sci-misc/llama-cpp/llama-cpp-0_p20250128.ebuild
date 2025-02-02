@@ -28,7 +28,10 @@ DEPEND="
 	)
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	opencl? ( virtual/opencl )
-	rocm? ( dev-util/rocm-smi )
+	rocm? (
+		dev-util/hip
+		dev-util/rocm-smi
+	)
 	vulkan? ( media-libs/vulkan-loader )
 "
 #	kompute? ( dev-libs/kompute )
