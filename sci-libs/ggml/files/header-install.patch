@@ -1,0 +1,11 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-01-29 02:57:00.000000000 -0800
++++ b/CMakeLists.txt	2025-02-02 16:02:28.445125421 -0800
+@@ -238,6 +238,7 @@
+ # all public headers
+ set(GGML_PUBLIC_HEADERS
+     include/ggml.h
++    include/ggml-cpp.h
+     include/ggml-cpu.h
+     include/ggml-alloc.h
+     include/ggml-backend.h

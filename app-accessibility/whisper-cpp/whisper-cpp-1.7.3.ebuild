@@ -16,6 +16,7 @@ IUSE="+models opencl +openvino sdl2"
 
 DEPEND="
 	sci-libs/ggml
+	sci-libs/clblast
 	net-misc/curl
 	opencl? ( sci-libs/clblast:= )
 	openvino? ( sci-libs/openvino )

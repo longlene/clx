@@ -22,6 +22,7 @@ IUSE="blas cuda kompute mkl opencl openmp rocm vulkan"
 
 DEPEND="
 	net-misc/curl
+	sci-libs/ggml[blas?,cuda?,mkl?,opencl?,rocm?,vulkan?]
 	blas? (
 		mkl? ( sci-libs/mkl )
 		!mkl? ( sci-libs/openblas:= )
@@ -41,7 +42,9 @@ BEPEND=""
 
 src_prepare() {
 	default
-	eapply "${FILESDIR}"/system-mkl.patch
+	eapply \
+		"${FILESDIR}"/system-mkl.patch \
+		"${FILESDIR}"/system-ggml.patch
 	if use kompute ; then
 		rmdir src/ggml-kompute/kompute
 		ln -sv "${WORKDIR}"/kompute-${KOMPUTE_COMMIT} ggml/src/ggml-kompute/kompute
@@ -70,14 +73,14 @@ src_configure() {
 	local mycmakeargs=(
 		-DLLAMA_BUILD_TESTS=OFF
 		-DLLAMA_CURL=ON
-		-DGGML_BLAS=${blas}
-		-DGGML_BLAS_VENDOR=${blas_vendor}
-		-DGGML_CUDA=$(usex cuda)
-		-DGGML_HIP=$(usex rocm)
-		-DGGML_KOMPUTE=$(usex kompute)
-		-DGGML_OPENCL=$(usex opencl)
-		-DGGML_OPENMP=$(usex openmp)
-		-DGGML_VULKAN=$(usex vulkan)
+		#-DGGML_BLAS=${blas}
+		#-DGGML_BLAS_VENDOR=${blas_vendor}
+		#-DGGML_CUDA=$(usex cuda)
+		#-DGGML_HIP=$(usex rocm)
+		#-DGGML_KOMPUTE=$(usex kompute)
+		#-DGGML_OPENCL=$(usex opencl)
+		#-DGGML_OPENMP=$(usex openmp)
+		#-DGGML_VULKAN=$(usex vulkan)
 	)
 	cmake_src_configure
 }

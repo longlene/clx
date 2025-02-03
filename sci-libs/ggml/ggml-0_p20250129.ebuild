@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake flag-o-matic vcs-snapshot
 
-EGIT_COMMIT="32f0b85987396945afea2291d5f4c5862434292b"
+EGIT_COMMIT="475e01227333a3a29ed0859b477beabcc2de7b5e"
 KOMPUTE_COMMIT="4565194ed7c32d1d2efa32ceab4d3c6cae006306"
 
 DESCRIPTION="Tensor library for machine learning"
@@ -27,7 +27,10 @@ DEPEND="
 	)
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	mkl? ( sci-libs/mkl )
-	rocm? ( dev-util/rocm-smi )
+	rocm? (
+		dev-util/hip
+		dev-util/rocm-smi
+	)
 	sycl? ( llvm-core/dpcpp )
 	vulkan? ( media-libs/vulkan-loader )
 "
@@ -37,9 +40,11 @@ REQUIRED_USE="sycl? ( blas )"
 
 src_prepare() {
 	default
-	eapply "${FILESDIR}"/system-mkl.patch
-	eapply "${FILESDIR}"/system-sycl.patch
-	eapply "${FILESDIR}"/ggml-pc-fix.patch
+	eapply \
+		"${FILESDIR}"/system-mkl.patch \
+	"${FILESDIR}"/system-sycl.patch \
+	"${FILESDIR}"/ggml-pc-fix.patch \
+	"${FILESDIR}"/header-install.patch
 	if use kompute ; then
 		rmdir src/ggml-kompute/kompute
 		ln -sv "${WORKDIR}"/kompute-${KOMPUTE_COMMIT} src/ggml-kompute/kompute
