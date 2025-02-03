@@ -1,6 +1,6 @@
 diff -Nur a/cmake/common.cmake b/cmake/common.cmake
 --- a/cmake/common.cmake	2025-01-27 10:36:10.000000000 -0800
-+++ b/cmake/common.cmake	2025-02-02 15:58:31.688450384 -0800
++++ b/cmake/common.cmake	2025-02-02 17:33:51.405319315 -0800
 @@ -20,7 +20,7 @@
              list(APPEND C_FLAGS   ${WARNING_FLAGS})
              list(APPEND CXX_FLAGS ${WARNING_FLAGS})
@@ -12,164 +12,65 @@ diff -Nur a/cmake/common.cmake b/cmake/common.cmake
                                  "$<$<COMPILE_LANGUAGE:CXX>:${CXX_FLAGS};${GF_CXX_FLAGS}>")
 diff -Nur a/CMakeLists.txt b/CMakeLists.txt
 --- a/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/CMakeLists.txt	2025-02-02 15:56:32.885112847 -0800
-@@ -144,7 +144,9 @@
++++ b/CMakeLists.txt	2025-02-02 17:30:35.155312361 -0800
+@@ -143,8 +143,8 @@
+ #
  # 3rd-party
  #
- 
+-
 -if (NOT TARGET ggml)
-+find_package(PkgConfig REQUIRED)
-+pkg_search_module(ggml REQUIRED IMPORTED_TARGET ggml)
-+if (NOT TARGET PkgConfig::ggml)
++find_package(ggml REQUIRED)
++if (NOT TARGET ggml::ggml)
      add_subdirectory(ggml)
      # ... otherwise assume ggml is added by a parent CMakeLists.txt
  endif()
-diff -Nur a/examples/convert-llama2c-to-ggml/CMakeLists.txt b/examples/convert-llama2c-to-ggml/CMakeLists.txt
---- a/examples/convert-llama2c-to-ggml/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/examples/convert-llama2c-to-ggml/CMakeLists.txt	2025-02-02 16:36:37.161864532 -0800
-@@ -1,5 +1,5 @@
- set(TARGET llama-convert-llama2c-to-ggml)
- add_executable(${TARGET} convert-llama2c-to-ggml.cpp)
- install(TARGETS ${TARGET} RUNTIME)
--target_link_libraries(${TARGET} PRIVATE common llama ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE common llama ${ggml_LIBRARIES} ggml-cpu ${CMAKE_THREAD_LIBS_INIT})
- target_compile_features(${TARGET} PRIVATE cxx_std_17)
-diff -Nur a/examples/cvector-generator/CMakeLists.txt b/examples/cvector-generator/CMakeLists.txt
---- a/examples/cvector-generator/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/examples/cvector-generator/CMakeLists.txt	2025-02-02 16:38:30.741868538 -0800
-@@ -1,5 +1,5 @@
- set(TARGET llama-cvector-generator)
- add_executable(${TARGET} cvector-generator.cpp pca.hpp)
- install(TARGETS ${TARGET} RUNTIME)
--target_link_libraries(${TARGET} PRIVATE common llama ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE common llama ${ggml_LIBRARIES} ggml-cpu ${CMAKE_THREAD_LIBS_INIT})
- target_compile_features(${TARGET} PRIVATE cxx_std_17)
-diff -Nur a/examples/export-lora/CMakeLists.txt b/examples/export-lora/CMakeLists.txt
---- a/examples/export-lora/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/examples/export-lora/CMakeLists.txt	2025-02-02 16:39:56.308538238 -0800
-@@ -1,5 +1,5 @@
- set(TARGET llama-export-lora)
- add_executable(${TARGET} export-lora.cpp)
- install(TARGETS ${TARGET} RUNTIME)
--target_link_libraries(${TARGET} PRIVATE common llama ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE common llama ggml-cpu ${CMAKE_THREAD_LIBS_INIT})
- target_compile_features(${TARGET} PRIVATE cxx_std_17)
 diff -Nur a/examples/gguf/CMakeLists.txt b/examples/gguf/CMakeLists.txt
 --- a/examples/gguf/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/examples/gguf/CMakeLists.txt	2025-02-02 16:27:15.765178044 -0800
++++ b/examples/gguf/CMakeLists.txt	2025-02-02 17:37:41.195327404 -0800
 @@ -1,5 +1,5 @@
  set(TARGET llama-gguf)
  add_executable(${TARGET} gguf.cpp)
  install(TARGETS ${TARGET} RUNTIME)
 -target_link_libraries(${TARGET} PRIVATE ggml ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE ${ggml_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(${TARGET} PRIVATE ggml::all ${CMAKE_THREAD_LIBS_INIT})
  target_compile_features(${TARGET} PRIVATE cxx_std_17)
 diff -Nur a/examples/gguf-hash/CMakeLists.txt b/examples/gguf-hash/CMakeLists.txt
 --- a/examples/gguf-hash/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/examples/gguf-hash/CMakeLists.txt	2025-02-02 16:24:28.268505466 -0800
++++ b/examples/gguf-hash/CMakeLists.txt	2025-02-02 17:36:28.578658202 -0800
 @@ -18,5 +18,5 @@
  add_library(sha256 OBJECT deps/sha256/sha256.c deps/sha256/sha256.h)
  target_link_libraries(${TARGET} PRIVATE sha256)
  
 -target_link_libraries(${TARGET} PRIVATE ggml ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE ${ggml_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
- target_compile_features(${TARGET} PRIVATE cxx_std_17)
-diff -Nur a/examples/llava/CMakeLists.txt b/examples/llava/CMakeLists.txt
---- a/examples/llava/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/examples/llava/CMakeLists.txt	2025-02-02 16:44:41.818548303 -0800
-@@ -5,7 +5,7 @@
-             clip.h
-             )
- 
--target_link_libraries(llava PRIVATE ggml llama ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(llava PRIVATE ${ggml_LIBRARIES} llama ${CMAKE_THREAD_LIBS_INIT})
- 
- target_include_directories(llava PUBLIC .)
- target_include_directories(llava PUBLIC ../..)
-@@ -18,7 +18,7 @@
-     set_target_properties(llava PROPERTIES POSITION_INDEPENDENT_CODE ON)
-     target_compile_definitions(llava PRIVATE LLAMA_SHARED LLAMA_BUILD)
-     add_library(llava_shared SHARED $<TARGET_OBJECTS:llava>)
--    target_link_libraries(llava_shared PRIVATE ggml llama ${CMAKE_THREAD_LIBS_INIT})
-+    target_link_libraries(llava_shared PRIVATE ${ggml_LIBRARIES} llama ${CMAKE_THREAD_LIBS_INIT})
-     install(TARGETS llava_shared LIBRARY)
- endif()
- 
-@@ -34,19 +34,19 @@
- add_executable(${TARGET} llava-cli.cpp)
- set_target_properties(${TARGET} PROPERTIES OUTPUT_NAME llama-llava-cli)
- install(TARGETS ${TARGET} RUNTIME)
--target_link_libraries(${TARGET} PRIVATE common llava ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE common llava ggml-cpu ${CMAKE_THREAD_LIBS_INIT})
- target_compile_features(${TARGET} PRIVATE cxx_std_17)
- 
- set(TARGET llama-minicpmv-cli)
- add_executable(${TARGET} minicpmv-cli.cpp)
- set_target_properties(${TARGET} PROPERTIES OUTPUT_NAME llama-minicpmv-cli)
- install(TARGETS ${TARGET} RUNTIME)
--target_link_libraries(${TARGET} PRIVATE common llava ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE common llava ggml-cpu ${CMAKE_THREAD_LIBS_INIT})
- target_compile_features(${TARGET} PRIVATE cxx_std_17)
- 
- set(TARGET llama-qwen2vl-cli)
- add_executable(${TARGET} qwen2vl-cli.cpp)
- set_target_properties(${TARGET} PROPERTIES OUTPUT_NAME llama-qwen2vl-cli)
- install(TARGETS ${TARGET} RUNTIME)
--target_link_libraries(${TARGET} PRIVATE common llava ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE common llava ggml-cpu ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(${TARGET} PRIVATE ggml::all ${CMAKE_THREAD_LIBS_INIT})
  target_compile_features(${TARGET} PRIVATE cxx_std_17)
 diff -Nur a/examples/quantize-stats/CMakeLists.txt b/examples/quantize-stats/CMakeLists.txt
 --- a/examples/quantize-stats/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/examples/quantize-stats/CMakeLists.txt	2025-02-02 16:34:16.575192885 -0800
++++ b/examples/quantize-stats/CMakeLists.txt	2025-02-02 17:41:04.255334567 -0800
 @@ -1,6 +1,6 @@
  set(TARGET llama-quantize-stats)
  add_executable(${TARGET} quantize-stats.cpp)
  install(TARGETS ${TARGET} RUNTIME)
 -target_link_libraries(${TARGET} PRIVATE llama build_info ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE llama build_info ggml-cpu ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(${TARGET} PRIVATE llama build_info ggml::all ${CMAKE_THREAD_LIBS_INIT})
  target_include_directories(${TARGET} PRIVATE ../../common)
  target_compile_features(${TARGET} PRIVATE cxx_std_17)
 diff -Nur a/examples/rpc/CMakeLists.txt b/examples/rpc/CMakeLists.txt
 --- a/examples/rpc/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/examples/rpc/CMakeLists.txt	2025-02-02 16:25:46.998508230 -0800
++++ b/examples/rpc/CMakeLists.txt	2025-02-02 17:39:19.261997514 -0800
 @@ -1,2 +1,2 @@
  add_executable(rpc-server rpc-server.cpp)
 -target_link_libraries(rpc-server PRIVATE ggml llama)
-+target_link_libraries(rpc-server PRIVATE ${ggml_LIBRARIES} llama)
-diff -Nur a/examples/simple-cmake-pkg/CMakeLists.txt b/examples/simple-cmake-pkg/CMakeLists.txt
---- a/examples/simple-cmake-pkg/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/examples/simple-cmake-pkg/CMakeLists.txt	2025-02-02 16:25:22.918507391 -0800
-@@ -7,5 +7,5 @@
- 
- add_executable(${TARGET} ${CMAKE_CURRENT_LIST_DIR}/../simple/simple.cpp)
- install(TARGETS ${TARGET} RUNTIME)
--target_link_libraries(${TARGET} PRIVATE llama ggml::all ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE llama ${ggml_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
- target_compile_features(${TARGET} PRIVATE cxx_std_17)
-diff -Nur a/pocs/vdot/CMakeLists.txt b/pocs/vdot/CMakeLists.txt
---- a/pocs/vdot/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/pocs/vdot/CMakeLists.txt	2025-02-02 16:42:18.868543269 -0800
-@@ -1,9 +1,9 @@
- set(TARGET llama-vdot)
- add_executable(${TARGET} vdot.cpp)
--target_link_libraries(${TARGET} PRIVATE common llama ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE common llama ggml-cpu ${CMAKE_THREAD_LIBS_INIT})
- target_compile_features(${TARGET} PRIVATE cxx_std_17)
- 
- set(TARGET llama-q8dot)
- add_executable(${TARGET} q8dot.cpp)
--target_link_libraries(${TARGET} PRIVATE common llama ${CMAKE_THREAD_LIBS_INIT})
-+target_link_libraries(${TARGET} PRIVATE common llama ggml-cpu ${CMAKE_THREAD_LIBS_INIT})
- target_compile_features(${TARGET} PRIVATE cxx_std_17)
++target_link_libraries(rpc-server PRIVATE ggml::all llama)
 diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
 --- a/src/CMakeLists.txt	2025-01-27 10:36:10.000000000 -0800
-+++ b/src/CMakeLists.txt	2025-02-02 15:46:36.668425067 -0800
++++ b/src/CMakeLists.txt	2025-02-02 17:43:23.862006169 -0800
 @@ -32,7 +32,7 @@
  target_include_directories(llama PUBLIC . ../include ../common)
  target_compile_features   (llama PUBLIC cxx_std_17) # don't bump
  
 -target_link_libraries(llama PUBLIC ggml)
-+target_link_libraries(llama PUBLIC ${ggml_LIBRARIES})
++target_link_libraries(llama PUBLIC ggml::all)
  
  if (BUILD_SHARED_LIBS)
      set_target_properties(llama PROPERTIES POSITION_INDEPENDENT_CODE ON)

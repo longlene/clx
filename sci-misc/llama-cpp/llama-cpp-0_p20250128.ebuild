@@ -30,8 +30,7 @@ DEPEND="
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	opencl? ( virtual/opencl )
 	rocm? (
-		dev-util/hip
-		dev-util/rocm-smi
+		sci-libs/hipBLAS
 	)
 	vulkan? ( media-libs/vulkan-loader )
 "

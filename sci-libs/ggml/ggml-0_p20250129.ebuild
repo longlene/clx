@@ -28,8 +28,7 @@ DEPEND="
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	mkl? ( sci-libs/mkl )
 	rocm? (
-		dev-util/hip
-		dev-util/rocm-smi
+		sci-libs/hipBLAS
 	)
 	sycl? ( llvm-core/dpcpp )
 	vulkan? ( media-libs/vulkan-loader )
@@ -42,9 +41,9 @@ src_prepare() {
 	default
 	eapply \
 		"${FILESDIR}"/system-mkl.patch \
-	"${FILESDIR}"/system-sycl.patch \
-	"${FILESDIR}"/ggml-pc-fix.patch \
-	"${FILESDIR}"/header-install.patch
+		"${FILESDIR}"/system-sycl.patch \
+		"${FILESDIR}"/ggml-pc-fix.patch \
+		"${FILESDIR}"/header-install.patch
 	if use kompute ; then
 		rmdir src/ggml-kompute/kompute
 		ln -sv "${WORKDIR}"/kompute-${KOMPUTE_COMMIT} src/ggml-kompute/kompute
