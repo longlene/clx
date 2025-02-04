@@ -1,9 +1,0 @@
-diff -Nur a/ggml.pc.in b/ggml.pc.in
---- a/ggml.pc.in	2024-12-23 11:25:52.000000000 -0800
-+++ b/ggml.pc.in	2025-01-01 02:36:23.203383062 -0800
-@@ -7,4 +7,4 @@
- Description: The GGML Tensor Library for Machine Learning
- Version: 0.0.0
- Cflags: -I${includedir}/ggml
--Libs: -L${libdir} -lggml
-+Libs: -L${libdir} -lggml -lggml-base

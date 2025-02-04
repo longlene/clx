@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake flag-o-matic vcs-snapshot
 
-EGIT_COMMIT="475e01227333a3a29ed0859b477beabcc2de7b5e"
+EGIT_COMMIT="5734b97d896ec744ea9ea288571308cca2285149"
 KOMPUTE_COMMIT="4565194ed7c32d1d2efa32ceab4d3c6cae006306"
 
 DESCRIPTION="Tensor library for machine learning"
@@ -18,29 +18,38 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+blas cuda mkl kompute opencl +openmp rocm -sycl vulkan"
+IUSE="blas cuda mkl kompute opencl +openmp rocm -sycl test vulkan"
 
 DEPEND="
 	blas? (
 		mkl? ( sci-libs/mkl )
-		!mkl? ( sci-libs/openblas:= )
+		!mkl? ( virtual/blas virtual/cblas )
 	)
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	mkl? ( sci-libs/mkl )
-	rocm? ( sci-libs/rocBLAS )
-	sycl? ( llvm-core/dpcpp )
+	rocm? (
+		sci-libs/rocBLAS
+		sci-libs/hipBLAS
+	)
+	sycl? (
+		llvm-core/dpcpp[cuda?,rocm?]
+		dev-libs/oneDNN[mkl,opencl,sycl]
+	)
 	vulkan? ( media-libs/vulkan-loader )
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
-REQUIRED_USE="sycl? ( blas )"
+REQUIRED_USE="
+	sycl? ( mkl opencl )
+	mkl? ( blas )
+"
 
 src_prepare() {
 	default
 	eapply \
 		"${FILESDIR}"/system-mkl.patch \
 		"${FILESDIR}"/system-sycl.patch \
-		"${FILESDIR}"/ggml-pc-fix.patch \
+		"${FILESDIR}"/system-blas.patch \
 		"${FILESDIR}"/header-install.patch
 	if use kompute ; then
 		rmdir src/ggml-kompute/kompute
@@ -50,21 +59,27 @@ src_prepare() {
 }
 
 src_configure() {
+	local blas=OFF
+	local blas_vendor="Generic"
+	if use blas ; then
+		blas=ON
+		if use mkl ; then
+			blas_vendor="Intel"
+		elif use cuda ; then
+			blas_vendor="NVHPC"
+		fi
+	fi
+	local sycl_target="INTEL"
 	if use sycl ; then
 		export CC=icx
 		export CXX=icpx
 		filter-flags '-mabm'
 		filter-flags '--param=l1-cache-*'
 		filter-flags '--param=l2-cache-*'
-	fi
-	local blas=OFF
-	local blas_vendor="Generic"
-	if use blas ; then
-		blas=ON
-		if use cuda ; then
-			blas_vendor="NVHPC"
-		elif use mkl ; then
-			blas_vendor="Intel"
+		if use cuda; then
+			sycl_target="NVIDIA"
+		elif use rocm; then
+			sycl_target="AMD"
 		fi
 	fi
 	local mycmakeargs=(
@@ -72,15 +87,18 @@ src_configure() {
 		-DGGML_BLAS=${blas}
 		-DGGML_BLAS_VENDOR=${blas_vendor}
 		-DGGML_CUDA=$(usex cuda)
-		-DGGML_HIPBLAS=$(usex rocm)
+		-DGGML_HIP=$(usex rocm)
 		-DGGML_VULKAN=$(usex vulkan)
 		-DGGML_KOMPUTE=$(usex kompute)
 		-DGGML_OPENMP=$(usex openmp)
-		-DGGML_SYCL=$(usex sycl)
-		-DGGML_OPENCL=$(usex opencl)
-		-DGGML_BUILD_TESTS=OFF
-		-DGGML_BUILD_EXAMPLES=OFF
 		-DGGML_RPC=ON
+		-DGGML_SYCL=$(usex sycl)
+		-DGGML_SYCL_TARGET=${sycl_target}
+		-DGGML_OPENCL=$(usex opencl)
+		-DGGML_OPENCL_USE_ADRENO_KERNELS=OFF
+		-DGGML_BUILD_TESTS=$(usex test)
+		-DGGML_BUILD_EXAMPLES=OFF
+		-DGGML_BUILD_NUMBER="${PV}"
 	)
 	cmake_src_configure
 }

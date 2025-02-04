@@ -1,0 +1,20 @@
+diff -Nur a/src/ggml-blas/CMakeLists.txt b/src/ggml-blas/CMakeLists.txt
+--- a/src/ggml-blas/CMakeLists.txt	2025-02-03 15:17:15.000000000 -0800
++++ b/src/ggml-blas/CMakeLists.txt	2025-02-04 10:27:08.777172748 -0800
+@@ -6,6 +6,7 @@
+ #endif()
+ 
+ set(BLA_VENDOR ${GGML_BLAS_VENDOR})
++set(BLA_PKGCONFIG_BLAS "cblas")
+ find_package(BLAS)
+ 
+ if (BLAS_FOUND)
+@@ -24,7 +25,7 @@
+         # see https://gitlab.kitware.com/cmake/cmake/-/issues/20268
+         find_package(PkgConfig REQUIRED)
+         if (${GGML_BLAS_VENDOR} MATCHES "Generic")
+-            pkg_check_modules(DepBLAS blas)
++            pkg_check_modules(DepBLAS cblas)
+         elseif (${GGML_BLAS_VENDOR} MATCHES "OpenBLAS")
+             # As of openblas v0.3.22, the 64-bit is named openblas64.pc
+             pkg_check_modules(DepBLAS openblas64)
