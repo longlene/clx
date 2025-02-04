@@ -81,7 +81,7 @@ pkg_setup() {
 src_unpack() { :; }
 
 src_install() {
-	insinto /usr/share/whisper/ggml-models
+	insinto /usr/share/whisper/models
 	for i in ${MODELS[@]} small.en-tdrz; do
 		use ${i/./-} && newins "${DISTDIR}/whisper-ggml-${i}.bin" "${i}.bin"
 	done
@@ -90,7 +90,7 @@ src_install() {
 	for i in ${MODELS[@]} small.en-tdrz; do
 		if use ${i/./-}; then
 			einfo "Selecting $i as the default model for whisper-cpp"
-			dosym "ggml-models/${i}.bin" "/usr/share/whisper/whisper-ggml-default.bin"
+			dosym "models/${i}.bin" "/usr/share/whisper/whisper-default.bin"
 			break
 		fi
 	done

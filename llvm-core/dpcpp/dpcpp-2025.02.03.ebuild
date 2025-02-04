@@ -28,7 +28,7 @@ SRC_URI="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="cuda hip +jit l0 rocm"
+IUSE="cuda +jit l0 rocm"
 
 DEPEND="
 	app-arch/zstd
@@ -37,7 +37,7 @@ DEPEND="
 	dev-libs/unified-runtime
 	>=dev-libs/opencl-icd-loader-2024.10.24
 	cuda? ( dev-util/nvidia-cuda-toolkit:= )
-	hip? ( dev-util/rocm-smi:= )
+	rocm? ( dev-util/rocm-smi:= )
 	l0? ( dev-libs/level-zero )
 "
 RDEPEND="${DEPEND}"
