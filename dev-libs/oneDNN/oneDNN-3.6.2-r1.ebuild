@@ -37,10 +37,14 @@ BDEPEND="
 	openmp? (
 		|| (
 			sys-devel/gcc[openmp]
-			sys-devel/clang-runtime[openmp]
+			llvm-core/clang-runtime[openmp]
 		)
 	)
 	sycl? ( llvm-core/dpcpp )
+"
+REQUIRED_USE="
+	cuda? ( sycl )
+	rocm? ( sycl )
 "
 
 pkg_pretend() {
@@ -56,7 +60,7 @@ src_configure() {
 		export CC=icx
 		export CXX=icpx
 	fi
-	local cpu_runtime=SEQ
+	local cpu_runtime
 	if use sycl ; then
 		cpu_runtime=SYCL
 	elif use tbb ; then
@@ -65,16 +69,16 @@ src_configure() {
 		cpu_runtime=OMP
 	fi
 	local gpu_runtime=NONE
+	local gpu_vendor=NONE
 	if use sycl ; then
 		gpu_runtime=SYCL
+		if use cuda ; then
+			gpu_vendor=NVIDIA
+		elif use rocm ; then
+			gpu_vendor=AMD
+		fi
 	elif use opencl ; then
 		gpu_runtime=OCL
-	fi
-	local gpu_vendor=NONE
-	if use cuda ; then
-		gpu_vendor=NVIDIA
-	elif use rocm ; then
-		gpu_vendor=AMD
 	fi
 
 	local mycmakeargs=(
@@ -83,6 +87,7 @@ src_configure() {
 		-DDNNL_CPU_RUNTIME=${cpu_runtime}
 		-DDNNL_GPU_RUNTIME=${gpu_runtime}
 		-DDNNL_GPU_VENDOR=${gpu_vendor}
+
 		-DDNNL_BUILD_EXAMPLES=OFF
 		-DDNNL_BUILD_TESTS="$(usex test)"
 		-DDNNL_ENABLE_CONCURRENT_EXEC=OFF
@@ -98,7 +103,7 @@ src_configure() {
 		-DDNNL_VERBOSE=ON
 		-DDNNL_DEV_MODE=OFF
 		-DDNNL_AARCH64_USE_ACL=OFF
-		-DDNNL_GPU_VENDOR=INTEL
+		-DDNNL_EXPERIMENTAL_UKERNEL=ON
 		-DDNNL_LIBRARY_NAME=dnnl
 		-DONEDNN_BUILD_GRAPH=ON
 		-DONEDNN_ENABLE_GRAPH_DUMP=OFF
@@ -112,11 +117,9 @@ src_configure() {
 		if [ -e "${EPREFIX}"/opt/intel/oneapi/mkl/latest/env/vars.sh ]; then
 			source "${EPREFIX}"/opt/intel/oneapi/mkl/latest/env/vars.sh || die
 		else
-			# bug 923109: sci-libs/mkl-2020.4.304 has no vars.sh, configure it manually
 			export CPATH="${EPREFIX}"/usr/include/mkl
 			export MKLROOT="${EPREFIX}"/usr
 		fi
-
 		mycmakeargs+=( -DDNNL_BLAS_VENDOR=MKL )
 	elif use cblas; then
 		mycmakeargs+=( -DDNNL_BLAS_VENDOR=ANY -DBLA_VENDOR=Generic -DBLAS_LIBRARIES=-lcblas )

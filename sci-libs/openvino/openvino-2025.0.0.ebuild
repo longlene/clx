@@ -7,8 +7,8 @@ PYTHON_COMPAT=( python3_{11..13} )
 
 inherit cmake python-single-r1
 
-ONEDNN_CPU_COMMIT="c60a9946aa2386890e5c9f5587974facb7624227"
-ONEDNN_GPU_COMMIT="1722066ad4c0f15495f2d0fcbe9deb2bfd188c36"
+ONEDNN_CPU_COMMIT="1789b1e0ae441de15d793123003a900a35d1dc71"
+ONEDNN_GPU_COMMIT="706a3ce3b391cf1d8a904a8efa981c70078719eb"
 
 DESCRIPTION="An open-source toolkit for optimizing and deploying AI inference"
 HOMEPAGE="https://docs.openvino.ai/"
@@ -49,9 +49,8 @@ BDEPEND=""
 src_prepare() {
 	default
 	eapply "${FILESDIR}"/openvino-disable-werror.patch
-	#eapply "${FILESDIR}"/install-path.patch
 	eapply "${FILESDIR}"/010-openvino-change-install-paths.patch
-	eapply "${FILESDIR}"/opencl-fix.patch
+	#eapply "${FILESDIR}"/opencl-fix.patch
 	eapply "${FILESDIR}"/system-l0.patch
 	#eapply "${FILESDIR}"/system-dnnl.patch
 	eapply "${FILESDIR}"/system-mlas.patch

@@ -16,12 +16,11 @@ IUSE="+models opencl openvino sdl2"
 
 DEPEND="
 	sci-libs/ggml[opencl?]
-	sci-libs/clblast
 	net-misc/curl
-	opencl? ( sci-libs/clblast:= )
 	openvino? ( sci-libs/openvino )
 	sdl2? ( media-libs/libsdl2 )
 "
+#	opencl? ( sci-libs/clblast:= )
 RDEPEND="${DEPEND}
 	models? ( app-accessibility/whisper-ggml-models )
 "
@@ -35,7 +34,7 @@ PATCHES=(
 src_configure() {
 	local mycmakeargs=(
 		-DWHISPER_BUILD_TESTS=OFF
-		-DWHISPER_CLBLAST=$(usex opencl)
+		#-DWHISPER_CLBLAST=$(usex opencl)
 		-DWHISPER_CURL=ON
 		-DWHISPER_SDL2=$(usex sdl2)
 		-DWHISPER_OPENVINO=$(usex openvino)

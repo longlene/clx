@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake flag-o-matic vcs-snapshot
 
-EGIT_COMMIT="5734b97d896ec744ea9ea288571308cca2285149"
+EGIT_COMMIT="08b538031f7f944e84f472483ef5d26bf5190ead"
 KOMPUTE_COMMIT="4565194ed7c32d1d2efa32ceab4d3c6cae006306"
 
 DESCRIPTION="Tensor library for machine learning"
@@ -23,7 +23,7 @@ IUSE="blas cuda mkl kompute opencl +openmp rocm -sycl test vulkan"
 DEPEND="
 	blas? (
 		mkl? ( sci-libs/mkl )
-		!mkl? ( virtual/blas virtual/cblas )
+		!mkl? ( virtual/cblas )
 	)
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	mkl? ( sci-libs/mkl )
@@ -88,6 +88,7 @@ src_configure() {
 		-DGGML_BLAS_VENDOR=${blas_vendor}
 		-DGGML_CUDA=$(usex cuda)
 		-DGGML_HIP=$(usex rocm)
+		-DGGML_HIPBLAS=$(usex rocm)
 		-DGGML_VULKAN=$(usex vulkan)
 		-DGGML_KOMPUTE=$(usex kompute)
 		-DGGML_OPENMP=$(usex openmp)
