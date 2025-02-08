@@ -1,6 +1,6 @@
 diff -Nur a/sycl/cmake/modules/FetchUnifiedRuntime.cmake b/sycl/cmake/modules/FetchUnifiedRuntime.cmake
---- a/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2024-12-16 16:36:27.000000000 -0800
-+++ b/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2024-12-16 20:48:29.330051890 -0800
+--- a/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2025-01-31 11:09:57.000000000 -0800
++++ b/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2025-02-06 21:09:33.380473153 -0800
 @@ -8,292 +8,310 @@
      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-covered-switch-default")
  endif()
@@ -581,8 +581,8 @@ diff -Nur a/sycl/cmake/modules/FetchUnifiedRuntime.cmake b/sycl/cmake/modules/Fe
 -  ARCHIVE DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
 -  RUNTIME DESTINATION "bin" COMPONENT unified-memory-framework)
 diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
---- a/sycl/CMakeLists.txt	2024-12-16 16:36:27.000000000 -0800
-+++ b/sycl/CMakeLists.txt	2024-12-16 20:51:17.366724463 -0800
+--- a/sycl/CMakeLists.txt	2025-01-31 11:09:57.000000000 -0800
++++ b/sycl/CMakeLists.txt	2025-02-06 21:12:30.797145998 -0800
 @@ -243,11 +243,6 @@
            sycl-device-aspect-macros-header
            boost_mp11-headers)
@@ -622,3 +622,14 @@ diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
  
  if (WIN32)
    set(SYCL_RT_LIBS sycl${SYCL_MAJOR_VERSION})
+@@ -511,8 +498,8 @@
+       "CUDA support requires adding \"libclc\" to the CMake argument \"LLVM_ENABLE_PROJECTS\"")
+   endif()
+ 
+-  add_dependencies(sycl-toolchain ur_adapter_cuda)
+-  list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS ur_adapter_cuda)
++  add_dependencies(sycl-toolchain unified-runtime::ur_adapter_cuda)
++  #list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS ur_adapter_cuda)
+ endif()
+ 
+ if("hip" IN_LIST SYCL_ENABLE_BACKENDS)

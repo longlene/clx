@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=sci-libs/pytorch-1.11.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-libs/optimum-1.23[${PYTHON_SINGLE_USEDEP}]
+	>=sci-libs/optimum-1.24[${PYTHON_SINGLE_USEDEP}]
 	>=sci-libs/transformers-4.36[${PYTHON_SINGLE_USEDEP}]
 	>=sci-libs/datasets-1.4.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '

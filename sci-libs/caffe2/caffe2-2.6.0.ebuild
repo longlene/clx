@@ -114,7 +114,7 @@ DEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-2.5.1-unbundle_fmt.patch
+	"${FILESDIR}"/${P}-unbundle_fmt.patch
 	"${FILESDIR}"/${PN}-2.5.1-unbundle_kineto.patch
 	"${FILESDIR}"/${PN}-2.5.1-cudnn_include_fix.patch
 	"${FILESDIR}"/${P}-gentoo.patch
@@ -126,13 +126,8 @@ PATCHES=(
 src_prepare() {
 	filter-lto #bug 862672
 
-	# Unbundle fmt
-	sed -i \
-		-e 's|::fmt-header-only||' \
-		c10/CMakeLists.txt \
-		cmake/Dependencies.cmake \
-		torch/CMakeLists.txt \
-		|| die
+	sed -e 's#add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/fmt)#find_package(fmt REQUIRED)#' \
+		-i cmake/Dependencies.cmake
 
 	# Drop third_party from CMake tree
 	sed -i \

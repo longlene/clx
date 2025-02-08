@@ -1,0 +1,15 @@
+diff -Nur a/src/gpu/intel/ocl/ocl_utils.cpp b/src/gpu/intel/ocl/ocl_utils.cpp
+--- a/src/gpu/intel/ocl/ocl_utils.cpp	2025-01-16 09:55:42.000000000 -0800
++++ b/src/gpu/intel/ocl/ocl_utils.cpp	2025-02-07 16:26:31.499585763 -0800
+@@ -26,9 +26,11 @@
+ #include "gpu/intel/ocl/ocl_utils.hpp"
+ #include "xpu/ocl/utils.hpp"
+ 
++#ifdef DNNL_WITH_SYCL
+ #if __has_include(<sycl/sycl.hpp>)
+ #include "gpu/intel/sycl/engine.hpp"
+ #endif
++#endif
+ 
+ #ifndef CL_KERNEL_BINARY_PROGRAM_INTEL
+ #define CL_KERNEL_BINARY_PROGRAM_INTEL 0x407D

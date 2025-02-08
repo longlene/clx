@@ -1,0 +1,17 @@
+diff -Nur a/sycl/tools/sycl-trace/CMakeLists.txt b/sycl/tools/sycl-trace/CMakeLists.txt
+--- a/sycl/tools/sycl-trace/CMakeLists.txt	2025-01-31 11:09:57.000000000 -0800
++++ b/sycl/tools/sycl-trace/CMakeLists.txt	2025-02-07 09:24:21.512026957 -0800
+@@ -108,11 +108,12 @@
+   target_include_directories(cuda_trace_collector
+     PRIVATE
+     ${CUDA_CUPTI_INCLUDE_DIR}
++    ${CUDA_INCLUDE_DIRS}
+   )
+ 
+   target_link_libraries(cuda_trace_collector
+     PRIVATE
+-      cudadrv
++      cuda
+       ${CUDA_cupti_LIBRARY}
+   )
+ 

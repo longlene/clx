@@ -54,6 +54,7 @@ src_configure() {
 		-DUR_BUILD_ADAPTER_CUDA=$(usex cuda)
 		-DUR_BUILD_ADAPTER_HIP=$(usex rocm)
 		-DUR_BUILD_ADAPTER_NATIVE_CPU=ON
+		-DUR_FORMAT_CPP_STYLE=OFF
 	)
 	use opencl && mycmakeargs+=( -DUR_OPENCL_INCLUDE_DIR="/usr/include" )
 	cmake_src_configure

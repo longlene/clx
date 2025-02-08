@@ -1,6 +1,6 @@
 diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
---- a/src/CMakeLists.txt	2024-12-23 12:31:37.274798563 -0800
-+++ b/src/CMakeLists.txt	2024-12-24 17:13:29.681689221 -0800
+--- a/src/CMakeLists.txt	2025-01-20 08:25:37.000000000 -0800
++++ b/src/CMakeLists.txt	2025-02-07 20:18:13.796742654 -0800
 @@ -148,34 +148,38 @@
  if(sentencepiece_FOUND)
    find_package(absl REQUIRED)
@@ -62,20 +62,20 @@ diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
    # in case if we don't build fast tokenizers, we have to include re2 explicitly
 -  ov_tokenizers_build_static_re2()
 +  find_package(PkgConfig REQUIRED)
-+  pkg_check_modules(re2 REQUIRED re2)
++  pkg_search_module(re2 REQUIRED re2)
 +  if (NOT re2_FOUND)
 +    ov_tokenizers_build_static_re2()
 +  endif()
  endif()
  
  function(ov_tokenizers_link_fast_tokenizer TARGET_NAME)
-@@ -344,27 +352,35 @@
+@@ -344,22 +352,30 @@
  endfunction()
  
  function(ov_tokenizers_link_pcre2 TARGET_NAME)
 -  FetchContent_Declare(
 +  find_package(PkgConfig REQUIRED)
-+  pkg_check_modules(pcre2 REQUIRED libpcre2-8)
++  pkg_search_module(pcre2 REQUIRED libpcre2-8)
 +  if(pcre2_FOUND)
 +    target_include_directories(${TARGET_NAME} PRIVATE ${pcre2_INCLUDE_DIRS})
 +    target_link_libraries(${TARGET_NAME} PRIVATE ${pcre2_LINK_LIBRARIES})
@@ -89,6 +89,12 @@ diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
 -  FetchContent_GetProperties(prce2)
 -  if(NOT prce2_POPULATED)
 -    FetchContent_Populate(prce2)
+-
+-    set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
+-    set(PCRE2_STATIC_PIC ON)
+-    set(PCRE2_BUILD_TESTS OFF)
+-    set(PCRE2_BUILD_PCRE2GREP OFF)
+-    set(PCRE2_BUILD_TESTS)
 +    )
 +    FetchContent_GetProperties(prce2)
 +    if(NOT prce2_POPULATED)
@@ -100,23 +106,9 @@ diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
 +      set(PCRE2_BUILD_PCRE2GREP OFF)
 +      set(PCRE2_BUILD_TESTS)
  
--    set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
--    set(PCRE2_STATIC_PIC ON)
--    set(PCRE2_BUILD_TESTS OFF)
--    set(PCRE2_BUILD_PCRE2GREP OFF)
--    set(PCRE2_BUILD_TESTS)
+-    add_subdirectory(${prce2_SOURCE_DIR} ${prce2_BINARY_DIR} EXCLUDE_FROM_ALL)
 +      add_subdirectory(${prce2_SOURCE_DIR} ${prce2_BINARY_DIR} EXCLUDE_FROM_ALL)
 +    endif()
- 
--    add_subdirectory(${prce2_SOURCE_DIR} ${prce2_BINARY_DIR} EXCLUDE_FROM_ALL)
-+    target_include_directories(${TARGET_NAME} PRIVATE ${pcre2_BINARY_DIR})
-+    target_link_libraries(${TARGET_NAME} PRIVATE pcre2-8)
-+    target_compile_definitions(${TARGET_NAME} PRIVATE PCRE2_CODE_UNIT_WIDTH=8)
    endif()
--
--  target_include_directories(${TARGET_NAME} PRIVATE ${pcre2_BINARY_DIR})
--  target_link_libraries(${TARGET_NAME} PRIVATE pcre2-8)
--  target_compile_definitions(${TARGET_NAME} PRIVATE PCRE2_CODE_UNIT_WIDTH=8)
- endfunction()
  
- function(ov_tokenizers_link_re2 TARGET_NAME)
+   target_include_directories(${TARGET_NAME} SYSTEM PRIVATE ${pcre2_BINARY_DIR})

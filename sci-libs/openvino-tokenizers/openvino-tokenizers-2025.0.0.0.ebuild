@@ -48,15 +48,17 @@ S="${WORKDIR}"/openvino_tokenizers-${PV}
 
 src_prepare() {
 	default
-	eapply "${FILESDIR}"/system-deps.patch
-	eapply "${FILESDIR}"/install-path.patch
-	eapply "${FILESDIR}"/py-build.patch
+	eapply \
+		"${FILESDIR}"/install-path.patch \
+		"${FILESDIR}"/system-deps.patch \
+		"${FILESDIR}"/py-build.patch
 	cmake_src_prepare
 	use python && distutils-r1_src_prepare
 }
 
 src_configure() {
 	local mycmakeargs=(
+#		-DENABLE_SYSTEM_ICU=ON
 		-DENABLE_FAST_TOKENIZERS=OFF
 		-DSENTENCEPIECE_SRC_DIR="${WORKDIR}"/sentencepiece-${SENTENCEPIECE_PV}
 		-DOPENVINO_TOKENIZERS_INSTALL_LIBDIR=$(get_libdir)

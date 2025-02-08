@@ -34,7 +34,7 @@ DEPEND="
 	app-arch/zstd
 	dev-cpp/parallel-hashmap
 	dev-libs/boost
-	dev-libs/unified-runtime
+	dev-libs/unified-runtime[cuda?]
 	>=dev-libs/opencl-icd-loader-2024.10.24
 	cuda? ( dev-util/nvidia-cuda-toolkit:= )
 	rocm? ( dev-util/rocm-smi:= )
@@ -57,22 +57,38 @@ src_prepare() {
 		"${FILESDIR}"/system-level-zero.patch \
 		"${FILESDIR}"/system-boost.patch \
 		"${FILESDIR}"/system-zstd.patch \
+		"${FILESDIR}"/system-cuda.patch \
 		"${FILESDIR}"/xptifw-dep.patch
 	cmake_src_prepare
 }
 
 multilib_src_configure() {
-	local targets="host"
-	local external_projects="sycl;llvm-spirv;opencl;xpti;xptifw;libdevice"
-	use jit && external_projects+=";sycl-jit"
-	local enable_projects="clang;${external_projects}"
-	local sycl_backends="opencl"
+	local llvm_targets=( "host" )
+	local llvm_external_projects=( "sycl" "llvm-spirv" "opencl" "xpti" "xptifw" "libdevice" )
+	local llvm_enable_projects=("clang" "${llvm_external_projects[@]}")
+	local sycl_enable_backends=("opencl")
+	local libclc_targets=()
+
+	use jit && llvm_external_projects+=("sycl-jit")
 
 	if use cuda ; then
-		targets+=";NVPTX"
-		sycl_backends+=";cuda"
+		llvm_targets+=( "NVPTX" )
+		llvm_enable_projects+=("libclc")
+		sycl_enable_backends+=("cuda")
 	fi
-	use l0 && sycl_backends+=";level_zero"
+	use l0 && sycl_enable_backends+=( "level_zero" )
+
+	use cuda && libclc_targets+=(
+		"nvptx--"
+		"nvptx64--"
+		"nvptx--nvidiacl"
+		"nvptx64--nvidiacl"
+	)
+
+	llvm_targets=${llvm_targets[*]}
+	llvm_external_projects=${llvm_external_projects[*]}
+	llvm_enable_projects=${llvm_enable_projects[*]}
+	sycl_enable_backends=${sycl_enable_backends[*]}
 
 	local libdir=$(get_libdir)
 	local mycmakeargs=(
@@ -80,8 +96,8 @@ multilib_src_configure() {
 		-DCMAKE_INSTALL_PREFIX="${EPREFIX}"/usr/lib/llvm/intel
 		-DLLVM_LIBDIR_SUFFIX=${libdir#lib}
 
-		-DLLVM_TARGETS_TO_BUILD=${targets}
-		-DLLVM_EXTERNAL_PROJECTS="${external_projects}"
+		-DLLVM_TARGETS_TO_BUILD=${llvm_targets// /;}
+		-DLLVM_EXTERNAL_PROJECTS="${llvm_external_projects// /;}"
 		-DLLVM_EXTERNAL_SYCL_SOURCE_DIR="${S}"/sycl
 		-DLLVM_EXTERNAL_LLVM_SPIRV_SOURCE_DIR="${S}"/llvm-spirv
 		-DLLVM_EXTERNAL_XPTI_SOURCE_DIR="${S}"/xpti
@@ -89,11 +105,9 @@ multilib_src_configure() {
 		-DLLVM_EXTERNAL_XPTIFW_SOURCE_DIR="${S}"/xptifw
 		-DLLVM_EXTERNAL_LIBDEVICE_SOURCE_DIR="${S}"/libdevice
 		-DLLVM_EXTERNAL_SYCL_JIT_SOURCE_DIR="${S}"/sycl-jit
-		-DLLVM_ENABLE_PROJECTS="${enable_projects}"
-		-DSYCL_BUILD_PI_HIP_PLATFORM="AMD"
+		-DLLVM_ENABLE_PROJECTS="${llvm_enable_projects// /;}"
 		-DLLVM_BUILD_TOOLS=ON
 		-DLLVM_ENABLE_ZSTD=ON
-		#-DLLVM_ENABLE_ZSTD=OFF
 		-DLLVM_USE_STATIC_ZSTD=OFF
 
 		-DLLVM_HOST_TRIPLE="${CHOST}"
@@ -110,7 +124,7 @@ multilib_src_configure() {
 		-DLLVM_ENABLE_LLD=OFF
 		-DXPTI_ENABLE_WERROR=OFF
 		-DXPTI_ENABLE_TESTS=OFF
-		-DSYCL_ENABLE_BACKENDS=${sycl_backends}
+		-DSYCL_ENABLE_BACKENDS=${sycl_enable_backends// /;}
 		-DSYCL_ENABLE_EXTENSION_JIT=$(usex jit)
 		-DSYCL_ENABLE_MAJOR_RELEASE_PREVIEW_LIB=ON
 		-DBUG_REPORT_URL="https://github.com/intel/llvm/issues"
@@ -135,6 +149,15 @@ multilib_src_configure() {
 	use l0 && mycmakeargs+=(
 		-DLEVEL_ZERO_INCLUDE_DIR="/usr/include/level_zero"
 	)
+	use rocm && mycmakeargs+=(
+		-DSYCL_BUILD_PI_HIP_PLATFORM="AMD"
+	)
+	if [[ ${#libclc_targets[@]} ]] ; then
+		libclc_targets=${libclc_targets[*]}
+		mycmakeargs+=(
+			-DLIBCLC_TARGETS_TO_BUILD="${libclc_targets// /;}"
+		)
+	fi
 
 	cmake_src_configure
 }

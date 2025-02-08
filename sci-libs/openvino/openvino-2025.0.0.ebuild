@@ -48,14 +48,13 @@ BDEPEND=""
 
 src_prepare() {
 	default
-	eapply "${FILESDIR}"/openvino-disable-werror.patch
-	eapply "${FILESDIR}"/010-openvino-change-install-paths.patch
-	#eapply "${FILESDIR}"/opencl-fix.patch
-	eapply "${FILESDIR}"/system-l0.patch
-	#eapply "${FILESDIR}"/system-dnnl.patch
-	eapply "${FILESDIR}"/system-mlas.patch
-	eapply "${FILESDIR}"/python-install-path.patch
-	eapply "${FILESDIR}"/040-openvino-protobuf23-fix.patch
+	eapply \
+		"${FILESDIR}"/openvino-disable-werror.patch \
+		"${FILESDIR}"/010-openvino-change-install-paths.patch \
+		"${FILESDIR}"/system-l0.patch \
+		"${FILESDIR}"/system-mlas.patch \
+		"${FILESDIR}"/python-install-path.patch \
+		"${FILESDIR}"/040-openvino-protobuf23-fix.patch
 	sed -e '/target_include_directories(openvino_core_dev SYSTEM INTERFACE/{s#SYSTEM ##}' \
 		-i src/core/CMakeLists.txt
 	sed -e '/target_include_directories/{s#SYSTEM PRIVATE#PRIVATE#}' \
@@ -65,6 +64,7 @@ src_prepare() {
 
 	rmdir src/plugins/intel_cpu/thirdparty/onednn && ln -sv "${WORKDIR}"/oneDNN-${ONEDNN_CPU_COMMIT} src/plugins/intel_cpu/thirdparty/onednn
 	rmdir src/plugins/intel_gpu/thirdparty/onednn_gpu && ln -sv "${WORKDIR}"/oneDNN-${ONEDNN_GPU_COMMIT} src/plugins/intel_gpu/thirdparty/onednn_gpu
+	pushd "${WORKDIR}"/oneDNN-${ONEDNN_GPU_COMMIT} && eapply "${FILESDIR}"/dnnl-sycl.patch && popd
 	cmake_src_prepare
 }
 
