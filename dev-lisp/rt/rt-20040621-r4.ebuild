@@ -23,7 +23,8 @@ RDEPEND="!dev-lisp/cl-${PN}"
 S="${WORKDIR}/cl-${P}"
 
 src_prepare() {
-	epatch "${WORKDIR}"/cl-${PN}_${PV}-${DEB_PV}.diff
+	default
+	eapply "${WORKDIR}"/cl-${PN}_${PV}-${DEB_PV}.diff
 	cp "${FILESDIR}"/${PN}.asd "${S}"
 }
 

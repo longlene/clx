@@ -4,7 +4,7 @@ EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="fea6cd18228d8895f09cda7ca2349779591c054a"
+EGIT_COMMIT="c41fcc5833ebcf184f48aaf31ab89a9a1c230464"
 
 DESCRIPTION="Colorize is a Common Lisp application for colorizing source code."
 HOMEPAGE="http://www.cliki.net/colorize"
@@ -24,5 +24,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	epatch "${FILESDIR}"/9999-hyperspec-pathname-gentoo.patch
+	default
+	eapply "${FILESDIR}"/9999-hyperspec-pathname-gentoo.patch
 }

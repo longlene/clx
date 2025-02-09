@@ -1,9 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2025 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit common-lisp-3 git-r3
+inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="a70480b06af25307d349d2c59a6b60a72b04dca5"
 

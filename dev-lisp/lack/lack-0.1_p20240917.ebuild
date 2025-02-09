@@ -45,11 +45,6 @@ RDEPEND="${DEPEND}
 	test? ( dev-lisp/prove )
 "
 
-src_prepare() {
-	eapply_user
-	use test || rm -r ${PN}-test.asd t t-*.asd
-}
-
 src_install() {
 	common-lisp-3_src_install
 	common-lisp-install-sources -t all README.md

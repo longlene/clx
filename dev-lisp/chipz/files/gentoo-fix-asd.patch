@@ -1,19 +1,17 @@
-diff -u chipz-0.8.orig/chipz.asd chipz-0.8/chipz.asd
---- chipz-0.8.orig/chipz.asd	2013-01-15 10:10:16.000000000 +0800
-+++ chipz-0.8/chipz.asd	2016-01-14 11:33:27.482522862 +0800
-@@ -1,11 +1,4 @@
- ; -*- mode: lisp -*-
--(cl:defpackage :chipz-system
--  (:use :cl :asdf)
--  (:export #:gray-streams))
--(cl:in-package :chipz-system)
--
+diff -Nur a/chipz.asd b/chipz.asd
+--- a/chipz.asd
++++ b/chipz.asd
+@@ -4,9 +4,6 @@
+   (:export #:gray-streams))
+ (cl:in-package :chipz-system)
+ 
 -(defclass txt-file (doc-file) ((type :initform "txt")))
 -(defclass css-file (doc-file) ((type :initform "css")))
- 
+-
  (eval-when (:compile-toplevel :load-toplevel :execute)
    #+(or sbcl lispworks openmcl cmu allegro clisp)
-@@ -17,15 +10,7 @@
+   (pushnew 'chipz-system:gray-streams cl:*features*))
+@@ -17,15 +14,7 @@
    :maintainer "Nathan Froyd <froydnj@gmail.com>"
    :description "A library for decompressing deflate, zlib, and gzip data"
    :license "BSD style"
@@ -30,4 +28,3 @@ diff -u chipz-0.8.orig/chipz.asd chipz-0.8/chipz.asd
                 (:file "constants" :depends-on ("package"))
                 (:file "types-and-tables" :depends-on ("constants"))
                 (:file "crc32" :depends-on ("types-and-tables"))
-Common subdirectories: chipz-0.8.orig/doc and chipz-0.8/doc

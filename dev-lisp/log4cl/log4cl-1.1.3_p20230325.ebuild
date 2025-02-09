@@ -4,7 +4,7 @@ EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="6a857b0b41c030a8a3b04096205e221baaa1755f"
+EGIT_COMMIT="fe3da517147d023029782ced7cd989ba24f1e62d"
 
 DESCRIPTION="Common Lisp logging framework, modeled after Log4J"
 HOMEPAGE="https://github.com/sharplispers/log4cl"

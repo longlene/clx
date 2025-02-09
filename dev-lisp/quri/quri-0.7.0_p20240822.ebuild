@@ -21,6 +21,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/split-sequence
 	dev-lisp/cl-utilities
+	dev-lisp/idna
 	test? ( dev-lisp/prove )
 "
 

@@ -35,6 +35,16 @@ RDEPEND="${DEPEND}
 	dev-lisp/str
 	dev-lisp/dexador
 	dev-lisp/lem-mailbox
+	dev-lisp/cl-charms
+	dev-lisp/cl-setlocale
+	dev-lisp/esrap
+	dev-lisp/cl-package-locks
+	dev-lisp/async-process
+	dev-lisp/3bmd
+	app-emacs/slime
+	dev-lisp/lisp-preprocessor
+	dev-lisp/trivial-ws
+	dev-lisp/trivial-open-browser
 "
 BDEPEND=""
 
@@ -49,9 +59,11 @@ src_compile() {
 
 src_install() {
 	common-lisp-3_src_install
+	common-lisp-install-sources -t all extensions/*/*.json \
+		extensions/markdown-mode/preview/external-browser-preview.html
 	doicon scripts/install/lem.svg
 	domenu scripts/install/lem.desktop
-	dobin lem
+	#dobin lem
 	einstalldocs
 }
 

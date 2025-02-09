@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2025 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="fcb2b319ccc628e59a91e32e719a270017e3b270"
+EGIT_COMMIT="46b4bf315590f510d2d4ec5ca8908efbe68007e9"
 
 DESCRIPTION="A simple semaphore class for bordeaux-threads inspired by SBCL's semaphore"
 HOMEPAGE="https://github.com/rmoritz/bt-semaphore"
@@ -22,7 +22,7 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	eapply_user
+	default
 	use test || rm -r ${PN}-test.asd t
 }
 

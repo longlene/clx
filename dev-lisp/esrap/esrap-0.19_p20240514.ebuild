@@ -4,7 +4,7 @@ EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="7588b430ad7c52f91a119b4b1c9a549d584b7064"
+EGIT_COMMIT="d9d4100159dc9897614683b4490d2919ab35ff8b"
 
 DESCRIPTION="ESRAP -- a packrat parser for Common Lisp"
 HOMEPAGE="https://github.com/scymtym/esrap"

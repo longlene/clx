@@ -4,7 +4,7 @@ EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="64aba59d89f85bc5c9402e445873965338a66a02"
+EGIT_COMMIT="9a8dd87787bd61efb8dd2a10f1afb8b0cc55b74a"
 
 DESCRIPTION="CFFI bindings to libcurses"
 HOMEPAGE="http://gitorious.org/cl-charms"

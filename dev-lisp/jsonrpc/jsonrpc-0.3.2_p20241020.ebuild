@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2025 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="d971f3dc5f3e1b952b36c413d1d48367935af2a6"
+EGIT_COMMIT="2af1e0fad429ee8c706b86c4a853248cdd1be933"
 
 DESCRIPTION="JSON-RPC 2.0 server/client for Common Lisp"
 HOMEPAGE="https://github.com/cxxxr/jsonrpc"
@@ -24,6 +24,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/event-emitter
 	dev-lisp/fast-io
+	dev-lisp/trivial-timeout
 	dev-lisp/trivial-utf8
 	dev-lisp/quri
 	dev-lisp/websocket-driver
