@@ -55,6 +55,12 @@ pkg_setup() {
 	[[ ${MERGE_TYPE} != binary ]] && use openmp && tc-check-openmp
 }
 
+src_prepare() {
+	default
+	eapply "${FILESDIR}"/dnnl-sycl.patch
+	cmake_src_prepare
+}
+
 src_configure() {
 	if use sycl ; then
 		export CC=icx

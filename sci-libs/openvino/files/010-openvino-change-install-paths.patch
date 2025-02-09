@@ -17,8 +17,8 @@
      set(OV_CPACK_WHEELSDIR wheels)
      set(OV_CPACK_DEVREQDIR tools)
 -    set(OV_CPACK_PYTHONDIR python)
-+    find_package(Python QUIET REQUIRED COMPONENTS Interpreter Development)
-+    set(OV_CPACK_PYTHONDIR "${CMAKE_INSTALL_LIBDIR}/python${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}/site-packages")
++    find_package(Python3 QUIET REQUIRED COMPONENTS Interpreter Development)
++    set(OV_CPACK_PYTHONDIR "lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages")
  
      if(USE_BUILD_TYPE_SUBFOLDER)
          set(build_type ${CMAKE_BUILD_TYPE})

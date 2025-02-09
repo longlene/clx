@@ -3,9 +3,12 @@
 
 EAPI=8
 
+DISTUTILS_OPTIONAL=1
+DISTUTILS_SINGLE_IMPL=1
+DISTUTILS_USE_PEP517=no
 PYTHON_COMPAT=( python3_{11..13} )
 
-inherit cmake python-single-r1
+inherit cmake distutils-r1
 
 ONEDNN_CPU_COMMIT="1789b1e0ae441de15d793123003a900a35d1dc71"
 ONEDNN_GPU_COMMIT="706a3ce3b391cf1d8a904a8efa981c70078719eb"
@@ -45,6 +48,10 @@ RDEPEND="
 	')
 "
 BDEPEND=""
+
+pkg_setup() {
+	use python && python_setup
+}
 
 src_prepare() {
 	default
@@ -96,5 +103,5 @@ src_configure() {
 
 src_install() {
 	cmake_src_install
-	python_optimize
+	use python && python_optimize
 }
