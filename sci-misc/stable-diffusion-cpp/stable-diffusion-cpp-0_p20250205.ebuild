@@ -5,47 +5,43 @@ EAPI=8
 
 inherit cmake
 
-EGIT_COMMIT="dcf91f9e0f2cbf9da472ee2a556751ed4bab2d2a"
-GGML_COMMIT="6fcbd60bc72ac3f7ad43f78c87e535f2e6206f58"
+EGIT_COMMIT="d46ed5e184b97c2018dc2e8105925bdb8775e02c"
 
 DESCRIPTION="Stable Diffusion and Flux in pure C/C++"
 HOMEPAGE="https://github.com/leejet/stable-diffusion.cpp"
 SRC_URI="
 	https://github.com/leejet/stable-diffusion.cpp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz
-	https://github.com/ggerganov/ggml/archive/${GGML_COMMIT}.tar.gz -> ggml-${GGML_COMMIT}.gh.tar.gz
 "
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="cuda rocm vulkan"
+IUSE="cuda rocm sycl vulkan"
 
 DEPEND="
-	cuda? ( dev-util/nvidia-cuda-toolkit )
-	rocm? ( dev-util/rocm-smi )
-	vulkan? ( media-libs/vulkan-loader )
+	sci-libs/ggml[cuda?,rocm?,vulkan?]
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
 S="${WORKDIR}"/stable-diffusion.cpp-${EGIT_COMMIT}
 
-src_prepare() {
-	default
-	rmdir ggml && ln -sv "${WORKDIR}"/ggml-${GGML_COMMIT} ggml
-	cmake_src_prepare
-}
+PATCHES=(
+	"${FILESDIR}"/system-ggml.patch
+)
 
 src_configure() {
 	local mycmakeargs=(
 		-DSD_CUDA=$(usex cuda)
 		-DSD_HIPBLAS=$(usex rocm)
 		-DSD_VULKAN=$(usex vulkan)
+		-DSD_BUILD_SHARED_LIBS=ON
 	)
 	cmake_src_configure
 }
 
 src_install() {
+	dolib.so "${BUILD_DIR}"/bin/libstable-diffusion.so
 	dobin "${BUILD_DIR}"/bin/sd
 	einstalldocs
 }
