@@ -1,11 +1,11 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit common-lisp-3 vcs-snapshot
 
-EGIT_COMMIT="8100eaecb32cd438c19886c9026088f39cdfa81b"
+EGIT_COMMIT="c1d357952179fea15d6c4802c59bef1c79267fb3"
 
 DESCRIPTION="Dynamic library delivery tools for SBCL"
 HOMEPAGE="https://github.com/quil-lang/sbcl-librarian"

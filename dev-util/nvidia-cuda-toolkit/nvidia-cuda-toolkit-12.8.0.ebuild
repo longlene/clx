@@ -58,6 +58,7 @@ src_prepare() {
 		-e "s:CUDA_SUPPORTED_GCC:${cuda_supported_gcc}:g" \
 		"${FILESDIR}"/cuda-config.in > "${T}"/cuda-config || die
 
+	eapply "${FILESDIR}"/fix-glibc241.patch
 	default
 }
 
