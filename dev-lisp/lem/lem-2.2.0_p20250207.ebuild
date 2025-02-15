@@ -61,8 +61,8 @@ src_install() {
 	common-lisp-3_src_install
 	common-lisp-install-sources -t all extensions/*/*.json \
 		extensions/markdown-mode/preview/external-browser-preview.html
-	doicon scripts/install/lem.svg
-	domenu scripts/install/lem.desktop
+	#doicon scripts/install/lem.svg
+	#domenu scripts/install/lem.desktop
 	#dobin lem
 	einstalldocs
 }
