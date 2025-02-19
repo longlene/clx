@@ -34,7 +34,7 @@ DEPEND="
 	app-arch/zstd
 	dev-cpp/parallel-hashmap
 	dev-libs/boost
-	dev-libs/unified-runtime[cuda?]
+	dev-libs/unified-runtime[opencl,cuda?,rocm?]
 	>=dev-libs/opencl-icd-loader-2024.10.24
 	cuda? ( dev-util/nvidia-cuda-toolkit:= )
 	rocm? ( dev-util/rocm-smi:= )

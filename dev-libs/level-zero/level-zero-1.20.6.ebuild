@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -13,7 +13,7 @@ LICENSE="MIT"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 
-RDEPEND=""
+RDEPEND="dev-libs/spdlog:="
 DEPEND="${RDEPEND}"
 
 src_prepare() {
@@ -27,3 +27,10 @@ src_prepare() {
 	echo "$(ver_cut 3)" > "${S}"/VERSION_PATCH || die
 }
 
+src_configure() {
+	local mycmakeargs=(
+		-DSYSTEM_SPDLOG="ON"
+	)
+
+	cmake_src_configure
+}
