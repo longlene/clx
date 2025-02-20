@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,6 +20,8 @@ BDEPEND=""
 src_configure() {
 	local mycmakeargs=(
 		-DBUILD_TESTING=OFF
+		-DDISABLE_PERL=ON
+		-DDISABLE_GO=ON
 	)
 	cmake_src_configure
 }

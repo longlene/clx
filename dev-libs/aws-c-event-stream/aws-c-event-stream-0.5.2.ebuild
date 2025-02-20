@@ -16,22 +16,13 @@ IUSE="static-libs test"
 
 RESTRICT="!test? ( test )"
 
-BDEPEND="
-	|| (
-		>dev-util/cmake-3.19.1
-		<dev-util/cmake-3.19.0
-	)
-"
+BDEPEND=""
 
 DEPEND="
 	>=dev-libs/aws-c-common-0.4.62:=[static-libs=]
 	>=dev-libs/aws-c-io-0.7.0:=[static-libs=]
 	>=dev-libs/aws-checksums-0.1.10:=[static-libs=]
 "
-
-PATCHES=(
-	"${FILESDIR}"/0.1.3-add_missing_cmake_install_prefix.patch
-)
 
 src_configure() {
 	local mycmakeargs=(
