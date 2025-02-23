@@ -1,7 +1,7 @@
 diff -Nur a/sycl/cmake/modules/FetchUnifiedRuntime.cmake b/sycl/cmake/modules/FetchUnifiedRuntime.cmake
---- a/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2025-02-18 14:38:06.000000000 -0800
-+++ b/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2025-02-18 23:13:50.384694692 -0800
-@@ -8,7 +8,52 @@
+--- a/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2025-02-20 11:28:51.000000000 -0800
++++ b/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2025-02-20 20:28:15.357096964 -0800
+@@ -8,6 +8,52 @@
      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-covered-switch-default")
  endif()
  
@@ -33,7 +33,7 @@ diff -Nur a/sycl/cmake/modules/FetchUnifiedRuntime.cmake b/sycl/cmake/modules/Fe
 +  # TODO: L0 adapter does other... things in its cmake - make sure they get
 +  # added to the new build system
 +endif()
- 
++
 +if("cuda" IN_LIST SYCL_ENABLE_BACKENDS)
 +  add_sycl_ur_adapter(cuda)
 +endif()
@@ -51,30 +51,46 @@ diff -Nur a/sycl/cmake/modules/FetchUnifiedRuntime.cmake b/sycl/cmake/modules/Fe
 +endif()
 +
 +else()
+ 
  # Options to override the default behaviour of the FetchContent to include UR
  # source code.
- set(SYCL_UR_OVERRIDE_FETCH_CONTENT_REPO
-@@ -315,3 +360,4 @@
+@@ -315,3 +361,4 @@
    LIBRARY DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
    ARCHIVE DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
    RUNTIME DESTINATION "bin" COMPONENT unified-memory-framework)
 +endif()
 diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
---- a/sycl/CMakeLists.txt	2025-02-18 14:38:06.000000000 -0800
-+++ b/sycl/CMakeLists.txt	2025-02-18 22:19:13.037912068 -0800
-@@ -243,11 +243,6 @@
+--- a/sycl/CMakeLists.txt	2025-02-20 11:28:51.000000000 -0800
++++ b/sycl/CMakeLists.txt	2025-02-20 20:34:17.940442844 -0800
+@@ -234,22 +234,12 @@
+ string(REPLACE "${sycl_inc_dir}" "${SYCL_INCLUDE_BUILD_DIR}"
+   OUT_HEADERS_IN_SYCLCOMPAT_DIR "${HEADERS_IN_SYCLCOMPAT_DIR}")
+ 
+-set(OUT_UR_HEADERS
+-  ${SYCL_INCLUDE_BUILD_DIR}/ur_api.h
+-  ${SYCL_INCLUDE_BUILD_DIR}/ur_api_funcs.def
+-  ${SYCL_INCLUDE_BUILD_DIR}/ur_print.hpp)
+-set(UR_HEADERS_TO_COPY
+-  ${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api.h
+-  ${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api_funcs.def
+-  ${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_print.hpp)
+-
+ # Copy SYCL headers from sources to build directory
+ add_custom_target(sycl-headers
+   DEPENDS ${OUT_HEADERS_IN_SYCL_DIR}
+           ${OUT_HEADERS_IN_CL_DIR}
+           ${OUT_HEADERS_IN_STD_DIR}
+           ${OUT_HEADERS_IN_SYCLCOMPAT_DIR}
+-          ${OUT_UR_HEADERS}
            sycl-device-aspect-macros-header
            boost_mp11-headers)
  
--list(APPEND UR_HEADERS_TO_COPY
--  ${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api.h
--  ${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api_funcs.def
--  ${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_print.hpp
--)
- add_custom_command(
-   OUTPUT  ${OUT_HEADERS_IN_SYCL_DIR}
+@@ -258,18 +248,15 @@
            ${OUT_HEADERS_IN_CL_DIR}
-@@ -257,13 +252,11 @@
+           ${OUT_HEADERS_IN_STD_DIR}
+           ${OUT_HEADERS_IN_SYCLCOMPAT_DIR}
+-          ${OUT_UR_HEADERS}
+   DEPENDS ${HEADERS_IN_SYCL_DIR}
            ${HEADERS_IN_CL_DIR}
            ${HEADERS_IN_STD_DIR}
            ${HEADERS_IN_SYCLCOMPAT_DIR}
@@ -88,7 +104,7 @@ diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
    COMMENT "Copying SYCL headers ...")
  
  # Copy SYCL headers from source to install directory
-@@ -273,12 +266,6 @@
+@@ -279,12 +266,6 @@
  install(DIRECTORY ${BOOST_MP11_DESTINATION_DIR} DESTINATION ${SYCL_INCLUDE_DIR}/sycl/detail COMPONENT boost_mp11-headers)
  install(DIRECTORY "${sycl_inc_dir}/syclcompat" DESTINATION ${SYCL_INCLUDE_DIR} COMPONENT sycl-headers)
  install(FILES "${sycl_inc_dir}/syclcompat.hpp" DESTINATION ${SYCL_INCLUDE_DIR} COMPONENT sycl-headers)
@@ -101,7 +117,7 @@ diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
  
  if (WIN32)
    set(SYCL_RT_LIBS sycl${SYCL_MAJOR_VERSION})
-@@ -468,8 +455,6 @@
+@@ -474,8 +455,6 @@
       sycl-headers-extras
       sycl
       libsycldevice
@@ -110,7 +126,7 @@ diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
       ${XPTIFW_LIBS}
       ${SYCL_TOOLCHAIN_DEPS}
  )
-@@ -515,8 +500,8 @@
+@@ -521,8 +500,8 @@
        "CUDA support requires adding \"libclc\" to the CMake argument \"LLVM_ENABLE_PROJECTS\"")
    endif()
  
@@ -121,7 +137,7 @@ diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
  endif()
  
  if("hip" IN_LIST SYCL_ENABLE_BACKENDS)
-@@ -532,8 +517,8 @@
+@@ -538,8 +517,8 @@
        "HIP support requires adding \"lld\" to the CMake argument \"LLVM_ENABLE_PROJECTS\"")
    endif()
  

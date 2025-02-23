@@ -66,24 +66,32 @@ multilib_src_configure() {
 	local llvm_targets=( "host" )
 	local llvm_external_projects=( "sycl" "llvm-spirv" "opencl" "xpti" "xptifw" "libdevice" )
 	local llvm_enable_projects=("clang" "${llvm_external_projects[@]}")
-	local sycl_enable_backends=("opencl")
+	local sycl_enable_backends=( "opencl" )
 	local libclc_targets=()
 
-	use jit && llvm_external_projects+=("sycl-jit")
+	use jit && llvm_external_projects+=( "sycl-jit" )
 
 	if use cuda ; then
 		llvm_targets+=( "NVPTX" )
-		llvm_enable_projects+=("libclc")
-		sycl_enable_backends+=("cuda")
+		llvm_enable_projects+=( "libclc" )
+		sycl_enable_backends+=( "cuda" )
+		libclc_targets+=(
+			"nvptx--"
+			"nvptx64--"
+			"nvptx--nvidiacl"
+			"nvptx64--nvidiacl"
+		)
 	fi
 	use l0 && sycl_enable_backends+=( "level_zero" )
 
-	use cuda && libclc_targets+=(
-		"nvptx--"
-		"nvptx64--"
-		"nvptx--nvidiacl"
-		"nvptx64--nvidiacl"
-	)
+	if use rocm ; then
+		llvm_targets+=( "AMDGPU" )
+		llvm_enable_projects+=( "libclc" "lld" )
+		sycl_enable_backends+=( "hip" )
+		libclc_targets+=(
+			"amdgcn--amdhsa"
+		)
+	fi
 
 	llvm_targets=${llvm_targets[*]}
 	llvm_external_projects=${llvm_external_projects[*]}
@@ -128,7 +136,7 @@ multilib_src_configure() {
 		-DSYCL_ENABLE_EXTENSION_JIT=$(usex jit)
 		-DSYCL_ENABLE_MAJOR_RELEASE_PREVIEW_LIB=ON
 		-DBUG_REPORT_URL="https://github.com/intel/llvm/issues"
-		-DOCAMLFIND=NO
+		-DOCAMLFIND=OFF
 
 		-DBOOST_MP11_SOURCE_DIR="${WORKDIR}/mp11-${BOOST_MP11_COMMIT}"
 		-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR="/usr/include"
@@ -145,6 +153,9 @@ multilib_src_configure() {
 	fi
 	mycmakeargs+=(
 		-DLLVM_VERSION_SUFFIX="${suffix}"
+	)
+	use cuda && mycmakeargs+=(
+		-DLIBCLC_GENERATE_REMANGLED_VARIANTS=ON
 	)
 	use l0 && mycmakeargs+=(
 		-DLEVEL_ZERO_INCLUDE_DIR="/usr/include/level_zero"
@@ -163,7 +174,9 @@ multilib_src_configure() {
 }
 
 multilib_src_compile() {
-	tc-env_build cmake_build sycl-toolchain
+	local targets=( sycl-toolchain )
+	use cuda && targets+=( clang-nvlink-wrapper )
+	tc-env_build cmake_build ${targets[@]}
 }
 
 multilib_src_test() {

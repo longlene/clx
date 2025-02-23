@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit cmake
+inherit cmake flag-o-matic
 
 DESCRIPTION="oneAPI DPC++ Library"
 HOMEPAGE="https://github.com/oneapi-src/oneDPL"
@@ -30,4 +30,9 @@ src_prepare() {
 	sed -e '/install/{/set(OUTPUT_DIR/d}' \
 		-i CMakeLists.txt
 	cmake_src_prepare
+}
+
+src_configure() {
+	filter-flags -mabm --param=l1-cache-* --param=l2-cache-*
+	cmake_src_configure
 }

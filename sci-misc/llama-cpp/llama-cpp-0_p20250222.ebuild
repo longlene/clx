@@ -1,11 +1,11 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="6dde1782483d6b0a1d59f5a5fbcb3119b9d34c27"
+EGIT_COMMIT="51f311e057723b7454d0ebe20f545a1a2c4db6b2"
 
 DESCRIPTION="Port of Facebook's LLaMA model in C/C++"
 HOMEPAGE="https://github.com/ggerganov/llama.cpp"
