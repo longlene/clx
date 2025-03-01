@@ -8,13 +8,10 @@ PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
-LLAMA_CPP_COMMIT="26a8406ba9198eb6fdd8329fa717555b4f77f05f"
-
 DESCRIPTION="Python bindings for the llama.cpp library"
 HOMEPAGE="https://github.com/abetlen/llama-cpp-python"
 SRC_URI="
 	https://github.com/abetlen/llama-cpp-python/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/ggerganov/llama.cpp/archive/${LLAMA_CPP_COMMIT}.tar.gz -> llama.cpp-${LLAMA_CPP_COMMIT}.tar.gz
 "
 
 LICENSE="MIT"
@@ -22,6 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
+	sci-misc/llama-cpp
 	>=dev-python/typing-extensions-4.5.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
 	>=dev-python/diskcache-5.6.1[${PYTHON_USEDEP}]
@@ -36,10 +34,4 @@ BDEPEND="
 
 distutils_enable_tests pytest
 
-S="${WORKDIR}"/${P}
-
-src_prepare() {
-	default
-	rmdir vendor/llama.cpp && mv "${WORKDIR}"/llama.cpp-${LLAMA_CPP_COMMIT} vendor/llama.cpp
-	distutils-r1_src_prepare
-}
+export CMAKE_ARGS="-DLLAMA_BUILD=OFF -DLLAVA_BUILD=OFF"

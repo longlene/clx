@@ -30,14 +30,15 @@ REQUIRED_USE="|| ( cuda rocm )"
 
 RDEPEND="
 	>=sci-libs/caffe2-2.5.1[cuda?,rocm?,${PYTHON_SINGLE_USEDEP}]
+	>=sci-libs/outlines-0.1.11[${PYTHON_SINGLE_USEDEP}]
 	>=sci-libs/transformers-4.48.2[${PYTHON_SINGLE_USEDEP}]
 	>=sci-libs/tokenizers-0.19.1[${PYTHON_SINGLE_USEDEP}]
-	>=sci-libs/tiktoken-0.6.0[${PYTHON_SINGLE_USEDEP}]
 	cuda? (
 		>=dev-libs/cutlass-3.7.0
 	)
 	$(python_gen_cond_dep '
 		sci-libs/sentencepiece[python,${PYTHON_USEDEP}]
+		>=dev-python/tiktoken-0.6.0[${PYTHON_USEDEP}]
 		dev-python/psutil[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
@@ -49,11 +50,10 @@ RDEPEND="
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		>=dev-python/openai-1.52.0[${PYTHON_USEDEP}]
 		>=dev-python/pydantic-2.9[${PYTHON_USEDEP}]
-		>=dev-python/prometheus_client-0.18.0[${PYTHON_USEDEP}]
+		>=dev-python/prometheus-client-0.18.0[${PYTHON_USEDEP}]
 		dev-python/pillow[${PYTHON_USEDEP}]
 		>=dev-python/prometheus-fastapi-instrumentator-7.0.0[${PYTHON_USEDEP}]
 		>=dev-python/lm-format-enforcer-0.10.9[${PYTHON_USEDEP}]
-		>=dev-python/outlines-0.1.11[${PYTHON_USEDEP}]
 		>=dev-python/lark-1.2.2[${PYTHON_USEDEP}]
 		>=dev-python/xgrammar-0.1.11[${PYTHON_USEDEP}]
 		>=dev-python/typing_extensions-4.10[${PYTHON_USEDEP}]

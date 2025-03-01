@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake flag-o-matic vcs-snapshot
 
-EGIT_COMMIT="9a4acb374565f4146b8d6eb1cffdcd7d437d1ba2"
+EGIT_COMMIT="eee63e831077047a4aa8378519f9d74796bacf88"
 KOMPUTE_COMMIT="4565194ed7c32d1d2efa32ceab4d3c6cae006306"
 
 DESCRIPTION="Tensor library for machine learning"
