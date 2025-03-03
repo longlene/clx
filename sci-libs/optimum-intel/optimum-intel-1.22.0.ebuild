@@ -21,10 +21,10 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=sci-libs/pytorch-1.11.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-libs/optimum-1.24[${PYTHON_SINGLE_USEDEP}]
-	>=sci-libs/transformers-4.36[${PYTHON_SINGLE_USEDEP}]
-	>=sci-libs/datasets-1.4.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-libs/optimum-1.24.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-libs/transformers-4.36.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		>=sci-libs/datasets-1.4.0[${PYTHON_SINGLE_USEDEP}]
 		sci-libs/sentencepiece[python,${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		sci-libs/onnx[${PYTHON_USEDEP}]

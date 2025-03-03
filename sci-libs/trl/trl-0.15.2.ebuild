@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,10 +20,10 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=sci-libs/accelerate-0.34.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-libs/datasets-2.21.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-libs/transformers-4.46.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/rich[${PYTHON_USEDEP}]
 	')
-	>=sci-libs/transformers-4.46.0[${PYTHON_SINGLE_USEDEP}]
 "
 BDEPEND=""
 

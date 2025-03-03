@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -11,6 +11,7 @@ inherit distutils-r1
 DESCRIPTION="Access and share datasets for Audio, Computer Vision, and NLP tasks"
 HOMEPAGE="
 	https://pypi.org/project/datasets/
+	https://github.com/huggingface/datasets/
 "
 SRC_URI="https://github.com/huggingface/${PN}/archive/refs/tags/${PV}.tar.gz
 	-> ${P}.gh.tar.gz"
@@ -20,24 +21,22 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# For pin on fsspec see https://github.com/huggingface/datasets/issues/6333
 RDEPEND="
-	${PYTHON_DEPS}
-	sci-libs/pytorch[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		dev-python/absl-py[${PYTHON_USEDEP}]
-		dev-python/aiohttp[${PYTHON_USEDEP}]
-		>=dev-python/fsspec-2023.10.0[${PYTHON_USEDEP}]
-		dev-python/multiprocess[${PYTHON_USEDEP}]
-		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/filelock[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
+		>=dev-python/pyarrow-15.0.0[${PYTHON_USEDEP},parquet,snappy]
+		>=dev-python/dill-0.3.0[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
-		dev-python/pyarrow[${PYTHON_USEDEP},parquet,snappy]
-		dev-python/pyyaml[${PYTHON_USEDEP}]
-		dev-python/tqdm[${PYTHON_USEDEP}]
+		>=dev-python/requests-2.32.2[${PYTHON_USEDEP}]
+		>=dev-python/tqdm-4.66.3[${PYTHON_USEDEP}]
 		dev-python/xxhash[${PYTHON_USEDEP}]
-		dev-python/zstandard[${PYTHON_USEDEP}]
-		>=sci-libs/huggingface_hub-0.14.0[${PYTHON_USEDEP}]
-		dev-python/scikit-learn[${PYTHON_USEDEP}]
+		>=dev-python/multiprocess-0.70.17[${PYTHON_USEDEP}]
+		>=dev-python/fsspec-2023.1.0[${PYTHON_USEDEP}]
+		dev-python/aiohttp[${PYTHON_USEDEP}]
+		>=sci-libs/huggingface_hub-0.24.0[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		>=dev-python/pyyaml-5.1.0[${PYTHON_USEDEP}]
 	')
 "
 DEPEND="${RDEPEND}"

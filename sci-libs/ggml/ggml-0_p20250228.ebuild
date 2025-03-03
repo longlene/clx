@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake flag-o-matic vcs-snapshot
 
-EGIT_COMMIT="eee63e831077047a4aa8378519f9d74796bacf88"
+EGIT_COMMIT="ff9052988b76e137bcf92bb335733933ca196ac0"
 KOMPUTE_COMMIT="4565194ed7c32d1d2efa32ceab4d3c6cae006306"
 
 DESCRIPTION="Tensor library for machine learning"
@@ -18,7 +18,7 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="blas cuda mkl kompute opencl +openmp rocm -sycl test vulkan"
+IUSE="blas cuda mkl kompute -opencl +openmp rocm -sycl test vulkan"
 
 DEPEND="
 	blas? (
@@ -63,10 +63,10 @@ src_configure() {
 	local blas_vendor="Generic"
 	if use blas ; then
 		blas=ON
-		if use mkl ; then
-			blas_vendor="Intel"
-		elif use cuda ; then
+		if use cuda ; then
 			blas_vendor="NVHPC"
+		elif use mkl ; then
+			blas_vendor="Intel"
 		fi
 	fi
 	local sycl_target="INTEL"

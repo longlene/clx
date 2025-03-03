@@ -19,20 +19,21 @@ SRC_URI="https://github.com/huggingface/${PN}/archive/refs/tags/v${PV}.tar.gz
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-RESTRICT="test" # Need some modules, not yet packaged
+
+RESTRICT="test"
 
 RDEPEND="
-	sci-libs/tokenizers[${PYTHON_SINGLE_USEDEP}]
+	>=sci-libs/tokenizers-0.21[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/filelock[${PYTHON_USEDEP}]
-		sci-libs/huggingface_hub[${PYTHON_USEDEP}]
-		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/packaging[${PYTHON_USEDEP}]
-		dev-python/pyyaml[${PYTHON_USEDEP}]
+		>=sci-libs/huggingface_hub-0.26.0[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
+		>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
+		>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
 		dev-python/regex[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
-		sci-libs/safetensors[${PYTHON_USEDEP}]
-		dev-python/tqdm[${PYTHON_USEDEP}]
+		>=sci-libs/safetensors-0.4.1[${PYTHON_USEDEP}]
+		>=dev-python/tqdm-4.27.0[${PYTHON_USEDEP}]
 	')
 "
 

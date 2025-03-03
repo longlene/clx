@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_12 )
 
 inherit distutils-r1
 
-EGIT_COMMIT="b15ef354b2db4de4654fb521b52908c1c2d79c7e"
+EGIT_COMMIT="3f9dd88d6f739b98a86aea608e238621f5b40add"
 
 DESCRIPTION="An open-weight TTS model with 82 million parameters"
 HOMEPAGE="
@@ -28,7 +28,7 @@ RDEPEND="
 	$(python_gen_cond_dep '
 		sci-libs/huggingface_hub[${PYTHON_USEDEP}]
 		dev-python/loguru[${PYTHON_USEDEP}]
-		>=dev-python/misaki-0.8.2[${PYTHON_USEDEP}]
+		>=dev-python/misaki-0.8.4[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.26.4[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 	')

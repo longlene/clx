@@ -12,7 +12,7 @@ SRC_URI="https://github.com/ggerganov/whisper.cpp/archive/v${PV}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+models opencl openvino sdl2"
+IUSE="+models -opencl openvino sdl2"
 
 DEPEND="
 	sci-libs/ggml[opencl?]

@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,7 +15,7 @@ HOMEPAGE="
 	https://github.com/BerriAI/litellm
 	https://pypi.org/project/litellm/
 "
-SRC_URI="https://github.com/BerriAI/litellm/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/BerriAI/litellm/archive/refs/tags/v${PV}-stable.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -25,14 +25,13 @@ RDEPEND="
 	sci-libs/tokenizers[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]
-		>=dev-python/openai-1.55.3[${PYTHON_USEDEP}]
+		>=dev-python/openai-1.61.0[${PYTHON_USEDEP}]
 		>=dev-python/python-dotenv-0.2.0[${PYTHON_USEDEP}]
 		>=dev-python/tiktoken-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/importlib-metadata-6.8.0[${PYTHON_USEDEP}]
 		dev-python/click[${PYTHON_USEDEP}]
 		>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
-		>=dev-python/requests-2.31.0[${PYTHON_USEDEP}]
 		>=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/jsonschema-4.22.0[${PYTHON_USEDEP}]
 	')

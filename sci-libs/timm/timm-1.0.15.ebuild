@@ -21,7 +21,7 @@ RDEPEND="
 	sci-libs/pytorch[${PYTHON_SINGLE_USEDEP}]
 	sci-libs/torchvision[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		dev-python/pyyaml
+		dev-python/pyyaml[${PYTHON_USEDEP}]
 		sci-libs/huggingface_hub[${PYTHON_USEDEP}]
 		sci-libs/safetensors[${PYTHON_USEDEP}]
 	')

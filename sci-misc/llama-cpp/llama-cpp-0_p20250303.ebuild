@@ -5,22 +5,23 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="d7cfe1ffe0f435d0048a6058d529daf76e072d9c"
+EGIT_COMMIT="cc473cac7cea1484c1f870231073b0bf0352c6f9"
 
 DESCRIPTION="Port of Facebook's LLaMA model in C/C++"
-HOMEPAGE="https://github.com/ggerganov/llama.cpp"
+HOMEPAGE="https://github.com/ggml-org/llama.cpp"
 SRC_URI="
-	https://github.com/ggerganov/llama.cpp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
+	https://github.com/ggml-org/llama.cpp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
 "
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="blas cuda kompute mkl opencl openmp rocm sycl vulkan test"
+IUSE="blas cuda kompute mkl -opencl openmp rocm sycl vulkan ssl test"
 
 DEPEND="
 	net-misc/curl
 	sci-libs/ggml[blas?,cuda?,kompute?,mkl?,opencl?,openmp?,rocm?,vulkan?]
+	ssl? ( dev-libs/openssl )
 "
 RDEPEND="${DEPEND}"
 BEPEND=""
@@ -44,6 +45,7 @@ src_configure() {
 	local mycmakeargs=(
 		-DLLAMA_BUILD_TESTS=OFF
 		-DLLAMA_CURL=ON
+		-DLLAMA_SERVER_SSL=$(usex ssl)
 		-DLLAMA_BUILD_TESTS=$(usex test)
 	)
 	cmake_src_configure

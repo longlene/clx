@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,9 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-libs/pytorch-1.10.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-libs/pytorch-2.0.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
 		>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
 		dev-python/psutil[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]

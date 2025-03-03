@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
-EGIT_COMMIT="da5d50827d7e6936dea98d217b93ed42ce4fd890"
+EGIT_COMMIT="14675cc09b1db6e452bd1114435ffcd3a1f0e770"
 
 DESCRIPTION="A G2P engine designed for Kokoro models"
 HOMEPAGE="
