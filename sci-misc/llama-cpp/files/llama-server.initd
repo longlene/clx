@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+command="/usr/bin/llama-server"
+command_args="${LLAMA_SERVER_OPTS}"
+command_background="yes"
+command_user="${SVCNAME#*.}"
+description="LLaMA.cpp HTTP Server"
+name="LLaMA.cpp HTTP Server"
+pidfile="/run/${RC_SVCNAME}.pid"
+
+depend() {
+	need net
+}
+

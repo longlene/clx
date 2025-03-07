@@ -1,4 +1,4 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -26,7 +26,7 @@ IUSE="cuda mkl blas"
 
 DEPEND="
 	mkl? ( sci-libs/mkl )
-	cuda? ( dev-util/nvidia-cuda-sdk )
+	cuda? ( dev-util/nvidia-cuda-toolkit )
 	blas? ( sci-libs/openblas )
 "
 RDEPEND="${DEPEND}"

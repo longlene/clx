@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="cc473cac7cea1484c1f870231073b0bf0352c6f9"
+EGIT_COMMIT="42994048a34b0bddd72b57c26f8ae2c7d417946d"
 
 DESCRIPTION="Port of Facebook's LLaMA model in C/C++"
 HOMEPAGE="https://github.com/ggml-org/llama.cpp"
@@ -49,4 +49,10 @@ src_configure() {
 		-DLLAMA_BUILD_TESTS=$(usex test)
 	)
 	cmake_src_configure
+}
+
+src_install() {
+	cmake_src_install
+	newinitd "${FILESDIR}"/llama-server.initd llama-server
+	newconfd "${FILESDIR}"/llama-server.confd llama-server
 }

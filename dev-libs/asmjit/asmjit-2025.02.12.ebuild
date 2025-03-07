@@ -1,10 +1,10 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 inherit cmake
 
-CommitId=4e50d8b319d637c5f95aac4394738c5c5bd8e571
+CommitId=029075b84bf0161a761beb63e6eda519a29020db
 
 DESCRIPTION="Machine code generation for C++"
 HOMEPAGE="https://asmjit.com/"
