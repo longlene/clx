@@ -1,11 +1,11 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit rebar vcs-snapshot
 
-EGIT_COMMIT="85b60d927faaf7038cd6b79a0edfa5b0bab315a4"
+EGIT_COMMIT="b2e3e5e95c0dc13a11617b7bb3ac943aa6795ca5"
 
 DESCRIPTION="An Erlang implementation of RAFT from WhatsApp"
 HOMEPAGE="https://github.com/WhatsApp/waraft"

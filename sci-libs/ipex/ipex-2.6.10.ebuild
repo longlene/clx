@@ -38,10 +38,7 @@ IPEX_VERSION="${PV}"
 
 src_prepare() {
 	default
-	eapply "${FILESDIR}"/system-onednn.patch
 	eapply "${FILESDIR}"/system-python.patch
-	eapply "${FILESDIR}"/system-sleef.patch
-	eapply "${FILESDIR}"/system-libxsmm.patch
 	eapply "${FILESDIR}"/setup-fix.patch
 	eapply "${FILESDIR}"/version-header.patch
 	eapply "${FILESDIR}"/install-path.patch
@@ -64,6 +61,11 @@ src_configure() {
 		-DCMAKE_INSTALL_LIBDIR=$(get_libdir)
 		-DBUILD_MODULE_TYPE="${mode}"
 		-DBUILD_STATIC_ONEMKL=OFF
+		-DUSE_SYSTEM_ONEDNN=ON
+		-DUSE_SYSTEM_IDEEP=ON
+		-DUSE_SYSTEM_LIBXSMM=ON
+		-DUSE_SYSTEM_MKL=ON
+		-DUSE_SYSTEM_SLEEF=ON
 	)
 	cmake_src_configure
 }

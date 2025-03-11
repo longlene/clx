@@ -1,11 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2025 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit desktop vcs-snapshot
 
-EGIT_COMMIT="b485166240a66e1aee0a38d80f941936a663f4f1"
+EGIT_COMMIT="6f30fc8502ade6fd510d6ef8280686ada7b60964"
 
 DESCRIPTION="Connect to Plan 9 CPU servers from other operating systems"
 HOMEPAGE="https://github.com/9fans/drawterm"

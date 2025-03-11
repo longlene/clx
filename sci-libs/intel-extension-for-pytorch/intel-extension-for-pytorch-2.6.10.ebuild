@@ -45,10 +45,7 @@ export EXT_DIR="${WORKDIR}"/${P}-xpu_build/intel_extension_for_pytorch/csrc/
 
 src_prepare() {
 	default
-	eapply "${FILESDIR}"/system-onednn.patch
 	eapply "${FILESDIR}"/system-python.patch
-	eapply "${FILESDIR}"/system-sleef.patch
-	eapply "${FILESDIR}"/system-libxsmm.patch
 	eapply "${FILESDIR}"/setup-fix.patch
 	eapply "${FILESDIR}"/version-header.patch
 	eapply "${FILESDIR}"/install-path.patch
