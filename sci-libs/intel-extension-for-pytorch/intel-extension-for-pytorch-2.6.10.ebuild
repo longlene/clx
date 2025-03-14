@@ -40,8 +40,13 @@ distutils_enable_tests pytest
 
 S="${WORKDIR}"/${P}-xpu
 
-IPEX_VERSION="${PV}"
-export EXT_DIR="${WORKDIR}"/${P}-xpu_build/intel_extension_for_pytorch/csrc/
+CMAKE_IN_SOURCE_BUILD=1
+
+export IPEX_VERSION="${PV}"
+
+pkg_setup() {
+	python_setup
+}
 
 src_prepare() {
 	default

@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2025 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,11 +21,11 @@ RDEPEND="${DEPEND}"
 
 src_configure() {
 	local mycmakeargs=(
-	-DSQLITECPP_RUN_CPPLINT=OFF
-	-DSQLITECPP_RUN_CPPCHECK=OFF
-	-DSQLITECPP_BUILD_EXAMPLES=$(usex example)
-	-DSQLITECPP_BUILD_TESTS=$(usex test)
-	-DSQLITECPP_INTERNAL_SQLITE=$(usex !system-sqlite)
+		-DSQLITECPP_BUILD_TESTS=$(usex test)
+		-DSQLITECPP_INTERNAL_SQLITE=$(usex !system-sqlite)
+		-DSQLITECPP_RUN_CPPLINT=OFF
+		-DSQLITECPP_RUN_CPPCHECK=OFF
+		-DSQLITECPP_BUILD_EXAMPLES=$(usex example)
 	)
 	cmake_src_configure
 }

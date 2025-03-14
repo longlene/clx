@@ -1,24 +1,3 @@
-diff -Nur a/CMakeLists.txt b/CMakeLists.txt
---- a/CMakeLists.txt	2024-12-15 02:42:10.145415141 -0800
-+++ b/CMakeLists.txt	2024-12-15 03:08:42.685471989 -0800
-@@ -1,5 +1,5 @@
- cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
--project(${IPEX_PROJ_NAME} VERSION ${CMAKE_PROJECT_VERSION})
-+project(${IPEX_PROJ_NAME} VERSION "2.5.0")
- 
- # Platform
- set(LINUX False)
-@@ -31,8 +31,8 @@
- set(CMAKE_INSTALL_RPATH $ORIGIN)
- 
- # Need the torch package
--set(Torch_COMP_VERION "${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}")
--find_package(Torch ${Torch_COMP_VERION} REQUIRED)
-+set(Torch_COMP_VERION "2.5" CACHE STRING "")
-+find_package(Torch REQUIRED)
- 
- if(NOT EXISTS ${TORCH_INSTALL_PREFIX})
-   message(FATAL_ERROR "Can NOT find torch install path at ${TORCH_INSTALL_PREFIX}!")
 diff -Nur a/csrc/CMakeLists.txt b/csrc/CMakeLists.txt
 --- a/csrc/CMakeLists.txt	2024-12-15 02:42:10.132081808 -0800
 +++ b/csrc/CMakeLists.txt	2024-12-15 13:43:39.366827034 -0800

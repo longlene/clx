@@ -1,17 +1,17 @@
 diff -Nur a/intel_extension_for_pytorch/csrc/CMakeLists.txt b/intel_extension_for_pytorch/csrc/CMakeLists.txt
---- a/intel_extension_for_pytorch/csrc/CMakeLists.txt	2024-12-19 19:33:09.000000000 -0800
-+++ b/intel_extension_for_pytorch/csrc/CMakeLists.txt	2025-01-20 08:30:03.114199023 -0800
-@@ -37,8 +37,8 @@
- 
+--- a/intel_extension_for_pytorch/csrc/CMakeLists.txt	2025-03-10 19:27:34.000000000 -0700
++++ b/intel_extension_for_pytorch/csrc/CMakeLists.txt	2025-03-14 01:46:40.873972641 -0700
+@@ -38,8 +38,8 @@
  add_library(intel-ext-pt-python SHARED ${PY_CPP_OBJS} init_python_bindings.cpp)
+ set_target_properties(intel-ext-pt-python PROPERTIES CXX_VISIBILITY_PRESET hidden CXX_VISIBILITY_INLINES_HIDDEN ON)
  
 -include(${IPEX_ROOT_DIR}/cmake/ClangFormat.cmake)
  if(CLANG_FORMAT)
-+  include(${IPEX_ROOT_DIR}/cmake/ClangFormat.cmake)
++include(${IPEX_ROOT_DIR}/cmake/ClangFormat.cmake)
    file(GLOB_RECURSE ALL_FRONT_END_NATIVE_CSRC_FILES ${IPEX_FRONT_END_ROOT_DIR}/**.[ch] ${IPEX_FRONT_END_ROOT_DIR}/**.[ch]pp)
    add_custom_target(CL_FORMAT_FRONT_END_NATIVE_CSRC COMMAND ${CLANG_FORMAT_EXEC} -i -style=file ${ALL_FRONT_END_NATIVE_CSRC_FILES})
    add_dependencies(intel-ext-pt-python CL_FORMAT_FRONT_END_NATIVE_CSRC)
-@@ -46,7 +46,7 @@
+@@ -47,7 +47,7 @@
  include_directories(${IPEX_CPU_CPP_THIRD_PARTY_ROOT}/libxsmm/include)
  
  target_include_directories(intel-ext-pt-python PUBLIC ${TORCH_INCLUDE_DIRS})
@@ -20,7 +20,7 @@ diff -Nur a/intel_extension_for_pytorch/csrc/CMakeLists.txt b/intel_extension_fo
  target_include_directories(intel-ext-pt-python PUBLIC ${pybind11_INCLUDE_DIRS})
  
  target_link_directories(intel-ext-pt-python PRIVATE ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR})
-@@ -65,13 +65,13 @@
+@@ -66,8 +66,8 @@
    target_link_libraries(intel-ext-pt-python PUBLIC intel-ext-pt-gpu)
  endif()
  
@@ -30,28 +30,13 @@ diff -Nur a/intel_extension_for_pytorch/csrc/CMakeLists.txt b/intel_extension_fo
    target_link_libraries(intel-ext-pt-python PUBLIC ${TORCH_PYTHON_LIBRARIES})
  endif()
  
- function (print_python_config_summary)
--  get_target_property(PYTHON_LINK_LIBRARIES intel-ext-pt-python LINK_LIBRARIES)
-+  get_target_property(Python_LINK_LIBRARIES intel-ext-pt-python LINK_LIBRARIES)
- 
-   print_config_summary()
-   message(STATUS "******** Summary on Python ********")
-@@ -85,7 +85,7 @@
- 
-   message(STATUS "  CXX flags             : ${CMAKE_CXX_FLAGS}")
-   message(STATUS "  CXX Linker options    : ${CMAKE_SHARED_LINKER_FLAGS}")
--  message(STATUS "  Link libraries        : ${PYTHON_LINK_LIBRARIES}")
-+  message(STATUS "  Link libraries        : ${Python_LINK_LIBRARIES}")
- 
-   message(STATUS "  Torch version         : ${Torch_VERSION}")
-   message(STATUS "  Torch include         : ${TORCH_INCLUDE_DIRS}")
-@@ -93,11 +93,11 @@
+@@ -94,11 +94,11 @@
    message(STATUS "  Torch Python libs     : ${TORCH_PYTHON_LIBRARIES}")
  endif()
  
 -  message(STATUS "  Python version        : ${PYTHON_BUILD_VERSION}")
 -  message(STATUS "  Python include        : ${PYTHON_INCLUDE_DIR}")
-+  message(STATUS "  Python version        : ${Python_BUILD_VERSION}")
++  message(STATUS "  Python version        : ${Python_VERSION}")
 +  message(STATUS "  Python include        : ${Python_INCLUDE_DIRS}")
    message(STATUS "  pybind11 include      : ${pybind11_INCLUDE_DIRS}")
  if(WINDOWS)
@@ -61,8 +46,8 @@ diff -Nur a/intel_extension_for_pytorch/csrc/CMakeLists.txt b/intel_extension_fo
  
    message(STATUS "")
 diff -Nur a/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt b/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt
---- a/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt	2024-12-19 19:33:09.000000000 -0800
-+++ b/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt	2025-01-20 08:25:29.280856050 -0800
+--- a/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt	2025-03-10 19:27:34.000000000 -0700
++++ b/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt	2025-03-14 01:44:29.392108282 -0700
 @@ -18,5 +18,5 @@
  
  target_include_directories(PY_CPU_OBJ PUBLIC ${TORCH_INCLUDE_DIRS})
@@ -71,8 +56,8 @@ diff -Nur a/intel_extension_for_pytorch/csrc/cpu/CMakeLists.txt b/intel_extensio
 +target_include_directories(PY_CPU_OBJ PUBLIC ${Python_INCLUDE_DIRS})
  target_include_directories(PY_CPU_OBJ PUBLIC ${pybind11_INCLUDE_DIRS})
 diff -Nur a/setup.py b/setup.py
---- a/setup.py	2024-12-19 19:33:09.000000000 -0800
-+++ b/setup.py	2025-01-20 08:39:16.844218511 -0800
+--- a/setup.py	2025-03-10 19:27:34.000000000 -0700
++++ b/setup.py	2025-03-14 01:44:29.420634657 -0700
 @@ -88,6 +88,7 @@
  from setuptools.command.build_clib import build_clib
  from setuptools.command.egg_info import egg_info
@@ -81,7 +66,7 @@ diff -Nur a/setup.py b/setup.py
  from pathlib import Path
  
  import sysconfig
-@@ -508,10 +509,10 @@
+@@ -519,10 +520,10 @@
  base_dir = os.path.dirname(os.path.abspath(__file__))
  # Generate version info (ipex.__version__)
  torch_git_sha = get_torch_git_head_sha()
@@ -95,17 +80,17 @@ diff -Nur a/setup.py b/setup.py
  create_version_files(
      base_dir,
      ipex_build_version,
-@@ -1099,6 +1100,8 @@
+@@ -1032,7 +1033,7 @@
+     ]
  
      if not IS_WINDOWS:
-         library_dirs = ["lib", os.path.join(pytorch_install_dir, "lib")]
-+        if 'EXT_DIR' in os.environ:
-+            library_dirs.append(os.environ['EXT_DIR'])
+-        library_dirs = ["lib", os.path.join(pytorch_install_dir, "lib")]
++        library_dirs = [os.path.join(base_dir, "intel_extension_for_pytorch", "csrc"), os.path.join(pytorch_install_dir, "lib")]
  
          extra_compile_args = [
              "-Wall",
-@@ -1208,6 +1211,9 @@
-     ]
+@@ -1233,6 +1234,9 @@
+     ],
  }
  
 +packages=find_packages(include=[PACKAGE_NAME, PACKAGE_NAME+'.*'])
@@ -114,7 +99,7 @@ diff -Nur a/setup.py b/setup.py
  
  setup(
      name=PACKAGE_NAME,
-@@ -1218,11 +1224,11 @@
+@@ -1243,11 +1247,11 @@
      url="https://github.com/intel/intel-extension-for-pytorch",
      author="Intel Corp.",
      install_requires=_build_installation_dependency(),

@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-EGIT_COMMIT="8be5147a33289d5adba6995ddbdd2ad083e82b32"
+EGIT_COMMIT="ace9f4a60b686463fdad15cd016c548237cb79e0"
 CUDART_PV="12.6.2"
 
 DESCRIPTION="Unified Memory Framework"
@@ -21,7 +21,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 IUSE="cuda +hwloc jemalloc l0"
 
 DEPEND="
