@@ -1,0 +1,29 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-03-14 17:59:53.612697422 -0700
++++ b/CMakeLists.txt	2025-03-14 19:05:01.082835337 -0700
+@@ -122,9 +122,9 @@
+ 
+ set(THREADS_PREFER_PTHREAD_FLAG ON)
+ find_package(Threads REQUIRED)
+-if (BUILD_PLUGINS OR BUILD_PARSERS)
+-    include(third_party/protobuf.cmake)
+-endif()
++#if (BUILD_PLUGINS OR BUILD_PARSERS)
++#    include(third_party/protobuf.cmake)
++#endif()
+ if(NOT CUB_ROOT_DIR)
+   if (CUDA_VERSION VERSION_LESS 11.0)
+     set(CUB_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third_party/cub CACHE STRING "directory of CUB installation")
+@@ -139,9 +139,9 @@
+ include_directories(
+     ${CUDA_INCLUDE_DIRS}
+ )
+-if(BUILD_PARSERS)
+-    configure_protobuf(${PROTOBUF_VERSION})
+-endif()
++#if(BUILD_PARSERS)
++#    configure_protobuf(${PROTOBUF_VERSION})
++#endif()
+ 
+ # Windows library names have major version appended.
+ if (MSVC)

@@ -1,0 +1,9 @@
+diff -Nur a/parsers/CMakeLists.txt b/parsers/CMakeLists.txt
+--- a/parsers/CMakeLists.txt	2025-03-14 17:59:53.586905936 -0700
++++ b/parsers/CMakeLists.txt	2025-03-14 18:41:05.472784749 -0700
+@@ -35,4 +35,4 @@
+    ${Protobuf_INCLUDE_DIR}
+ )
+ 
+-add_subdirectory(onnx)
++#add_subdirectory(onnx)

@@ -1,0 +1,13 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-03-14 17:59:53.612697422 -0700
++++ b/CMakeLists.txt	2025-03-14 20:34:10.533022786 -0700
+@@ -132,9 +132,7 @@
+ endif()
+ 
+ ## find_package(CUDA) is broken for cross-compilation. Enable CUDA language instead.
+-if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+     find_package(CUDA ${CUDA_VERSION} REQUIRED)
+-endif()
+ 
+ include_directories(
+     ${CUDA_INCLUDE_DIRS}
