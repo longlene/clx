@@ -39,7 +39,7 @@ DEPEND="
 	l0? ( dev-libs/level-zero )
 	opencl? ( virtual/opencl )
 "
-#	onednn? ( dev-libs/oneDNN )
+#	onednn? ( sci-ml/oneDNN )
 RDEPEND="
 	${DEPEND}
 	${PYTHON_DEPS}

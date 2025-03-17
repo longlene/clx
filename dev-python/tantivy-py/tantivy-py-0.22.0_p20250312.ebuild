@@ -1,0 +1,234 @@
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{11..13} )
+
+CRATES="
+	ahash@0.8.6
+	aho-corasick@1.1.2
+	allocator-api2@0.2.16
+	android-tzdata@0.1.1
+	android_system_properties@0.1.5
+	arc-swap@1.6.0
+	async-trait@0.1.74
+	autocfg@1.1.0
+	base64@0.22.1
+	bitflags@1.3.2
+	bitflags@2.4.1
+	bitpacking@0.9.2
+	bumpalo@3.14.0
+	byteorder@1.5.0
+	cc@1.0.83
+	census@0.4.2
+	cfg-if@1.0.0
+	chrono@0.4.40
+	core-foundation-sys@0.8.4
+	crc32fast@1.3.2
+	crossbeam-channel@0.5.8
+	crossbeam-deque@0.8.3
+	crossbeam-epoch@0.9.15
+	crossbeam-utils@0.8.16
+	crunchy@0.2.2
+	deranged@0.3.9
+	downcast-rs@1.2.0
+	either@1.9.0
+	errno@0.3.5
+	fastdivide@0.4.0
+	fastrand@2.0.1
+	fnv@1.0.7
+	fs4@0.8.2
+	futures-channel@0.3.31
+	futures-core@0.3.31
+	futures-executor@0.3.31
+	futures-io@0.3.31
+	futures-macro@0.3.31
+	futures-sink@0.3.31
+	futures-task@0.3.31
+	futures-util@0.3.31
+	futures@0.3.31
+	generator@0.7.5
+	getrandom@0.2.10
+	hashbrown@0.14.2
+	heck@0.4.1
+	hermit-abi@0.3.3
+	htmlescape@0.3.1
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.58
+	indoc@2.0.4
+	instant@0.1.12
+	itertools@0.12.1
+	itertools@0.14.0
+	itoa@1.0.9
+	jobserver@0.1.27
+	js-sys@0.3.64
+	lazy_static@1.4.0
+	levenshtein_automata@0.2.1
+	libc@0.2.153
+	libm@0.2.8
+	linux-raw-sys@0.4.10
+	lock_api@0.4.11
+	log@0.4.20
+	loom@0.5.6
+	lru@0.12.3
+	lz4_flex@0.11.1
+	matchers@0.1.0
+	measure_time@0.8.2
+	memchr@2.6.4
+	memmap2@0.9.4
+	memoffset@0.9.0
+	minimal-lexical@0.2.1
+	murmurhash32@0.3.0
+	nom@7.1.3
+	nu-ansi-term@0.46.0
+	num-conv@0.1.0
+	num-traits@0.2.17
+	num_cpus@1.16.0
+	once_cell@1.18.0
+	oneshot@0.1.6
+	overload@0.1.1
+	ownedbytes@0.7.0
+	parking_lot@0.12.1
+	parking_lot_core@0.9.9
+	pin-project-lite@0.2.13
+	pin-utils@0.1.0
+	pkg-config@0.3.27
+	portable-atomic@1.6.0
+	powerfmt@0.2.0
+	ppv-lite86@0.2.17
+	proc-macro2@1.0.89
+	pyo3-build-config@0.21.2
+	pyo3-build-config@0.24.0
+	pyo3-ffi@0.21.2
+	pyo3-macros-backend@0.21.2
+	pyo3-macros@0.21.2
+	pyo3@0.21.2
+	pythonize@0.21.1
+	quote@1.0.36
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	rand_distr@0.4.3
+	rayon-core@1.12.0
+	rayon@1.8.0
+	redox_syscall@0.4.1
+	regex-automata@0.1.10
+	regex-automata@0.4.3
+	regex-syntax@0.6.29
+	regex-syntax@0.8.2
+	regex@1.10.2
+	rust-stemmers@1.2.0
+	rustc-hash@1.1.0
+	rustix@0.38.21
+	rustversion@1.0.14
+	ryu@1.0.15
+	scoped-tls@1.0.1
+	scopeguard@1.2.0
+	serde@1.0.219
+	serde_derive@1.0.219
+	serde_json@1.0.140
+	sharded-slab@0.1.7
+	sketches-ddsketch@0.2.1
+	slab@0.4.9
+	smallvec@1.11.1
+	stable_deref_trait@1.2.0
+	syn@2.0.85
+	tantivy-bitpacker@0.6.0
+	tantivy-columnar@0.3.0
+	tantivy-common@0.7.0
+	tantivy-fst@0.5.0
+	tantivy-query-grammar@0.22.0
+	tantivy-sstable@0.3.0
+	tantivy-stacker@0.3.0
+	tantivy-tokenizer-api@0.3.0
+	tantivy@0.22.0
+	target-lexicon@0.12.14
+	target-lexicon@0.13.2
+	tempfile@3.8.1
+	thiserror-impl@1.0.50
+	thiserror@1.0.50
+	thread_local@1.1.7
+	time-core@0.1.2
+	time-macros@0.2.18
+	time@0.3.36
+	tracing-attributes@0.1.27
+	tracing-core@0.1.32
+	tracing-log@0.1.4
+	tracing-subscriber@0.3.17
+	tracing@0.1.40
+	unicode-ident@1.0.12
+	unindent@0.2.3
+	utf8-ranges@1.0.5
+	uuid@1.5.0
+	valuable@0.1.0
+	version_check@0.9.4
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasm-bindgen-backend@0.2.87
+	wasm-bindgen-macro-support@0.2.87
+	wasm-bindgen-macro@0.2.87
+	wasm-bindgen-shared@0.2.87
+	wasm-bindgen@0.2.87
+	web-sys@0.3.64
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-core@0.51.1
+	windows-link@0.1.0
+	windows-sys@0.48.0
+	windows-sys@0.52.0
+	windows-targets@0.48.5
+	windows-targets@0.52.5
+	windows@0.48.0
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_gnullvm@0.52.5
+	windows_aarch64_msvc@0.48.5
+	windows_aarch64_msvc@0.52.5
+	windows_i686_gnu@0.48.5
+	windows_i686_gnu@0.52.5
+	windows_i686_gnullvm@0.52.5
+	windows_i686_msvc@0.48.5
+	windows_i686_msvc@0.52.5
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnu@0.52.5
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_gnullvm@0.52.5
+	windows_x86_64_msvc@0.48.5
+	windows_x86_64_msvc@0.52.5
+	zerocopy-derive@0.7.31
+	zerocopy@0.7.31
+	zstd-safe@7.1.0
+	zstd-sys@2.0.10+zstd.1.5.6
+	zstd@0.13.1
+"
+
+inherit cargo distutils-r1
+
+EGIT_COMMIT="72d6101ae2c665c647294192f6b0b63d4f6bef76"
+
+DESCRIPTION="Python bindings for Tantivy"
+HOMEPAGE="
+	https://pypi.org/project/tantivy-py/
+	https://github.com/quickwit-oss/tantivy-py
+"
+SRC_URI="
+	https://github.com/quickwit-oss/tantivy-py/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="
+"
+#BDEPEND="
+#	test? (
+#	)
+#"
+
+distutils_enable_tests pytest
+
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

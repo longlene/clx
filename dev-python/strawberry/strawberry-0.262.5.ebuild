@@ -20,9 +20,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/graphql-core-3.4.0
-	>=dev-python/typing-extensions-4.5.0
-	>=dev-python/python-dateutil-2.7.0
+	>=dev-python/graphql-core-3.4.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.5.0[${PYTHON_USEDEP}]
+	>=dev-python/python-dateutil-2.7.0[${PYTHON_USEDEP}]
+	>=dev-python/packaging-23.0[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

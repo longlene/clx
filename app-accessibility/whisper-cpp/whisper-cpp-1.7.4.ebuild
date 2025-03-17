@@ -15,7 +15,7 @@ KEYWORDS="~amd64"
 IUSE="+models -opencl openvino sdl2"
 
 DEPEND="
-	sci-libs/ggml[opencl?]
+	sci-ml/ggml[opencl?]
 	net-misc/curl
 	openvino? ( sci-libs/openvino )
 	sdl2? ( media-libs/libsdl2 )

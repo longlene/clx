@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="84d547554123a62e9ac77107cb20e4f6cc503af4"
+EGIT_COMMIT="f4c3dd5daa3a79f713813cf1aabdc5886071061d"
 
 DESCRIPTION="Port of Facebook's LLaMA model in C/C++"
 HOMEPAGE="https://github.com/ggml-org/llama.cpp"
@@ -20,7 +20,7 @@ IUSE="blas cuda kompute mkl -opencl openmp rocm sycl vulkan ssl test"
 
 DEPEND="
 	net-misc/curl
-	sci-libs/ggml[blas?,cuda?,kompute?,mkl?,opencl?,openmp?,rocm?,vulkan?]
+	sci-ml/ggml[blas?,cuda?,kompute?,mkl?,opencl?,openmp?,rocm?,vulkan?]
 	ssl? ( dev-libs/openssl )
 "
 RDEPEND="${DEPEND}"

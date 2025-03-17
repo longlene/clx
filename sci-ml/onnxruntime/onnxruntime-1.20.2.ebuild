@@ -69,7 +69,7 @@ BDEPEND="
 	cuda? ( dev-util/nvidia-cuda-toolkit:= )
 	cudnn? ( dev-libs/cudnn:= )
 	javascript? ( dev-util/emscripten )
-	onednn? ( dev-libs/oneDNN:= )
+	onednn? ( sci-ml/oneDNN:= )
 	hip? (
 		sci-libs/hipFFT:=
 		sci-libs/hipCUB:=

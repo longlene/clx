@@ -33,7 +33,7 @@ DEPEND="
 	)
 	sycl? (
 		llvm-core/dpcpp[cuda?,rocm?]
-		dev-libs/oneDNN[mkl,opencl,sycl]
+		sci-ml/oneDNN[mkl,opencl,sycl]
 	)
 	vulkan? ( media-libs/vulkan-loader )
 "

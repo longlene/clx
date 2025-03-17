@@ -25,7 +25,7 @@ DEPEND="
 	dev-libs/sleef
 	sci-ml/ideep
 	dev-libs/libxsmm
-	dev-libs/oneDNN
+	sci-ml/oneDNN
 	sci-ml/caffe2[distributed,${PYTHON_SINGLE_USEDEP}]
 	sci-libs/mkl
 "
