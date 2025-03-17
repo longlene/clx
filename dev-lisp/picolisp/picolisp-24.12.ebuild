@@ -1,47 +1,30 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2025 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit bash-completion-r1 toolchain-funcs
 
-URI_FILENAME="picoLisp"
-URI_DOMAIN="http://software-lab.de/"
-URI_PREFIX="${URI_DOMAIN}${URI_FILENAME}"
-URI_SUFFIX=".tgz"
-
-if [[ ${PV} != 9999 ]] ; then
-	SRC_URI="${URI_PREFIX}-${PV}${URI_SUFFIX}"
-	KEYWORDS="~amd64 ~x86"
-fi
-
 DESCRIPTION="A fast and lightweight Lisp interpreter"
 HOMEPAGE="http://picolisp.com/"
+SRC_URI="
+	https://software-lab.de/picoLisp-${PV}.tgz
+	https://software-lab.de/x86-64.linux.tgz -> picolisp-x86-64.linux.tgz
+"
 
 LICENSE="MIT"
 SLOT="0"
+KEYWORDS="~amd64 ~x86"
 IUSE="bash-completion doc examples src"
 
 QA_PREBUILT="*"
 
 S="${WORKDIR}/picoLisp"
 
-livefetch() {
-	FILENAME="${1##*/}"
-	einfo "Fetching ${FILENAME}"
-	wget "${1}" || die
-	tar xf "${FILENAME}" || die
-}
-
-pre_src_unpack() {
-	[[ ${PV} == 9999 ]] && livefetch "${URI_PREFIX}${URI_SUFFIX}"
-	use amd64           && livefetch "${URI_DOMAIN}x86-64.linux${URI_SUFFIX}"
-}
-
 src_prepare() {
+	default
 	find . -type f -executable -exec sed -i "s#!bin/picolisp lib.l#!/usr/bin/picolisp /usr/lib/picolisp/lib.l#" {} \;
 	sed -i "s# test -x /usr/bin/picolisp# false#" src64/mkAsm || die
-	eapply_user
 }
 
 src_compile() {
