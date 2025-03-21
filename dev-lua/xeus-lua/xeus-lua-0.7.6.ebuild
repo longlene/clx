@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,10 +16,8 @@ IUSE="luajit"
 
 DEPEND="
 	dev-cpp/xeus
-	dev-cpp/xtl
 	dev-cpp/xwidgets
 	dev-lang/lua
-	net-libs/cppzmq
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

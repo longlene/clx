@@ -1,6 +1,6 @@
 diff -Nur a/cmake/FetchLevelZero.cmake b/cmake/FetchLevelZero.cmake
---- a/cmake/FetchLevelZero.cmake	2024-12-11 07:14:14.000000000 -0800
-+++ b/cmake/FetchLevelZero.cmake	2024-12-12 23:32:58.745572138 -0800
+--- a/cmake/FetchLevelZero.cmake	2025-02-13 03:43:34.000000000 -0800
++++ b/cmake/FetchLevelZero.cmake	2025-03-17 21:36:52.402009454 -0700
 @@ -97,21 +97,25 @@
                "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
  )
@@ -40,3 +40,27 @@ diff -Nur a/cmake/FetchLevelZero.cmake b/cmake/FetchLevelZero.cmake
  message(STATUS "Level Zero Adapter: Using Level Zero headers from ${COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE}")
  target_include_directories(ComputeRuntimeLevelZero-Headers
      INTERFACE "$<BUILD_INTERFACE:${COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE}>"
+diff -Nur a/source/adapters/level_zero/common.cpp b/source/adapters/level_zero/common.cpp
+--- a/source/adapters/level_zero/common.cpp	2025-02-13 03:43:34.000000000 -0800
++++ b/source/adapters/level_zero/common.cpp	2025-03-17 22:01:41.695395690 -0700
+@@ -11,7 +11,7 @@
+ #include "common.hpp"
+ #include "logger/ur_logger.hpp"
+ #include "usm.hpp"
+-#include <level_zero/include/ze_intel_gpu.h>
++#include <level_zero/ze_intel_gpu.h>
+ 
+ ur_result_t ze2urResult(ze_result_t ZeResult) {
+   if (ZeResult == ZE_RESULT_SUCCESS)
+diff -Nur a/source/adapters/level_zero/device.hpp b/source/adapters/level_zero/device.hpp
+--- a/source/adapters/level_zero/device.hpp	2025-02-13 03:43:34.000000000 -0800
++++ b/source/adapters/level_zero/device.hpp	2025-03-17 21:37:27.468677372 -0700
+@@ -20,7 +20,7 @@
+ 
+ #include "adapters/level_zero/platform.hpp"
+ #include "common.hpp"
+-#include <level_zero/include/ze_intel_gpu.h>
++#include <level_zero/ze_intel_gpu.h>
+ #include <ur/ur.hpp>
+ #include <ur_ddi.h>
+ #include <ze_api.h>

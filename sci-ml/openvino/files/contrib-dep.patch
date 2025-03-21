@@ -1,0 +1,61 @@
+diff -Nur a/modules/nvidia_plugin/CMakeLists.txt b/modules/nvidia_plugin/CMakeLists.txt
+--- a/modules/nvidia_plugin/CMakeLists.txt	2025-02-08 10:03:47.000000000 -0800
++++ b/modules/nvidia_plugin/CMakeLists.txt	2025-03-18 13:57:54.740749867 -0700
+@@ -140,41 +140,8 @@
+ endif()
+ message("-- [nvidia_gpu] CMAKE_CUDA_ARCHITECTURES ${CMAKE_CUDA_ARCHITECTURES}")
+ 
+-include(FetchContent)
+-
+-# In this example we are picking a specific tag.
+-# You can also pick a specific commit, if you need to.
+-FetchContent_Declare(GSL
+-                     GIT_REPOSITORY "https://github.com/microsoft/GSL"
+-                     GIT_TAG "v3.1.0")
+-if(CMAKE_VERSION VERSION_LESS 3.14.0)
+-    FetchContent_GetProperties(GSL)
+-    if(NOT GSL_POPULATED)
+-        FetchContent_Populate(GSL)
+-        message(STATUS "gsl_SOURCE_DIR is ${gsl_SOURCE_DIR}")
+-        add_subdirectory(${gsl_SOURCE_DIR} ${gsl_BINARY_DIR})
+-    endif()
+-else()
+-    FetchContent_MakeAvailable(GSL)
+-endif()
+-# it contains c++14 requirement, which overrides c++17 setting in CMAKE_CUDA_FLAGS
+-set_property(TARGET GSL PROPERTY INTERFACE_COMPILE_FEATURES)
+-
+-FetchContent_Declare(fmt-header-only
+-                     GIT_REPOSITORY "https://github.com/fmtlib/fmt"
+-                     GIT_TAG "7.1.3")
+-if(CMAKE_VERSION VERSION_LESS 3.14.0)
+-    FetchContent_GetProperties(fmt-header-only)
+-    if(NOT fmt-header-only_POPULATED)
+-        FetchContent_Populate(fmt-header-only)
+-        message(STATUS "fmt-header-only_SOURCE_DIR is ${fmt-header-only_SOURCE_DIR}")
+-        add_subdirectory(${fmt-header-only_SOURCE_DIR} ${fmt-header-only_BINARY_DIR})
+-    endif()
+-else()
+-    FetchContent_MakeAvailable(fmt-header-only)
+-endif()
+-# it contains c++11 requirement, which overrides c++17 setting in CMAKE_CUDA_FLAGS
+-set_property(TARGET fmt-header-only PROPERTY INTERFACE_COMPILE_FEATURES)
++find_package(Microsoft.GSL REQUIRED)
++find_package(fmt REQUIRED)
+ 
+ add_subdirectory(src)
+ #add_subdirectory(thirdparty)
+diff -Nur a/modules/nvidia_plugin/src/CMakeLists.txt b/modules/nvidia_plugin/src/CMakeLists.txt
+--- a/modules/nvidia_plugin/src/CMakeLists.txt	2025-02-08 10:03:47.000000000 -0800
++++ b/modules/nvidia_plugin/src/CMakeLists.txt	2025-03-18 13:56:47.654080838 -0700
+@@ -55,8 +55,8 @@
+ 
+ target_link_libraries(${OBJ_NAME}
+                       PUBLIC
+-                      GSL
+-                      fmt-header-only
++                      Microsoft.GSL::GSL
++                      fmt::fmt
+                       openvino::runtime
+                       openvino::runtime::dev
+                       openvino::core::dev

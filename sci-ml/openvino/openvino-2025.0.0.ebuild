@@ -10,8 +10,10 @@ PYTHON_COMPAT=( python3_{11..13} )
 
 inherit cmake distutils-r1
 
-ONEDNN_CPU_COMMIT="1789b1e0ae441de15d793123003a900a35d1dc71"
+#ONEDNN_CPU_COMMIT="1789b1e0ae441de15d793123003a900a35d1dc71"
+ONEDNN_CPU_COMMIT="5baba714e16e11309774a62783f363cad30e97c7"
 ONEDNN_GPU_COMMIT="706a3ce3b391cf1d8a904a8efa981c70078719eb"
+CONTRIB_COMMIT="b34ff382bef32286186253768aed41a406876e8b"
 
 DESCRIPTION="An open-source toolkit for optimizing and deploying AI inference"
 HOMEPAGE="https://docs.openvino.ai/"
@@ -19,12 +21,13 @@ SRC_URI="
 	https://github.com/openvinotoolkit/openvino/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz
 	https://github.com/openvinotoolkit/oneDNN/archive/${ONEDNN_CPU_COMMIT}.tar.gz -> oneDNN-${ONEDNN_CPU_COMMIT}.gh.tar.gz
 	https://github.com/oneapi-src/oneDNN/archive/${ONEDNN_GPU_COMMIT}.tar.gz -> oneDNN-${ONEDNN_GPU_COMMIT}.gh.tar.gz
+	contrib? ( https://github.com/openvinotoolkit/openvino_contrib/archive/${CONTRIB_COMMIT}.tar.gz -> openvino_contrib-${CONTRIB_COMMIT}.tar.gz )
 "
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="-l0 onednn opencl python test"
+IUSE="-l0 onednn opencl python contrib cuda test"
 
 DEPEND="
 	sys-libs/zlib
@@ -38,6 +41,11 @@ DEPEND="
 	app-arch/snappy
 	l0? ( dev-libs/level-zero )
 	opencl? ( virtual/opencl )
+	cuda? ( 
+		dev-libs/cutensor
+		dev-cpp/gsl
+		dev-libs/libfmt
+	)
 "
 #	onednn? ( sci-ml/oneDNN )
 RDEPEND="
@@ -72,6 +80,9 @@ src_prepare() {
 	rmdir src/plugins/intel_cpu/thirdparty/onednn && ln -sv "${WORKDIR}"/oneDNN-${ONEDNN_CPU_COMMIT} src/plugins/intel_cpu/thirdparty/onednn
 	rmdir src/plugins/intel_gpu/thirdparty/onednn_gpu && ln -sv "${WORKDIR}"/oneDNN-${ONEDNN_GPU_COMMIT} src/plugins/intel_gpu/thirdparty/onednn_gpu
 	pushd "${WORKDIR}"/oneDNN-${ONEDNN_GPU_COMMIT} && eapply "${FILESDIR}"/dnnl-sycl.patch && popd
+	if use contrib ; then
+		pushd "${WORKDIR}"/openvino_contrib-${CONTRIB_COMMIT} && eapply "${FILESDIR}"/contrib-dep.patch && popd
+	fi
 	cmake_src_prepare
 }
 
@@ -86,7 +97,6 @@ src_configure() {
 		-DENABLE_INTEL_NPU=OFF
 		-DENABLE_INTEL_GPU=$(usex opencl)
 		-DENABLE_ONEDNN_FOR_GPU=$(usex onednn)
-		-DENABLE_PLUGINS_XML=ON
 		-DENABLE_FUNCTIONAL_TESTS=$(usex test)
 		-DENABLE_SAMPLES=OFF
 		-DENABLE_SYSTEM_PUGIXML=ON
@@ -94,10 +104,22 @@ src_configure() {
 		-DENABLE_SYSTEM_TBB=ON
 		-DENABLE_SYSTEM_OPENCL=$(usex opencl)
 		-DENABLE_SYSTEM_PROTOBUF=ON
+		-DProtobuf_USE_STATIC_LIBS=OFF
 		-DENABLE_SYSTEM_SNAPPY=ON
-		-DENABLE_OV_ONNX_FRONTEND=OFF
 		-DENABLE_JS=OFF
 		-DENABLE_PYTHON=$(usex python)
+	)
+	use contrib && mycmakeargs+=(
+		-DOPENVINO_EXTRA_MODULES="${WORKDIR}"/openvino_contrib-${CONTRIB_COMMIT}/modules
+		-DBUILD_custom_operations=OFF
+		-DBUILD_java_api=OFF
+		-DBUILD_llama_cpp_plugin=OFF
+		-DBUILD_nvidia_plugin=$(usex cuda)
+		-DBUILD_openvino_code=OFF
+		-DBUILD_token_merging=OFF
+	)
+	use cuda && mycmakeargs+=(
+		-DCUDNN_PATH="/opt/cuda"
 	)
 	cmake_src_configure
 }

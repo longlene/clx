@@ -1,12 +1,11 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit cmake
 
-EGIT_COMMIT="ace9f4a60b686463fdad15cd016c548237cb79e0"
-CUDART_PV="12.6.2"
+EGIT_COMMIT="316c220c282bbcef2b42b3f1f39e1d81497e98b5"
 
 DESCRIPTION="Unified Memory Framework"
 HOMEPAGE="
@@ -14,9 +13,6 @@ HOMEPAGE="
 "
 SRC_URI="
 	https://github.com/oneapi-src/unified-memory-framework/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz
-	cuda? (
-		https://gitlab.com/nvidia/headers/cuda-individual/cudart/-/archive/cuda-${CUDART_PV}/cudart-cuda-${CUDART_PV}.tar.gz
-	)
 "
 
 LICENSE="Apache-2.0"
@@ -49,7 +45,7 @@ src_configure() {
 		-DUMF_BUILD_LEVEL_ZERO_PROVIDER=$(usex l0)
 		-DUMF_LEVEL_ZERO_INCLUDE_DIR="/usr/include/level_zero"
 		-DUMF_BUILD_CUDA_PROVIDER=$(usex cuda)
-		-DUMF_CUDA_INCLUDE_DIR="${WORKDIR}/cudart-cuda-${CUDART_PV}"
+		-DUMF_CUDA_INCLUDE_DIR="/opt/cuda/include"
 		-DUMF_BUILD_LIBUMF_POOL_DISJOINT=ON
 		-DUMF_BUILD_LIBUMF_POOL_JEMALLOC=$(usex jemalloc)
 		-DUMF_BUILD_TESTS=OFF

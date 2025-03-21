@@ -1,22 +1,23 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit cmake
 
+EGIT_COMMIT="89443bfa2ead8999c6c27a88ded1eeb6ac30e014"
 
 DESCRIPTION="Unified Memory Framework"
 HOMEPAGE="
 	https://github.com/oneapi-src/unified-memory-framework
 "
 SRC_URI="
-	https://github.com/oneapi-src/unified-memory-framework/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	https://github.com/oneapi-src/unified-memory-framework/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz
 "
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+#KEYWORDS="~amd64"
 IUSE="cuda +hwloc jemalloc l0"
 
 DEPEND="
@@ -28,6 +29,8 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 src_prepare() {
 	default
@@ -43,7 +46,7 @@ src_configure() {
 		-DUMF_LEVEL_ZERO_INCLUDE_DIR="/usr/include/level_zero"
 		-DUMF_BUILD_CUDA_PROVIDER=$(usex cuda)
 		-DUMF_CUDA_INCLUDE_DIR="/opt/cuda/include"
-		-DUMF_BUILD_LIBUMF_POOL_DISJOINT=ON
+		#-DUMF_BUILD_LIBUMF_POOL_DISJOINT=ON
 		-DUMF_BUILD_LIBUMF_POOL_JEMALLOC=$(usex jemalloc)
 		-DUMF_BUILD_TESTS=OFF
 		-DUMF_BUILD_EXAMPLES=OFF

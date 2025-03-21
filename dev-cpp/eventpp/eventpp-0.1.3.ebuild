@@ -1,7 +1,9 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
+
+inherit cmake
 
 DESCRIPTION="Event Dispatcher and callback list for C++"
 HOMEPAGE="https://github.com/wqking/eventpp"
@@ -14,9 +16,3 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
-
-src_install() {
-	insinto /usr/include
-	doins -r include/eventpp
-	dodoc readme.md
-}

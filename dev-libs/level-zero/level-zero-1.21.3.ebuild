@@ -16,6 +16,8 @@ KEYWORDS="~amd64"
 RDEPEND="dev-libs/spdlog:="
 DEPEND="${RDEPEND}"
 
+PATCHES=( "${FILESDIR}"/install-fix.patch )
+
 src_prepare() {
 	# Don't hardcore -Werror
 	sed -e 's/-Werror//g' -i CMakeLists.txt || die
@@ -31,6 +33,5 @@ src_configure() {
 	local mycmakeargs=(
 		-DSYSTEM_SPDLOG="ON"
 	)
-
 	cmake_src_configure
 }

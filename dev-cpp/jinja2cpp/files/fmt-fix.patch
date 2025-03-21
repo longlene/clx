@@ -1,6 +1,6 @@
 diff -Nur a/src/error_info.cpp b/src/error_info.cpp
---- a/src/error_info.cpp	2024-06-23 12:31:22.000000000 -0700
-+++ b/src/error_info.cpp	2024-12-25 00:54:41.202662485 -0800
+--- a/src/error_info.cpp	2024-11-22 01:12:24.000000000 -0800
++++ b/src/error_info.cpp	2025-03-20 10:55:55.839423321 -0700
 @@ -90,8 +90,7 @@
  };
  } // namespace
@@ -28,3 +28,24 @@ diff -Nur a/src/error_info.cpp b/src/error_info.cpp
  
  namespace jinja2
  {
+@@ -257,7 +257,7 @@
+         break;
+     }
+     format_to(std::back_inserter(out), UNIVERSAL_STR("\n{}").GetValue<CharT>(), errInfo.GetLocationDescr());
+-    result = to_string(out);
++    result = string_t(out.data(), out.size());
+ }
+ 
+ template<>
+diff -Nur a/src/serialize_filters.cpp b/src/serialize_filters.cpp
+--- a/src/serialize_filters.cpp	2024-11-22 01:12:24.000000000 -0800
++++ b/src/serialize_filters.cpp	2025-03-20 10:30:06.959368115 -0700
+@@ -233,7 +233,7 @@
+         {
+             m_store.push_back(fmt::arg(m_name.c_str(), t));
+         }
+-        return fmt::detail::make_arg<FormatContext>(t);
++        return fmt::basic_format_arg<FormatContext>(t);
+     }
+ 
+     const RenderContext* m_context;

@@ -1,15 +1,13 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit cmake vcs-snapshot
-
-EGIT_COMMIT="5ddf5d96c99e9b91c98d37212c1098e8a8aec202"
+inherit cmake
 
 DESCRIPTION="The Lobster Programming Language"
 HOMEPAGE="https://github.com/aardappel/lobster"
-SRC_URI="https://github.com/aardappel/lobster/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/aardappel/lobster/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -23,3 +21,10 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 CMAKE_USE_DIR="${S}"/dev
+
+src_configure() {
+	local mycmakeargs=(
+		-DLOBSTER_ENGINE=OFF
+	)
+	cmake_src_configure
+}

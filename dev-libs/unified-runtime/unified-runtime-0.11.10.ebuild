@@ -5,13 +5,12 @@ EAPI=8
 
 inherit cmake
 
-EGIT_COMMIT="d03f19a88e42cb98be9604ff24b61190d1e48727"
 COMPUTE_RUNTIME_PV="24.39.31294.12"
 
 DESCRIPTION="Unified Runtime"
 HOMEPAGE="https://oneapi-src.github.io/unified-runtime/"
 SRC_URI="
-	https://github.com/oneapi-src/unified-runtime/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz
+	https://github.com/oneapi-src/unified-runtime/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
 	https://github.com/intel/compute-runtime/archive/${COMPUTE_RUNTIME_PV}.tar.gz -> intel-compute-runtime-${COMPUTE_RUNTIME_PV}.tar.gz
 "
 
@@ -30,11 +29,8 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-
 src_prepare() {
 	default
-	eapply "${FILESDIR}"/system-umf.patch
 	eapply "${FILESDIR}"/system-l0.patch
 	rm include/.clang-format
 	cmake_src_prepare
@@ -55,6 +51,7 @@ src_configure() {
 		-DUR_BUILD_ADAPTER_HIP=$(usex rocm)
 		-DUR_BUILD_ADAPTER_NATIVE_CPU=ON
 		-DUR_FORMAT_CPP_STYLE=OFF
+		-DUR_USE_EXTERNAL_UMF=ON
 	)
 	use opencl && mycmakeargs+=( -DUR_OPENCL_INCLUDE_DIR="/usr/include" )
 	cmake_src_configure

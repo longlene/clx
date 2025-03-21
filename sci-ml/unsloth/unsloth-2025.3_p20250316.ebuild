@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
-EGIT_COMMIT="840988b12b7e7ba5fa103f42cafccc3d61f6ed3e"
+EGIT_COMMIT="6f7c8c6d0a63caaa129cc0bc6b845d5d8b9c81e8"
 
 DESCRIPTION="2-5X faster LLM finetuning"
 HOMEPAGE="

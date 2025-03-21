@@ -3,11 +3,8 @@
 
 EAPI=7
 
-#LLVM_COMMIT="ac712f0f44b45a1455a302dd6cbb7b6cce269d2d"
-LLVM_COMMIT="3253e78008eef8b776c56ec1724977b4859370a9"
-CLANG_COMMIT="25f804797f80b69d8c56794e3e0300acd9458958"
+LLVM_COMMIT="fd3db4ac62588a4fc8cea5d6cbe4d9e50de67ef5"
 
-#inherit cmake flag-o-matic
 inherit cmake
 
 DESCRIPTION="The cling C++ interpreter"
@@ -16,7 +13,6 @@ SRC_URI="
 	https://github.com/vgvassilev/cling/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/root-project/llvm-project/archive/${LLVM_COMMIT}.tar.gz -> llvm-${LLVM_COMMIT}.tar.gz
 "
-#https://github.com/vgvassilev/clang/archive/${CLANG_COMMIT}.tar.gz -> clang-${CLANG_COMMIT}.tar.gz
 
 LICENSE="LGPL"
 SLOT="0"

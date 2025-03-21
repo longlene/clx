@@ -12,10 +12,10 @@ CRATES="
 	android-tzdata@0.1.1
 	android_system_properties@0.1.5
 	anstream@0.6.14
-	anstyle@1.0.7
 	anstyle-parse@0.2.4
 	anstyle-query@1.0.3
 	anstyle-wincon@3.0.3
+	anstyle@1.0.7
 	anyhow@1.0.86
 	arc-swap@1.7.1
 	argon2@0.5.3
@@ -23,18 +23,18 @@ CRATES="
 	assert-json-diff@2.0.2
 	assert_matches@1.5.0
 	async-convert@1.0.0
-	async-openai-alt@0.26.1
-	async-stream@0.3.5
+	async-openai-alt@0.26.2
 	async-stream-impl@0.3.5
+	async-stream@0.3.5
 	async-trait@0.1.80
 	atoi@2.0.0
 	atomic-waker@1.1.2
 	auto_enums@0.8.5
 	autocfg@1.3.0
-	axum@0.7.5
 	axum-core@0.4.3
 	axum-extra@0.9.3
 	axum-prometheus@0.6.1
+	axum@0.7.5
 	backoff@0.4.0
 	backtrace@0.3.71
 	base64@0.21.7
@@ -72,13 +72,13 @@ CRATES="
 	console@0.15.8
 	const-oid@0.9.6
 	convert_case@0.4.0
-	core-foundation@0.9.4
-	core-foundation@0.10.0
 	core-foundation-sys@0.8.7
+	core-foundation@0.10.0
+	core-foundation@0.9.4
 	cpufeatures@0.2.12
-	crc@3.2.1
 	crc-catalog@2.4.0
 	crc32fast@1.4.2
+	crc@3.2.1
 	cron@0.12.1
 	crossbeam-channel@0.5.13
 	crossbeam-deque@0.8.5
@@ -87,8 +87,8 @@ CRATES="
 	crossbeam-utils@0.8.20
 	crunchy@0.2.2
 	crypto-common@0.1.6
-	cssparser@0.27.2
 	cssparser-macros@0.6.1
+	cssparser@0.27.2
 	custom_error@1.9.2
 	darling@0.14.4
 	darling@0.20.9
@@ -108,14 +108,14 @@ CRATES="
 	digest@0.10.7
 	dotenvy@0.15.7
 	downcast-rs@1.2.1
-	dtoa@1.0.9
 	dtoa-short@0.3.4
+	dtoa@1.0.9
 	either@1.12.0
 	email-encoding@0.3.0
 	email_address@0.2.4
 	encode_unicode@0.3.6
-	encoder@0.2.4
 	encoder-ryu@1.0.16
+	encoder@0.2.4
 	encoding_rs@0.8.34
 	encoding_rs_io@0.1.7
 	equivalent@1.0.1
@@ -131,14 +131,13 @@ CRATES="
 	float-cmp@0.9.0
 	flume@0.11.0
 	fnv@1.0.7
-	foreign-types@0.3.2
 	foreign-types-shared@0.1.1
+	foreign-types@0.3.2
 	form_urlencoded@1.2.1
 	fs4@0.8.3
 	fs_extra@1.3.0
 	fslock@0.2.1
 	futf@0.1.5
-	futures@0.3.30
 	futures-channel@0.3.30
 	futures-core@0.3.30
 	futures-executor@0.3.30
@@ -149,6 +148,7 @@ CRATES="
 	futures-task@0.3.30
 	futures-timer@3.0.3
 	futures-util@0.3.30
+	futures@0.3.30
 	fxhash@0.2.1
 	generator@0.7.5
 	generic-array@0.14.7
@@ -164,19 +164,19 @@ CRATES="
 	graphql_client@0.14.0
 	graphql_client_codegen@0.14.0
 	graphql_query_derive@0.14.0
-	grep@0.3.1
 	grep-cli@0.1.10
 	grep-matcher@0.1.7
 	grep-printer@0.2.1
 	grep-regex@0.1.12
 	grep-searcher@0.1.13
+	grep@0.3.1
 	h2@0.4.5
 	halfbrown@0.2.5
 	hashbrown@0.12.3
 	hashbrown@0.14.5
 	hashlink@0.8.4
-	headers@0.4.0
 	headers-core@0.3.0
+	headers@0.4.0
 	heck@0.4.1
 	heck@0.5.0
 	hermit-abi@0.3.9
@@ -189,23 +189,23 @@ CRATES="
 	html5ever@0.25.2
 	html5ever@0.27.0
 	htmlescape@0.3.1
-	http@0.2.12
-	http@1.1.0
+	http-body-util@0.1.1
 	http-body@0.4.6
 	http-body@1.0.0
-	http-body-util@0.1.1
+	http@0.2.12
+	http@1.1.0
 	httparse@1.8.0
 	httpdate@1.0.3
 	humantime@2.1.0
-	hyper@0.14.28
-	hyper@1.3.1
 	hyper-rustls@0.26.0
 	hyper-rustls@0.27.3
 	hyper-timeout@0.5.1
 	hyper-tls@0.6.0
 	hyper-util@0.1.5
-	iana-time-zone@0.1.60
+	hyper@0.14.28
+	hyper@1.3.1
 	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.60
 	ident_case@1.0.1
 	idna@0.5.0
 	ignore@0.4.22
@@ -271,9 +271,9 @@ CRATES="
 	measure_time@0.8.3
 	memchr@2.7.2
 	memmap2@0.9.4
-	metrics@0.22.3
 	metrics-exporter-prometheus@0.13.1
 	metrics-util@0.16.3
+	metrics@0.22.3
 	mime@0.3.17
 	mime_guess@2.0.4
 	minimal-lexical@0.2.1
@@ -287,10 +287,10 @@ CRATES="
 	nom@7.1.3
 	ntapi@0.4.1
 	nu-ansi-term@0.46.0
-	nucleo@0.5.0
 	nucleo-matcher@0.3.1
-	num-bigint@0.4.5
+	nucleo@0.5.0
 	num-bigint-dig@0.8.4
+	num-bigint@0.4.5
 	num-conv@0.1.0
 	num-integer@0.1.46
 	num-iter@0.1.45
@@ -298,22 +298,22 @@ CRATES="
 	num_cpus@1.16.0
 	num_threads@0.1.7
 	number_prefix@0.4.0
-	nvml-wrapper@0.9.0
 	nvml-wrapper-sys@0.7.0
+	nvml-wrapper@0.9.0
 	object@0.32.2
 	octocrab@0.42.1
 	omnicopy_to_output@0.1.1
 	once_cell@1.19.0
-	openssl@0.10.64
 	openssl-macros@0.1.1
 	openssl-probe@0.1.5
 	openssl-src@300.3.0+3.3.0
 	openssl-sys@0.9.102
-	opentelemetry@0.18.0
-	opentelemetry@0.27.1
+	openssl@0.10.64
 	opentelemetry-otlp@0.27.0
 	opentelemetry-proto@0.27.0
 	opentelemetry-semantic-conventions@0.27.0
+	opentelemetry@0.18.0
+	opentelemetry@0.27.1
 	opentelemetry_api@0.18.0
 	opentelemetry_sdk@0.18.0
 	opentelemetry_sdk@0.27.1
@@ -324,27 +324,27 @@ CRATES="
 	parse-git-url@0.5.1
 	password-hash@0.5.0
 	paste@1.0.15
-	pem@3.0.4
 	pem-rfc7468@0.7.0
+	pem@3.0.4
 	percent-encoding@2.3.1
 	pest@2.7.10
 	pest_derive@2.7.10
 	pest_generator@2.7.10
 	pest_meta@2.7.10
-	phf@0.8.0
 	phf@0.11.2
-	phf_codegen@0.8.0
+	phf@0.8.0
 	phf_codegen@0.11.2
-	phf_generator@0.8.0
+	phf_codegen@0.8.0
 	phf_generator@0.10.0
 	phf_generator@0.11.2
+	phf_generator@0.8.0
 	phf_macros@0.8.0
-	phf_shared@0.8.0
 	phf_shared@0.10.0
 	phf_shared@0.11.2
-	pin-project@1.1.5
+	phf_shared@0.8.0
 	pin-project-internal@1.1.5
 	pin-project-lite@0.2.14
+	pin-project@1.1.5
 	pin-utils@0.1.0
 	pkcs1@0.7.5
 	pkcs8@0.10.2
@@ -353,13 +353,13 @@ CRATES="
 	powerfmt@0.2.0
 	ppv-lite86@0.2.17
 	precomputed-hash@0.1.1
-	proc-macro-error@1.0.4
 	proc-macro-error-attr@1.0.4
+	proc-macro-error@1.0.4
 	proc-macro-hack@0.5.20+deprecated
 	proc-macro2@1.0.84
 	project-root@0.2.2
-	prost@0.13.4
 	prost-derive@0.13.4
+	prost@0.13.4
 	psm@0.1.21
 	quanta@0.12.3
 	querystring@1.1.0
@@ -376,41 +376,41 @@ CRATES="
 	rand_pcg@0.2.1
 	ratelimit@0.10.0
 	raw-cpuid@11.0.2
-	rayon@1.10.0
 	rayon-core@1.12.1
+	rayon@1.10.0
 	readable-readability@0.4.0
 	redox_syscall@0.4.1
 	redox_syscall@0.5.1
-	ref-cast@1.0.23
 	ref-cast-impl@1.0.23
-	regex@1.10.4
+	ref-cast@1.0.23
 	regex-automata@0.1.10
 	regex-automata@0.4.6
 	regex-syntax@0.6.29
 	regex-syntax@0.8.3
-	reqwest@0.12.4
+	regex@1.10.4
 	reqwest-eventsource@0.6.0
+	reqwest@0.12.4
 	ring@0.16.20
 	ring@0.17.8
-	rmp@0.8.14
 	rmp-serde@1.3.0
+	rmp@0.8.14
 	rsa@0.9.6
-	rust-embed@8.4.0
 	rust-embed-impl@8.4.0
 	rust-embed-utils@8.4.0
+	rust-embed@8.4.0
 	rust-stemmers@1.2.0
 	rustc-demangle@0.1.24
 	rustc-hash@1.1.0
 	rustc_version@0.4.0
 	rustix@0.38.34
-	rustls@0.20.9
-	rustls@0.22.4
-	rustls@0.23.20
 	rustls-native-certs@0.7.0
 	rustls-native-certs@0.8.1
 	rustls-pemfile@2.1.2
 	rustls-pki-types@1.10.0
 	rustls-webpki@0.102.8
+	rustls@0.20.9
+	rustls@0.22.4
+	rustls@0.23.20
 	rustversion@1.0.17
 	ryu@1.0.18
 	same-file@1.0.6
@@ -420,15 +420,15 @@ CRATES="
 	scopeguard@1.2.0
 	sct@0.7.1
 	sdd@0.2.0
-	secrecy@0.8.0
 	secrecy@0.10.3
+	secrecy@0.8.0
+	security-framework-sys@2.12.1
 	security-framework@2.11.0
 	security-framework@3.0.1
-	security-framework-sys@2.12.1
 	selectors@0.22.0
 	semver@1.0.23
-	serde@1.0.203
 	serde-jsonlines@0.5.0
+	serde@1.0.203
 	serde_derive@1.0.203
 	serde_json@1.0.117
 	serde_path_to_error@0.1.16
@@ -454,8 +454,8 @@ CRATES="
 	slab@0.4.9
 	smallvec@1.13.2
 	smartstring@1.0.1
-	snafu@0.8.3
 	snafu-derive@0.8.3
+	snafu@0.8.3
 	socket2@0.5.7
 	spin@0.5.2
 	spin@0.9.8
@@ -483,26 +483,25 @@ CRATES="
 	sync_wrapper@0.1.2
 	sync_wrapper@1.0.1
 	sysinfo@0.33.0
-	system-configuration@0.5.1
 	system-configuration-sys@0.5.0
+	system-configuration@0.5.1
 	tantivy-fst@0.5.0
-	tarpc@0.33.0
 	tarpc-plugins@0.12.0
+	tarpc@0.33.0
 	temp_testdir@0.2.3
 	tempfile@3.10.1
 	tendril@0.4.3
 	termcolor@1.4.1
 	text-splitter@0.13.3
 	thin-slice@0.1.1
-	thiserror@1.0.61
 	thiserror-impl@1.0.61
+	thiserror@1.0.61
 	thread_local@1.1.8
-	time@0.3.36
 	time-core@0.1.2
 	time-macros@0.2.18
+	time@0.3.36
 	tinyvec@1.6.0
 	tinyvec_macros@0.1.1
-	tokio@1.42.0
 	tokio-macros@2.4.0
 	tokio-native-tls@0.3.1
 	tokio-retry@0.3.0
@@ -513,17 +512,17 @@ CRATES="
 	tokio-stream@0.1.17
 	tokio-tungstenite@0.21.0
 	tokio-util@0.7.11
+	tokio@1.42.0
 	toml@0.7.8
 	toml_datetime@0.6.6
 	toml_edit@0.19.15
 	tonic@0.12.3
-	tower@0.4.13
-	tower@0.5.2
 	tower-http@0.5.2
 	tower-http@0.6.2
 	tower-layer@0.3.3
 	tower-service@0.3.3
-	tracing@0.1.40
+	tower@0.4.13
+	tower@0.5.2
 	tracing-attributes@0.1.27
 	tracing-core@0.1.32
 	tracing-error@0.2.0
@@ -531,11 +530,11 @@ CRATES="
 	tracing-opentelemetry@0.18.0
 	tracing-opentelemetry@0.28.0
 	tracing-subscriber@0.3.18
-	tracing-test@0.2.4
 	tracing-test-macro@0.2.4
+	tracing-test@0.2.4
+	tracing@0.1.40
 	trackable@1.3.0
 	trackable_derive@1.0.0
-	tree-sitter@0.22.6
 	tree-sitter-c-sharp@0.21.2
 	tree-sitter-elixir@0.2.0
 	tree-sitter-go@0.21.0
@@ -547,6 +546,7 @@ CRATES="
 	tree-sitter-rust@0.21.2
 	tree-sitter-tags@0.22.6
 	tree-sitter-typescript@0.21.1
+	tree-sitter@0.22.6
 	trie-rs@0.1.1
 	try-lock@0.2.5
 	tungstenite@0.21.0
@@ -563,17 +563,17 @@ CRATES="
 	unreachable@1.0.0
 	untrusted@0.7.1
 	untrusted@0.9.0
-	url@2.5.0
 	url-parse@1.0.8
+	url@2.5.0
 	urlencoding@2.1.3
 	utf-8@0.7.6
 	utf8-ranges@1.0.5
 	utf8parse@0.2.1
-	utoipa@4.2.3
 	utoipa-gen@4.3.0
 	utoipa-swagger-ui@6.0.0
-	uuid@1.8.0
+	utoipa@4.2.3
 	uuid-macro-internal@1.8.0
+	uuid@1.8.0
 	validator@0.18.1
 	validator_derive@0.18.1
 	valuable@0.1.0
@@ -584,29 +584,26 @@ CRATES="
 	void@1.0.2
 	walkdir@2.5.0
 	want@0.3.1
-	wasi@0.9.0+wasi-snapshot-preview1
 	wasi@0.11.0+wasi-snapshot-preview1
+	wasi@0.9.0+wasi-snapshot-preview1
 	wasite@0.1.0
-	wasm-bindgen@0.2.92
 	wasm-bindgen-backend@0.2.92
 	wasm-bindgen-futures@0.4.42
-	wasm-bindgen-macro@0.2.92
 	wasm-bindgen-macro-support@0.2.92
+	wasm-bindgen-macro@0.2.92
 	wasm-bindgen-shared@0.2.92
+	wasm-bindgen@0.2.92
 	wasm-streams@0.4.0
 	web-sys@0.3.69
 	web-time@1.1.0
-	webpki@0.22.4
 	webpki-roots@0.26.3
+	webpki@0.22.4
 	which@6.0.1
 	whoami@1.5.1
-	winapi@0.3.9
 	winapi-i686-pc-windows-gnu@0.4.0
 	winapi-util@0.1.8
 	winapi-x86_64-pc-windows-gnu@0.4.0
-	windows@0.48.0
-	windows@0.52.0
-	windows@0.57.0
+	winapi@0.3.9
 	windows-core@0.52.0
 	windows-core@0.57.0
 	windows-implement@0.57.0
@@ -616,6 +613,9 @@ CRATES="
 	windows-sys@0.52.0
 	windows-targets@0.48.5
 	windows-targets@0.52.5
+	windows@0.48.0
+	windows@0.52.0
+	windows@0.57.0
 	windows_aarch64_gnullvm@0.48.5
 	windows_aarch64_gnullvm@0.52.5
 	windows_aarch64_msvc@0.48.5
@@ -636,37 +636,38 @@ CRATES="
 	winsafe@0.0.19
 	wrapcenum-derive@0.4.1
 	xml5ever@0.18.0
-	zerocopy@0.7.34
 	zerocopy-derive@0.7.34
+	zerocopy@0.7.34
 	zeroize@1.8.1
 	zip@0.6.6
-	zstd@0.13.1
 	zstd-safe@7.1.0
 	zstd-sys@2.0.10+zstd.1.5.6
+	zstd@0.13.1
 "
 
 declare -A GIT_CRATES=(
-	[ollama-rs]="https://github.com/pepperoni21/ollama-rs;56e8157d98d4185bc171fe9468d3d09bc56e9dd3"
-	[oneshot]="https://github.com/fulmicoton/oneshot;b208f493e505f5f37e180b5cdec4c22b6f99abaa"
-	[ownedbytes]="https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/ownedbytes"
-	[sqlx]="https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133"
-	[sqlx-core]="https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-core"
-	[sqlx-macros]="https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-macros"
-	[sqlx-macros-core]="https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-macros-core"
-	[sqlx-mysql]="https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-mysql"
-	[sqlx-postgres]="https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-postgres"
-	[sqlx-sqlite]="https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-sqlite"
-	[tantivy]="https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7"
-	[tantivy-bitpacker]="https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/bitpacker"
-	[tantivy-columnar]="https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/columnar"
-	[tantivy-common]="https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/common"
-	[tantivy-query-grammar]="https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/query-grammar"
-	[tantivy-sstable]="https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/sstable"
-	[tantivy-stacker]="https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/stacker"
-	[tantivy-tokenizer-api]="https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/tokenizer-api"
-	[tree-sitter-c]="https://github.com/tree-sitter/tree-sitter-c;00ed08f1a6c18141bfd7a81638e4d239a0bb55cc"
-	[tree-sitter-cpp]="https://github.com/tree-sitter/tree-sitter-cpp;d29fbff09a8c9ff4f3074de2595dfca12cb33da9"
-	[tree-sitter-solidity]="https://github.com/JoranHonig/tree-sitter-solidity;0e86ae647bda22c9bee00ec59752df7b3d3b000b"
+	[ollama-rs]='https://github.com/pepperoni21/ollama-rs;56e8157d98d4185bc171fe9468d3d09bc56e9dd3;ollama-rs-%commit%'
+	[oneshot]='https://github.com/fulmicoton/oneshot;b208f493e505f5f37e180b5cdec4c22b6f99abaa;oneshot-%commit%'
+	[ownedbytes]='https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/ownedbytes'
+	[sqlx-core]='https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-core'
+	[sqlx-macros-core]='https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-macros-core'
+	[sqlx-macros]='https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-macros'
+	[sqlx-mysql]='https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-mysql'
+	[sqlx-postgres]='https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-postgres'
+	[sqlx-sqlite]='https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%/sqlx-sqlite'
+	[sqlx]='https://github.com/wsxiaoys/sqlx;8ca573cc0e323a637261a8f2cbc4a7c3c7b4e133;sqlx-%commit%'
+	[tantivy-bitpacker]='https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/bitpacker'
+	[tantivy-columnar]='https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/columnar'
+	[tantivy-common]='https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/common'
+	[tantivy-query-grammar]='https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/query-grammar'
+	[tantivy-sstable]='https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/sstable'
+	[tantivy-stacker]='https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/stacker'
+	[tantivy-tokenizer-api]='https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%/tokenizer-api'
+	[tantivy]='https://github.com/quickwit-oss/tantivy;4143d31865cbae9a9a7a286b0420a95814408ec7;tantivy-%commit%'
+	[tree-sitter-c]='https://github.com/tree-sitter/tree-sitter-c;00ed08f1a6c18141bfd7a81638e4d239a0bb55cc;tree-sitter-c-%commit%'
+	[tree-sitter-cpp]='https://github.com/tree-sitter/tree-sitter-cpp;d29fbff09a8c9ff4f3074de2595dfca12cb33da9;tree-sitter-cpp-%commit%'
+	[tree-sitter-gdscript]='https://github.com/faceCutWall/tree-sitter-gdscript;8a8c067899d734840e8ce86fdeeeadbe8088446b;tree-sitter-gdscript-%commit%'
+	[tree-sitter-solidity]='https://github.com/JoranHonig/tree-sitter-solidity;0e86ae647bda22c9bee00ec59752df7b3d3b000b;tree-sitter-solidity-%commit%'
 )
 
 inherit cargo
