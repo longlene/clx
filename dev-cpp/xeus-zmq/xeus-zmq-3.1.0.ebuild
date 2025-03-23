@@ -14,12 +14,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="
-	dev-cpp/xeus
-	net-libs/zeromq
-	net-libs/cppzmq
-	dev-cpp/nlohmann_json
-	dev-libs/openssl
-	dev-cpp/xtl
+	>=dev-cpp/xeus-5.0.0
+	>=net-libs/zeromq-4.2.5
+	>=net-libs/cppzmq-4.8.1
+	>=dev-cpp/nlohmann_json-3.11.3
+	>=dev-libs/openssl-3.0
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

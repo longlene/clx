@@ -14,12 +14,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="
-	>=dev-cpp/xeus-1.0.0
-	dev-db/sqlite
+	>=dev-cpp/xeus-zmq-3.0.0
+	>=dev-db/sqlite-3.30.1
 	>=dev-cpp/sqlitecpp-3.0.0
-	>=dev-cpp/tabulate-1.3.0
+	>=dev-cpp/tabulate-1.5.0
 	>=dev-cpp/nlohmann_json-3.0.0
 	>=dev-cpp/xvega-0.0.10
+	>=dev-cpp/xvega-bindings-0.0.10
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

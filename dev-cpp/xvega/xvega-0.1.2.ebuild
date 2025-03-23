@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-cpp/xtl-0.7.0
-	>=dev-cpp/nlohmann_json-3.7.3
-	>=dev-cpp/xproperty-0.11.0
+	>=dev-cpp/nlohmann_json-3.11.3
+	>=dev-cpp/xproperty-0.12.0
 "
 BDEPEND=""
