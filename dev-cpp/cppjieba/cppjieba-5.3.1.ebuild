@@ -16,8 +16,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
-	insinto /usr
-	doins -r include
+	doheader -r include/cppjieba
 	insinto /usr/share/jieba/dict
 	doins dict/*.utf8
 	dodoc -r README.md

@@ -3,7 +3,6 @@
 
 EAPI=8
 
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{11..13} )
 inherit distutils-r1
@@ -19,8 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/pytorch-1.12.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/torchaudio-0.12.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/pytorch-1.12.0[${PYTHON_USEDEP}]
+	>=sci-ml/torchaudio-0.12.0[${PYTHON_USEDEP}]
 	>=sci-ml/onnxruntime-1.16.1[python]
 "
 

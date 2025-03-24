@@ -18,13 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/pytorch-1.8.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/datasets-2.16.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/accelerate-0.26.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/peft-0.2.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/evaluate-0.4.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.1[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		>=sci-ml/pytorch-1.8.0[${PYTHON_USEDEP}]
 		dev-python/jsonlines[${PYTHON_USEDEP}]
 		dev-python/numexpr[${PYTHON_USEDEP}]
 		>=dev-python/pybind11-2.6.2[${PYTHON_USEDEP}]

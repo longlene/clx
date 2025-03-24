@@ -22,9 +22,9 @@ KEYWORDS="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	>=sci-ml/pytorch-1.11.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.41[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		>=sci-ml/pytorch-1.11.0[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
 		dev-python/scikit-learn[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]

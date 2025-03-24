@@ -25,7 +25,7 @@ RDEPEND="
 	dev-python/ffmpy[${PYTHON_USEDEP}]
 	>=dev-python/gradio-client-1.5.1[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]
-	>=sci-libs/huggingface_hub-0.25.1[${PYTHON_USEDEP}]
+	>=sci-ml/huggingface_hub-0.25.1[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-2.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.0[${PYTHON_USEDEP}]

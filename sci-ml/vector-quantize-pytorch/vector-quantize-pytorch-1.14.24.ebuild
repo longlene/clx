@@ -3,7 +3,6 @@
 
 EAPI=8
 
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{11..13} )
 
@@ -18,19 +17,15 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/pytorch-2.0[${PYTHON_SINGLE_USEDEP}]
-	$(python_gen_cond_dep '
-		>=dev-python/einops-0.8.0[${PYTHON_USEDEP}]
-		>=dev-python/einx-0.2.2[${PYTHON_USEDEP}]
-	')
+	>=sci-ml/pytorch-2.0[${PYTHON_USEDEP}]
+	>=dev-python/einops-0.8.0[${PYTHON_USEDEP}]
+	>=dev-python/einx-0.2.2[${PYTHON_USEDEP}]
 "
 BDEPEND="
 	test? (
-		$(python_gen_cond_dep '
-			>=dev-python/ruff-0.4.2[${PYTHON_USEDEP}]
-			>=dev-python/pytest-8.2.0[${PYTHON_USEDEP}]
-			>=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
-		')
+		>=dev-python/ruff-0.4.2[${PYTHON_USEDEP}]
+		>=dev-python/pytest-8.2.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-cov-5.0.0[${PYTHON_USEDEP}]
 	)
 "
 

@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_EXT=1
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
@@ -24,13 +23,11 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	>=sci-ml/pytorch-2.5.0[${PYTHON_SINGLE_USEDEP}]
-	$(python_gen_cond_dep '
-		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/packaging[${PYTHON_USEDEP}]
-		dev-python/cloudpickle[${PYTHON_USEDEP}]
-		>=sci-ml/tensordict-0.6.0[${PYTHON_USEDEP}]
-	')
+	>=sci-ml/pytorch-2.5.0[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/cloudpickle[${PYTHON_USEDEP}]
+	>=sci-ml/tensordict-0.6.0[${PYTHON_USEDEP}]
 "
 
 S="${WORKDIR}"/rl-${PV}

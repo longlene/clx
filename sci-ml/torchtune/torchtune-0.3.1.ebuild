@@ -20,9 +20,9 @@ KEYWORDS="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/datasets[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		sci-ml/pytorch[${PYTHON_USEDEP}]
 		sci-ml/huggingface_hub[${PYTHON_USEDEP}]
 		sci-ml/safetensors[${PYTHON_USEDEP}]
 

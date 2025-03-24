@@ -3,9 +3,9 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{10..13} )
 ROCM_VERSION=6.1
-inherit python-single-r1 cmake cuda flag-o-matic prefix rocm toolchain-funcs
+inherit python-r1 cmake cuda flag-o-matic prefix rocm toolchain-funcs
 
 MYPN=pytorch
 MYP=${MYPN}-${PV}
@@ -20,7 +20,8 @@ S="${WORKDIR}"/${MYP}
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="cuda distributed fbgemm flash gloo mkl mpi nnpack +numpy onednn openblas opencl openmp qnnpack rocm xnnpack"
+IUSE="cuda distributed fbgemm flash gloo memefficient mkl mpi nnpack +numpy
+	onednn openblas opencl openmp qnnpack rocm xnnpack"
 RESTRICT="test"
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
@@ -41,19 +42,19 @@ RDEPEND="
 	dev-cpp/nlohmann_json
 	dev-cpp/opentelemetry-cpp
 	dev-libs/cpuinfo
-	dev-libs/libfmt
+	dev-libs/libfmt:=
 	dev-libs/protobuf:=
 	dev-libs/pthreadpool
 	dev-libs/sleef
 	virtual/lapack
-	sci-ml/onnx
 	sci-ml/foxi
+	sci-ml/onnx
 	cuda? (
 		dev-libs/cudnn
 		>=dev-libs/cudnn-frontend-1.0.3:0/8
 		dev-util/nvidia-cuda-toolkit:=[profiler]
 	)
-	fbgemm? ( >=dev-libs/FBGEMM-2023.12.01 )
+	fbgemm? ( >=sci-ml/FBGEMM-2023.12.01 )
 	gloo? ( sci-ml/gloo[cuda?] )
 	mpi? ( virtual/mpi )
 	nnpack? ( sci-ml/NNPACK )
@@ -64,7 +65,7 @@ RDEPEND="
 	opencl? ( virtual/opencl )
 	qnnpack? (
 		!sci-ml/QNNPACK
-		dev-cpp/gemmlowp
+		sci-ml/gemmlowp
 	)
 	rocm? (
 		=dev-util/hip-6.1*
@@ -97,20 +98,18 @@ RDEPEND="
 
 DEPEND="
 	${RDEPEND}
-	qnnpack? ( dev-libs/clog )
-	cuda? ( <=dev-libs/cutlass-3.4.1 )
-	onednn? ( sci-ml/ideep )
-	dev-libs/psimd
-	sci-ml/FP16
+	dev-libs/flatbuffers
 	dev-libs/FXdiv
 	dev-libs/pocketfft
-	dev-libs/flatbuffers
+	dev-libs/psimd
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+	dev-python/pybind11[${PYTHON_USEDEP}]
+	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	sci-ml/FP16
 	>=sci-ml/kineto-0.4.0_p20240525
-	$(python_gen_cond_dep '
-		dev-python/pyyaml[${PYTHON_USEDEP}]
-		dev-python/pybind11[${PYTHON_USEDEP}]
-		dev-python/typing-extensions[${PYTHON_USEDEP}]
-	')
+	cuda? ( <=dev-libs/cutlass-3.4.1 )
+	onednn? ( sci-ml/ideep )
+	qnnpack? ( dev-libs/clog )
 "
 
 PATCHES=(
@@ -122,6 +121,10 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-2.5.1-glog-0.6.0.patch
 	"${FILESDIR}"/${PN}-2.5.1-newfix-functorch-install.patch
 )
+
+pkg_setup() {
+	python_setup
+}
 
 src_prepare() {
 	filter-lto #bug 862672
@@ -143,6 +146,10 @@ src_prepare() {
 		c10/cuda/CMakeLists.txt \
 		c10/CMakeLists.txt \
 		c10/hip/CMakeLists.txt \
+		|| die
+	sed -i \
+		-e '/Using pocketfft in directory:/d' \
+		cmake/Dependencies.cmake \
 		|| die
 
 	cmake_src_prepare
@@ -208,7 +215,7 @@ src_configure() {
 		-DUSE_ITT=OFF
 		-DUSE_KINETO=OFF # TODO
 		-DUSE_MAGMA=OFF # TODO: In GURU as sci-libs/magma
-		-DUSE_MEM_EFF_ATTENTION=OFF
+		-DUSE_MEM_EFF_ATTENTION=$(usex memefficient)
 		-DUSE_MKLDNN=$(usex onednn)
 		-DUSE_MPI=$(usex mpi)
 		-DUSE_NCCL=OFF
@@ -293,6 +300,19 @@ src_compile() {
 	cmake_src_compile
 }
 
+python_install() {
+	python_domodule python/torch
+	mkdir "${D}"$(python_get_sitedir)/torch/bin || die
+	mkdir "${D}"$(python_get_sitedir)/torch/lib || die
+	mkdir "${D}"$(python_get_sitedir)/torch/include || die
+	ln -s ../../../../../include/torch \
+		"${D}$(python_get_sitedir)"/torch/include/torch || die # bug 923269
+	ln -s ../../../../../bin/torch_shm_manager \
+		"${D}"/$(python_get_sitedir)/torch/bin/torch_shm_manager || die
+	ln -s ../../../../../$(get_libdir)/libtorch_global_deps.so \
+		"${D}"/$(python_get_sitedir)/torch/lib/libtorch_global_deps.so || die
+}
+
 src_install() {
 	cmake_src_install
 
@@ -304,18 +324,5 @@ src_install() {
 	rm -rf python
 	mkdir -p python/torch || die
 	cp torch/version.py python/torch/ || die
-	python_domodule python/torch
-
-	mkdir "${D}"$(python_get_sitedir)/torch/bin || die
-	mkdir "${D}"$(python_get_sitedir)/torch/lib || die
-	mkdir "${D}"$(python_get_sitedir)/torch/include || die
-
-	ln -s ../../../../../include/torch \
-		"${D}$(python_get_sitedir)"/torch/include/torch || die # bug 923269
-
-	mv "${D}"/usr/bin/torch_shm_manager \
-		"${D}"/$(python_get_sitedir)/torch/bin/ || die
-
-	mv "${D}"/usr/$(get_libdir)/libtorch_global_deps.so \
-		"${D}"/$(python_get_sitedir)/torch/lib/ || die
+	python_foreach_impl python_install
 }

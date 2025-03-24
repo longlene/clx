@@ -5,7 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{11..13} )
 
-inherit cmake flag-o-matic python-single-r1
+inherit cmake flag-o-matic python-r1
 
 MY_PN="intel-extension-for-pytorch"
 MY_P=${MY_PN}-${PV}
@@ -26,7 +26,7 @@ DEPEND="
 	sci-ml/ideep
 	dev-libs/libxsmm
 	sci-ml/oneDNN
-	sci-ml/caffe2[distributed,${PYTHON_SINGLE_USEDEP}]
+	sci-ml/caffe2[distributed,${PYTHON_USEDEP}]
 	sci-libs/mkl
 "
 RDEPEND="${DEPEND}"

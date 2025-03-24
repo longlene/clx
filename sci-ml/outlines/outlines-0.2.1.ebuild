@@ -3,7 +3,6 @@
 
 EAPI=8
 
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
@@ -20,27 +19,25 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-libs/pytorch[${PYTHON_SINGLE_USEDEP}]
-	$(python_gen_cond_dep '
-		dev-python/interegular[${PYTHON_USEDEP}]
-		dev-python/jinja2[${PYTHON_USEDEP}]
-		dev-python/lark[${PYTHON_USEDEP}]
-		dev-python/nest-asyncio[${PYTHON_USEDEP}]
-		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/cloudpickle[${PYTHON_USEDEP}]
-		dev-python/diskcache[${PYTHON_USEDEP}]
-		>=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
-		dev-python/referencing[${PYTHON_USEDEP}]
-		dev-python/jsonschema[${PYTHON_USEDEP}]
-		dev-python/requests[${PYTHON_USEDEP}]
-		dev-python/tqdm[${PYTHON_USEDEP}]
-		dev-python/typing-extensions[${PYTHON_USEDEP}]
-		dev-python/iso3166[${PYTHON_USEDEP}]
-		dev-python/airportsdata[${PYTHON_USEDEP}]
-		>=dev-python/outlines-core-0.1.26[${PYTHON_USEDEP}]
-		dev-python/genson[${PYTHON_USEDEP}]
-		>=dev-python/pre-commit-4.0.1[${PYTHON_USEDEP}]
-	')
+	sci-ml/pytorch[${PYTHON_USEDEP}]
+	dev-python/interegular[${PYTHON_USEDEP}]
+	dev-python/jinja2[${PYTHON_USEDEP}]
+	dev-python/lark[${PYTHON_USEDEP}]
+	dev-python/nest-asyncio[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/cloudpickle[${PYTHON_USEDEP}]
+	dev-python/diskcache[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
+	dev-python/referencing[${PYTHON_USEDEP}]
+	dev-python/jsonschema[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/tqdm[${PYTHON_USEDEP}]
+	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	dev-python/iso3166[${PYTHON_USEDEP}]
+	dev-python/airportsdata[${PYTHON_USEDEP}]
+	>=dev-python/outlines-core-0.1.26[${PYTHON_USEDEP}]
+	dev-python/genson[${PYTHON_USEDEP}]
+	>=dev-python/pre-commit-4.0.1[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

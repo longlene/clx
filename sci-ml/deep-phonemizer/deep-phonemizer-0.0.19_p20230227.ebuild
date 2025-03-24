@@ -21,9 +21,9 @@ KEYWORDS="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	>=sci-ml/pytorch-1.2.0[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/tensorboard[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		>=sci-ml/pytorch-1.2.0[${PYTHON_USEDEP}]
 		>=dev-python/tqdm-4.38.0[${PYTHON_USEDEP}]
 		>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
 		>=dev-python/certifi-2022.12.7[${PYTHON_USEDEP}]

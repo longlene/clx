@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_EXT=1
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
@@ -23,11 +22,8 @@ KEYWORDS="~amd64"
 IUSE="cuda"
 
 RDEPEND="
-	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
-	sci-ml/caffe2[cuda?,${PYTHON_SINGLE_USEDEP}]
-	$(python_gen_cond_dep '
-		>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
-	')
+	sci-ml/pytorch[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

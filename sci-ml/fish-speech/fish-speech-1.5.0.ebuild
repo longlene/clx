@@ -18,15 +18,14 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/transformers-4.45.2[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/datasets-2.18.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/lightning-2.1.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/tensorboard-2.14.1[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/vector-quantize-pytorch-1.14.24[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/faster-whisper[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/silero-vad[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/funasr-1.1.5[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		>=sci-ml/vector-quantize-pytorch-1.14.24[${PYTHON_USEDEP}]
+		>=sci-ml/transformers-4.45.2[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.26.4[${PYTHON_USEDEP}]
 		>=dev-python/hydra-1.3.2[${PYTHON_USEDEP}]
 		>=dev-python/natsort-8.4.0[${PYTHON_USEDEP}]
@@ -46,6 +45,7 @@ RDEPEND="
 		>=dev-python/zstandard-0.22.0[${PYTHON_USEDEP}]
 		dev-python/pydub[${PYTHON_USEDEP}]
 		dev-python/pyaudio[${PYTHON_USEDEP}]
+		>=sci-ml/lightning-2.1.0[${PYTHON_USEDEP}]
 		>=sci-ml/modelscope-1.17.1[${PYTHON_USEDEP}]
 		>=dev-python/opencc-python-reimplemented-0.1.7[${PYTHON_USEDEP}]
 		dev-python/ormsgpack[${PYTHON_USEDEP}]

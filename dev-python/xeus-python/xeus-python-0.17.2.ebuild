@@ -16,9 +16,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="
-	dev-cpp/pybind11_json
-	dev-cpp/xeus-zmq
-	dev-cpp/xtl
+	>=dev-cpp/xeus-zmq-3.1
+	>=dev-cpp/nlohmann_json-3.11.3
+	>=dev-cpp/nlohmann_json-3.11.3
+	>=dev-cpp/pybind11_json-0.2.8
+	>=dev-python/pybind11-2.6.1
+	>=dev-python/pygments-2.3.1
+	>=dev-python/debugpy-1.1.0
+	>=dev-python/xeus-python-shell-0.6.3.0
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

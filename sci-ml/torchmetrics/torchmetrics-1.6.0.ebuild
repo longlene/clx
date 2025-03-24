@@ -3,7 +3,6 @@
 
 EAPI=8
 
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12..13} )
 
@@ -18,12 +17,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/pytorch-2.1.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/lightning-utilities-0.8.0[${PYTHON_SINGLE_USEDEP}]
-	$(python_gen_cond_dep '
-		>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
-		>=dev-python/packaging-17.1[${PYTHON_USEDEP}]
-	')
+	>=sci-ml/pytorch-2.1.0[${PYTHON_USEDEP}]
+	>=sci-ml/lightning-utilities-0.8.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
+	>=dev-python/packaging-17.1[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

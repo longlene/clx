@@ -22,10 +22,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.19.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/openvino-2023.1.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		sci-ml/pytorch[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
 		dev-python/more-itertools[${PYTHON_USEDEP}]

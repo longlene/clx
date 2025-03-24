@@ -20,10 +20,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/pytorch-1.8.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/torchvision-0.9.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/ultralytics-thop-2.0.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		>=sci-ml/pytorch-1.8.0[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
 		>=media-libs/opencv-4.6.0[${PYTHON_USEDEP}]

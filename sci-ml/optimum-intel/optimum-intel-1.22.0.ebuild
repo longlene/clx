@@ -20,11 +20,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/pytorch-1.11.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/optimum-1.24.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.36.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/datasets-1.4.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		>=sci-ml/datasets-1.4.0[${PYTHON_SINGLE_USEDEP}]
+		>=sci-ml/pytorch-1.11.0[${PYTHON_USEDEP}]
 		sci-ml/sentencepiece[python,${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		sci-ml/onnx[${PYTHON_USEDEP}]

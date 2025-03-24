@@ -3,7 +3,6 @@
 
 EAPI=8
 
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12..13} )
 
@@ -18,10 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	$(python_gen_cond_dep '
-		>=dev-python/packaging-17.1[${PYTHON_USEDEP}]
-		dev-python/typing-extensions[${PYTHON_USEDEP}]
-	')
+	>=dev-python/packaging-17.1[${PYTHON_USEDEP}]
+	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

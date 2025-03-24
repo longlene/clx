@@ -23,7 +23,7 @@ RDEPEND="
 	>=dev-python/hatch-fancy-pypi-readme-22.5.0[${PYTHON_USEDEP}]
 	dev-python/fsspec[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]
-	>=sci-libs/huggingface_hub-0.19.3[${PYTHON_USEDEP}]
+	>=sci-ml/huggingface_hub-0.19.3[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}]
 	>=dev-python/websockets-10.0[${PYTHON_USEDEP}]

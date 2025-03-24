@@ -3,7 +3,6 @@
 
 EAPI=8
 
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
@@ -29,10 +28,8 @@ DEPEND="
 	rocm? ( dev-util/hip )
 "
 RDEPEND="${DEPEND}
-	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
-	$(python_gen_cond_dep '
-		dev-python/einops[${PYTHON_USEDEP}]
-	')
+	dev-python/einops[${PYTHON_USEDEP}]
+	sci-ml/pytorch[${PYTHON_USEDEP}]
 "
 BDEPEND=""
 

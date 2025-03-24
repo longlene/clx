@@ -17,13 +17,16 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/aiohttp-3.9.5[${PYTHON_USEDEP}]
+	>=dev-python/aiohttp-3.10.4[${PYTHON_USEDEP}]
+	>=dev-python/click-8.1.7[${PYTHON_USEDEP}]
+	>=dev-python/cryptography-43.0.1[${PYTHON_USEDEP}]
 	>=dev-python/loguru-0.7.2[${PYTHON_USEDEP}]
-	>=dev-python/xmlschema-3.3.0[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0.2[${PYTHON_USEDEP}]
+	>=dev-python/uvloop-0.21.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
 	test? (
-		>=dev-python/pytest-asyncio-0.21.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-asyncio-0.23.8[${PYTHON_USEDEP}]
 	)
 "
 

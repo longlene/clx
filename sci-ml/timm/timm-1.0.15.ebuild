@@ -3,7 +3,6 @@
 
 EAPI=8
 
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=pdm-backend
 PYTHON_COMPAT=( python3_{11..13} )
 
@@ -18,13 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
-	sci-ml/torchvision[${PYTHON_SINGLE_USEDEP}]
-	$(python_gen_cond_dep '
-		dev-python/pyyaml[${PYTHON_USEDEP}]
-		sci-ml/huggingface_hub[${PYTHON_USEDEP}]
-		sci-ml/safetensors[${PYTHON_USEDEP}]
-	')
+	sci-ml/pytorch[${PYTHON_USEDEP}]
+	sci-ml/torchvision[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+	sci-ml/huggingface_hub[${PYTHON_USEDEP}]
+	sci-ml/safetensors[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

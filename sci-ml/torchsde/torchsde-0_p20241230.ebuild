@@ -3,7 +3,6 @@
 
 EAPI=8
 
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
@@ -21,12 +20,10 @@ KEYWORDS="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	>=sci-ml/pytorch-1.6.0[${PYTHON_SINGLE_USEDEP}]
-	$(python_gen_cond_dep '
-		>=dev-python/numpy-1.19[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.5[${PYTHON_USEDEP}]
-		>=dev-python/trampoline-0.1.2[${PYTHON_USEDEP}]
-	')
+	>=sci-ml/pytorch-1.6.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.19[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.5[${PYTHON_USEDEP}]
+	>=dev-python/trampoline-0.1.2[${PYTHON_USEDEP}]
 "
 BDEPEND=""
 

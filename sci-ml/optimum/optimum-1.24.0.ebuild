@@ -20,9 +20,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/pytorch-1.11.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.29[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		>=sci-ml/pytorch-1.11.0[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		>=sci-ml/huggingface_hub-0.8.0[${PYTHON_USEDEP}]
 	')

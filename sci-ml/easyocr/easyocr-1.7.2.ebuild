@@ -3,7 +3,6 @@
 
 EAPI=8
 
-DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
@@ -21,20 +20,18 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/torchvision-0.5[${PYTHON_SINGLE_USEDEP}]
-	$(python_gen_cond_dep '
-		dev-python/scipy[${PYTHON_USEDEP}]
-		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/pillow[${PYTHON_USEDEP}]
-		dev-python/scikit-image[${PYTHON_USEDEP}]
-		dev-python/python-bidi[${PYTHON_USEDEP}]
-		dev-python/pyyaml[${PYTHON_USEDEP}]
-		dev-python/shapely[${PYTHON_USEDEP}]
-		dev-python/pyclipper[${PYTHON_USEDEP}]
-		dev-python/ninja[${PYTHON_USEDEP}]
-		media-libs/opencv[${PYTHON_USEDEP}]
-	')
+	sci-ml/pytorch[${PYTHON_USEDEP}]
+	>=sci-ml/torchvision-0.5[${PYTHON_USEDEP}]
+	dev-python/scipy[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	dev-python/scikit-image[${PYTHON_USEDEP}]
+	dev-python/python-bidi[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+	dev-python/shapely[${PYTHON_USEDEP}]
+	dev-python/pyclipper[${PYTHON_USEDEP}]
+	dev-python/ninja[${PYTHON_USEDEP}]
+	media-libs/opencv[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

@@ -21,16 +21,16 @@ KEYWORDS="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	>=sci-ml/pytorch-2.5.1[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/lightning-2.4.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/pytorchcv-0.0.67[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/timm-1.0.3[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/openvino-2024.6[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/openvino-model-api-0.2.5[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/nncf-2.14.1[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/datumaro-1.10.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/anomalib-1.1.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		>=sci-ml/lightning-2.4.0[${PYTHON_USEDEP}]
+		>=sci-ml/pytorchcv-0.0.67[${PYTHON_USEDEP}]
+		>=sci-ml/timm-1.0.3[${PYTHON_USEDEP}]
+		>=sci-ml/pytorch-2.5.1[${PYTHON_USEDEP}]
 		>=sci-ml/onnx-1.17.0[${PYTHON_USEDEP}]
 		>=sci-ml/onnxconverter-common-1.14.0[${PYTHON_USEDEP}]
 		>=dev-python/omegaconf-2.3.0[${PYTHON_USEDEP}]

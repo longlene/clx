@@ -1,11 +1,11 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit rebar3
 
-ZSTD_PV="1.5.5"
+ZSTD_PV="1.5.6"
 
 DESCRIPTION="Zstd binding for Erlang"
 HOMEPAGE="https://github.com/silviucpp/ezstd"
@@ -28,5 +28,4 @@ src_prepare() {
 	ln -sv "${WORKDIR}"/zstd-${ZSTD_PV} "${S}"/_build/deps/zstd
 	sed -e '/git checkout/d' \
 		-i build_deps.sh
-	rebar_src_prepare
 }
