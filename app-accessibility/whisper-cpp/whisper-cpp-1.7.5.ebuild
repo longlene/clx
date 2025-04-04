@@ -28,11 +28,11 @@ BDEPEND=""
 
 PATCHES=(
 	"${FILESDIR}"/whisper-cpp-${PV}-default-model-path.patch
-	"${FILESDIR}"/system-ggml.patch
 )
 
 src_configure() {
 	local mycmakeargs=(
+		-DWHISPER_USE_SYSTEM_GGML=ON
 		-DWHISPER_BUILD_TESTS=OFF
 		#-DWHISPER_CLBLAST=$(usex opencl)
 		-DWHISPER_CURL=ON

@@ -1,7 +1,7 @@
 diff -Nur a/examples/cli/cli.cpp b/examples/cli/cli.cpp
---- a/examples/cli/cli.cpp	2025-01-06 05:13:48.000000000 -0800
-+++ b/examples/cli/cli.cpp	2025-02-04 11:04:06.857250094 -0800
-@@ -76,7 +76,7 @@
+--- a/examples/cli/cli.cpp
++++ b/examples/cli/cli.cpp
+@@ -83,7 +83,7 @@
      std::string language  = "en";
      std::string prompt;
      std::string font_path = "/System/Library/Fonts/Supplemental/Courier New Bold.ttf";
