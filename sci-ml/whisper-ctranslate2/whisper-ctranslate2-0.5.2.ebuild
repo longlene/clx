@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 RESTRICT="test" # Need some modules, not yet packaged
 
 RDEPEND="
-	>=sci-ml/faster-whisper-1.1.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/faster-whisper-1.1.1[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/ctranslate2[${PYTHON_USEDEP}]

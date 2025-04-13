@@ -18,10 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
+	>=sci-ml/pytorch-1.13.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/accelerate-0.21.0[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/transformers[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		>=sci-ml/pytorch-1.13.0[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 		>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
 		dev-python/psutil[${PYTHON_USEDEP}]
