@@ -1,7 +1,7 @@
 diff -Nur a/CMakeLists.txt b/CMakeLists.txt
---- a/CMakeLists.txt	2025-01-24 04:55:40.000000000 -0800
-+++ b/CMakeLists.txt	2025-02-07 19:30:05.979973787 -0800
-@@ -59,6 +59,7 @@
+--- a/CMakeLists.txt	2025-03-28 06:59:41.000000000 -0700
++++ b/CMakeLists.txt	2025-04-13 14:24:12.857453262 -0700
+@@ -61,6 +61,7 @@
                   PATHS "${OpenVINO_DIR_PY}")
  endif()
  
@@ -9,26 +9,17 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
  include(cmake/features.cmake)
  include(cmake/version.cmake)
  
-@@ -88,18 +89,22 @@
- 
- add_subdirectory(thirdparty)
- add_subdirectory(src)
--if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/samples")
-+if(ENABLE_EXAMPLE)
-+  if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/samples")
+@@ -93,15 +94,15 @@
+ if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/samples" AND ENABLE_SAMPLES)
      add_subdirectory(samples)
-+  endif()
  endif()
 -if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/tools/continuous_batching")
-+if(ENABLE_TOOL)
-+  if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/tools/continuous_batching")
++if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/tools/continuous_batching" AND ENABLE_TOOLS)
      add_subdirectory(tools/continuous_batching)
--endif()
+ endif()
 -if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/tests/cpp")
-+  endif()
-+  if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/tests/cpp")
++if(EXISTS "${OpenVINOGenAI_SOURCE_DIR}/tests/cpp" AND ENABLE_TESTS)
      add_subdirectory(tests/cpp)
-+  endif()
  endif()
  
 -install(FILES LICENSE DESTINATION docs/licensing COMPONENT licensing_genai RENAME LICENSE-GENAI)
@@ -38,55 +29,66 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
  if(NOT DEFINED CPACK_ARCHIVE_COMPONENT_INSTALL)
      set(CPACK_ARCHIVE_COMPONENT_INSTALL ON)
  endif()
-diff -Nur a/src/cpp/CMakeLists.txt b/src/cpp/CMakeLists.txt
---- a/src/cpp/CMakeLists.txt	2025-01-24 04:55:40.000000000 -0800
-+++ b/src/cpp/CMakeLists.txt	2025-02-07 19:37:35.563323058 -0800
-@@ -148,26 +148,26 @@
+diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
+--- a/src/CMakeLists.txt	2025-03-28 06:59:41.000000000 -0700
++++ b/src/CMakeLists.txt	2025-04-13 14:29:35.434131405 -0700
+@@ -56,9 +56,9 @@
+         list(APPEND rpaths "@loader_path/../node_modules/openvino-node/bin")
+     endif()
+ else()
+-    set(LIBRARY_DESTINATION runtime/lib/${ARCH_DIR})
+-    set(ARCHIVE_DESTINATION runtime/lib/${ARCH_DIR})
+-    set(RUNTIME_DESTINATION runtime/bin/${ARCH_DIR})
++    set(LIBRARY_DESTINATION ${CMAKE_INSTALL_LIBDIR})
++    set(ARCHIVE_DESTINATION ${CMAKE_INSTALL_LIBDIR})
++    set(RUNTIME_DESTINATION ${CMAKE_INSTALL_LIBDIR})
  endif()
  
- install(TARGETS ${TARGET_NAME} EXPORT OpenVINOGenAITargets
--        LIBRARY DESTINATION runtime/lib/${ARCH_DIR} COMPONENT core_genai
--            NAMELINK_COMPONENT core_genai_dev
--        ARCHIVE DESTINATION runtime/lib/${ARCH_DIR} COMPONENT core_genai_dev
--        RUNTIME DESTINATION runtime/bin/${ARCH_DIR} COMPONENT core_genai
+ if(NOT DEFINED ENABLE_LTO)
+diff -Nur a/src/cpp/CMakeLists.txt b/src/cpp/CMakeLists.txt
+--- a/src/cpp/CMakeLists.txt	2025-03-28 06:59:41.000000000 -0700
++++ b/src/cpp/CMakeLists.txt	2025-04-13 14:12:36.887428377 -0700
+@@ -148,7 +148,7 @@
+             NAMELINK_COMPONENT core_genai_dev
+         ARCHIVE DESTINATION ${ARCHIVE_DESTINATION} COMPONENT core_genai_dev
+         RUNTIME DESTINATION ${RUNTIME_DESTINATION} COMPONENT core_genai
 -        INCLUDES DESTINATION runtime/include)
-+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT core_genai
-+  NAMELINK_COMPONENT core_genai_dev
-+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT core_genai_dev
-+  RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT core_genai
-+  INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
++        INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+ 
+ # development files do not need to be built for NPM package
+ if(CPACK_GENERATOR STREQUAL "NPM")
+@@ -157,12 +157,12 @@
  
  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
+                   ${OpenVINOGenAI_SOURCE_DIR}/src/c/include/
 -        DESTINATION runtime/include COMPONENT core_genai_dev)
-+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} COMPONENT core_genai_dev)
++                  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} COMPONENT core_genai_dev)
  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/openvino/genai/version.hpp
 -        DESTINATION runtime/include/openvino/genai COMPONENT core_genai_dev)
-+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/openvino/genai COMPONENT core_genai_dev)
++        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/openvino/genai COMPONENT core_genai_dev)
  
  install(EXPORT OpenVINOGenAITargets FILE OpenVINOGenAITargets.cmake
 -        NAMESPACE openvino:: DESTINATION runtime/cmake
-+  NAMESPACE openvino:: DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cmake/${PROJECT_NAME}
++        NAMESPACE openvino:: DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake/${PROJECT_NAME}
          COMPONENT core_genai_dev)
  
  include(CMakePackageConfigHelpers)
- configure_package_config_file("${OpenVINOGenAI_SOURCE_DIR}/cmake/templates/OpenVINOGenAIConfig.cmake.in"
--                              "${CMAKE_BINARY_DIR}/OpenVINOGenAIConfig.cmake" INSTALL_DESTINATION runtime/cmake)
-+  "${CMAKE_BINARY_DIR}/OpenVINOGenAIConfig.cmake" INSTALL_DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cmake/${PROJECT_NAME})
+@@ -171,5 +171,5 @@
  write_basic_package_version_file("${CMAKE_BINARY_DIR}/OpenVINOGenAIConfigVersion.cmake"
                                   VERSION ${OpenVINOGenAI_VERSION} COMPATIBILITY AnyNewerVersion)
  install(FILES "${CMAKE_BINARY_DIR}/OpenVINOGenAIConfig.cmake" "${CMAKE_BINARY_DIR}/OpenVINOGenAIConfigVersion.cmake"
 -        DESTINATION runtime/cmake COMPONENT core_genai_dev)
-+  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cmake/${PROJECT_NAME} COMPONENT core_genai_dev)
++        DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake/${PROJECT_NAME} COMPONENT core_genai_dev)
  export(EXPORT OpenVINOGenAITargets FILE "${CMAKE_BINARY_DIR}/OpenVINOGenAITargets.cmake" NAMESPACE openvino::)
 diff -Nur a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
---- a/src/python/CMakeLists.txt	2025-01-24 04:55:40.000000000 -0800
-+++ b/src/python/CMakeLists.txt	2025-02-07 19:40:26.496662461 -0800
-@@ -66,24 +66,24 @@
+--- a/src/python/CMakeLists.txt	2025-03-28 06:59:41.000000000 -0700
++++ b/src/python/CMakeLists.txt	2025-04-13 14:17:16.157438397 -0700
+@@ -59,24 +59,24 @@
  install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/openvino_genai/__init__.py"
                "${CMAKE_CURRENT_SOURCE_DIR}/openvino_genai/__init__.pyi"
                "${CMAKE_CURRENT_SOURCE_DIR}/openvino_genai/py_openvino_genai.pyi"
 -        DESTINATION python/openvino_genai
-+              DESTINATION ${Python3_SITELIB}/openvino_genai
++        DESTINATION ${Python3_SITELIB}/openvino_genai
          COMPONENT pygenai_${Python3_VERSION_MAJOR}_${Python3_VERSION_MINOR})
  install(TARGETS ${TARGET_NAME}
 -        LIBRARY DESTINATION python/openvino_genai
@@ -97,7 +99,7 @@ diff -Nur a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
                "${OpenVINOGenAI_SOURCE_DIR}/third-party-programs.txt"
                "${OpenVINOGenAI_SOURCE_DIR}/SECURITY.md"
 -        DESTINATION "${PY_BUILD_CMAKE_PACKAGE_NAME}-${PY_BUILD_CMAKE_PACKAGE_VERSION}.dist-info"
-+        DESTINATION "${Python3_SITELIB}/${PY_BUILD_CMAKE_PACKAGE_NAME}-${PY_BUILD_CMAKE_PACKAGE_VERSION}.dist-info"
++              DESTINATION "${Python3_SITELIB}/${PY_BUILD_CMAKE_PACKAGE_NAME}-${PY_BUILD_CMAKE_PACKAGE_VERSION}.dist-info"
          COMPONENT wheel_genai
          EXCLUDE_FROM_ALL)
  
@@ -106,8 +108,8 @@ diff -Nur a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
  install(TARGETS openvino_genai ${TARGET_NAME}
 -        LIBRARY DESTINATION openvino_genai COMPONENT wheel_genai EXCLUDE_FROM_ALL
 -        RUNTIME DESTINATION openvino_genai COMPONENT wheel_genai EXCLUDE_FROM_ALL)
-+  LIBRARY DESTINATION ${Python3_SITEARCH}/openvino_genai COMPONENT wheel_genai EXCLUDE_FROM_ALL
-+        RUNTIME DESTINATION on3_SITEARCH}/openvino_genai COMPONENT wheel_genai EXCLUDE_FROM_ALL)
++        LIBRARY DESTINATION ${Python3_SITEARCH}/openvino_genai COMPONENT wheel_genai EXCLUDE_FROM_ALL
++        RUNTIME DESTINATION ${Python_SITEARCH}/openvino_genai COMPONENT wheel_genai EXCLUDE_FROM_ALL)
  
  # Generate or check .pyi stub files generated by pybind11-stub
  

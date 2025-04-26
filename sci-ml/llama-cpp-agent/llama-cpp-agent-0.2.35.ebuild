@@ -10,7 +10,6 @@ inherit distutils-r1
 
 DESCRIPTION="A framework for building LLM based AI agents with llama.cpp"
 HOMEPAGE="
-	https://pypi.org/project/bitsandbytes/
 	https://github.com/Maximilian-Winter/llama-cpp-agent
 "
 SRC_URI="https://github.com/Maximilian-Winter/llama-cpp-agent/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
