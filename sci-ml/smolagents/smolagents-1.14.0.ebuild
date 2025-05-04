@@ -23,7 +23,6 @@ RDEPEND="
 	>=sci-ml/huggingface_hub-0.28.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.32.3[${PYTHON_USEDEP}]
 	>=dev-python/rich-13.9.4[${PYTHON_USEDEP}]
-	>=dev-python/pandas-2.2.3[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.1.4[${PYTHON_USEDEP}]
 	>=dev-python/pillow-11.0.0[${PYTHON_USEDEP}]
 	>=dev-python/markdownify-0.14.1[${PYTHON_USEDEP}]

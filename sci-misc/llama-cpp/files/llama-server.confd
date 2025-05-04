@@ -1,4 +1,4 @@
 # Config file for /etc/init.d/llama-server
 
 # extra options (run llama-server -h for a list of supported options)
-LLAMA_SERVER_OPTS=""
+LLAMA_SERVER_OPTS=()

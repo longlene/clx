@@ -3,7 +3,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 command="/usr/bin/llama-server"
-command_args="${LLAMA_SERVER_OPTS}"
+command_args="${LLAMA_SERVER_OPTS[*]}"
 command_background="yes"
 command_user="${SVCNAME#*.}"
 description="LLaMA.cpp HTTP Server"

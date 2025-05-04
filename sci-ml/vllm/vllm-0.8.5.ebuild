@@ -10,7 +10,7 @@ PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
-FLASH_ATTENTION_COMMIT="720c94869cf2e0ff5a706e9c7f1dce0939686ade"
+FLASH_ATTENTION_COMMIT="8798f27777fb57f447070301bf33a9f9c607f491"
 FLASHMLA_COMMIT="575f7724b9762f265bbee5889df9c7d630801845"
 
 DESCRIPTION="A high-throughput and memory-efficient inference and serving engine for LLMs"
@@ -34,7 +34,7 @@ RDEPEND="
 	>=sci-ml/transformers-4.48.2[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/tokenizers-0.19.1[${PYTHON_SINGLE_USEDEP}]
 	cuda? (
-		>=dev-libs/cutlass-3.7.0
+		>=dev-libs/cutlass-3.9.0
 	)
 	$(python_gen_cond_dep '
 		>=sci-ml/caffe2-2.6.0[cuda?,rocm?,${PYTHON_USEDEP}]
