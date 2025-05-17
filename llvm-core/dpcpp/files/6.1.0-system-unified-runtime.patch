@@ -1,0 +1,155 @@
+diff -Nur a/sycl/cmake/modules/FetchUnifiedRuntime.cmake b/sycl/cmake/modules/FetchUnifiedRuntime.cmake
+--- a/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2025-05-15 01:15:09.000000000 -0700
++++ b/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2025-05-17 12:08:53.317889394 -0700
+@@ -183,27 +183,74 @@
+     ${UNIFIED_RUNTIME_SOURCE_DIR}
+     ${CMAKE_CURRENT_BINARY_DIR}/unified-runtime)
+ else()
+-  # SYCL_UR_USE_FETCH_CONTENT is OFF and SYCL_UR_SOURCE_DIR has not been
+-  # set, check if the fallback local directory exists.
+-  if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/unified-runtime)
+-    message(FATAL_ERROR
+-      "SYCL_UR_USE_FETCH_CONTENT is disabled but no alternative Unified \
+-      Runtime source directory has been provided, either:
++    ## SYCL_UR_USE_FETCH_CONTENT is OFF and SYCL_UR_SOURCE_DIR has not been
++    ## set, check if the fallback local directory exists.
++    #if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/unified-runtime)
++    #  message(FATAL_ERROR
++    #    "SYCL_UR_USE_FETCH_CONTENT is disabled but no alternative Unified \
++    #    Runtime source directory has been provided, either:
++
++    #    * Set -DSYCL_UR_SOURCE_DIR=/path/to/unified-runtime
++    #    * Clone the UR repo in ${CMAKE_CURRENT_SOURCE_DIR}/unified-runtime")
++    #endif()
++    ## The fallback local directory for the Unified Runtime repository has been
++    ## found, use it.
++    #set(UNIFIED_RUNTIME_SOURCE_DIR
++    #  "${CMAKE_CURRENT_SOURCE_DIR}/unified-runtime" CACHE PATH
++    #  "Path to Unified Runtime Headers" FORCE)
++    #add_subdirectory(${UNIFIED_RUNTIME_SOURCE_DIR})
+ 
+-      * Set -DSYCL_UR_SOURCE_DIR=/path/to/unified-runtime
+-      * Clone the UR repo in ${CMAKE_CURRENT_SOURCE_DIR}/unified-runtime")
+-  endif()
+-  # The fallback local directory for the Unified Runtime repository has been
+-  # found, use it.
+-  set(UNIFIED_RUNTIME_SOURCE_DIR
+-    "${CMAKE_CURRENT_SOURCE_DIR}/unified-runtime" CACHE PATH
+-    "Path to Unified Runtime Headers" FORCE)
+-  add_subdirectory(${UNIFIED_RUNTIME_SOURCE_DIR})
+ endif()
+ 
+ # Restore original flags
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_BAK}")
+ 
++find_package(unified-runtime REQUIRED)
++if(unified-runtime_FOUND)
++  message(STATUS "Using system Unified Runtime")
++  find_package(umf REQUIRED)
++
++  add_library(UnifiedRuntimeLoader ALIAS unified-runtime::ur_loader)
++  add_library(UnifiedRuntimeCommon ALIAS unified-runtime::ur_common)
++  add_library(ur_umf INTERFACE)
++  target_link_libraries(ur_umf INTERFACE
++    umf::umf
++    umf::headers
++    umf::disjoint_pool
++  )
++  add_library(UnifiedMemoryFramework ALIAS ur_umf)
++  add_library(UnifiedRuntime-Headers ALIAS unified-runtime::ur_headers)
++
++add_custom_target(UnifiedRuntimeAdapters)
++
++function(add_sycl_ur_adapter NAME)
++  add_dependencies(UnifiedRuntimeAdapters unified-runtime::ur_adapter_${NAME})
++endfunction()
++
++if("level_zero" IN_LIST SYCL_ENABLE_BACKENDS)
++  add_sycl_ur_adapter(level_zero)
++
++  # TODO: L0 adapter does other... things in its cmake - make sure they get
++  # added to the new build system
++endif()
++
++if("cuda" IN_LIST SYCL_ENABLE_BACKENDS)
++  add_sycl_ur_adapter(cuda)
++endif()
++
++if("hip" IN_LIST SYCL_ENABLE_BACKENDS)
++  add_sycl_ur_adapter(hip)
++endif()
++
++if("opencl" IN_LIST SYCL_ENABLE_BACKENDS)
++  add_sycl_ur_adapter(opencl)
++endif()
++
++if("native_cpu" IN_LIST SYCL_ENABLE_BACKENDS)
++  add_sycl_ur_adapter(native_cpu)
++endif()
++
++else()
+ message(STATUS
+   "Using Unified Runtime source directory: ${UNIFIED_RUNTIME_SOURCE_DIR}")
+ 
+@@ -297,3 +344,4 @@
+   LIBRARY DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
+   ARCHIVE DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
+   RUNTIME DESTINATION "bin" COMPONENT unified-memory-framework)
++endif()
+diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
+--- a/sycl/CMakeLists.txt	2025-05-15 01:15:09.000000000 -0700
++++ b/sycl/CMakeLists.txt	2025-05-17 12:11:58.257895904 -0700
+@@ -257,9 +257,6 @@
+   COMMAND ${CMAKE_COMMAND} -E copy_directory ${sycl_inc_dir}/std ${SYCL_INCLUDE_BUILD_DIR}/std
+   COMMAND ${CMAKE_COMMAND} -E copy_directory ${sycl_inc_dir}/syclcompat ${SYCL_INCLUDE_BUILD_DIR}/syclcompat
+   COMMAND ${CMAKE_COMMAND} -E copy ${sycl_inc_dir}/syclcompat.hpp ${SYCL_INCLUDE_BUILD_DIR}/syclcompat.hpp
+-  COMMAND ${CMAKE_COMMAND} -E copy ${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api.h ${SYCL_INCLUDE_BUILD_DIR}
+-  COMMAND ${CMAKE_COMMAND} -E copy ${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api_funcs.def ${SYCL_INCLUDE_BUILD_DIR}
+-  COMMAND ${CMAKE_COMMAND} -E copy ${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_print.hpp ${SYCL_INCLUDE_BUILD_DIR}
+   COMMENT "Copying SYCL headers ...")
+ 
+ # Copy SYCL headers from source to install directory
+@@ -269,12 +266,6 @@
+ install(DIRECTORY ${BOOST_MP11_DESTINATION_DIR} DESTINATION ${SYCL_INCLUDE_DIR}/sycl/detail COMPONENT boost_mp11-headers)
+ install(DIRECTORY "${sycl_inc_dir}/syclcompat" DESTINATION ${SYCL_INCLUDE_DIR} COMPONENT sycl-headers)
+ install(FILES "${sycl_inc_dir}/syclcompat.hpp" DESTINATION ${SYCL_INCLUDE_DIR} COMPONENT sycl-headers)
+-install(FILES "${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api.h" DESTINATION ${SYCL_INCLUDE_DIR}
+-  COMPONENT sycl-headers)
+-install(FILES "${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api_funcs.def" DESTINATION ${SYCL_INCLUDE_DIR}
+-  COMPONENT sycl-headers)
+-install(FILES "${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_print.hpp" DESTINATION ${SYCL_INCLUDE_DIR}
+-  COMPONENT sycl-headers)
+ 
+ if (WIN32)
+   set(SYCL_RT_LIBS sycl${SYCL_MAJOR_VERSION})
+@@ -464,8 +455,6 @@
+      sycl-headers-extras
+      sycl
+      libsycldevice
+-     unified-memory-framework
+-     unified-runtime-loader
+      ${XPTIFW_LIBS}
+      ${SYCL_TOOLCHAIN_DEPS}
+ )
+@@ -507,8 +496,8 @@
+       "CUDA support requires adding \"libclc\" to the CMake argument \"LLVM_ENABLE_PROJECTS\"")
+   endif()
+ 
+-  add_dependencies(sycl-toolchain ur_adapter_cuda)
+-  list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS ur_adapter_cuda)
++  add_dependencies(sycl-toolchain unified-runtime::ur_adapter_cuda)
++  #list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS ur_adapter_cuda)
+ endif()
+ 
+ if("hip" IN_LIST SYCL_ENABLE_BACKENDS)
+@@ -524,8 +513,8 @@
+       "HIP support requires adding \"lld\" to the CMake argument \"LLVM_ENABLE_PROJECTS\"")
+   endif()
+ 
+-  add_dependencies(sycl-toolchain ur_adapter_hip)
+-  list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS ur_adapter_hip)
++  add_dependencies(sycl-toolchain unified-runtime::ur_adapter_hip)
++  #list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS ur_adapter_hip)
+ endif()
+ 
+ # Use it as fake dependency in order to force another command(s) to execute.

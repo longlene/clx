@@ -1,0 +1,323 @@
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{11..13} )
+
+CRATES="
+	addr2line@0.24.2
+	adler2@2.0.0
+	aho-corasick@1.1.3
+	alloc-no-stdlib@2.0.4
+	alloc-stdlib@0.2.2
+	antidote@1.0.0
+	arc-swap@1.7.1
+	async-channel@2.3.1
+	async-compression@0.4.23
+	async-trait@0.1.88
+	atomic-waker@1.1.2
+	autocfg@1.4.0
+	backtrace@0.3.75
+	base64@0.22.1
+	bindgen@0.70.1
+	bitflags@2.9.0
+	block-buffer@0.10.4
+	boring-sys2@4.15.13
+	boring2@4.15.13
+	brotli-decompressor@5.0.0
+	brotli@8.0.1
+	bytes@1.10.1
+	cc@1.2.21
+	cexpr@0.6.0
+	cfg-if@1.0.0
+	clang-sys@1.8.1
+	cmake@0.1.54
+	concurrent-queue@2.5.0
+	cookie@0.18.1
+	cookie_store@0.21.1
+	core-foundation-sys@0.8.7
+	core-foundation@0.9.4
+	cpufeatures@0.2.17
+	crc32fast@1.4.2
+	critical-section@1.2.0
+	crossbeam-channel@0.5.15
+	crossbeam-epoch@0.9.18
+	crossbeam-utils@0.8.21
+	crypto-common@0.1.6
+	data-encoding@2.9.0
+	deranged@0.4.0
+	digest@0.10.7
+	displaydoc@0.2.5
+	document-features@0.2.11
+	either@1.15.0
+	encoding_rs@0.8.35
+	enum-as-inner@0.6.1
+	equivalent@1.0.2
+	event-listener-strategy@0.5.4
+	event-listener@5.4.0
+	flate2@1.1.1
+	fnv@1.0.7
+	foreign-types-macros@0.2.3
+	foreign-types-shared@0.3.1
+	foreign-types@0.5.0
+	form_urlencoded@1.2.1
+	fs_extra@1.3.0
+	fslock@0.2.1
+	futures-channel@0.3.31
+	futures-core@0.3.31
+	futures-executor@0.3.31
+	futures-io@0.3.31
+	futures-macro@0.3.31
+	futures-sink@0.3.31
+	futures-task@0.3.31
+	futures-util@0.3.31
+	futures@0.3.31
+	generator@0.8.4
+	generic-array@0.14.7
+	getrandom@0.2.16
+	getrandom@0.3.2
+	gimli@0.31.1
+	glob@0.3.2
+	hashbrown@0.15.3
+	heck@0.5.0
+	hickory-proto@0.25.2
+	hickory-resolver@0.25.2
+	http-body-util@0.1.3
+	http-body@1.0.1
+	http2@0.4.21
+	http@1.3.1
+	httparse@1.10.1
+	hyper2@1.5.5
+	icu_collections@1.5.0
+	icu_locid@1.5.0
+	icu_locid_transform@1.5.0
+	icu_locid_transform_data@1.5.1
+	icu_normalizer@1.5.0
+	icu_normalizer_data@1.5.1
+	icu_properties@1.5.1
+	icu_properties_data@1.5.1
+	icu_provider@1.5.0
+	icu_provider_macros@1.5.0
+	idna@1.0.3
+	idna_adapter@1.2.0
+	indexmap@2.9.0
+	indoc@2.0.6
+	inventory@0.3.20
+	ipconfig@0.3.2
+	ipnet@2.11.0
+	itertools@0.13.0
+	itoa@1.0.15
+	jobserver@0.1.33
+	lazy_static@1.5.0
+	libc@0.2.172
+	libloading@0.8.6
+	linked-hash-map@0.5.6
+	linked_hash_set@0.1.5
+	litemap@0.7.5
+	litrs@0.4.1
+	lock_api@0.4.12
+	log@0.4.27
+	loom@0.7.2
+	lru@0.13.0
+	matchers@0.1.0
+	memchr@2.7.4
+	memoffset@0.9.1
+	mime@0.3.17
+	mime_guess@2.0.5
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.8
+	mio@1.0.3
+	moka@0.12.10
+	nom@7.1.3
+	nu-ansi-term@0.46.0
+	num-conv@0.1.0
+	object@0.36.7
+	once_cell@1.21.3
+	openssl-macros@0.1.1
+	overload@0.1.1
+	parking@2.2.1
+	parking_lot@0.12.3
+	parking_lot_core@0.9.10
+	percent-encoding@2.3.1
+	pin-project-lite@0.2.16
+	pin-utils@0.1.0
+	pkg-config@0.3.32
+	portable-atomic@1.11.0
+	powerfmt@0.2.0
+	ppv-lite86@0.2.21
+	proc-macro2@1.0.95
+	psl-types@2.0.11
+	publicsuffix@2.3.0
+	pyo3-async-runtimes@0.24.0
+	pyo3-build-config@0.24.2
+	pyo3-ffi@0.24.2
+	pyo3-macros-backend@0.24.2
+	pyo3-macros@0.24.2
+	pyo3@0.24.2
+	python3-dll-a@0.2.13
+	quote@1.0.40
+	r-efi@5.2.0
+	rand@0.9.1
+	rand_chacha@0.9.0
+	rand_core@0.9.3
+	redox_syscall@0.5.12
+	regex-automata@0.1.10
+	regex-automata@0.4.9
+	regex-syntax@0.6.29
+	regex-syntax@0.8.5
+	regex@1.11.1
+	resolv-conf@0.7.3
+	ring@0.17.14
+	rquest-util@2.2.0
+	rquest@5.1.0
+	rustc-demangle@0.1.24
+	rustc-hash@1.1.0
+	rustc_version@0.4.1
+	rustls-pki-types@1.11.0
+	rustversion@1.0.20
+	ryu@1.0.20
+	scoped-tls@1.0.1
+	scopeguard@1.2.0
+	semver@1.0.26
+	serde@1.0.219
+	serde_derive@1.0.219
+	serde_json@1.0.140
+	serde_urlencoded@0.7.1
+	sha1@0.10.6
+	sharded-slab@0.1.7
+	shlex@1.3.0
+	slab@0.4.9
+	smallvec@1.15.0
+	socket2@0.5.9
+	stable_deref_trait@1.2.0
+	syn@2.0.101
+	sync_wrapper@1.0.2
+	synstructure@0.13.2
+	system-configuration-sys@0.6.0
+	system-configuration@0.6.1
+	tagptr@0.2.0
+	target-lexicon@0.13.2
+	thiserror-impl@1.0.69
+	thiserror-impl@2.0.12
+	thiserror@1.0.69
+	thiserror@2.0.12
+	thread_local@1.1.8
+	tikv-jemalloc-sys@0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7
+	tikv-jemallocator@0.6.0
+	time-core@0.1.4
+	time-macros@0.2.22
+	time@0.3.41
+	tinystr@0.7.6
+	tinyvec@1.9.0
+	tinyvec_macros@0.1.1
+	tokio-boring2@4.15.13
+	tokio-macros@2.5.0
+	tokio-socks@0.5.2
+	tokio-tungstenite@0.26.2
+	tokio-util@0.7.15
+	tokio@1.45.0
+	tower-layer@0.3.3
+	tower-service@0.3.3
+	tower@0.5.2
+	tracing-core@0.1.33
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.19
+	tracing@0.1.41
+	try-lock@0.2.5
+	tungstenite@0.26.2
+	typed-builder-macro@0.21.0
+	typed-builder@0.21.0
+	typenum@1.18.0
+	unicase@2.8.1
+	unicode-ident@1.0.18
+	unindent@0.2.4
+	untrusted@0.9.0
+	url@2.5.4
+	utf-8@0.7.6
+	utf16_iter@1.0.5
+	utf8_iter@1.0.4
+	uuid@1.16.0
+	valuable@0.1.1
+	version_check@0.9.5
+	want@0.3.1
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasi@0.14.2+wasi-0.2.4
+	webpki-root-certs@1.0.0
+	webpki-root-certs@0.26.11
+	widestring@1.2.0
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-core@0.58.0
+	windows-implement@0.58.0
+	windows-interface@0.58.0
+	windows-link@0.1.1
+	windows-registry@0.5.1
+	windows-result@0.2.0
+	windows-result@0.3.2
+	windows-strings@0.1.0
+	windows-strings@0.4.0
+	windows-sys@0.48.0
+	windows-sys@0.52.0
+	windows-targets@0.48.5
+	windows-targets@0.52.6
+	windows@0.58.0
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.48.5
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.48.5
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.48.5
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.48.5
+	windows_x86_64_msvc@0.52.6
+	winreg@0.50.0
+	wit-bindgen-rt@0.39.0
+	write16@1.0.0
+	writeable@0.5.5
+	yoke-derive@0.7.5
+	yoke@0.7.5
+	zerocopy-derive@0.8.25
+	zerocopy@0.8.25
+	zerofrom-derive@0.1.6
+	zerofrom@0.1.6
+	zerovec-derive@0.10.3
+	zerovec@0.10.4
+	zstd-safe@7.2.4
+	zstd-sys@2.0.15+zstd.1.5.7
+	zstd@0.13.3
+"
+
+inherit cargo distutils-r1
+
+DESCRIPTION="A blazing-fast Python HTTP client with TLS fingerprint"
+HOMEPAGE="
+	https://pypi.org/project/rnet/
+	https://github.com/0x676e67/rnet/
+"
+SRC_URI="
+	https://github.com/0x676e67/rnet/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE=""
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="
+"
+#BDEPEND="
+#	test? (
+#	)
+#"
+
+distutils_enable_tests pytest

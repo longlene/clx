@@ -1,37 +1,19 @@
 diff -Nur a/cmake/FetchLevelZero.cmake b/cmake/FetchLevelZero.cmake
---- a/cmake/FetchLevelZero.cmake	2025-04-10 08:43:27.000000000 -0700
-+++ b/cmake/FetchLevelZero.cmake	2025-04-12 21:44:48.505339553 -0700
-@@ -129,13 +129,7 @@
- 
- # When UR_COMPUTE_RUNTIME_FETCH_REPO is OFF, use UR_COMPUTE_RUNTIME_REPO as repo.
+--- a/cmake/FetchLevelZero.cmake	2025-05-05 01:51:11.000000000 -0700
++++ b/cmake/FetchLevelZero.cmake	2025-05-14 01:35:52.070544773 -0700
+@@ -131,11 +131,11 @@
  else()
--
--    # Check if UR_COMPUTE_RUNTIME_REPO is set. Throw if not.
+ 
+     # Check if UR_COMPUTE_RUNTIME_REPO is set. Throw if not.
 -    if (UR_COMPUTE_RUNTIME_REPO STREQUAL "")
 -        message(FATAL_ERROR "UR_COMPUTE_RUNTIME_FETCH_REPO is set to OFF but UR_COMPUTE_RUNTIME_REPO is not set. Please set it to the compute runtime repo.")
 -    endif()
--
++    #if (UR_COMPUTE_RUNTIME_REPO STREQUAL "")
++    #    message(FATAL_ERROR "UR_COMPUTE_RUNTIME_FETCH_REPO is set to OFF but UR_COMPUTE_RUNTIME_REPO is not set. Please set it to the compute runtime repo.")
++    #endif()
+ 
 -    set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${UR_COMPUTE_RUNTIME_REPO}/level_zero/include")
 +    set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${UR_COMPUTE_RUNTIME_DIR}/level_zero/include")
      set(COMPUTE_RUNTIME_REPO_PATH "${UR_COMPUTE_RUNTIME_REPO}")
  endif()
  
-diff -Nur a/source/adapters/level_zero/common.hpp b/source/adapters/level_zero/common.hpp
---- a/source/adapters/level_zero/common.hpp	2025-04-10 08:43:27.000000000 -0700
-+++ b/source/adapters/level_zero/common.hpp	2025-04-12 21:46:10.862009118 -0700
-@@ -31,7 +31,7 @@
- #include <ze_api.h>
- #include <zes_api.h>
- 
--#include <level_zero/include/level_zero/ze_intel_gpu.h>
-+#include <level_zero/ze_intel_gpu.h>
- #include <umf_pools/disjoint_pool_config_parser.hpp>
- 
- #include "logger/ur_logger.hpp"
-@@ -380,4 +380,4 @@
- // Utility function for setting a message and warning
- [[maybe_unused]] void setErrorMessage(const char *pMessage,
-                                       ur_result_t ErrorCode,
--                                      int32_t AdapterErrorCode);
-\ No newline at end of file
-+                                      int32_t AdapterErrorCode);

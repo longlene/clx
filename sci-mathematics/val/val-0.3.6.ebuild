@@ -1,0 +1,164 @@
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	aho-corasick@1.1.3
+	allocator-api2@0.2.21
+	anes@0.1.6
+	anstream@0.6.18
+	anstyle-parse@0.2.6
+	anstyle-query@1.1.2
+	anstyle-wincon@3.0.7
+	anstyle@1.0.10
+	anyhow@1.0.98
+	ariadne@0.5.1
+	astro-float-macro@0.4.5
+	astro-float-num@0.3.6
+	astro-float@0.9.5
+	autocfg@1.4.0
+	bitflags@2.9.0
+	bumpalo@3.17.0
+	cast@0.3.0
+	cc@1.2.19
+	cfg-if@1.0.0
+	cfg_aliases@0.2.1
+	chumsky@0.10.1
+	ciborium-io@0.2.2
+	ciborium-ll@0.2.2
+	ciborium@0.2.2
+	clap@4.5.36
+	clap_builder@4.5.36
+	clap_derive@4.5.32
+	clap_lex@0.7.4
+	clipboard-win@5.4.0
+	colorchoice@1.0.3
+	console_error_panic_hook@0.1.7
+	criterion-plot@0.5.0
+	criterion@0.5.1
+	crossbeam-deque@0.8.6
+	crossbeam-epoch@0.9.18
+	crossbeam-utils@0.8.21
+	crunchy@0.2.3
+	diff@0.1.13
+	dirs-sys@0.5.0
+	dirs@6.0.0
+	either@1.15.0
+	endian-type@0.1.2
+	equivalent@1.0.2
+	errno@0.3.11
+	error-code@3.3.1
+	executable-path@1.0.0
+	fastrand@2.3.0
+	fd-lock@4.0.4
+	foldhash@0.1.5
+	getrandom@0.2.15
+	getrandom@0.3.2
+	half@2.6.0
+	hashbrown@0.15.2
+	heck@0.5.0
+	hermit-abi@0.5.0
+	home@0.5.11
+	indoc@2.0.6
+	is-terminal@0.4.16
+	is_terminal_polyfill@1.70.1
+	itertools@0.10.5
+	itoa@1.0.15
+	js-sys@0.3.77
+	lazy_static@1.5.0
+	libc@0.2.172
+	libredox@0.1.3
+	linux-raw-sys@0.9.4
+	log@0.4.27
+	memchr@2.7.4
+	nibble_vec@0.1.0
+	nix@0.29.0
+	num-traits@0.2.19
+	once_cell@1.21.3
+	oorandom@11.1.5
+	option-ext@0.2.0
+	plotters-backend@0.3.7
+	plotters-svg@0.3.7
+	plotters@0.3.7
+	pretty_assertions@1.4.1
+	proc-macro2@1.0.94
+	psm@0.1.25
+	quote@1.0.40
+	r-efi@5.2.0
+	radix_trie@0.2.1
+	rayon-core@1.12.1
+	rayon@1.10.0
+	redox_users@0.5.0
+	regex-automata@0.3.9
+	regex-automata@0.4.9
+	regex-syntax@0.7.5
+	regex-syntax@0.8.5
+	regex@1.11.1
+	rustix@1.0.5
+	rustversion@1.0.20
+	rustyline@15.0.0
+	ryu@1.0.20
+	same-file@1.0.6
+	serde-wasm-bindgen@0.6.5
+	serde@1.0.219
+	serde_derive@1.0.219
+	serde_json@1.0.140
+	shlex@1.3.0
+	smallvec@1.15.0
+	stacker@0.1.20
+	strsim@0.11.1
+	syn@1.0.109
+	syn@2.0.100
+	tempfile@3.19.1
+	thiserror-impl@2.0.12
+	thiserror@2.0.12
+	tinytemplate@1.2.1
+	unicode-ident@1.0.18
+	unicode-segmentation@1.12.0
+	unicode-width@0.1.14
+	unicode-width@0.2.0
+	unindent@0.2.4
+	utf8parse@0.2.2
+	walkdir@2.5.0
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasi@0.14.2+wasi-0.2.4
+	wasm-bindgen-backend@0.2.100
+	wasm-bindgen-macro-support@0.2.100
+	wasm-bindgen-macro@0.2.100
+	wasm-bindgen-shared@0.2.100
+	wasm-bindgen@0.2.100
+	web-sys@0.3.77
+	winapi-util@0.1.9
+	windows-sys@0.59.0
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	wit-bindgen-rt@0.39.0
+	yansi@1.0.1
+"
+
+inherit cargo
+
+DESCRIPTION="An arbitrary precision calculator language"
+HOMEPAGE="https://github.com/terror/val"
+SRC_URI="
+	https://github.com/terror/val/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="CC0-1.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+BDEPEND=""
+
+

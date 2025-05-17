@@ -1,0 +1,32 @@
+diff -Nur a/source/common/CMakeLists.txt b/source/common/CMakeLists.txt
+--- a/source/common/CMakeLists.txt	2024-12-11 07:14:14.000000000 -0800
++++ b/source/common/CMakeLists.txt	2024-12-12 13:53:21.933040280 -0800
+@@ -26,6 +26,13 @@
+     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+ )
+ 
++set(UR_USE_EXTERNAL_UMF ON CACHE BOOL "Use a pre-built UMF")
++
++if (UR_USE_EXTERNAL_UMF)
++  find_package(umf REQUIRED)
++  # Add an alias matching the FetchContent case
++  add_library(umf::headers ALIAS umf::umf_headers)
++else()
+ message(STATUS "Download Unified Memory Framework from github.com")
+ if (NOT DEFINED UMF_REPO)
+     set(UMF_REPO "https://github.com/oneapi-src/unified-memory-framework.git")
+@@ -52,14 +59,6 @@
+         set(UMF_BUILD_SHARED_LIBRARY OFF)
+     endif()
+ endif()
+-
+-set(UR_USE_EXTERNAL_UMF OFF CACHE BOOL "Use a pre-built UMF")
+-
+-if (UR_USE_EXTERNAL_UMF)
+-  find_package(umf REQUIRED)
+-  # Add an alias matching the FetchContent case
+-  add_library(umf::headers ALIAS umf::umf_headers)
+-else()
+   set(UMF_BUILD_TESTS OFF CACHE INTERNAL "Build UMF tests")
+   set(UMF_BUILD_EXAMPLES OFF CACHE INTERNAL "Build UMF examples")
+   set(UMF_BUILD_SHARED_LIBRARY ${UMF_BUILD_SHARED_LIBRARY} CACHE INTERNAL "Build UMF shared library")

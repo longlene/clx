@@ -1,0 +1,46 @@
+From a7fc8ce41551075c388505b71a48ab994b88cc14 Mon Sep 17 00:00:00 2001
+From: Nicolas Miller <nicolas.miller@codeplay.com>
+Date: Wed, 12 Mar 2025 18:13:26 +0000
+Subject: [PATCH] [clang][SYCL] Disable float128 device mode diagnostic
+ (#128513)
+
+This diagnostic is disabled for device compilation as float128 is not
+supported on the device side.
+
+Other diagnostics are already covering the cases where float128 is
+actually used in the kernel code, and it's already tested for in the
+existing test.
+
+This is expanding on the patch 318bff6 that handled this for cuda
+compilation.
+---
+ clang/lib/Sema/SemaDeclAttr.cpp  | 3 ++-
+ clang/test/SemaSYCL/float128.cpp | 1 +
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/clang/lib/Sema/SemaDeclAttr.cpp b/clang/lib/Sema/SemaDeclAttr.cpp
+index 0f9e5a391614c..2b2151d8c5c94 100644
+--- a/clang/lib/Sema/SemaDeclAttr.cpp
++++ b/clang/lib/Sema/SemaDeclAttr.cpp
+@@ -4725,7 +4725,8 @@ void Sema::AddModeAttr(Decl *D, const AttributeCommonInfo &CI,
+ 
+   if (NewElemTy.isNull()) {
+     // Only emit diagnostic on host for 128-bit mode attribute
+-    if (!(DestWidth == 128 && getLangOpts().CUDAIsDevice))
++    if (!(DestWidth == 128 &&
++          (getLangOpts().CUDAIsDevice || getLangOpts().SYCLIsDevice)))
+       Diag(AttrLoc, diag::err_machine_mode) << 1 /*Unsupported*/ << Name;
+     return;
+   }
+diff --git a/clang/test/SemaSYCL/float128.cpp b/clang/test/SemaSYCL/float128.cpp
+index 920900fbc14b1..3c7e24f331797 100644
+--- a/clang/test/SemaSYCL/float128.cpp
++++ b/clang/test/SemaSYCL/float128.cpp
+@@ -5,6 +5,7 @@
+ 
+ sycl::queue deviceQueue;
+ 
++typedef _Complex float __cfloat128 __attribute__ ((__mode__ (__TC__)));
+ typedef __float128 BIGTY;
+ 
+ template <class T>
