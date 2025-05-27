@@ -196,6 +196,7 @@ multilib_src_install_all() {
 	mv "${ED}"${INTEL_DIR}/include/{sycl,CL,std,syclcompat,syclcompat.hpp} "${ED}"/usr/include
 	dodir /usr/${libdir}
 	mv "${ED}"${INTEL_DIR}/${libdir}/libsycl*.so* "${ED}"/usr/${libdir}
+	mv "${ED}"${INTEL_DIR}/${libdir}/libsycl*.a "${ED}"/usr/${libdir}
 	dosym "${INTEL_DIR}"/bin/clang /usr/bin/icx
 	dosym "${INTEL_DIR}"/bin/clang++ /usr/bin/icpx
 	einstalldocs

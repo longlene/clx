@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/mcp-1.5.0[${PYTHON_USEDEP}]
+	>=dev-python/mcp-1.8.0[${PYTHON_USEDEP}]
 	>=dev-python/uvicorn-0.34.0[${PYTHON_USEDEP}]
 "
 #BDEPEND="

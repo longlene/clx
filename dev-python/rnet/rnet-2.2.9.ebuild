@@ -23,14 +23,14 @@ CRATES="
 	backtrace@0.3.75
 	base64@0.22.1
 	bindgen@0.70.1
-	bitflags@2.9.0
+	bitflags@2.9.1
 	block-buffer@0.10.4
 	boring-sys2@4.15.13
 	boring2@4.15.13
 	brotli-decompressor@5.0.0
 	brotli@8.0.1
 	bytes@1.10.1
-	cc@1.2.21
+	cc@1.2.23
 	cexpr@0.6.0
 	cfg-if@1.0.0
 	clang-sys@1.8.1
@@ -75,10 +75,10 @@ CRATES="
 	futures-task@0.3.31
 	futures-util@0.3.31
 	futures@0.3.31
-	generator@0.8.4
+	generator@0.8.5
 	generic-array@0.14.7
 	getrandom@0.2.16
-	getrandom@0.3.2
+	getrandom@0.3.3
 	gimli@0.31.1
 	glob@0.3.2
 	hashbrown@0.15.3
@@ -91,18 +91,15 @@ CRATES="
 	http@1.3.1
 	httparse@1.10.1
 	hyper2@1.5.5
-	icu_collections@1.5.0
-	icu_locid@1.5.0
-	icu_locid_transform@1.5.0
-	icu_locid_transform_data@1.5.1
-	icu_normalizer@1.5.0
-	icu_normalizer_data@1.5.1
-	icu_properties@1.5.1
-	icu_properties_data@1.5.1
-	icu_provider@1.5.0
-	icu_provider_macros@1.5.0
+	icu_collections@2.0.0
+	icu_locale_core@2.0.0
+	icu_normalizer@2.0.0
+	icu_normalizer_data@2.0.0
+	icu_properties@2.0.0
+	icu_properties_data@2.0.0
+	icu_provider@2.0.0
 	idna@1.0.3
-	idna_adapter@1.2.0
+	idna_adapter@1.2.1
 	indexmap@2.9.0
 	indoc@2.0.6
 	inventory@0.3.20
@@ -113,10 +110,10 @@ CRATES="
 	jobserver@0.1.33
 	lazy_static@1.5.0
 	libc@0.2.172
-	libloading@0.8.6
+	libloading@0.8.7
 	linked-hash-map@0.5.6
 	linked_hash_set@0.1.5
-	litemap@0.7.5
+	litemap@0.8.0
 	litrs@0.4.1
 	lock_api@0.4.12
 	log@0.4.27
@@ -146,6 +143,7 @@ CRATES="
 	pin-utils@0.1.0
 	pkg-config@0.3.32
 	portable-atomic@1.11.0
+	potential_utf@0.1.2
 	powerfmt@0.2.0
 	ppv-lite86@0.2.21
 	proc-macro2@1.0.95
@@ -157,7 +155,7 @@ CRATES="
 	pyo3-macros-backend@0.24.2
 	pyo3-macros@0.24.2
 	pyo3@0.24.2
-	python3-dll-a@0.2.13
+	python3-dll-a@0.2.14
 	quote@1.0.40
 	r-efi@5.2.0
 	rand@0.9.1
@@ -169,14 +167,14 @@ CRATES="
 	regex-syntax@0.6.29
 	regex-syntax@0.8.5
 	regex@1.11.1
-	resolv-conf@0.7.3
+	resolv-conf@0.7.4
 	ring@0.17.14
-	rquest-util@2.2.0
+	rquest-util@2.2.1
 	rquest@5.1.0
 	rustc-demangle@0.1.24
 	rustc-hash@1.1.0
 	rustc_version@0.4.1
-	rustls-pki-types@1.11.0
+	rustls-pki-types@1.12.0
 	rustversion@1.0.20
 	ryu@1.0.20
 	scoped-tls@1.0.1
@@ -210,7 +208,7 @@ CRATES="
 	time-core@0.1.4
 	time-macros@0.2.22
 	time@0.3.41
-	tinystr@0.7.6
+	tinystr@0.8.1
 	tinyvec@1.9.0
 	tinyvec_macros@0.1.1
 	tokio-boring2@4.15.13
@@ -237,7 +235,6 @@ CRATES="
 	untrusted@0.9.0
 	url@2.5.4
 	utf-8@0.7.6
-	utf16_iter@1.0.5
 	utf8_iter@1.0.4
 	uuid@1.16.0
 	valuable@0.1.1
@@ -245,53 +242,64 @@ CRATES="
 	want@0.3.1
 	wasi@0.11.0+wasi-snapshot-preview1
 	wasi@0.14.2+wasi-0.2.4
-	webpki-root-certs@1.0.0
 	webpki-root-certs@0.26.11
+	webpki-root-certs@1.0.0
 	widestring@1.2.0
 	winapi-i686-pc-windows-gnu@0.4.0
 	winapi-x86_64-pc-windows-gnu@0.4.0
 	winapi@0.3.9
-	windows-core@0.58.0
-	windows-implement@0.58.0
-	windows-interface@0.58.0
+	windows-collections@0.2.0
+	windows-core@0.61.1
+	windows-future@0.2.1
+	windows-implement@0.60.0
+	windows-interface@0.59.1
 	windows-link@0.1.1
-	windows-registry@0.5.1
-	windows-result@0.2.0
-	windows-result@0.3.2
-	windows-strings@0.1.0
-	windows-strings@0.4.0
+	windows-numerics@0.2.0
+	windows-registry@0.5.2
+	windows-result@0.3.3
+	windows-strings@0.4.1
 	windows-sys@0.48.0
 	windows-sys@0.52.0
 	windows-targets@0.48.5
 	windows-targets@0.52.6
-	windows@0.58.0
+	windows-targets@0.53.0
+	windows-threading@0.1.0
+	windows@0.61.1
 	windows_aarch64_gnullvm@0.48.5
 	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_gnullvm@0.53.0
 	windows_aarch64_msvc@0.48.5
 	windows_aarch64_msvc@0.52.6
+	windows_aarch64_msvc@0.53.0
 	windows_i686_gnu@0.48.5
 	windows_i686_gnu@0.52.6
+	windows_i686_gnu@0.53.0
 	windows_i686_gnullvm@0.52.6
+	windows_i686_gnullvm@0.53.0
 	windows_i686_msvc@0.48.5
 	windows_i686_msvc@0.52.6
+	windows_i686_msvc@0.53.0
 	windows_x86_64_gnu@0.48.5
 	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnu@0.53.0
 	windows_x86_64_gnullvm@0.48.5
 	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_gnullvm@0.53.0
 	windows_x86_64_msvc@0.48.5
 	windows_x86_64_msvc@0.52.6
+	windows_x86_64_msvc@0.53.0
 	winreg@0.50.0
 	wit-bindgen-rt@0.39.0
-	write16@1.0.0
-	writeable@0.5.5
-	yoke-derive@0.7.5
-	yoke@0.7.5
+	writeable@0.6.1
+	yoke-derive@0.8.0
+	yoke@0.8.0
 	zerocopy-derive@0.8.25
 	zerocopy@0.8.25
 	zerofrom-derive@0.1.6
 	zerofrom@0.1.6
-	zerovec-derive@0.10.3
-	zerovec@0.10.4
+	zerotrie@0.2.2
+	zerovec-derive@0.11.1
+	zerovec@0.11.2
 	zstd-safe@7.2.4
 	zstd-sys@2.0.15+zstd.1.5.7
 	zstd@0.13.3
@@ -313,11 +321,13 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
+DEPEND+="app-arch/zstd"
+RDEPEND="${DEPEND}"
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
+
+export ZSTD_SYS_USE_PKG_CONFIG=1

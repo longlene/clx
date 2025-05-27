@@ -3,9 +3,9 @@
 
 EAPI=8
 
-inherit multiprocessing toolchain-funcs vcs-snapshot
+inherit desktop multiprocessing toolchain-funcs vcs-snapshot wrapper
 
-EGIT_COMMIT="13582b1a899b9644071791e862c935384c27cb35"
+EGIT_COMMIT="df9b195ebfcd7d5fb673512ec7ec3b3df9981c61"
 
 DESCRIPTION="Plan 9 from User Space"
 HOMEPAGE="http://swtch.com/plan9port/"
@@ -105,7 +105,7 @@ src_install() {
 		insinto /usr/share/pixmaps
 		newins dist/spaceglenda100.png acme.png
 		make_wrapper acme "${PLAN9}/bin/9 acme"
-		make_desktop_entry acme "Editor from Plan9" acme "Application;Development;TextEditor;"
+		make_desktop_entry acme "Editor from Plan9" acme "Development;TextEditor;"
 	fi
 	dosym ${PLAN9}/bin/9 /usr/bin/9
 }

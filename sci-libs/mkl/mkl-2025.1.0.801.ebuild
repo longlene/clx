@@ -22,7 +22,7 @@ SRC_URI="
 	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-${MY_PV}_amd64.deb
 	https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-devel-${MY_PV}_amd64.deb
 
-	!minimal? (
+	sycl? (
 		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-${MY_PV}_amd64.deb
 		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-blas-${MY_PV}_amd64.deb
 		https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-data-fitting-${MY_PV}_amd64.deb
@@ -46,7 +46,7 @@ S="${WORKDIR}"
 LICENSE="ISSL"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+minimal"
+IUSE="sycl"
 
 RESTRICT="strip"
 

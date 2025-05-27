@@ -8,8 +8,8 @@ CRATES="
 	adler2@2.0.0
 	adler@1.0.2
 	aes@0.8.4
-	ahash@0.8.11
 	aho-corasick@1.0.2
+	allocator-api2@0.2.20
 	ambient-authority@0.0.2
 	android_system_properties@0.1.5
 	anes@0.1.6
@@ -18,26 +18,28 @@ CRATES="
 	anstyle-query@1.0.0
 	anstyle-wincon@3.0.4
 	anstyle@1.0.8
-	anyhow@1.0.75
-	arbitrary@1.3.1
+	anyhow@1.0.93
+	arbitrary@1.4.1
+	arbtest@0.3.1
 	arrayvec@0.7.6
 	async-trait@0.1.71
+	auditable-serde@0.8.0
 	autocfg@1.1.0
 	backtrace@0.3.74
-	base64@0.21.0
 	base64@0.22.1
 	base64ct@1.6.0
-	bindgen@0.69.4
+	beef@0.5.2
+	bindgen@0.70.1
 	bit-set@0.5.2
 	bit-vec@0.6.3
 	bitflags@1.3.2
 	bitflags@2.6.0
 	block-buffer@0.10.2
 	bstr@1.6.0
-	bumpalo@3.14.0
+	bumpalo@3.16.0
 	byteorder@1.4.3
 	bytes@1.5.0
-	bytesize@1.3.0
+	bytesize@2.0.1
 	bzip2-sys@0.1.11+1.0.8
 	bzip2@0.4.4
 	camino@1.1.4
@@ -47,12 +49,12 @@ CRATES="
 	cap-rand@3.4.1
 	cap-std@3.4.1
 	cap-time-ext@3.4.1
-	capstone-sys@0.16.0
-	capstone@0.12.0
+	capstone-sys@0.17.0
+	capstone@0.13.0
 	cargo-platform@0.1.2
-	cargo_metadata@0.18.1
+	cargo_metadata@0.19.2
 	cast@0.3.0
-	cc@1.1.6
+	cc@1.2.5
 	cexpr@0.6.0
 	cfg-if@1.0.0
 	ciborium-io@0.2.0
@@ -84,13 +86,14 @@ CRATES="
 	cty@0.2.2
 	debugid@0.8.0
 	deranged@0.3.11
-	derive_arbitrary@1.3.1
+	derive_arbitrary@1.4.0
 	digest@0.10.7
 	directories-next@2.0.0
 	dirs-next@2.0.0
 	dirs-sys-next@0.1.2
+	displaydoc@0.2.5
 	dlmalloc@0.2.4
-	downcast-rs@1.2.0
+	downcast-rs@2.0.1
 	easy-smt@0.2.2
 	egg@0.6.0
 	either@1.13.0
@@ -101,7 +104,7 @@ CRATES="
 	env_logger@0.10.0
 	env_logger@0.11.5
 	equivalent@1.0.1
-	errno@0.3.8
+	errno@0.3.10
 	escape8259@0.5.2
 	fallible-iterator@0.3.0
 	fastrand@2.0.1
@@ -110,18 +113,21 @@ CRATES="
 	filecheck@0.5.0
 	filetime@0.2.16
 	flagset@0.4.3
-	flate2@1.0.30
+	flate2@1.1.0
 	fnv@1.0.7
-	form_urlencoded@1.1.0
+	foldhash@0.1.3
+	form_urlencoded@1.2.1
 	fs-set-times@0.20.1
 	fslock@0.2.1
-	futures-channel@0.3.27
-	futures-core@0.3.27
-	futures-io@0.3.28
-	futures-sink@0.3.27
-	futures-task@0.3.27
-	futures-util@0.3.27
-	futures@0.3.27
+	futures-channel@0.3.31
+	futures-core@0.3.31
+	futures-executor@0.3.31
+	futures-io@0.3.31
+	futures-macro@0.3.31
+	futures-sink@0.3.31
+	futures-task@0.3.31
+	futures-util@0.3.31
+	futures@0.3.31
 	fxhash@0.2.1
 	fxprof-processed-profile@0.6.0
 	generic-array@0.14.5
@@ -133,10 +139,10 @@ CRATES="
 	half@1.8.2
 	half@2.4.1
 	hashbrown@0.12.3
-	hashbrown@0.14.3
+	hashbrown@0.15.2
 	heck@0.4.1
 	heck@0.5.0
-	hermit-abi@0.3.0
+	hermit-abi@0.3.9
 	hmac@0.12.1
 	home@0.5.9
 	http-body-util@0.1.0
@@ -147,12 +153,22 @@ CRATES="
 	humantime@2.1.0
 	hyper@1.0.1
 	iana-time-zone-haiku@0.1.2
-	iana-time-zone@0.1.59
+	iana-time-zone@0.1.61
+	icu_collections@1.5.0
+	icu_locid@1.5.0
+	icu_locid_transform@1.5.0
+	icu_locid_transform_data@1.5.0
+	icu_normalizer@1.5.0
+	icu_normalizer_data@1.5.0
+	icu_properties@1.5.1
+	icu_properties_data@1.5.0
+	icu_provider@1.5.0
+	icu_provider_macros@1.5.0
 	id-arena@2.2.1
-	idna@0.3.0
-	indexmap-nostd@0.4.0
+	idna@1.0.3
+	idna_adapter@1.2.0
 	indexmap@1.9.1
-	indexmap@2.2.6
+	indexmap@2.7.0
 	indicatif@0.13.0
 	inout@0.1.3
 	instant@0.1.12
@@ -163,22 +179,28 @@ CRATES="
 	is_terminal_polyfill@1.70.1
 	itertools@0.10.5
 	itertools@0.12.1
-	itoa@1.0.1
+	itertools@0.14.0
+	itoa@1.0.14
 	ittapi-sys@0.4.0
 	ittapi@0.4.0
 	jobserver@0.1.32
-	js-sys@0.3.57
+	js-sys@0.3.74
 	lazy_static@1.4.0
-	lazycell@1.3.0
 	leb128@0.2.5
-	libc@0.2.161
-	libfuzzer-sys@0.4.5
+	leb128fmt@0.1.0
+	libc@0.2.171
+	libfuzzer-sys@0.4.8
 	libloading@0.8.1
-	libm@0.2.8
-	libtest-mimic@0.7.0
+	libm@0.2.11
+	libtest-mimic@0.8.1
 	linux-raw-sys@0.4.14
+	linux-raw-sys@0.9.3
 	listenfd@1.0.0
+	litemap@0.7.4
 	log@0.4.22
+	logos-codegen@0.14.2
+	logos-derive@0.14.2
+	logos@0.14.2
 	mach2@0.4.2
 	matchers@0.1.0
 	matrixmultiply@0.3.9
@@ -188,7 +210,7 @@ CRATES="
 	memmap2@0.2.3
 	minimal-lexical@0.2.1
 	miniz_oxide@0.7.4
-	miniz_oxide@0.8.0
+	miniz_oxide@0.8.5
 	mio@0.8.11
 	multi-stash@0.2.0
 	ndarray@0.15.6
@@ -200,7 +222,7 @@ CRATES="
 	num-traits@0.2.19
 	num_cpus@1.16.0
 	number_prefix@0.3.0
-	object@0.36.0
+	object@0.36.5
 	ocaml-boxroot-sys@0.2.0
 	ocaml-interop@0.8.8
 	ocaml-sys@0.22.3
@@ -215,7 +237,7 @@ CRATES="
 	password-hash@0.4.2
 	paste@1.0.7
 	pbkdf2@0.11.0
-	percent-encoding@2.2.0
+	percent-encoding@2.3.1
 	pin-project-lite@0.2.14
 	pin-utils@0.1.0
 	pkg-config@0.3.29
@@ -223,8 +245,8 @@ CRATES="
 	powerfmt@0.2.0
 	ppv-lite86@0.2.16
 	pretty_env_logger@0.5.0
-	prettyplease@0.2.20
-	proc-macro2@1.0.81
+	prettyplease@0.2.31
+	proc-macro2@1.0.92
 	proptest@1.0.0
 	psm@0.1.18
 	quick-error@1.2.3
@@ -240,18 +262,20 @@ CRATES="
 	redox_syscall@0.2.13
 	redox_syscall@0.3.5
 	redox_users@0.4.3
-	regalloc2@0.10.2
+	regalloc2@0.11.2
 	regex-automata@0.1.10
 	regex-automata@0.3.3
 	regex-syntax@0.6.25
 	regex-syntax@0.7.4
+	regex-syntax@0.8.5
 	regex@1.9.1
 	region@3.0.2
 	ring@0.17.3
 	rustc-demangle@0.1.24
 	rustc-hash@1.1.0
-	rustc-hash@2.0.0
-	rustix@0.38.38
+	rustc-hash@2.1.1
+	rustix@0.38.43
+	rustix@1.0.3
 	rustls-pki-types@1.3.1
 	rustls-webpki@0.102.2
 	rustls@0.22.4
@@ -262,9 +286,9 @@ CRATES="
 	safetensors@0.3.3
 	same-file@1.0.6
 	semver@1.0.17
-	serde@1.0.188
-	serde_derive@1.0.188
-	serde_json@1.0.107
+	serde@1.0.215
+	serde_derive@1.0.215
+	serde_json@1.0.140
 	serde_spanned@0.6.5
 	sha1@0.10.6
 	sha2@0.10.2
@@ -275,40 +299,40 @@ CRATES="
 	signal-hook-registry@1.4.1
 	similar@2.2.0
 	slab@0.4.7
-	slice-group-by@0.3.1
 	smallvec@1.13.2
 	socket2@0.5.7
 	souper-ir@2.1.0
 	spdx@0.10.1
-	spin@0.9.4
+	spin@0.9.8
 	sptr@0.3.2
 	stable_deref_trait@1.2.0
 	static_assertions@1.1.0
-	string-interner@0.17.0
+	string-interner@0.19.0
 	strsim@0.11.1
 	strum@0.24.1
 	strum_macros@0.24.3
 	subtle@2.5.0
 	symbolic_expressions@5.0.3
 	syn@1.0.92
-	syn@2.0.60
+	syn@2.0.100
+	synstructure@0.13.1
 	system-interface@0.27.1
 	tar@0.4.41
-	target-lexicon@0.12.16
+	target-lexicon@0.13.0
 	tch@0.17.0
 	tempfile@3.8.0
 	termcolor@1.4.1
 	terminal_size@0.3.0
 	test-log@0.2.11
-	thiserror-impl@1.0.43
-	thiserror@1.0.43
+	thiserror-impl@1.0.65
+	thiserror-impl@2.0.12
+	thiserror@1.0.65
+	thiserror@2.0.12
 	thread_local@1.1.4
-	threadpool@1.8.1
 	time-core@0.1.2
 	time@0.3.36
+	tinystr@0.7.6
 	tinytemplate@1.2.1
-	tinyvec@1.6.0
-	tinyvec_macros@0.1.0
 	tokio-macros@2.1.0
 	tokio-rustls@0.25.0
 	tokio-util@0.7.4
@@ -316,26 +340,29 @@ CRATES="
 	toml@0.8.10
 	toml_datetime@0.6.5
 	toml_edit@0.22.4
+	topological-sort@0.2.2
 	torch-sys@0.17.0
 	tracing-attributes@0.1.26
 	tracing-core@0.1.31
 	tracing-log@0.1.3
 	tracing-subscriber@0.3.17
 	tracing@0.1.37
+	trait-variant@0.1.2
 	try-lock@0.2.4
 	typenum@1.15.0
-	unicode-bidi@0.3.8
 	unicode-ident@1.0.8
-	unicode-normalization@0.1.21
 	unicode-segmentation@1.11.0
 	unicode-width@0.1.9
+	unicode-width@0.2.0
 	unicode-xid@0.2.3
 	untrusted@0.9.0
 	ureq@2.10.0
-	url@2.3.1
+	url@2.5.4
+	utf16_iter@1.0.5
+	utf8_iter@1.0.4
 	utf8parse@0.2.1
 	uuid@1.0.0
-	v8@129.0.0
+	v8@134.5.0
 	valuable@0.1.0
 	version_check@0.9.4
 	wait-timeout@0.2.0
@@ -343,28 +370,31 @@ CRATES="
 	want@0.3.0
 	wasi-nn@0.6.0
 	wasi@0.11.0+wasi-snapshot-preview1
-	wasm-bindgen-backend@0.2.87
-	wasm-bindgen-macro-support@0.2.87
-	wasm-bindgen-macro@0.2.87
-	wasm-bindgen-shared@0.2.87
-	wasm-bindgen@0.2.87
-	wasm-encoder@0.219.1
-	wasm-metadata@0.219.1
-	wasm-mutate@0.219.1
-	wasm-smith@0.219.1
-	wasmi@0.39.0
-	wasmi_collections@0.39.0
-	wasmi_core@0.39.0
-	wasmi_ir@0.39.0
-	wasmparser-nostd@0.100.2
-	wasmparser@0.219.1
-	wasmprinter@0.219.1
-	wast@219.0.1
+	wasi@0.14.0+wasi-0.2.3
+	wasm-bindgen-backend@0.2.97
+	wasm-bindgen-macro-support@0.2.97
+	wasm-bindgen-macro@0.2.97
+	wasm-bindgen-shared@0.2.97
+	wasm-bindgen@0.2.97
+	wasm-encoder@0.227.1
+	wasm-encoder@0.228.0
+	wasm-metadata@0.227.0
+	wasm-metadata@0.228.0
+	wasm-mutate@0.228.0
+	wasm-smith@0.228.0
+	wasm-wave@0.228.0
+	wasmi@0.43.0
+	wasmi_collections@0.43.0
+	wasmi_core@0.43.0
+	wasmi_ir@0.43.0
+	wasmparser@0.227.1
+	wasmparser@0.228.0
+	wasmprinter@0.228.0
+	wast@228.0.0
 	wast@35.0.2
-	wat@1.219.1
+	wat@1.228.0
 	web-sys@0.3.57
 	webpki-roots@0.26.1
-	which@4.4.2
 	which@6.0.3
 	winapi-i686-pc-windows-gnu@0.4.0
 	winapi-util@0.1.5
@@ -397,18 +427,27 @@ CRATES="
 	winnow@0.5.39
 	winsafe@0.0.19
 	winx@0.36.3
-	wit-bindgen-core@0.34.0
-	wit-bindgen-rt@0.34.0
-	wit-bindgen-rust-macro@0.34.0
-	wit-bindgen-rust@0.34.0
-	wit-bindgen@0.34.0
-	wit-component@0.219.1
-	wit-parser@0.219.1
+	wit-bindgen-core@0.41.0
+	wit-bindgen-rt@0.37.0
+	wit-bindgen-rt@0.41.0
+	wit-bindgen-rust-macro@0.41.0
+	wit-bindgen-rust@0.41.0
+	wit-bindgen@0.41.0
+	wit-component@0.227.0
+	wit-component@0.228.0
+	wit-parser@0.227.0
+	wit-parser@0.228.0
 	witx@0.9.1
+	write16@1.0.0
+	writeable@0.5.5
 	xattr@1.3.1
-	zerocopy-derive@0.7.32
-	zerocopy@0.7.32
+	yoke-derive@0.7.5
+	yoke@0.7.5
+	zerofrom-derive@0.1.5
+	zerofrom@0.1.5
 	zeroize@1.7.0
+	zerovec-derive@0.10.3
+	zerovec@0.10.4
 	zip@0.6.6
 	zstd-safe@5.0.2+zstd.1.5.2
 	zstd-safe@7.0.0
@@ -418,11 +457,6 @@ CRATES="
 "
 
 inherit cargo
-
-WASI_COMMIT="0ba0c5e2e37625ca5a6d3e4255a998dfaa3efc52"
-WASI_NN_COMMIT="e2310b860db2ff1719c9d69816099b87e85fabdb"
-#	https://github.com/WebAssembly/WASI/archive/${WASI_COMMIT}.tar.gz -> WASI-${WASI_COMMIT}.tar.gz
-#	https://github.com/WebAssembly/wasi-nn/archive/${WASI_NN_COMMIT}.tar.gz -> wasi-nn-${WASI_NN_COMMIT}.tar.gz
 
 DESCRIPTION="A fast and secure runtime for WebAssembly"
 HOMEPAGE="https://wasmtime.dev/"
@@ -438,12 +472,6 @@ IUSE=""
 BDEPEND="
 	dev-build/cmake
 "
-
-#src_prepare() {
-#	default
-#	rmdir crates/wasi-common/WASI && ln -sv "${WORKDIR}"/WASI-${WASI_COMMIT} crates/wasi-common/WASI
-#	rmdir crates/wasi-nn/spec && ln -sv "${WORKDIR}"/wasi-nn-${WASI_NN_COMMIT} crates/wasi-nn/spec
-#}
 
 src_install() {
 	cargo_src_install

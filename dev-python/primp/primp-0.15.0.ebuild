@@ -262,11 +262,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
+DEPEND+="app-arch/zstd"
+RDEPEND=""
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
+
+export ZSTD_SYS_USE_PKG_CONFIG=1

@@ -24,7 +24,7 @@ CRATES="
 	arrayref@0.3.9
 	arrayvec@0.7.6
 	async-scoped@0.7.1
-	async-trait@0.1.87
+	async-trait@0.1.88
 	atomic-waker@1.1.2
 	atty@0.2.14
 	autocfg@1.4.0
@@ -85,7 +85,7 @@ CRATES="
 	equator-macro@0.2.1
 	equator@0.2.2
 	equivalent@1.0.1
-	errno@0.3.9
+	errno@0.3.11
 	fastrand@2.2.0
 	findshlibs@0.10.2
 	fnv@1.0.7
@@ -93,7 +93,6 @@ CRATES="
 	foreign-types@0.3.2
 	form_urlencoded@1.2.1
 	fragile@2.0.0
-	fuchsia-cprng@0.1.1
 	futures-channel@0.3.31
 	futures-core@0.3.31
 	futures-executor@0.3.31
@@ -158,6 +157,7 @@ CRATES="
 	is_terminal_polyfill@1.70.1
 	itertools@0.10.5
 	itertools@0.13.0
+	itertools@0.14.0
 	itoa@1.0.13
 	js-sys@0.3.77
 	jsonwebtoken@9.3.0
@@ -165,7 +165,7 @@ CRATES="
 	len-trait@0.6.1
 	libc@0.2.171
 	libredox@0.1.3
-	linux-raw-sys@0.4.14
+	linux-raw-sys@0.9.4
 	litemap@0.7.3
 	lmdb-rkv-sys@0.11.2
 	lock_api@0.4.12
@@ -238,18 +238,14 @@ CRATES="
 	pyo3@0.23.3
 	quick-xml@0.26.0
 	quote@1.0.37
-	rand@0.4.6
 	rand@0.8.5
-	rand@0.9.0
+	rand@0.9.1
 	rand_chacha@0.3.1
 	rand_chacha@0.9.0
-	rand_core@0.3.1
-	rand_core@0.4.2
 	rand_core@0.6.4
 	rand_core@0.9.3
 	rayon-core@1.12.1
 	rayon@1.10.0
-	rdrand@0.4.0
 	redox_syscall@0.2.16
 	redox_syscall@0.5.7
 	redox_users@0.4.6
@@ -258,7 +254,6 @@ CRATES="
 	regex-syntax@0.6.29
 	regex-syntax@0.8.5
 	regex@1.11.1
-	remove_dir_all@0.5.3
 	reqwest-middleware@0.3.3
 	reqwest-retry@0.6.1
 	reqwest@0.11.27
@@ -268,7 +263,7 @@ CRATES="
 	ring@0.17.8
 	rustc-demangle@0.1.24
 	rustc-hash@1.1.0
-	rustix@0.38.41
+	rustix@1.0.7
 	rustls-pemfile@1.0.4
 	rustls-pemfile@2.2.0
 	rustls-pki-types@1.10.0
@@ -317,8 +312,7 @@ CRATES="
 	system-configuration@0.5.1
 	system-configuration@0.6.1
 	target-lexicon@0.12.16
-	tempdir@0.3.7
-	tempfile@3.14.0
+	tempfile@3.19.1
 	termcolor@1.4.1
 	termtree@0.4.1
 	textwrap@0.16.1
@@ -333,20 +327,22 @@ CRATES="
 	tinystr@0.7.6
 	tokio-macros@2.5.0
 	tokio-native-tls@0.3.1
+	tokio-retry@0.3.0
 	tokio-rustls@0.26.0
 	tokio-util@0.7.12
 	tokio@1.44.0
 	toml@0.5.11
 	tower-service@0.3.3
-	tracing-attributes@0.1.27
-	tracing-core@0.1.32
+	tracing-attributes@0.1.28
+	tracing-core@0.1.33
 	tracing-log@0.2.0
 	tracing-serde@0.1.3
 	tracing-subscriber@0.3.18
-	tracing@0.1.40
+	tracing@0.1.41
 	try-lock@0.2.5
 	twox-hash@1.6.3
 	typenum@1.17.0
+	ulid@1.2.1
 	unicode-ident@1.0.14
 	unindent@0.2.3
 	untrusted@0.9.0
@@ -372,6 +368,7 @@ CRATES="
 	wasm-streams@0.4.2
 	wasm-timer@0.2.5
 	web-sys@0.3.72
+	web-time@1.1.0
 	webpki-roots@0.25.4
 	whoami@1.5.2
 	winapi-i686-pc-windows-gnu@0.4.0
@@ -409,9 +406,7 @@ CRATES="
 	yoke-derive@0.7.4
 	yoke@0.7.4
 	zerocopy-derive@0.7.35
-	zerocopy-derive@0.8.23
 	zerocopy@0.7.35
-	zerocopy@0.8.23
 	zerofrom-derive@0.1.4
 	zerofrom@0.1.4
 	zeroize@1.8.1

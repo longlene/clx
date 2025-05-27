@@ -59,6 +59,7 @@ src_configure() {
 	if use sycl ; then
 		export CC=icx
 		export CXX=icpx
+		filter-flags -mabm --param=l1-cache-* --param=l2-cache-*
 	fi
 	local cpu_runtime
 	if use sycl ; then
