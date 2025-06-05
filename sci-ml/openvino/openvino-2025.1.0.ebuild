@@ -31,6 +31,7 @@ IUSE="-l0 onednn opencl python contrib cuda test"
 DEPEND="
 	sys-libs/zlib
 	>=dev-cpp/clhpp-2024.10.24
+	dev-cpp/nlohmann_json
 	dev-cpp/tbb
 	dev-libs/mlas
 	dev-libs/xbyak
@@ -38,6 +39,7 @@ DEPEND="
 	dev-libs/flatbuffers
 	dev-libs/protobuf
 	app-arch/snappy
+	sci-ml/onnx
 	l0? ( dev-libs/level-zero )
 	opencl? ( virtual/opencl )
 	cuda? ( 

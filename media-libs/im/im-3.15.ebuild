@@ -1,69 +1,81 @@
-# Copyright 2023 Gentoo Foundation
+# Copyright 2025 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-LUA_COMPAT=( lua5-{1..4} luajit )
+LUA_COMPAT=( lua5-{1..4} )
 
-inherit multilib lua
+inherit lua
 
 DESCRIPTION="A toolkit for Digital Imaging"
 HOMEPAGE="http://imtoolkit.sourceforge.net/"
-SRC_URI="mirror://sourceforge/imtoolkit/${PV}/Docs%20and%20Sources/im-${PV}_Sources.tar.gz"
-
+SRC_URI="https://downloads.sourceforge.net/project/imtoolkit/${PV}/Docs%20and%20Sources/${P}_Sources.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+openmp lua static-libs"
+IUSE="lua static-libs"
 
-DEPEND=""
+DEPEND="
+	lua? ( ${LUA_DEPS} )
+"
 RDEPEND="${DEPEND}
-sys-libs/zlib
-media-libs/jasper
-lua? ( >=dev-lang/lua-5.1 )"
+	media-libs/libpng
+	sci-libs/fftw
+	sys-libs/zlib
+"
 
 S="${WORKDIR}"/${PN}
 
-#src_prepare() {
-#	find . -type d -exec chmod 755 {} \;
-#}
+PATCHES=(
+	"${FILESDIR}"/build-fix.patch
+)
+
+src_prepare() {
+	default
+	sed -i 's/^im_.*/\0 im/g;s/^im_fftw3.*/\0 im_process/g;s/^imlua_.*/\0 imlua5/g' src/Makefile
+}
+
+lua_src_compile() {
+	local target=(
+		imlua5
+		imlua_jp25
+		imlua_process5
+		imlua_process_omp5
+		imlua_fftw35
+	)
+	local VER=$(ver_cut 1-2 $(lua_get_version))
+	emake -C src USE_LUA$(ver_rs 1- '' ${VER})=Yes LUA_SFX=${VER} LUA_INC=$(lua_get_include_dir) ${target[@]}
+}
 
 src_compile() {
-	local target=" im "
-	if use openmp; then
-		target+=" im_process_omp "
-	else
-		target+=" im_process "
-	fi
-	target+=" im_fftw im_lzo "
-
-	make -C src ${target}
+	local target=(
+		im
+		im_jp2
+		im_process
+		im_process_omp
+		im_fftw3
+	)
+	emake -C src ${target[@]}
 
 	if use lua; then
-		local luaver=$(lua -v 2>&1 | cut -d ' ' -f 2 | cut -d . -f1,2 | tr -d .)
-		local cmd="make --no-print-directory -f ../tecmake.mak"
-		cd ${S}/src
-		${cmd} MF=imlua5 USE_LUA${luaver}=Yes
-		${cmd} MF=imlua_jp2 USE_LUA${luaver}=Yes
-		if use openmp; then
-			${cmd} MF=imlua_process5 USE_OPENMP=Yes USE_LUA${luaver}=Yes
-		else
-			${cmd} MF=imlua_process5 USE_LUA${luaver}=Yes
-		fi
-		${cmd} MF=imlua_fftw5 USE_LUA${luaver}=Yes
+		lua_foreach_impl lua_src_compile
 	fi
 }
 
+lua_src_install() {
+	insinto $(lua_get_cmod_dir)
+	doins lib/Linux*/Lua*/libimlua*.so
+}
+
 src_install() {
-	if use lua; then
-		lua_install_cmodule lib/*/*lua*.so
-		rm lib/*/*lua*.*
-	fi
-	dolib lib/*/*.so
-	use static-libs && dolib lib/*/*.a
+	dolib.so lib/Linux*/*.so
+	use static-libs && dolib.a lib/Linux*/*.a
 
 	insinto /usr/include/im
 	doins include/*.h
+	if use lua; then
+		lua_foreach_impl lua_src_install
+	fi
 }
 

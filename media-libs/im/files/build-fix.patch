@@ -1,0 +1,12 @@
+diff -Nur a/src/libjasper2/jasper/jas_stream.h b/src/libjasper2/jasper/jas_stream.h
+--- a/src/libjasper2/jasper/jas_stream.h	2017-09-14 16:20:10.000000000 -0700
++++ b/src/libjasper2/jasper/jas_stream.h	2025-06-01 22:21:26.940209063 -0700
+@@ -82,7 +82,7 @@
+ #include <fcntl.h>
+ #endif
+ #include <string.h>
+-#if defined(JAS_HAVE_UNISTD_H)
++#if defined(HAVE_UNISTD_H)
+ #include <unistd.h>
+ #endif
+ #include <jasper/jas_types.h>

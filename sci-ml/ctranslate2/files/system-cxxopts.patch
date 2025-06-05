@@ -1,0 +1,25 @@
+diff -Nur a/cli/CMakeLists.txt b/cli/CMakeLists.txt
+--- a/cli/CMakeLists.txt	2025-04-08 08:30:28.000000000 -0700
++++ b/cli/CMakeLists.txt	2025-05-18 20:42:08.164255689 -0700
+@@ -1,14 +1,15 @@
+-if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../third_party/cxxopts/include")
+-  message(FATAL_ERROR "The client dependency repository (cxxopts) is missing! "
+-    "You probably didn't clone the project with --recursive. You can include it "
+-    "by calling \"git submodule update --init --recursive\"")
+-endif()
++#if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../third_party/cxxopts/include")
++#  message(FATAL_ERROR "The client dependency repository (cxxopts) is missing! "
++#    "You probably didn't clone the project with --recursive. You can include it "
++#    "by calling \"git submodule update --init --recursive\"")
++#endif()
++find_package(cxxopts REQUIRED)
+ 
+ add_executable(translator
+   translator.cc
+   )
+ target_include_directories(translator
+-  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../third_party/cxxopts/include
++  PRIVATE $<TARGET_PROPERTY:cxxopts::cxxopts,INTERFACE_INCLUDE_DIRECTORIES>
+   )
+ target_link_libraries(translator
+   PRIVATE ${PROJECT_NAME}

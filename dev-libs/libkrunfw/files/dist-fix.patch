@@ -1,0 +1,30 @@
+diff -Nur a/Makefile b/Makefile
+--- a/Makefile	2025-03-24 09:02:59.000000000 -0700
++++ b/Makefile	2025-06-01 14:26:01.462684484 -0700
+@@ -1,6 +1,6 @@
+ KERNEL_VERSION = linux-6.12.20
+ KERNEL_REMOTE = https://cdn.kernel.org/pub/linux/kernel/v6.x/$(KERNEL_VERSION).tar.xz
+-KERNEL_TARBALL = tarballs/$(KERNEL_VERSION).tar.xz
++KERNEL_TARBALL ?= tarballs/$(KERNEL_VERSION).tar.xz
+ KERNEL_SOURCES = $(KERNEL_VERSION)
+ KERNEL_PATCHES = $(shell find patches/ -name "0*.patch" | sort)
+ KERNEL_C_BUNDLE = kernel.c
+@@ -20,7 +20,7 @@
+ 
+ HOSTARCH = $(shell uname -m)
+ OS = $(shell uname -s)
+-ifeq ($(ARCH),)
++ifeq ($(ARCH),x86)
+ 	GUESTARCH := $(HOSTARCH)
+ 	STRIP := strip
+ else ifeq ($(ARCH),arm64)
+@@ -102,9 +102,6 @@
+ 
+ $(KRUNFW_BINARY_$(OS)): $(KERNEL_C_BUNDLE) $(QBOOT_C_BUNDLE) $(INITRD_C_BUNDLE)
+ 	$(CC) -fPIC -DABI_VERSION=$(ABI_VERSION) -shared $(SONAME_$(OS)) -o $@ $(KERNEL_C_BUNDLE) $(QBOOT_C_BUNDLE) $(INITRD_C_BUNDLE)
+-ifeq ($(OS),Linux)
+-	$(STRIP) $(KRUNFW_BINARY_$(OS))
+-endif
+ 
+ install:
+ 	install -d $(DESTDIR)$(PREFIX)/$(LIBDIR_$(OS))/

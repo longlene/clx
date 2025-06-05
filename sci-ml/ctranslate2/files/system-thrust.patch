@@ -1,0 +1,12 @@
+diff -Nur a/src/cuda/primitives.cu b/src/cuda/primitives.cu
+--- a/src/cuda/primitives.cu	2025-04-08 08:30:28.000000000 -0700
++++ b/src/cuda/primitives.cu	2025-06-04 01:10:40.540022061 -0700
+@@ -3,6 +3,8 @@
+ #include <cuda_runtime.h>
+ #include <cublas_v2.h>
+ #include <thrust/device_ptr.h>
++#include <thrust/extrema.h>
++#include <thrust/reduce.h>
+ 
+ #include "cuda/helpers.h"
+ #include "type_dispatch.h"

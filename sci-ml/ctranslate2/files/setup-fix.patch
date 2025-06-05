@@ -1,0 +1,11 @@
+diff -Nur a/python/setup.py b/python/setup.py
+--- a/python/setup.py	2025-04-08 08:30:28.000000000 -0700
++++ b/python/setup.py	2025-06-05 01:05:04.780992397 -0700
+@@ -32,6 +32,7 @@
+     if "%s_ROOT" % lib_name in os.environ:
+         root = os.environ["%s_ROOT" % lib_name]
+         include_dirs.append("%s/include" % root)
++        library_dirs.append(root)
+         for lib_dir in ("lib", "lib64"):
+             path = "%s/%s" % (root, lib_dir)
+             if os.path.exists(path):

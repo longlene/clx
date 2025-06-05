@@ -15,8 +15,8 @@ SLOT="0"
 
 DEPEND="
 	media-sound/audacity
-	sci-libs/openvino
-	sci-libs/pytorch
+	sci-ml/openvino
+	sci-ml/pytorch
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""

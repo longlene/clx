@@ -1,0 +1,259 @@
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	addr2line@0.24.2
+	adler2@2.0.0
+	aho-corasick@1.1.3
+	allocator-api2@0.2.21
+	android-tzdata@0.1.1
+	android_system_properties@0.1.5
+	annotate-snippets@0.9.2
+	anyhow@1.0.98
+	async-trait@0.1.88
+	atty@0.2.14
+	autocfg@1.4.0
+	backtrace@0.3.74
+	base64@0.22.1
+	bincode@1.3.3
+	bindgen@0.69.5
+	bindgen@0.71.1
+	bitfield@0.15.0
+	bitflags@1.3.2
+	bitflags@2.9.0
+	bumpalo@3.17.0
+	byteorder@1.5.0
+	bzip2-sys@0.1.13+1.0.8
+	bzip2@0.5.2
+	caps@0.5.5
+	cc@1.2.19
+	cexpr@0.6.0
+	cfg-expr@0.15.8
+	cfg-if@1.0.0
+	cfg_aliases@0.2.1
+	chrono@0.4.40
+	clang-sys@1.8.1
+	codicon@3.0.0
+	convert_case@0.6.0
+	cookie-factory@0.3.3
+	core-foundation-sys@0.8.7
+	crc32fast@1.4.2
+	crossbeam-channel@0.5.15
+	crossbeam-utils@0.8.21
+	curl-sys@0.4.80+curl-8.12.1
+	curl@0.4.47
+	dirs-sys@0.4.1
+	dirs@5.0.1
+	either@1.15.0
+	env_logger@0.9.3
+	equivalent@1.0.2
+	flate2@1.1.1
+	foldhash@0.1.5
+	foreign-types-shared@0.1.1
+	foreign-types@0.3.2
+	futures-channel@0.3.31
+	futures-core@0.3.31
+	futures-executor@0.3.31
+	futures-io@0.3.31
+	futures-macro@0.3.31
+	futures-sink@0.3.31
+	futures-task@0.3.31
+	futures-util@0.3.31
+	futures@0.3.31
+	getrandom@0.2.15
+	getrandom@0.3.2
+	gimli@0.31.1
+	glob@0.3.2
+	hashbrown@0.15.2
+	heck@0.5.0
+	hermit-abi@0.1.19
+	hex@0.4.3
+	humantime@2.2.0
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.63
+	imago@0.1.4
+	indexmap@2.9.0
+	iocuddle@0.1.1
+	itertools@0.12.1
+	itertools@0.13.0
+	itoa@1.0.15
+	jobserver@0.1.33
+	js-sys@0.3.77
+	kbs-types@0.8.0
+	kvm-bindings@0.11.1
+	kvm-ioctls@0.21.0
+	lazy_static@1.5.0
+	lazycell@1.3.0
+	libc@0.2.172
+	libloading@0.8.6
+	libredox@0.1.3
+	libspa-sys@0.8.0
+	libspa@0.8.0
+	libz-sys@1.1.22
+	linux-loader@0.13.0
+	log@0.4.27
+	lru@0.14.0
+	memchr@2.7.4
+	memoffset@0.6.5
+	memoffset@0.7.1
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.8
+	nix@0.24.3
+	nix@0.26.4
+	nix@0.27.1
+	nix@0.29.0
+	nom@7.1.3
+	num-traits@0.2.19
+	object@0.36.7
+	once_cell@1.21.3
+	openssl-macros@0.1.1
+	openssl-probe@0.1.6
+	openssl-sys@0.9.107
+	openssl@0.10.72
+	option-ext@0.2.0
+	page_size@0.6.0
+	pin-project-lite@0.2.16
+	pin-utils@0.1.0
+	pipewire-sys@0.8.0
+	pipewire@0.8.0
+	pkg-config@0.3.32
+	ppv-lite86@0.2.21
+	prettyplease@0.2.32
+	proc-macro2@1.0.95
+	procfs@0.12.0
+	quote@1.0.40
+	r-efi@5.2.0
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	rdrand@0.8.3
+	redox_users@0.4.6
+	regex-automata@0.4.9
+	regex-syntax@0.8.5
+	regex@1.11.1
+	remain@0.2.15
+	rustc-demangle@0.1.24
+	rustc-hash@1.1.0
+	rustc-hash@2.1.1
+	rustc_version@0.4.1
+	rustversion@1.0.20
+	ryu@1.0.20
+	schannel@0.1.27
+	semver@1.0.26
+	serde-big-array@0.5.1
+	serde@1.0.219
+	serde_bytes@0.11.17
+	serde_derive@1.0.219
+	serde_json@1.0.140
+	serde_spanned@0.6.8
+	sev@4.0.0
+	sev@6.0.0
+	shlex@1.3.0
+	slab@0.4.9
+	smallvec@1.15.0
+	socket2@0.5.9
+	static_assertions@1.1.0
+	syn@2.0.100
+	system-deps@6.2.2
+	target-lexicon@0.12.16
+	termcolor@1.4.1
+	thiserror-impl@1.0.69
+	thiserror@1.0.69
+	tokio@1.44.2
+	toml@0.8.20
+	toml_datetime@0.6.8
+	toml_edit@0.22.24
+	tracing-attributes@0.1.28
+	tracing-core@0.1.33
+	tracing@0.1.41
+	unicode-ident@1.0.18
+	unicode-segmentation@1.12.0
+	unicode-width@0.1.14
+	uuid@1.16.0
+	vcpkg@0.2.15
+	version-compare@0.2.0
+	virtio-bindings@0.2.5
+	vm-fdt@0.3.0
+	vm-memory@0.16.1
+	vmm-sys-util@0.12.1
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasi@0.14.2+wasi-0.2.4
+	wasm-bindgen-backend@0.2.100
+	wasm-bindgen-macro-support@0.2.100
+	wasm-bindgen-macro@0.2.100
+	wasm-bindgen-shared@0.2.100
+	wasm-bindgen@0.2.100
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.9
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-core@0.61.0
+	windows-implement@0.60.0
+	windows-interface@0.59.1
+	windows-link@0.1.1
+	windows-result@0.3.2
+	windows-strings@0.4.0
+	windows-sys@0.48.0
+	windows-sys@0.52.0
+	windows-sys@0.59.0
+	windows-targets@0.48.5
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.48.5
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.48.5
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.48.5
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.48.5
+	windows_x86_64_msvc@0.52.6
+	winnow@0.7.6
+	wit-bindgen-rt@0.39.0
+	yansi-term@0.1.2
+	zerocopy-derive@0.6.6
+	zerocopy-derive@0.8.24
+	zerocopy@0.6.6
+	zerocopy@0.8.24
+	zstd-safe@7.2.4
+	zstd-sys@2.0.15+zstd.1.5.7
+	zstd@0.13.3
+"
+
+inherit cargo
+
+DESCRIPTION="A dynamic library providing Virtualization-based process isolation capabilities"
+HOMEPAGE="https://github.com/containers/libkrun"
+SRC_URI="
+	https://github.com/containers/libkrun/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+DEPEND="
+	app-arch/zstd:=
+"
+RDEPEND="${DEPEND}
+	dev-libs/libkrunfw
+"
+BDEPEND=""
+
+export ZSTD_SYS_USE_PKG_CONFIG=1
+
+src_compile() {
+	emake
+}
+
+src_install() {
+	emake DESTDIR="${D}" PREFIX="/usr" install
+}
