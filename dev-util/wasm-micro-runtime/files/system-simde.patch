@@ -1,0 +1,13 @@
+diff -Nur a/core/iwasm/libraries/simde/simde.cmake b/core/iwasm/libraries/simde/simde.cmake
+--- a/core/iwasm/libraries/simde/simde.cmake	2025-06-02 01:30:51.000000000 -0700
++++ b/core/iwasm/libraries/simde/simde.cmake	2025-06-05 23:08:36.290474466 -0700
+@@ -23,6 +23,6 @@
+     GIT_TAG v0.8.2
+ )
+ 
+-message("-- Fetching simde ..")
+-FetchContent_MakeAvailable(simde)
+-include_directories("${simde_SOURCE_DIR}")
++#message("-- Fetching simde ..")
++#FetchContent_MakeAvailable(simde)
++#include_directories("${simde_SOURCE_DIR}")

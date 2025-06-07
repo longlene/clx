@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,7 +15,7 @@ CRATES="
 	anes@0.1.6
 	anstream@0.6.15
 	anstyle-parse@0.2.1
-	anstyle-query@1.0.0
+	anstyle-query@1.1.2
 	anstyle-wincon@3.0.4
 	anstyle@1.0.8
 	anyhow@1.0.93
@@ -43,18 +43,18 @@ CRATES="
 	bzip2-sys@0.1.11+1.0.8
 	bzip2@0.4.4
 	camino@1.1.4
-	cap-fs-ext@3.4.1
-	cap-net-ext@3.4.1
-	cap-primitives@3.4.1
-	cap-rand@3.4.1
-	cap-std@3.4.1
-	cap-time-ext@3.4.1
+	cap-fs-ext@3.4.4
+	cap-net-ext@3.4.4
+	cap-primitives@3.4.4
+	cap-rand@3.4.4
+	cap-std@3.4.4
+	cap-time-ext@3.4.4
 	capstone-sys@0.17.0
 	capstone@0.13.0
 	cargo-platform@0.1.2
 	cargo_metadata@0.19.2
 	cast@0.3.0
-	cc@1.2.5
+	cc@1.2.19
 	cexpr@0.6.0
 	cfg-if@1.0.0
 	ciborium-io@0.2.0
@@ -62,11 +62,11 @@ CRATES="
 	ciborium@0.2.0
 	cipher@0.4.4
 	clang-sys@1.8.1
-	clap@4.5.17
-	clap_builder@4.5.17
+	clap@4.5.36
+	clap_builder@4.5.36
 	clap_complete@4.5.28
-	clap_derive@4.5.13
-	clap_lex@0.7.2
+	clap_derive@4.5.32
+	clap_lex@0.7.4
 	cobs@0.2.3
 	codespan-reporting@0.11.1
 	colorchoice@1.0.0
@@ -89,7 +89,6 @@ CRATES="
 	derive_arbitrary@1.4.0
 	digest@0.10.7
 	directories-next@2.0.0
-	dirs-next@2.0.0
 	dirs-sys-next@0.1.2
 	displaydoc@0.2.5
 	dlmalloc@0.2.4
@@ -107,7 +106,7 @@ CRATES="
 	errno@0.3.10
 	escape8259@0.5.2
 	fallible-iterator@0.3.0
-	fastrand@2.0.1
+	fastrand@2.3.0
 	fd-lock@4.0.2
 	file-per-thread-logger@0.2.0
 	filecheck@0.5.0
@@ -131,7 +130,8 @@ CRATES="
 	fxhash@0.2.1
 	fxprof-processed-profile@0.6.0
 	generic-array@0.14.5
-	getrandom@0.2.9
+	getrandom@0.2.15
+	getrandom@0.3.1
 	gimli@0.31.0
 	glob@0.3.1
 	gzip-header@1.0.0
@@ -190,7 +190,7 @@ CRATES="
 	leb128fmt@0.1.0
 	libc@0.2.171
 	libfuzzer-sys@0.4.8
-	libloading@0.8.1
+	libloading@0.8.6
 	libm@0.2.11
 	libtest-mimic@0.8.1
 	linux-raw-sys@0.4.14
@@ -211,7 +211,7 @@ CRATES="
 	minimal-lexical@0.2.1
 	miniz_oxide@0.7.4
 	miniz_oxide@0.8.5
-	mio@0.8.11
+	mio@1.0.3
 	multi-stash@0.2.0
 	ndarray@0.15.6
 	nom@7.1.3
@@ -244,7 +244,6 @@ CRATES="
 	postcard@1.0.8
 	powerfmt@0.2.0
 	ppv-lite86@0.2.16
-	pretty_env_logger@0.5.0
 	prettyplease@0.2.31
 	proc-macro2@1.0.92
 	proptest@1.0.0
@@ -260,9 +259,8 @@ CRATES="
 	rayon-core@1.12.0
 	rayon@1.5.3
 	redox_syscall@0.2.13
-	redox_syscall@0.3.5
 	redox_users@0.4.3
-	regalloc2@0.11.2
+	regalloc2@0.12.2
 	regex-automata@0.1.10
 	regex-automata@0.3.3
 	regex-syntax@0.6.25
@@ -270,10 +268,11 @@ CRATES="
 	regex-syntax@0.8.5
 	regex@1.9.1
 	region@3.0.2
-	ring@0.17.3
+	ring@0.17.14
 	rustc-demangle@0.1.24
 	rustc-hash@1.1.0
 	rustc-hash@2.1.1
+	rustix-linux-procfs@0.1.1
 	rustix@0.38.43
 	rustix@1.0.3
 	rustls-pki-types@1.3.1
@@ -293,7 +292,6 @@ CRATES="
 	sha1@0.10.6
 	sha2@0.10.2
 	sharded-slab@0.1.4
-	shellexpand@2.1.0
 	shlex@1.3.0
 	shuffling-allocator@1.1.2
 	signal-hook-registry@1.4.1
@@ -320,9 +318,9 @@ CRATES="
 	tar@0.4.41
 	target-lexicon@0.13.0
 	tch@0.17.0
-	tempfile@3.8.0
+	tempfile@3.19.1
 	termcolor@1.4.1
-	terminal_size@0.3.0
+	terminal_size@0.4.2
 	test-log@0.2.11
 	thiserror-impl@1.0.65
 	thiserror-impl@2.0.12
@@ -333,10 +331,10 @@ CRATES="
 	time@0.3.36
 	tinystr@0.7.6
 	tinytemplate@1.2.1
-	tokio-macros@2.1.0
+	tokio-macros@2.5.0
 	tokio-rustls@0.25.0
 	tokio-util@0.7.4
-	tokio@1.30.0
+	tokio@1.44.2
 	toml@0.8.10
 	toml_datetime@0.6.5
 	toml_edit@0.22.4
@@ -370,6 +368,7 @@ CRATES="
 	want@0.3.0
 	wasi-nn@0.6.0
 	wasi@0.11.0+wasi-snapshot-preview1
+	wasi@0.13.3+wasi-0.2.2
 	wasi@0.14.0+wasi-0.2.3
 	wasm-bindgen-backend@0.2.97
 	wasm-bindgen-macro-support@0.2.97
@@ -377,22 +376,22 @@ CRATES="
 	wasm-bindgen-shared@0.2.97
 	wasm-bindgen@0.2.97
 	wasm-encoder@0.227.1
-	wasm-encoder@0.228.0
+	wasm-encoder@0.229.0
 	wasm-metadata@0.227.0
-	wasm-metadata@0.228.0
-	wasm-mutate@0.228.0
-	wasm-smith@0.228.0
-	wasm-wave@0.228.0
-	wasmi@0.43.0
-	wasmi_collections@0.43.0
-	wasmi_core@0.43.0
-	wasmi_ir@0.43.0
+	wasm-metadata@0.229.0
+	wasm-mutate@0.229.0
+	wasm-smith@0.229.0
+	wasm-wave@0.229.0
+	wasmi@0.43.1
+	wasmi_collections@0.43.1
+	wasmi_core@0.43.1
+	wasmi_ir@0.43.1
 	wasmparser@0.227.1
-	wasmparser@0.228.0
-	wasmprinter@0.228.0
-	wast@228.0.0
+	wasmparser@0.229.0
+	wasmprinter@0.229.0
+	wast@229.0.0
 	wast@35.0.2
-	wat@1.228.0
+	wat@1.229.0
 	web-sys@0.3.57
 	webpki-roots@0.26.1
 	which@6.0.3
@@ -403,40 +402,32 @@ CRATES="
 	windows-core@0.52.0
 	windows-implement@0.52.0
 	windows-interface@0.52.0
-	windows-sys@0.48.0
 	windows-sys@0.52.0
 	windows-sys@0.59.0
-	windows-targets@0.48.5
 	windows-targets@0.52.6
 	windows@0.52.0
-	windows_aarch64_gnullvm@0.48.5
 	windows_aarch64_gnullvm@0.52.6
-	windows_aarch64_msvc@0.48.5
 	windows_aarch64_msvc@0.52.6
-	windows_i686_gnu@0.48.5
 	windows_i686_gnu@0.52.6
 	windows_i686_gnullvm@0.52.6
-	windows_i686_msvc@0.48.5
 	windows_i686_msvc@0.52.6
-	windows_x86_64_gnu@0.48.5
 	windows_x86_64_gnu@0.52.6
-	windows_x86_64_gnullvm@0.48.5
 	windows_x86_64_gnullvm@0.52.6
-	windows_x86_64_msvc@0.48.5
 	windows_x86_64_msvc@0.52.6
 	winnow@0.5.39
 	winsafe@0.0.19
 	winx@0.36.3
 	wit-bindgen-core@0.41.0
+	wit-bindgen-rt@0.33.0
 	wit-bindgen-rt@0.37.0
 	wit-bindgen-rt@0.41.0
 	wit-bindgen-rust-macro@0.41.0
 	wit-bindgen-rust@0.41.0
 	wit-bindgen@0.41.0
 	wit-component@0.227.0
-	wit-component@0.228.0
+	wit-component@0.229.0
 	wit-parser@0.227.0
-	wit-parser@0.228.0
+	wit-parser@0.229.0
 	witx@0.9.1
 	write16@1.0.0
 	writeable@0.5.5
@@ -456,24 +447,36 @@ CRATES="
 	zstd@0.13.0
 "
 
-inherit cargo
+inherit cargo cmake
 
 DESCRIPTION="A fast and secure runtime for WebAssembly"
 HOMEPAGE="https://wasmtime.dev/"
 SRC_URI="
 	https://github.com/bytecodealliance/wasmtime/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	$(cargo_crate_uris ${CRATES})"
+	${CARGO_CRATE_URIS}"
 
 LICENSE="MIT Apache-2.0 BSD-2 ISC"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-BDEPEND="
-	dev-build/cmake
-"
+BDEPEND=""
+
+CMAKE_USE_DIR="${S}"/crates/c-api
+
+src_configure() {
+	local mycmakeargs=(
+		-DCMAKE_INSTALL_PREFIX="${EPREFIX}"/usr
+	)
+	cmake_src_configure
+}
+
+src_compile() {
+	cmake_src_compile
+}
 
 src_install() {
-	cargo_src_install
+	doheader -r crates/c-api/include/{wasmtime,*.h,*.hh}
+	dolib.so target/*/release/libwasmtime.so
 	einstalldocs
 }

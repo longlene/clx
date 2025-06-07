@@ -1,0 +1,63 @@
+diff -Nur a/cmake/Modules/FindLuaJIT.cmake b/cmake/Modules/FindLuaJIT.cmake
+--- a/cmake/Modules/FindLuaJIT.cmake	2024-10-08 12:45:45.000000000 -0700
++++ b/cmake/Modules/FindLuaJIT.cmake	2025-05-18 21:34:48.061033932 -0700
+@@ -30,13 +30,13 @@
+ find_path(LUAJIT_INCLUDE_DIR
+   NAMES lua.h
+   HINTS ${PC_LUAJIT_INCLUDE_DIRS}
+-  PATH_SUFFIXES luajit-2.0)
++  PATH_SUFFIXES luajit-2.0 luajit-2.1)
+ mark_as_advanced(LUAJIT_INCLUDE_DIR)
+ 
+ find_library(LUAJIT_LIBRARY
+   NAMES luajit-5.1
+   HINTS ${PC_LUAJIT_LIBRARY_DIRS}
+-  PATH_SUFFIXES luajit-2.0)
++  PATH_SUFFIXES luajit-2.0 luajit-2.1)
+ mark_as_advanced(LUAJIT_LIBRARY)
+ 
+ find_package_handle_standard_args(LuaJIT
+diff -Nur a/deps/lrexlib.cmake b/deps/lrexlib.cmake
+--- a/deps/lrexlib.cmake	2024-10-08 12:45:45.000000000 -0700
++++ b/deps/lrexlib.cmake	2025-05-18 21:35:07.937701305 -0700
+@@ -2,7 +2,7 @@
+ 
+ set(LREXLIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/deps/lrexlib" CACHE PATH "Path to lrexlib")
+ 
+-add_library(lrexlib STATIC
++add_library(lrexlib
+   ${LREXLIB_DIR}/src/common.c
+   ${LREXLIB_DIR}/src/pcre2/lpcre2.c
+   ${LREXLIB_DIR}/src/pcre2/lpcre2_f.c
+diff -Nur a/deps/lua-openssl.cmake b/deps/lua-openssl.cmake
+--- a/deps/lua-openssl.cmake	2024-10-08 12:45:45.000000000 -0700
++++ b/deps/lua-openssl.cmake	2025-05-18 21:35:50.274369434 -0700
+@@ -6,6 +6,7 @@
+   ${CMAKE_BINARY_DIR}/include
+   ${LUA_OPENSSL_DIR}/deps/auxiliar
+   ${LUA_OPENSSL_DIR}/deps/lua-compat
++  ${LUA_OPENSSL_DIR}/deps/lua-compat/c-api
+   ${LUA_OPENSSL_DIR}/src
+ )
+ 
+@@ -16,7 +17,7 @@
+   find_package(Threads)
+ endif()
+ 
+-add_library(lua_openssl STATIC
++add_library(lua_openssl
+   ${LUA_OPENSSL_DIR}/deps/auxiliar/auxiliar.c
+   ${LUA_OPENSSL_DIR}/deps/auxiliar/subsidiar.c
+   ${LUA_OPENSSL_DIR}/src/asn1.c
+diff -Nur a/deps/lua-zlib.cmake b/deps/lua-zlib.cmake
+--- a/deps/lua-zlib.cmake	2024-10-08 12:45:45.000000000 -0700
++++ b/deps/lua-zlib.cmake	2025-05-18 21:36:07.431036714 -0700
+@@ -2,7 +2,7 @@
+ 
+ set(LUA_ZLIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/deps/lua-zlib" CACHE STRING "Path to lua-zlib")
+ 
+-add_library(lua_zlib STATIC
++add_library(lua_zlib
+   ${LUA_ZLIB_DIR}/lua_zlib.c
+   ${LUA_ZLIB_DIR}/zlib.def
+ )

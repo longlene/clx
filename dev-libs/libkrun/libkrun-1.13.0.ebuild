@@ -11,9 +11,13 @@ CRATES="
 	android-tzdata@0.1.1
 	android_system_properties@0.1.5
 	annotate-snippets@0.9.2
+	anstream@0.6.18
+	anstyle-parse@0.2.6
+	anstyle-query@1.1.2
+	anstyle-wincon@3.0.8
+	anstyle@1.0.10
 	anyhow@1.0.98
 	async-trait@0.1.88
-	atty@0.2.14
 	autocfg@1.4.0
 	backtrace@0.3.74
 	base64@0.22.1
@@ -36,6 +40,7 @@ CRATES="
 	chrono@0.4.40
 	clang-sys@1.8.1
 	codicon@3.0.0
+	colorchoice@1.0.3
 	convert_case@0.6.0
 	cookie-factory@0.3.3
 	core-foundation-sys@0.8.7
@@ -47,7 +52,8 @@ CRATES="
 	dirs-sys@0.4.1
 	dirs@5.0.1
 	either@1.15.0
-	env_logger@0.9.3
+	env_filter@0.1.3
+	env_logger@0.11.8
 	equivalent@1.0.2
 	flate2@1.1.1
 	foldhash@0.1.5
@@ -68,20 +74,21 @@ CRATES="
 	glob@0.3.2
 	hashbrown@0.15.2
 	heck@0.5.0
-	hermit-abi@0.1.19
 	hex@0.4.3
-	humantime@2.2.0
 	iana-time-zone-haiku@0.1.2
 	iana-time-zone@0.1.63
 	imago@0.1.4
 	indexmap@2.9.0
 	iocuddle@0.1.1
+	is_terminal_polyfill@1.70.1
 	itertools@0.12.1
 	itertools@0.13.0
 	itoa@1.0.15
+	jiff-static@0.2.14
+	jiff@0.2.14
 	jobserver@0.1.33
 	js-sys@0.3.77
-	kbs-types@0.8.0
+	kbs-types@0.11.0
 	kvm-bindings@0.11.1
 	kvm-ioctls@0.21.0
 	lazy_static@1.5.0
@@ -108,6 +115,7 @@ CRATES="
 	num-traits@0.2.19
 	object@0.36.7
 	once_cell@1.21.3
+	once_cell_polyfill@1.70.1
 	openssl-macros@0.1.1
 	openssl-probe@0.1.6
 	openssl-sys@0.9.107
@@ -119,6 +127,8 @@ CRATES="
 	pipewire-sys@0.8.0
 	pipewire@0.8.0
 	pkg-config@0.3.32
+	portable-atomic-util@0.2.4
+	portable-atomic@1.11.0
 	ppv-lite86@0.2.21
 	prettyplease@0.2.32
 	proc-macro2@1.0.95
@@ -148,7 +158,6 @@ CRATES="
 	serde_derive@1.0.219
 	serde_json@1.0.140
 	serde_spanned@0.6.8
-	sev@4.0.0
 	sev@6.0.0
 	shlex@1.3.0
 	slab@0.4.9
@@ -158,9 +167,10 @@ CRATES="
 	syn@2.0.100
 	system-deps@6.2.2
 	target-lexicon@0.12.16
-	termcolor@1.4.1
 	thiserror-impl@1.0.69
+	thiserror-impl@2.0.12
 	thiserror@1.0.69
+	thiserror@2.0.12
 	tokio@1.44.2
 	toml@0.8.20
 	toml_datetime@0.6.8
@@ -171,6 +181,7 @@ CRATES="
 	unicode-ident@1.0.18
 	unicode-segmentation@1.12.0
 	unicode-width@0.1.14
+	utf8parse@0.2.2
 	uuid@1.16.0
 	vcpkg@0.2.15
 	version-compare@0.2.0
@@ -186,7 +197,6 @@ CRATES="
 	wasm-bindgen-shared@0.2.100
 	wasm-bindgen@0.2.100
 	winapi-i686-pc-windows-gnu@0.4.0
-	winapi-util@0.1.9
 	winapi-x86_64-pc-windows-gnu@0.4.0
 	winapi@0.3.9
 	windows-core@0.61.0
