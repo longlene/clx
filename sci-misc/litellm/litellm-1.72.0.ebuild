@@ -22,7 +22,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-libs/tokenizers[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/tokenizers[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]
 		>=dev-python/openai-1.68.2[${PYTHON_USEDEP}]

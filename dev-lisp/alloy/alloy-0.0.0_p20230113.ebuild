@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,7 +18,10 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
+	dev-lisp/trivial-extensible-sequences
 	dev-lisp/array-utils
+	dev-lisp/float-features
+	dev-lisp/global-vars
 	dev-lisp/closer-mop
 "
 BDEPEND=""

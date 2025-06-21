@@ -1,0 +1,236 @@
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{11..13} )
+
+CRATES="
+	aho-corasick@1.1.3
+	android-tzdata@0.1.1
+	android_system_properties@0.1.5
+	anes@0.1.6
+	anstream@0.6.19
+	anstyle-parse@0.2.7
+	anstyle-query@1.1.3
+	anstyle-wincon@3.0.9
+	anstyle@1.0.11
+	anyhow@1.0.98
+	argfile@0.2.1
+	autocfg@1.4.0
+	bitflags@2.9.1
+	bstr@1.12.0
+	bumpalo@3.18.1
+	camino@1.1.10
+	cast@0.3.0
+	castaway@0.2.3
+	cc@1.2.27
+	cfg-if@1.0.1
+	cfg_aliases@0.2.1
+	chrono@0.4.41
+	ciborium-io@0.2.2
+	ciborium-ll@0.2.2
+	ciborium@0.2.2
+	clap@4.5.40
+	clap_builder@4.5.40
+	clap_derive@4.5.40
+	clap_lex@0.7.5
+	codspeed-criterion-compat-walltime@2.10.1
+	codspeed-criterion-compat@2.10.1
+	codspeed@2.10.1
+	colorchoice@1.0.4
+	colored@2.2.0
+	colored@3.0.0
+	compact_str@0.9.0
+	console@0.15.11
+	core-foundation-sys@0.8.7
+	criterion-plot@0.5.0
+	criterion@0.6.0
+	crossbeam-deque@0.8.6
+	crossbeam-epoch@0.9.18
+	crossbeam-utils@0.8.21
+	crunchy@0.2.3
+	ctrlc@3.4.7
+	diff@0.1.13
+	dunce@1.0.5
+	either@1.15.0
+	encode_unicode@1.0.0
+	equivalent@1.0.2
+	errno@0.3.12
+	fastrand@2.3.0
+	fs-err@2.11.0
+	getopts@0.2.23
+	getrandom@0.2.16
+	getrandom@0.3.3
+	glob@0.3.2
+	globset@0.4.16
+	half@2.6.0
+	hashbrown@0.15.4
+	heck@0.5.0
+	hermit-abi@0.5.2
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.63
+	ignore@0.4.23
+	indexmap@2.9.0
+	indicatif@0.17.11
+	indoc@2.0.6
+	insta-cmd@0.6.0
+	insta@1.43.1
+	is-macro@0.3.7
+	is-terminal@0.4.16
+	is_terminal_polyfill@1.70.1
+	itertools@0.10.5
+	itertools@0.13.0
+	itertools@0.14.0
+	itoa@1.0.15
+	js-sys@0.3.77
+	lazy_static@1.5.0
+	libc@0.2.173
+	linux-raw-sys@0.9.4
+	log@0.4.27
+	markdown@1.0.0
+	matchers@0.1.0
+	memchr@2.7.5
+	memoffset@0.9.1
+	nix@0.30.1
+	nu-ansi-term@0.50.1
+	num-traits@0.2.19
+	number_prefix@0.4.0
+	once_cell@1.21.3
+	once_cell_polyfill@1.70.1
+	oorandom@11.1.5
+	os_str_bytes@7.1.0
+	phf@0.11.3
+	phf_codegen@0.11.3
+	phf_generator@0.11.3
+	phf_shared@0.11.3
+	pin-project-lite@0.2.16
+	portable-atomic@1.11.1
+	ppv-lite86@0.2.21
+	pretty_assertions@1.4.1
+	proc-macro2@1.0.95
+	pyo3-build-config@0.25.1
+	pyo3-ffi@0.25.1
+	pyo3-macros-backend@0.25.1
+	pyo3-macros@0.25.1
+	pyo3@0.25.1
+	quote@1.0.40
+	r-efi@5.2.0
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	regex-automata@0.1.10
+	regex-automata@0.4.9
+	regex-syntax@0.6.29
+	regex-syntax@0.8.5
+	regex@1.11.1
+	rustc-hash@2.1.1
+	rustix@1.0.7
+	rustversion@1.0.21
+	ryu@1.0.20
+	same-file@1.0.6
+	serde@1.0.219
+	serde_derive@1.0.219
+	serde_json@1.0.140
+	sharded-slab@0.1.7
+	shlex@1.3.0
+	similar@2.7.0
+	siphasher@1.0.1
+	smallvec@1.15.1
+	static_assertions@1.1.0
+	strsim@0.11.1
+	syn@2.0.103
+	target-lexicon@0.13.2
+	tempfile@3.20.0
+	terminal_size@0.4.2
+	thiserror-impl@2.0.12
+	thiserror@2.0.12
+	thread_local@1.1.9
+	tinytemplate@1.2.1
+	tinyvec@1.9.0
+	tinyvec_macros@0.1.1
+	tracing-attributes@0.1.29
+	tracing-core@0.1.34
+	tracing-flame@0.2.0
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.19
+	tracing-tree@0.4.0
+	tracing@0.1.41
+	unicode-id@0.3.5
+	unicode-ident@1.0.18
+	unicode-normalization@0.1.24
+	unicode-width@0.2.1
+	unicode_names2@1.3.0
+	unicode_names2_generator@1.3.0
+	unindent@0.2.4
+	utf8parse@0.2.2
+	uuid@1.17.0
+	valuable@0.1.1
+	walkdir@2.5.0
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasi@0.14.2+wasi-0.2.4
+	wasm-bindgen-backend@0.2.100
+	wasm-bindgen-macro-support@0.2.100
+	wasm-bindgen-macro@0.2.100
+	wasm-bindgen-shared@0.2.100
+	wasm-bindgen@0.2.100
+	web-time@1.1.0
+	wild@2.2.1
+	winapi-util@0.1.9
+	windows-core@0.61.2
+	windows-implement@0.60.0
+	windows-interface@0.59.1
+	windows-link@0.1.3
+	windows-result@0.3.4
+	windows-strings@0.4.2
+	windows-sys@0.52.0
+	windows-sys@0.59.0
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	wit-bindgen-rt@0.39.0
+	yansi@1.0.1
+	zerocopy-derive@0.8.25
+	zerocopy@0.8.25
+"
+
+declare -A GIT_CRATES=(
+	[ruff_python_ast]='https://github.com/astral-sh/ruff;89d915a1e34144051815dfcbe60ec2cdeb29909e;ruff-%commit%/crates/ruff_python_ast'
+	[ruff_python_parser]='https://github.com/astral-sh/ruff;89d915a1e34144051815dfcbe60ec2cdeb29909e;ruff-%commit%/crates/ruff_python_parser'
+	[ruff_python_trivia]='https://github.com/astral-sh/ruff;89d915a1e34144051815dfcbe60ec2cdeb29909e;ruff-%commit%/crates/ruff_python_trivia'
+	[ruff_source_file]='https://github.com/astral-sh/ruff;89d915a1e34144051815dfcbe60ec2cdeb29909e;ruff-%commit%/crates/ruff_source_file'
+	[ruff_text_size]='https://github.com/astral-sh/ruff;89d915a1e34144051815dfcbe60ec2cdeb29909e;ruff-%commit%/crates/ruff_text_size'
+)
+
+inherit cargo distutils-r1
+
+DESCRIPTION="A Python test framework, written in Rust"
+HOMEPAGE="
+	https://pypi.org/project/karva/
+	https://github.com/MatthewMckee4/karva
+"
+SRC_URI="
+	https://github.com/MatthewMckee4/karva/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="
+"
+#BDEPEND="
+#	test? (
+#	)
+#"
+
+distutils_enable_tests pytest

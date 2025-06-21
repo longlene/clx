@@ -1,0 +1,245 @@
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{11..13} )
+
+CRATES="
+	ab_glyph_rasterizer@0.1.8
+	adler@1.0.2
+	aho-corasick@0.7.20
+	arrayref@0.3.6
+	arrayvec@0.7.2
+	autocfg@1.1.0
+	base64@0.21.0
+	bit_field@0.10.1
+	bitflags@1.3.2
+	bumpalo@3.12.0
+	bytecount@0.6.3
+	bytemuck@1.12.3
+	byteorder@1.4.3
+	bytes@1.3.0
+	camino@1.1.2
+	cargo-platform@0.1.2
+	cargo_metadata@0.14.2
+	cc@1.0.78
+	cfg-if@1.0.0
+	color_quant@1.1.0
+	core-foundation-sys@0.8.3
+	core-foundation@0.9.3
+	crc32fast@1.3.2
+	crossbeam-channel@0.5.6
+	crossbeam-deque@0.8.2
+	crossbeam-epoch@0.9.13
+	crossbeam-utils@0.8.14
+	crunchy@0.2.2
+	either@1.8.0
+	emojis@0.5.2
+	encoding_rs@0.8.31
+	error-chain@0.12.4
+	exr@1.5.2
+	fastrand@1.8.0
+	flate2@1.0.25
+	flume@0.10.14
+	fnv@1.0.7
+	foreign-types-shared@0.1.1
+	foreign-types@0.3.2
+	form_urlencoded@1.1.0
+	futures-channel@0.3.25
+	futures-core@0.3.25
+	futures-io@0.3.25
+	futures-sink@0.3.25
+	futures-task@0.3.25
+	futures-util@0.3.25
+	fxhash@0.2.1
+	getrandom@0.2.8
+	gif@0.11.4
+	glob@0.3.1
+	h2@0.3.15
+	half@2.2.1
+	hashbrown@0.12.3
+	hermit-abi@0.2.6
+	http-body@0.4.5
+	http@0.2.8
+	httparse@1.8.0
+	httpdate@1.0.2
+	hyper-tls@0.5.0
+	hyper@0.14.23
+	idna@0.3.0
+	image@0.24.5
+	indexmap@1.9.2
+	indoc@1.0.8
+	instant@0.1.12
+	ipnet@2.7.1
+	itoa@1.0.5
+	jpeg-decoder@0.3.0
+	js-sys@0.3.60
+	lazy_static@1.4.0
+	lebe@0.5.2
+	libc@0.2.139
+	lock_api@0.4.9
+	log@0.4.17
+	mach@0.3.2
+	memchr@2.5.0
+	memoffset@0.7.1
+	memoffset@0.8.0
+	mime@0.3.16
+	miniz_oxide@0.6.2
+	mio@0.8.5
+	moka@0.9.6
+	nanorand@0.7.0
+	native-tls@0.2.11
+	num-integer@0.1.45
+	num-rational@0.4.1
+	num-traits@0.2.15
+	num_cpus@1.15.0
+	once_cell@1.17.0
+	openssl-macros@0.1.0
+	openssl-probe@0.1.5
+	openssl-src@111.24.0+1.1.1s
+	openssl-sys@0.9.80
+	openssl@0.10.45
+	owned_ttf_parser@0.15.2
+	parking_lot@0.12.1
+	parking_lot_core@0.9.6
+	percent-encoding@2.2.0
+	phf@0.11.1
+	phf_shared@0.11.1
+	pin-project-internal@1.0.12
+	pin-project-lite@0.2.9
+	pin-project@1.0.12
+	pin-utils@0.1.0
+	pkg-config@0.3.26
+	png@0.17.7
+	proc-macro2@1.0.50
+	pulldown-cmark@0.9.2
+	pyo3-build-config@0.18.0
+	pyo3-ffi@0.18.0
+	pyo3-macros-backend@0.18.0
+	pyo3-macros@0.18.0
+	pyo3@0.18.0
+	quanta@0.10.1
+	quote@1.0.23
+	raw-cpuid@10.6.0
+	rayon-core@1.10.1
+	rayon@1.6.1
+	redox_syscall@0.2.16
+	regex-syntax@0.6.28
+	regex@1.7.1
+	remove_dir_all@0.5.3
+	reqwest@0.11.14
+	rustc_version@0.4.0
+	rusttype@0.9.3
+	ryu@1.0.12
+	same-file@1.0.6
+	schannel@0.1.21
+	scheduled-thread-pool@0.2.6
+	scoped_threadpool@0.1.9
+	scopeguard@1.1.0
+	security-framework-sys@2.8.0
+	security-framework@2.8.1
+	semver@1.0.16
+	serde@1.0.152
+	serde_derive@1.0.152
+	serde_json@1.0.91
+	serde_urlencoded@0.7.1
+	siphasher@0.3.10
+	skeptic@0.13.7
+	slab@0.4.7
+	smallvec@1.10.0
+	socket2@0.4.7
+	spin@0.9.4
+	strict-num@0.1.0
+	syn@1.0.107
+	tagptr@0.2.0
+	target-lexicon@0.12.5
+	tempfile@3.3.0
+	thiserror-impl@1.0.38
+	thiserror@1.0.38
+	threadpool@1.8.1
+	tiff@0.8.1
+	tiny-skia-path@0.8.2
+	tiny-skia@0.8.2
+	tinyvec@1.6.0
+	tinyvec_macros@0.1.0
+	tokio-native-tls@0.3.0
+	tokio-util@0.7.4
+	tokio@1.24.2
+	tower-service@0.3.2
+	tracing-core@0.1.30
+	tracing@0.1.37
+	triomphe@0.1.8
+	try-lock@0.2.4
+	ttf-parser@0.15.2
+	unicase@2.6.0
+	unicode-bidi@0.3.10
+	unicode-ident@1.0.6
+	unicode-normalization@0.1.22
+	unicode-segmentation@1.10.0
+	unindent@0.1.11
+	url@2.3.1
+	uuid@1.2.2
+	vcpkg@0.2.15
+	version_check@0.9.4
+	walkdir@2.3.2
+	want@0.3.0
+	wasi@0.10.2+wasi-snapshot-preview1
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasm-bindgen-backend@0.2.83
+	wasm-bindgen-futures@0.4.33
+	wasm-bindgen-macro-support@0.2.83
+	wasm-bindgen-macro@0.2.83
+	wasm-bindgen-shared@0.2.83
+	wasm-bindgen@0.2.83
+	web-sys@0.3.60
+	weezl@0.1.7
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.5
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-sys@0.42.0
+	windows_aarch64_gnullvm@0.42.1
+	windows_aarch64_msvc@0.42.1
+	windows_i686_gnu@0.42.1
+	windows_i686_msvc@0.42.1
+	windows_x86_64_gnu@0.42.1
+	windows_x86_64_gnullvm@0.42.1
+	windows_x86_64_msvc@0.42.1
+	winreg@0.10.1
+"
+
+inherit cargo distutils-r1
+
+IMAGETEXT_COMMIT="e07df782323acc206d47eeaf1df5679abdaba406"
+
+DESCRIPTION="A blazing fast text drawing library"
+HOMEPAGE="
+	https://pypi.org/project/imagetext-py/
+"
+SRC_URI="
+	https://github.com/nathanielfernandes/imagetext-py/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	https://github.com/nathanielfernandes/imagetext/archive/${IMAGETEXT_COMMIT}.tar.gz -> imagetext-${IMAGETEXT_COMMIT}.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="
+"
+#BDEPEND="
+#	test? (
+#	)
+#"
+
+distutils_enable_tests pytest
+
+src_prepare() {
+	default
+	rmdir imagetext && ln -sv "${WORKDIR}"/imagetext-${IMAGETEXT_COMMIT} imagetext
+	distutils-r1_src_prepare
+}
