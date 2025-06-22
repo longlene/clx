@@ -5,14 +5,14 @@ EAPI=8
 
 inherit cmake
 
-MY_PV="10.9.0.34"
+MY_PV="10.12.0.36"
 MY_P="TensorRT-${MY_PV}"
 
 DESCRIPTION="A platform for high-performance deep learning inference on NVIDIA hardware"
 HOMEPAGE="https://developer.nvidia.com/tensorrt"
 SRC_URI="
 	https://github.com/NVIDIA/TensorRT/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/${PV}/tars/TensorRT-${MY_PV}.Linux.x86_64-gnu.cuda-12.8.tar.gz
+	https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/${PV}/tars/TensorRT-${MY_PV}.Linux.x86_64-gnu.cuda-12.9.tar.gz
 "
 
 LICENSE="NVIDIA-CUDA"

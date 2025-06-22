@@ -88,6 +88,7 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
+		-DCMAKE_POLICY_VERSION_MINIMUM:STRING='3.5.0'
 		-DENABLE_CPPLINT=OFF
 		-DENABLE_CLANG_FORMAT=OFF
 		-DENABLE_NCC_STYLE=OFF
