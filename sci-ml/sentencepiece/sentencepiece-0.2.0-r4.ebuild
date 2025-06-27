@@ -38,14 +38,14 @@ REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
 "
 
-DOCS=(
-	README.md
-	doc/api.md
-	doc/experiments.md
-	doc/normalization.md
-	doc/options.md
-	doc/special_symbols.md
-)
+#DOCS=(
+#	README.md
+#	doc/api.md
+#	doc/experiments.md
+#	doc/normalization.md
+#	doc/options.md
+#	doc/special_symbols.md
+#)
 
 PATCHES=(
 	"${FILESDIR}"/disable-strip.patch

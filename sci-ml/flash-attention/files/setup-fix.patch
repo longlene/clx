@@ -1,18 +1,19 @@
 diff -Nur a/setup.py b/setup.py
---- a/setup.py	2025-03-12 17:32:26.000000000 -0700
-+++ b/setup.py	2025-03-14 02:42:29.640757736 -0700
-@@ -143,21 +143,6 @@
+--- a/setup.py	2025-06-21 05:43:59.000000000 -0700
++++ b/setup.py	2025-06-23 20:44:37.428848296 -0700
+@@ -143,22 +143,22 @@
  cmdclass = {}
  ext_modules = []
  
 -# We want this even if SKIP_CUDA_BUILD because when we run python setup.py sdist we want the .hpp
 -# files included in the source distribution, in case the user compiles from source.
 -if os.path.isdir(".git"):
--    subprocess.run(["git", "submodule", "update", "--init", "csrc/composable_kernel"], check=True)
--    subprocess.run(["git", "submodule", "update", "--init", "csrc/cutlass"], check=True)
+-    if not SKIP_CK_BUILD:
+-        subprocess.run(["git", "submodule", "update", "--init", "csrc/composable_kernel"], check=True)
+-        subprocess.run(["git", "submodule", "update", "--init", "csrc/cutlass"], check=True)
 -else:
 -    if IS_ROCM:
--        if not USE_TRITON_ROCM:
+-        if not SKIP_CK_BUILD:
 -            assert (
 -                os.path.exists("csrc/composable_kernel/example/ck_tile/01_fmha/generate.py")
 -            ), "csrc/composable_kernel is missing, please use source distribution or git clone"
@@ -20,6 +21,22 @@ diff -Nur a/setup.py b/setup.py
 -        assert (
 -            os.path.exists("csrc/cutlass/include/cutlass/cutlass.h")
 -        ), "csrc/cutlass is missing, please use source distribution or git clone"
++## We want this even if SKIP_CUDA_BUILD because when we run python setup.py sdist we want the .hpp
++## files included in the source distribution, in case the user compiles from source.
++#if os.path.isdir(".git"):
++#    if not SKIP_CK_BUILD:
++#        subprocess.run(["git", "submodule", "update", "--init", "csrc/composable_kernel"], check=True)
++#        subprocess.run(["git", "submodule", "update", "--init", "csrc/cutlass"], check=True)
++#else:
++#    if IS_ROCM:
++#        if not SKIP_CK_BUILD:
++#            assert (
++#                os.path.exists("csrc/composable_kernel/example/ck_tile/01_fmha/generate.py")
++#            ), "csrc/composable_kernel is missing, please use source distribution or git clone"
++#    else:
++#        assert (
++#            os.path.exists("csrc/cutlass/include/cutlass/cutlass.h")
++#        ), "csrc/cutlass is missing, please use source distribution or git clone"
  
  if not SKIP_CUDA_BUILD and not IS_ROCM:
      print("\n\ntorch.__version__  = {}\n\n".format(torch.__version__))

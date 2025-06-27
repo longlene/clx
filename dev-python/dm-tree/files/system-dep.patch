@@ -1,0 +1,14 @@
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py	2025-01-30 09:20:58.000000000 -0800
++++ b/setup.py	2025-06-23 20:31:50.215487902 -0700
+@@ -82,7 +82,9 @@
+         f'-DPython3_ROOT_DIR={sys.prefix}',
+         f'-DPython3_EXECUTABLE={sys.executable}',
+         f'-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extension_dir}',
+-        f'-DCMAKE_BUILD_TYPE={build_cfg}'
++        f'-DCMAKE_BUILD_TYPE={build_cfg}',
++        f'-DUSE_SYSTEM_ABSEIL=ON',
++        f'-DUSE_SYSTEM_PYBIND11=ON'
+     ]
+     if platform.system() != 'Windows':
+       cmake_args.extend([
