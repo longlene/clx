@@ -1,0 +1,32 @@
+diff -Nur a/bindings/python/setup.py b/bindings/python/setup.py
+--- a/bindings/python/setup.py	2025-04-15 08:40:45.000000000 -0700
++++ b/bindings/python/setup.py	2025-06-28 00:37:42.020353155 -0700
+@@ -29,6 +29,7 @@
+     if root is None:
+         return
+     include_dirs.append(os.path.join(root, "include"))
++    library_dirs.append(root)
+     if not header_only:
+         for lib_subdir in ("lib64", "lib"):
+             lib_dir = os.path.join(root, lib_subdir)
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-04-15 08:40:45.000000000 -0700
++++ b/CMakeLists.txt	2025-06-28 00:48:12.463708722 -0700
+@@ -111,7 +111,7 @@
+ include(GNUInstallDirs)
+ include(GenerateExportHeader)
+ string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
+-generate_export_header(${PROJECT_NAME} EXPORT_FILE_NAME ${PROJECT_BINARY_DIR}/onmt/${PROJECT_NAME_LOWER}_export.h)
++generate_export_header(${PROJECT_NAME} EXPORT_FILE_NAME ${CMAKE_CURRENT_SOURCE_DIR}/include/onmt/${PROJECT_NAME_LOWER}_export.h)
+ target_include_directories(${PROJECT_NAME} ${INCLUDE_DIRECTORIES})
+ target_link_libraries(${PROJECT_NAME} ${LINK_LIBRARIES})
+ 
+@@ -131,7 +131,7 @@
+   INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+   )
+ install(FILES
+-  ${PUBLIC_HEADERS} "${PROJECT_BINARY_DIR}/onmt/${PROJECT_NAME_LOWER}_export.h"
++  ${PUBLIC_HEADERS} "${CMAKE_CURRENT_SOURCE_DIR}/include/onmt/${PROJECT_NAME_LOWER}_export.h"
+   DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/onmt"
+   )
+ install(FILES

@@ -1,0 +1,12 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-04-15 08:40:45.000000000 -0700
++++ b/CMakeLists.txt	2025-06-28 00:33:11.013676932 -0700
+@@ -111,7 +111,7 @@
+ include(GNUInstallDirs)
+ include(GenerateExportHeader)
+ string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
+-generate_export_header(${PROJECT_NAME} EXPORT_FILE_NAME ${PROJECT_BINARY_DIR}/onmt/${PROJECT_NAME_LOWER}_export.h)
++generate_export_header(${PROJECT_NAME} EXPORT_FILE_NAME ${CMAKE_CURRENT_SOURCE_DIR}/include/onmt/${PROJECT_NAME_LOWER}_export.h)
+ target_include_directories(${PROJECT_NAME} ${INCLUDE_DIRECTORIES})
+ target_link_libraries(${PROJECT_NAME} ${LINK_LIBRARIES})
+ 

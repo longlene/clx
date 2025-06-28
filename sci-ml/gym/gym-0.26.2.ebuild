@@ -1,9 +1,11 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2025 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9,10,11} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{11..14} )
+
 inherit distutils-r1
 
 DESCRIPTION="A toolkit for developing and comparing reinforcement learning algorithms"
@@ -17,9 +19,11 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-python/scipy${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.10.4${PYTHON_USEDEP}]
-	>=dev-python/pyglet-1.4.0${PYTHON_USEDEP}]
-	dev-python/pillow${PYTHON_USEDEP}]
-	>=dev-python/cloudpickle-1.2.0${PYTHON_USEDEP}]
+	dev-python/scipy[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.10.4[${PYTHON_USEDEP}]
+	>=dev-python/pyglet-1.4.0[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	>=dev-python/cloudpickle-1.2.0[${PYTHON_USEDEP}]
 "
+
+RESTRICT="test"

@@ -5,9 +5,9 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_12 )
+PYTHON_COMPAT=( python3_{13..14} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
 
 DESCRIPTION="A framework for evaluating language models"
 HOMEPAGE="https://github.com/EleutherAI/lm-evaluation-harness"
@@ -18,13 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/datasets-2.16.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/accelerate-0.26.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/peft-0.2.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/datasets-2.16.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/evaluate-0.4.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/peft-0.2.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/pytorch-1.8.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.1[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		>=sci-ml/pytorch-1.8.0[${PYTHON_USEDEP}]
 		dev-python/jsonlines[${PYTHON_USEDEP}]
 		dev-python/numexpr[${PYTHON_USEDEP}]
 		>=dev-python/pybind11-2.6.2[${PYTHON_USEDEP}]

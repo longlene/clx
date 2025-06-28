@@ -30,3 +30,9 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
+
+src_prepare() {
+	sed -e "s#get_version(),#'${PV}',#" \
+		-i setup.py
+	distutils-r1_src_prepare
+}

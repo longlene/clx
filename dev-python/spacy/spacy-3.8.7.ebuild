@@ -4,7 +4,8 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{13..14} )
+
 inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Industrial-strength Natural Language Processing (NLP) in Python"
@@ -16,23 +17,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-python/cymem
-	dev-python/preshed
-	dev-python/thinc
-	dev-python/ml_datasets
-	dev-python/murmurhash
-	dev-python/wasabi
-	dev-python/srsly
-	dev-python/catalogue
-	dev-python/typer
-	dev-python/pathy
-	dev-python/numpy
-	dev-python/requests
-	dev-python/tqdm
-	dev-python/pydantic
-	dev-python/jinja2
-	dev-python/langcodes
 "
-BDEPEND=""
+BDEPEND="
+	>=dev-python/cymem-2.0.2[${PYTHON_USEDEP}]
+	>=dev-python/preshed-3.0.2[${PYTHON_USEDEP}]
+	>=dev-python/murmurhash-0.28.0[${PYTHON_USEDEP}]
+	>=dev-python/thinc-8.3.4[${PYTHON_USEDEP}]
+	>=dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
+"
 
 distutils_enable_tests pytest
