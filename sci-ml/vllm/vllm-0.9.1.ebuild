@@ -33,12 +33,14 @@ REQUIRED_USE="|| ( cuda rocm )"
 RDEPEND="
 	>=sci-ml/transformers-4.48.2[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/tokenizers-0.19.1[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/caffe2-2.6.0[cuda?,rocm?,${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/xgrammar-0.1.16[${PYTHON_SINGLE_USEDEP}]
+	>=dev-python/compressed-tensors-0.9.1[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/outlines-0.1.11[${PYTHON_SINGLE_USEDEP}]
 	cuda? (
 		>=dev-libs/cutlass-3.9.0
 	)
 	$(python_gen_cond_dep '
-		>=sci-ml/caffe2-2.6.0[cuda?,rocm?,${PYTHON_USEDEP}]
-		>=sci-ml/outlines-0.1.11[${PYTHON_USEDEP}]
 		|| (
 			sci-ml/pysentencepiece[${PYTHON_USEDEP}]
 			sci-ml/sentencepiece[python,${PYTHON_USEDEP}]
@@ -60,19 +62,17 @@ RDEPEND="
 		>=dev-python/prometheus-fastapi-instrumentator-7.0.0[${PYTHON_USEDEP}]
 		>=sci-ml/lm-format-enforcer-0.10.11[${PYTHON_USEDEP}]
 		>=dev-python/lark-1.2.2[${PYTHON_USEDEP}]
-		>=dev-python/xgrammar-0.1.16[${PYTHON_USEDEP}]
-		>=dev-python/typing_extensions-4.10[${PYTHON_USEDEP}]
+		>=dev-python/typing-extensions-4.10[${PYTHON_USEDEP}]
 		>=dev-python/filelock-3.16.1[${PYTHON_USEDEP}]
 		dev-python/partial-json-parser[${PYTHON_USEDEP}]
 		dev-python/pyzmq[${PYTHON_USEDEP}]
 		dev-python/msgspec[${PYTHON_USEDEP}]
 		>=dev-python/gguf-0.10.0[${PYTHON_USEDEP}]
-		dev-python/importlib_metadata[${PYTHON_USEDEP}]
-		>=dev-python/mistral_common-1.5.4[${PYTHON_USEDEP}]
+		dev-python/importlib-metadata[${PYTHON_USEDEP}]
+		>=dev-python/mistral-common-1.5.4[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 		>=dev-python/six-1.16.0[${PYTHON_USEDEP}]
 		dev-python/einops[${PYTHON_USEDEP}]
-		>=dev-python/compressed-tensors-0.9.1[${PYTHON_USEDEP}]
 		>=dev-python/depyf-0.18.0[${PYTHON_USEDEP}]
 		dev-python/cloudpickle[${PYTHON_USEDEP}]
 		dev-python/watchfiles[${PYTHON_USEDEP}]

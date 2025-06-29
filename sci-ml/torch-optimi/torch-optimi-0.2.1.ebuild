@@ -23,7 +23,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=sci-ml/pytorch-1.13.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		>=sci-ml/packaging-21.3[${PYTHON_USEDEP}]
+		>=dev-python/packaging-21.3[${PYTHON_USEDEP}]
 	')
 "
 #BDEPEND="
