@@ -1,0 +1,12 @@
+diff -Nur a/Makefile b/Makefile
+--- a/Makefile	2025-02-28 17:43:42.000000000 -0800
++++ b/Makefile	2025-07-14 18:00:54.250310614 -0700
+@@ -85,7 +85,7 @@
+ 	$(TS) generate --no-bindings
+ 
+ install: all
+-	install -Dm644 bindings/c/$(LANGUAGE_NAME).h '$(DESTDIR)$(INCLUDEDIR)'/tree_sitter/$(LANGUAGE_NAME).h
++	install -Dm644 bindings/c/tree_sitter/$(LANGUAGE_NAME).h '$(DESTDIR)$(INCLUDEDIR)'/tree_sitter/$(LANGUAGE_NAME).h
+ 	install -Dm644 $(LANGUAGE_NAME).pc '$(DESTDIR)$(PCLIBDIR)'/$(LANGUAGE_NAME).pc
+ 	install -Dm755 lib$(LANGUAGE_NAME).a '$(DESTDIR)$(LIBDIR)'/lib$(LANGUAGE_NAME).a
+ 	install -m755 lib$(LANGUAGE_NAME).$(SOEXT) '$(DESTDIR)$(LIBDIR)'/lib$(LANGUAGE_NAME).$(SOEXTVER)

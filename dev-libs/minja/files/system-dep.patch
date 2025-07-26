@@ -1,0 +1,20 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-05-15 03:43:52.000000000 -0700
++++ b/CMakeLists.txt	2025-07-14 01:30:29.491535144 -0700
+@@ -52,11 +52,12 @@
+     add_compile_options(-Wall -Wextra -pedantic -Werror)
+ endif()
+ 
+-include(FetchContent)
++#include(FetchContent)
+ 
+-# Fetch nlohmann/json
+-FetchContent_Declare(json URL https://github.com/nlohmann/json/archive/refs/heads/develop.zip)
+-FetchContent_MakeAvailable(json)
++## Fetch nlohmann/json
++#FetchContent_Declare(json URL https://github.com/nlohmann/json/archive/refs/heads/develop.zip)
++#FetchContent_MakeAvailable(json)
++find_package(nlohmann_json REQUIRED)
+ target_link_libraries(minja INTERFACE nlohmann_json::nlohmann_json)
+ 
+ if(MINJA_TEST_ENABLED)

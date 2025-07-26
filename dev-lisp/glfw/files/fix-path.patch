@@ -1,0 +1,14 @@
+diff -Nur a/low-level.lisp b/low-level.lisp
+--- a/low-level.lisp
++++ b/low-level.lisp
+@@ -10,7 +10,9 @@
+                 #+ARM64 "libglfw-mac-arm64.dylib"))
+   (:unix (:or #+X86 "libglfw-lin-i686.so"
+               #+X86-64 "libglfw-lin-amd64.so"
+-              #+ARM64 "libglfw-lin-arm64.so"))
++              #+ARM64 "libglfw-lin-arm64.so"
++          (:default "libglfw.so.3")
++          (:default "libglfw")))
+   (:windows (:or #+X86 "libglfw-win-i686.dll"
+                  #+X86-64 "libglfw-win-amd64.dll"
+                  #+ARM64 "libglfw-win-arm64.so"))
