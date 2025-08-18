@@ -1,0 +1,70 @@
+diff -Nur a/src/cpp/CMakeLists.txt b/src/cpp/CMakeLists.txt
+--- a/src/cpp/CMakeLists.txt	2025-07-24 02:45:22.000000000 -0700
++++ b/src/cpp/CMakeLists.txt	2025-08-16 03:41:06.310078993 -0700
+@@ -6,6 +6,7 @@
+ 
+ include(FetchContent)
+ 
++find_package(nlohmann_json)
+ if(NOT TARGET nlohmann_json)
+     FetchContent_Declare(nlohmann_json
+         URL https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.tar.gz
+@@ -47,24 +48,29 @@
+     endif()
+ endfunction()
+ 
+-ov_genai_build_jinja2cpp()
++find_package(jinja2cpp QUIET)
++if(NOT TARGET jinja2cpp)
++    ov_genai_build_jinja2cpp()
++endif()
+ 
+-FetchContent_Declare(safetensors.h
+-    URL https://github.com/hsnyder/safetensors.h/archive/974a85d7dfd6e010558353226638bb26d6b9d756.tar.gz
+-    URL_HASH SHA256=9aaf5961609601cf9aaa96582a207bce7c6e5fbf57ed2cc669bb7bde6a937d4b)
+-FetchContent_MakeAvailable(safetensors.h)
++find_path(safetensors.h_SOURCE_DIR safetensors.h
++        PATHS /usr/include)
++#FetchContent_Declare(safetensors.h
++#    URL https://github.com/hsnyder/safetensors.h/archive/974a85d7dfd6e010558353226638bb26d6b9d756.tar.gz
++#    URL_HASH SHA256=9aaf5961609601cf9aaa96582a207bce7c6e5fbf57ed2cc669bb7bde6a937d4b)
++#FetchContent_MakeAvailable(safetensors.h)
+ 
+ if(ENABLE_GGUF)
+     FetchContent_Declare(
+       gguflib
+       URL https://github.com/Lourdle/gguf-tools/archive/bac796ada809ac293e685db59b075971181cb008.zip
+       URL_HASH SHA256=4d6eab5055468d222833f3f83fe2f7909ccd06114278c2c0b468570ef002c22d)
+-    FetchContent_MakeAvailable(gguflib)
+-    set_target_properties(gguf-tools PROPERTIES EXCLUDE_FROM_ALL ON)
++    #FetchContent_MakeAvailable(gguflib)
++    #set_target_properties(gguf-tools PROPERTIES EXCLUDE_FROM_ALL ON)
+ 
+-    add_library(gguflib STATIC ${gguflib_SOURCE_DIR}/fp16.c ${gguflib_SOURCE_DIR}/gguflib.c)
++    add_library(gguflib STATIC $ENV{gguflib_SOURCE_DIR}/fp16.c $ENV{gguflib_SOURCE_DIR}/gguflib.c)
+     set_target_properties(gguflib PROPERTIES POSITION_INDEPENDENT_CODE ON)
+-    target_include_directories(gguflib PUBLIC "${gguflib_SOURCE_DIR}")
++    target_include_directories(gguflib PUBLIC "$ENV{gguflib_SOURCE_DIR}")
+ endif()
+ 
+ # generate version files
+diff -Nur a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
+--- a/src/python/CMakeLists.txt	2025-07-24 02:45:22.000000000 -0700
++++ b/src/python/CMakeLists.txt	2025-08-16 03:28:12.950682684 -0700
+@@ -2,6 +2,8 @@
+ # SPDX-License-Identifier: Apache-2.0
+ #
+ 
++find_package(pybind11)
++if(NOT pybind11_FOUND)
+ include(FetchContent)
+ 
+ FetchContent_Declare(
+@@ -17,6 +19,7 @@
+     FetchContent_Populate(pybind11)
+     add_subdirectory(${pybind11_SOURCE_DIR} ${pybind11_BINARY_DIR})
+ endif()
++endif()
+ 
+ file(GLOB python_sources "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
+ 
