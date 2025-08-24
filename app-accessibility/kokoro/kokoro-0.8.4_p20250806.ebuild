@@ -5,11 +5,11 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_12 )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1
 
-EGIT_COMMIT="3f9dd88d6f739b98a86aea608e238621f5b40add"
+EGIT_COMMIT="dfb907a02bba8152ca444717ca5d78747ccb4bec"
 
 DESCRIPTION="An open-weight TTS model with 82 million parameters"
 HOMEPAGE="
@@ -23,10 +23,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-libs/pytorch[${PYTHON_SINGLE_USEDEP}]
-	sci-libs/transformers[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/transformers[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/huggingface_hub[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		sci-libs/huggingface_hub[${PYTHON_USEDEP}]
 		dev-python/loguru[${PYTHON_USEDEP}]
 		>=dev-python/misaki-0.8.4[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.26.4[${PYTHON_USEDEP}]

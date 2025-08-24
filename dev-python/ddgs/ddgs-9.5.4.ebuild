@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/click-8.1.8[${PYTHON_USEDEP}]
 	>=dev-python/primp-0.15.0[${PYTHON_USEDEP}]
-	>=dev-python/lxml-5.3.0[${PYTHON_USEDEP}]
+	>=dev-python/lxml-6.0.0[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

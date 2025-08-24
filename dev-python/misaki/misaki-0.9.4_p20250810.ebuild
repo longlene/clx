@@ -4,11 +4,11 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
-EGIT_COMMIT="14675cc09b1db6e452bd1114435ffcd3a1f0e770"
+EGIT_COMMIT="fba1236595f2d2bf21d414ba6e57d25256afada3"
 
 DESCRIPTION="A G2P engine designed for Kokoro models"
 HOMEPAGE="

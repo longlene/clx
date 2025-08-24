@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 inherit distutils-r1
 
 DESCRIPTION="Data manipulation and transformation for audio signal processing"
@@ -19,12 +19,13 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=""
 RDEPEND="${DEPEND}
 	sci-ml/pytorch[${PYTHON_USEDEP}]
-	media-video/ffmpeg
 "
+#	media-video/ffmpeg
 BDEPEND=""
 RESTRICT="test"
 
 S="${WORKDIR}"/audio-${PV}
 
+export USE_FFMPEG=OFF
 export BUILD_SOX=OFF
-export FFMPEG_ROOT=/usr
+export TORIO_USE_FFMPEG=OFF
