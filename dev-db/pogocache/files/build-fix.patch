@@ -1,0 +1,35 @@
+diff -Nur a/src/Makefile b/src/Makefile
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -37,8 +37,7 @@
+ else
+ ../deps/liburing/src/liburing.a:
+ 	../deps/build-uring.sh
+-DEPS += ../deps/liburing/src/liburing.a
+-CLIBS += ../deps/liburing/src/liburing.a
++CLIBS += -luring
+ endif
+ endif
+ 
+@@ -47,8 +46,7 @@
+ else
+ ../deps/openssl/libssl.a:
+ 	../deps/build-openssl.sh
+-DEPS += ../deps/openssl/libssl.a
+-CLIBS += ../deps/openssl/libssl.a ../deps/openssl/libcrypto.a
++CLIBS += -lssl -lcrypto
+ ifdef USEFULLOPENSSLHEADER
+ CFLAGS += "-I../deps/openssl/include"
+ endif
+diff -Nur a/src/uring.h b/src/uring.h
+--- a/src/uring.h
++++ b/src/uring.h
+@@ -12,7 +12,7 @@
+ 
+ #ifndef NOURING
+ #ifdef __linux__
+-#include "../deps/liburing/src/include/liburing.h"
++#include "liburing.h"
+ #else
+ #define NOURING
+ #endif

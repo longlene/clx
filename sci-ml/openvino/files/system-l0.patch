@@ -1,17 +1,23 @@
 diff -Nur a/thirdparty/dependencies.cmake b/thirdparty/dependencies.cmake
---- a/thirdparty/dependencies.cmake	2024-11-08 22:14:37.000000000 -0800
-+++ b/thirdparty/dependencies.cmake	2024-12-14 13:55:32.910456023 -0800
-@@ -284,10 +291,10 @@
+--- a/thirdparty/dependencies.cmake	2025-08-26 05:56:24.000000000 -0700
++++ b/thirdparty/dependencies.cmake	2025-09-05 10:03:17.544223091 -0700
+@@ -305,13 +305,13 @@
  # Gflags
  #
  
 -if(ENABLE_SAMPLES OR ENABLE_TESTS OR ENABLE_INTEL_NPU_INTERNAL)
 -    add_subdirectory(thirdparty/gflags EXCLUDE_FROM_ALL)
--    ov_developer_package_export_targets(TARGET gflags)
+-    ov_developer_package_export_targets(
+-        TARGET gflags
+-        INSTALL_INCLUDE_DIRECTORIES "${CMAKE_BINARY_DIR}/thirdparty/gflags/gflags/include/gflags"
+-        INSTALL_DESTIONATION "developer_package/include/gflags")
 -endif()
 +#if(ENABLE_SAMPLES OR ENABLE_TESTS OR ENABLE_INTEL_NPU_INTERNAL)
 +#    add_subdirectory(thirdparty/gflags EXCLUDE_FROM_ALL)
-+#    ov_developer_package_export_targets(TARGET gflags)
++#    ov_developer_package_export_targets(
++#        TARGET gflags
++#        INSTALL_INCLUDE_DIRECTORIES "${CMAKE_BINARY_DIR}/thirdparty/gflags/gflags/include/gflags"
++#        INSTALL_DESTIONATION "developer_package/include/gflags")
 +#endif()
  
  #

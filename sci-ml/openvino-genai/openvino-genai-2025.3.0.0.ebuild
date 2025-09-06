@@ -24,11 +24,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="python"
 
+#	dev-cpp/jinja2cpp
 DEPEND="
 	sci-ml/openvino[python?]
-	dev-cpp/jinja2cpp
+	dev-libs/minja
 	dev-cpp/nlohmann_json
 	dev-libs/safetensors
+	dev-libs/cxxopts
 "
 RDEPEND="${DEPEND}
 	python? ( ${PYTHON_DEPS})
@@ -66,6 +68,9 @@ src_configure() {
 		-DBUILD_TOKENIZERS=OFF
 		-DENABLE_PYTHON=$(usex python)
 		-DENABLE_SAMPLES=OFF
+		-DENABLE_TOOLS=OFF
+		-DENABLE_TESTS=OFF
+		-DENABLE_XGRAMMAR=OFF
 	)
 	cmake_src_configure
 }

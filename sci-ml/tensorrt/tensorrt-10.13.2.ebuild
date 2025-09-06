@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-MY_PV="10.13.0.35"
+MY_PV="10.13.2.6"
 MY_P="TensorRT-${MY_PV}"
 
 DESCRIPTION="A platform for high-performance deep learning inference on NVIDIA hardware"

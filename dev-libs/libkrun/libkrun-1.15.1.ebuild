@@ -11,36 +11,37 @@ CRATES="
 	android-tzdata@0.1.1
 	android_system_properties@0.1.5
 	annotate-snippets@0.9.2
-	anstream@0.6.18
-	anstyle-parse@0.2.6
-	anstyle-query@1.1.2
-	anstyle-wincon@3.0.8
-	anstyle@1.0.10
+	anstream@0.6.19
+	anstyle-parse@0.2.7
+	anstyle-query@1.1.3
+	anstyle-wincon@3.0.9
+	anstyle@1.0.11
 	anyhow@1.0.98
 	async-trait@0.1.88
 	autocfg@1.4.0
-	backtrace@0.3.74
+	backtrace@0.3.75
 	base64@0.22.1
 	bincode@1.3.3
 	bindgen@0.69.5
-	bindgen@0.71.1
-	bitfield@0.15.0
+	bindgen@0.72.0
+	bitfield-macros@0.19.1
+	bitfield@0.19.1
 	bitflags@1.3.2
-	bitflags@2.9.0
-	bumpalo@3.17.0
+	bitflags@2.9.1
+	bumpalo@3.18.1
 	byteorder@1.5.0
 	bzip2-sys@0.1.13+1.0.8
 	bzip2@0.5.2
 	caps@0.5.5
-	cc@1.2.19
+	cc@1.2.26
 	cexpr@0.6.0
 	cfg-expr@0.15.8
 	cfg-if@1.0.0
 	cfg_aliases@0.2.1
-	chrono@0.4.40
+	chrono@0.4.41
 	clang-sys@1.8.1
 	codicon@3.0.0
-	colorchoice@1.0.3
+	colorchoice@1.0.4
 	convert_case@0.6.0
 	cookie-factory@0.3.3
 	core-foundation-sys@0.8.7
@@ -49,8 +50,8 @@ CRATES="
 	crossbeam-utils@0.8.21
 	curl-sys@0.4.80+curl-8.12.1
 	curl@0.4.47
-	dirs-sys@0.4.1
-	dirs@5.0.1
+	dirs-sys@0.5.0
+	dirs@6.0.0
 	either@1.15.0
 	env_filter@0.1.3
 	env_logger@0.11.8
@@ -68,11 +69,11 @@ CRATES="
 	futures-task@0.3.31
 	futures-util@0.3.31
 	futures@0.3.31
-	getrandom@0.2.15
-	getrandom@0.3.2
+	getrandom@0.2.16
+	getrandom@0.3.3
 	gimli@0.31.1
 	glob@0.3.2
-	hashbrown@0.15.2
+	hashbrown@0.15.3
 	heck@0.5.0
 	hex@0.4.3
 	iana-time-zone-haiku@0.1.2
@@ -82,19 +83,18 @@ CRATES="
 	iocuddle@0.1.1
 	is_terminal_polyfill@1.70.1
 	itertools@0.12.1
-	itertools@0.13.0
 	itoa@1.0.15
 	jiff-static@0.2.14
 	jiff@0.2.14
 	jobserver@0.1.33
 	js-sys@0.3.77
 	kbs-types@0.11.0
-	kvm-bindings@0.11.1
-	kvm-ioctls@0.21.0
+	kvm-bindings@0.12.0
+	kvm-ioctls@0.22.0
 	lazy_static@1.5.0
 	lazycell@1.3.0
 	libc@0.2.172
-	libloading@0.8.6
+	libloading@0.8.8
 	libredox@0.1.3
 	libspa-sys@0.8.0
 	libspa@0.8.0
@@ -105,8 +105,10 @@ CRATES="
 	memchr@2.7.4
 	memoffset@0.6.5
 	memoffset@0.7.1
+	memoffset@0.9.1
 	minimal-lexical@0.2.1
 	miniz_oxide@0.8.8
+	nitro-enclaves@0.3.0
 	nix@0.24.3
 	nix@0.26.4
 	nix@0.27.1
@@ -118,8 +120,9 @@ CRATES="
 	once_cell_polyfill@1.70.1
 	openssl-macros@0.1.1
 	openssl-probe@0.1.6
-	openssl-sys@0.9.107
-	openssl@0.10.72
+	openssl-src@300.5.0+3.5.0
+	openssl-sys@0.9.109
+	openssl@0.10.73
 	option-ext@0.2.0
 	page_size@0.6.0
 	pin-project-lite@0.2.16
@@ -128,18 +131,20 @@ CRATES="
 	pipewire@0.8.0
 	pkg-config@0.3.32
 	portable-atomic-util@0.2.4
-	portable-atomic@1.11.0
+	portable-atomic@1.11.1
 	ppv-lite86@0.2.21
-	prettyplease@0.2.32
 	proc-macro2@1.0.95
 	procfs@0.12.0
 	quote@1.0.40
 	r-efi@5.2.0
 	rand@0.8.5
+	rand@0.9.2
 	rand_chacha@0.3.1
+	rand_chacha@0.9.0
 	rand_core@0.6.4
+	rand_core@0.9.3
 	rdrand@0.8.3
-	redox_users@0.4.6
+	redox_users@0.5.0
 	regex-automata@0.4.9
 	regex-syntax@0.8.5
 	regex@1.11.1
@@ -148,7 +153,7 @@ CRATES="
 	rustc-hash@1.1.0
 	rustc-hash@2.1.1
 	rustc_version@0.4.1
-	rustversion@1.0.20
+	rustversion@1.0.21
 	ryu@1.0.20
 	schannel@0.1.27
 	semver@1.0.26
@@ -157,38 +162,41 @@ CRATES="
 	serde_bytes@0.11.17
 	serde_derive@1.0.219
 	serde_json@1.0.140
-	serde_spanned@0.6.8
-	sev@6.0.0
+	serde_spanned@0.6.9
+	sev@6.2.1
 	shlex@1.3.0
 	slab@0.4.9
 	smallvec@1.15.0
-	socket2@0.5.9
+	socket2@0.5.10
 	static_assertions@1.1.0
-	syn@2.0.100
+	syn@2.0.101
 	system-deps@6.2.2
 	target-lexicon@0.12.16
+	tdx@0.1.0
 	thiserror-impl@1.0.69
 	thiserror-impl@2.0.12
 	thiserror@1.0.69
 	thiserror@2.0.12
-	tokio@1.44.2
-	toml@0.8.20
-	toml_datetime@0.6.8
-	toml_edit@0.22.24
-	tracing-attributes@0.1.28
-	tracing-core@0.1.33
+	tokio@1.45.1
+	toml@0.8.23
+	toml_datetime@0.6.11
+	toml_edit@0.22.27
+	tracing-attributes@0.1.29
+	tracing-core@0.1.34
 	tracing@0.1.41
 	unicode-ident@1.0.18
 	unicode-segmentation@1.12.0
 	unicode-width@0.1.14
 	utf8parse@0.2.2
-	uuid@1.16.0
+	uuid@1.17.0
 	vcpkg@0.2.15
 	version-compare@0.2.0
-	virtio-bindings@0.2.5
+	virtio-bindings@0.2.6
 	vm-fdt@0.3.0
-	vm-memory@0.16.1
+	vm-memory@0.16.2
 	vmm-sys-util@0.12.1
+	vmm-sys-util@0.14.0
+	vsock@0.5.1
 	wasi@0.11.0+wasi-snapshot-preview1
 	wasi@0.14.2+wasi-0.2.4
 	wasm-bindgen-backend@0.2.100
@@ -199,39 +207,30 @@ CRATES="
 	winapi-i686-pc-windows-gnu@0.4.0
 	winapi-x86_64-pc-windows-gnu@0.4.0
 	winapi@0.3.9
-	windows-core@0.61.0
+	windows-core@0.61.2
 	windows-implement@0.60.0
 	windows-interface@0.59.1
 	windows-link@0.1.1
-	windows-result@0.3.2
-	windows-strings@0.4.0
-	windows-sys@0.48.0
+	windows-result@0.3.4
+	windows-strings@0.4.2
 	windows-sys@0.52.0
 	windows-sys@0.59.0
-	windows-targets@0.48.5
 	windows-targets@0.52.6
-	windows_aarch64_gnullvm@0.48.5
 	windows_aarch64_gnullvm@0.52.6
-	windows_aarch64_msvc@0.48.5
 	windows_aarch64_msvc@0.52.6
-	windows_i686_gnu@0.48.5
 	windows_i686_gnu@0.52.6
 	windows_i686_gnullvm@0.52.6
-	windows_i686_msvc@0.48.5
 	windows_i686_msvc@0.52.6
-	windows_x86_64_gnu@0.48.5
 	windows_x86_64_gnu@0.52.6
-	windows_x86_64_gnullvm@0.48.5
 	windows_x86_64_gnullvm@0.52.6
-	windows_x86_64_msvc@0.48.5
 	windows_x86_64_msvc@0.52.6
-	winnow@0.7.6
+	winnow@0.7.10
 	wit-bindgen-rt@0.39.0
 	yansi-term@0.1.2
 	zerocopy-derive@0.6.6
-	zerocopy-derive@0.8.24
+	zerocopy-derive@0.8.25
 	zerocopy@0.6.6
-	zerocopy@0.8.24
+	zerocopy@0.8.25
 	zstd-safe@7.2.4
 	zstd-sys@2.0.15+zstd.1.5.7
 	zstd@0.13.3

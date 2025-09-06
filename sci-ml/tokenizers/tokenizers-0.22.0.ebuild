@@ -11,20 +11,23 @@ DISTUTILS_EXT=1
 DISTUTILS_SINGLE_IMPL=1
 
 CRATES="
+	addr2line@0.24.2
+	adler2@2.0.1
 	ahash@0.8.12
 	aho-corasick@1.1.3
-	anstream@0.6.19
+	anstream@0.6.20
 	anstyle-parse@0.2.7
-	anstyle-query@1.1.3
-	anstyle-wincon@3.0.9
+	anstyle-query@1.1.4
+	anstyle-wincon@3.0.10
 	anstyle@1.0.11
-	autocfg@1.4.0
+	autocfg@1.5.0
+	backtrace@0.3.75
 	base64@0.13.1
-	bitflags@2.9.1
-	bumpalo@3.18.1
-	castaway@0.2.3
-	cc@1.2.27
-	cfg-if@1.0.1
+	bitflags@2.9.3
+	bumpalo@3.19.0
+	castaway@0.2.4
+	cc@1.2.34
+	cfg-if@1.0.3
 	colorchoice@1.0.4
 	compact_str@0.9.0
 	console@0.15.11
@@ -42,22 +45,33 @@ CRATES="
 	encode_unicode@1.0.0
 	env_filter@0.1.3
 	env_logger@0.11.8
-	errno@0.3.12
+	errno@0.3.13
 	esaxx-rs@0.1.10
 	fastrand@2.3.0
 	fnv@1.0.7
+	futures-channel@0.3.31
+	futures-core@0.3.31
+	futures-executor@0.3.31
+	futures-io@0.3.31
+	futures-macro@0.3.31
+	futures-sink@0.3.31
+	futures-task@0.3.31
+	futures-util@0.3.31
+	futures@0.3.31
 	getrandom@0.3.3
+	gimli@0.31.1
 	heck@0.5.0
 	ident_case@1.0.1
 	indicatif@0.17.11
 	indoc@2.0.6
+	io-uring@0.7.10
 	is_terminal_polyfill@1.70.1
 	itertools@0.14.0
 	itoa@1.0.15
 	jiff-static@0.2.15
 	jiff@0.2.15
 	js-sys@0.3.77
-	libc@0.2.173
+	libc@0.2.175
 	linux-raw-sys@0.9.4
 	log@0.4.27
 	macro_rules_attribute-proc_macro@0.2.2
@@ -66,6 +80,8 @@ CRATES="
 	memchr@2.7.5
 	memoffset@0.9.1
 	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	mio@1.0.4
 	monostate-impl@0.1.14
 	monostate@0.1.14
 	ndarray@0.16.1
@@ -75,16 +91,20 @@ CRATES="
 	num-traits@0.2.19
 	number_prefix@0.4.0
 	numpy@0.25.0
+	object@0.36.7
 	once_cell@1.21.3
 	once_cell_polyfill@1.70.1
 	onig@6.5.1
 	onig_sys@69.9.1
 	paste@1.0.15
+	pin-project-lite@0.2.16
+	pin-utils@0.1.0
 	pkg-config@0.3.32
 	portable-atomic-util@0.2.4
 	portable-atomic@1.11.1
 	ppv-lite86@0.2.21
-	proc-macro2@1.0.95
+	proc-macro2@1.0.101
+	pyo3-async-runtimes@0.25.0
 	pyo3-build-config@0.25.1
 	pyo3-ffi@0.25.1
 	pyo3-macros-backend@0.25.1
@@ -92,33 +112,38 @@ CRATES="
 	pyo3@0.25.1
 	quote@1.0.40
 	r-efi@5.3.0
-	rand@0.9.1
+	rand@0.9.2
 	rand_chacha@0.9.0
 	rand_core@0.9.3
 	rawpointer@0.2.1
 	rayon-cond@0.4.0
-	rayon-core@1.12.1
-	rayon@1.10.0
-	regex-automata@0.4.9
-	regex-syntax@0.8.5
-	regex@1.11.1
+	rayon-core@1.13.0
+	rayon@1.11.0
+	regex-automata@0.4.10
+	regex-syntax@0.8.6
+	regex@1.11.2
+	rustc-demangle@0.1.26
 	rustc-hash@2.1.1
-	rustix@1.0.7
-	rustversion@1.0.21
+	rustix@1.0.8
+	rustversion@1.0.22
 	ryu@1.0.20
 	serde@1.0.219
 	serde_derive@1.0.219
-	serde_json@1.0.140
+	serde_json@1.0.143
 	shlex@1.3.0
+	signal-hook-registry@1.4.6
+	slab@0.4.11
 	smallvec@1.15.1
 	spm_precompiled@0.1.4
 	static_assertions@1.1.0
 	strsim@0.11.1
-	syn@2.0.103
+	syn@2.0.106
 	target-lexicon@0.13.2
-	tempfile@3.20.0
-	thiserror-impl@2.0.12
-	thiserror@2.0.12
+	tempfile@3.21.0
+	thiserror-impl@2.0.16
+	thiserror@2.0.16
+	tokio-macros@2.5.0
+	tokio@1.47.1
 	unicode-ident@1.0.18
 	unicode-normalization-alignments@0.1.12
 	unicode-segmentation@1.12.0
@@ -127,53 +152,61 @@ CRATES="
 	unindent@0.2.4
 	utf8parse@0.2.2
 	version_check@0.9.5
-	wasi@0.14.2+wasi-0.2.4
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasi@0.14.3+wasi-0.2.4
 	wasm-bindgen-backend@0.2.100
 	wasm-bindgen-macro-support@0.2.100
 	wasm-bindgen-macro@0.2.100
 	wasm-bindgen-shared@0.2.100
 	wasm-bindgen@0.2.100
 	web-time@1.1.0
+	windows-link@0.1.3
 	windows-sys@0.59.0
+	windows-sys@0.60.2
 	windows-targets@0.52.6
+	windows-targets@0.53.3
 	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_gnullvm@0.53.0
 	windows_aarch64_msvc@0.52.6
+	windows_aarch64_msvc@0.53.0
 	windows_i686_gnu@0.52.6
+	windows_i686_gnu@0.53.0
 	windows_i686_gnullvm@0.52.6
+	windows_i686_gnullvm@0.53.0
 	windows_i686_msvc@0.52.6
+	windows_i686_msvc@0.53.0
 	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnu@0.53.0
 	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_gnullvm@0.53.0
 	windows_x86_64_msvc@0.52.6
-	wit-bindgen-rt@0.39.0
-	zerocopy-derive@0.8.25
-	zerocopy@0.8.25
-	addr2line@0.24.2
-	adler2@2.0.1
-	ahash@0.8.12
+	windows_x86_64_msvc@0.53.0
+	wit-bindgen@0.45.0
+	zerocopy-derive@0.8.26
+	zerocopy@0.8.26
+
+
 	aho-corasick@1.1.3
 	anes@0.1.6
-	anstyle@1.0.11
 	assert_approx_eq@1.1.0
-	autocfg@1.5.0
-	backtrace@0.3.75
-	base64@0.13.1
+	atomic-waker@1.1.2
 	base64@0.22.1
 	bit-set@0.8.0
 	bit-vec@0.8.0
-	bitflags@2.9.1
+	bitflags@2.9.3
 	bumpalo@3.19.0
 	byteorder@1.5.0
 	bytes@1.10.1
 	cast@0.3.0
 	castaway@0.2.4
-	cc@1.2.31
-	cfg-if@1.0.1
+	cc@1.2.34
+	cfg-if@1.0.3
 	cfg_aliases@0.2.1
 	ciborium-io@0.2.2
 	ciborium-ll@0.2.2
 	ciborium@0.2.2
-	clap@4.5.42
-	clap_builder@4.5.42
+	clap@4.5.46
+	clap_builder@4.5.46
 	clap_lex@0.7.5
 	compact_str@0.9.0
 	console@0.15.11
@@ -202,7 +235,7 @@ CRATES="
 	fastrand@2.3.0
 	flate2@1.1.2
 	fnv@1.0.7
-	form_urlencoded@1.2.1
+	form_urlencoded@1.2.2
 	futures-channel@0.3.31
 	futures-core@0.3.31
 	futures-io@0.3.31
@@ -221,7 +254,7 @@ CRATES="
 	httparse@1.10.1
 	hyper-rustls@0.27.7
 	hyper-util@0.1.16
-	hyper@1.6.0
+	hyper@1.7.0
 	icu_collections@2.0.0
 	icu_locale_core@2.0.0
 	icu_normalizer@2.0.0
@@ -230,10 +263,10 @@ CRATES="
 	icu_properties_data@2.0.1
 	icu_provider@2.0.0
 	ident_case@1.0.1
-	idna@1.0.3
+	idna@1.1.0
 	idna_adapter@1.2.1
 	indicatif@0.17.11
-	io-uring@0.7.9
+	io-uring@0.7.10
 	ipnet@2.11.0
 	iri-string@0.7.8
 	itertools@0.10.5
@@ -242,7 +275,7 @@ CRATES="
 	itoa@1.0.15
 	js-sys@0.3.77
 	lazy_static@1.5.0
-	libc@0.2.174
+	libc@0.2.175
 	libredox@0.1.9
 	linux-raw-sys@0.9.4
 	litemap@0.8.0
@@ -257,7 +290,7 @@ CRATES="
 	monostate-impl@0.1.14
 	monostate@0.1.14
 	nom@7.1.3
-	nu-ansi-term@0.46.0
+	nu-ansi-term@0.50.1
 	num-traits@0.2.19
 	number_prefix@0.4.0
 	object@0.36.7
@@ -266,9 +299,8 @@ CRATES="
 	onig_sys@69.9.1
 	oorandom@11.1.5
 	option-ext@0.2.0
-	overload@0.1.1
 	paste@1.0.15
-	percent-encoding@2.3.1
+	percent-encoding@2.3.2
 	pin-project-lite@0.2.16
 	pin-utils@0.1.0
 	pkg-config@0.3.32
@@ -276,25 +308,25 @@ CRATES="
 	plotters-svg@0.3.7
 	plotters@0.3.7
 	portable-atomic@1.11.1
-	potential_utf@0.1.2
+	potential_utf@0.1.3
 	ppv-lite86@0.2.21
-	proc-macro2@1.0.95
-	quinn-proto@0.11.12
-	quinn-udp@0.5.13
-	quinn@0.11.8
+	proc-macro2@1.0.101
+	quinn-proto@0.11.13
+	quinn-udp@0.5.14
+	quinn@0.11.9
 	quote@1.0.40
 	r-efi@5.3.0
 	rand@0.9.2
 	rand_chacha@0.9.0
 	rand_core@0.9.3
 	rayon-cond@0.4.0
-	rayon-core@1.12.1
-	rayon@1.10.0
+	rayon-core@1.13.0
+	rayon@1.11.0
 	redox_users@0.5.2
-	regex-automata@0.4.9
-	regex-syntax@0.8.5
-	regex@1.11.1
-	reqwest@0.12.22
+	regex-automata@0.4.10
+	regex-syntax@0.8.6
+	regex@1.11.2
+	reqwest@0.12.23
 	ring@0.17.14
 	rustc-demangle@0.1.26
 	rustc-hash@2.1.1
@@ -302,18 +334,17 @@ CRATES="
 	rustls-pki-types@1.12.0
 	rustls-webpki@0.103.4
 	rustls@0.23.31
-	rustversion@1.0.21
+	rustversion@1.0.22
 	ryu@1.0.20
 	same-file@1.0.6
 	serde@1.0.219
 	serde_derive@1.0.219
-	serde_json@1.0.142
+	serde_json@1.0.143
 	serde_urlencoded@0.7.1
 	sharded-slab@0.1.7
 	shlex@1.3.0
-	slab@0.4.10
+	slab@0.4.11
 	smallvec@1.15.1
-	socket2@0.5.10
 	socket2@0.6.0
 	socks@0.3.4
 	spm_precompiled@0.1.4
@@ -321,16 +352,16 @@ CRATES="
 	static_assertions@1.1.0
 	strsim@0.11.1
 	subtle@2.6.1
-	syn@2.0.104
+	syn@2.0.106
 	sync_wrapper@1.0.2
 	synstructure@0.13.2
-	tempfile@3.20.0
-	thiserror-impl@2.0.12
-	thiserror@2.0.12
+	tempfile@3.21.0
+	thiserror-impl@2.0.16
+	thiserror@2.0.16
 	thread_local@1.1.9
 	tinystr@0.8.1
 	tinytemplate@1.2.1
-	tinyvec@1.9.0
+	tinyvec@1.10.0
 	tinyvec_macros@0.1.1
 	tokio-rustls@0.26.2
 	tokio-util@0.7.16
@@ -342,7 +373,7 @@ CRATES="
 	tracing-attributes@0.1.30
 	tracing-core@0.1.34
 	tracing-log@0.2.0
-	tracing-subscriber@0.3.19
+	tracing-subscriber@0.3.20
 	tracing@0.1.41
 	try-lock@0.2.5
 	unicode-ident@1.0.18
@@ -352,14 +383,14 @@ CRATES="
 	unicode_categories@0.1.1
 	untrusted@0.9.0
 	ureq@2.12.1
-	url@2.5.4
+	url@2.5.7
 	utf8_iter@1.0.4
 	valuable@0.1.1
 	version_check@0.9.5
 	walkdir@2.5.0
 	want@0.3.1
 	wasi@0.11.1+wasi-snapshot-preview1
-	wasi@0.14.2+wasi-0.2.4
+	wasi@0.14.3+wasi-0.2.4
 	wasm-bindgen-backend@0.2.100
 	wasm-bindgen-futures@0.4.50
 	wasm-bindgen-macro-support@0.2.100
@@ -372,7 +403,7 @@ CRATES="
 	webpki-roots@0.26.11
 	webpki-roots@1.0.2
 	winapi-i686-pc-windows-gnu@0.4.0
-	winapi-util@0.1.9
+	winapi-util@0.1.10
 	winapi-x86_64-pc-windows-gnu@0.4.0
 	winapi@0.3.9
 	windows-link@0.1.3
@@ -397,7 +428,7 @@ CRATES="
 	windows_x86_64_gnullvm@0.53.0
 	windows_x86_64_msvc@0.52.6
 	windows_x86_64_msvc@0.53.0
-	wit-bindgen-rt@0.39.0
+	wit-bindgen@0.45.0
 	writeable@0.6.1
 	yoke-derive@0.8.0
 	yoke@0.8.0
@@ -408,16 +439,14 @@ CRATES="
 	zeroize@1.8.1
 	zerotrie@0.2.2
 	zerovec-derive@0.11.1
-	zerovec@0.11.3
+	zerovec@0.11.4
 "
-
 inherit cargo distutils-r1
 
 DESCRIPTION="Implementation of today's most used tokenizers"
 HOMEPAGE="https://github.com/huggingface/tokenizers"
 SRC_URI="
-	https://github.com/huggingface/${PN}/archive/refs/tags/v${PV}.tar.gz
-	-> ${P}.gh.tar.gz
+	https://github.com/huggingface/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
 	${CARGO_CRATE_URIS}
 "
 

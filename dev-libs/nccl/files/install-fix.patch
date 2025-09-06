@@ -1,0 +1,17 @@
+diff -Nur a/src/Makefile b/src/Makefile
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -157,11 +157,11 @@
+ 	rm -rf ${BINDIR} ${INCDIR} ${LIBDIR} ${PKGDIR} ${OBJDIR}
+ 
+ install : build
+-	mkdir -p $(PREFIX)/lib
++	mkdir -p $(PREFIX)/$(INSTALL_LIBDIR)
+ 	mkdir -p $(PREFIX)/lib/pkgconfig
+ 	mkdir -p $(PREFIX)/include
+ 	mkdir -p $(PREFIX)/bin
+-	cp -P -v $(BUILDDIR)/lib/lib* $(PREFIX)/lib/
++	cp -P -v $(BUILDDIR)/lib/lib* $(PREFIX)/$(INSTALL_LIBDIR)
+ 	cp -P -v $(BUILDDIR)/lib/pkgconfig/* $(PREFIX)/lib/pkgconfig/
+ 	cp -v -r $(BUILDDIR)/include/* $(PREFIX)/include/
+ 	cp -v $(BUILDDIR)/bin/ncclras $(PREFIX)/bin/

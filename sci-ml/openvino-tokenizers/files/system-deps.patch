@@ -1,114 +1,73 @@
 diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
---- a/src/CMakeLists.txt	2025-01-20 08:25:37.000000000 -0800
-+++ b/src/CMakeLists.txt	2025-02-07 20:18:13.796742654 -0800
-@@ -148,34 +148,38 @@
- if(sentencepiece_FOUND)
-   find_package(absl REQUIRED)
- else()
--  FetchContent_Declare(
--    sentencepiece
--    URL      https://github.com/google/sentencepiece/archive/refs/tags/v0.2.0.tar.gz
--    URL_HASH SHA256=9970f0a0afee1648890293321665e5b2efa04eaec9f1671fcf8048f456f5bb86
--  )
--  FetchContent_GetProperties(sentencepiece)
--  if(NOT sentencepiece_POPULATED)
--    if(DEFINED ENV{CONDA_BUILD_SYSROOT})
-+  if(DEFINED SENTENCEPIECE_SRC_DIR)
-+    add_subdirectory(${SENTENCEPIECE_SRC_DIR} ${SENTENCEPIECE_SRC_DIR} EXCLUDE_FROM_ALL)
-+  else()
-+    FetchContent_Declare(
-+      sentencepiece
-+      URL      https://github.com/google/sentencepiece/archive/refs/tags/v0.2.0.tar.gz
-+      URL_HASH SHA256=9970f0a0afee1648890293321665e5b2efa04eaec9f1671fcf8048f456f5bb86
-+    )
-+    FetchContent_GetProperties(sentencepiece)
-+    if(NOT sentencepiece_POPULATED)
-+      if(DEFINED ENV{CONDA_BUILD_SYSROOT})
-         set(openvino_installed_from_conda ON)
-         # OpenVINO conda package dynamically linked with external protobuf,
-         # and we need to link sentencepiece with external protobuf too.
-         set(CMAKE_FIND_PACKAGE_PREFER_CONFIG ON)
-         set(protobuf_MODULE_COMPATIBLE ON CACHE BOOL "Protobuf module compatible")
--    endif()
--    if(openvino_installed_from_conda AND NOT WIN32)
-+      endif()
-+      if(openvino_installed_from_conda AND NOT WIN32)
-         set(SPM_USE_BUILTIN_PROTOBUF OFF CACHE BOOL "")
-         set(SPM_PROTOBUF_PROVIDER "package" CACHE STRING "")
-         set(SPM_ABSL_PROVIDER "package" CACHE STRING "")
--    else()
-+      else()
-         set(SPM_USE_BUILTIN_PROTOBUF ON CACHE BOOL "")
-         set(SPM_PROTOBUF_PROVIDER "internal" CACHE STRING "")
-         set(SPM_ABSL_PROVIDER "internal" CACHE STRING "")
--    endif()
-+      endif()
+--- a/src/CMakeLists.txt	2025-06-24 07:11:33.000000000 -0700
++++ b/src/CMakeLists.txt	2025-08-17 20:50:58.348622517 -0700
+@@ -102,8 +102,9 @@
+   set(SPM_ENABLE_TCMALLOC OFF CACHE BOOL "")
+   set(SPM_ENABLE_NFKC_COMPILE ON CACHE BOOL "Enable NFKC compile")
  
--    set(SPM_ENABLE_SHARED OFF CACHE BOOL "")
--    set(SPM_ENABLE_TCMALLOC OFF CACHE BOOL "")
--    FetchContent_Populate(sentencepiece)
--    add_subdirectory(${sentencepiece_SOURCE_DIR} ${sentencepiece_BINARY_DIR} EXCLUDE_FROM_ALL)
-+      set(SPM_ENABLE_SHARED OFF CACHE BOOL "")
-+      set(SPM_ENABLE_TCMALLOC OFF CACHE BOOL "")
-+      FetchContent_Populate(sentencepiece)
-+      add_subdirectory(${sentencepiece_SOURCE_DIR} ${sentencepiece_BINARY_DIR} EXCLUDE_FROM_ALL)
-+    endif()
-   endif()
- endif()
+-  FetchContent_Populate(sentencepiece)
+-  add_subdirectory(${sentencepiece_SOURCE_DIR} ${sentencepiece_BINARY_DIR} EXCLUDE_FROM_ALL)
++  #FetchContent_Populate(sentencepiece)
++  #add_subdirectory(${sentencepiece_SOURCE_DIR} ${sentencepiece_BINARY_DIR} EXCLUDE_FROM_ALL)
++  add_subdirectory(${SENTENCEPIECE_SRC_DIR} ${SENTENCEPIECE_SRC_DIR} EXCLUDE_FROM_ALL)
  
-@@ -330,7 +334,11 @@
-   endif()
- else()
-   # in case if we don't build fast tokenizers, we have to include re2 explicitly
--  ov_tokenizers_build_static_re2()
-+  find_package(PkgConfig REQUIRED)
-+  pkg_search_module(re2 REQUIRED re2)
-+  if (NOT re2_FOUND)
-+    ov_tokenizers_build_static_re2()
-+  endif()
- endif()
- 
- function(ov_tokenizers_link_fast_tokenizer TARGET_NAME)
-@@ -344,22 +352,30 @@
+   if(TARGET ${ICU_TARGET_NAME})
+     foreach(sp_target sentencepiece sentencepiece_train)
+@@ -183,7 +184,11 @@
+   target_compile_definitions(re2 PUBLIC $<TARGET_PROPERTY:openvino::runtime,INTERFACE_COMPILE_DEFINITIONS>)
  endfunction()
  
+-ov_tokenizers_build_static_re2()
++find_package(PkgConfig REQUIRED)
++pkg_search_module(re2 REQUIRED re2)
++if (NOT re2_FOUND)
++  ov_tokenizers_build_static_re2()
++endif()
+ 
  function(ov_tokenizers_link_pcre2 TARGET_NAME)
--  FetchContent_Declare(
-+  find_package(PkgConfig REQUIRED)
-+  pkg_search_module(pcre2 REQUIRED libpcre2-8)
-+  if(pcre2_FOUND)
-+    target_include_directories(${TARGET_NAME} PRIVATE ${pcre2_INCLUDE_DIRS})
-+    target_link_libraries(${TARGET_NAME} PRIVATE ${pcre2_LINK_LIBRARIES})
-+    target_compile_definitions(${TARGET_NAME} PRIVATE PCRE2_CODE_UNIT_WIDTH=8)
-+  else()
-+    FetchContent_Declare(
-       prce2
+   FetchContent_Declare(
+@@ -191,23 +196,28 @@
        URL https://github.com/PCRE2Project/pcre2/archive/refs/tags/pcre2-10.44.zip
        URL_HASH SHA256=2d87bd1700bd1993ddea7c56aad2b0373ac2b3d52d9cc78842a6d061ffaf0925
--  )
+   )
 -  FetchContent_GetProperties(prce2)
 -  if(NOT prce2_POPULATED)
 -    FetchContent_Populate(prce2)
 -
 -    set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
+-    set(CMAKE_POLICY_DEFAULT_CMP0126 NEW)
+-    set(PCRE2_SUPPORT_JIT ON)
 -    set(PCRE2_STATIC_PIC ON)
 -    set(PCRE2_BUILD_TESTS OFF)
 -    set(PCRE2_BUILD_PCRE2GREP OFF)
--    set(PCRE2_BUILD_TESTS)
-+    )
-+    FetchContent_GetProperties(prce2)
-+    if(NOT prce2_POPULATED)
-+      FetchContent_Populate(prce2)
-+
-+      set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
-+      set(PCRE2_STATIC_PIC ON)
-+      set(PCRE2_BUILD_TESTS OFF)
-+      set(PCRE2_BUILD_PCRE2GREP OFF)
-+      set(PCRE2_BUILD_TESTS)
- 
+-
 -    add_subdirectory(${prce2_SOURCE_DIR} ${prce2_BINARY_DIR} EXCLUDE_FROM_ALL)
-+      add_subdirectory(${prce2_SOURCE_DIR} ${prce2_BINARY_DIR} EXCLUDE_FROM_ALL)
-+    endif()
-   endif()
+-  endif()
+-
+-  target_include_directories(${TARGET_NAME} SYSTEM PRIVATE ${pcre2_BINARY_DIR})
+-  target_link_libraries(${TARGET_NAME} PRIVATE pcre2-8)
++  #FetchContent_GetProperties(prce2)
++  #if(NOT prce2_POPULATED)
++  #  FetchContent_Populate(prce2)
++
++  #  set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
++  #  set(CMAKE_POLICY_DEFAULT_CMP0126 NEW)
++  #  set(PCRE2_SUPPORT_JIT ON)
++  #  set(PCRE2_STATIC_PIC ON)
++  #  set(PCRE2_BUILD_TESTS OFF)
++  #  set(PCRE2_BUILD_PCRE2GREP OFF)
++
++  #  add_subdirectory(${prce2_SOURCE_DIR} ${prce2_BINARY_DIR} EXCLUDE_FROM_ALL)
++  #endif()
++  #target_include_directories(${TARGET_NAME} SYSTEM PRIVATE ${pcre2_BINARY_DIR})
++  #target_link_libraries(${TARGET_NAME} PRIVATE pcre2-8)
++  #target_compile_definitions(${TARGET_NAME} PRIVATE PCRE2_CODE_UNIT_WIDTH=8)
++  find_package(PkgConfig REQUIRED)
++  pkg_search_module(pcre2 REQUIRED libpcre2-8)
++  target_include_directories(${TARGET_NAME} PRIVATE ${pcre2_INCLUDE_DIRS})
++  target_link_libraries(${TARGET_NAME} PRIVATE ${pcre2_LINK_LIBRARIES})
+   target_compile_definitions(${TARGET_NAME} PRIVATE PCRE2_CODE_UNIT_WIDTH=8)
++
+ endfunction()
  
-   target_include_directories(${TARGET_NAME} SYSTEM PRIVATE ${pcre2_BINARY_DIR})
+ function(ov_tokenizers_link_re2 TARGET_NAME)

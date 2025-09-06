@@ -6,11 +6,11 @@ EAPI=8
 DISTUTILS_OPTIONAL=1
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{10..14} )
 
 inherit cmake distutils-r1
 
-SENTENCEPIECE_PV="0.2.0"
+SENTENCEPIECE_PV="0.2.1"
 
 DESCRIPTION="OpenVINO Tokenizers extension"
 HOMEPAGE="https://github.com/openvinotoolkit/openvino_tokenizers"
@@ -58,8 +58,8 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-#		-DENABLE_SYSTEM_ICU=ON
-		-DENABLE_FAST_TOKENIZERS=OFF
+		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+		-DENABLE_SYSTEM_ICU=ON
 		-DSENTENCEPIECE_SRC_DIR="${WORKDIR}"/sentencepiece-${SENTENCEPIECE_PV}
 		-DOPENVINO_TOKENIZERS_INSTALL_LIBDIR=$(get_libdir)
 	)

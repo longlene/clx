@@ -37,7 +37,7 @@ RDEPEND="${DEPEND}
 	')
 "
 BDEPEND="
-	dev-libs/dlpack
+	sci-libs/dlpack
 	$(python_gen_cond_dep '
 		>=dev-python/nanobind-2.5.0[${PYTHON_USEDEP}]
 	')

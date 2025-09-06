@@ -3,7 +3,7 @@
 
 EAPI=8
 
-KERNEL_VERSION="linux-6.12.20"
+KERNEL_VERSION="linux-6.12.34"
 
 DESCRIPTION="A library bundling a Linux kernel in a dynamic library"
 HOMEPAGE="https://github.com/containers/libkrunfw/"

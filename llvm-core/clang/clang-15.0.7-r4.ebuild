@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{10..14} )
 inherit cmake llvm llvm.org multilib multilib-minimal \
 	prefix python-single-r1 toolchain-funcs
 
@@ -41,7 +41,7 @@ BDEPEND="
 "
 PDEPEND="
 	llvm-core/clang-toolchain-symlinks:${LLVM_MAJOR}
-	~llvm-core/clang-runtime-${PV}
+	~llvm-runtimes/clang-runtime-${PV}
 "
 
 LLVM_COMPONENTS=(

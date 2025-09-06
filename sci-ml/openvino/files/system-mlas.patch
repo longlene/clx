@@ -1,7 +1,7 @@
 diff -Nur a/src/plugins/intel_cpu/CMakeLists.txt b/src/plugins/intel_cpu/CMakeLists.txt
---- a/src/plugins/intel_cpu/CMakeLists.txt	2024-12-12 05:05:10.000000000 -0800
-+++ b/src/plugins/intel_cpu/CMakeLists.txt	2025-01-20 16:44:43.858588125 -0800
-@@ -260,7 +260,7 @@
+--- a/src/plugins/intel_cpu/CMakeLists.txt	2025-08-26 05:56:24.000000000 -0700
++++ b/src/plugins/intel_cpu/CMakeLists.txt	2025-09-05 10:27:35.547611221 -0700
+@@ -266,7 +266,7 @@
  target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
  if (ENABLE_MLAS_FOR_CPU)
      target_link_libraries(${TARGET_NAME} PRIVATE mlas)
@@ -10,10 +10,10 @@ diff -Nur a/src/plugins/intel_cpu/CMakeLists.txt b/src/plugins/intel_cpu/CMakeLi
      add_definitions(-DOV_CPU_WITH_MLAS)
  endif()
  if (ENABLE_SNIPPETS_LIBXSMM_TPP)
-@@ -366,9 +366,9 @@
-         target_include_directories(${TARGET_NAME}_obj SYSTEM PUBLIC $<TARGET_PROPERTY:xsmm,INCLUDE_DIRECTORIES>)
+@@ -406,9 +406,9 @@
      endif()
  
+     target_include_directories(${TARGET_NAME}_obj SYSTEM PRIVATE $<TARGET_PROPERTY:openvino::runtime::dev,INTERFACE_INCLUDE_DIRECTORIES>)
 -    if(ENABLE_MLAS_FOR_CPU)
 -        target_include_directories(${TARGET_NAME}_obj SYSTEM PUBLIC $<TARGET_PROPERTY:mlas,INCLUDE_DIRECTORIES>)
 -    endif()
@@ -24,9 +24,9 @@ diff -Nur a/src/plugins/intel_cpu/CMakeLists.txt b/src/plugins/intel_cpu/CMakeLi
      if(ENABLE_SHL_FOR_CPU)
          target_include_directories(${TARGET_NAME}_obj SYSTEM PUBLIC $<TARGET_PROPERTY:shl,INTERFACE_INCLUDE_DIRECTORIES>)
 diff -Nur a/src/plugins/intel_cpu/thirdparty/CMakeLists.txt b/src/plugins/intel_cpu/thirdparty/CMakeLists.txt
---- a/src/plugins/intel_cpu/thirdparty/CMakeLists.txt	2024-12-12 05:05:10.000000000 -0800
-+++ b/src/plugins/intel_cpu/thirdparty/CMakeLists.txt	2025-01-20 16:41:44.958581821 -0800
-@@ -159,10 +159,10 @@
+--- a/src/plugins/intel_cpu/thirdparty/CMakeLists.txt	2025-08-26 05:56:24.000000000 -0700
++++ b/src/plugins/intel_cpu/thirdparty/CMakeLists.txt	2025-09-05 10:28:03.447612230 -0700
+@@ -178,10 +178,10 @@
      ov_install_static_lib(libxsmm ${OV_CPACK_COMP_CORE})
  endif()
  
@@ -40,4 +40,4 @@ diff -Nur a/src/plugins/intel_cpu/thirdparty/CMakeLists.txt b/src/plugins/intel_
 +#endif()
  
  if(ENABLE_SHL_FOR_CPU)
-     add_subdirectory(shl)
+     function(ov_build_shl_static)

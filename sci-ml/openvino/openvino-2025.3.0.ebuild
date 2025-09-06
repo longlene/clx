@@ -10,8 +10,8 @@ PYTHON_COMPAT=( python3_{11..13} )
 
 inherit cmake distutils-r1
 
-ONEDNN_CPU_COMMIT="793dd02883483385fb7ee3b1af1e4273ce833444"
-ONEDNN_GPU_COMMIT="c7d59a12849295c8bdf6401b8ea3968f4346ee0c"
+ONEDNN_CPU_COMMIT="3d7a6f1d068d8ae08f189aa4baa93d177bc07507"
+ONEDNN_GPU_COMMIT="8edf6bb60fdaa2769f3cebf44bd2ee94da00744c"
 CONTRIB_COMMIT="b34ff382bef32286186253768aed41a406876e8b"
 
 DESCRIPTION="An open-source toolkit for optimizing and deploying AI inference"
