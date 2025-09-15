@@ -10,8 +10,8 @@ PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
-FLASH_ATTENTION_COMMIT="57b4e68b9f9d94750b46de8f8dbd2bfcc86edd4f"
-FLASHMLA_COMMIT="0e43e774597682284358ff2c54530757b654b8d1"
+FLASH_ATTENTION_COMMIT="ee4d25bd84e0cbc7e0b9b9685085fd5db2dcb62a"
+FLASHMLA_COMMIT="a757314c04eedd166e329e846c820eb1bdd702de"
 
 DESCRIPTION="A high-throughput and memory-efficient inference and serving engine for LLMs"
 HOMEPAGE="
@@ -92,12 +92,9 @@ RESTRICT="test"
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 
 src_prepare() {
+	#	"${FILESDIR}"/system-cuda.patch
 	eapply \
-		"${FILESDIR}"/system-cuda.patch \
-		"${FILESDIR}"/system-cutlass.patch \
-		"${FILESDIR}"/system-python.patch
-	sed -e 's#\("3.12"\))#\1 "3.13")#' \
-		-i "${WORKDIR}"/flash-attention-${FLASH_ATTENTION_COMMIT}/CMakeLists.txt
+		"${FILESDIR}"/system-cutlass.patch
 	distutils-r1_src_prepare
 }
 

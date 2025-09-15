@@ -25,7 +25,7 @@ RESTRICT="test"
 
 RDEPEND="
 	>=sci-ml/huggingface_hub-0.34.0[${PYTHON_SINGLE_USEDEP}]
-	=sci-ml/tokenizers-0.21*[${PYTHON_SINGLE_USEDEP}]
+	=sci-ml/tokenizers-0.22*[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/filelock[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.17[${PYTHON_USEDEP}]

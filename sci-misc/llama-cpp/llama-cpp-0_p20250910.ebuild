@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-EGIT_COMMIT="009b709d6efd24820ac67765ed339a72dc797814"
+EGIT_COMMIT="00681dfc16ba4cebb9c7fbd2cf2656e06a0692a4"
 
 DESCRIPTION="Port of Facebook's LLaMA model in C/C++"
 HOMEPAGE="https://github.com/ggml-org/llama.cpp"

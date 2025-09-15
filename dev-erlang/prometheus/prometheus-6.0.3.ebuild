@@ -1,9 +1,9 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit rebar vcs-snapshot
+inherit rebar3 vcs-snapshot
 
 DESCRIPTION="Prometheus.io client in Erlang"
 HOMEPAGE="https://github.com/deadtrickster/prometheus.erl"
