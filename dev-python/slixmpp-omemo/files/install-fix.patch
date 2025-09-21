@@ -1,0 +1,12 @@
+diff -Nur a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -47,7 +47,7 @@
+ version = { attr = "slixmpp_omemo.version.__version__" }
+ 
+ [tool.setuptools.packages.find]
+-exclude = [ "tests" ]
++exclude = [ "tests", "docs", "examples" ]
+ 
+ [project.optional-dependencies]
+ docs = [

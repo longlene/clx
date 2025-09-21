@@ -1,0 +1,12 @@
+diff -Nur a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -42,7 +42,7 @@
+ version = { attr = "doubleratchet.version.__version__" }
+ 
+ [tool.setuptools.packages.find]
+-exclude = [ "tests" ]
++exclude = [ "tests", "examples", "docs" ]
+ 
+ [project.optional-dependencies]
+ docs = [

@@ -1,0 +1,101 @@
+diff -Nur a/cmake/openfst.cmake b/cmake/openfst.cmake
+--- a/cmake/openfst.cmake	2025-09-01 01:34:48.000000000 -0700
++++ b/cmake/openfst.cmake	2025-09-18 23:43:36.621886737 -0700
+@@ -44,6 +44,7 @@
+   if(NOT WIN32)
+     FetchContent_Declare(openfst
+       URL
++      $ENV{openfst_URL}
+         ${openfst_URL}
+         ${openfst_URL2}
+       URL_HASH          ${openfst_HASH}
+@@ -67,6 +68,7 @@
+     FetchContent_Populate(openfst)
+   endif()
+   message(STATUS "openfst is downloaded to ${openfst_SOURCE_DIR}")
++
+   add_subdirectory(${openfst_SOURCE_DIR} ${openfst_BINARY_DIR} EXCLUDE_FROM_ALL)
+   set(openfst_SOURCE_DIR ${openfst_SOURCE_DIR} PARENT_SCOPE)
+ 
+@@ -92,4 +94,70 @@
+ 
+ endfunction()
+ 
+-download_openfst()
++# Check if OPENFST_SOURCE_DIR environment variable is set
++# This allows using a pre-downloaded and extracted source directory
++if(DEFINED ENV{OPENFST_SOURCE_DIR} AND EXISTS "$ENV{OPENFST_SOURCE_DIR}")
++  message(STATUS "Using pre-downloaded OpenFST source from: $ENV{OPENFST_SOURCE_DIR}")
++
++  set(openfst_SOURCE_DIR "$ENV{OPENFST_SOURCE_DIR}")
++  set(openfst_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/openfst-build)
++
++  # Apply necessary patches to the pre-downloaded source
++  if(NOT WIN32)
++    execute_process(
++      COMMAND sed -i.bak s/enable_testing\(\)//g "src/CMakeLists.txt"
++      WORKING_DIRECTORY ${openfst_SOURCE_DIR}
++      RESULT_VARIABLE patch_result1
++    )
++    execute_process(
++      COMMAND sed -i.bak s/add_subdirectory\(test\)//g "src/CMakeLists.txt"
++      WORKING_DIRECTORY ${openfst_SOURCE_DIR}
++      RESULT_VARIABLE patch_result2
++    )
++    execute_process(
++      COMMAND sed -i.bak /message/d "src/script/CMakeLists.txt"
++      WORKING_DIRECTORY ${openfst_SOURCE_DIR}
++      RESULT_VARIABLE patch_result3
++    )
++  endif()
++
++  # Set the same cache variables as in download_openfst
++  set(HAVE_BIN OFF CACHE BOOL "" FORCE)
++  set(HAVE_SCRIPT ON CACHE BOOL "" FORCE)
++  set(HAVE_COMPACT OFF CACHE BOOL "" FORCE)
++  set(HAVE_COMPRESS OFF CACHE BOOL "" FORCE)
++  set(HAVE_CONST OFF CACHE BOOL "" FORCE)
++  set(HAVE_FAR OFF CACHE BOOL "" FORCE)
++  set(HAVE_GRM OFF CACHE BOOL "" FORCE)
++  set(HAVE_PDT OFF CACHE BOOL "" FORCE)
++  set(HAVE_MPDT OFF CACHE BOOL "" FORCE)
++  set(HAVE_LINEAR OFF CACHE BOOL "" FORCE)
++  set(HAVE_LOOKAHEAD OFF CACHE BOOL "" FORCE)
++  set(HAVE_NGRAM OFF CACHE BOOL "" FORCE)
++  set(HAVE_PYTHON OFF CACHE BOOL "" FORCE)
++  set(HAVE_SPECIAL OFF CACHE BOOL "" FORCE)
++
++  add_subdirectory(${openfst_SOURCE_DIR} ${openfst_BINARY_DIR} EXCLUDE_FROM_ALL)
++
++  set_target_properties(fst PROPERTIES OUTPUT_NAME "kaldifst_fst")
++
++  install(TARGETS fst
++    DESTINATION lib
++  )
++
++  if(KALDIFST_BUILD_PYTHON)
++    set_target_properties(fstscript PROPERTIES OUTPUT_NAME "kaldifst_fstscript")
++  endif()
++
++  if(KALDIFST_BUILD_PYTHON AND WIN32)
++    install(TARGETS fst fstscript DESTINATION ..)
++  else()
++    install(TARGETS fst fstscript DESTINATION lib)
++  endif()
++
++  if(WIN32 AND BUILD_SHARED_LIBS)
++    install(TARGETS fst fstscript DESTINATION bin)
++  endif()
++else()
++  download_openfst()
++endif()
+diff -Nur a/cmake/pybind11.cmake b/cmake/pybind11.cmake
+--- a/cmake/pybind11.cmake	2025-09-01 01:34:48.000000000 -0700
++++ b/cmake/pybind11.cmake	2025-09-18 19:17:02.582844552 -0700
+@@ -40,4 +40,5 @@
+   add_subdirectory(${pybind11_SOURCE_DIR} ${pybind11_BINARY_DIR} EXCLUDE_FROM_ALL)
+ endfunction()
+ 
+-download_pybind11()
++#download_pybind11()
++find_package(pybind11 REQUIRED)

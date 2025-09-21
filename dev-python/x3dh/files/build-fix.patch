@@ -1,0 +1,12 @@
+diff -Nur a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -43,7 +43,7 @@
+ version = { attr = "x3dh.version.__version__" }
+ 
+ [tool.setuptools.packages.find]
+-exclude = [ "tests" ]
++exclude = [ "tests", "docs" ]
+ 
+ [project.optional-dependencies]
+ docs = [
