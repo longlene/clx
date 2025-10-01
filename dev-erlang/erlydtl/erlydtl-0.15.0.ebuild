@@ -3,11 +3,11 @@
 
 EAPI=8
 
-inherit rebar vcs-snapshot
+inherit rebar
 
 DESCRIPTION="Django templates for Erlang"
 HOMEPAGE="https://github.com/erlydtl/erlydtl"
-SRC_URI="https://github.com/erlydtl/erlydtl/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/erlydtl/erlydtl/archive/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 
 LICENSE="MIT"

@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
-EGIT_COMMIT="f82741f548ba59f27866211f0dc3969bb1e2f120"
+EGIT_COMMIT="661df44e5ade986c2e84f485f19d6714841199ec"
 
 DESCRIPTION="Utils for Unsloth"
 HOMEPAGE="https://github.com/unslothai/unsloth-zoo"

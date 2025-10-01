@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
-EGIT_COMMIT="dc26a7a0eb20c31549318396f53639ba8c01025e"
+EGIT_COMMIT="229e2ecc67756f36316dfcbea42396f59eef44e0"
 
 DESCRIPTION="2-5X faster LLM finetuning"
 HOMEPAGE="
@@ -23,7 +23,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/unsloth-zoo-2025.8.5[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/unsloth-zoo-2025.9.9[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.51.3[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/datasets-3.4.1[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/accelerate-0.34.1[${PYTHON_SINGLE_USEDEP}]
