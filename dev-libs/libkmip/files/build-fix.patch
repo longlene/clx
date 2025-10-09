@@ -1,0 +1,57 @@
+diff -Nur a/Makefile b/Makefile
+--- a/Makefile
++++ b/Makefile
+@@ -8,12 +8,12 @@
+ INC_DIR = include
+ BIN_DIR = bin
+ OBJ_DIR = obj
+-LIB_DIR = lib
++LIB_DIR := lib
+ TEST_DIR = tests
+ DEMO_DIR = demos
+ DEST_DIR =
+ DOCS_DIR = docs
+-PREFIX = /usr/local
++PREFIX := /usr/local
+ KMIP = kmip
+ 
+ MAJOR   = 0
+@@ -166,23 +166,23 @@
+ 
+ ## Install targets
+ install: all
+-	mkdir -p $(DEST_DIR)$(PREFIX)/bin/$(KMIP)
++	#mkdir -p $(DEST_DIR)$(PREFIX)/bin/$(KMIP)
+ 	mkdir -p $(DEST_DIR)$(PREFIX)/include/$(KMIP)
+-	mkdir -p $(DEST_DIR)$(PREFIX)/lib
+-	mkdir -p $(DEST_DIR)$(PREFIX)/src/$(KMIP)
+-	mkdir -p $(DEST_DIR)$(PREFIX)/share/doc/$(KMIP)/src
+-	cp $(BIN_DIR)/demo_create $(DEST_DIR)$(PREFIX)/bin/$(KMIP)
+-	cp $(BIN_DIR)/demo_get $(DEST_DIR)$(PREFIX)/bin/$(KMIP)
+-	cp $(BIN_DIR)/demo_destroy $(DEST_DIR)$(PREFIX)/bin/$(KMIP)
+-	cp $(BIN_DIR)/demo_query $(DEST_DIR)$(PREFIX)/bin/$(KMIP)
+-	cp -r $(DOCS_DIR)/source/. $(DEST_DIR)$(PREFIX)/share/doc/$(KMIP)/src
+-	cp $(SRC_DIR)/*.c $(DEST_DIR)$(PREFIX)/src/$(KMIP)
++	mkdir -p $(DEST_DIR)$(PREFIX)/$(LIB_DIR)
++	#mkdir -p $(DEST_DIR)$(PREFIX)/src/$(KMIP)
++	#mkdir -p $(DEST_DIR)$(PREFIX)/share/doc/$(KMIP)/src
++	#cp $(BIN_DIR)/demo_create $(DEST_DIR)$(PREFIX)/bin/$(KMIP)
++	#cp $(BIN_DIR)/demo_get $(DEST_DIR)$(PREFIX)/bin/$(KMIP)
++	#cp $(BIN_DIR)/demo_destroy $(DEST_DIR)$(PREFIX)/bin/$(KMIP)
++	#cp $(BIN_DIR)/demo_query $(DEST_DIR)$(PREFIX)/bin/$(KMIP)
++	#cp -r $(DOCS_DIR)/source/. $(DEST_DIR)$(PREFIX)/share/doc/$(KMIP)/src
++	#cp $(SRC_DIR)/*.c $(DEST_DIR)$(PREFIX)/src/$(KMIP)
+ 	cp $(INC_DIR)/*.h $(DEST_DIR)$(PREFIX)/include/$(KMIP)
+-	cp $(LIB_DIR)/* $(DEST_DIR)$(PREFIX)/lib
+-	ln -sf $(LIB_NAME) $(DEST_DIR)$(PREFIX)/lib/$(LINK_NAME)
+-	ln -sf $(LIB_NAME) $(DEST_DIR)$(PREFIX)/lib/$(SO_NAME)
+-	ln -sf $(LIB_CORE_NAME) $(DEST_DIR)$(PREFIX)/lib/$(LINK_CORE_NAME)
+-	ln -sf $(LIB_CORE_NAME) $(DEST_DIR)$(PREFIX)/lib/$(SO_CORE_NAME)
++	cp $(LIB_DIR)/* $(DEST_DIR)$(PREFIX)/$(LIB_DIR)
++	ln -sf $(LIB_NAME) $(DEST_DIR)$(PREFIX)/$(LIB_DIR)/$(LINK_NAME)
++	ln -sf $(LIB_NAME) $(DEST_DIR)$(PREFIX)/$(LIB_DIR)/$(SO_NAME)
++	ln -sf $(LIB_CORE_NAME) $(DEST_DIR)$(PREFIX)/$(LIB_DIR)/$(LINK_CORE_NAME)
++	ln -sf $(LIB_CORE_NAME) $(DEST_DIR)$(PREFIX)/$(LIB_DIR)/$(SO_CORE_NAME)
+ 
+ install_html_docs: html_docs
+ 	mkdir -p $(DEST_DIR)$(PREFIX)/share/doc/$(KMIP)/html

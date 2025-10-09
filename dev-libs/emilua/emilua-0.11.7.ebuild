@@ -7,7 +7,7 @@ inherit meson
 
 DESCRIPTION="Lua execution engine"
 HOMEPAGE="https://gitlab.com/emilua/emilua"
-SRC_URI="https://gitlab.com/emilua/emilua/-/archive/v0.11.0/emilua-v${PV}.tar.gz -> ${P}.gl.tar.gz"
+SRC_URI="https://gitlab.com/emilua/emilua/-/archive/v${PV}/emilua-v${PV}.tar.gz -> ${P}.gl.tar.gz"
 
 LICENSE="Boost"
 SLOT="0"
@@ -15,7 +15,7 @@ KEYWORDS="~amd64"
 IUSE="doc"
 
 DEPEND="
-	dev-lang/luajit	
+	dev-lang/luajit
 	>=dev-libs/boost-1.82.0
 	dev-libs/cereal
 	dev-libs/libfmt

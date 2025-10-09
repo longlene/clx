@@ -11,7 +11,7 @@ PYTHON_COMPAT=( python3_{11..14} )
 inherit distutils-r1
 
 FLASH_ATTENTION_COMMIT="ee4d25bd84e0cbc7e0b9b9685085fd5db2dcb62a"
-FLASHMLA_COMMIT="a757314c04eedd166e329e846c820eb1bdd702de"
+FLASHMLA_COMMIT="5f65b85703c7ed75fda01e06495077caad207c3f"
 
 DESCRIPTION="A high-throughput and memory-efficient inference and serving engine for LLMs"
 HOMEPAGE="

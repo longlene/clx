@@ -1,15 +1,15 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-PUGIXML_COMMIT="db78afc2b7d8f043b4bc6b185635d949ea2ed2a8"
-PYBIND11_COMMIT="8a099e44b3d5f85b20f05828d919d2332a8de841"
+PUGIXML_COMMIT="ee86beb30e4973f5feffe3ce63bfa4fbadf72f38"
+PYBIND11_COMMIT="a2e59f0e7065404b44dfe92a28aca47ba1378dc4"
 
 DESCRIPTION="Python bindings for pugixml"
 HOMEPAGE="https://github.com/miute/pugixml-python"
