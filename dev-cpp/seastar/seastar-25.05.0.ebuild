@@ -1,21 +1,18 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-
-#EGIT_COMMIT="f305841432eb815ecdf5776d3fb7a4df939a2df2"
-EGIT_COMMIT="908ccd936a63a37cd98470ad8bf44a20d969c51e"
 
 inherit cmake flag-o-matic vcs-snapshot
 
 DESCRIPTION="High performance server-side application framework"
 HOMEPAGE="http://seastar.io/"
-SRC_URI="https://github.com/scylladb/seastar/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/scylladb/seastar/archive/refs/tags/${P}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="dpdk +hwloc +numa"
+IUSE="dpdk +hwloc uring"
 
 DEPEND="
 	app-arch/lz4
@@ -27,14 +24,16 @@ DEPEND="
 	sys-fs/xfsprogs
 	net-misc/lksctp-tools
 	dev-debug/valgrind
-	dev-debug/systemtap
-	sys-libs/liburing
 	dpdk? ( net-libs/dpdk )
 	hwloc? ( sys-apps/hwloc )
-	numa? ( sys-process/numactl )
+	uring? ( sys-libs/liburing )
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+PATCHES=(
+	"${FILESDIR}"/system-lz4.patch
+)
 
 src_configure() {
 	append-cxxflags "-fcoroutines"
@@ -46,7 +45,7 @@ src_configure() {
 		-DSeastar_TESTING=OFF
 		-DSeastar_DPDK=$(usex dpdk)
 		-DSeastar_HWLOC=$(usex hwloc)
-		-DSeastar_NUMA=$(usex numa)
+		-DSeastar_IO_URING=$(usex uring)
 	)
 	cmake_src_configure
 }

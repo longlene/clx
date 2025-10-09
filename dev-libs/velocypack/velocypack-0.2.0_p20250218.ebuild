@@ -1,13 +1,15 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit cmake
+inherit cmake vcs-snapshot
+
+EGIT_COMMIT="64aa203fd9a4d98254911ecafdf02fc1d0e54baf"
 
 DESCRIPTION="A fast and compact format for serialization and storage"
 HOMEPAGE="https://github.com/arangodb/velocypack"
-SRC_URI="https://github.com/arangodb/velocypack/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/arangodb/velocypack/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
