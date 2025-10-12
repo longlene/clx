@@ -1,0 +1,32 @@
+diff -Nur a/scripts/build.py b/scripts/build.py
+--- a/scripts/build.py	2025-08-06 04:21:41.000000000 -0700
++++ b/scripts/build.py	2025-10-09 23:31:59.842865963 -0700
+@@ -42,8 +42,9 @@
+                     os.makedirs(tmpdir, exist_ok=True)
+                     arch["libdir"] = tmpdir
+                 else:
+-                    tmpdir = tempfile.TemporaryDirectory()
+-                    arch["libdir"] = tmpdir.name
++                    #tmpdir = tempfile.TemporaryDirectory()
++                    #arch["libdir"] = tmpdir.name
++                    arch["libdir"] = os.environ["DOWNLOAD_DIR"]
+             return arch
+     raise Exception(f"Unsupported arch: {uname}")
+ 
+@@ -139,7 +140,7 @@
+ ffibuilder = FFI()
+ system = platform.system()
+ root_dir = Path(__file__).parent.parent
+-download_libcurl()
++#download_libcurl()
+ 
+ 
+ ffibuilder.set_source(
+@@ -156,6 +157,7 @@
+         str(root_dir / "include"),
+         str(root_dir / "ffi"),
+         str(Path(arch["libdir"]) / "include"),
++        os.environ['INC_DIR'],
+     ],
+     sources=[
+         str(root_dir / "ffi/shim.c"),

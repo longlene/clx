@@ -1,7 +1,22 @@
 diff -Nur a/src/Makefile b/src/Makefile
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -37,8 +37,7 @@
+@@ -49,10 +49,10 @@
+ ifdef NOMIMALLOC
+ CFLAGS += -DNOMIMALLOC
+ else
+-../deps/mimalloc/out/release/libmimalloc.a:
+-	../deps/build-mimalloc.sh
+-DEPS += ../deps/mimalloc/out/release/libmimalloc.a
+-CLIBS += ../deps/mimalloc/out/release/libmimalloc.a
++#../deps/mimalloc/out/release/libmimalloc.a:
++#	../deps/build-mimalloc.sh
++#DEPS += ../deps/mimalloc/out/release/libmimalloc.a
++CLIBS += -lmimalloc
+ endif
+ 
+ ifdef NOJEMALLOC
+@@ -71,18 +71,16 @@
  else
  ../deps/liburing/src/liburing.a:
  	../deps/build-uring.sh
@@ -11,15 +26,18 @@ diff -Nur a/src/Makefile b/src/Makefile
  endif
  endif
  
-@@ -47,8 +46,7 @@
+ ifdef NOOPENSSL
+ CFLAGS += -DNOOPENSSL
  else
- ../deps/openssl/libssl.a:
- 	../deps/build-openssl.sh
+-../deps/openssl/libssl.a:
+-	../deps/build-openssl.sh
 -DEPS += ../deps/openssl/libssl.a
 -CLIBS += ../deps/openssl/libssl.a ../deps/openssl/libcrypto.a
++#../deps/openssl/libssl.a:
++#	../deps/build-openssl.sh
 +CLIBS += -lssl -lcrypto
  ifdef USEFULLOPENSSLHEADER
- CFLAGS += "-I../deps/openssl/include"
+ CFLAGS += -I../deps/openssl/include
  endif
 diff -Nur a/src/uring.h b/src/uring.h
 --- a/src/uring.h
@@ -33,3 +51,15 @@ diff -Nur a/src/uring.h b/src/uring.h
  #else
  #define NOURING
  #endif
+diff -Nur a/src/xmalloc.c b/src/xmalloc.c
+--- a/src/xmalloc.c
++++ b/src/xmalloc.c
+@@ -28,7 +28,7 @@
+ #endif
+ 
+ #ifndef NOMIMALLOC
+-#include "../deps/mimalloc/include/mimalloc.h"
++#include "mimalloc.h"
+ #endif
+ 
+ #ifndef NOJEMALLOC

@@ -1,0 +1,13 @@
+diff -Nur a/Makefile b/Makefile
+--- a/Makefile	2025-06-01 15:56:24.552877657 -0700
++++ b/Makefile	2025-06-01 15:56:27.846211108 -0700
+@@ -157,7 +157,8 @@
+ 	fi
+ 
+ build_libkrun:
+-	./scripts/build_libkrun.sh --no-clean
++	@echo "done"
++
+ 
+ # Catch-all target to allow example names and arguments
+ %:

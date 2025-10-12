@@ -1,0 +1,97 @@
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{13..14} )
+
+CRATES="
+	arc-swap@1.7.1
+	async-lock@3.4.1
+	async-trait@0.1.89
+	autocfg@1.5.0
+	bitflags@2.9.4
+	bumpalo@3.19.0
+	cfg-if@1.0.3
+	concurrent-queue@2.5.0
+	crossbeam-utils@0.8.21
+	dashmap@6.1.0
+	event-listener-strategy@0.5.4
+	event-listener@5.4.1
+	fastrand@2.3.0
+	getrandom@0.2.16
+	hashbrown@0.14.5
+	heck@0.5.0
+	indoc@2.0.6
+	itoa@1.0.15
+	js-sys@0.3.81
+	libc@0.2.177
+	lock_api@0.4.14
+	log@0.4.28
+	memchr@2.7.6
+	memoffset@0.9.1
+	once_cell@1.21.3
+	parking@2.2.1
+	parking_lot_core@0.9.12
+	pin-project-lite@0.2.16
+	portable-atomic@1.11.1
+	proc-macro2@1.0.101
+	pyo3-build-config@0.26.0
+	pyo3-ffi@0.26.0
+	pyo3-macros-backend@0.26.0
+	pyo3-macros@0.26.0
+	pyo3@0.26.0
+	quote@1.0.41
+	redox_syscall@0.5.18
+	rustversion@1.0.22
+	ryu@1.0.20
+	scopeguard@1.2.0
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.145
+	smallstr@0.3.1
+	smallvec@1.15.1
+	syn@2.0.106
+	target-lexicon@0.13.3
+	thiserror-impl@2.0.17
+	thiserror@2.0.17
+	unicode-ident@1.0.19
+	unindent@0.2.4
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasm-bindgen-backend@0.2.104
+	wasm-bindgen-macro-support@0.2.104
+	wasm-bindgen-macro@0.2.104
+	wasm-bindgen-shared@0.2.104
+	wasm-bindgen@0.2.104
+	windows-link@0.2.1
+	yrs@0.24.0
+"
+
+inherit cargo distutils-r1
+
+DESCRIPTION="Python bindings for Yrs"
+HOMEPAGE="
+	https://pypi.org/project/pycrdt/
+	https://github.com/y-crdt/pycrdt
+"
+SRC_URI="
+	https://github.com/y-crdt/pycrdt/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="
+	>=dev-python/anyio-4.4.0[${PYTHON_USEDEP}]
+"
+#BDEPEND="
+#	test? (
+#	)
+#"
+
+distutils_enable_tests pytest

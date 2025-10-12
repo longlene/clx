@@ -1,0 +1,286 @@
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{13..14} )
+
+CRATES="
+	adler2@2.0.1
+	aligned-vec@0.6.4
+	anyhow@1.0.100
+	arbitrary@1.4.2
+	arg_enum_proc_macro@0.3.4
+	array-init@2.1.0
+	arrayvec@0.7.6
+	autocfg@1.5.0
+	av1-grain@0.2.4
+	avif-serialize@0.8.6
+	az@1.2.1
+	bincode@1.3.3
+	bit_field@0.10.3
+	bitflags@1.3.2
+	bitflags@2.9.4
+	bitstream-io@2.6.0
+	block-buffer@0.10.4
+	built@0.7.7
+	bumpalo@3.19.0
+	bytemuck@1.24.0
+	bytemuck_derive@1.10.2
+	byteorder-lite@0.1.0
+	byteorder@1.5.0
+	cc@1.2.41
+	cfg-expr@0.15.8
+	cfg-if@1.0.3
+	circular-buffer@1.2.0
+	cmake@0.1.54
+	cmov@0.3.1
+	coe-rs@0.1.2
+	color_quant@1.1.0
+	cpufeatures@0.2.17
+	crc32fast@1.5.0
+	crossbeam-deque@0.8.6
+	crossbeam-epoch@0.9.18
+	crossbeam-utils@0.8.21
+	crunchy@0.2.4
+	crypto-common@0.1.6
+	dbgf@0.1.2
+	digest@0.10.7
+	divrem@1.0.0
+	doc-comment@0.3.3
+	document-features@0.2.11
+	dyn-stack-macros@0.1.0
+	dyn-stack@0.11.0
+	dyn-stack@0.13.2
+	either@1.15.0
+	enum-as-inner@0.6.1
+	equator-macro@0.2.1
+	equator-macro@0.4.2
+	equator@0.2.2
+	equator@0.4.2
+	equivalent@1.0.2
+	exr@1.73.0
+	faer-entity@0.20.1
+	faer@0.20.2
+	fast_image_resize@5.3.0
+	fax@0.2.6
+	fax_derive@0.2.0
+	fdeflate@0.3.7
+	find-msvc-tools@0.1.4
+	fixed@1.29.0
+	flate2@1.1.4
+	gcd@2.3.0
+	gemm-c32@0.18.2
+	gemm-c64@0.18.2
+	gemm-common@0.18.2
+	gemm-f16@0.18.2
+	gemm-f32@0.18.2
+	gemm-f64@0.18.2
+	gemm@0.18.2
+	generativity@1.1.0
+	generator@0.8.7
+	generic-array@0.14.7
+	getrandom@0.2.16
+	getrandom@0.3.3
+	gif@0.13.3
+	half@2.7.0
+	hashbrown@0.16.0
+	heck@0.5.0
+	image-webp@0.2.4
+	image@0.25.8
+	imgref@1.12.0
+	indexmap@2.11.4
+	indoc@2.0.6
+	interpolate_name@0.2.4
+	itertools@0.12.1
+	jobserver@0.1.34
+	jpeg-decoder@0.3.2
+	jpeg-encoder@0.6.1
+	kiddo@5.2.2
+	lazy_static@1.5.0
+	lebe@0.5.3
+	libc@0.2.177
+	libfuzzer-sys@0.4.10
+	libm@0.2.15
+	litrs@0.4.2
+	log@0.4.28
+	loop9@0.1.5
+	matrixcompare-core@0.1.0
+	matrixcompare@0.3.0
+	matrixmultiply@0.3.10
+	maybe-rayon@0.1.1
+	memchr@2.7.6
+	memoffset@0.9.1
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	moxcms@0.7.7
+	nano-gemm-c32@0.1.0
+	nano-gemm-c64@0.1.0
+	nano-gemm-codegen@0.1.0
+	nano-gemm-core@0.1.0
+	nano-gemm-f32@0.1.0
+	nano-gemm-f64@0.1.0
+	nano-gemm@0.1.3
+	ndarray@0.16.1
+	new_debug_unreachable@1.0.6
+	nom@7.1.3
+	noop_proc_macro@0.3.0
+	npyz@0.8.4
+	nu-ansi-term@0.50.3
+	num-bigint@0.4.6
+	num-complex@0.4.6
+	num-derive@0.4.2
+	num-integer@0.1.46
+	num-rational@0.4.2
+	num-traits@0.2.19
+	numpy@0.24.0
+	once_cell@1.21.3
+	ordered-float@5.1.0
+	paste@1.0.15
+	pest@2.8.3
+	pest_derive@2.8.3
+	pest_generator@2.8.3
+	pest_meta@2.8.3
+	pin-project-lite@0.2.16
+	pkg-config@0.3.32
+	png@0.17.16
+	png@0.18.0
+	portable-atomic-util@0.2.4
+	portable-atomic@1.11.1
+	ppv-lite86@0.2.21
+	proc-macro2@1.0.101
+	profiling-procmacros@1.0.17
+	profiling@1.0.17
+	pulp@0.18.22
+	pulp@0.21.5
+	pxfm@0.1.25
+	py_literal@0.4.0
+	pyo3-build-config@0.24.2
+	pyo3-ffi@0.24.2
+	pyo3-macros-backend@0.24.2
+	pyo3-macros@0.24.2
+	pyo3@0.24.2
+	qoi@0.4.1
+	quick-error@2.0.1
+	quote@1.0.41
+	r-efi@5.3.0
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	rand_distr@0.4.3
+	rav1e@0.7.1
+	ravif@0.11.20
+	raw-cpuid@11.6.0
+	rawpointer@0.2.1
+	rayon-core@1.13.0
+	rayon@1.11.0
+	reborrow@0.5.5
+	rgb@0.8.52
+	rustc-hash@2.1.1
+	rustversion@1.0.22
+	same-file@1.0.6
+	seq-macro@0.3.6
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_spanned@0.6.9
+	sha2@0.10.9
+	sharded-slab@0.1.7
+	shlex@1.3.0
+	simd-adler32@0.3.7
+	simd_helpers@0.1.0
+	smallvec@1.15.1
+	sorted-vec@0.8.10
+	syn@2.0.106
+	sysctl@0.6.0
+	system-deps@6.2.2
+	target-lexicon@0.12.16
+	target-lexicon@0.13.3
+	thiserror-impl@1.0.69
+	thiserror-impl@2.0.17
+	thiserror@1.0.69
+	thiserror@2.0.17
+	thread_local@1.1.9
+	tiff@0.10.3
+	tiff@0.9.1
+	toml@0.8.23
+	toml_datetime@0.6.11
+	toml_edit@0.22.27
+	tracing-attributes@0.1.30
+	tracing-core@0.1.34
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.20
+	tracing@0.1.41
+	turbojpeg-sys@1.1.1
+	turbojpeg@1.3.3
+	typenum@1.19.0
+	ucd-trie@0.1.7
+	unicode-ident@1.0.19
+	unindent@0.2.4
+	v_frame@0.3.9
+	valuable@0.1.1
+	version-compare@0.2.0
+	version_check@0.9.5
+	walkdir@2.5.0
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasi@0.14.7+wasi-0.2.4
+	wasip2@1.0.1+wasi-0.2.4
+	wasm-bindgen-backend@0.2.104
+	wasm-bindgen-macro-support@0.2.104
+	wasm-bindgen-macro@0.2.104
+	wasm-bindgen-shared@0.2.104
+	wasm-bindgen@0.2.104
+	weezl@0.1.10
+	winapi-util@0.1.11
+	windows-collections@0.2.0
+	windows-core@0.61.2
+	windows-future@0.2.1
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.1.3
+	windows-link@0.2.1
+	windows-numerics@0.2.0
+	windows-result@0.3.4
+	windows-strings@0.4.2
+	windows-sys@0.61.2
+	windows-threading@0.1.0
+	windows@0.61.3
+	winnow@0.7.13
+	wit-bindgen@0.46.0
+	zerocopy-derive@0.8.27
+	zerocopy@0.8.27
+	zune-core@0.4.12
+	zune-inflate@0.2.54
+	zune-jpeg@0.4.21
+"
+
+inherit cargo distutils-r1
+
+DESCRIPTION="Low level implementations for computer vision in Rust"
+HOMEPAGE="
+	https://pypi.org/project/kornia-rs/
+	http://kornia.org
+"
+SRC_URI="
+	https://github.com/kornia/kornia-rs/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="
+"
+#BDEPEND="
+#	test? (
+#	)
+#"
+
+EPYTEST_PLUGINS=()
+distutils_enable_tests pytest
+
+S="${WORKDIR}"/${P}/kornia-py
+
