@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit rebar3
+inherit rebar
 
 DESCRIPTION="Index tree for MQTT topic filters"
 HOMEPAGE="https://github.com/processone/mqtree"
