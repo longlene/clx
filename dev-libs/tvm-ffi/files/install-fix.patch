@@ -1,0 +1,101 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-10-18 13:38:06.000000000 -0700
++++ b/CMakeLists.txt	2025-11-02 22:29:41.343259876 -0800
+@@ -51,7 +51,7 @@
+                            $<INSTALL_INTERFACE:include>
+ )
+ target_include_directories(
+-  tvm_ffi_header INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include>
++  tvm_ffi_header INTERFACE 
+                            $<INSTALL_INTERFACE:include>
+ )
+ 
+@@ -278,32 +278,34 @@
+   endif ()
+   install(TARGETS tvm_ffi_cython DESTINATION .)
+ 
+-  # ######### Installing the source ##########
+-  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include/
+-          DESTINATION 3rdparty/dlpack/include/
+-  )
+-  install(
+-    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/libbacktrace/
+-    DESTINATION 3rdparty/libbacktrace/
+-    PATTERN ".git" EXCLUDE
+-    PATTERN ".git*" EXCLUDE
+-    PATTERN "*.tmp" EXCLUDE
+-  )
+-  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/ffi/ DESTINATION src/ffi/)
++  ## ######### Installing the source ##########
++  #install(
++  #  DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/libbacktrace/
++  #  DESTINATION 3rdparty/libbacktrace/
++  #  PATTERN ".git" EXCLUDE
++  #  PATTERN ".git*" EXCLUDE
++  #  PATTERN "*.tmp" EXCLUDE
++  #)
++  #install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/ffi/ DESTINATION src/ffi/)
++  #install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Utils/ DESTINATION share/cmake/tvm_ffi/Utils)
++  #install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt DESTINATION .)
++  #install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tvm_ffi-config.cmake
++  #        DESTINATION share/cmake/tvm_ffi
++  #)
++  #install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/python/tvm_ffi/cython/tvm_ffi_python_helpers.h
++  #        DESTINATION include/
++  #)
++else()
+   install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Utils/ DESTINATION share/cmake/tvm_ffi/Utils)
+-  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt DESTINATION .)
+   install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tvm_ffi-config.cmake
+           DESTINATION share/cmake/tvm_ffi
+   )
+-  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/python/tvm_ffi/cython/tvm_ffi_python_helpers.h
+-          DESTINATION include/
+-  )
+ endif ()
+ 
+ # ######### Install the related for normal cmake library ##########
+ 
++if (NOT TVM_FFI_BUILD_PYTHON_MODULE)
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/tvm/ffi/ DESTINATION include/tvm/ffi/)
+-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include/ DESTINATION include/)
+ install(TARGETS tvm_ffi_shared DESTINATION lib)
+ # if tvm_ffi_testing is built, we also install it
+ if (TARGET tvm_ffi_testing)
+@@ -313,6 +315,7 @@
+     OPTIONAL
+   )
+ endif ()
++endif ()
+ # ship additional dSYM files for debugging symbols on if available
+ if (APPLE)
+   install(
+diff -Nur a/python/tvm_ffi/libinfo.py b/python/tvm_ffi/libinfo.py
+--- a/python/tvm_ffi/libinfo.py	2025-10-18 13:38:06.000000000 -0700
++++ b/python/tvm_ffi/libinfo.py	2025-11-02 22:31:44.159930825 -0800
+@@ -53,6 +53,8 @@
+     """Get the possible dll directories."""
+     ffi_dir = Path(__file__).expanduser().resolve().parent
+     dll_path: list[Path] = [ffi_dir / "lib"]
++    dll_path.append(Path("/usr/lib64"))
++    dll_path.append(Path("/usr/lib"))
+     dll_path.append(ffi_dir / ".." / ".." / "build" / "lib")
+     # in source build from parent if needed
+     dll_path.append(ffi_dir / ".." / ".." / ".." / "build" / "lib")
+@@ -150,6 +152,7 @@
+     candidates = [
+         str(Path(__file__).resolve().parent / "include"),
+         str(Path(__file__).resolve().parent / ".." / ".." / "include"),
++        "/usr/include",
+     ]
+     for candidate in candidates:
+         if Path(candidate).is_dir():
+@@ -171,7 +174,7 @@
+ 
+ def find_dlpack_include_path() -> str:
+     """Find dlpack header files for C compilation."""
+-    install_include_path = Path(__file__).resolve().parent / "include"
++    install_include_path = Path("/usr/include")
+     if (install_include_path / "dlpack").is_dir():
+         return str(install_include_path)
+ 

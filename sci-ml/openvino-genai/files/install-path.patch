@@ -1,6 +1,6 @@
 diff -Nur a/CMakeLists.txt b/CMakeLists.txt
---- a/CMakeLists.txt	2025-08-26 00:27:57.000000000 -0700
-+++ b/CMakeLists.txt	2025-09-05 14:20:02.044780513 -0700
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
 @@ -62,6 +62,7 @@
                   PATHS "${OpenVINO_DIR_PY}")
  endif()
@@ -21,8 +21,8 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
      set(CPACK_ARCHIVE_COMPONENT_INSTALL ON)
  endif()
 diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
---- a/src/CMakeLists.txt	2025-08-26 00:27:57.000000000 -0700
-+++ b/src/CMakeLists.txt	2025-09-05 14:22:08.174785152 -0700
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
 @@ -56,9 +56,9 @@
          list(APPEND rpaths "@loader_path/../node_modules/openvino-node/bin")
      endif()
@@ -37,8 +37,8 @@ diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
  
  if(NOT DEFINED ENABLE_LTO)
 diff -Nur a/src/cpp/CMakeLists.txt b/src/cpp/CMakeLists.txt
---- a/src/cpp/CMakeLists.txt	2025-08-26 00:27:57.000000000 -0700
-+++ b/src/cpp/CMakeLists.txt	2025-09-05 14:30:11.031469624 -0700
+--- a/src/cpp/CMakeLists.txt
++++ b/src/cpp/CMakeLists.txt
 @@ -233,7 +233,7 @@
              NAMELINK_COMPONENT core_genai_dev
          ARCHIVE DESTINATION ${ARCHIVE_DESTINATION} COMPONENT core_genai_dev
@@ -72,8 +72,8 @@ diff -Nur a/src/cpp/CMakeLists.txt b/src/cpp/CMakeLists.txt
 +        DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake/${PROJECT_NAME} COMPONENT core_genai_dev)
  export(EXPORT OpenVINOGenAITargets FILE "${CMAKE_BINARY_DIR}/OpenVINOGenAITargets.cmake" NAMESPACE openvino::)
 diff -Nur a/src/python/CMakeLists.txt b/src/python/CMakeLists.txt
---- a/src/python/CMakeLists.txt	2025-08-26 00:27:57.000000000 -0700
-+++ b/src/python/CMakeLists.txt	2025-09-05 14:37:35.088152652 -0700
+--- a/src/python/CMakeLists.txt
++++ b/src/python/CMakeLists.txt
 @@ -63,24 +63,24 @@
  install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/openvino_genai/__init__.py"
                "${CMAKE_CURRENT_SOURCE_DIR}/openvino_genai/__init__.pyi"

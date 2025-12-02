@@ -1,0 +1,18 @@
+diff -Nur a/include/ideep/tensor.hpp b/include/ideep/tensor.hpp
+--- a/include/ideep/tensor.hpp
++++ b/include/ideep/tensor.hpp
+@@ -1,6 +1,7 @@
+ #ifndef IDEEP_TENSOR_HPP
+ #define IDEEP_TENSOR_HPP
+ 
++#include <cassert>
+ #include "attributes.hpp"
+ #include "utils.hpp"
+ 
+@@ -1312,4 +1313,4 @@
+ };
+ 
+ } // namespace ideep
+-#endif
+\ No newline at end of file
++#endif

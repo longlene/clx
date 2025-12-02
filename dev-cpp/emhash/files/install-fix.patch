@@ -1,0 +1,12 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-08-30 02:08:03.000000000 -0700
++++ b/CMakeLists.txt	2025-10-27 01:25:59.271556522 -0700
+@@ -42,7 +42,7 @@
+ 
+ install(TARGETS emhash
+     EXPORT emhash-targets
+-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
++    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/emhash
+ )
+ 
+ install(EXPORT emhash-targets

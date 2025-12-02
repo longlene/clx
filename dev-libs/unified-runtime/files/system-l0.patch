@@ -1,19 +1,34 @@
 diff -Nur a/cmake/FetchLevelZero.cmake b/cmake/FetchLevelZero.cmake
---- a/cmake/FetchLevelZero.cmake	2025-05-05 01:51:11.000000000 -0700
-+++ b/cmake/FetchLevelZero.cmake	2025-05-14 01:35:52.070544773 -0700
-@@ -131,11 +131,11 @@
- else()
+--- a/cmake/FetchLevelZero.cmake
++++ b/cmake/FetchLevelZero.cmake
+@@ -97,6 +97,7 @@
+               "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
+ )
  
-     # Check if UR_COMPUTE_RUNTIME_REPO is set. Throw if not.
--    if (UR_COMPUTE_RUNTIME_REPO STREQUAL "")
--        message(FATAL_ERROR "UR_COMPUTE_RUNTIME_FETCH_REPO is set to OFF but UR_COMPUTE_RUNTIME_REPO is not set. Please set it to the compute runtime repo.")
--    endif()
-+    #if (UR_COMPUTE_RUNTIME_REPO STREQUAL "")
-+    #    message(FATAL_ERROR "UR_COMPUTE_RUNTIME_FETCH_REPO is set to OFF but UR_COMPUTE_RUNTIME_REPO is not set. Please set it to the compute runtime repo.")
-+    #endif()
- 
--    set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${UR_COMPUTE_RUNTIME_REPO}/level_zero/include")
-+    set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${UR_COMPUTE_RUNTIME_DIR}/level_zero/include")
-     set(COMPUTE_RUNTIME_REPO_PATH "${UR_COMPUTE_RUNTIME_REPO}")
++if (NOT DEFINED UR_COMPUTE_RUNTIME_DIR)
+ if (UR_COMPUTE_RUNTIME_REPO STREQUAL "")
+ set(UR_COMPUTE_RUNTIME_REPO "https://github.com/intel/compute-runtime.git")
  endif()
+@@ -112,6 +113,10 @@
+ endif()
+ add_library(ComputeRuntimeLevelZero-Headers INTERFACE)
+ set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${exp-headers_SOURCE_DIR}/../..")
++else()
++add_library(ComputeRuntimeLevelZero-Headers INTERFACE)
++set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${UR_COMPUTE_RUNTIME_DIR}")
++endif()
+ message(STATUS "Level Zero Adapter: Using Level Zero headers from ${COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE}")
+ target_include_directories(ComputeRuntimeLevelZero-Headers
+     INTERFACE "$<BUILD_INTERFACE:${COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE}>"
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -133,6 +133,8 @@
+     endif()
+ endif()
+ 
++add_compile_definitions(CL_ENABLE_BETA_EXTENSIONS)
++
+ if(UR_ENABLE_TRACING)
+     add_compile_definitions(UR_ENABLE_TRACING)
  

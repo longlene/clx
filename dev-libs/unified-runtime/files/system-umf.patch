@@ -1,6 +1,6 @@
 diff -Nur a/source/common/CMakeLists.txt b/source/common/CMakeLists.txt
---- a/source/common/CMakeLists.txt	2024-12-11 07:14:14.000000000 -0800
-+++ b/source/common/CMakeLists.txt	2024-12-12 13:53:21.933040280 -0800
+--- a/source/common/CMakeLists.txt
++++ b/source/common/CMakeLists.txt
 @@ -26,6 +26,13 @@
      $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
  )

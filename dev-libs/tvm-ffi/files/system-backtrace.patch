@@ -1,0 +1,15 @@
+diff -Nur a/cmake/Utils/AddLibbacktrace.cmake b/cmake/Utils/AddLibbacktrace.cmake
+--- a/cmake/Utils/AddLibbacktrace.cmake
++++ b/cmake/Utils/AddLibbacktrace.cmake
+@@ -87,5 +87,10 @@
+ endfunction ()
+ 
+ if (NOT MSVC)
+-  _libbacktrace_compile()
++  #_libbacktrace_compile()
++  find_library(libbacktrace_path NAMES backtrace)
++  add_library(libbacktrace UNKNOWN IMPORTED)
++  set_target_properties(libbacktrace PROPERTIES
++    IMPORTED_LOCATION "${libbacktrace_path}"
++  )
+ endif ()
