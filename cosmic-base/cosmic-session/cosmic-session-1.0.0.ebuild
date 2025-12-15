@@ -1,0 +1,268 @@
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	addr2line@0.24.2
+	adler2@2.0.1
+	aho-corasick@1.1.3
+	async-broadcast@0.7.2
+	async-channel@2.5.0
+	async-executor@1.13.3
+	async-io@2.5.0
+	async-lock@3.4.1
+	async-process@2.4.0
+	async-recursion@1.1.1
+	async-signal@0.2.12
+	async-signals@0.5.0
+	async-task@4.7.1
+	async-trait@0.1.89
+	atomic-waker@1.1.2
+	autocfg@1.5.0
+	backtrace@0.3.75
+	bitflags@2.9.3
+	block@0.1.6
+	blocking@1.6.2
+	bytes@1.10.1
+	cc@1.2.34
+	cfg-if@1.0.3
+	cfg_aliases@0.2.1
+	color-eyre@0.6.5
+	color-spantrace@0.3.0
+	concurrent-queue@2.5.0
+	crossbeam-epoch@0.9.18
+	crossbeam-queue@0.3.12
+	crossbeam-skiplist@0.1.3
+	crossbeam-utils@0.8.21
+	dirs-sys@0.5.0
+	dirs@6.0.0
+	displaydoc@0.2.5
+	document-features@0.2.11
+	either@1.15.0
+	endi@1.1.0
+	enumflags2@0.7.12
+	enumflags2_derive@0.7.12
+	equivalent@1.0.2
+	errno@0.3.13
+	event-listener-strategy@0.5.4
+	event-listener@5.4.1
+	eyre@0.6.12
+	fast_image_resize@5.1.4
+	fastrand@2.3.0
+	form_urlencoded@1.2.2
+	freedesktop-desktop-entry@0.7.14
+	futures-channel@0.3.31
+	futures-core@0.3.31
+	futures-executor@0.3.31
+	futures-io@0.3.31
+	futures-lite@2.6.1
+	futures-macro@0.3.31
+	futures-sink@0.3.31
+	futures-task@0.3.31
+	futures-util@0.3.31
+	futures@0.3.31
+	getrandom@0.2.16
+	getrandom@0.3.3
+	gettext-rs@0.7.2
+	gettext-sys@0.22.5
+	gimli@0.31.1
+	hashbrown@0.15.5
+	hermit-abi@0.5.2
+	hex@0.4.3
+	icu_collections@2.0.0
+	icu_locale_core@2.0.0
+	icu_normalizer@2.0.0
+	icu_normalizer_data@2.0.0
+	icu_properties@2.0.1
+	icu_properties_data@2.0.1
+	icu_provider@2.0.0
+	idna@1.1.0
+	idna_adapter@1.2.1
+	indenter@0.3.4
+	indexmap@2.11.0
+	io-uring@0.7.10
+	itertools@0.14.0
+	itoa@1.0.15
+	lazy_static@1.5.0
+	libc@0.2.175
+	libredox@0.1.9
+	linux-raw-sys@0.9.4
+	litemap@0.8.0
+	litrs@0.4.2
+	locale_config@0.3.0
+	lock_api@0.4.13
+	log-panics@2.1.0
+	log@0.4.27
+	logind-zbus@5.3.2
+	malloc_buf@0.0.6
+	matchers@0.1.0
+	memchr@2.7.5
+	memoffset@0.9.1
+	miniz_oxide@0.8.9
+	mio@1.0.4
+	nix@0.29.0
+	nix@0.30.1
+	nu-ansi-term@0.46.0
+	num-traits@0.2.19
+	objc-foundation@0.1.1
+	objc@0.2.7
+	objc_id@0.1.1
+	object@0.36.7
+	once_cell@1.21.3
+	option-ext@0.2.0
+	ordered-stream@0.2.0
+	overload@0.1.1
+	owo-colors@4.2.2
+	parking@2.2.1
+	parking_lot@0.12.4
+	parking_lot_core@0.9.11
+	percent-encoding@2.3.2
+	pin-project-lite@0.2.16
+	pin-utils@0.1.0
+	piper@0.2.4
+	polling@3.10.0
+	potential_utf@0.1.2
+	ppv-lite86@0.2.21
+	proc-macro-crate@3.3.0
+	proc-macro2@1.0.101
+	quote@1.0.40
+	r-efi@5.3.0
+	rand@0.8.5
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	redox_syscall@0.5.17
+	redox_users@0.5.2
+	regex-automata@0.1.10
+	regex-automata@0.4.10
+	regex-syntax@0.6.29
+	regex-syntax@0.8.6
+	regex@1.11.2
+	rustc-demangle@0.1.26
+	rustix@1.0.8
+	ryu@1.0.20
+	scopeguard@1.2.0
+	sendfd@0.4.4
+	serde@1.0.219
+	serde_derive@1.0.219
+	serde_json@1.0.143
+	serde_repr@0.1.20
+	sharded-slab@0.1.7
+	shell-words@1.1.0
+	shlex@1.3.0
+	signal-hook-registry@1.4.6
+	slab@0.4.11
+	slotmap@1.0.7
+	smallvec@1.15.1
+	socket2@0.6.0
+	stable_deref_trait@1.2.0
+	static_assertions@1.1.0
+	syn@2.0.106
+	sync_wrapper@1.0.2
+	synstructure@0.13.2
+	temp-dir@0.1.16
+	tempfile@3.21.0
+	thiserror-impl@1.0.69
+	thiserror-impl@2.0.16
+	thiserror@1.0.69
+	thiserror@2.0.16
+	thread_local@1.1.9
+	tinystr@0.8.1
+	tokio-macros@2.5.0
+	tokio-util@0.7.16
+	tokio@1.47.1
+	toml_datetime@0.6.11
+	toml_edit@0.22.27
+	tracing-attributes@0.1.30
+	tracing-core@0.1.34
+	tracing-error@0.2.1
+	tracing-journald@0.3.1
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.19
+	tracing@0.1.41
+	uds_windows@1.1.0
+	unicase@2.8.1
+	unicode-ident@1.0.18
+	url@2.5.7
+	utf8_iter@1.0.4
+	valuable@0.1.1
+	version_check@0.9.5
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasi@0.14.3+wasi-0.2.4
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-link@0.1.3
+	windows-sys@0.59.0
+	windows-sys@0.60.2
+	windows-targets@0.52.6
+	windows-targets@0.53.3
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_gnullvm@0.53.0
+	windows_aarch64_msvc@0.52.6
+	windows_aarch64_msvc@0.53.0
+	windows_i686_gnu@0.52.6
+	windows_i686_gnu@0.53.0
+	windows_i686_gnullvm@0.52.6
+	windows_i686_gnullvm@0.53.0
+	windows_i686_msvc@0.52.6
+	windows_i686_msvc@0.53.0
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnu@0.53.0
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_gnullvm@0.53.0
+	windows_x86_64_msvc@0.52.6
+	windows_x86_64_msvc@0.53.0
+	winnow@0.7.13
+	wit-bindgen@0.45.0
+	writeable@0.6.1
+	xdg@2.5.2
+	yoke-derive@0.8.0
+	yoke@0.8.0
+	zbus@5.10.0
+	zbus_macros@5.10.0
+	zbus_names@4.2.0
+	zbus_systemd@0.25701.0
+	zerocopy-derive@0.8.26
+	zerocopy@0.8.26
+	zerofrom-derive@0.1.6
+	zerofrom@0.1.6
+	zerotrie@0.2.2
+	zerovec-derive@0.11.1
+	zerovec@0.11.4
+	zvariant@5.7.0
+	zvariant_derive@5.7.0
+	zvariant_utils@3.2.1
+"
+
+declare -A GIT_CRATES=(
+	[cosmic-dbus-a11y]='https://github.com/pop-os/dbus-settings-bindings;3b86984332be2c930a3536ab714b843c851fa8ca;dbus-settings-bindings-%commit%/a11y'
+	[cosmic-notifications-util]='https://github.com/pop-os/cosmic-notifications;744439a6e79f7bcb74ba861d525318f9b774c7f5;cosmic-notifications-%commit%/cosmic-notifications-util'
+	[launch-pad]='https://github.com/pop-os/launch-pad;5e8e72a676337cad3335f4b46b09f12c41e208ae;launch-pad-%commit%'
+)
+
+inherit cargo
+
+DESCRIPTION="Session manager fro the COSMIC desktop environment"
+HOMEPAGE="https://github.com/pop-os/cosmic-session"
+SRC_URI="
+	https://github.com/pop-os/cosmic-session/archive/refs/tags/epoch-${PV}.tar.gz -> ${P}.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="GPL-3"
+SLOT="0"
+KEYWORDS="~amd64"
+
+DEPEND="
+	x11-libs/libxkbcommon
+"
+RDEPEND="${DEPEND}"
+BDEPEND=""
+
+S="${WORKDIR}"/${PN}-epoch-${PV}
+
+src_install() {
+	cargo_src_install
+	einstalldocs
+}

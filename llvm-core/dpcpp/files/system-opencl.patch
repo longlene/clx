@@ -1,188 +1,34 @@
 diff -Nur a/opencl/CMakeLists.txt b/opencl/CMakeLists.txt
---- a/opencl/CMakeLists.txt	2024-12-09 16:51:36.000000000 -0800
-+++ b/opencl/CMakeLists.txt	2024-12-13 18:58:08.431375989 -0800
-@@ -1,81 +1,96 @@
- cmake_minimum_required(VERSION 3.20.0)
+--- a/opencl/CMakeLists.txt	2025-12-11 13:30:09.000000000 -0800
++++ b/opencl/CMakeLists.txt	2025-12-12 13:51:07.694005634 -0800
+@@ -17,6 +17,11 @@
  
--include(FetchContent)
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../unified-runtime/cmake")
+ 
+-include(FetchOpenCL)
++#include(FetchOpenCL)
++find_package(OpenCLHeaders REQUIRED)
++add_library(OpenCL-Headers ALIAS OpenCL::Headers)
++
 +find_package(OpenCL 3.0)
-+if(NOT OpenCL_FOUND)
++add_library(OpenCL-ICD ALIAS OpenCL::OpenCL)
  
--# Suppress warnings related to dependencies
--if (MSVC)
--  add_definitions(
--    -wd4133 # Suppress ''function': incompatible types - from 'char [9]' to 'LPCWSTR''
--    -wd4152 # Suppress 'nonstandard extension, function/data pointer conversion in expression'
--    -wd4201 # Suppress 'nonstandard extension used: nameless struct/union'
--  )
--endif()
-+    include(FetchContent)
- 
--# Repo URLs
-+    # Suppress warnings related to dependencies
-+    if (MSVC)
-+        add_definitions(
-+            -wd4133 # Suppress ''function': incompatible types - from 'char [9]' to 'LPCWSTR''
-+            -wd4152 # Suppress 'nonstandard extension, function/data pointer conversion in expression'
-+            -wd4201 # Suppress 'nonstandard extension used: nameless struct/union'
-+        )
-+    endif()
-+
-+    # Repo URLs
-+
-+    set(OCL_HEADERS_REPO
-+        "https://github.com/KhronosGroup/OpenCL-Headers.git")
-+    set(OCL_LOADER_REPO
-+        "https://github.com/KhronosGroup/OpenCL-ICD-Loader.git")
-+
-+    # Repo tags/hashes
-+
-+    set(OCL_HEADERS_TAG 542d7a8f65ecfd88b38de35d8b10aa67b36b33b2)
-+    set(OCL_LOADER_TAG 804b6f040503c47148bee535230070da6b857ae4)
-+
-+    # OpenCL Headers
-+    if(NOT OpenCL_HEADERS)
-+        message(STATUS "Will fetch OpenCL headers from ${OCL_HEADERS_REPO}")
-+
-+        FetchContent_Declare(ocl-headers
-+            GIT_REPOSITORY    ${OCL_HEADERS_REPO}
-+            GIT_TAG           ${OCL_HEADERS_TAG}
-+        )
-+    else()
-+        message(STATUS "OpenCL headers are added manually ${OpenCL_HEADERS}")
-+
-+        FetchContent_Declare(ocl-headers
-+            URL               ${OpenCL_HEADERS}
-+        )
-+    endif()
-+
-+    FetchContent_MakeAvailable(ocl-headers)
-+    FetchContent_GetProperties(ocl-headers)
-+    set(OpenCL_INCLUDE_DIR
-+        ${ocl-headers_SOURCE_DIR} CACHE PATH "Path to OpenCL Headers")
-+
-+    target_compile_definitions(Headers INTERFACE -DCL_TARGET_OPENCL_VERSION=300)
-+    add_library(OpenCL-Headers ALIAS Headers)
-+
-+    # OpenCL Library (ICD Loader)
-+
-+    # Set OPENCL_ICD_LOADER_HEADERS_DIR, as prerequisite for ICD build
-+    set(OPENCL_ICD_LOADER_HEADERS_DIR
-+        ${OpenCL_INCLUDE_DIR} CACHE PATH "Path to OpenCL Headers")
-+
-+    # LLVM build sets this OFF by default, but we need OpenCL to be built as shared
-+    # library.
-+    set(BUILD_SHARED_LIBS ON)
-+
-+    if(NOT OpenCL_LIBRARY_SRC)
-+        message(STATUS "Will fetch OpenCL ICD Loader from ${OCL_LOADER_REPO}")
-+
-+        FetchContent_Declare(ocl-icd
-+            GIT_REPOSITORY    ${OCL_LOADER_REPO}
-+            GIT_TAG           ${OCL_LOADER_TAG}
-+        )
-+    else()
-+        # TODO: add possibility to use prebuilt OpenCL library rather than building
-+        #       together with llvm.
-+        message(STATUS
-+            "OpenCL ICD Loader sources added manually ${OpenCL_LIBRARY_SRC}")
-+
-+        FetchContent_Declare(ocl-icd
-+            URL               ${OpenCL_LIBRARY_SRC}
-+        )
-+    endif()
- 
--set(OCL_HEADERS_REPO
--  "https://github.com/KhronosGroup/OpenCL-Headers.git")
--set(OCL_LOADER_REPO
--  "https://github.com/KhronosGroup/OpenCL-ICD-Loader.git")
--
--# Repo tags/hashes
--
--set(OCL_HEADERS_TAG 542d7a8f65ecfd88b38de35d8b10aa67b36b33b2)
--set(OCL_LOADER_TAG 804b6f040503c47148bee535230070da6b857ae4)
--
--# OpenCL Headers
--if(NOT OpenCL_HEADERS)
--  message(STATUS "Will fetch OpenCL headers from ${OCL_HEADERS_REPO}")
--
--  FetchContent_Declare(ocl-headers
--    GIT_REPOSITORY    ${OCL_HEADERS_REPO}
--    GIT_TAG           ${OCL_HEADERS_TAG}
--  )
--else()
--  message(STATUS "OpenCL headers are added manually ${OpenCL_HEADERS}")
-+    FetchContent_MakeAvailable(ocl-icd)
-+    add_library(OpenCL-ICD ALIAS OpenCL)
- 
--  FetchContent_Declare(ocl-headers
--    URL               ${OpenCL_HEADERS}
--  )
--endif()
- 
--FetchContent_MakeAvailable(ocl-headers)
--FetchContent_GetProperties(ocl-headers)
--set(OpenCL_INCLUDE_DIR
--  ${ocl-headers_SOURCE_DIR} CACHE PATH "Path to OpenCL Headers")
--
--target_compile_definitions(Headers INTERFACE -DCL_TARGET_OPENCL_VERSION=300)
--add_library(OpenCL-Headers ALIAS Headers)
--
--# OpenCL Library (ICD Loader)
--
--# Set OPENCL_ICD_LOADER_HEADERS_DIR, as prerequisite for ICD build
--set(OPENCL_ICD_LOADER_HEADERS_DIR
--  ${OpenCL_INCLUDE_DIR} CACHE PATH "Path to OpenCL Headers")
--
--# LLVM build sets this OFF by default, but we need OpenCL to be built as shared
--# library.
--set(BUILD_SHARED_LIBS ON)
--
--if(NOT OpenCL_LIBRARY_SRC)
--  message(STATUS "Will fetch OpenCL ICD Loader from ${OCL_LOADER_REPO}")
--
--  FetchContent_Declare(ocl-icd
--    GIT_REPOSITORY    ${OCL_LOADER_REPO}
--    GIT_TAG           ${OCL_LOADER_TAG}
--  )
- else()
--  # TODO: add possibility to use prebuilt OpenCL library rather than building
--  #       together with llvm.
--  message(STATUS
--    "OpenCL ICD Loader sources added manually ${OpenCL_LIBRARY_SRC}")
--
--  FetchContent_Declare(ocl-icd
--    URL               ${OpenCL_LIBRARY_SRC}
--  )
-+    find_package(OpenCLHeaders)
-+    add_library(Headers INTERFACE)
-+    target_link_libraries(Headers INTERFACE OpenCL::Headers)
-+    add_library(OpenCL-Headers ALIAS Headers)
-+
-+    add_library(OpenCL INTERFACE)
-+    target_link_libraries(OpenCL INTERFACE OpenCL::OpenCL)
-+    add_library(OpenCL-ICD ALIAS OpenCL)
- endif()
- 
--FetchContent_MakeAvailable(ocl-icd)
--add_library(OpenCL-ICD ALIAS OpenCL)
--
  add_subdirectory(opencl-aot)
 diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
---- a/sycl/CMakeLists.txt	2024-12-09 16:51:36.000000000 -0800
-+++ b/sycl/CMakeLists.txt	2024-12-14 18:15:04.517672354 -0800
-@@ -157,10 +157,10 @@
- # e.g. when run LIT tests
- file(COPY ${OpenCL_INCLUDE_DIR}/CL DESTINATION ${SYCL_INCLUDE_BUILD_DIR})
+--- a/sycl/CMakeLists.txt	2025-12-11 13:30:09.000000000 -0800
++++ b/sycl/CMakeLists.txt	2025-12-12 13:51:55.654007322 -0800
+@@ -156,10 +156,10 @@
+   # e.g. when run LIT tests
+   file(COPY ${OpenCL_INCLUDE_DIR}/CL DESTINATION ${SYCL_INCLUDE_BUILD_DIR})
  
--# Include OpenCL Headers into final bundle.
--install(DIRECTORY ${OpenCL_INCLUDE_DIR}/CL
--        DESTINATION ${SYCL_INCLUDE_DIR}
--        COMPONENT OpenCL-Headers)
-+## Include OpenCL Headers into final bundle.
-+#install(DIRECTORY ${OpenCL_INCLUDE_DIR}/CL
-+#        DESTINATION ${SYCL_INCLUDE_DIR}
-+#        COMPONENT OpenCL-Headers)
+-  # Include OpenCL Headers into final bundle.
+-  install(DIRECTORY ${OpenCL_INCLUDE_DIR}/CL
+-          DESTINATION ${SYCL_INCLUDE_DIR}
+-          COMPONENT OpenCL-Headers)
++  ## Include OpenCL Headers into final bundle.
++  #install(DIRECTORY ${OpenCL_INCLUDE_DIR}/CL
++  #        DESTINATION ${SYCL_INCLUDE_DIR}
++  #        COMPONENT OpenCL-Headers)
+ endif()
  
  # Option for enabling building the SYCL major release preview library.
- option(SYCL_ENABLE_MAJOR_RELEASE_PREVIEW_LIB "Enable build of the SYCL major release preview library" ON)

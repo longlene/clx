@@ -1,0 +1,12 @@
+diff -Nur a/cmake/FetchOpenCL.cmake b/cmake/FetchOpenCL.cmake
+--- a/cmake/FetchOpenCL.cmake	2025-12-12 16:42:58.000000000 -0800
++++ b/cmake/FetchOpenCL.cmake	2025-12-12 21:55:41.611697315 -0800
+@@ -19,7 +19,7 @@
+ 
+ # Set NO_CMAKE_PACKAGE_REGISTRY so only system-wide installs are
+ # detected.
+-find_package(OpenCL 3.0 QUIET NO_CMAKE_PACKAGE_REGISTRY)
++find_package(OpenCL 3.0 REQUIRED)
+ 
+ if(OpenCL_FOUND)
+   # The OpenCL-Headers CMake files don't provide granular info

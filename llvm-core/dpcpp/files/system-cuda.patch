@@ -1,13 +1,17 @@
 diff -Nur a/sycl/tools/sycl-trace/CMakeLists.txt b/sycl/tools/sycl-trace/CMakeLists.txt
---- a/sycl/tools/sycl-trace/CMakeLists.txt	2025-01-31 11:09:57.000000000 -0800
-+++ b/sycl/tools/sycl-trace/CMakeLists.txt	2025-02-07 09:24:21.512026957 -0800
-@@ -108,11 +108,12 @@
+--- a/sycl/tools/sycl-trace/CMakeLists.txt	2025-10-09 13:35:26.000000000 -0700
++++ b/sycl/tools/sycl-trace/CMakeLists.txt	2025-12-13 01:56:05.092205172 -0800
+@@ -109,6 +109,8 @@
    target_include_directories(cuda_trace_collector
-     PRIVATE
-     ${CUDA_CUPTI_INCLUDE_DIR}
+     SYSTEM PRIVATE
+     ${CUDAToolkit_CUPTI_INCLUDE_DIR}
++    ${CUDAToolkit_INCLUDE_DIRS}
 +    ${CUDA_INCLUDE_DIRS}
    )
  
+   # FindCUDATookit fails to find CUPTI in CUDA installations from runfile.
+@@ -134,7 +136,7 @@
+   endif()
    target_link_libraries(cuda_trace_collector
      PRIVATE
 -      cudadrv

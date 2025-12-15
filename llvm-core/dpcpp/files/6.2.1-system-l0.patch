@@ -1,0 +1,15 @@
+diff -Nur a/unified-runtime/cmake/FetchLevelZero.cmake b/unified-runtime/cmake/FetchLevelZero.cmake
+--- a/unified-runtime/cmake/FetchLevelZero.cmake	2025-08-14 05:27:00.000000000 -0700
++++ b/unified-runtime/cmake/FetchLevelZero.cmake	2025-12-12 01:54:31.607255341 -0800
+@@ -61,8 +61,9 @@
+     message(STATUS "Level Zero Adapter: Will fetch Level Zero Loader from ${UR_LEVEL_ZERO_LOADER_REPO}")
+     include(FetchContent)
+     FetchContent_Declare(level-zero-loader
+-        GIT_REPOSITORY    ${UR_LEVEL_ZERO_LOADER_REPO}
+-        GIT_TAG           ${UR_LEVEL_ZERO_LOADER_TAG}
++        #GIT_REPOSITORY    ${UR_LEVEL_ZERO_LOADER_REPO}
++        #GIT_TAG           ${UR_LEVEL_ZERO_LOADER_TAG}
++        SOURCE_DIR ${UR_LEVEL_ZERO_SRC}
+     )
+     if(MSVC)
+         set(USE_Z7 ON)

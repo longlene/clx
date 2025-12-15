@@ -1,0 +1,17 @@
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py
++++ b/setup.py
+@@ -345,8 +345,11 @@
+             self.build_cmake(ext)
+ 
+         # Use BuildExtension to build other extensions
+-        self.extensions = other_extensions
+-        super().build_extensions()
++        #self.extensions = other_extensions
++        #super().build_extensions()
++        for ext in other_extensions:
++            self.extensions = [ext]
++            super().build_extensions()
+ 
+         self.extensions = other_extensions + cmake_extensions
+ 

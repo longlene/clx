@@ -1,0 +1,21 @@
+diff -Nur a/xptifw/src/CMakeLists.txt b/xptifw/src/CMakeLists.txt
+--- a/xptifw/src/CMakeLists.txt	2025-08-14 05:27:00.000000000 -0700
++++ b/xptifw/src/CMakeLists.txt	2025-10-26 21:47:46.117760309 -0700
+@@ -8,6 +8,7 @@
+   include(FetchEmhash)
+ endif()
+ 
++if(NOT DEFINED PARALLEL_HASHMAP_SOURCE_DIR)
+ set(PARALLEL_HASHMAP_REPO https://github.com/greg7mdp/parallel-hashmap.git)
+ message(STATUS "Will fetch parallel-hashmap from ${PARALLEL_HASHMAP_REPO}")
+ FetchContent_Declare(parallel-hashmap
+@@ -19,6 +20,9 @@
+ FetchContent_MakeAvailable(parallel-hashmap)
+ 
+ set(XPTIFW_PARALLEL_HASHMAP_HEADERS "${parallel-hashmap_SOURCE_DIR}")
++else()
++set(XPTIFW_PARALLEL_HASHMAP_HEADERS "${PARALLEL_HASHMAP_SOURCE_DIR}")
++endif()
+ 
+ file(GLOB SOURCES *.cpp)
+ 

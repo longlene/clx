@@ -1,0 +1,48 @@
+diff -Nur a/sycl/source/detail/device_kernel_info.hpp b/sycl/source/detail/device_kernel_info.hpp
+--- a/sycl/source/detail/device_kernel_info.hpp	2025-12-11 13:30:09.000000000 -0800
++++ b/sycl/source/detail/device_kernel_info.hpp	2025-12-12 19:08:13.808574733 -0800
+@@ -9,7 +9,7 @@
+ 
+ #include <detail/hashers.hpp>
+ #include <detail/kernel_arg_mask.hpp>
+-#include <hash_table8.hpp>
++#include <emhash/hash_table8.hpp>
+ #include <sycl/detail/compile_time_kernel_info.hpp>
+ #include <sycl/detail/spinlock.hpp>
+ #include <sycl/detail/ur.hpp>
+diff -Nur a/sycl/source/detail/unordered_multimap.hpp b/sycl/source/detail/unordered_multimap.hpp
+--- a/sycl/source/detail/unordered_multimap.hpp	2025-12-11 13:30:09.000000000 -0800
++++ b/sycl/source/detail/unordered_multimap.hpp	2025-12-12 19:08:28.930759339 -0800
+@@ -7,7 +7,7 @@
+ //===--------------------------------------------------------------===//
+ #pragma once
+ #include <detail/hashers.hpp>
+-#include <hash_table8.hpp>
++#include <emhash/hash_table8.hpp>
+ 
+ #include <utility>
+ #include <vector>
+diff -Nur a/xptifw/include/xpti_string_table.hpp b/xptifw/include/xpti_string_table.hpp
+--- a/xptifw/include/xpti_string_table.hpp	2025-12-11 13:30:09.000000000 -0800
++++ b/xptifw/include/xpti_string_table.hpp	2025-12-12 20:01:46.428190392 -0800
+@@ -7,7 +7,7 @@
+ 
+ #include "parallel_hashmap/phmap.h"
+ #include "xpti/xpti_data_types.h"
+-#include <hash_table7.hpp>
++#include <emhash/hash_table7.hpp>
+ 
+ #include <atomic>
+ #include <shared_mutex>
+diff -Nur a/xptifw/src/xpti_trace_framework.cpp b/xptifw/src/xpti_trace_framework.cpp
+--- a/xptifw/src/xpti_trace_framework.cpp	2025-12-11 13:30:09.000000000 -0800
++++ b/xptifw/src/xpti_trace_framework.cpp	2025-12-12 19:08:44.399757691 -0800
+@@ -19,7 +19,7 @@
+ #include "xpti_int64_hash_table.hpp"
+ #include "xpti_object_table.hpp"
+ #include "xpti_string_table.hpp"
+-#include <hash_table7.hpp>
++#include <emhash/hash_table7.hpp>
+ 
+ #include <algorithm>
+ #include <array>

@@ -1,10 +1,10 @@
 diff -Nur a/sycl/source/CMakeLists.txt b/sycl/source/CMakeLists.txt
---- a/sycl/source/CMakeLists.txt	2025-01-31 11:09:57.000000000 -0800
-+++ b/sycl/source/CMakeLists.txt	2025-02-03 22:54:50.602374403 -0800
-@@ -72,7 +72,7 @@
-   if (NOT LLVM_ENABLE_ZSTD)
-     target_compile_definitions(${LIB_OBJ_NAME} PRIVATE SYCL_RT_ZSTD_NOT_AVAIABLE)
-   else()
+--- a/sycl/source/CMakeLists.txt	2025-12-11 13:30:09.000000000 -0800
++++ b/sycl/source/CMakeLists.txt	2025-12-12 14:44:56.037452621 -0800
+@@ -160,7 +160,7 @@
+ 
+   if (LLVM_ENABLE_ZSTD)
+     target_compile_definitions(${LIB_OBJ_NAME} PRIVATE SYCL_RT_ZSTD_AVAILABLE)
 -    target_link_libraries(${LIB_NAME} PRIVATE ${zstd_STATIC_LIBRARY})
 +    target_link_libraries(${LIB_NAME} PRIVATE ${zstd_LIBRARY})
      target_include_directories(${LIB_OBJ_NAME} PRIVATE ${zstd_INCLUDE_DIR})

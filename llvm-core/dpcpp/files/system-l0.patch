@@ -1,0 +1,36 @@
+diff -Nur a/sycl/tools/sycl-trace/CMakeLists.txt b/sycl/tools/sycl-trace/CMakeLists.txt
+--- a/sycl/tools/sycl-trace/CMakeLists.txt	2025-10-09 13:35:26.000000000 -0700
++++ b/sycl/tools/sycl-trace/CMakeLists.txt	2025-12-13 02:17:02.462249441 -0800
+@@ -11,15 +11,21 @@
+ )
+ 
+ if ("level_zero" IN_LIST SYCL_ENABLE_BACKENDS)
++  find_package(PkgConfig REQUIRED)
++  pkg_search_module(LEVEL_ZERO REQUIRED level-zero)
+   add_library(ze_trace_collector SHARED
+     ze_trace_collector.cpp
+   )
++  target_include_directories(ze_trace_collector PRIVATE
++    ${LEVEL_ZERO_INCLUDE_DIRS}
++  )
+   set(EXTRA_TARGETS_TO_INSTALL
+     ze_trace_collector
+   )
+   add_dependencies(sycl-trace ze_trace_collector)
+   target_include_directories(ze_trace_collector PRIVATE
+     "${sycl_inc_dir}"
++    ${LEVEL_ZERO_INCLUDE_DIRS}
+   )
+ endif()
+ 
+@@ -45,7 +51,9 @@
+ 
+ # To get L0 loader
+ if ("level_zero" IN_LIST SYCL_ENABLE_BACKENDS)
+-  target_link_libraries(ze_trace_collector PRIVATE LevelZeroLoader-Headers)
++  pkg_search_module(LEVEL_ZERO_LOADER libze_loader)
++
++  target_link_libraries(ze_trace_collector PRIVATE ${LEVEL_ZERO_LOADER_LIBRARIES})
+   target_compile_definitions(ze_trace_collector PRIVATE SYCL_HAS_LEVEL_ZERO)
+   target_link_libraries(ze_trace_collector PRIVATE xptifw)
+ 

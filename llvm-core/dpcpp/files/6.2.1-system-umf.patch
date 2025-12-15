@@ -1,0 +1,46 @@
+diff -Nur a/sycl/cmake/modules/FetchUnifiedRuntime.cmake b/sycl/cmake/modules/FetchUnifiedRuntime.cmake
+--- a/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2025-08-14 05:27:00.000000000 -0700
++++ b/sycl/cmake/modules/FetchUnifiedRuntime.cmake	2025-12-12 00:49:16.685566365 -0800
+@@ -429,7 +429,7 @@
+   endif()
+ endif()
+ 
+-install(TARGETS umf
+-  LIBRARY DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
+-  ARCHIVE DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
+-  RUNTIME DESTINATION "bin" COMPONENT unified-memory-framework)
++#install(TARGETS umf
++#  LIBRARY DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
++#  ARCHIVE DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
++#  RUNTIME DESTINATION "bin" COMPONENT unified-memory-framework)
+diff -Nur a/unified-runtime/source/common/CMakeLists.txt b/unified-runtime/source/common/CMakeLists.txt
+--- a/unified-runtime/source/common/CMakeLists.txt	2025-08-14 05:27:00.000000000 -0700
++++ b/unified-runtime/source/common/CMakeLists.txt	2025-12-12 00:43:55.536037583 -0800
+@@ -34,6 +34,13 @@
+     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+ )
+ 
++set(UR_USE_EXTERNAL_UMF ON CACHE BOOL "Use a pre-built UMF")
++
++if (UR_USE_EXTERNAL_UMF)
++  find_package(umf REQUIRED)
++  # Add an alias matching the FetchContent case
++  add_library(umf::headers ALIAS umf::umf_headers)
++else()
+ message(STATUS "Download Unified Memory Framework from github.com")
+ if (NOT DEFINED UMF_REPO)
+     set(UMF_REPO "https://github.com/oneapi-src/unified-memory-framework.git")
+@@ -62,13 +69,7 @@
+     endif()
+ endif()
+ 
+-set(UR_USE_EXTERNAL_UMF OFF CACHE BOOL "Use a pre-built UMF")
+ 
+-if (UR_USE_EXTERNAL_UMF)
+-  find_package(umf REQUIRED)
+-  # Add an alias matching the FetchContent case
+-  add_library(umf::headers ALIAS umf::umf_headers)
+-else()
+   set(UMF_BUILD_TESTS OFF CACHE INTERNAL "Build UMF tests")
+   set(UMF_BUILD_EXAMPLES OFF CACHE INTERNAL "Build UMF examples")
+   set(UMF_BUILD_SHARED_LIBRARY ${UMF_BUILD_SHARED_LIBRARY} CACHE INTERNAL "Build UMF shared library")
