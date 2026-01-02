@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="ComfyUI help pages"
 HOMEPAGE="
-	https://github.com/Comfy-Org/embedded-docs"
+	https://github.com/Comfy-Org/embedded-docs
 "
 
 LICENSE="GPL-3.0"

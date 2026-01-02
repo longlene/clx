@@ -23,6 +23,7 @@ app-portage
 app-shells
 app-text
 app-vim
+cosmic-base
 dev-android
 dev-cpp
 dev-crystal

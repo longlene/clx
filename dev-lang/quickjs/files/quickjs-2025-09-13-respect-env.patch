@@ -1,0 +1,36 @@
+--- a/Makefile
++++ b/Makefile
+@@ -97,7 +97,7 @@
+ ifdef CONFIG_CLANG
+   HOST_CC=clang
+   CC=$(CROSS_PREFIX)clang
+-  CFLAGS+=-g -Wall -MMD -MF $(OBJDIR)/$(@F).d
++  CFLAGS+=-Wall -MMD -MF $(OBJDIR)/$(@F).d
+   CFLAGS += -Wextra
+   CFLAGS += -Wno-sign-compare
+   CFLAGS += -Wno-missing-field-initializers
+@@ -121,13 +121,13 @@
+   HOST_CC=gcc
+   CC=cosmocc
+   # cosmocc does not correct support -MF
+-  CFLAGS=-g -Wall #-MMD -MF $(OBJDIR)/$(@F).d
++  CFLAGS=-Wall #-MMD -MF $(OBJDIR)/$(@F).d
+   CFLAGS += -Wno-array-bounds -Wno-format-truncation
+   AR=cosmoar
+ else
+   HOST_CC=gcc
+   CC=$(CROSS_PREFIX)gcc
+-  CFLAGS+=-g -Wall -MMD -MF $(OBJDIR)/$(@F).d
++  CFLAGS+=-Wall -MMD -MF $(OBJDIR)/$(@F).d
+   CFLAGS += -Wno-array-bounds -Wno-format-truncation -Wno-infinite-recursion
+   ifdef CONFIG_LTO
+     AR=$(CROSS_PREFIX)gcc-ar
+@@ -165,7 +165,7 @@
+ ifdef CONFIG_COSMO
+ LDFLAGS+=-s # better to strip by default
+ else
+-LDFLAGS+=-g
++LDFLAGS+=
+ endif
+ ifdef CONFIG_LTO
+ CFLAGS_SMALL+=-flto

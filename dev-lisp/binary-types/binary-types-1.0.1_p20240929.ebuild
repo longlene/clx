@@ -31,7 +31,7 @@ BDEPEND=""
 src_prepare() {
 	default
 	if use !test ; then
-		sed -e '/defsystem "binary-types\/tests",$d' \
+		sed -e '/defsystem "binary-types\/tests"/,$d' \
 			-i ${PN}.asd
 		rm -rf tests
 	fi

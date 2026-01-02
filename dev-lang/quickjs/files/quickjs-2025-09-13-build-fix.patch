@@ -1,0 +1,11 @@
+--- a/Makefile
++++ b/Makefile
+@@ -226,7 +226,7 @@
+ # no -m32 option in qjsc
+ ifndef CONFIG_M32
+ ifndef CONFIG_WIN32
+-PROGS+=examples/hello_module
++#PROGS+=examples/hello_module
+ endif
+ endif
+ ifdef CONFIG_SHARED_LIBS

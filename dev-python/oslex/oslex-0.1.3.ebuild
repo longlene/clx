@@ -20,7 +20,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-python/mslex[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (
