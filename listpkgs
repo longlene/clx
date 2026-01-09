@@ -1,5 +1,0 @@
-#!/bin/sh
-# list all your ebuilds
-
-find . -name '*.ebuild' | sed -e 's/^\.\///' -e 's/\.ebuild$//' -e 's/\/.+\///' -e 's|/.*/|/|' | sort
-

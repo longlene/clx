@@ -1,0 +1,62 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-12-31 15:54:44.000000000 -0800
++++ b/CMakeLists.txt	2026-01-04 03:36:24.574389402 -0800
+@@ -57,6 +57,7 @@
+   target_compile_options(fastmcpp_core PRIVATE /FS)
+ endif()
+ 
++find_package(nlohmann_json REQUIRED)
+ # nlohmann_json dependency - use existing target if available (e.g., from vcpkg)
+ if(NOT TARGET nlohmann_json::nlohmann_json)
+     include(FetchContent)
+@@ -77,11 +78,13 @@
+   GIT_REPOSITORY https://github.com/yhirose/cpp-httplib.git
+   GIT_TAG v0.15.3
+ )
+-FetchContent_GetProperties(cpp_httplib)
+-if(NOT cpp_httplib_POPULATED)
+-  FetchContent_Populate(cpp_httplib)
+-endif()
+-target_include_directories(fastmcpp_core PUBLIC ${cpp_httplib_SOURCE_DIR})
++#FetchContent_GetProperties(cpp_httplib)
++#if(NOT cpp_httplib_POPULATED)
++#  FetchContent_Populate(cpp_httplib)
++#endif()
++find_package(httplib REQUIRED)
++target_include_directories(fastmcpp_core PUBLIC ${httplib_INCLUDE_DIRS})
++target_link_libraries(fastmcpp_core PUBLIC httplib::httplib)
+ 
+ # Header-only WebSocket client (easywsclient)
+ FetchContent_Declare(
+@@ -174,18 +177,20 @@
+   GIT_REPOSITORY https://github.com/eidheim/tiny-process-library.git
+   GIT_TAG master
+ )
+-FetchContent_GetProperties(tiny_process_lib)
+-if(NOT tiny_process_lib_POPULATED)
+-  FetchContent_Populate(tiny_process_lib)
+-endif()
+-target_include_directories(fastmcpp_core PUBLIC ${tiny_process_lib_SOURCE_DIR})
++#FetchContent_GetProperties(tiny_process_lib)
++#if(NOT tiny_process_lib_POPULATED)
++#  FetchContent_Populate(tiny_process_lib)
++#endif()
++find_package(tiny-process-library REQUIRED)
++target_link_libraries(fastmcpp_core PUBLIC tiny-process-library::tiny-process-library)
++target_include_directories(fastmcpp_core PUBLIC ${tiny_process_lib_INCLUDE_DIR})
+ target_compile_definitions(fastmcpp_core PUBLIC TINY_PROCESS_LIB_AVAILABLE)
+-target_sources(fastmcpp_core PRIVATE ${tiny_process_lib_SOURCE_DIR}/process.cpp)
+-if(UNIX)
+-  target_sources(fastmcpp_core PRIVATE ${tiny_process_lib_SOURCE_DIR}/process_unix.cpp)
+-elseif(WIN32)
+-  target_sources(fastmcpp_core PRIVATE ${tiny_process_lib_SOURCE_DIR}/process_win.cpp)
+-endif()
++#target_sources(fastmcpp_core PRIVATE ${tiny_process_lib_SOURCE_DIR}/process.cpp)
++#if(UNIX)
++#  target_sources(fastmcpp_core PRIVATE ${tiny_process_lib_SOURCE_DIR}/process_unix.cpp)
++#elseif(WIN32)
++#  target_sources(fastmcpp_core PRIVATE ${tiny_process_lib_SOURCE_DIR}/process_win.cpp)
++#endif()
+ find_package(Threads REQUIRED)
+ target_link_libraries(fastmcpp_core PRIVATE Threads::Threads)
+ 

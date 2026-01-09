@@ -12,7 +12,7 @@ inherit cmake distutils-r1
 
 ONEDNN_CPU_COMMIT="a4ed4a789b6e0869e4f651bbfeff6878e91d388e"
 ONEDNN_GPU_COMMIT="29d64fe0ec0f1f20d7f80aa76630d58a6011a869"
-CONTRIB_COMMIT="b34ff382bef32286186253768aed41a406876e8b"
+CONTRIB_COMMIT="0d513530811a528710412f48eba461ac6cf55f1a"
 
 DESCRIPTION="An open-source toolkit for optimizing and deploying AI inference"
 HOMEPAGE="https://docs.openvino.ai/"
@@ -26,13 +26,14 @@ SRC_URI="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="-l0 onednn opencl python contrib cuda test"
+IUSE="l0 npu opencl python contrib cuda test"
 
 DEPEND="
 	sys-libs/zlib
 	>=dev-cpp/clhpp-2024.10.24
 	dev-cpp/nlohmann_json
 	dev-cpp/tbb
+	dev-cpp/yaml-cpp
 	dev-libs/ittapi
 	dev-libs/mlas
 	dev-libs/xbyak
@@ -41,7 +42,10 @@ DEPEND="
 	dev-libs/protobuf
 	app-arch/snappy
 	sci-ml/onnx
-	l0? ( dev-libs/level-zero )
+	l0? (
+		dev-libs/level-zero
+		dev-libs/level-zero-npu-extensions
+	)
 	opencl? ( virtual/opencl )
 	cuda? (
 		dev-libs/cutensor
@@ -49,7 +53,7 @@ DEPEND="
 		dev-libs/libfmt
 	)
 "
-#	onednn? ( sci-ml/oneDNN )
+# sci-ml/oneDNN
 RDEPEND="
 	${DEPEND}
 	${PYTHON_DEPS}
@@ -71,6 +75,7 @@ src_prepare() {
 		"${FILESDIR}"/system-l0.patch \
 		"${FILESDIR}"/system-mlas.patch \
 		"${FILESDIR}"/system-ittapi.patch \
+		"${FILESDIR}"/system-yaml-cpp.patch \
 		"${FILESDIR}"/python-install-path.patch \
 		"${FILESDIR}"/040-openvino-protobuf23-fix.patch
 	sed -e '/target_include_directories(openvino_core_dev SYSTEM INTERFACE/{s#SYSTEM ##}' \
@@ -96,11 +101,9 @@ src_configure() {
 		-DENABLE_CLANG_FORMAT=OFF
 		-DENABLE_NCC_STYLE=OFF
 		-DENABLE_TESTS=$(usex test)
-		-DENABLE_SYSTEM_LEVEL_ZERO=ON
-		-DENABLE_INTEL_NPU=$(usex l0)
-		-DENABLE_INTEL_NPU=OFF
 		-DENABLE_INTEL_GPU=$(usex opencl)
-		-DENABLE_ONEDNN_FOR_GPU=$(usex onednn)
+		-DENABLE_INTEL_NPU=$(usex npu)
+		-DENABLE_PKGCONFIG_GEN=ON
 		-DENABLE_FUNCTIONAL_TESTS=$(usex test)
 		-DENABLE_SAMPLES=OFF
 		-DENABLE_SYSTEM_PUGIXML=ON
@@ -108,6 +111,7 @@ src_configure() {
 		-DENABLE_SYSTEM_TBB=ON
 		-DENABLE_SYSTEM_OPENCL=$(usex opencl)
 		-DENABLE_SYSTEM_PROTOBUF=ON
+		-DENABLE_SYSTEM_LEVEL_ZERO=ON
 		-DProtobuf_USE_STATIC_LIBS=OFF
 		-DENABLE_SYSTEM_SNAPPY=ON
 		-DENABLE_JS=OFF
@@ -123,7 +127,7 @@ src_configure() {
 		-DBUILD_token_merging=OFF
 	)
 	use cuda && mycmakeargs+=(
-		-DCUDNN_PATH="/opt/cuda"
+		-DCUDA_PATH="/opt/cuda"
 	)
 	cmake_src_configure
 }

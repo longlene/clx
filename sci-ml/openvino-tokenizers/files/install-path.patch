@@ -1,6 +1,13 @@
-diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
---- a/src/CMakeLists.txt	2024-12-23 12:31:37.274798563 -0800
-+++ b/src/CMakeLists.txt	2024-12-24 17:24:10.288378358 -0800
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -164,6 +164,7 @@
+         "${_sp_src}/third_party/protobuf-lite" # for "google/protobuf/port_def.inc"
+         "${_sp_src}/third_party/" # for "absl/strings/string_view.h" and "darts_clone/darts.h"
+         "${_sp_src}" # for "third_party/absl/strings/string_view.h"
++        "${sentencepiece_BINARY_DIR}" # for "config.h"
+         )
+     else()
+       target_include_directories(${TARGET_NAME} SYSTEM PRIVATE
 @@ -498,12 +498,6 @@
    install(FILES ${extra_libs} DESTINATION ${extra_libs_location} COMPONENT openvino_tokenizers)
  endif()

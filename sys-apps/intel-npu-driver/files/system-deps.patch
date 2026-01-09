@@ -1,0 +1,15 @@
+diff -Nur a/third_party/CMakeLists.txt b/third_party/CMakeLists.txt
+--- a/third_party/CMakeLists.txt	2025-12-18 05:42:25.000000000 -0800
++++ b/third_party/CMakeLists.txt	2026-01-03 16:32:44.306319187 -0800
+@@ -15,8 +15,9 @@
+ endif()
+ 
+ set(INSTALL_GTEST OFF)
+-add_subdirectory(googletest EXCLUDE_FROM_ALL)
++#add_subdirectory(googletest EXCLUDE_FROM_ALL)
+ 
+ set(YAML_CPP_INSTALL OFF)
+ set(BUILD_SHARED_LIBS OFF)
+-add_subdirectory(yaml-cpp EXCLUDE_FROM_ALL)
++#add_subdirectory(yaml-cpp EXCLUDE_FROM_ALL)
++find_package(yaml-cpp REQUIRED)

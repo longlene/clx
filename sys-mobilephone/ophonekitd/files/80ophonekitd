@@ -1,3 +1,0 @@
-#!/bin/sh -e
-ophonekitd >> /var/log/ophonekitd.log 2>&1 &
-renice -3 $!

@@ -1,0 +1,27 @@
+diff -Nur a/src/plugins/intel_npu/thirdparty/CMakeLists.txt b/src/plugins/intel_npu/thirdparty/CMakeLists.txt
+--- a/src/plugins/intel_npu/thirdparty/CMakeLists.txt
++++ b/src/plugins/intel_npu/thirdparty/CMakeLists.txt
+@@ -8,7 +8,7 @@
+ 
+ if(ENABLE_NPU_PLUGIN_ENGINE)
+     add_library(level-zero-ext INTERFACE)
+-    set_property(TARGET level-zero-ext APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/level-zero-ext/>)
++    set_property(TARGET level-zero-ext APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES $<BUILD_INTERFACE:/usr/include/level_zero/>)
+     add_library(LevelZero::NPUExt ALIAS level-zero-ext)
+ endif()
+ 
+@@ -18,9 +18,10 @@
+ 
+ if(ENABLE_INTEL_NPU_PROTOPIPE)
+     set(YAML_BUILD_SHARED_LIBS OFF)
+-    add_subdirectory(yaml-cpp EXCLUDE_FROM_ALL)
++    #add_subdirectory(yaml-cpp EXCLUDE_FROM_ALL)
++    find_package(yaml-cpp REQUIRED)
+     # NB: Suppress warnings in yaml-cpp
+-    if(SUGGEST_OVERRIDE_SUPPORTED)
+-        target_compile_options(yaml-cpp PRIVATE -Wno-suggest-override)
+-    endif()
++    #if(SUGGEST_OVERRIDE_SUPPORTED)
++    #    target_compile_options(yaml-cpp PRIVATE -Wno-suggest-override)
++    #endif()
+ endif()

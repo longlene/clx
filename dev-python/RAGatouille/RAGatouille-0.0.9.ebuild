@@ -3,6 +3,7 @@
 
 EAPI=8
 
+DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{13..14} )
 
@@ -11,6 +12,7 @@ inherit distutils-r1
 DESCRIPTION="Library to facilitate the use of state-of-the-art retrieval models in common RAG contexts"
 HOMEPAGE="
 	https://pypi.org/project/RAGatouille/
+	https://github.com/AnswerDotAI/RAGatouille
 "
 SRC_URI="https://github.com/AnswerDotAI/RAGatouille/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -19,17 +21,19 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-libs/llama-index[${PYTHON_USEDEP}]
-	sci-libs/faiss-cpu[${PYTHON_USEDEP}]
-	sci-libs/langchain_core[${PYTHON_USEDEP}]
-	>=sci-libs/colbert-ai-0.2.19[${PYTHON_USEDEP}]
-	sci-libs/langchain[${PYTHON_USEDEP}]
-	sci-libs/onnx[${PYTHON_USEDEP}]
-	sci-libs/srsly[${PYTHON_USEDEP}]
-	sci-libs/voyager[${PYTHON_USEDEP}]
-	>=sci-libs/pytorch-1.13[${PYTHON_USEDEP}]
-	sci-libs/fast-pytorch-kmeans[${PYTHON_USEDEP}]
-	sci-libs/sentence-transformers[${PYTHON_USEDEP}]
+	>=sci-ml/pytorch-1.13[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/colbert-ai-0.2.19[${PYTHON_SINGLE_USEDEP}]
+	$(python_gen_cond_dep '
+		sci-ml/llama-index[${PYTHON_USEDEP}]
+		sci-ml/faiss[${PYTHON_USEDEP}]
+		sci-ml/langchain-core[${PYTHON_USEDEP}]
+		sci-ml/langchain[${PYTHON_USEDEP}]
+		sci-ml/onnx[${PYTHON_USEDEP}]
+		dev-python/srsly[${PYTHON_USEDEP}]
+		dev-python/voyager[${PYTHON_USEDEP}]
+		sci-ml/fast-pytorch-kmeans[${PYTHON_USEDEP}]
+		sci-ml/sentence-transformers[${PYTHON_USEDEP}]
+	')
 "
 #BDEPEND="
 #	test? (

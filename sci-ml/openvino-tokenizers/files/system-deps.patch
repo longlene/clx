@@ -1,73 +1,22 @@
-diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
---- a/src/CMakeLists.txt	2025-06-24 07:11:33.000000000 -0700
-+++ b/src/CMakeLists.txt	2025-08-17 20:50:58.348622517 -0700
-@@ -102,8 +102,9 @@
-   set(SPM_ENABLE_TCMALLOC OFF CACHE BOOL "")
-   set(SPM_ENABLE_NFKC_COMPILE ON CACHE BOOL "Enable NFKC compile")
- 
--  FetchContent_Populate(sentencepiece)
--  add_subdirectory(${sentencepiece_SOURCE_DIR} ${sentencepiece_BINARY_DIR} EXCLUDE_FROM_ALL)
-+  #FetchContent_Populate(sentencepiece)
-+  #add_subdirectory(${sentencepiece_SOURCE_DIR} ${sentencepiece_BINARY_DIR} EXCLUDE_FROM_ALL)
-+  add_subdirectory(${SENTENCEPIECE_SRC_DIR} ${SENTENCEPIECE_SRC_DIR} EXCLUDE_FROM_ALL)
- 
-   if(TARGET ${ICU_TARGET_NAME})
-     foreach(sp_target sentencepiece sentencepiece_train)
-@@ -183,7 +184,11 @@
-   target_compile_definitions(re2 PUBLIC $<TARGET_PROPERTY:openvino::runtime,INTERFACE_COMPILE_DEFINITIONS>)
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -190,6 +190,9 @@
  endfunction()
- 
--ov_tokenizers_build_static_re2()
-+find_package(PkgConfig REQUIRED)
-+pkg_search_module(re2 REQUIRED re2)
-+if (NOT re2_FOUND)
-+  ov_tokenizers_build_static_re2()
-+endif()
  
  function(ov_tokenizers_link_pcre2 TARGET_NAME)
-   FetchContent_Declare(
-@@ -191,23 +196,28 @@
-       URL https://github.com/PCRE2Project/pcre2/archive/refs/tags/pcre2-10.44.zip
-       URL_HASH SHA256=2d87bd1700bd1993ddea7c56aad2b0373ac2b3d52d9cc78842a6d061ffaf0925
-   )
--  FetchContent_GetProperties(prce2)
--  if(NOT prce2_POPULATED)
--    FetchContent_Populate(prce2)
--
--    set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
--    set(CMAKE_POLICY_DEFAULT_CMP0126 NEW)
--    set(PCRE2_SUPPORT_JIT ON)
--    set(PCRE2_STATIC_PIC ON)
--    set(PCRE2_BUILD_TESTS OFF)
--    set(PCRE2_BUILD_PCRE2GREP OFF)
--
--    add_subdirectory(${prce2_SOURCE_DIR} ${prce2_BINARY_DIR} EXCLUDE_FROM_ALL)
--  endif()
--
--  target_include_directories(${TARGET_NAME} SYSTEM PRIVATE ${pcre2_BINARY_DIR})
--  target_link_libraries(${TARGET_NAME} PRIVATE pcre2-8)
-+  #FetchContent_GetProperties(prce2)
-+  #if(NOT prce2_POPULATED)
-+  #  FetchContent_Populate(prce2)
-+
-+  #  set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
-+  #  set(CMAKE_POLICY_DEFAULT_CMP0126 NEW)
-+  #  set(PCRE2_SUPPORT_JIT ON)
-+  #  set(PCRE2_STATIC_PIC ON)
-+  #  set(PCRE2_BUILD_TESTS OFF)
-+  #  set(PCRE2_BUILD_PCRE2GREP OFF)
-+
-+  #  add_subdirectory(${prce2_SOURCE_DIR} ${prce2_BINARY_DIR} EXCLUDE_FROM_ALL)
-+  #endif()
-+  #target_include_directories(${TARGET_NAME} SYSTEM PRIVATE ${pcre2_BINARY_DIR})
-+  #target_link_libraries(${TARGET_NAME} PRIVATE pcre2-8)
-+  #target_compile_definitions(${TARGET_NAME} PRIVATE PCRE2_CODE_UNIT_WIDTH=8)
 +  find_package(PkgConfig REQUIRED)
 +  pkg_search_module(pcre2 REQUIRED libpcre2-8)
-+  target_include_directories(${TARGET_NAME} PRIVATE ${pcre2_INCLUDE_DIRS})
-+  target_link_libraries(${TARGET_NAME} PRIVATE ${pcre2_LINK_LIBRARIES})
-   target_compile_definitions(${TARGET_NAME} PRIVATE PCRE2_CODE_UNIT_WIDTH=8)
-+
- endfunction()
++  if (NOT pcre2_FOUND)
+   FetchContent_Declare(
+       pcre2
+       URL https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.46/pcre2-10.46.zip
+@@ -210,6 +213,9 @@
+   endif()
  
- function(ov_tokenizers_link_re2 TARGET_NAME)
+   target_include_directories(${TARGET_NAME} SYSTEM PRIVATE ${pcre2_BINARY_DIR})
++  endif()
++
++  target_include_directories(${TARGET_NAME} SYSTEM PRIVATE ${pcre2_INCLUDE_DIRS})
+   target_link_libraries(${TARGET_NAME} PRIVATE pcre2-8)
+   target_compile_definitions(${TARGET_NAME} PRIVATE PCRE2_CODE_UNIT_WIDTH=8)
+ endfunction()

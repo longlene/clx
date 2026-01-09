@@ -1,6 +1,5 @@
-diff -Nur a/pyproject.toml b/pyproject.toml
---- a/pyproject.toml	2024-12-07 04:06:16.000000000 -0800
-+++ b/pyproject.toml	2024-12-24 18:24:25.088504866 -0800
+--- a/pyproject.toml
++++ b/pyproject.toml
 @@ -91,13 +91,12 @@
  build_type = "Release"
  config = ["Release"]
