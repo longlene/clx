@@ -5,15 +5,17 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
-DESCRIPTION=""
-HOMEPAGE=""
+DESCRIPTION="High-quality multi-lingual text-to-speech library by MyShell.ai"
+HOMEPAGE="
+	https://github.com/myshell-ai/MeloTTS
+"
 SRC_URI="https://github.com/myshell-ai/MeloTTS/archive/refs/tags/v0.1.2.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 

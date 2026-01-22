@@ -1,0 +1,18 @@
+diff -Nur a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml	2026-01-08 02:18:55.000000000 -0800
++++ b/pyproject.toml	2026-01-10 15:40:33.747568433 -0800
+@@ -58,7 +58,7 @@
+ pattern = "(?P<version>^\\s*[^\\r\\n\\s]+)"
+ 
+ [tool.hatch.build.targets.wheel]
+-packages = ["rogue", "examples"]
++packages = ["rogue"]
+ 
+ [tool.hatch.build.targets.wheel.sources]
+ "rogue" = "rogue"
+@@ -69,4 +69,4 @@
+ 
+ [project.scripts]
+ rogue-ai = "rogue.__main__:main"
+-rogue-ai-example-tshirt = "examples.tshirt_store_agent.__main__:main"
++#rogue-ai-example-tshirt = "examples.tshirt_store_agent.__main__:main"

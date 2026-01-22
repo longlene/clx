@@ -1,0 +1,31 @@
+diff -Nur a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -59,9 +59,9 @@
+ 
+ [project.scripts]
+ mem0-mcp-server = "mem0_mcp_server.server:main"
+-dev = "smithery.cli.dev:main"
+-start = "smithery.cli.start:main"
+-playground = "smithery.cli.playground:main"
++#dev = "smithery.cli.dev:main"
++#start = "smithery.cli.start:main"
++#playground = "smithery.cli.playground:main"
+ 
+ [project.entry-points."mcp.servers"]
+ mem0 = "mem0_mcp_server:mcp.json"
+@@ -72,10 +72,10 @@
+ [tool.hatch.build.targets.wheel]
+ packages = ["src/mem0_mcp_server"]
+ 
+-[tool.hatch.build.targets.wheel.shared-data]
+-"src/mem0_mcp_server/mcp.json" = "share/mcp/servers/mem0-mcp-server.json"
+-"src/mem0_mcp_server/py.typed" = "mem0_mcp_server/py.typed"
+-"src/mem0_mcp_server/config.json" = "share/mcp/configs/mem0-mcp-server.json"
++#[tool.hatch.build.targets.wheel.shared-data]
++#"src/mem0_mcp_server/mcp.json" = "share/mcp/servers/mem0-mcp-server.json"
++#"src/mem0_mcp_server/py.typed" = "mem0_mcp_server/py.typed"
++#"src/mem0_mcp_server/config.json" = "share/mcp/configs/mem0-mcp-server.json"
+ 
+ [tool.ruff]
+ target-version = "py310"

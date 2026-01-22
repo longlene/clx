@@ -1,0 +1,12 @@
+diff -Nur a/caffe2/CMakeLists.txt b/caffe2/CMakeLists.txt
+--- a/caffe2/CMakeLists.txt
++++ b/caffe2/CMakeLists.txt
+@@ -992,6 +992,8 @@
+     target_compile_definitions(torch_cuda PRIVATE USE_NCCL)
+   endif()
+ 
++  target_link_libraries(torch_cuda PRIVATE caffe2::cuda)
++
+   # Compile with NVSHMEM
+   # Default value of `USE_NVSHMEM` is set in CMakeLists.txt under root, to ON.
+   if(USE_NVSHMEM)

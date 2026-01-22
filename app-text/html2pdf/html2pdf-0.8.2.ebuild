@@ -1,0 +1,216 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	adler2@2.0.0
+	aho-corasick@1.1.3
+	anstream@0.6.18
+	anstyle-parse@0.2.6
+	anstyle-query@1.1.2
+	anstyle-wincon@3.0.7
+	anstyle@1.0.10
+	anyhow@1.0.96
+	assert2-macros@0.3.15
+	assert2@0.3.15
+	auto_generate_cdp@0.4.5
+	autocfg@1.4.0
+	base64@0.22.1
+	bitflags@2.8.0
+	block-buffer@0.10.4
+	byteorder@1.5.0
+	bytes@1.10.0
+	cc@1.2.15
+	cfg-if@1.0.0
+	clap@4.5.30
+	clap_builder@4.5.30
+	clap_derive@4.5.28
+	clap_lex@0.7.4
+	colorchoice@1.0.3
+	convert_case@0.4.0
+	cpufeatures@0.2.17
+	crc32fast@1.4.2
+	crypto-common@0.1.6
+	darling@0.20.10
+	darling_core@0.20.10
+	darling_macro@0.20.10
+	data-encoding@2.8.0
+	derive_builder@0.20.2
+	derive_builder_core@0.20.2
+	derive_builder_macro@0.20.2
+	derive_more-impl@1.0.0
+	derive_more@1.0.0
+	diff@0.1.13
+	digest@0.10.7
+	displaydoc@0.2.5
+	dunce@1.0.5
+	either@1.14.0
+	env_home@0.1.0
+	equivalent@1.0.2
+	errno@0.3.10
+	fastrand@2.3.0
+	flate2@1.0.35
+	fnv@1.0.7
+	form_urlencoded@1.2.1
+	futures-core@0.3.31
+	futures-macro@0.3.31
+	futures-task@0.3.31
+	futures-timer@3.0.3
+	futures-util@0.3.31
+	generic-array@0.14.7
+	getrandom@0.2.15
+	getrandom@0.3.1
+	glob@0.3.2
+	hashbrown@0.15.2
+	headless_chrome@1.0.16
+	heck@0.5.0
+	hermit-abi@0.4.0
+	http@1.2.0
+	httparse@1.10.0
+	humantime@2.1.0
+	icu_collections@1.5.0
+	icu_locid@1.5.0
+	icu_locid_transform@1.5.0
+	icu_locid_transform_data@1.5.0
+	icu_normalizer@1.5.0
+	icu_normalizer_data@1.5.0
+	icu_properties@1.5.1
+	icu_properties_data@1.5.0
+	icu_provider@1.5.0
+	icu_provider_macros@1.5.0
+	ident_case@1.0.1
+	idna@1.0.3
+	idna_adapter@1.2.0
+	indexmap@2.7.1
+	is-terminal@0.4.15
+	is_terminal_polyfill@1.70.1
+	itoa@1.0.14
+	lazy_static@1.5.0
+	libc@0.2.170
+	linux-raw-sys@0.4.15
+	litemap@0.7.4
+	log@0.4.26
+	matchers@0.1.0
+	memchr@2.7.4
+	miniz_oxide@0.8.5
+	nu-ansi-term@0.46.0
+	once_cell@1.20.3
+	overload@0.1.1
+	percent-encoding@2.3.1
+	pin-project-lite@0.2.16
+	pin-utils@0.1.0
+	ppv-lite86@0.2.20
+	proc-macro-crate@3.2.0
+	proc-macro2@1.0.93
+	quote@1.0.38
+	rand@0.9.0
+	rand_chacha@0.9.0
+	rand_core@0.9.2
+	regex-automata@0.1.10
+	regex-automata@0.4.9
+	regex-syntax@0.6.29
+	regex-syntax@0.8.5
+	regex@1.11.1
+	relative-path@1.9.3
+	ring@0.17.11
+	rstest@0.24.0
+	rstest_macros@0.24.0
+	rustc_version@0.4.1
+	rustix@0.38.44
+	rustls-pki-types@1.11.0
+	rustls-webpki@0.102.8
+	rustls@0.23.23
+	ryu@1.0.19
+	semver@1.0.25
+	serde@1.0.218
+	serde_derive@1.0.218
+	serde_json@1.0.139
+	sha1@0.10.6
+	sharded-slab@0.1.7
+	shlex@1.3.0
+	slab@0.4.9
+	smallvec@1.14.0
+	socks@0.3.4
+	stable_deref_trait@1.2.0
+	strsim@0.11.1
+	subtle@2.6.1
+	syn@2.0.98
+	synstructure@0.13.1
+	tempfile@3.17.1
+	thiserror-impl@2.0.11
+	thiserror@2.0.11
+	thread_local@1.1.8
+	tinystr@0.7.6
+	toml_datetime@0.6.8
+	toml_edit@0.22.24
+	tracing-attributes@0.1.28
+	tracing-core@0.1.33
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.19
+	tracing@0.1.41
+	tungstenite@0.26.2
+	typenum@1.18.0
+	unicode-ident@1.0.17
+	unicode-xid@0.2.6
+	untrusted@0.9.0
+	ureq@2.12.1
+	url@2.5.4
+	utf-8@0.7.6
+	utf16_iter@1.0.5
+	utf8_iter@1.0.4
+	utf8parse@0.2.2
+	valuable@0.1.1
+	version_check@0.9.5
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasi@0.13.3+wasi-0.2.2
+	webpki-roots@0.26.8
+	which@7.0.2
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-sys@0.52.0
+	windows-sys@0.59.0
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	winnow@0.7.3
+	winreg@0.55.0
+	winsafe@0.0.19
+	wit-bindgen-rt@0.33.0
+	write16@1.0.0
+	writeable@0.5.5
+	yansi@1.0.1
+	yoke-derive@0.7.5
+	yoke@0.7.5
+	zerocopy-derive@0.7.35
+	zerocopy-derive@0.8.20
+	zerocopy@0.7.35
+	zerocopy@0.8.20
+	zerofrom-derive@0.1.5
+	zerofrom@0.1.5
+	zeroize@1.8.1
+	zerovec-derive@0.10.3
+	zerovec@0.10.4
+"
+
+RUST_MIN_VER="1.84"
+
+inherit cargo
+
+DESCRIPTION="Convert HTML to PDF using a Headless Chrome browser"
+HOMEPAGE="https://github.com/ilaborie/html2pdf"
+SRC_URI="
+	https://github.com/ilaborie/html2pdf/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="|| ( Apache-2.0 MIT )"
+SLOT="0"
+KEYWORDS="~amd64"

@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/prompt_toolkit-3[${PYTHON_USEDEP}]
+	>=dev-python/prompt-toolkit-3[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2[${PYTHON_USEDEP}]
 	>=dev-python/mistune-3.0[${PYTHON_USEDEP}]
 	>=dev-python/configobj-5.0[${PYTHON_USEDEP}]

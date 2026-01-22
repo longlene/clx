@@ -27,7 +27,7 @@ RDEPEND="
 	dev-python/terminaltables[${PYTHON_USEDEP}]
 	>=dev-python/trafaret-2.1.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.1[${PYTHON_USEDEP}]
-	>=dev-python/prompt_toolkit-3.0[${PYTHON_USEDEP}]
+	>=dev-python/prompt-toolkit-3.0[${PYTHON_USEDEP}]
 	>=dev-python/aioconsole-0.7.0[${PYTHON_USEDEP}]
 "
 #BDEPEND="

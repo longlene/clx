@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-python/appdirs[${PYTHON_USEDEP}]
 	>=dev-python/jedi-0.16.0[${PYTHON_USEDEP}]
-	>=dev-python/prompt_toolkit-3.0.34[${PYTHON_USEDEP}]
+	>=dev-python/prompt-toolkit-3.0.34[${PYTHON_USEDEP}]
 	dev-python/pygments[${PYTHON_USEDEP}]
 "
 BDEPEND=""

@@ -1,0 +1,11 @@
+diff -Nur a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml	2024-04-19 03:28:09.000000000 -0700
++++ b/pyproject.toml	2026-01-13 17:49:31.363608507 -0800
+@@ -51,6 +51,7 @@
+ requires = [
+     "setuptools",
+ ]
++build-backend = "setuptools.build_meta"
+ 
+ [pytest]
+ norecursedirs="tests/helpers"

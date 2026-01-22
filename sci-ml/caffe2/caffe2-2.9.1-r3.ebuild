@@ -165,6 +165,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-2.9.0-cmake.patch
 	"${FILESDIR}"/${PN}-2.9.0-rocm-distributed-link.patch
 	"${FILESDIR}"/${P}-CCCL31.patch
+	"${FILESDIR}"/${P}-cuda-link.patch
 )
 
 src_prepare() {

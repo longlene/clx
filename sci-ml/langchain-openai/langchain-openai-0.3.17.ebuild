@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/langchain-core-0.3.49[${PYTHON_USEDEP}]
+	>=sci-ml/langchain-core-0.3.49[${PYTHON_USEDEP}]
 	>=dev-python/openai-1.68.2[${PYTHON_USEDEP}]
 	>=dev-python/tiktoken-0.7[${PYTHON_USEDEP}]
 "

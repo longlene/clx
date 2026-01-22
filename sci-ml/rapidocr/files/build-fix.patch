@@ -1,0 +1,55 @@
+--- a/setup.py
++++ b/setup.py
+@@ -6,7 +6,8 @@
+ from typing import List, Union
+ 
+ import setuptools
+-from get_pypi_latest_version import GetPyPiLatestVersion
++#from get_pypi_latest_version import GetPyPiLatestVersion
++import os
+ 
+ 
+ def read_txt(txt_path: Union[Path, str]) -> List[str]:
+@@ -26,19 +27,19 @@
+ 
+ MODULE_NAME = "rapidocr"
+ 
+-obtainer = GetPyPiLatestVersion()
+-try:
+-    latest_version = obtainer(MODULE_NAME)
+-except Exception as e:
+-    latest_version = "0.0.0"
+-VERSION_NUM = obtainer.version_add_one(latest_version, add_patch=True)
+-
+-if len(sys.argv) > 2:
+-    match_str = " ".join(sys.argv[2:])
+-    matched_versions = obtainer.extract_version(match_str)
+-    if matched_versions:
+-        VERSION_NUM = matched_versions
+-sys.argv = sys.argv[:2]
++#obtainer = GetPyPiLatestVersion()
++#try:
++#    latest_version = obtainer(MODULE_NAME)
++#except Exception as e:
++#    latest_version = "0.0.0"
++VERSION_NUM = os.getenv('PV')
++
++#if len(sys.argv) > 2:
++#    match_str = " ".join(sys.argv[2:])
++#    matched_versions = obtainer.extract_version(match_str)
++#    if matched_versions:
++#        VERSION_NUM = matched_versions
++#sys.argv = sys.argv[:2]
+ 
+ project_urls = {
+     "Documentation": "https://rapidai.github.io/RapidOCRDocs",
+@@ -59,8 +60,7 @@
+     license="Apache-2.0",
+     include_package_data=True,
+     install_requires=read_txt("requirements.txt"),
+-    package_dir={"": MODULE_NAME},
+-    packages=setuptools.find_namespace_packages(where=MODULE_NAME),
++    packages=setuptools.find_packages(exclude=["tests", "tests.*"]),
+     package_data={"": ["*.onnx", "*.yaml", "*.txt"]},
+     keywords=[
+         "ocr,text_detection,text_recognition,db,onnxruntime,paddleocr,openvino,rapidocr"

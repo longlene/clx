@@ -1,0 +1,13 @@
+diff -Nur a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml	2025-01-23 07:39:53.000000000 -0800
++++ b/pyproject.toml	2025-02-07 14:35:53.402685366 -0800
+@@ -40,9 +40,6 @@
+     "pynvml"
+ ]
+ 
+-[project.scripts]
+-optimum-cli="optimum.commands.optimum_cli:main"
+-
+ 
+ [project.urls]
+ Homepage = "https://huggingface.co/hardware/nvidia"

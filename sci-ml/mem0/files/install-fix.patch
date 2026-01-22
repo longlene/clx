@@ -1,0 +1,14 @@
+diff -Nur a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -100,8 +100,8 @@
+ packages = ["mem0"]
+ only-include = ["mem0"]
+ 
+-[tool.hatch.build.targets.wheel.shared-data]
+-"README.md" = "README.md"
++#[tool.hatch.build.targets.wheel.shared-data]
++#"README.md" = "README.md"
+ 
+ [tool.hatch.envs.dev_py_3_9]
+ python = "3.9"

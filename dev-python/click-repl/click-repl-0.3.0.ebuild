@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/click-7.0[${PYTHON_USEDEP}]
-	>=dev-python/prompt_toolkit-3.0.36[${PYTHON_USEDEP}]
+	>=dev-python/prompt-toolkit-3.0.36[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
