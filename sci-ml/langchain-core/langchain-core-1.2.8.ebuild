@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=pdm-backend
+DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/langsmith-0.3.45[${PYTHON_USEDEP}]
 	>=dev-python/tenacity-8.4.0[${PYTHON_USEDEP}]
-	>=dev-python/jsonpatch-1.33[${PYTHON_USEDEP}]
+	>=dev-python/jsonpatch-1.33.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.3.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.7.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23.2.0[${PYTHON_USEDEP}]

@@ -1,0 +1,83 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -281,25 +281,27 @@
+           "${LAPACK_ROOT};$ENV{LAPACK_ROOT};/usr/local/opt/openblas")
+     endif()
+     # Search and link with lapack.
+-    find_package(LAPACK REQUIRED)
+-    if(NOT LAPACK_FOUND)
+-      message(FATAL_ERROR "Must have LAPACK installed")
+-    endif()
+-    find_path(LAPACK_INCLUDE_DIRS lapacke.h /usr/include /usr/local/include
+-              /usr/local/opt/openblas/include)
+-    message(STATUS "Lapack lib " ${LAPACK_LIBRARIES})
+-    message(STATUS "Lapack include " ${LAPACK_INCLUDE_DIRS})
+-    target_include_directories(mlx PRIVATE ${LAPACK_INCLUDE_DIRS})
+-    target_link_libraries(mlx PRIVATE ${LAPACK_LIBRARIES})
+-    # List blas after lapack otherwise we may accidentally incldue an old
+-    # version of lapack.h from the include dirs of blas.
+-    find_package(BLAS REQUIRED)
+-    if(NOT BLAS_FOUND)
+-      message(FATAL_ERROR "Must have BLAS installed")
+-    endif()
+-    # TODO find a cleaner way to do this
+-    find_path(BLAS_INCLUDE_DIRS cblas.h /usr/include /usr/local/include
+-              $ENV{BLAS_HOME}/include)
++    #find_package(LAPACK REQUIRED)
++    #if(NOT LAPACK_FOUND)
++    #  message(FATAL_ERROR "Must have LAPACK installed")
++    #endif()
++    #find_path(LAPACK_INCLUDE_DIRS lapacke.h /usr/include /usr/local/include
++    #          /usr/local/opt/openblas/include)
++    #message(STATUS "Lapack lib " ${LAPACK_LIBRARIES})
++    #message(STATUS "Lapack include " ${LAPACK_INCLUDE_DIRS})
++    #target_include_directories(mlx PRIVATE ${LAPACK_INCLUDE_DIRS})
++    #target_link_libraries(mlx PRIVATE ${LAPACK_LIBRARIES})
++    ## List blas after lapack otherwise we may accidentally incldue an old
++    ## version of lapack.h from the include dirs of blas.
++    #find_package(BLAS REQUIRED)
++    #if(NOT BLAS_FOUND)
++    #  message(FATAL_ERROR "Must have BLAS installed")
++    #endif()
++    ## TODO find a cleaner way to do this
++    #find_path(BLAS_INCLUDE_DIRS cblas.h /usr/include /usr/local/include
++    #          $ENV{BLAS_HOME}/include)
++    find_package(PkgConfig REQUIRED)
++    pkg_search_module(BLAS REQUIRED flexiblas)
+     message(STATUS "Blas lib " ${BLAS_LIBRARIES})
+     message(STATUS "Blas include " ${BLAS_INCLUDE_DIRS})
+     target_include_directories(mlx PRIVATE ${BLAS_INCLUDE_DIRS})
+@@ -309,13 +311,13 @@
+   set(MLX_BUILD_ACCELERATE OFF)
+ endif()
+ 
+-message(STATUS "Downloading json")
+-FetchContent_Declare(
+-  json
+-  URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz)
+-FetchContent_MakeAvailable(json)
++#message(STATUS "Downloading json")
++#FetchContent_Declare(
++#  json
++#  URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz)
++#FetchContent_MakeAvailable(json)
+ target_include_directories(
+-  mlx PRIVATE $<BUILD_INTERFACE:${json_SOURCE_DIR}/single_include/nlohmann>)
++  mlx PRIVATE $<BUILD_INTERFACE:/usr/include/nlohmann>)
+ 
+ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/mlx)
+ 
+@@ -367,6 +369,7 @@
+ # ----------------------------- Installation -----------------------------
+ include(GNUInstallDirs)
+ 
++if(NOT MLX_BUILD_PYTHON_BINDINGS)
+ if(WIN32)
+   # Install DLLs to the same dir with extension file (core.pyd) on Windows.
+   set(CMAKE_INSTALL_BINDIR ".")
+@@ -435,3 +438,4 @@
+ 
+ install(DIRECTORY ${CMAKE_MODULE_PATH}/
+         DESTINATION ${MLX_CMAKE_INSTALL_MODULE_DIR})
++endif()

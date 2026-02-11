@@ -1,0 +1,12 @@
+diff -Nur a/thirdparty/dependencies.cmake b/thirdparty/dependencies.cmake
+--- a/thirdparty/dependencies.cmake	2026-01-08 01:24:41.000000000 -0800
++++ b/thirdparty/dependencies.cmake	2026-02-10 04:31:28.185719749 -0800
+@@ -531,6 +531,8 @@
+ #
+ 
+ if(ENABLE_OV_ONNX_FRONTEND)
++    find_package(absl REQUIRED)
++    find_package(utf8_range REQUIRED)
+     find_package(ONNX 1.16.2 QUIET COMPONENTS onnx onnx_proto NO_MODULE)
+ 
+     if(ONNX_FOUND)

@@ -1,4 +1,4 @@
-# Copyright 2025 Gentoo Authors
+# Copyright 2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -24,21 +24,19 @@ IUSE="torch"
 RESTRICT="test"
 
 RDEPEND="
-	>=sci-ml/huggingface_hub-0.34.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/huggingface_hub-1.3.0[${PYTHON_SINGLE_USEDEP}]
 	=sci-ml/tokenizers-0.22*[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		dev-python/filelock[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
 		>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
 		>=dev-python/pyyaml-5.1[${PYTHON_USEDEP}]
 		dev-python/regex[${PYTHON_USEDEP}]
-		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/typer[${PYTHON_USEDEP}]
 		>=sci-ml/safetensors-0.4.3[${PYTHON_USEDEP}]
 		>=dev-python/tqdm-4.27.0[${PYTHON_USEDEP}]
 	')
 	torch? (
-		>=sci-ml/accelerate-0.26.0[${PYTHON_SINGLE_USEDEP}]
+		>=sci-ml/accelerate-1.1.0[${PYTHON_SINGLE_USEDEP}]
 		sci-ml/caffe2[${PYTHON_SINGLE_USEDEP}]
 		sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
 	)

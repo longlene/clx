@@ -15,7 +15,7 @@ HOMEPAGE="
 	https://pypi.org/project/triton/
 	https://github.com/triton-lang/triton
 "
-SRC_URI="https://files.pythonhosted.org/packages/27/46/8c3bbb5b0a19313f50edcaa363b599e5a1a5ac9683ead82b9b80fe497c8d/triton-3.5.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
+SRC_URI="https://files.pythonhosted.org/packages/f9/0b/37d991d8c130ce81a8728ae3c25b6e60935838e9be1b58791f5997b24a54/triton-3.6.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
 
 LICENSE="MIT"
 SLOT="0"

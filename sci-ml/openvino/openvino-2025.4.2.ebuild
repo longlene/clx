@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -12,7 +12,7 @@ inherit cmake distutils-r1
 
 ONEDNN_CPU_COMMIT="a4ed4a789b6e0869e4f651bbfeff6878e91d388e"
 ONEDNN_GPU_COMMIT="29d64fe0ec0f1f20d7f80aa76630d58a6011a869"
-CONTRIB_COMMIT="0d513530811a528710412f48eba461ac6cf55f1a"
+CONTRIB_COMMIT="b7e33c272afb771fa251ce24adfac4432b88542b"
 
 DESCRIPTION="An open-source toolkit for optimizing and deploying AI inference"
 HOMEPAGE="https://docs.openvino.ai/"
@@ -26,7 +26,7 @@ SRC_URI="
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="l0 npu opencl python contrib cuda test"
+IUSE="l0 opencl python contrib cuda test"
 
 DEPEND="
 	sys-libs/zlib
@@ -63,6 +63,8 @@ RDEPEND="
 "
 BDEPEND=""
 
+RESTRICT="test"
+
 pkg_setup() {
 	use python && python_setup
 }
@@ -75,6 +77,7 @@ src_prepare() {
 		"${FILESDIR}"/system-l0.patch \
 		"${FILESDIR}"/system-mlas.patch \
 		"${FILESDIR}"/system-ittapi.patch \
+		"${FILESDIR}"/system-onnx.patch \
 		"${FILESDIR}"/system-yaml-cpp.patch \
 		"${FILESDIR}"/python-install-path.patch \
 		"${FILESDIR}"/040-openvino-protobuf23-fix.patch
@@ -96,13 +99,13 @@ src_prepare() {
 src_configure() {
 	local mycmakeargs=(
 		-DCI_BUILD_NUMBER="${PV}-0-0"
-		-DCMAKE_POLICY_VERSION_MINIMUM:STRING='3.5.0'
+		#-DCMAKE_POLICY_VERSION_MINIMUM:STRING='3.5.0'
 		-DENABLE_CPPLINT=OFF
 		-DENABLE_CLANG_FORMAT=OFF
 		-DENABLE_NCC_STYLE=OFF
 		-DENABLE_TESTS=$(usex test)
 		-DENABLE_INTEL_GPU=$(usex opencl)
-		-DENABLE_INTEL_NPU=$(usex npu)
+		-DENABLE_INTEL_NPU=$(usex l0)
 		-DENABLE_PKGCONFIG_GEN=ON
 		-DENABLE_FUNCTIONAL_TESTS=$(usex test)
 		-DENABLE_SAMPLES=OFF
@@ -117,18 +120,20 @@ src_configure() {
 		-DENABLE_JS=OFF
 		-DENABLE_PYTHON=$(usex python)
 	)
-	use contrib && mycmakeargs+=(
-		-DOPENVINO_EXTRA_MODULES="${WORKDIR}"/openvino_contrib-${CONTRIB_COMMIT}/modules
-		-DBUILD_custom_operations=OFF
-		-DBUILD_java_api=OFF
-		-DBUILD_llama_cpp_plugin=OFF
-		-DBUILD_nvidia_plugin=$(usex cuda)
-		-DBUILD_openvino_code=OFF
-		-DBUILD_token_merging=OFF
-	)
-	use cuda && mycmakeargs+=(
-		-DCUDA_PATH="/opt/cuda"
-	)
+	if use contrib ; then
+		mycmakeargs+=(
+			-DOPENVINO_EXTRA_MODULES="${WORKDIR}"/openvino_contrib-${CONTRIB_COMMIT}/modules
+			-DBUILD_custom_operations=OFF
+			-DBUILD_java_api=OFF
+			-DBUILD_llama_cpp_plugin=OFF
+			-DBUILD_nvidia_plugin=$(usex cuda)
+			-DBUILD_openvino_code=OFF
+			-DBUILD_token_merging=OFF
+		)
+		use cuda && mycmakeargs+=(
+			-DCUDA_PATH="/opt/cuda"
+		)
+	fi
 	cmake_src_configure
 }
 

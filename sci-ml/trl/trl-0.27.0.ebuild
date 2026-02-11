@@ -20,8 +20,10 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=sci-ml/accelerate-1.4.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/datasets-3.0.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/packaging-20.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.56.2[${PYTHON_SINGLE_USEDEP}]
+	$(python_gen_cond_dep '
+		>=dev-python/packaging-20.0[${PYTHON_USEDEP}]
+	')
 "
 BDEPEND=""
 

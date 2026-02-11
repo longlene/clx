@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=pdm-backend
+DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
@@ -20,8 +20,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/langchain-core-1.2.7[${PYTHON_USEDEP}]
-	>=sci-ml/langgraph-1.0.2[${PYTHON_USEDEP}]
+	>=sci-ml/langchain-core-${PV}[${PYTHON_USEDEP}]
+	>=sci-ml/langgraph-1.0.7[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2.7.4[${PYTHON_USEDEP}]
 "
 #BDEPEND="
@@ -31,4 +31,4 @@ RDEPEND="
 
 distutils_enable_tests pytest
 
-S="${WORKDIR}"/langchain-${P}
+S="${WORKDIR}"/langchain-${P}/libs/langchain_v1
