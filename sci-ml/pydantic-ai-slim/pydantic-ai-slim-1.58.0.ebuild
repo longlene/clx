@@ -26,7 +26,7 @@ RDEPEND="
 	>=dev-python/griffe-1.14.0[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.27[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2.10[${PYTHON_USEDEP}]
-	sci-ml/pydantic-graph[${PYTHON_USEDEP}]
+	>=sci-ml/pydantic-graph-${PV}[${PYTHON_USEDEP}]
 	>=dev-python/opentelemetry-api-1.28.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-inspection-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/genai-prices-0.0.48[${PYTHON_USEDEP}]

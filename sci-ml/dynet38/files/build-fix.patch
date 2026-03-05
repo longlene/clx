@@ -1,0 +1,86 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2024-01-22 19:42:46.000000000 -0800
++++ b/CMakeLists.txt	2026-02-15 04:58:33.291603579 -0800
+@@ -1,8 +1,10 @@
+ project(dynet)
+-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+ 
+ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+ 
++include(GNUInstallDirs)
++
+ # DYNET uses Eigen which exploits modern CPU architectures. To get the
+ # best possible performance, the following are recommended:
+ #   1. use very recent versions of gcc or Clang to build
+diff -Nur a/dynet/CMakeLists.txt b/dynet/CMakeLists.txt
+--- a/dynet/CMakeLists.txt	2024-01-22 19:42:46.000000000 -0800
++++ b/dynet/CMakeLists.txt	2026-02-15 04:59:36.201605756 -0800
+@@ -303,9 +303,9 @@
+ endif(WITH_CUDA_BACKEND)
+ 
+ install(FILES ${dynet_library_HDRS} DESTINATION include/dynet)
+-install(TARGETS dynet DESTINATION lib)
++install(TARGETS dynet DESTINATION ${LIBIDIR})
+ if(WITH_CUDA_BACKEND)
+-  install(TARGETS dynet DESTINATION lib)
++  install(TARGETS dynet DESTINATION ${LIBDIR})
+ endif(WITH_CUDA_BACKEND)
+ 
+ # target_compile_features(dynet PRIVATE cxx_range_for)
+diff -Nur a/python/_dynet.pyx b/python/_dynet.pyx
+--- a/python/_dynet.pyx	2024-01-22 19:42:46.000000000 -0800
++++ b/python/_dynet.pyx	2026-02-15 02:39:37.781333353 -0800
+@@ -1173,7 +1173,7 @@
+         Args:
+             arr (np.array): numpy array of shape :code:`(num_lookups,...)`
+         """
+-        rows = long(self.thisptr.get_storage().values.size())
++        rows = int(self.thisptr.get_storage().values.size())
+         if len(arr) > rows:
+             raise Exception("too many rows")
+         if arr.shape[1] != self.thisptr.get_storage().values[0].d.rows():
+diff -Nur a/setup.cfg b/setup.cfg
+--- a/setup.cfg	2024-01-22 19:42:46.000000000 -0800
++++ b/setup.cfg	2026-02-15 02:40:19.761299179 -0800
+@@ -1,2 +1,2 @@
+ [metadata]
+-description-file = README.md
++description_file = README.md
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py	2024-01-22 19:42:46.000000000 -0800
++++ b/setup.py	2026-02-15 06:40:27.308882411 -0800
+@@ -335,15 +335,15 @@
+         log.info("EXTRA_LINK_ARGS=%r" % " ".join(EXTRA_LINK_ARGS))
+         log.info("RUNTIME_LIB_DIRS=%r" % " ".join(RUNTIME_LIB_DIRS))
+         _build_ext.run(self)
+-        if os.path.abspath(".") != SCRIPT_DIR:
+-            log.info("Copying built extensions...")
+-            for d in os.listdir("build"):
+-                target_dir = os.path.join(SCRIPT_DIR, "build", d)
+-                rmtree(target_dir, ignore_errors=True)
+-                try:
+-                    copytree(os.path.join("build", d), target_dir)
+-                except OSError as e:
+-                    log.info("Cannot copy %s %s" % (os.path.join("build",d), e))
++        #if os.path.abspath(".") != SCRIPT_DIR:
++        #    log.info("Copying built extensions...")
++        #    for d in os.listdir("build"):
++        #        target_dir = os.path.join(SCRIPT_DIR, "build", d)
++        #        rmtree(target_dir, ignore_errors=True)
++        #        try:
++        #            copytree(os.path.join("build", d), target_dir)
++        #        except OSError as e:
++        #            log.info("Cannot copy %s %s" % (os.path.join("build",d), e))
+ 
+ 
+ try:
+@@ -380,7 +380,7 @@
+     maintainer="Taishi Ikeda",
+     maintainer_email="taishi.ikeda.0323@gmail.com",
+     license="Apache 2.0",
+-    cmdclass={"build": build, "build_py": build_py, "install_data": install_data, "build_ext": build_ext},
++    cmdclass={"build_py": build_py, "install_data": install_data, "build_ext": build_ext},
+     ext_modules=TARGET,
+     py_modules=["dynet", "dynet_viz", "dynet_config"],
+     data_files=[(os.path.join("..", ".."), DATA_FILES)],

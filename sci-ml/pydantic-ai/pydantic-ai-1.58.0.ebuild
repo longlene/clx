@@ -1,10 +1,10 @@
-# Copyright 2025 Gentoo Authors
+# Copyright 2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
@@ -32,8 +32,7 @@ distutils_enable_tests pytest
 
 src_prepare() {
 	default
-	sed -e '/only-include/{s#"/README.md"##}' \
-		-e '/include/{s#"/README.md", ##}' \
+	sed -e '/include/{s#"/README.md", ##}' \
 		-i pyproject.toml 
 	distutils-r1_src_prepare
 }

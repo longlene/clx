@@ -3,7 +3,7 @@
 
 EAPI=8
 
-EGIT_COMMIT="61e4aeb00afd2a5b6955986269eed3a713c7b562"
+EGIT_COMMIT="49fdfc269cc5147dc18c2e4710bc76c3f33e0be3"
 
 DESCRIPTION="NPU level zero extensions headers"
 HOMEPAGE="https://github.com/intel/level-zero-npu-extensions"
