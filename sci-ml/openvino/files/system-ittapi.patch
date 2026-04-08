@@ -1,13 +1,9 @@
 diff -Nur a/thirdparty/ittapi/CMakeLists.txt b/thirdparty/ittapi/CMakeLists.txt
 --- a/thirdparty/ittapi/CMakeLists.txt
 +++ b/thirdparty/ittapi/CMakeLists.txt
-@@ -1,30 +1,33 @@
- # Copyright (C) 2018-2025 Intel Corporation
+@@ -2,27 +2,31 @@
  # SPDX-License-Identifier: Apache-2.0
  #
-+find_package(ittapi REQUIRED)
-+add_library(ittapi::ittnotify ALIAS ittnotify)
-+ov_developer_package_export_targets(TARGET ittapi::ittnotify)
  
 -if(DEFINED INTEL_VTUNE_DIR OR DEFINED ENV{INTEL_VTUNE_DIR})
 -    find_package(ITT
@@ -18,7 +14,10 @@ diff -Nur a/thirdparty/ittapi/CMakeLists.txt b/thirdparty/ittapi/CMakeLists.txt
 -    endif()
 -else()
 -    add_subdirectory(ittapi EXCLUDE_FROM_ALL)
--
++find_package(ittapi REQUIRED)
++add_library(ittapi::ittnotify ALIAS ittnotify)
++ov_developer_package_export_targets(TARGET ittapi::ittnotify)
+ 
 -    target_compile_definitions(ittnotify INTERFACE ENABLE_PROFILING_ITT)
 -    if(CMAKE_COMPILER_IS_GNUCXX OR OV_COMPILER_IS_CLANG)
 -        target_compile_options(ittnotify PRIVATE -Wno-undef)
@@ -31,8 +30,6 @@ diff -Nur a/thirdparty/ittapi/CMakeLists.txt b/thirdparty/ittapi/CMakeLists.txt
 -
 -    # create alias ittapi::ittnotify
 -    add_library(ittapi::ittnotify ALIAS ittnotify)
--
--    ov_developer_package_export_targets(TARGET ittapi::ittnotify)
 -    ov_install_static_lib(ittnotify ${OV_CPACK_COMP_CORE})
 -endif()
 +#if(DEFINED INTEL_VTUNE_DIR OR DEFINED ENV{INTEL_VTUNE_DIR})
@@ -57,7 +54,5 @@ diff -Nur a/thirdparty/ittapi/CMakeLists.txt b/thirdparty/ittapi/CMakeLists.txt
 +#
 +#    # create alias ittapi::ittnotify
 +#    add_library(ittapi::ittnotify ALIAS ittnotify)
-+#
-+#    ov_developer_package_export_targets(TARGET ittapi::ittnotify)
 +#    ov_install_static_lib(ittnotify ${OV_CPACK_COMP_CORE})
 +#endif()

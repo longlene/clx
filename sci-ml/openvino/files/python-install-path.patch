@@ -1,12 +1,7 @@
 diff -Nur a/src/bindings/python/CMakeLists.txt b/src/bindings/python/CMakeLists.txt
---- a/src/bindings/python/CMakeLists.txt	2025-07-25 09:52:01.000000000 -0700
-+++ b/src/bindings/python/CMakeLists.txt	2025-08-15 02:17:53.006848175 -0700
-@@ -271,15 +271,12 @@
-         endif()
-     endforeach()
- 
--    file(GLOB_RECURSE openvino_py_files ${OpenVINOPython_SOURCE_DIR}/src/openvino/*.py)
-     file(GLOB_RECURSE openvino_pyi_files ${OpenVINOPython_SOURCE_DIR}/src/openvino/*.pyi)
+--- a/src/bindings/python/CMakeLists.txt	2026-03-25 07:35:23.000000000 -0700
++++ b/src/bindings/python/CMakeLists.txt	2026-04-02 14:44:01.345533090 -0700
+@@ -278,10 +278,8 @@
      list(APPEND openvino_py_files ${openvino_pyi_files})
  
      list(APPEND ov_setup_py_deps
@@ -18,17 +13,17 @@ diff -Nur a/src/bindings/python/CMakeLists.txt b/src/bindings/python/CMakeLists.
          "${OpenVINO_SOURCE_DIR}/LICENSE"
          "${OpenVINO_SOURCE_DIR}/licensing/onednn_third-party-programs.txt"
 diff -Nur a/src/bindings/python/src/pyopenvino/CMakeLists.txt b/src/bindings/python/src/pyopenvino/CMakeLists.txt
---- a/src/bindings/python/src/pyopenvino/CMakeLists.txt	2025-07-25 09:52:01.000000000 -0700
-+++ b/src/bindings/python/src/pyopenvino/CMakeLists.txt	2025-08-15 02:31:12.060209645 -0700
-@@ -90,7 +90,6 @@
- add_custom_command(TARGET ${PROJECT_NAME}
-         POST_BUILD
-         COMMAND ${CMAKE_COMMAND} -E copy_directory ${OpenVINOPython_SOURCE_DIR}/src/openvino ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}
--        COMMAND ${CMAKE_COMMAND} -E copy ${OpenVINOPython_SOURCE_DIR}/requirements.txt ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/../requirements.txt
-         )
- 
- ov_python_minimal_api(${PROJECT_NAME})
-@@ -123,20 +122,6 @@
+--- a/src/bindings/python/src/pyopenvino/CMakeLists.txt	2026-03-25 07:35:23.000000000 -0700
++++ b/src/bindings/python/src/pyopenvino/CMakeLists.txt	2026-04-02 14:32:24.187230375 -0700
+@@ -100,7 +100,6 @@
+ add_custom_command(
+     OUTPUT ${PYTHON_COPY_STAMP_FILE}
+     COMMAND ${CMAKE_COMMAND} -E copy_directory ${OpenVINOPython_SOURCE_DIR}/src/openvino ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}
+-    COMMAND ${CMAKE_COMMAND} -E copy ${OpenVINOPython_SOURCE_DIR}/requirements.txt ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/../requirements.txt
+     COMMAND ${CMAKE_COMMAND} -E touch ${PYTHON_COPY_STAMP_FILE}
+     DEPENDS ${OPENVINO_PYTHON_SOURCE_FILES} ${OpenVINOPython_SOURCE_DIR}/requirements.txt
+     COMMENT "Copying Python source files to build directory"
+@@ -144,21 +143,6 @@
  
  ov_cpack_add_component(${OV_CPACK_COMP_OPENVINO_REQ_FILES} HIDDEN)
  
@@ -46,6 +41,7 @@ diff -Nur a/src/bindings/python/src/pyopenvino/CMakeLists.txt b/src/bindings/pyt
 -        DESTINATION tests/${PROJECT_NAME}
 -        COMPONENT tests
 -        EXCLUDE_FROM_ALL)
- 
+-
  if(TARGET ie_wheel)
      add_dependencies(ie_wheel ${PROJECT_NAME})
+ endif()

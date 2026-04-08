@@ -31,6 +31,7 @@ DEPEND="
 	sci-libs/flexiblas
 	cuda? (
 		dev-util/nvidia-cuda-toolkit
+		dev-libs/nccl
 	)
 "
 RDEPEND="
@@ -46,6 +47,7 @@ RESTRICT="test"
 
 PATCHES=(
 	"${FILESDIR}"/system-deps.patch
+	"${FILESDIR}"/system-cuda.patch
 )
 
 export DEBUG=1
@@ -70,6 +72,11 @@ src_configure() {
 		-DUSE_SYSTEM_FMT=ON
 		-DFETCHCONTENT_SOURCE_DIR_GGUFLIB=${WORKDIR}/gguf-tools-${GGUF_TOOLS_COMMIT}
 	)
+	if use cuda; then
+		mycmakeargs+=(
+			-DMLX_CUDA_ARCHITECTURES="${MLX_CUDA_ARCHITECTURES:-89;90}"
+		)
+	fi
 	cmake_src_configure
 	if use python ; then
 		local myargs="${mycmakeargs[*]}"

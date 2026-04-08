@@ -1,0 +1,338 @@
+diff -Nur a/mlx/backend/cuda/CMakeLists.txt b/mlx/backend/cuda/CMakeLists.txt
+--- a/mlx/backend/cuda/CMakeLists.txt	2026-03-11 15:25:17.000000000 -0700
++++ b/mlx/backend/cuda/CMakeLists.txt	2026-03-27 17:55:57.323738046 -0700
+@@ -211,18 +211,18 @@
+ 
+ # ------------------------ Dependencies ------------------------
+ 
+-# Use fixed version of CCCL.
+-FetchContent_Declare(
+-  cccl
+-  URL "https://github.com/NVIDIA/cccl/releases/download/v3.1.3/cccl-v3.1.3.zip")
+-FetchContent_MakeAvailable(cccl)
+-target_include_directories(mlx BEFORE PRIVATE "${cccl_SOURCE_DIR}/include")
+-
+-# Install CCCL headers for JIT.
+-install(DIRECTORY ${cccl_SOURCE_DIR}/include/cuda
+-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cccl)
+-install(DIRECTORY ${cccl_SOURCE_DIR}/include/nv
+-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cccl)
++## Use fixed version of CCCL.
++#FetchContent_Declare(
++#  cccl
++#  URL "https://github.com/NVIDIA/cccl/releases/download/v3.1.3/cccl-v3.1.3.zip")
++#FetchContent_MakeAvailable(cccl)
++#target_include_directories(mlx BEFORE PRIVATE "${cccl_SOURCE_DIR}/include")
++#
++## Install CCCL headers for JIT.
++#install(DIRECTORY ${cccl_SOURCE_DIR}/include/cuda
++#        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cccl)
++#install(DIRECTORY ${cccl_SOURCE_DIR}/include/nv
++#        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/cccl)
+ 
+ # The binary of C++ tests will not be installed so it can not find the CCCL
+ # headers, and we have to hard-code the path.
+@@ -231,15 +231,15 @@
+                              PRIVATE MLX_CCCL_DIR="${cccl_SOURCE_DIR}/include")
+ endif()
+ 
+-# Use fixed version of NVTX.
+-FetchContent_Declare(
+-  nvtx3
+-  GIT_REPOSITORY https://github.com/NVIDIA/NVTX.git
+-  GIT_TAG v3.1.1
+-  GIT_SHALLOW TRUE
+-  SOURCE_SUBDIR c EXCLUDE_FROM_ALL)
+-FetchContent_MakeAvailable(nvtx3)
+-target_link_libraries(mlx PUBLIC $<BUILD_INTERFACE:nvtx3-cpp>)
++## Use fixed version of NVTX.
++#FetchContent_Declare(
++#  nvtx3
++#  GIT_REPOSITORY https://github.com/NVIDIA/NVTX.git
++#  GIT_TAG v3.1.1
++#  GIT_SHALLOW TRUE
++#  SOURCE_SUBDIR c EXCLUDE_FROM_ALL)
++#FetchContent_MakeAvailable(nvtx3)
++#target_link_libraries(mlx PUBLIC $<BUILD_INTERFACE:nvtx3-cpp>)
+ 
+ # Make cuda runtime APIs available in non-cuda files.
+ target_include_directories(mlx PRIVATE ${CUDAToolkit_INCLUDE_DIRS})
+@@ -261,8 +261,8 @@
+ set(CUDNN_FRONTEND_BUILD_SAMPLES OFF)
+ set(CUDNN_FRONTEND_BUILD_TESTS OFF)
+ set(CUDNN_FRONTEND_BUILD_PYTHON_BINDINGS OFF)
+-FetchContent_MakeAvailable(cudnn)
+-target_link_libraries(mlx PRIVATE cudnn_frontend)
++#FetchContent_MakeAvailable(cudnn)
++#target_link_libraries(mlx PRIVATE cudnn_frontend)
+ # Link with the actual cuDNN libraries.
+ target_link_libraries(mlx PRIVATE CUDNN::cudnn_all)
+ 
+@@ -273,6 +273,6 @@
+   GIT_TAG v4.3.5
+   GIT_SHALLOW TRUE
+   SOURCE_SUBDIR include EXCLUDE_FROM_ALL)
+-FetchContent_MakeAvailable(cutlass)
++#FetchContent_MakeAvailable(cutlass)
+ target_include_directories(
+   mlx SYSTEM PRIVATE $<BUILD_INTERFACE:${cutlass_SOURCE_DIR}/include>)
+diff -Nur a/mlx/backend/cuda/device/binary_ops.cuh b/mlx/backend/cuda/device/binary_ops.cuh
+--- a/mlx/backend/cuda/device/binary_ops.cuh	2026-03-11 15:25:17.000000000 -0700
++++ b/mlx/backend/cuda/device/binary_ops.cuh	2026-03-27 17:01:07.236683654 -0700
+@@ -19,7 +19,8 @@
+     if constexpr (cuda::std::is_integral_v<T>) {
+       return x / y;
+     } else {
+-      return cuda::std::trunc(x / y);
++      using U = cuda::std::conditional_t<(sizeof(T) < sizeof(float)), float, T>;
++      return static_cast<T>(cuda::std::trunc(U(x) / U(y)));
+     }
+   }
+ };
+@@ -47,7 +48,8 @@
+     } else if constexpr (is_complex_v<T>) {
+       return x % y;
+     } else {
+-      T r = cuda::std::fmod(x, y);
++      using U = cuda::std::conditional_t<(sizeof(T) < sizeof(float)), float, T>;
++      T r = static_cast<T>(cuda::std::fmod(U(x), U(y)));
+       if (r != 0 && (r < 0 != y < 0)) {
+         r = r + y;
+       }
+@@ -222,7 +224,8 @@
+     } else if constexpr (is_complex_v<T>) {
+       return cuda::std::pow(base, exp);
+     } else {
+-      return cuda::std::pow(base, exp);
++      using U = cuda::std::conditional_t<(sizeof(T) < sizeof(float)), float, T>;
++      return static_cast<T>(cuda::std::pow(U(base), U(exp)));
+     }
+   }
+ };
+diff -Nur a/mlx/backend/cuda/device/unary_ops.cuh b/mlx/backend/cuda/device/unary_ops.cuh
+--- a/mlx/backend/cuda/device/unary_ops.cuh	2026-03-11 15:25:17.000000000 -0700
++++ b/mlx/backend/cuda/device/unary_ops.cuh	2026-03-27 17:18:53.383245506 -0700
+@@ -11,13 +11,21 @@
+ 
+ namespace mlx::core::cu {
+ 
++// Promote __half/__nv_bfloat16 to float to avoid overload ambiguity with
++// GCC 14's <cmath>, which exposes std::foo(float) and std::foo(long double)
++// but no overload for 16-bit floats.
++template <typename T>
++__device__ auto to_math(T x) {
++  return static_cast<cuda::std::conditional_t<(sizeof(T) < sizeof(float)), float, T>>(x);
++}
++
+ struct Abs {
+   template <typename T>
+   __device__ T operator()(T x) {
+     if constexpr (cuda::std::is_unsigned_v<T>) {
+       return x;
+     } else {
+-      return cuda::std::abs(x);
++      return static_cast<T>(cuda::std::abs(to_math(x)));
+     }
+   }
+ };
+@@ -25,42 +33,42 @@
+ struct ArcCos {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::acos(x);
++    return static_cast<T>(cuda::std::acos(to_math(x)));
+   }
+ };
+ 
+ struct ArcCosh {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::acosh(x);
++    return static_cast<T>(cuda::std::acosh(to_math(x)));
+   }
+ };
+ 
+ struct ArcSin {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::asin(x);
++    return static_cast<T>(cuda::std::asin(to_math(x)));
+   }
+ };
+ 
+ struct ArcSinh {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::asinh(x);
++    return static_cast<T>(cuda::std::asinh(to_math(x)));
+   }
+ };
+ 
+ struct ArcTan {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::atan(x);
++    return static_cast<T>(cuda::std::atan(to_math(x)));
+   }
+ };
+ 
+ struct ArcTanh {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::atanh(x);
++    return static_cast<T>(cuda::std::atanh(to_math(x)));
+   }
+ };
+ 
+@@ -79,7 +87,7 @@
+     } else if constexpr (is_complex_v<T>) {
+       return T{cuda::std::ceil(x.real()), cuda::std::ceil(x.imag())};
+     } else {
+-      return cuda::std::ceil(x);
++      return static_cast<T>(cuda::std::ceil(to_math(x)));
+     }
+   }
+ };
+@@ -94,14 +102,14 @@
+ struct Cos {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::cos(x);
++    return static_cast<T>(cuda::std::cos(to_math(x)));
+   }
+ };
+ 
+ struct Cosh {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::cosh(x);
++    return static_cast<T>(cuda::std::cosh(to_math(x)));
+   }
+ };
+ 
+@@ -134,14 +142,14 @@
+ struct Exp {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::exp(x);
++    return static_cast<T>(cuda::std::exp(to_math(x)));
+   }
+ };
+ 
+ struct Expm1 {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::expm1(x);
++    return static_cast<T>(cuda::std::expm1(to_math(x)));
+   }
+ };
+ 
+@@ -153,7 +161,7 @@
+     } else if constexpr (is_complex_v<T>) {
+       return T{cuda::std::floor(x.real()), cuda::std::floor(x.imag())};
+     } else {
+-      return cuda::std::floor(x);
++      return static_cast<T>(cuda::std::floor(to_math(x)));
+     }
+   }
+ };
+@@ -168,7 +176,7 @@
+ struct Log {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::log(x);
++    return static_cast<T>(cuda::std::log(to_math(x)));
+   }
+ };
+ 
+@@ -179,7 +187,7 @@
+       auto y = Log{}(x);
+       return {y.real() / CUDART_LN2_F, y.imag() / CUDART_LN2_F};
+     } else {
+-      return cuda::std::log2(x);
++      return static_cast<T>(cuda::std::log2(to_math(x)));
+     }
+   }
+ };
+@@ -187,7 +195,7 @@
+ struct Log10 {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::log10(x);
++    return static_cast<T>(cuda::std::log10(to_math(x)));
+   }
+ };
+ 
+@@ -210,7 +218,7 @@
+         return {logf(z0), theta};
+       }
+     } else {
+-      return cuda::std::log1p(z);
++      return static_cast<T>(cuda::std::log1p(to_math(z)));
+     }
+   }
+ };
+@@ -245,7 +253,7 @@
+     if constexpr (is_complex_v<T>) {
+       return {cuda::std::rint(x.real()), cuda::std::rint(x.imag())};
+     } else {
+-      return cuda::std::rint(x);
++      return static_cast<T>(cuda::std::rint(to_math(x)));
+     }
+   }
+ };
+@@ -253,8 +261,9 @@
+ struct Sigmoid {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    T y = 1 / (1 + cuda::std::exp(cuda::std::abs(x)));
+-    return (x < 0) ? y : 1 - y;
++    auto ux = to_math(x);
++    auto y = decltype(ux){1} / (decltype(ux){1} + cuda::std::exp(cuda::std::abs(ux)));
++    return static_cast<T>((ux < 0) ? y : decltype(ux){1} - y);
+   }
+ };
+ 
+@@ -280,14 +289,14 @@
+ struct Sin {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::sin(x);
++    return static_cast<T>(cuda::std::sin(to_math(x)));
+   }
+ };
+ 
+ struct Sinh {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::sinh(x);
++    return static_cast<T>(cuda::std::sinh(to_math(x)));
+   }
+ };
+ 
+@@ -301,7 +310,7 @@
+ struct Sqrt {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::sqrt(x);
++    return static_cast<T>(cuda::std::sqrt(to_math(x)));
+   }
+ };
+ 
+@@ -323,14 +332,14 @@
+ struct Tan {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::tan(x);
++    return static_cast<T>(cuda::std::tan(to_math(x)));
+   }
+ };
+ 
+ struct Tanh {
+   template <typename T>
+   __device__ T operator()(T x) {
+-    return cuda::std::tanh(x);
++    return static_cast<T>(cuda::std::tanh(to_math(x)));
+   }
+ };
+ 
