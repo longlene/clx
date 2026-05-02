@@ -1,7 +1,7 @@
 diff -Nur a/mlx/backend/cuda/CMakeLists.txt b/mlx/backend/cuda/CMakeLists.txt
---- a/mlx/backend/cuda/CMakeLists.txt	2026-03-11 15:25:17.000000000 -0700
-+++ b/mlx/backend/cuda/CMakeLists.txt	2026-03-27 17:55:57.323738046 -0700
-@@ -211,18 +211,18 @@
+--- a/mlx/backend/cuda/CMakeLists.txt
++++ b/mlx/backend/cuda/CMakeLists.txt
+@@ -218,18 +218,18 @@
  
  # ------------------------ Dependencies ------------------------
  
@@ -32,7 +32,7 @@ diff -Nur a/mlx/backend/cuda/CMakeLists.txt b/mlx/backend/cuda/CMakeLists.txt
  
  # The binary of C++ tests will not be installed so it can not find the CCCL
  # headers, and we have to hard-code the path.
-@@ -231,15 +231,15 @@
+@@ -238,15 +238,15 @@
                               PRIVATE MLX_CCCL_DIR="${cccl_SOURCE_DIR}/include")
  endif()
  
@@ -57,7 +57,7 @@ diff -Nur a/mlx/backend/cuda/CMakeLists.txt b/mlx/backend/cuda/CMakeLists.txt
  
  # Make cuda runtime APIs available in non-cuda files.
  target_include_directories(mlx PRIVATE ${CUDAToolkit_INCLUDE_DIRS})
-@@ -261,8 +261,8 @@
+@@ -271,8 +271,8 @@
  set(CUDNN_FRONTEND_BUILD_SAMPLES OFF)
  set(CUDNN_FRONTEND_BUILD_TESTS OFF)
  set(CUDNN_FRONTEND_BUILD_PYTHON_BINDINGS OFF)
@@ -68,8 +68,8 @@ diff -Nur a/mlx/backend/cuda/CMakeLists.txt b/mlx/backend/cuda/CMakeLists.txt
  # Link with the actual cuDNN libraries.
  target_link_libraries(mlx PRIVATE CUDNN::cudnn_all)
  
-@@ -273,6 +273,6 @@
-   GIT_TAG v4.3.5
+@@ -283,6 +283,6 @@
+   GIT_TAG v4.4.2
    GIT_SHALLOW TRUE
    SOURCE_SUBDIR include EXCLUDE_FROM_ALL)
 -FetchContent_MakeAvailable(cutlass)
@@ -77,8 +77,8 @@ diff -Nur a/mlx/backend/cuda/CMakeLists.txt b/mlx/backend/cuda/CMakeLists.txt
  target_include_directories(
    mlx SYSTEM PRIVATE $<BUILD_INTERFACE:${cutlass_SOURCE_DIR}/include>)
 diff -Nur a/mlx/backend/cuda/device/binary_ops.cuh b/mlx/backend/cuda/device/binary_ops.cuh
---- a/mlx/backend/cuda/device/binary_ops.cuh	2026-03-11 15:25:17.000000000 -0700
-+++ b/mlx/backend/cuda/device/binary_ops.cuh	2026-03-27 17:01:07.236683654 -0700
+--- a/mlx/backend/cuda/device/binary_ops.cuh
++++ b/mlx/backend/cuda/device/binary_ops.cuh
 @@ -19,7 +19,8 @@
      if constexpr (cuda::std::is_integral_v<T>) {
        return x / y;
@@ -110,8 +110,8 @@ diff -Nur a/mlx/backend/cuda/device/binary_ops.cuh b/mlx/backend/cuda/device/bin
    }
  };
 diff -Nur a/mlx/backend/cuda/device/unary_ops.cuh b/mlx/backend/cuda/device/unary_ops.cuh
---- a/mlx/backend/cuda/device/unary_ops.cuh	2026-03-11 15:25:17.000000000 -0700
-+++ b/mlx/backend/cuda/device/unary_ops.cuh	2026-03-27 17:18:53.383245506 -0700
+--- a/mlx/backend/cuda/device/unary_ops.cuh
++++ b/mlx/backend/cuda/device/unary_ops.cuh
 @@ -11,13 +11,21 @@
  
  namespace mlx::core::cu {
@@ -336,3 +336,27 @@ diff -Nur a/mlx/backend/cuda/device/unary_ops.cuh b/mlx/backend/cuda/device/unar
    }
  };
  
+diff -Nur a/mlx/backend/cuda/quantized/qmm/qmm_impl_naive.cuh b/mlx/backend/cuda/quantized/qmm/qmm_impl_naive.cuh
+--- a/mlx/backend/cuda/quantized/qmm/qmm_impl_naive.cuh
++++ b/mlx/backend/cuda/quantized/qmm/qmm_impl_naive.cuh
+@@ -71,7 +71,7 @@
+   auto k_residue = shape_K - bK * ceil_div(shape_K, bK);
+   if constexpr (HasKResidue) {
+     A += k_residue * get<1>(dA);
+-    B += k_residue * get<1>(dB) * cuda::std::min(8, sizeof_bits_v<Quant>) / 8;
++    B += k_residue * get<1>(dB) * std::min(8, sizeof_bits_v<Quant>) / 8;
+     S += k_residue * stride<1>(S_layout);
+     Z += k_residue * stride<1>(S_layout);
+   }
+diff -Nur a/mlx/backend/cuda/quantized/qmm/qmv.cu b/mlx/backend/cuda/quantized/qmm/qmv.cu
+--- a/mlx/backend/cuda/quantized/qmm/qmv.cu
++++ b/mlx/backend/cuda/quantized/qmm/qmv.cu
+@@ -104,7 +104,7 @@
+   // For sub-byte Q, pointer moves by 8bits for each advance, e.g. w += 1 would
+   // move past 2 elements for 4-bit Q.
+   constexpr int bits = cute::sizeof_bits_v<Q>;
+-  auto w_step = [&](int idx) { return idx * cuda::std::min(8, bits) / 8; };
++  auto w_step = [&](int idx) { return idx * std::min(8, bits) / 8; };
+ 
+   // How many groups (and scales/biases) in a row.
+   int groups_per_row = k / group_size;

@@ -1,0 +1,182 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	adler32@1.2.0
+	aho-corasick@1.1.4
+	allocator-api2@0.2.21
+	android_system_properties@0.1.5
+	anstream@0.6.21
+	anstyle-parse@0.2.7
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anstyle@1.0.13
+	async-trait@0.1.89
+	autocfg@1.5.0
+	base64@0.22.1
+	bitflags@2.10.0
+	bumpalo@3.19.1
+	byteorder@1.5.0
+	bytes@1.11.0
+	cc@1.2.53
+	cfg-if@1.0.4
+	chrono@0.4.43
+	clap@4.5.54
+	clap_builder@4.5.54
+	clap_derive@4.5.49
+	clap_lex@0.7.7
+	colorchoice@1.0.4
+	core-foundation-sys@0.8.7
+	core2@0.4.0
+	crc32fast@1.5.0
+	darling@0.23.0
+	darling_core@0.23.0
+	darling_macro@0.23.0
+	dary_heap@0.3.8
+	dyn-clone@1.0.20
+	eetf@0.11.0
+	equivalent@1.0.2
+	erl_dist@0.7.0
+	errno@0.3.14
+	fastrand@2.3.0
+	find-msvc-tools@0.1.8
+	foldhash@0.2.0
+	futures-channel@0.3.31
+	futures-core@0.3.31
+	futures-executor@0.3.31
+	futures-io@0.3.31
+	futures-macro@0.3.31
+	futures-sink@0.3.31
+	futures-task@0.3.31
+	futures-util@0.3.31
+	futures@0.3.31
+	getrandom@0.3.4
+	hashbrown@0.16.1
+	heck@0.5.0
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.64
+	ident_case@1.0.1
+	is_terminal_polyfill@1.70.2
+	itoa@1.0.17
+	js-sys@0.3.85
+	lazy_static@1.5.0
+	libc@0.2.180
+	libflate@2.2.1
+	libflate_lz77@2.2.0
+	linux-raw-sys@0.11.0
+	lock_api@0.4.14
+	log@0.4.29
+	matchers@0.2.0
+	md5@0.8.0
+	memchr@2.7.6
+	mio@1.1.1
+	nu-ansi-term@0.50.3
+	num-bigint@0.4.6
+	num-integer@0.1.46
+	num-traits@0.2.19
+	once_cell@1.21.3
+	once_cell_polyfill@1.70.2
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
+	pastey@0.2.1
+	pin-project-lite@0.2.16
+	pin-utils@0.1.0
+	ppv-lite86@0.2.21
+	proc-macro2@1.0.105
+	quote@1.0.43
+	r-efi@5.3.0
+	rand@0.9.2
+	rand_chacha@0.9.0
+	rand_core@0.9.5
+	redox_syscall@0.5.18
+	ref-cast-impl@1.0.25
+	ref-cast@1.0.25
+	regex-automata@0.4.13
+	regex-syntax@0.8.8
+	rle-decode-fast@1.0.3
+	rmcp-macros@0.13.0
+	rmcp@0.13.0
+	rustix@1.1.3
+	rustversion@1.0.22
+	schemars@1.2.0
+	schemars_derive@1.2.0
+	scopeguard@1.2.0
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_derive_internals@0.29.1
+	serde_json@1.0.149
+	sharded-slab@0.1.7
+	shlex@1.3.0
+	signal-hook-registry@1.4.8
+	slab@0.4.11
+	smallvec@1.15.1
+	socket2@0.6.1
+	strsim@0.11.1
+	syn@2.0.114
+	tempfile@3.24.0
+	thiserror-impl@2.0.18
+	thiserror@2.0.18
+	thread_local@1.1.9
+	tokio-macros@2.6.0
+	tokio-util@0.7.18
+	tokio@1.49.0
+	tracing-attributes@0.1.31
+	tracing-core@0.1.36
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.22
+	tracing@0.1.44
+	unicode-ident@1.0.22
+	utf8parse@0.2.2
+	uuid@1.19.0
+	valuable@0.1.1
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.2+wasi-0.2.9
+	wasm-bindgen-macro-support@0.2.108
+	wasm-bindgen-macro@0.2.108
+	wasm-bindgen-shared@0.2.108
+	wasm-bindgen@0.2.108
+	windows-core@0.62.2
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.2.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.60.2
+	windows-sys@0.61.2
+	windows-targets@0.53.5
+	windows_aarch64_gnullvm@0.53.1
+	windows_aarch64_msvc@0.53.1
+	windows_i686_gnu@0.53.1
+	windows_i686_gnullvm@0.53.1
+	windows_i686_msvc@0.53.1
+	windows_x86_64_gnu@0.53.1
+	windows_x86_64_gnullvm@0.53.1
+	windows_x86_64_msvc@0.53.1
+	wit-bindgen@0.51.0
+	zerocopy-derive@0.8.33
+	zerocopy@0.8.33
+	zmij@1.0.16
+"
+
+RUST_MIN_VER="1.88.0"
+
+inherit cargo
+
+DESCRIPTION="Erlang Distribution MCP Server - connects to Erlang/BEAM nodes for introspection and debugging"
+HOMEPAGE="https://github.com/jimsynz/erl_dist_mcp/"
+SRC_URI="
+	https://github.com/jimsynz/erl_dist_mcp/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+src_install() {
+	cargo_src_install
+	einstalldocs
+}

@@ -1,0 +1,40 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2026-02-09 23:21:41.000000000 -0800
++++ b/CMakeLists.txt	2026-04-30 18:43:11.397991206 -0700
+@@ -289,7 +289,8 @@
+ 
+ # dmlc-core
+ set(DMLC_FORCE_SHARED_CRT ${FORCE_SHARED_CRT})
+-add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
++#add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
++find_package(dmlc REQUIRED)
+ 
+ if(MSVC)
+   if(TARGET dmlc_unit_tests)
+@@ -302,7 +303,7 @@
+ 
+ # core xgboost
+ add_subdirectory(${xgboost_SOURCE_DIR}/src)
+-target_link_libraries(objxgboost PUBLIC dmlc)
++target_link_libraries(objxgboost PUBLIC dmlc::dmlc)
+ 
+ # Link -lstdc++fs for GCC 8.x
+ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.0")
+@@ -385,7 +386,7 @@
+ #-- End shared library
+ 
+ # Common setup for all targets
+-foreach(target xgboost objxgboost dmlc)
++foreach(target xgboost objxgboost)
+   xgboost_target_properties(${target})
+   xgboost_target_link_libraries(${target})
+   xgboost_target_defs(${target})
+@@ -441,7 +442,7 @@
+ #
+ # https://github.com/dmlc/xgboost/issues/6085
+ if(BUILD_STATIC_LIB)
+-  set(INSTALL_TARGETS xgboost objxgboost dmlc)
++  set(INSTALL_TARGETS xgboost objxgboost)
+ else()
+   set(INSTALL_TARGETS xgboost)
+ endif()

@@ -1,0 +1,11 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -42,8 +42,6 @@
+ [tool.setuptools.package-data]
+ "pymilvus.model.sparse.bm25" = ["lang.yaml"]
+ 
+-[tool.setuptools.dynamic]
+-version = { attr = "_version_helper.version" }
+ 
+ [tool.setuptools_scm]
+ 

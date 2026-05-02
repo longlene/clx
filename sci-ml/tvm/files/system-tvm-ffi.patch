@@ -1,0 +1,71 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2026-01-26 21:55:36.000000000 -0800
++++ b/CMakeLists.txt	2026-04-30 08:36:01.299265540 -0700
+@@ -491,9 +491,9 @@
+ add_library(tvm_objs OBJECT ${COMPILER_SRCS})
+ add_library(tvm_runtime_objs OBJECT ${RUNTIME_SRCS})
+ add_library(tvm_libinfo_objs OBJECT ${LIBINFO_FILE})
+-target_link_libraries(tvm_objs PUBLIC tvm_ffi_header)
+-target_link_libraries(tvm_runtime_objs PUBLIC tvm_ffi_header)
+-target_link_libraries(tvm_libinfo_objs PUBLIC tvm_ffi_header)
++target_link_libraries(tvm_objs PUBLIC tvm_ffi::header)
++target_link_libraries(tvm_runtime_objs PUBLIC tvm_ffi::header)
++target_link_libraries(tvm_libinfo_objs PUBLIC tvm_ffi::header)
+ 
+ include(GNUInstallDirs)
+ if(NOT BUILD_DUMMY_LIBTVM)
+@@ -503,7 +503,7 @@
+     $<TARGET_OBJECTS:tvm_libinfo_objs>
+     ${TVM_RUNTIME_EXT_OBJS}
+   )
+-  target_link_libraries(tvm PUBLIC tvm_ffi_shared)
++  target_link_libraries(tvm PUBLIC tvm_ffi::shared)
+ else()
+   # dummy version of libtvm that can be used by downstream to specify dependencies
+   # the real runner still need a full version of libtvm
+@@ -512,7 +512,7 @@
+     $<TARGET_OBJECTS:tvm_libinfo_objs>
+     ${TVM_RUNTIME_EXT_OBJS}
+   )
+-  target_link_libraries(tvm PUBLIC tvm_ffi_shared)
++  target_link_libraries(tvm PUBLIC tvm_ffi::shared)
+ endif()
+ 
+ target_include_directories(tvm PUBLIC "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>")
+@@ -530,7 +530,7 @@
+   string(CONCAT NOTICE ${NOTICE_MULTILINE})
+   add_custom_command(TARGET tvm_runtime POST_BUILD
+     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --yellow --bold ${NOTICE})
+-  target_link_libraries(tvm_runtime PUBLIC tvm_ffi_static)
++  target_link_libraries(tvm_runtime PUBLIC tvm_ffi::static)
+ else()
+   add_library(tvm_runtime SHARED
+     $<TARGET_OBJECTS:tvm_runtime_objs>
+@@ -538,7 +538,7 @@
+     ${TVM_RUNTIME_EXT_OBJS}
+   )
+   set_property(TARGET tvm_runtime APPEND PROPERTY LINK_OPTIONS "${TVM_NO_UNDEFINED_SYMBOLS}")
+-  target_link_libraries(tvm_runtime PUBLIC tvm_ffi_shared)
++  target_link_libraries(tvm_runtime PUBLIC tvm_ffi::shared)
+ endif()
+ 
+ 
+@@ -568,7 +568,8 @@
+   add_subdirectory("apps/ios_rpc")
+ endif()
+ 
+-add_subdirectory(3rdparty/tvm-ffi)
++#add_subdirectory(3rdparty/tvm-ffi)
++find_package(tvm_ffi REQUIRED)
+ 
+ if(TVM_DEBUG_WITH_ABI_CHANGE)
+   message(STATUS "Building with debug code that may cause ABI changes...")
+@@ -632,7 +633,7 @@
+   add_library(tvm_allvisible SHARED $<TARGET_OBJECTS:tvm_objs> $<TARGET_OBJECTS:tvm_runtime_objs> $<TARGET_OBJECTS:tvm_libinfo_objs>)
+   target_include_directories(tvm_allvisible PUBLIC "$<TARGET_PROPERTY:tvm,INCLUDE_DIRECTORIES>")
+   target_link_libraries(tvm_allvisible PRIVATE "$<TARGET_PROPERTY:tvm,LINK_LIBRARIES>")
+-  target_link_libraries(tvm_allvisible PUBLIC tvm_ffi_shared)
++  target_link_libraries(tvm_allvisible PUBLIC tvm_ffi::shared)
+   set(TVM_TEST_LIBRARY_NAME tvm_allvisible)
+ 
+   set(HIDE_SYMBOLS_LINKER_FLAGS "-Wl,--exclude-libs,ALL")

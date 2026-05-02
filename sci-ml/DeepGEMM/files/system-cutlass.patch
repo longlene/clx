@@ -1,0 +1,13 @@
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py	2025-10-13 22:05:47.000000000 -0700
++++ b/setup.py	2026-04-27 20:28:59.783747886 -0700
+@@ -45,8 +45,7 @@
+     f'{CUDA_HOME}/lib64/stubs'
+ ]
+ third_party_include_dirs = [
+-    'third-party/cutlass/include/cute',
+-    'third-party/cutlass/include/cutlass',
++    '/usr/include/cutlass',
+ ]
+ 
+ # Release
