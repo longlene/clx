@@ -1,0 +1,13 @@
+diff -Nur a/setup.py b/setup.py
+--- a/setup.py
++++ b/setup.py
+@@ -70,6 +70,9 @@
+                 f"-DFETCHCONTENT_SOURCE_DIR_DLPACK={os.environ['FETCHCONTENT_SOURCE_DIR_DLPACK']}"
+             )
+ 
++        if "CUDNN_FRONTEND_USE_SYSTEM_DLPACK" in os.environ:
++            cmake_args.append(f"-DCUDNN_FRONTEND_USE_SYSTEM_DLPACK={os.environ['CUDNN_FRONTEND_USE_SYSTEM_DLPACK']}")
++
+         # Using Ninja-build since it a) is available as a wheel and b)
+         # multithreads automatically. MSVC would require all variables be
+         # exported for Ninja to pick it up, which is a little tricky to do.

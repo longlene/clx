@@ -59,7 +59,6 @@ wrap_python() {
 	fi
 }
 
-
 pkg_setup() {
 	python_setup
 }

@@ -1,0 +1,585 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{13..14} )
+DISTUTILS_EXT=1
+DISTUTILS_SINGLE_IMPL=1
+
+CRATES="
+	ahash@0.8.12
+	aho-corasick@1.1.4
+	anstream@1.0.0
+	anstyle-parse@1.0.0
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anstyle@1.0.14
+	anyhow@1.0.102
+	autocfg@1.5.0
+	base64@0.13.1
+	bitflags@2.11.1
+	bumpalo@3.20.2
+	castaway@0.2.4
+	cc@1.2.61
+	cfg-if@1.0.4
+	colorchoice@1.0.5
+	compact_str@0.9.0
+	console@0.16.3
+	crossbeam-deque@0.8.6
+	crossbeam-epoch@0.9.18
+	crossbeam-utils@0.8.21
+	daachorse@1.0.1
+	darling@0.20.11
+	darling_core@0.20.11
+	darling_macro@0.20.11
+	dary_heap@0.3.9
+	derive_builder@0.20.2
+	derive_builder_core@0.20.2
+	derive_builder_macro@0.20.2
+	either@1.15.0
+	encode_unicode@1.0.0
+	env_filter@1.0.1
+	env_logger@0.11.10
+	equivalent@1.0.2
+	errno@0.3.14
+	esaxx-rs@0.1.10
+	fastrand@2.4.1
+	find-msvc-tools@0.1.9
+	fnv@1.0.7
+	foldhash@0.1.5
+	futures-channel@0.3.32
+	futures-core@0.3.32
+	futures-macro@0.3.32
+	futures-task@0.3.32
+	futures-util@0.3.32
+	getrandom@0.3.4
+	getrandom@0.4.2
+	hashbrown@0.15.5
+	hashbrown@0.17.0
+	heck@0.5.0
+	id-arena@2.3.0
+	ident_case@1.0.1
+	indexmap@2.14.0
+	indicatif@0.18.4
+	is_terminal_polyfill@1.70.2
+	itertools@0.14.0
+	itoa@1.0.18
+	jiff-static@0.2.24
+	jiff@0.2.24
+	js-sys@0.3.95
+	leb128fmt@0.1.0
+	libc@0.2.186
+	linux-raw-sys@0.12.1
+	log@0.4.29
+	macro_rules_attribute-proc_macro@0.2.2
+	macro_rules_attribute@0.2.2
+	matrixmultiply@0.3.10
+	memchr@2.8.0
+	minimal-lexical@0.2.1
+	mio@1.2.0
+	monostate-impl@0.1.18
+	monostate@0.1.18
+	ndarray@0.16.1
+	ndarray@0.17.2
+	nom@7.1.3
+	num-complex@0.4.6
+	num-integer@0.1.46
+	num-traits@0.2.19
+	numpy@0.28.0
+	once_cell@1.21.4
+	once_cell_polyfill@1.70.2
+	onig@6.5.3
+	onig_sys@69.9.3
+	paste@1.0.15
+	pin-project-lite@0.2.17
+	pkg-config@0.3.33
+	portable-atomic-util@0.2.7
+	portable-atomic@1.13.1
+	ppv-lite86@0.2.21
+	prettyplease@0.2.37
+	proc-macro2@1.0.106
+	pyo3-async-runtimes@0.28.0
+	pyo3-build-config@0.28.2
+	pyo3-ffi@0.28.2
+	pyo3-macros-backend@0.28.2
+	pyo3-macros@0.28.2
+	pyo3@0.28.2
+	quote@1.0.45
+	r-efi@5.3.0
+	r-efi@6.0.0
+	rand@0.9.4
+	rand_chacha@0.9.0
+	rand_core@0.9.5
+	rawpointer@0.2.1
+	rayon-cond@0.4.0
+	rayon-core@1.13.0
+	rayon@1.12.0
+	regex-automata@0.4.14
+	regex-syntax@0.8.10
+	regex@1.12.3
+	rustc-hash@2.1.2
+	rustix@1.1.4
+	rustversion@1.0.22
+	ryu@1.0.23
+	semver@1.0.28
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.149
+	shlex@1.3.0
+	signal-hook-registry@1.4.8
+	slab@0.4.12
+	smallvec@1.15.1
+	spm_precompiled@0.1.4
+	static_assertions@1.1.0
+	strsim@0.11.1
+	syn@2.0.117
+	target-lexicon@0.13.5
+	tempfile@3.27.0
+	thiserror-impl@2.0.18
+	thiserror@2.0.18
+	tokio-macros@2.7.0
+	tokio@1.52.1
+	unicode-ident@1.0.24
+	unicode-normalization-alignments@0.1.12
+	unicode-segmentation@1.13.2
+	unicode-width@0.2.2
+	unicode-xid@0.2.6
+	unicode_categories@0.1.1
+	unit-prefix@0.5.2
+	utf8parse@0.2.2
+	version_check@0.9.5
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.3+wasi-0.2.9
+	wasip3@0.4.0+wasi-0.3.0-rc-2026-01-06
+	wasm-bindgen-macro-support@0.2.118
+	wasm-bindgen-macro@0.2.118
+	wasm-bindgen-shared@0.2.118
+	wasm-bindgen@0.2.118
+	wasm-encoder@0.244.0
+	wasm-metadata@0.244.0
+	wasmparser@0.244.0
+	web-time@1.1.0
+	windows-link@0.2.1
+	windows-sys@0.61.2
+	wit-bindgen-core@0.51.0
+	wit-bindgen-rust-macro@0.51.0
+	wit-bindgen-rust@0.51.0
+	wit-bindgen@0.51.0
+	wit-bindgen@0.57.1
+	wit-component@0.244.0
+	wit-parser@0.244.0
+	zerocopy-derive@0.8.48
+	zerocopy@0.8.48
+	zmij@1.0.21
+
+	adler2@2.0.1
+	ahash@0.8.12
+	aho-corasick@1.1.4
+	anes@0.1.6
+	anstyle@1.0.14
+	anyhow@1.0.102
+	assert_approx_eq@1.1.0
+	atomic-waker@1.1.2
+	autocfg@1.5.0
+	base64@0.13.1
+	base64@0.22.1
+	bit-set@0.8.0
+	bit-vec@0.8.0
+	bitflags@2.11.1
+	bumpalo@3.20.2
+	byteorder@1.5.0
+	bytes@1.11.1
+	cast@0.3.0
+	castaway@0.2.4
+	cc@1.2.61
+	cfg-if@1.0.4
+	cfg_aliases@0.2.1
+	ciborium-io@0.2.2
+	ciborium-ll@0.2.2
+	ciborium@0.2.2
+	clap@4.6.1
+	clap_builder@4.6.0
+	clap_lex@1.1.0
+	compact_str@0.9.0
+	console@0.15.11
+	console@0.16.3
+	crc32fast@1.5.0
+	criterion-plot@0.5.0
+	criterion@0.6.0
+	crossbeam-deque@0.8.6
+	crossbeam-epoch@0.9.18
+	crossbeam-utils@0.8.21
+	crunchy@0.2.4
+	daachorse@1.0.1
+	darling@0.20.11
+	darling_core@0.20.11
+	darling_macro@0.20.11
+	dary_heap@0.3.9
+	derive_builder@0.20.2
+	derive_builder_core@0.20.2
+	derive_builder_macro@0.20.2
+	dirs-sys@0.5.0
+	dirs@6.0.0
+	displaydoc@0.2.5
+	either@1.15.0
+	encode_unicode@1.0.0
+	equivalent@1.0.2
+	errno@0.3.14
+	esaxx-rs@0.1.10
+	fancy-regex@0.17.0
+	fastrand@2.4.1
+	find-msvc-tools@0.1.9
+	flate2@1.1.9
+	fnv@1.0.7
+	foldhash@0.1.5
+	form_urlencoded@1.2.2
+	futures-channel@0.3.32
+	futures-core@0.3.32
+	futures-io@0.3.32
+	futures-macro@0.3.32
+	futures-sink@0.3.32
+	futures-task@0.3.32
+	futures-util@0.3.32
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.2
+	half@2.7.1
+	hashbrown@0.15.5
+	hashbrown@0.17.0
+	heck@0.5.0
+	hf-hub@0.4.3
+	http-body-util@0.1.3
+	http-body@1.0.1
+	http@1.4.0
+	httparse@1.10.1
+	hyper-rustls@0.27.9
+	hyper-util@0.1.20
+	hyper@1.9.0
+	icu_collections@2.2.0
+	icu_locale_core@2.2.0
+	icu_normalizer@2.2.0
+	icu_normalizer_data@2.2.0
+	icu_properties@2.2.0
+	icu_properties_data@2.2.0
+	icu_provider@2.2.0
+	id-arena@2.3.0
+	ident_case@1.0.1
+	idna@1.1.0
+	idna_adapter@1.2.2
+	indexmap@2.14.0
+	indicatif@0.17.11
+	indicatif@0.18.4
+	ipnet@2.12.0
+	iri-string@0.7.12
+	itertools@0.10.5
+	itertools@0.13.0
+	itertools@0.14.0
+	itoa@1.0.18
+	js-sys@0.3.97
+	lazy_static@1.5.0
+	leb128fmt@0.1.0
+	libc@0.2.186
+	libredox@0.1.16
+	linux-raw-sys@0.12.1
+	litemap@0.8.2
+	log@0.4.29
+	lru-slab@0.1.2
+	macro_rules_attribute-proc_macro@0.2.2
+	macro_rules_attribute@0.2.2
+	memchr@2.8.0
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	mio@1.2.0
+	monostate-impl@0.1.18
+	monostate@0.1.18
+	nom@7.1.3
+	nu-ansi-term@0.50.3
+	num-traits@0.2.19
+	number_prefix@0.4.0
+	once_cell@1.21.4
+	onig@6.5.3
+	onig_sys@69.9.3
+	oorandom@11.1.5
+	option-ext@0.2.0
+	paste@1.0.15
+	percent-encoding@2.3.2
+	pin-project-lite@0.2.17
+	pkg-config@0.3.33
+	plotters-backend@0.3.7
+	plotters-svg@0.3.7
+	plotters@0.3.7
+	portable-atomic@1.13.1
+	potential_utf@0.1.5
+	ppv-lite86@0.2.21
+	prettyplease@0.2.37
+	proc-macro2@1.0.106
+	quinn-proto@0.11.14
+	quinn-udp@0.5.14
+	quinn@0.11.9
+	quote@1.0.45
+	r-efi@5.3.0
+	r-efi@6.0.0
+	rand@0.9.4
+	rand_chacha@0.9.0
+	rand_core@0.9.5
+	rayon-cond@0.4.0
+	rayon-core@1.13.0
+	rayon@1.12.0
+	redox_users@0.5.2
+	regex-automata@0.4.14
+	regex-syntax@0.8.10
+	regex@1.12.3
+	reqwest@0.12.28
+	ring@0.17.14
+	rustc-hash@2.1.2
+	rustix@1.1.4
+	rustls-pki-types@1.14.1
+	rustls-webpki@0.103.13
+	rustls@0.23.40
+	rustversion@1.0.22
+	ryu@1.0.23
+	same-file@1.0.6
+	semver@1.0.28
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.149
+	serde_urlencoded@0.7.1
+	sharded-slab@0.1.7
+	shlex@1.3.0
+	simd-adler32@0.3.9
+	slab@0.4.12
+	smallvec@1.15.1
+	socket2@0.6.3
+	socks@0.3.4
+	spm_precompiled@0.1.4
+	stable_deref_trait@1.2.1
+	static_assertions@1.1.0
+	strsim@0.11.1
+	subtle@2.6.1
+	syn@2.0.117
+	sync_wrapper@1.0.2
+	synstructure@0.13.2
+	tempfile@3.27.0
+	thiserror-impl@2.0.18
+	thiserror@2.0.18
+	thread_local@1.1.9
+	tinystr@0.8.3
+	tinytemplate@1.2.1
+	tinyvec@1.11.0
+	tinyvec_macros@0.1.1
+	tokio-rustls@0.26.4
+	tokio-util@0.7.18
+	tokio@1.52.1
+	tower-http@0.6.8
+	tower-layer@0.3.3
+	tower-service@0.3.3
+	tower@0.5.3
+	tracing-attributes@0.1.31
+	tracing-core@0.1.36
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.23
+	tracing@0.1.44
+	try-lock@0.2.5
+	unicode-ident@1.0.24
+	unicode-normalization-alignments@0.1.12
+	unicode-segmentation@1.13.2
+	unicode-width@0.2.2
+	unicode-xid@0.2.6
+	unicode_categories@0.1.1
+	unit-prefix@0.5.2
+	untrusted@0.9.0
+	ureq@2.12.1
+	url@2.5.8
+	utf8_iter@1.0.4
+	valuable@0.1.1
+	version_check@0.9.5
+	walkdir@2.5.0
+	want@0.3.1
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.3+wasi-0.2.9
+	wasip3@0.4.0+wasi-0.3.0-rc-2026-01-06
+	wasm-bindgen-futures@0.4.70
+	wasm-bindgen-macro-support@0.2.120
+	wasm-bindgen-macro@0.2.120
+	wasm-bindgen-shared@0.2.120
+	wasm-bindgen@0.2.120
+	wasm-encoder@0.244.0
+	wasm-metadata@0.244.0
+	wasm-streams@0.4.2
+	wasmparser@0.244.0
+	web-sys@0.3.97
+	web-time@1.1.0
+	webpki-roots@0.26.11
+	webpki-roots@1.0.7
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.11
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-link@0.2.1
+	windows-sys@0.52.0
+	windows-sys@0.59.0
+	windows-sys@0.60.2
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows-targets@0.53.5
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_gnullvm@0.53.1
+	windows_aarch64_msvc@0.52.6
+	windows_aarch64_msvc@0.53.1
+	windows_i686_gnu@0.52.6
+	windows_i686_gnu@0.53.1
+	windows_i686_gnullvm@0.52.6
+	windows_i686_gnullvm@0.53.1
+	windows_i686_msvc@0.52.6
+	windows_i686_msvc@0.53.1
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnu@0.53.1
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_gnullvm@0.53.1
+	windows_x86_64_msvc@0.52.6
+	windows_x86_64_msvc@0.53.1
+	wit-bindgen-core@0.51.0
+	wit-bindgen-rust-macro@0.51.0
+	wit-bindgen-rust@0.51.0
+	wit-bindgen@0.51.0
+	wit-bindgen@0.57.1
+	wit-component@0.244.0
+	wit-parser@0.244.0
+	writeable@0.6.3
+	yoke-derive@0.8.2
+	yoke@0.8.2
+	zerocopy-derive@0.8.48
+	zerocopy@0.8.48
+	zerofrom-derive@0.1.7
+	zerofrom@0.1.7
+	zeroize@1.8.2
+	zerotrie@0.2.4
+	zerovec-derive@0.11.3
+	zerovec@0.11.6
+	zmij@1.0.21
+"
+
+RUST_MIN_VER="1.87.0"
+
+inherit cargo distutils-r1
+
+DESCRIPTION="Implementation of today's most used tokenizers"
+HOMEPAGE="https://github.com/huggingface/tokenizers"
+SRC_URI="
+	https://github.com/huggingface/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="Apache-2.0"
+# Dependent crate licenses
+LICENSE+="
+	Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD ISC MIT MPL-2.0
+	Unicode-DFS-2016
+"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="dev-libs/oniguruma"
+BDEPEND="
+	test? ( sci-ml/datasets[${PYTHON_SINGLE_USEDEP}] )
+	$(python_gen_cond_dep '
+		dev-python/setuptools-rust[${PYTHON_USEDEP}]
+	')
+"
+
+distutils_enable_tests pytest
+
+QA_FLAGS_IGNORED=".*/site-packages/tokenizers/.*so"
+
+src_unpack() {
+	cargo_src_unpack
+}
+
+pkg_setup() {
+	python-single-r1_pkg_setup
+	rust_pkg_setup
+}
+
+src_prepare() {
+	default
+	cd bindings/python
+	distutils-r1_src_prepare
+}
+
+src_configure() {
+	cd tokenizers
+	cargo_src_configure
+	cd ../bindings/python
+	distutils-r1_src_configure
+}
+
+src_compile() {
+	export RUSTONIG_SYSTEM_LIBONIG=1
+	cd tokenizers
+	cargo_src_compile
+	cd ../bindings/python
+	distutils-r1_src_compile
+}
+
+src_test() {
+	cd tokenizers
+	# Tests do not work
+	#cargo_src_test
+	cd ../bindings/python
+	local -x EPYTEST_IGNORE=( benches/ )
+	local -x EPYTEST_DESELECT=(
+		tests/bindings/test_encoding.py::TestEncoding::test_sequence_ids
+		tests/bindings/test_encoding.py::TestEncoding::test_n_sequences
+		tests/bindings/test_encoding.py::TestEncoding::test_word_to_tokens
+		tests/bindings/test_encoding.py::TestEncoding::test_word_to_chars
+		tests/bindings/test_encoding.py::TestEncoding::test_token_to_sequence
+		tests/bindings/test_encoding.py::TestEncoding::test_token_to_chars
+		tests/bindings/test_encoding.py::TestEncoding::test_token_to_word
+		tests/bindings/test_encoding.py::TestEncoding::test_char_to_token
+		tests/bindings/test_encoding.py::TestEncoding::test_char_to_word
+		tests/bindings/test_encoding.py::TestEncoding::test_truncation
+		tests/bindings/test_encoding.py::TestEncoding::test_invalid_truncate_direction
+		tests/bindings/test_models.py::TestBPE::test_instantiate
+		tests/bindings/test_models.py::TestWordLevel::test_instantiate
+		tests/bindings/test_models.py::TestWordPiece::test_instantiate
+		tests/bindings/test_processors.py::TestByteLevelProcessing::test_processing
+		tests/bindings/test_trainers.py::TestUnigram::test_continuing_prefix_trainer_mismatch
+		tests/bindings/test_trainers.py::TestUnigram::test_train
+		tests/bindings/test_trainers.py::TestUnigram::test_train_parallelism_with_custom_pretokenizer
+		tests/documentation/test_pipeline.py::TestPipeline::test_pipeline
+		tests/documentation/test_pipeline.py::TestPipeline::test_bert_example
+		tests/implementations/test_char_bpe.py::TestCharBPETokenizer::test_basic_encode
+		tests/implementations/test_char_bpe.py::TestCharBPETokenizer::test_lowercase
+		tests/implementations/test_char_bpe.py::TestCharBPETokenizer::test_decoding
+		tests/implementations/test_char_bpe.py::TestCharBPETokenizer::test_multiprocessing_with_parallelism
+		tests/test_serialization.py::TestSerialization::test_full_serialization_albert
+		tests/test_serialization.py::TestSerialization::test_str_big
+		tests/bindings/test_tokenizer.py::TestTokenizer::test_encode_formats
+		tests/bindings/test_tokenizer.py::TestTokenizer::test_encode_add_special_tokens
+		tests/bindings/test_tokenizer.py::TestTokenizer::test_from_pretrained
+		tests/bindings/test_tokenizer.py::TestTokenizer::test_from_pretrained_revision
+		tests/bindings/test_tokenizer.py::TestTokenizer::test_encode_special_tokens
+		tests/bindings/test_tokenizer.py::TestTokenizer::test_splitting
+		tests/documentation/test_quicktour.py::TestQuicktour::test_quicktour
+		tests/documentation/test_tutorial_train_from_iterators.py::TestTrainFromIterators::test_datasets
+		tests/documentation/test_tutorial_train_from_iterators.py::TestTrainFromIterators::test_gzip
+		tests/implementations/test_bert_wordpiece.py::TestBertWordPieceTokenizer::test_basic_encode
+		tests/implementations/test_bert_wordpiece.py::TestBertWordPieceTokenizer::test_multiprocessing_with_parallelism
+		tests/implementations/test_byte_level_bpe.py::TestByteLevelBPE::test_basic_encode
+		tests/implementations/test_byte_level_bpe.py::TestByteLevelBPE::test_add_prefix_space
+		tests/implementations/test_byte_level_bpe.py::TestByteLevelBPE::test_lowerspace
+		tests/implementations/test_byte_level_bpe.py::TestByteLevelBPE::test_multiprocessing_with_parallelism
+
+	)
+	distutils-r1_src_test
+}
+
+src_install() {
+	cd tokenizers
+	cd ../bindings/python
+	distutils-r1_src_install
+}

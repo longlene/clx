@@ -4,14 +4,15 @@
 EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=standalone
 PYTHON_COMPAT=( python3_{11..14} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="TensorFlow's Visualization Toolkit "
 HOMEPAGE="https://github.com/tensorflow/tensorboard"
-SRC_URI="https://github.com/tensorflow/tensorboard/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+#SRC_URI="https://github.com/tensorflow/tensorboard/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="$(pypi_wheel_url)"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -41,8 +42,9 @@ RDEPEND="
 
 RESTRICT="test"
 
-src_prepare() {
-	default
-	mv tensorboard/pip_package/{setup.*,requirements.*,README.*} .
-	distutils-r1_src_prepare
+S="${WORKDIR}"
+
+python_compile() {
+	distutils_wheel_install "${BUILD_DIR}/install" \
+		"${DISTDIR}/${A}"
 }

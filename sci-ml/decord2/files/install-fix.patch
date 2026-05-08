@@ -1,0 +1,31 @@
+diff -Nur a/python/setup.py b/python/setup.py
+--- a/python/setup.py	2026-04-06 11:00:01.000000000 -0700
++++ b/python/setup.py	2026-05-01 23:58:57.635753310 -0700
+@@ -39,9 +39,10 @@
+     lib_path = libinfo['find_lib_path']()
+     libs = [lib_path[0]]
+ 
+-    return libs, version
++    return version
+ 
+-LIBS, VERSION = get_lib_path()
++LIBS = []
++VERSION = get_lib_path()
+ 
+ # Allow injecting a PEP 440 local version (e.g., "+cu132") at build time.
+ # This ensures the wheel filename and internal dist-info directory match,
+@@ -61,6 +62,7 @@
+ else:
+     include_libs = True
+ 
++wheel_include_libs = False
+ setup_kwargs = {}
+ 
+ # For bdist_wheel only
+@@ -116,4 +118,4 @@
+     os.remove("MANIFEST.in")
+     for path in LIBS:
+         _, libname = os.path.split(path)
+-        os.remove("decord/%s" % libname)
+\ No newline at end of file
++        os.remove("decord/%s" % libname)

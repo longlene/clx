@@ -1,0 +1,303 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{13..14} )
+
+CRATES="
+	aho-corasick@1.1.4
+	android_system_properties@0.1.5
+	anstream@1.0.0
+	anstyle-parse@1.0.0
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anstyle@1.0.14
+	anyhow@1.0.102
+	arc-swap@1.9.1
+	arcstr@1.2.0
+	async-lock@3.4.2
+	async-trait@0.1.89
+	atomic-waker@1.1.2
+	autocfg@1.5.0
+	backon@1.6.0
+	base64@0.22.1
+	bitflags@2.11.0
+	block-buffer@0.12.0
+	bumpalo@3.20.2
+	bytes@1.11.1
+	cast@0.3.0
+	cbindgen@0.29.2
+	cc@1.2.60
+	cfg-if@1.0.4
+	chrono@0.4.44
+	clap@4.6.0
+	clap_builder@4.6.0
+	clap_lex@1.1.0
+	colorchoice@1.0.5
+	combine@4.6.7
+	concurrent-queue@2.5.0
+	const-oid@0.10.2
+	convert_case@0.6.0
+	core-foundation-sys@0.8.7
+	cpufeatures@0.3.0
+	crossbeam-utils@0.8.21
+	crypto-common@0.2.1
+	ctor@0.2.9
+	digest@0.11.2
+	displaydoc@0.2.5
+	either@1.15.0
+	equivalent@1.0.2
+	errno@0.3.14
+	event-listener-strategy@0.5.4
+	event-listener@5.4.1
+	fastrand@2.4.1
+	find-msvc-tools@0.1.9
+	fnv@1.0.7
+	foldhash@0.1.5
+	form_urlencoded@1.2.2
+	futures-channel@0.3.32
+	futures-core@0.3.32
+	futures-executor@0.3.32
+	futures-io@0.3.32
+	futures-macro@0.3.32
+	futures-sink@0.3.32
+	futures-task@0.3.32
+	futures-util@0.3.32
+	futures@0.3.32
+	getrandom@0.3.4
+	getrandom@0.4.2
+	h2@0.4.13
+	hashbrown@0.15.5
+	hashbrown@0.17.0
+	heck@0.5.0
+	http-body-util@0.1.3
+	http-body@1.0.1
+	http@1.4.0
+	httparse@1.10.1
+	hybrid-array@0.4.10
+	hyper-timeout@0.5.2
+	hyper-util@0.1.20
+	hyper@1.9.0
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.65
+	icu_collections@2.2.0
+	icu_locale_core@2.2.0
+	icu_normalizer@2.2.0
+	icu_normalizer_data@2.2.0
+	icu_properties@2.2.0
+	icu_properties_data@2.2.0
+	icu_provider@2.2.0
+	id-arena@2.3.0
+	idna@1.1.0
+	idna_adapter@1.2.1
+	indexmap@2.14.0
+	ipnet@2.12.0
+	iri-string@0.7.12
+	is_terminal_polyfill@1.70.2
+	itertools@0.14.0
+	itoa@1.0.18
+	js-sys@0.3.95
+	leb128fmt@0.1.0
+	libc@0.2.185
+	libloading@0.8.9
+	libm@0.2.16
+	linux-raw-sys@0.12.1
+	litemap@0.8.2
+	lock_api@0.4.14
+	log@0.4.29
+	memchr@2.8.0
+	minicov@0.3.8
+	mio@1.2.0
+	napi-build@2.3.1
+	napi-derive-backend@1.0.75
+	napi-derive@2.16.13
+	napi-sys@2.4.0
+	napi@2.16.17
+	nu-ansi-term@0.50.3
+	num-bigint@0.4.6
+	num-integer@0.1.46
+	num-traits@0.2.19
+	once_cell@1.21.4
+	once_cell_polyfill@1.70.2
+	oorandom@11.1.5
+	openinference-semantic-conventions@0.1.1
+	opentelemetry-http@0.31.0
+	opentelemetry-otlp@0.31.1
+	opentelemetry-proto@0.31.0
+	opentelemetry@0.31.0
+	opentelemetry_sdk@0.31.0
+	ordered-float@2.10.1
+	parking@2.2.1
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
+	percent-encoding@2.3.2
+	pin-project-internal@1.1.11
+	pin-project-lite@0.2.17
+	pin-project@1.1.11
+	portable-atomic@1.13.1
+	potential_utf@0.1.5
+	ppv-lite86@0.2.21
+	prettyplease@0.2.37
+	proc-macro2@1.0.106
+	prost-derive@0.14.3
+	prost@0.14.3
+	pyo3-async-runtimes@0.28.0
+	pyo3-build-config@0.28.3
+	pyo3-ffi@0.28.3
+	pyo3-macros-backend@0.28.3
+	pyo3-macros@0.28.3
+	pyo3@0.28.3
+	pythonize@0.28.0
+	quote@1.0.45
+	r-efi@5.3.0
+	r-efi@6.0.0
+	rand@0.9.3
+	rand_chacha@0.9.0
+	rand_core@0.9.5
+	redis@1.2.0
+	redox_syscall@0.5.18
+	regex-automata@0.4.14
+	regex-syntax@0.8.10
+	regex@1.12.3
+	reqwest@0.12.28
+	rustix@1.1.4
+	rustversion@1.0.22
+	ryu-js@1.0.2
+	ryu@1.0.23
+	same-file@1.0.6
+	scopeguard@1.2.0
+	semver@1.0.28
+	send_wrapper@0.6.0
+	serde-wasm-bindgen@0.6.5
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.149
+	serde_json_canonicalizer@0.3.2
+	serde_spanned@1.1.1
+	serde_urlencoded@0.7.1
+	sha1_smol@1.0.1
+	sha2@0.11.0
+	shlex@1.3.0
+	signal-hook-registry@1.4.8
+	slab@0.4.12
+	smallvec@1.15.1
+	socket2@0.6.3
+	stable_deref_trait@1.2.1
+	strsim@0.11.1
+	syn@2.0.117
+	sync_wrapper@1.0.2
+	synstructure@0.13.2
+	target-lexicon@0.13.5
+	tdigest@0.2.3
+	tempfile@3.27.0
+	thiserror-impl@2.0.18
+	thiserror@2.0.18
+	tinystr@0.8.3
+	tokio-macros@2.7.0
+	tokio-stream@0.1.18
+	tokio-util@0.7.18
+	tokio@1.51.1
+	toml@0.9.12+spec-1.1.0
+	toml_datetime@0.7.5+spec-1.1.0
+	toml_parser@1.1.2+spec-1.1.0
+	toml_writer@1.1.1+spec-1.1.0
+	tonic-prost@0.14.5
+	tonic@0.14.5
+	tower-http@0.6.8
+	tower-layer@0.3.3
+	tower-service@0.3.3
+	tower@0.5.3
+	tracing-attributes@0.1.31
+	tracing-core@0.1.36
+	tracing@0.1.44
+	try-lock@0.2.5
+	typed-builder-macro@0.23.2
+	typed-builder@0.23.2
+	typenum@1.19.0
+	unicode-ident@1.0.24
+	unicode-segmentation@1.13.2
+	unicode-xid@0.2.6
+	url@2.5.8
+	utf8_iter@1.0.4
+	utf8parse@0.2.2
+	uuid@1.18.1
+	walkdir@2.5.0
+	want@0.3.1
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.2+wasi-0.2.9
+	wasip3@0.4.0+wasi-0.3.0-rc-2026-01-06
+	wasm-bindgen-futures@0.4.68
+	wasm-bindgen-macro-support@0.2.118
+	wasm-bindgen-macro@0.2.118
+	wasm-bindgen-shared@0.2.118
+	wasm-bindgen-test-macro@0.3.68
+	wasm-bindgen-test-shared@0.2.118
+	wasm-bindgen-test@0.3.68
+	wasm-bindgen@0.2.118
+	wasm-encoder@0.244.0
+	wasm-metadata@0.244.0
+	wasmparser@0.244.0
+	web-sys@0.3.95
+	winapi-util@0.1.11
+	windows-core@0.62.2
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.2.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.61.2
+	winnow@0.7.15
+	winnow@1.0.1
+	wit-bindgen-core@0.51.0
+	wit-bindgen-rust-macro@0.51.0
+	wit-bindgen-rust@0.51.0
+	wit-bindgen@0.51.0
+	wit-component@0.244.0
+	wit-parser@0.244.0
+	writeable@0.6.3
+	xxhash-rust@0.8.15
+	yoke-derive@0.8.2
+	yoke@0.8.2
+	zerocopy-derive@0.8.48
+	zerocopy@0.8.48
+	zerofrom-derive@0.1.7
+	zerofrom@0.1.7
+	zerotrie@0.2.4
+	zerovec-derive@0.11.3
+	zerovec@0.11.6
+	zmij@1.0.21
+"
+
+RUST_MIN_VER="1.93"
+
+inherit cargo distutils-r1
+
+DESCRIPTION="Python bindings for the NeMo Flow agent runtime"
+HOMEPAGE="
+	https://pypi.org/project/nemo-flow/
+	https://github.com/NVIDIA/NeMo-Flow
+"
+SRC_URI="
+	https://github.com/NVIDIA/NeMo-Flow/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="
+"
+#BDEPEND="
+#	test? (
+#	)
+#"
+
+EPYTEST_PLUGINS=()
+distutils_enable_tests pytest
+
+S="${WORKDIR}"/NeMo-Flow-${PV}
