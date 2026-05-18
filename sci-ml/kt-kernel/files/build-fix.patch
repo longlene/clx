@@ -1,0 +1,13 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2026-05-02 23:28:09.000000000 -0700
++++ b/CMakeLists.txt	2026-05-15 22:29:55.590155644 -0700
+@@ -398,7 +398,8 @@
+ add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:${ARCH_FLAGS}>")
+ add_compile_options("$<$<COMPILE_LANGUAGE:C>:${ARCH_FLAGS}>")
+ 
+-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../third_party/pybind11 ${CMAKE_CURRENT_BINARY_DIR}/third_party/pybind11)
++#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../third_party/pybind11 ${CMAKE_CURRENT_BINARY_DIR}/third_party/pybind11)
++find_package(pybind11 REQUIRED)
+ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../third_party/llama.cpp ${CMAKE_CURRENT_BINARY_DIR}/third_party/llama.cpp)
+ 
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../third_party)

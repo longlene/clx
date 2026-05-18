@@ -1,0 +1,28 @@
+diff -Nur a/include/tvm/target/target_kind.h b/include/tvm/target/target_kind.h
+--- a/include/tvm/target/target_kind.h	2026-04-15 22:34:07.000000000 -0700
++++ b/include/tvm/target/target_kind.h	2026-04-30 16:13:38.196900874 -0700
+@@ -101,6 +101,24 @@
+     int32_t type_index;
+     std::unique_ptr<ValueTypeInfo> key;
+     std::unique_ptr<ValueTypeInfo> val;
++
++    ValueTypeInfo() = default;
++    ValueTypeInfo(ValueTypeInfo&&) = default;
++    ValueTypeInfo& operator=(ValueTypeInfo&&) = default;
++    ValueTypeInfo(const ValueTypeInfo& other)
++      : type_key(other.type_key),
++      type_index(other.type_index),
++      key(other.key ? std::make_unique<ValueTypeInfo>(*other.key) : nullptr),
++      val(other.val ? std::make_unique<ValueTypeInfo>(*other.val) : nullptr) {}
++    ValueTypeInfo& operator=(const ValueTypeInfo& other) {
++      if (this != &other) {
++	type_key = other.type_key;
++	type_index = other.type_index;
++	key = other.key ? std::make_unique<ValueTypeInfo>(*other.key) : nullptr;
++	val = other.val ? std::make_unique<ValueTypeInfo>(*other.val) : nullptr;
++      }
++      return *this;
++    }
+   };
+   /*! \brief A hash table that stores the type information of each attr of the target key */
+   std::unordered_map<ffi::String, ValueTypeInfo> key2vtype_;

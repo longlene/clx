@@ -13,7 +13,7 @@ KEYWORDS="~amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	dev-util/nvidia-cuda-toolkit
+	<dev-util/nvidia-cuda-toolkit-13.0.0
 "
 BDEPEND=""
 

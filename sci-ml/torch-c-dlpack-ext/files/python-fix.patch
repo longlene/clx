@@ -1,0 +1,11 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -40,7 +40,7 @@
+ 
+ [tool.setuptools]
+ include-package-data = true
+-py-modules = ["build_backend"]
++#py-modules = ["build_backend"]
+ 
+ [tool.setuptools.packages.find]
+ include = ["torch_c_dlpack_ext*"]

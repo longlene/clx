@@ -1,7 +1,7 @@
 diff -Nur a/sycl/cmake/modules/BuildUnifiedRuntime.cmake b/sycl/cmake/modules/BuildUnifiedRuntime.cmake
---- a/sycl/cmake/modules/BuildUnifiedRuntime.cmake	2025-10-09 13:35:26.000000000 -0700
-+++ b/sycl/cmake/modules/BuildUnifiedRuntime.cmake	2025-12-13 00:54:21.205408100 -0800
-@@ -65,6 +65,20 @@
+--- a/sycl/cmake/modules/BuildUnifiedRuntime.cmake	2026-05-13 16:53:18.000000000 -0700
++++ b/sycl/cmake/modules/BuildUnifiedRuntime.cmake	2026-05-14 21:05:32.990154697 -0700
+@@ -69,6 +69,20 @@
    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error")
  endif()
  
@@ -22,65 +22,52 @@ diff -Nur a/sycl/cmake/modules/BuildUnifiedRuntime.cmake b/sycl/cmake/modules/Bu
  set(UR_INTREE_SOURCE_DIR "${LLVM_SOURCE_DIR}/../unified-runtime")
  cmake_path(NORMAL_PATH UR_INTREE_SOURCE_DIR OUTPUT_VARIABLE UR_INTREE_SOURCE_DIR)
  
-@@ -295,3 +309,4 @@
+@@ -299,3 +313,4 @@
      ARCHIVE DESTINATION "lib${LLVM_LIBDIR_SUFFIX}" COMPONENT unified-memory-framework
      RUNTIME DESTINATION "bin" COMPONENT unified-memory-framework)
  endif()
 +endif()
 diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
---- a/sycl/CMakeLists.txt	2025-10-09 13:35:26.000000000 -0700
-+++ b/sycl/CMakeLists.txt	2025-12-13 00:57:07.358747285 -0800
-@@ -274,7 +274,7 @@
+--- a/sycl/CMakeLists.txt	2026-05-13 16:53:18.000000000 -0700
++++ b/sycl/CMakeLists.txt	2026-05-14 21:05:32.994372688 -0700
+@@ -271,7 +271,7 @@
            ${OUT_HEADERS_IN_CL_DIR}
            ${OUT_HEADERS_IN_STD_DIR}
            ${OUT_HEADERS_IN_SYCLCOMPAT_DIR}
--          ${OUT_UR_HEADERS}
-+          #${OUT_UR_HEADERS}
+-          ${OUT_HEADERS_IN_UR_DIR}
++	  #${OUT_HEADERS_IN_UR_DIR}
            sycl-device-aspect-macros-header
            )
  
-@@ -283,18 +283,18 @@
+@@ -280,23 +280,23 @@
            ${OUT_HEADERS_IN_CL_DIR}
            ${OUT_HEADERS_IN_STD_DIR}
            ${OUT_HEADERS_IN_SYCLCOMPAT_DIR}
--          ${OUT_UR_HEADERS}
-+          #${OUT_UR_HEADERS}
+-          ${OUT_HEADERS_IN_UR_DIR}
++	  #${OUT_HEADERS_IN_UR_DIR}
    DEPENDS ${HEADERS_IN_SYCL_DIR}
            ${HEADERS_IN_CL_DIR}
            ${HEADERS_IN_STD_DIR}
            ${HEADERS_IN_SYCLCOMPAT_DIR}
--          ${UR_HEADERS_TO_COPY}
-+          #${UR_HEADERS_TO_COPY}
+-          ${HEADERS_IN_UR_DIR}
++	  #${HEADERS_IN_UR_DIR}
    COMMAND ${CMAKE_COMMAND} -E copy_directory ${sycl_inc_dir}/sycl ${SYCL_INCLUDE_BUILD_DIR}/sycl
    COMMAND ${CMAKE_COMMAND} -E copy_directory ${sycl_inc_dir}/CL ${SYCL_INCLUDE_BUILD_DIR}/CL
    COMMAND ${CMAKE_COMMAND} -E copy_directory ${sycl_inc_dir}/std ${SYCL_INCLUDE_BUILD_DIR}/std
-   COMMAND ${CMAKE_COMMAND} -E copy_directory ${sycl_inc_dir}/syclcompat ${SYCL_INCLUDE_BUILD_DIR}/syclcompat
-   COMMAND ${CMAKE_COMMAND} -E copy ${sycl_inc_dir}/syclcompat.hpp ${SYCL_INCLUDE_BUILD_DIR}/syclcompat.hpp
--  COMMAND ${CMAKE_COMMAND} -E copy ${UR_HEADERS_TO_COPY} ${SYCL_INCLUDE_BUILD_DIR}
-+  #COMMAND ${CMAKE_COMMAND} -E copy ${UR_HEADERS_TO_COPY} ${SYCL_INCLUDE_BUILD_DIR}
+-  COMMAND ${CMAKE_COMMAND} -E copy_directory ${UNIFIED_RUNTIME_INCLUDE_DIR}/unified-runtime ${SYCL_INCLUDE_BUILD_DIR}/unified-runtime
++  #COMMAND ${CMAKE_COMMAND} -E copy_directory ${UNIFIED_RUNTIME_INCLUDE_DIR}/unified-runtime ${SYCL_INCLUDE_BUILD_DIR}/unified-runtime
    COMMENT "Copying SYCL headers ...")
  
  # Copy SYCL headers from source to install directory
-@@ -303,12 +303,12 @@
+ install(DIRECTORY "${sycl_inc_dir}/sycl" DESTINATION ${SYCL_INCLUDE_DIR} COMPONENT sycl-headers)
+ install(DIRECTORY "${sycl_inc_dir}/CL" DESTINATION ${SYCL_INCLUDE_DIR}/ COMPONENT sycl-headers)
  install(DIRECTORY "${sycl_inc_dir}/std" DESTINATION ${SYCL_INCLUDE_DIR} COMPONENT sycl-headers)
- install(DIRECTORY "${sycl_inc_dir}/syclcompat" DESTINATION ${SYCL_INCLUDE_DIR} COMPONENT sycl-headers)
- install(FILES "${sycl_inc_dir}/syclcompat.hpp" DESTINATION ${SYCL_INCLUDE_DIR} COMPONENT sycl-headers)
--install(FILES "${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api.h" DESTINATION ${SYCL_INCLUDE_DIR}
--  COMPONENT sycl-headers)
--install(FILES "${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api_funcs.def" DESTINATION ${SYCL_INCLUDE_DIR}
--  COMPONENT sycl-headers)
--install(FILES "${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_print.hpp" DESTINATION ${SYCL_INCLUDE_DIR}
--  COMPONENT sycl-headers)
-+#install(FILES "${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api.h" DESTINATION ${SYCL_INCLUDE_DIR}
-+#  COMPONENT sycl-headers)
-+#install(FILES "${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_api_funcs.def" DESTINATION ${SYCL_INCLUDE_DIR}
-+#  COMPONENT sycl-headers)
-+#install(FILES "${UNIFIED_RUNTIME_INCLUDE_DIR}/ur_print.hpp" DESTINATION ${SYCL_INCLUDE_DIR}
-+#  COMPONENT sycl-headers)
+-install(DIRECTORY "${UNIFIED_RUNTIME_INCLUDE_DIR}/unified-runtime" DESTINATION ${SYCL_INCLUDE_DIR} COMPONENT sycl-headers)
++#install(DIRECTORY "${UNIFIED_RUNTIME_INCLUDE_DIR}/unified-runtime" DESTINATION ${SYCL_INCLUDE_DIR} COMPONENT sycl-headers)
  
  if (WIN32)
    set(SYCL_RT_LIBS sycl${SYCL_MAJOR_VERSION})
-@@ -490,8 +490,8 @@
+@@ -495,8 +495,8 @@
       sycl-headers-extras
       sycl
       libsycldevice
@@ -91,25 +78,25 @@ diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
       ${XPTIFW_LIBS}
       ${SYCL_TOOLCHAIN_DEPS}
  )
-@@ -537,8 +537,8 @@
+@@ -549,8 +549,8 @@
        "CUDA support requires adding \"libclc\" to the CMake argument \"LLVM_ENABLE_PROJECTS\"")
    endif()
  
 -  add_dependencies(sycl-toolchain ur_adapter_cuda)
 -  list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS ur_adapter_cuda)
 +  add_dependencies(sycl-toolchain unified-runtime::ur_adapter_cuda)
-+  #list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS ur_adapter_cuda)
++  list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS unified-runtime::ur_adapter_cuda)
  endif()
  
  if("hip" IN_LIST SYCL_ENABLE_BACKENDS)
-@@ -554,8 +554,8 @@
+@@ -565,8 +565,8 @@
        "HIP support requires adding \"lld\" to the CMake argument \"LLVM_ENABLE_PROJECTS\"")
    endif()
  
 -  add_dependencies(sycl-toolchain ur_adapter_hip)
 -  list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS ur_adapter_hip)
 +  add_dependencies(sycl-toolchain unified-runtime::ur_adapter_hip)
-+  #list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS ur_adapter_hip)
++  list(APPEND SYCL_TOOLCHAIN_DEPLOY_COMPONENTS unified-runtime::ur_adapter_hip)
  endif()
  
  if("offload" IN_LIST SYCL_ENABLE_BACKENDS)

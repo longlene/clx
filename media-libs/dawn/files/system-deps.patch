@@ -1,0 +1,33 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2026-04-24 01:29:50.000000000 -0700
++++ b/CMakeLists.txt	2026-05-02 20:10:08.303603282 -0700
+@@ -444,6 +444,8 @@
+ endif()
+ if (DAWN_ENABLE_VULKAN)
+     target_compile_definitions(dawn_internal_config INTERFACE "DAWN_ENABLE_BACKEND_VULKAN")
++    find_package(VulkanHeaders QUIET)
++    find_package(VulkanUtilityLibraries QUIET)
+ endif()
+ if (DAWN_USE_WAYLAND)
+     target_compile_definitions(dawn_internal_config INTERFACE "DAWN_USE_WAYLAND")
+@@ -471,6 +473,7 @@
+ set(TINT_SPIRV_HEADERS_DIR ${DAWN_SPIRV_HEADERS_DIR})
+ set(TINT_SPIRV_TOOLS_DIR   ${DAWN_SPIRV_TOOLS_DIR})
+ 
++find_package(absl REQUIRED)
+ 
+ ################################################################################
+ # Run on all subdirectories
+diff -Nur a/third_party/CMakeLists.txt b/third_party/CMakeLists.txt
+--- a/third_party/CMakeLists.txt	2026-04-24 01:29:50.000000000 -0700
++++ b/third_party/CMakeLists.txt	2026-05-02 20:10:36.415320105 -0700
+@@ -145,7 +145,8 @@
+     add_subdirectory(${DAWN_SPIRV_TOOLS_DIR} "${CMAKE_CURRENT_BINARY_DIR}/spirv-tools" EXCLUDE_FROM_ALL)
+ endif()
+ 
+-if(NOT TARGET glslang AND (TINT_BUILD_GLSL_WRITER OR TINT_BUILD_GLSL_VALIDATOR) AND TINT_BUILD_CMD_TOOLS)
++find_package(glslang REQUIRED)
++if(NOT TARGET glslang::glslang AND (TINT_BUILD_GLSL_WRITER OR TINT_BUILD_GLSL_VALIDATOR) AND TINT_BUILD_CMD_TOOLS)
+     set(SKIP_GLSLANG_INSTALL ON CACHE BOOL "" FORCE)
+     set(ENABLE_OPT OFF CACHE BOOL "" FORCE)
+     message(STATUS "Dawn: using GLSLang at ${DAWN_GLSLANG_DIR}")

@@ -1,0 +1,14 @@
+diff -Nur a/cmake/pypi-z3/FindZ3.cmake b/cmake/pypi-z3/FindZ3.cmake
+--- a/cmake/pypi-z3/FindZ3.cmake	2026-04-22 01:22:01.000000000 -0700
++++ b/cmake/pypi-z3/FindZ3.cmake	2026-04-30 16:00:33.868312918 -0700
+@@ -12,8 +12,8 @@
+     message(FATAL_ERROR "Failed to locate z3 Python package. Ensure z3-solver>=4.13.0 is installed.")
+ endif()
+ message("-- Find Z3 in path: ${Z3_PATH}")
+-find_path(Z3_INCLUDE_DIR NO_DEFAULT_PATH NAMES z3++.h PATHS ${Z3_PATH}/include)
+-find_library(Z3_LIBRARY NO_DEFAULT_PATH NAMES z3 libz3 PATHS ${Z3_PATH}/bin ${Z3_PATH}/lib ${Z3_PATH}/lib64)
++find_path(Z3_INCLUDE_DIR NAMES z3++.h PATHS ${Z3_PATH}/include)
++find_library(Z3_LIBRARY NAMES z3 libz3 PATHS ${Z3_PATH}/bin ${Z3_PATH}/lib ${Z3_PATH}/lib64)
+ message("-- Found Z3 include dir: ${Z3_INCLUDE_DIR}")
+ message("-- Found Z3 library: ${Z3_LIBRARY}")
+ add_library(z3::libz3 SHARED IMPORTED GLOBAL)

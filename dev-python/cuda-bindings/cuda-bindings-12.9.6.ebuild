@@ -3,7 +3,8 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=standalone
 PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
@@ -18,16 +19,17 @@ HOMEPAGE="
 "
 SRC_URI="https://github.com/NVIDIA/cuda-python/archive/refs/tags/v${PV}.tar.gz -> ${MY_P}.tar.gz"
 
-LICENSE=""
+LICENSE="NVIDIA"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="
-	dev-util/nvidia-cuda-toolkit
-	dev-python/pyclibrary[${PYTHON_USEDEP}]
+DEPEND+="
+	dev-python/cuda-pathfinder[${PYTHON_USEDEP}]
 "
 RDEPEND="
-	dev-python/cuda-pathfinder[${PYTHON_USEDEP}]
+"
+BDEPEND="
+	dev-python/pyclibrary[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (
@@ -40,3 +42,4 @@ distutils_enable_tests pytest
 S="${WORKDIR}"/${MY_P}/cuda_bindings
 
 export CUDA_HOME="/opt/cuda"
+export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_CUDA_BINDINGS="${PV}"

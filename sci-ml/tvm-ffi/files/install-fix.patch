@@ -1,19 +1,26 @@
 diff -Nur a/CMakeLists.txt b/CMakeLists.txt
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -54,7 +54,7 @@
+--- a/CMakeLists.txt	2026-04-26 12:31:02.000000000 -0700
++++ b/CMakeLists.txt	2026-05-08 11:28:59.371785001 -0700
+@@ -53,10 +53,10 @@
+   tvm_ffi_header INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
                             $<INSTALL_INTERFACE:include>
  )
- target_include_directories(
+-target_include_directories(
 -  tvm_ffi_header INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include>
-+  tvm_ffi_header INTERFACE
-                            $<INSTALL_INTERFACE:include>
- )
+-                           $<INSTALL_INTERFACE:include>
+-)
++#target_include_directories(
++#  tvm_ffi_header INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include>
++#                           $<INSTALL_INTERFACE:include>
++#)
  
-@@ -304,31 +304,32 @@
+ # ######### Target: `tvm_ffi_objs` ##########
+ 
+@@ -304,32 +304,33 @@
+   endif ()
    install(TARGETS tvm_ffi_cython DESTINATION .)
  
-   # ######### Installing the source ##########
+-  # ######### Installing the source ##########
 -  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include/
 -          DESTINATION 3rdparty/dlpack/include/
 -  )
@@ -33,25 +40,26 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
 -  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/python/tvm_ffi/cython/tvm_ffi_python_helpers.h
 -          DESTINATION include/
 -  )
-+  #install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include/
-+  #        DESTINATION 3rdparty/dlpack/include/
-+  #)
-+  #install(
-+  #  DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/libbacktrace/
-+  #  DESTINATION 3rdparty/libbacktrace/
-+  #  PATTERN ".git" EXCLUDE
-+  #  PATTERN ".git*" EXCLUDE
-+  #  PATTERN "*.tmp" EXCLUDE
-+  #)
-+  #install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/ffi/ DESTINATION src/ffi/)
-+  #install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Utils/ DESTINATION share/cmake/tvm_ffi/Utils)
-+  #install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt DESTINATION .)
-+  #install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tvm_ffi-config.cmake
-+  #        DESTINATION share/cmake/tvm_ffi
-+  #)
-+  #install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/python/tvm_ffi/cython/tvm_ffi_python_helpers.h
-+  #        DESTINATION include/
-+  #)
++  # # ######### Installing the source ##########
++  # install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include/
++  #         DESTINATION 3rdparty/dlpack/include/
++  # )
++  # install(
++  #   DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/libbacktrace/
++  #   DESTINATION 3rdparty/libbacktrace/
++  #   PATTERN ".git" EXCLUDE
++  #   PATTERN ".git*" EXCLUDE
++  #   PATTERN "*.tmp" EXCLUDE
++  # )
++  # install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/ffi/ DESTINATION src/ffi/)
++  # install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Utils/ DESTINATION share/cmake/tvm_ffi/Utils)
++  # install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt DESTINATION .)
++  # install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tvm_ffi-config.cmake
++  #         DESTINATION share/cmake/tvm_ffi
++  # )
++  # install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/python/tvm_ffi/cython/tvm_ffi_python_helpers.h
++  #         DESTINATION include/
++  # )
  endif ()
  
  # ######### Install the related for normal cmake library ##########
@@ -63,21 +71,21 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
  install(TARGETS tvm_ffi_shared DESTINATION lib)
  # if tvm_ffi_testing is built, we also install it
  if (TARGET tvm_ffi_testing)
-@@ -338,6 +339,11 @@
+@@ -339,6 +340,11 @@
      OPTIONAL
    )
  endif ()
-+  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Utils/ DESTINATION share/cmake/tvm_ffi/Utils)
-+  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tvm_ffi-config.cmake
-+          DESTINATION share/cmake/tvm_ffi
-+  )
-+endif ()
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Utils/ DESTINATION share/cmake/tvm_ffi/Utils)
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/tvm_ffi-config.cmake
++        DESTINATION share/cmake/tvm_ffi
++)
++endif()
  # ship additional dSYM files for debugging symbols on if available
  if (APPLE)
    install(
 diff -Nur a/python/tvm_ffi/libinfo.py b/python/tvm_ffi/libinfo.py
---- a/python/tvm_ffi/libinfo.py	2026-04-01 12:29:51.000000000 -0700
-+++ b/python/tvm_ffi/libinfo.py	2026-04-30 09:02:26.548205450 -0700
+--- a/python/tvm_ffi/libinfo.py	2026-04-26 12:31:02.000000000 -0700
++++ b/python/tvm_ffi/libinfo.py	2026-05-08 11:30:48.371709798 -0700
 @@ -90,6 +90,7 @@
          paths=[
              _rel_top_directory() / "include",
@@ -95,12 +103,3 @@ diff -Nur a/python/tvm_ffi/libinfo.py b/python/tvm_ffi/libinfo.py
          ],
          cond=lambda p: (p / "dlpack").is_dir(),
      ):
-@@ -253,6 +254,8 @@
-     dll_paths.append(_rel_top_directory() / "lib")
-     dll_paths.append(_dev_top_directory() / "build" / "lib")
-     dll_paths.append(_dev_top_directory() / "lib")
-+    dll_paths.append(Path("/usr/lib64"))
-+    dll_paths.append(Path("/usr/lib"))
- 
-     # Case 2. It is specified in PATH-related environment variables
-     if sys.platform.startswith("win32"):

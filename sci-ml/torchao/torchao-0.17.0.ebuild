@@ -28,6 +28,8 @@ S="${WORKDIR}"/ao-${PV}
 
 PATCHES=(
 	"${FILESDIR}"/fix-build-order.patch
+	"${FILESDIR}"/fix-nvcc-default-args.patch
+	"${FILESDIR}"/fix-test-package.patch
 )
 
 export USE_SYSTEM_LIBS=ON

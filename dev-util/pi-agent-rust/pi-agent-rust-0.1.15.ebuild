@@ -786,7 +786,6 @@ BDEPEND=""
 S="${WORKDIR}"/pi_agent_rust-${PV}
 
 src_install() {
-	cargo_src_install
-	rm "${D}"/usr/bin/pi_legacy_capture
+	cargo_src_install --bin pi
 	einstalldocs
 }
