@@ -8,16 +8,16 @@ inherit git-r3 common-lisp-3
 
 DESCRIPTION="CL21's spin-off project that provides neat API for regular expressions"
 HOMEPAGE="https://github.com/fukamachi/re21"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/fukamachi/re21.git"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/cl-syntax

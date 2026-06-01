@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">facebookresearch/ocean</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Ocean is Meta's in-house framework for Computer Vision (CV) and Augmented
+    Reality (AR) applications. It is platform-independent and implemented
+    primarily in C/C++, supporting Linux, macOS, Windows, Android, and iOS.
+  </longdescription>
+  <use>
+    <flag name="curl">Enable HTTPS client support via libcurl in the network module</flag>
+    <flag name="minimal">Build only the base, cv, and math components (no media, IO, network, tracking, etc.)</flag>
+    <flag name="ssl">Enable OpenSSL support for digital signature verification in the IO module</flag>
+    <flag name="xml">Enable tinyxml2 support for XML parsing in the IO module</flag>
+  </use>
+</pkgmetadata>

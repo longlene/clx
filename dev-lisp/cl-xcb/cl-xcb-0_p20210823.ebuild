@@ -15,11 +15,9 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/cffi
 	dev-lisp/cl-freetype2
 	x11-libs/libxcb
 "
-BDEPEND=""

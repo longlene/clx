@@ -14,7 +14,6 @@ SRC_URI="https://zadzmo.org/code/sqltable/downloads/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

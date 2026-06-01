@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ytrace is a header-only C++20 tracing library with runtime-controllable
+    trace points. It provides macros for structured logging at different levels
+    (log, trace, debug, info, warn, error) with optional spdlog backend. A
+    Unix-domain socket control interface allows enabling or disabling individual
+    trace points at runtime without recompilation.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">zokrezyl/ytrace</remote-id>
+  </upstream>
+  <use>
+    <flag name="tools">Build the ytrace-ctl runtime control utility</flag>
+  </use>
+</pkgmetadata>

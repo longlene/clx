@@ -10,13 +10,10 @@ SRC_URI="https://cl-web-crawler.googlecode.com/files/cl-web-crawler_0.02.tar.gz 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/drakma
 dev-lisp/puri
 dev-lisp/cl-ppcre
 dev-lisp/cl-html-parse"
-

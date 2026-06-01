@@ -14,15 +14,11 @@ SRC_URI="https://github.com/erlangsters/term-validator/archive/refs/tags/${PV}.t
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${MY_P}
 
 src_prepare() {
 	default
 }
-

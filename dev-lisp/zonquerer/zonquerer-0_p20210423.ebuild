@@ -15,7 +15,6 @@ LICENSE="AGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-sdl2
 	dev-lisp/cl-autowrap
@@ -27,7 +26,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 	dev-lisp/com_gigmonkeys_json
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

@@ -14,9 +14,10 @@ SRC_URI="https://github.com/orthecreedence/cl-hash-util/archive/${EGIT_COMMIT}.t
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	test? ( dev-lisp/fiveam )
 "
@@ -25,4 +26,3 @@ src_prepare() {
 	default
 	use test || rm ${PN}-test.asd tests.lisp
 }
-

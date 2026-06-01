@@ -71,7 +71,6 @@ RDEPEND="${DEPEND}
 	>=dev-lua/brotli-ffi-0.3[${LUA_USEDEP}]
 	>=dev-lua/lua-ffi-zlib-0.6[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 src_prepare() {
 	default

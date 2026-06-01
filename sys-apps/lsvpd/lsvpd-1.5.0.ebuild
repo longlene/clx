@@ -2,14 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="A utility that collects device vital product data (vpd) and displays it using several ouput programs."
+DESCRIPTION="A utility that collects device vital product data (vpd) and displays it"
 HOMEPAGE="http://linux-diag.sourceforge.net/Lsvpd.html"
 SRC_URI="mirror://sourceforge/linux-diag/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~ppc64"
-IUSE=""
+KEYWORDS="~ppc ~ppc64 ~x86"
 
 DEPEND="sys-apps/sg3_utils
 	>=sys-libs/libvpd-1.5.0"

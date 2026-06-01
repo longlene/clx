@@ -13,13 +13,10 @@ SRC_URI="https://github.com/liuliu/ccv/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+S="${WORKDIR}"/${P}/lib
+KEYWORDS="~amd64 ~arm ~x86"
 
 DEPEND="
-	sys-devel/clang
+	llvm-core/clang
 "
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}"/${P}/lib
-

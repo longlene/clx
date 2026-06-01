@@ -77,7 +77,7 @@ multilib_src_install_all() {
 
 	if [[ ! -f "${ED}/usr/$(get_libdir)/libprotobuf.so.${SLOT#*/}" ]]; then
 		eerror "No matching library found with SLOT variable, currently set: ${SLOT}\n" \
-			"Expected value: ${ED}/usr/$(get_libdir)/libprotobuf.so.${SLOT#*/}"
+			"Expected value: "${ED}"/usr/$(get_libdir)/libprotobuf.so.${SLOT#*/}"
 		die "Please update SLOT variable"
 	fi
 

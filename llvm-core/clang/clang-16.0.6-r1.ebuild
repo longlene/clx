@@ -16,7 +16,7 @@ HOMEPAGE="https://llvm.org/"
 
 LICENSE="Apache-2.0-with-LLVM-exceptions UoI-NCSA MIT"
 SLOT="${LLVM_MAJOR}/${LLVM_SOABI}"
-KEYWORDS="amd64 arm arm64 ~loong ppc ppc64 ~riscv ~sparc x86 ~amd64-linux ~arm64-macos ~x64-macos"
+KEYWORDS="amd64 arm arm64 ppc ppc64 x86 ~amd64-linux ~arm64-macos ~loong ~riscv ~sparc ~x64-macos"
 IUSE="debug doc +extra ieee-long-double +pie +static-analyzer test xml"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RESTRICT="!test? ( test )"
@@ -368,7 +368,7 @@ multilib_src_compile() {
 	cmake_build distribution
 
 	# provide a symlink for tests
-	if [[ ! -L ${WORKDIR}/lib/clang ]]; then
+	if [[ ! -L "${WORKDIR}"/lib/clang ]]; then
 		mkdir -p "${WORKDIR}"/lib || die
 		ln -s "${BUILD_DIR}/$(get_libdir)/clang" "${WORKDIR}"/lib/clang || die
 	fi
@@ -463,12 +463,12 @@ multilib_src_install_all() {
 }
 
 pkg_postinst() {
-	if [[ -z ${ROOT} && -f ${EPREFIX}/usr/share/eselect/modules/compiler-shadow.eselect ]] ; then
+	if [[ -z "${ROOT}" && -f ${EPREFIX}/usr/share/eselect/modules/compiler-shadow.eselect ]] ; then
 		eselect compiler-shadow update all
 	fi
 
 	elog "You can find additional utility scripts in:"
-	elog "  ${EROOT}/usr/lib/llvm/${LLVM_MAJOR}/share/clang"
+	elog "  "${EROOT}"/usr/lib/llvm/${LLVM_MAJOR}/share/clang"
 	if use extra; then
 		elog "Some of them are vim integration scripts (with instructions inside)."
 		elog "The run-clang-tidy.py script requires the following additional package:"
@@ -477,7 +477,7 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	if [[ -z ${ROOT} && -f ${EPREFIX}/usr/share/eselect/modules/compiler-shadow.eselect ]] ; then
+	if [[ -z "${ROOT}" && -f ${EPREFIX}/usr/share/eselect/modules/compiler-shadow.eselect ]] ; then
 		eselect compiler-shadow clean all
 	fi
 }

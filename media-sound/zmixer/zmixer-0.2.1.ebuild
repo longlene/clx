@@ -1,8 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-IUSE=""
-
 DESCRIPTION="Zmixer is a simple volume control which based on gtk"
 HOMEPAGE="http://zwin.org/projects/zmixer"
 SRC_URI="http://zwin.org/projects/zmixer/${P}.tar.gz"
@@ -27,4 +25,3 @@ sed -i \
 src_install() {
 	dobin zmixer
 }
-	

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/l04m33/twitacle/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-async
 	dev-lisp/cl-async-oauth

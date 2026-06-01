@@ -14,7 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/hu_dwim_serializer
 	dev-lisp/alexandria
@@ -22,7 +21,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/cl-ppcre
 "
-BDEPEND=""
 
 src_prepare() {
 	default

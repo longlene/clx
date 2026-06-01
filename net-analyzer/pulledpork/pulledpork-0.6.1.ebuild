@@ -9,7 +9,6 @@ SRC_URI="http://pulledpork.googlecode.com/files/${P}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="dev-lang/perl
 	dev-perl/libwww-perl

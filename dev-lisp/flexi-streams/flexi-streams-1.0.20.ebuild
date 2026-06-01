@@ -5,15 +5,17 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="FLEXI-STREAMS implements \"virtual\" bivalent streams that can be layered atop real binary or bivalent streams."
+DESCRIPTION="FLEXI-STREAMS implements \"virtual\" bivalent streams that can be layered"
 HOMEPAGE="http://weitz.de/flexi-streams/
 		http://www.cliki.net/flexi-streams/"
 SRC_URI="https://github.com/edicl/flexi-streams/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-lisp/trivial-gray-streams-20060925"

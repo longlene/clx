@@ -14,11 +14,8 @@ SRC_URI="https://github.com/ridiculousfish/cdecl-blocks/archive/${EGIT_COMMIT}.t
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	dobin c++decl

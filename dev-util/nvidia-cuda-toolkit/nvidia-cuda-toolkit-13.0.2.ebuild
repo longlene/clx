@@ -5,7 +5,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit check-reqs edo toolchain-funcs
 inherit python-r1
 
@@ -30,7 +30,7 @@ LICENSE="NVIDIA-CUDA"
 SLOT="0/${PV}" # UNSLOTTED
 # SLOT="${PV}" # SLOTTED
 
-KEYWORDS="-* ~amd64 ~arm64"
+KEYWORDS="~amd64 ~arm64 -*"
 IUSE="clang debugger examples nsight profiler rdma sanitizer"
 RESTRICT="bindist mirror strip test"
 
@@ -213,7 +213,7 @@ src_install() {
 			return
 		fi
 
-		eval mv -i "${1}" "${ED}${_DESTDIR}" || die "mv failed ${PWD} / ${1} -> ${ED} ${_DESTDIR}"
+		eval mv -i "${1}" "${ED}${_DESTDIR}" || die "mv failed ${PWD} / ${1} -> "${ED}" ${_DESTDIR}"
 	}
 
 	dopcfile() {
@@ -261,7 +261,7 @@ src_install() {
 
 	eend $? # }}}
 
-	# At this point ${ED}/${CUDA_PATH} should *not* be empty 
+	# At this point "${ED}"/${CUDA_PATH} should *not* be empty
 	find "${ED}/${CUDA_PATH}" -empty -delete || die "empty CUDA installation dir"
 
 	# Remove directories created by manifest parsing before creating compatibility symlinks
@@ -285,7 +285,7 @@ src_install() {
 	if [[ -d "${ED}/${CUDA_PATH}/$(get_libdir)" && ! -L "${ED}/${CUDA_PATH}/$(get_libdir)" ]]; then
 		einfo "Merging existing lib content before creating symlink"
 
-		# Ensure target directory exists  
+		# Ensure target directory exists
 		mkdir -p "${ED}/${CUDA_PATH}/targets/${narch}-linux/lib" || die "failed to create target lib directory"
 
 		# Move any existing content from lib/ to targets/.../lib/
@@ -298,7 +298,7 @@ src_install() {
 		rm -rf "${ED}/${CUDA_PATH}/$(get_libdir)" || die "failed to remove lib directory"
 	fi
 
-	# Create symlinks for backward compatibility  
+	# Create symlinks for backward compatibility
 	dosym "targets/${narch}-linux/include" "${CUDA_PATH#/}/include"
 	dosym "targets/${narch}-linux/lib" "${CUDA_PATH#/}/$(get_libdir)"
 
@@ -311,7 +311,7 @@ src_install() {
 		# Only create symlink if component exists in CCCL but not directly in include
 		if [[ ! -e "${direct_path}" && -d "${cccl_path}" ]]; then
 			einfo "Creating ${component} symlink in target include directory (CCCL location)"
-			# Create relative symlink from targets/.../include/cub to cccl/cub  
+			# Create relative symlink from targets/.../include/cub to cccl/cub
 			dosym "cccl/${component}" "${CUDA_PATH#/}/targets/${narch}-linux/include/${component}"
 		elif [[ -d "${direct_path}" ]]; then
 			einfo "Component ${component} already exists in direct location, no symlink needed"

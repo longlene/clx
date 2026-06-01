@@ -10,10 +10,9 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="x11-libs/gtk+:2
-	x11-libs/libXtst 
+	x11-libs/libXtst
 	media-libs/libsdl[joystick]"
 RDEPEND="${DEPEND}"
 

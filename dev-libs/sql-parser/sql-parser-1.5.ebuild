@@ -10,9 +10,7 @@ SRC_URI="https://github.com/hyrise/sql-parser/archive/v${PV}.tar.gz -> ${P}.tar.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
@@ -25,4 +23,3 @@ src_install() {
 	doins src/sql/*.h
 	dodoc README.md
 }
-	

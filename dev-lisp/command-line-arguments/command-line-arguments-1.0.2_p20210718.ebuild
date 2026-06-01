@@ -13,8 +13,5 @@ SRC_URI="https://github.com/fare/command-line-arguments/archive/${EGIT_COMMIT}.t
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-

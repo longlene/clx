@@ -14,7 +14,6 @@ SRC_URI="https://github.com/openresty/lua-resty-balancer/archive/v${PV}.tar.gz -
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND="
 	${LUA_DEPS}

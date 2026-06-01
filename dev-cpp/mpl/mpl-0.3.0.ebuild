@@ -13,7 +13,6 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	|| (
 	>=sys-cluster/openmpi-4.1.2
@@ -22,4 +21,3 @@ RDEPEND="${DEPEND}
 	sys-cluster/nullmpi
 )
 "
-BDEPEND=""

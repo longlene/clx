@@ -15,6 +15,7 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/stable-diffusion.cpp-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 IUSE="cuda rocm sycl vulkan"
 
@@ -22,9 +23,6 @@ DEPEND="
 	sci-libs/ggml[cuda?,rocm?,vulkan?]
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/stable-diffusion.cpp-${EGIT_COMMIT}
 
 PATCHES=(
 	"${FILESDIR}"/system-ggml.patch

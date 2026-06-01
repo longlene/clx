@@ -8,10 +8,8 @@ SRC_URI="mirror://debian/pool/main/9/${PN}/${PN}_${PV}.orig.tar.gz"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="x11-libs/libX11"
-
 
 src_compile() {
 	emake -f Makefile.noimake || die "emake error"

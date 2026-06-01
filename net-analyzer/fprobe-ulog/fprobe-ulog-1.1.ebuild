@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="A libipulog-based fork of fprobe - a tool to collect network traffic data and emit it as NetFlow flows"
+DESCRIPTION="A libipulog-based fork of fprobe - a tool to collect network traffic data"
 HOMEPAGE="http://fprobe.sourceforge.net"
 LICENSE="GPL-2"
 

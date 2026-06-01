@@ -8,16 +8,17 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="6791f3569acd42b723ce82051cc8e2e3ee42a671"
 
-DESCRIPTION="Persistent, fast mmap'd database for Common Lisp using MOP; includes its own GC systems"
+DESCRIPTION="Persistent, fast mmap'd database for Common Lisp using MOP; includes its own"
 HOMEPAGE="https://github.com/ilitirit/manardb"
 SRC_URI="https://github.com/ilitirit/manardb/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/osicat

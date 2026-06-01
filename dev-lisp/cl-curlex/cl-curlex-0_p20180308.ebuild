@@ -12,11 +12,8 @@ SRC_URI="https://github.com/mabragor/cl-curlex/archive/${EGIT_COMMIT}.tar.gz -> 
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/eos
 	dev-lisp/iterate"
-

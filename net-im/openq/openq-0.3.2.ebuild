@@ -11,14 +11,12 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 
 DEPEND=">=net-im/gaim-1.0.0
-        >=dev-libs/glib-2.0.0
-        >=x11-libs/gtk+-2.0.0"
+		>=dev-libs/glib-2.0.0
+		>=x11-libs/gtk+-2.0.0"
 
 src_install() {
 	make install DESTDIR=${D} || die "install failure"
 	dodoc AUTHORS COPYING ChangeLog INSTALL NEWS README VERSION
 }
-

@@ -12,15 +12,12 @@ SRC_URI="https://github.com/shop-planner/shop3/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="MPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-garbage
 	dev-lisp/alexandria
 	dev-lisp/iterate
 "
-BDEPEND=""
 
 src_install() {
 	default

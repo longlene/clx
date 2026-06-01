@@ -14,10 +14,7 @@ SRC_URI="https://github.com/marcoheisig/numpy-file-format/archive/${EGIT_COMMIT}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/ieee-floats
 "
-BDEPEND=""

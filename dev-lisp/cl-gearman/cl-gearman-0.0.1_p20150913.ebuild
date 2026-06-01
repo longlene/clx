@@ -14,9 +14,10 @@ SRC_URI="https://github.com/taksatou/cl-gearman/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/split-sequence
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	test? ( dev-lisp/cl-test-more )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

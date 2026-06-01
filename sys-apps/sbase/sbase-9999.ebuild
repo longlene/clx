@@ -8,16 +8,13 @@ inherit git-r3
 
 DESCRIPTION="suckless unix tools"
 HOMEPAGE="http://git.2f30.org/sbase/"
-SRC_URI=""
 
 EGIT_REPO_URI="git://git.2f30.org/sbase"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

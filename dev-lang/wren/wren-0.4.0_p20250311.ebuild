@@ -11,14 +11,11 @@ SRC_URI="https://github.com/wren-lang/wren/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 IUSE="static-libs"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 src_prepare() {
 	default

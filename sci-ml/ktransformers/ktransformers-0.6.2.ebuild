@@ -3,12 +3,13 @@
 
 EAPI=8
 
+DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A Flexible Framework for Experiencing Heterogeneous LLM Inference/Fine-tune Optimizations"
+DESCRIPTION="A Flexible Framework for Experiencing Heterogeneous LLM Inference/Fine-tune"
 HOMEPAGE="
 	https://pypi.org/project/ktransformers/
 	https://github.com/kvcache-ai/ktransformers/
@@ -20,7 +21,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-ml/kt-kernel-${PV}[${PYTHON_USEDEP}]
+	>=sci-ml/kt-kernel-${PV}[${PYTHON_SINGLE_USEDEP}]
 "
 #BDEPEND="
 #	test? (

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Common lisp interface to unix rlimit -- ensure the performance of your program!
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Common lisp interface to unix rlimit -- ensure the performance of your program!
+  </longdescription>
+  <upstream>
+    <remote-id type="github">guicho271828/cl-rlimit</remote-id>
+  </upstream>
 </pkgmetadata>

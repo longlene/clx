@@ -14,9 +14,7 @@ SRC_URI="https://github.com/hanshuebner/bknr-datastore/archive/${EGIT_COMMIT}.ta
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-interpol
 	dev-lisp/unit-test
@@ -31,4 +29,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/flexi-streams
 	dev-lisp/bordeaux-threads
 "
-BDEPEND=""

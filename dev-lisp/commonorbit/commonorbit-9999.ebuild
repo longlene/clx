@@ -6,16 +6,12 @@ EAPI=8
 
 inherit common-lisp-3 git-r3
 
-DESCRIPTION="CORBIT: Object-oriented extension of Common Lisp based on a prototype (classless) model of OOP"
+DESCRIPTION="CORBIT: Object-oriented extension of Common Lisp based on a prototype"
 HOMEPAGE="https://github.com/g000001/CommonORBIT"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/g000001/CommonORBIT.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS=""
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

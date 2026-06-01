@@ -13,7 +13,6 @@ SLOT="0"
 #KEYWORDS="~x86 ~amd64"
 IUSE="debug gengc threads +unicode"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-libs/gmp
 virtual/libffi

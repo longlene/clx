@@ -12,7 +12,7 @@ KEYWORDS="~x86"
 
 DEPEND="dev-python/PyQt
 	x11-libs/qt
-	dev-util/scons"
+	dev-build/scons"
 
 RDEPEND="dev-python/PyQt
 	x11-libs/qt

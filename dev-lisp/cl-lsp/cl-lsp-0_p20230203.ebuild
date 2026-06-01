@@ -14,15 +14,26 @@ SRC_URI="https://github.com/cxxxr/cl-lsp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/lem
+	dev-lisp/jsonrpc
+	dev-lisp/command-line-arguments
 "
+
+export CL_SOURCE_REGISTRY="${S}":/usr/share/common-lisp/systems
 
 src_prepare() {
 	default
+	sed -e 's#src/main.lisp#main.lisp#' \
+		-i Makefile
 	sed -i '/defsystem "cl-lsp\/test/,$d' ${PN}.asd
 	rm -rf test
+}
+
+src_compile() {
+	#emake
+	sbcl \
+		--eval '(asdf:load-system :cl-lsp/executable)' \
+		--eval '(asdf:make :cl-lsp/executable)'
 }

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		cl-github-v3 - Common Lisp interface to the github V3 API
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    cl-github-v3 - Common Lisp interface to the github V3 API
+  </longdescription>
+  <upstream>
+    <remote-id type="github">hanshuebner/cl-github-v3</remote-id>
+  </upstream>
 </pkgmetadata>

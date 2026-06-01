@@ -10,10 +10,7 @@ SRC_URI="http://code.stiernstrom.se/rfc3339-timestamp/downloads/rfc3339-timestam
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-yacc"
-

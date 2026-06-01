@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 DESCRIPTION="Type system extensions for use with the pyre type checker"
 HOMEPAGE="
 	https://pypi.org/project/pyre-extensions/
-    https://pyre-check.org
+	https://pyre-check.org
 "
 
 LICENSE="MIT"

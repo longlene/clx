@@ -5,7 +5,7 @@ EAPI=8
 
 inherit vcs-snapshot systemd
 
-DESCRIPTION="MongooseIM is a mobile messaging platform with focus on performance and scalability"
+DESCRIPTION="MongooseIM is a mobile messaging platform with focus on performance and"
 HOMEPAGE="https://github.com/esl/MongooseIM"
 SRC_URI="https://github.com/esl/MongooseIM/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -18,7 +18,6 @@ DEPEND="
 	dev-lang/erlang[odbc,ssl]
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 RESTRICT=network-sandbox
 
@@ -47,4 +46,3 @@ src_install() {
 	insinto /etc/logrotate.d
 	newins "${FILESDIR}/${PN}.logrotate" "${PN}"
 }
-

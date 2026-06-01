@@ -13,7 +13,6 @@ LICENSE="GPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/babel
@@ -23,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-macroexpand-all
 "
-BDEPEND=""

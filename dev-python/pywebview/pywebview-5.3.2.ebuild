@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -28,11 +28,11 @@ RDEPEND="
 	)
 	qt5? (
 		 dev-python/pyside2[${PYTHON_USEDEP},webengine]
-		 dev-python/QtPy[${PYTHON_USEDEP},webengine]
+		 dev-python/qtpy[${PYTHON_USEDEP},webengine]
 	)
 	qt6? (
-		dev-python/pyside6[${PYTHON_USEDEP},webengine]
-		dev-python/QtPy[${PYTHON_USEDEP},webengine]
+		dev-python/pyside[${PYTHON_USEDEP},webengine]
+		dev-python/qtpy[${PYTHON_USEDEP},webengine]
 	)
 "
 

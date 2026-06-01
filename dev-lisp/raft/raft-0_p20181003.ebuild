@@ -14,9 +14,10 @@ SRC_URI="https://github.com/AeroNotix/raft/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/log4cl
 	dev-lisp/flexi-streams
@@ -31,7 +32,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/uuid
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

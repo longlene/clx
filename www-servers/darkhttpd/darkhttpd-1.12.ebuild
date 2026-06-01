@@ -9,9 +9,7 @@ SRC_URI="http://unix4lyfe.org/darkhttpd/${P}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

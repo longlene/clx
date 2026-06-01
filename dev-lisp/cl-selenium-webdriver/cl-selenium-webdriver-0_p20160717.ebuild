@@ -15,9 +15,10 @@ SRC_URI="https://github.com/TatriX/cl-selenium-webdriver/archive/${EGIT_COMMIT}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	!dev-lisp/cl-selenium
 	dev-lisp/dexador

@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://pypi.org/project/fastmcp/
 	https://github.com/jlowin/fastmcp
 "
-SRC_URI="https://github.com/jlowin/fastmcp/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jlowin/fastmcp/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

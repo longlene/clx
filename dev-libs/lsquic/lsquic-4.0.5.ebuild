@@ -18,11 +18,10 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}/lsquic-${LSQUIC_COMMIT}"
 KEYWORDS="~amd64 ~arm64"
 IUSE="static-libs test"
 RESTRICT="!test? ( test )"
-
-S="${WORKDIR}/lsquic-${LSQUIC_COMMIT}"
 
 DEPEND="
 	dev-lang/go
@@ -38,7 +37,7 @@ PATCHES=(
 src_unpack() {
 	unpack ${P}.tar.gz
 	unpack boringssl-fips-20230428.tar.gz
-	mv boringssl-${BORINGSSL_COMMIT} ${S}/src/liblsquic/boringssl || die
+	mv boringssl-${BORINGSSL_COMMIT} "${S}"/src/liblsquic/boringssl || die
 }
 
 src_configure() {

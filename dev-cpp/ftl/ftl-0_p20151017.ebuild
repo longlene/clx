@@ -14,9 +14,7 @@ SRC_URI="https://github.com/beark/ftl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

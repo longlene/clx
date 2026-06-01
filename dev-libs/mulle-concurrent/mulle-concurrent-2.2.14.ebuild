@@ -12,10 +12,8 @@ SRC_URI="https://github.com/mulle-concurrent/mulle-concurrent/archive/${PV}.tar.
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/mulle-aba
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

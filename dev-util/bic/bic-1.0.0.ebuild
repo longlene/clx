@@ -12,14 +12,12 @@ SRC_URI="https://github.com/hexagonal-sun/bic/archive/v${PV}.tar.gz -> ${P}.tar.
 LICENSE="GPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/gmp
 	sys-libs/readline
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

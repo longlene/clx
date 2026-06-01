@@ -14,9 +14,10 @@ SRC_URI="https://github.com/Th30n/cl-shake/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="GPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-sdl2
 	dev-lisp/alexandria
@@ -27,7 +28,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

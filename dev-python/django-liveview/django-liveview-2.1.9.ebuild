@@ -17,6 +17,7 @@ SRC_URI="https://github.com/Django-LiveView/liveview/archive/refs/tags/v${PV}.ta
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/liveview-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -31,5 +32,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/liveview-${PV}

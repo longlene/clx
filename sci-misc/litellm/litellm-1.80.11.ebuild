@@ -19,6 +19,7 @@ SRC_URI="https://github.com/BerriAI/litellm/archive/refs/tags/v${PV}-nightly.tar
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${P}-nightly
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -31,7 +32,7 @@ RDEPEND="
 		>=dev-python/tiktoken-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/importlib-metadata-6.8.0[${PYTHON_USEDEP}]
 		>=dev-python/click-8.1.7[${PYTHON_USEDEP}]
-		>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
+		>=dev-python/jinja22-3.1.2[${PYTHON_USEDEP}]
 		>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]
 		>=dev-python/pydantic-2.5.0[${PYTHON_USEDEP}]
 		>=dev-python/jsonschema-4.23.0[${PYTHON_USEDEP}]
@@ -49,5 +50,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${P}-nightly

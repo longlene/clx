@@ -18,7 +18,6 @@ DEPEND="
 	uring? ( sys-libs/liburing )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(
@@ -32,6 +31,6 @@ src_configure() {
 src_install() {
 	insinto /usr/include
 	doins -r include/unifex
-	dolib.so ${BUILD_DIR}/source/libunifex.so
+	dolib.so "${BUILD_DIR}"/source/libunifex.so
 	dodoc README.md
 }

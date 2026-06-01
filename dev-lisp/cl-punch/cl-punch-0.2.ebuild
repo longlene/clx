@@ -12,14 +12,14 @@ SRC_URI="https://github.com/windymelt/cl-punch/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-syntax
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

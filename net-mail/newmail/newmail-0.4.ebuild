@@ -9,10 +9,6 @@ SRC_URI="http://www.infodrom.org/projects/newmail/download/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND=""
 
 src_install() {
 	dobin newmail

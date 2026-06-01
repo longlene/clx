@@ -10,7 +10,7 @@ SRC_URI="https://github.com/fsphil/fswebcam/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="v4l"
 
 DEPEND="

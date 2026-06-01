@@ -18,4 +18,3 @@ DEPEND="
 	dev-erlang/telemetry
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

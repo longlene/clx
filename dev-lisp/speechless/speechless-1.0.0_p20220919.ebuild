@@ -15,9 +15,7 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-markless
 	dev-lisp/documentation-utils
 "
-BDEPEND=""

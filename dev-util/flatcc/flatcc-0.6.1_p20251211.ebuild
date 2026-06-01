@@ -13,13 +13,10 @@ SRC_URI="https://github.com/dvidelabs/flatcc/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
+KEYWORDS="~amd64 ~arm ~x86"
+
+RDEPEND="${DEPEND}"
 
 src_configure() {
 	local mycmakeargs=(

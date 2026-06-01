@@ -11,10 +11,6 @@ KEYWORDS="~amd64 ~ppc ~x86"
 SRC_URI="http://downloads.sourceforge.net/project/${PN}/${PN}/${PV}/${P}.tgz"
 RESTRICT="nomirror"
 
-IUSE=""
-RDEPEND=""
-DEPEND=""
-
 src_install() {
 	cd "${S}"
 	exeinto /usr/bin

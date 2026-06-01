@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Scalable Vector Search (SVS) is a performance library for vector similarity
+    search, targeting high-dimensional approximate nearest-neighbor search (ANNS)
+    workloads on x86 CPUs. It uses multi-arch AVX2/AVX-512 dispatch and the
+    Vamana graph-based index algorithm.
+  </longdescription>
+  <use>
+    <flag name="numa">Enable NUMA-aware data structures via sys-process/numactl</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">intel/ScalableVectorSearch</remote-id>
+    <remote-id type="github">marzer/tomlplusplus</remote-id>
+  </upstream>
+</pkgmetadata>

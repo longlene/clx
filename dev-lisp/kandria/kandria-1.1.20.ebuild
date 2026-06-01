@@ -13,7 +13,6 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/deploy
 	dev-lisp/trial-glfw
@@ -49,4 +48,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/simple-tasks
 	app-emacs/slime
 "
-BDEPEND=""

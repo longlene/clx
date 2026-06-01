@@ -17,6 +17,7 @@ SRC_URI="https://github.com/microsoft/markitdown/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
+S="${S}"/packages/markitdown
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -33,5 +34,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${S}"/packages/markitdown

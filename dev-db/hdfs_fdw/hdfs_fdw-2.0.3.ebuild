@@ -11,16 +11,14 @@ SRC_URI="https://github.com/EnterpriseDB/hdfs_fdw/archive/v${PV}.tar.gz -> ${P}.
 
 LICENSE="apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${P}
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=virtual/jdk-1.6
 	dev-db/postgresql
 "
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}"/${P}
 
 src_compile() {
 	JDK_INCLUDE=${JAVA_HOME}/include emake -C libhive

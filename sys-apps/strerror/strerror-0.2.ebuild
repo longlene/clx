@@ -7,11 +7,9 @@ HOMEPAGE="http://strerror.sourceforge.net/"
 SRC_URI="mirror://sourceforge/strerror/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
-IUSE=""
+KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=sys-devel/binutils-2.18"
-RDEPEND=""
 
 src_compile() {
 	econf --disable-strip --enable-cflags \

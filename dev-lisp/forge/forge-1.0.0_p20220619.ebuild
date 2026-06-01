@@ -15,7 +15,6 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/forge-support
 	dev-lisp/forge-communication
@@ -31,4 +30,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/cffi
 "
-BDEPEND=""

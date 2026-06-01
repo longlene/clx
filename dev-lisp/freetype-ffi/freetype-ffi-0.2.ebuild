@@ -10,10 +10,11 @@ SRC_URI="http://cyrusharmon.org/static/releases/freetype-ffi_${PV}.tar.gz -> ${P
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 dev-lisp/xmls
 dev-lisp/gcc-xml-ffi
@@ -25,4 +26,3 @@ src_prepare() {
 		rm -r test *test*.*
 	fi
 }
-

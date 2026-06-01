@@ -22,7 +22,8 @@ SRC_URI="
 
 LICENSE="Apache-2.0 MIT"
 SLOT="0"
-KEYWORDS="amd64 ~arm arm64 ~ppc ~ppc64 ~riscv x86 ~x64-macos"
+S="${WORKDIR}/${MY_P}"
+KEYWORDS="amd64 arm64 x86 ~arm ~ppc ~ppc64 ~riscv ~x64-macos"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
@@ -36,8 +37,6 @@ RDEPEND="${DEPEND}"
 PATCHES=(
 	"${FILESDIR}"/${PN}-1.43.0.0-cmake_lua_version.patch
 )
-
-S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	# Fix libdir

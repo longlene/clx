@@ -11,8 +11,7 @@ SRC_URI="http://files.kpe.io/${PN}/${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="dev-lisp/ptester"
 
@@ -20,7 +19,6 @@ src_install() {
 	common-lisp-install *.lisp ${PN}.asd
 	common-lisp-symlink-asdf
 	dodoc README LICENSE
-
 
 	#if use doc ; then
 	#	dodoc doc/uffi.pdf

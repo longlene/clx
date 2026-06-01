@@ -17,6 +17,7 @@ SRC_URI="https://github.com/spatialaudio/python-sounddevice/archive/refs/tags/${
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 
 #distutils_enable_tests pytest
 RESTRICT="test"
-
-S="${WORKDIR}"/python-${P}

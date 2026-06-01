@@ -12,7 +12,6 @@ SRC_URI="https://github.com/libbitcoin/libbitcoin/archive/v${PV}.tar.gz -> ${P}.
 LICENSE="AGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/boost
@@ -24,4 +23,3 @@ src_prepare() {
 	eapply_user
 	eautoreconf
 }
-

@@ -15,7 +15,6 @@ SRC_URI="https://github.com/lanpa/tensorboardX/archive/refs/tags/${PV}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]

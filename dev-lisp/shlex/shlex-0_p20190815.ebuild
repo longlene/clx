@@ -14,9 +14,10 @@ SRC_URI="https://github.com/ruricolist/cl-shlex/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/serapeum
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-unicode
 	test? ( dev-lisp/fiveam )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

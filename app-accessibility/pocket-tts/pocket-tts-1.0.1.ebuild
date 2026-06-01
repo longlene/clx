@@ -19,9 +19,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
-	>=sci-libs/pytorch-2.5.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/pytorch-2.5.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-libs/hugging_hub-0.10.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/beartype-0.22.5[${PYTHON_USEDEP}]
@@ -39,7 +38,6 @@ RDEPEND="${DEPEND}
 		>=dev-python/requests-2.20.0[${PYTHON_USEDEP}]
 	')
 "
-BDEPEND=""
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest

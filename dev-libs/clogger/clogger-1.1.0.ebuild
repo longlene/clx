@@ -11,10 +11,8 @@ SRC_URI="https://github.com/dcreager/clogger/archive/${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-libs/libcork
 dev-libs/check
@@ -27,4 +25,3 @@ src_prepare() {
 		-e '/if(GIT_SHA1/,/endif(GIT_SHA1/d' \
 		-i CMakeLists.txt
 }
-

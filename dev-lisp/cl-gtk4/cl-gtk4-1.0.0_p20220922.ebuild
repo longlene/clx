@@ -15,7 +15,6 @@ LICENSE="LGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	gui-libs/gtk:4
 	dev-libs/gobject-introspection
@@ -23,7 +22,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-gobject-introspection-wrapper
 	dev-lisp/cl-glib
 "
-BDEPEND=""
 
 src_prepare() {
 	default

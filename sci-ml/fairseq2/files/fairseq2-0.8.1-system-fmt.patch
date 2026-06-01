@@ -1,0 +1,27 @@
+Use system fmt instead of bundled git submodule.
+
+--- a/third-party/fmt.cmake
++++ b/third-party/fmt.cmake
+@@ -6,21 +6,6 @@
+
+ macro(fairseq2n_add_fmt)
+     if(NOT TARGET fmt::fmt)
+-        set(FMT_SYSTEM_HEADERS ON)
+-
+-        add_subdirectory(${PROJECT_SOURCE_DIR}/third-party/fmt EXCLUDE_FROM_ALL)
+-
+-        target_compile_features(fmt PRIVATE cxx_std_17)
+-
+-        set_target_properties(fmt PROPERTIES
+-            CXX_VISIBILITY_PRESET
+-                hidden
+-            POSITION_INDEPENDENT_CODE
+-                ON
+-        )
+-
+-        # We depend on the phony torch_cxx11_abi target to ensure that we use
+-        # the same libstdc++ ABI as PyTorch.
+-        target_link_libraries(fmt PRIVATE torch_cxx11_abi)
++        find_package(fmt REQUIRED)
+     endif()
+ endmacro()

@@ -11,13 +11,11 @@ LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/msgpack
 	dev-cpp/nlohmann_json
 	|| ( dev-libs/boost dev-cpp/asio )
 "
-BDEPEND=""
 
 src_install() {
 	insinto /usr/include

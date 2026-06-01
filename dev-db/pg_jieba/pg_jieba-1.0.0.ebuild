@@ -11,7 +11,6 @@ SRC_URI="https://github.com/jaiminpan/pg_jieba/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="dev-db/postgresql"
 RDEPEND="${DEPEND}"

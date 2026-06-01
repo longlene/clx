@@ -15,7 +15,5 @@ SRC_URI="https://github.com/sharplispers/zlib/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

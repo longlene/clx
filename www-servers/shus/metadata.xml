@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		shus is a tiny HTTP server which supports only GET requests and static pages
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    shus is a tiny HTTP server which supports only GET requests and static pages
+  </longdescription>
+  <upstream>
+    <remote-id type="github">dimkr/shus</remote-id>
+  </upstream>
 </pkgmetadata>

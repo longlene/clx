@@ -15,13 +15,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-json
 	dev-lisp/hunchentoot
 "
-BDEPEND=""
 
 src_prepare() {
 	default

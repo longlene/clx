@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Arachne is a framework for writing web spiders and crawlers in Common Lisp.
-		Features
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Arachne is a framework for writing web spiders and crawlers in Common Lisp.
+    Features
 
-		Arachne is very similar in use to Scrapy, a high-level Python web crawling framework, the main difference being that while Scrapy is aimed at scraping HTML websites or RSS feeds, Arachne is designed to be more general and work the same way with JSON APIs and sites that dynamically load content with JavaScript.
-		General
+    Arachne is very similar in use to Scrapy, a high-level Python web crawling framework, the main difference being that while Scrapy is aimed at scraping HTML websites or RSS feeds, Arachne is designed to be more general and work the same way with JSON APIs and sites that dynamically load content with JavaScript.
+    General
 
-		Arachne doesn't define Scrapy's Items or require you to send anything through a pipeline; it simply gives you the ability to add callbacks to Requests and process the extracted data in any way you want.
-		Crawl Anything
+    Arachne doesn't define Scrapy's Items or require you to send anything through a pipeline; it simply gives you the ability to add callbacks to Requests and process the extracted data in any way you want.
+    Crawl Anything
 
-		Arachne allows you to follow links or extract structured data using XPath, CSS selectors, JSON selectors (Specially useful when crawling APIs), or by directly using the DOM and STP.
-	</longdescription>
+    Arachne allows you to follow links or extract structured data using XPath, CSS selectors, JSON selectors (Specially useful when crawling APIs), or by directly using the DOM and STP.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">eudoxia0/arachne</remote-id>
+  </upstream>
 </pkgmetadata>

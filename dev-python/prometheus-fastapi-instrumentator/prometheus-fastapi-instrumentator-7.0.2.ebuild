@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://pypi.org/project/prometheus-fastapi-instrumentator/
 	https://github.com/trallnag/prometheus-fastapi-instrumentator
 "
-SRC_URI="https://github.com/trallnag/prometheus-fastapi-instrumentator/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/trallnag/prometheus-fastapi-instrumentator/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"

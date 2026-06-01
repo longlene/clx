@@ -10,16 +10,16 @@ SRC_URI="https://github.com/Hexstream/parse-number-range/archive/v${PV}.tar.gz -
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/map-bind
 	dev-lisp/cartesian-product-switch
 	dev-lisp/enhanced-multiple-value-bind
 	test? ( dev-lisp/parachute )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

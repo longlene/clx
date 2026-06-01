@@ -17,7 +17,6 @@ DEPEND="
 	app-eselect/eselect-blas
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

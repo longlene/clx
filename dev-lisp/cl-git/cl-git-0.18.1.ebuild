@@ -10,10 +10,8 @@ SRC_URI="https://github.com/russell/cl-git/archive/${PV}.tar.gz"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cffi
 dev-lisp/local-time
@@ -22,4 +20,3 @@ dev-lisp/trivial-garbage
 dev-lisp/anaphora
 dev-lisp/alexandria
 dev-lisp/closer-mop"
-

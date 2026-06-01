@@ -12,9 +12,10 @@ SRC_URI="https://github.com/ukari/cl-generator/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-cont
 	test? ( dev-lisp/lisp-unit )

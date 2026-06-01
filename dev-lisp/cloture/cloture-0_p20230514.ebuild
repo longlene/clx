@@ -14,9 +14,7 @@ SRC_URI="https://github.com/ruricolist/cloture/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="EPL-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/serapeum
 	dev-lisp/trivia
@@ -39,7 +37,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/sycamore
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

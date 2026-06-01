@@ -15,7 +15,6 @@ LICENSE="MS-PL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/anaphora
@@ -24,7 +23,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/fare-csv
 	dev-lisp/let-plus
 "
-BDEPEND=""
 
 src_prepare() {
 	default
@@ -37,4 +35,3 @@ src_install() {
 	common-lisp-3_src_install
 	common-lisp-install-sources -t all description.text
 }
-

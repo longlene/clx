@@ -33,6 +33,6 @@ distutils_enable_tests pytest
 src_prepare() {
 	default
 	sed -e '/include/{s#"/README.md", ##}' \
-		-i pyproject.toml 
+		-i pyproject.toml
 	distutils-r1_src_prepare
 }

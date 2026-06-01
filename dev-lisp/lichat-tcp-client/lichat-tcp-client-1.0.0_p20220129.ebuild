@@ -14,9 +14,7 @@ SRC_URI="https://github.com/Shirakumo/lichat-tcp-client/archive/${EGIT_COMMIT}.t
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/lichat-protocol
 	dev-lisp/usocket
@@ -24,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/verbose
 "
-BDEPEND=""

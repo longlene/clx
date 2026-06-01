@@ -14,7 +14,5 @@ SRC_URI="https://github.com/slyrus/ref/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

@@ -6,16 +6,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Yet Another Common Lisp YaML processor"
 HOMEPAGE="https://github.com/mabragor/cl-yaclyaml"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/mabragor/cl-yaclyaml.git"
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/iterate
 dev-lisp/rutils
@@ -27,4 +24,3 @@ dev-lisp/yaclanapht
 dev-lisp/cl-ppcre
 dev-lisp/demacro-enhance
 dev-lisp/parse-number"
-

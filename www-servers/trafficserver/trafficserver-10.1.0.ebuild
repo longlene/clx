@@ -23,7 +23,6 @@ DEPEND="
 	unwind? ( sys-libs/libunwind )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

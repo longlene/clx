@@ -27,7 +27,9 @@ KERNEL_ARCHIVE="linux_${DEB_PV_BASE}.orig.tar.xz"
 PATCH_ARCHIVE="linux_${DEB_PV}.debian.tar.xz"
 RESTRICT="binchecks strip mirror"
 LICENSE="GPL-2"
+S="$WORKDIR/linux-${DEB_PV_BASE}"
 KEYWORDS="*"
+SRC_URI="$DEB_UPSTREAM/${KERNEL_ARCHIVE} $DEB_UPSTREAM/${PATCH_ARCHIVE}"
 IUSE="binary btrfs custom-cflags ec2 luks lvm sign-modules zfs"
 DEPEND="
 	virtual/libelf
@@ -46,8 +48,6 @@ zfs? ( binary )
 DESCRIPTION="Debian Sources (and optional binary kernel)"
 DEB_UPSTREAM="http://http.debian.net/debian/pool/main/l/linux"
 HOMEPAGE="https://packages.debian.org/unstable/kernel/"
-SRC_URI="$DEB_UPSTREAM/${KERNEL_ARCHIVE} $DEB_UPSTREAM/${PATCH_ARCHIVE}"
-S="$WORKDIR/linux-${DEB_PV_BASE}"
 
 get_patch_list() {
 	[[ -z "${1}" ]] && die "No patch series file specified"
@@ -241,7 +241,6 @@ src_install() {
 	cp "${T}"/config .config || die
 	cp -a "${T}"/debian debian || die
 
-
 	# if we didn't use genkernel, we're done. The kernel source tree is left in
 	# an unconfigured state - you can't compile 3rd-party modules against it yet.
 	use binary || return
@@ -264,20 +263,19 @@ src_install() {
 	if use sign-modules; then
 		for x in $(find "${D}"/lib/modules -iname *.ko); do
 			# $certs_dir defined previously in this function.
-			${WORKDIR}/build/scripts/sign-file sha512 $certs_dir/signing_key.pem $certs_dir/signing_key.x509 $x || die
+			"${WORKDIR}"/build/scripts/sign-file sha512 $certs_dir/signing_key.pem $certs_dir/signing_key.x509 $x || die
 		done
 		# install the sign-file executable for future use.
 		exeinto /usr/src/${LINUX_SRCDIR}/scripts
-		doexe ${WORKDIR}/build/scripts/sign-file
+		doexe "${WORKDIR}"/build/scripts/sign-file
 	fi
 
 	# The new naming scheme leaves an extra -${PN} at the name of various things in /boot. This should fix that.
-	cd ${D}/boot
+	cd "${D}"/boot
 	for x in $(ls *); do
 		xnew=${x%-${PN}}
 		mv $x ${xnew} || die
 	done
-
 
 }
 

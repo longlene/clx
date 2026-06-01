@@ -12,16 +12,16 @@ SRC_URI="https://gitlab.com/Gnuxie/cl-matrix/repository/archive.tar.gz?ref=${EGI
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/jsown
 	dev-lisp/drakma
 	dev-lisp/method-hooks
 	dev-lisp/documentation-utils
 "
-BDEPEND=""
 
 src_prepare() {
 	default

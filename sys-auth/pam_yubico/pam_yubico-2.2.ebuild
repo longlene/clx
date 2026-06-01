@@ -10,7 +10,6 @@ SRC_URI="http://yubico-pam.googlecode.com/files/${P}.tar.gz"
 LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE=""
 
 DEPEND="sys-auth/pambase
 	sys-libs/pam
@@ -24,4 +23,3 @@ src_install() {
 	emake install DESTDIR="${D}" || die "Install failed"
 	dodoc ChangeLog NEWS README
 }
-

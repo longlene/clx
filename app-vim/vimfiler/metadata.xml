@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		vimfiler is a powerful file explorer(filer) written by Vim script.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    vimfiler is a powerful file explorer(filer) written by Vim script.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Shougo/vimfiler.vim</remote-id>
+  </upstream>
 </pkgmetadata>

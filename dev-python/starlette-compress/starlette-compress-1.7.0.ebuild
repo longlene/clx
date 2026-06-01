@@ -17,6 +17,7 @@ SRC_URI="https://github.com/Zaczero/pkgs/archive/refs/tags/starlette-compress/${
 
 LICENSE="BSD"
 SLOT="0"
+S="${WORKDIR}"/pkgs-${P}/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,5 +31,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/pkgs-${P}/${PN}

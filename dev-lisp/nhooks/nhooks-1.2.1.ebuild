@@ -13,12 +13,10 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/serapeum
 	dev-lisp/closer-mop
 "
-BDEPEND=""
 
 src_prepare() {
 	default

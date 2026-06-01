@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 CRATES="
 	aho-corasick@0.7.18
@@ -227,10 +227,9 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/tensorboard-${MY_PV}/tensorboard/data/server
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -239,8 +238,6 @@ RDEPEND="
 #distutils_enable_tests pytest
 
 RESTRICT="test"
-
-S="${WORKDIR}"/tensorboard-${MY_PV}/tensorboard/data/server
 
 export PROTOC=protoc
 
@@ -261,4 +258,3 @@ src_compile() {
 	cp target/*/release/rustboard bin/server
 	distutils-r1_src_compile
 }
-

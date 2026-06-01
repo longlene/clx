@@ -21,7 +21,6 @@ DEPEND="
 	dev-libs/protobuf
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 DOCS=( config.proto configs README.md )
 

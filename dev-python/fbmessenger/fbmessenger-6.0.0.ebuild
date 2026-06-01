@@ -50,6 +50,5 @@ RDEPEND="
 	=dev-python/urllib3-1.23[${PYTHON_USEDEP}]
 	=dev-python/wrapt-1.10.11[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 #distutils_enable_tests pytest

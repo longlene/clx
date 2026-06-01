@@ -22,7 +22,6 @@ DEPEND="
 	dev-util/spirv-tools
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

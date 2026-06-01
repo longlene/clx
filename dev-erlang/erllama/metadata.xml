@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    OTP-native LLM inference runtime built on a vendored llama.cpp NIF.
+    Provides token-exact tiered KV caching (RAM, RAM+file, disk) and an
+    OpenAI/Anthropic/Ollama-compatible HTTP daemon.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">barrel-platform/barrel_inference</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -12,9 +12,7 @@ SRC_URI="https://github.com/skypjack/uvw/archive/v1.7.0_libuv-v${PV}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/libuv
 "

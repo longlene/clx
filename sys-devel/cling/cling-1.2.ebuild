@@ -1,7 +1,7 @@
 # Copyright 2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 LLVM_COMMIT="fd3db4ac62588a4fc8cea5d6cbe4d9e50de67ef5"
 
@@ -17,9 +17,7 @@ SRC_URI="
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 CMAKE_USE_DIR="${WORKDIR}"/llvm-project-${LLVM_COMMIT}/llvm

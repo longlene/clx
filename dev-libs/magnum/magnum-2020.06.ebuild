@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION="Lightweight and modular C++11 graphics middleware for games and data visualization"
+DESCRIPTION="Lightweight and modular C++11 graphics middleware for games and data"
 HOMEPAGE="https://magnum.graphics/"
 SRC_URI="https://github.com/mosra/magnum/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -20,7 +20,6 @@ DEPEND="
 	media-libs/libsdl2
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

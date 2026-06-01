@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -19,13 +19,11 @@ SRC_URI="https://github.com/saffsd/langid.py/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="BSD"
 SLOT="0"
+S="${WORKDIR}"/langid.py-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"
-
-S="${WORKDIR}"/langid.py-${EGIT_COMMIT}

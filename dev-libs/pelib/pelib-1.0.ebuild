@@ -12,14 +12,12 @@ SRC_URI="https://github.com/avast-tl/pelib/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
 	insinto /usr/include
 	doins -r include/pelib
-	dolib.a ${BUILD_DIR}/src/pelib/libpelib.a
+	dolib.a "${BUILD_DIR}"/src/pelib/libpelib.a
 	dodoc README.md
 }

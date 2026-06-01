@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <longdescription>
+    Quickwit is a cloud-native search engine for observability. It is designed
+    to index large volumes of data from log lines, traces, and any JSON
+    document, and then search and analyze them in a cost-effective way.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">quickwit-oss/quickwit</remote-id>
+  </upstream>
+</pkgmetadata>

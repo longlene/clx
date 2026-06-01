@@ -21,7 +21,6 @@ RDEPEND="
 	dev-python/sympy[${PYTHON_USEDEP}]
 	dev-python/frozendict[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"
 

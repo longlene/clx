@@ -8,14 +8,12 @@ inherit git-r3
 
 DESCRIPTION="Luke Tierney's Xlispstat statistical environmnet"
 HOMEPAGE="https://github.com/jhbadger/xlispstat"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/jhbadger/xlispstat.git"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	x11-libs/libX11

@@ -6,7 +6,7 @@ HOMEPAGE="http://www.over-yonder.net/~fullermd/projects/libcidr/"
 SRC_URI="http://www.over-yonder.net/~fullermd/projects/libcidr/${P}.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND="${DEPEND}"
@@ -15,7 +15,7 @@ RDEPEND="${RDEPEND}"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	# Use CFLAGS as defined in the system
 	sed -i 's/^_CFLAGS \:= \(-g -Os -pipe\) \(.*\)/_CFLAGS ?= \1\n_CFLAGS += \2/;' src/*.inc
 }
@@ -26,7 +26,7 @@ src_compile() {
 }
 
 src_install() {
-	cd ${S}
+	cd "${S}"
 
 	dobin src/examples/cidrcalc/cidrcalc
 

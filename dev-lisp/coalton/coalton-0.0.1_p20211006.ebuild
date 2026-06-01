@@ -14,9 +14,10 @@ SRC_URI="https://github.com/coalton-lang/coalton/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/global-vars
@@ -26,7 +27,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/float-features
 	test? ( dev-lisp/fiasco )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

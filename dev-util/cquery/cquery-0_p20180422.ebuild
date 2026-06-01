@@ -14,9 +14,8 @@ EGIT_REPO_URI="https://github.com/cquery-project/cquery.git"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND="sys-devel/clang"
+DEPEND="llvm-core/clang"
 RDEPEND="${DEPEND}"
 
 src_configure() {

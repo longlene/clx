@@ -14,9 +14,7 @@ SRC_URI="https://github.com/moderninterpreters/markup/archive/${EGIT_COMMIT}.tar
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/str
 	dev-lisp/alexandria

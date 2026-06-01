@@ -9,14 +9,13 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Library to facilitate the use of state-of-the-art retrieval models in common RAG contexts"
+DESCRIPTION="Library to facilitate the use of state-of-the-art retrieval models in common"
 HOMEPAGE="
 	https://pypi.org/project/RAGatouille/
 	https://github.com/AnswerDotAI/RAGatouille
 "
-SRC_URI="https://github.com/AnswerDotAI/RAGatouille/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/AnswerDotAI/RAGatouille/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 

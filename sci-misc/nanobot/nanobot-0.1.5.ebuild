@@ -52,7 +52,7 @@ RDEPEND="
 		>=dev-python/chardet-3.0.2[${PYTHON_USEDEP}]
 		>=dev-python/openai-2.8.0[${PYTHON_USEDEP}]
 		>=dev-python/tiktoken-0.12.0[${PYTHON_USEDEP}]
-		>=dev-python/jinja2-3.1.0[${PYTHON_USEDEP}]
+		>=dev-python/jinja22-3.1.0[${PYTHON_USEDEP}]
 		>=dev-python/dulwich-0.22.0[${PYTHON_USEDEP}]
 	')
 "

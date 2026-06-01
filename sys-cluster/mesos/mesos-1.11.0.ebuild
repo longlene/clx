@@ -7,10 +7,8 @@ DESCRIPTION="A distributed systems kernel"
 HOMEPAGE="http://mesos.apache.org/"
 SRC_URI="http://www.apache.org/dist/mesos/${PV}/${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-cpp/gmock
@@ -27,7 +25,7 @@ src_prepare() {
 }
 
 src_configure() {
-	#econf --disable-bundled 
+	#econf --disable-bundled
 	econf --disable-java \
 		--disable-python \
 		--with-curl=/usr \

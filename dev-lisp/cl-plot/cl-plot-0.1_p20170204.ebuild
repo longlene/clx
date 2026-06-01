@@ -15,9 +15,7 @@ SRC_URI="https://github.com/martinkersner/cl-plot/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	sci-visualization/gnuplot
 "

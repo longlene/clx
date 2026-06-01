@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Quicksearch is a search-engine-interface for Common Lisp. The goal of Quicksearch is to find the CL library quickly
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Quicksearch is a search-engine-interface for Common Lisp. The goal of Quicksearch is to find the CL library quickly
+  </longdescription>
+  <upstream>
+    <remote-id type="github">tkych/quicksearch</remote-id>
+  </upstream>
 </pkgmetadata>

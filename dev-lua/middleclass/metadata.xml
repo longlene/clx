@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		A simple OOP library for Lua. It has inheritance, metamethods (operators), class variables and weak mixin support.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    A simple OOP library for Lua. It has inheritance, metamethods (operators), class variables and weak mixin support.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">kikito/middleclass</remote-id>
+  </upstream>
 </pkgmetadata>

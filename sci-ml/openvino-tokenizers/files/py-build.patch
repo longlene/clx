@@ -1,6 +1,6 @@
 --- a/pyproject.toml
 +++ b/pyproject.toml
-@@ -91,13 +91,12 @@
+@@ -83,13 +83,12 @@
  build_type = "Release"
  config = ["Release"]
  find_python3 = true
@@ -8,11 +8,11 @@
 +build_args = ["--parallel"]
  install_args = ["--strip"]
  install_components = ["openvino_tokenizers", "openvino_tokenizers_python", "openvino_tokenizers_licenses"]
- 
+
  [tool.py-build-cmake.cmake.options]
 -OPENVINO_TOKENIZERS_INSTALL_BINDIR = "openvino_tokenizers/lib"
 -OPENVINO_TOKENIZERS_INSTALL_LIBDIR = "openvino_tokenizers/lib"
 +BUILD_CPP_EXTENSION = "OFF"
- 
+ ENABLE_LTO = "ON"
+
  [tool.py-build-cmake.wheel]
- python_abi = "none"

@@ -13,8 +13,7 @@ SRC_URI="https://github.com/leafo/pgmoon/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

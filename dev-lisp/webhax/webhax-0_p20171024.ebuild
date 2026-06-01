@@ -14,9 +14,7 @@ SRC_URI="https://github.com/BnMcGn/webhax/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/gadgets
 	dev-lisp/cl-who
@@ -33,4 +31,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/optima
 	dev-lisp/cl-markdown
 "
-

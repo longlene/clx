@@ -7,7 +7,6 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="a45eadade90d64ec0d543b6a2befcb302d63fdbb"
 
-DESCRIPTION=""
 HOMEPAGE="https://github.com/deepfire/cl-org-mode"
 SRC_URI="https://github.com/deepfire/cl-org-mode/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -15,7 +14,6 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/iterate
@@ -24,7 +22,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/flexi-streams
 "
-BDEPEND=""
 
 src_prepare() {
 	default

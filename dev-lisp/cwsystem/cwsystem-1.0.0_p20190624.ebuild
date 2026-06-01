@@ -14,8 +14,5 @@ SRC_URI="https://github.com/nptcl/cwsystem/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

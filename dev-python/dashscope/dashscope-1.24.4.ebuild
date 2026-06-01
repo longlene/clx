@@ -17,6 +17,7 @@ SRC_URI="https://github.com/dashscope/dashscope-sdk-python/archive/refs/tags/v${
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${PN}-sdk-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -33,8 +34,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-sdk-python-${PV}
 
 src_prepare() {
 	default

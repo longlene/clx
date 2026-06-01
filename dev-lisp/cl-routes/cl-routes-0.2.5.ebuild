@@ -11,8 +11,7 @@ SRC_URI="http://cl-routes.googlecode.com/files/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="dev-lisp/iterate
 		virtual/puri

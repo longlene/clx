@@ -14,7 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="emacs example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/lispbuilder-sdl
 	dev-lisp/lispbuilder-sdl-image
@@ -48,4 +47,3 @@ pkg_postinst() {
 pkg_postrm() {
 	use emacs && elisp-site-regen
 }
-

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -17,6 +17,7 @@ SRC_URI="https://github.com/iterative/telemetry-python/archive/refs/tags/${PV}.t
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/telemetry-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,5 +33,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/telemetry-python-${PV}

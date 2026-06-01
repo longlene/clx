@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Convert Plump documents to CommonDoc ones, and vice versa"
 HOMEPAGE="https://github.com/CommonDoc/common-doc-plump"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/CommonDoc/common-doc-plump.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/common-doc
 	dev-lisp/plump
@@ -35,4 +35,3 @@ src_install() {
 	common-lisp-3_src_install
 	common-lisp-install-sources -t all README.md
 }
-

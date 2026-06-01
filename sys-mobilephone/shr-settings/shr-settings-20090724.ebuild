@@ -13,8 +13,7 @@ EGIT_PROJECT="shr-settings"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 RDEPEND="dev-python/dbus-python
 	>=dev-python/python-elementary-20090127-r38808
@@ -24,7 +23,6 @@ RDEPEND="dev-python/dbus-python
 	sys-mobilephone/ophonekitd"
 
 DEPEND="dev-python/setuptools"
-
 
 src_unpack() {
 	# Fetch and unpack current git sources

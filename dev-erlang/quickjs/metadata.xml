@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Erlang NIF binding for the quickjs-ng JavaScript engine. Provides an
+    API-compatible replacement for erlang-duktape with better performance
+    and ES2023 support.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">benoitc/erlang-quickjs</remote-id>
+  </upstream>
+</pkgmetadata>

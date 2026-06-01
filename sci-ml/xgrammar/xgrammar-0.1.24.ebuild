@@ -21,12 +21,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=sci-ml/pytorch-1.10.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.38.0[${PYTHON_SINGLE_USEDEP}]
-	dev-python/triton-bin[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
+		dev-python/triton[${PYTHON_USEDEP}]
 		dev-python/pydantic[${PYTHON_USEDEP}]
 		|| (
 			sci-ml/pysentencepiece[${PYTHON_USEDEP}]
@@ -42,3 +41,5 @@ BDEPEND="
 		>=dev-python/nanobind-2.5.0[${PYTHON_USEDEP}]
 	')
 "
+
+RESTRICT="test"

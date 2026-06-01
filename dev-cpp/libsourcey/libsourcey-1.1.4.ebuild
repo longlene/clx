@@ -5,16 +5,14 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION="C++11 evented IO for realtime video streaming and high performance networking applications"
+DESCRIPTION="C++11 evented IO for realtime video streaming and high performance"
 HOMEPAGE="http://sourcey.com/libsourcey"
 SRC_URI="https://github.com/sourcey/libsourcey/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

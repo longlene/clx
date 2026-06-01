@@ -8,12 +8,13 @@ PYTHON_COMPAT=( python3_1{1..2} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION="Multilingual Automatic Speech Recognition with word-level timestamps and confidence"
+DESCRIPTION="Multilingual Automatic Speech Recognition with word-level timestamps and"
 HOMEPAGE="https://github.com/linto-ai/whisper-timestamped"
 SRC_URI="https://github.com/linto-ai/whisper-timestamped/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="AGPL-3.0"
 SLOT="0"
+S="${WORKDIR}"/${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -21,8 +22,5 @@ RDEPEND="
 	dev-python/dtw-python[${PYTHON_USEDEP}]
 	dev-python/openai-whisper[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"
-
-S="${WORKDIR}"/${P}

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/phoe/petri/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/closer-mop
@@ -24,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 	dev-lisp/phoe-toolbox
 "
-BDEPEND=""

@@ -22,7 +22,6 @@ DEPEND="
 	postgres? ( dev-db/postgresql )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(
@@ -32,4 +31,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-

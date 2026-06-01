@@ -17,6 +17,7 @@ SRC_URI="https://github.com/larksuite/oapi-sdk-python/archive/refs/tags/v${PV}.t
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/oapi-sdk-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -35,5 +36,3 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/oapi-sdk-python-${PV}

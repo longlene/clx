@@ -7,4 +7,3 @@ DEPEND="dev-plan9/libdraw"
 inherit plan9-libs
 
 KEYWORDS="~x86"
-

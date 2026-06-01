@@ -12,18 +12,15 @@ SRC_URI="https://github.com/fare/lisp-interface-library/archive/${EGIT_COMMIT}.t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/closer-mop
 	dev-lisp/fare-memoization
 	dev-lisp/fare-utils
 "
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 src_install() {
 	common-lisp-3_src_install

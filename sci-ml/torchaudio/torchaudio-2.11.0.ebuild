@@ -15,9 +15,9 @@ SRC_URI="https://github.com/pytorch/audio/archive/refs/tags/v${PV}.tar.gz -> ${P
 
 LICENSE="BSD-2"
 SLOT="0"
+S="${WORKDIR}"/audio-${PV}
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
@@ -25,10 +25,7 @@ RDEPEND="${DEPEND}
 	')
 "
 #	media-video/ffmpeg
-BDEPEND=""
 RESTRICT="test"
-
-S="${WORKDIR}"/audio-${PV}
 
 export USE_FFMPEG=OFF
 export BUILD_SOX=OFF

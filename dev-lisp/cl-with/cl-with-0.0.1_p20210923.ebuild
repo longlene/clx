@@ -14,11 +14,8 @@ SRC_URI="https://github.com/stacksmith/cl-with/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/closer-mop
 "
-BDEPEND=""

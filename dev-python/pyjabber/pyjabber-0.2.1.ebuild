@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -14,6 +14,7 @@ SRC_URI="https://github.com/DinoThor/PyJabber/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/PyJabber-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -31,5 +32,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/PyJabber-${PV}

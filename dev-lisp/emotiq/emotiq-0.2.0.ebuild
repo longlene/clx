@@ -12,9 +12,10 @@ SRC_URI="https://github.com/emotiq/emotiq/archive/mvp-${PV}.tar.gz -> ${P}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/simple-date-time
 	dev-lisp/ironclad
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	test? ( dev-lisp/lisp-unit )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

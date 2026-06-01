@@ -14,14 +14,14 @@ SRC_URI="https://github.com/myaosato/clcm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	test? ( dev-lisp/cl-json )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

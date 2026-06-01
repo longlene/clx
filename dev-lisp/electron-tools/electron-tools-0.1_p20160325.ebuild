@@ -14,9 +14,10 @@ SRC_URI="https://github.com/ceramic/electron-tools/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-download
 	dev-lisp/trivial-extract

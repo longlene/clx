@@ -11,9 +11,7 @@ SRC_URI="https://github.com/wolfgangj/bone-lisp/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="ISC"
 SLOT="0"
 #KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

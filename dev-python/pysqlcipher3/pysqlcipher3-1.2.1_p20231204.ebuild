@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
@@ -16,18 +16,16 @@ SRC_URI="https://github.com/rigglemania/pysqlcipher3/archive/${EGIT_COMMIT}.tar.
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 DEPEND="
 	dev-db/sqlcipher
 "
-RDEPEND="
-"
+
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

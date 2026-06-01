@@ -10,10 +10,8 @@ SRC_URI="http://git.suckless.org/sltar/snapshot/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

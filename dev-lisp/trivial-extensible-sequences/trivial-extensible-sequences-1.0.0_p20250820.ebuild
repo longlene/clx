@@ -13,10 +13,7 @@ SRC_URI="https://codeberg.org/shinmera/trivial-extensible-sequences/archive/${EG
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}

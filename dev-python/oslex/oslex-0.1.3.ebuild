@@ -17,10 +17,9 @@ SRC_URI="https://github.com/petamas/oslex/archive/refs/tags/release/v${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/oslex-release-v${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -28,5 +27,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/oslex-release-v${PV}

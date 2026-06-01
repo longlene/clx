@@ -14,13 +14,11 @@ SRC_URI="https://github.com/unya/usim/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	x11-libs/libX11
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_compile() {
 	emake usim
@@ -30,4 +28,3 @@ src_install() {
 	dobin usim
 	dodoc README
 }
-

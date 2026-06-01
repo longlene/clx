@@ -16,8 +16,8 @@ HOMEPAGE="
 "
 SRC_URI="https://github.com/unum-cloud/USearch/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
+S="${WORKDIR}"/USearch-${PV}
 KEYWORDS="~amd64"
 IUSE="python"
 
@@ -39,8 +39,6 @@ REQUIRED_USE="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/USearch-${PV}
 
 wrap_python() {
 	local phase=$1

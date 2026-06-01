@@ -14,7 +14,6 @@ SRC_URI="https://github.com/9fans/drawterm/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	x11-libs/libX11

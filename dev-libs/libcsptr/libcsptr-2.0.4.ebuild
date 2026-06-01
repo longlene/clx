@@ -9,12 +9,12 @@ DESCRIPTION="Smart pointers for the (GNU) C programming language"
 HOMEPAGE="https://snai.pe/c/c-smart-pointers/"
 SRC_URI="https://github.com/Snaipe/libcsptr/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
 
 src_configure() {
@@ -24,4 +24,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-	

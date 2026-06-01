@@ -15,6 +15,5 @@ KEYWORDS="~amd64"
 
 DEPEND="sys-libs/ncurses"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 CMAKE_MAKEFILE_GENERATOR=emake

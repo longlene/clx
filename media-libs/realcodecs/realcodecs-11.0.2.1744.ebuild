@@ -11,15 +11,14 @@ HOMEPAGE="http://www.real.com/ http://player.helixcommunity.org/"
 SRC_URI="http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm"
 RESTRICT="mirror strip test binchecks"
 LICENSE="HBRL"
-KEYWORDS="-* ~amd64 ~x86"
+S="${WORKDIR}/opt/real/RealPlayer"
+KEYWORDS="~amd64 ~x86 -*"
 SLOT="0"
 IUSE="win32codecs"
 RDEPEND="win32codecs? ( >=media-libs/win32codecs-20071007-r4[real] )
 	x86? ( =virtual/libstdc++-3.3* )
 	amd64? ( app-emulation/emul-linux-x86-compat )
 	!<media-video/realplayer-11.0.1.1056-r2"
-
-S="${WORKDIR}/opt/real/RealPlayer"
 
 pkg_setup() {
 	# This is a binary x86 package => ABI=x86

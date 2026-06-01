@@ -8,16 +8,13 @@ inherit git-r3
 
 DESCRIPTION="A minimalistic initrd implementation"
 HOMEPAGE="https://github.com/chris-se/tiny-initrd"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/chris-se/tiny-initrd.git"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile() {

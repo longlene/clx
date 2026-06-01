@@ -10,9 +10,7 @@ SRC_URI="https://www.vlfeat.org/download/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 pkg_setup() {

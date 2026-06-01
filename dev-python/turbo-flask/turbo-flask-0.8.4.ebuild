@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -20,6 +20,5 @@ RDEPEND="
 	>=dev-python/flask-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/flask-sock-0.4[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT=test

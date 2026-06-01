@@ -4,11 +4,11 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="A file utility for accessing both local and remote files through a unified interface"
+DESCRIPTION="A file utility for accessing both local and remote files through a unified"
 HOMEPAGE="
 	https://pypi.org/project/cached-path/
 "
@@ -16,6 +16,7 @@ SRC_URI="https://github.com/allenai/cached_path/archive/refs/tags/v${PV}.tar.gz 
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/cached_path-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -24,7 +25,7 @@ RDEPEND="
 	>=dev-python/filelock-3.4[${PYTHON_USEDEP}]
 	>=dev-python/boto3-1.0[${PYTHON_USEDEP}]
 	>=dev-python/google-cloud-storage-1.32.0[${PYTHON_USEDEP}]
-	>=sci-libs/huggingface_hub-0.8.1[${PYTHON_USEDEP}]
+	>=sci-ml/huggingface_hub-0.8.1[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (
@@ -32,5 +33,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/cached_path-${PV}

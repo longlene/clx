@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="doc"
 
-DEPEND="doc? ( app-doc/doxygen )"
+DEPEND="doc? ( app-text/doxygen )"
 RDEPEND="${DEPEND}"
 
 src_compile() {

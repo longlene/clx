@@ -7,16 +7,16 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="4ce4aa738bf6bd8ee226b3d4427b6a796f008094"
 
-DESCRIPTION=""
 HOMEPAGE="https://github.com/cxxxr/msgpack"
 SRC_URI="https://github.com/cxxxr/msgpack/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/ieee-floats
 	dev-lisp/babel

@@ -8,14 +8,11 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A high-performance open source distributed systems framework"
 HOMEPAGE="http://GBBopen.org"
-SRC_URI=""
 
 ESVN_REPO_URI="http://GBBopen.org/svn/GBBopen/trunk/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

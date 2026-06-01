@@ -15,14 +15,12 @@ LICENSE="MS-PL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/lass
 	dev-lisp/cl-who
 	dev-lisp/clppcre
 	dev-lisp/alexandria
 "
-BDEPEND=""
 
 src_prepare() {
 	default

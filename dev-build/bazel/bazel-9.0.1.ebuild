@@ -86,4 +86,3 @@ src_install() {
 		docompress -x /usr/share/doc/${PF}/tools/build_defs/pkg/testdata
 	fi
 }
-

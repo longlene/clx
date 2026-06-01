@@ -18,6 +18,7 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64"
 IUSE="lua static-libs"
 
@@ -29,9 +30,6 @@ DEPEND="
 	lua? ( ${LUA_DEPS} )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}
 
 PATCHES=(
 	"${FILESDIR}"/fix-build-gcc-14.patch
@@ -102,4 +100,3 @@ src_install() {
 		lua_foreach_impl lua_src_install
 	fi
 }
-

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">grpc/grpc</remote-id>
+    <remote-id type="pypi">grpcio-reflection</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Implementation of the gRPC server reflection protocol for Python.
+    Allows gRPC clients to query a server's available services and
+    their method signatures at runtime without prior knowledge.
+  </longdescription>
+</pkgmetadata>

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		An acronym expander that utilizes a templating system
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    An acronym expander that utilizes a templating system
+  </longdescription>
+  <upstream>
+    <remote-id type="github">isoraqathedh/cl-acronyms</remote-id>
+  </upstream>
 </pkgmetadata>

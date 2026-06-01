@@ -25,6 +25,5 @@ RDEPEND="
 	>=dev-python/multidict-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.10.10[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 distutils_enable_tests pytest

@@ -11,12 +11,9 @@ SRC_URI="https://github.com/youngde811/Lisa/archive/refs/tags/v${PV}.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/Lisa-${PV}
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/log4cl
 "
-
-S="${WORKDIR}"/Lisa-${PV}

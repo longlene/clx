@@ -14,7 +14,5 @@ SRC_URI="https://github.com/cbaggers/structy-defclass/archive/${EGIT_COMMIT}.tar
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

@@ -17,4 +17,3 @@ DEPEND="
 	dev-erlang/bisect
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

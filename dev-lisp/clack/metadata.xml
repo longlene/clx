@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Clack is a web application environment for Common Lisp inspired by Python's WSGI and Ruby's Rack.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Clack is a web application environment for Common Lisp inspired by Python's WSGI and Ruby's Rack.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">fukamachi/clack</remote-id>
+  </upstream>
 </pkgmetadata>

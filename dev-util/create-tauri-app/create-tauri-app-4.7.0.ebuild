@@ -120,13 +120,10 @@ SRC_URI="
 
 LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
+S="${WORKDIR}"/create-tauri-app-create-tauri-app-v${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/create-tauri-app-create-tauri-app-v${PV}
 
 src_install() {
 	cargo_src_install

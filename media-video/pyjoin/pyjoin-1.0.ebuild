@@ -9,11 +9,10 @@ SRC_URI="http://www.mynetcologne.de/~nc-mayha2/${PN}.py"
 LICENSE="GPL-1"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 
 DEPEND="dev-lang/python"
 
 src_install() {
 		into /usr
-		newbin ${DISTDIR}/${PN}.py pyjoin
+		newbin "${DISTDIR}"/${PN}.py pyjoin
 }

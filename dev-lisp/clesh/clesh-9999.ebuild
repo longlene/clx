@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A Unix shell interface for Common Lisp"
 HOMEPAGE="https://github.com/Neronus/clesh"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/Neronus/clesh.git"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-shell
 	dev-lisp/named-readtables

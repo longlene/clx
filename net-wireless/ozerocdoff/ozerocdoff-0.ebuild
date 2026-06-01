@@ -12,8 +12,7 @@ SRC_URI="http://downloads.greenmice.info/distfiles/udev.tar.gz"
 
 LICENSE="Uncknown"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
-IUSE=""
+KEYWORDS="~amd64 ~x86"
 
 DEPEND="dev-libs/libusb sys-fs/udev"
 RDEPEND="$DEPEND"
@@ -33,7 +32,7 @@ src_install() {
 pkg_postinst() {
 	ewarn "After installing this package all ZeroCDs would be rezeroed"
 	einfo "automatically right after plugging"
-	einfo 
+	einfo
 	einfo "See README for more details"
 	einfo
 	ewarn "You might need to disable the option kernel module"

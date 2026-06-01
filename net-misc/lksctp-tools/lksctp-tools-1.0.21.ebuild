@@ -11,12 +11,11 @@ SRC_URI="https://github.com/sctp/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="|| ( GPL-2+ LGPL-2.1 )"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm arm64 hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 sparc x86"
+KEYWORDS="amd64 arm arm64 hppa ppc ppc64 sparc x86 ~alpha ~loong ~m68k ~mips ~riscv ~s390"
 IUSE="static-libs"
 
 # This is only supposed to work with Linux to begin with.
 DEPEND=">=sys-kernel/linux-headers-2.6"
-RDEPEND=""
 
 REQUIRED_USE="kernel_linux"
 

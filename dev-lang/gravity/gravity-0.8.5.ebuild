@@ -12,12 +12,10 @@ SRC_URI="https://github.com/marcobambini/gravity/archive/${PV}.tar.gz -> ${P}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 #src_install() {
-#	dobin ${BUILD_DIR}/bin/${PN}
+#	dobin "${BUILD_DIR}"/bin/${PN}
 #	dodoc README.md
 #}

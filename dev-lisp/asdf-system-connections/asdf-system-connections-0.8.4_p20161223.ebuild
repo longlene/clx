@@ -14,5 +14,3 @@ SRC_URI="https://github.com/gwkkwg/asdf-system-connections/archive/${EGIT_COMMIT
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
-

@@ -15,18 +15,11 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE=""
-
-COMMON_DEP=""
-
 RDEPEND=">=virtual/jre-1.5
   ${COMMON_DEP}"
 DEPEND=">=virtual/jdk-1.5
   app-arch/unzip
   ${COMMON_DEP}"
-
-EANT_BUILD_TARGET=""
-EANT_DOC_TARGET=""
 
 src_compile() {
 	ant || die "compile failed"

@@ -9,15 +9,14 @@ SRC_URI="http://sidplayer.cebix.net/downloads/${MY_P}.tar.gz"
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="x86 amd64" 
+S="${WORKDIR}/${MY_P}"
+KEYWORDS="amd64 x86"
 IUSE="sdl"
 
 DEPEND=">=media-libs/libsdl-1.2.10
 	media-libs/sdl-sound"
 
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}/${MY_P}"
 
 src_compile() {
 	econf || die "econf failed"

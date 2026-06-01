@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A simple way to train and use PyTorch models with multi-GPU, TPU, mixed-precision"
+DESCRIPTION="A simple way to train and use PyTorch models with multi-GPU, TPU,"
 HOMEPAGE="https://github.com/huggingface/accelerate"
 SRC_URI="https://github.com/huggingface/accelerate/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 

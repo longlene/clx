@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://pypi.org/project/glom/
 	https://github.com/mahmoud/glom
 "
-SRC_URI="https://github.com/mahmoud/glom/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/mahmoud/glom/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

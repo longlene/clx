@@ -9,14 +9,11 @@ SRC_URI="mirror://apache/lucy/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 # TODO: maybe perl, ruby USE need be added?
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-libs/apache-clownfish"
-
 
 src_configure() {
 	cd "${S}"/runtime/c && econf

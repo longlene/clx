@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">Zulko/moviepy</remote-id>
+    <remote-id type="pypi">moviepy</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    MoviePy is a Python library for video editing: cutting, concatenations,
+    title insertions, video compositing, video processing, and creation of
+    custom effects. It can read and write video files using FFmpeg.
+  </longdescription>
+</pkgmetadata>

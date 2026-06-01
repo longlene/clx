@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_1{1..2} )
 
 inherit distutils-r1
 
-DESCRIPTION="Remote Python Call (RPyC) is a transparent and symmetric distributed computing library"
+DESCRIPTION="Remote Python Call (RPyC) is a transparent and symmetric distributed"
 HOMEPAGE="https://github.com/tomerfiliba-org/rpyc"
 SRC_URI="https://github.com/tomerfiliba-org/rpyc/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -19,6 +19,5 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-python/plumbum[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"

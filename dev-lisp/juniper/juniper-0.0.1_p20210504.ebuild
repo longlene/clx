@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-json
@@ -23,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/kebab
 	dev-lisp/puri
 "
-BDEPEND=""

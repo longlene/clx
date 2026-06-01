@@ -14,9 +14,10 @@ SRC_URI="https://github.com/gos-k/cl-oclapi/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi

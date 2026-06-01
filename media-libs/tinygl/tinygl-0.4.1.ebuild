@@ -9,6 +9,7 @@ SRC_URI="https://bellard.org/TinyGL/TinyGL-${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
+S="${WORKDIR}"/TinyGL
 KEYWORDS="~amd64"
 
 DEPEND="
@@ -16,9 +17,6 @@ DEPEND="
 	x11-libs/libXext
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/TinyGL
 
 src_install() {
 	dolib.a lib/libTinyGL.a

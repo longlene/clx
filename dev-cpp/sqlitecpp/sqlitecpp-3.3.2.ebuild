@@ -12,7 +12,9 @@ SRC_URI="https://github.com/SRombauts/SQLiteCpp/archive/${PV}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="example +system-sqlite test"
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	system-sqlite? ( dev-db/sqlite )
@@ -29,4 +31,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-

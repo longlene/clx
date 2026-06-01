@@ -8,16 +8,13 @@ inherit git-r3 common-lisp-3
 
 DESCRIPTION="A matrix package for common lisp"
 HOMEPAGE="http://github.com/blindglobe/lisp-matrix"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/blindglobe/lisp-matrix.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cffi
 dev-lisp/cl-utilities

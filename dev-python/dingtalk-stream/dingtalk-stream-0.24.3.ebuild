@@ -17,6 +17,7 @@ SRC_URI="https://github.com/open-dingtalk/dingtalk-stream-sdk-python/archive/ref
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/dingtalk-stream-sdk-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -31,5 +32,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/dingtalk-stream-sdk-python-${PV}

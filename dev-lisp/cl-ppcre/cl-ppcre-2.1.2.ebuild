@@ -12,8 +12,10 @@ SRC_URI="https://github.com/edicl/cl-ppcre/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="test? ( dev-lisp/flexi-streams )"
 PDEPEND="dev-lisp/cl-ppcre-unicode"
@@ -26,4 +28,3 @@ src_prepare() {
 		rm -r test
 	fi
 }
-

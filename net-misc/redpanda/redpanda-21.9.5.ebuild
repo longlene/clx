@@ -24,18 +24,17 @@ DEPEND="
 	dev-cpp/seastar
 	dev-libs/rapidjson
 	dev-libs/xxhash
-	dev-python/jinja
+	dev-python/jinja2
 	net-misc/curl
 	dev-libs/crc32c
 	dev-libs/croaring
 	dev-libs/hdr-histogram-c
 	dev-python/pex
-	dev-python/jinja
+	dev-python/jinja2
 	dev-python/jsonschema
 	ccache? ( dev-util/ccache )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 CMAKE_BUILD_TYPE=Release
 CMAKE_IN_SOURCE_BUILD=ON

@@ -11,34 +11,31 @@ SRC_URI="http://www.pzs-ng.com/stable/${DIR}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
+S="${WORKDIR}/${DIR}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 RESTRICT="nomirror"
 
 RDEPEND="=net-ftp/glftpd-2.01"
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/${DIR}"
-
-
 pkg_setup() {
-	ewarn "You can modify ${FILESDIR}/zsconfig.h for your need."
+	ewarn "You can modify "${FILESDIR}"/zsconfig.h for your need."
 	ewarn "Then don't forgot to execute \"ebuild ${PN}.ebuild digest\""
 }
 
 src_compile() {
-        econf \
+		econf \
 		--with-glpath=${GLFTPD_DIR} \
 		--enable-gl201 \
 		|| die "econf failed"
-					
-        cp ${FILESDIR}/zsconfig.h ${S}/zipscript/conf/
+
+		cp "${FILESDIR}"/zsconfig.h "${S}"/zipscript/conf/
 
 	emake || die "emake failed"
 }
 
 src_install() {
-	cd ${S}
+	cd "${S}"
 
 	sed 's/prefix=/prefix=\${D}/' ./Makefile > ./Makefile.xxx
 	sed 's/prefix=/prefix=\${D}/' ./sitewho/Makefile > ./sitewho/Makefile.xxx

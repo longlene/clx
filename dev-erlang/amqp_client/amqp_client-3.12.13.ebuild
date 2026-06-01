@@ -12,7 +12,9 @@ SRC_URI="https://repo.hex.pm/tarballs/amqp_client-${PV}.tar"
 LICENSE="LLGPL BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-lang/erlang-17.1"

@@ -14,7 +14,9 @@ SRC_URI="https://github.com/gwkkwg/trivial-backtrace/archive/${EGIT_COMMIT}.tar.
 LICENSE="MIT BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 src_prepare() {
 	eapply_user

@@ -501,13 +501,10 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/mistral.rs-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/mistral.rs-${PV}
 
 export SWAGGER_UI_DOWNLOAD_URL="file://${DISTDIR}/swagger-ui-5.17.12.zip"
 
@@ -515,4 +512,3 @@ src_install() {
 	cargo_src_install --path mistralrs-server
 	einstalldocs
 }
-

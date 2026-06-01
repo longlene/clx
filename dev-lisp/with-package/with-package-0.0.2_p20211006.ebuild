@@ -14,9 +14,10 @@ SRC_URI="https://github.com/hyotang666/with-package/archive/${EGIT_COMMIT}.tar.g
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trestrul
 	dev-lisp/named-readtables

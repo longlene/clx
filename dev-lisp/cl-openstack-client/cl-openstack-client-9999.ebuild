@@ -6,16 +6,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp OpenStack client"
 HOMEPAGE="https://github.com/stackforge/cl-openstack-client"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/stackforge/cl-openstack-client.git"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-json
 	dev-lisp/drakma

@@ -14,12 +14,9 @@ SRC_URI="https://github.com/cl-stream/unistd-stream/archive/${EGIT_COMMIT}.tar.g
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi-fcntl
 	dev-lisp/cffi-unistd
 	dev-lisp/cl-stream
 "
-BDEPEND=""

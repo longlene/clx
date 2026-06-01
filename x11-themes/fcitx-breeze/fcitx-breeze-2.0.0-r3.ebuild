@@ -9,15 +9,12 @@ SRC_URI="https://github.com/scratch-er/fcitx5-breeze/releases/download/v${PV}/fc
 
 LICENSE="GPL-3"
 SLOT="5"
+S="${WORKDIR}"/fcitx5-breeze
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	app-i18n/fcitx:5
 "
-BDEPEND=""
-
-S="${WORKDIR}"/fcitx5-breeze
 
 src_install() {
 	./install.sh "${D}"/usr || die "install failed"

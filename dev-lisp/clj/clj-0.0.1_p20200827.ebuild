@@ -14,9 +14,7 @@ SRC_URI="https://github.com/inaimathi/clj/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/named-readtables
 	dev-lisp/cl-hamt
@@ -26,4 +24,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/local-package-aliases
 	dev-lisp/agnostic-lizard
 "
-BDEPEND=""

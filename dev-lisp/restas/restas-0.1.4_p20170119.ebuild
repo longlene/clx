@@ -51,4 +51,3 @@ pkg_postinst() {
 pkg_postrm() {
 	use slime && elisp-site-regen
 }
-

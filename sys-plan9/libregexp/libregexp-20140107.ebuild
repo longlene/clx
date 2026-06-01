@@ -8,4 +8,3 @@ DEPEND="dev-plan9/lib9"
 inherit plan9-libs
 
 KEYWORDS="~x86"
-

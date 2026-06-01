@@ -17,10 +17,9 @@ SRC_URI="https://github.com/nficano/humps/archive/refs/tags/v${PV}.tar.gz -> ${P
 
 LICENSE="Unlicense"
 SLOT="0"
+S="${WORKDIR}"/humps-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -28,5 +27,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/humps-${PV}

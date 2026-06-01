@@ -53,113 +53,113 @@ IUSE="${IUSE_KAMAILIO_MODULES} ipv6 debug"
 IUSE_EXPAND="KAMAILIO_MODULES"
 
 REQUIRED_USE="
-        kamailio_modules_acc?            ( kamailio_modules_tm kamailio_modules_rr kamailio_modules_dialog || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_acc_radius?     ( kamailio_modules_acc )
-        kamailio_modules_alias_db?       ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_app_perl?       ( kamailio_modules_sl )
-        kamailio_modules_async?          ( kamailio_modules_tm kamailio_modules_tmx )
-        kamailio_modules_auth_ephemeral? ( kamailio_modules_auth )
-        kamailio_modules_auth_db?        ( kamailio_modules_auth || ( kamailio_modules_db_mysql kamailio_modules_db_postgres kamailio_modules_db_text ) )
-        kamailio_modules_auth_diameter?  ( kamailio_modules_sl )
-        kamailio_modules_auth_radius?    ( kamailio_modules_auth )
-        kamailio_modules_call_control?   ( kamailio_modules_pv kamailio_modules_dialog )
-        kamailio_modules_carrierroute?   ( kamailio_modules_tm || ( kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_postgres kamailio_modules_db_unixodbc ) )
-        kamailio_modules_cdp_avp?        ( kamailio_modules_cdp )
-        kamailio_modules_cfg_db?         ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_cnxcc?          ( kamailio_modules_dialog )
-        kamailio_modules_cpl-c?          ( kamailio_modules_tm kamailio_modules_sl kamailio_modules_usrloc || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_db_cluster?     ( || ( kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_postgres kamailio_modules_db_unixodbc ) )
-        kamailio_modules_db_perlvdb?     ( kamailio_modules_app_perl )
-        kamailio_modules_dialog?         ( kamailio_modules_tm kamailio_modules_rr kamailio_modules_pv )
-        kamailio_modules_dialog_ng?      ( kamailio_modules_tm kamailio_modules_rr )
-        kamailio_modules_dialplan?       ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_dispatcher?     ( kamailio_modules_tm || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_dmq?            ( kamailio_modules_sl kamailio_modules_tm )
-        kamailio_modules_dmq_usrloc?     ( kamailio_modules_dmq kamailio_modules_usrloc )
-        kamailio_modules_domain?         ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_domainpolicy?   ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_drouting?       ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_evapi?          ( kamailio_modules_tm )
-        kamailio_modules_group?          ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_h350?           ( kamailio_modules_ldap )
-        kamailio_modules_http_async_client?      ( kamailio_modules_tm kamailio_modules_pv )
-        kamailio_modules_ims_auth?       ( kamailio_modules_tm kamailio_modules_cdp kamailio_modules_cdp_avp )
-        kamailio_modules_ims_charging?   ( kamailio_modules_ims_dialog kamailio_modules_tm kamailio_modules_cdp kamailio_modules_cdp_avp )
-        kamailio_modules_ims_dialog?     ( kamailio_modules_tm kamailio_modules_rr )
-        kamailio_modules_ims_icscf?      ( kamailio_modules_tm kamailio_modules_sl kamailio_modules_cdp kamailio_modules_cdp_avp )
-        kamailio_modules_ims_isc?        ( kamailio_modules_tm kamailio_modules_ims_usrloc_scscf )
-        kamailio_modules_ims_qos?        ( kamailio_modules_dialog_ng kamailio_modules_ims_usrloc_pcscf kamailio_modules_tm kamailio_modules_cdp kamailio_modules_cdp_avp )
-        kamailio_modules_ims_registrar_scscf?    ( kamailio_modules_cdp kamailio_modules_cdp_avp kamailio_modules_tm kamailio_modules_ims_usrloc_scscf )
-        kamailio_modules_ims_registrar_pcscf?    ( kamailio_modules_cdp kamailio_modules_cdp_avp kamailio_modules_tm kamailio_modules_ims_usrloc_pcscf )
-        kamailio_modules_imc?            ( kamailio_modules_db_mysql kamailio_modules_tm )
-        kamailio_modules_janssonrpc-c?   ( kamailio_modules_jansson kamailio_modules_tm )
-        kamailio_modules_jsonrpc-c?      ( kamailio_modules_tm )
-        kamailio_modules_jsonrpc-s?      ( kamailio_modules_xhttp )
-        kamailio_modules_lcr?            ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_mediaproxy?     ( kamailio_modules_dialog )
-        kamailio_modules_mohqueue?       ( kamailio_modules_tm kamailio_modules_sl kamailio_modules_rtpproxy || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_msilo?          ( kamailio_modules_tm || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_mtree?          ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_nathelper?      ( kamailio_modules_usrloc )
-        kamailio_modules_nat_traversal?  ( kamailio_modules_sl kamailio_modules_tm kamailio_modules_dialog )
-        kamailio_modules_osp?            ( kamailio_modules_sl kamailio_modules_tm kamailio_modules_rr kamailio_modules_textops kamailio_modules_siputils )
-        kamailio_modules_p_usrloc?       ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_path?           ( kamailio_modules_rr kamailio_modules_outbound )
-        kamailio_modules_pdt?            ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_pipelimit?      ( kamailio_modules_sl || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_presence?       ( kamailio_modules_sl kamailio_modules_tm || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_presence_conference?    ( kamailio_modules_presence )
-        kamailio_modules_presence_dialoginfo?    ( kamailio_modules_presence )
-        kamailio_modules_presence_mwi?   ( kamailio_modules_presence )
-        kamailio_modules_presence_profile?       ( kamailio_modules_presence )
-        kamailio_modules_presence_xml?   ( kamailio_modules_presence kamailio_modules_sl kamailio_modules_xcap_client || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_presence_reginfo?       ( kamailio_modules_presence )
-        kamailio_modules_pua?            ( kamailio_modules_tm || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_pua_bla?        ( kamailio_modules_usrloc kamailio_modules_pua kamailio_modules_presence )
-        kamailio_modules_pua_dialoginfo? ( kamailio_modules_dialog kamailio_modules_pua )
-        kamailio_modules_pua_mi?         ( kamailio_modules_pua )
-        kamailio_modules_pua_reginfo?    ( kamailio_modules_pua kamailio_modules_usrloc )
-        kamailio_modules_pua_usrloc?     ( kamailio_modules_usrloc kamailio_modules_pua )
-        kamailio_modules_pua_xmpp?       ( kamailio_modules_presence kamailio_modules_pua kamailio_modules_xmpp )
-        kamailio_modules_purple?         ( kamailio_modules_presence kamailio_modules_pua || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_qos?            ( kamailio_modules_dialog )
-        kamailio_modules_ratelimit?      ( kamailio_modules_sl )
-        kamailio_modules_registrar?      ( kamailio_modules_usrloc kamailio_modules_sl )
-        kamailio_modules_rls?            ( kamailio_modules_tm kamailio_modules_sl kamailio_modules_presence kamailio_modules_pua || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_rr?             ( kamailio_modules_outbound )
-        kamailio_modules_rtjson?         ( kamailio_modules_tm kamailio_modules_uac )
-        kamailio_modules_rtpengine?      ( kamailio_modules_tm )
-        kamailio_modules_rtpproxy?       ( kamailio_modules_tm )
-        kamailio_modules_sanity?         ( kamailio_modules_sl )
-        kamailio_modules_sca?            ( kamailio_modules_sl kamailio_modules_tm || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_seas?           ( kamailio_modules_tm )
-        kamailio_modules_sipcapture?     ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_siptrace?       ( kamailio_modules_tm kamailio_modules_sl || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_siputils?       ( kamailio_modules_sl )
-        kamailio_modules_sms?            ( kamailio_modules_tm )
-        kamailio_modules_snmpstats?      ( kamailio_modules_usrloc || ( kamailio_modules_dialog kamailio_modules_dialog_ng ) )
-        kamailio_modules_speeddial?      ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_sqlops?         ( || ( kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_unixodbc ) )
-        kamailio_modules_sst?            ( kamailio_modules_sl || ( kamailio_modules_dialog kamailio_modules_dialog_ng ) )
-        kamailio_modules_tmx?            ( kamailio_modules_tm )
-        kamailio_modules_topoh?          ( kamailio_modules_rr )
-        kamailio_modules_topos?          ( kamailio_modules_rr || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_tsilo?          ( kamailio_modules_registrar kamailio_modules_tm kamailio_modules_usrloc kamailio_modules_sl )
-        kamailio_modules_uac?            ( kamailio_modules_tm kamailio_modules_rr kamailio_modules_dialog )
-        kamailio_modules_uac_redirect?   ( kamailio_modules_tm kamailio_modules_acc )
-        kamailio_modules_auth_db?        ( kamailio_modules_auth || ( kamailio_modules_db_mysql kamailio_modules_db_postgres kamailio_modules_db_text ) )
-        kamailio_modules_uri_db?         ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_userblacklist?  ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_usrloc?         ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_utils?          ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_websocket?      ( kamailio_modules_sl kamailio_modules_tm kamailio_modules_msrp || ( kamailio_modules_nathelper kamailio_modules_outbound ) )
-        kamailio_modules_xcap_server?    ( kamailio_modules_sl kamailio_modules_xhttp || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
-        kamailio_modules_xhttp?          ( kamailio_modules_sl )
-        kamailio_modules_xhttp_pi?       ( kamailio_modules_xhttp )
-        kamailio_modules_xhttp_rpc?      ( kamailio_modules_xhttp )
-        kamailio_modules_xlog?           ( kamailio_modules_pv )
-        kamailio_modules_xmlrpc?         ( kamailio_modules_sl )
-        kamailio_modules_xmpp?           ( kamailio_modules_tm )
+		kamailio_modules_acc?            ( kamailio_modules_tm kamailio_modules_rr kamailio_modules_dialog || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_acc_radius?     ( kamailio_modules_acc )
+		kamailio_modules_alias_db?       ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_app_perl?       ( kamailio_modules_sl )
+		kamailio_modules_async?          ( kamailio_modules_tm kamailio_modules_tmx )
+		kamailio_modules_auth_ephemeral? ( kamailio_modules_auth )
+		kamailio_modules_auth_db?        ( kamailio_modules_auth || ( kamailio_modules_db_mysql kamailio_modules_db_postgres kamailio_modules_db_text ) )
+		kamailio_modules_auth_diameter?  ( kamailio_modules_sl )
+		kamailio_modules_auth_radius?    ( kamailio_modules_auth )
+		kamailio_modules_call_control?   ( kamailio_modules_pv kamailio_modules_dialog )
+		kamailio_modules_carrierroute?   ( kamailio_modules_tm || ( kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_postgres kamailio_modules_db_unixodbc ) )
+		kamailio_modules_cdp_avp?        ( kamailio_modules_cdp )
+		kamailio_modules_cfg_db?         ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_cnxcc?          ( kamailio_modules_dialog )
+		kamailio_modules_cpl-c?          ( kamailio_modules_tm kamailio_modules_sl kamailio_modules_usrloc || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_db_cluster?     ( || ( kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_postgres kamailio_modules_db_unixodbc ) )
+		kamailio_modules_db_perlvdb?     ( kamailio_modules_app_perl )
+		kamailio_modules_dialog?         ( kamailio_modules_tm kamailio_modules_rr kamailio_modules_pv )
+		kamailio_modules_dialog_ng?      ( kamailio_modules_tm kamailio_modules_rr )
+		kamailio_modules_dialplan?       ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_dispatcher?     ( kamailio_modules_tm || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_dmq?            ( kamailio_modules_sl kamailio_modules_tm )
+		kamailio_modules_dmq_usrloc?     ( kamailio_modules_dmq kamailio_modules_usrloc )
+		kamailio_modules_domain?         ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_domainpolicy?   ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_drouting?       ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_evapi?          ( kamailio_modules_tm )
+		kamailio_modules_group?          ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_h350?           ( kamailio_modules_ldap )
+		kamailio_modules_http_async_client?      ( kamailio_modules_tm kamailio_modules_pv )
+		kamailio_modules_ims_auth?       ( kamailio_modules_tm kamailio_modules_cdp kamailio_modules_cdp_avp )
+		kamailio_modules_ims_charging?   ( kamailio_modules_ims_dialog kamailio_modules_tm kamailio_modules_cdp kamailio_modules_cdp_avp )
+		kamailio_modules_ims_dialog?     ( kamailio_modules_tm kamailio_modules_rr )
+		kamailio_modules_ims_icscf?      ( kamailio_modules_tm kamailio_modules_sl kamailio_modules_cdp kamailio_modules_cdp_avp )
+		kamailio_modules_ims_isc?        ( kamailio_modules_tm kamailio_modules_ims_usrloc_scscf )
+		kamailio_modules_ims_qos?        ( kamailio_modules_dialog_ng kamailio_modules_ims_usrloc_pcscf kamailio_modules_tm kamailio_modules_cdp kamailio_modules_cdp_avp )
+		kamailio_modules_ims_registrar_scscf?    ( kamailio_modules_cdp kamailio_modules_cdp_avp kamailio_modules_tm kamailio_modules_ims_usrloc_scscf )
+		kamailio_modules_ims_registrar_pcscf?    ( kamailio_modules_cdp kamailio_modules_cdp_avp kamailio_modules_tm kamailio_modules_ims_usrloc_pcscf )
+		kamailio_modules_imc?            ( kamailio_modules_db_mysql kamailio_modules_tm )
+		kamailio_modules_janssonrpc-c?   ( kamailio_modules_jansson kamailio_modules_tm )
+		kamailio_modules_jsonrpc-c?      ( kamailio_modules_tm )
+		kamailio_modules_jsonrpc-s?      ( kamailio_modules_xhttp )
+		kamailio_modules_lcr?            ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_mediaproxy?     ( kamailio_modules_dialog )
+		kamailio_modules_mohqueue?       ( kamailio_modules_tm kamailio_modules_sl kamailio_modules_rtpproxy || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_msilo?          ( kamailio_modules_tm || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_mtree?          ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_nathelper?      ( kamailio_modules_usrloc )
+		kamailio_modules_nat_traversal?  ( kamailio_modules_sl kamailio_modules_tm kamailio_modules_dialog )
+		kamailio_modules_osp?            ( kamailio_modules_sl kamailio_modules_tm kamailio_modules_rr kamailio_modules_textops kamailio_modules_siputils )
+		kamailio_modules_p_usrloc?       ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_path?           ( kamailio_modules_rr kamailio_modules_outbound )
+		kamailio_modules_pdt?            ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_pipelimit?      ( kamailio_modules_sl || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_presence?       ( kamailio_modules_sl kamailio_modules_tm || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_presence_conference?    ( kamailio_modules_presence )
+		kamailio_modules_presence_dialoginfo?    ( kamailio_modules_presence )
+		kamailio_modules_presence_mwi?   ( kamailio_modules_presence )
+		kamailio_modules_presence_profile?       ( kamailio_modules_presence )
+		kamailio_modules_presence_xml?   ( kamailio_modules_presence kamailio_modules_sl kamailio_modules_xcap_client || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_presence_reginfo?       ( kamailio_modules_presence )
+		kamailio_modules_pua?            ( kamailio_modules_tm || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_pua_bla?        ( kamailio_modules_usrloc kamailio_modules_pua kamailio_modules_presence )
+		kamailio_modules_pua_dialoginfo? ( kamailio_modules_dialog kamailio_modules_pua )
+		kamailio_modules_pua_mi?         ( kamailio_modules_pua )
+		kamailio_modules_pua_reginfo?    ( kamailio_modules_pua kamailio_modules_usrloc )
+		kamailio_modules_pua_usrloc?     ( kamailio_modules_usrloc kamailio_modules_pua )
+		kamailio_modules_pua_xmpp?       ( kamailio_modules_presence kamailio_modules_pua kamailio_modules_xmpp )
+		kamailio_modules_purple?         ( kamailio_modules_presence kamailio_modules_pua || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_qos?            ( kamailio_modules_dialog )
+		kamailio_modules_ratelimit?      ( kamailio_modules_sl )
+		kamailio_modules_registrar?      ( kamailio_modules_usrloc kamailio_modules_sl )
+		kamailio_modules_rls?            ( kamailio_modules_tm kamailio_modules_sl kamailio_modules_presence kamailio_modules_pua || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_rr?             ( kamailio_modules_outbound )
+		kamailio_modules_rtjson?         ( kamailio_modules_tm kamailio_modules_uac )
+		kamailio_modules_rtpengine?      ( kamailio_modules_tm )
+		kamailio_modules_rtpproxy?       ( kamailio_modules_tm )
+		kamailio_modules_sanity?         ( kamailio_modules_sl )
+		kamailio_modules_sca?            ( kamailio_modules_sl kamailio_modules_tm || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_seas?           ( kamailio_modules_tm )
+		kamailio_modules_sipcapture?     ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_siptrace?       ( kamailio_modules_tm kamailio_modules_sl || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_siputils?       ( kamailio_modules_sl )
+		kamailio_modules_sms?            ( kamailio_modules_tm )
+		kamailio_modules_snmpstats?      ( kamailio_modules_usrloc || ( kamailio_modules_dialog kamailio_modules_dialog_ng ) )
+		kamailio_modules_speeddial?      ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_sqlops?         ( || ( kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_unixodbc ) )
+		kamailio_modules_sst?            ( kamailio_modules_sl || ( kamailio_modules_dialog kamailio_modules_dialog_ng ) )
+		kamailio_modules_tmx?            ( kamailio_modules_tm )
+		kamailio_modules_topoh?          ( kamailio_modules_rr )
+		kamailio_modules_topos?          ( kamailio_modules_rr || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_tsilo?          ( kamailio_modules_registrar kamailio_modules_tm kamailio_modules_usrloc kamailio_modules_sl )
+		kamailio_modules_uac?            ( kamailio_modules_tm kamailio_modules_rr kamailio_modules_dialog )
+		kamailio_modules_uac_redirect?   ( kamailio_modules_tm kamailio_modules_acc )
+		kamailio_modules_auth_db?        ( kamailio_modules_auth || ( kamailio_modules_db_mysql kamailio_modules_db_postgres kamailio_modules_db_text ) )
+		kamailio_modules_uri_db?         ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_userblacklist?  ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_usrloc?         ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_utils?          ( || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_websocket?      ( kamailio_modules_sl kamailio_modules_tm kamailio_modules_msrp || ( kamailio_modules_nathelper kamailio_modules_outbound ) )
+		kamailio_modules_xcap_server?    ( kamailio_modules_sl kamailio_modules_xhttp || ( kamailio_modules_db_berkeley kamailio_modules_db_cassandra kamailio_modules_db_cluster kamailio_modules_db_flatstore kamailio_modules_db_mongodb kamailio_modules_db_mysql kamailio_modules_db_oracle kamailio_modules_db_perlvdb kamailio_modules_db_postgres kamailio_modules_db_sqlite kamailio_modules_db_text kamailio_modules_db_unixodbc ) )
+		kamailio_modules_xhttp?          ( kamailio_modules_sl )
+		kamailio_modules_xhttp_pi?       ( kamailio_modules_xhttp )
+		kamailio_modules_xhttp_rpc?      ( kamailio_modules_xhttp )
+		kamailio_modules_xlog?           ( kamailio_modules_pv )
+		kamailio_modules_xmlrpc?         ( kamailio_modules_sl )
+		kamailio_modules_xmpp?           ( kamailio_modules_tm )
 "
 
 DEPEND="app-text/docbook2X
@@ -259,12 +259,12 @@ RDEPEND="${DEPEND}
 "
 
 pkg_setup() {
-        use kamailio_modules_app_python && python-single-r1_pkg_setup
+		use kamailio_modules_app_python && python-single-r1_pkg_setup
 }
 
 src_configure() {
-        cd "${S}"
-        for i in ${IUSE_KAMAILIO_MODULES};
+		cd "${S}"
+		for i in ${IUSE_KAMAILIO_MODULES};
 	do
 	if use $i; then
 		KAMODULES="${KAMODULES} $(echo $i | sed -e 's/kamailio_modules_//g')"
@@ -302,23 +302,23 @@ src_configure() {
 		mode="${mode}" \
 		TLS_HOOKS="${tls_hooks}" \
 		cfg_prefix="${D}" \
-                cfg_dir="/etc/${PN}/" \
-                cfg_target="/etc/${PN}/" \
-                mode="release" \
-                doc_dir="share/doc/${P}/" \
+				cfg_dir="/etc/${PN}/" \
+				cfg_target="/etc/${PN}/" \
+				mode="release" \
+				doc_dir="share/doc/${P}/" \
 		cfg
 }
 
 src_compile() {
-        use amd64 && append-cflags "-fPIC"
-        emake \
-                CC="$(tc-getCC)" \
-                CPU_TYPE="$(get-flag march)" \
-                all || die
+		use amd64 && append-cflags "-fPIC"
+		emake \
+				CC="$(tc-getCC)" \
+				CPU_TYPE="$(get-flag march)" \
+				all || die
 }
 
 src_install () {
-        emake \
+		emake \
 		BASEDIR="${D}" \
 		prefix="/" \
 		bin_dir=/usr/sbin/ \
@@ -329,12 +329,12 @@ src_install () {
 		doc_dir="/usr/share/doc/${flavour}/" \
 		share_dir="/usr/share/${flavour}/" \
 		data_dir="/usr/share/${flavour}/" \
-                install || die
+				install || die
 }
 
 pkg_preinst() {
-	chown -R root:${PN}  ${D}/etc/${PN}
-	chmod -R u=rwX,g=rX,o= ${D}/etc/${PN}
+	chown -R root:${PN}  "${D}"/etc/${PN}
+	chmod -R u=rwX,g=rX,o= "${D}"/etc/${PN}
 
 	systemd_dounit "${FILESDIR}/${PN}.service"
 
@@ -343,7 +343,7 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-        ewarn "**************************** Warning! ******************************"
-        ewarn "Preliminary ebuild - Use with caution"
-        ewarn "**************************** Warning! ******************************"
+		ewarn "**************************** Warning! ******************************"
+		ewarn "Preliminary ebuild - Use with caution"
+		ewarn "**************************** Warning! ******************************"
 }

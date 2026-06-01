@@ -19,10 +19,9 @@ SRC_URI="https://gitlab.com/ferreum/trampoline/-/archive/${EGIT_COMMIT}/trampoli
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/trampoline-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -30,5 +29,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/trampoline-${EGIT_COMMIT}

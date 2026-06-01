@@ -8,10 +8,7 @@ DESCRIPTION="A Lightweight Durable HTTP Key-Value Pair Database in C"
 HOMEPAGE="https://github.com/willemt/pearldb"
 SRC_URI="https://github.com/willemt/pearldb/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 #KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

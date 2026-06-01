@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -14,15 +14,12 @@ SRC_URI="https://github.com/akshaynagpal/w2n/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/w2n-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/w2n-${PV}

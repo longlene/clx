@@ -7,7 +7,6 @@ HOMEPAGE="http://trac.shr-project.org/trac"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE=""
 DOCS="README"
 
 PROJECT_NAME="${PN}"

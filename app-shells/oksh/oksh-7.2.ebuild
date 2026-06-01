@@ -9,13 +9,10 @@ SRC_URI="https://github.com/ibara/oksh/archive/refs/tags/oksh-${PV}.tar.gz -> ${
 
 LICENSE="public-domain"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${P}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${P}
 
 src_configure() {
 	econf --no-strip

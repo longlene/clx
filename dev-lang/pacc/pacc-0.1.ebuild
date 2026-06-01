@@ -11,9 +11,7 @@ SRC_URI="http://static.paccrat.org/release/pacc-${PV}.tar.bz2"
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

@@ -14,9 +14,9 @@ SRC_URI="https://github.com/explosion/thinc/archive/refs/tags/release-v${PV}.tar
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-release-v${PV}
 KEYWORDS="~amd64"
 
-RDEPEND=""
 BDEPEND="
 	>=dev-python/cython-0.25[${PYTHON_USEDEP}]
 	>=dev-python/murmurhash-1.0.2[${PYTHON_USEDEP}]
@@ -27,5 +27,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-release-v${PV}

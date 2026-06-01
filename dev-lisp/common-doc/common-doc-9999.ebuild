@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A framework for representing and manipulating documents"
 HOMEPAGE="http://commondoc.github.io"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/CommonDoc/common-doc.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-types
 	dev-lisp/quri

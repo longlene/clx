@@ -19,6 +19,7 @@ SRC_URI="https://github.com/langchain-ai/langsmith-sdk/archive/refs/tags/v${PV}.
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}/python
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -38,5 +39,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}/python

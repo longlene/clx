@@ -17,4 +17,3 @@ DEPEND="
 	dev-erlang/parse_trans
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

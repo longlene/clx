@@ -1,0 +1,96 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -43,23 +43,7 @@
+ clear_cuda_arches(CMAKE_FLAG)
+ 
+ # Third Party repos
+-# cutlass
+-FetchContent_Declare(
+-    repo-cutlass
+-    GIT_REPOSITORY https://github.com/NVIDIA/cutlass
+-    GIT_TAG        57e3cfb47a2d9e0d46eb6335c3dc411498efa198
+-    GIT_SHALLOW    OFF
+-)
+-FetchContent_Populate(repo-cutlass)
+ 
+-# fmt
+-FetchContent_Declare(
+-    repo-fmt
+-    GIT_REPOSITORY https://github.com/fmtlib/fmt
+-    GIT_TAG        553ec11ec06fbe0beebfbb45f9dc3c9eabd83d28
+-    GIT_SHALLOW    OFF
+-)
+-FetchContent_Populate(repo-fmt)
+ 
+ # Triton kernel
+ FetchContent_Declare(
+@@ -88,14 +72,12 @@
+ )
+ FetchContent_Populate(repo-flash-attention)
+ 
+-# mscclpp
+-FetchContent_Declare(
+-    repo-mscclpp
+-    GIT_REPOSITORY https://github.com/microsoft/mscclpp.git
+-    GIT_TAG        51eca89d20f0cfb3764ccd764338d7b22cd486a6
+-    GIT_SHALLOW    OFF
+-)
+-FetchContent_Populate(repo-mscclpp)
++# Use system dev-libs/cutlass; example headers installed to cutlass/examples/
++find_package(NvidiaCutlass REQUIRED)
++get_filename_component(_cutlass_prefix "${NvidiaCutlass_CMAKE_DIR}/../../.." ABSOLUTE)
++set(CUTLASS_EXAMPLES_DIR "${_cutlass_prefix}/include/cutlass/examples")
++unset(_cutlass_prefix)
++
+ 
+ # ccache option
+ option(ENABLE_CCACHE "Whether to use ccache" ON)
+@@ -317,13 +299,10 @@
+ )
+ 
+ set(INCLUDES
+-    ${repo-cutlass_SOURCE_DIR}/include
+-    ${repo-cutlass_SOURCE_DIR}/tools/util/include
+     ${repo-flashinfer_SOURCE_DIR}/include
+     ${repo-flashinfer_SOURCE_DIR}/csrc
+-    ${repo-mscclpp_SOURCE_DIR}/include
+-    ${repo-cutlass_SOURCE_DIR}/examples/77_blackwell_fmha
+-    ${repo-cutlass_SOURCE_DIR}/examples/common
++    ${CUTLASS_EXAMPLES_DIR}/77_blackwell_fmha
++    ${CUTLASS_EXAMPLES_DIR}/common
+     ${repo-flash-attention_SOURCE_DIR}/csrc/flash_attn/src
+ )
+ 
+@@ -371,17 +350,10 @@
+     set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -D_GLIBCXX_USE_CXX11_ABI=1")
+ endif()
+ 
+-# mscclpp option
+-set(MSCCLPP_USE_CUDA ON)
+-set(MSCCLPP_BYPASS_GPU_CHECK ON)
+-set(MSCCLPP_BUILD_TESTS OFF)
+-add_subdirectory(
+-    ${repo-mscclpp_SOURCE_DIR}
+-    ${CMAKE_CURRENT_BINARY_DIR}/mscclpp-build
+-)
++find_package(mscclpp CONFIG REQUIRED)
+ 
+-target_link_libraries(common_ops_sm90_build PRIVATE ${TORCH_LIBRARIES} c10 cuda cublas cublasLt mscclpp_static)
+-target_link_libraries(common_ops_sm100_build PRIVATE ${TORCH_LIBRARIES} c10 cuda cublas cublasLt mscclpp_static)
++target_link_libraries(common_ops_sm90_build PRIVATE ${TORCH_LIBRARIES} c10 cuda cublas cublasLt mscclpp::mscclpp nvidia::cutlass::cutlass)
++target_link_libraries(common_ops_sm100_build PRIVATE ${TORCH_LIBRARIES} c10 cuda cublas cublasLt mscclpp::mscclpp nvidia::cutlass::cutlass)
+ 
+ # sparse flash attention
+ target_compile_definitions(common_ops_sm90_build PRIVATE
+@@ -472,10 +444,9 @@
+ 
+     target_compile_options(flash_ops PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:${SGL_FLASH_KERNEL_CUDA_FLAGS}>)
+     target_include_directories(flash_ops PRIVATE
+-        ${repo-cutlass_SOURCE_DIR}/include
+-        ${repo-cutlass_SOURCE_DIR}/tools/util/include
+         ${repo-flash-attention_SOURCE_DIR}/hopper
+     )
++    target_link_libraries(flash_ops PRIVATE nvidia::cutlass::cutlass)
+     target_link_libraries(flash_ops PRIVATE ${TORCH_LIBRARIES} c10 cuda)
+ 
+     install(TARGETS flash_ops LIBRARY DESTINATION "sgl_kernel")

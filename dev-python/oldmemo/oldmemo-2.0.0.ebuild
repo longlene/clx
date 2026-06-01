@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Backend implementation of the namespace 'eu.siacs.conversations.axolotl' for python-omemo"
+DESCRIPTION="Backend implementation of the namespace 'eu.siacs.conversations.axolotl' for"
 HOMEPAGE="
 	https://pypi.org/project/python-oldmemo/
 	https://github.com/Syndace/python-oldmemo/
@@ -17,6 +17,7 @@ SRC_URI="https://github.com/Syndace/python-oldmemo/archive/refs/tags/v${PV}.tar.
 
 LICENSE="AGPL-3.0"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -35,8 +36,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-${P}
 
 PATCHES=(
 	"${FILESDIR}"/install-fix.patch

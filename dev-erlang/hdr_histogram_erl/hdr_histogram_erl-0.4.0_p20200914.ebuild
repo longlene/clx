@@ -15,8 +15,6 @@ LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 REBAR_APP_SRC="src/hdr_histogram.app.src"

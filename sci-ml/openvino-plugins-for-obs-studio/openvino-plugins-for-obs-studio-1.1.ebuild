@@ -19,12 +19,11 @@ DEPEND="
 	sci-ml/openvino
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	insinto /usr/share/obs/obs-plugins
 	doins -r openvino-models
 	insinto /usr/$(get_libdir)/obs-plugins
-	doins ${BUILD_DIR}/obs_plugins/*/*.so
+	doins "${BUILD_DIR}"/obs_plugins/*/*.so
 	einstalldocs
 }

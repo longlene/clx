@@ -14,13 +14,10 @@ SRC_URI="ftp://jaguar.ncsl.nist.gov/pub/${MY_P}-1312Z.tar.bz2"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-
 S="${WORKDIR}"/${MY_P}-1312Z/
+KEYWORDS="~amd64 ~arm ~x86"
+
+RDEPEND="${DEPEND}"
 
 src_configure() {
 	emake PREFIX="${D}"usr config

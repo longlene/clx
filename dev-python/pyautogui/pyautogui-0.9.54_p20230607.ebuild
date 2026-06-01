@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
@@ -15,10 +15,11 @@ HOMEPAGE="
 	https://github.com/asweigart/pyautogui
 	https://pypi.org/project/pyautogui/
 "
-SRC_URI="https://github.com/asweigart/pyautogui/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/asweigart/pyautogui/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -36,5 +37,3 @@ RDEPEND="
 #
 #distutils_enable_tests pytest
 RESTRICT="test"
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

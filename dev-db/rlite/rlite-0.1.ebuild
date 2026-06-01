@@ -6,16 +6,14 @@ EAPI=8
 
 inherit flag-o-matic
 
-DESCRIPTION="self-contained, serverless, zero-configuration, transactional redis-compatible database engine"
+DESCRIPTION="self-contained, serverless, zero-configuration, transactional"
 HOMEPAGE="https://github.com/seppo0010/rlite"
 SRC_URI="https://github.com/seppo0010/rlite/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

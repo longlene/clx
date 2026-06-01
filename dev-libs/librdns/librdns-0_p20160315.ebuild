@@ -17,12 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="static"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
-	dolib.so ${BUILD_DIR}/librdns.so*
-	use static && dolib.a ${BUILD_DIR}/librdns_static.a
+	dolib.so "${BUILD_DIR}"/librdns.so*
+	use static && dolib.a "${BUILD_DIR}"/librdns_static.a
 	insinto /usr
 	doins -r include
 	dodoc README.md

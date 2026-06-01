@@ -14,8 +14,5 @@ SRC_URI="https://github.com/telephil/cl-ascii-table/archive/${EGIT_COMMIT}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -12,9 +12,10 @@ SRC_URI="https://github.com/Hexstream/enhanced-defclass/archive/v${PV}.tar.gz ->
 LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/evaled-when
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/enhanced-eval-when
 	dev-lisp/enhanced-find-class
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -13,14 +13,12 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bobbin
 	dev-lisp/cl-reexport
 	dev-lisp/split-sequence
 	dev-lisp/with-user-abort
 "
-BDEPEND=""
 
 src_prepare() {
 	default

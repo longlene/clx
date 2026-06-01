@@ -14,9 +14,10 @@ SRC_URI="https://github.com/gibsonf1/cl-solid/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/clack
 	dev-lisp/lack
@@ -31,7 +32,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/clath
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

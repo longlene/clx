@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit cmake python-any-r1 toolchain-funcs
 
@@ -14,14 +14,11 @@ https://github.com/WebAssembly/binaryen/archive/refs/tags/version_${PV}.tar.gz -
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${PN}-version_${PV}
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="${PYTHON_DEPS}"
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}"/${PN}-version_${PV}
-
 
 pkg_setup() {
 	export CC=$(tc-getCC)

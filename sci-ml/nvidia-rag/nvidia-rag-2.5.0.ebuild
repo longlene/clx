@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A reference solution for a foundational Retrieval Augmented Generation (RAG) pipeline"
+DESCRIPTION="A reference solution for a foundational Retrieval Augmented Generation (RAG)"
 HOMEPAGE="
 	https://pypi.org/project/nvidia-rag/
 	https://github.com/NVIDIA-AI-Blueprints/rag
@@ -18,6 +18,7 @@ SRC_URI="https://github.com/NVIDIA-AI-Blueprints/rag/archive/refs/tags/v${PV}.ta
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/rag-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -54,8 +55,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/rag-${PV}
 
 PATCHES=(
 	"${FILESDIR}"/build-fix.patch

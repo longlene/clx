@@ -14,7 +14,5 @@ SRC_URI="https://github.com/slyrus/asdf-objects/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

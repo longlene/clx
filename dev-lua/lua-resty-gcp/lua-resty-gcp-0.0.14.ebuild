@@ -17,14 +17,12 @@ KEYWORDS="~amd64"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
 	>=dev-lua/lua-resty-jwt-0.2.3[${LUA_USEDEP}]
 	dev-lua/lua-resty-luasocket[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

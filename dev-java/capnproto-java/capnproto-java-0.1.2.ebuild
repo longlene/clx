@@ -13,8 +13,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 
-IUSE=""
-
 COMMON_DEP="dev-libs/capnproto"
 
 DEPEND="

@@ -12,9 +12,10 @@ SRC_URI="https://github.com/lisp-mirror/cl-wfx/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-ppcre
@@ -31,7 +32,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/csv-parser
 	dev-lisp/local-time
 "
-BDEPEND=""
 
 src_prepare() {
 	default

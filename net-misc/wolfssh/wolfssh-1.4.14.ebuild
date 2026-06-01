@@ -15,7 +15,6 @@ KEYWORDS="~amd64"
 
 DEPEND="dev-libs/wolfssl"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

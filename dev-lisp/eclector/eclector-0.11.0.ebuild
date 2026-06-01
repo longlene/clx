@@ -11,21 +11,17 @@ SRC_URI="https://github.com/s-expressionists/Eclector/archive/refs/tags/${PV}.ta
 
 LICENSE="BSD-2"
 SLOT="0"
+S="${WORKDIR}"/Eclector-${PV}
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/closer-mop
 	dev-lisp/acclimation
 "
-BDEPEND=""
-
-S="${WORKDIR}"/Eclector-${PV}
 
 src_prepare() {
 	default
 	sed -i '/defsystem "eclector\/test/,$d' ${PN}.asd
 	rm -rf test
 }
-

@@ -13,10 +13,3 @@ SRC_URI="https://github.com/justmao945/vim-clang/archive/${PV}.tar.gz -> ${P}.ta
 
 LICENSE="as-is"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-
-VIM_PLUGIN_HELPFILES=""
-VIM_PLUGIN_HELPTEXT=""
-VIM_PLUGIN_HELPURI=""
-VIM_PLUGIN_MESSAGES=""
-

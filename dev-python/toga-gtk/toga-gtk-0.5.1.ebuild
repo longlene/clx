@@ -20,6 +20,7 @@ SRC_URI="https://github.com/beeware/toga/archive/refs/tags/v${PV}.tar.gz -> ${MY
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}/gtk
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -33,7 +34,5 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}/gtk
 
 export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_TOGA_GTK="${PV}"

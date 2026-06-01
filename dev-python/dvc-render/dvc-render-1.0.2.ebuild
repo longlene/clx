@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -14,12 +14,10 @@ HOMEPAGE="
 	https://github.com/iterative/dvc-render
 	https://pypi.org/project/dvc-render/
 "
-SRC_URI="https://github.com/iterative/dvc-render/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/iterative/dvc-render/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 RESTRICT="test"

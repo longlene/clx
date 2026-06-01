@@ -12,10 +12,8 @@ SRC_URI="https://github.com/blunderer/libroxml/archive/${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

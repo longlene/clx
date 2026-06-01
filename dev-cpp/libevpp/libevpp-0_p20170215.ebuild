@@ -14,13 +14,11 @@ SRC_URI="https://github.com/hamidr/libevpp/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
-	dolib.a ${BUILD_DIR}/lib{event_loop,network}.a 
+	dolib.a "${BUILD_DIR}"/lib{event_loop,network}.a
 	insinto /usr
 	doins -r includes/libevpp
 	dodoc README.md

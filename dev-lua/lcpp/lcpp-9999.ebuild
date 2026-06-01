@@ -8,15 +8,12 @@ inherit git-r3
 
 DESCRIPTION="A Lua C PreProcessor"
 HOMEPAGE="https://github.com/willsteel/lcpp"
-SRC_URI=""
 EGIT_REPO_URI="https://github.com/willsteel/lcpp.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile() {

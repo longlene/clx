@@ -14,10 +14,8 @@ SRC_URI="https://github.com/deadpixi/sam/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	x11-base/xorg-x11
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

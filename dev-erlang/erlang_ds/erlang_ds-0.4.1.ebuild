@@ -5,7 +5,7 @@ EAPI=8
 
 inherit rebar3
 
-DESCRIPTION="Universal and extensible data structure library for interacting with Erlang maps, proplists, dicts"
+DESCRIPTION="Universal and extensible data structure library for interacting with Erlang"
 HOMEPAGE="https://github.com/choptastic/erlang_ds"
 SRC_URI="https://github.com/choptastic/erlang_ds/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -13,6 +13,4 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -14,7 +14,9 @@ SRC_URI="https://github.com/gwkkwg/${PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	dev-lisp/asdf-system-connections
@@ -37,4 +39,3 @@ src_prepare() {
 	use test || rm -r ${PN}-test.asd unit-tests
 	rm -r dev/examples
 }
-

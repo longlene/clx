@@ -17,6 +17,7 @@ SRC_URI="https://github.com/web-push-libs/vapid/archive/refs/tags/${PV}.tar.gz -
 
 LICENSE="MPL-2.0"
 SLOT="0"
+S="${WORKDIR}"/vapid-${PV}/python
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/vapid-${PV}/python

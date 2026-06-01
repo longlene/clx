@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    SMG (Shared Model Gateway) is an engine-agnostic LLM gateway written in
+    Rust. It provides full OpenAI and Anthropic API compatibility across
+    multiple backends including SGLang, vLLM, TRT-LLM, OpenAI, and Gemini.
+    Features include gRPC pipeline, KV cache-aware routing, chat history,
+    tokenization caching, embeddings, WASM plugins, MCP, and multi-tenant auth.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">lightseekorg/smg</remote-id>
+  </upstream>
+</pkgmetadata>

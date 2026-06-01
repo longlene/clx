@@ -9,14 +9,15 @@ SRC_URI="https://github.com/rabbitmq/rabbitmq-common/archive/v${PV}.tar.gz -> ${
 
 LICENSE="ISC"
 SLOT="0"
+S="${WORKDIR}"/rabbitmq-common-${PV}
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-lang/erlang-17.1"
 DEPEND="${RDEPEND}"
-
-S="${WORKDIR}"/rabbitmq-common-${PV}
 
 src_prepare() {
 	eapply_user

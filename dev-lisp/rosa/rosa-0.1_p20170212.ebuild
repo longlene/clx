@@ -15,9 +15,10 @@ SRC_URI="https://github.com/t-sin/rosa/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/anaphora
 	dev-lisp/trivial-gray-streams

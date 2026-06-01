@@ -11,13 +11,10 @@ SRC_URI="https://github.com/ashvardanian/SimSIMD/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/SimSIMD-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/SimSIMD-${PV}
 
 src_prepare() {
 	default

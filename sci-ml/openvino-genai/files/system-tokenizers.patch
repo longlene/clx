@@ -1,0 +1,23 @@
+--- a/thirdparty/CMakeLists.txt
++++ b/thirdparty/CMakeLists.txt
+@@ -5,13 +5,11 @@
+ option(BUILD_TOKENIZERS "Build OpenVINO Tokenizers together with OpenVINO GenAI" ON)
+
+ if(BUILD_TOKENIZERS)
+-    add_subdirectory(./openvino_tokenizers/ "${CMAKE_BINARY_DIR}/openvino_tokenizers/")
+-    # Put binaries to a single dir to mimic package structure.
+-    set_target_properties(openvino_tokenizers PROPERTIES
+-        # Generator expressions to disable appending a per-configuration subdirectory (Release, Debug).
+-        # ARCHIVE_OUTPUT is irrelevant. It's here just to keep all the artifacts in one place.
+-        ARCHIVE_OUTPUT_DIRECTORY "$<1:${CMAKE_BINARY_DIR}/openvino_genai/>"
+-        LIBRARY_OUTPUT_DIRECTORY "$<1:${CMAKE_BINARY_DIR}/openvino_genai/>"
+-        RUNTIME_OUTPUT_DIRECTORY "$<1:${CMAKE_BINARY_DIR}/openvino_genai/>"
+-    )
++    find_library(OPENVINO_TOKENIZERS_LIB openvino_tokenizers REQUIRED)
++    if(NOT TARGET openvino_tokenizers)
++        add_library(openvino_tokenizers SHARED IMPORTED GLOBAL)
++        set_target_properties(openvino_tokenizers PROPERTIES
++            IMPORTED_LOCATION "${OPENVINO_TOKENIZERS_LIB}"
++        )
++    endif()
+ endif()

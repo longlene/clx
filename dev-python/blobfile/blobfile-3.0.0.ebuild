@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
@@ -22,7 +22,6 @@ RDEPEND="
 	>=dev-python/lxml-4.9[${PYTHON_USEDEP}]
 	>=dev-python/filelock-3.0[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 #distutils_enable_tests pytest
 RESTRICT="test"

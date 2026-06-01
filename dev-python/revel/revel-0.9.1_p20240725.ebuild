@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -16,6 +16,7 @@ SRC_URI="https://gitlab.com/mad-moo/revel/-/archive/${EGIT_COMMIT}/revel-${EGIT_
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,5 +31,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

@@ -12,7 +12,6 @@ SRC_URI="https://github.com/zmartzone/liboauth2/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="AGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/cjose
@@ -21,7 +20,6 @@ DEPEND="
 	net-misc/curl
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

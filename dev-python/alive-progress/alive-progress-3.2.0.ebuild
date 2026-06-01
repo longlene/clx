@@ -4,16 +4,16 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="A new kind of Progress Bar, with real-time throughput, ETA, and very cool animations"
+DESCRIPTION="A new kind of Progress Bar, with real-time throughput, ETA, and very cool"
 HOMEPAGE="
-    https://github.com/rsalmei/alive-progress
+	https://github.com/rsalmei/alive-progress
 	https://pypi.org/project/alive-progress/
 "
-SRC_URI="https://github.com/rsalmei/alive-progress/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/rsalmei/alive-progress/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

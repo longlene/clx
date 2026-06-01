@@ -14,9 +14,7 @@ SRC_URI="https://github.com/lispnik/cd/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	media-libs/cd
 	dev-lisp/cffi
@@ -25,7 +23,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/serapeum
 	dev-lisp/im
 "
-BDEPEND=""
 
 src_prepare() {
 	default

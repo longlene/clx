@@ -6,18 +6,15 @@ EAPI=8
 
 inherit git-r3
 
-DESCRIPTION="A C library for product recommendations/suggestions using collaborative filtering"
+DESCRIPTION="A C library for product recommendations/suggestions using collaborative"
 HOMEPAGE="https://github.com/GHamrouni/Recommender"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/GHamrouni/Recommender.git"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

@@ -4,11 +4,11 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="Ultralytics THOP package for fast computation of PyTorch model FLOPs and parameters"
+DESCRIPTION="Ultralytics THOP package for fast computation of PyTorch model FLOPs and"
 HOMEPAGE="
 	https://github.com/ultralytics/thop
 "
@@ -16,6 +16,7 @@ SRC_URI="https://github.com/ultralytics/thop/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="AGPL-3.0"
 SLOT="0"
+S="${WORKDIR}"/thop-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 #
 #distutils_enable_tests pytest
 RESTRICT="test"
-
-S="${WORKDIR}"/thop-${PV}

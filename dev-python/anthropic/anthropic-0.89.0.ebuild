@@ -13,10 +13,11 @@ HOMEPAGE="
 	https://pypi.org/project/anthropic/
 	https://github.com/anthropics/anthropic-sdk-python
 "
-SRC_URI="https://github.com/anthropics/anthropic-sdk-python/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/anthropics/anthropic-sdk-python/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-sdk-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -39,5 +40,3 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-sdk-python-${PV}

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://github.com/pallets-eco/flask-mail
 	https://pypi.org/project/flask-mail/
 "
-SRC_URI="https://github.com/pallets-eco/flask-mail/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/pallets-eco/flask-mail/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
@@ -23,6 +23,5 @@ RDEPEND="
 	dev-python/flask[${PYTHON_USEDEP}]
 	dev-python/blinker[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 distutils_enable_tests pytest

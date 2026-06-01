@@ -11,7 +11,6 @@ SRC_URI="https://github.com/veelenga/vicr/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="dev-lang/crystal"
 RDEPEND="${DEPEND}

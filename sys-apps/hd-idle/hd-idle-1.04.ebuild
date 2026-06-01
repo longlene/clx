@@ -4,16 +4,10 @@
 
 EAPI=8
 
-DESCRIPTION=""
-HOMEPAGE=""
 SRC_URI="mirror://sourceforge/hd-idle/${P}.tgz"
 
-LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-
 S=${WORKDIR}/${PN}
+KEYWORDS="~amd64"
+
+RDEPEND="${DEPEND}"

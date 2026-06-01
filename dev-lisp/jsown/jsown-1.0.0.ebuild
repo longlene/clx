@@ -11,9 +11,10 @@ SRC_URI="https://github.com/madnificent/jsown/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	test? ( dev-lisp/fiveam )
 "
@@ -22,4 +23,3 @@ src_prepare() {
 	eapply_user
 	use test || rm -r tests
 }
-

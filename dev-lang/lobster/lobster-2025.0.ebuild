@@ -12,13 +12,11 @@ SRC_URI="https://github.com/aardappel/lobster/archive/refs/tags/v${PV}.tar.gz ->
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	virtual/opengl
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 CMAKE_USE_DIR="${S}"/dev
 

@@ -23,7 +23,6 @@ DEPEND="
 	dev-games/physfs
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

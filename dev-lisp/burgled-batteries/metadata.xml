@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		burgled-batteries provides a shim between Python (specifically, the CPython implementation of Python) and Common Lisp.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    burgled-batteries provides a shim between Python (specifically, the CPython implementation of Python) and Common Lisp.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">pinterface/burgled-batteries</remote-id>
+  </upstream>
 </pkgmetadata>

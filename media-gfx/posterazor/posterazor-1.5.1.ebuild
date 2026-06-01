@@ -10,12 +10,10 @@ RESTRICT="primaryuri"
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND=">=x11-libs/fltk-1.1
 	>=media-libs/freeimage-3.10.0
 	>=x11-libs/libXpm-3.5"
-RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
@@ -30,6 +28,6 @@ src_compile() {
 }
 
 src_install () {
-	mkdir -p ${D}/usr/bin
-	cp src/PosteRazor ${D}/usr/bin
+	mkdir -p "${D}"/usr/bin
+	cp src/PosteRazor "${D}"/usr/bin
 }

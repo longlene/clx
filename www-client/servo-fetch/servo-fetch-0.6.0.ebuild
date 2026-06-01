@@ -923,7 +923,7 @@ inherit cargo
 
 MOZJS_PV="0.140.10-3"
 
-DESCRIPTION="A browser engine in a binary — fetch, render, and extract web content powered by Servo"
+DESCRIPTION="A browser engine in a binary — fetch, render, and extract web content"
 HOMEPAGE="https://github.com/konippi/servo-fetch"
 SRC_URI="
 	https://github.com/konippi/servo-fetch/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
@@ -940,13 +940,10 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${P}/crates/${PN}-cli
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${P}/crates/${PN}-cli
 
 src_compile() {
 	local archive

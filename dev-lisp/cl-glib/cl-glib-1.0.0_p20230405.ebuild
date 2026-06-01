@@ -15,9 +15,7 @@ LICENSE="LGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-gobject-introspection-wrapper
 	dev-lisp/bordeaux-threads
 "
-BDEPEND=""

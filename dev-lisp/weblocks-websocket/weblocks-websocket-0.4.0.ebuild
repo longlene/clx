@@ -9,17 +9,14 @@ DESCRIPTION="Websocket support for Common Lisp framework weblocks"
 HOMEPAGE="https://github.com/40ants/weblocks-websocket"
 SRC_URI="https://github.com/40ants/weblocks-websocket/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/weblocks
 	dev-lisp/weblocks-parenscript
 	dev-lisp/websocket-driver
 "
-BDEPEND=""
 
 src_prepare() {
 	default

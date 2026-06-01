@@ -11,12 +11,5 @@ DESCRIPTION="vim plugin: Vim Syntax for TOML"
 HOMEPAGE="https://github.com/cespare/vim-toml"
 LICENSE="MIT"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 EGIT_REPO_URI="https://github.com/cespare/vim-toml.git"
-
-VIM_PLUGIN_HELPFILES=""
-VIM_PLUGIN_HELPTEXT=""
-VIM_PLUGIN_HELPURI=""
-VIM_PLUGIN_MESSAGES=""
-

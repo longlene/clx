@@ -19,5 +19,3 @@ DEPEND="
 	dev-libs/libsodium
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-

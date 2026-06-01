@@ -16,7 +16,6 @@ DEPEND="
 	x11-libs/xcb-util-keysyms
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	dobin xwm

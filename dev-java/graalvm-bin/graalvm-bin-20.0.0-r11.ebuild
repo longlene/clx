@@ -15,6 +15,7 @@ SRC_URI="https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${PV}
 DESCRIPTION="GraalVM prebuild binaries"
 HOMEPAGE="https://www.graalvm.org/"
 LICENSE="GPL-2-with-classpath-exception"
+S=${WORKDIR}/graalvm-ce-java${JVM_VER}-${PV}
 KEYWORDS="~amd64"
 IUSE="+gentoo-vm native-image"
 
@@ -23,7 +24,6 @@ RDEPEND=">=sys-libs/glibc-2.2.5:*
 
 RESTRICT="preserve-libs splitdebug"
 QA_PREBUILT="*"
-S=${WORKDIR}/graalvm-ce-java${JVM_VER}-${PV}
 
 pkg_pretend() {
 	if [[ "$(tc-is-softfloat)" != "no" ]]; then
@@ -36,8 +36,8 @@ src_unpack() {
 }
 
 src_install() {
-        if use native-image ; then
-		bin/gu install -A -N -L ${DISTDIR}/native-image-installable-svm-java${JVM_VER}-linux-amd64-${PV}.jar
+		if use native-image ; then
+		bin/gu install -A -N -L "${DISTDIR}"/native-image-installable-svm-java${JVM_VER}-linux-amd64-${PV}.jar
 	fi
 
 	local dest="/opt/${P}"
@@ -46,7 +46,7 @@ src_install() {
 	dodir "${dest}"
 	cp -pPR * "${ddest}" || die
 
-        if use native-image ; then
+		if use native-image ; then
 		dosym ${dest}/bin/native-image /usr/bin/native-image
 	fi
 

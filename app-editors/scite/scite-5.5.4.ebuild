@@ -13,7 +13,8 @@ SRC_URI="https://www.scintilla.org/${PN}${PV//./}.tgz -> ${P}.tgz"
 
 LICENSE="HPND lua? ( MIT )"
 SLOT="0"
-KEYWORDS="amd64 ppc ~riscv x86 ~amd64-linux ~arm-linux ~x86-linux"
+S="${WORKDIR}/${PN}/gtk"
+KEYWORDS="amd64 ppc x86 ~amd64-linux ~arm-linux ~riscv ~x86-linux"
 IUSE="lua"
 
 REQUIRED_USE="lua? ( ${LUA_REQUIRED_USE} )"
@@ -33,8 +34,6 @@ BDEPEND="
 	virtual/pkgconfig"
 
 DOCS=("../README")
-
-S="${WORKDIR}/${PN}/gtk"
 
 pkg_setup() {
 	use lua && lua-single_pkg_setup

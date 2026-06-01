@@ -8,12 +8,9 @@ DESCRIPTION="SLisp"
 HOMEPAGE="http://www.sigala.it/sandro/"
 SRC_URI="http://www.sigala.it/sandro/files/slisp-${PV}.tar.gz"
 
-LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_configure() {

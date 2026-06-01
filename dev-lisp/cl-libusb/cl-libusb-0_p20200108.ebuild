@@ -11,12 +11,9 @@ DESCRIPTION="Common Lisp bindings to libusb"
 HOMEPAGE="https://github.com/soemraws/cl-libusb"
 SRC_URI="https://github.com/soemraws/cl-libusb/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-garbage
 	dev-lisp/cffi

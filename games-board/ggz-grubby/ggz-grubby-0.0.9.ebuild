@@ -8,8 +8,7 @@ SRC_URI="http://ftp.ggzgamingzone.org/pub/ggz/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
-IUSE=""
+KEYWORDS="~ppc ~x86"
 
 DEPEND="=dev-games/libggz-0.0.9
 	=dev-games/ggz-client-libs-0.0.9"

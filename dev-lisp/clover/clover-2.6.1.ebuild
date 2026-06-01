@@ -13,7 +13,6 @@ LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-cpus
 	dev-lisp/cl-heap
@@ -25,7 +24,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/cl-custom-hash-table
 "
-BDEPEND=""
 
 src_prepare() {
 	default

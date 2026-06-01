@@ -19,6 +19,7 @@ SRC_URI="https://github.com/crewAIInc/crewAI/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/crewAI-${PV}/lib/crewai
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -61,5 +62,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/crewAI-${PV}/lib/crewai

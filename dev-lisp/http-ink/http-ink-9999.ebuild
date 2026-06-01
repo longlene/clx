@@ -8,16 +8,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="http server"
 HOMEPAGE="https://github.com/m0cchi/http-ink"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/m0cchi/http-ink.git"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/flexi-streams
 	dev-lisp/cl-fad

@@ -15,12 +15,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/openssl
 	sys-libs/zlib
 "
-BDEPEND=""
 
 src_install() {
 	insinto /usr/include

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/dptd/jasaw/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/dexador
 	dev-lisp/cl-json

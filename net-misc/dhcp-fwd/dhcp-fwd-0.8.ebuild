@@ -8,12 +8,11 @@ SRC_URI="http://savannah.nongnu.org/download/${P}/${PSRC}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
+S="${WORKDIR}/${PSRC}"
 KEYWORDS="~amd64 ~x86"
 IUSE="diet logging"
 
 DEPEND="diet? ( dev-libs/dietlibc )"
-
-S="${WORKDIR}/${PSRC}"
 
 src_unpack() {
 	unpack ${A}
@@ -33,7 +32,7 @@ src_compile() {
 	if ! use diet ; then
 		myconf="${myconf} --disable-dietlibc"
 	fi
-	
+
 	if use logging ; then
 		myconf="${myconf} --enable-logging"
 	fi
@@ -43,11 +42,9 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die 
+	emake DESTDIR="${D}" install || die
 	newinitd "${FILESDIR}/dhcp-fwd.initd" dhcp-fwd
 	newconfd "${FILESDIR}/dhcp-fwd.confd" dhcp-fwd
 	insinto /etc
 	newins contrib/dhcp-fwd.conf dhcp-fwd.conf
 }
-
-

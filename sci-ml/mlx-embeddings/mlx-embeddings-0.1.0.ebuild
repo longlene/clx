@@ -18,7 +18,6 @@ SRC_URI="
 LICENSE="GPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND="
 	>=sci-ml/mlx-vlm-0.4.0[${PYTHON_SINGLE_USEDEP}]
@@ -36,4 +35,3 @@ RDEPEND="
 #distutils_enable_tests pytest
 
 RESTRICT="test"
-

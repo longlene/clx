@@ -4,7 +4,7 @@
 
 EAPI=8
 
-DESCRIPTION="Thrust is a parallel algorithms library which resembles the C++ Standard Template Library"
+DESCRIPTION="Thrust is a parallel algorithms library which resembles the C++ Standard"
 HOMEPAGE="http://thrust.github.com/"
 SRC_URI="https://github.com/thrust/thrust/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -13,7 +13,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

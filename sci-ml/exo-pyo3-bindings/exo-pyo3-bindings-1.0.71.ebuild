@@ -534,16 +534,12 @@ SRC_URI="
 
 LICENSE="GPL-3"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}/rust/exo_pyo3_bindings
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}/rust/exo_pyo3_bindings
-

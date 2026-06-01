@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="parameter setting framework for Common Lisp"
 HOMEPAGE="https://github.com/mobius-eng/parameters"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/mobius-eng/parameters.git"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/keyword-dispatch

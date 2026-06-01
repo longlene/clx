@@ -15,6 +15,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 IUSE="cuda l0 opencl rocm"
 
@@ -27,9 +28,6 @@ DEPEND="
 	rocm? ( dev-util/rocm-smi:= )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 src_configure() {
 	local mycmakeargs=(

@@ -37,4 +37,3 @@ src_prepare() {
 		rm -r ${PN}-tests.asd tests
 	fi
 }
-

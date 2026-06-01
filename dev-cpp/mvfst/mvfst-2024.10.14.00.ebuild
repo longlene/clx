@@ -12,11 +12,9 @@ SRC_URI="https://github.com/facebook/mvfst/archive/refs/tags/v${PV}.tar.gz -> ${
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-cpp/fizz
 	dev-cpp/folly
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

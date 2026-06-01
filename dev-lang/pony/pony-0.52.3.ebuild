@@ -12,22 +12,21 @@ SRC_URI="https://github.com/ponylang/ponyc/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
+S="${WORKDIR}/ponyc-${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="test vim-syntax"
-RESTRICT="strip"
+RESTRICT="strip !test? ( test )"
 
 RDEPEND="
 	dev-libs/libpcre2
 	dev-libs/openssl:=
-	>=sys-devel/llvm-3.9.1:=
-	<sys-devel/llvm-6.0.0:=
+	>=llvm-core/llvm-3.9.1:=
+	<llvm-core/llvm-6.0.0:=
 	sys-libs/ncurses:=
 	sys-libs/zlib
 	vim-syntax? ( app-vim/pony-syntax )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
-
-S="${WORKDIR}/ponyc-${PV}"
 
 src_prepare() {
 	default

@@ -18,7 +18,6 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND="
 	>=sci-ml/transformers-5.0.0[${PYTHON_SINGLE_USEDEP}]
@@ -28,7 +27,7 @@ RDEPEND="
 		sci-ml/sentencepiece[${PYTHON_USEDEP}]
 		dev-python/protobuf[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
-		dev-python/jinja2[${PYTHON_USEDEP}]
+		dev-python/jinja22[${PYTHON_USEDEP}]
 	')
 "
 #BDEPEND="
@@ -39,4 +38,3 @@ RDEPEND="
 #distutils_enable_tests pytest
 
 RESTRICT="test"
-

@@ -13,8 +13,10 @@ SRC_URI="https://github.com/m2ym/cl-annot/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	dev-lisp/alexandria
@@ -25,4 +27,3 @@ src_prepare() {
 	default
 	use test || rm -rf ${PN}-test.asd t
 }
-

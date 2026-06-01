@@ -17,7 +17,6 @@ HOMEPAGE="
 "
 SRC_URI="https://github.com/leptonai/leptonai/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 

@@ -15,14 +15,13 @@ HOMEPAGE="
 "
 SRC_URI="https://github.com/mtkennerly/poetry-dynamic-versioning/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/dunamai-1.25.0[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.4[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-2.11.1[${PYTHON_USEDEP}]
+	>=dev-python/jinja22-2.11.1[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

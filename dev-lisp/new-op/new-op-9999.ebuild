@@ -6,15 +6,11 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A new operator for Common Lisp"
 HOMEPAGE="http://common-lisp.net/project/new-op/index.html"
-SRC_URI=""
 
 EGIT_REPO_URI="git://common-lisp.net/projects/new-op/new-op.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-

@@ -12,7 +12,6 @@ SRC_URI="https://github.com/zeromq/zyre/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/libsodium
@@ -20,4 +19,3 @@ DEPEND="
 	net-libs/czmq
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

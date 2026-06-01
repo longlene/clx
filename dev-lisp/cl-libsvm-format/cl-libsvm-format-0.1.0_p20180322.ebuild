@@ -14,9 +14,10 @@ SRC_URI="https://github.com/masatoi/cl-libsvm-format/archive/${EGIT_COMMIT}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	test? ( dev-lisp/prove )

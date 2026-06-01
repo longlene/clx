@@ -13,9 +13,10 @@ SRC_URI="https://github.com/sharplispers/let-plus/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="BSL-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/anaphora
@@ -30,4 +31,3 @@ src_prepare() {
 		rm tests.lisp
 	fi
 }
-

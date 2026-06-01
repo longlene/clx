@@ -19,7 +19,6 @@ DEPEND="
 	dev-libs/jansson
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

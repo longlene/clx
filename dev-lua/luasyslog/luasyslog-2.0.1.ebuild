@@ -15,11 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-lua/lualogging-1.3.0
 "
-BDEPEND=""
 
 lua_src_prepare() {
 	sed -e "/CFLAGS/{s#-I \$(LUA_PREFIX)/include#$(lua_get_CFLAGS)#}" \

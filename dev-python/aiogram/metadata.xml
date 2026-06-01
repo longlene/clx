@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="fast">Enable performance extras: uvloop event loop and aiodns resolver</flag>
+    <flag name="i18n">Enable internationalization support via dev-python/babel</flag>
+    <flag name="redis">Enable Redis storage backend via dev-python/redis</flag>
+    <flag name="signature">Enable webhook signature verification via dev-python/cryptography</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">aiogram/aiogram</remote-id>
+    <remote-id type="pypi">aiogram</remote-id>
+  </upstream>
+</pkgmetadata>

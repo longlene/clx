@@ -14,16 +14,13 @@ SRC_URI="https://github.com/cuichaox/dml/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/donuts
 	dev-lisp/cl-cairo2
 	dev-lisp/alexandria
 	dev-lisp/cl-ppcre
 "
-BDEPEND=""
 
 src_prepare() {
 	default

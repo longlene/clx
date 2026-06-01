@@ -10,10 +10,9 @@ SRC_URI="http://cyrusharmon.org/static/releases/ch-image_${PV}.tar.gz -> ${P}.ta
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="jpeg tiff freetype"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 jpeg? ( dev-lisp/cl-jpeg )
 tiff? ( dev-lisp/tiff-ffi )

@@ -9,16 +9,13 @@ SRC_URI="http://repo.or.cz/w/cl-v4l2.git/snapshot/HEAD.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cffi
 dev-lisp/iolib
 dev-lisp/trivial-garbage
 dev-lisp/closer-mop"
-
 
 src_install() {
 	common-lisp-install *.{asd,lisp}

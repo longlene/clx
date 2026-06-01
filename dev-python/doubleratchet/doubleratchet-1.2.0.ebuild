@@ -17,6 +17,7 @@ SRC_URI="https://github.com/Syndace/python-doubleratchet/archive/refs/tags/v${PV
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -31,8 +32,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-${P}
 
 PATCHES=(
 	"${FILESDIR}"/build-fix.patch

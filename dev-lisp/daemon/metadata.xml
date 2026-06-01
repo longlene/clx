@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		daemon
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    daemon
 
-		This is a library which has simple functionality to make lisp process daemonize on unix like platform.
-	</longdescription>
+    This is a library which has simple functionality to make lisp process daemonize on unix like platform.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">snmsts/daemon</remote-id>
+  </upstream>
 </pkgmetadata>

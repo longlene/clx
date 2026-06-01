@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Flax is a high-performance neural network library for JAX that is
+    designed for flexibility. It provides the Linen API for defining
+    modules and the NNX API for a more Pythonic object-oriented style.
+  </longdescription>
+  <use>
+    <flag name="test">Enable pytest test suite</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">google/flax</remote-id>
+    <remote-id type="pypi">flax</remote-id>
+  </upstream>
+</pkgmetadata>

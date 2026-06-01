@@ -6,16 +6,12 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Library Documentation Hosting for Common Lisp"
 HOMEPAGE="https://github.com/fukamachi/quickdocs"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/fukamachi/quickdocs.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS=""
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-annot
 dev-lisp/flexi-streams
@@ -32,4 +28,3 @@ dev-lisp/clack
 dev-lisp/ningle
 dev-lisp/local-time
 dev-lisp/split-sequence"
-

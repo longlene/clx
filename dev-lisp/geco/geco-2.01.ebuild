@@ -13,7 +13,5 @@ SRC_URI="https://common-lisp.net/project/geco/download/${P}a.tar.gz -> ${P}.tar.
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

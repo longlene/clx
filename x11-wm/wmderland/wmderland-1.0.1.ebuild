@@ -12,11 +12,9 @@ SRC_URI="https://github.com/aesophor/Wmderland/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-cpp/glog
 	x11-libs/libX11
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

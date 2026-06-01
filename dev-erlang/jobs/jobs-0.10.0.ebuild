@@ -12,10 +12,8 @@ SRC_URI="https://github.com/uwiger/jobs/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-erlang/parse_trans-3.3.0
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

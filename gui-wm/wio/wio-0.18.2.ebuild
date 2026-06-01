@@ -22,4 +22,3 @@ DEPEND="
 	x11-libs/libxkbcommon
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -12,10 +12,8 @@ DESCRIPTION="Fortran ABI independent wrappers around scal, dot"
 HOMEPAGE="https://github.com/matlisp/matlisp-forbi"
 SRC_URI="https://github.com/matlisp/matlisp-forbi/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	virtual/fortran

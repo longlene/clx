@@ -12,7 +12,6 @@ SRC_URI="https://github.com/matthijs/sqlpp11-connector-postgresql/archive/v${PV}
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-cpp/sqlpp11

@@ -20,10 +20,9 @@ SRC_URI="https://github.com/NVIDIA/${MY_PN}/archive/refs/tags/v${PV}.tar.gz -> $
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}/python/CuTeDSL
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -31,5 +30,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}/python/CuTeDSL

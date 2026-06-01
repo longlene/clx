@@ -12,7 +12,6 @@ SRC_URI="https://github.com/neoxic/lua-mongo/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/mongo-c-driver

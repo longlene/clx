@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{9..14}  )
 
 inherit cmake python-any-r1
 
@@ -22,10 +22,9 @@ LICENSE="
 	test? ( BSD )
 "
 SLOT="0/${PV%%.*}"
-KEYWORDS="amd64 ~arm arm64 ~loong ppc64 ~riscv x86"
+KEYWORDS="amd64 arm64 ppc64 x86 ~arm ~loong ~riscv"
 IUSE="test"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 BDEPEND="

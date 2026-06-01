@@ -4,7 +4,7 @@
 
 EAPI=8
 
-DESCRIPTION="PL/Lua is an implementation of Lua as a loadable procedural language for PostgreSQL"
+DESCRIPTION="PL/Lua is an implementation of Lua as a loadable procedural language for"
 HOMEPAGE="https://github.com/pllua/pllua"
 SRC_URI="https://github.com/pllua/pllua/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 

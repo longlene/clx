@@ -14,7 +14,7 @@ IUSE="gpg"
 
 DEPEND="
 	app-arch/libarchive
-	app-arch/xz-utils	
+	app-arch/xz-utils
 	net-misc/curl[ssl]
 	gpg? ( app-crypt/gpgme )
 "

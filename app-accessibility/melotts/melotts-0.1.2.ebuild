@@ -17,13 +17,13 @@ SRC_URI="https://github.com/myshell-ai/MeloTTS/archive/refs/tags/v0.1.2.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/MeloTTS-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
-	sci-libs/pytorch[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
 	sci-libs/torchaudio[${PYTHON_SINGLE_USEDEP}]
-	>=sci-libs/transformers-4.27.4[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/transformers-4.27.4[${PYTHON_SINGLE_USEDEP}]
 	>=sci-libs/tensorboard-2.16.2[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/txtsplit[${PYTHON_USEDEP}]
@@ -53,6 +53,3 @@ RDEPEND="${DEPEND}
 		>=dev-python/loguru-0.7.2[${PYTHON_USEDEP}]
 	')
 "
-BDEPEND=""
-
-S="${WORKDIR}"/MeloTTS-${PV}

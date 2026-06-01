@@ -14,9 +14,10 @@ SRC_URI="https://github.com/AccelerationNet/access/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
 
 src_prepare() {

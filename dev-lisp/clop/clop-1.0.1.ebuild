@@ -13,7 +13,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/esrap
@@ -21,7 +20,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/str
 "
-BDEPEND=""
 
 src_prepare() {
 	default

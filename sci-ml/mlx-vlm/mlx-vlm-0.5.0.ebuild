@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A package for inference and fine-tuning of Vision Language Models and Omni Models"
+DESCRIPTION="A package for inference and fine-tuning of Vision Language Models and Omni"
 HOMEPAGE="https://github.com/Blaizzy/mlx-vlm"
 SRC_URI="
 	https://github.com/Blaizzy/mlx-vlm/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
@@ -18,7 +18,6 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND="
 	>=sci-ml/transformers-5.5.0[${PYTHON_SINGLE_USEDEP}]
@@ -47,4 +46,3 @@ RDEPEND="
 #distutils_enable_tests pytest
 
 RESTRICT="test"
-

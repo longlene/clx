@@ -8,14 +8,11 @@ inherit git-r3 cmake
 
 DESCRIPTION="A collection of compute vision methods for solving geometric vision problems"
 HOMEPAGE="http://laurentkneip.github.io/opengv/page_installation.html"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/laurentkneip/opengv.git"
 
 LICENSE="as-is"
 SLOT="0"
 #KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

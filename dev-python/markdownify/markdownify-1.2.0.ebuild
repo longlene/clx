@@ -17,6 +17,7 @@ SRC_URI="https://github.com/matthewwithanm/python-markdownify/archive/refs/tags/
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="
@@ -25,8 +26,6 @@ RDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-${P}
 
 export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_MARKDOWNIFY="${PV}"
 

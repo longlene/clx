@@ -4,6 +4,7 @@ EAPI=8
 
 inherit autotools
 
+S=${WORKDIR}/${MY_P}
 KEYWORDS="~amd64 ~x86"
 
 MY_P=${P/pdc/PDC}
@@ -25,8 +26,6 @@ DEPEND="x11-libs/libX11
 		Xaw3d? ( x11-libs/Xaw3d )
 		!nextaw? ( !Xaw3d? ( x11-libs/libXaw ) )"
 RDEPEND="${DEPEND}"
-
-S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	if use Xaw3d && use nextaw ; then

@@ -8,16 +8,17 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="2872c0e5fbcc6048ec43b9b3a41ef201e1d7a633"
 
-DESCRIPTION="Efficient and expressive vector math library with an embedded language on Common Lisp"
+DESCRIPTION="Efficient and expressive vector math library with an embedded language on"
 HOMEPAGE="https://github.com/takagi/mini-lang"
 SRC_URI="https://github.com/takagi/mini-lang/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="example test"
 
-DEPEND=""
+IUSE="example test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-tuples
 	dev-lisp/cl-pattern

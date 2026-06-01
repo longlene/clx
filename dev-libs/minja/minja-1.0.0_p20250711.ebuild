@@ -13,13 +13,10 @@ SRC_URI="https://github.com/google/minja/archive/${EGIT_COMMIT}.tar.gz -> ${P}.g
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 PATCHES=(
 	"${FILESDIR}"/system-dep.patch

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>0xccef@gmail.com</email>
+  </maintainer>
+  <longdescription>
+    rendercanvas provides a single canvas API that works with multiple backends
+    including Qt, wx, GLFW, and Jupyter. It is designed for use with wgpu and
+    other rendering libraries.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">pygfx/rendercanvas</remote-id>
+    <remote-id type="pypi">rendercanvas</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -13,7 +13,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-sdl2
 	dev-lisp/cl-sdl2-mixer
@@ -23,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-cairo2
 	dev-lisp/cl-gobject-introspection
 "
-BDEPEND=""

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -14,6 +14,7 @@ SRC_URI="https://github.com/dajiaji/python-cwt/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,5 +31,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-${P}

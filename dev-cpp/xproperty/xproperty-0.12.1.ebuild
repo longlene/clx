@@ -12,7 +12,6 @@ SRC_URI="https://github.com/QuantStack/xproperty/archive/${PV}.tar.gz -> ${P}.ta
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-cpp/xtl-0.7.0

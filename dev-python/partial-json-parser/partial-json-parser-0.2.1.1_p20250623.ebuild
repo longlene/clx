@@ -19,10 +19,9 @@ SRC_URI="https://github.com/promplate/partial-json-parser/archive/${EGIT_COMMIT}
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -30,5 +29,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

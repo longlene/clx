@@ -14,9 +14,10 @@ SRC_URI="https://github.com/shamazmazum/codex/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/docparser
 	dev-lisp/common-doc

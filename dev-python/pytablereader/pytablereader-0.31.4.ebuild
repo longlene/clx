@@ -4,11 +4,11 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="A Python library to load structured table data from files/strings/URL with various data format"
+DESCRIPTION="A Python library to load structured table data from files/strings/URL with"
 HOMEPAGE="https://github.com/thombashi/pytablereader"
 SRC_URI="https://github.com/thombashi/pytablereader/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 

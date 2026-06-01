@@ -12,16 +12,14 @@ SRC_URI="https://github.com/mariusherzog/dicom/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/boost
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
-	dolib.a ${BUILD_DIR}/source/liblibdicompp.a
+	dolib.a "${BUILD_DIR}"/source/liblibdicompp.a
 	insinto /usr/include
 	doins -r include/libdicompp
 	dodoc README.md

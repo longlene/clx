@@ -15,4 +15,3 @@ DEPEND="
 	dev-libs/mulle-c11
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

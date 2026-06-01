@@ -14,7 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="
-	sys-devel/llvm
+	llvm-core/llvm
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/richmit/mjrcalc/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	sci-visualization/gnuplot
 "

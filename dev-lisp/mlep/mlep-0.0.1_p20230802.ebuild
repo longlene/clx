@@ -14,9 +14,7 @@ SRC_URI="https://github.com/fzalkow/cl-mlep/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/lla

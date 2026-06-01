@@ -11,11 +11,10 @@ SRC_URI="http://slackware.cs.utah.edu/pub/slackware/slackware-13.0/source/a/kbd/
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="amd64 arm ia64 ppc s390 sh sparc x86"
-IUSE=""
 
 src_unpack() {
-	dodir ${WORKDIR}
-	tar zxvf ${DISTDIR}/extraf.tgz --strip-components 4 -C ${WORKDIR}
+	dodir "${WORKDIR}"
+	tar zxvf "${DISTDIR}"/extraf.tgz --strip-components 4 -C "${WORKDIR}"
 }
 
 src_install() {

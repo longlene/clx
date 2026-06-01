@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		jsonpp is a header-only JSON parser and writer that is currently in development. It is a semi-strict parser that throws exceptions for errors.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    jsonpp is a header-only JSON parser and writer that is currently in development. It is a semi-strict parser that throws exceptions for errors.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Rapptz/jsonpp</remote-id>
+  </upstream>
 </pkgmetadata>

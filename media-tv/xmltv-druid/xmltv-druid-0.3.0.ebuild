@@ -1,13 +1,12 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-DESCRIPTION="Very simple Gnome druid for selecting, configuring and scheduling s tv_grab task for XMLTV."
+DESCRIPTION="Very simple Gnome druid for selecting, configuring and scheduling s tv_grab"
 HOMEPAGE="http://gshowtv.sourceforge.net/xmltv-druid.html"
 SRC_URI="mirror://sourceforge/gshowtv/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
-IUSE=""
+KEYWORDS="~amd64 ~x86"
 
 DEPEND="media-tv/xmltv
 	dev-perl/gtk2-perl

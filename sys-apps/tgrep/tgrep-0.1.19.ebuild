@@ -135,7 +135,7 @@ RUST_MIN_VER="1.87.0"
 
 inherit cargo
 
-DESCRIPTION="Trigram-indexed grep — fast regex search for large codebases with client/server architecture"
+DESCRIPTION="Trigram-indexed grep — fast regex search for large codebases with"
 HOMEPAGE="https://github.com/microsoft/tgrep"
 SRC_URI="
 	https://github.com/microsoft/tgrep/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
@@ -144,13 +144,10 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${P}/tgrep-cli
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${P}/tgrep-cli
 
 src_install() {
 	cargo_src_install

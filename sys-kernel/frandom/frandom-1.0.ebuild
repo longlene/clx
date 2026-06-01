@@ -13,7 +13,6 @@ SRC_URI="mirror://sourceforge/project/frandom/frandom/${P}/${P}.tar.gz"
 LICENSE="GPL-1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RESTRICT="strip"
 
@@ -22,7 +21,7 @@ BUILD_TARGET_ARCH="${ARCH}"
 MODULE_NAMES="frandom(misc)"
 
 src_prepare() {
-	sed -i -e "s:\$(shell uname -r):${KV_FULL}:" "${S}"/Makefile || die "sed failed" 
+	sed -i -e "s:\$(shell uname -r):${KV_FULL}:" "${S}"/Makefile || die "sed failed"
 }
 
 src_install() {

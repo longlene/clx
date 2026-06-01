@@ -10,11 +10,8 @@ SRC_URI="https://github.com/wgtdkp/wgtcc/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_compile() {
 	emake all

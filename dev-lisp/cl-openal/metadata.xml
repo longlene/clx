@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		cl-openal is a series of semi-lispy public domain bindings to the OpenAL API. It includes direct CFFI bindings, as well as varying levels of lispy wrappings around AL, ALC, and ALUT.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    cl-openal is a series of semi-lispy public domain bindings to the OpenAL API. It includes direct CFFI bindings, as well as varying levels of lispy wrappings around AL, ALC, and ALUT.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">sykopomp/cl-openal</remote-id>
+  </upstream>
 </pkgmetadata>

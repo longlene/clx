@@ -13,7 +13,6 @@ SRC_URI="https://github.com/aconchillo/guile-oauth/archive/${PV}.tar.gz -> ${P}.
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-scheme/guile-json

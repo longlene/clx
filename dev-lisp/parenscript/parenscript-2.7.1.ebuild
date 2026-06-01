@@ -11,10 +11,12 @@ SRC_URI="https://common-lisp.net/project/parenscript/release/${P}.tgz"
 
 LICENSE="BSD"
 SLOT="0"
+S="${WORKDIR}/Parenscript-${PV}"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="
 	dev-lisp/anaphora
 	dev-lisp/cl-ppcre
@@ -22,10 +24,7 @@ RDEPEND="
 	test? ( dev-lisp/eos dev-lisp/cl-js )
 "
 
-S="${WORKDIR}/Parenscript-${PV}"
-
 src_prepare() {
 	default
 	use test || rm -r ${PN}.tests.asd tests
 }
-	

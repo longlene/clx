@@ -19,15 +19,12 @@ SRC_URI="https://github.com/bcj/AttrDict/archive/${EGIT_COMMIT}.tar.gz -> ${P}.g
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/AttrDict-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/AttrDict-${EGIT_COMMIT}

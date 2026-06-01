@@ -8,16 +8,13 @@ SRC_URI="http://${PN/b/}.longstair.com/files/${P/b/}.tbz2"
 
 LICENSE="GPL-2"
 SLOT="0"
+S="${WORKDIR}/${PN/b/}"
 KEYWORDS="~x86"
 IUSE="db"
 
-DEPEND=""
-RDEPEND=""
-S="${WORKDIR}/${PN/b/}"
-
 src_install() {
-	cd ${S}
-	
+	cd "${S}"
+
 	insinto /usr/share/${PN}
 	doins -r classes util
 
@@ -27,6 +24,6 @@ src_install() {
 	doexe smrt
 
 	if use db; then doins musicdb.sqlite; fi
-	
+
 	make_wrapper ${PN/b/} ${PN/b/} /usr/share/${PN}
 }

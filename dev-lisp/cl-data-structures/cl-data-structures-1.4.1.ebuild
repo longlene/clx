@@ -13,7 +13,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/alexandria
@@ -28,7 +27,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/trivial-garbage
 "
-BDEPEND=""
 
 src_prepare() {
 	default

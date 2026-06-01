@@ -12,10 +12,8 @@ SRC_URI="https://gitlab.common-lisp.net/antik/antik/repository/archive.tar.gz?re
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/gsll
 
@@ -32,4 +30,4 @@ RDEPEND="${DEPEND}
 	dev-lisp/fare-utils
 	dev-lisp/trivial-utf8
 "
-# static-vectors 
+# static-vectors

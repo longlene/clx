@@ -11,9 +11,7 @@ SRC_URI="http://common-lisp.net/project/${PN}/${PN}_${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
 
 RDEPEND="!dev-lisp/cl-${PN}"
-
-S="${WORKDIR}"/${PN}

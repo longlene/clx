@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/ieee-floats
@@ -25,7 +24,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/bit-smasher
 	dev-lisp/local-time
 "
-BDEPEND=""
 
 src_prepare() {
 	default

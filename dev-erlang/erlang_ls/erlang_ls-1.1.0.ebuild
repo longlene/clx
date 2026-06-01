@@ -10,13 +10,11 @@ SRC_URI="https://github.com/erlang-ls/erlang_ls/archive/${PV}.tar.gz -> ${P}.tar
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-util/rebar:3
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 RESTRICT=network-sandbox
 

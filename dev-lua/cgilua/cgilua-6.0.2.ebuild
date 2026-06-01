@@ -7,14 +7,13 @@ LUA_COMPAT=( lua5-{1..3} luajit )
 
 inherit lua
 
-DESCRIPTION="CGILua is a tool for creating dynamic HTML pages and manipulating input data from Web forms"
+DESCRIPTION="CGILua is a tool for creating dynamic HTML pages and manipulating input data"
 HOMEPAGE="http://keplerproject.github.com/cgilua"
 SRC_URI="https://github.com/keplerproject/cgilua/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

@@ -10,7 +10,7 @@ PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A modular, primitive-first, python-first PyTorch library for Reinforcement Learning"
+DESCRIPTION="A modular, primitive-first, python-first PyTorch library for Reinforcement"
 HOMEPAGE="
 	https://pytorch.org/rl
 	https://github.com/pytorch/rl
@@ -19,10 +19,9 @@ SRC_URI="https://github.com/pytorch/rl/archive/refs/tags/v${PV}.tar.gz -> ${P}.t
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/rl-${PV}
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=sci-ml/pytorch-2.5.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
@@ -36,11 +35,8 @@ RDEPEND="${DEPEND}
 
 RESTRICT="test"
 
-S="${WORKDIR}"/rl-${PV}
-
 src_prepare() {
 	default
 	rm -rf benchmarks
 	distutils-r1_src_prepare
 }
-

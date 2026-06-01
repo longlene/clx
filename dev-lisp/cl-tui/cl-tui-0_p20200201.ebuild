@@ -14,9 +14,7 @@ SRC_URI="https://github.com/naryl/cl-tui/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-charms
 	dev-lisp/trivial-types
@@ -26,4 +24,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-containers
 	dev-lisp/osicat
 "
-BDEPEND=""

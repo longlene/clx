@@ -15,7 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="static"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_configure() {
@@ -24,5 +23,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-
-

@@ -14,12 +14,9 @@ SRC_URI="https://github.com/show-matz/CL-STL/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/cl-overload
 	dev-lisp/cl-operator
 "
-BDEPEND=""

@@ -8,16 +8,13 @@ inherit git-r3 common-lisp-3
 
 DESCRIPTION="Trivial lazy macros and functions for Common Lisp"
 HOMEPAGE="https://github.com/dsorokin/trivial-lazy"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/dsorokin/trivial-lazy.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 "

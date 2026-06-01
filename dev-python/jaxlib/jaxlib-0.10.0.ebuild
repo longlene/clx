@@ -15,6 +15,7 @@ SRC_URI="https://github.com/jax-ml/jax/archive/refs/tags/jax-v${PV}.tar.gz -> ${
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/jax-jax-v${PV}
 KEYWORDS="~amd64"
 
 IUSE="cuda"
@@ -25,7 +26,6 @@ RDEPEND="
 "
 
 # S points to repo root so that packages=['jaxlib'] resolves to jaxlib/ subdir
-S="${WORKDIR}"/jax-jax-v${PV}
 
 src_prepare() {
 	# Root setup.py is for the jax package; replace with jaxlib's setup.py

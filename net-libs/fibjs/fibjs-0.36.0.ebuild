@@ -10,14 +10,11 @@ SRC_URI="https://github.com/fibjs/fibjs/releases/download/v${PV}/fullsrc.zip -> 
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
-IUSE=""
-
-BDEPEND="dev-util/cmake"
-DEPEND=""
-RDEPEND="${DEPEND}"
-
 S="${WORKDIR}"
+KEYWORDS="~amd64"
+
+BDEPEND="dev-build/cmake"
+RDEPEND="${DEPEND}"
 
 src_prepare() {
 	default
@@ -32,4 +29,3 @@ src_install() {
 	dobin bin/Linux_*_release/fibjs
 	dodoc README.md
 }
-

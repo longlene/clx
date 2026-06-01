@@ -17,7 +17,6 @@ DEPEND="
 	x11-libs/libXmu
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION="Open source library for building editors that can handle massive files, and multiple viewports"
+DESCRIPTION="Open source library for building editors that can handle massive files, and"
 HOMEPAGE="https://github.com/ctc-oss/omega-edit"
 SRC_URI="https://github.com/ctc-oss/omega-edit/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -13,9 +13,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 CMAKE_USE_DIR="${S}"/core
 

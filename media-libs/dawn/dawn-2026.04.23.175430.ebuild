@@ -25,24 +25,30 @@ SRC_URI="
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}
 KEYWORDS="~amd64"
 IUSE="gles2 glfw opengl vulkan wayland X"
 
 DEPEND="
 	dev-cpp/abseil-cpp
 	dev-util/glslang
-	media-libs/mesa[X,opengl?,vulkan?,wayland?]
-	glfw? ( media-libs/glfw )
-	vulkan? ( dev-util/vulkan-utility-libraries)
-    wayland? (
-        >=dev-libs/wayland-1.20.0[${MULTILIB_USEDEP}]
-        >=dev-libs/wayland-protocols-1.15
-    )
+	media-libs/mesa[X?,gles2?,opengl?,vulkan?,wayland?]
+	glfw? (
+		!wayland? ( media-libs/glfw )
+		wayland? ( media-libs/glfw[wayland] )
+	)
+	vulkan? (
+		dev-util/vulkan-headers
+		dev-util/vulkan-utility-libraries
+	)
+	wayland? ( >=dev-libs/wayland-1.20.0 )
+	X? (
+		x11-libs/libX11
+		x11-libs/libX11-xcb
+	)
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${MY_P}
+BDEPEND="dev-lang/python:3"
 
 PATCHES=(
 	"${FILESDIR}"/system-deps.patch

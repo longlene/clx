@@ -15,7 +15,6 @@ LICENSE="GPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/bordeaux-threads
@@ -26,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/yason
 	app-emacs/slime
 "
-BDEPEND=""
 
 src_prepare() {
 	default

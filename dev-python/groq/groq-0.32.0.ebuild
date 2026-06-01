@@ -17,6 +17,7 @@ SRC_URI="https://github.com/groq/groq-python/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/groq-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -36,5 +37,3 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/groq-python-${PV}

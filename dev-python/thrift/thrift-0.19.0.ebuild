@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 DISTUTILS_EXT=1
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1
 
 DESCRIPTION="Python implementation of Thrift"
@@ -15,5 +15,5 @@ S="${WORKDIR}/${P}/lib/py"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="amd64 ~riscv x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~riscv ~x86-linux"
 RESTRICT="test"

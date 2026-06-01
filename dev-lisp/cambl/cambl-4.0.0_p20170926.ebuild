@@ -14,9 +14,10 @@ SRC_URI="https://github.com/jwiegley/cambl/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-containers
 	dev-lisp/local-time

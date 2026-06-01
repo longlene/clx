@@ -7,7 +7,6 @@ ESVN_REPO_URI="https://lincetorrent.svn.sourceforge.net/svnroot/lincetorrent/tru
 
 inherit subversion
 
-
 #MY_PV="${PV/_}"
 #MY_P="Lince-${MY_PV}"
 
@@ -16,6 +15,7 @@ HOMEPAGE="http://lincetorrent.sourceforge.net"
 
 LICENSE="GPL-3"
 SLOT="0"
+S=${WORKDIR}/${PN}
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="dbus libnotify"
 
@@ -29,8 +29,6 @@ RDEPEND="dev-cpp/gtkmm:2.4
 	libnotify? ( x11-libs/libnotify )"
 DEPEND="${RDEPEND}
 	dev-util/intltool"
-
-S=${WORKDIR}/${PN}
 
 src_unpack() {
 	subversion_src_unpack

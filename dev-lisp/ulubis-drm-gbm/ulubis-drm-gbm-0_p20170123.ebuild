@@ -14,9 +14,7 @@ SRC_URI="https://github.com/malcolmstill/ulubis-drm-gbm/archive/${EGIT_COMMIT}.t
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/osicat

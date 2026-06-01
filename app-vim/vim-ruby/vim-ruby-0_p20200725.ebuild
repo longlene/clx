@@ -14,10 +14,3 @@ SRC_URI="https://github.com/vim-ruby/vim-ruby/archive/${EGIT_COMMIT}.tar.gz -> $
 
 LICENSE="as-is"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-
-VIM_PLUGIN_HELPFILES=""
-VIM_PLUGIN_HELPTEXT=""
-VIM_PLUGIN_HELPURI=""
-VIM_PLUGIN_MESSAGES=""
-

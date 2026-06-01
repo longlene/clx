@@ -15,12 +15,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/parse-float
 "
-BDEPEND=""
 
 src_prepare() {
 	default

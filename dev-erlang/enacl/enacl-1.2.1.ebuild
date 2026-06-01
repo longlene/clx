@@ -12,10 +12,8 @@ SRC_URI="https://github.com/jlouis/enacl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/libsodium
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

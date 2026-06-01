@@ -12,12 +12,5 @@ HOMEPAGE="https://github.com/katono/rogue.vim"
 SRC_URI="https://github.com/katono/rogue.vim/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-
-VIM_PLUGIN_HELPFILES=""
-VIM_PLUGIN_HELPTEXT=""
-VIM_PLUGIN_HELPURI=""
-VIM_PLUGIN_MESSAGES=""
-
 S="${WORKDIR}"/${PN}.vim-${PV}
+KEYWORDS="~amd64 ~arm ~x86"

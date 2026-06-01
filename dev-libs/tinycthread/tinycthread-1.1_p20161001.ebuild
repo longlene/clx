@@ -15,9 +15,10 @@ SRC_URI="https://github.com/tinycthread/tinycthread/archive/${EGIT_COMMIT}.tar.g
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
 
 src_configure() {
@@ -27,4 +28,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-

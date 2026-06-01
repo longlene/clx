@@ -12,6 +12,7 @@ SRC_URI="http://4store.org/download/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
+S="${WORKDIR}/${MY_P}"
 KEYWORDS="~amd64 ~x86"
 IUSE="cluster"
 
@@ -28,25 +29,19 @@ DEPEND="media-libs/raptor
 
 RDEPEND="${DEPEND}"
 
-
-S="${WORKDIR}/${MY_P}"
-
-
 pkg_setup() {
 	enewgroup fourstore
 	enewuser  fourstore -1 -1 /var/lib/4store fourstore
 }
 
-
 #src_configure() {
 #}
-
 
 src_install() {
 
 	# patch the Makefiles to use /usr/ instead of /usr/local/
 	find . -name "Makefile" -execdir sed -e "s#/usr/local/#/usr/#" -i {} \;
-	
+
 	MAKEOPTS="-j1" emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodir /var/log/4store
@@ -57,7 +52,7 @@ src_install() {
 	# fix 1777
 	fperms 755 /var/lib/4store
 
-	# fix 755 
+	# fix 755
 	fperms 644 \
 		/usr/share/man/man1/4s-query.1 \
 		/usr/share/man/man1/4s-backend-setup.1 \

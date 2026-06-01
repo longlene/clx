@@ -14,9 +14,7 @@ SRC_URI="https://github.com/synrc/adm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-erlang/active
 	dev-erlang/erlydtl
@@ -25,4 +23,3 @@ RDEPEND="${DEPEND}
 	dev-erlang/n2o
 	dev-erlang/bpe
 "
-BDEPEND=""

@@ -1,0 +1,33 @@
+--- a/csrc/cutlass_extensions/gemm/collective/builders/sm90_gmma_builder_mixed_input.inl
++++ b/csrc/cutlass_extensions/gemm/collective/builders/sm90_gmma_builder_mixed_input.inl
+@@ -210,8 +210,8 @@
+                                                   ElementScale,
+                                                   ElementZero,
+                                                   TileShape_MNK,
+-                                                  StageCountType::bytes,
+-                                                  SmemAlignment>(StageCountType{})
++                                                  SmemAlignment,
++                                                  StageCountType::bytes>(StageCountType{})
+                                             : detail::compute_stage_count_or_override_single_affine_transformed_input<
+                                                   detail::sm90_smem_capacity_bytes,
+                                                   RealElementA,
+@@ -219,15 +219,15 @@
+                                                   ElementScale,
+                                                   ElementZero,
+                                                   TileShape_MNK,
+-                                                  StageCountType::bytes,
+-                                                  SmemAlignment>(StageCountType{}))
++                                                  SmemAlignment,
++                                                  StageCountType::bytes>(StageCountType{}))
+                    : detail::compute_stage_count_or_override<
+                          detail::sm90_smem_capacity_bytes,
+                          ElementAMma,
+                          ElementBMma,
+                          TileShape_MNK,
+-                         StageCountType::bytes,
+-                         SmemAlignment>(StageCountType{});
++                         SmemAlignment,
++                         StageCountType::bytes>(StageCountType{});
+ 
+   using DispatchPolicy = cute::conditional_t<
+       IsMixedInput,

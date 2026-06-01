@@ -13,7 +13,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/3b-bmfont
 	dev-lisp/babel
@@ -39,7 +38,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/static-vectors
 	dev-lisp/trivial-features
 "
-BDEPEND=""
 
 src_prepare() {
 	default

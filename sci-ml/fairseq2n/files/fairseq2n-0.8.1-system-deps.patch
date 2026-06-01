@@ -1,0 +1,217 @@
+Replace bundled third-party libraries with system packages.
+
+--- a/native/third-party/kaldi-native-fbank.cmake
++++ b/native/third-party/kaldi-native-fbank.cmake
+@@ -6,49 +6,7 @@
+
+ macro(fairseq2n_add_kaldi_native_fbank)
+     if(NOT TARGET kaldi-native-fbank::core)
+-        find_package(Git REQUIRED)
+-
+-        execute_process(
+-            COMMAND
+-                ${GIT_EXECUTABLE} apply ${PROJECT_SOURCE_DIR}/third-party/kaldi-native-fbank.patch
+-            WORKING_DIRECTORY
+-                ${PROJECT_SOURCE_DIR}/third-party/kaldi-native-fbank
+-            ERROR_QUIET
+-        )
+-
+-        set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
+-
+-        set(KALDI_NATIVE_FBANK_BUILD_TESTS  OFF)
+-        set(KALDI_NATIVE_FBANK_BUILD_PYTHON OFF)
+-
+-        set(backup_build_shared_libs ${BUILD_SHARED_LIBS})
+-
+-        # Force the library to be static.
+-        set(BUILD_SHARED_LIBS FALSE)
+-
+-        add_subdirectory(${PROJECT_SOURCE_DIR}/third-party/kaldi-native-fbank EXCLUDE_FROM_ALL)
+-
+-        # Revert.
+-        set(BUILD_SHARED_LIBS ${backup_build_shared_libs})
+-
+-        unset(backup_build_shared_libs)
+-
+-        set_target_properties(kaldi-native-fbank-core PROPERTIES
+-            CXX_VISIBILITY_PRESET
+-                hidden
+-            POSITION_INDEPENDENT_CODE
+-                ON
+-        )
+-
+-        target_include_directories(kaldi-native-fbank-core SYSTEM
+-            PUBLIC
+-                ${PROJECT_SOURCE_DIR}/third-party/kaldi-native-fbank
+-        )
+-
+-        # We depend on the phony torch_cxx11_abi target to ensure that we use
+-        # the same libstdc++ ABI as PyTorch.
+-        target_link_libraries(kaldi-native-fbank-core PRIVATE torch_cxx11_abi)
+-
+-        add_library(kaldi-native-fbank::core ALIAS kaldi-native-fbank-core)
++        find_package(kaldi-native-fbank CONFIG REQUIRED)
++        add_library(kaldi-native-fbank::core ALIAS kaldi-native-fbank::kaldi-native-fbank-core)
+     endif()
+ endmacro()
+--- a/native/third-party/sentencepiece.cmake
++++ b/native/third-party/sentencepiece.cmake
+@@ -6,40 +6,12 @@
+ 
+ macro(fairseq2n_add_sentencepiece)
+     if(NOT TARGET sentencepiece-static)
+-        set(CMAKE_POLICY_DEFAULT_CMP0063 NEW)
+-        set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
+-
+-        # Do not build the shared library.
+-        set(SPM_ENABLE_SHARED OFF)
+-
+-        add_subdirectory(${PROJECT_SOURCE_DIR}/third-party/sentencepiece EXCLUDE_FROM_ALL)
+-
+-        target_compile_features(sentencepiece-static PRIVATE cxx_std_17)
+-
+-        if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+-            # See https://github.com/protocolbuffers/protobuf/issues/6419.
+-            target_compile_options(sentencepiece-static PRIVATE -Wno-stringop-overflow)
+-        endif()
+-
+-        if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+-            target_compile_options(sentencepiece-static PRIVATE -Wno-deprecated-declarations)
+-        endif()
+-
+-        set_target_properties(sentencepiece-static PROPERTIES
+-            CXX_VISIBILITY_PRESET
+-                hidden
+-            POSITION_INDEPENDENT_CODE
+-                ON
+-        )
+-
+-        target_include_directories(sentencepiece-static SYSTEM
+-            PUBLIC
+-                ${PROJECT_SOURCE_DIR}/third-party
+-                ${PROJECT_SOURCE_DIR}/third-party/sentencepiece/third_party/protobuf-lite
+-        )
+-
+-        # We depend on the phony torch_cxx11_abi target to ensure that we use the
+-        # same libstdc++ ABI as PyTorch.
+-        target_link_libraries(sentencepiece-static PRIVATE torch_cxx11_abi)
++        find_package(PkgConfig REQUIRED)
++        pkg_check_modules(sentencepiece_pc REQUIRED IMPORTED_TARGET sentencepiece)
++        find_package(protobuf CONFIG REQUIRED)
++        add_library(sentencepiece-static INTERFACE)
++        target_link_libraries(sentencepiece-static INTERFACE
++            PkgConfig::sentencepiece_pc
++            protobuf::libprotobuf-lite)
+     endif()
+ endmacro()
+--- a/native/third-party/pybind11.cmake
++++ b/native/third-party/pybind11.cmake
+@@ -6,6 +6,6 @@
+ 
+ macro(fairseq2n_add_pybind11)
+     if(NOT TARGET pybind11::module)
+-        add_subdirectory(${PROJECT_SOURCE_DIR}/third-party/pybind11 EXCLUDE_FROM_ALL)
++        find_package(pybind11 REQUIRED)
+     endif()
+ endmacro()
+--- a/native/third-party/libpng.cmake
++++ b/native/third-party/libpng.cmake
+@@ -6,35 +6,7 @@
+ 
+ macro(fairseq2n_add_libpng)
+     if(NOT TARGET png_static)
+-        set(CMAKE_POLICY_DEFAULT_CMP0126 NEW)
+-
+-        set(PNG_SHARED OFF)
+-        set(PNG_STATIC ON)
+-        set(PNG_TESTS  OFF)
+-
+-        if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+-            set(PNG_INTEL_SSE on)
+-        elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "arm64")
+-            set(PNG_ARM_NEON on)
+-        endif()
+-
+-        set(SKIP_INSTALL_ALL TRUE)
+-
+-        add_subdirectory(${PROJECT_SOURCE_DIR}/third-party/libpng EXCLUDE_FROM_ALL)
+-
+-        set_target_properties(png_static PROPERTIES
+-            C_VISIBILITY_PRESET
+-                hidden
+-            POSITION_INDEPENDENT_CODE
+-                ON
+-        )
+-
+-        target_include_directories(png_static SYSTEM
+-            PUBLIC
+-                ${PROJECT_BINARY_DIR}/third-party/libpng
+-                ${PROJECT_SOURCE_DIR}/third-party/libpng
+-        )
+-
+-        unset(SKIP_INSTALL_ALL)
++        find_package(PNG REQUIRED)
++        add_library(png_static ALIAS PNG::PNG)
+     endif()
+ endmacro()
+--- a/native/third-party/libjpeg-turbo.cmake
++++ b/native/third-party/libjpeg-turbo.cmake
+@@ -6,56 +6,7 @@
+ 
+ macro(fairseq2n_add_libjpeg_turbo)
+     if(NOT TARGET jpeg_turbo_static)
+-        if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64" AND NOT DEFINED ENV{ASM_NASM})
+-            find_program(NASM_EXECUTABLE NAMES nasm yasm)
+-            if(NOT NASM_EXECUTABLE)
+-                message(WARNING
+-                    "NASM or YASM compiler cannot be found. libjpeg-turbo won't have SIMD extensions enabled.")
+-            endif()
+-        endif()
+-
+-        include(ExternalProject)
+-
+-        set(prefix ${PROJECT_BINARY_DIR}/third-party/libjpeg-turbo)
+-
+-        set(JPEG_TURBO_LIBRARY ${prefix}/lib/libturbojpeg.a)
+-
+-        set(JPEG_TURBO_INCLUDE_DIR ${prefix}/include)
+-
+-        ExternalProject_Add(
+-            #NAME
+-                jpeg_turbo
+-            PREFIX
+-                ${prefix}
+-            GIT_REPOSITORY
+-                https://github.com/libjpeg-turbo/libjpeg-turbo.git
+-            GIT_TAG
+-                3.0.1
+-            UPDATE_DISCONNECTED
+-                TRUE
+-            CMAKE_GENERATOR
+-                Ninja
+-            CMAKE_ARGS
+-                -DENABLE_SHARED=OFF
+-                -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+-                -DCMAKE_C_VISIBILITY_PRESET=hidden
+-                -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
+-                -DCMAKE_INSTALL_LIBDIR=<INSTALL_DIR>/lib
+-                -DCMAKE_POLICY_DEFAULT_CMP0063=NEW
+-            BUILD_BYPRODUCTS
+-                ${JPEG_TURBO_LIBRARY}
+-        )
+-
+-        file(MAKE_DIRECTORY ${JPEG_TURBO_INCLUDE_DIR})
+-
+-        add_library(jpeg_turbo_static STATIC IMPORTED)
+-
+-        add_dependencies(jpeg_turbo_static jpeg_turbo)
+-
+-        set_property(TARGET jpeg_turbo_static PROPERTY IMPORTED_LOCATION ${JPEG_TURBO_LIBRARY})
+-
+-        target_include_directories(jpeg_turbo_static INTERFACE ${JPEG_TURBO_INCLUDE_DIR})
+-
+-        unset(prefix)
++        find_package(libjpeg-turbo REQUIRED)
++        add_library(jpeg_turbo_static ALIAS libjpeg-turbo::jpeg)
+     endif()
+ endmacro()

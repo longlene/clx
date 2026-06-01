@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://github.com/VikParuchuri/texify
 	https://pypi.org/project/texify/
 "
-SRC_URI="https://github.com/VikParuchuri/texify/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/VikParuchuri/texify/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="GPL-3.0"
 SLOT="0"
@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/transformers-4.36.2[${PYTHON_USEDEP}]
-	>=sci-libs/pytorch-2.1.2[${PYTHON_USEDEP}]
+	>=sci-ml/pytorch-2.1.2[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2.5.2[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-settings-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/pillow-10.1.0[${PYTHON_USEDEP}]

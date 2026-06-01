@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1 pypi
 
@@ -17,6 +17,7 @@ HOMEPAGE="https://github.com/Microsoft/playwright-python"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}/"
 KEYWORDS="amd64"
 
 SRC_URI="
@@ -37,8 +38,6 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RESTRICT="test"
 
 QA_PREBUILT="usr/lib/python*/site-packages/playwright/driver/node"
-
-S="${WORKDIR}/"
 
 pkg_setup() {
 	python_setup

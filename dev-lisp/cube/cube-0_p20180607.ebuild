@@ -11,12 +11,9 @@ DESCRIPTION="Common LISP Kubernetes Client"
 HOMEPAGE="https://github.com/xh4/cube"
 SRC_URI="https://github.com/xh4/cube/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/optima

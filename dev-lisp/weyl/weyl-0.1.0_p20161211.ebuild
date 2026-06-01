@@ -15,9 +15,7 @@ SRC_URI="https://github.com/OdonataResearchLLC/weyl/archive/${EGIT_COMMIT}.tar.g
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 "

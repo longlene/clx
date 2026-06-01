@@ -26,7 +26,6 @@ DEPEND="
 	!gnutls? ( dev-libs/openssl )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

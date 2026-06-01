@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>0xccef@gmail.com</email>
+  </maintainer>
+  <longdescription>
+    Python bindings for Wasmtime, a standalone WebAssembly runtime. Provides a
+    Python API for compiling, instantiating, and executing WebAssembly modules
+    using the Wasmtime engine via ctypes bindings to the C API library.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">bytecodealliance/wasmtime-py</remote-id>
+    <remote-id type="pypi">wasmtime</remote-id>
+  </upstream>
+</pkgmetadata>

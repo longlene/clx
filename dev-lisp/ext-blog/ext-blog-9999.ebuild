@@ -6,16 +6,12 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A BLOG engine which supports custom theme"
 HOMEPAGE="https://github.com/kevinlynx/ext-blog"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/kevinlynx/ext-blog.git"
 
-LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/restas
 dev-lisp/cl-store
@@ -26,4 +22,3 @@ dev-lisp/image
 dev-lisp/file-publisher
 dev-lisp/s-xml-rpc
 dev-lisp/cl-fad"
-

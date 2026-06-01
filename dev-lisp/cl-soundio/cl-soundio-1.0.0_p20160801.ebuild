@@ -7,7 +7,7 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="d8894ea4cd59393518835f2bd44b9bdc78fa4ec7"
 
-DESCRIPTION="Common Lisp bindings for libsoundio to allow direct sound input and output cross-platform"
+DESCRIPTION="Common Lisp bindings for libsoundio to allow direct sound input and output"
 HOMEPAGE="https://github.com/Shirakumo/cl-soundio"
 SRC_URI="https://github.com/Shirakumo/cl-soundio/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -16,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-features

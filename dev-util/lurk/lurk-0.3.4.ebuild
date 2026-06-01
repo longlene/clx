@@ -95,9 +95,7 @@ LICENSE="|| ( MIT Apache-2.0 )"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
 	>=virtual/rust-1.31.0
 "
-

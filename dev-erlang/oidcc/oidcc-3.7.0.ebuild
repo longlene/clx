@@ -21,4 +21,3 @@ RDEPEND="${DEPEND}
 	>=dev-erlang/telemetry_registry-0.3.1
 	>=dev-erlang/jose-1.11.0
 "
-BDEPEND=""

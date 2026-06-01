@@ -14,8 +14,5 @@ SRC_URI="https://github.com/Zulu-Inuoe/trivial-cltl2/archive/${EGIT_COMMIT}.tar.
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

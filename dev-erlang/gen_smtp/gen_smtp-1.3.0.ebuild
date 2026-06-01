@@ -5,18 +5,16 @@ EAPI=8
 
 inherit rebar3
 
-DESCRIPTION="A generic Erlang SMTP server and client that can be extended via callback modules"
+DESCRIPTION="A generic Erlang SMTP server and client that can be extended via callback"
 HOMEPAGE="https://github.com/gen-smtp/gen_smtp"
 SRC_URI="https://github.com/gen-smtp/gen_smtp/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-erlang/hut
 	dev-erlang/ranch
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

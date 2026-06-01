@@ -13,12 +13,9 @@ EGIT_PROJECT="libframeworkd-glib"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 DOCS="README"
 
-
-DEPEND=""
 RDEPEND="dev-libs/dbus-glib"
 
 src_prepare() {

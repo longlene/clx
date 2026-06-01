@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://pypi.org/project/face/
 	https://github.com/mahmoud/face
 "
-SRC_URI="https://github.com/mahmoud/face/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/mahmoud/face/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

@@ -17,6 +17,7 @@ SRC_URI="https://github.com/googleapis/python-logging/archive/refs/tags/v${PV}.t
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/python-logging-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -37,5 +38,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-logging-${PV}

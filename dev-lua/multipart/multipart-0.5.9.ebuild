@@ -13,13 +13,10 @@ SRC_URI="https://github.com/Kong/lua-multipart/archive/refs/tags/${PV}-1.tar.gz 
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/lua-${P}-1
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/lua-${P}-1
 
 lua_src_install() {
 	insinto $(lua_get_lmod_dir)

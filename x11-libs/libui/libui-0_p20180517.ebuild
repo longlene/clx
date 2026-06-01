@@ -14,7 +14,6 @@ SRC_URI="https://github.com/andlabs/libui/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="x11-libs/gtk+:3"
 RDEPEND="${DEPEND}"

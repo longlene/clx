@@ -8,16 +8,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Bringing the speed of Static Dispatch to CLOS"
 HOMEPAGE="https://github.com/guicho271828/inlined-generic-function"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/guicho271828/inlined-generic-function.git"
 
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivia
 	dev-lisp/closer-mop

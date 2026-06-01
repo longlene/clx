@@ -14,18 +14,19 @@ SRC_URI="https://github.com/hiyouga/LLaMA-Factory/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/LlamaFactory-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
 	>=sci-ml/pytorch-2.4.0[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/torchvision-0.19.0[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/torchaudio-2.4.0[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/transformers-4.55.0[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/datasets-2.16.0[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/accelerate-1.3.0[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/peft-0.18.0[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/trl-0.18.0[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/torchdata-0.10.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/torchvision-0.19.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/torchaudio-2.4.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/transformers-4.55.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/datasets-2.16.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/accelerate-1.3.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/peft-0.18.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/trl-0.18.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/torchdata-0.10.0[${PYTHON_SINGLE_USEDEP}]
 	>=dev-python/gradio-4.38.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/matplotlib-3.7.0[${PYTHON_USEDEP}]
@@ -57,5 +58,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/LlamaFactory-${PV}

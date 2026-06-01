@@ -11,14 +11,12 @@ SRC_URI="https://github.com/herth/ltk/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
+S="${WORKDIR}/${PN}"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
 
 RDEPEND="
 	dev-lang/tk
 "
-
-S="${WORKDIR}/${PN}"
 
 CLSYSTEMS="ltk ltk-mw ltk-remote"
 

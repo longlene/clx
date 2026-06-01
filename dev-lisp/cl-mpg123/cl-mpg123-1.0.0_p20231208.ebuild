@@ -16,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-features

@@ -10,11 +10,7 @@ SRC_URI="http://packetstorm.wowhacker.com/UNIX/scanners/ppscan-0.3.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
-IUSE=""
-
-DEPEND=""
-RDEPEND=""
+KEYWORDS="~amd64 ~x86"
 
 src_compile() {
 	gcc -o ppscan ppscan.c -lpthread $CFLAGS || die "failed to compile"

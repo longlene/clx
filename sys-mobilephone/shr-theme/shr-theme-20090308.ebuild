@@ -12,11 +12,7 @@ EGIT_PROJECT="shr-theme"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
-IUSE=""
-
-RDEPEND=""
-DEPEND=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 src_unpack() {
 	git_src_unpack

@@ -13,7 +13,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/trivial-garbage
@@ -21,7 +20,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/jpl-queues
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -14,7 +14,6 @@ SRC_URI="https://github.com/trivial-gray-streams/trivial-gray-streams/archive/${
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
 
 RDEPEND="!dev-lisp/cl-${PN}"
 

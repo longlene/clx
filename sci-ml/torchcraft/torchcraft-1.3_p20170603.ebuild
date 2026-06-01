@@ -16,9 +16,7 @@ SRC_URI="https://github.com/TorchCraft/TorchCraft/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	sci-libs/torch7
 	dev-lua/penlight
@@ -47,5 +45,3 @@ src_install() {
 	insinto $(lua_get_sharedir)/torchcraft
 	doins lua/{_env,init,replayer,utils}.lua
 }
-
-

@@ -14,11 +14,11 @@ SRC_URI="https://github.com/carrotflakes/cl-double-array/archive/${EGIT_COMMIT}.
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

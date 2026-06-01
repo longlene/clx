@@ -3,7 +3,8 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..13} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1
 
 EGIT_COMMIT="d8b12828f8c9d117af45819f97702b82a43fdb0d"
@@ -14,11 +15,7 @@ SRC_URI="https://github.com/Pyrlang/Pyrlang/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-BDEPEND=""
-
 S="${WORKDIR}"/Pyrlang-${EGIT_COMMIT}
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND="${DEPEND}"

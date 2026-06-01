@@ -8,16 +8,13 @@ inherit cmake git-r3
 
 DESCRIPTION="Web is a C++ web framework"
 HOMEPAGE="https://github.com/mpapierski/web"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/mpapierski/web.git"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

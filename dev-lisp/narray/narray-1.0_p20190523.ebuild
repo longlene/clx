@@ -14,13 +14,10 @@ SRC_URI="https://github.com/physcrf/narray/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/utility
 	dev-lisp/complex
 	dev-lisp/cl-ppcre
 "
-BDEPEND=""

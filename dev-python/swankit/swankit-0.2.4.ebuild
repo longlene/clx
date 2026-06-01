@@ -17,6 +17,7 @@ SRC_URI="https://github.com/SwanHubX/SwanLab-Toolkit/archive/refs/tags/v${PV}.ta
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/SwanLab-Toolkit-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -33,5 +34,3 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/SwanLab-Toolkit-${PV}

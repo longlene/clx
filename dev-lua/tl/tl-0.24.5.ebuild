@@ -15,12 +15,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-lua/argparse-0.7.1[${LUA_USEDEP}]
 	>=dev-lua/luafilesystem-1.8.0[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 src_compile() {
 	:

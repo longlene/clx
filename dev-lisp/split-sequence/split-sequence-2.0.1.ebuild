@@ -12,7 +12,9 @@ SRC_URI="https://github.com/sharplispers/${PN}/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	test? ( dev-lisp/fiveam )

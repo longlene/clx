@@ -22,10 +22,12 @@ SRC_URI="https://github.com/actor-framework/actor-framework/archive/${PV}.tar.gz
 LICENSE="|| ( Boost-1.0 BSD )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+
 IUSE="boost benchmarks cash debug doc examples +mem_management nexus riac static test"
+RESTRICT="!test? ( test )"
 
 DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen
+	doc? ( app-text/doxygen
 		dev-texlive/texlive-latex
 		dev-tex/hevea
 	)"

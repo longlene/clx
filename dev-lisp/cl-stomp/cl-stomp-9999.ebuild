@@ -8,7 +8,6 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="STOMP protocol in Common Lisp"
 HOMEPAGE="https://github.com/cpc26/cl-stomp"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/cpc26/cl-stomp.git"
 
@@ -17,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/babel
@@ -28,4 +26,3 @@ src_prepare() {
 	rm -f Makefile
 	use example || rm -f example.lisp ${PN}-example.asd
 }
-

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -16,10 +16,9 @@ SRC_URI="https://github.com/yichen0831/opencc-python/archive/${EGIT_COMMIT}.tar.
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/opencc-python-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -28,5 +27,3 @@ RDEPEND="
 #distutils_enable_tests pytest
 
 RESTRICT="test"
-
-S="${WORKDIR}"/opencc-python-${EGIT_COMMIT}

@@ -17,7 +17,7 @@ HOMEPAGE="
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 ~sparc x86"
+KEYWORDS="amd64 arm arm64 ppc ppc64 x86 ~alpha ~hppa ~loong ~mips ~riscv ~s390 ~sparc"
 
 BDEPEND="
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]

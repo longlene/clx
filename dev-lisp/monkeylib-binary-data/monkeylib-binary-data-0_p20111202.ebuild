@@ -13,10 +13,6 @@ SRC_URI="https://github.com/gigamonkey/monkeylib-binary-data/archive/${EGIT_COMM
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria"
-

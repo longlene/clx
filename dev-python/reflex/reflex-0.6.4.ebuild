@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/fastapi-0.96.0[${PYTHON_USEDEP}]
 	>=dev-python/gunicorn-20.1.0[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
+	>=dev-python/jinja22-3.1.2[${PYTHON_USEDEP}]
 	>=dev-python/psutil-5.9.4[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10.2[${PYTHON_USEDEP}]
 	>=dev-python/python-multipart-0.0.5[${PYTHON_USEDEP}]
@@ -44,7 +44,7 @@ RDEPEND="
 	>=dev-python/httpx-0.25.1[${PYTHON_USEDEP}]
 	>=dev-python/twine-4.0.0[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.12.4[${PYTHON_USEDEP}]
-	>=dev-python/lazy_loader-0.4[${PYTHON_USEDEP}]
+	>=dev-python/lazy-loader-0.4[${PYTHON_USEDEP}]
 	>=dev-python/reflex-chakra-0.6.0[${PYTHON_USEDEP}]
 "
 #BDEPEND="

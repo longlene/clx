@@ -12,15 +12,15 @@ SRC_URI="https://github.com/ultralisp/ultralisp/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-interpol
 	dev-lisp/weblocks-ui
 	test? ( dev-lisp/hamcrest )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

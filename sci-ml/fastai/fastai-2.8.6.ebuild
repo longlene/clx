@@ -17,7 +17,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=sci-ml/torchvision-0.11[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
@@ -38,4 +37,3 @@ RDEPEND="${DEPEND}
 		dev-python/cloudpickle[${PYTHON_USEDEP}]
 	')
 "
-BDEPEND=""

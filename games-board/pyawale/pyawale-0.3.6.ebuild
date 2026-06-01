@@ -1,7 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-IUSE=""
 RESTRICT="nomirror"
 
 DESCRIPTION="PyAwale is a Python implementation of the Ivory Coast rules for Awale."

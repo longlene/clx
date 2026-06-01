@@ -21,13 +21,11 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/mu
 	sci-libs/openblas
 "
-BDEPEND=""
 
 src_prepare() {
 	default

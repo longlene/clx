@@ -14,9 +14,7 @@ SRC_URI="https://github.com/mark-gerarts/cl-pong/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-gamekit
 	dev-lisp/cl-bodge

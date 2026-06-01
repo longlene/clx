@@ -15,7 +15,6 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/file-attributes
@@ -26,4 +25,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/3bz
 	dev-lisp/salza2
 "
-BDEPEND=""

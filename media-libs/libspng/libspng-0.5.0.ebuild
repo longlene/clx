@@ -18,7 +18,6 @@ DEPEND="
 	sys-libs/zlib
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

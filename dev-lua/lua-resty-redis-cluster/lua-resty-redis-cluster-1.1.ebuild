@@ -13,10 +13,7 @@ SRC_URI="https://github.com/api7/lua-resty-redis-cluster/archive/v${PV}.tar.gz -
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS=""
-IUSE=""
 
-DEPEND=""
 RDEPEND="
 	${DEPEND}
 	${LUA_DEPS}

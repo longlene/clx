@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_11 )
+PYTHON_COMPAT=( python3_11 python3_12 python3_13 python3_14  )
 
 inherit distutils-r1 pypi
 
@@ -20,6 +20,5 @@ RDEPEND="
 	>=dev-python/dnspython-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/ifaddr-0.2.0[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"

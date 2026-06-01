@@ -15,12 +15,10 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="
 	${DEPEND}
 	${LUA_DEPS}
 "
-BDEPEND=""
 
 each_src_install() {
 	insinto $(lua_get_lmod_dir)

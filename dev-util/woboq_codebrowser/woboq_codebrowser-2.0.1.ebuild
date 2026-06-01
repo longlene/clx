@@ -13,12 +13,11 @@ SRC_URI="https://github.com/woboq/woboq_codebrowser/archive/${PV}.tar.gz -> ${P}
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND="sys-devel/llvm"
+DEPEND="llvm-core/llvm"
 RDEPEND="${DEPEND}"
 
 src_install() {
-	dobin ${BUILD_DIR}/generator/codebrowser_generator ${BUILD_DIR}/indexgenerator/codebrowser_indexgenerator
+	dobin "${BUILD_DIR}"/generator/codebrowser_generator "${BUILD_DIR}"/indexgenerator/codebrowser_indexgenerator
 	dodoc -r data README.md
 }

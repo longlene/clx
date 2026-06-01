@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		SB-DAEMON:DAEMONIZE forks off a daemonized subprocess. 
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    SB-DAEMON:DAEMONIZE forks off a daemonized subprocess. 
+  </longdescription>
+  <upstream>
+    <remote-id type="github">nikodemus/sb-daemon</remote-id>
+  </upstream>
 </pkgmetadata>

@@ -30,7 +30,7 @@ src_configure() {
 }
 
 src_install() {
-	dolib.so ${BUILD_DIR}/src/libcpp-readline.so*
+	dolib.so "${BUILD_DIR}"/src/libcpp-readline.so*
 	insinto /usr/include
 	doins src/Console.hpp
 	dodoc README.md

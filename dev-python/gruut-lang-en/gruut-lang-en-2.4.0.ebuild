@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1 pypi
 
@@ -17,16 +17,12 @@ SRC_URI="https://github.com/rhasspy/gruut/archive/refs/tags/v${PV}.tar.gz -> gru
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/gruut-${PV}/${PN}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/gruut-${PV}/${PN}
-

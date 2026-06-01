@@ -17,7 +17,6 @@ KEYWORDS="~amd64"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
-DEPEND=""
 RDEPEND="
 	${DEPEND}
 	${LUA_DEPS}
@@ -25,7 +24,6 @@ RDEPEND="
 	dev-lua/lua-cjson[${LUA_USEDEP}]
 	dev-lua/lua-resty-string[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

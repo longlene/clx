@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>0xccef@gmail.com</email>
+  </maintainer>
+  <longdescription>
+    Pyxel is a retro game engine for Python inspired by the PICO-8 fantasy console.
+    It provides pixel art graphics, chiptune sounds, and a simple API for creating
+    8-bit style games. The engine is built with Rust and SDL2 for performance.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">kitao/pyxel</remote-id>
+    <remote-id type="pypi">pyxel</remote-id>
+  </upstream>
+</pkgmetadata>

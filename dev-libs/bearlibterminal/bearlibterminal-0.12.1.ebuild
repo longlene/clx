@@ -6,14 +6,13 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-DESCRIPTION="BearLibTerminal provides a pseudoterminal window with a grid of character cells and a simple yet powerful API for flexible textual output and uncomplicated input processing"
+DESCRIPTION="BearLibTerminal provides a pseudoterminal window with a grid of character"
 HOMEPAGE="https://bitbucket.org/cfyzium/bearlibterminal"
 SRC_URI="https://bitbucket.org/cfyzium/bearlibterminal/get/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="virtual/opengl"
 RDEPEND="${DEPEND}"

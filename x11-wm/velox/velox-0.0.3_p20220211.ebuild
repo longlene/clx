@@ -20,4 +20,3 @@ DEPEND="
 	dev-libs/wayland
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

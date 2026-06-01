@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://github.com/pynickle/git-python
 	https://pypi.org/project/git-python/
 "
-SRC_URI="https://github.com/pynickle/git-python/archive/refs/tags/v1.1.2.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/pynickle/git-python/archive/refs/tags/v1.1.2.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"

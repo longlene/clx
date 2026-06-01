@@ -11,11 +11,7 @@ SRC_URI="https://github.com/helium/erlang-multihash/archive/v${PV}.tar.gz -> erl
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-BDEPEND=""
-
 S="${WORKDIR}/erlang-${P}"
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND="${DEPEND}"

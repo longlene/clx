@@ -11,13 +11,10 @@ SRC_URI="https://github.com/goldsborough/lru-cache/archive/${EGIT_COMMIT}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 src_install() {
 	doheader -r include/lru

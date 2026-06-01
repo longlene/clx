@@ -9,7 +9,6 @@ DESCRIPTION="Bond is a cross-platform framework for working with schematized dat
 HOMEPAGE="https://github.com/Microsoft/bond"
 SRC_URI="https://github.com/Microsoft/bond/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="grpc"

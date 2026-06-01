@@ -16,9 +16,9 @@ RDEPEND=">=dev-python/pygtk-2.0
 	>=media-gfx/gimp-2.2"
 
 src_unpack() {
-	mkdir -p ${S}
+	mkdir -p "${S}"
 	for F in ${A}; do
-		cp ${DISTDIR}/${F} ${S}/
+		cp "${DISTDIR}"/${F} "${S}"/
 	done
 }
 
@@ -32,7 +32,7 @@ src_install() {
 	DDIR=${D}/usr/lib/gimp/2.0/plug-ins
 	mkdir -p ${DDIR}
 	for F in ${A}; do
-		cp ${S}/${F} ${DDIR}/
+		cp "${S}"/${F} ${DDIR}/
 		chmod 755 ${DDIR}/${F}
 	done
 }

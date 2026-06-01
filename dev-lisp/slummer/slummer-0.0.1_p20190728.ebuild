@@ -14,9 +14,7 @@ SRC_URI="https://github.com/thegoofist/slummer/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="AGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/parenscript
 	dev-lisp/lass
@@ -27,4 +25,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-fad
 	dev-lisp/hunchentoot
 "
-BDEPEND=""

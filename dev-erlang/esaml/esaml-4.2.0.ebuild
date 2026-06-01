@@ -17,4 +17,3 @@ DEPEND="
 	dev-erlang/cowboy
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

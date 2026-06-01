@@ -14,9 +14,7 @@ SRC_URI="https://github.com/cbaggers/fn/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/macroexpand-dammit
 	dev-lisp/named-readtables

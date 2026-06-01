@@ -6,7 +6,7 @@ EAPI=8
 
 inherit mercurial
 
-DESCRIPTION="${PN} - interface library to allow C programs to interact with a running VDR, via SVDRP protocol."
+DESCRIPTION="${PN} - interface library to allow C programs to interact with a running"
 
 HOMEPAGE="http://${PN}.geexbox.org/"
 
@@ -17,15 +17,13 @@ LICENSE="LGPL-2.1"
 
 SLOT="0"
 
-KEYWORDS=""
-
 IUSE="doc"
 
 RDEPEND="sys-libs/glibc"
 
 # add build-time dependencies
 DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen )"
+	doc? ( app-text/doxygen )"
 
 S="${WORKDIR}/${PN}"
 

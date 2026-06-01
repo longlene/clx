@@ -19,4 +19,3 @@ DEPEND="
 	media-libs/gsound
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

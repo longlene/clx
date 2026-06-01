@@ -11,6 +11,7 @@ SRC_URI="https://github.com/datastax/cpp-driver/archive/refs/tags/${PV}.tar.gz -
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/cpp-driver-${PV}
 KEYWORDS="~amd64 ~x86"
 IUSE="ssl"
 
@@ -20,8 +21,6 @@ RDEPEND="
 		dev-libs/openssl:0=
 	)"
 DEPEND="${RDEPEND}"
-
-S="${WORKDIR}"/cpp-driver-${PV}
 
 src_prepare() {
 	default

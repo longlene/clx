@@ -14,7 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example doc"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_configure() {

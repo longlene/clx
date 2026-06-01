@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_12 )
+PYTHON_COMPAT=( python3_12 python3_13 python3_14  )
 
 inherit distutils-r1 pypi
 
@@ -16,8 +16,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

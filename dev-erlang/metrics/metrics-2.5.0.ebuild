@@ -11,14 +11,15 @@ SRC_URI="https://github.com/benoitc/erlang-${PN}/archive/${PV}.tar.gz -> erlang-
 
 LICENSE="as-is"
 SLOT="0"
+S="${WORKDIR}"/erlang-${P}
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-lang/erlang-17.1"
 DEPEND="${RDEPEND}"
-
-S="${WORKDIR}"/erlang-${P}
 
 #src_prepare() {
 #	rebar_src_prepare

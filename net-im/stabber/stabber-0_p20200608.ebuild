@@ -21,7 +21,6 @@ DEPEND="
 	net-libs/libmicrohttpd
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

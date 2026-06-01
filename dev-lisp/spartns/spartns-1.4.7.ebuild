@@ -12,9 +12,10 @@ SRC_URI="https://github.com/jpellegrini/spartns/archive/${PV}.tar.gz -> ${P}.tar
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
 
 src_prepare() {
@@ -24,4 +25,3 @@ src_prepare() {
 		rm lisp-unit.lisp spartns-test-package.lisp utils-test.lisp tests.lisp
 	fi
 }
-

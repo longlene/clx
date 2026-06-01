@@ -15,11 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	app-editors/lite-xl
 "
-BDEPEND=""
 
 src_install() {
 	insinto /usr/share/lite-xl/

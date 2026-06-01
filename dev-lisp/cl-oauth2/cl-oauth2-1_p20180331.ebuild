@@ -14,9 +14,7 @@ SRC_URI="https://github.com/MadEarl/cl-oauth2/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/cl-base64
@@ -32,4 +30,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/puri
 	dev-lisp/hunchentoot
 "
-BDEPEND=""

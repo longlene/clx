@@ -14,6 +14,7 @@ SRC_URI="https://github.com/googleapis/google-cloud-python/archive/refs/tags/${P
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/google-cloud-python-${PN}-v${PV}/packages/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/google-cloud-python-${PN}-v${PV}/packages/${PN}

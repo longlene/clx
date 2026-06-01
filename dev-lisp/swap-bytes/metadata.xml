@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		A library for changing endianness of unsigned integers of length 1/2/4/8. Very useful in implementing various network protocols and file formats.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    A library for changing endianness of unsigned integers of length 1/2/4/8. Very useful in implementing various network protocols and file formats.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">sionescu/swap-bytes</remote-id>
+  </upstream>
 </pkgmetadata>

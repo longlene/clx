@@ -15,13 +15,10 @@ SRC_URI="https://github.com/Tieske/binaryheap.lua/archive/refs/tags/version_${MY
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}.lua-version_${MY_PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}.lua-version_${MY_PV}
 
 lua_src_install() {
 	insinto $(lua_get_lmod_dir)

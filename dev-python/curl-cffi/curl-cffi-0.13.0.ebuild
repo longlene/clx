@@ -27,6 +27,7 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/curl_cffi-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -40,8 +41,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/curl_cffi-${PV}
 
 export DOWNLOAD_DIR="${WORKDIR}"
 export INC_DIR="${WORKDIR}"/curl-${CURL_VERSION}/include

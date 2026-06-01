@@ -12,10 +12,11 @@ SRC_URI="https://github.com/crategus/cl-cffi-gtk/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="amd64 ~arm x86"
-IUSE="example test"
+KEYWORDS="amd64 x86 ~arm"
 
-DEPEND=""
+IUSE="example test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/bordeaux-threads
@@ -32,4 +33,3 @@ src_prepare() {
 	use example || rm -rf demo tutorial
 	use test || rm -rf test
 }
-

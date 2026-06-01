@@ -10,13 +10,10 @@ HOMEPAGE="https://huggingface.co/ggerganov/whisper.cpp"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"
 
 MODELS=(
 	"base" "base-q5_1" "base.en" "base.en-q5_1"
@@ -39,8 +36,9 @@ for i in ${MODELS[@]}; do
 	SRC_URI="${SRC_URI} ${i/./-}? ( https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-${i}.bin -> whisper-ggml-${i}.bin )"
 done
 
-IUSE="${IUSE} small-en-tdrz"
 SRC_URI="${SRC_URI} small-en-tdrz? ( https://huggingface.co/akashmjn/tinydiarize-whisper.cpp/resolve/main/ggml-small.en-tdrz.bin -> whisper-ggml-small.en-tdrz.bin )"
+IUSE="${IUSE} small-en-tdrz"
+
 REQUIRED_USE="${REQUIRED_USE} small-en-tdrz )"
 
 whisper_check-reqs() {

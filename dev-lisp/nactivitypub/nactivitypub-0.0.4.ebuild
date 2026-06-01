@@ -13,7 +13,6 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/njson
 	dev-lisp/serapeum
@@ -23,5 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/dexador
 	dev-lisp/quri
 "
-BDEPEND=""
-

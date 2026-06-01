@@ -14,8 +14,7 @@ SRC_URI="https://github.com/gwkkwg/cl-html-parse/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 src_install() {
 	common-lisp-3_src_install

@@ -16,9 +16,6 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=""
-BDEPEND=""
-
 CMAKE_BUILD_TYPE=Debug
 
 src_prepare() {
@@ -42,7 +39,6 @@ src_configure() {
 }
 
 src_install() {
-	dolib.so ${BUILD_DIR}/src/lpython/liblpython_lib.so
+	dolib.so "${BUILD_DIR}"/src/lpython/liblpython_lib.so
 	cmake_src_install
 }
-

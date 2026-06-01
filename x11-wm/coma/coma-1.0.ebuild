@@ -12,11 +12,8 @@ SRC_URI="https://github.com/jorisvink/coma/archive/${PV}-release.tar.gz -> ${P}.
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

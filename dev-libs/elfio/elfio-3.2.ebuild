@@ -5,14 +5,13 @@ EAPI=8
 
 inherit autotools
 
-DESCRIPTION="ELF (Executable and Linkable Format) reader and producer implemented as a C++ library"
+DESCRIPTION="ELF (Executable and Linkable Format) reader and producer implemented as a"
 HOMEPAGE="http://elfio.sourceforge.net/"
 SRC_URI="mirror://sourceforge/elfio/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~x86-fbsd"
-IUSE=""
 
 src_prepare() {
 	eapply_user

@@ -11,15 +11,13 @@ SRC_URI="https://github.com/dmedvinsky/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="GPL-3"
 SLOT="0"
+S=$WORKDIR/$PF
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="x11-libs/gtk+:3"
 DEPEND="${RDEPEND}
 	virutal/pkgconfig
-	>=sys-devel/autoconf-2.65"
-
-S=$WORKDIR/$PF
+	>=dev-build/autoconf-2.65"
 
 src_prepare() {
 	default

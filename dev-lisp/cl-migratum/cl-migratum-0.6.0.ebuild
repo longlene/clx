@@ -12,16 +12,16 @@ SRC_URI="https://github.com/dnaeon/cl-migratum/archive/refs/tags/v${PV}.tar.gz -
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/cl-ascii-table
 	dev-lisp/log4cl
 	test? ( dev-lisp/rove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

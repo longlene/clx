@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A Lua 5.4.7 interpreter written in Rust. Passes the upstream test
+    suite and supports LuaRocks. Provides an interactive REPL with
+    readline editing.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ianm199/lua-rs</remote-id>
+  </upstream>
+</pkgmetadata>

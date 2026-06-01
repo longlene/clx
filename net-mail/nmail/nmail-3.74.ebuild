@@ -20,4 +20,3 @@ DEPEND="
 	dev-db/sqlite
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -15,7 +15,6 @@ DEPEND="dev-libs/libgrapheme"
 RDEPEND="${DEPEND}
 	sys-apps/grep
 "
-BDEPEND=""
 
 src_install() {
 	dobin lchat

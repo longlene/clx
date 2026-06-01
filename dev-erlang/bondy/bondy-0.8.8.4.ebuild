@@ -3,16 +3,12 @@
 
 EAPI=8
 
-DESCRIPTION=""
 HOMEPAGE="
 	https://pypi.org/project/bondy/
 "
-SRC_URI="https://github.com/Leapsight/bondy/archive/refs/tags/0.8.8.4.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/Leapsight/bondy/archive/refs/tags/0.8.8.4.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/Kong/kong/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lua/inspect[${LUA_USEDEP}]
 	dev-lua/luasec[${LUA_USEDEP}]

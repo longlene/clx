@@ -8,16 +8,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Hunchentoot and CL-WHO utility library"
 HOMEPAGE="https://github.com/michaeljforster/hunchentools/"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/michaeljforster/hunchentools.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/hunchentoot
 	dev-lisp/alexandria

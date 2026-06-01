@@ -13,14 +13,11 @@ SRC_URI="https://github.com/Shinmera/file-notify/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-features
 	dev-lisp/documentation-utils
 	dev-lisp/cffi
 "
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

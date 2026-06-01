@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Low-level Lisp for LLVM"
 HOMEPAGE="https://github.com/eudoxia0/corvus"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/eudoxia0/corvus.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre
 dev-lisp/esrap

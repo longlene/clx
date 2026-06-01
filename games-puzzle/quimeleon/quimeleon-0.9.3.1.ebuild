@@ -11,9 +11,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 
-IUSE=""
-
-
 DEPEND=">=dev-cpp/libxmlpp-2.6
 	>=dev-cpp/gtkmm-2.8
 	>=gnome-base/librsvg-2.8.1

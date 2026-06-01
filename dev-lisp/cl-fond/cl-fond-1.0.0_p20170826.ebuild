@@ -14,9 +14,7 @@ SRC_URI="https://github.com/Shirakumo/cl-fond/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi

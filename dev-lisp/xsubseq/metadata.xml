@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		XSubseq provides functions to be able to handle "subseq"s more effieiently. As Common Lisp's subseq copies the data every time, "subseq" and "concatenate" code is very inefficient like the following code.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    XSubseq provides functions to be able to handle "subseq"s more effieiently. As Common Lisp's subseq copies the data every time, "subseq" and "concatenate" code is very inefficient like the following code.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">fukamachi/xsubseq</remote-id>
+  </upstream>
 </pkgmetadata>

@@ -23,6 +23,7 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/Python-Wrapper-for-World-Vocoder-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -35,8 +36,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/Python-Wrapper-for-World-Vocoder-${PV}
 
 src_prepare() {
 	default

@@ -19,6 +19,7 @@ SRC_URI="https://github.com/explosion/spacy-transformers/archive/refs/tags/relea
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/spacy-transformers-release-v${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -45,5 +46,3 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/spacy-transformers-release-v${PV}

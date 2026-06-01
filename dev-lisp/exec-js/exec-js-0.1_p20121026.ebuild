@@ -14,12 +14,9 @@ SRC_URI="https://github.com/LowH/exec-js/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-json
 	dev-lisp/external-program
 "
-BDEPEND=""

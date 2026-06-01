@@ -15,9 +15,7 @@ SRC_URI="https://github.com/akssri/mnist/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/matlisp
 	dev-lisp/ieee-flaots

@@ -8,16 +8,14 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="OpenGL utilities for math, shaders"
 HOMEPAGE="https://github.com/lispgames/glkit"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/lispgames/glkit.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/defpackage-plus

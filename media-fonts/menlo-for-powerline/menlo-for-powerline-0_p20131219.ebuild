@@ -14,8 +14,5 @@ SRC_URI="https://github.com/abertsch/Menlo-for-Powerline/archive/${EGIT_COMMIT}.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
-IUSE=""
-
-DEPEND=""
 
 FONT_SUFFIX="ttf"

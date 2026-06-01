@@ -12,7 +12,6 @@ SRC_URI="https://github.com/RedisLabsModules/RediSearch/archive/v${PV}.tar.gz ->
 LICENSE="AGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-db/redis
@@ -28,6 +27,6 @@ src_configure() {
 
 src_install() {
 	insinto /var/lib/redis/modules
-	doins ${BUILD_DIR}/redisearch.so
+	doins "${BUILD_DIR}"/redisearch.so
 	dodoc README.md
 }

@@ -12,15 +12,15 @@ SRC_URI="https://github.com/40ants/cl-hamcrest/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/split-sequence
 	dev-lisp/cl-ppcre
 "
-BDEPEND=""
 
 src_prepare() {
 	default

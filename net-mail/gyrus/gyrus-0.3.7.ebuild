@@ -9,7 +9,6 @@ SRC_URI="http://ftp.acc.umu.se/pub/GNOME/sources/gyrus/${PV%${PV/?.?/}}/${P}.tar
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 
 RDEPEND=">=gnome-base/gconf-2.0.0
 	>=x11-libs/gtk+-2.4.0

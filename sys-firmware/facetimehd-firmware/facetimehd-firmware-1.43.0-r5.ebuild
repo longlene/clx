@@ -9,11 +9,10 @@ SRC_URI="https://updates.cdn-apple.com/2019/cert/041-88431-20191011-e7ee7d98-287
 
 LICENSE="as-is"
 SLOT="0"
+S=${WORKDIR}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 DEPEND="
 	app-arch/cpio
@@ -22,8 +21,6 @@ DEPEND="
 	net-misc/curl
 	sys-apps/coreutils
 "
-
-S=${WORKDIR}
 
 CAM_IF_OFFSET="204909802"
 CAM_IF_SIZE="2823322"

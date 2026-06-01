@@ -31,7 +31,6 @@ DEPEND="
 	l0? ( dev-libs/level-zero )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

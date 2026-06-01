@@ -11,10 +11,8 @@ SRC_URI="https://github.com/edicl/chunga/archive/refs/tags/v${PV}.tar.gz -> ${P}
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="
 	dev-lisp/trivial-gray-streams
 "
-

@@ -28,7 +28,7 @@ EGO_SUM=(
 	"rsc.io/pdf v0.1.1/go.mod"
 	)
 GO_OPTIONAL=1
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..14}  )
 
 inherit cmake flag-o-matic go-module python-single-r1
 
@@ -92,7 +92,7 @@ BDEPEND="
 	virtual/pkgconfig
 
 	doc? (
-		app-doc/doxygen
+		app-text/doxygen
 		dev-libs/mathjax
 	)
 	test? ( $(python_gen_cond_dep 'dev-python/pytest[${PYTHON_USEDEP}]') )

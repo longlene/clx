@@ -5,14 +5,13 @@ EAPI=8
 
 inherit apache-module
 
-DESCRIPTION="A Fast and Memory-Efficient Web Server Extension Mechanism Using Scripting Language mruby for Apache httpd"
+DESCRIPTION="A Fast and Memory-Efficient Web Server Extension Mechanism Using Scripting"
 HOMEPAGE="http://mod.mruby.org/"
 SRC_URI="https://github.com/matsumotory/mod_mruby/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE=""
 
 APACHE2_MOD_CONF="99_${PN}"
 APACHE2_MOD_DEFINE="MRUBY"

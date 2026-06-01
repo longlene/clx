@@ -14,7 +14,6 @@ SRC_URI="https://github.com/XerTheSquirrel/SquirrelJME/archive/${EGIT_COMMIT}.ta
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND=">=virtual/jre-1.7"
 RDEPEND="
@@ -25,8 +24,7 @@ src_compile() {
 	mkdir build && cd build && ../build.sh
 }
 
-
 src_install() {
-	java-pkg_dojar build/*.jar 
+	java-pkg_dojar build/*.jar
 	dodoc README.md
 }

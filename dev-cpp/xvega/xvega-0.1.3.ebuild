@@ -13,9 +13,7 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-cpp/nlohmann_json-3.12.0
 	>=dev-cpp/xproperty-0.12.1
 "
-BDEPEND=""

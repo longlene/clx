@@ -13,15 +13,13 @@ SRC_URI="https://github.com/asmjit/${PN}/archive/${CommitId}.tar.gz
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${CommitId}
 KEYWORDS="~amd64"
 IUSE="test"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="test? ( dev-cpp/gtest )"
 RESTRICT="!test? ( test )"
-
-S="${WORKDIR}"/${PN}-${CommitId}
 
 src_configure() {
 	mycmakeargs=(

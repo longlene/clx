@@ -8,16 +8,13 @@ inherit git-r3 common-lisp-3
 
 DESCRIPTION="Pure Common Lisp TrueType font renderer for CLX"
 HOMEPAGE="https://github.com/filonenko-mikhail/clx-truetype"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/filonenko-mikhail/clx-truetype.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/clx
 	dev-lisp/zpb-ttf

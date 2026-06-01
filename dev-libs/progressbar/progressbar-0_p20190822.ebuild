@@ -13,9 +13,7 @@ SRC_URI="https://github.com/doches/progressbar/archive/${EGIT_COMMIT}.tar.gz -> 
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="static-libs"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-

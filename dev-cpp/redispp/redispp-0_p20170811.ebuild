@@ -14,9 +14,7 @@ SRC_URI="https://github.com/brianwatling/redispp/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

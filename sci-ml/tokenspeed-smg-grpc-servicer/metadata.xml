@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">lightseekorg/smg</remote-id>
+    <remote-id type="pypi">tokenspeed-smg-grpc-servicer</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    SMG (Scheduler Multi-GPU) gRPC servicer implementations that wrap
+    LLM inference engine backends (vLLM, SGLang, MLX, TokenSpeed) behind
+    a unified gRPC interface defined by tokenspeed-smg-grpc-proto.
+  </longdescription>
+  <use>
+    <flag name="sglang">Enable SGLang inference engine backend support</flag>
+    <flag name="vllm">Enable vLLM inference engine backend support</flag>
+  </use>
+</pkgmetadata>

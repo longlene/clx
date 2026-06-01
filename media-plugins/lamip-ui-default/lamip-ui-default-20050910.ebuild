@@ -10,13 +10,12 @@ SRC_URI="http://fondriest.frederic.free.fr/realisations/lamip/files/src/0.0.3/la
 RESTRICT="nomirror" #as long as it isn't in the official Portage tree
 
 SLOT="0"
+S="${WORKDIR}/controldefault"
 KEYWORDS="~x86"
 IUSE="debug shoutcast"
 
 DEPEND="media-sound/lamip-core
 	>=x11-libs/gtk+-2"
-
-S="${WORKDIR}/controldefault"
 
 src_compile() {
 	autoreconf -vifs || die "error: autoreconf failed!"

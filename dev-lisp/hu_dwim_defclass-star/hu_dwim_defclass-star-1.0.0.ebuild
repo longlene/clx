@@ -12,13 +12,13 @@ SRC_URI="https://github.com/hu-dwim/hu.dwim.defclass-star/archive/refs/tags/v${P
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/hu_dwim_asdf
 "
-BDEPEND=""
 
 src_prepare() {
 	default

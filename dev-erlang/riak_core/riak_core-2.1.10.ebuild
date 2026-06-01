@@ -10,7 +10,6 @@ SRC_URI="https://github.com/basho/riak_core/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-erlang/lager-3.2.4
@@ -24,4 +23,3 @@ DEPEND="
 	>=dev-erlang/clique-0.3.9
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

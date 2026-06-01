@@ -157,5 +157,5 @@ python_test() {
 }
 
 pkg_postinst() {
-	optfeature "using telegram.ext.JobQueue" dev-python/APScheduler
+	optfeature "using telegram.ext.JobQueue" dev-python/apscheduler
 }

@@ -9,14 +9,14 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Efficient and Effective Passage Search via Contextualized Late Interaction over BERT"
+DESCRIPTION="Efficient and Effective Passage Search via Contextualized Late Interaction"
 HOMEPAGE="
 	https://pypi.org/project/colbert-ai/
 "
 SRC_URI="https://github.com/stanford-futuredata/ColBERT/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
+S="${WORKDIR}"/ColBERT-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -40,5 +40,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/ColBERT-${PV}

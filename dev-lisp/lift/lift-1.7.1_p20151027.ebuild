@@ -14,10 +14,11 @@ SRC_URI="https://github.com/gwkkwg/lift/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 src_prepare() {
 	eapply_user
 	use test || rm -r ${PN}-test.asd test
 }
-

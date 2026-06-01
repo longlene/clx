@@ -6,16 +6,14 @@ EAPI=8
 
 inherit git-r3
 
-DESCRIPTION="Guile pipe macros for functional chaining, similar to the UNIX pipe \"|\" operator"
+DESCRIPTION="Guile pipe macros for functional chaining, similar to the UNIX pipe \"|\""
 HOMEPAGE="https://github.com/joshwalters/guile-pipe"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/joshwalters/guile-pipe.git"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="dev-scheme/guile"
 RDEPEND="${DEPEND}"

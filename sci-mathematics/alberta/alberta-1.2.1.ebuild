@@ -8,13 +8,11 @@ SRC_URI="http://www.alberta-fem.de/Downloads/${P/.1}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
+S="${WORKDIR}/${P/.1}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="sci-libs/blas-atlas
 	virtual/opengl"
-
-S="${WORKDIR}/${P/.1}"
 
 src_unpack() {
 	unpack ${A}
@@ -35,5 +33,3 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README THANKS AUTHORS NEWS
 }
-
-

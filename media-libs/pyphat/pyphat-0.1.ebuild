@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-IUSE=""
-
 DESCRIPTION="Python bindings for PHAT."
 HOMEPAGE="http://phat.berlios.de/"
 SRC_URI="http://download.berlios.de/phat/${P}.tar.gz"

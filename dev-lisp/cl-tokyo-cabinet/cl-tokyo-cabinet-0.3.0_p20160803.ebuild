@@ -15,13 +15,11 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/deoxybyte-systems
 	dev-lisp/cffi
 	dev-db/tokyocabinet
 "
-BDEPEND=""
 
 src_prepare() {
 	default

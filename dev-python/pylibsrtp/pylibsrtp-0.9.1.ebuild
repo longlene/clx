@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11,12} )
+PYTHON_COMPAT=( python3_{11,12,13,14}  )
 
 inherit distutils-r1 pypi
 
@@ -20,5 +20,3 @@ DEPEND="net-libs/libsrtp"
 RDEPEND="
 	>=dev-python/cffi-1.0.0[${PYTHON_USEDEP}]
 "
-BDEPEND=""
-

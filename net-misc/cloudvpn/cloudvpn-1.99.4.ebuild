@@ -12,10 +12,9 @@ SRC_URI="http://e-x-a.org/releases/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=net-libs/gnutls-2.4"
-DEPEND="sys-devel/automake
+DEPEND="dev-build/automake
 	${RDEPEND}"
 
 src_compile() {

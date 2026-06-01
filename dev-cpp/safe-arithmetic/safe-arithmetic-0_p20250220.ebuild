@@ -15,11 +15,9 @@ LICENSE="BSL-1.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/boost
 "
-BDEPEND=""
 
 src_install() {
 	doheader -r include/safe{,.hpp}

@@ -8,15 +8,15 @@ PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A Python SDK for Vertex AI, a fully managed, end-to-end platform for data science and machine learning"
+DESCRIPTION="A Python SDK for Vertex AI, a fully managed, end-to-end platform for data"
 HOMEPAGE="
 	https://pypi.org/project/google-cloud-aiplatform/
 	https://github.com/googleapis/python-aiplatform
 "
-SRC_URI="https://github.com/googleapis/python-aiplatform/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/googleapis/python-aiplatform/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
+S="${WORKDIR}"/python-aiplatform-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -40,5 +40,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-aiplatform-${PV}

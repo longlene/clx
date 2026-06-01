@@ -11,6 +11,7 @@ SRC_URI="https://files.viva64.com/${P}-x86_64.tgz"
 
 LICENSE="free-noncomm"
 SLOT="0"
+S="${WORKDIR}/${P}-x86_64"
 KEYWORDS="~amd64"
 IUSE="bash-completion"
 
@@ -20,8 +21,6 @@ QA_PRESTRIPPED="
 	/usr/bin/pvs-studio
 	/usr/bin/plog-converter
 "
-
-S="${WORKDIR}/${P}-x86_64"
 
 src_install() {
 	dobin bin/plog-converter bin/pvs-studio bin/pvs-studio-analyzer

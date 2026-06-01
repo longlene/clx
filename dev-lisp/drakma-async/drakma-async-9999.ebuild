@@ -4,18 +4,14 @@ EAPI=8
 
 DESCRIPTION="An asynchronous version of drakma that runs off of cl-async"
 HOMEPAGE="https://github.com/orthecreedence/drakma-async"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/orthecreedence/drakma-async.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/drakma
 dev-lisp/cl-async
 dev-lisp/flexi-streams"
-

@@ -64,4 +64,3 @@ src_install() {
 	newinitd "${FILESDIR}/${PN}.initd" riak
 	newconfd "${FILESDIR}/${PN}.confd" riak
 }
-

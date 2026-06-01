@@ -14,9 +14,10 @@ SRC_URI="https://github.com/fukamachi/assoc-utils/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
 
 src_prepare() {

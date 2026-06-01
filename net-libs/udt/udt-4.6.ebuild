@@ -9,13 +9,11 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}.sdk.${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
+S="${WORKDIR}/udt4"
 KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/udt4"
 MAKEOPTS="${MAKEOPTS} -j1"
 
 src_compile(){

@@ -13,9 +13,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-erlang/jsx-3.1.0
 	>=dev-erlang/jesse-1.8.1
 "
-BDEPEND=""

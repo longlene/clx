@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		sophia - a modern embeddable key-value database, fast and feature-rich. 
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    sophia - a modern embeddable key-value database, fast and feature-rich. 
+  </longdescription>
+  <upstream>
+    <remote-id type="github">pmwkaa/sophia</remote-id>
+  </upstream>
 </pkgmetadata>

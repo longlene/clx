@@ -5,19 +5,16 @@
 EAPI=8
 inherit common-lisp-3 git-r3
 
-DESCRIPTION="DIFF is a Common Lisp library for computing the unified or context difference between two files."
+DESCRIPTION="DIFF is a Common Lisp library for computing the unified or context"
 HOMEPAGE="http://www.cliki.net/DIFF"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/froydnj/diff.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="!dev-lisp/cl-${PN}"
-
 
 src_prepare() {
 	epatch "${FILESDIR}"/9999-gentoo-fix.patch

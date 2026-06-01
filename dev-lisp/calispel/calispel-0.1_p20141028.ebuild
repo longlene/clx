@@ -14,14 +14,14 @@ SRC_URI="https://github.com/hawkir/calispel/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/jpl-queues
 	dev-lisp/bordeaux-threads
 "
-BDEPEND=""
 
 src_prepare() {
 	default

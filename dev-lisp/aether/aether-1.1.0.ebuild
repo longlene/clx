@@ -13,14 +13,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/policy-cond
 	dev-lisp/cl-heap
 	dev-lisp/global-vars
 "
-BDEPEND=""
 
 src_prepare() {
 	default

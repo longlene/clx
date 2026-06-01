@@ -14,7 +14,6 @@ SRC_URI="https://github.com/kristapsdz/ksql/archive/VERSION_${MY_PV}.tar.gz -> $
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="dev-db/sqlite"
 RDEPEND="${DEPEND}"

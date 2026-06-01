@@ -15,11 +15,9 @@ SRC_URI="https://github.com/explosion/murmurhash/archive/refs/tags/release-v${PV
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-release-v${PV}
 KEYWORDS="~amd64"
 
-RDEPEND=""
 BDEPEND="dev-python/cython[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-release-v${PV}

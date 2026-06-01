@@ -12,12 +12,12 @@ DESCRIPTION="Tools for writing optimized bit-vector routines"
 HOMEPAGE="https://github.com/guicho271828/bit-ops"
 SRC_URI="https://github.com/guicho271828/bit-ops/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/alexandria

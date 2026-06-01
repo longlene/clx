@@ -438,7 +438,7 @@ inherit cargo distutils-r1
 MY_PN="lingua-rs"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="An accurate natural language detection library, suitable for long and short text alike"
+DESCRIPTION="An accurate natural language detection library, suitable for long and short"
 HOMEPAGE="
 	https://pypi.org/project/lingua-language-detector/
 	https://github.com/pemistahl/lingua-rs
@@ -454,10 +454,9 @@ LICENSE+="
 	MIT Unicode-3.0 Unlicense ZLIB
 "
 SLOT="0"
+S="${WORKDIR}"/${MY_P}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -465,5 +464,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}

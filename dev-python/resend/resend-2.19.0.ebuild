@@ -17,6 +17,7 @@ SRC_URI="https://github.com/resend/resend-python/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,6 +31,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-
-S="${WORKDIR}"/${PN}-python-${PV}

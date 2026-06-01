@@ -10,10 +10,8 @@ SRC_URI="https://github.com/archimag/mongo-cl-driver/archive/${PV}.tar.gz -> ${P
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/iterate
 dev-lisp/closer-mop
@@ -25,4 +23,3 @@ dev-lisp/bordeaux-threads
 dev-lisp/cl-async-future
 dev-lisp/cl-async
 dev-lisp/usocket"
-

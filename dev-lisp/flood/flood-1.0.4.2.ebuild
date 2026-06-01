@@ -12,9 +12,10 @@ SRC_URI="https://github.com/epuccini/flood/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/trivial-features
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-who
 	dev-lisp/lparallel
 "
-BDEPEND=""
 
 src_prepare() {
 	default

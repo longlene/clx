@@ -13,10 +13,11 @@ HOMEPAGE="
 	https://pypi.org/project/rio-ui/
 	https://rio.dev/
 "
-SRC_URI="https://github.com/rio-labs/rio/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/rio-labs/rio/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/rio-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -33,7 +34,7 @@ RDEPEND="
 	>=dev-python/ordered-set-4.1.0[${PYTHON_USEDEP}]
 	>=dev-python/path-imports-1.1.2[${PYTHON_USEDEP}]
 	>=dev-python/pillow-10.2[${PYTHON_USEDEP}]
-	>=dev-python/Levenshtein-0.23[${PYTHON_USEDEP}]
+	>=dev-python/levenshtein-0.23[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2024.1[${PYTHON_USEDEP}]
 	>=dev-python/revel-0.9.1[${PYTHON_USEDEP}]
 	>=dev-python/timer-dict-1.0[${PYTHON_USEDEP}]
@@ -52,5 +53,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/rio-${PV}

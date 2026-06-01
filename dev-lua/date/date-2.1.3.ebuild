@@ -13,16 +13,14 @@ SRC_URI="https://github.com/Tieske/date/archive/version_${PV}.tar.gz -> ${P}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+S=${WORKDIR}/${PN}-version_${PV}
+KEYWORDS="~amd64 ~arm ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
 DEPEND="${LUA_DEPS}"
 RDEPEND="${DEPEND}"
 BDEPEND="virtual/pkgconfig"
-
-S=${WORKDIR}/${PN}-version_${PV}
 
 lua_src_install() {
 	insinto $(lua_get_lmod_dir)

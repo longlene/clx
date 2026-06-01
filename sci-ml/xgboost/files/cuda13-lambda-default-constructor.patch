@@ -1,0 +1,62 @@
+--- a/src/common/linalg_op.cu
++++ b/src/common/linalg_op.cu
+@@ -13,6 +13,21 @@
+ #include "xgboost/linalg.h"   // for VectorView
+ 
+ namespace xgboost::linalg::cuda_impl {
++
++// Namespace-scope functor: CUDA 13 CCCL DispatchStreamingReduceByKey
++// default-constructs the key iterator inside streaming_context_t.
++// Local named structs cannot appear in device kernel template instantiations
++// (unlike lambdas handled by --expt-extended-lambda), so this must be at
++// namespace scope. TensorView has no default ctor, so we store ptr + stride.
++struct SmallHistogramKeyFn {
++  float const* ptr{nullptr};
++  std::size_t stride0{1};
++  common::Span<std::size_t> d_sorted_idx{};
++  XGBOOST_DEVICE float operator()(std::size_t i) const {
++    return ptr[stride0 * d_sorted_idx[i]];
++  }
++};
++
+ void SmallHistogram(Context const* ctx, linalg::MatrixView<float const> indices,
+                     common::OptionalWeights const& d_weights, linalg::VectorView<float> bins) {
+   auto n_bins = bins.Size();
+@@ -23,7 +38,7 @@
+   auto d_sorted_idx = dh::ToSpan(sorted_idx);
+ 
+   auto key_it = dh::MakeIndexTransformIter(
+-      [=] XGBOOST_DEVICE(std::size_t i) { return indices(d_sorted_idx[i]); });
++      SmallHistogramKeyFn{indices.Values().data(), indices.Stride(0), d_sorted_idx});
+ 
+   dh::device_vector<std::size_t> counts_out(n_bins + 1, 0);
+   // Obtain the segment boundaries for the segmented sum.
+--- a/src/data/data.cu
++++ b/src/data/data.cu
+@@ -75,13 +75,23 @@
+   std::partial_sum(out->begin(), out->end(), out->begin());
+ }
+ 
++// Namespace-scope functor: CUDA 13 CCCL DispatchStreamingReduceByKey
++// default-constructs the key iterator inside streaming_context_t.
++// Local named structs cannot appear in device kernel template instantiations
++// (unlike lambdas handled by --expt-extended-lambda), so this must be at
++// namespace scope. ArrayInterface<1> has a default ctor so members init fine.
++struct CopyQidKeyFn {
++  ArrayInterface<1> array_interface{};
++  __device__ uint32_t operator()(size_t i) const {
++    return TypedIndex<uint32_t, 1>{array_interface}(i);
++  }
++};
++
+ void CopyQidImpl(Context const* ctx, ArrayInterface<1> array_interface,
+                  std::vector<bst_group_t>* p_group_ptr) {
+   auto& group_ptr_ = *p_group_ptr;
+   auto it = dh::MakeTransformIterator<uint32_t>(
+-      thrust::make_counting_iterator(0ul), [array_interface] __device__(size_t i) {
+-        return TypedIndex<uint32_t, 1>{array_interface}(i);
+-      });
++      thrust::make_counting_iterator(0ul), CopyQidKeyFn{array_interface});
+   dh::caching_device_vector<bool> flag(1);
+   auto d_flag = dh::ToSpan(flag);
+   auto d = DeviceOrd::CUDA(SetDeviceToPtr(array_interface.data));

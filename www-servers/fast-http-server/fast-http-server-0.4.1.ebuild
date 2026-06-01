@@ -11,7 +11,6 @@ SRC_URI="https://github.com/sdogruyol/fast-http-server/archive/v${PV}.tar.gz -> 
 LICENSE="MIT"
 SLOT="0"
 #KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="dev-lang/crystal"
 RDEPEND="${DEPEND}"

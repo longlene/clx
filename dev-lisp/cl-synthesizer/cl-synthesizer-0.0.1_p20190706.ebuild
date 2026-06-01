@@ -14,14 +14,14 @@ SRC_URI="https://github.com/Frechmatz/cl-synthesizer/archive/${EGIT_COMMIT}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-wave-file-writer
 	test? ( dev-lisp/lisp-unit )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

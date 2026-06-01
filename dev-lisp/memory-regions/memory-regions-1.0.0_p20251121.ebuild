@@ -13,9 +13,9 @@ SRC_URI="https://codeberg.org/shinmera/memory-regions/archive/${EGIT_COMMIT}.tar
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/documentation-utils
@@ -24,6 +24,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/static-vectors
 	dev-lisp/mmap
 "
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}

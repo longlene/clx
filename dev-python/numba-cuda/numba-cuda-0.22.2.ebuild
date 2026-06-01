@@ -14,14 +14,12 @@ HOMEPAGE="
 	https://pypi.org/project/numba-cuda/
 	https://github.com/NVIDIA/numba-cuda
 "
-SRC_URI="https://github.com/NVIDIA/numba-cuda/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/NVIDIA/numba-cuda/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

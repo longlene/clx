@@ -12,14 +12,13 @@ SRC_URI="http://common-lisp.net/project/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 RDEPEND="dev-lisp/sbcl"
 
 src_prepare() {
 	rm load.lisp
-	cp ${FILESDIR}/${PV}-load.lisp load.lisp
+	cp "${FILESDIR}"/${PV}-load.lisp load.lisp
 }
 src_compile() {
 	emake DESTDIR="${ED}"/usr clfswm

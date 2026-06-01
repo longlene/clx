@@ -14,9 +14,10 @@ SRC_URI="http://github.com/hu-dwim/hu.dwim.def/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/hu_dwim_asdf
 	dev-lisp/alexandria

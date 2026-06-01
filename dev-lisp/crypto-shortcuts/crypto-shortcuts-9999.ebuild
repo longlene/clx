@@ -8,16 +8,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Collection of common cryptography functions"
 HOMEPAGE="http://shinmera.github.io/crypto-shortcuts/"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/Shinmera/crypto-shortcuts.git"
 
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-base64
 	dev-lisp/ironclad

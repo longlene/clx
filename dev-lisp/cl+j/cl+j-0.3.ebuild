@@ -10,12 +10,9 @@ SRC_URI="http://common-lisp.net/project/cl-plus-j/releases/cl+j-${PV}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cffi
 dev-lisp/trivial-garbage
 dev-lisp/bordeaux-threads"
-

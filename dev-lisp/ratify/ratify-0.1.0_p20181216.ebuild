@@ -14,9 +14,7 @@ SRC_URI="https://github.com/Shinmera/ratify/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/local-time

@@ -14,7 +14,6 @@ SRC_URI="http://code.matthewwild.co.uk/verse/archive/${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 BDEPEND="
 	dev-lua/squish[${LUA_USEDEP}]
@@ -26,7 +25,6 @@ RDEPEND="
 	dev-lua/LuaBitOp[${LUA_USEDEP}]
 "
 DEPEND="${RDEPEND}"
-
 
 lua_src_install() {
 	insinto $(lua_get_lmod_dir)

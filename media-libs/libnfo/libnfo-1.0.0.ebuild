@@ -14,7 +14,7 @@ LICENSE="LGPL-2.1"
 
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 IUSE="debug doc"
 
@@ -22,7 +22,7 @@ RDEPEND="dev-libs/libxml2"
 
 # add build-only dependencies
 DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen )"
+	doc? ( app-text/doxygen )"
 
 #S="${WORKDIR}/${P}"
 

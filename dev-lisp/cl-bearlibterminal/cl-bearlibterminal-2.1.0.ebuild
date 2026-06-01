@@ -13,9 +13,7 @@ SRC_URI="https://gitlab.com/mordocai/cl-bearlibterminal/repository/archive.tar.g
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-autowrap
 "

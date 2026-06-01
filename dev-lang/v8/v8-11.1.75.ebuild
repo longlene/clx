@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit python-any-r1
 
 DESCRIPTION="V8 JavaScript Engine"
@@ -13,9 +13,7 @@ SRC_URI="https://github.com/v8/v8/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_configure() {

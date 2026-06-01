@@ -19,9 +19,8 @@ DEPEND="
 	x11-libs/libX11
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
-	dobin ${BUILD_DIR}/{lde,ldex}
+	dobin "${BUILD_DIR}"/{lde,ldex}
 	einstalldocs
 }

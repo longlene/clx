@@ -4,7 +4,7 @@
 
 EAPI=8
 
-DESCRIPTION="Media Center app using (EFL) for the GUI and GeeXboX libs for playback and information retrieval"
+DESCRIPTION="Media Center app using (EFL) for the GUI and GeeXboX libs for playback and"
 
 HOMEPAGE="http://${PN}.geexbox.org/"
 
@@ -14,7 +14,7 @@ LICENSE="LGPL-2.1"
 
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 IUSE="+theme
 	+bookstore +configuration +music +photo +video +weather

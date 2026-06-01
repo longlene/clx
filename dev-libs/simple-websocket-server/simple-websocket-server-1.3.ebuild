@@ -12,7 +12,6 @@ SRC_URI="https://github.com/eidheim/Simple-WebSocket-Server/archive/v${PV}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/boost

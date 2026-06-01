@@ -10,10 +10,8 @@ SRC_URI="http://mydebian.googlecode.com/files/cgn-008.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/ltk
 sci-visualization/gnuplot"

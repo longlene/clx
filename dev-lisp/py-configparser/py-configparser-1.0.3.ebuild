@@ -7,11 +7,7 @@ DESCRIPTION="implement of the ConfigParser Python module functionality in Common
 HOMEPAGE="http://common-lisp.net/project/py-configparser/"
 SRC_URI="http://common-lisp.net/project/py-configparser/releases/${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-

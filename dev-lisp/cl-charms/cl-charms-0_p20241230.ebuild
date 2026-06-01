@@ -15,7 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	sys-libs/ncurses
 	dev-lisp/cffi

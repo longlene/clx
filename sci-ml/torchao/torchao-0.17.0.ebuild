@@ -15,16 +15,13 @@ SRC_URI="https://github.com/pytorch/ao/archive/refs/tags/v${PV}.tar.gz -> ${P}.g
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/ao-${PV}
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
 "
-BDEPEND=""
 RESTRICT="test"
-
-S="${WORKDIR}"/ao-${PV}
 
 PATCHES=(
 	"${FILESDIR}"/fix-build-order.patch

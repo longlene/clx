@@ -14,11 +14,8 @@ SRC_URI="https://github.com/hdima/erlport/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

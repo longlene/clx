@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1
 
 DESCRIPTION="High-Performance Image Processing Functions"
@@ -17,12 +17,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-python/numpy-1.24.4[${PYTHON_USEDEP}]
 	>=dev-libs/stringzilla-3.10.4[python,${PYTHON_USEDEP}]
 	>=dev-python/simsimd-5.9.2[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"

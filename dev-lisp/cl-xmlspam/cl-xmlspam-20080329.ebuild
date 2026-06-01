@@ -4,17 +4,13 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="XML Stream PAttern Matcher - concise, regexp-like pattern matching on streaming XML"
+DESCRIPTION="XML Stream PAttern Matcher - concise, regexp-like pattern matching on"
 HOMEPAGE="http://common-lisp.net/project/cl-xmlspam/"
 SRC_URI="https://mydebian.googlecode.com/files/${P}.tgz"
 
-LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cxml
 dev-lisp/cl-ppcre"
-

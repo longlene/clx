@@ -29,7 +29,6 @@ DEPEND="
 	mkl? ( sci-libs/mkl )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

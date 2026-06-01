@@ -16,4 +16,3 @@ DEPEND="
 	dev-scheme/guile
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

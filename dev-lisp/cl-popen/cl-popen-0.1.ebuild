@@ -5,14 +5,13 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="Common Lisp library that allows to run a child process and have its input, output and error avaliable as Gray streams."
+DESCRIPTION="Common Lisp library that allows to run a child process and have its input,"
 HOMEPAGE="https://github.com/archimag/cl-popen"
 SRC_URI="http://archimag-lisp-overlay.googlecode.com/files/${P}.tar.bz2"
 
 LICENSE="Lisp LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="dev-lisp/iolib dev-lisp/lift"
 

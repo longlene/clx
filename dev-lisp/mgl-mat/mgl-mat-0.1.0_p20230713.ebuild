@@ -7,16 +7,17 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="94a6351f259fa6d0e0c34e266f72e0cd6bf9881f"
 
-DESCRIPTION="MAT is library for working with multi-dimensional arrays which supports efficient interfacing to foreign and CUDA code"
+DESCRIPTION="MAT is library for working with multi-dimensional arrays which supports"
 HOMEPAGE="https://github.com/melisgl/mgl-mat"
 SRC_URI="https://github.com/melisgl/mgl-mat/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/bordeaux-threads

@@ -17,10 +17,9 @@ SRC_URI="https://github.com/ankushshah89/python-docx2txt/archive/refs/tags/${PV}
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -28,5 +27,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-${P}

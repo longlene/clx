@@ -17,6 +17,7 @@ SRC_URI="https://github.com/pynamodb/PynamoDB/archive/refs/tags/${PV}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/PynamoDB-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/PynamoDB-${PV}

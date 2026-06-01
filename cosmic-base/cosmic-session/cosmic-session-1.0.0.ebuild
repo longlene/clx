@@ -252,15 +252,13 @@ SRC_URI="
 
 LICENSE="GPL-3"
 SLOT="0"
+S="${WORKDIR}"/${PN}-epoch-${PV}
 KEYWORDS="~amd64"
 
 DEPEND="
 	x11-libs/libxkbcommon
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-epoch-${PV}
 
 src_install() {
 	cargo_src_install

@@ -19,7 +19,6 @@ DEPEND="
 	dev-cpp/nameof
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

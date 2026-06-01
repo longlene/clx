@@ -14,7 +14,6 @@ SRC_URI="https://git.openwrt.org/?p=project/uclient.git;a=snapshot;h=${EGIT_COMM
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="dev-libs/ustream-ssl"
 
@@ -22,4 +21,3 @@ src_prepare() {
 		default
 		sed -i 's/-Werror //' CMakeLists.txt
 }
-

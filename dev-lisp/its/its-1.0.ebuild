@@ -12,8 +12,5 @@ SRC_URI="https://github.com/Hexstream/its/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

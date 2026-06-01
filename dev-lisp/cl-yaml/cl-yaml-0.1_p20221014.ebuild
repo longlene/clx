@@ -13,9 +13,10 @@ SRC_URI="https://github.com/eudoxia0/cl-yaml/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-libyaml
 	dev-lisp/alexandria
@@ -32,4 +33,3 @@ src_install() {
 	common-lisp-3_src_install
 	common-lisp-install sources -t all README.md
 }
-

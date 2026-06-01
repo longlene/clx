@@ -10,13 +10,11 @@ SRC_URI="https://zxq9.com/projects/zomp/${P}.tar.xz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-lang/erlang
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_compile() {
 	cd zomp/lib/otpr/zx/${PV} && ./make_zx || die "compile failed"

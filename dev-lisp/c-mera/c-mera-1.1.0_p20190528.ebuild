@@ -14,7 +14,6 @@ SRC_URI="https://github.com/kiselgra/c-mera/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-lisp/sbcl
@@ -29,7 +28,6 @@ QA_PRESTRIPPED="
 	/usr/bin/cm-cuda
 	/usr/bin/cm-opencl
 "
-
 
 src_prepare() {
 	eapply_user

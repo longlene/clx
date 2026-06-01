@@ -15,13 +15,11 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/base
 	dev-lisp/bordeaux-threads
 	dev-lisp/swank-client
 "
-BDEPEND=""
 
 src_prepare() {
 	default

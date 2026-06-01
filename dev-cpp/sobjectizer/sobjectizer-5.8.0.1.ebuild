@@ -12,11 +12,8 @@ SRC_URI="https://github.com/Stiffstream/sobjectizer/archive/v.${PV}.tar.gz -> ${
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 CMAKE_USE_DIR="${S}"/dev
 

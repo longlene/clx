@@ -8,14 +8,12 @@ inherit git-r3
 
 DESCRIPTION="sb - simple webkit browser"
 HOMEPAGE="https://github.com/mutantturkey/sb"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/mutantturkey/sb.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 DEPEND="
 	net-libs/webkit-gtk

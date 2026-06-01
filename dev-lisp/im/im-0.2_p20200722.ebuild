@@ -14,9 +14,7 @@ SRC_URI="https://github.com/lispnik/im/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	media-libs/im
 	dev-lisp/cffi
@@ -24,7 +22,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/serapeum
 	dev-lisp/static-vectors
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

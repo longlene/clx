@@ -13,9 +13,7 @@ SRC_URI="https://github.com/mheily/libkqueue/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

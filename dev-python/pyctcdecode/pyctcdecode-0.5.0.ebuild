@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A fast and lightweight python-based CTC beam search decoder for speech recognition"
+DESCRIPTION="A fast and lightweight python-based CTC beam search decoder for speech"
 HOMEPAGE="
 	https://pypi.org/project/pyctcdecode/
 	https://github.com/kensho-technologies/pyctcdecode
@@ -19,8 +19,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

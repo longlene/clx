@@ -9,13 +9,11 @@ LICENSE="CeCILL"
 SLOT="0"
 KEYWORDS="~x86"
 
-IUSE=""
-
 RDEPEND="media-video/setpwc
 		dev-perl/gtk2-perl"
 
 src_install() {
-	cd ${WORKDIR}/${PN}
+	cd "${WORKDIR}"/${PN}
 	exeinto /usr/bin
 	doexe gtksetpwc.pl || die "install failed"
 	dodoc INSTALL README

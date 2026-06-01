@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10,11} )
+PYTHON_COMPAT=( python3_{10,11,12,13,14}  )
 inherit distutils-r1
 
 DESCRIPTION="Native, async Python gRPC client and server implementation"
@@ -20,6 +20,5 @@ RDEPEND="
 	>=dev-python/anyio-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/async_generator-1.10[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 distutils_enable_tests pytest

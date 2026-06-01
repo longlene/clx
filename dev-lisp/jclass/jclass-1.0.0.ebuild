@@ -13,11 +13,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/float-features
 "
-BDEPEND=""
 
 src_prepare() {
 	default

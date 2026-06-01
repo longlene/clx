@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		S-HTTP-SERVER
-		A Minimal Standalone Common Lisp HTTP Server
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    S-HTTP-SERVER
+    A Minimal Standalone Common Lisp HTTP Server
 
-		S-HTTP-SERVER is a minimal standalone HTTP Server. This simple package is used as a building block in a number of other open source projects.
-	</longdescription>
+    S-HTTP-SERVER is a minimal standalone HTTP Server. This simple package is used as a building block in a number of other open source projects.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">svenvc/s-http-server</remote-id>
+  </upstream>
 </pkgmetadata>

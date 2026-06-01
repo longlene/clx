@@ -4,13 +4,13 @@
 
 EAPI=8
 
-DESCRIPTION="pianod2 is an open-source, multi-source network-controlled music player for use as central music server"
+DESCRIPTION="pianod2 is an open-source, multi-source network-controlled music player for"
 HOMEPAGE="http://deviousfish.com/pianod2/"
 SRC_URI="http://deviousfish.com/Downloads/pianod2/Devel/pianod2-${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="extra"
 
 DEPEND="

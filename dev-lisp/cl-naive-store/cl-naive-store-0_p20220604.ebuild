@@ -14,9 +14,10 @@ SRC_URI="https://gitlab.com/Harag/cl-naive-store/-/archive/${EGIT_COMMIT}/cl-nai
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-fad
 	dev-lisp/split-sequence
@@ -29,4 +30,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-cpus
 	dev-lisp/bordeaux-threads
 "
-BDEPEND=""

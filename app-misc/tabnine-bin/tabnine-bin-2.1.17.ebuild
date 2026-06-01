@@ -12,17 +12,13 @@ SRC_URI="
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-BDEPEND=""
-
 S="${WORKDIR}"
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND="${DEPEND}"
 
 QA_PRESTRIPPED="/usr/bin/TabNine"
 
 src_install() {
-	newbin ${DISTDIR}/${A} TabNine
+	newbin "${DISTDIR}"/${A} TabNine
 }

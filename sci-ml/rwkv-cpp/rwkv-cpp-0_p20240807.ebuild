@@ -17,13 +17,10 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/rwkv.cpp-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/rwkv.cpp-${EGIT_COMMIT}
 
 src_prepare() {
 	default

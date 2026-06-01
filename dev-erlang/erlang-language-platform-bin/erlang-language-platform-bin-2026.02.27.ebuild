@@ -19,9 +19,8 @@ SRC_URI="
 
 LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
-KEYWORDS="~amd64"
-
 S="${WORKDIR}"
+KEYWORDS="~amd64"
 
 src_compile() {
 	:

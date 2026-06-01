@@ -15,7 +15,6 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/str
 	dev-lisp/quri
@@ -28,7 +27,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/jonathan
 	dev-lisp/find-port
 "
-BDEPEND=""
 
 src_prepare() {
 	default

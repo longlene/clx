@@ -11,8 +11,7 @@ SRC_URI="https://github.com/sionescu/bordeaux-threads/archive/refs/tags/v${PV}.t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 RDEPEND="
 	dev-lisp/alexandria

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>Local Overlay</name>
+  </maintainer>
+  <longdescription>
+    A file utility for accessing both local and remote files through a unified
+    interface, supporting S3, GCS, HTTP, and Hugging Face Hub backends.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">allenai/cached_path</remote-id>
+    <remote-id type="pypi">cached-path</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -7,10 +7,8 @@ DESCRIPTION="m9u music server"
 HOMEPAGE="http://sqweek.net/code/m9u/"
 SRC_URI="http://sqweek.net/9p/${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	sys-libs/libixp

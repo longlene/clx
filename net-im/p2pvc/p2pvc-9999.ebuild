@@ -8,14 +8,12 @@ inherit git-r3
 
 DESCRIPTION="A point to point color terminal video chat"
 HOMEPAGE="https://github.com/mofarrell/p2pvc"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/mofarrell/p2pvc.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 DEPEND="
 	media-libs/opencv

@@ -12,10 +12,11 @@ SRC_URI="https://github.com/yandex/pire/archive/release-${PV}.tar.gz -> ${P}.tar
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+
 IUSE="debug extra static test"
+RESTRICT="!test? ( test )"
 
 DEPEND="test? ( dev-util/cppunit )"
-RDEPEND=""
 
 src_prepare() {
 	default

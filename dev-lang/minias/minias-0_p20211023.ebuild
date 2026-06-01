@@ -19,4 +19,3 @@ DEPEND="
 	dev-util/peg
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

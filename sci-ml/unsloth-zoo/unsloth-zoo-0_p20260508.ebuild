@@ -17,6 +17,7 @@ SRC_URI="https://github.com/unslothai/unsloth-zoo/archive/${EGIT_COMMIT}.tar.gz 
 
 LICENSE="LGPL-3"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -50,11 +51,8 @@ RDEPEND="
 		dev-python/filelock[${PYTHON_USEDEP}]
 	')
 "
-BDEPEND=""
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 src_prepare() {
 	rm -rf tests

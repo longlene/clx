@@ -18,4 +18,3 @@ DEPEND="
 	dev-erlang/typerefl
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

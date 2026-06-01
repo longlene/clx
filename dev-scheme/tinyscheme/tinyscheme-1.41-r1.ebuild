@@ -15,9 +15,6 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86 ~arm"
 IUSE="static-libs"
 
-DEPEND=""
-RDEPEND=""
-
 src_prepare() {
 
 	epatch "${FILESDIR}"/${P}-makefile.patch

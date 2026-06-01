@@ -13,9 +13,10 @@ SRC_URI="https://github.com/m2ym/optima/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/closer-mop
@@ -26,4 +27,3 @@ src_prepare() {
 	eapply_user
 	use test || rm -r ${PN}.test.asd test
 }
-

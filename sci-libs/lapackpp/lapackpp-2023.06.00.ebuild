@@ -17,7 +17,6 @@ DEPEND="
 	sci-libs/blaspp
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

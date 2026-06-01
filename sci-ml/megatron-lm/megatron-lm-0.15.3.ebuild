@@ -19,6 +19,7 @@ SRC_URI="https://github.com/NVIDIA/Megatron-LM/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/Megatron-LM-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,7 +33,7 @@ BDEPEND="
 	$(python_gen_cond_dep '
 		dev-python/pybind11[${PYTHON_USEDEP}]
 	')
-	
+
 "
 #BDEPEND="
 #	test? (
@@ -40,8 +41,6 @@ BDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/Megatron-LM-${PV}
 
 src_prepare() {
 	default

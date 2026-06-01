@@ -23,7 +23,6 @@ RDEPEND="
 	www-servers/nginx:*[nginx_modules_http_lua]
 	>=dev-lua/lua-resty-ipmatcher-0.6.1[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

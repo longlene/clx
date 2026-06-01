@@ -12,15 +12,12 @@ SRC_URI="https://github.com/40ants/weblocks-ui/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/parenscript
 	dev-lisp/weblocks-parenscript
 	dev-lisp/quri
 "
-BDEPEND=""
 
 src_prepare() {
 	default

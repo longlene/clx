@@ -13,8 +13,8 @@ SRC_URI="https://github.com/comtihon/mongodb-erlang/archive/refs/tags/${PV}.tar.
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}/${MY_PN}-${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-erlang/bson
@@ -22,6 +22,3 @@ DEPEND="
 	dev-erlang/poolboy
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}/${MY_PN}-${PV}"

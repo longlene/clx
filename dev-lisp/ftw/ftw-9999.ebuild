@@ -8,7 +8,6 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Functional HTTP Request Dispatcher"
 HOMEPAGE="https://github.com/drewc/ftw"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/drewc/ftw.git"
 
@@ -17,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/arnesi
 	dev-lisp/yaclml

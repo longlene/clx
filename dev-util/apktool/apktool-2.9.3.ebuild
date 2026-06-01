@@ -9,14 +9,11 @@ SRC_URI="https://bitbucket.org/iBotPeaches/apktool/downloads/${PN}_${PV}.jar -> 
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="|| ( virtual/jre virtual/jdk )
 	dev-util/android-sdk-update-manager"
-
-S="${WORKDIR}"
 
 src_unpack() {
 	dodir "${S}"

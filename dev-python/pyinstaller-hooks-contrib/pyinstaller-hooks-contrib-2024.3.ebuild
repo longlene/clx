@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -16,8 +16,6 @@ LICENSE="|| ( Apache-2.0 GPL-2 )"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 BDEPEND="
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
 "

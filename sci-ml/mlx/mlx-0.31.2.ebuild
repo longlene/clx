@@ -34,8 +34,7 @@ DEPEND="
 		dev-libs/nccl
 	)
 "
-RDEPEND="
-"
+
 #BDEPEND="
 #	test? (
 #	)

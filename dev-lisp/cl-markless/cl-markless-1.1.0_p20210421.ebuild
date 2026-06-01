@@ -15,12 +15,10 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/trivial-indent
 "
-BDEPEND=""
 
 src_prepare() {
 	default

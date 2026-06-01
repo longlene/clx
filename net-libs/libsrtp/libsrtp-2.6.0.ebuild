@@ -11,7 +11,7 @@ SRC_URI="https://github.com/cisco/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="2/1"
-KEYWORDS="~alpha amd64 arm arm64 ~hppa ~ia64 ~loong ppc ppc64 ~riscv -sparc x86 ~ppc-macos ~x64-macos"
+KEYWORDS="amd64 arm arm64 ppc ppc64 x86 ~alpha ~hppa ~ia64 ~loong ~ppc-macos ~riscv ~x64-macos -sparc"
 IUSE="debug doc nss openssl static-libs test"
 RESTRICT="!test? ( test )"
 

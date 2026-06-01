@@ -15,20 +15,20 @@ IUSE="static"
 DEPEND="virtual/libc"
 
 src_compile() {
-         econf \
-                 $(use_enable static) \
-                 || die
-         make clean || die
-         make || die
+		 econf \
+				 $(use_enable static) \
+				 || die
+		 make clean || die
+		 make || die
 }
 
 src_install() {
-         dodir /usr/bin
-         dobin src/mmsrip
-         chmod 755 ${D}/usr/bin/mmsrip
-         doman doc/mmsrip.1
-         chmod 644 ${D}/usr/share/man/man1/mmsrip.1
+		 dodir /usr/bin
+		 dobin src/mmsrip
+		 chmod 755 "${D}"/usr/bin/mmsrip
+		 doman doc/mmsrip.1
+		 chmod 644 "${D}"/usr/share/man/man1/mmsrip.1
 
-         einstall || die "Installation failed"
-         dodoc AUTHORS COPYING ChangeLog INSTALL NEWS README
+		 einstall || die "Installation failed"
+		 dodoc AUTHORS COPYING ChangeLog INSTALL NEWS README
 }

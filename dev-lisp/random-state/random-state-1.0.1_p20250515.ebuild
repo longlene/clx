@@ -14,10 +14,7 @@ SRC_URI="https://github.com/Shinmera/random-state/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 "
-BDEPEND=""

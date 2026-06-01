@@ -10,10 +10,7 @@ SRC_URI="https://github.com/xach/${PN}/archive/release-${PV}.tar.gz -> ${P}.tgz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-fad
 dev-lisp/html-template"
-

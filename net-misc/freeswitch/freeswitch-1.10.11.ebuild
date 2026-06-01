@@ -22,7 +22,6 @@ DEPEND="
 	dev-libs/libedit
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

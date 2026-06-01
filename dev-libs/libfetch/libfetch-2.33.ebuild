@@ -4,20 +4,16 @@
 EAPI=8
 
 DESCRIPTION="File Transfer Library for URLs"
-HOMEPAGE=""
 SRC_URI="https://sources.archlinux.org/other/libfetch/${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
 	default
-	cp ${FILESDIR}/Makefile Makefile
+	cp "${FILESDIR}"/Makefile Makefile
 }
 
 src_install() {
@@ -26,4 +22,3 @@ src_install() {
 	dolib.so libfetch.so
 	doman fetch.3
 }
-

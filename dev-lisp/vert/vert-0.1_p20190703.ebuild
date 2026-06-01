@@ -14,9 +14,10 @@ SRC_URI="https://github.com/realark/vert/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-sdl2
 	dev-lisp/cl-sdl2-mixer
@@ -30,7 +31,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default
@@ -39,4 +39,3 @@ src_prepare() {
 		rm -rf t
 	fi
 }
-

@@ -12,12 +12,10 @@ SRC_URI="http://www.saturn.in/download/14/ -> ${PN}.zip"
 
 LICENSE="as-is"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="app-arch/unzip"
-RDEPEND=""
 
-S="${WORKDIR}"
 FONT_S="${WORKDIR}/fonts"
 FONT_SUFFIX="ttf"

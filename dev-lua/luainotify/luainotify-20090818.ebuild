@@ -12,16 +12,18 @@ SRC_URI="http://www3.telus.net/taj_khattra/${PN}/${P}.tar.gz"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+
 IUSE="test valgrind"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	<dev-lang/lua-5.2.0
 	valgrind? (
-		dev-util/valgrind
+		dev-debug/valgrind
 		sys-libs/glibc[debug] )"
 DEPEND="${RDEPEND}
 	test? (
-		dev-util/valgrind
+		dev-debug/valgrind
 		sys-libs/glibc[debug] )"
 
 src_prepare() {

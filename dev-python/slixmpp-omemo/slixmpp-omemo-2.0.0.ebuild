@@ -23,7 +23,6 @@ RDEPEND="
 	>=dev-python/twomemo-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"
 

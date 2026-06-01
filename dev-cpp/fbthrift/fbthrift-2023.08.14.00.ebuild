@@ -25,7 +25,6 @@ DEPEND="
 	dev-libs/thrift
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

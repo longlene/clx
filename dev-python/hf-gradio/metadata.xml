@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Extends the huggingface_hub CLI with commands to run, deploy,
+    and interact with Gradio Spaces directly from the terminal.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">gradio-app/hf-gradio</remote-id>
+    <remote-id type="pypi">hf-gradio</remote-id>
+  </upstream>
+</pkgmetadata>

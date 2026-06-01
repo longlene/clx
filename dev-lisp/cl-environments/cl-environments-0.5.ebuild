@@ -12,9 +12,10 @@ SRC_URI="https://github.com/alex-gutev/cl-environments/archive/v${PV}.tar.gz -> 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/anaphora
@@ -22,7 +23,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/collectors
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

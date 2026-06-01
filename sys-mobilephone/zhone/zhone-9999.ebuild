@@ -13,7 +13,7 @@ EGIT_PROJECT="zhone"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="gsm gps readline"
 
 RDEPEND="
@@ -26,7 +26,6 @@ RDEPEND="
 	dev-python/pycairo"
 
 DEPEND="media-libs/edje"
-
 
 src_unpack() {
 	# Fetch and unpack current git sources

@@ -12,12 +12,9 @@ SRC_URI="https://github.com/orthecreedence/cl-libevent2/archive/${EGIT_COMMIT}.t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-libs/libevent
 "
-

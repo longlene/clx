@@ -15,11 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/uiop
 	dev-lisp/alexandria
 	dev-lisp/cl-slug
 	dev-lisp/random-ua
 "
-BDEPEND=""

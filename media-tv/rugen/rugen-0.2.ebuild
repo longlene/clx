@@ -8,8 +8,7 @@ SRC_URI="http://users.pandora.be/acp/rugen/downloads/${PN}-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
-IUSE=""
+KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=media-libs/mlt-0.2 >=x11-libs/gtk+-2.0"
 

@@ -6,18 +6,15 @@ EAPI=8
 
 inherit common-lisp-3 git-r3
 
-DESCRIPTION="A multi bodies systems simulator written in lisp and using automatic differentiation to build equations"
+DESCRIPTION="A multi bodies systems simulator written in lisp and using automatic"
 HOMEPAGE="https://github.com/kayhman/lisphys"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/kayhman/lisphys.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/clunit
 	dev-lisp/alexandria

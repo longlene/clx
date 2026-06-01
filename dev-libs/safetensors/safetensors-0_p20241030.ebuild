@@ -11,13 +11,10 @@ SRC_URI="https://github.com/hsnyder/safetensors.h/archive/${EGIT_COMMIT}.tar.gz 
 
 LICENSE="public-domain"
 SLOT="0"
+S="${WORKDIR}"/safetensors.h-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/safetensors.h-${EGIT_COMMIT}
 
 src_install() {
 	doheader safetensors.h

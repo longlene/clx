@@ -11,7 +11,7 @@ SRC_URI="https://kore.io/releases/${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="debug postgres +ssl +threads"
 
 DEPEND="

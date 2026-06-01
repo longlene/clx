@@ -10,13 +10,10 @@ SRC_URI="https://github.com/nschum/highlight-parentheses.el/archive/${PV}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-
 S="${WORKDIR}"/"${PN}.el-${PV}"
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND="${DEPEND}"
 
 src_install() {
 	elisp-install ${PN} *.el

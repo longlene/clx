@@ -7,18 +7,17 @@ SRC_URI="http://www.0xdeadbeef.info/code/havoc-0.1d.tgz"
 
 SLOT="0"
 LICENSE="GPL-2"
+S=${WORKDIR}/${PN}
 KEYWORDS="x86"
-IUSE=""
 
 DEPEND=">=net-libs/libpcap-0.9.4"
-S=${WORKDIR}/${PN}
 
 src_unpack() {
-	unpack ${A} ; cd ${S}
+	unpack ${A} ; cd "${S}"
 }
 
 src_compile() {
-	./configure --prefix=/usr	
+	./configure --prefix=/usr
 	make CFLAGS="${CFLAGS}" || die
 }
 

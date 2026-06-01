@@ -12,10 +12,11 @@ SRC_URI="https://github.com/pnathan/pp-toml/archive/v${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-ppcre

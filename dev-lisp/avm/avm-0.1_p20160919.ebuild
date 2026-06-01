@@ -8,16 +8,17 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="0f42fa59eed6a7722b1002b00428be5d21e1caa9"
 
-DESCRIPTION="Efficient and expressive arrayed vector math library with multi-threading and CUDA support in Common Lisp"
+DESCRIPTION="Efficient and expressive arrayed vector math library with multi-threading"
 HOMEPAGE="https://github.com/takagi/avm"
 SRC_URI="https://github.com/takagi/avm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-tuples
 	dev-lisp/cl-pattern

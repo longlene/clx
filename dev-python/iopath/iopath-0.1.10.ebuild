@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A python library that provides common I/O interface across different storage backends"
+DESCRIPTION="A python library that provides common I/O interface across different storage"
 HOMEPAGE="
 	https://pypi.org/project/iopath/
 	https://github.com/facebookresearch/iopath

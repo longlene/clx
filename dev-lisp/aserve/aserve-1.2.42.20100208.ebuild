@@ -6,26 +6,24 @@ inherit common-lisp-3
 MY_PV=${PV:0:6}
 CVS_PV=${PV:7:4}.${PV:11:2}.${PV:13}
 
-DESCRIPTION="A portable version of AllegroServe which is a web application server for Common Lisp programs."
+DESCRIPTION="A portable version of AllegroServe which is a web application server for"
 HOMEPAGE="http://portableaserve.sourceforge.net/
 http://packages.debian.org/untable/web/cl-aserve.html"
 SRC_URI="https://mydebian.googlecode.com/files/cl-portable-aserve_${MY_PV}+cvs.${CVS_PV}.orig.tar.gz"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+S=${WORKDIR}/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}-dfsg/aserve
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 =dev-lisp/htmlgen-${PV}
 =dev-lisp/webactions-${PV}
 =dev-lisp/acl-compat-${PV}"
 
-S=${WORKDIR}/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}-dfsg/aserve
 #src_unpack() {
 #	unpack ${A}
-#	cd ${S}; epatch ${FILESDIR}/${PV}-clisp-gentoo.patch
+#	cd "${S}"; epatch "${FILESDIR}"/${PV}-clisp-gentoo.patch
 #}
 
 src_install() {

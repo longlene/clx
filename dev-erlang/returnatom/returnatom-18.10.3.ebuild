@@ -5,15 +5,12 @@ EAPI=8
 
 inherit rebar3
 
-DESCRIPTION="Erlang library for creating dynamic modules that their functions always yield atom type"
+DESCRIPTION="Erlang library for creating dynamic modules that their functions always"
 HOMEPAGE="https://github.com/Pouriya-Jahanbakhsh/returnatom"
 SRC_URI="https://github.com/Pouriya-Jahanbakhsh/returnatom/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

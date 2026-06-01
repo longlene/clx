@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -17,6 +17,7 @@ SRC_URI="https://github.com/lmcinnes/umap/archive/refs/tags/release-${PV}.tar.gz
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/umap-release-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -33,5 +34,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/umap-release-${PV}

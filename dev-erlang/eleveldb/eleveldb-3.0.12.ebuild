@@ -12,9 +12,5 @@ SRC_URI="https://github.com/basho/eleveldb/archive/refs/tags/riak_kv-${PV}.tar.g
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-

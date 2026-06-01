@@ -14,9 +14,7 @@ SRC_URI="https://github.com/fukamachi/mito-auth/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/mito
 	dev-lisp/ironclad

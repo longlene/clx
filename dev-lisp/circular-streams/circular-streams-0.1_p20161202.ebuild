@@ -13,9 +13,7 @@ SRC_URI="https://github.com/fukamachi/circular-streams/archive/${EGIT_COMMIT}.ta
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="amd64 x86 ~arm"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-annot
 dev-lisp/cl-syntax
@@ -25,4 +23,3 @@ src_prepare() {
 	default
 	rm -rf ${PN}-test.asd t
 }
-

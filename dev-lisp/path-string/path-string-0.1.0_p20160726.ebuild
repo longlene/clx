@@ -14,9 +14,10 @@ SRC_URI="https://github.com/wemeetagain/path-string/archive/${EGIT_COMMIT}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/split-sequence

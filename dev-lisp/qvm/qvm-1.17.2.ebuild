@@ -12,9 +12,10 @@ SRC_URI="https://github.com/quil-lang/qvm/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/abstract-classes
@@ -30,9 +31,8 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-features
 	test? ( dev-lisp/fiasco )
 "
-BDEPEND=""
 
 src_prepare() {
 	default
-	use test || rm -r ${PN}-tests.asd tests ${PN}-examples.asd examples ${PN}-benchmarks.asd bench ${PN}-app.asd app ${PN}-app-tests.asd 
+	use test || rm -r ${PN}-tests.asd tests ${PN}-examples.asd examples ${PN}-benchmarks.asd bench ${PN}-app.asd app ${PN}-app-tests.asd
 }

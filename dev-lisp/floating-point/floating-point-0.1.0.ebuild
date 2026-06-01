@@ -13,7 +13,5 @@ SRC_URI="https://github.com/OdonataResearchLLC/floating-point/archive/v${PV}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

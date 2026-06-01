@@ -13,7 +13,6 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/serapeum
 	dev-lisp/alexandria
@@ -21,7 +20,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/nibbles-streams
 	dev-lisp/stateless-iterators
 "
-BDEPEND=""
 
 src_prepare() {
 	default

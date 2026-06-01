@@ -8,6 +8,7 @@ SRC_URI="mirror://sourceforge/bmeps/${P}-a.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
+S=${WORKDIR}/${PN}
 KEYWORDS="~x86"
 
 IUSE="jpeg"
@@ -15,10 +16,6 @@ IUSE="jpeg"
 DEPEND="sys-libs/zlib
 	media-libs/libpng
 	jpeg? ( media-libs/jpeg )"
-
-
-
-S=${WORKDIR}/${PN}
 
 src_compile() {
 

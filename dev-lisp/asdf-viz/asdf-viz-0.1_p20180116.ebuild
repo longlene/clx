@@ -14,9 +14,7 @@ SRC_URI="https://github.com/guicho271828/asdf-viz/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	app-emacs/slime
 	dev-lisp/iterate

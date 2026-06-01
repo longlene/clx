@@ -27,7 +27,7 @@ src_configure() {
 }
 
 src_install() {
-	cp ${S}_build/libls-hpack.* ${S} || die
+	cp ${S}_build/libls-hpack.* "${S}" || die
 	newheader lshpack.h lshpack.h
 	if [[ $(usex static-libs) == "yes" ]] ; then
 		newlib.a libls-hpack.a libls-hpack.a

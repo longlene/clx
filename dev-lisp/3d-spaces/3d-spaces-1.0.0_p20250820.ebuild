@@ -13,9 +13,9 @@ SRC_URI="https://codeberg.org/shirakumo/3d-spaces/archive/${EGIT_COMMIT}.tar.gz 
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/3d-math
@@ -25,9 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/nibbles
 	dev-lisp/babel
 "
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}
 
 src_prepare() {
 	default

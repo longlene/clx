@@ -49,5 +49,5 @@ src_install() {
 	doins luma/*
 
 	# install the desktop entry
-	domenu ${FILESDIR}/${PN}.desktop
+	domenu "${FILESDIR}"/${PN}.desktop
 }

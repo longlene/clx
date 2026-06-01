@@ -9,10 +9,6 @@ SRC_URI="http://www.code-wizards.com/projects/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND=""
 
 src_compile() {
 	sed -i 's:${CC}:$(CC) $(CFLAGS):;

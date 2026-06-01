@@ -11,6 +11,7 @@ SRC_URI="https://gitlab.com/emilua/emilua/-/archive/v${PV}/emilua-v${PV}.tar.gz 
 
 LICENSE="Boost"
 SLOT="0"
+S="${WORKDIR}"/${PN}-v${PV}
 KEYWORDS="~amd64"
 IUSE="doc"
 
@@ -27,9 +28,6 @@ DEPEND="
 	sys-libs/liburing
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-v${PV}
 
 src_configure() {
 	local emesonargs=(

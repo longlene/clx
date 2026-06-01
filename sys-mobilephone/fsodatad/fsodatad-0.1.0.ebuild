@@ -16,4 +16,3 @@ RDEPEND=">=dev-libs/glib-2.18.0
 	>=net-misc/mobile-broadband-provider-info-20090414"
 DEPEND="${RDEPEND}
 	>=dev-lang/vala-0.7.9"
-

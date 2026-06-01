@@ -13,14 +13,12 @@ SRC_URI="https://github.com/ittner/abelhas/archive/abelhas-${PV}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
 DEPEND="${LUA_DEPS}"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 DOCS=( README luapso.ps )
 

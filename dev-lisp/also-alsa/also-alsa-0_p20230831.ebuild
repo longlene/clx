@@ -14,9 +14,7 @@ SRC_URI="https://github.com/varjagg/also-alsa/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	media-libs/alsa-lib

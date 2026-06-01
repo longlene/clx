@@ -22,4 +22,3 @@ DEPEND="
 	dev-cpp/gflags
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

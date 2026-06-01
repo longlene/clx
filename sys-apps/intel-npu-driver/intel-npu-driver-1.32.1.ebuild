@@ -16,16 +16,13 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/linux-npu-driver-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-cpp/yaml-cpp
 	dev-libs/level-zero-npu-extensions
 "
-BDEPEND=""
-
-S="${WORKDIR}"/linux-npu-driver-${PV}
 
 src_prepare() {
 	default

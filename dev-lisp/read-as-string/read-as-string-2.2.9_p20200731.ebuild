@@ -14,14 +14,11 @@ SRC_URI="https://github.com/hyotang666/read-as-string/archive/${EGIT_COMMIT}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/named-readtables
 	dev-lisp/core-reader
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

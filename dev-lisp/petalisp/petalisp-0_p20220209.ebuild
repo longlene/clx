@@ -14,9 +14,10 @@ SRC_URI="https://github.com/marcoheisig/Petalisp/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/agnostic-lizard
 	dev-lisp/alexandria

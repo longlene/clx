@@ -14,9 +14,7 @@ SRC_URI="https://github.com/mmontone/easy-routes/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/hunchentoot
 	dev-lisp/cl-routes

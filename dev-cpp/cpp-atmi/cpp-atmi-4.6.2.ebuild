@@ -12,7 +12,6 @@ SRC_URI="https://github.com/HerbertKoelman/cpp-atmi/archive/v${PV}.tar.gz -> ${P
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=sys-cluster/tuxedo-12.2.2.0.0

@@ -22,10 +22,10 @@ src_configure() {
 }
 
 src_install() {
-	mkdir -p ${D}/usr/include/
-	mkdir -p ${D}/usr/lib64/
-	cp ${S}_build/libls* ${D}/usr/lib64/
-	cp ${S}/lsxpack_header.h ${D}/usr/include/
-	cp ${S}/lsqpack.h ${D}/usr/include/
+	mkdir -p "${D}"/usr/include/
+	mkdir -p "${D}"/usr/lib64/
+	cp ${S}_build/libls* "${D}"/usr/lib64/
+	cp "${S}"/lsxpack_header.h "${D}"/usr/include/
+	cp "${S}"/lsqpack.h "${D}"/usr/include/
 	einstalldocs
 }

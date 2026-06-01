@@ -13,14 +13,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/boost-json
 	dev-lisp/dexador
 	dev-lisp/lexer
 	dev-lisp/cl-ppcre
 "
-BDEPEND=""
 
 src_prepare() {
 	default

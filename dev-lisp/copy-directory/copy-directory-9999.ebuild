@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Copy a directory"
 HOMEPAGE="https://github.com/ceramic/copy-directory"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/ceramic/copy-directory.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/uiop
 	dev-lisp/cl-fad

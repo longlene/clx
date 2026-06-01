@@ -14,9 +14,10 @@ SRC_URI="https://github.com/yehohanan7/cl-kafka/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/dexador
 	dev-lisp/uuid
@@ -34,4 +35,3 @@ src_prepare() {
 		sed -e '/defsystem\ #:cl-kafka-test/,$d' -i ${PN}.asd
 	fi
 }
-

@@ -14,10 +14,8 @@ SRC_URI="https://github.com/erlangbureau/jamdb_oracle/archive/${EGIT_COMMIT}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-erlang/jose-1.8.0
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

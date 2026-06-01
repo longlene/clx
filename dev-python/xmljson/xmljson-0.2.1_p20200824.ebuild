@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11,12} )
+PYTHON_COMPAT=( python3_{11,12,13,14}  )
 
 inherit distutils-r1
 
@@ -16,9 +16,9 @@ SRC_URI="https://github.com/sanand0/xmljson/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-RDEPEND=""
 BDEPEND="
 	test? (
 		dev-python/lxml[${PYTHON_USEDEP}]
@@ -26,5 +26,3 @@ BDEPEND="
 "
 
 #distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

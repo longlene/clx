@@ -14,9 +14,10 @@ SRC_URI="https://github.com/rpav/CheckL/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="LLGPL BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc test"
 
-DEPEND=""
+IUSE="doc test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/marshal
 	doc? ( dev-lisp/cl-gendoc )

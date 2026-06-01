@@ -14,7 +14,6 @@ SRC_URI="https://github.com/Kong/lua-resty-events/archive/${PV}.tar.gz -> ${P}.t
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

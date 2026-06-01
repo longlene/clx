@@ -15,7 +15,6 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND="dev-libs/boost"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

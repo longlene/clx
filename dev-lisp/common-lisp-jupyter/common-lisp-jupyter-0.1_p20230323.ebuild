@@ -14,9 +14,7 @@ SRC_URI="https://github.com/yitzchak/common-lisp-jupyter/archive/${EGIT_COMMIT}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/babel
@@ -39,4 +37,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/shasht
 	dev-python/jupyter
 "
-BDEPEND=""

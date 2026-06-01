@@ -17,4 +17,3 @@ DEPEND="
 	dev-libs/libpqxx
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

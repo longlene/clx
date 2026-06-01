@@ -12,11 +12,8 @@ SRC_URI="https://github.com/fastdgiot/gen_rpc/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-erlang/hut-1.2
 	>=dev-erlang/ssl_verify_fun-1.1
 "
-BDEPEND=""

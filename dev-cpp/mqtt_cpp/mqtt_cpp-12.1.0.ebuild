@@ -9,7 +9,6 @@ DESCRIPTION="MQTT client for C++14 based on Boost.Asio"
 HOMEPAGE="https://github.com/redboltz/mqtt_cpp"
 SRC_URI="https://github.com/redboltz/mqtt_cpp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="ssl"

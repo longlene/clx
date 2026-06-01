@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://github.com/bdcht/grandalf
 	https://pypi.org/project/grandalf/
 "
-SRC_URI="https://github.com/bdcht/grandalf/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/bdcht/grandalf/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="|| ( GPL-2.0 EPL-1 )"
 SLOT="0"
@@ -22,6 +22,5 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-python/pyparsing[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 distutils_enable_tests pytest

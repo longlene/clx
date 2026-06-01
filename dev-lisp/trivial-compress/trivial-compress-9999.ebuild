@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Compress a directory from Common Lisp"
 HOMEPAGE="https://github.com/ceramic/trivial-compress"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/ceramic/trivial-compress.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/archive

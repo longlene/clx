@@ -17,4 +17,3 @@ DEPEND="
 	media-libs/freetype
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

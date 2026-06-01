@@ -19,6 +19,5 @@ DEPEND="
 	sci-ml/pytorch
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 S="${WORKDIR}"/${P}-R4.2/mod-openvino

@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A text generation method which returns a generator, streaming out each token in real-time during inference"
+DESCRIPTION="A text generation method which returns a generator, streaming out each token"
 HOMEPAGE="
 	https://pypi.org/project/transformers-stream-generator
 	https://github.com/LowinLi/transformers-stream-generator
@@ -30,4 +30,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-

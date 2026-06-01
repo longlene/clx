@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		cl-6502 is a Common Lisp emulator, assembler and disassembler for the MOS 6502 processor
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    cl-6502 is a Common Lisp emulator, assembler and disassembler for the MOS 6502 processor
+  </longdescription>
+  <upstream>
+    <remote-id type="github">kingcons/cl-6502</remote-id>
+  </upstream>
 </pkgmetadata>

@@ -9,9 +9,7 @@ SRC_URI="mirror://sourceforge/$PN/$P.tar.bz2"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="app-shells/bash
 	net-misc/curl"
 

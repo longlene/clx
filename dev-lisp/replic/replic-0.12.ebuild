@@ -12,9 +12,10 @@ SRC_URI="https://github.com/vindarel/replic/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-readline
 	dev-lisp/alexandria
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/py-configparser
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

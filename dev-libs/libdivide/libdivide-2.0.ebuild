@@ -10,11 +10,8 @@ SRC_URI="https://github.com/ridiculousfish/libdivide/archive/v${PV}.tar.gz -> ${
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	insinto /usr/include

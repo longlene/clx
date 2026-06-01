@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -16,11 +16,7 @@ SRC_URI="https://github.com/usingsky/korean_lunar_calendar_py/archive/${EGIT_COM
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/korean_lunar_calendar_py-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-RDEPEND=""
-BDEPEND=""
-
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/korean_lunar_calendar_py-${EGIT_COMMIT}

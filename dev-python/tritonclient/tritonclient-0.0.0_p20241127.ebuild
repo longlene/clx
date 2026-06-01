@@ -4,13 +4,13 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
 EGIT_COMMIT="76e15f2e5eda03546202f98f80576d070a2a8cf4"
 
-DESCRIPTION="Python client library and utilities for communicating with Triton Inference Server"
+DESCRIPTION="Python client library and utilities for communicating with Triton Inference"
 HOMEPAGE="
 	https://github.com/triton-inference-server/client
 	https://pypi.org/project/tritonclient/
@@ -19,6 +19,7 @@ SRC_URI="https://github.com/triton-inference-server/client/archive/${EGIT_COMMIT
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/client-${EGIT_COMMIT}/src/python/library
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -28,8 +29,6 @@ RDEPEND="
 "
 
 RESTRICT="test"
-
-S="${WORKDIR}"/client-${EGIT_COMMIT}/src/python/library
 
 export VERSION="$(ver_cut 1)"
 

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		REASONABLE-UTILITIES (RUTILS) is yet another general purpose utilities package for COMMON-LISP.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    REASONABLE-UTILITIES (RUTILS) is yet another general purpose utilities package for COMMON-LISP.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">mabragor/rutils</remote-id>
+  </upstream>
 </pkgmetadata>

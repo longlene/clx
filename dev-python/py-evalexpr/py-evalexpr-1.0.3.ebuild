@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=maturin
-PYTHON_COMPAT=( python3_13 )
+PYTHON_COMPAT=( python3_12 python3_13 python3_14  )
 
 CRATES="
 	autocfg@1.4.0
@@ -37,21 +37,18 @@ HOMEPAGE="
 	https://pypi.org/project/py-evalexpr/
 "
 SRC_URI="
-	https://github.com/b-kiiskila/py_evalexpr/archive/refs/tags/1.0.3.tar.gz -> ${P}.tar.gz
+	https://github.com/b-kiiskila/py_evalexpr/archive/refs/tags/1.0.3.tar.gz -> ${P}.gh.tar.gz
 	${CARGO_CRATE_URIS}
 "
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/py_evalexpr-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/py_evalexpr-${PV}

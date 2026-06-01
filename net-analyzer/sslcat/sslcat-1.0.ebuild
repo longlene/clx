@@ -8,13 +8,10 @@ SRC_URI="http://www.bindshell.net/tools/sslcat/sslcat.tgz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="dev-libs/openssl"
-
 S="${WORKDIR}"/$PN
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND="dev-libs/openssl"
 
 src_install() {
 	dobin sslcat || die "failed to install sslcat"

@@ -14,15 +14,15 @@ SRC_URI="https://github.com/pve1/shell-utility/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/apply-argv
 	test? ( dev-lisp/fiveam )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

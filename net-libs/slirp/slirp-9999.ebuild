@@ -11,10 +11,7 @@ EGIT_REPO_URI="git://cgit.freedesktop.org/spice/slirp"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS=""
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

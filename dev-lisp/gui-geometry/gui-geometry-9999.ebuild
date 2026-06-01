@@ -8,16 +8,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Generic layout widget with the same nested thinking as OpenGL"
 HOMEPAGE="https://github.com/kennytilton/gui-geometry"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/kennytilton/gui-geometry.git"
 
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cells
 "

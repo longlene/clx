@@ -16,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	media-libs/assimp
@@ -27,4 +26,3 @@ src_prepare() {
 	eapply_user
 	use example || rm -r ${PN}-samples.asd *sample*.lisp files.lisp
 }
-

@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-python/click[${PYTHON_USEDEP}]
-	dev-python/jinja2[${PYTHON_USEDEP}]
+	dev-python/jinja22[${PYTHON_USEDEP}]
 	dev-python/shellingham[${PYTHON_USEDEP}]
 "
 #BDEPEND="

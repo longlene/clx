@@ -5,7 +5,7 @@ EAPI=8
 
 inherit rebar3
 
-DESCRIPTION="OTP library to pragmatically and efficiently encode and decode JSON to Erlang terms"
+DESCRIPTION="OTP library to pragmatically and efficiently encode and decode JSON to"
 HOMEPAGE="https://github.com/nomasystems/njson"
 SRC_URI="https://github.com/nomasystems/njson/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -13,6 +13,4 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

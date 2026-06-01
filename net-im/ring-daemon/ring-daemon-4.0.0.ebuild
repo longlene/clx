@@ -10,7 +10,6 @@ SRC_URI="https://github.com/savoirfairelinux/ring-daemon/archive/${PV}.tar.gz ->
 LICENSE="GPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	net-misc/pjproject

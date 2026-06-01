@@ -14,7 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="tiff"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/zpng
 	dev-lisp/ffa
@@ -39,7 +38,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-soil
 	media-libs/tiff
 "
-BDEPEND=""
 
 src_compile() {
 	emake -C c-source lib

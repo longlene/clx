@@ -14,15 +14,14 @@ SRC_URI="https://github.com/basho/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~ia64 ppc ~sparc x86"
+S="${WORKDIR}/${MY_P}"
+KEYWORDS="amd64 ppc x86 ~arm ~ia64 ~sparc"
 
 DEPEND=">=dev-erlang/riak_pb-2.1.4.2
 	>=dev-lang/erlang-17.1"
 RDEPEND="${DEPEND}"
 
 DOCS=( README.md RELNOTES.md )
-
-S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	rebar_src_prepare

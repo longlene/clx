@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    smallcode is an AI coding agent designed to work efficiently with small
+    LLMs (4B+ active parameters). It achieves 87% benchmark scores while
+    running models locally. Supports multiple providers and includes a TUI
+    interface, RAG indexing, and MCP protocol support.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Doorman11991/smallcode</remote-id>
+  </upstream>
+</pkgmetadata>

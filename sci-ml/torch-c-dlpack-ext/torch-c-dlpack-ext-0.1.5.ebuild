@@ -22,6 +22,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}/addons/torch_c_dlpack_ext
 KEYWORDS="~amd64"
 
 DEPEND+="
@@ -32,8 +33,6 @@ RDEPEND="${DEPEND}
 #BDEPEND="
 #"
 RESTRICT="test"
-
-S="${WORKDIR}"/${MY_P}/addons/torch_c_dlpack_ext
 
 PATCHES=(
 	"${FILESDIR}"/python-fix.patch

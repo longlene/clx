@@ -15,12 +15,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

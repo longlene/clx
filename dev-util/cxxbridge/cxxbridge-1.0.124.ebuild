@@ -76,13 +76,11 @@ SRC_URI="
 
 LICENSE="MIT Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/cxx-${PV}/gen/cmd
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
-S="${WORKDIR}"/cxx-${PV}/gen/cmd
 DOCS=( "${WORKDIR}"/cxx-${PV}/README.md )
 
 src_install() {

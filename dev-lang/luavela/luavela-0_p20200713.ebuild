@@ -14,11 +14,8 @@ SRC_URI="https://github.com/iponweb/luavela/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 CMAKE_MAKEFILE_GENERATOR="emake"
 

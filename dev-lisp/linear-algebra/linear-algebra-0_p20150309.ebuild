@@ -15,9 +15,10 @@ SRC_URI="https://github.com/OdonataResearchLLC/linear-algebra/archive/${EGIT_COM
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="doc test"
 
-DEPEND=""
+IUSE="doc test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/floating-point

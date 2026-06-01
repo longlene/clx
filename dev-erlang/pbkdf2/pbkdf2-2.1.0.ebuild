@@ -11,10 +11,7 @@ SRC_URI="https://github.com/basho/erlang-pbkdf2/archive/${PV}.tar.gz -> erlang-$
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}/erlang-${P}"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}/erlang-${P}"

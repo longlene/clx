@@ -13,7 +13,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-environments
@@ -24,4 +23,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/optima
 	dev-lisp/trivial-types
 "
-BDEPEND=""

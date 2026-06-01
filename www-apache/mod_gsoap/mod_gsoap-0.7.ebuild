@@ -5,14 +5,13 @@ EAPI=8
 
 inherit apache-module
 
-DESCRIPTION="mod_gsoap is an Apache module that allows Apache to serve SOAP requests via the Gsoap library"
+DESCRIPTION="mod_gsoap is an Apache module that allows Apache to serve SOAP requests via"
 HOMEPAGE="https://sourceforge.net/projects/mod-gsoap/"
 SRC_URI="mirror://sourceforge/mod-gsoap/${P}.tar.gz"
 
 LICENSE="GPL-2"
 
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 SLOT="0"
 
 DEPEND="net-libs/gsoap"
@@ -24,4 +23,3 @@ APACHE2_MOD_DEFINE="GSOAP"
 need_apache2
 
 APXS2_S="${S}"/apache_20
-

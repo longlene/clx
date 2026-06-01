@@ -9,10 +9,9 @@ DESCRIPTION="A collection of Clojure refactoring functions for Emacs"
 HOMEPAGE="https://github.com/clojure-emacs/clj-refactor.el"
 SRC_URI="https://github.com/clojure-emacs/clj-refactor.el/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
+S="${WORKDIR}"/${PN}.el-${PV}
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	app-emacs/yasnippet
@@ -26,5 +25,3 @@ DEPEND="
 	app-emacs/subword
 "
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}"/${PN}.el-${PV}

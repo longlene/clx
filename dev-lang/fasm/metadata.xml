@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    The flat assembler (fasm) is a fast, efficient, multi-pass x86
+    assembler that is self-hosting. It supports x86 and x86-64 and
+    produces output in a variety of binary formats.
+  </longdescription>
+  <use>
+    <flag name="libc">
+      Build fasm from source using the libc-interfaced variant (requires
+      a C compiler); without this flag the pre-built binary bootstrap is
+      used directly
+    </flag>
+  </use>
+  <upstream>
+    <remote-id type="sourceforge">fasm</remote-id>
+  </upstream>
+</pkgmetadata>

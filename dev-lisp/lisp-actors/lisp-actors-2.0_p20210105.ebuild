@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivia
 	dev-lisp/optima
@@ -26,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/cffi
 "
-BDEPEND=""
 
 src_prepare() {
 	default

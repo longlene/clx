@@ -9,13 +9,10 @@ SRC_URI="ftp://ftp.easysw.com/pub/newsd/test/${MY_P}-source.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
+S=${WORKDIR}/${MY_P}
 KEYWORDS="~x86"
-IUSE=""
 
 DEPEND="sys-apps/groff"
-RDEPEND=""
-
-S=${WORKDIR}/${MY_P}
 
 src_install() {
 	dodoc ANNOUNCEMENT CHANGES README inn2newsd.sh doc/*
@@ -23,5 +20,5 @@ src_install() {
 	dosbin newsd
 	insinto /etc
 	doins newsd.conf
-	newinitd ${FILESDIR}/newsd.init newsd	
+	newinitd "${FILESDIR}"/newsd.init newsd
 }

@@ -4,14 +4,12 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="closure-common is a helper library for Closure and Closure XML implementing runes."
+DESCRIPTION="closure-common is a helper library for Closure and Closure XML implementing"
 HOMEPAGE="http://www.cliki.net/closure-common"
 SRC_URI="http://archimag-lisp-overlay.googlecode.com/files/${P}.tar.bz2"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="dev-lisp/trivial-gray-streams"
-

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    WebTransport protocol implementation for Erlang supporting both HTTP/2
+    and HTTP/3 transports, providing bidirectional streams and datagrams.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">benoitc/erlang-webtransport</remote-id>
+  </upstream>
+</pkgmetadata>

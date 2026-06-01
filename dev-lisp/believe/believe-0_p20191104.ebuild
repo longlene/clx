@@ -7,20 +7,16 @@ inherit vcs-snapshot
 
 EGIT_COMMIT="98cf8689a75764ab485c78e82ba587cdd1c40c9e"
 
-DESCRIPTION=""
-HOMEPAGE=""
 SRC_URI="https://github.com/luksamuk/believe/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/boehm-gc
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

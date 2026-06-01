@@ -12,14 +12,11 @@ SRC_URI="https://github.com/gwkkwg/clnuplot/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-containers
 	dev-lisp/cl-mathstats
 	dev-lisp/metabang-bind
 	dev-lisp/trivial-shell
 	sci-visualization/gnuplot"
-

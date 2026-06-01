@@ -15,6 +15,5 @@ LICENSE="Apache-2.0"
 
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
 
 RDEPEND="dev-lisp/re"

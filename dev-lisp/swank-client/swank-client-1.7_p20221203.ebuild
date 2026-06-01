@@ -15,14 +15,12 @@ LICENSE="GPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/base
 	dev-lisp/usocket
 	app-emacs/slime
 "
-BDEPEND=""
 
 src_prepare() {
 	default

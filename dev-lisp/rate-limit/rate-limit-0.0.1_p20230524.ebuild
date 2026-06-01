@@ -15,11 +15,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 "
-BDEPEND=""
 
 src_prepare() {
 	default

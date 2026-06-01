@@ -11,12 +11,10 @@ DESCRIPTION="Assembler with input in the form of standard instances"
 HOMEPAGE="https://github.com/robert-strandh/Cluster"
 SRC_URI="https://github.com/robert-strandh/Cluster/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="as-is"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 	dev-lisp/acclimation

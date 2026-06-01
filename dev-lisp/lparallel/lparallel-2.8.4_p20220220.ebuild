@@ -12,10 +12,11 @@ SRC_URI="https://github.com/sharplispers/lparallel/archive/${EGIT_COMMIT}.tar.gz
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/bordeaux-threads
@@ -27,4 +28,3 @@ src_prepare() {
 	rm -rf ${PN}-bench.asd bench
 	use test || rm -rf ${PN}-test.asd test
 }
-

@@ -15,10 +15,11 @@ HOMEPAGE="
 	https://pypi.org/project/misaki/
 	https://github.com/hexgrad/misaki
 "
-SRC_URI="https://github.com/hexgrad/misaki/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/hexgrad/misaki/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,5 +31,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

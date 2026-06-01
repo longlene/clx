@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_OPTIONAL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit cmake distutils-r1
 
@@ -16,6 +16,7 @@ SRC_URI="https://github.com/ashvardanian/StringZilla/archive/refs/tags/v${PV}.ta
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/StringZilla-${PV}
 KEYWORDS="~amd64"
 IUSE="cuda python"
 
@@ -37,8 +38,6 @@ REQUIRED_USE="
 "
 
 RESTRICT="test"
-
-S="${WORKDIR}"/StringZilla-${PV}
 
 wrap_python() {
 	local phase=$1

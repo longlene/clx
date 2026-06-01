@@ -12,10 +12,11 @@ SRC_URI="https://github.com/andy128k/cl-gobject-introspection/archive/${EGIT_COM
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi
@@ -27,4 +28,3 @@ src_prepare() {
 	default
 	use test || rm -rf ${PN}-test.asd test
 }
-

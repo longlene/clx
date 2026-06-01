@@ -12,9 +12,7 @@ SRC_URI="https://common-lisp.net/project/clonsigna/files/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/iolib
 	dev-lisp/cl-base64
@@ -24,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-plus-ssl
 	dev-lisp/babel
 "
-BDEPEND=""

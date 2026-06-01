@@ -8,14 +8,11 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A Decimal Package for Lisp"
 HOMEPAGE="https://wukix.com/lisp-decimal"
-SRC_URI=""
 
 EGIT_REPO_URI="http://wukix.com/dist/wu-decimal.git"
 
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

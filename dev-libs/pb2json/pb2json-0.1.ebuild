@@ -11,7 +11,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="static"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-libs/jansson
 dev-libs/protobuf"

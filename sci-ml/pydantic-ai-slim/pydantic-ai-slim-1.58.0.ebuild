@@ -20,6 +20,7 @@ SRC_URI="https://github.com/pydantic/pydantic-ai/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}/pydantic_ai_slim
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -40,6 +41,3 @@ BDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}/pydantic_ai_slim
-

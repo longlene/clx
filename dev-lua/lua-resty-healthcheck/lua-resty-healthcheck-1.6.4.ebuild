@@ -22,7 +22,6 @@ RDEPEND="
 	dev-lua/penlight[${LUA_USEDEP}]
 	dev-lua/lua-resty-timer[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 DOCS=( readme.md )
 

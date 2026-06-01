@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1 vcs-snapshot
 
@@ -15,14 +15,12 @@ HOMEPAGE="
 	https://pypi.org/project/dirtyjson/
 	https://github.com/codecobblers/dirtyjson
 "
-SRC_URI="https://github.com/codecobblers/dirtyjson/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/codecobblers/dirtyjson/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

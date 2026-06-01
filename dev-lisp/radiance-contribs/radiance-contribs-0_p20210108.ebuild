@@ -15,7 +15,6 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/hunchentoot
 	dev-lisp/cl-ppcre
@@ -36,4 +35,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/woo
 	dev-lisp/http-body
 "
-BDEPEND=""

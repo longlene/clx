@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
@@ -13,10 +13,11 @@ HOMEPAGE="
 	https://github.com/magmax/python-inquirer
 	https://pypi.org/project/inquirer/
 "
-SRC_URI="https://github.com/magmax/python-inquirer/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/magmax/python-inquirer/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -31,5 +32,3 @@ RDEPEND="
 #
 #distutils_enable_tests pytest
 RESTRICT="test"
-
-S="${WORKDIR}"/python-${P}

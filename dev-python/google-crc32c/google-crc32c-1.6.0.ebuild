@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -20,6 +20,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/python-crc32c-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,7 +33,4 @@ RDEPEND="
 
 distutils_enable_tests pytest
 
-S="${WORKDIR}"/python-crc32c-${PV}
-
 export CRC32C_PURE_PYTHON=false
-

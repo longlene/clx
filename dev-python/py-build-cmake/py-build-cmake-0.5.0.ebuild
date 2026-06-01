@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Modern, PEP 517 compliant build backend for creating Python packages with extensions built using CMake"
+DESCRIPTION="Modern, PEP 517 compliant build backend for creating Python packages with"
 HOMEPAGE="
 	https://github.com/tttapa/py-build-cmake
 	https://pypi.org/project/py-build-cmake/
@@ -33,7 +33,7 @@ BDEPEND="
 	>=dev-python/lark-1.1.9[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/nox-2023.4.22[${PYTHON_USEDEP}]
-		>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
+		>=dev-python/jinja22-3.1.2[${PYTHON_USEDEP}]
 	)
 "
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A modular and stable agent sandbox runtime environment for LLM agents.
+    Provides a secure execution environment with FastAPI-based service interface.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">modelscope/ms-enclave</remote-id>
+    <remote-id type="pypi">ms-enclave</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -10,13 +10,10 @@ SRC_URI="http://common-lisp.net/project/xcvb/releases/${P}.tar.bz2"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 >=dev-lisp/asdf-2.016
 dev-lisp/fare-mop
 dev-lisp/fare-memoization
 dev-lisp/uiop"
-

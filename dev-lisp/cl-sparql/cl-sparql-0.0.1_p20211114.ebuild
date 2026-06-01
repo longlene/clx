@@ -15,14 +15,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/puri
 	dev-lisp/parser-combinators
 	dev-lisp/cl-ppcre
 	dev-lisp/split-sequence
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -15,7 +15,6 @@ DEPEND="
 	dev-libs/libyaml
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_compile() {
 	emake PREFIX=/usr

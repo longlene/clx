@@ -15,6 +15,4 @@ LICENSE="epgsql"
 SLOT="0"
 IUSE="src"
 
-RDEPEND=""
 DEPEND="${DEPEND}"
-

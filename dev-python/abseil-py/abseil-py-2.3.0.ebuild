@@ -12,13 +12,10 @@ HOMEPAGE="
 	https://pypi.org/project/absl-py/
 	https://github.com/abseil/abseil-py
 "
-SRC_URI="https://github.com/abseil/abseil-py/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/abseil/abseil-py/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-
-RDEPEND=""
-BDEPEND=""
 
 distutils_enable_tests pytest

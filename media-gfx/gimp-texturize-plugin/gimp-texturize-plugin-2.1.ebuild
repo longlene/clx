@@ -8,13 +8,11 @@ SRC_URI="mirror://sourceforge/gimp-texturize/texturize-${PV}_src.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
+S="$WORKDIR/gimp-texturize"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND=">=media-gfx/gimp-2.3"
 DEPEND="${RDEPEND}"
-
-S="$WORKDIR/gimp-texturize"
 
 src_install() {
 	make DESTDIR="${D}" install

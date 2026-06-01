@@ -14,12 +14,9 @@ SRC_URI="https://github.com/a-nano/xlsx/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/zip
 	dev-lisp/xmls
 	dev-lisp/babel
 "
-BDEPEND=""

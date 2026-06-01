@@ -1,0 +1,153 @@
+Fix compile errors with system fmt v12, bundled zip build issues, and C++20 compatibility.
+
+--- a/native/third-party/zip.cmake
++++ b/native/third-party/zip.cmake
+@@ -13,6 +13,8 @@
+ 
+         add_subdirectory(${PROJECT_SOURCE_DIR}/third-party/zip EXCLUDE_FROM_ALL)
+ 
++        target_compile_options(zip PRIVATE -Wno-stringop-truncation)
++
+         # Revert.
+         set(BUILD_SHARED_LIBS ${backup_build_shared_libs})
+ 
+@@ -26,7 +28,7 @@
+ 
+         target_include_directories(kuba-zip SYSTEM
+             INTERFACE
+-                ${PROJECT_SOURCE_DIR}/third-party/zip/src
++                ${PROJECT_SOURCE_DIR}/third-party
+         )
+     endif()
+ endmacro()
+--- a/native/src/fairseq2n/data/immutable_string.h
++++ b/native/src/fairseq2n/data/immutable_string.h
+@@ -204,6 +204,12 @@
+     return s.remove_suffix(n);
+ }
+ 
++inline std::string_view
++format_as(const immutable_string &s) noexcept
++{
++    return static_cast<std::string_view>(s);
++}
++
+ class FAIRSEQ2_API invalid_utf8_error : public std::domain_error {
+ public:
+     using std::domain_error::domain_error;
+--- a/native/src/fairseq2n/data/zip_data_source.cc
++++ b/native/src/fairseq2n/data/zip_data_source.cc
+@@ -10,6 +10,7 @@
+ #include <cstdint>
+ 
+ #include <fmt/format.h>
++#include <fmt/ranges.h>
+ 
+ #include "fairseq2n/detail/exception.h"
+ #include "fairseq2n/detail/parallel.h"
+--- a/native/src/fairseq2n/data/text/sentencepiece/sp_processor.h
++++ b/native/src/fairseq2n/data/text/sentencepiece/sp_processor.h
+@@ -14,7 +14,7 @@
+ #include <string_view>
+ #include <vector>
+ 
+-#include <sentencepiece/src/sentencepiece_processor.h>
++#include <sentencepiece_processor.h>
+ 
+ #include "fairseq2n/data/text/sentencepiece/sp_model.h"
+ 
+--- a/native/src/fairseq2n/data/text/sentencepiece/sp_processor.cc
++++ b/native/src/fairseq2n/data/text/sentencepiece/sp_processor.cc
+@@ -141,7 +141,7 @@
+
+     auto st = native_->Load(std::move(proto));
+     if (!st.ok())
+-        throw_<std::runtime_error>(st.message());
++        throw_<std::runtime_error>("{}", st.message());
+
+     unk_idx = conditional_cast<std::int32_t>(native_->unk_id());
+     bos_idx = conditional_cast<std::int32_t>(native_->bos_id());
+@@ -162,7 +162,7 @@
+
+     auto st = native_->Encode(text, spt.mutable_proto());
+     if (!st.ok())
+-        throw_<std::runtime_error>(st.message());
++        throw_<std::runtime_error>("{}", st.message());
+
+     return spt;
+ }
+@@ -174,7 +174,7 @@
+
+     auto st = native_->SampleEncode(text, nbest_size, alpha, spt.mutable_proto());
+     if (!st.ok())
+-        throw_<std::runtime_error>(st.message());
++        throw_<std::runtime_error>("{}", st.message());
+
+     return spt;
+ }
+@@ -186,7 +186,7 @@
+
+     auto st = native_->Decode(tokens, &text);
+     if (!st.ok())
+-        throw_<std::runtime_error>(st.message());
++        throw_<std::runtime_error>("{}", st.message());
+
+     return text;
+ }
+--- a/native/src/fairseq2n/data/audio/detail/sndfile.cc
++++ b/native/src/fairseq2n/data/audio/detail/sndfile.cc
+@@ -163,9 +163,9 @@
+         err_msg = "An unknown libsndfile error has occurred.";
+
+     if (err_num == ::SF_ERR_SYSTEM || err_num == ::SF_ERR_UNSUPPORTED_ENCODING)
+-        throw_<std::runtime_error>(err_msg);
++        throw_<std::runtime_error>("{}", err_msg);
+     else
+-        throw_<std::invalid_argument>(err_msg);
++        throw_<std::invalid_argument>("{}", err_msg);
+ }
+
+ }  // namespace fairseq2n::detail
+--- a/native/src/fairseq2n/data/audio/detail/kaldi_fbank.cc
++++ b/native/src/fairseq2n/data/audio/detail/kaldi_fbank.cc
+@@ -63,7 +63,9 @@
+
+     span<const float32> waveform_data = get_waveform_storage();
+
+-    auto compute_fbank = [this, &frame_opts, &fbank_data, &waveform_data](
++    const std::vector<float32> waveform_vec(waveform_data.begin(), waveform_data.end());
++
++    auto compute_fbank = [this, &frame_opts, &fbank_data, &waveform_vec](
+         std::int32_t begin, std::int32_t end)
+     {
+         std::vector<float32> signal_frame{};
+@@ -74,8 +76,7 @@
+             // Extract the frame from the waveform tensor.
+             knf::ExtractWindow(
+                 /*sample_offset=*/0,
+-                waveform_data.data(),
+-                waveform_data.size(),
++                waveform_vec,
+                 frame_nr,
+                 frame_opts,
+                 computer_->window_fn(),
+--- a/native/python/src/fairseq2n/bindings/memory.cc
++++ b/native/python/src/fairseq2n/bindings/memory.cc
+@@ -96,8 +96,16 @@
+             {
+                 using T = memory_block::value_type;
+
++                // pybind11 3.x: 5-arg ctor 4th param is ndim not size; use
++                // 7-arg for 1D. Also resolves ssize() vs std::ssize ambiguity.
+                 return py::buffer_info{
+                     // NOLINTNEXTLINE(cppcoreguidelines-pro-type-const-cast)
+-                    const_cast<T *>(self.data()), sizeof(T), "B", ssize(self), /*readonly=*/true
++                    const_cast<T *>(self.data()),
++                    sizeof(T),
++                    "B",
++                    static_cast<py::ssize_t>(1),
++                    {static_cast<py::ssize_t>(self.size())},
++                    {static_cast<py::ssize_t>(sizeof(T))},
++                    /*readonly=*/true
+                 };
+             })

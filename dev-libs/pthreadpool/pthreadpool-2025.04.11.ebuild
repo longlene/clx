@@ -14,11 +14,12 @@ SRC_URI="https://github.com/Maratyszcza/pthreadpool/archive/${EGIT_COMMIT}.tar.g
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 DEPEND="dev-libs/FXdiv"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-2022.05.09-gentoo.patch

@@ -13,10 +13,9 @@ IUSE="uselocaldir"
 DEPEND=">=sys-apps/sed-4.1.5
 	>=app-arch/tar-1.16.1
 	>=sys-devel/binutils-2.17
-	>=sys-devel/make-3.81
+	>=dev-build/make-3.81
 	>=sys-apps/coreutils-6.9-r1"
 RDEPEND="${DEPEND}"
-
 
 src_unpack(){
 	unpack ${A}
@@ -28,7 +27,6 @@ src_unpack(){
 	cp "${FILESDIR}"/dnetd "${S}"/scripts/
 	epatch "${FILESDIR}"/${P}-linuxconf.patch || die "patch failed"
 }
-
 
 src_compile() {
 #	make depend doesn't work right now:FIXME

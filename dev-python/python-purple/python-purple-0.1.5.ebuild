@@ -20,8 +20,7 @@ DEPEND="
 	net-im/pidgin
 	>=dev-python/cython-0.29.21[${PYTHON_USEDEP}]
 "
-RDEPEND="
-"
+
 BDEPEND="
 	test? (
 		>=dev-python/pytest-xdist-1.29.0[${PYTHON_USEDEP}]

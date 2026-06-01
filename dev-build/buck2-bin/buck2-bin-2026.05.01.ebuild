@@ -18,15 +18,13 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64"
 
 DEPEND="
 	app-arch/zstd
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"
 
 src_install() {
 	newbin ${P} buck2-bin

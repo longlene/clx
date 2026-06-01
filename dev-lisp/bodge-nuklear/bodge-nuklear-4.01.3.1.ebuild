@@ -13,7 +13,6 @@ SRC_URI="https://github.com/borodust/bodge-nuklear/archive/v${PV}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/nuklear

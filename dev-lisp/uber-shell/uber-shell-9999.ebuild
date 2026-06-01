@@ -6,16 +6,12 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Ultimate POSIX-Shell Integration for Steel Bank Common Lisp"
 HOMEPAGE="https://github.com/thephoeron/uber-shell"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/thephoeron/uber-shell.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-fad"
-

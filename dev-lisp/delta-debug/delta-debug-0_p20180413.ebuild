@@ -12,9 +12,10 @@ SRC_URI="https://github.com/eschulte/delta-debug/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/named-readtables

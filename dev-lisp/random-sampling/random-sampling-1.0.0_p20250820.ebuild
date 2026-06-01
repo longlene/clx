@@ -13,17 +13,14 @@ SRC_URI="https://codeberg.org/shinmera/random-sampling/archive/${EGIT_COMMIT}.ta
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/random-state
 	dev-lisp/3d-math
 "
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}
 
 src_prepare() {
 	default

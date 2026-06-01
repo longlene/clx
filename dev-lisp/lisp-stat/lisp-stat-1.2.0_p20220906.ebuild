@@ -15,7 +15,6 @@ LICENSE="MS-PL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/alexandria-plus
@@ -29,7 +28,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/statistics
 	dev-lisp/conduit-packages
 "
-BDEPEND=""
 
 src_prepare() {
 	default

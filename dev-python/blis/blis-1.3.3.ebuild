@@ -20,10 +20,9 @@ SRC_URI="
 
 LICENSE="BSD"
 SLOT="0"
+S="${WORKDIR}"/cython-${PN}-release-v${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 BDEPEND="
 	>=dev-python/cython-3.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]
@@ -31,5 +30,3 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/cython-${PN}-release-v${PV}

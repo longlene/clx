@@ -13,7 +13,9 @@ SRC_URI="https://github.com/datasift/served/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="example test"
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	dev-libs/boost

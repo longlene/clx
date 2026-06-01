@@ -17,10 +17,9 @@ SRC_URI="https://github.com/slackapi/python-slack-sdk/archive/refs/tags/v${PV}.t
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-slack-sdk-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 BDEPEND="
 	test? (
 		>=dev-python/pytest-asyncio-1[${PYTHON_USEDEP}]
@@ -28,5 +27,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-slack-sdk-${PV}

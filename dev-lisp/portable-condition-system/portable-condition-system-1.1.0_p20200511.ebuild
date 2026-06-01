@@ -14,14 +14,14 @@ SRC_URI="https://github.com/phoe/portable-condition-system/archive/${EGIT_COMMIT
 LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/split-sequence
 "
-BDEPEND=""
 
 src_prepare() {
 	default

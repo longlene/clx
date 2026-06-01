@@ -20,7 +20,7 @@ RDEPEND="media-libs/tiff
 	virtual/jpeg"
 DEPEND="${RDEPEND}"
 BDEPEND="doc? (
-	app-doc/doxygen
+	app-text/doxygen
 	dev-libs/libxslt
 )"
 

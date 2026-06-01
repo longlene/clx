@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1
 
 DESCRIPTION="Free and Open Source Machine Translation API"
@@ -13,6 +13,7 @@ SRC_URI="https://github.com/LibreTranslate/LibreTranslate/archive/refs/tags/v${P
 
 LICENSE="AGPL-3.0"
 SLOT="0"
+S="${WORKDIR}"/libretranslate-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,7 +30,7 @@ RDEPEND="
 	>=dev-python/lexilang-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/morfessor-2.0.6[${PYTHON_USEDEP}]
 	>=dev-python/appdirs-1.4.4[${PYTHON_USEDEP}]
-	>=dev-python/APScheduler-3.9.1[${PYTHON_USEDEP}]
+	>=dev-python/apscheduler-3.9.1[${PYTHON_USEDEP}]
 	>=dev-python/translatehtml-1.5.2[${PYTHON_USEDEP}]
 	>=dev-python/argos-translate-files-1.1.4[${PYTHON_USEDEP}]
 	>=dev-python/itsdangerous-2.1.2[${PYTHON_USEDEP}]
@@ -40,12 +41,10 @@ RDEPEND="
 	>=dev-python/prometheus-client-0.15.0[${PYTHON_USEDEP}]
 	>=dev-python/polib-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
-	>=sci-libs/pytorch-2.0.1[${PYTHON_USEDEP}]
+	>=sci-ml/pytorch-2.0.1[${PYTHON_USEDEP}]
 "
 BDEPEND="
 	test? ( dev-python/pytest-runner[${PYTHON_USEDEP}] )
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/libretranslate-${PV}

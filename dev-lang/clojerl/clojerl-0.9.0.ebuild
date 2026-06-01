@@ -12,10 +12,10 @@ SRC_URI="https://github.com/clojerl/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="EPL-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-RDEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 DEPEND="${RDEPEND}"
 
 DOCS=( CHANGELOG.md )
-

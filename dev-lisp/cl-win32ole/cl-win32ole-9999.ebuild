@@ -6,16 +6,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="win32 ole library for common lisp"
 HOMEPAGE="https://github.com/quek/cl-win32ole"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/quek/cl-win32ole.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cffi
 dev-lisp/cl-ppcre
@@ -25,4 +22,3 @@ dev-lisp/simple-date-time"
 src_prepare() {
 	rm Makefile
 }
-

@@ -9,7 +9,7 @@ SRC_URI="https://mcabber.com/files/${PN}/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm ~arm64 ~ia64 ppc ppc64 sparc x86 ~ppc-macos"
+KEYWORDS="amd64 arm ppc ppc64 sparc x86 ~alpha ~arm64 ~ia64 ~ppc-macos"
 
 IUSE="asyncns ssl openssl static-libs test"
 RESTRICT="!test? ( test )"
@@ -26,7 +26,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	dev-util/glib-utils
-	dev-util/gtk-doc-am
+	dev-build/gtk-doc-am
 	test? ( dev-libs/check )
 	virtual/pkgconfig
 "

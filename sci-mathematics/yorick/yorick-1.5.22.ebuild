@@ -6,12 +6,13 @@ DESCRIPTION="A language for scientific computing and rapid prototyping"
 HOMEPAGE="http://yorick-mb.sourceforge.net/"
 SLOT="0"
 LICENSE="BSD"
+S=${WORKDIR}/${MY_P}
 KEYWORDS="~x86"
+SRC_URI="mirror://sourceforge/yorick-mb/${MY_P}.tar.gz"
 IUSE="X"
 MY_P=${PN}-mb-${PV}
 RESTRICT="nomirror"
-SRC_URI="mirror://sourceforge/yorick-mb/${MY_P}.tar.gz"
-S=${WORKDIR}/${MY_P}
+
 DEPEND="X? ( virtual/x11 )"
 
 src_compile() {

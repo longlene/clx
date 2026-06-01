@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    TokenSpeed is a high-performance LLM inference engine designed for
+    speed-of-light throughput. It provides a server compatible with the
+    OpenAI API and supports a wide range of model architectures.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">lightseekorg/tokenspeed</remote-id>
+  </upstream>
+</pkgmetadata>

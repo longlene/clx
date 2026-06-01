@@ -34,7 +34,7 @@ src_compile() {
 }
 
 src_install() {
-	elisp-install ${PN} *.{el,elc} 
+	elisp-install ${PN} *.{el,elc}
 	elisp-site-file-install "${FILESDIR}"/${SITEFILE} || die
 
 	common-lisp-install-sources slynk/backend/*.lisp slynk/*.lisp

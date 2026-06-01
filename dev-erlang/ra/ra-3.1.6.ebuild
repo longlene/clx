@@ -12,7 +12,6 @@ SRC_URI="https://github.com/rabbitmq/ra/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-erlang/aten
@@ -20,4 +19,3 @@ DEPEND="
 	dev-erlang/seshat
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

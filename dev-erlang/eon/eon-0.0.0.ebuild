@@ -15,7 +15,6 @@ DEPEND="
 	dev-lang/erlang
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	dobin eon

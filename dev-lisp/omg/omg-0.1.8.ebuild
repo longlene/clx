@@ -13,11 +13,9 @@ LICENSE="GPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/clack
 	dev-lisp/websocket-driver-server
 	dev-lisp/bordeaux-threads
 	dev-lisp/trivial-utf8
 "
-BDEPEND=""

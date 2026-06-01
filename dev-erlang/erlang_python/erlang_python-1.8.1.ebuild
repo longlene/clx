@@ -11,13 +11,10 @@ SRC_URI="https://github.com/benoitc/erlang-python/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/erlang-python-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/erlang-python-${PV}
 
 src_install() {
 	rebar3_src_install

@@ -43,8 +43,6 @@ QA_PRESTRIPPED="
 	/opt/bcompare/lib/beyondcompare/BCompare
 
 "
-QA_FLAGS_IGNORED="
-"
 
 src_unpack() {
 	unpack ${A}

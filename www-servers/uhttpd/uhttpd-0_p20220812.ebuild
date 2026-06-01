@@ -15,7 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="lua ssl ubus"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/libubox
 	lua? ( dev-lang/lua )

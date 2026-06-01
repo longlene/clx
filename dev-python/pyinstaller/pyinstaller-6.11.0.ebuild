@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 PYTHON_REQ_USE='threads(+)'
 
 inherit distutils-r1 pypi
@@ -44,7 +44,7 @@ RDEPEND="${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}
 	leak-detector? ( dev-libs/boehm-gc )
-	clang? ( sys-devel/clang )
+	clang? ( llvm-core/clang )
 	!clang? ( sys-devel/gcc )"
 
 src_install() {

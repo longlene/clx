@@ -12,9 +12,10 @@ SRC_URI="https://github.com/numcl/numcl/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivia
 	dev-lisp/alexandria
@@ -29,7 +30,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/gtype
 	test? ( dev-lisp/fiveam )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

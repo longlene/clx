@@ -31,6 +31,5 @@ RDEPEND="
 		sci-ml/safetensors[${PYTHON_USEDEP}]
 	')
 "
-BDEPEND=""
 
 RESTRICT="test"

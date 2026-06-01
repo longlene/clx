@@ -5,11 +5,11 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="VizTracer is a low-overhead logging/debugging/profiling tool that can trace and visualize your python code execution"
+DESCRIPTION="VizTracer is a low-overhead logging/debugging/profiling tool that can trace"
 HOMEPAGE="https://github.com/gaogaotiantian/viztracer"
 SRC_URI="https://github.com/gaogaotiantian/viztracer/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 

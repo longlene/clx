@@ -12,9 +12,7 @@ SRC_URI="https://github.com/HackerTheory/ViralityEngine/archive/v${PV}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/babel
@@ -38,4 +36,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/varjo
 	dev-lisp/verbose
 "
-BDEPEND=""

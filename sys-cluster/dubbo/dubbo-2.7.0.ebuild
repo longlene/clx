@@ -3,14 +3,9 @@
 
 EAPI=8
 
-DESCRIPTION=""
-HOMEPAGE=""
 SRC_URI="https://github.com/apache/incubator-dubbo/archive/${P}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

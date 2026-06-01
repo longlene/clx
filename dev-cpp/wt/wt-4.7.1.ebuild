@@ -13,9 +13,10 @@ SRC_URI="https://github.com/emweb/wt/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="example firebird mysql opengl pango pdf postgres qt4 ssl test"
 
-DEPEND=""
+IUSE="example firebird mysql opengl pango pdf postgres qt4 ssl test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-db/sqlite
 	firebird? ( dev-db/firebird )

@@ -19,4 +19,3 @@ DEPEND="
 	net-libs/nghttp2
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

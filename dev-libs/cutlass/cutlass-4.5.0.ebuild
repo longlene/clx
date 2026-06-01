@@ -36,4 +36,11 @@ src_configure() {
 src_install() {
 	cmake_src_install
 	rm -r "${ED}"/usr/test || die
+
+	# Install example headers required by downstream GPU kernels (e.g. sglang-kernel).
+	# These two directories are not part of the normal cmake install but are needed
+	# at compile time as include directories.
+	insinto /usr/include/cutlass/examples
+	doins -r "${S}/examples/common"
+	doins -r "${S}/examples/77_blackwell_fmha"
 }

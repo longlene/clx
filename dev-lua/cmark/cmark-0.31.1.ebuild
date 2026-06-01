@@ -13,15 +13,13 @@ SRC_URI="https://github.com/jgm/cmark-lua/archive/${PV}.tar.gz -> cmark-lua-${PV
 
 LICENSE="BSD-2"
 SLOT="0"
+S="${WORKDIR}/cmark-lua-${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
 DEPEND="${LUA_DEPS}"
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}/cmark-lua-${PV}"
 
 lua_src_compile() {
 	emake cmark.so

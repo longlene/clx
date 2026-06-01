@@ -7,7 +7,7 @@ SRC_URI="http://download.savannah.gnu.org/releases/gmediaserver/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="id3lib taglib nls"
 
 DEPEND="net-libs/libupnp

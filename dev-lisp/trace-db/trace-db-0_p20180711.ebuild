@@ -14,9 +14,7 @@ SRC_URI="https://github.com/GrammaTech/trace-db/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/boost
 	dev-lisp/alexandria

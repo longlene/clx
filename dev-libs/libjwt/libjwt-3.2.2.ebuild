@@ -12,14 +12,12 @@ SRC_URI="https://github.com/benmcollins/libjwt/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="LGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/jansson
 	dev-libs/openssl
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 EGIT_COMMIT="bf762693bff43d7ccad15c854aa075f849bd0dbc"
 
@@ -44,6 +44,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/Term-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 BDEPEND="
@@ -51,5 +52,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/Term-${EGIT_COMMIT}

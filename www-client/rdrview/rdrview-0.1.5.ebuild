@@ -17,7 +17,6 @@ DEPEND="
 	sys-libs/libseccomp
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	dobin rdrview

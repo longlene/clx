@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    DwarfStar (ds4) is a small, self-contained native inference engine
+    optimized for DeepSeek V4 Flash models. It includes a CLI, an
+    OpenAI-compatible HTTP server, benchmarking and evaluation tools,
+    and an integrated coding agent. CPU and CUDA (NVIDIA) backends are
+    supported on Linux.
+  </longdescription>
+  <use>
+    <flag name="cuda">Enable NVIDIA CUDA GPU acceleration</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">antirez/ds4</remote-id>
+  </upstream>
+</pkgmetadata>

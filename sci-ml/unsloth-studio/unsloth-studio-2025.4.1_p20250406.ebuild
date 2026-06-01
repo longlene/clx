@@ -17,6 +17,7 @@ SRC_URI="https://github.com/unslothai/unsloth-studio/archive/${EGIT_COMMIT}.tar.
 
 LICENSE="AGPL-3"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -48,8 +49,5 @@ RDEPEND="
 		dev-python/hf_transfer[${PYTHON_USEDEP}]
 	')
 "
-BDEPEND=""
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

@@ -6,16 +6,9 @@ EAPI=8
 
 inherit cmake git-r3
 
-DESCRIPTION=""
-HOMEPAGE=""
-SRC_URI=""
-
 EGIT_REPO_URI="http://git.openwrt.org/project/mdnsd.git"
 
-LICENSE=""
 SLOT="0"
-KEYWORDS=""
-IUSE=""
 
 DEPEND="
 	dev-libs/libubox

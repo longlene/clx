@@ -12,7 +12,9 @@ SRC_URI="https://github.com/maranda/metronome/archive/v${PV}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="ipv6 libevent mysql postgres sqlite ssl zlib jit libressl test"
+RESTRICT="!test? ( test )"
 
 BASE_DEPEND="net-im/jabber-base
 		dev-lua/LuaBitOp
@@ -70,4 +72,3 @@ src_install() {
 	newinitd "${FILESDIR}/${PN}".initd ${PN}
 	keepdir "${JABBER_SPOOL}"
 }
-

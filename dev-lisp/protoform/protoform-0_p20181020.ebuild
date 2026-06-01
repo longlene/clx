@@ -14,9 +14,7 @@ SRC_URI="https://github.com/Seteeri/protoform/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/osicat
 	dev-lisp/cl-drm
@@ -43,4 +41,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/lparallel
 	dev-lisp/skip-list
 "
-BDEPEND=""

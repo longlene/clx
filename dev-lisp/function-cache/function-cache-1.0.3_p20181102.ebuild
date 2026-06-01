@@ -14,9 +14,10 @@ SRC_URI="https://github.com/AccelerationNet/function-cache/archive/${EGIT_COMMIT
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-interpol
@@ -25,7 +26,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	test? ( dev-lisp/lisp-unit2 )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

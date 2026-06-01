@@ -18,6 +18,7 @@ SRC_URI="https://github.com/PrimeIntellect-ai/prime/archive/refs/tags/v${PV}.tar
 
 LICENSE="MIT"
 SLOT="0"
+S="${S}"/packages/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -47,5 +48,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${S}"/packages/${PN}

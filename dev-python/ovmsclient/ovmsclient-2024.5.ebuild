@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1 pypi
 
@@ -17,6 +17,7 @@ SRC_URI="https://github.com/openvinotoolkit/model_server/archive/refs/tags/v${PV
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/model_server-${PV}/client/python/ovmsclient/lib
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -27,5 +28,3 @@ RDEPEND="
 "
 
 RESTRICT="test"
-
-S="${WORKDIR}"/model_server-${PV}/client/python/ovmsclient/lib

@@ -14,13 +14,9 @@ SRC_URI="https://gitlab.common-lisp.net/cungil/xlsx/repository/archive.tar.gz?re
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/zip
 	dev-lisp/flexi-streams
 	dev-lisp/xmls
 "
-
-

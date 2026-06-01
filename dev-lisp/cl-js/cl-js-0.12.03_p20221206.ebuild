@@ -13,10 +13,7 @@ SRC_URI="https://github.com/akapav/js/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/parse-js
 "
-

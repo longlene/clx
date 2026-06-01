@@ -11,7 +11,5 @@ SRC_URI="https://github.com/openframeworks/openFrameworks/archive/${PV}.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 #KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

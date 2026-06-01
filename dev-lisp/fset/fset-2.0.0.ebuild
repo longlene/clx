@@ -12,9 +12,7 @@ SRC_URI="https://github.com/slburson/fset/archive/refs/tags/v${PV}.tar.gz -> ${P
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/misc-extensions
 	dev-lisp/mt19937

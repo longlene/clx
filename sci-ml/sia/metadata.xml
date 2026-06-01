@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">hexo-ai/sia</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    SIA (Self-Improving AI) is an autonomous framework for improving the
+    performance of AI systems (models or agents) on benchmark tasks. It
+    provides an orchestration layer that iteratively refines agent behavior
+    using evaluation feedback.
+  </longdescription>
+</pkgmetadata>

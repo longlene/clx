@@ -14,13 +14,10 @@ SRC_URI="https://github.com/phoe/wordnet/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/joinr/clclojure/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="EPL-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/named-readtables
 "

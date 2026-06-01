@@ -22,4 +22,3 @@ DEPEND="
 
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

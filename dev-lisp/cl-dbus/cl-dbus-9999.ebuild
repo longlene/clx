@@ -6,18 +6,15 @@ EAPI=8
 
 inherit common-lisp-3 git-r3
 
-DESCRIPTION="cl-dbus aims to be a complete implementation of the DBUS protocol used in popular desktop environments"
+DESCRIPTION="cl-dbus aims to be a complete implementation of the DBUS protocol used in"
 HOMEPAGE="https://github.com/blitz/cl-dbus"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/blitz/cl-dbus.git"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/flexi-streams

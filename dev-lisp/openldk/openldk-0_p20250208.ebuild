@@ -13,9 +13,9 @@ SRC_URI="https://github.com/atgreen/openldk/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="GPL-2"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-annot
 	dev-lisp/command-line-args
@@ -38,6 +38,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/precise-time
 	app-emacs/sly
 "
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

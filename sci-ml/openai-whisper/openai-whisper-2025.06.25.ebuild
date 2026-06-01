@@ -19,6 +19,7 @@ SRC_URI="https://github.com/openai/whisper/archive/refs/tags/v${MY_PV}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/whisper-${MY_PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -38,5 +39,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/whisper-${MY_PV}

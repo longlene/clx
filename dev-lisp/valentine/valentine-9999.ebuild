@@ -8,16 +8,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp CFFI wrapper for the Bullet Physics LIbary"
 HOMEPAGE="https://github.com/BradWBeer/valentine"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/BradWBeer/valentine.git"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lang/swig
 	dev-lisp/cffi

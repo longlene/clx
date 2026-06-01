@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
 The library (INCF CL) is a collection of convenience functions and macros for Common Lisp. The features it provides are:
 
     List comprehensions.
     Doctest suite for automatic verification of examples in docstrings.
     List manipulation functions similar to those in Haskell’s prelude.
     Nesting functions akin to those available in Mathematica.
-		
-	</longdescription>
+    
+  </longdescription>
+  <upstream>
+    <remote-id type="github">jmbr/incf-cl</remote-id>
+  </upstream>
 </pkgmetadata>

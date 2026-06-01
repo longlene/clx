@@ -11,13 +11,12 @@ SRC_URI="https://github.com/intel/ideep/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/ideep-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
 	=sci-ml/oneDNN-$(ver_cut 1-3 ${PV})
 "
-
-S="${WORKDIR}"/ideep-${EGIT_COMMIT}
 
 #PATCHES=(
 #	"${FILESDIR}"/install-fix.patch

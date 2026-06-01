@@ -14,9 +14,10 @@ SRC_URI="https://github.com/AccelerationNet/group-by/archive/${EGIT_COMMIT}.tar.
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/alexandria

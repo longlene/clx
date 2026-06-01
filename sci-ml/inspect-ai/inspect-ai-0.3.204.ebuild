@@ -17,6 +17,7 @@ SRC_URI="https://github.com/UKGovernmentBEIS/inspect_ai/archive/refs/tags/${PV}.
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/inspect_ai-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -65,7 +66,5 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/inspect_ai-${PV}
 
 export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_INSPECT_AI=${PV}

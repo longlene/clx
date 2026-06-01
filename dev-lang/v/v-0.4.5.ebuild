@@ -17,18 +17,15 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	media-libs/glfw
 	net-misc/curl
 	media-libs/freetype
 "
-BDEPEND=""
 
 src_compile() {
-	$(tc-getCC) -w -o v ${WORKDIR}/vc-${VC_COMMIT}/v.c -lm -lpthread
+	$(tc-getCC) -w -o v "${WORKDIR}"/vc-${VC_COMMIT}/v.c -lm -lpthread
 	./v self
 }
 

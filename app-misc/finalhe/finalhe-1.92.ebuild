@@ -23,9 +23,8 @@ DEPEND="
 	dev-qt/linguist-tools
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
-	newbin ${BUILD_DIR}/src/FinalHE finalhe
+	newbin "${BUILD_DIR}"/src/FinalHE finalhe
 	dodoc README.md
 }

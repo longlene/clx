@@ -14,9 +14,7 @@ SRC_URI="https://github.com/hanshuebner/bknr-web/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-interpol
 	dev-lisp/cl-ppcre
@@ -34,4 +32,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/parenscript
 	dev-lisp/yason
 "
-BDEPEND=""

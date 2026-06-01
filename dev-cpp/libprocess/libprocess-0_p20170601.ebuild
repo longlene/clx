@@ -23,4 +23,3 @@ DEPEND="
 	ssl? ( dev-libs/openssl dev-libs/libev )
 "
 RDEPEND="${DEPEND}"
-

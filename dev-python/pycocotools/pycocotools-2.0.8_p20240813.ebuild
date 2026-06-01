@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -18,8 +18,8 @@ HOMEPAGE="
 "
 SRC_URI="https://github.com/ppwwyyxx/cocoapi/archive/${EGIT_COMMIT}.tar.gz -> cocoapi-${EGIT_COMMIT}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
+S="${WORKDIR}"/cocoapi-${EGIT_COMMIT}/PythonAPI
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -31,5 +31,3 @@ BDEPEND="
 "
 
 RESTRICT="test"
-
-S="${WORKDIR}"/cocoapi-${EGIT_COMMIT}/PythonAPI

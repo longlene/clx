@@ -11,12 +11,9 @@ DESCRIPTION="A Common Lisp binding for the Apache Thrift framework"
 HOMEPAGE="https://github.com/lisp/de.setf.thrift"
 SRC_URI="https://github.com/lisp/de.setf.thrift/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	virtual/puri
 	dev-lisp/usocket

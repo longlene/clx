@@ -19,7 +19,6 @@ DEPEND="
 	media-libs/freetype
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

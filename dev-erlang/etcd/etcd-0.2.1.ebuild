@@ -11,16 +11,17 @@ SRC_URI="https://github.com/yunba/erl-${PN}/archive/${PV}.tar.gz -> erl-${P}.tar
 
 LICENSE="as-is"
 SLOT="0"
+S="${WORKDIR}"/erl-${P}
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-erlang/jiffy-0.14.11
 	>=dev-erlang/ibrowse-4.4.0
 	>=dev-lang/erlang-17.1"
 DEPEND="${RDEPEND}"
-
-S="${WORKDIR}"/erl-${P}
 
 #src_prepare() {
 #	rebar_src_prepare

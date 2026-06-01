@@ -15,15 +15,13 @@ SRC_URI="https://github.com/luafun/luafun/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/luafun-${EGIT_COMMIT}
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
 DEPEND="${LUA_DEPS}"
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}"/luafun-${EGIT_COMMIT}
 
 lua_src_install() {
 	insinto $(lua_get_lmod_dir)

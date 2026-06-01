@@ -8,16 +8,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp Utilities from mobius"
 HOMEPAGE="https://github.com/mobius-eng/mobius-utils"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/mobius-eng/mobius-utils.git"
 
 LICENSE="LLGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/optima

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/ruricolist/vernacular/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/overlord
 	dev-lisp/alexandria
@@ -25,4 +23,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/trivial-garbage
 "
-BDEPEND=""

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/yandex/ozo/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="PostgreSQL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-db/postgresql
 	dev-db/resource_pool

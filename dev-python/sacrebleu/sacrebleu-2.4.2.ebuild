@@ -4,11 +4,11 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="Hassle-free computation of shareable, comparable, and reproducible BLEU, chrF, and TER scores"
+DESCRIPTION="Hassle-free computation of shareable, comparable, and reproducible BLEU,"
 HOMEPAGE="https://github.com/mjpost/sacrebleu"
 SRC_URI="https://github.com/mjpost/sacrebleu/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 

@@ -12,7 +12,6 @@ EGIT_PROJECT="shr-settings"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE=""
 
 RDEPEND="dev-python/dbus-python
 	>=dev-python/python-elementary-20090422
@@ -20,7 +19,6 @@ RDEPEND="dev-python/dbus-python
 	>=dev-python/python-e_dbus-20090422
 	>=dev-python/python-ecore-20090422"
 DEPEND="dev-python/setuptools"
-
 
 src_unpack() {
 	# Fetch and unpack current git sources

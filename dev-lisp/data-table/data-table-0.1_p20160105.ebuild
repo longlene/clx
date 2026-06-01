@@ -14,9 +14,10 @@ SRC_URI="https://github.com/AccelerationNet/data-table/archive/${EGIT_COMMIT}.ta
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/symbol-munger

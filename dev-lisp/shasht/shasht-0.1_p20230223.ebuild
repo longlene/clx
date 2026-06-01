@@ -15,12 +15,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-do
 	dev-lisp/closer-mop
 "
-BDEPEND=""
 
 src_prepare() {
 	default

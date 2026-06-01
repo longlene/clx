@@ -11,11 +11,7 @@ SRC_URI="https://github.com/shopgun/graphql-erlang/archive/${PV}.tar.gz -> ${P}.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-BDEPEND=""
-
 S="${WORKDIR}/${PN}-erlang-${PV}"
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND="${DEPEND}"

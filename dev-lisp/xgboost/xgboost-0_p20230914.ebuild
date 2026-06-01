@@ -15,15 +15,13 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/trivial-garbage 
-	dev-lisp/cffi 
-	dev-lisp/cl-autowrap 
+	dev-lisp/trivial-garbage
+	dev-lisp/cffi
+	dev-lisp/cl-autowrap
 	dev-lisp/cl-json
 	sc-libs/xgboost
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

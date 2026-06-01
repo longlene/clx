@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_11 )
+PYTHON_COMPAT=( python3_11 python3_12 python3_13 python3_14  )
 inherit distutils-r1
 
 DESCRIPTION="A cython wrapping of the C++ Cap'n Proto library"
@@ -15,7 +15,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=""
 BDEPEND="
 	dev-libs/capnproto
 	dev-python/cython[${PYTHON_USEDEP}]

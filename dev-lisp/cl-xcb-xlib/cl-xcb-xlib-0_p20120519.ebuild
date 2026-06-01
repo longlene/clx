@@ -13,13 +13,10 @@ SRC_URI="https://github.com/rpav/cl-xcb-xlib/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/bordeaux-threads
 	dev-lisp/trivial-garbage
 	dev-lisp/static-vectors
 "
-

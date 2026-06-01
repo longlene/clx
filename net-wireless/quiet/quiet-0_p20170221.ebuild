@@ -14,7 +14,6 @@ SRC_URI="https://github.com/quiet/quiet/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	net-libs/liquid-dsp
@@ -24,4 +23,3 @@ DEPEND="
 	media-libs/portaudio
 "
 RDEPEND="${DEPEND}"
-

@@ -6,18 +6,15 @@ EAPI=8
 
 inherit common-lisp-3 git-r3
 
-DESCRIPTION="makeres table transformations for generating and compiling C++ programs for efficient computation"
+DESCRIPTION="makeres table transformations for generating and compiling C++ programs for"
 HOMEPAGE="https://github.com/ghollisjr/makeres-cpp"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/ghollisjr/makeres-cpp.git"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ana
 	dev-lisp/external-program

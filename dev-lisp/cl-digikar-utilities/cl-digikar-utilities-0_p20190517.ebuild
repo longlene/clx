@@ -14,8 +14,5 @@ SRC_URI="https://github.com/digikar99/cl-digikar-utilities/archive/${EGIT_COMMIT
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

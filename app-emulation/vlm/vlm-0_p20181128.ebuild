@@ -14,13 +14,11 @@ SRC_URI="https://github.com/longlene/vlm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	x11-libs/libX11
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	dobin genera

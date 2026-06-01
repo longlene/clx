@@ -11,6 +11,7 @@ SRC_URI="mirror://apache/brpc/${PV}/apache-${P}-src.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/apache-${P}-src
 KEYWORDS="~amd64 ~x86"
 IUSE="thrift"
 
@@ -21,9 +22,6 @@ DEPEND="
 	thrift? ( dev-libs/thrift )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/apache-${P}-src
 
 src_configure() {
 	local mycmakeargs=(

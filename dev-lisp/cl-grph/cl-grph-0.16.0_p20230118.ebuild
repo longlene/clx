@@ -15,11 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/veq
 	dev-lisp/fset
 	dev-lisp/alexandria
 	dev-lisp/lparallel
 "
-BDEPEND=""

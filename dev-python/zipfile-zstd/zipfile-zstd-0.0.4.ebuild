@@ -17,6 +17,7 @@ SRC_URI="https://github.com/taisei-project/python-zipfile-zstd/archive/refs/tags
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-${P}

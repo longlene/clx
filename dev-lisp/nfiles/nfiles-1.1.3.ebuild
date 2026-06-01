@@ -13,7 +13,6 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/hu_dwim_defclass-star
@@ -23,7 +22,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-package-local-nicknames
 	dev-lisp/trivial-types
 "
-BDEPEND=""
 
 src_prepare() {
 	default

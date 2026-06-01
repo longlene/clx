@@ -18,6 +18,7 @@ SRC_URI="https://github.com/KittenML/KittenTTS/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/KittenTTS-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -27,7 +28,7 @@ RDEPEND="
 		dev-python/spacy[${PYTHON_USEDEP}]
 		dev-python/espeakng-loader[${PYTHON_USEDEP}]
 		>=dev-python/misaki-0.9.4[${PYTHON_USEDEP}]
-		sci-libs/onnxruntime[${PYTHON_USEDEP}]
+		sci-ml/onnxruntime[${PYTHON_USEDEP}]
 		dev-python/soundfile[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 	')
@@ -39,5 +40,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/KittenTTS-${PV}

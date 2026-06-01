@@ -10,7 +10,6 @@ SRC_URI="https://github.com/SuperPaintman/serve/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-lang/crystal

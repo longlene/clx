@@ -9,15 +9,12 @@ SRC_URI="https://developer.download.nvidia.com/compute/cutensor/redist/libcutens
 
 LICENSE="NVIDIA-CUDA"
 SLOT="0"
+S="${WORKDIR}"/libcutensor-linux-x86_64-${PV}-archive
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	<dev-util/nvidia-cuda-toolkit-13.0.0
 "
-BDEPEND=""
-
-S="${WORKDIR}"/libcutensor-linux-x86_64-${PV}-archive
 
 QA_PREBUILT="
 	/usr/lib*/libcutensor*.so*

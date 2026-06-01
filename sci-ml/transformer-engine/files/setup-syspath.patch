@@ -1,0 +1,13 @@
+--- a/setup.py
++++ b/setup.py
+@@ -4,6 +4,10 @@
+ 
+ """Installation script."""
+ 
++import os as _os, sys as _sys
++_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
++
++
+ from importlib import metadata
+ import os
+ import shutil

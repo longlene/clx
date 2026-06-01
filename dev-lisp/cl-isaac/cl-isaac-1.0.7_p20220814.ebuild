@@ -13,9 +13,7 @@ SRC_URI="https://github.com/thephoeron/cl-isaac/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

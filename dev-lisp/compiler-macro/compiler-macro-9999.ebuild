@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="CL compiler macro utilities"
 HOMEPAGE="https://github.com/Bike/compiler-macro"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/Bike/compiler-macro.git"
 
 LICENSE="WTFPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/introspect-environment
 "

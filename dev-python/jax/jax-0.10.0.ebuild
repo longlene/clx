@@ -16,6 +16,7 @@ SRC_URI="https://github.com/jax-ml/jax/archive/refs/tags/jax-v${PV}.tar.gz -> ${
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/jax-jax-v${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,8 +31,6 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/jax-jax-v${PV}
 
 src_prepare() {
 	rm -rf docs

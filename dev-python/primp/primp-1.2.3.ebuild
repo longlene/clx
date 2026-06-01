@@ -445,17 +445,15 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${P}/crates/primp-python
 KEYWORDS="~amd64"
 
 DEPEND+="app-arch/zstd"
-RDEPEND=""
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${P}/crates/primp-python
 
 export ZSTD_SYS_USE_PKG_CONFIG=1

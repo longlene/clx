@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Duck Programming Language
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Duck Programming Language
 
-		A simple scripting language based on the idea of duck-typing (or dynamic typing).
+    A simple scripting language based on the idea of duck-typing (or dynamic typing).
 
-		“When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.” — James Whitcomb Riley
+    “When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.” — James Whitcomb Riley
 
-		Language Features
+    Language Features
 
-		The duck programming language supports first-class functions, integer and floating-point arithmetic, string manipulation, dynamically-sized arrays, dictionary types, and basic object oriented programming. The syntax is strongly reminiscent of BASIC, Lua, or Python. While indentation is not strictly specified, the language requires specific whitespace in required newlines at the end of certain statements. Duck is currently only implemented in the form of a slow, interpreted frontend, making it useful as a portable scripting language. This frontend has been developed entirely in C.
-	</longdescription>
+    The duck programming language supports first-class functions, integer and floating-point arithmetic, string manipulation, dynamically-sized arrays, dictionary types, and basic object oriented programming. The syntax is strongly reminiscent of BASIC, Lua, or Python. While indentation is not strictly specified, the language requires specific whitespace in required newlines at the end of certain statements. Duck is currently only implemented in the form of a slow, interpreted frontend, making it useful as a portable scripting language. This frontend has been developed entirely in C.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">gregtour/duck-lang</remote-id>
+  </upstream>
 </pkgmetadata>

@@ -11,18 +11,14 @@ SRC_URI="http://common-lisp.net/project/cl-ncurses/files/cl-ncurses_${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
-
-DEPEND=""
+S=${WORKDIR}/cl-ncurses_${PV}
+KEYWORDS="~amd64 ~arm ~x86"
 
 CLPACKAGE=cl-ncurses
 
-S=${WORKDIR}/cl-ncurses_${PV}
-
 #src_unpack() {
 #	unpack ${A}
-#	cd ${S} && epatch ${FILESDIR}/cl-ncurses-${PV}-funtoo-fixes.patch
+#	cd "${S}" && epatch "${FILESDIR}"/cl-ncurses-${PV}-funtoo-fixes.patch
 #}
 #
 src_prepare() {

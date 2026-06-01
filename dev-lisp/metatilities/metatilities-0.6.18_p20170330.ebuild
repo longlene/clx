@@ -14,7 +14,6 @@ SRC_URI="https://github.com/gwkkwg/metatilities/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
 
 RDEPEND="dev-lisp/asdf-system-connections
 		>=dev-lisp/metatilities-base-0.6.3
@@ -27,4 +26,3 @@ src_prepare() {
 	eapply "${FILESDIR}"/fix-export-new-states.patch
 	rm -rf ${PN}-test.asd tests
 }
-

@@ -10,16 +10,13 @@ SRC_URI="http://www.common-lisp.net/project/ecl-readline/releases/${P}.tar.gz"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/ecls
+	dev-lisp/ecl
 "
 
 src_prepare() {
 	eapply_user
 	sed -i 's#g_completions\ =\ malloc#g_completions = (char **)malloc#' ecl-completions.lisp
 }
-

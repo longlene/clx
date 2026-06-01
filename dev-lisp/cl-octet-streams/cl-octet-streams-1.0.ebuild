@@ -12,9 +12,10 @@ SRC_URI="https://github.com/glv2/cl-octet-streams/archive/v${PV}.tar.gz -> ${P}.
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-gray-streams
 	test? ( dev-lisp/fiveam )

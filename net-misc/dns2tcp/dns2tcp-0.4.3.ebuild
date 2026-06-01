@@ -8,7 +8,6 @@ SRC_URI="http://www.hsc.fr/ressources/outils/dns2tcp/download/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 src_install() {
 	emake install DESTDIR="${D}" || die "make install failed"
@@ -18,4 +17,3 @@ src_install() {
 	doins server/dns2tcpdrc
 	doins client/dns2tcprc
 }
-

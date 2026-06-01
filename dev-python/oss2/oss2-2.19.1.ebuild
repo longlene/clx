@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Aliyun OSS (Object Storage Service) SDK"
 HOMEPAGE="
-    http://oss.aliyun.com
+	http://oss.aliyun.com
 	https://pypi.org/project/oss2/
 "
 

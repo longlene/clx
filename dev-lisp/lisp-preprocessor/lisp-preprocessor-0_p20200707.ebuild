@@ -14,9 +14,10 @@ SRC_URI="https://github.com/cxxxr/lisp-preprocessor/archive/${EGIT_COMMIT}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/split-sequence
@@ -25,7 +26,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	test? ( dev-lisp/rove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -24,8 +24,8 @@ src_unpack() {
 src_install() {
 	exeinto /etc/init.d || die
 	doexe init.d/{netif.tmpl,net.lo} || die
-	cp -a netif.d ${D}/etc || die
-	chown -R root:root ${D}/etc/netif.d || die
-	chmod 0755 ${D}/etc/netif.d || die
-	chmod -R 0644 ${D}/etc/netif.d/* || die
+	cp -a netif.d "${D}"/etc || die
+	chown -R root:root "${D}"/etc/netif.d || die
+	chmod 0755 "${D}"/etc/netif.d || die
+	chmod -R 0644 "${D}"/etc/netif.d/* || die
 }

@@ -1,0 +1,38 @@
+--- a/transformer_engine/common/CMakeLists.txt
++++ b/transformer_engine/common/CMakeLists.txt
+@@ -87,21 +87,22 @@
+ # These are applied to all CUDA sources (both generic and arch-specific).
+ set(NVTE_STANDARD_ARCHS ${CMAKE_CUDA_ARCHITECTURES})
+ 
+-# cuDNN frontend API
+-set(CUDNN_FRONTEND_INCLUDE_DIR
+-    "${CMAKE_CURRENT_SOURCE_DIR}/../../3rdparty/cudnn-frontend/include")
+-if(NOT EXISTS "${CUDNN_FRONTEND_INCLUDE_DIR}")
+-    message(FATAL_ERROR
+-            "Could not find cuDNN frontend API at ${CUDNN_FRONTEND_INCLUDE_DIR}. "
+-            "Try running 'git submodule update --init --recursive' "
+-            "within the Transformer Engine source.")
++# cuDNN frontend API (system installation)
++find_package(cudnn_frontend REQUIRED)
++set(CUDNN_FRONTEND_INCLUDE_DIR "/usr/include")
++
++if(NOT TARGET CUDNN::cudnn_all)
++  find_library(CUDNN_LIBRARY NAMES cudnn
++    HINTS "${CUDAToolkit_LIBRARY_DIR}"
++    REQUIRED)
++  add_library(CUDNN::cudnn_all IMPORTED SHARED)
++  set_target_properties(CUDNN::cudnn_all PROPERTIES
++    IMPORTED_LOCATION "${CUDNN_LIBRARY}"
++    INTERFACE_INCLUDE_DIRECTORIES "${CUDAToolkit_INCLUDE_DIRS}")
+ endif()
+-include(${CMAKE_CURRENT_SOURCE_DIR}/../../3rdparty/cudnn-frontend/cmake/cuDNN.cmake)
+ 
+-set(CUTLASS_INCLUDE_DIR
+-  "${CMAKE_CURRENT_SOURCE_DIR}/../../3rdparty/cutlass/include")
+-set(CUTLASS_TOOLS_INCLUDE_DIR
+-  "${CMAKE_CURRENT_SOURCE_DIR}/../../3rdparty/cutlass/tools/util/include")
++set(CUTLASS_INCLUDE_DIR "/usr/include")
++set(CUTLASS_TOOLS_INCLUDE_DIR "/usr/include")
+ 
+ # Python
+ find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)

@@ -11,13 +11,10 @@ SRC_URI="https://github.com/illusori/emacs-flymake/archive/${PV}.tar.gz -> ${P}.
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
 	elisp-install ${PN} *.el
 	dodoc README*
 }
-

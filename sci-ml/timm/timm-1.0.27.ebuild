@@ -11,10 +11,11 @@ inherit distutils-r1
 
 DESCRIPTION="PyTorch Image Models"
 HOMEPAGE="https://pypi.org/project/timm/"
-SRC_URI="https://github.com/huggingface/pytorch-image-models/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/huggingface/pytorch-image-models/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/pytorch-image-models-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -33,6 +34,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/pytorch-image-models-${PV}
-

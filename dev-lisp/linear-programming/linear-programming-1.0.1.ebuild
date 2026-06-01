@@ -12,9 +12,10 @@ SRC_URI="https://github.com/neil-lindquist/linear-programming/archive/v${PV}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
 BDEPEND="
 	dev-lisp/iterate

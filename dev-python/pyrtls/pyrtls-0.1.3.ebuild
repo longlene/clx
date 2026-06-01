@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=maturin
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 CRATES="
 	anyhow@1.0.88
@@ -100,7 +100,7 @@ inherit cargo distutils-r1
 DESCRIPTION="rustls-based modern TLS for Python"
 HOMEPAGE="https://pypi.org/project/pyrtls/"
 SRC_URI="
-	https://github.com/djc/pyrtls/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/djc/pyrtls/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
 	${CARGO_CRATE_URIS}
 "
 
@@ -108,7 +108,6 @@ LICENSE="|| ( MIT Apache-2.0 )"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=""
 #BDEPEND="
 #	test? (
 #	)

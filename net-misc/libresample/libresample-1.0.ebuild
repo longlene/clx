@@ -14,9 +14,7 @@ ESVN_REPO_URI="http://svn.digium.com/svn/thirdparty/libresample/trunk"
 LICENSE="UNK"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile(){

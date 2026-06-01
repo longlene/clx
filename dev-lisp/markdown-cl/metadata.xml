@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		This is a markdown parsing library for Common Lisp. The goal is to provide a very simple interface for turning markdown into valid HTML.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    This is a markdown parsing library for Common Lisp. The goal is to provide a very simple interface for turning markdown into valid HTML.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">orthecreedence/markdown.cl</remote-id>
+  </upstream>
 </pkgmetadata>

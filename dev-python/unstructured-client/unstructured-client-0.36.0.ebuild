@@ -17,6 +17,7 @@ SRC_URI="https://github.com/Unstructured-IO/unstructured-python-client/archive/r
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/unstructured-python-client-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -34,8 +35,6 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/unstructured-python-client-${PV}
 
 src_prepare() {
 	default

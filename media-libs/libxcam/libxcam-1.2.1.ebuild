@@ -36,7 +36,7 @@ CDEPEND="
 	)
 "
 DEPEND="${CDEPEND}
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 "
 RDEPEND="${CDEPEND}"
 

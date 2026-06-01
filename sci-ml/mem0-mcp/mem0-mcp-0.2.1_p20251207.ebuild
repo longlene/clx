@@ -10,7 +10,7 @@ inherit distutils-r1
 
 EGIT_COMMIT="b53a1f327032352f730a5df0461a2f597892a843"
 
-DESCRIPTION="Model Context Protocol server that exposes the Mem0 long-term memory API as tools"
+DESCRIPTION="Model Context Protocol server that exposes the Mem0 long-term memory API as"
 HOMEPAGE="
 	https://pypi.org/project/mem0-mcp-server/
 	https://github.com/mem0ai/mem0-mcp/
@@ -19,6 +19,7 @@ SRC_URI="https://github.com/mem0ai/mem0-mcp/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/mem0-mcp-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -36,8 +37,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/mem0-mcp-${EGIT_COMMIT}
 
 PATCHES=(
 	"${FILESDIR}"/install-fix.patch

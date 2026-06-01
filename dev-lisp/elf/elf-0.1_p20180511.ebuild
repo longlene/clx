@@ -13,9 +13,10 @@ SRC_URI="https://github.com/GrammaTech/elf/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/monkeylib-binary-data

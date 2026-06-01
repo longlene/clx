@@ -13,7 +13,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-environments
 	dev-lisp/agutil
@@ -23,7 +22,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/arrows
 	dev-lisp/introspect-environment
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -11,9 +11,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 RESTRICT=network-sandbox
 

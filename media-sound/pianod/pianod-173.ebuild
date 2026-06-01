@@ -4,14 +4,13 @@
 
 EAPI=8
 
-DESCRIPTION="pianod is a music player with line-oriented and Websocket TCP/IP control interfaces"
+DESCRIPTION="pianod is a music player with line-oriented and Websocket TCP/IP control"
 HOMEPAGE="http://deviousfish.com/pianod/"
 SRC_URI="http://deviousfish.com/Downloads/pianod/pianod-${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 DEPEND="
 media-libs/libao

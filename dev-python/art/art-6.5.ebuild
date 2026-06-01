@@ -13,14 +13,12 @@ HOMEPAGE="
 	https://github.com/sepandhaghighi/art
 	https://pypi.org/project/art/
 "
-SRC_URI="https://github.com/sepandhaghighi/art/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/sepandhaghighi/art/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

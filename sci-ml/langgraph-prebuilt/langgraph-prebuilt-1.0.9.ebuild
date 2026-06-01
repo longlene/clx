@@ -10,7 +10,7 @@ inherit distutils-r1
 
 MY_PN="${PN/langgraph-/}"
 
-DESCRIPTION="Library with high-level APIs for creating and executing LangGraph agents and tools"
+DESCRIPTION="Library with high-level APIs for creating and executing LangGraph agents and"
 HOMEPAGE="
 	https://pypi.org/project/langgraph-prebuilt/
 	https://github.com/langchain-ai/langgraph/
@@ -19,6 +19,7 @@ SRC_URI="https://github.com/langchain-ai/langgraph/archive/refs/tags/${MY_PN}==$
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${P}/libs/${MY_PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,5 +33,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${P}/libs/${MY_PN}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="anthropic">Enable Anthropic Claude prompt/embedding drivers</flag>
+    <flag name="aws">Enable Amazon Web Services drivers (Bedrock, SageMaker, S3, DynamoDB, SQS)</flag>
+    <flag name="image">Enable image loading via dev-python/pillow</flag>
+    <flag name="mongodb">Enable MongoDB vector store driver</flag>
+    <flag name="ollama">Enable Ollama local LLM prompt/embedding driver</flag>
+    <flag name="pdf">Enable PDF document loader via dev-python/pypdf</flag>
+    <flag name="redis">Enable Redis conversation-memory and vector-store drivers</flag>
+    <flag name="sql">Enable SQL drivers via dev-python/sqlalchemy</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">griptape-ai/griptape</remote-id>
+    <remote-id type="pypi">griptape</remote-id>
+  </upstream>
+</pkgmetadata>

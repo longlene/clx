@@ -14,9 +14,10 @@ SRC_URI="https://github.com/numcl/gtype/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivialib_type-unify
 	dev-lisp/trivial-cltl2
@@ -26,7 +27,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/type-r
 	test? ( dev-lisp/fiveam )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

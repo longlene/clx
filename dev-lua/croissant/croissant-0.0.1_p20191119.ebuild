@@ -19,14 +19,12 @@ KEYWORDS="~amd64 ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-lua/sirocco-0.0.1
 	>=dev-lua/hump-0.4
 	>=dev-lua/lpeg-1.0.1
 	>=dev-lua/argparse-0.6.0
 "
-BDEPEND=""
 
 DOCS=( READM.md )
 
@@ -40,4 +38,3 @@ src_install() {
 	dobin bin/croissant
 	einstalldocs
 }
-

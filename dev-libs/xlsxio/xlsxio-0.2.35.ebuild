@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION="Cross-platform C library for reading values from and writing values to .xlsx files"
+DESCRIPTION="Cross-platform C library for reading values from and writing values to .xlsx"
 HOMEPAGE="https://github.com/brechtsanders/xlsxio"
 SRC_URI="https://github.com/brechtsanders/xlsxio/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -17,7 +17,7 @@ IUSE="doc example static-libs tools"
 DEPEND="
 	dev-libs/libzip
 	dev-libs/expat
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 "
 RDEPEND="${DEPEND}"
 

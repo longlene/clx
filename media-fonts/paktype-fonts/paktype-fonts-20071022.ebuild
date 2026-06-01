@@ -13,13 +13,11 @@ SRC_URI="mirror://sourceforge/paktype/PakType-Tehreer1.3.zip
 
 LICENSE="GPL-2"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~x86"
-IUSE=""
 
 DEPEND="app-arch/unzip"
-RDEPEND=""
 
-S="${WORKDIR}"
 FONT_S="${S}"
 FONT_SUFFIX="ttf"
 
@@ -34,5 +32,3 @@ src_unpack() {
 		mv ./"${FONTFILE}" ./"${PARTONE}"-"${PARTTWO}".ttf
 	done
 }
-
-DOCS=""

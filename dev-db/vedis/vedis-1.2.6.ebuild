@@ -14,13 +14,11 @@ SRC_URI="http://vedis.symisc.net/db/vedis-ds-${MY_PV}.zip"
 
 LICENSE="Sleepycat"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}"
 src_compile() {
 	$(tc-getCC) ${CFLAGS} ${LDFLAGS} -fPIC -shared -Wl,-soname,lib${PN}.so -o lib${PN}.so ${PN}.c
 }

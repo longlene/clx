@@ -18,7 +18,6 @@ DEPEND="
 	dev-libs/libfmt
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

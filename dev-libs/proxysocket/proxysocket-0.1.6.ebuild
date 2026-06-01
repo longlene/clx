@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DESCRIPTION="Portable C library for proxy support, designed to be used as a drop-in replacement for connect()"
+DESCRIPTION="Portable C library for proxy support, designed to be used as a drop-in"
 HOMEPAGE="https://github.com/brechtsanders/proxysocket"
 SRC_URI="https://github.com/brechtsanders/proxysocket/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -12,7 +12,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="static-libs"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

@@ -1,0 +1,393 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	adler2@2.0.1
+	aes@0.8.4
+	aho-corasick@1.1.4
+	anstream@1.0.0
+	anstyle-parse@1.0.0
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anstyle@1.0.14
+	anyhow@1.0.102
+	arbitrary@1.4.2
+	atomic-waker@1.1.2
+	autocfg@1.5.0
+	aws-lc-rs@1.16.3
+	aws-lc-sys@0.40.0
+	base64@0.22.1
+	bindgen@0.71.1
+	bitflags@2.11.0
+	block-buffer@0.10.4
+	bumpalo@3.20.2
+	bytemuck@1.25.0
+	byteorder-lite@0.1.0
+	byteorder@1.5.0
+	bytes@1.11.1
+	bzip2-sys@0.1.13+1.0.8
+	bzip2@0.5.2
+	cc@1.2.61
+	cexpr@0.6.0
+	cfb@0.7.3
+	cfg-if@1.0.4
+	cfg_aliases@0.2.1
+	cipher@0.4.4
+	clang-sys@1.8.1
+	clap@4.6.0
+	clap_builder@4.6.0
+	clap_derive@4.6.0
+	clap_lex@1.1.0
+	cmake@0.1.58
+	colorchoice@1.0.5
+	combine@4.6.7
+	console_error_panic_hook@0.1.7
+	constant_time_eq@0.3.1
+	convert_case@0.6.0
+	core-foundation-sys@0.8.7
+	core-foundation@0.10.1
+	core-foundation@0.9.4
+	cpufeatures@0.2.17
+	crc-catalog@2.5.0
+	crc32fast@1.5.0
+	crc@3.4.0
+	crossbeam-utils@0.8.21
+	crypto-common@0.1.7
+	ctor@0.2.9
+	deflate64@0.1.12
+	deranged@0.5.8
+	derive_arbitrary@1.4.2
+	digest@0.10.7
+	displaydoc@0.2.5
+	dunce@1.0.5
+	either@1.15.0
+	encoding_rs@0.8.35
+	equivalent@1.0.2
+	errno@0.3.14
+	fastrand@2.4.1
+	fdeflate@0.3.7
+	filetime@0.2.27
+	find-msvc-tools@0.1.9
+	flate2@1.1.9
+	fnv@1.0.7
+	foldhash@0.1.5
+	foreign-types-shared@0.1.1
+	foreign-types@0.3.2
+	form_urlencoded@1.2.2
+	fs_extra@1.3.0
+	futures-channel@0.3.32
+	futures-core@0.3.32
+	futures-executor@0.3.32
+	futures-io@0.3.32
+	futures-sink@0.3.32
+	futures-task@0.3.32
+	futures-util@0.3.32
+	generic-array@0.14.7
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.2
+	glob@0.3.3
+	h2@0.4.14
+	hashbrown@0.15.5
+	hashbrown@0.17.1
+	heck@0.5.0
+	hmac@0.12.1
+	http-body-util@0.1.3
+	http-body@1.0.1
+	http@1.4.0
+	httparse@1.10.1
+	hyper-rustls@0.27.9
+	hyper-tls@0.6.0
+	hyper-util@0.1.20
+	hyper@1.9.0
+	icu_collections@2.2.0
+	icu_locale_core@2.2.0
+	icu_normalizer@2.2.0
+	icu_normalizer_data@2.2.0
+	icu_properties@2.2.0
+	icu_properties_data@2.2.0
+	icu_provider@2.2.0
+	id-arena@2.3.0
+	idna@1.1.0
+	idna_adapter@1.2.2
+	image@0.25.10
+	indexmap@2.14.0
+	infer@0.19.0
+	inout@0.1.4
+	ipnet@2.12.0
+	is_terminal_polyfill@1.70.2
+	itertools@0.13.0
+	itoa@1.0.18
+	jni-macros@0.22.4
+	jni-sys-macros@0.4.1
+	jni-sys@0.4.1
+	jni@0.22.4
+	jobserver@0.1.34
+	js-sys@0.3.98
+	leb128fmt@0.1.0
+	libc@0.2.186
+	libloading@0.8.9
+	libredox@0.1.16
+	linux-raw-sys@0.12.1
+	litemap@0.8.2
+	lock_api@0.4.14
+	log@0.4.29
+	lru-slab@0.1.2
+	lzma-rs@0.3.0
+	lzma-sys@0.1.20
+	memchr@2.8.0
+	mime@0.3.17
+	mime_guess@2.0.5
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	mio@1.2.0
+	moxcms@0.8.1
+	napi-build@2.3.2
+	napi-derive-backend@1.0.75
+	napi-derive@2.16.13
+	napi-sys@2.4.0
+	napi@2.16.17
+	native-tls@0.2.18
+	nom@7.1.3
+	num-conv@0.2.1
+	num-traits@0.2.19
+	once_cell@1.21.4
+	once_cell_polyfill@1.70.2
+	openssl-macros@0.1.1
+	openssl-probe@0.2.1
+	openssl-sys@0.9.116
+	openssl@0.10.80
+	ordered-float@5.3.0
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
+	pbkdf2@0.12.2
+	percent-encoding@2.3.2
+	pin-project-lite@0.2.17
+	pkg-config@0.3.33
+	plain@0.2.3
+	png@0.18.1
+	portable-atomic@1.13.1
+	potential_utf@0.1.5
+	powerfmt@0.2.0
+	ppv-lite86@0.2.21
+	prettyplease@0.2.37
+	proc-macro2@1.0.106
+	pxfm@0.1.29
+	pyo3-build-config@0.28.3
+	pyo3-ffi@0.28.3
+	pyo3-macros-backend@0.28.3
+	pyo3-macros@0.28.3
+	pyo3@0.28.3
+	quinn-proto@0.11.14
+	quinn-udp@0.5.14
+	quinn@0.11.9
+	quote@1.0.45
+	r-efi@5.3.0
+	r-efi@6.0.0
+	rand@0.9.4
+	rand_chacha@0.9.0
+	rand_core@0.9.5
+	redox_syscall@0.5.18
+	redox_syscall@0.7.5
+	regex-automata@0.4.14
+	regex-syntax@0.8.10
+	regex@1.12.3
+	reqwest@0.12.28
+	reqwest@0.13.3
+	ring@0.17.14
+	rustc-hash@2.1.2
+	rustc_version@0.4.1
+	rustix@1.1.4
+	rustls-native-certs@0.8.3
+	rustls-pki-types@1.14.1
+	rustls-platform-verifier-android@0.1.1
+	rustls-platform-verifier@0.7.0
+	rustls-webpki@0.103.13
+	rustls@0.23.40
+	rustversion@1.0.22
+	ryu@1.0.23
+	same-file@1.0.6
+	scc@2.4.0
+	schannel@0.1.29
+	scopeguard@1.2.0
+	sdd@3.0.10
+	security-framework-sys@2.17.0
+	security-framework@3.7.0
+	semver@1.0.28
+	serde-wasm-bindgen@0.6.5
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.149
+	serde_urlencoded@0.7.1
+	serial_test@3.4.0
+	serial_test_derive@3.4.0
+	sha1@0.10.6
+	shlex@1.3.0
+	signal-hook-registry@1.4.8
+	simd-adler32@0.3.9
+	simd_cesu8@1.1.1
+	simdutf8@0.1.5
+	slab@0.4.12
+	smallvec@1.15.1
+	socket2@0.6.3
+	stable_deref_trait@1.2.1
+	strsim@0.11.1
+	subtle@2.6.1
+	syn@2.0.117
+	sync_wrapper@1.0.2
+	synstructure@0.13.2
+	system-configuration-sys@0.6.0
+	system-configuration@0.7.0
+	tar@0.4.45
+	target-lexicon@0.13.5
+	tempfile@3.27.0
+	tesseract-rs@0.2.0
+	thiserror-impl@1.0.69
+	thiserror-impl@2.0.18
+	thiserror@1.0.69
+	thiserror@2.0.18
+	time-core@0.1.8
+	time@0.3.47
+	tinystr@0.8.3
+	tinyvec@1.11.0
+	tinyvec_macros@0.1.1
+	tokio-macros@2.7.0
+	tokio-native-tls@0.3.1
+	tokio-rustls@0.26.4
+	tokio-util@0.7.18
+	tokio@1.52.3
+	tower-http@0.6.10
+	tower-layer@0.3.3
+	tower-service@0.3.3
+	tower@0.5.3
+	tracing-core@0.1.36
+	tracing@0.1.44
+	try-lock@0.2.5
+	typenum@1.20.0
+	unicase@2.9.0
+	unicode-ident@1.0.24
+	unicode-segmentation@1.13.2
+	unicode-xid@0.2.6
+	untrusted@0.9.0
+	ureq-proto@0.6.0
+	ureq@3.3.0
+	url@2.5.8
+	utf8-zero@0.8.1
+	utf8_iter@1.0.4
+	utf8parse@0.2.2
+	uuid@1.23.1
+	vcpkg@0.2.15
+	version_check@0.9.5
+	walkdir@2.5.0
+	want@0.3.1
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.3+wasi-0.2.9
+	wasip3@0.4.0+wasi-0.3.0-rc-2026-01-06
+	wasm-bindgen-futures@0.4.71
+	wasm-bindgen-macro-support@0.2.121
+	wasm-bindgen-macro@0.2.121
+	wasm-bindgen-shared@0.2.121
+	wasm-bindgen@0.2.121
+	wasm-encoder@0.244.0
+	wasm-metadata@0.244.0
+	wasmparser@0.244.0
+	web-sys@0.3.98
+	web-time@1.1.0
+	webpki-root-certs@1.0.7
+	webpki-roots@1.0.7
+	winapi-util@0.1.11
+	windows-link@0.2.1
+	windows-registry@0.6.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.52.0
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	wit-bindgen-core@0.51.0
+	wit-bindgen-rust-macro@0.51.0
+	wit-bindgen-rust@0.51.0
+	wit-bindgen@0.51.0
+	wit-bindgen@0.57.1
+	wit-component@0.244.0
+	wit-parser@0.244.0
+	writeable@0.6.3
+	xattr@1.6.1
+	xz2@0.1.7
+	yoke-derive@0.8.2
+	yoke@0.8.2
+	zerocopy-derive@0.8.48
+	zerocopy@0.8.48
+	zerofrom-derive@0.1.7
+	zerofrom@0.1.7
+	zeroize@1.8.2
+	zeroize_derive@1.4.3
+	zerotrie@0.2.4
+	zerovec-derive@0.11.3
+	zerovec@0.11.6
+	zip@2.4.2
+	zmij@1.0.21
+	zopfli@0.8.3
+	zstd-safe@7.2.4
+	zstd-sys@2.0.16+zstd.1.5.7
+	zstd@0.13.3
+"
+
+DISTUTILS_EXT=1
+PYTHON_COMPAT=( python3_{13..15} )
+DISTUTILS_USE_PEP517=maturin
+
+RUST_MIN_VER="1.88.0"
+inherit cargo distutils-r1
+
+DESCRIPTION="Python bindings for LiteParse PDF and document parsing"
+HOMEPAGE="https://developers.llamaindex.ai/liteparse/"
+SRC_URI="
+	https://github.com/run-llama/liteparse/archive/refs/tags/python-v${PV}.tar.gz
+		-> liteparse-python-${PV}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+S="${WORKDIR}/liteparse-python-v${PV}/packages/python"
+LICENSE="
+	Apache-2.0
+	Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD CDLA-Permissive-2.0
+	ISC MIT Unicode-3.0 ZLIB
+"
+SLOT="0"
+KEYWORDS="~amd64"
+IUSE="tesseract"
+
+DEPEND="app-text/pdfium-binaries-bin"
+RDEPEND="${DEPEND}
+	tesseract? ( app-text/tesseract:= )"
+BDEPEND="
+	${PYTHON_DEPS}
+	virtual/pkgconfig
+	tesseract? ( app-text/tesseract:= )
+"
+
+src_unpack() {
+	cargo_src_unpack
+}
+
+python_compile() {
+	local -x PDFIUM_LIB_PATH="/usr/lib64"
+	local -x PDFIUM_INCLUDE_PATH="/usr/include"
+	local myfeatures=()
+	use tesseract && myfeatures+=( tesseract )
+	local -x MATURIN_PEP517_ARGS="--no-default-features $(printf -- '--features %s ' "${myfeatures[@]}")"
+	distutils-r1_python_compile
+}
+
+distutils_enable_tests pytest

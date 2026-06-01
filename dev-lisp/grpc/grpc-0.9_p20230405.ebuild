@@ -21,7 +21,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/bordeaux-threads
 "
-BDEPEND=""
 
 src_prepare() {
 	default

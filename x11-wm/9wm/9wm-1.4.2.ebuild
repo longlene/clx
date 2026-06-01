@@ -9,8 +9,7 @@ SRC_URI="https://github.com/9wm/9wm/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="9wm"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 RDEPEND="x11-libs/libX11
 		x11-libs/libXext

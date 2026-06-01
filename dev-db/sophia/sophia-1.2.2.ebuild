@@ -10,13 +10,11 @@ SRC_URI="https://github.com/pmwkaa/sophia/archive/version_${PV}.tar.gz -> ${P}.t
 
 LICENSE="BSD"
 SLOT="0"
+S="${WORKDIR}"/${PN}-version_${PV}
 KEYWORDS="~amd64 ~x86"
 IUSE="static-libs"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}"/${PN}-version_${PV}
 
 src_prepare() {
 	sed -i -e '/git/ s/^/#/' -e 's/$build\>/a0837ea/' sophia/build

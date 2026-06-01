@@ -14,15 +14,15 @@ SRC_URI="https://github.com/Shinmera/precise-time/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-features
 	dev-lisp/documentation-utils
 	dev-lisp/cffi
 "
-BDEPEND=""
 
 src_prepare() {
 	default

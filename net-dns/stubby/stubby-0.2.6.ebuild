@@ -12,14 +12,12 @@ SRC_URI="https://github.com/getdnsapi/stubby/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/libyaml
 	>=net-dns/getdns-1.5.0
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

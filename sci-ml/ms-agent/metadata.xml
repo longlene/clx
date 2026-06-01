@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">modelscope/ms-agent</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    MS-Agent is a lightweight framework to empower agentic execution of
+    complex tasks. It provides tools for building AI agents with support
+    for multi-modal inputs, tool use, memory, and planning capabilities.
+  </longdescription>
+</pkgmetadata>

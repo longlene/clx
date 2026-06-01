@@ -1,0 +1,43 @@
+--- a/meson_options.txt	2026-05-19 11:39:11.592091563 -0700
++++ b/meson_options.txt	2026-05-19 11:39:18.035522514 -0700
+@@ -18,3 +18,9 @@
+                 '(50-80 MB typical) and slower link. ' +
+                 'Only effective when LLVM is enabled.',
+ )
++
++option('tests',
++  type        : 'boolean',
++  value       : false,
++  description : 'Build test executables and benchmarks.',
++)
+--- a/meson.build	2026-05-19 11:39:11.597879376 -0700
++++ b/meson.build	2026-05-19 11:39:30.750120742 -0700
+@@ -108,17 +108,19 @@
+   libraries_private : ['-ldl'],
+ )
+ 
+-# Build tests
+-subdir('tests')
++# Build tests, benchmarks, and examples only when -Dtests=true
++if get_option('tests')
++  subdir('tests')
+ 
+-# Build benchmarks
+-subdir('bench')
++  # Build benchmarks
++  subdir('bench')
+ 
+-# M5.1: PG bootscanner port (end-to-end demo + test).  Lives
+-# under examples/ but is wired as a meson test so the example
+-# stays compiled and the .lex -> .c+.h codegen path is
+-# exercised on every CI run.
+-subdir('examples/pg_bootscanner')
++  # M5.1: PG bootscanner port (end-to-end demo + test).  Lives
++  # under examples/ but is wired as a meson test so the example
++  # stays compiled and the .lex -> .c+.h codegen path is
++  # exercised on every CI run.
++  subdir('examples/pg_bootscanner')
++endif
+ 
+ # API documentation via Doxygen
+ doxygen = find_program('doxygen', required : false)

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/Shinmera/cl-all/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
 	dev-lisp/sbcl

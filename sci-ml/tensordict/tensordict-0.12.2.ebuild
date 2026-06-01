@@ -17,9 +17,7 @@ SRC_URI="https://github.com/pytorch/tensordict/archive/refs/tags/v${PV}.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=sci-ml/pytorch-2.5.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '

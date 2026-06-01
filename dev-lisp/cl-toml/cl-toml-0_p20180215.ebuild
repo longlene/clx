@@ -14,9 +14,10 @@ SRC_URI="https://github.com/cxxxr/cl-toml/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/trivial-types
@@ -28,4 +29,3 @@ src_prepare() {
 	eapply_user
 	use test || rm ${PN}-test.asd test.lisp
 }
-	

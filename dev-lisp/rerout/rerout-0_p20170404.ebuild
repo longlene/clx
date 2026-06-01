@@ -14,15 +14,15 @@ SRC_URI="https://github.com/jorams/rerout/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/quri
 	test? ( dev-lisp/parachute )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

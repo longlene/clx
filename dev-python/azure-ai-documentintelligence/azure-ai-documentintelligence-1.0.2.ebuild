@@ -17,6 +17,7 @@ SRC_URI="https://github.com/Azure/azure-sdk-for-python/archive/refs/tags/${PN}_$
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/azure-sdk-for-python-${PN}_${PV}/sdk/documentintelligence/${PN}/
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -31,5 +32,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/azure-sdk-for-python-${PN}_${PV}/sdk/documentintelligence/${PN}/

@@ -12,7 +12,5 @@ SRC_URI="https://github.com/MatthewRock/cl-sandbox/archive/${PV}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

@@ -12,12 +12,9 @@ SRC_URI="https://github.com/sinasamavati/leptus/archive/${PV}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lang/erlang
 	>=dev-erlang/cowboy-2.4.0
 	>=dev-erlang/jiffy-0.15.2
 "
-BDEPEND=""

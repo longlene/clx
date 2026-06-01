@@ -6,16 +6,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="myweb - simple web server written in Common Lisp"
 HOMEPAGE="https://github.com/LinkFly/myweb"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/LinkFly/myweb.git"
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 app-emacs/slime
 dev-lisp/usocket
@@ -23,4 +20,3 @@ dev-lisp/bordeaux-threads
 dev-lisp/local-time
 dev-lisp/cl-log
 dev-lisp/trivial-utf8"
-

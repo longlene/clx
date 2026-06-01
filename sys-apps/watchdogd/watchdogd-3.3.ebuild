@@ -17,7 +17,6 @@ DEPEND="
 	dev-libs/libuev
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

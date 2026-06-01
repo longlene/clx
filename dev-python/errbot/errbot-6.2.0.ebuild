@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Errbot is a chatbot designed to be simple to extend with plugins written in Python"
+DESCRIPTION="Errbot is a chatbot designed to be simple to extend with plugins written in"
 HOMEPAGE="
 	https://pypi.org/project/errbot/
 	https://github.com/errbotio/errbot/
@@ -24,7 +24,7 @@ RDEPEND="
 	>=dev-python/setuptools-78.1.1[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.3.3[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.32.3[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-3.1.6[${PYTHON_USEDEP}]
+	>=dev-python/jinja22-3.1.6[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-24.3.0[${PYTHON_USEDEP}]
 	>=dev-python/colorlog-6.7.0[${PYTHON_USEDEP}]
 	>=dev-python/markdown-3.4.4[${PYTHON_USEDEP}]

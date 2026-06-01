@@ -9,7 +9,7 @@ LIBREALCUGAN_COMMIT="d9c5a7eb4c8475af6110496c27c3d1f702f9b96a"
 LIBREALESRGAN_COMMIT="c1f255524f79566c40866b38e5e65b40adf77eee"
 LIBRIFE_COMMIT="3f7bcb44f38b2acda6fa5e575a6d12517ac16b94"
 
-DESCRIPTION="A machine learning-based video super resolution and frame interpolation framework"
+DESCRIPTION="A machine learning-based video super resolution and frame interpolation"
 HOMEPAGE="
 	https://docs.video2x.org/
 	https://github.com/k4yt3x/video2x/
@@ -33,7 +33,6 @@ DEPEND="
 	media-video/ffmpeg[libplacebo]
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

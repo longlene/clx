@@ -19,7 +19,6 @@ DEPEND="
 	dev-libs/cpuinfo
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

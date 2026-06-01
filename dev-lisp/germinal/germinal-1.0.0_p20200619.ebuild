@@ -14,9 +14,7 @@ SRC_URI="https://git.carcosa.net/jmcbray/germinal/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/babel
@@ -34,4 +32,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/uax15
 "
-BDEPEND=""

@@ -12,14 +12,14 @@ SRC_URI="https://github.com/phoe/safe-read/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/trivial-garbage
 "
-BDEPEND=""
 
 src_prepare() {
 	default

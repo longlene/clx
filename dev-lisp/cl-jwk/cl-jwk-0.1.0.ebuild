@@ -13,7 +13,6 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/binascii
@@ -23,7 +22,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/jonathan
 	dev-lisp/jose
 "
-BDEPEND=""
 
 src_prepare() {
 	default

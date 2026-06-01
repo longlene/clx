@@ -16,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+sbcl"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/hunchentoot
 	dev-lisp/anaphora
@@ -30,4 +29,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	sbcl? ( dev-lisp/sbcl )
 "
-BDEPEND=""

@@ -10,8 +10,8 @@ HOMEPAGE="http://cl-sdl.sourceforge.net/"
 SRC_URI="mirror://sourceforge/cl-sdl/${PN}_${PV}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc x86 ~arm"
-IUSE=""
+S=${WORKDIR}/${PN}
+KEYWORDS="x86 ~amd64 ~arm ~ppc ~sparc"
 DEPEND="dev-lisp/cl-uffi
 	media-libs/libsdl
 	media-libs/sdl-ttf
@@ -19,14 +19,12 @@ DEPEND="dev-lisp/cl-uffi
 	media-libs/sdl-image
 	virtual/opengl"
 
-S=${WORKDIR}/${PN}
-
 SUB_PACKAGES="sdl sdl-ttf sdl-img sdl-mix opengl"
 CLPACKAGE="sdl-ffi sdl-demos ${SUB_PACKAGES}"
 
 src_unpack() {
 	unpack ${A}
-	epatch ${FILESDIR}/${PV}-CD-STATUS-gentoo.patch || die
+	epatch "${FILESDIR}"/${PV}-CD-STATUS-gentoo.patch || die
 }
 
 src_compile() {

@@ -12,10 +12,8 @@ SRC_URI="https://github.com/aconchillo/guile-xmlrpc/archive/${PV}.tar.gz -> ${P}
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

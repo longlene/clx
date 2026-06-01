@@ -14,7 +14,7 @@ SRC_URI="https://github.com/McCLIM/McCLIM/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 IUSE="emacs doc"
 
 DEPEND="doc? ( virtual/texi2dvi )"

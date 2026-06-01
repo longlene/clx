@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1
 
 DESCRIPTION="Fast and flexible image augmentation library"
@@ -17,7 +17,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-python/numpy-1.24.4[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
@@ -25,6 +24,5 @@ RDEPEND="${DEPEND}
 	>=dev-python/pydantic-2.9.2[${PYTHON_USEDEP}]
 	>=sci-ml/albucore-0.0.23[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"

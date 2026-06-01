@@ -14,7 +14,6 @@ SRC_URI="https://github.com/ajwans/libtoml/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="dev-utils/ragel"
 RDEPEND="${DEPEND}"

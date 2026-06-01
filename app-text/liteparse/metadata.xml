@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Fast, lightweight PDF and document parsing with spatial text extraction.
+    Provides the `lit` CLI tool for parsing PDFs and other documents.
+  </longdescription>
+  <use>
+    <flag name="tesseract">Enable OCR support via Tesseract</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">run-llama/liteparse</remote-id>
+  </upstream>
+</pkgmetadata>

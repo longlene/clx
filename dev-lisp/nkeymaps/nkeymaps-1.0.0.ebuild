@@ -13,13 +13,11 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/fset
 	dev-lisp/trivial-package-local-nicknames
 "
-BDEPEND=""
 
 src_prepare() {
 	default

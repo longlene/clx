@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="JSX Compiler for Common Lisp"
 HOMEPAGE="https://github.com/thephoeron/cl-jsx"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/thephoeron/cl-jsx.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-who
 	dev-lisp/parenscript

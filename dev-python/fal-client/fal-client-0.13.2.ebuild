@@ -17,6 +17,7 @@ SRC_URI="https://github.com/fal-ai/fal/archive/refs/tags/fal_client_v${PV}.tar.g
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/fal-fal_client_v${PV}/projects/fal_client
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,5 +33,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/fal-fal_client_v${PV}/projects/fal_client

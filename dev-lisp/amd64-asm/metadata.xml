@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		amd64-asm is a Lisp library for generating AMD64 machine code
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    amd64-asm is a Lisp library for generating AMD64 machine code
+  </longdescription>
+  <upstream>
+    <remote-id type="github">rayiner/amd64-asm</remote-id>
+  </upstream>
 </pkgmetadata>

@@ -12,9 +12,7 @@ SRC_URI="https://github.com/fukamachi/utopian/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/lack
 	dev-lisp/mito
@@ -30,4 +28,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/clack
 	dev-lisp/jonathan
 "
-BDEPEND=""

@@ -12,9 +12,7 @@ SRC_URI="https://github.com/lisp-maintainers/cl-repl/archive/refs/tags/v${PV}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/uiop
 	dev-lisp/unix-opts

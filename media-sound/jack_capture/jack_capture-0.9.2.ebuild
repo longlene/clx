@@ -7,12 +7,11 @@ what is coming out your speakers."
 
 HOMEPAGE="http://www.notam02.no/arkiv/src/"
 SRC_URI="http://www.notam02.no/arkiv/src/${P}.tar.gz"
-# No license in source, but README states the program is based on 
+# No license in source, but README states the program is based on
 # code from an example that comes with jack, which is GPL-2.
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 DEPEND="media-sound/jack-audio-connection-kit
 	media-libs/libsndfile"
 RDEPEND="${DEPEND}"

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/stacksmith/cl-fm/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-cffi-gtk
 	dev-lisp/gtk-emacs-like-input

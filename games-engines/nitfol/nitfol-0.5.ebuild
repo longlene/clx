@@ -8,7 +8,6 @@ SRC_URI="http://www.ifarchive.org/if-archive/infocom/interpreters/nitfol/nitfol-
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 RDEPEND=">=dev-libs/glkloader-0.3.2"
 DEPEND="${RDEPEND}
 	>=dev-lang/perl-5.8.7-r3"

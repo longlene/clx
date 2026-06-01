@@ -13,18 +13,15 @@ SRC_URI="https://github.com/iresty/lua-typeof/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/lua-${P}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="
 	${DEPEND}
 	${LUA_DEPS}
 "
-BDEPEND=""
 
 DOCS=( README.md )
-
-S="${WORKDIR}"/lua-${P}
 
 each_lua_install() {
 	insinto "$(lua_get_lmod_dir)"

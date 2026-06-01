@@ -6,20 +6,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Conserv is an event-based networking library"
 HOMEPAGE="https://github.com/sykopomp/conserv"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/sykopomp/conserv.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/iolib
 dev-lisp/babel
 dev-lisp/trivial-gray-streams
 dev-lisp/alexandria
 dev-lisp/cl-ppcre"
-

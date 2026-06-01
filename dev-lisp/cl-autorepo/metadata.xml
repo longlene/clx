@@ -1,49 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		cl-autorepo is a simple lisp library to ease inclusion of
-		non-Quicklisp libraries from repositories.
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    cl-autorepo is a simple lisp library to ease inclusion of
+    non-Quicklisp libraries from repositories.
 
-		For example, to load my File System DataBase library:
+    For example, to load my File System DataBase library:
 
-		(ql:quickload "cl-autorepo")
-		(cl-autorepo:add-system "fsdb" "https://github.com/billstclair/fsdb" :git)
-		(ql:quickload "fsdb")
+    (ql:quickload "cl-autorepo")
+    (cl-autorepo:add-system "fsdb" "https://github.com/billstclair/fsdb" :git)
+    (ql:quickload "fsdb")
 
-		You can add ADD-SYSTEM calls to your library system definition (.asd)
-		files, to auto-download systems that aren't yet in Quicklisp.
+    You can add ADD-SYSTEM calls to your library system definition (.asd)
+    files, to auto-download systems that aren't yet in Quicklisp.
 
-		Downloaded systems are kept in ~/.local/share/common-lisp/source/,
-		which is one of the places ASDF looks for systems by default.
+    Downloaded systems are kept in ~/.local/share/common-lisp/source/,
+    which is one of the places ASDF looks for systems by default.
 
-		There is currently no support for updating libraries. You can easily
-		do that yourself with "git pull", "svn update", etc.
+    There is currently no support for updating libraries. You can easily
+    do that yourself with "git pull", "svn update", etc.
 
-		I've included support for git, svn, darcs, and hg. You can add another
-		respository type with a simple DOWNLOAD-REPO method. Send it to me,
-		and I'll add it.
+    I've included support for git, svn, darcs, and hg. You can add another
+    respository type with a simple DOWNLOAD-REPO method. Send it to me,
+    and I'll add it.
 
-		One way to autoload cl-autorepo itself, before it becomes part of
-		Quicklisp, is the code below:
+    One way to autoload cl-autorepo itself, before it becomes part of
+    Quicklisp, is the code below:
 
-		(load "~/quicklisp/setup")              ;may be in your init file
+    (load "~/quicklisp/setup")              ;may be in your init file
 
-		(unless (or (find-package :cl-autorepo)
-		(ignore-errors (ql:quickload "cl-autorepo")))
-		(let* ((dir "~/.local/share/common-lisp/source/")
-		(autorepo-asd (merge-pathnames "cl-autorepo/cl-autorepo.asd" dir))
-		(url "https://github.com/billstclair/cl-autorepo"))
-		(asdf:run-shell-command "mkdir -p ~a;cd ~a;git clone ~a" dir dir url)
-		(load autorepo-asd)
-		(ql:quickload "cl-autorepo")))
+    (unless (or (find-package :cl-autorepo)
+    (ignore-errors (ql:quickload "cl-autorepo")))
+    (let* ((dir "~/.local/share/common-lisp/source/")
+    (autorepo-asd (merge-pathnames "cl-autorepo/cl-autorepo.asd" dir))
+    (url "https://github.com/billstclair/cl-autorepo"))
+    (asdf:run-shell-command "mkdir -p ~a;cd ~a;git clone ~a" dir dir url)
+    (load autorepo-asd)
+    (ql:quickload "cl-autorepo")))
 
-		For an example of using cl-autorepo in a real system, see:
+    For an example of using cl-autorepo in a real system, see:
 
-		https://github.com/billstclair/truledger/blob/master/truledger.asd
-	</longdescription>
+    https://github.com/billstclair/truledger/blob/master/truledger.asd
+  </longdescription>
+  <upstream>
+    <remote-id type="github">billstclair/cl-autorepo</remote-id>
+  </upstream>
 </pkgmetadata>

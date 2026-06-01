@@ -11,11 +11,8 @@ SRC_URI="https://github.com/msgpack/msgpack-erlang/archive/refs/tags/${PV}.tar.g
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/msgpack-erlang-${PV}
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND=">=dev-lang/erlang-17.0"
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/msgpack-erlang-${PV}

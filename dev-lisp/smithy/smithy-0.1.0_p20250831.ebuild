@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/closer-mop
@@ -25,7 +24,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/babel
 	dev-lisp/assoc-utils
 "
-BDEPEND=""
 
 src_prepare() {
 	default

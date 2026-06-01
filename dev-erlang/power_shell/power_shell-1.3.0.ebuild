@@ -12,9 +12,5 @@ SRC_URI="https://github.com/WhatsApp/power_shell/archive/${PV}.tar.gz -> ${P}.ta
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-

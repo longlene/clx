@@ -15,7 +15,6 @@ SRC_URI="https://github.com/memononen/nanovg/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-util/premake
@@ -38,4 +37,3 @@ src_install() {
 	doins src/nanovg{,_gl}.h
 	dodoc README.md
 }
-

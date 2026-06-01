@@ -11,11 +11,9 @@ SRC_URI="https://github.com/yuce/bert.erl/archive/refs/tags/v${PV}.tar.gz -> ${P
 
 LICENSE="as-is"
 SLOT="0"
+S="${WORKDIR}"/bert.erl-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
-S="${WORKDIR}"/bert.erl-${PV}
 REBAR_APP_SRC=src/bert.app.src

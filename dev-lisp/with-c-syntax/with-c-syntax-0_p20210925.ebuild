@@ -14,9 +14,10 @@ SRC_URI="https://github.com/y2q-actionman/with-c-syntax/archive/${EGIT_COMMIT}.t
 LICENSE="WTFPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-yacc
@@ -26,7 +27,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/floating-point-contractions
 	test? ( dev-lisp/1am )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

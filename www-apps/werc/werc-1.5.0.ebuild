@@ -10,9 +10,7 @@ SRC_URI="http://werc.cat-v.org/download/${P}.tar.gz"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-util/plan9port
 "

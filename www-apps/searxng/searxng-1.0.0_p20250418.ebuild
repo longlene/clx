@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -19,6 +19,7 @@ SRC_URI="https://github.com/searxng/searxng/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="AGPL-3"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -27,7 +28,7 @@ RDEPEND="
 	>=dev-python/flask-babel-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/flask-1.1.2[${PYTHON_USEDEP}]
 	>=dev-python/idna-2.10[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-2.11.3[${PYTHON_USEDEP}]
+	>=dev-python/jinja22-2.11.3[${PYTHON_USEDEP}]
 	>=dev-python/lxml-4.6.3[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.1[${PYTHON_USEDEP}]
@@ -41,5 +42,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

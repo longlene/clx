@@ -12,7 +12,6 @@ SRC_URI="https://github.com/bitbouncer/csi-kafka/archive/v${PV}.tar.gz -> ${P}.t
 LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-cpp/csi-async

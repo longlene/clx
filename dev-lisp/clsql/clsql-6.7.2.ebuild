@@ -14,7 +14,7 @@ SRC_URI="http://git.kpe.io/?p=clsql.git;a=snapshot;h=${EGIT_COMMIT};sf=tgz -> ${
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 IUSE="doc examples mysql odbc oracle postgres sqlite"
 
 RDEPEND="

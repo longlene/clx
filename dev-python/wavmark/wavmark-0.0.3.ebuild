@@ -20,8 +20,7 @@ RDEPEND="
 	dev-python/librosa[${PYTHON_USEDEP}]
 	dev-python/resampy[${PYTHON_USEDEP}]
 	dev-python/huggingface_hub[${PYTHON_USEDEP}]
-	sci-libs/pytorch[${PYTHON_USEDEP}]
+	sci-ml/pytorch[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT=test

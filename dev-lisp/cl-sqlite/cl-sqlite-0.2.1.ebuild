@@ -12,7 +12,9 @@ SRC_URI="https://github.com/dmitryvk/cl-sqlite/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	dev-lisp/cffi
@@ -25,4 +27,3 @@ src_prepare() {
 	default
 	use test || rm sqlite-tests.asd sqlite-tests.lisp
 }
-

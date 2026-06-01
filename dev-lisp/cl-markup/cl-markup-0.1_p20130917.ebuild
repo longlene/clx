@@ -13,9 +13,10 @@ SRC_URI="https://github.com/arielnetworks/cl-markup/archive/${EGIT_COMMIT}.tar.g
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	test? ( dev-lisp/cl-test-more )
 "
@@ -23,4 +24,3 @@ RDEPEND="${DEPEND}
 src_prepare() {
 	use test || rm -r ${PN}-test.asd test
 }
-

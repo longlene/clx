@@ -9,7 +9,6 @@ SRC_URI="http://www.terrysoucy.ca/uploads/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 DEPEND="
 	net-p2p/transmission
@@ -21,10 +20,9 @@ RDEPEND="${DEPEND}"
 src_install () {
 	exeinto /usr/sbin
 	doexe mytv || die "Install of mytv failed"
-	
+
 	# run mytv every hour
 	dosym /usr/sbin/mytv /etc/cron.hourly/mytv
-
 
 	dodoc Changelog README
 

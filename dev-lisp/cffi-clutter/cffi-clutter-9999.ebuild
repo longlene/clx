@@ -8,7 +8,6 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Thin Common Lisp bindings for Clutter toolkit"
 HOMEPAGE="https://github.com/stacksmith/cffi-clutter"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/stacksmith/cffi-clutter.git"
 
@@ -17,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/alexandria

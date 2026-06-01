@@ -93,6 +93,6 @@ src_install() {
 pkg_postinst() {
 	tmpfiles_process ${PN}.conf
 
-	elog "You need to copy ${EROOT}/etc/turnserver.conf.default to"
+	elog "You need to copy "${EROOT}"/etc/turnserver.conf.default to"
 	elog "${EROOT}/etc/turnserver.conf and do your settings there."
 }

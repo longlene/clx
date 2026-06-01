@@ -17,7 +17,6 @@ DEPEND="
 	dev-libs/libbpf
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 CMAKE_BUILD_TYPE=debug
 

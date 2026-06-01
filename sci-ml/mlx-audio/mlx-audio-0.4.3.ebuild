@@ -18,7 +18,6 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND="
 	>=sci-ml/huggingface_hub-1.0[${PYTHON_SINGLE_USEDEP}]
@@ -41,4 +40,3 @@ RDEPEND="
 #distutils_enable_tests pytest
 
 RESTRICT="test"
-

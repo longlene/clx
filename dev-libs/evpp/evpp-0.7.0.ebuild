@@ -5,14 +5,13 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION="A modern C++ network library for developing high performance network services in TCP/UDP/HTTP protocols"
+DESCRIPTION="A modern C++ network library for developing high performance network"
 HOMEPAGE="https://github.com/Qihoo360/evpp"
 SRC_URI="https://github.com/Qihoo360/evpp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-cpp/glog

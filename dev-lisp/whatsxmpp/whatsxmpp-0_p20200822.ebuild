@@ -14,9 +14,7 @@ SRC_URI="https://git.theta.eu.org/eta/whatsxmpp/archive/acfa5c236dea8abedb6ab01f
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/bordeaux-threads
@@ -33,4 +31,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-backtrace
 	dev-lisp/trivial-mimes
 "
-BDEPEND=""

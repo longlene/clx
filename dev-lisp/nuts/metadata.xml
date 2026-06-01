@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		css-lite is a library for generating CSS from an s-exp based syntax. When compiled with Parenscript loaded in the Lisp image, it also provides the same CSS generation facilities in Parenscript-generated JavaScript code.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    css-lite is a library for generating CSS from an s-exp based syntax. When compiled with Parenscript loaded in the Lisp image, it also provides the same CSS generation facilities in Parenscript-generated JavaScript code.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">vseloved/nuts</remote-id>
+  </upstream>
 </pkgmetadata>

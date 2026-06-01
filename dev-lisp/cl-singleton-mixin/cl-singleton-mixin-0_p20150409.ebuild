@@ -14,9 +14,10 @@ SRC_URI="https://github.com/hipeta/cl-singleton-mixin/archive/${EGIT_COMMIT}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/metap

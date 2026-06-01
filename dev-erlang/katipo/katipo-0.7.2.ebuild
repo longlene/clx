@@ -12,7 +12,6 @@ SRC_URI="https://github.com/puzza007/katipo/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-erlang/cowlib-2.4.0
@@ -20,4 +19,3 @@ DEPEND="
 	>=dev-erlang/metrics-2.5.0
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

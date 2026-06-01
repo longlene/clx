@@ -9,9 +9,7 @@ SRC_URI="http://john.fremlin.org/programs/teepeedee/download/teepeedee-${PV}pre.
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile() {

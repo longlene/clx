@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1
 
 DESCRIPTION="Hjson for Python"
@@ -13,14 +13,10 @@ SRC_URI="https://github.com/hjson/hjson-py/archive/refs/tags/v${PV}.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/hjson-py-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND=""
-BDEPEND=""
-
 RESTRICT="test"
-
-S="${WORKDIR}"/hjson-py-${PV}
 
 src_prepare() {
 	default

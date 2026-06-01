@@ -14,18 +14,15 @@ SRC_URI="https://github.com/fffonion/lua-resty-openssl/archive/refs/tags/${PV}.t
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
-DEPEND=""
 RDEPEND="
 	${DEPEND}
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
 	dev-libs/openssl
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

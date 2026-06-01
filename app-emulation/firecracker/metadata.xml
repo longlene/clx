@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Firecracker is an open source virtualization technology that is purpose-built
+    for creating and managing secure, multi-tenant container and function-based
+    services. It enables you to deploy workloads in lightweight virtual machines,
+    called microVMs, which provide enhanced security and workload isolation over
+    traditional VMs, while enabling the speed and resource efficiency of
+    containers.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">firecracker-microvm/firecracker</remote-id>
+  </upstream>
+</pkgmetadata>

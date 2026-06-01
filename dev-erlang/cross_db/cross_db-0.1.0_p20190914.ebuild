@@ -19,7 +19,6 @@ DEPEND="
 	dev-erlang/iso8601
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

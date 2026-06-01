@@ -11,13 +11,11 @@ SRC_URI="mirror://sourceforge/${PN}/Manchu_Font_2005_${PV}.zip"
 
 LICENSE="public-domain"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="app-arch/unzip"
-RDEPEND=""
 
-S="${WORKDIR}"
 FONT_S="${S}"
 FONT_SUFFIX="ttf"
 DOCS="ReadMe.txt"

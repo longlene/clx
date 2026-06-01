@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A tiny library to compile a system into an executable"
 HOMEPAGE="https://github.com/ceramic/trivial-build"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/ceramic/trivial-build.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/lisp-invocation
 	dev-lisp/trivial-exe

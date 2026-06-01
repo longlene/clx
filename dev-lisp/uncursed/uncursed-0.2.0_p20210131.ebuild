@@ -15,14 +15,12 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi
 	dev-lisp/terminfo
 	dev-lisp/cl-setlocale
 "
-BDEPEND=""
 
 src_prepare() {
 	default

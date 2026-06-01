@@ -17,7 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="test"
 
-DEPEND=""
 RDEPEND="
 	${DEPEND}
 	>=dev-python/marshmallow-3.18.0[${PYTHON_USEDEP}]

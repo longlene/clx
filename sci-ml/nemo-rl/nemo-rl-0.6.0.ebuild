@@ -18,6 +18,7 @@ SRC_URI="https://github.com/NVIDIA-NeMo/RL/archive/refs/tags/v${PV}.tar.gz -> ${
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/RL-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -64,5 +65,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/RL-${PV}

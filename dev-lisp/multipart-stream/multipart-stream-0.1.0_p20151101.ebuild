@@ -14,9 +14,7 @@ SRC_URI="https://github.com/wemeetagain/multipart-stream/archive/${EGIT_COMMIT}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/clean-composite-stream
 "

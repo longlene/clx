@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    MSCCL++ is a GPU-driven communication stack for scalable AI applications.
+    It provides a high-performance inter-GPU communication library that supports
+    NVIDIA CUDA and AMD ROCm, with optional InfiniBand support. It implements
+    the HybridFlow communication model used by verl and similar ML training
+    frameworks.
+  </longdescription>
+  <use>
+    <flag name="cuda">Enable NVIDIA CUDA GPU support</flag>
+    <flag name="rocm">Enable AMD ROCm/HIP GPU support</flag>
+    <flag name="infiniband">Enable InfiniBand RDMA support via rdma-core</flag>
+    <flag name="test">Build and run MPI-based unit tests</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">microsoft/mscclpp</remote-id>
+  </upstream>
+</pkgmetadata>

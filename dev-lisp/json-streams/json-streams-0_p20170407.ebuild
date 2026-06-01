@@ -13,13 +13,13 @@ SRC_URI="https://github.com/copyleft/json-streams/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
 
 src_prepare() {
 	eapply_user
 	use test || rm -r ${PN}-tests.asd tests
 }
-

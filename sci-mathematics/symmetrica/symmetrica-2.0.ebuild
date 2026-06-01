@@ -8,16 +8,11 @@ SRC_URI="http://www.neu.uni-bayreuth.de/de/Uni_Bayreuth/Fakultaeten/1_Mathematik
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~ppc64"
-IUSE=""
+S="${WORKDIR}"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 
 #### Remove the following line when moving this ebuild to the main tree!
 RESTRICT="mirror"
-
-RDEPEND=""
-DEPEND=""
-
-S="${WORKDIR}"
 
 src_unpack() {
 	cd "${S}"
@@ -37,4 +32,3 @@ src_install() {
 #	symmetrica's documentation are just text files with a ".doc" extension.
 	dodoc README *.doc
 }
-

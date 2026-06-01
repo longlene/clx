@@ -12,12 +12,9 @@ SRC_URI="https://cl-lex.googlecode.com/files/cl-lex_${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+S="${WORKDIR}"/${PN}
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre
 "
-
-S="${WORKDIR}"/${PN}

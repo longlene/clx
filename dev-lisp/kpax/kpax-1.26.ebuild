@@ -16,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-who
 	dev-lisp/puri
@@ -26,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/s-base64
 	dev-lisp/s-http-server
 "
-BDEPEND=""
 
 src_prepare() {
 	default

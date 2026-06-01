@@ -14,9 +14,7 @@ SRC_URI="https://github.com/malcolmstill/cepl.drm-gbm/archive/${EGIT_COMMIT}.tar
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cepl
 	dev-lisp/osicat

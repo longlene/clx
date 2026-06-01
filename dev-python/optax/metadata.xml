@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Optax is a gradient processing and optimization library for JAX,
+    providing composable gradient transformations and a suite of popular
+    optimizers (Adam, SGD, AdaGrad, RMSProp, etc.) for machine learning research.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">google-deepmind/optax</remote-id>
+    <remote-id type="pypi">optax</remote-id>
+  </upstream>
+</pkgmetadata>

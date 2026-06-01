@@ -15,13 +15,11 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	insinto /usr/include
 	doins -r include/mls
-	dolib.so ${BUILD_DIR}/libmlspp.so ${BUILD_DIR}/lib/bytes/libbytes.so ${BUILD_DIR}/lib/hpke/libhpke.so ${BUILD_DIR}/lib/tls_syntax/libtls_syntax.so ${BUILD_DIR}/lib/mls_vectors/libmls_vectors.so
+	dolib.so "${BUILD_DIR}"/libmlspp.so "${BUILD_DIR}"/lib/bytes/libbytes.so "${BUILD_DIR}"/lib/hpke/libhpke.so "${BUILD_DIR}"/lib/tls_syntax/libtls_syntax.so "${BUILD_DIR}"/lib/mls_vectors/libmls_vectors.so
 	dodoc README.md
 }

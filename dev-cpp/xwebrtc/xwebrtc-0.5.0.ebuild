@@ -9,14 +9,11 @@ DESCRIPTION="C++ backend for the jupyter webrtc widget"
 HOMEPAGE="https://github.com/QuantStack/xwebrtc"
 SRC_URI="https://github.com/QuantStack/xwebrtc/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-cpp/xeus
 	dev-cpp/xwidgets
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

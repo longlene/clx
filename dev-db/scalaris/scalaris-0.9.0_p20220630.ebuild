@@ -14,11 +14,8 @@ SRC_URI="https://github.com/scalaris-team/scalaris/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	default

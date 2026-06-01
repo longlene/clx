@@ -13,8 +13,7 @@ SRC_URI="https://github.com/atlas-engineer/closure/archive/${EGIT_COMMIT}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="
 	dev-lisp/cxml
@@ -27,4 +26,3 @@ RDEPEND="
 	dev-lisp/skippy
 	media-libs/jpeg
 "
-

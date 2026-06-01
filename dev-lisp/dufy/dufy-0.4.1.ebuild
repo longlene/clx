@@ -10,9 +10,10 @@ SRC_URI="https://github.com/privet-kitty/dufy/archive/v0.1.1.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/alexandria

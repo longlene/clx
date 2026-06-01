@@ -15,12 +15,8 @@ SRC_URI="
 
 LICENSE="MPL-2.0 GPL-2 LGPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-RDEPEND=""
-
 S=${WORKDIR}/"${MY_PN}"
+KEYWORDS="~amd64 ~x86"
 
 src_install() {
 	local dest=/opt/${MY_PN}

@@ -10,12 +10,9 @@ SRC_URI="http://files.kpe.io/cl-rss/cl-rss-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/kmrcl
 dev-lisp/xmls
 dev-lisp/aserve"
-

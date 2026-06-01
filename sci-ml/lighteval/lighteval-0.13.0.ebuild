@@ -28,7 +28,7 @@ RDEPEND="
 	$(python_gen_cond_dep '
  		>=sci-ml/inspect-ai-0.3.140[${PYTHON_USEDEP}]
 		dev-python/openai[${PYTHON_USEDEP}]
-    	>=dev-python/gitpython-3.1.41[${PYTHON_USEDEP}]
+		>=dev-python/gitpython-3.1.41[${PYTHON_USEDEP}]
 		dev-python/pydantic[${PYTHON_USEDEP}]
 		>=dev-python/numpy-2[${PYTHON_USEDEP}]
 		>=dev-python/typer-0.20.0[${PYTHON_USEDEP}]
@@ -51,7 +51,4 @@ RDEPEND="
 	')
 "
 
-BDEPEND=""
-
 distutils_enable_tests pytest
-

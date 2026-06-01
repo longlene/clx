@@ -18,7 +18,6 @@ HOMEPAGE="
 "
 #SRC_URI="https://github.com/firecrawl/firecrawl/archive/refs/tags/v${PV}.tar.gz -> ${MY_P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 

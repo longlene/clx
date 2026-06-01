@@ -12,11 +12,9 @@ SRC_URI="https://github.com/mulle-c/mulle-buffer/archive/${PV}.tar.gz -> ${P}.ta
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/mulle-allocator
 	dev-libs/mulle-data
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

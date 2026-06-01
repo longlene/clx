@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Python bindings for LiteParse, providing fast PDF and document parsing
+    with spatial text extraction via PyO3 Rust bindings.
+  </longdescription>
+  <use>
+    <flag name="tesseract">Enable OCR support via Tesseract</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">run-llama/liteparse</remote-id>
+    <remote-id type="pypi">liteparse</remote-id>
+  </upstream>
+</pkgmetadata>

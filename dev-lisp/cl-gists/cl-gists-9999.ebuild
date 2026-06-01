@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Gists API Wrapper for Common Lisp"
 HOMEPAGE="https://github.com/Rudolph-Miller/cl-gists"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/Rudolph-Miller/cl-gists.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-syntax
 	dev-lisp/alexandria

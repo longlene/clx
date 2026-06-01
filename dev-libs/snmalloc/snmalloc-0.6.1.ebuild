@@ -12,14 +12,10 @@ SRC_URI="https://github.com/microsoft/snmalloc/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
-	dolib.so ${BUILD_DIR}/libsnmallocshim.so
+	dolib.so "${BUILD_DIR}"/libsnmallocshim.so
 	dodoc README.md
 }
-

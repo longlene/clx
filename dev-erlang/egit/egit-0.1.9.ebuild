@@ -22,8 +22,6 @@ DEPEND="
 	dev-libs/libgit2
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
 
 src_prepare() {
 	default

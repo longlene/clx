@@ -12,11 +12,9 @@ SRC_URI="https://github.com/dbi-beam/dbi_sqlite/archive/${PV}.tar.gz -> ${P}.tar
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-erlang/dbi-1.0.0
 	>=dev-erlang/esqlite-0.2.3
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

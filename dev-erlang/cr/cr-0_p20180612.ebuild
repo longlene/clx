@@ -14,10 +14,8 @@ SRC_URI="https://github.com/synrc/cr/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.g
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-erlang/kvs
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

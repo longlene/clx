@@ -37,7 +37,6 @@ DEPEND="clutter? ( media-libs/clutter )
 		truetype? ( media-libs/freetype )
 		vorbis? ( media-libs/libvorbis )
 		zlib? ( sys-libs/zlib )"
-RDEPEND=""
 REQUIRED_USE="vorbis? ( ogg )"
 
 src_prepare() {

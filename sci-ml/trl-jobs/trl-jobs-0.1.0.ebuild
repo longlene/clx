@@ -20,6 +20,5 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=sci-ml/huggingface_hub-0.34.4[${PYTHON_SINGLE_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"

@@ -14,11 +14,8 @@ SRC_URI="https://github.com/mateuszb/alien-ring/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-gray-streams
 "
-BDEPEND=""

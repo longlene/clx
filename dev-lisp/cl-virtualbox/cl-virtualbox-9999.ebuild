@@ -8,16 +8,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Control VirtualBox from Common Lisp"
 HOMEPAGE="https://github.com/eudoxia0/cl-virtualbox"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/eudoxia0/cl-virtualbox"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre
 dev-lisp/uiop

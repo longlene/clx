@@ -13,10 +13,8 @@ SRC_URI="https://github.com/fukamachi/event-emitter/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

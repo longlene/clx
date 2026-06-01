@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9,10,11} )
+PYTHON_COMPAT=( python3_{9,10,11,12,13,14}  )
 inherit distutils-r1
 
 DESCRIPTION="A Python NLP Library for Many Human Languages"
@@ -18,10 +18,10 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-python/emoji[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/protobuf-python[${PYTHON_USEDEP}]
+	dev-python/protobuf[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
-	>=sci-libs/pytorch-1.3.0[${PYTHON_USEDEP}]
+	>=sci-ml/pytorch-1.3.0[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
 "
 BDEPEND="test? ( dev-python/coverage[${PYTHON_USEDEP}] )"

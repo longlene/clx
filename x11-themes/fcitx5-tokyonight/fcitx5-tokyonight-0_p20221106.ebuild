@@ -15,11 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	app-i18n/fcitx
 "
-BDEPEND=""
 
 src_install() {
 	local themes=/usr/share/fcitx5/themes

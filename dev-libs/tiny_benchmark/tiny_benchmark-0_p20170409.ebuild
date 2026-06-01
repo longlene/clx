@@ -14,9 +14,7 @@ SRC_URI="https://github.com/cdacamar/tiny_benchmark/archive/${EGIT_COMMIT}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

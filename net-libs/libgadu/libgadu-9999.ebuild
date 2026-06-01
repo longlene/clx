@@ -13,8 +13,6 @@ HOMEPAGE="http://toxygen.net/libgadu/"
 LICENSE="GPL-2"
 SLOT="0"
 
-KEYWORDS=""
-
 IUSE="ssl threads"
 
 DEPEND="ssl? ( >=dev-libs/openssl-0.9.6m )"

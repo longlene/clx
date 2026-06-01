@@ -30,7 +30,6 @@ RDEPEND="${DEPEND}
 	dev-python/einops[${PYTHON_USEDEP}]
 	sci-ml/pytorch[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 PATCHES=(
 	"${FILESDIR}"/setup-fix.patch

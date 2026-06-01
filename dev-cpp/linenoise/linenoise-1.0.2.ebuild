@@ -12,10 +12,8 @@ SRC_URI="https://github.com/taktoa/linenoise/archive/v${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

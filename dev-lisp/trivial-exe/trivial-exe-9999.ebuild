@@ -8,16 +8,15 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A couple of utilities for working with executables"
 HOMEPAGE="https://github.com/ceramic/trivial-exe"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/ceramic/trivial-exe.git"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/osicat
 	dev-lisp/uiop

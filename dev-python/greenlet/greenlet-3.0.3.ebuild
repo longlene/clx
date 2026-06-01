@@ -7,7 +7,7 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 # Note: greenlet is built-in in pypy
 # py3.12: https://github.com/python-greenlet/greenlet/issues/368
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1 pypi
 
@@ -20,7 +20,7 @@ HOMEPAGE="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm arm64 -hppa -ia64 ~m68k ~mips ~ppc ppc64 ~riscv ~s390 sparc x86 ~amd64-linux ~x86-linux ~x64-macos"
+KEYWORDS="amd64 arm arm64 ppc64 sparc x86 ~alpha ~amd64-linux ~m68k ~mips ~ppc ~riscv ~s390 ~x64-macos ~x86-linux -hppa -ia64"
 
 BDEPEND="
 	test? (

@@ -7,16 +7,14 @@ inherit vcs-snapshot
 
 EGIT_COMMIT="41dc0bc4766f6f5fdfc6ad3f3e9f567b60488211"
 
-DESCRIPTION="Libbele, a simple library to marshal an integer to or from little-endian or big-endian formats"
+DESCRIPTION="Libbele, a simple library to marshal an integer to or from little-endian or"
 HOMEPAGE="https://github.com/0intro/libbele"
 SRC_URI="https://github.com/0intro/libbele/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

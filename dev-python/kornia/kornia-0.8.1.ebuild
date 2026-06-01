@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/kornia-rs-0.1.9[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	>=sci-libs/pytorch-2.0.0[${PYTHON_USEDEP}]
+	>=sci-ml/pytorch-2.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
 	test? (

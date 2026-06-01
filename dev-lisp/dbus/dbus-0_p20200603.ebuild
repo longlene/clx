@@ -14,9 +14,7 @@ SRC_URI="https://github.com/death/dbus/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/babel
@@ -27,4 +25,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 	dev-lisp/ieee-floats
 "
-BDEPEND=""

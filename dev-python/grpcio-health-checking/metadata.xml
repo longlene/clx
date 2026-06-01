@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">grpc/grpc</remote-id>
+    <remote-id type="pypi">grpcio-health-checking</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Implementation of the gRPC health checking protocol for Python.
+    Provides a standard interface for services to signal their health
+    status and for clients to query it.
+  </longdescription>
+</pkgmetadata>

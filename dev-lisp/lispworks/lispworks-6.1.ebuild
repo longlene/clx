@@ -10,10 +10,10 @@ SRC_URI="amd64? ( lwper61-x86-linux.tar.gz lwdoc61-x86-linux.tar.gz )"
 
 LICENSE="as-is"
 SLOT="0"
+S=${WORKDIR}
 KEYWORDS="~amd64"
 IUSE="+doc"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 RESTRICT="strip"
@@ -22,8 +22,6 @@ MY_A="lwper61-x86-linux.tar.gz"
 MY_DOC="lwdoc61-x86-linux.tar.gz"
 MY_PREFIX="/usr/lib/LispWorks"
 
-S=${WORKDIR}
-
 pkg_nofetch() {
 	eerror "Please go to"
 	eerror " ${HOMEPAGE%/*}"
@@ -31,7 +29,7 @@ pkg_nofetch() {
 	eerror " ${SRC_URI} "
 
 	eerror "After downloading these files, put them in:"
-	eerror "	${DISTDIR}/"
+	eerror "	"${DISTDIR}"/"
 }
 
 src_unpack() {

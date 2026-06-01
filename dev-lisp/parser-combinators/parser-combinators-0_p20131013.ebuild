@@ -15,12 +15,10 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/iterate
 "
-BDEPEND=""
 
 src_prepare() {
 	default

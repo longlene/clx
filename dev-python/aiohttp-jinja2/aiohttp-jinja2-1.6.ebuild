@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/aiohttp-3.10.8[${PYTHON_USEDEP}]
 	>=dev-python/alabaster-0.6.2[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-3.1.4[${PYTHON_USEDEP}]
+	>=dev-python/jinja22-3.1.4[${PYTHON_USEDEP}]
 	>=dev-python/yarl-1.13.1[${PYTHON_USEDEP}]
 "
 #BDEPEND="

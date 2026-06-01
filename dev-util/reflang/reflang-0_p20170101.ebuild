@@ -14,14 +14,13 @@ SRC_URI="https://github.com/chakaz/reflang/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
-	sys-devel/clang
+	llvm-core/clang
 "
 RDEPEND="${DEPEND}"
 
 src_install() {
-	dobin ${BUILD_DIR}/reflang
+	dobin "${BUILD_DIR}"/reflang
 	dodoc README.md
 }

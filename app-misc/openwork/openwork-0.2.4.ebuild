@@ -14,16 +14,13 @@ SRC_URI="https://github.com/different-ai/openwork/releases/download/v0.2.4/OpenW
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-util/opencode
 	net-libs/webkit-gtk:4.1
 "
-BDEPEND=""
-
-S="${WORKDIR}"
 
 QA_PREBUILT="
 	/usr/bin/openwork

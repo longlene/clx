@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://pypi.org/project/atlassian-python-api/
 	https://github.com/atlassian-api/atlassian-python-api/
 "
-SRC_URI="https://github.com/atlassian-api/atlassian-python-api/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/atlassian-api/atlassian-python-api/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

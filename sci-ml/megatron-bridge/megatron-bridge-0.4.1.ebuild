@@ -10,7 +10,7 @@ PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Training library for Megatron-based models with bidirectional Hugging Face conversion capability"
+DESCRIPTION="Training library for Megatron-based models with bidirectional Hugging Face"
 HOMEPAGE="
 	https://github.com/NVIDIA-NeMo/Megatron-Bridge/
 	https://docs.nvidia.com/nemo/megatron-bridge/latest/
@@ -19,15 +19,16 @@ SRC_URI="https://github.com/NVIDIA-NeMo/Megatron-Bridge/archive/refs/tags/v${PV}
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/Megatron-Bridge-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
 	>=sci-ml/transformers-5.8.1[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/peft-0.18.1[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/datasets-2.20.0[${PYTHON_SINGLE_USEDEP}]
-    sci-ml/accelerate[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/diffusers-0.36.0[${PYTHON_SINGLE_USEDEP}]
-    >=sci-ml/peft-0.18.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/peft-0.18.1[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/datasets-2.20.0[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/accelerate[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/diffusers-0.36.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/peft-0.18.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/tensorboard-2.19.0[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/megatron-lm[${PYTHON_SINGLE_USEDEP}]
 	dev-python/nvidia-resiliency-ext[${PYTHON_SINGLE_USEDEP}]
@@ -38,7 +39,7 @@ RDEPEND="
 	>=sci-ml/flashinfer-0.6.8[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/open-clip-torch-3.2.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-    	>=dev-python/mistral-common-1.10.0[${PYTHON_USEDEP}]
+		>=dev-python/mistral-common-1.10.0[${PYTHON_USEDEP}]
 		dev-python/einops[${PYTHON_USEDEP}]
 		dev-python/imageio[${PYTHON_USEDEP}]
 		dev-python/imageio-ffmpeg[${PYTHON_USEDEP}]
@@ -68,8 +69,6 @@ BDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/Megatron-Bridge-${PV}
 
 #src_prepare() {
 #	default

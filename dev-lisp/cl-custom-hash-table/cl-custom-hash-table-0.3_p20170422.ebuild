@@ -14,9 +14,10 @@ SRC_URI="https://github.com/metawilm/cl-custom-hash-table/archive/${EGIT_COMMIT}
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	test? ( dev-lisp/stefil )
 "

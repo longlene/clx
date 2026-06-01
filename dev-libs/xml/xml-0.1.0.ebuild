@@ -12,13 +12,10 @@ SRC_URI="https://github.com/ooxi/xml.c/archive/release-${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-
 S="${WORKDIR}"/${PN}.c-release-${PV}
+KEYWORDS="~amd64 ~arm ~x86"
+
+RDEPEND="${DEPEND}"
 
 src_install() {
 	dolib.a ${CMAKE_BUILD_DIR}/libxml.a

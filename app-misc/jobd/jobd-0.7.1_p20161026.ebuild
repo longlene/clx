@@ -11,10 +11,8 @@ DESCRIPTION="A job management framework"
 HOMEPAGE="https://github.com/mheily/jobd"
 SRC_URI="https://github.com/mheily/jobd/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/libkqueue

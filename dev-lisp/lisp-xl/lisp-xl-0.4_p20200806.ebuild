@@ -14,16 +14,13 @@ SRC_URI="https://github.com/defunkydrummer/lisp-xl/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/zip
 	dev-lisp/cxml
 	dev-lisp/xmls
 	dev-lisp/cl-csv
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

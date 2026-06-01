@@ -5,7 +5,7 @@ EAPI=8
 
 inherit ninja-utils
 
-DESCRIPTION="Public domain cross platform lock free thread caching 16-byte aligned memory allocator implemented in C"
+DESCRIPTION="Public domain cross platform lock free thread caching 16-byte aligned memory"
 HOMEPAGE="https://github.com/mjansson/rpmalloc"
 SRC_URI="https://github.com/mjansson/rpmalloc/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -13,9 +13,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	./configure.py || die "configure failed"

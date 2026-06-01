@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1
 
 EGIT_COMMIT="da6b2fe5231fd5f8a8633ed11a05ef24c8e7223d"
@@ -15,13 +15,14 @@ SRC_URI="https://git.sr.ht/~nicoco/slidge/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 
 LICENSE="AGPL-3.0"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/qrcode-7.4.1[${PYTHON_USEDEP}]
 	>=dev-python/Pillow-10[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.8.3[${PYTHON_USEDEP}]
-	>=dev-python/ConfigArgParse-1.5.3[${PYTHON_USEDEP}]
+	>=dev-python/configargparse-1.5.3[${PYTHON_USEDEP}]
 	>=dev-python/pickle-secure-0.99.9[${PYTHON_USEDEP}]
 	>=dev-python/python-magic-0.4.27[${PYTHON_USEDEP}]
 	>=dev-python/slixmpp-1.8.5[${PYTHON_USEDEP}]
@@ -34,5 +35,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

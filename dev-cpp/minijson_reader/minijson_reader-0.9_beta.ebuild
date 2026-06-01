@@ -8,16 +8,14 @@ inherit vcs-snapshot
 
 MY_PV=${PV/_/-}
 
-DESCRIPTION="A DOM-less JSON parser that can parse a JSON object without allocating a single byte of memory"
+DESCRIPTION="A DOM-less JSON parser that can parse a JSON object without allocating a"
 HOMEPAGE="https://github.com/giacomodrago/minijson_reader"
 SRC_URI="https://github.com/giacomodrago/minijson_reader/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile() {

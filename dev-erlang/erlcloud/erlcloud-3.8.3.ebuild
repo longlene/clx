@@ -21,4 +21,3 @@ DEPEND="
 	dev-erlang/lhttpc
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

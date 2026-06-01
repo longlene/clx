@@ -15,12 +15,10 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/3d-vectors
 "
-BDEPEND=""
 
 src_prepare() {
 	default

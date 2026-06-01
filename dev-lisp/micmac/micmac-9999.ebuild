@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp implementation of various AI/statistics related things"
 HOMEPAGE="https://github.com/melisgl/micmac"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/melisgl/micmac.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/mgl-pax
 "

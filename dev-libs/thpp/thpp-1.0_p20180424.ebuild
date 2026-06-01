@@ -11,10 +11,11 @@ DESCRIPTION="C++ interface to the torch7 TH library"
 HOMEPAGE="https://github.com/facebook/thpp"
 SRC_URI="https://github.com/facebook/thpp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	sci-libs/torch7
@@ -32,4 +33,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-

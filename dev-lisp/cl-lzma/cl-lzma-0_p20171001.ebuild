@@ -14,9 +14,7 @@ SRC_URI="https://github.com/phoe/cl-lzma/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	app-arch/lzma
 	dev-lisp/cl-autowrap

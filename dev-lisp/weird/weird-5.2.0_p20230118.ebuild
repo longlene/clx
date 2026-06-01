@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-json
@@ -24,7 +23,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/veq
 	dev-lisp/split-sequence
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -1,0 +1,44 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -386,8 +386,8 @@
+   else()
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m64")
+     set(MKL_LIBRARIES
+-      ${MKL_LIBRARY_DIR}/libmkl_core.a
+-      ${MKL_LIBRARY_DIR}/libmkl_intel_ilp64.a
++      ${MKL_LIBRARY_DIR}/libmkl_core.so
++      ${MKL_LIBRARY_DIR}/libmkl_intel_ilp64.so
+       )
+   endif()
+ 
+@@ -395,19 +395,19 @@
+     if(WIN32)
+       list(APPEND MKL_LIBRARIES ${MKL_LIBRARY_DIR}/mkl_intel_thread.lib)
+     else()
+-      list(APPEND MKL_LIBRARIES ${MKL_LIBRARY_DIR}/libmkl_intel_thread.a)
++      list(APPEND MKL_LIBRARIES ${MKL_LIBRARY_DIR}/libmkl_intel_thread.so)
+     endif()
+   elseif(OPENMP_RUNTIME STREQUAL "COMP")
+     if(WIN32)
+       message(FATAL_ERROR "Building with MKL requires Intel OpenMP")
+     else()
+-      list(APPEND MKL_LIBRARIES ${MKL_LIBRARY_DIR}/libmkl_gnu_thread.a)
++      list(APPEND MKL_LIBRARIES ${MKL_LIBRARY_DIR}/libmkl_gnu_thread.so)
+     endif()
+   elseif(OPENMP_RUNTIME STREQUAL "NONE")
+     if(WIN32)
+       list(APPEND MKL_LIBRARIES ${MKL_LIBRARY_DIR}/mkl_sequential.lib)
+     else()
+-      list(APPEND MKL_LIBRARIES ${MKL_LIBRARY_DIR}/libmkl_sequential.a)
++      list(APPEND MKL_LIBRARIES ${MKL_LIBRARY_DIR}/libmkl_sequential.so)
+     endif()
+   endif()
+   list(APPEND PRIVATE_INCLUDE_DIRECTORIES ${MKL_INCLUDE_DIR})
+@@ -513,6 +513,7 @@
+     add_definitions(-DCT2_WITH_TENSOR_PARALLEL)
+   endif ()
+   include_directories(${CUDA_TOOLKIT_ROOT_DIR}/include)
++  include_directories(${CUDA_TOOLKIT_ROOT_DIR}/include/cccl)
+ 
+   add_definitions(-DCT2_WITH_CUDA)
+   if(MSVC)

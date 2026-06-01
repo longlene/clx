@@ -7,16 +7,17 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="51cc9edcbbe13d9132fe12b0b197848f31513232"
 
-DESCRIPTION="Implementation of several advanced heap data structures with priority queue and meld functionality in Common Lisp"
+DESCRIPTION="Implementation of several advanced heap data structures with priority queue"
 HOMEPAGE="https://github.com/sfrank/minheap"
 SRC_URI="https://github.com/sfrank/minheap/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
 
 src_prepare() {

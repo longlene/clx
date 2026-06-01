@@ -13,9 +13,7 @@ SRC_URI="https://github.com/vseloved/should-test/archive/${PV}.tar.gz -> ${P}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/local-time

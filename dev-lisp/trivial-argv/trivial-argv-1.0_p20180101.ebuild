@@ -14,15 +14,15 @@ SRC_URI="https://github.com/ta2gch/trivial-argv/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/alexandria
 	test? ( dev-lisp/1am )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

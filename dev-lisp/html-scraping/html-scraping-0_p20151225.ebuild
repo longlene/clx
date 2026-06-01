@@ -15,9 +15,7 @@ SRC_URI="https://github.com/stassats/html-scraping/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/cxml-stp

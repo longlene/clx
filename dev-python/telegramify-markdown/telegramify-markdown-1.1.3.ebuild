@@ -17,6 +17,7 @@ SRC_URI="https://github.com/sudoskys/telegramify-markdown/archive/refs/tags/pypi
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/telegramify-markdown-pypi_${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/telegramify-markdown-pypi_${PV}

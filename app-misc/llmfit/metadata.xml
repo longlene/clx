@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    llmfit is a terminal UI and CLI tool that surveys available LLM models
+    and providers, then filters them by your system's RAM, CPU, and GPU,
+    so you can quickly find models that will actually run on your hardware.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">AlexsJones/llmfit</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -9,13 +9,10 @@ DESCRIPTION="An efficient, small mobile key-value storage framework developed by
 HOMEPAGE="https://github.com/Tencent/MMKV"
 SRC_URI="https://github.com/Tencent/MMKV/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 CMAKE_USE_DIR="${S}"/POSIX
 

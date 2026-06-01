@@ -21,13 +21,13 @@ SRC_URI="https://github.com/NVIDIA/cudnn-frontend/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="NVIDIA"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}
 KEYWORDS="~amd64"
 
 DEPEND+="
 	sci-libs/dlpack
 "
-RDEPEND="
-"
+
 BDEPEND="
 	dev-python/pybind11[${PYTHON_USEDEP}]
 "
@@ -38,8 +38,6 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}
 
 PATCHES=(
 	"${FILESDIR}"/system-dlpack.patch

@@ -521,7 +521,7 @@ RUST_MIN_VER="1.88.0"
 
 inherit cargo
 
-DESCRIPTION="Open-source LLMOps platform for hosting and scaling AI in your own infrastructure"
+DESCRIPTION="Open-source LLMOps platform for hosting and scaling AI in your own"
 HOMEPAGE="https://paddler.intentee.com/"
 SRC_URI="
 	https://github.com/intentee/paddler/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz

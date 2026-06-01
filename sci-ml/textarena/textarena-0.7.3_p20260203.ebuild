@@ -10,7 +10,7 @@ inherit distutils-r1
 
 EGIT_COMMIT="a2c896c5c84c8557d78d3d9182a066ff573daf44"
 
-DESCRIPTION="A Collection of Competitive Text-Based Games for Language Model Evaluation and Reinforcement Learning"
+DESCRIPTION="A Collection of Competitive Text-Based Games for Language Model Evaluation"
 HOMEPAGE="
 	https://pypi.org/project/textarena/
 	https://github.com/TextArena/TextArena
@@ -19,6 +19,7 @@ SRC_URI="https://github.com/TextArena/TextArena/archive/${EGIT_COMMIT}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/TextArena-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -37,5 +38,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/TextArena-${EGIT_COMMIT}

@@ -20,6 +20,7 @@ SRC_URI="https://github.com/GoogleCloudPlatform/opentelemetry-operations-python/
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -35,5 +36,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}/${PN}

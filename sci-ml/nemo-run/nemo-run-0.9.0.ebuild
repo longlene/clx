@@ -17,6 +17,7 @@ SRC_URI="https://github.com/NVIDIA-NeMo/Run/archive/refs/tags/v${PV}.tar.gz -> $
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/Run-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,7 +30,7 @@ RDEPEND="
 		>=sci-ml/torchx-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/typer-0.12.3[${PYTHON_USEDEP}]
 		>=dev-python/rich-13.7.1[${PYTHON_USEDEP}]
-		>=dev-python/jinja2-3.1.4[${PYTHON_USEDEP}]
+		>=dev-python/jinja22-3.1.4[${PYTHON_USEDEP}]
 		>=dev-python/networkx-3.3[${PYTHON_USEDEP}]
 		>=dev-python/omegaconf-2.3.0[${PYTHON_USEDEP}]
 		dev-python/toml[${PYTHON_USEDEP}]
@@ -41,5 +42,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/Run-${PV}

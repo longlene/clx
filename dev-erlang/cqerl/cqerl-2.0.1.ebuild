@@ -22,4 +22,3 @@ DEPEND="
 	dev-erlang/uuid
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

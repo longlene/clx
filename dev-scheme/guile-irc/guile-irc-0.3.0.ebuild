@@ -6,14 +6,10 @@ EAPI=8
 
 inherit autotools
 
-DESCRIPTION=""
-HOMEPAGE=""
 SRC_URI="https://github.com/guildhall/guile-irc/archive/v0.3.0.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 DEPEND="
 	net-libs/gnutls[guile]

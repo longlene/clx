@@ -13,15 +13,12 @@ SRC_URI="https://github.com/Shirakumo/cl-gamepad/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-features
 	dev-lisp/deploy
 	dev-lisp/cffi
 	dev-lisp/documentation-utils
 "
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

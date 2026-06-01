@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Transformer Engine is a library for accelerating Transformer models
+    on NVIDIA GPUs, supporting 8-bit and 4-bit floating point (FP8/FP4)
+    precision on Hopper, Ada, and Blackwell GPUs for better training and
+    inference performance with lower memory utilization.
+  </longdescription>
+  <use>
+    <flag name="jax">Build JAX framework support</flag>
+    <flag name="pytorch">Build PyTorch framework support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">NVIDIA/TransformerEngine</remote-id>
+  </upstream>
+</pkgmetadata>

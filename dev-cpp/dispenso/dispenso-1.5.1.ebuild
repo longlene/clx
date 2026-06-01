@@ -17,7 +17,6 @@ DEPEND="
 	dev-cpp/concurrentqueue
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

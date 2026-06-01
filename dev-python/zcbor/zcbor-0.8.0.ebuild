@@ -21,7 +21,5 @@ RDEPEND="
 	>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
 	>=dev-python/regex-2022.3.15[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"
-

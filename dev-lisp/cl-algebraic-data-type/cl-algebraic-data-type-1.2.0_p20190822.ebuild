@@ -14,14 +14,11 @@ SRC_URI="https://github.com/stylewarning/cl-algebraic-data-type/archive/${EGIT_C
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/global-vars
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

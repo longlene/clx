@@ -15,7 +15,6 @@ LICENSE="LGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/cl-ppcre
@@ -24,7 +23,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/flexi-streams
 	dev-lisp/secret-values
 "
-BDEPEND=""
 
 src_prepare() {
 	default

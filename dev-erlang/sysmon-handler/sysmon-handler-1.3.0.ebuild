@@ -14,8 +14,6 @@ LICENSE="Apache-2.0 MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 REBAR_APP_SRC=src/sysmon_handler.app.src

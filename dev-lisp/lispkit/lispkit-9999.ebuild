@@ -6,16 +6,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A lisp browser using WebKit"
 HOMEPAGE="http://lispkit.org"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/AeroNotix/lispkit.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-cffi-gtk

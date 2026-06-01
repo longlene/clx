@@ -13,14 +13,11 @@ SRC_URI="https://codeberg.org/shinmera/mmap/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/documentation-utils
 	dev-lisp/pathname-utils
 "
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}

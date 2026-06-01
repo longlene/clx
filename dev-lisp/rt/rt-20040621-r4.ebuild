@@ -15,12 +15,10 @@ SRC_URI="mirror://debian/pool/main/c/cl-${PN}/cl-${PN}_${PV}.orig.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+S="${WORKDIR}/cl-${P}"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="!dev-lisp/cl-${PN}"
-
-S="${WORKDIR}/cl-${P}"
 
 src_prepare() {
 	default

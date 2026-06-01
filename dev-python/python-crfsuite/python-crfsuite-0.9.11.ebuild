@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -18,7 +18,7 @@ HOMEPAGE="
 	https://github.com/scrapinghub/python-crfsuite
 "
 SRC_URI="
-	https://github.com/scrapinghub/python-crfsuite/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/scrapinghub/python-crfsuite/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz
 	https://github.com/chokkan/crfsuite/archive/${CRFSUITE_COMMIT}.tar.gz -> crfsuite-${CRFSUITE_COMMIT}.tar.gz
 	https://github.com/chokkan/liblbfgs/archive/${LIBLBFGS_COMMIT}.tar.gz -> liblbfgs-${LIBLBFGS_COMMIT}.tar.gz
 "
@@ -27,8 +27,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

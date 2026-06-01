@@ -15,6 +15,7 @@ SRC_URI="mirror://sourceforge/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
+S=${WORKDIR}/${MY_P}
 KEYWORDS="~amd64 ~x86"
 IUSE="lapack-atlas"
 
@@ -27,8 +28,6 @@ RDEPEND="lapack-atlas? (
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-S=${WORKDIR}/${MY_P}
-
 src_prepare() {
 	epatch "${FILESDIR}"/${MY_PN}-gimp-2.0.patch
 	epatch "${FILESDIR}"/${MY_PN}-0.9.0-gimp-2.2_rlx.diff
@@ -40,7 +39,7 @@ src_prepare() {
 
 src_configure() {
 	export GIMPTOOL="/usr/bin/gimptool-2.0"
-	local pkgconfig=$(tc-getPKG_CONFIG) 
+	local pkgconfig=$(tc-getPKG_CONFIG)
 
 	if use lapack-atlas; then
 		econf --with-lapack-libs="$(${pkgconfig} --libs lapack)" \

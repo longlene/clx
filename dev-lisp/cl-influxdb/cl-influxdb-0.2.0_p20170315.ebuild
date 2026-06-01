@@ -14,9 +14,7 @@ SRC_URI="https://github.com/mmaul/cl-influxdb/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-json
 	dev-lisp/drakma

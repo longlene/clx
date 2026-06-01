@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    LitGPT provides hackable, high-performance implementations of 20+ leading
+    open-source LLMs with recipes for pretraining, finetuning, and deployment
+    at scale, built on top of PyTorch Lightning.
+  </longdescription>
+  <use>
+    <flag name="extra">Install optional dependencies for evaluation, data
+      preparation, deployment, and quantization</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">Lightning-AI/litgpt</remote-id>
+    <remote-id type="pypi">litgpt</remote-id>
+  </upstream>
+</pkgmetadata>

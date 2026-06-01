@@ -14,7 +14,6 @@ SRC_URI="https://github.com/h2o/yoml/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.g
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="dev-libs/libyaml"
 RDEPEND="${DEPEND}"

@@ -14,7 +14,6 @@ SRC_URI="https://github.com/gwkkwg/dynamic-classes/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
 
 RDEPEND="dev-lisp/metatilities-base"
 
@@ -22,4 +21,3 @@ src_prepare() {
 	default
 	rm -rf ${PN}-test.asd test
 }
-

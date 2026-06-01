@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A third-party Gradio component library that integrates Ant Design,
+    Ant Design X, Monaco Editor and more advanced components.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">modelscope/modelscope-studio</remote-id>
+    <remote-id type="pypi">modelscope-studio</remote-id>
+  </upstream>
+</pkgmetadata>

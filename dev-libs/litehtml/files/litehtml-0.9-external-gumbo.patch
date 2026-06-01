@@ -1,0 +1,13 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -20,6 +20,10 @@
+
+ if(NOT EXTERNAL_GUMBO)
+     add_subdirectory(src/gumbo)
++else()
++    find_package(PkgConfig REQUIRED)
++    pkg_check_modules(GUMBO REQUIRED IMPORTED_TARGET gumbo)
++    add_library(gumbo ALIAS PkgConfig::GUMBO)
+ endif()
+
+ set(SOURCE_LITEHTML

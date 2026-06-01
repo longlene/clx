@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">gaogaotiantian/objprint</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    objprint provides a drop-in replacement for Python's print() that
+    renders objects in a structured, human-readable format with attribute
+    names, types, and nested object trees.
+  </longdescription>
+</pkgmetadata>

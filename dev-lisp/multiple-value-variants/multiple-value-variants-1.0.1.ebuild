@@ -12,9 +12,10 @@ SRC_URI="https://github.com/Hexstream/multiple-value-variants/archive/v${PV}.tar
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/definitions-systems
 	dev-lisp/map-bind
@@ -22,7 +23,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/enhanced-multiple-value-bind
 	test? ( dev-lisp/parachute )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

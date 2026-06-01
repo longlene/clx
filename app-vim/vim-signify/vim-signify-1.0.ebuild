@@ -13,10 +13,3 @@ SRC_URI="https://github.com/mhinz/vim-signify/archive/v${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-
-VIM_PLUGIN_HELPFILES=""
-VIM_PLUGIN_HELPTEXT=""
-VIM_PLUGIN_HELPURI=""
-VIM_PLUGIN_MESSAGES=""
-

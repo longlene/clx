@@ -15,10 +15,8 @@ LICENSE="LGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-gobject-introspection
 	dev-lisp/cl-ppcre
 "
-BDEPEND=""

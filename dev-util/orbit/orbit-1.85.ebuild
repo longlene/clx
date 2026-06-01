@@ -19,7 +19,6 @@ DEPEND="
 	qt? ( dev-qt/qtcore dev-qt/qtwidgets )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(
@@ -27,4 +26,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-

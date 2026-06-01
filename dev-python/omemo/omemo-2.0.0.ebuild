@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A Python implementation of the OMEMO Multi-End Message and Object Encryption protocol"
+DESCRIPTION="A Python implementation of the OMEMO Multi-End Message and Object Encryption"
 HOMEPAGE="
 	https://pypi.org/project/python-omemo/
 	https://github.com/Syndace/python-omemo/
@@ -17,6 +17,7 @@ SRC_URI="https://github.com/Syndace/python-omemo/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,5 +31,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-${P}

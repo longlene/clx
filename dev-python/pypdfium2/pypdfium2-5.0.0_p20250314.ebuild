@@ -15,14 +15,13 @@ HOMEPAGE="
 	https://pypi.org/project/pypdfium2/
 	https://github.com/pypdfium2-team/pypdfium2
 "
-SRC_URI="https://github.com/pypdfium2-team/pypdfium2/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/pypdfium2-team/pypdfium2/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="|| ( BSD-3 Apache-2.0 )"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 BDEPEND="
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/ctypesgen[${PYTHON_USEDEP}]
@@ -31,5 +30,3 @@ BDEPEND="
 #	)
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

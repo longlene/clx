@@ -4,18 +4,19 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
 EGIT_COMMIT="c9a30692979614bb83eef4b075b3cd6344b1d0e6"
 
-DESCRIPTION="A set of easy-to-use utils that will come in handy in any Computer Vision project"
+DESCRIPTION="A set of easy-to-use utils that will come in handy in any Computer Vision"
 HOMEPAGE="https://github.com/roboflow/supervision"
 SRC_URI="https://github.com/roboflow/supervision/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -35,5 +36,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

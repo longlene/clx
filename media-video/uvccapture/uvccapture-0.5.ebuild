@@ -10,12 +10,10 @@ HOMEPAGE="http://staticwave.ca/source/uvccapture/"
 SRC_URI="http://staticwave.ca/source/${PN}/${P}.tar.bz2"
 
 KEYWORDS="amd64 x86"
-IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
 
 DEPEND="virtual/jpeg"
-RDEPEND=""
 
 src_prepare () {
 	default

@@ -18,6 +18,7 @@ SRC_URI="https://github.com/warner-benjamin/optimi/archive/refs/tags/v${PV}.tar.
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/optimi-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -33,5 +34,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/optimi-${PV}

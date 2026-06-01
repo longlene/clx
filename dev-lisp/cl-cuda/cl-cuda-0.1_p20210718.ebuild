@@ -14,9 +14,10 @@ SRC_URI="https://github.com/takagi/cl-cuda/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="example test"
 
-DEPEND=""
+IUSE="example test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/alexandria
@@ -38,7 +39,7 @@ src_prepare() {
 	use test || rm -rf ${PN}-test.asd ${PN}-interop-test.asd t
 	use example || rm -rf ${PN}-examples.asd ${PN}-interop-examples.asd examples
 	sed -e '/grovel-file/{s#"type-grovel"#"type-grovel" :cc-flags ("-I" "/opt/cuda/include")#}' \
-		-e "/defclass cuda-grovel-file/r ${FILESDIR}/patch.lisp" \
+		-e "/defclass cuda-grovel-file/r "${FILESDIR}"/patch.lisp" \
 		-i ${PN}.asd
 }
 

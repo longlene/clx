@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">lightseekorg/TorchSpec</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    TorchSpec is a PyTorch-native library for training speculative decoding
+    models. It provides tools and training infrastructure for developing
+    draft models used in speculative decoding inference pipelines.
+  </longdescription>
+  <use>
+    <flag name="vllm">Enable vLLM inference engine backend support</flag>
+  </use>
+</pkgmetadata>

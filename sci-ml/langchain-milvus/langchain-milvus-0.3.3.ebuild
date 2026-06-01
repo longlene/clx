@@ -17,6 +17,7 @@ SRC_URI="https://github.com/langchain-ai/langchain-milvus/archive/refs/tags/libs
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/langchain-milvus-libs-milvus-v${PV}/libs/milvus
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/langchain-milvus-libs-milvus-v${PV}/libs/milvus

@@ -13,14 +13,11 @@ SRC_URI="https://github.com/lisp-mirror/gendl/archive/${EGIT_COMMIT}.tar.gz -> $
 
 LICENSE="AGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/gwl-graphics
 	dev-lisp/tasty
 	dev-lisp/robot
 	dev-lisp/yadd
 "
-

@@ -12,12 +12,10 @@ SRC_URI="https://github.com/silviucpp/erltls/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/openssl
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 export USE_BORINGSSL=0

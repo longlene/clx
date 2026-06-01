@@ -13,8 +13,5 @@ SRC_URI="https://github.com/marijnh/parse-js/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-

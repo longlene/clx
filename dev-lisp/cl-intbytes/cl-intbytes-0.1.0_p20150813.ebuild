@@ -14,9 +14,10 @@ SRC_URI="https://github.com/EuAndreh/cl-intbytes/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/fast-io
 	test? ( dev-lisp/prove )

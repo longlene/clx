@@ -14,9 +14,10 @@ SRC_URI="https://github.com/sjl/temperance/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-arrows
 	dev-lisp/policy-cond
@@ -28,4 +29,3 @@ src_prepare() {
 	rm Makefile
 	use test || rm ${PN}.test.asd test package.test.lisp
 }
-

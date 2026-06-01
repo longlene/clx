@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=scikit-build-core
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1 pypi
 
@@ -25,7 +25,6 @@ RDEPEND="
 	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
 	>=dev-python/typing_extensions-4.6.3[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 #distutils_enable_tests pytest
 

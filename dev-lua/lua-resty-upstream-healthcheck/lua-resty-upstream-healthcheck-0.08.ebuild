@@ -14,7 +14,6 @@ SRC_URI="https://github.com/openresty/lua-resty-upstream-healthcheck/archive/v${
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 RDEPEND="
 	www-servers/nginx:*[nginx_modules_http_lua,nginx_modules_http_lua_upstream]
@@ -34,4 +33,3 @@ src_install() {
 	lua_foreach_impl each_lua_install
 	einstalldocs
 }
-

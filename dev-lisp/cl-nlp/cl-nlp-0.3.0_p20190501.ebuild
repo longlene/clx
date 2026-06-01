@@ -13,9 +13,7 @@ SRC_URI="https://github.com/vseloved/cl-nlp/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/archive
 	dev-lisp/chipz
@@ -33,9 +31,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/zip
 "
 
-
 src_install() {
 	common-lisp-3_src_install
 	common-lisp-install-sources -t all version.txt
 }
-

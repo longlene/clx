@@ -14,7 +14,6 @@ SRC_URI="https://github.com/bluelisp/zip/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="LLGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 RDEPEND="
 	dev-lisp/salza2
@@ -22,4 +21,3 @@ RDEPEND="
 	dev-lisp/babel
 	dev-lisp/cl-fad
 "
-

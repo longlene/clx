@@ -14,5 +14,3 @@ SRC_URI="https://github.com/svenvc/s-base64/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="LLGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-

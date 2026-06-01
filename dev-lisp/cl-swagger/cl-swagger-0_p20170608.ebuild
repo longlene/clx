@@ -14,9 +14,7 @@ SRC_URI="https://github.com/ibawt/cl-swagger/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="AGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-json

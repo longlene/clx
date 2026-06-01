@@ -12,13 +12,10 @@ SRC_URI="https://github.com/archimag/cl-oracle/archive/${EGIT_COMMIT}.tar.gz -> 
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-db/oracle-instantclient
 	dev-lisp/cffi
 	dev-lisp/iterate
 	dev-lisp/parse-number"
-

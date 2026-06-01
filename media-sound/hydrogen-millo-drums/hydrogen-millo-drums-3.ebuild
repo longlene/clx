@@ -12,7 +12,6 @@ SRC_URI="mirror://sourceforge/hydrogen/${MY_P}.zip"
 LICENSE="freedist"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 
 RDEPEND="media-sound/hydrogen"
 
@@ -22,9 +21,9 @@ src_unpack() {
 	tar xvfz *.h2drumkit
 }
 
-src_compile() { 
+src_compile() {
 	# Recode in FLAC with best parameters
-	cd ${WORKDIR}/MilloDrums-3/Millo_MultiLayered3
+	cd "${WORKDIR}"/MilloDrums-3/Millo_MultiLayered3
 	for i in *.wav; do
 		flac --best -es "${i}"
 	done
@@ -35,10 +34,9 @@ src_compile() {
 src_install() {
 	dodir /usr/share/hydrogen/data/drumkits/Millo_MultiLayered3
 	insinto /usr/share/hydrogen/data/drumkits/Millo_MultiLayered3
-	doins ${WORKDIR}/MilloDrums-3/Millo_MultiLayered3/*.flac
-	doins ${WORKDIR}/MilloDrums-3/Millo_MultiLayered3/*.xml
+	doins "${WORKDIR}"/MilloDrums-3/Millo_MultiLayered3/*.flac
+	doins "${WORKDIR}"/MilloDrums-3/Millo_MultiLayered3/*.xml
 	dodir /usr/share/hydrogen/data/demo_songs
 	insinto /usr/share/hydrogen/data/demo_songs
-	doins ${WORKDIR}/MilloDrums-3/*.h2song
+	doins "${WORKDIR}"/MilloDrums-3/*.h2song
 }
-

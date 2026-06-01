@@ -16,9 +16,8 @@ KEYWORDS="~amd64"
 DEPEND="
 	dev-libs/spdlog
 "
-#	sys-devel/llvm
+#	llvm-core/llvm
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1
 
 DESCRIPTION="Open source machine learning framework"
@@ -23,7 +23,7 @@ RDEPEND="
 	>=dev-python/jsonpickle-1.3[${PYTHON_USEDEP}]
 	>=dev-python/redis-4.5.3[${PYTHON_USEDEP}]
 	>=dev-python/absl-py-0.9[${PYTHON_USEDEP}]
-	>=dev-python/APScheduler-3.6[${PYTHON_USEDEP}]
+	>=dev-python/apscheduler-3.6[${PYTHON_USEDEP}]
 	>=dev-python/tqdm-4.31[${PYTHON_USEDEP}]
 	>=dev-python/networkx-2.4[${PYTHON_USEDEP}]
 	>=dev-python/fbmessenger-6.0.0[${PYTHON_USEDEP}]
@@ -84,6 +84,5 @@ RDEPEND="
 	>=dev-python/certifi-2023.7.22[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-41.0.2[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 distutils_enable_tests pytest

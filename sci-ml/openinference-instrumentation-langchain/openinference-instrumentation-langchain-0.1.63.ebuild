@@ -17,6 +17,7 @@ SRC_URI="https://github.com/Arize-ai/openinference/archive/refs/tags/python-${PN
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/openinference-python-${PN}-v${PV}/python/instrumentation/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -34,5 +35,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/openinference-python-${PN}-v${PV}/python/instrumentation/${PN}

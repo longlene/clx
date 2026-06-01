@@ -15,9 +15,7 @@ SRC_URI="http://repo.or.cz/cl-zmq.git/snapshot/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-garbage

@@ -13,13 +13,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/ironclad
 	dev-lisp/usocket
 "
-BDEPEND=""
 
 src_prepare() {
 	default

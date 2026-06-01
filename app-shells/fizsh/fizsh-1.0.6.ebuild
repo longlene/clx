@@ -8,12 +8,9 @@ DESCRIPTION="Friendly Interactive ZSHell"
 HOMEPAGE="https://github.com/zsh-users/fizsh"
 SRC_URI="https://github.com/zsh-users/fizsh/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 #KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${P}/fizsh-dev

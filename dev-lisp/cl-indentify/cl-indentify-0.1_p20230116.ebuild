@@ -15,12 +15,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/trivial-gray-streams
 "
-BDEPEND=""
 
 src_prepare() {
 	default

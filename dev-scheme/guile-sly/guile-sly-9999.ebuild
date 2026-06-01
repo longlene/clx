@@ -8,14 +8,12 @@ inherit autotools git-r3
 
 DESCRIPTION="Functional reactive game programming in GNU Guile Scheme"
 HOMEPAGE="https://github.com/taktoa/guile-sly"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/taktoa/guile-sly.git"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-scheme/guile-sdl

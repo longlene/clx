@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		A small collection of common lisp macros to make collecting values easier.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    A small collection of common lisp macros to make collecting values easier.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">AccelerationNet/collectors</remote-id>
+  </upstream>
 </pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Odysseus is a self-hosted AI workspace providing chat, agent, deep research,
+    document editing, email, calendar, notes, and memory features. Supports
+    multiple LLM backends (vLLM, llama.cpp, Ollama, OpenRouter, OpenAI) and
+    MCP tool integrations.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">pewdiepie-archdaemon/odysseus</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -5,17 +5,13 @@ EAPI=8
 
 DESCRIPTION="Workstation 8 and Fusion 4 Mac OS X Unlocker"
 HOMEPAGE="http://www.insanelymac.com/forum/index.php?showtopic=268531"
-SRC_URI=""
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 amd64"
-IUSE=""
+S="${WORKDIR}/unlock-all-v110/src"
+KEYWORDS="amd64 x86"
 
 DEPEND="app-arch/unzip"
-RDEPEND=""
-
-S="${WORKDIR}/unlock-all-v110/src"
 
 src_unpack() {
 	unzip "${FILESDIR}"/unlock-all-v110.zip
@@ -31,6 +27,5 @@ src_install() {
 
 	cd ../tools
 	insinto /opt/vmware/lib/vmware/isoimages/
-    doins darwin.iso*
+	doins darwin.iso*
 }
-

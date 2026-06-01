@@ -22,7 +22,6 @@ DEPEND="
 	net-libs/miniupnpc
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	./bootstrap.sh CPPFLAGS="-fpermissive"

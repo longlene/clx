@@ -20,7 +20,6 @@ DEPEND="
 	sys-firmware/facetimehd-firmware
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 BUILD_TARGETS="all"
 MODULE_NAMES="facetimehd()"
@@ -34,4 +33,3 @@ pkg_setup() {
 	fi
 	linux-mod_pkg_setup
 }
-

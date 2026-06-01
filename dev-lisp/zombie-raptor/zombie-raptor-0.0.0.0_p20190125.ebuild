@@ -11,13 +11,10 @@ DESCRIPTION="A 3D game engine written in Common Lisp"
 HOMEPAGE="https://gitlab.com/zombie-raptor/zombie-raptor"
 SRC_URI="https://gitlab.com/zombie-raptor/zombie-raptor/repository/archive.tar.gz?ref=${EGIT_COMMIT} -> ${P}.tar.gz"
 
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi
@@ -33,4 +30,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/uiop
 	dev-lisp/zpb-ttf
 "
-BDEPEND=""

@@ -20,6 +20,7 @@ SRC_URI="https://github.com/google-deepmind/tree/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/tree-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -34,8 +35,6 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/tree-${EGIT_COMMIT}
 
 PATCHES=(
 	"${FILESDIR}"/system-dep.patch

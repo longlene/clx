@@ -19,4 +19,3 @@ DEPEND="
 	dev-cpp/wangle
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

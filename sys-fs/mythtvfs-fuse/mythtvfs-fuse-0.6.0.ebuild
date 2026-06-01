@@ -8,7 +8,7 @@ SRC_URI="http://outflux.net/software/pkgs/mythtvfs-fuse/download/mythtvfs-fuse-0
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=sys-fs/fuse-2.2
 	media-tv/mythtv"

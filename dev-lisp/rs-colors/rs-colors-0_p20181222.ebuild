@@ -14,9 +14,7 @@ SRC_URI="https://github.com/ralph-schleicher/rs-colors/archive/${EGIT_COMMIT}.ta
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/alexandria

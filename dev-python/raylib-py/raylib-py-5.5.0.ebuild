@@ -14,11 +14,9 @@ SRC_URI="https://github.com/overdev/raylib-py/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-games/raylib
 "
-BDEPEND=""
-
-S="${WORKDIR}"/${P}

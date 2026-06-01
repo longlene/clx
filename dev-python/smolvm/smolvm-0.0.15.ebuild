@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Open-source AI sandbox infrastructure for code execution, browser use, and AI agents"
+DESCRIPTION="Open-source AI sandbox infrastructure for code execution, browser use, and"
 HOMEPAGE="
 	https://pypi.org/project/smolvm/
 	https://github.com/CelestoAI/SmolVM
@@ -20,6 +20,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/SmolVM-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -39,5 +40,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/SmolVM-${PV}

@@ -12,6 +12,7 @@ SRC_URI="https://github.com/yyzybb537/libgonet/archive/v${PV}-stable.tar.gz -> $
 
 LICENSE="LGPL-3"
 SLOT="0"
+S="${WORKDIR}/${P}-stable"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="ssl"
 
@@ -20,8 +21,6 @@ DEPEND="
 	dev-cpp/libgo
 "
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}/${P}-stable"
 
 src_prepare() {
 	eapply_user

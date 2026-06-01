@@ -15,10 +15,7 @@ SRC_URI="https://github.com/gleam-lang/tree-sitter-gleam/archive/${EGIT_COMMIT}.
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

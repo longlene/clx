@@ -11,11 +11,9 @@ SRC_URI="https://github.com/froydnj/chipz/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 src_prepare() {
 	default
 	eapply "${FILESDIR}"/gentoo-fix-asd.patch
 }
-

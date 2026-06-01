@@ -17,4 +17,3 @@ DEPEND="
 	dev-libs/boost
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

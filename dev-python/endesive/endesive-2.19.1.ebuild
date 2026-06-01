@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Library for digital signing and verification of digital signatures in mail, PDF and XML documents"
+DESCRIPTION="Library for digital signing and verification of digital signatures in mail,"
 HOMEPAGE="
 	https://pypi.org/project/endesive/
 	https://github.com/m32/endesive
@@ -19,8 +19,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

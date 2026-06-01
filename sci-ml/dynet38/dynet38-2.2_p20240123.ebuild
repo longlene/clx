@@ -23,11 +23,10 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/dynet-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 IUSE="python"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -35,8 +34,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/dynet-${EGIT_COMMIT}
 
 export EIGEN3_INCLUDE_DIR="/usr/include/eigen3"
 

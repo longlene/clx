@@ -19,4 +19,3 @@ DEPEND="
 	dev-db/postgresql
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

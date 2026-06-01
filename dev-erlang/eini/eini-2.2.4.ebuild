@@ -16,10 +16,7 @@ SRC_URI="https://github.com/aws-beam/eini-beam/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${MY_P}

@@ -18,4 +18,3 @@ DEPEND="
 	net-libs/dpdk
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

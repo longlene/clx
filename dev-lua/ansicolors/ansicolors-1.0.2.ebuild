@@ -13,16 +13,14 @@ SRC_URI="https://github.com/kikito/ansicolors.lua/archive/v${PV}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+S="${WORKDIR}"/${PN}.lua-${PV}
+KEYWORDS="~amd64 ~arm ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
 RDEPEND="${LUA_DEPS}"
 DEPEND="${RDEPEND}"
 BDEPEND="virtual/pkgconfig"
-
-S="${WORKDIR}"/${PN}.lua-${PV}
 
 DOCS=( README.textile )
 

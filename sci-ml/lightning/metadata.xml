@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Lightning is a deep learning framework built on top of PyTorch.
+    It abstracts the engineering boilerplate for training at scale,
+    covering multi-GPU, TPU, mixed precision, and distributed strategies.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Lightning-AI/pytorch-lightning</remote-id>
+    <remote-id type="pypi">lightning</remote-id>
+  </upstream>
+</pkgmetadata>

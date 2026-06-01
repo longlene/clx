@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -19,6 +19,7 @@ SRC_URI="https://github.com/HawkClaws/main_content_extractor/archive/${EGIT_COMM
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/main_content_extractor-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -34,5 +35,3 @@ RDEPEND="
 #distutils_enable_tests pytest
 
 RESTRICT="test"
-
-S="${WORKDIR}"/main_content_extractor-${EGIT_COMMIT}

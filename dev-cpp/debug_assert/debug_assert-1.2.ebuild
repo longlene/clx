@@ -10,9 +10,7 @@ SRC_URI="https://github.com/foonathan/debug_assert/archive/v${PV}.tar.gz -> ${P}
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-cpp/type_safe
 "

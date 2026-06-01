@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="experimental language for type inference"
 HOMEPAGE="https://github.com/moratori/protolang"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/moratori/protolang.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 dev-lisp/cl-lex
 dev-lisp/cl-yacc

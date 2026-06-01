@@ -17,6 +17,7 @@ SRC_URI="https://github.com/langchain-ai/langgraph/archive/refs/tags/checkpoint=
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${P}/libs/checkpoint
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,5 +31,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${P}/libs/checkpoint

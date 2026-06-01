@@ -479,7 +479,7 @@ cuda_get_host_compiler() {
 			if [[ -z "${package_version_next}" ]]; then
 				eerror "Compiler lookup failed. Nothing installed matches: ${package_version}."
 				eerror "You can use NVCC_CCBIN to specify the exact compiler to use."
-				eerror "Check ${T}/cuda_get_host_compiler.log for details."
+				eerror "Check "${T}"/cuda_get_host_compiler.log for details."
 				die "Could not find a supported version of ${compiler}. Did not find \"${package_version}\". NVCC_CCBIN is unset."
 			fi
 

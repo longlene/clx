@@ -14,7 +14,6 @@ SRC_URI="https://github.com/0x00A/ldb/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/leveldb

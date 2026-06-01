@@ -13,7 +13,6 @@ LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/alexandria
@@ -24,4 +23,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-base64
 	dev-lisp/flexi-streams
 "
-BDEPEND=""

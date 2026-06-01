@@ -20,5 +20,3 @@ DEPEND="
 	dev-lang/lua
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-

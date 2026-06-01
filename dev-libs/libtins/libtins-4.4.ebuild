@@ -15,7 +15,6 @@ KEYWORDS="~amd64"
 
 DEPEND="dev-libs/boost"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

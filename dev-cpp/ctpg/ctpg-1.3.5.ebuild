@@ -17,4 +17,3 @@ DEPEND="
 	dev-cpp/catch:0
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

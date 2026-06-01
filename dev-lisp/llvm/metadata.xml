@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		LLVM is a collection of modular and reusable compiler and toolchain technologies. This library makes it easy (and hopefully intuitive) to use them in Common Lisp
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    LLVM is a collection of modular and reusable compiler and toolchain technologies. This library makes it easy (and hopefully intuitive) to use them in Common Lisp
+  </longdescription>
+  <upstream>
+    <remote-id type="github">sellout/CL-LLVM</remote-id>
+  </upstream>
 </pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Picotron is a minimalistic distributed training framework implementing
+    4D-parallelism (data, tensor, pipeline, and context parallelism) designed
+    for educational purposes to understand how large-scale LLM training works.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">huggingface/picotron</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -29,7 +29,6 @@ DEPEND="
 	uring? ( sys-libs/liburing )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 PATCHES=(
 	"${FILESDIR}"/system-lz4.patch

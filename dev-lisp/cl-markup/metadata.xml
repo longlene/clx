@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		CL-MARKUP - Modern markup generation library for Common Lisp
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    CL-MARKUP - Modern markup generation library for Common Lisp
+  </longdescription>
+  <upstream>
+    <remote-id type="github">arielnetworks/cl-markup</remote-id>
+  </upstream>
 </pkgmetadata>

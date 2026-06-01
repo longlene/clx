@@ -8,16 +8,13 @@ inherit git-r3 common-lisp-3
 
 DESCRIPTION="A trivial read-macro for uiop:run-program"
 HOMEPAGE="https://github.com/tkych/shell-in-repl"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/tkych/shell-in-repl.git"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/named-readtables
 	dev-lisp/uiop

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		CL-DOT is a small package for easily generating dot (a program in the GraphViz suite) output from arbitrary Lisp data.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    CL-DOT is a small package for easily generating dot (a program in the GraphViz suite) output from arbitrary Lisp data.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">michaelw/cl-dot</remote-id>
+  </upstream>
 </pkgmetadata>

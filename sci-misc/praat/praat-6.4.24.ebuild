@@ -12,7 +12,6 @@ SRC_URI="https://github.com/praat/praat/archive/refs/tags/v${PV}.tar.gz -> ${P}.
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	x11-libs/libXmu
@@ -25,4 +24,3 @@ DEPEND="
 	x11-libs/gtk+
 "
 RDEPEND="${DEPEND}"
-

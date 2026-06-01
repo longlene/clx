@@ -14,8 +14,5 @@ SRC_URI="https://bitbucket.org/tarballs_are_good/map-set/get/${EGIT_COMMIT}.tar.
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

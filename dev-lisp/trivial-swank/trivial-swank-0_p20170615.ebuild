@@ -14,9 +14,7 @@ SRC_URI="https://github.com/stacksmith/trivial-swank/archive/${EGIT_COMMIT}.tar.
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/bordeaux-threads

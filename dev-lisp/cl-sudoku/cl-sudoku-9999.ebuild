@@ -6,16 +6,12 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Norvig's sudoku solver in Common Lisp"
 HOMEPAGE="https://github.com/tkych/cl-sudoku"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/tkych/cl-sudoku.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre"
-

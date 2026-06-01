@@ -14,9 +14,7 @@ SRC_URI="https://github.com/Shirakumo/glsl-toolkit/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/parse-float

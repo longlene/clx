@@ -5,12 +5,12 @@ EAPI=8
 
 inherit common-lisp-3 autotools
 
-DESCRIPTION="DSWM is a tiling, keyboard driven X11 Window Manager written entirely in Common Lisp"
+DESCRIPTION="DSWM is a tiling, keyboard driven X11 Window Manager written entirely in"
 # HOMEPAGE="http://dss-project.org"
 SRC_URI="http://sourceforge.net/projects/dswm/files/0.0.5r2/dswm-0.0.5r2.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="emacs doc"
 
 CLPACKAGE="dswm"
@@ -35,7 +35,7 @@ src_configure() {
 	## autocnof
 	##./configure --prefix=/usr --with-lisp=sbcl || die
 	# autoconf
-        econf \
+		econf \
 	--prefix=/usr --with-lisp=sbcl ${myconf}
 }
 

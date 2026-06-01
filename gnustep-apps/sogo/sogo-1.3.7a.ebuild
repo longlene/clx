@@ -13,6 +13,7 @@ HOMEPAGE="http://sogo.opengroupware.org/"
 SRC_URI="http://www.sogo.nu/files/downloads/${MY_PN}/Sources/${MY_PN}-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
+S=${WORKDIR}/${MY_PN}-${PV}
 KEYWORDS="~amd64 ~x86"
 IUSE="postgres mysql logrotate"
 DEPEND="gnustep-libs/sope[ldap,mysql?,postgres?]
@@ -21,8 +22,6 @@ DEPEND="gnustep-libs/sope[ldap,mysql?,postgres?]
 	net-nds/openldap"
 RDEPEND="${DEPEND}
 	logrotate? ( app-admin/logrotate )"
-
-S=${WORKDIR}/${MY_PN}-${PV}
 
 pkg_setup() {
 	gnustep-base_pkg_setup

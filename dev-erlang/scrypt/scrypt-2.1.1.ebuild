@@ -11,10 +11,7 @@ SRC_URI="https://github.com/kpy3/erlscrypt/archive/refs/tags/${PV}.tar.gz -> erl
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/erl${P}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/erl${P}

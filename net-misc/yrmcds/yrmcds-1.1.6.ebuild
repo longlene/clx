@@ -11,9 +11,7 @@ SRC_URI="https://github.com/cybozu/yrmcds/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0"
 #KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
@@ -30,4 +28,3 @@ src_install() {
 	dosbin ${PN}
 	dodoc README.md
 }
-

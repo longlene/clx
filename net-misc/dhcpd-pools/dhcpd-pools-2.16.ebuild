@@ -11,13 +11,9 @@ SRC_URI="mirror://sourceforge/project/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_configure() {
 	econf --with-dhcpd-conf=${EPREFIX}/etc/dhcp/dhcpd.conf --with-dhcpd-leases=${EPREFIX}/var/lib/dhcp/dhcpd.leases
 }
-
-

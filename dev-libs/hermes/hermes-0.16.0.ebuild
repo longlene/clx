@@ -11,15 +11,13 @@ SRC_URI="https://github.com/facebook/hermes/archive/refs/tags/hermes-v${PV}.tar.
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/hermes-hermes-v${PV}
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="
 	dev-lang/python
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/hermes-hermes-v${PV}
 
 src_prepare() {
 	default

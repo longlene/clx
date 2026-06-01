@@ -10,7 +10,7 @@ S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="libpcap debug"
 
 DEPEND="libpcap? ( net-libs/libpcap )"
@@ -28,7 +28,7 @@ src_compile() {
 
 src_install() {
 	#make DESTDIR="${D}" install || die "emake install failed"
-	
+
 	dosbin src/lldpd || die
 	dodoc README || die
 	newinitd "${FILESDIR}"/lldp-initd lldpd
@@ -40,4 +40,3 @@ pkg_postinst() {
 	elog ""
 	!use libpcap && elog "The kernel module \"af_packet\" is needed for this tool to run."
 }
-

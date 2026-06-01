@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Conserv is an event-based networking library inspired by the networking modules of Node.js. It aims to provide a simple, easy-to-use API for implementing and using network protocols. Conserv currently includes a TCP client and server API and an HTTP/1.1 server with CONNECT/Upgrade support
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Conserv is an event-based networking library inspired by the networking modules of Node.js. It aims to provide a simple, easy-to-use API for implementing and using network protocols. Conserv currently includes a TCP client and server API and an HTTP/1.1 server with CONNECT/Upgrade support
+  </longdescription>
+  <upstream>
+    <remote-id type="github">sykopomp/conserv</remote-id>
+  </upstream>
 </pkgmetadata>

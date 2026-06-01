@@ -8,16 +8,16 @@ inherit common-lisp-3 elisp-common git-r3
 
 DESCRIPTION="A markup language with Scribe syntax"
 HOMEPAGE="https://github.com/CommonDoc/scriba"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/CommonDoc/scriba.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="emacs test"
 
-DEPEND=""
+IUSE="emacs test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/common-doc-plump
 	dev-lisp/plum-sexp
@@ -47,4 +47,3 @@ pkg_postrm() {
 		elisp-site-regen
 	fi
 }
-

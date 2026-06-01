@@ -12,7 +12,6 @@ SRC_URI="https://github.com/msgpack-rpc/msgpack-rpc-erlang/archive/${PV}.tar.gz 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-erlang/msgpack-0.2.3
@@ -20,4 +19,3 @@ DEPEND="
 	dev-erlang/proper
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

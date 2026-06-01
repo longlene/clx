@@ -13,11 +13,5 @@ SRC_URI="https://github.com/phongvcao/vim-stardict/archive/${PV}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-
-VIM_PLUGIN_HELPFILES=""
-VIM_PLUGIN_HELPTEXT=""
-VIM_PLUGIN_HELPURI=""
-VIM_PLUGIN_MESSAGES=""
 
 DEPEND="app-text/sdcv"

@@ -13,12 +13,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
-	dolib.a ${BUILD_DIR}/libcbor.a
+	dolib.a "${BUILD_DIR}"/libcbor.a
 	insinto /usr/include
 	doins -r include/cbor
 	einstalldocs

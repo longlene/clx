@@ -44,8 +44,6 @@ RDEPEND="
 		dev-python/pydub[${PYTHON_USEDEP}]
 	')
 "
-BDEPEND="
-"
 
 RESTRICT="test"
 

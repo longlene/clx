@@ -11,8 +11,11 @@ SRC_URI="mirror://apache/couchdb/source/${PV}/apache-${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}/apache-${P}"
 KEYWORDS="~amd64 ~ppc ~x86"
+
 IUSE="libressl selinux test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-libs/icu-4.3.1:=
@@ -28,12 +31,10 @@ RDEPEND="
 DEPEND="${RDEPEND}
 		>=dev-util/rebar-2.6.0
 		<dev-util/rebar-3.0.0
-		sys-devel/autoconf-archive
+		dev-build/autoconf-archive
 "
 
 RESTRICT=test
-
-S="${WORKDIR}/apache-${P}"
 
 src_configure() {
 	econf \

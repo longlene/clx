@@ -10,7 +10,6 @@ HOMEPAGE="http://wiki.openwrt.org/"
 EGIT_REPO_URI="git://nbd.name/luci2/${PN}.git"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
 IUSE="lua"
 
 DEPEND="

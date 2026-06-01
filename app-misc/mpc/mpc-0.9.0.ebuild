@@ -11,9 +11,7 @@ SRC_URI="https://github.com/orangeduck/mpc/archive/0.8.7.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile() {

@@ -15,7 +15,6 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-features
@@ -23,7 +22,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/static-vectors
 	dev-lisp/documentation-utils
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

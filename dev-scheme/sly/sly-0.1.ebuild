@@ -12,8 +12,7 @@ SRC_URI="http://files.dthompson.us/sly/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 DEPEND="
 	>=dev-scheme/guile-sdl-0.5.0
@@ -22,4 +21,3 @@ DEPEND="
 	sci-libs/gsl
 "
 RDEPEND="${DEPEND}"
-

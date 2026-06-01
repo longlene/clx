@@ -14,14 +14,13 @@ HOMEPAGE="http://portableaserve.sourceforge.net/
 SRC_URI="https://mydebian.googlecode.com/files/cl-portable-aserve_${MY_PV}+cvs.${CVS_PV}.orig.tar.gz"
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+S=${WORKDIR}/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}-dfsg
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 DEPEND="=dev-lisp/acl-compat-${PV}*"
 
 CLPACKAGE=htmlgen
 
 #S=${WORKDIR}/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}.orig
-S=${WORKDIR}/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}-dfsg
 
 src_install() {
 	cd aserve/htmlgen

@@ -15,14 +15,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/yason
 	dev-lisp/trivial-do
 	dev-lisp/cl-ppcre
 "
-BDEPEND=""
 
 src_prepare() {
 	default

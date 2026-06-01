@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-IUSE=""
-
 MY_S=${WORKDIR}/${PN}
 
 DESCRIPTION="Program for extracting embedded audio data from JPEG images (written in Python)."

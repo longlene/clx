@@ -11,14 +11,12 @@ SRC_URI="https://github.com/archimag/wiki-parser/archive/version-${PV}.tar.gz ->
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+S="${WORKDIR}/${PN}-version-${PV}"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="dev-lisp/alexandria
 dev-lisp/iterate
 dev-lisp/cl-ppcre"
-
-S="${WORKDIR}/${PN}-version-${PV}"
 
 src_install() {
 	common-lisp-install-sources src t

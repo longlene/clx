@@ -19,6 +19,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 #src_install() {
-#	dobin ${BUILD_DIR}/clpeak
+#	dobin "${BUILD_DIR}"/clpeak
 #	dodoc README.md
 #}

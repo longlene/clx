@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Very low footprint JSON parser written in portable ANSI C.
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Very low footprint JSON parser written in portable ANSI C.
 
-		BSD licensed with no dependencies (i.e. just drop the C file into your project)
-		Never recurses or allocates more memory than it needs
-		Very simple API with operator sugar for C++
+    BSD licensed with no dependencies (i.e. just drop the C file into your project)
+    Never recurses or allocates more memory than it needs
+    Very simple API with operator sugar for C++
 
-	</longdescription>
+  </longdescription>
+  <upstream>
+    <remote-id type="github">udp/json-parser</remote-id>
+  </upstream>
 </pkgmetadata>

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/ruricolist/bosom-serpent/archive/${EGIT_COMMIT}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/burgled-batteries
 	dev-lisp/vernacular
@@ -25,4 +23,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/trivia
 "
-BDEPEND=""

@@ -15,7 +15,5 @@ SRC_URI="https://github.com/nowl/elray/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

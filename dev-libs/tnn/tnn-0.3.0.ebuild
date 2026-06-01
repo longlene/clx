@@ -13,13 +13,11 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	insinto /usr/include
 	doins -r include/tnn
-	dolib.so ${BUILD_DIR}/libTNN.so*
+	dolib.so "${BUILD_DIR}"/libTNN.so*
 	einstalldocs
 }

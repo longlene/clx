@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Needle is a client library for the Needle API, which simplifies building
+    retrieval-augmented generation (RAG) pipelines on top of your own
+    documents.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">needle-ai/needle-python</remote-id>
+    <remote-id type="pypi">needle-python</remote-id>
+  </upstream>
+</pkgmetadata>

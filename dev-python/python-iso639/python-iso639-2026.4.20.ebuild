@@ -13,19 +13,16 @@ HOMEPAGE="
 	https://pypi.org/project/python-iso639/
 	https://github.com/jacksonllee/iso639
 "
-SRC_URI="https://github.com/jacksonllee/iso639/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jacksonllee/iso639/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/iso639-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/iso639-${PV}

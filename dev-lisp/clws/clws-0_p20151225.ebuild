@@ -13,9 +13,7 @@ SRC_URI="https://github.com/deadtrickster/clws/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/safe-queue
 	dev-lisp/iolib
@@ -32,4 +30,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-backtrace
 	dev-lisp/blackbird
 "
-

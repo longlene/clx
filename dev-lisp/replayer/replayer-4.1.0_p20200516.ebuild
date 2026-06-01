@@ -14,9 +14,7 @@ SRC_URI="https://github.com/hyotang666/replayer/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/mixalot
 	dev-lisp/mixalot-mp3
@@ -24,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/datafly
 	dev-lisp/sxql
 "
-BDEPEND=""

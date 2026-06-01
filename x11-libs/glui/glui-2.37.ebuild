@@ -12,10 +12,7 @@ SRC_URI="https://github.com/libglui/glui/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	media-libs/freeglut
 "
-BDEPEND=""

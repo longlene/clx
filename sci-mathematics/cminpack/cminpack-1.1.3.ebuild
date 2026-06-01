@@ -13,20 +13,18 @@ SRC_URI="http://devernay.free.fr/hacks/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
-
 
 src_configure() {
 
 local mycmakeargs=(
-	-DBUILD_EXAMPLES=OFF                                                                                                       
-	-DBUILD_EXAMPLES_FORTRAN=OFF                                                                                                       
-	-DCMAKE_BUILD_TYPE=Release                                                                                                   
+	-DBUILD_EXAMPLES=OFF
+	-DBUILD_EXAMPLES_FORTRAN=OFF
+	-DCMAKE_BUILD_TYPE=Release
 	-DCMAKE_INSTALL_PREFIX:PATH=/usr
 	-DSHARED_LIBS=ON
 	-DUSE_FPIC=ON
 	)
-	
+
 	cmake_src_configure
 }
 

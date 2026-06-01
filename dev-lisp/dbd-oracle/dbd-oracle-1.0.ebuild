@@ -12,9 +12,10 @@ SRC_URI="https://github.com/sergadin/dbd-oracle/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-db/oracle-instantclient
 	dev-lisp/cffi

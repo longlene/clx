@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi
@@ -25,7 +24,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/glfw-blob
 	dev-lisp/cffi-c-ref
 "
-BDEPEND=""
 
 src_prepare() {
 	default

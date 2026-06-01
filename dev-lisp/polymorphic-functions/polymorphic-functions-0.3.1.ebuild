@@ -6,14 +6,11 @@ EAPI=8
 inherit common-lisp-3
 
 DESCRIPTION="Type based dispatch for Common Lisp"
-HOMEPAGE=""
 SRC_URI="https://github.com/digikar99/polymorphic-functions/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/closer-mop
@@ -28,4 +25,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 	dev-lisp/trivial-garbage
 "
-BDEPEND=""

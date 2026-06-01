@@ -14,13 +14,10 @@ SRC_URI="https://github.com/cmoore/cl-mango/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/drakma
 	dev-lisp/yason
 	dev-lisp/json-mop
 	dev-lisp/log4cl
 "
-BDEPEND=""

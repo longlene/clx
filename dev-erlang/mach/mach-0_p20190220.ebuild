@@ -14,12 +14,9 @@ SRC_URI="https://github.com/synrc/mach/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-erlang/kvs
 	>=dev-erlang/jsone-0.3.3
 	dev-erlang/n2o
 "
-BDEPEND=""

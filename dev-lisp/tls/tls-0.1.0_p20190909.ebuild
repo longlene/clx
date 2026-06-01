@@ -14,9 +14,10 @@ SRC_URI="https://github.com/mateuszb/tls1.3/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/alien-ring
@@ -26,7 +27,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/flexi-streams
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

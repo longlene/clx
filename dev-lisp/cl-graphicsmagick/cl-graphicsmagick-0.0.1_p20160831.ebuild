@@ -14,9 +14,7 @@ SRC_URI="https://github.com/muyinliu/cl-graphicsmagick/archive/${EGIT_COMMIT}.ta
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	media-gfx/graphicsmagick

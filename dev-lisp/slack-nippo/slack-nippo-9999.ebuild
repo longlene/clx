@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Slack-Nippo"
 HOMEPAGE="https://github.com/Rudolph-Miller/slack-nippo/"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/Rudolph-Miller/slack-nippo.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-syntax
 	dev-lisp/quri

@@ -15,10 +15,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/drakma
 	dev-lisp/cl-json
 	dev-lisp/log4cl
 "
-BDEPEND=""

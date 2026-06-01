@@ -8,10 +8,9 @@ SRC_URI="mirror://sourceforge/linux-diag/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~ppc64"
-IUSE=""
+KEYWORDS="~ppc ~ppc64 ~x86"
 
-DEPEND="sys-devel/libtool
+DEPEND="dev-build/libtool
 	>=sys-libs/db-4.3.29-r2"
 RDEPEND=">=sys-libs/libstdc++-v3-3.3.4
 	>=sys-libs/zlib-1.2.3"

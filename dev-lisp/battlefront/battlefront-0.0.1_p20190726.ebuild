@@ -14,13 +14,10 @@ SRC_URI="https://github.com/noffle/battlefront/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-sdl2
 	dev-lisp/cl-opengl
 	dev-lisp/pngload
 	dev-lisp/3d-vectors
 "
-BDEPEND=""

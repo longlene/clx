@@ -21,7 +21,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/jinja2-2.11.3[${PYTHON_USEDEP}]
+	>=dev-python/jinja22-2.11.3[${PYTHON_USEDEP}]
 	dev-python/prettytable[${PYTHON_USEDEP}]
 	dev-python/simplejson[${PYTHON_USEDEP}]
 "

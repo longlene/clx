@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A Python implementation of the Extended Triple Diffie-Hellman key agreement protocol"
+DESCRIPTION="A Python implementation of the Extended Triple Diffie-Hellman key agreement"
 HOMEPAGE="
 	https://pypi.org/project/python-x3dh/
 	https://github.com/Syndace/python-x3dh/
@@ -17,6 +17,7 @@ SRC_URI="https://github.com/Syndace/python-x3dh/archive/refs/tags/v${PV}.tar.gz 
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,8 +33,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-${P}
 
 PATCHES=(
 	"${FILESDIR}"/build-fix.patch

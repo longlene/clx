@@ -17,6 +17,7 @@ SRC_URI="https://github.com/modelcontextprotocol/python-sdk/archive/refs/tags/v$
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-sdk-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -43,7 +44,5 @@ BDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-sdk-${PV}
 
 export UV_DYNAMIC_VERSIONING_BYPASS="${PV}"

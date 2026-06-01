@@ -24,7 +24,6 @@ RDEPEND="
 	dev-lua/api7-lua-resty-http[${LUA_USEDEP}]
 	dev-lua/lua-typeof[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

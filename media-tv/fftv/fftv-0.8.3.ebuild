@@ -14,18 +14,17 @@ IUSE="tcron zlib mmx v4l vorbis oss lirc mp3"
 DEPEND=">=x11-libs/gtk+-2
 	lirc? ( app-misc/lirc )
 	tcron? ( sys-power/tcron )"
-RDEPEND=""
 
 src_compile() {
-        econf \
+		econf \
 		--prefix=/usr \
-                $(use_enable zlib) \
-                $(use_enable mmx) \
-                $(use_enable v4l) \
-                $(use_enable vorbis) \
-                $(use_enable mp3 mp3lame) \
-                $(use_enable oss audio-oss) \
-                ${myconf} || die
+				$(use_enable zlib) \
+				$(use_enable mmx) \
+				$(use_enable v4l) \
+				$(use_enable vorbis) \
+				$(use_enable mp3 mp3lame) \
+				$(use_enable oss audio-oss) \
+				${myconf} || die
 	emake || die "Make failed!"
 }
 
@@ -55,7 +54,7 @@ src_install() {
 
 	#install fftv and ffradio menu entry
 	#insinto /usr/share/applications
-	#doins ${FILESDIR}/fftv.desktop ${FILESDIR}/ffradio.desktop
+	#doins "${FILESDIR}"/fftv.desktop "${FILESDIR}"/ffradio.desktop
 	make_desktop_entry ffradio "FFRadio" fftv.png
 	make_desktop_entry fftv "FFTV" fftv.png
 

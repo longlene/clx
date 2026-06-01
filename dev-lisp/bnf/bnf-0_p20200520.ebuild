@@ -14,9 +14,10 @@ SRC_URI="https://github.com/hyotang666/bnf/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trestrul
 	test? ( dev-lisp/jingoh )

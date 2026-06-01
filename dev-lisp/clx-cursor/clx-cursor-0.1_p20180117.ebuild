@@ -14,9 +14,7 @@ SRC_URI="https://github.com/filonenko-mikhail/clx-cursor/archive/${EGIT_COMMIT}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/clx
 	dev-lisp/cl-fad

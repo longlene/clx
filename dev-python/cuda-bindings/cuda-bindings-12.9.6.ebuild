@@ -21,13 +21,13 @@ SRC_URI="https://github.com/NVIDIA/cuda-python/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="NVIDIA"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}/cuda_bindings
 KEYWORDS="~amd64"
 
 DEPEND+="
 	dev-python/cuda-pathfinder[${PYTHON_USEDEP}]
 "
-RDEPEND="
-"
+
 BDEPEND="
 	dev-python/pyclibrary[${PYTHON_USEDEP}]
 "
@@ -38,8 +38,6 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}/cuda_bindings
 
 export CUDA_HOME="/opt/cuda"
 export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_CUDA_BINDINGS="${PV}"

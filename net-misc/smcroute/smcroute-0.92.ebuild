@@ -4,23 +4,20 @@ HOMEPAGE="http://www.cschill.de/smcroute/"
 KEYWORDS="x86"
 LICENSE="GPL"
 SLOT="0"
-DEPEND=""
-RDEPEND=""
-IUSE=""
 
 src_unpack() {
  unpack ${A}
  cd "${S}"
 }
 
-src_compile() { 
+src_compile() {
  cd src
  emake
 }
 
 src_install() {
-    cd "${S}"
+	cd "${S}"
 	dosbin bin/mcsender bin/smcroute
 	doman doc/smcroute.8
-	dodoc ChangeLog.txt GPL.txt 
+	dodoc ChangeLog.txt GPL.txt
 }

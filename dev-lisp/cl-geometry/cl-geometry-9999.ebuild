@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp package for simple two dimensional computational geometry"
 HOMEPAGE="https://github.com/Ramarren/cl-geometry"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/Ramarren/cl-geometry.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/trees

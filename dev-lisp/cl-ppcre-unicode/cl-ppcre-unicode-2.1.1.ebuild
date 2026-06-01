@@ -14,13 +14,14 @@ SRC_URI="https://github.com/edicl/cl-ppcre/archive/v${PV}.tar.gz -> ${MY_P}.tar.
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
+S="${WORKDIR}"/${MY_P}
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="=dev-lisp/cl-ppcre-${PV}*[test?]
 		dev-lisp/cl-unicode"
-
-S="${WORKDIR}"/${MY_P}
 
 src_prepare() {
 	eapply_user

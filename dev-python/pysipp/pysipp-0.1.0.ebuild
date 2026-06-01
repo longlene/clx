@@ -19,6 +19,5 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/pluggy-1.0.0[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 distutils_enable_tests pytest

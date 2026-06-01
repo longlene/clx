@@ -11,15 +11,13 @@ SRC_URI="https://github.com/NVIDIA/nccl/archive/refs/tags/v${MY_PV}.tar.gz -> ${
 
 LICENSE="NVIDIA-r2"
 SLOT="0"
+S="${WORKDIR}"/nccl-${MY_PV}
 KEYWORDS="~amd64"
 
 DEPEND="
 	dev-util/nvidia-cuda-toolkit
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/nccl-${MY_PV}
 
 PATCHES=(
 	"${FILESDIR}"/install-fix.patch

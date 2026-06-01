@@ -188,13 +188,10 @@ SRC_URI="
 
 LICENSE="GPL-3"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 src_install() {
 	cargo_src_install

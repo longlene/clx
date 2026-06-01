@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Vundle is short for Vim bundle and is a Vim plugin manager
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Vundle is short for Vim bundle and is a Vim plugin manager
+  </longdescription>
+  <upstream>
+    <remote-id type="github">gmarik/vundle</remote-id>
+  </upstream>
 </pkgmetadata>

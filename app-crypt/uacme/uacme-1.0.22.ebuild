@@ -10,11 +10,8 @@ SRC_URI="https://github.com/ndilieto/uacme/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/openssl
 	net-misc/curl
 "
-BDEPEND=""

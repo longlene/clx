@@ -13,13 +13,10 @@ SRC_URI="https://github.com/quasi/cl-memcached/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/split-sequence
 	dev-lisp/babel
 	dev-lisp/pooler
 "
-

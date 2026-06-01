@@ -17,7 +17,6 @@ DEPEND="
 	app-text/libexttextcat
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

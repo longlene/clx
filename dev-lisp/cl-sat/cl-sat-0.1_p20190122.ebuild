@@ -14,16 +14,16 @@ SRC_URI="https://github.com/guicho271828/cl-sat/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivia
 	dev-lisp/alexandria
 	dev-lisp/iterate
 	test? ( dev-lisp/fiveam )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

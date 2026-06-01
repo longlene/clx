@@ -12,7 +12,6 @@ SRC_URI="http://files.kpe.io/${PN}/${P}.tar.gz"
 LICENSE="LLGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
 
 RDEPEND="!dev-lisp/cl-${PN}"
 

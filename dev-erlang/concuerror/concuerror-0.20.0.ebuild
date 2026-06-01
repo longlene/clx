@@ -14,7 +14,9 @@ SRC_URI="https://github.com/parapluu/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-erlang/getopt-1.0.1

@@ -12,7 +12,6 @@ SRC_URI="https://github.com/lpgauth/shackle/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-erlang/fail-0.1.3
@@ -21,4 +20,3 @@ DEPEND="
 	>=dev-erlang/telemetry-1.2.1
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

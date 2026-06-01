@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	${LUA_DEPS}
 	>=dev-lua/lua-term-0.7
@@ -29,7 +28,6 @@ RDEPEND="${DEPEND}
 	>=dev-lua/lua-bit32-5.2.0
 	dev-lua/lua-tui
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

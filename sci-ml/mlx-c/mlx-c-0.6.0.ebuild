@@ -17,7 +17,6 @@ DEPEND="
 	sci-ml/mlx
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

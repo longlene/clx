@@ -165,7 +165,7 @@ RUST_MIN_VER="1.88.0"
 
 inherit cargo
 
-DESCRIPTION="Erlang Distribution MCP Server - connects to Erlang/BEAM nodes for introspection and debugging"
+DESCRIPTION="Erlang Distribution MCP Server - connects to Erlang/BEAM nodes for"
 HOMEPAGE="https://github.com/jimsynz/erl_dist_mcp/"
 SRC_URI="
 	https://github.com/jimsynz/erl_dist_mcp/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz

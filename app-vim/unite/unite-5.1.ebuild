@@ -11,6 +11,5 @@ SRC_URI="https://github.com/Shougo/unite.vim/archive/ver.${PV}.tar.gz -> ${P}.ta
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 VIM_PLUGIN_HELPFILES="${PN}.txt"

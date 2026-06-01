@@ -11,13 +11,10 @@ SRC_URI="https://github.com/benoitc/erlang-duktape/archive/refs/tags/${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/erlang-${P}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/erlang-${P}
 
 src_install() {
 	rebar3_src_install

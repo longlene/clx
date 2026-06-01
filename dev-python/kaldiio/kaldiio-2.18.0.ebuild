@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -12,7 +12,6 @@ DESCRIPTION="A pure python module for reading and writing kaldi ark files"
 HOMEPAGE="https://github.com/nttcslab-sp/kaldiio"
 SRC_URI="https://github.com/nttcslab-sp/kaldiio/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 

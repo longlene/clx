@@ -6,12 +6,9 @@ DESCRIPTION="The new generation C compiler"
 HOMEPAGE="http://students.ceid.upatras.gr/~sxanth/ncc/"
 SRC_URI="http://students.ceid.upatras.gr/~sxanth/ncc/ncc-${PV}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile() {

@@ -376,15 +376,13 @@ SRC_URI="
 
 LICENSE="MIT CC-BY-4.0"
 SLOT="0"
+S="${WORKDIR}"/RustPython-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
 	>=virtual/rust-1.67.1
 "
-
-S="${WORKDIR}"/RustPython-${PV}
 
 src_install() {
 	cargo_src_install

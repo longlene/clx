@@ -13,10 +13,8 @@ SRC_URI="https://github.com/orthecreedence/cl-nanomsg/archive/${EGIT_COMMIT}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cffi
 "

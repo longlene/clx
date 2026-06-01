@@ -12,7 +12,9 @@ SRC_URI="https://github.com/owt5008137/libcopp/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+
 IUSE="example test"
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	test? ( dev-cpp/gtest )

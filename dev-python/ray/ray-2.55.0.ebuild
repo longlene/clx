@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_13 )
+PYTHON_COMPAT=( python3_12 python3_13 python3_14  )
 
 inherit distutils-r1
 
@@ -22,6 +22,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -41,8 +42,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"
 
 QA_PRESTRIPPED="
    /usr/lib/python3.13/site-packages/ray/_private/runtime_env/agent/thirdparty_files/aiohttp/_websocket/mask.cpython-313-x86_64-linux-gnu.so
@@ -64,4 +63,3 @@ python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" \
 		"${DISTDIR}/${A}"
 }
-

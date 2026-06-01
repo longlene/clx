@@ -4,16 +4,16 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="Evaluate your speech-to-text system with similarity measures such as word error rate"
+DESCRIPTION="Evaluate your speech-to-text system with similarity measures such as word"
 HOMEPAGE="
 	https://github.com/jitsi/jiwer
 	https://pypi.org/project/jiwer/
 "
-SRC_URI="https://github.com/jitsi/jiwer/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jitsi/jiwer/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"

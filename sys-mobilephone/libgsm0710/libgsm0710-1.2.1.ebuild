@@ -11,5 +11,4 @@ SRC_URI="http://www.freesmartphone.org/sources/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~arm ~x86 ~amd64"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"

@@ -14,14 +14,14 @@ SRC_URI="https://github.com/komi1230/kai/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-opengl
 	test? ( dev-lisp/rove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

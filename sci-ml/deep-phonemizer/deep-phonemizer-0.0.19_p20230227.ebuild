@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -17,9 +17,9 @@ SRC_URI="https://github.com/as-ideas/DeepPhonemizer/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/DeepPhonemizer-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	sci-ml/tensorboard[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
@@ -29,6 +29,3 @@ RDEPEND="${DEPEND}
 		>=dev-python/certifi-2022.12.7[${PYTHON_USEDEP}]
 	')
 "
-BDEPEND=""
-
-S="${WORKDIR}"/DeepPhonemizer-${EGIT_COMMIT}

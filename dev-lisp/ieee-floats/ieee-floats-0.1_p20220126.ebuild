@@ -14,7 +14,9 @@ SRC_URI="https://github.com/marijnh/ieee-floats/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="test? ( dev-lisp/fiveam )"
 

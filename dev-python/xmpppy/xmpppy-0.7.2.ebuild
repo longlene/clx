@@ -19,4 +19,3 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-python/six[${PYTHON_USEDEP}]
 "
-BDEPEND=""

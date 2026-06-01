@@ -18,7 +18,6 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/torchdata[${PYTHON_SINGLE_USEDEP}]
@@ -38,7 +37,5 @@ RDEPEND="${DEPEND}
 		>=dev-python/pillow-9.4.0[${PYTHON_USEDEP}]
 	')
 "
-BDEPEND=""
 
 distutils_enable_tests pytest
-

@@ -12,11 +12,8 @@ SRC_URI="https://github.com/hnes/libaco/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_compile() {
 	$(tc-getCC) -fPIC -shared ${CFLAGS} ${LDFLAGS} aco.c acosw.S -Wl,-soname,${PN}.so -o ${PN}.so

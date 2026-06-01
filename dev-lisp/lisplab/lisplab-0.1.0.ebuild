@@ -8,9 +8,5 @@ SRC_URI="http://common-lisp.net/project/lisplab/download/lisplab-0.1.0-svn149.tg
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS=""
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-

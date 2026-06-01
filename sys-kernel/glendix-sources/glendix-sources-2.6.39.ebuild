@@ -9,7 +9,7 @@ ETYPE="sources"
 inherit kernel-2
 detect_version
 
-DESCRIPTION="Patched sources for the Linux kernel with experimental support for programs  from the  Plan 9 From Bell Labs research operating system."
+DESCRIPTION="Patched sources for the Linux kernel with experimental support for programs "
 HOMEPAGE="http://www.glendix.org http://www.kernel.org"
 SRC_URI="${KERNEL_URI}"
 
@@ -17,5 +17,5 @@ KEYWORDS="x86"
 IUSE="deblob"
 
 src_prepare() {
-            epatch "${FILESDIR}/glendix_${PV}.patch"
+			epatch "${FILESDIR}/glendix_${PV}.patch"
 }

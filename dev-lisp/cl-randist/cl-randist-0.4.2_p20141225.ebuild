@@ -14,7 +14,5 @@ SRC_URI="https://github.com/lvaruzza/cl-randist/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

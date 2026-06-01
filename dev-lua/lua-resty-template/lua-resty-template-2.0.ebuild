@@ -15,12 +15,10 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="
 	${DEPEND}
 	${LUA_DEPS}
 "
-BDEPEND=""
 
 src_compile() {
 	:

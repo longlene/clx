@@ -15,7 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="ssl thread regex shared defer"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-libs/libevent
 ssl? ( dev-libs/openssl )

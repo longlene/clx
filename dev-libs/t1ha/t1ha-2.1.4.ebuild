@@ -9,13 +9,10 @@ SRC_URI="https://abf.io/erthink/t1ha/archive/${PN}-v${PV}.tar.gz"
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}-v${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-v${PV}
 
 src_install() {
 	insinto /usr/include

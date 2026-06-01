@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A Common Lisp date/time library"
 HOMEPAGE="https://github.com/dlowe-net/clock"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/dlowe-net/clock.git"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 test? ( dev-lisp/stefil )
 "

@@ -13,7 +13,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/abstract-arrays
 	dev-lisp/polymorphic-functions
@@ -26,4 +25,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-form-types
 	dev-lisp/trivial-types
 "
-BDEPEND=""

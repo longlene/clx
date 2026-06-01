@@ -12,13 +12,11 @@ SRC_URI="http://www.acme.com/software/thttpd/${P}.tar.gz"
 LICENSE="BSD GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 RDEPEND="
 	acct-group/thttpd
 	acct-user/thttpd
 "
-DEPEND=""
 
 WEBROOT="/var/www/localhost"
 

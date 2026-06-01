@@ -4,18 +4,17 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION=""
 HOMEPAGE="
 	https://pypi.org/project/language-data/
 "
-SRC_URI="https://github.com/georgkrause/language_data/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/georgkrause/language_data/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
+S="${WORKDIR}"/language_data-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -27,7 +26,5 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/language_data-${PV}
 
 export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_LANGUAGE_DATA="${PV}"

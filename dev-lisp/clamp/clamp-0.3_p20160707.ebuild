@@ -14,9 +14,10 @@ SRC_URI="https://github.com/malisper/Clamp/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="Artistic-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/cl-syntax

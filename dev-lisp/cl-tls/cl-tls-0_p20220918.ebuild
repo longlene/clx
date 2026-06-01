@@ -14,9 +14,7 @@ SRC_URI="https://github.com/shrdlu68/cl-tls/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/babel
 	dev-lisp/ironclad

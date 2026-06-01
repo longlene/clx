@@ -11,12 +11,9 @@ SRC_URI="https://github.com/madmalik/mononoki/releases/download/${PV}/mononoki.z
 
 LICENSE="OFL-1.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-
 S="${WORKDIR}"
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND="${DEPEND}"
 
 FONT_SUFFIX="ttf"

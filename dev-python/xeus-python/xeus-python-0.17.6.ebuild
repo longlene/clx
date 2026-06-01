@@ -25,4 +25,3 @@ DEPEND="
 	>=dev-python/xeus-python-shell-0.6.3.0
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

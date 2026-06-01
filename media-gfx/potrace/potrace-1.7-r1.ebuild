@@ -9,7 +9,7 @@ SRC_URI="http://potrace.sourceforge.net/download/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc ~ppc-macos sparc x86"
+KEYWORDS="alpha amd64 ia64 ppc sparc x86 ~ppc-macos"
 
 IUSE="zlib"
 

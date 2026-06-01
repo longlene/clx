@@ -13,10 +13,11 @@ SRC_URI="https://github.com/eudoxia0/lucerne/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/clack
 	dev-lisp/myway

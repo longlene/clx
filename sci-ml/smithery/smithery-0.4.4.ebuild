@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/toml-0.10.2[${PYTHON_USEDEP}]
-	>=dev-python/typer-0.17.3[${PYTHON_USEDEP}] 
+	>=dev-python/typer-0.17.3[${PYTHON_USEDEP}]
 	>=dev-python/art-6.3[${PYTHON_USEDEP}]
 	>=dev-python/uvicorn-0.30.0[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
@@ -31,4 +31,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-

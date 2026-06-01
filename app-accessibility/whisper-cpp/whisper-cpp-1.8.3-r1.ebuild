@@ -23,7 +23,6 @@ DEPEND="
 RDEPEND="${DEPEND}
 	models? ( app-accessibility/whisper-ggml-models )
 "
-BDEPEND=""
 
 PATCHES=(
 	"${FILESDIR}"/whisper-cpp-1.7.5-default-model-path.patch

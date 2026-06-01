@@ -12,7 +12,7 @@ IUSE="aac cddb flac musepack oggvorbis"
 DEPEND=" >=dev-perl/gtk2-perl-1.040
 	media-sound/normalize
 	media-sound/cdparanoia
-	media-sound/lame	
+	media-sound/lame
 	dev-perl/MP3-Info
 	media-sound/cdcd
 	aac? ( media-libs/faac
@@ -21,7 +21,7 @@ DEPEND=" >=dev-perl/gtk2-perl-1.040
 	flac? ( >=media-libs/flac-1.1.1 )
 	oggvorbis? ( media-sound/vorbis-tools )
 	cddb? ( dev-perl/CDDB_get )"
-	
+
 src_install() {
 	dobin gnormalize
 	doicon icons/gnormalize*.png

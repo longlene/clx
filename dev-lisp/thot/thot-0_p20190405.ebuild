@@ -7,16 +7,13 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="9cfb6c228753a752d9326a8b39a77b77f790263c"
 
-DESCRIPTION=""
 HOMEPAGE="https://github.com/RailsOnLisp/thot"
 SRC_URI="https://github.com/RailsOnLisp/thot/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/babel
 	dev-lisp/bordeaux-queue
@@ -35,4 +32,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-utf8
 	dev-lisp/unistd-stream
 "
-BDEPEND=""

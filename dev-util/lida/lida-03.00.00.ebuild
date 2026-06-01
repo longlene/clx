@@ -10,9 +10,7 @@ SRC_URI="mirror://sourceforge/$PN/$P.tgz
 LICENSE="GPL-1"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND=""
 RDEPEND="dev-perl/perl-tk"
 
 RESTRICT="strip"

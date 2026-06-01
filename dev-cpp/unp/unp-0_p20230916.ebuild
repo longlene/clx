@@ -15,9 +15,7 @@ LICENSE="BSL-1.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	insinto /usr/include

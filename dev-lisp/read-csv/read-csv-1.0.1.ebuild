@@ -12,8 +12,6 @@ SRC_URI="https://github.com/deadtrickster/read-csv/archive/v${PV}.tar.gz -> ${P}
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"

@@ -8,6 +8,7 @@ SRC_URI="http://www.bedroomlan.org/~alexios/files/SOFTWARE/evrouter/${PN}_${PV}.
 
 LICENSE="GPL-2"
 SLOT="0"
+S=${WORKDIR}/${PN}
 KEYWORDS="~x86"
 IUSE="X xmms"
 
@@ -20,8 +21,6 @@ IUSE="X xmms"
 # a dependency.
 DEPEND="X? ( virtual/x11 )
 	xmms? ( >=media-sound/xmms-1.2.10-r5 )"
-
-S=${WORKDIR}/${PN}
 
 src_compile() {
 	myconf="$(use_with X x) $(use_with xmms)"

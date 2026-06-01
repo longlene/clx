@@ -13,10 +13,11 @@ HOMEPAGE="
 	https://pypi.org/project/cuda-python/
 	https://github.com/NVIDIA/cuda-python/
 "
-SRC_URI="https://github.com/NVIDIA/cuda-python/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/NVIDIA/cuda-python/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="NVIDIA"
 SLOT="0"
+S="${WORKDIR}"/${P}/cuda_python
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${P}/cuda_python

@@ -7,8 +7,7 @@ HOMEPAGE="http://trac.shr-project.org/trac"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 DOCS="README"
 
 PROJECT_NAME="${PN}"
@@ -28,7 +27,6 @@ src_unpack() {
 	sed -i -e "s|@MSGFMT_OPTS@||" po/Makefile.in.in "${S}/${PROJECT_NAME}"/po/Makefile.in.in
 }
 
-
 src_compile() {
 	cd "${S}/${PROJECT_NAME}"
 	econf --with-edje-cc=/usr/bin/edje_cc || die "econf failed"
@@ -41,4 +39,3 @@ src_install() {
         emake DESTDIR="${D}" SUBDIRS="src data" install || die "emake install failed"
         dodoc AUTHORS NEWS README
 }
-

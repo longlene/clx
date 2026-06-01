@@ -10,7 +10,6 @@ SRC_URI="http://www.catb.org/~esr/open-adventure/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/libedit

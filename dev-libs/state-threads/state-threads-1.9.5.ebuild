@@ -9,9 +9,7 @@ SRC_URI="https://github.com/ossrs/state-threads/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="MPL GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 DOCS=( README.md )

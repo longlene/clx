@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="doc">Enable document parsing (PDF, Word, Excel, PowerPoint) via pypdf, python-docx, openpyxl, python-pptx</flag>
+    <flag name="feishu">Enable Feishu/Lark channel support via lark-oapi</flag>
+    <flag name="plugins">Enable plugin installation support via dulwich</flag>
+    <flag name="tiktoken">Enable OpenAI token counting via tiktoken</flag>
+    <flag name="voice">Enable voice features (TTS) via pydub, gTTS, edge-tts</flag>
+    <flag name="wechat">Enable WeChat/WeCom channel support via wechatpy, pycryptodome, websocket-client</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">zhayujie/CowAgent</remote-id>
+  </upstream>
+</pkgmetadata>

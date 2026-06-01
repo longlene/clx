@@ -14,12 +14,9 @@ SRC_URI="https://gitlab.com/ediethelm/trivial-utilities/repository/archive.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/iterate
 	dev-lisp/closer-mop
 "
-BDEPEND=""

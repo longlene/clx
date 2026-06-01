@@ -12,9 +12,10 @@ SRC_URI="https://github.com/vindarel/cl-torrents/archive/${PV}.tar.gz -> ${P}.ta
 LICENSE="test"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/replic
 	dev-lisp/cl-transmission

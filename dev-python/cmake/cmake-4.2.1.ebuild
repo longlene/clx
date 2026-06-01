@@ -20,6 +20,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/cmake-python-distributions-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -35,8 +36,6 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/cmake-python-distributions-${PV}
 
 PATCHES=(
 	"${FILESDIR}"/build-fix.patch

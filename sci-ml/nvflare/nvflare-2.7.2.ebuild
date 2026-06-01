@@ -14,9 +14,9 @@ SRC_URI="https://github.com/NVIDIA/NVFlare/archive/refs/tags/${PV}.tar.gz -> ${P
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/NVFlare-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-python/cryptography-36.0.0[${PYTHON_USEDEP}]
 	>=dev-python/flask-3.0.2[${PYTHON_USEDEP}]
@@ -42,5 +42,3 @@ RDEPEND="${DEPEND}
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/NVFlare-${PV}

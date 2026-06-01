@@ -10,10 +10,8 @@ SRC_URI="https://github.com/franzinc/solr/archive/release${PV}.tar.gz -> ${P}.ta
 
 LICENSE="EPL-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

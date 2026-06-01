@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/cffi
@@ -29,7 +28,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/uuid
 	dev-db/duckdb
 "
-BDEPEND=""
 
 src_prepare() {
 	default

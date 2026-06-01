@@ -14,14 +14,11 @@ SRC_URI="https://github.com/google/marl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
-	dolib.so ${BUILD_DIR}/libmarl.so*
+	dolib.so "${BUILD_DIR}"/libmarl.so*
 	insinto /usr/include
 	doins -r include/marl
 	dodoc README.md

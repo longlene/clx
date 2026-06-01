@@ -13,7 +13,7 @@ SRC_URI="https://git.openwrt.org/?p=project/odhcpd.git;a=snapshot;h=${EGIT_COMMI
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="ubus"
 
 RDEPEND="

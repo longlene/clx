@@ -2,12 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+SRC_URI="mirror://sourceforge/swami/${MY_P}.tar.gz"
 IUSE="debug doc"
 
 DESCRIPTION="Library for processing digital sample based MIDI instrument patch files."
 HOMEPAGE="http://swami.sourceforge.net/"
 MY_P="${P/_/}"
-SRC_URI="mirror://sourceforge/swami/${MY_P}.tar.gz"
+
 S="${WORKDIR}/${PN}-1.0.0"
 
 LICENSE="GPL-2"

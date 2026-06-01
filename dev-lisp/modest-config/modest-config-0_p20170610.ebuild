@@ -14,9 +14,10 @@ SRC_URI="https://github.com/tormaroe/modest-config/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	test? ( dev-lisp/prove )
 "

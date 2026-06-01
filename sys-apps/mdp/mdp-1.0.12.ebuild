@@ -9,9 +9,7 @@ SRC_URI="https://github.com/visit1985/mdp/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 sys-libs/ncurses"
 
@@ -19,7 +17,6 @@ sys-libs/ncurses"
 #	# remove the CFLAGS and LDFLAGS defination in Makefile, use default option in make.conf as the binary will be stripped automatically
 #	sed -i -e '/CFLAGS[[:space:]]*=/d' -e '/LDFLAGS[[:space:]]*=/d' Makefile
 #}
-
 
 src_install() {
 	dobin mdp

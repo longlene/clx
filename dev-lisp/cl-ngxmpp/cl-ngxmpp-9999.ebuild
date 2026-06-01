@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp library for XMPP RFCs"
 HOMEPAGE="https://github.com/grouzen/cl-ngxmpp"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/grouzen/cl-ngxmpp.git"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="example test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="example test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/blackbird
 	dev-lisp/alexandria

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		A standalone promise implementation for Common Lisp. This is the successor to the now-deprecated cl-async-future project.
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    A standalone promise implementation for Common Lisp. This is the successor to the now-deprecated cl-async-future project.
 
-		Its goal is to provide an abstraction around synchronous and asynchronous code in a way that's natural to regular lisp programming. This is ideal for both writing drivers that can handle both blocking and non-blocking sockets, as well as various threading operations that have the concept of a delayed result.
-	</longdescription>
+    Its goal is to provide an abstraction around synchronous and asynchronous code in a way that's natural to regular lisp programming. This is ideal for both writing drivers that can handle both blocking and non-blocking sockets, as well as various threading operations that have the concept of a delayed result.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">orthecreedence/blackbird</remote-id>
+  </upstream>
 </pkgmetadata>

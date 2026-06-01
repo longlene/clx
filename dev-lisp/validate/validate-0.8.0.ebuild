@@ -12,9 +12,10 @@ SRC_URI="https://github.com/fisxoj/validate/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="LGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/cl-ppcre
@@ -22,7 +23,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

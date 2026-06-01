@@ -14,8 +14,5 @@ SRC_URI="https://github.com/lisp-mirror/wxcl/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

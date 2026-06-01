@@ -14,9 +14,10 @@ SRC_URI="https://github.com/eudoxia0/clack-errors/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="example test"
 
-DEPEND=""
+IUSE="example test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/clack
 	dev-lisp/closer-mop

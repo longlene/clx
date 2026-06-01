@@ -11,10 +11,9 @@ DESCRIPTION="library for SSL over ustream"
 HOMEPAGE="http://wiki.openwrt.org/"
 SRC_URI="https://git.openwrt.org/?p=project/ustream-ssl.git;a=snapshot;h=${EGIT_COMMIT};sf=tgz -> ${P}.tar.gz"
 
-
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="mbedtls"
 
 RDEPEND="

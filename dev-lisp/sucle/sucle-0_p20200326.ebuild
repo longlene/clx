@@ -14,9 +14,7 @@ SRC_URI="https://github.com/gregcman/sucle/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/utility
 	dev-lisp/bordeaux-threads
@@ -42,7 +40,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/bodge-glfw
 	dev-lisp/trivial-features
 "
-BDEPEND=""
 
 src_prepare() {
 	default

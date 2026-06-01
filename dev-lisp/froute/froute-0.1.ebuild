@@ -12,9 +12,10 @@ SRC_URI="https://github.com/FungusHumungus/froute/archive/v${PV}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/cl-ppcre

@@ -6,16 +6,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="S-Expressions for XML generation"
 HOMEPAGE="https://github.com/madnificent/SEXML"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/madnificent/SEXML.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre
 dev-lisp/alexandria

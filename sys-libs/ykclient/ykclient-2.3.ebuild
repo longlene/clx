@@ -9,8 +9,7 @@ SRC_URI="http://yubico-c-client.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="x86 amd64"
-IUSE=""
+KEYWORDS="amd64 x86"
 
 DEPEND="net-misc/curl"
 RDEPEND="${DEPEND}"
@@ -23,10 +22,7 @@ src_unpack() {
 	eautoreconf
 }
 
-
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 	dodoc AUTHORS ChangeLog NEWS README || die
 }
-
-

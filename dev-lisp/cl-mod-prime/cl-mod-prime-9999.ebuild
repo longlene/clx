@@ -8,14 +8,11 @@ inherit git-r3 common-lisp-3
 
 DESCRIPTION="Modular Arithmetic and Prime Number Library for Common Lisp"
 HOMEPAGE="https://github.com/tkych/cl-mod-prime"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/tkych/cl-mod-prime.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"

@@ -5,16 +5,14 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-DESCRIPTION="A small platform independent library making it simple to create and stop new processes in C++"
+DESCRIPTION="A small platform independent library making it simple to create and stop new"
 HOMEPAGE="https://gitlab.com/eidheim/tiny-process-library/"
 SRC_URI="https://gitlab.com/eidheim/tiny-process-library/-/archive/v2.0.4/tiny-process-library-v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

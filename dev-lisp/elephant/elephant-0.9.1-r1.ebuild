@@ -13,7 +13,7 @@ SRC_URI="http://common-lisp.net/~sionescu/files/${P}.tar.bz2
 
 LICENSE="GPL-2 LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="doc postgres sqlite3"
 
 RDEPEND="!dev-lisp/cl-${PN}

@@ -13,7 +13,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-types
 	dev-lisp/closer-mop
@@ -22,7 +21,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/extensible-compound-types
 	dev-lisp/extensible-compound-types-interfaces
 "
-BDEPEND=""
 
 src_preapre() {
 	default

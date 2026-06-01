@@ -83,10 +83,9 @@ SRC_URI="
 LICENSE="Apache-2.0"
 LICENSE+=" Apache-2.0-with-LLVM-exceptions MIT Unicode-3.0"
 SLOT="0"
+S="${WORKDIR}"/SmolVM-${PV}/smolvm-core
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -94,5 +93,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/SmolVM-${PV}/smolvm-core

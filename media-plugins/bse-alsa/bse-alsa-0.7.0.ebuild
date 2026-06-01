@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-IUSE=""
-
 DESCRIPTION="BEAST - the Bedevilled Sound Engine (ALSA plugin)"
 HOMEPAGE="http://beast.gtk.org"
 SRC_URI="ftp://beast.gtk.org/pub/beast/v0.7/${P}.tar.bz2"

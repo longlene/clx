@@ -7,7 +7,7 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="c401827446944fc1436e4f7d73b0b4b5c7253a8e"
 
-DESCRIPTION="A lock-free, concurrent, key/value index supporting both fast transient and efficient memory-mapped persistent storage models"
+DESCRIPTION="A lock-free, concurrent, key/value index supporting both fast transient and"
 HOMEPAGE="https://github.com/danlentz/cl-ctrie"
 SRC_URI="https://github.com/danlentz/cl-ctrie/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/contextl
@@ -33,4 +32,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/hu_dwim_serializer
 	dev-lisp/cl-store
 "
-BDEPEND=""

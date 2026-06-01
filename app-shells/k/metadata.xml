@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		k is the new l, yo
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    k is the new l, yo
 
-		Directory listings for zsh with git features.
+    Directory listings for zsh with git features.
 
-		k is a zsh script to make directory listings more readable, adding a bit of color and some git information.
-	</longdescription>
+    k is a zsh script to make directory listings more readable, adding a bit of color and some git information.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">supercrabtree/k</remote-id>
+  </upstream>
 </pkgmetadata>

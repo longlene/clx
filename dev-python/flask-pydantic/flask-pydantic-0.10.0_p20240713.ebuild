@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_12 )
+PYTHON_COMPAT=( python3_12 python3_13 python3_14  )
 
 inherit distutils-r1 pypi
 
@@ -15,10 +15,11 @@ HOMEPAGE="
 	https://pypi.org/project/flask-pydantic/
 	https://github.com/bauerji/flask_pydantic
 "
-SRC_URI="https://github.com/bauerji/flask-pydantic/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/bauerji/flask-pydantic/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -31,5 +32,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

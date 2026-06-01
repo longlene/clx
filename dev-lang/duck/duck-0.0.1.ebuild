@@ -12,15 +12,12 @@ SRC_URI="https://github.com/gregtour/duck-lang/archive/${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="as-is"
 SLOT="0"
+S="${WORKDIR}"/duck-lang-${PV}
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	media-libs/sdl-gfx
 "
-
-S="${WORKDIR}"/duck-lang-${PV}
 
 src_install() {
 	dobin bin/duck

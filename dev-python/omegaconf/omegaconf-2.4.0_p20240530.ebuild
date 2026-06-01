@@ -16,6 +16,7 @@ SRC_URI="https://github.com/omry/omegaconf/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -27,5 +28,3 @@ RDEPEND="
 #"
 
 #distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

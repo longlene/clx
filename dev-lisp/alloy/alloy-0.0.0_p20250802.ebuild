@@ -15,7 +15,6 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/trivial-extensible-sequences
@@ -24,4 +23,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/global-vars
 	dev-lisp/closer-mop
 "
-BDEPEND=""

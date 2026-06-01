@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/anaphora
 	dev-lisp/alexandria
@@ -26,10 +25,8 @@ RDEPEND="${DEPEND}
 	dev-lisp/drakma
 	dev-lisp/cl-fad
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install
 	common-lisp-install-sources -t all README.md
 }
-	

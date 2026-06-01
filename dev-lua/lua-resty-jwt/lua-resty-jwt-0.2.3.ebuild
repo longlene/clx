@@ -15,14 +15,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
 	dev-lua/lua-resty-openssl[${LUA_USEDEP}]
 	dev-lua/lua-resty-hmac[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

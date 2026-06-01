@@ -13,7 +13,6 @@ SRC_URI="
 	https://github.com/lz4/lz4/archive/refs/tags/v1.9.3.tar.gz -> lz4-1.9.3.tar.gz
 "
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
@@ -23,7 +22,6 @@ DEPEND="
 	dev-cpp/workflow
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

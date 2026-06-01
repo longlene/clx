@@ -13,8 +13,8 @@ SRC_URI="mirror://luaforge/${PN}/${PN}/${P}/lua-${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
-IUSE=""
+S="${WORKDIR}/lua-${P}"
+KEYWORDS="~amd64 ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
@@ -23,8 +23,6 @@ RDEPEND="${DEPEND}"
 BDEPEND="virtual/pkgconfig"
 
 DOCS=( README )
-
-S="${WORKDIR}/lua-${P}"
 
 src_compile() { :; }
 

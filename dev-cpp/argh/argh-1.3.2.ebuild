@@ -10,9 +10,7 @@ SRC_URI="https://github.com/adishavit/argh/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

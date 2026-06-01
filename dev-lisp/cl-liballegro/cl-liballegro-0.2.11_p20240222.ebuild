@@ -14,9 +14,7 @@ SRC_URI="https://github.com/resttime/cl-liballegro/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="Allegro"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-garbage

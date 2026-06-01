@@ -11,8 +11,11 @@ SRC_URI="https://github.com/inaka/${PN}4erl/archive/${PV}.tar.gz -> ${PN}4erl-${
 
 LICENSE="as-is"
 SLOT="0"
+S="${WORKDIR}"/${PN}4erl-${PV}
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-erlang/chatterbox-0.7.0
@@ -21,7 +24,4 @@ RDEPEND="
 	>=dev-lang/erlang-17.1"
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}"/${PN}4erl-${PV}
-
 DOCS=( CHANGELOG.md )
-

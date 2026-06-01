@@ -15,13 +15,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/hunchentoot
 	dev-lisp/string-case
 	dev-lisp/parse-number
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

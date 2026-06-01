@@ -10,11 +10,8 @@ SRC_URI="https://github.com/ARMmbed/littlefs/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	insinto /usr/include

@@ -18,7 +18,6 @@ DEPEND="
 	nettle? ( dev-libs/nettle )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

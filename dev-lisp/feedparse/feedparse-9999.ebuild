@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Common Lisp library to parse Atom and RSS feeds"
 HOMEPAGE="https://github.com/kisom/cl-feedparse"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/kisom/cl-feedparse.git"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 dev-lisp/s-xml
 dev-lisp/flexi-streams

@@ -13,9 +13,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-erlang/cowboy-2.9.0
 	>=dev-erlang/cowboy_swagger-2.5.0
 "
-BDEPEND=""

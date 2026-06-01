@@ -16,6 +16,7 @@ SRC_URI="https://files.pythonhosted.org/packages/ba/12/1e5497183bdbe782dbb91bad1
 
 LICENSE="Apaache-2.0"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,10 +30,7 @@ RDEPEND="
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
-S="${WORKDIR}"
-
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" \
 		"${DISTDIR}/${A}"
 }
-

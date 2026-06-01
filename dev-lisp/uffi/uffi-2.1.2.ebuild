@@ -11,7 +11,7 @@ SRC_URI="http://files.kpe.io/uffi/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 IUSE="doc"
 
 src_prepare() {

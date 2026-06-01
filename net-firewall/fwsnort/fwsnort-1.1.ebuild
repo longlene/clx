@@ -11,7 +11,6 @@ SRC_URI="http://www.cipherdyne.org/${PN}/download/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="dev-lang/perl
 	dev-perl/IPTables-Parse

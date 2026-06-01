@@ -12,9 +12,10 @@ SRC_URI="https://github.com/quil-lang/quilc/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/split-sequence
@@ -40,7 +41,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/queues
 	dev-lisp/trivial-benchmark
 "
-BDEPEND=""
 
 src_prepare() {
 	default

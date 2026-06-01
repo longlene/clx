@@ -11,12 +11,10 @@ SRC_URI="http://common-lisp.net/project/asdf/archives/asdf-${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~amd64-linux ~x86-linux ~x64-macos ~x86-macos ~x86-solaris"
-IUSE=""
+S="${WORKDIR}/asdf-${PV}/${PN}"
+KEYWORDS="~amd64 ~amd64-linux ~ppc ~sparc ~x64-macos ~x86 ~x86-linux ~x86-macos ~x86-solaris"
 
 RDEPEND="~dev-lisp/asdf-${PV}"
-
-S="${WORKDIR}/asdf-${PV}/${PN}"
 
 src_install() {
 	insinto "${CLSOURCEROOT}/${PN}"

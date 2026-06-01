@@ -7,15 +7,9 @@ EAPI=8
 inherit common-lisp-3 git-r3
 
 DESCRIPTION="FFI Bindings for GLPK"
-HOMEPAGE=""
-SRC_URI=""
 
-LICENSE=""
 SLOT="0"
-KEYWORDS=""
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-garbage

@@ -14,28 +14,29 @@ SRC_URI="https://github.com/fukamachi/lack/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/alexandria
-	
+
 	dev-lisp/local-time
-	
+
 	dev-lisp/cl-base64
 	dev-lisp/split-sequence
-	
+
 	dev-lisp/cl-ppcre
-	
+
 	dev-lisp/trivial-mimes
 	dev-lisp/uiop
-	
+
 	dev-lisp/quri
 	dev-lisp/http-body
 	dev-lisp/circular-streams
 	dev-lisp/trivial-rfc1123
-	
+
 	dev-lisp/cl-dbi
 	dev-lisp/marshal
 	dev-lisp/trivial-utf8

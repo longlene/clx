@@ -12,9 +12,10 @@ SRC_URI="https://github.com/digikar99/py4cl2/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-garbage
 	dev-lisp/iterate
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/uiop
 	dev-lisp/numpy-file-format
 "
-BDEPEND=""
 
 src_prepare() {
 	default

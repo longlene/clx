@@ -11,6 +11,7 @@ SRC_URI="https://github.com/CloudI/CloudI/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${P}/src
 KEYWORDS="~amd64 ~x86"
 IUSE="go haskell java javascript ocaml perl php python ruby"
 
@@ -28,9 +29,6 @@ DEPEND="
 	ruby? ( dev-lang/ruby )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${P}/src
 
 src_prepare() {
 	default

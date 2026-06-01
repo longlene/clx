@@ -7,7 +7,6 @@ SRC_URI="http://dev.alpinelinux.org/openrpcgen/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 DEPEND="!sys-libs/glibc"
 RDEPEND="${DEPEND}"
 

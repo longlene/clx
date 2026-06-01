@@ -17,7 +17,6 @@ KEYWORDS="~amd64"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
@@ -27,7 +26,6 @@ RDEPEND="${DEPEND}
 	>=dev-lua/lua-resty-openssl-0.8.17[${LUA_USEDEP}]
 	>=dev-lua/luaexpat-1.5.1[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

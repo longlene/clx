@@ -13,8 +13,10 @@ SRC_URI="https://gitlab.common-lisp.net/alexandria/alexandria/repository/archive
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+
 IUSE="doc test"
+RESTRICT="!test? ( test )"
 
 src_prepare() {
 	eapply_user

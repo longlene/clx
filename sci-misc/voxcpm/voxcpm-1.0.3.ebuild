@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Tokenizer-Free TTS for Context-Aware Speech Generation and True-to-Life Voice Cloning"
+DESCRIPTION="Tokenizer-Free TTS for Context-Aware Speech Generation and True-to-Life"
 HOMEPAGE="
 	https://github.com/OpenBMB/VoxCPM
 "
@@ -17,6 +17,7 @@ SRC_URI="https://github.com/OpenBMB/VoxCPM/archive/refs/tags/${PV}.tar.gz -> ${P
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/VoxCPM-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -48,5 +49,3 @@ RDEPEND="
 distutils_enable_tests pytest
 
 export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_VOXCPM="${PV}"
-
-S="${WORKDIR}"/VoxCPM-${PV}

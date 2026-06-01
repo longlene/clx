@@ -17,7 +17,6 @@ KEYWORDS="~amd64"
 
 DEPEND="x11-libs/fltk"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

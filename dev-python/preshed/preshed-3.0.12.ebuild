@@ -17,10 +17,9 @@ SRC_URI="https://github.com/explosion/preshed/archive/refs/tags/release-v${PV}.t
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/preshed-release-v${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 BDEPEND="
 	>=dev-python/cython-0.28[${PYTHON_USEDEP}]
 	>=dev-python/cymem-2.0.2[${PYTHON_USEDEP}]
@@ -29,6 +28,3 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/preshed-release-v${PV}
-

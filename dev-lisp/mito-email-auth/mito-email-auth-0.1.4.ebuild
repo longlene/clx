@@ -12,9 +12,7 @@ SRC_URI="https://github.com/40ants/mito-email-auth/archive/v${PV}.tar.gz -> ${P}
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/log4cl
 	dev-lisp/weblocks
@@ -23,7 +21,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/uuid
 	dev-lisp/mito
 "
-BDEPEND=""
 
 src_prepare() {
 	default

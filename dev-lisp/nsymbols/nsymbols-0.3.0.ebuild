@@ -5,7 +5,7 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="A set of convenience functions to list class, variable, function, and other symbols"
+DESCRIPTION="A set of convenience functions to list class, variable, function, and other"
 HOMEPAGE="https://github.com/atlas-engineer/nsymbols"
 SRC_URI="https://github.com/atlas-engineer/nsymbols/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -13,9 +13,7 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

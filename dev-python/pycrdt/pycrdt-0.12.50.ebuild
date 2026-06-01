@@ -76,7 +76,7 @@ HOMEPAGE="
 	https://github.com/y-crdt/pycrdt
 "
 SRC_URI="
-	https://github.com/y-crdt/pycrdt/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/y-crdt/pycrdt/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz
 	${CARGO_CRATE_URIS}
 "
 

@@ -15,9 +15,10 @@ SRC_URI="https://github.com/kennytilton/cells/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/utils-kt
 "
@@ -26,4 +27,3 @@ src_prepare() {
 	eapply_user
 	use test || rm -r ${PN}-test{,.asd}
 }
-	

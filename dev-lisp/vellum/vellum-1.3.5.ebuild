@@ -13,7 +13,6 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/serapeum
@@ -24,7 +23,6 @@ RDEPEND="${DEPEND}
 	>=dev-lisp/cl-data-structures-1.4.0
 	dev-lisp/documentation-utils-extensions
 "
-BDEPEND=""
 
 src_prepare() {
 	default

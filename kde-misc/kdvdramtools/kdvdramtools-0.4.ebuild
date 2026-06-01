@@ -7,54 +7,53 @@ SRC_URI="http://www.multimedia4linux.de/dvd-ram/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 IUSE="dolphin d3lphin konqueror doc"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 		>=kde-base/kommander-3.5
-                >=sys-fs/udftools-1.0.0b-r3
+				>=sys-fs/udftools-1.0.0b-r3
 		>=app-cdr/dvd+rw-tools-7.0
 		>=sys-apps/hal-0.5.9"
 
 src_install() {
 	export KDEDIR="$(kde-config --prefix)"
-	
-        if use konqueror; then
+
+		if use konqueror; then
 		insinto ${KDEDIR}/share/apps/konqueror/servicemenus
 		doins media_dvd*.desktop
-        fi
-	
-        if use dolphin; then
+		fi
+
+		if use dolphin; then
 		insinto ${KDEDIR}/share/apps/dolphin/servicemenus
 		doins media_dvd*.desktop
-        fi
-	
-        if use d3lphin; then
+		fi
+
+		if use d3lphin; then
 		insinto ${KDEDIR}/share/apps/d3lphin/servicemenus
 		doins media_dvd*.desktop
-        fi
-	
+		fi
+
 	insinto ${KDEDIR}/share/templates
 	doins linkDVDRAMWRITER.desktop
-	
+
 	insinto ${KDEDIR}/share/templates/.source
 	doins DVDRAMWRITER-Device.desktop
-	
+
 	exeinto ${KDEDIR}/bin
 	doexe src/*.sh src/*.kmdr
-	
+
 	#insinto ${KDEDIR}/share/locale/de/LC_MESSAGES
 	#doins po/de/*.mo
 	domo po/de/*.mo
-	
+
 	insinto ${KDEDIR}/share/icons/default.kde/32x32/devices
 	doins icons/32x32/*.png
-	
+
 	insinto ${KDEDIR}/share/icons/default.kde/48x48/devices
 	doins icons/48x48/*.png
-	
+
 	insinto ${KDEDIR}/share/icons/default.kde/64x64/devices
 	doins icons/64x64/*.png
 

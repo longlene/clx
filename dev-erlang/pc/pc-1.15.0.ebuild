@@ -5,16 +5,10 @@ EAPI=8
 
 inherit rebar3
 
-DESCRIPTION=""
-HOMEPAGE=""
 SRC_URI="https://github.com/blt/port_compiler/archive/refs/tags/v${PV}.tar.gz -> port_compiler-${PV}.tar.gz"
 
-LICENSE=""
 SLOT="0"
+S="${WORKDIR}"/port_compiler-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/port_compiler-${PV}

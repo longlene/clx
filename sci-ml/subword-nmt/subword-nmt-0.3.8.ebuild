@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Unsupervised Word Segmentation for Neural Machine Translation and Text Generation"
+DESCRIPTION="Unsupervised Word Segmentation for Neural Machine Translation and Text"
 HOMEPAGE="
 	https://pypi.org/project/subword-nmt
 	https://github.com/rsennrich/subword-nmt

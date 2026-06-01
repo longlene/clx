@@ -19,4 +19,3 @@ DEPEND="
 	dev-libs/jsoncpp
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

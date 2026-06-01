@@ -13,9 +13,7 @@ LICENSE="OFL-1.1"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 FONT_S="${S}"/fonts/otf
 FONT_SUFFIX="otf"

@@ -7,16 +7,14 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="6b4036a7fb287c9f94456fe06ae3d4a4d68248c3"
 
-DESCRIPTION="A service and protocol for coordinating recurring get-togethers between many humans"
+DESCRIPTION="A service and protocol for coordinating recurring get-togethers between many"
 HOMEPAGE="https://github.com/inaimathi/cl-congregate"
 SRC_URI="https://github.com/inaimathi/cl-congregate/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/house

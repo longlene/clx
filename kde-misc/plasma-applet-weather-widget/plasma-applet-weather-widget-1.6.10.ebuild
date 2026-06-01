@@ -14,8 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="
-	>=kde-frameworks/plasma-5.60.0:5
+	>=kde-plasma/libplasma-5.60.0:5
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-

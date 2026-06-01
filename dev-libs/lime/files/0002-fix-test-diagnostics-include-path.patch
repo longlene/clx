@@ -1,0 +1,11 @@
+--- a/tests/test_diagnostics.c	2026-05-19 11:39:11.603543774 -0700
++++ b/tests/test_diagnostics.c	2026-05-19 11:42:01.480226958 -0700
+@@ -16,7 +16,7 @@
+ #include <string.h>
+ 
+ #include "test_diagnostics_grammar.h"
+-#include "../../include/lime_error.h"
++#include "../include/lime_error.h"
+ 
+ /* Declarations for the generated parser API (Lemon convention:
+ ** user declares these in their driver). */

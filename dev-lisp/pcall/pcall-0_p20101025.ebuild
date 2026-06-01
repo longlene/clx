@@ -15,9 +15,7 @@ SRC_URI="https://github.com/marijnh/pcall/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/fiveam

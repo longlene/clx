@@ -1,12 +1,92 @@
-diff -Nur a/src/cuda/primitives.cu b/src/cuda/primitives.cu
---- a/src/cuda/primitives.cu	2025-04-08 08:30:28.000000000 -0700
-+++ b/src/cuda/primitives.cu	2025-06-04 01:10:40.540022061 -0700
-@@ -3,6 +3,8 @@
- #include <cuda_runtime.h>
+--- a/src/cuda/helpers.h
++++ b/src/cuda/helpers.h
+@@ -10,6 +10,7 @@
+ #include <thrust/iterator/counting_iterator.h>
+ #define __nv_bfloat16 __hip_bfloat16
+ #else
++#include <thrust/iterator/counting_iterator.h>
+ #include <cuda_fp16.h>
+ #include <cuda_bf16.h>
+ #endif
+@@ -240,6 +241,13 @@
+ #endif
+ 
+     template <typename T>
++    struct identity_func {
++      __device__ T operator()(T x) const {
++        return x;
++      }
++    };
++
++    template <typename T>
+     struct relu_func {
+       __device__ T operator()(T x) const {
+         return x > T(0.f) ? x : T(0.f);
+--- a/src/cuda/primitives.cu
++++ b/src/cuda/primitives.cu
+@@ -29,6 +29,8 @@
  #include <cublas_v2.h>
+ #endif
  #include <thrust/device_ptr.h>
 +#include <thrust/extrema.h>
 +#include <thrust/reduce.h>
  
  #include "cuda/helpers.h"
  #include "type_dispatch.h"
+--- a/src/ops/dequantize_gpu.cu
++++ b/src/ops/dequantize_gpu.cu
+@@ -69,7 +69,7 @@
+ 
+       if (!activation_type) {
+         dequantize_gemm_output_kernel<<<blocks, threads, 0, cuda::get_cuda_stream()>>>(
+-          c, a_scales, b_scales, transpose_a, transpose_b, bias, thrust::identity<T>(), y, depth);
++          c, a_scales, b_scales, transpose_a, transpose_b, bias, cuda::identity_func<T>(), y, depth);
+ 
+       } else {
+         switch (*activation_type) {
+--- a/src/ops/topk_gpu.cu
++++ b/src/ops/topk_gpu.cu
+@@ -136,6 +136,7 @@
+ }
+ #else
+ #include <cub/block/block_reduce.cuh>
++#include <cuda/std/limits>
+ #endif
+ 
+ namespace fastertransformer {
+@@ -157,7 +158,7 @@
+   template <typename T>
+   struct TopK {
+     int p = NOT_FOUND;
+-    T u = cub::FpLimits<T>::Lowest();
++    T u = ::cuda::std::numeric_limits<T>::lowest();
+ 
+     __device__ __forceinline__ void insert(T elem, int elem_id) {
+       if (greater(elem, u)) {
+@@ -167,7 +168,7 @@
+     }
+ 
+     __device__ __forceinline__ void init() {
+-      u = cub::FpLimits<T>::Lowest();
++      u = ::cuda::std::numeric_limits<T>::lowest();
+       p = NOT_FOUND;
+     }
+   };
+@@ -213,7 +214,7 @@
+         topk_tmp_val_buf[index] = total.u;
+         // If we found a max, blank out the value in the log prob array before starting the next iteration
+         if (total.p != NOT_FOUND)
+-          log_probs[total.p] = cub::FpLimits<T>::Lowest();
++          log_probs[total.p] = ::cuda::std::numeric_limits<T>::lowest();
+       }
+       __syncthreads();
+     }
+@@ -259,7 +260,7 @@
+ 
+       if (tid == 0) {
+         topks[ite] = total;
+-        s_val[total.p] = cub::FpLimits<T>::Lowest();
++        s_val[total.p] = ::cuda::std::numeric_limits<T>::lowest();
+       }
+       __syncthreads();
+     }

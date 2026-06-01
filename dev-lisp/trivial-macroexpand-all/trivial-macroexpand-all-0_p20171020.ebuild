@@ -14,7 +14,5 @@ SRC_URI="https://github.com/cbaggers/trivial-macroexpand-all/archive/${EGIT_COMM
 LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

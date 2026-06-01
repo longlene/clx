@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		parse-js is a Common Lisp package for parsing JavaScript — ECMAScript 3, to be more precise. 
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    parse-js is a Common Lisp package for parsing JavaScript — ECMAScript 3, to be more precise. 
+  </longdescription>
+  <upstream>
+    <remote-id type="github">marijnh/parse-js</remote-id>
+  </upstream>
 </pkgmetadata>

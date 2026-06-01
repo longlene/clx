@@ -12,7 +12,6 @@ SRC_URI="https://github.com/mulle-objc/mulle-objc-runtime/archive/${PV}.tar.gz -
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/mulle-concurrent
@@ -23,4 +22,3 @@ DEPEND="
 	dev-libs/mulle-data
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

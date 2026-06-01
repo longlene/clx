@@ -15,9 +15,7 @@ SRC_URI="https://github.com/eadmund/cl-xdg/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/uiop
 	dev-lisp/split-sequence

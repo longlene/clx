@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION="A single-file header-only version of a C++17-like string_view for C++98, C++11 and later"
+DESCRIPTION="A single-file header-only version of a C++17-like string_view for C++98,"
 HOMEPAGE="https://github.com/martinmoene/string-view-lite"
 SRC_URI="https://github.com/martinmoene/string-view-lite/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -13,9 +13,7 @@ LICENSE="BSL-1.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

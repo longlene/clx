@@ -15,11 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bodge-blobs-support
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

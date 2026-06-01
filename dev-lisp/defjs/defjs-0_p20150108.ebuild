@@ -15,9 +15,7 @@ SRC_URI="https://github.com/ahungry/defjs/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/parenscript

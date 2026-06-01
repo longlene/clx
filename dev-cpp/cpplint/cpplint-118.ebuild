@@ -15,6 +15,7 @@ SRC_URI="http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml?${SUBVER
 											       emacs? ( http://google-styleguide.googlecode.com/svn/trunk/google-c-style.el?${SUBVERSION_REVISION} -> cpplint-${PV}.el )"
 LICENSE="CC-BY-3.0"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64 ~x86"
 IUSE="emacs"
 
@@ -23,8 +24,6 @@ COMMON="emacs? ( virtual/emacs )"
 DEPEND="${COMMON}"
 RDEPEND="dev-lang/python
 	${COMMON}"
-
-S="${WORKDIR}"
 
 src_unpack() {
 	     cp -- "${DISTDIR}/cpplint-${PV}.xml" cppguide.xml || die
@@ -73,4 +72,3 @@ pkg_postinst() {
 pkg_postrm() {
 	     elisp-site-regen
 }
-

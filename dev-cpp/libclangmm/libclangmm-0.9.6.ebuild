@@ -13,7 +13,6 @@ SRC_URI="https://github.com/cppit/libclangmm/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND="sys-devel/clang"
+DEPEND="llvm-core/clang"
 RDEPEND="${DEPEND}"

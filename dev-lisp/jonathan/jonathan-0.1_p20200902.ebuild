@@ -14,9 +14,10 @@ SRC_URI="https://github.com/Rudolph-Miller/jonathan/archive/${EGIT_COMMIT}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-syntax
 	dev-lisp/fast-io
@@ -37,4 +38,3 @@ src_install() {
 	common-lisp-3_src_install
 	common-lisp-install-sources -t all README.md
 }
-

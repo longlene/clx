@@ -12,9 +12,10 @@ SRC_URI="https://github.com/40ants/weblocks-auth/archive/v${PV}.tar.gz -> ${P}.t
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/dexador
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-strings
 	dev-lisp/mito
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -17,4 +17,3 @@ DEPEND="
 	dev-erlang/hpack
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

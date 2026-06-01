@@ -5,16 +5,14 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="A Common Lisp roguelike battle of Angels and Demons in the streets of a Human city"
+DESCRIPTION="A Common Lisp roguelike battle of Angels and Demons in the streets of a"
 HOMEPAGE="https://github.com/gwathlobal/CotD"
 SRC_URI="https://github.com/gwathlobal/CotD/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/lispbuilder-sdl
 	dev-lisp/bordeaux-threads

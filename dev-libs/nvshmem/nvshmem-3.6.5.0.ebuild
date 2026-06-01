@@ -21,6 +21,7 @@ SRC_URI="https://github.com/NVIDIA/nvshmem/archive/refs/tags/v${MY_PV}.tar.gz ->
 
 LICENSE="NVIDIA"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}
 KEYWORDS="~amd64"
 IUSE="mpi nccl python"
 
@@ -33,8 +34,6 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 	python? ( dev-python/build[${PYTHON_USEDEP}] )
 "
-
-S="${WORKDIR}"/${MY_P}
 
 PATCHES=(
 	"${FILESDIR}"/build-fix.patch
@@ -89,8 +88,8 @@ src_install() {
 	cmake_src_install
 	# The device ExternalProject's cmake_install.cmake bakes in the portage
 	# build path as CMAKE_INSTALL_PREFIX.  When cmake re-runs it with
-	# DESTDIR=${D}, files land in ${D}/var/tmp/portage/…/build/lib/.
-	# The correct copies are already installed under ${D}/usr by the parent
+	# DESTDIR=${D}, files land in "${D}"/var/tmp/portage/…/build/lib/.
+	# The correct copies are already installed under "${D}"/usr by the parent
 	# project's own install() rules, so we just remove the stray tree.
 	rm -rf "${D}"/var || die
 

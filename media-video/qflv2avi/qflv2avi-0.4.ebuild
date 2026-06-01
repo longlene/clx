@@ -8,7 +8,6 @@ SRC_URI="http://www.kde-apps.org/CONTENT/content-files/56717-${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE=""
 
 KEYWORDS="~x86"
 

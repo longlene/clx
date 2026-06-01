@@ -19,7 +19,6 @@ DEPEND="
 	sys-apps/pcsc-lite
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

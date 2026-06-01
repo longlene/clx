@@ -15,7 +15,6 @@ LICENSE="MS-PL"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/anaphora
 	dev-lisp/alexandria
@@ -24,7 +23,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/select
 	dev-lisp/let-plus
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -14,11 +14,11 @@ SRC_URI="https://github.com/lem-project/micros/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

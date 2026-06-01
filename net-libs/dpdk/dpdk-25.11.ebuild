@@ -12,6 +12,7 @@ SRC_URI="https://fast.dpdk.org/rel/${P}.tar.xz"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
+S="${WORKDIR}"/${PN}-stable-${PV}
 KEYWORDS="~amd64"
 IUSE="test"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
@@ -43,8 +44,6 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 	dev-lang/nasm
 "
-
-S="${WORKDIR}"/${PN}-stable-${PV}
 
 PATCHES=( "${FILESDIR}/dpdk-${PV}-binutils.patch" )
 

@@ -15,13 +15,11 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-features
 	dev-lisp/pathname-utils
 	dev-lisp/documentation-utils
 "
-BDEPEND=""
 
 src_prepare() {
 	default

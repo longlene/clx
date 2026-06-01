@@ -15,9 +15,7 @@ IUSE="static-libs"
 
 DEPEND="
 	dev-lang/perl
-	sys-devel/libtool"
-
-RDEPEND=""
+	dev-build/libtool"
 
 src_compile() {
 	append-flags -fPIC

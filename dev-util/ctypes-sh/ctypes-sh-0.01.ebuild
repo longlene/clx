@@ -13,7 +13,6 @@ SRC_URI="https://github.com/taviso/ctypes.sh/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="MIT"
 SLOT="0"
 #KEYWORDS="~amd64"
-IUSE=""
 
 DEPEND="
 	app-shells/bash[plugins]

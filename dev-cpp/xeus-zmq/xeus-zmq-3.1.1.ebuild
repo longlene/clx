@@ -21,4 +21,3 @@ DEPEND="
 	>=dev-libs/openssl-3.0
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

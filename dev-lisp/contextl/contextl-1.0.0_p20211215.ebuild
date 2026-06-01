@@ -14,7 +14,6 @@ SRC_URI="https://github.com/pcostanza/contextl/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
 
 RDEPEND="
 	dev-lisp/lw-compat

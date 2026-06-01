@@ -6,15 +6,10 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Tiny-CLOS is a small object system with a metaobject protocol (MOP)"
 HOMEPAGE="http://www.foldr.org/~michaelw/lisp/mw-tiny-clos/"
-SRC_URI=""
 
 EGIT_REPO_URI="http://www.foldr.org/~michaelw/projects/mw-tiny-clos.git"
 
-LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-

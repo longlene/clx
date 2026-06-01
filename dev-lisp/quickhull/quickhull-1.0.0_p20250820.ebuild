@@ -13,16 +13,13 @@ SRC_URI="https://codeberg.org/shirakumo/quickhull/archive/${EGIT_COMMIT}.tar.gz 
 
 LICENSE="ZLIB"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/3d-math
 	dev-lisp/documentation-utils
 "
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}
 
 src_prepare() {
 	default

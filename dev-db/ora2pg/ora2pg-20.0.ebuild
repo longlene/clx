@@ -5,7 +5,7 @@ EAPI=8
 
 inherit perl-module
 
-DESCRIPTION="Ora2Pg is a free tool used to migrate an Oracle database to a PostgreSQL compatible schema"
+DESCRIPTION="Ora2Pg is a free tool used to migrate an Oracle database to a PostgreSQL"
 HOMEPAGE="http://ora2pg.darold.net/"
 SRC_URI="https://github.com/darold/ora2pg/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 

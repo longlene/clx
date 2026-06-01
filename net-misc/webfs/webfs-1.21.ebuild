@@ -11,9 +11,7 @@ SRC_URI="https://www.kraxel.org/releases/webfs/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
@@ -22,4 +20,3 @@ src_prepare() {
 		-e '/INSTALL_BINARY/{s#-s##}' \
 		-i mk/Variables.mk
 }
-

@@ -14,13 +14,10 @@ SRC_URI="https://git.sr.ht/~mcf/cproc/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	sys-devel/qbe
 "
-BDEPEND=""
 
 src_configure() {
 	./configure --prefix=/usr || die "configure failed"

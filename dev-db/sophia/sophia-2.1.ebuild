@@ -10,13 +10,11 @@ SRC_URI="https://github.com/pmwkaa/sophia/archive/version_${PV}.tar.gz -> ${P}.t
 
 LICENSE="BSD"
 SLOT="0"
+S="${WORKDIR}"/${PN}-version_${PV}
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="static-libs"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}"/${PN}-version_${PV}
 
 src_prepare() {
 	eapply_user

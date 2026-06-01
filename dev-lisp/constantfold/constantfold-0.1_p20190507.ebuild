@@ -14,9 +14,10 @@ SRC_URI="https://github.com/numcl/constantfold/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivia
 	dev-lisp/alexandria
@@ -26,7 +27,6 @@ RDEPEND="${DEPEND}
 	sci-mathematics/minisat
 	test? ( dev-lisp/fiveam )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

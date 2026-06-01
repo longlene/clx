@@ -13,7 +13,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/serapeum
@@ -22,4 +21,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/postmodern
 	dev-lisp/documentation-utils-extensions
 "
-BDEPEND=""

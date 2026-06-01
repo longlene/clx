@@ -8,16 +8,14 @@ SRC_URI="http://www.imaginary2008.de/data/surfer-rev-${PV}-source.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
+S=${WORKDIR}/surfer-source-rev-${PV}/surfer-rev-${PV}
 KEYWORDS="~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="
 	>=dev-cpp/gtkmm-2.12.1
 	>=media-gfx/surf-1.0.5
 "
 
-S=${WORKDIR}/surfer-source-rev-${PV}/surfer-rev-${PV}
 bd=${WORKDIR}/surfer-source-rev-${PV}
 
 src_compile() {
@@ -30,7 +28,7 @@ src_install() {
 	dodir /usr/share/${PN}/gallery
 	insinto /usr/share/${PN}/gallery
 	doins -r ${bd}/gallery-rev-${PV}/*
-	dodoc ${S}/README ${S}/AUTHORS ${bd}/surfer-anleitung.pdf
+	dodoc "${S}"/README "${S}"/AUTHORS ${bd}/surfer-anleitung.pdf
 }
 
 pkg_postinst() {

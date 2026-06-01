@@ -13,7 +13,6 @@ SRC_URI="https://github.com/tcolgate/guile-snmp/archive/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 #KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
 
 DEPEND="
 	net-analyzer/net-snmp

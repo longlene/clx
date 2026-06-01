@@ -34,8 +34,7 @@ DEPEND+="
 		llvm-core/mlir:${LLVM_SLOT}[test]
 	')
 "
-RDEPEND="
-"
+
 BDEPEND="
 	dev-python/pybind11[${PYTHON_USEDEP}]
 "

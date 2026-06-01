@@ -15,11 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/vivid-colors
 	dev-lisp/cl-colors2
 	dev-lisp/closer-mop
 	dev-lisp/matrix-case
 "
-BDEPEND=""

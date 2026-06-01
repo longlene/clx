@@ -4,18 +4,19 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
 EGIT_COMMIT="c5f3070324609e682d082ed53122a36002a3e293"
 
-DESCRIPTION="A simple, cross-platform module for obtaining GUI information on applications' windows"
+DESCRIPTION="A simple, cross-platform module for obtaining GUI information on"
 HOMEPAGE="https://github.com/asweigart/pygetwindow"
 SRC_URI="https://github.com/asweigart/pygetwindow/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
+S="${WORKDIR}"/PyGetWindow-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -28,5 +29,3 @@ RDEPEND="
 #
 #distutils_enable_tests pytest
 RESTRICT="test"
-
-S="${WORKDIR}"/PyGetWindow-${EGIT_COMMIT}

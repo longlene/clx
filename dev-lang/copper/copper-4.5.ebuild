@@ -2,7 +2,7 @@
 
 EAPI=8
 
-DESCRIPTION="Copper is a simple imperative language statically typed with tpe inference and genericity"
+DESCRIPTION="Copper is a simple imperative language statically typed with tpe inference"
 HOMEPAGE="http://tibleiz.net/copper"
 SRC_URI="http://tibleiz.net/download/copper-${PV}-src.tar.gz -> ${P}.tar.gz"
 
@@ -11,10 +11,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+llvm"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 sys-libs/ncurses
-sys-devel/llvm"
+llvm-core/llvm"
 
 QA_PRESTRIPPED="/usr/bin/copper-llvm /usr/bin/copper-elf /usr/bin/copper-coff"
 

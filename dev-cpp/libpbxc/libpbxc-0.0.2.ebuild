@@ -12,7 +12,6 @@ SRC_URI="http://10.20.16.48/acct/libpbxc/repository/archive.tar.gz?ref=v${PV} ->
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/protobuf

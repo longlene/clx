@@ -23,8 +23,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="python"
 
-DEPEND="
-"
 RDEPEND="${DEPEND}
 	python? (
 		${PYTHON_DEPS}

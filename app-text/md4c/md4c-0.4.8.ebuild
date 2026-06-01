@@ -12,14 +12,12 @@ SRC_URI="https://github.com/mity/md4c/archive/release-${PV}.tar.gz -> ${P}.tar.g
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 #src_install() {
-#	dobin ${BUILD_DIR}/md2html/md2html
-#	dolib.a ${BUILD_DIR}/md4c/libmd4c.a
+#	dobin "${BUILD_DIR}"/md2html/md2html
+#	dolib.a "${BUILD_DIR}"/md4c/libmd4c.a
 #	insinto /usr/include
 #	doins md4c/md4c.h
 #	dodoc README.md

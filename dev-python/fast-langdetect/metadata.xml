@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">LlmKira/fast-langdetect</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    fast-langdetect provides 80x faster language detection using fasttext,
+    with support for 176 languages, a lite model bundled locally, and
+    utilities to split text by detected language.
+  </longdescription>
+</pkgmetadata>

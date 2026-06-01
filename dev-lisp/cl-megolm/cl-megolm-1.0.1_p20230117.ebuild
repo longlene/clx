@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/claw-olm
@@ -26,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/str
 	dev-lisp/alexandria
 "
-BDEPEND=""
 
 src_prepare() {
 	default

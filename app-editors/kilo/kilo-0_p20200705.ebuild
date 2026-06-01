@@ -14,9 +14,7 @@ SRC_URI="https://github.com/antirez/kilo/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

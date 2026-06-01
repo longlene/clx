@@ -19,9 +19,8 @@ DEPEND="
 	dev-lang/lua
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
-	dobin ${BUILD_DIR}/yue
+	dobin "${BUILD_DIR}"/yue
 	einstalldocs
 }

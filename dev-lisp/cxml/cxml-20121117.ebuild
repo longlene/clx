@@ -5,17 +5,13 @@ EAPI=8
 
 inherit common-lisp-3 git-r3
 
-
-DESCRIPTION="A Common Lisp XML library implementing namespaces, a validating SAX-like XML 1.0 parser and the DOM Level 1 Core interfaces."
+DESCRIPTION="A Common Lisp XML library implementing namespaces, a validating SAX-like XML"
 HOMEPAGE="http://common-lisp.net/project/cxml/"
-SRC_URI=""
 EGIT_REPO_URI="http://repo.or.cz/r/cxml.git"
-
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="!dev-lisp/cl-${PN}
 		>=dev-lisp/closure-common-20081130

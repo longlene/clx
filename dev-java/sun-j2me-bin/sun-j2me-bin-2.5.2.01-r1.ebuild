@@ -14,6 +14,7 @@ BINARY="sun_java_wireless_toolkit-2.5.2_01-linuxi486.bin.sh"
 SRC_URI="${BINARY}"
 LICENSE="sun-bcla-j2me"
 SLOT="0"
+S=${WORKDIR}
 KEYWORDS="amd64 x86"
 IUSE="doc examples"
 RESTRICT="fetch"
@@ -28,8 +29,6 @@ RDEPEND="${COMMON_DEP}
 DEPEND="${COMMON_DEP}
 	app-arch/unzip"
 
-S=${WORKDIR}
-
 MY_FILE=${DISTDIR}/${BINARY}
 
 pkg_nofetch() {
@@ -39,7 +38,7 @@ pkg_nofetch() {
 	einfo "scroll down and notice the download button."
 	einfo "Click the Download button for J2ME Wireless Toolkit 2.5.2"
 	einfo "and download ${BINARY}"
-	einfo "Put this file to ${DISTDIR} and resume the installation"
+	einfo "Put this file to "${DISTDIR}" and resume the installation"
 
 }
 

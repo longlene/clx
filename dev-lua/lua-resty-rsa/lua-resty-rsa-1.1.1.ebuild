@@ -15,11 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="
 	${LUA_DEPS}
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

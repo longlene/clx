@@ -12,10 +12,7 @@ SRC_URI="https://github.com/snatch-xmpp/snatch/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-erlang/fast_xml-1.1.24
 "
-BDEPEND=""

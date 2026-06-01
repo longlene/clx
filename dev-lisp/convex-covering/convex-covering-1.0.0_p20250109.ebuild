@@ -15,7 +15,6 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/manifolds
 	dev-lisp/3d-spaces
@@ -24,4 +23,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/machine-state
 	dev-lisp/documentation-utils
 "
-BDEPEND=""

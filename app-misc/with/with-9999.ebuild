@@ -8,16 +8,13 @@ inherit git-r3
 
 DESCRIPTION="Command prefixing for continuours workflow using a single tool"
 HOMEPAGE="https://github.com/mchav/with"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/mchav/with.git"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

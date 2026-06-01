@@ -14,7 +14,6 @@ SRC_URI="https://github.com/CastXML/CastXML/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND="sys-devel/llvm"
+DEPEND="llvm-core/llvm"
 RDEPEND="${DEPEND}"

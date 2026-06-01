@@ -8,13 +8,11 @@ SRC_URI="http://elceef.itsec.pl/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
+S=${WORKDIR}/${PN}
 KEYWORDS="~x86"
-IUSE=""
 
 DEPEND=">=net-libs/libpcap-0.6.0"
 RDEPEND="${DEPEND}"
-
-S=${WORKDIR}/${PN}
 
 src_compile() {
 	econf || die "econf failed"

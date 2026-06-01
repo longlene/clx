@@ -10,7 +10,8 @@ SRC_URI="http://download.plt-scheme.org/bundles/${PV}/mz/mz-${PV}-src-unix.tgz"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="x86 amd64"
+S="${WORKDIR}/mz-${PV}/src"
+KEYWORDS="amd64 x86"
 IUSE="perl xft"
 
 DEPEND="perl? ( dev-lang/perl )
@@ -18,8 +19,6 @@ xft? ( x11-libs/libXft )"
 
 RDEPEND="${DEPEND}
 !dev-scheme/racket"
-
-S="${WORKDIR}/mz-${PV}/src"
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-funtoo-fixes.patch"

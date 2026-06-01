@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Flexible general iterative algorithm for Common Lisp"
 HOMEPAGE="https://github.com/mobius-eng/cl-iterative"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/mobius-eng/cl-iterative.git"
 
 LICENSE="LLGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/optima

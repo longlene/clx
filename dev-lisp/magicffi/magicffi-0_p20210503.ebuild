@@ -15,13 +15,11 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/cl-ppcre
 	sys-apps/file
 "
-BDEPEND=""
 
 src_prepare() {
 	default

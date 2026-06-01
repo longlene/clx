@@ -19,7 +19,6 @@ REQUIRED_USE="${LUA_REQUIRED_USE}"
 
 DEPEND="${LUA_DEPS}"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 lua_src_install() {
 	insinto $(lua_get_lmod_dir)/${PN}

@@ -13,6 +13,7 @@ SRC_URI="https://github.com/jinja2cpp/Jinja2Cpp/archive/${EGIT_COMMIT}.tar.gz ->
 
 LICENSE="MPL-2.0"
 SLOT="0"
+S="${WORKDIR}"/Jinja2Cpp-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 DEPEND="
@@ -25,15 +26,12 @@ DEPEND="
 	dev-libs/boost
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 PATCHES=(
 	"${FILESDIR}"/removed-unused-boost-libs.patch
 	"${FILESDIR}"/system-dep.patch
 	"${FILESDIR}"/fmt-fix.patch
 )
-
-S="${WORKDIR}"/Jinja2Cpp-${EGIT_COMMIT}
 
 src_configure() {
 	local mycmakeargs=(

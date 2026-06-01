@@ -14,7 +14,9 @@ SRC_URI="https://github.com/cffi/cffi/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+
 IUSE="doc example test"
+RESTRICT="!test? ( test )"
 
 DEPEND="doc? ( dev-lisp/sbcl virtual/texi2dvi )"
 RDEPEND="

@@ -15,9 +15,10 @@ SRC_URI="https://github.com/zqwell/guess/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/anaphora
 	dev-lisp/alexandria

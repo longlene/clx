@@ -8,9 +8,6 @@ LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
-
-DEPEND=""
 
 src_unpack() {
 	unpack ${A}

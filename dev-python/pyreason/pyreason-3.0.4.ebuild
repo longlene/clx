@@ -4,16 +4,16 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="An explainable inference software supporting annotated, real valued, graph based and temporal logic"
+DESCRIPTION="An explainable inference software supporting annotated, real valued, graph"
 HOMEPAGE="
 	https://pypi.org/project/pyreason/
 	https://github.com/lab-v2/pyreason
 "
-SRC_URI="https://github.com/lab-v2/pyreason/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/lab-v2/pyreason/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"

@@ -22,8 +22,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -37,4 +35,3 @@ PATCHES=(
 )
 
 export OPENFST_SOURCE_DIR="${WORKDIR}"/openfst-sherpa-onnx-2024-06-13/
-

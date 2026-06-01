@@ -13,9 +13,7 @@ SRC_URI="https://bitbucket.org/eeeickythump/cl-tcod/get/${PV}.tar.gz -> ${P}.tar
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/libtcod
 	dev-lisp/cffi

@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 CRATES="
 	aho-corasick@1.0.2
@@ -113,10 +113,9 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/py-${P}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 BDEPEND="
 	dev-python/setuptools-rust[${PYTHON_USEDEP}]
 	test? (
@@ -125,5 +124,3 @@ BDEPEND="
 "
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/py-${P}

@@ -13,16 +13,13 @@ SRC_URI="https://github.com/darkstalker/lua_brain/archive/${PV}.tar.gz -> ${P}.t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+S="${WORKDIR}"/lua_${P}
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lua/lsqlite3[${LUA_USEDEP}]
 	dev-lua/luautf8[${LUA_USEDEP}]
 "
-
-S="${WORKDIR}"/lua_${P}
 
 DOCS=( README.md )
 

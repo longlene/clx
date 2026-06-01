@@ -14,9 +14,7 @@ SRC_URI="https://github.com/phoe/ccl-compat/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/alexandria

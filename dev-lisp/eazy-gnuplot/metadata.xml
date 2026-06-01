@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Eazy-Gnuplot
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Eazy-Gnuplot
 
-		Super Duper Doopa Booka Lispy Gnuplot library
+    Super Duper Doopa Booka Lispy Gnuplot library
 
-		Structure-less – no CFFI, no CLOS, no STRUCTURE
-		Just print the data to the *standard-output* inside plot function
-	</longdescription>
+    Structure-less – no CFFI, no CLOS, no STRUCTURE
+    Just print the data to the *standard-output* inside plot function
+  </longdescription>
+  <upstream>
+    <remote-id type="github">guicho271828/eazy-gnuplot</remote-id>
+  </upstream>
 </pkgmetadata>

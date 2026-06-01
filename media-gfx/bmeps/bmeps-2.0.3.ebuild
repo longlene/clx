@@ -19,10 +19,10 @@ DEPEND="
 "
 
 src_install() {
-	dobin ${WORKDIR}/${P}/bmeps || die
-	dolib.a ${WORKDIR}/${P}/libbmeps.a || die
-	doman ${WORKDIR}/${P}/man/man1/bmeps.1
-	mv ${WORKDIR}/${P}/share/bmeps ${D}usr/share/
-	mv ${WORKDIR}/${P}/share/doc/bmeps/bmeps.pdf ${D}usr/share/bmeps
-	mv ${WORKDIR}/${P}/contrib ${D}usr/share/bmeps
+	dobin "${WORKDIR}"/${P}/bmeps || die
+	dolib.a "${WORKDIR}"/${P}/libbmeps.a || die
+	doman "${WORKDIR}"/${P}/man/man1/bmeps.1
+	mv "${WORKDIR}"/${P}/share/bmeps ${D}usr/share/
+	mv "${WORKDIR}"/${P}/share/doc/bmeps/bmeps.pdf ${D}usr/share/bmeps
+	mv "${WORKDIR}"/${P}/contrib ${D}usr/share/bmeps
 }

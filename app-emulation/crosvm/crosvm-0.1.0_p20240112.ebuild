@@ -248,6 +248,7 @@ SRC_URI="
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 DEPEND="
@@ -258,8 +259,6 @@ BDEPEND="
 	>=virtual/rust-1.31.0
 	dev-libs/protobuf
 "
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 src_prepare() {
 	default

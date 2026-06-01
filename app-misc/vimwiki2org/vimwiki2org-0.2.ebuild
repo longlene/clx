@@ -10,9 +10,7 @@ SRC_URI="https://github.com/fasheng/vimwiki2org/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lang/perl
 "

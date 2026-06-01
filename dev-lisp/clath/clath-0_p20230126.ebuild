@@ -14,9 +14,7 @@ SRC_URI="https://github.com/BnMcGn/clath/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/ningle
 	dev-lisp/clack

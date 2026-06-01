@@ -13,11 +13,9 @@ LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-utilities
 "
-BDEPEND=""
 
 src_prepare() {
 	default

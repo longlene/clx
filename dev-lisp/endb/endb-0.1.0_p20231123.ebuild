@@ -15,7 +15,6 @@ LICENSE="AGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/archive
@@ -36,7 +35,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-utf8
 	dev-lisp/trivia
 "
-BDEPEND=""
 
 src_prepare() {
 	default

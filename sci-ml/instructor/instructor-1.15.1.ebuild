@@ -33,7 +33,7 @@ RDEPEND="
 		>=dev-python/tenacity-8.2.3[${PYTHON_USEDEP}]
 		dev-python/pydantic[${PYTHON_USEDEP}]
 		>=dev-python/jiter-0.6.1[${PYTHON_USEDEP}]
-		>=dev-python/jinja2-3.1.4[${PYTHON_USEDEP}]
+		>=dev-python/jinja22-3.1.4[${PYTHON_USEDEP}]
 		>=dev-python/requests-2.32.3[${PYTHON_USEDEP}]
 		>=dev-python/diskcache-5.6.3[${PYTHON_USEDEP}]
 	')

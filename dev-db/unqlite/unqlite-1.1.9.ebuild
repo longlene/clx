@@ -11,13 +11,10 @@ SRC_URI="https://github.com/symisc/unqlite/archive/refs/tags/v${PV}.tar.gz -> ${
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-
 S="${WORKDIR}"
+KEYWORDS="~amd64 ~arm ~x86"
+
+RDEPEND="${DEPEND}"
 
 src_compile() {
 	$(tc-getCC) ${CFLAGS} ${LDFLAGS} -fPIC -shared -Wl,-soname,lib${PN}.so -o lib${PN}.so ${PN}.c

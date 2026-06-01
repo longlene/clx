@@ -1,0 +1,35 @@
+--- a/src/lib_python/CMakeLists.txt
++++ b/src/lib_python/CMakeLists.txt
+@@ -8,6 +8,7 @@
+ endif()
+
+ set(PYBIND11_PYTHON_VERSION ${BUILD_PYTHON_VERSION})
++find_package(Python "${BUILD_PYTHON_VERSION}" EXACT COMPONENTS Interpreter Development.Module REQUIRED)
+ set(PYBIND11_FINDPYTHON True)
+
+ set(VIZDOOM_PYTHON_OUTPUT_DIR ${VIZDOOM_OUTPUT_DIR}/python${BUILD_PYTHON_VERSION})
+@@ -17,23 +18,7 @@
+
+ message(STATUS "Specified Python version to use: ${BUILD_PYTHON_VERSION}")
+
+-if(NOT EXISTS ${VIZDOOM_PYTHON_SRC_DIR}/pybind11/CMakeLists.txt)
+-    find_package(Git QUIET)
+-    if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
+-        message(STATUS "pybind11 submodule update")
+-        execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive
+-                WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+-                RESULT_VARIABLE GIT_SUBMOD_RESULT)
+-        if(NOT GIT_SUBMOD_RESULT EQUAL "0")
+-            message(FATAL_ERROR "git submodule update --init --recursive failed with ${GIT_SUBMOD_RESULT}, please checkout submodules")
+-        endif()
+-    endif()
+-
+-    if(NOT EXISTS ${VIZDOOM_PYTHON_SRC_DIR}/pybind11/CMakeLists.txt)
+-        message(FATAL_ERROR "The pybind11 submodule was not downloaded!")
+-    endif()
+-endif()
+-add_subdirectory(${VIZDOOM_PYTHON_SRC_DIR}/pybind11)
++find_package(pybind11 REQUIRED)
+
+ set(VIZDOOM_PYTHON_LIBS
+     ${VIZDOOM_LIBS}

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/cxxxr/cl-mecab/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/uiop
 	dev-lisp/cffi

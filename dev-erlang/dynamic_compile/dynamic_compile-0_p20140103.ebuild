@@ -14,11 +14,8 @@ SRC_URI="https://github.com/jkvor/dynamic_compile/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	insinto /usr/$(get_libdir)/erlang/lib/${P}

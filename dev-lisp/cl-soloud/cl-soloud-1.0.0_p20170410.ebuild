@@ -7,16 +7,14 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="4ba2b98d6241c62709f8bbec6f8ec6a12c6cb7ce"
 
-DESCRIPTION="Bindings to SoLoud, a multi-platform, multi-backend, minimal dependencies sound mixing and output library"
+DESCRIPTION="Bindings to SoLoud, a multi-platform, multi-backend, minimal dependencies"
 HOMEPAGE="https://github.com/Shirakumo/cl-soloud"
 SRC_URI="https://github.com/Shirakumo/cl-soloud/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi

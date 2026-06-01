@@ -14,9 +14,10 @@ SRC_URI="https://github.com/masatoi/mgl-user/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/mgl[example]
 	dev-lisp/fare-csv

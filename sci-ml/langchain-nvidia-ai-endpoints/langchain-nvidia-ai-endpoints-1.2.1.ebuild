@@ -17,6 +17,7 @@ SRC_URI="https://github.com/langchain-ai/langchain-nvidia/archive/refs/tags/libs
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/langchain-nvidia-libs-ai-endpoints-v${PV}/libs/ai-endpoints/
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -31,5 +32,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/langchain-nvidia-libs-ai-endpoints-v${PV}/libs/ai-endpoints/

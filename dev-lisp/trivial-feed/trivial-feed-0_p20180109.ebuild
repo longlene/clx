@@ -14,13 +14,10 @@ SRC_URI="https://github.com/eugeneia/trivial-feed/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="AGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/xmls
 	dev-lisp/cl-date-time-parser
 	dev-lisp/flexi-streams
 	dev-lisp/cl-ppcre
 "
-BDEPEND=""

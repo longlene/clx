@@ -12,7 +12,6 @@ SRC_URI="https://github.com/dbi-beam/dbi_pgsql/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-erlang/dbi-1.1.5
@@ -20,4 +19,3 @@ DEPEND="
 	>=dev-erlang/epgsql-3.4.0
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

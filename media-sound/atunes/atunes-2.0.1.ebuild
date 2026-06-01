@@ -10,9 +10,10 @@ HOMEPAGE="http://www.atunes.org"
 SRC_URI="http://downloads.sourceforge.net/atunes/${MY_PN}-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+S=${WORKDIR}/${MY_PN}-${PV}-SNAPSHOT
+KEYWORDS="~amd64 ~x86"
 IUSE="mplayer mp3 flac ogg"
-# TODO - Package depends on either mplayer or xine. 
+# TODO - Package depends on either mplayer or xine.
 # idl0r helped with the current implementation. Hopefully I got it right!
 DEPEND=">=virtual/jre-1.6.0
 		virtual/cdrtools
@@ -22,7 +23,6 @@ DEPEND=">=virtual/jre-1.6.0
 		flac? ( >=media-libs/flac-1.2 )
 		ogg? ( >=media-sound/vorbis-tools-1.2 )"
 RDEPEND="${DEPEND}"
-S=${WORKDIR}/${MY_PN}-${PV}-SNAPSHOT
 
 src_install() {
 	# aTunes is installed into $atunes_home by simply copying the archive
@@ -30,20 +30,20 @@ src_install() {
 	# desktop shortcut.
 	atunes_home=/usr/share/atunes
 
-	epatch ${FILESDIR}/${P}.diff
+	epatch "${FILESDIR}"/${P}.diff
 
-	insinto ${atunes_home} 
-	exeinto ${atunes_home} 
+	insinto ${atunes_home}
+	exeinto ${atunes_home}
 
 	doins *
 	cp -R lib ${D}${atunes_home}
-	doexe aTunes.sh 
+	doexe aTunes.sh
 	dosym ${atunes_home}/aTunes.sh /usr/bin/atunes
 
 	# Install desktop shortcut
-	mkdir -p ${D}/usr/share/pixmaps
+	mkdir -p "${D}"/usr/share/pixmaps
 	insinto /usr/share/pixmaps
 	atunes_icon=atunes.png
-	doins ${atunes_icon} 
+	doins ${atunes_icon}
 	make_desktop_entry "atunes" "aTunes" "${atunes_icon}" "AudioVideo;Player"
 }

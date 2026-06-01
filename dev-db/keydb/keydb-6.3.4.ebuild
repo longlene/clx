@@ -22,7 +22,6 @@ DEPEND="
 	jemalloc? ( >=dev-libs/jemalloc-5.1:= )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 REQUIRED_USE="?? ( tcmalloc jemalloc )"
 
@@ -89,7 +88,7 @@ src_install() {
 	insinto /etc/
 	newins redis.conf keydb.conf
 	newins sentinel.conf keydb-sentinel.conf
-	
+
 	newconfd "${FILESDIR}/keydb.confd" keydb
 	newinitd "${FILESDIR}/keydb.initd" keydb
 
@@ -107,4 +106,3 @@ src_install() {
 	diropts -m0750 -o keydb -g keydb
 	keepdir /var/{log,lib}/keydb
 }
-

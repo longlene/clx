@@ -10,9 +10,7 @@ SRC_URI="http://home.tiscali.cz/~cz210552/distfiles/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

@@ -21,7 +21,6 @@ DEPEND="
 	media-libs/vulkan-loader
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

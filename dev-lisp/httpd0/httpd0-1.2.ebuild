@@ -13,9 +13,7 @@ SRC_URI="https://github.com/eugeneia/httpd0/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="AGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/q-thread-pool
 	dev-lisp/trivial-utf8

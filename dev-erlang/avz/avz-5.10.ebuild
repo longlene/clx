@@ -12,9 +12,7 @@ SRC_URI="https://github.com/synrc/avz/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-erlang/nitro
 	dev-erlang/n2o
@@ -22,4 +20,3 @@ RDEPEND="${DEPEND}
 	dev-erlang/erlydtl
 	>=dev-erlang/oauth-1.6.0
 "
-BDEPEND=""

@@ -17,8 +17,6 @@ LICENSE="LGPL-2.1"
 
 SLOT="0"
 
-KEYWORDS=""
-
 IUSE="X debug doc gstreamer mplayer vlc +xine +xlib-hack"
 
 RDEPEND="X? ( x11-libs/libX11 )
@@ -30,7 +28,7 @@ RDEPEND="X? ( x11-libs/libX11 )
 
 # add build-time dependencies
 DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen )"
+	doc? ( app-text/doxygen )"
 
 S="${WORKDIR}/${PN}"
 

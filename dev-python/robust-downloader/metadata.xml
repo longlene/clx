@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">fedebotu/robust-downloader</remote-id>
+    <remote-id type="pypi">robust-downloader</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    A simple, robust file downloader supporting direct HTTP/HTTPS links,
+    Google Drive, and Amazon S3 with progress reporting via tqdm.
+  </longdescription>
+</pkgmetadata>

@@ -23,6 +23,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${MY_PV}
 KEYWORDS="~amd64"
 IUSE="cuda nccl opencl vulkan python"
 
@@ -42,9 +43,6 @@ DEPEND="
 	vulkan? ( media-libs/vulkan-loader )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${MY_PV}
 
 PATCHES=(
 	"${FILESDIR}"/system-tvm-ffi.patch

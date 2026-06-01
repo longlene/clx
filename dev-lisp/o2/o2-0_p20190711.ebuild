@@ -14,9 +14,7 @@ SRC_URI="https://github.com/pkulev/o2/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-sdl2
 	dev-lisp/cl-sdl2-image
@@ -24,7 +22,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/bodge-chipmunk
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

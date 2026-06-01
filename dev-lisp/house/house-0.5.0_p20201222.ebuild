@@ -13,9 +13,10 @@ SRC_URI="https://github.com/Inaimathi/house/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/anaphora
@@ -38,4 +39,3 @@ src_prepare() {
 		rm -rf test
 	fi
 }
-

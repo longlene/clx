@@ -17,6 +17,7 @@ SRC_URI="https://github.com/langchain-ai/langchain-experimental/archive/refs/tag
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/langchain-experimental-libs-experimental-v${PV}/libs/experimental
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/langchain-experimental-libs-experimental-v${PV}/libs/experimental

@@ -8,16 +8,16 @@ inherit git-r3 common-lisp-3
 
 DESCRIPTION="Emails and Common Lisp"
 HOMEPAGE="https://github.com/deadtrickster/cl-mail"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/deadtrickster/cl-mail.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/split-sequence

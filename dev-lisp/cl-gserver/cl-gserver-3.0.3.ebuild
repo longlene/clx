@@ -12,9 +12,10 @@ SRC_URI="https://github.com/mdbergmann/cl-gserver/archive/refs/tags/${PV}.tar.gz
 LICENSE="AGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/bordeaux-threads
@@ -27,7 +28,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/atomics
 	test? ( dev-lisp/fiveam dev-lisp/trivia )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

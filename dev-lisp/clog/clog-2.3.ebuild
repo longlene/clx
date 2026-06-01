@@ -13,7 +13,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/clack
 	dev-lisp/websocket-driver
@@ -34,7 +33,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-pass
 	dev-lisp/cl-isaac
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

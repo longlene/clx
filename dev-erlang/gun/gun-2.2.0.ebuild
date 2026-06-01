@@ -12,7 +12,9 @@ SRC_URI="https://github.com/ninenines/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-erlang/cowlib-2.5.1
@@ -23,4 +25,3 @@ src_prepare() {
 	default
 	rebar_remove_deps
 }
-

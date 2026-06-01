@@ -13,20 +13,19 @@ HOMEPAGE="
 	https://pypi.org/project/altair/
 	https://github.com/altair-viz/altair
 "
-SRC_URI="https://github.com/altair-viz/altair/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/altair-viz/altair/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-python/jinja2[${PYTHON_USEDEP}]
+	dev-python/jinja22[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-3.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/pandas-0.25[${PYTHON_USEDEP}]
 	dev-python/toolz[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-	<pkgmetadata>
-		<maintainer>
-			<email>longlene@gmail.com</email>
-			<name>loong0</name>
-		</maintainer>
-		<longdescription>
+  <pkgmetadata>
+    <maintainer type="person">
+      <email>longlene@gmail.com</email>
+      <name>loong0</name>
+    </maintainer>
+    <longdescription>
 
-		</longdescription>
-	</pkgmetadata>
+    </longdescription>
+    <upstream>
+    <remote-id type="github">jekyll/jekyll-mentions</remote-id>
+  </upstream>
+</pkgmetadata>

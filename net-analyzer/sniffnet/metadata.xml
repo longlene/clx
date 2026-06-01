@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Sniffnet is a network monitoring application that lets you comfortably
+    monitor your Internet traffic. It provides real-time statistics, charts,
+    and notifications, with support for filtering by protocol, address, and
+    more. Built with the iced GUI framework and wgpu for rendering.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">GyulyVGC/sniffnet</remote-id>
+  </upstream>
+</pkgmetadata>

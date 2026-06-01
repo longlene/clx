@@ -12,7 +12,7 @@ inherit cmake distutils-r1
 DLPACK_COMMIT="5c792cef3aee54ad8b7000111c9dc1797f327b59"
 DMLC_CORE_COMMIT="d07fb7a443b5db8a89d65a15a024af6a425615a5"
 
-DESCRIPTION="An efficient video loader for deep learning with smart shuffling that's super easy to digest"
+DESCRIPTION="An efficient video loader for deep learning with smart shuffling that's"
 HOMEPAGE="
 	https://pypi.org/project/decord2/
 	https://github.com/johnnynunez/decord2
@@ -23,7 +23,7 @@ SRC_URI="
 	https://github.com/dmlc/dmlc-core/archive/${DMLC_CORE_COMMIT}.tar.gz -> dmlc-core-${DMLC_CORE_COMMIT}.tar.gz
 "
 
-LICENSE=""
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="cuda python"

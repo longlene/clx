@@ -13,7 +13,5 @@ SRC_URI="mirror://apache/storm/${MY_P}/${MY_P}.tar.gz"
 LICENSE="Apache"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

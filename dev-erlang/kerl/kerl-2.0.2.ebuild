@@ -14,9 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bash-completion zsh-completion"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	dobin kerl
@@ -27,4 +25,3 @@ src_install() {
 	fi
 	dodoc README.md
 }
-

@@ -14,10 +14,7 @@ SRC_URI="https://github.com/RailsOnLisp/bordeaux-set/archive/${EGIT_COMMIT}.tar.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 "
-BDEPEND=""

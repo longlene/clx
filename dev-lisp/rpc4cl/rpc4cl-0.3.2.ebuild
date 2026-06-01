@@ -10,10 +10,8 @@ SRC_URI="http://code.stiernstrom.se/rpc4cl/downloads/rpc4cl-${PV}.tar.gz -> ${P}
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/drakma
 dev-lisp/cxml
@@ -22,4 +20,3 @@ dev-lisp/parse-number
 dev-lisp/rfc3339-timestamp
 dev-lisp/babel
 dev-lisp/trivial-timeout"
-

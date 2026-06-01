@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit cmake flag-o-matic llvm-utils multilib-minimal python-any-r1
 
 MY_PV=${PV//./-}
@@ -22,6 +22,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/llvm-nightly-${MY_PV}
 KEYWORDS="~amd64"
 IUSE="cuda +jit l0 rocm"
 
@@ -41,8 +42,6 @@ BDEPEND="
 	${PYTHON_DEPS}
 	llvm-core/clang
 "
-
-S="${WORKDIR}"/llvm-nightly-${MY_PV}
 
 CMAKE_USE_DIR="${S}"/llvm
 

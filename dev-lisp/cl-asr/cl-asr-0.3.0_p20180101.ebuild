@@ -14,9 +14,7 @@ SRC_URI="https://github.com/belambert/cl-asr/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-fft
 	dev-lisp/cl-ppcre

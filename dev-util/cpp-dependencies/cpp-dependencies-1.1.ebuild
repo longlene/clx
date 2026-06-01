@@ -12,7 +12,6 @@ SRC_URI="https://github.com/tomtom-international/cpp-dependencies/archive/${PV}.
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="dev-libs/boost"
 RDEPEND="${DEPEND}"

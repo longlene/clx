@@ -13,10 +13,11 @@ HOMEPAGE="
 	https://pypi.org/project/google-adk/
 	https://github.com/google/adk-python/
 "
-SRC_URI="https://github.com/google/adk-python/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/google/adk-python/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/adk-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -68,5 +69,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/adk-python-${PV}

@@ -15,9 +15,7 @@ SRC_URI="https://github.com/raysan5/raygui/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-games/raylib
 "

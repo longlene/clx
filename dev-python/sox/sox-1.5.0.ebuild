@@ -17,6 +17,7 @@ SRC_URI="https://github.com/marl/pysox/archive/refs/tags/v${PV}.tar.gz -> pysox-
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/pysox-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/pysox-${PV}

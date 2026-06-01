@@ -14,7 +14,6 @@ SRC_URI="https://git.openwrt.org/?p=project/procd.git;a=snapshot;h=${EGIT_COMMIT
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 COMMON_DEPEND="
 	dev-libs/libubox[json]

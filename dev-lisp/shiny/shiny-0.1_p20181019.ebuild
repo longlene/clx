@@ -14,9 +14,7 @@ SRC_URI="https://github.com/azimut/shiny/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="GPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	app-emacs/slime
 	dev-lisp/cm
@@ -40,4 +38,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/nineveh
 	dev-lisp/with-setf
 "
-BDEPEND=""

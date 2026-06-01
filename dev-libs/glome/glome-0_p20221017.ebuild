@@ -17,4 +17,3 @@ KEYWORDS="~amd64"
 
 DEPEND="dev-libs/openssl"
 RDEPEND="${DEPEND}"
-BDEPEND=""

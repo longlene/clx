@@ -13,7 +13,6 @@ SRC_URI="https://github.com/antoniogarro/guile-matrix/archive/v${PV}.tar.gz -> $
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="virtual/lapack"
 RDEPEND="${DEPEND}"

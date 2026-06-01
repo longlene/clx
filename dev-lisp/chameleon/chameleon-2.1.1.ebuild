@@ -12,15 +12,15 @@ SRC_URI="https://github.com/sheepduke/chameleon/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/trivia
 	test? ( dev-lisp/rove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

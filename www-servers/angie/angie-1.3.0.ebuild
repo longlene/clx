@@ -65,7 +65,6 @@ CDEPEND="
 "
 DEPEND="${CDEPEND}"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 REQUIRED_USE="
 	pcre-jit? ( pcre )

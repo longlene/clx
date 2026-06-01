@@ -5,14 +5,12 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="High-level Common Lisp wrapper around libxml2 and libxslt."
 HOMEPAGE="http://code.google.com/p/cl-libxml2/"
-SRC_URI=""
 
 EGIT_REPO_URI="git://github.com/archimag/cl-libxml2.git"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 DEPEND="dev-libs/libxml2
 dev-libs/libxslt"

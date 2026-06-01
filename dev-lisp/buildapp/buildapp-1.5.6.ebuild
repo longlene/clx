@@ -11,10 +11,8 @@ SRC_URI="http://github.com/xach/buildapp/archive/release-${PV}.tar.gz -> ${P}.ta
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/sbcl"
 
@@ -30,4 +28,3 @@ src_install() {
 	dodoc README
 	dodoc doc/LICENSE doc/{index.html,style.css}
 }
-

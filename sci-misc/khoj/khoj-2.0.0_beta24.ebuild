@@ -21,6 +21,7 @@ SRC_URI="https://github.com/khoj-ai/khoj/archive/refs/tags/${MY_PV}.tar.gz -> ${
 
 LICENSE="AGPL-3.0+"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${MY_PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -35,7 +36,7 @@ RDEPEND="
 		>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
 		>=dev-python/fastapi-0.110.0[${PYTHON_USEDEP}]
 		>=dev-python/python-multipart-0.0.7[${PYTHON_USEDEP}]
-		>=dev-python/jinja2-3.1.6[${PYTHON_USEDEP}]
+		>=dev-python/jinja22-3.1.6[${PYTHON_USEDEP}]
 		>=dev-python/openai-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/tiktoken-0.3.2[${PYTHON_USEDEP}]
 		>=dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]
@@ -92,5 +93,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${PN}-${MY_PV}

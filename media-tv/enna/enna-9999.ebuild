@@ -6,7 +6,7 @@ EAPI=8
 
 inherit mercurial
 
-DESCRIPTION="Media Center app using (EFL) for the GUI and GeeXboX libs for playback and information retrieval"
+DESCRIPTION="Media Center app using (EFL) for the GUI and GeeXboX libs for playback and"
 
 HOMEPAGE="http://${PN}.geexbox.org/"
 
@@ -16,8 +16,6 @@ HOMEPAGE="http://${PN}.geexbox.org/"
 LICENSE="LGPL-2.1"
 
 SLOT="0"
-
-KEYWORDS=""
 
 IUSE="+theme
 	+bookstore +configuration +games +music +photo +vdr +video +weather

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    verl (Volcano Engine Reinforcement Learning) is a flexible, efficient and
+    production-ready RL training library for large language models (LLMs).
+    It implements HybridFlow, a hybrid programming model combining single-controller
+    and multi-controller paradigms for scalable RLHF/RL post-training.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">verl-project/verl</remote-id>
+    <remote-id type="pypi">verl</remote-id>
+  </upstream>
+</pkgmetadata>

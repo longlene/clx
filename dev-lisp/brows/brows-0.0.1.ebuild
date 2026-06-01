@@ -12,9 +12,7 @@ SRC_URI="https://github.com/sjl/brows/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/boots
 	dev-lisp/cl-ppcre

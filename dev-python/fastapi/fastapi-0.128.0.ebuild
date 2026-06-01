@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="FastAPI framework, high performance, easy to learn, fast to code, ready for production"
+DESCRIPTION="FastAPI framework, high performance, easy to learn, fast to code, ready for"
 HOMEPAGE="
 	https://github.com/fastapi/fastapi
 	https://fastapi.tiangolo.com/

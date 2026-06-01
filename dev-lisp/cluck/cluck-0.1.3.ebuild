@@ -5,14 +5,13 @@
 EAPI=8
 inherit common-lisp-3
 
-DESCRIPTION="A Common Lisp library to help automate clock and divisor selections for microcontrollers."
+DESCRIPTION="A Common Lisp library to help automate clock and divisor selections for"
 HOMEPAGE="http://uffi.b9.com/"
 SRC_URI="http://files.kpe.io/cluck/${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
 RDEPEND="dev-lisp/kmrcl"
 
@@ -20,7 +19,6 @@ src_install() {
 	common-lisp-install *.lisp ${PN}.asd
 	common-lisp-symlink-asdf
 	dodoc ${PN}.txt
-
 
 	#if use doc ; then
 	#	dodoc doc/uffi.pdf

@@ -15,9 +15,7 @@ SRC_URI="https://github.com/SamSkulls/rss-bastard/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-json
 	dev-lisp/drakma

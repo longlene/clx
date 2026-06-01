@@ -10,12 +10,10 @@ HOMEPAGE="http://common-lisp.net/project/fucc/"
 SRC_URI="http://common-lisp.net/project/fucc/files/fucc_0.2.1-alpha-20080624.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE=""
+S=${WORKDIR}/fucc_${PV}
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 SLOT="0"
 DEPEND="virtual/commonlisp"
-
-S=${WORKDIR}/fucc_${PV}
 
 CLPACKAGE="fucc-parser fucc-generator"
 

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -16,6 +16,7 @@ SRC_URI="https://github.com/betodealmeida/python-rison/archive/${EGIT_COMMIT}.ta
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/python-rison-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -27,6 +28,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-rison-${EGIT_COMMIT}
-

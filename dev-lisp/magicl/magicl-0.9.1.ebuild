@@ -12,9 +12,10 @@ SRC_URI="https://github.com/quil-lang/magicl/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="example test"
 
-DEPEND=""
+IUSE="example test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi

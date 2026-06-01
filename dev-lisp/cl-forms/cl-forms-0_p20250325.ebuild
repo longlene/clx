@@ -14,9 +14,10 @@ SRC_URI="https://github.com/mmontone/cl-forms/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-ppcre
@@ -32,4 +33,3 @@ src_prepare() {
 	default
 	use test || rm -r ${PN}.test.asd test
 }
-	

@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="RethinkDB driver for Common Lisp"
 HOMEPAGE="https://github.com/orthecreedence/cl-rethinkdb"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/orthecreedence/cl-rethinkdb.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/blackbird
 	dev-lisp/vom

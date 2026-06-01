@@ -10,9 +10,9 @@ SRC_URI="http://transmisson-remote-gui.googlecode.com/files/${P}-src.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
+S="${WORKDIR}/TransGUI"
 KEYWORDS="~amd64 ~x86"
 
-IUSE=""
 RESTRICT="mirror strip"
 
 RDEPEND=">=sys-libs/glibc-2.11.0
@@ -21,8 +21,6 @@ RDEPEND=">=sys-libs/glibc-2.11.0
 DEPEND="${RDEPEND}
 		>=dev-lang/lazarus-0.9.28.2
 		app-arch/unzip"
-
-S="${WORKDIR}/TransGUI"
 
 pkg_setup() {
 	if [ ! -e /usr/share/lazarus/tools/lazres ]; then

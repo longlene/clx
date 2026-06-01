@@ -21,17 +21,15 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/pugixml-python-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND=""
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 #distutils_enable_tests pytest
-
-S="${WORKDIR}"/pugixml-python-${PV}
 
 src_prepare() {
 	default

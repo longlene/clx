@@ -9,14 +9,10 @@ SRC_URI="https://adi.tilde.institute/pp/${P}.tgz"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-BDEPEND=""
-
 S="${WORKDIR}"/${PN}
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND="${DEPEND}"
 
 src_prepare() {
 	default

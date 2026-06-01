@@ -11,6 +11,7 @@ SRC_URI="https://bellard.org/tinyemu/tinyemu-${MY_PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/tinyemu-2019-12-21
 KEYWORDS="~amd64 ~x86"
 IUSE="sdl"
 
@@ -20,9 +21,6 @@ DEPEND="
 	sdl? ( media-libs/libsdl )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/tinyemu-2019-12-21
 
 src_prepare() {
 	default
@@ -35,4 +33,3 @@ src_install() {
 	dobin temu
 	dodoc readme.txt
 }
-

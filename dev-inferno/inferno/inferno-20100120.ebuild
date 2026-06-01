@@ -11,10 +11,9 @@ SRC_URI="http://www.vitanuova.com/dist/4e/inferno-20100120.tgz"
 
 LICENSE="GPL-2"
 SLOT=0
-KEYWORDS="~x86 ~amd64"
+S="${WORKDIR}/${PN}"
+KEYWORDS="~amd64 ~x86"
 IUSE="hardened X doc source re2 cjson ipv6"
-
-RDEPEND=""
 
 DEPEND="${RDEPEND}
 	hardened? ( sys-apps/paxctl )
@@ -22,10 +21,8 @@ DEPEND="${RDEPEND}
 	re2? ( >=dev-libs/libre2-110302 )
 	amd64? (
 		X? ( app-emulation/emul-linux-x86-xlibs )
-    )
+	)
 	"
-
-S="${WORKDIR}/${PN}"
 
 INFERNO_REV=30728b7b868e
 RE2_REV=1.2.2
@@ -118,7 +115,6 @@ src_install() {
 	# Setup the path environment
 	doenvd "${FILESDIR}/20inferno"
 
-    # We don't compress to keep support for Inferno's man
-    docompress -x /usr/inferno/man
+	# We don't compress to keep support for Inferno's man
+	docompress -x /usr/inferno/man
 }
-

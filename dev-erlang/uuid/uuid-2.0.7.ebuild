@@ -17,4 +17,3 @@ DEPEND="
 	dev-erlang/quickrand
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

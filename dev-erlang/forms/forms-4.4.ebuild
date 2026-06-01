@@ -12,13 +12,10 @@ SRC_URI="https://github.com/synrc/forms/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-erlang/cowboy
 	>=dev-erlang/nitro-4.4
 	dev-erlang/n2o
 	>=dev-erlang/kvs-6.4
 "
-BDEPEND=""

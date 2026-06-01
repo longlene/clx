@@ -8,14 +8,12 @@ inherit git-r3
 
 DESCRIPTION="'tail -f' your PostgreSQL tables"
 HOMEPAGE="https://github.com/aaparmeggiani/pg_tail"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/aaparmeggiani/pg_tail.git"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="dev-db/postgresql"
 RDEPEND="${DEPEND}"

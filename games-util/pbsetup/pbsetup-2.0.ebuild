@@ -8,13 +8,8 @@ SRC_URI="http://websec.evenbalance.com/downloads/linux/pbsetup.run"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND=""
-
 S=${WORKDIR}
+KEYWORDS="x86"
 
 src_unpack() {
 	cp "${DISTDIR}/${A}" "${S}"

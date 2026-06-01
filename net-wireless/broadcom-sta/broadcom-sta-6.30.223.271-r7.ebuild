@@ -14,7 +14,7 @@ SRC_URI="x86? ( ${SRC_BASE}-nodebug-pcoem-${PV//\./_}.tar.gz )
 S="${WORKDIR}"
 
 LICENSE="Broadcom"
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 -*"
 
 RESTRICT="mirror"
 

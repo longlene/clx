@@ -14,9 +14,7 @@ SRC_URI="https://github.com/Shinmera/deeds/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/bordeaux-threads

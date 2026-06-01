@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -20,6 +20,7 @@ SRC_URI="https://github.com/aliyun/aliyun-openapi-python-sdk/archive/${EGIT_COMM
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${MY_PN}-${EGIT_COMMIT}/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,5 +33,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_PN}-${EGIT_COMMIT}/${PN}

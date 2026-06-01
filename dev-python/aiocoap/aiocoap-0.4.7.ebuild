@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..12} pypy3 )
+PYTHON_COMPAT=( python3_{11..14} pypy3  )
 
 inherit distutils-r1
 
@@ -15,8 +15,5 @@ SRC_URI="https://github.com/chrysn/aiocoap/archive/refs/tags/${PV}.tar.gz -> ${P
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-
-RDEPEND=""
-BDEPEND=""
 
 RESTRICT="test"

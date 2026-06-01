@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/ironclad
@@ -23,7 +22,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/trivial-mimes
 "
-BDEPEND=""
 
 src_prepare() {
 	default

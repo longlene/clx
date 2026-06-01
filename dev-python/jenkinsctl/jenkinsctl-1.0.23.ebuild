@@ -8,7 +8,6 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION=""
 HOMEPAGE="
 	https://pypi.org/project/jenkinsctl/
 	https://github.com/amanshaw4511/jenkinsctl/

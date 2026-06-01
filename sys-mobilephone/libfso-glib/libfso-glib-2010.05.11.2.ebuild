@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation                                              
-# Distributed under the terms of the GNU General Public License v2                   
-# $Header: $                                                                         
+# Copyright 1999-2008 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
 
 EAPI=8
 inherit base git-2 autotools
@@ -12,8 +12,7 @@ EGIT_COMMIT="5cda3952855d6c4273929449339b04509387bdd2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~arm ~x86 ~amd64"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 DOCS="README"
 
 RDEPEND=">=dev-libs/dbus-glib-0.70

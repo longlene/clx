@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Comon Lisp numerical library"
 HOMEPAGE="https://github.com/mobius-eng/mobius-num"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/mobius-eng/mobius-num.git"
 
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/mobius-utils
 	dev-lisp/alexandira

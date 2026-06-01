@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1 vcs-snapshot
 
@@ -15,7 +15,7 @@ HOMEPAGE="
 	https://pypi.org/project/cl4py/
 	https://github.com/marcoheisig/cl4py
 "
-SRC_URI="https://github.com/marcoheisig/cl4py/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/marcoheisig/cl4py/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

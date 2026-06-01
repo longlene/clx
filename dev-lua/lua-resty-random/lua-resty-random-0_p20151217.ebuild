@@ -16,9 +16,7 @@ SRC_URI="https://github.com/bungle/lua-resty-random/archive/${EGIT_COMMIT}.tar.g
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND=""
 RDEPEND="
 	${DEPEND}
 	${LUA_DEPS}

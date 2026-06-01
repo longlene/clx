@@ -8,16 +8,13 @@ inherit cmake git-r3
 
 DESCRIPTION="Command Args"
 HOMEPAGE="https://github.com/RaftLib/cmdargs"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/RaftLib/cmdargs.git"
 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

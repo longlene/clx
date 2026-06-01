@@ -360,9 +360,8 @@ LICENSE+="
 	|| ( Artistic-2 CC0-1.0 )
 "
 SLOT="0"
-KEYWORDS="~amd64"
-
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
+KEYWORDS="~amd64"
 
 src_install() {
 	cargo_src_install

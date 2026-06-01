@@ -6,16 +6,14 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="A variant of READ secure against internbombing, excessive input and macro characters"
+DESCRIPTION="A variant of READ secure against internbombing, excessive input and macro"
 HOMEPAGE="https://github.com/phoe/secure-read"
 SRC_URI="https://github.com/phoe/secure-read/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/trivial-garbage

@@ -3,7 +3,8 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..13} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1
 
 DESCRIPTION="Vectorized interface for reinforcement learning environments"
@@ -13,9 +14,7 @@ SRC_URI="https://github.com/openai/gym3/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-python/numpy-1.11.0${PYTHON_USEDEP}]
 	>=dev-python/cffi-1.13.0${PYTHON_USEDEP}]

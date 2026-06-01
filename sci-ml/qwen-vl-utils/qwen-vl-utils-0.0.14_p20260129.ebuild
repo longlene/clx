@@ -19,6 +19,7 @@ SRC_URI="https://github.com/QwenLM/Qwen3-VL/archive/${EGIT_COMMIT}.tar.gz -> qwe
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/Qwen3-VL-${EGIT_COMMIT}/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,5 +31,3 @@ RDEPEND="
 #BDEPEND=""
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/Qwen3-VL-${EGIT_COMMIT}/${PN}

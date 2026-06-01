@@ -18,7 +18,6 @@ DEPEND="
 	system-json? ( dev-cpp/nlohmann_json )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

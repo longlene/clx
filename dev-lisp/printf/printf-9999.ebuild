@@ -8,16 +8,11 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="A printf implementation in Common Lisp"
 HOMEPAGE="https://github.com/dlowe-net/printf"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/dlowe-net/printf.git"
 
-LICENSE=""
 SLOT="0"
-KEYWORDS=""
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/smug
 "

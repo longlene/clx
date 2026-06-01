@@ -3,7 +3,8 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11,12} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{13..14}  )
 inherit distutils-r1
 
 DESCRIPTION="Erlang Binary Term Format for Python"
@@ -13,8 +14,5 @@ SRC_URI="https://github.com/okeuday/erlang_py/archive/v${PV}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

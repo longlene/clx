@@ -12,11 +12,8 @@ SRC_URI="https://www.thoughtcrime.us/software/jpl-queues/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-jpl-util
 	dev-lisp/bordeaux-threads
 "
-BDEPEND=""

@@ -12,7 +12,6 @@ SRC_URI="https://github.com/nitrogen/nitrogen_core/archive/v${PV}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-erlang/rekt
@@ -23,4 +22,3 @@ DEPEND="
 	dev-erlang/qdate
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

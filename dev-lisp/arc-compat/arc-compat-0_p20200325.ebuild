@@ -12,14 +12,11 @@ SRC_URI="https://github.com/g000001/arc-compat/archive/${EGIT_COMMIT}.tar.gz -> 
 
 LICENSE="Aritstic License 2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/fiveam
 dev-lisp/named-readtables
 dev-lisp/bordeaux-threads
 dev-lisp/ironclad
 dev-lisp/cl-fad"
-

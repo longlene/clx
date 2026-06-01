@@ -15,13 +15,11 @@ LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/introspect-environment
 	dev-lisp/cl-stream
 "
-BDEPEND=""
 
 src_prepare() {
 	default

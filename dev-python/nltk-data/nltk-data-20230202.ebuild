@@ -13,7 +13,7 @@ HOMEPAGE="https://www.nltk.org/nltk_data/"
 # TODO: create a USE flag for free-ish subset
 LICENSE="all-rights-reserved"
 SLOT="0"
-KEYWORDS="amd64 ~ppc64 ~riscv x86"
+KEYWORDS="amd64 x86 ~ppc64 ~riscv"
 RESTRICT="bindist mirror"
 
 BDEPEND="app-arch/unzip"

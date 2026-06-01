@@ -12,7 +12,6 @@ SRC_URI="http://mirrors.kernel.org/sourceware/libabigail/libabigail-${PV}.tar.gz
 LICENSE="LLGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="dev-libs/elfutils
 dev-libs/libxml2"

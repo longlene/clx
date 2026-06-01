@@ -13,9 +13,10 @@ SRC_URI="https://github.com/fukamachi/ningle/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/myway
 	dev-lisp/clack
@@ -28,4 +29,3 @@ src_prepare() {
 	default
 	use test || rm -rf ${PN}-test.asd tests
 }
-

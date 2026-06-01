@@ -14,9 +14,10 @@ SRC_URI="https://github.com/mbrezu/cl-messagepack/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/flexi-streams
 	dev-lisp/babel

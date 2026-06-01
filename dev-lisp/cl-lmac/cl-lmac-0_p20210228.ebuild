@@ -15,11 +15,9 @@ LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-cas
 	dev-lisp/split-sequence
 	dev-lisp/quri
 "
-BDEPEND=""

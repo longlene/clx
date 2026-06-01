@@ -13,9 +13,7 @@ SRC_URI="mirror://sourceforge/project/motm/${PV}/${P}.tar.bz2"
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	sys-libs/ncurses

@@ -12,9 +12,6 @@ SRC_URI="https://github.com/terminal625/utility/archive/${EGIT_COMMIT}.tar.gz ->
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-

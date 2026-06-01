@@ -46,10 +46,9 @@ DEPEND="
 	zlib? ( sys-libs/zlib )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 PATCHES=(
-	${FILESDIR}/${P}-cmake.patch
+	"${FILESDIR}"/${P}-cmake.patch
 )
 
 src_prepare() {
@@ -88,5 +87,5 @@ src_configure() {
 }
 
 src_test() {
-	${BUILD_DIR}/luvi samples/test.app
+	"${BUILD_DIR}"/luvi samples/test.app
 }

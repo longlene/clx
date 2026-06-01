@@ -17,7 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	example? ( dev-lisp/glop dev-lisp/cl-opengl )

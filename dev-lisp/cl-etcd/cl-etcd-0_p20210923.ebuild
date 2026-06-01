@@ -15,7 +15,6 @@ LICENSE="AGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/async-process
@@ -28,4 +27,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/flexi-streams
 	dev-lisp/split-sequence
 "
-BDEPEND=""

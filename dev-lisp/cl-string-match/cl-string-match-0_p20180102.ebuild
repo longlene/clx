@@ -15,7 +15,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-yacc
@@ -25,7 +24,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/proc-parse
 	dev-lisp/parse-float
 "
-BDEPEND=""
 
 src_prepare() {
 	default

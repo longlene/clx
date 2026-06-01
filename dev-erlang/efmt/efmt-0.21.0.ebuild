@@ -75,7 +75,6 @@ RUST_MIN_VER="1.88"
 
 inherit cargo
 
-
 DESCRIPTION="Erlang code formatter"
 HOMEPAGE="https://github.com/sile/efmt"
 SRC_URI="
@@ -87,7 +86,6 @@ LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
 	>=virtual/rust-1.31.0

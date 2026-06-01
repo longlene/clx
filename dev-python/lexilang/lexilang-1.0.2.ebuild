@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
@@ -14,14 +14,12 @@ SRC_URI="https://github.com/LibreTranslate/LexiLang/archive/refs/tags/v${PV}.tar
 
 LICENSE="AGPL-3.0"
 SLOT="0"
+S="${WORKDIR}"/LexiLang-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND=""
 #BDEPEND="
 #	test? (
 #	)
 #"
 #
 #distutils_enable_tests pytest
-
-S="${WORKDIR}"/LexiLang-${PV}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>Local Overlay</name>
+  </maintainer>
+  <longdescription>
+    Additional functionality for Python dataclasses, including enhanced
+    serialization and configuration support.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">epwalsh/dataclass-extensions</remote-id>
+    <remote-id type="pypi">dataclass-extensions</remote-id>
+  </upstream>
+</pkgmetadata>

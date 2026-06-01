@@ -14,11 +14,11 @@ SRC_URI="https://gitlab.com/Harleqin/arrows/repository/archive.tar.gz?ref=${EGIT
 LICENSE="CC0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

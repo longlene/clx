@@ -13,14 +13,12 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/dissect
 	dev-lisp/trivial-custom-debugger
 	dev-lisp/bordeaux-threads
 	dev-lisp/trivial-gray-streams
 "
-BDEPEND=""
 
 src_prepare() {
 	default
@@ -28,4 +26,3 @@ src_prepare() {
 		-i ${PN}.asd
 	rm -rf tests
 }
-

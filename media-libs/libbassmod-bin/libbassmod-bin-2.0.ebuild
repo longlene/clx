@@ -7,16 +7,13 @@ HOMEPAGE="http://www.un4seen.com/bassmod.html"
 SRC_URI="http://www.un4seen.com/files/bassmod20-linux.zip
 	http://www.un4seen.co.uk/files/bassmod20-linux.zip"
 
-LICENSE=""
 SLOT="0"
-KEYWORDS="-* ~x86"
+S=${WORKDIR}
+KEYWORDS="~x86 -*"
 IUSE="doc"
 RESTRICT="mirror strip"
 
 DEPEND="app-arch/unzip"
-RDEPEND=""
-
-S=${WORKDIR}
 
 src_compile() {
 	:;

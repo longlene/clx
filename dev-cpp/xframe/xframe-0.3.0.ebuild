@@ -12,7 +12,6 @@ SRC_URI="https://github.com/QuantStack/xframe/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-cpp/xtensor-0.21.4

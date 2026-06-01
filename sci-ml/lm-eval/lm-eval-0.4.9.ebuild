@@ -15,6 +15,7 @@ SRC_URI="https://github.com/EleutherAI/lm-evaluation-harness/archive/refs/tags/v
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/lm-evaluation-harness-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -48,6 +49,3 @@ RDEPEND="
 #distutils_enable_tests pytest
 
 RESTRICT="test"
-
-S="${WORKDIR}"/lm-evaluation-harness-${PV}
-

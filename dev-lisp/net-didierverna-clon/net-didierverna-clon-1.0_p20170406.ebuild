@@ -14,9 +14,7 @@ SRC_URI="https://github.com/didierverna/clon/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 RDEPEND="
 	dev-lisp/named-readtables
 	dev-lisp/cffi"
-

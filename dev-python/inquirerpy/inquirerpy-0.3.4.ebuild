@@ -8,7 +8,6 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION=""
 HOMEPAGE="
 	https://pypi.org/project/inquirerpy/
 "
@@ -16,6 +15,7 @@ SRC_URI="https://github.com/kazhala/InquirerPy/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/InquirerPy-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +29,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/InquirerPy-${PV}

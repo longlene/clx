@@ -15,9 +15,7 @@ SRC_URI="https://github.com/openai/gym/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/scipy[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.10.4[${PYTHON_USEDEP}]

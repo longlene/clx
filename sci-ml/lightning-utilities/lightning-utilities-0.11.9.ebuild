@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
@@ -14,6 +14,7 @@ SRC_URI="https://github.com/Lightning-AI/utilities/archive/refs/tags/v${PV}.tar.
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/utilities-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -26,5 +27,3 @@ RDEPEND="
 #"
 #
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/utilities-${PV}

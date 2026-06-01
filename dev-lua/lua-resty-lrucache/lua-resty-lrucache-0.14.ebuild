@@ -16,13 +16,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
-DEPEND=""
 RDEPEND="
 	${DEPEND}
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
 "
-BDEPEND=""
 
 DOCS=( README.markdown )
 

@@ -19,6 +19,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/Qwen-Agent-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -41,5 +42,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/Qwen-Agent-${PV}

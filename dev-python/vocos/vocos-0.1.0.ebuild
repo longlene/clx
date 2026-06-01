@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-libs/pytorch[${PYTHON_USEDEP}]
+	sci-ml/pytorch[${PYTHON_USEDEP}]
 	sci-libs/torchaudio[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
@@ -26,6 +26,5 @@ RDEPEND="
 	dev-python/huggingface_hub[${PYTHON_USEDEP}]
 	dev-python/encodec[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"

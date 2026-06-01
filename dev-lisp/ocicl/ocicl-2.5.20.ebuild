@@ -13,15 +13,14 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
-	dev-lisp/with-user-abort 
-	dev-lisp/unix-opts 
-	dev-lisp/dexador 
-	dev-lisp/cl-json 
-	dev-lisp/cl-interpol 
-	dev-lisp/tar 
-	dev-lisp/copy-directory 
+	dev-lisp/with-user-abort
+	dev-lisp/unix-opts
+	dev-lisp/dexador
+	dev-lisp/cl-json
+	dev-lisp/cl-interpol
+	dev-lisp/tar
+	dev-lisp/copy-directory
 "
 BDEPEND="dev-lisp/sbcl"
 

@@ -15,7 +15,6 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/r-data-model
 	dev-lisp/r-clip
@@ -23,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-csv
 "
-BDEPEND=""

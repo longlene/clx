@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -14,6 +14,7 @@ SRC_URI="https://github.com/run-llama/llama_index/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/llama_index-${PV}/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -46,5 +47,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/llama_index-${PV}/${PN}

@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Python interface to the miniaudio audio playback, recording, decoding and conversion library"
+DESCRIPTION="Python interface to the miniaudio audio playback, recording, decoding and"
 HOMEPAGE="
 	https://pypi.org/project/miniaudio/
 	https://github.com/irmen/pyminiaudio
@@ -18,10 +18,9 @@ SRC_URI="https://github.com/irmen/pyminiaudio/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/py${P}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 BDEPEND="
 	>=dev-python/cffi-1.12.0[${PYTHON_USEDEP}]
 "
@@ -32,5 +31,3 @@ BDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/py${P}

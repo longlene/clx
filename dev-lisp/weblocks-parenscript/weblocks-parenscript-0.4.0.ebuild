@@ -5,21 +5,17 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="An utility to define JavaScript dependencies for Weblocks widgets using Parenscript"
+DESCRIPTION="An utility to define JavaScript dependencies for Weblocks widgets using"
 HOMEPAGE="https://github.com/40ants/weblocks-parenscript"
 SRC_URI="https://github.com/40ants/weblocks-parenscript/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/weblocks
 	dev-lisp/parenscript
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -18,4 +18,3 @@ DEPEND="
 	dev-cpp/nlohmann_json
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

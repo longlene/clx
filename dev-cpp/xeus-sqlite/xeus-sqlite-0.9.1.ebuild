@@ -23,4 +23,3 @@ DEPEND="
 	>=dev-cpp/xvega-bindings-0.0.10
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

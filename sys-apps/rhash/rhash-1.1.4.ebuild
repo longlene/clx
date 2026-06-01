@@ -2,16 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="Recursive Hasher is a console utility for computing and verifying hash sums of files"
+DESCRIPTION="Recursive Hasher is a console utility for computing and verifying hash sums"
 HOMEPAGE="http://rhash.anz.ru/"
 SRC_URI="http://rhash.anz.ru/bin/${P}-src.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
-
-DEPEND=""
 
 src_unpack() {
 	unpack ${A}

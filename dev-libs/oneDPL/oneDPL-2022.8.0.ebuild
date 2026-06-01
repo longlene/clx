@@ -11,6 +11,7 @@ SRC_URI="https://github.com/oneapi-src/oneDPL/archive/refs/tags/${P}-release.tar
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${P}-release
 KEYWORDS="~amd64"
 
 DEPEND="
@@ -18,9 +19,6 @@ DEPEND="
 	dev-libs/tbb
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${P}-release
 
 export CC=icx
 export CXX=icpx

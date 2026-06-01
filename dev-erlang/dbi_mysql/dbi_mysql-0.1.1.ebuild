@@ -12,7 +12,6 @@ SRC_URI="https://github.com/dbi-beam/dbi_mysql/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-erlang/dbi-1.0.0
@@ -20,4 +19,3 @@ DEPEND="
 	>=dev-erlang/p1_mysql-1.0.4
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -8,23 +8,22 @@ inherit font
 
 MY_P="SophiaNubian"
 
-DESCRIPTION="SIL Gentium Unicode font for Nubian languages which use the Coptic Unicode character set."
+DESCRIPTION="SIL Gentium Unicode font for Nubian languages which use the Coptic Unicode"
 HOMEPAGE="http://scripts.sil.org/SophiaNubian"
 SRC_URI="http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=SN1.0.zip&filename=SN1.0.zip -> SN1.0.zip"
 
 LICENSE="OFL"
 SLOT="0"
+S="${WORKDIR}/${MY_P}"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 DEPEND="app-arch/unzip"
-RDEPEND=""
 # media-libs/silgraphite x11-plugins/pangographite
 
 DOCS="FONTLOG OFL OFL-FAQ Readme"
 FONT_SUFFIX="ttf"
 
-S="${WORKDIR}/${MY_P}"
 FONT_S="${S}"
 
 src_install() {

@@ -10,13 +10,11 @@ SRC_URI="https://github.com/rxi/lite/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	media-libs/libsdl2
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_compile() {
 	./build.sh || die "compile failed"
@@ -26,4 +24,3 @@ src_install() {
 	dobin lite
 	dodoc README.md
 }
-

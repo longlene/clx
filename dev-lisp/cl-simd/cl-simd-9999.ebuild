@@ -6,15 +6,11 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="SSE intrinsics implementation for ECL & SBCL"
 HOMEPAGE="https://github.com/angavrilov/cl-simd"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/angavrilov/cl-simd.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-

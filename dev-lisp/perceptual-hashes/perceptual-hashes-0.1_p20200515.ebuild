@@ -14,16 +14,16 @@ SRC_URI="https://github.com/shamazmazum/perceptual-hashes/archive/${EGIT_COMMIT}
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/imago
 	dev-lisp/jpeg-turbo
 	dev-lisp/array-operations
 	test? ( dev-lisp/fiveam )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -15,9 +15,10 @@ SRC_URI="https://github.com/takagi/cl-coroutine/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-cont

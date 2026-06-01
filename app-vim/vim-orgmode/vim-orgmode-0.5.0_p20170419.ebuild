@@ -14,12 +14,6 @@ SRC_URI="https://github.com/jceb/vim-orgmode/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="as-is"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-VIM_PLUGIN_HELPFILES=""
-VIM_PLUGIN_HELPTEXT=""
-VIM_PLUGIN_HELPURI=""
-VIM_PLUGIN_MESSAGES=""
 
 src_prepare() {
 	eapply_user

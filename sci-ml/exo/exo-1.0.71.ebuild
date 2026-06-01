@@ -62,4 +62,3 @@ RESTRICT="test"
 #	sed -e '/extras_require=extras_require,/a scripts=["exo-py"]' \
 #		-i setup.py
 #}
-

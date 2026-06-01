@@ -12,10 +12,8 @@ SRC_URI="https://github.com/adrienmo/eredis_cluster/archive/${PV}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-erlang/poolboy
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

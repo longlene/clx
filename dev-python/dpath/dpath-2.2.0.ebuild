@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -13,14 +13,11 @@ HOMEPAGE="
 	https://github.com/dpath-maintainers/dpath-python
 	https://pypi.org/project/dpath/
 "
-SRC_URI="https://github.com/dpath-maintainers/dpath-python/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/dpath-maintainers/dpath-python/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-python-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 RESTRICT="test"
-
-S="${WORKDIR}"/${PN}-python-${PV}

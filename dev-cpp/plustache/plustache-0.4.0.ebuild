@@ -13,7 +13,6 @@ SRC_URI="https://github.com/mrtazz/plustache/archive/${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="dev-libs/boost"
 RDEPEND="${DEPEND}"

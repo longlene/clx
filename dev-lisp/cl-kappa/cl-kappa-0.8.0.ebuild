@@ -10,10 +10,8 @@ SRC_URI="https://launchpad.net/cl-kappa/trunk/0.8.0/+download/cl-kappa-0.8.0.tar
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre
 dev-lisp/closure-html
@@ -23,4 +21,3 @@ dev-lisp/trivial-timeout
 dev-lisp/alexandria
 dev-lisp/cl-fad
 dev-lisp/fiveam"
-

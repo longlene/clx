@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="sglang">Enable SGLang inference backend support</flag>
+    <flag name="transformers">Enable HuggingFace Transformers inference backend with PyTorch</flag>
+    <flag name="vllm">Enable vLLM inference backend support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">z-lab/dflash</remote-id>
+  </upstream>
+</pkgmetadata>

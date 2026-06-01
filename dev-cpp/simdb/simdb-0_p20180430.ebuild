@@ -14,11 +14,8 @@ SRC_URI="https://github.com/LiveAsynchronousVisualizedArchitecture/simdb/archive
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	insinto /usr/include

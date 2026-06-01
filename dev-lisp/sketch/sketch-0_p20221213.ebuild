@@ -7,7 +7,7 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="aea3f9509182749fa80bcc993dc0f284559b2392"
 
-DESCRIPTION="Sketch is a Common Lisp framework for the creation of electronic art, computer graphics, visual design, game making and more"
+DESCRIPTION="Sketch is a Common Lisp framework for the creation of electronic art,"
 HOMEPAGE="https://github.com/vydd/sketch"
 SRC_URI="https://github.com/vydd/sketch/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -16,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-geometry
@@ -31,6 +30,6 @@ RDEPEND="${DEPEND}
 "
 
 src_prepare() {
-	default	
+	default
 	use example || rm -r examples ${PN}-examples.asd
 }

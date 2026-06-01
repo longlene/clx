@@ -14,13 +14,10 @@ SRC_URI="http://fpdns.googlecode.com/files/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND=">=dev-perl/Net-DNS-0.42"
-
 S="${WORKDIR}"/"${MY_P}"
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND=">=dev-perl/Net-DNS-0.42"
 
 src_install() {
 	newbin apps/fpdns fpdns

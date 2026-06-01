@@ -12,10 +12,8 @@ SRC_URI="https://github.com/jtanx/libclipboard/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	x11-libs/libxcb
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

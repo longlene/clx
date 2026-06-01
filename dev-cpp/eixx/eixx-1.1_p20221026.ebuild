@@ -14,13 +14,11 @@ SRC_URI="https://github.com/saleyn/eixx/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/boost
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default
@@ -40,4 +38,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-

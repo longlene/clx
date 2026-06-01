@@ -5,11 +5,11 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="Static memory-efficient Trie-like structures for Python based on marisa-trie C++ library"
+DESCRIPTION="Static memory-efficient Trie-like structures for Python based on marisa-trie"
 HOMEPAGE="https://github.com/pytries/marisa-trie/"
 SRC_URI="
 	https://github.com/pytries/marisa-trie/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
@@ -20,8 +20,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

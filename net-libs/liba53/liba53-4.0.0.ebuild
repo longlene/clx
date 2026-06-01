@@ -10,10 +10,7 @@ SRC_URI="https://github.com/RangeNetworks/liba53/archive/v${PV}.tar.gz -> ${P}.t
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

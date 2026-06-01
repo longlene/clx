@@ -14,11 +14,8 @@ SRC_URI="https://github.com/Shinmera/universal-config/archive/${EGIT_COMMIT}.tar
 LICENSE="Artistic-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre
 	dev-lisp/parse-float
 "
-BDEPEND=""

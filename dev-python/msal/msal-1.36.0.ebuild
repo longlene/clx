@@ -17,6 +17,7 @@ SRC_URI="https://github.com/AzureAD/microsoft-authentication-library-for-python/
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/microsoft-authentication-library-for-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,5 +31,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/microsoft-authentication-library-for-python-${PV}

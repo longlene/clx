@@ -17,7 +17,6 @@ KEYWORDS="~amd64"
 
 DEPEND="virtual/opengl"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

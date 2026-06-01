@@ -15,9 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 lua_src_compile() {
 	$(tc-getCC) $(lua_get_CFLAGS) -fPIC -shared -o lua_pack.so lua_pack.c

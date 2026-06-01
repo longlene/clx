@@ -14,14 +14,14 @@ SRC_URI="https://github.com/bendudson/py4cl/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-garbage
 	test? ( dev-lisp/clunit )
 "
-BDEPEND=""
 
 src_prepare() {
 	default
@@ -30,4 +30,3 @@ src_prepare() {
 		rm -r tests
 	fi
 }
-

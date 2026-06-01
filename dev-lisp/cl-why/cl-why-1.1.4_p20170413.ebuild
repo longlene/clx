@@ -14,9 +14,10 @@ SRC_URI="https://github.com/jpcima/cl-why/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	test? ( dev-lisp/flexi-streams )
 "
@@ -28,4 +29,3 @@ src_prepare() {
 		sed -i '/defsystem\ :cl-why-test/,$d' cl-why.asd
 	fi
 }
-		

@@ -14,9 +14,10 @@ SRC_URI="https://github.com/eadmund/cl-sxml/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cxml
 	test? ( dev-lisp/fiveam )

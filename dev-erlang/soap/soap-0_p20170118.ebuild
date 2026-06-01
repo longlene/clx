@@ -14,10 +14,7 @@ SRC_URI="https://github.com/bet365/soap/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-erlang/erlsom-1.4.0
 "
-BDEPEND=""

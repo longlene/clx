@@ -46,4 +46,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-

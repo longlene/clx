@@ -10,11 +10,8 @@ SRC_URI="https://craigbarnes.gitlab.io/dist/dte/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	prefix=${D}/usr emake install

@@ -15,12 +15,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
-	dolib.so ${BUILD_DIR}/libcborcpp.so
+	dolib.so "${BUILD_DIR}"/libcborcpp.so
 	insinto /usr/include
 	doins cbor/cbor.h
 	insinto /usr/include/cbor

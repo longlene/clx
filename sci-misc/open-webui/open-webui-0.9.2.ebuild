@@ -113,7 +113,7 @@ RDEPEND="
 		>=sci-ml/rapidocr-onnxruntime-1.4.4[${PYTHON_USEDEP}]
 		>=dev-python/rank-bm25-0.2.2[${PYTHON_USEDEP}]
 
-		>=sci-libs/onnxruntime-1.24.3[${PYTHON_USEDEP}]
+		>=sci-ml/onnxruntime-1.24.3[${PYTHON_USEDEP}]
 
 		>=dev-python/black-26.3.1[${PYTHON_USEDEP}]
 		>=dev-python/youtube-transcript-api-1.2.4[${PYTHON_USEDEP}]

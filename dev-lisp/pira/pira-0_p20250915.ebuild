@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/smithy
 	dev-lisp/dexador
@@ -29,7 +28,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/aws-sign4
 	dev-lisp/ironclad
 "
-BDEPEND=""
 
 src_prepare() {
 	default

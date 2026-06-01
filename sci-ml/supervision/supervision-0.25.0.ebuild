@@ -4,11 +4,11 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="A set of easy-to-use utils that will come in handy in any Computer Vision project"
+DESCRIPTION="A set of easy-to-use utils that will come in handy in any Computer Vision"
 HOMEPAGE="https://github.com/roboflow/supervision"
 SRC_URI="https://github.com/roboflow/supervision/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 

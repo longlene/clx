@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://pypi.org/project/pinyin-to-ipa/
 	https://github.com/stefantaubert/pinyin-to-ipa
 "
-SRC_URI="https://github.com/stefantaubert/pinyin-to-ipa/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/stefantaubert/pinyin-to-ipa/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

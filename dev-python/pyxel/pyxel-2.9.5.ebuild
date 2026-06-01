@@ -1,0 +1,300 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	adler2@2.0.1
+	aho-corasick@1.1.4
+	aligned-vec@0.6.4
+	aligned@0.4.3
+	allocator-api2@0.2.21
+	android_system_properties@0.1.5
+	anyhow@1.0.102
+	arbitrary@1.4.2
+	arg_enum_proc_macro@0.3.4
+	arrayvec@0.7.6
+	as-slice@0.2.1
+	autocfg@1.5.0
+	av-scenechange@0.14.1
+	av1-grain@0.2.5
+	avif-serialize@0.8.8
+	bindgen@0.72.1
+	bit_field@0.10.3
+	bitflags@1.3.2
+	bitflags@2.11.1
+	bitstream-io@4.10.0
+	blip_buf@0.1.6
+	built@0.8.0
+	bumpalo@3.20.2
+	bytemuck@1.25.0
+	byteorder-lite@0.1.0
+	cc@1.2.61
+	cexpr@0.6.0
+	cfg-if@1.0.4
+	chacha20@0.10.0
+	chrono@0.4.44
+	clang-sys@1.8.1
+	cmake@0.1.58
+	color_quant@1.1.0
+	core-foundation-sys@0.8.7
+	cpufeatures@0.3.0
+	crc32fast@1.5.0
+	crossbeam-deque@0.8.6
+	crossbeam-epoch@0.9.18
+	crossbeam-utils@0.8.21
+	crunchy@0.2.4
+	directories@6.0.0
+	dirs-sys@0.5.0
+	either@1.15.0
+	encoding_rs@0.8.35
+	equator-macro@0.4.2
+	equator@0.4.2
+	equivalent@1.0.2
+	errno@0.3.14
+	exr@1.74.0
+	extended@0.1.0
+	fax@0.2.7
+	fdeflate@0.3.7
+	filetime@0.2.27
+	find-msvc-tools@0.1.9
+	flate2@1.1.9
+	foldhash@0.1.5
+	fontdue@0.9.3
+	futures-core@0.3.32
+	futures-task@0.3.32
+	futures-util@0.3.32
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.2
+	gif@0.14.2
+	glob@0.3.3
+	glow@0.17.0
+	half@2.7.1
+	hashbrown@0.15.5
+	hashbrown@0.17.0
+	heck@0.5.0
+	hound@3.5.1
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.65
+	id-arena@2.3.0
+	image-webp@0.2.4
+	image@0.25.10
+	imgref@1.12.1
+	indexmap@2.14.0
+	interpolate_name@0.2.4
+	inventory@0.3.24
+	itertools@0.13.0
+	itertools@0.14.0
+	itoa@1.0.18
+	jobserver@0.1.34
+	js-sys@0.3.97
+	lazy_static@1.5.0
+	leb128fmt@0.1.0
+	lebe@0.5.3
+	libc@0.2.186
+	libfuzzer-sys@0.4.12
+	libloading@0.8.9
+	libredox@0.1.16
+	linux-raw-sys@0.12.1
+	log@0.4.29
+	loop9@0.1.5
+	maybe-rayon@0.1.1
+	memchr@2.8.0
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	moxcms@0.8.1
+	new_debug_unreachable@1.0.6
+	no_std_io2@0.9.3
+	noise@0.9.0
+	nom@7.1.3
+	nom@8.0.0
+	noop_proc_macro@0.3.0
+	ntapi@0.4.3
+	num-bigint@0.4.6
+	num-derive@0.4.2
+	num-integer@0.1.46
+	num-rational@0.4.2
+	num-traits@0.2.19
+	objc2-core-foundation@0.3.2
+	objc2-io-kit@0.3.2
+	once_cell@1.21.4
+	option-ext@0.2.0
+	paste@1.0.15
+	pastey@0.1.1
+	pin-project-lite@0.2.17
+	plain@0.2.3
+	png@0.18.1
+	portable-atomic@1.13.1
+	ppv-lite86@0.2.21
+	prettyplease@0.2.37
+	proc-macro2@1.0.106
+	profiling-procmacros@1.0.17
+	profiling@1.0.17
+	pxfm@0.1.29
+	pyo3-build-config@0.28.3
+	pyo3-ffi@0.28.3
+	pyo3-macros-backend@0.28.3
+	pyo3-macros@0.28.3
+	pyo3@0.28.3
+	qoi@0.4.1
+	quick-error@2.0.1
+	quote@1.0.45
+	r-efi@5.3.0
+	r-efi@6.0.0
+	rand@0.10.1
+	rand@0.8.6
+	rand@0.9.4
+	rand_chacha@0.9.0
+	rand_core@0.10.1
+	rand_core@0.6.4
+	rand_core@0.9.5
+	rand_xorshift@0.3.0
+	rand_xoshiro@0.8.0
+	rav1e@0.8.1
+	ravif@0.13.0
+	rayon-core@1.13.0
+	rayon@1.12.0
+	redox_syscall@0.7.4
+	redox_users@0.5.2
+	regex-automata@0.4.14
+	regex-syntax@0.8.10
+	regex@1.12.3
+	rgb@0.8.53
+	rustc-hash@2.1.2
+	rustix@1.1.4
+	rustversion@1.0.22
+	semver@1.0.28
+	serde-xml-rs@0.8.2
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.149
+	serde_spanned@1.1.1
+	shlex@1.3.0
+	simd-adler32@0.3.9
+	simd_helpers@0.1.0
+	slab@0.4.12
+	slotmap@1.1.1
+	smallvec@1.15.1
+	stable_deref_trait@1.2.1
+	symphonia-bundle-flac@0.5.5
+	symphonia-bundle-mp3@0.5.5
+	symphonia-codec-aac@0.5.5
+	symphonia-codec-adpcm@0.5.5
+	symphonia-codec-alac@0.5.5
+	symphonia-codec-pcm@0.5.5
+	symphonia-codec-vorbis@0.5.5
+	symphonia-core@0.5.5
+	symphonia-format-mkv@0.5.5
+	symphonia-format-ogg@0.5.5
+	symphonia-format-riff@0.5.5
+	symphonia-metadata@0.5.5
+	symphonia-utils-xiph@0.5.5
+	symphonia@0.5.5
+	syn@2.0.117
+	sysinfo@0.38.4
+	tar@0.4.45
+	target-lexicon@0.13.5
+	thiserror-impl@2.0.18
+	thiserror@2.0.18
+	tiff@0.11.3
+	toml@1.1.2+spec-1.1.0
+	toml_datetime@1.1.1+spec-1.1.0
+	toml_parser@1.1.2+spec-1.1.0
+	toml_writer@1.1.1+spec-1.1.0
+	ttf-parser@0.21.1
+	typed-path@0.12.3
+	unicode-ident@1.0.24
+	unicode-xid@0.2.6
+	v_frame@0.3.9
+	version_check@0.9.5
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.3+wasi-0.2.9
+	wasip3@0.4.0+wasi-0.3.0-rc-2026-01-06
+	wasm-bindgen-macro-support@0.2.120
+	wasm-bindgen-macro@0.2.120
+	wasm-bindgen-shared@0.2.120
+	wasm-bindgen@0.2.120
+	wasm-encoder@0.244.0
+	wasm-metadata@0.244.0
+	wasmparser@0.244.0
+	web-sys@0.3.97
+	weezl@0.1.12
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-collections@0.3.2
+	windows-core@0.62.2
+	windows-future@0.3.2
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.2.1
+	windows-numerics@0.3.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.61.2
+	windows-threading@0.2.1
+	windows@0.62.2
+	winnow@1.0.2
+	wit-bindgen-core@0.51.0
+	wit-bindgen-rust-macro@0.51.0
+	wit-bindgen-rust@0.51.0
+	wit-bindgen@0.51.0
+	wit-bindgen@0.57.1
+	wit-component@0.244.0
+	wit-parser@0.244.0
+	xattr@1.6.1
+	xml@1.2.1
+	y4m@0.8.0
+	zerocopy-derive@0.8.48
+	zerocopy@0.8.48
+	zip@8.6.0
+	zlib-rs@0.6.3
+	zmij@1.0.21
+	zopfli@0.8.3
+	zune-core@0.5.1
+	zune-inflate@0.2.54
+	zune-jpeg@0.5.15
+"
+
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{13..15} )
+RUST_MIN_VER="1.88.0"
+
+inherit cargo distutils-r1
+
+DESCRIPTION="A retro game engine for Python"
+HOMEPAGE="https://github.com/kitao/pyxel"
+SRC_URI="
+	https://github.com/kitao/pyxel/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+S="${WORKDIR}/${P}/python"
+
+LICENSE="MIT Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD BSD-2 ISC MPL-2.0 UoI-NCSA Unicode-3.0 ZLIB"
+SLOT="0"
+KEYWORDS="~amd64"
+RESTRICT="test"
+
+RDEPEND="media-libs/libsdl2:="
+DEPEND="${RDEPEND}"
+BDEPEND="llvm-core/clang:*"
+
+src_unpack() {
+	cargo_src_unpack
+}
+
+src_prepare() {
+	# Enable dynamic SDL2 linking (the default build has no SDL2 backend at all)
+	sed -i \
+		-e '/^\[tool\.maturin\]/a features = ["sdl2_dynamic"]' \
+		pyproject.toml || die
+
+	distutils-r1_src_prepare
+}
+
+src_compile() {
+	cargo_src_configure
+	distutils-r1_src_compile
+}

@@ -986,6 +986,7 @@ LICENSE+="
 	Unicode-3.0 ZLIB BZIP2
 "
 SLOT="0"
+S="${WORKDIR}"/rustfs-${MY_PV}
 KEYWORDS="~amd64"
 
 DEPEND="
@@ -995,12 +996,8 @@ DEPEND="
 	dev-libs/protobuf
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/rustfs-${MY_PV}
 
 src_install() {
 	cargo_src_install --path ./rustfs
 	einstalldocs
 }
-

@@ -4,13 +4,13 @@
 
 EAPI=8
 
-DESCRIPTION="A small library that implements a \"channel\" construct for inter-thread communication in C"
+DESCRIPTION="A small library that implements a \"channel\" construct for inter-thread"
 HOMEPAGE="http://repo.hu/projects/cchan"
 SRC_URI="http://repo.hu/projects/cchan/releases/cchan-${PV}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="sdl"
 
 DEPEND="sdl? ( media-libs/libsdl )"

@@ -11,10 +11,7 @@ SRC_URI="https://github.com/pmai/md5/archive/refs/tags/release-${PV}.tar.gz -> $
 
 LICENSE="public-domain"
 SLOT="0"
+S="${WORKDIR}"/${PN}-release-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-release-${PV}

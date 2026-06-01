@@ -12,7 +12,9 @@ SRC_URI="https://github.com/${PN}-project/${PN}/archive/v${PV}.tar.gz -> ${P}.ta
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 x86 ~amd64-linux"
+
 IUSE="debug doc opus +speex test theora vpx"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	dev-qt/qtcore:5

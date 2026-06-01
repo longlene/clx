@@ -24,15 +24,14 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="amd64 arm arm64 ppc ppc64 ~riscv ~sparc x86"
+S="${WORKDIR}"/python-rsa-${EGIT_COMMIT}
+KEYWORDS="amd64 arm arm64 ppc ppc64 x86 ~riscv ~sparc"
 
 RDEPEND="
 	>=dev-python/pyasn1-0.1.3[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests unittest
-
-S="${WORKDIR}"/python-rsa-${EGIT_COMMIT}
 
 src_prepare() {
 	rm tests/test_mypy.py || die

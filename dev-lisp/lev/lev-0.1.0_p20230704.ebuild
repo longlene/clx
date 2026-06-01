@@ -14,9 +14,7 @@ SRC_URI="https://github.com/fukamachi/lev/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/libev
 	dev-lisp/cffi

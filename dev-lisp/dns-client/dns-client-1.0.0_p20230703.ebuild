@@ -14,11 +14,8 @@ SRC_URI="https://github.com/Shinmera/dns-client/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/documentation-utils
 "
-BDEPEND=""

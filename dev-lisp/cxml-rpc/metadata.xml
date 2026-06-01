@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		This library implements xml-rpc client and server functionality using Drakma, CXML and Hunchentoot. 
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    This library implements xml-rpc client and server functionality using Drakma, CXML and Hunchentoot. 
+  </longdescription>
+  <upstream>
+    <remote-id type="github">antifuchs/cxml-rpc</remote-id>
+  </upstream>
 </pkgmetadata>

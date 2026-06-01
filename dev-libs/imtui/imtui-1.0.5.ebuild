@@ -18,7 +18,6 @@ KEYWORDS="~amd64"
 
 DEPEND="!media-libs/imgui"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

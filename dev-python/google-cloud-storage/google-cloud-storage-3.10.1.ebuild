@@ -17,6 +17,7 @@ SRC_URI="https://github.com/googleapis/python-storage/archive/refs/tags/v${PV}.t
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/python-storage-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -33,5 +34,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-storage-${PV}

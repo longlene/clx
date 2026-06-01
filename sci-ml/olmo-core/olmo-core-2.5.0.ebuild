@@ -1,0 +1,40 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_SINGLE_IMPL=1
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{13..14} )
+
+inherit distutils-r1
+
+DESCRIPTION="Core training module for the Open Language Model (OLMo)"
+HOMEPAGE="
+	https://github.com/allenai/OLMo-core
+	https://olmo-core.readthedocs.io/en/latest/
+"
+SRC_URI="https://github.com/allenai/OLMo-core/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+
+S="${WORKDIR}/OLMo-core-${PV}"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="
+	>=sci-ml/pytorch-2.6.0[${PYTHON_SINGLE_USEDEP}]
+	$(python_gen_cond_dep '
+		dev-python/filelock[${PYTHON_USEDEP}]
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/rich[${PYTHON_USEDEP}]
+		sci-ml/safetensors[${PYTHON_USEDEP}]
+	')
+"
+
+EPYTEST_PLUGINS=()
+distutils_enable_tests pytest

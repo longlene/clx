@@ -13,10 +13,7 @@ SRC_URI="https://github.com/helium/erl-base58/archive/${EGIT_COMMIT}.tar.gz -> $
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/erl-base58-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/erl-base58-${EGIT_COMMIT}

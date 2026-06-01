@@ -22,6 +22,5 @@ RDEPEND="
 	>=dev-python/aiohttp-3.9.0[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-retry-2.0.3[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 #distutils_enable_tests pytest

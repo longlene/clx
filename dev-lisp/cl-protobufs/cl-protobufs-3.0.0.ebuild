@@ -12,7 +12,6 @@ SRC_URI="https://github.com/qitab/cl-protobufs/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/protobuf

@@ -13,7 +13,6 @@ SRC_URI="https://github.com/solatis/libpaxos-cpp/archive/v${PV}.tar.gz -> ${P}.t
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	dev-cpp/asio

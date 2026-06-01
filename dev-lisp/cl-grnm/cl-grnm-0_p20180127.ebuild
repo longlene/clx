@@ -14,9 +14,7 @@ SRC_URI="https://github.com/rigetticomputing/cl-grnm/archive/${EGIT_COMMIT}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

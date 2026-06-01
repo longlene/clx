@@ -14,9 +14,10 @@ SRC_URI="https://github.com/Rudolph-Miller/dyna/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-syntax
 	dev-lisp/dexador
@@ -32,7 +33,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/sxql
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

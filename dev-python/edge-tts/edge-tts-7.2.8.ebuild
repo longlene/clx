@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Use Microsoft Edge's online text-to-speech service from Python WITHOUT needing Microsoft Edge or Windows or an API key"
+DESCRIPTION="Use Microsoft Edge's online text-to-speech service from Python WITHOUT"
 HOMEPAGE="
 	https://pypi.org/project/edge-tts/
 	https://github.com/rany2/edge-tts

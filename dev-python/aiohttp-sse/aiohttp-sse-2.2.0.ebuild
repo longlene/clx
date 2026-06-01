@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -12,7 +12,6 @@ DESCRIPTION="Server-sent events support for aiohttp"
 HOMEPAGE="https://github.com/aio-libs/aiohttp-sse"
 SRC_URI="https://github.com/aio-libs/aiohttp-sse/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 

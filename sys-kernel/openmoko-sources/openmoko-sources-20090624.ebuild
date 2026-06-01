@@ -5,7 +5,6 @@ EAPI=8
 
 DESCRIPTION="Andy-tracking kernel for Openmoko devices"
 HOMEPAGE="http://www.openmoko.org/"
-SRC_URI=""
 EGIT_REPO_URI="git://git.openmoko.org/git/kernel.git"
 # This needs to be the COMMIT!!!!! else the git eclass is not able
 # to checkout the correct branch at the given commit!
@@ -25,17 +24,13 @@ detect_version
 
 LICENSE="GPL-2"
 SLOT="0"
+S="${WORKDIR}/${MY_P}"
 KEYWORDS="~arm"
 
-IUSE=""
-DOCS=""
-
-RDEPEND=""
 DEPEND="sys-devel/gcc
 	dev-embedded/u-boot-tools"
 
 MY_P="linux-${OKV}${CKV}"
-S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	# Fetch and unpack current git sources
@@ -45,7 +40,7 @@ src_unpack() {
 pkg_postinst() {
 	postinst_sources
 	einfo "The kernel source is now installed in"
-	einfo "  ${ROOT}/usr/src/linux."
+	einfo "  "${ROOT}"/usr/src/linux."
 	einfo "Please change to this directory to configure and build the kernel."
 	einfo ""
 	einfo "To use a default kernel-configuration for your device, rename one"

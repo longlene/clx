@@ -12,10 +12,11 @@ SRC_URI="https://github.com/vseloved/cl-redis/archive/${EGIT_COMMIT}.tar.gz -> $
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/rutils
 	dev-lisp/cl-ppcre
@@ -32,4 +33,3 @@ src_prepare() {
 		rm test.lisp
 	fi
 }
-

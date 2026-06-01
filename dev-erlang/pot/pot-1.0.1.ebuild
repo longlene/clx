@@ -5,7 +5,7 @@ EAPI=8
 
 inherit rebar3
 
-DESCRIPTION="An Erlang library for generating Google Authenticator compatible one time passwords"
+DESCRIPTION="An Erlang library for generating Google Authenticator compatible one time"
 HOMEPAGE="https://github.com/yuce/pot"
 SRC_URI="https://github.com/yuce/pot/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -13,6 +13,4 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

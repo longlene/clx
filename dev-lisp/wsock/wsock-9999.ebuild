@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Low-level UNIX socket library"
 HOMEPAGE="https://github.com/fukamachi/wsock"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/fukamachi/wsock.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 dev-lisp/cffi
 "

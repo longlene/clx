@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">supertone-inc/supertonic</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Python ONNX inference helper for Supertonic, a lightning-fast on-device
+    multilingual TTS engine supporting 31 languages. Provides the helper
+    module and supertonic-tts-onnx CLI script for running inference against
+    Supertonic ONNX models from Hugging Face.
+  </longdescription>
+</pkgmetadata>

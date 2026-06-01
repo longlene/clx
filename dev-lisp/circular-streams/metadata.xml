@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Circular-Streams allows you to read streams circularly by wrapping real streams. Once you reach end-of-file of a stream, it's file position will be reset to 0 and you're able to read it again.
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Circular-Streams allows you to read streams circularly by wrapping real streams. Once you reach end-of-file of a stream, it's file position will be reset to 0 and you're able to read it again.
 
-		Note this library can treat only octet streams which has a method read-byte. This might be expanded in the future.
-	</longdescription>
+    Note this library can treat only octet streams which has a method read-byte. This might be expanded in the future.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">fukamachi/circular-streams</remote-id>
+  </upstream>
 </pkgmetadata>

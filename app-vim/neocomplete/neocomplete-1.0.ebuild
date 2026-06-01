@@ -11,16 +11,10 @@ SRC_URI="https://github.com/Shougo/neocomplete.vim/archive/ver.${PV}.tar.gz -> $
 
 LICENSE="MIT"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="|| (
 >app-editors/vim-7.3.885[lua]
 >app-editors/gvim-7.3.885[lua] )"
-
-VIM_PLUGIN_HELPFILES=""
-VIM_PLUGIN_HELPTEXT=""
-VIM_PLUGIN_HELPURI=""
-VIM_PLUGIN_MESSAGES=""
 
 src_prepare() {
 	rm autoload/vital.vim # for file collision

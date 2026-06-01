@@ -14,6 +14,7 @@ SRC_URI="https://github.com/run-llama/llama_index/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/llama_index-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,5 +33,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/llama_index-${PV}

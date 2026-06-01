@@ -10,10 +10,8 @@ SRC_URI="mirror://nongnu/nyacc/${P}.tar.gz"
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-scheme/guile
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

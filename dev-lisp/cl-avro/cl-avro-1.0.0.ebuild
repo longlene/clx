@@ -12,9 +12,10 @@ SRC_URI="https://github.com/SahilKang/cl-avro/archive/refs/tags/v${PV}.tar.gz ->
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-gray-streams
 	dev-lisp/babel
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/salza2
 	test? ( dev-lisp/1am )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

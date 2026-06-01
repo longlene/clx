@@ -3,14 +3,9 @@
 
 EAPI=8
 
-DESCRIPTION=""
-HOMEPAGE=""
 SRC_URI="http://downloads.mesosphere.com/marathon/v${PV}/${P}.tgz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"

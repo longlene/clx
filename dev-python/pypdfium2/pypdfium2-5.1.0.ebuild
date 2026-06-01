@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_13 )
+PYTHON_COMPAT=( python3_12 python3_13 python3_14  )
 
 inherit distutils-r1
 
@@ -18,21 +18,15 @@ SRC_URI="https://files.pythonhosted.org/packages/2f/74/92f508e71178aa85de3245476
 
 LICENSE="|| ( BSD-3 Apache-2.0 )"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
-BDEPEND="
-"
 #	test? (
 #	)
 
 distutils_enable_tests pytest
 
-S="${WORKDIR}"
-
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" \
 		"${DISTDIR}/${A}"
 }
-

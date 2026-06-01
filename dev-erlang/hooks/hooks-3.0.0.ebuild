@@ -12,8 +12,5 @@ SRC_URI="https://github.com/benoitc/hooks/archive/refs/tags/v${PV}.tar.gz -> ${P
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

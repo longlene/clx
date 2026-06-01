@@ -14,14 +14,14 @@ SRC_URI="https://github.com/Shinmera/classowary/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	test? ( dev-lisp/parachute )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

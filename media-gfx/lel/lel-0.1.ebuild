@@ -10,8 +10,7 @@ SRC_URI="http://git.2f30.org/lel/snapshot/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 DEPEND="x11-libs/libX11"
 RDEPEND="${DEPEND}"

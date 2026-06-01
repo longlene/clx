@@ -17,6 +17,7 @@ SRC_URI="https://github.com/langchain-ai/langchain/archive/refs/tags/${PN}==${PV
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/langchain-${P}/libs/core
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -36,6 +37,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/langchain-${P}/libs/core
-

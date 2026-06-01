@@ -4,22 +4,18 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_12 )
+PYTHON_COMPAT=( python3_12 python3_13 python3_14  )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
 HOMEPAGE="
 	https://pypi.org/project/pybase16384/
 "
-SRC_URI="https://github.com/synodriver/pybase16384/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/synodriver/pybase16384/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

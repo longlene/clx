@@ -3,18 +3,16 @@
 
 EAPI=8
 
-DESCRIPTION="TinyWM is a ridiculously tiny window manager implemender nearly as few lines of C as possible"
+DESCRIPTION="TinyWM is a ridiculously tiny window manager implemender nearly as few lines"
 HOMEPAGE="http://incise.org/tinywm.html"
 SRC_URI="http://incise.org/files/dev/tinywm-${PV}.tgz"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
 	dobin tinywm
 }
-

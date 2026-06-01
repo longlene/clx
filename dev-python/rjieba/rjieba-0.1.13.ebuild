@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=maturin
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 CRATES="
 	adler32@1.2.0
@@ -74,21 +74,18 @@ HOMEPAGE="
 	https://pypi.org/project/rjieba/
 "
 SRC_URI="
-	https://github.com/messense/rjieba-py/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/messense/rjieba-py/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
 	${CARGO_CRATE_URIS}
 "
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/rjieba-py-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/rjieba-py-${PV}

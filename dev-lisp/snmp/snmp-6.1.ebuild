@@ -11,9 +11,10 @@ SRC_URI="http://common-lisp.net/project/cl-net-snmp/release/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/ieee-floats

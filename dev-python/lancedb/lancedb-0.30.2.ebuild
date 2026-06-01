@@ -811,7 +811,6 @@ CRATES="
 	zstd@0.13.3
 "
 
-
 DISTUTILS_USE_PEP517=maturin
 PYTHON_COMPAT=( python3_{13..14} )
 
@@ -829,6 +828,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/lancedb-python-v${PV}/python
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -847,7 +847,5 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/lancedb-python-v${PV}/python
 
 export AWS_LC_SYS_CFLAGS="${CFLAGS//-O[0-9s]/-O0}"

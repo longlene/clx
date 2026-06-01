@@ -13,10 +13,9 @@ SRC_URI="http://thera.be/my_public/my_projects/otpasswd/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="virtual/pam dev-libs/gmp"
-DEPEND="${RDEPEND} dev-util/cmake"
+DEPEND="${RDEPEND} dev-build/cmake"
 
 RESTRICT=test
 

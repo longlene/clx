@@ -10,12 +10,9 @@ SRC_URI="https://github.com/billstclair/cl-crypto/archive/${PV}.tar.gz -> ${P}.t
 
 LICENSE="Apache"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-base64
 dev-lisp/flexi-streams
 dev-lisp/anaphora"
-

@@ -15,7 +15,6 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivia
 	dev-lisp/alexandria
@@ -26,4 +25,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/stealth-mixin
 	dev-lisp/bordeaux-threads
 "
-BDEPEND=""

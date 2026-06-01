@@ -8,12 +8,9 @@ DESCRIPTION="Video++, a C++14 high performance video and image processing librar
 HOMEPAGE="http://documentup.com/matt-42/vpp"
 SRC_URI="https://github.com/matt-42/vpp/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-cpp/eigen:3
 	dev-cpp/iod

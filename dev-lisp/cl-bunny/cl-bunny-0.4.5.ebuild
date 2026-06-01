@@ -10,12 +10,12 @@ DESCRIPTION="Common Lisp RabbitMQ client based on IOLib"
 HOMEPAGE="http://cl-rabbit.io"
 SRC_URI="https://github.com/cl-rabbit/cl-bunny/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="example test"
 
-DEPEND=""
+IUSE="example test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-amqp

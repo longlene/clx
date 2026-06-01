@@ -13,13 +13,11 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	app-text/cmark
 	dev-lisp/cffi
 	dev-lisp/flexi-streams
 "
-BDEPEND=""
 
 src_prepare() {
 	default

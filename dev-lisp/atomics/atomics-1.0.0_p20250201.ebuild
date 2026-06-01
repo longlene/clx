@@ -14,14 +14,14 @@ SRC_URI="https://github.com/Shinmera/atomics/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="Artistic-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	test? ( dev-lisp/parachute )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

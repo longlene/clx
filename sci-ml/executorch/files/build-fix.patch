@@ -1,0 +1,903 @@
+--- a/CMakeLists.txt	2026-05-30 10:52:51.004953776 -0700
++++ b/CMakeLists.txt	2026-05-30 11:05:42.507298053 -0700
+@@ -276,17 +276,17 @@
+   )
+ endif()
+ 
+-if(NOT DEFINED FXDIV_SOURCE_DIR)
+-  set(ORIGINAL_CMAKE_POSITION_INDEPENDENT_CODE_FLAG
+-      ${CMAKE_POSITION_INDEPENDENT_CODE}
+-  )
+-  set(FXDIV_SOURCE_DIR "backends/xnnpack/third-party/FXdiv")
+-  add_subdirectory("${FXDIV_SOURCE_DIR}")
+-  executorch_move_interface_include_directories_to_build_time_only(fxdiv)
+-  set(CMAKE_POSITION_INDEPENDENT_CODE
+-      ${ORIGINAL_CMAKE_POSITION_INDEPENDENT_CODE_FLAG}
+-  )
+-endif()
++#if(NOT DEFINED FXDIV_SOURCE_DIR)
++#  set(ORIGINAL_CMAKE_POSITION_INDEPENDENT_CODE_FLAG
++#      ${CMAKE_POSITION_INDEPENDENT_CODE}
++#  )
++#  set(FXDIV_SOURCE_DIR "backends/xnnpack/third-party/FXdiv")
++#  add_subdirectory("${FXDIV_SOURCE_DIR}")
++#  executorch_move_interface_include_directories_to_build_time_only(fxdiv)
++#  set(CMAKE_POSITION_INDEPENDENT_CODE
++#      ${ORIGINAL_CMAKE_POSITION_INDEPENDENT_CODE_FLAG}
++#  )
++#endif()
+ 
+ if(EXECUTORCH_BUILD_CPUINFO)
+   # --- cpuinfo
+@@ -416,15 +416,15 @@
+ # exactly `executorch`. Check the assumption first. Remove this check once we
+ # stop relying on the assumption.
+ cmake_path(GET CMAKE_CURRENT_SOURCE_DIR FILENAME _repo_dir_name)
+-if(NOT "${_repo_dir_name}" STREQUAL "executorch")
+-  message(
+-    FATAL_ERROR
+-      "The ExecuTorch repo must be cloned into a directory named exactly "
+-      "`executorch`; found `${_repo_dir_name}`. See "
+-      "https://github.com/pytorch/executorch/issues/6475 for progress on a "
+-      "fix for this restriction."
+-  )
+-endif()
++#if(NOT "${_repo_dir_name}" STREQUAL "executorch")
++#  message(
++#    FATAL_ERROR
++#      "The ExecuTorch repo must be cloned into a directory named exactly "
++#      "`executorch`; found `${_repo_dir_name}`. See "
++#      "https://github.com/pytorch/executorch/issues/6475 for progress on a "
++#      "fix for this restriction."
++#  )
++#endif()
+ set(_common_include_directories
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/runtime/core/portable_type/c10>
+--- a/schema/CMakeLists.txt	2026-05-30 10:52:51.005895883 -0700
++++ b/schema/CMakeLists.txt	2026-05-30 11:05:36.747297852 -0700
+@@ -32,7 +32,7 @@
+     COMMAND flatc --cpp --cpp-std c++11 --gen-mutable --scoped-enums -o
+             "${_program_schema__output_dir}" ${_schema_srcs}
+     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+-    DEPENDS flatc ${_schema_srcs}
++    #DEPENDS flatc ${_schema_srcs}
+     COMMENT "Generating ${_schema_name} headers"
+     VERBATIM
+   )
+--- a/third-party/CMakeLists.txt	2026-05-30 10:52:51.006980700 -0700
++++ b/third-party/CMakeLists.txt	2026-05-30 11:06:28.297299688 -0700
+@@ -5,11 +5,10 @@
+ # LICENSE file in the root directory of this source tree.
+ 
+ set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+-add_subdirectory(json)
+-# hexagon toolchain does not support mkdir, which is used in gflags.
+-if(NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES Hexagon)
+-  add_subdirectory(gflags)
+-endif()
++#add_subdirectory(json)
++find_package(nlohmann_json REQUIRED)
++#add_subdirectory(gflags)
++find_package(gflags REQUIRED)
+ 
+ if(EXECUTORCH_BUILD_PYBIND)
+   add_subdirectory(pybind11)
+@@ -33,43 +32,41 @@
+ 
+ # We use ExternalProject to build flatc from source to force it target the host.
+ # Otherwise, flatc will target the project's toolchain (i.e. iOS, or Android).
+-ExternalProject_Add(
+-  flatbuffers_ep
+-  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/flatc_ep
+-  BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/flatc_ep/src/build
+-  SOURCE_DIR ${PROJECT_SOURCE_DIR}/third-party/flatbuffers
+-  CMAKE_ARGS
+-    -DFLATBUFFERS_BUILD_FLATC=ON
+-    -DFLATBUFFERS_INSTALL=ON
+-    -DFLATBUFFERS_BUILD_FLATHASH=OFF
+-    -DFLATBUFFERS_BUILD_FLATLIB=OFF
+-    -DFLATBUFFERS_BUILD_TESTS=OFF
+-    -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+-    -DCMAKE_CXX_FLAGS="-DFLATBUFFERS_MAX_ALIGNMENT=${EXECUTORCH_FLATBUFFERS_MAX_ALIGNMENT}"
+-    # Unset the toolchain to build for the host instead of the toolchain set for
+-    # the project.
+-    -DCMAKE_TOOLCHAIN_FILE=
+-    # If building for iOS, "unset" these variables to rely on the host (macOS)
+-    # defaults.
+-    $<$<AND:$<BOOL:${APPLE}>,$<BOOL:$<FILTER:${PLATFORM},EXCLUDE,^MAC>>>:-DCMAKE_OSX_SYSROOT=>
+-    -DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=${CMAKE_OSX_DEPLOYMENT_TARGET}
+-  BUILD_BYPRODUCTS <INSTALL_DIR>/bin/flatc
+-                   ${_executorch_external_project_additional_args}
+-)
+-ExternalProject_Get_Property(flatbuffers_ep INSTALL_DIR)
++#ExternalProject_Add(
++#  flatbuffers_ep
++#  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/flatc_ep
++#  BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/flatc_ep/src/build
++#  SOURCE_DIR ${PROJECT_SOURCE_DIR}/third-party/flatbuffers
++#  CMAKE_ARGS
++#    -DFLATBUFFERS_BUILD_FLATC=ON
++#    -DFLATBUFFERS_INSTALL=ON
++#    -DFLATBUFFERS_BUILD_FLATHASH=OFF
++#    -DFLATBUFFERS_BUILD_FLATLIB=OFF
++#    -DFLATBUFFERS_BUILD_TESTS=OFF
++#    -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
++#    -DCMAKE_CXX_FLAGS="-DFLATBUFFERS_MAX_ALIGNMENT=${EXECUTORCH_FLATBUFFERS_MAX_ALIGNMENT}"
++#    -DCMAKE_TOOLCHAIN_FILE=
++#    $<$<AND:$<BOOL:${APPLE}>,$<BOOL:$<FILTER:${PLATFORM},EXCLUDE,^MAC>>>:-DCMAKE_OSX_SYSROOT=>
++#    -DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=${CMAKE_OSX_DEPLOYMENT_TARGET}
++#  BUILD_BYPRODUCTS <INSTALL_DIR>/bin/flatc
++#                   ${_executorch_external_project_additional_args}
++#)
++#ExternalProject_Get_Property(flatbuffers_ep INSTALL_DIR)
++#add_executable(flatc IMPORTED GLOBAL)
++#add_dependencies(flatc flatbuffers_ep)
++#if(WIN32 AND NOT CMAKE_CROSSCOMPILING)
++#  set_target_properties(
++#    flatc PROPERTIES IMPORTED_LOCATION ${INSTALL_DIR}/bin/flatc.exe
++#  )
++#else()
++#  set_target_properties(
++#    flatc PROPERTIES IMPORTED_LOCATION ${INSTALL_DIR}/bin/flatc
++#  )
++#endif()
++find_package(flatbuffers REQUIRED)
++find_program(FLATC_EXECUTABLE NAMES flatc REQUIRED)
+ add_executable(flatc IMPORTED GLOBAL)
+-add_dependencies(flatc flatbuffers_ep)
+-if(WIN32 AND NOT CMAKE_CROSSCOMPILING)
+-  # flatbuffers does not use CMAKE_BUILD_TYPE. Internally, the build forces
+-  # Release config, but from CMake's perspective the build type is always Debug.
+-  set_target_properties(
+-    flatc PROPERTIES IMPORTED_LOCATION ${INSTALL_DIR}/bin/flatc.exe
+-  )
+-else()
+-  set_target_properties(
+-    flatc PROPERTIES IMPORTED_LOCATION ${INSTALL_DIR}/bin/flatc
+-  )
+-endif()
++set_target_properties(flatc PROPERTIES IMPORTED_LOCATION "${FLATC_EXECUTABLE}")
+ 
+ # TODO: re-enable once flatbuffers is added as a subdirectory.
+ # set(FLATBUFFERS_BUILD_FLATC OFF) set(FLATBUFFERS_INSTALL OFF)
+@@ -90,41 +87,41 @@
+ 
+ # Similar to flatbuffers, we want to build flatcc for the host. See inline
+ # comments in the flatbuffers ExternalProject_Add for more details.
+-ExternalProject_Add(
+-  flatcc_ep
+-  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/flatcc_ep
+-  SOURCE_DIR ${PROJECT_SOURCE_DIR}/third-party/flatcc
+-  BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/flatcc_ep/src/build
+-  CMAKE_ARGS
+-    -DFLATCC_RTONLY=OFF
+-    -DFLATCC_TEST=OFF
+-    -DFLATCC_REFLECTION=OFF
+-    -DFLATCC_DEBUG_CLANG_SANITIZE=OFF
+-    -DFLATCC_ALLOW_WERROR=OFF
+-    -DFLATCC_INSTALL=ON
+-    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+-    -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+-    -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+-    -DCMAKE_TOOLCHAIN_FILE=
+-    $<$<AND:$<BOOL:${APPLE}>,$<BOOL:$<FILTER:${PLATFORM},EXCLUDE,^MAC>>>:-DCMAKE_OSX_SYSROOT=>
+-    -DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=${CMAKE_OSX_DEPLOYMENT_TARGET}
+-    ${_flatcc_extra_cmake_args}
+-  BUILD_BYPRODUCTS <INSTALL_DIR>/bin/flatcc
+-                   ${_executorch_external_project_additional_args}
+-)
+-file(REMOVE_RECURSE ${PROJECT_SOURCE_DIR}/third-party/flatcc/lib)
+-ExternalProject_Get_Property(flatcc_ep INSTALL_DIR)
+-add_executable(flatcc_cli IMPORTED GLOBAL)
+-add_dependencies(flatcc_cli flatcc_ep)
+-if(WIN32 AND NOT CMAKE_CROSSCOMPILING)
+-  set_target_properties(
+-    flatcc_cli PROPERTIES IMPORTED_LOCATION ${INSTALL_DIR}/bin/flatcc.exe
+-  )
+-else()
+-  set_target_properties(
+-    flatcc_cli PROPERTIES IMPORTED_LOCATION ${INSTALL_DIR}/bin/flatcc
+-  )
+-endif()
++#ExternalProject_Add(
++#  flatcc_ep
++#  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/flatcc_ep
++#  SOURCE_DIR ${PROJECT_SOURCE_DIR}/third-party/flatcc
++#  BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/flatcc_ep/src/build
++#  CMAKE_ARGS
++#    -DFLATCC_RTONLY=OFF
++#    -DFLATCC_TEST=OFF
++#    -DFLATCC_REFLECTION=OFF
++#    -DFLATCC_DEBUG_CLANG_SANITIZE=OFF
++#    -DFLATCC_ALLOW_WERROR=OFF
++#    -DFLATCC_INSTALL=ON
++#    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
++#    -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
++#    -DCMAKE_POSITION_INDEPENDENT_CODE=ON
++#    -DCMAKE_TOOLCHAIN_FILE=
++#    $<$<AND:$<BOOL:${APPLE}>,$<BOOL:$<FILTER:${PLATFORM},EXCLUDE,^MAC>>>:-DCMAKE_OSX_SYSROOT=>
++#    -DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=${CMAKE_OSX_DEPLOYMENT_TARGET}
++#    ${_flatcc_extra_cmake_args}
++#  BUILD_BYPRODUCTS <INSTALL_DIR>/bin/flatcc
++#                   ${_executorch_external_project_additional_args}
++#)
++#file(REMOVE_RECURSE ${PROJECT_SOURCE_DIR}/third-party/flatcc/lib)
++#ExternalProject_Get_Property(flatcc_ep INSTALL_DIR)
++#add_executable(flatcc_cli IMPORTED GLOBAL)
++#add_dependencies(flatcc_cli flatcc_ep)
++#if(WIN32 AND NOT CMAKE_CROSSCOMPILING)
++#  set_target_properties(
++#    flatcc_cli PROPERTIES IMPORTED_LOCATION ${INSTALL_DIR}/bin/flatcc.exe
++#  )
++#else()
++#  set_target_properties(
++#    flatcc_cli PROPERTIES IMPORTED_LOCATION ${INSTALL_DIR}/bin/flatcc
++#  )
++#endif()
+ 
+ set(FLATCC_RTONLY
+     ON
+@@ -150,24 +147,14 @@
+     OFF
+     CACHE BOOL ""
+ )
+-add_subdirectory(flatcc)
+-if(CMAKE_C_COMPILER_ID STREQUAL "GNU"
+-   AND CMAKE_C_COMPILER_VERSION VERSION_GREATER_EQUAL 15
+-)
+-  target_compile_options(
+-    flatccrt PRIVATE -Wno-error=unterminated-string-initialization
+-  )
+-endif()
+-# Unfortunately flatcc writes libs directly in to the source tree [1]. So to
+-# ensure the target lib is created last, force flatcc_cli to build first.
+-#
+-# [1]
+-# https://github.com/dvidelabs/flatcc/blob/896db54787e8b730a6be482c69324751f3f5f117/CMakeLists.txt#L168
+-add_dependencies(flatccrt flatcc_cli)
+-# Fix for "relocation R_X86_64_32 against `.rodata' can not be used when making
+-# a shared object; recompile with -fPIC" when building on some x86 linux
+-# systems.
+-#
+-# Learn more: https://github.com/pytorch/executorch/pull/2467
+-set_property(TARGET flatccrt PROPERTY POSITION_INDEPENDENT_CODE ON)
+-install(TARGETS flatccrt DESTINATION ${CMAKE_BINARY_DIR}/lib)
++#add_subdirectory(flatcc)
++#if(CMAKE_C_COMPILER_ID STREQUAL "GNU"
++#   AND CMAKE_C_COMPILER_VERSION VERSION_GREATER_EQUAL 15
++#)
++#  target_compile_options(
++#    flatccrt PRIVATE -Wno-error=unterminated-string-initialization
++#  )
++#endif()
++#add_dependencies(flatccrt flatcc_cli)
++#set_property(TARGET flatccrt PROPERTY POSITION_INDEPENDENT_CODE ON)
++#install(TARGETS flatccrt DESTINATION ${CMAKE_BINARY_DIR}/lib)
+diff -Nur a/backends/cuda/CMakeLists.txt b/backends/cuda/CMakeLists.txt
+--- a/backends/cuda/CMakeLists.txt
++++ b/backends/cuda/CMakeLists.txt
+@@ -99,7 +99,7 @@
+ install(
+   TARGETS cuda_platform
+   EXPORT ExecuTorchTargets
+-  DESTINATION lib
++  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+ )
+
+ # CUDA-specific AOTI shim symbols (dynamically linked)
+@@ -175,7 +175,7 @@
+ install(
+   TARGETS aoti_cuda_shims
+   EXPORT ExecuTorchTargets
+-  DESTINATION lib
++  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+ )
+
+ # CUDA backend implementation
+@@ -225,5 +225,5 @@
+ install(
+   TARGETS aoti_cuda_backend
+   EXPORT ExecuTorchTargets
+-  DESTINATION lib
++  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+ )
+diff -Nur a/backends/vulkan/CMakeLists.txt b/backends/vulkan/CMakeLists.txt
+--- a/backends/vulkan/CMakeLists.txt
++++ b/backends/vulkan/CMakeLists.txt
+@@ -37,9 +37,9 @@
+
+ set(VULKAN_THIRD_PARTY_PATH ${CMAKE_CURRENT_SOURCE_DIR}/third-party)
+
+-set(VULKAN_HEADERS_PATH ${VULKAN_THIRD_PARTY_PATH}/Vulkan-Headers)
+-set(VOLK_PATH ${VULKAN_THIRD_PARTY_PATH}/volk)
+-set(VMA_PATH ${VULKAN_THIRD_PARTY_PATH}/VulkanMemoryAllocator)
++set(VULKAN_HEADERS_PATH /usr)
++set(VOLK_PATH /usr/include)
++set(VMA_PATH /usr)
+
+ set(COMMON_INCLUDES
+     $<BUILD_INTERFACE:${EXECUTORCH_ROOT}/..>
+@@ -102,7 +102,7 @@
+   vulkan_schema
+   INTERFACE
+     $<BUILD_INTERFACE:${SCHEMA_INCLUDE_DIR}>
+-    $<BUILD_INTERFACE:${EXECUTORCH_ROOT}/third-party/flatbuffers/include>
++    $<BUILD_INTERFACE:/usr/include>
+ )
+
+ # vulkan runtime utils files
+
+diff -Nur a/backends/vulkan/runtime/vk_api/vk_api.h b/backends/vulkan/runtime/vk_api/vk_api.h
+--- a/backends/vulkan/runtime/vk_api/vk_api.h
++++ b/backends/vulkan/runtime/vk_api/vk_api.h
+@@ -7,6 +7,7 @@
+  */
+
+ #pragma once
++#include <algorithm>
+
+ #ifdef USE_VULKAN_WRAPPER
+
+diff -Nur a/backends/vulkan/cmake/ShaderLibrary.cmake b/backends/vulkan/cmake/ShaderLibrary.cmake
+--- a/backends/vulkan/cmake/ShaderLibrary.cmake
++++ b/backends/vulkan/cmake/ShaderLibrary.cmake
+@@ -94,8 +94,8 @@
+     ${library_name}
+     PRIVATE
+       ${EXECUTORCH_ROOT}/..
+-      ${EXECUTORCH_ROOT}/backends/vulkan/third-party/Vulkan-Headers/include
+-      ${EXECUTORCH_ROOT}/backends/vulkan/third-party/volk
++      /usr/include
++      /usr/include
+   )
+   target_link_libraries(${library_name} vulkan_backend)
+   target_compile_options(${library_name} PRIVATE ${VULKAN_CXX_FLAGS})
+@@ -118,8 +118,8 @@
+     ${library_name}
+     PRIVATE
+       ${EXECUTORCH_ROOT}/..
+-      ${EXECUTORCH_ROOT}/backends/vulkan/third-party/Vulkan-Headers/include
+-      ${EXECUTORCH_ROOT}/backends/vulkan/third-party/volk
++      /usr/include
++      /usr/include
+   )
+   target_link_libraries(${library_name} vulkan_backend)
+   target_compile_options(${library_name} PRIVATE ${VULKAN_CXX_FLAGS})
+
+diff -Nur a/extension/evalue_util/CMakeLists.txt b/extension/evalue_util/CMakeLists.txt
+--- a/extension/evalue_util/CMakeLists.txt
++++ b/extension/evalue_util/CMakeLists.txt
+@@ -24,7 +24,7 @@
+ install(
+   TARGETS extension_evalue_util
+   EXPORT ExecuTorchTargets
+-  DESTINATION ${CMAKE_BINARY_DIR}/lib
++  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+   INCLUDES
+   DESTINATION ${_common_include_directories}
+ )
+
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -289,109 +289,25 @@
+ #endif()
+ 
+ if(EXECUTORCH_BUILD_CPUINFO)
+-  # --- cpuinfo
+-  set(ORIGINAL_CMAKE_POSITION_INDEPENDENT_CODE_FLAG
+-      ${CMAKE_POSITION_INDEPENDENT_CODE}
+-  )
+-  set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+-  set(CPUINFO_SOURCE_DIR
+-      "${CMAKE_CURRENT_LIST_DIR}/backends/xnnpack/third-party/cpuinfo"
+-  )
+-  set(CPUINFO_BUILD_TOOLS
+-      OFF
+-      CACHE BOOL ""
+-  )
+-  set(CPUINFO_BUILD_UNIT_TESTS
+-      OFF
+-      CACHE BOOL ""
+-  )
+-  set(CPUINFO_BUILD_MOCK_TESTS
+-      OFF
+-      CACHE BOOL ""
+-  )
+-  set(CPUINFO_BUILD_BENCHMARKS
+-      OFF
+-      CACHE BOOL ""
+-  )
+-  set(CPUINFO_LIBRARY_TYPE
+-      "static"
+-      CACHE STRING ""
+-  )
+-  set(CPUINFO_LOG_LEVEL
+-      "error"
+-      CACHE STRING ""
+-  )
+-  set(CLOG_SOURCE_DIR "${CPUINFO_SOURCE_DIR}/deps/clog")
+-  add_subdirectory("${CPUINFO_SOURCE_DIR}")
+-  set(CMAKE_POSITION_INDEPENDENT_CODE
+-      ${ORIGINAL_CMAKE_POSITION_INDEPENDENT_CODE_FLAG}
+-  )
+-  executorch_add_prefix_to_public_headers(cpuinfo "${CPUINFO_SOURCE_DIR}/")
+-  install(
+-    TARGETS cpuinfo
+-    EXPORT ExecuTorchTargets
+-    DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-    INCLUDES
+-    DESTINATION ${_common_include_directories}
++  find_library(CPUINFO_LIB NAMES cpuinfo REQUIRED)
++  find_path(CPUINFO_INCLUDE NAMES cpuinfo.h REQUIRED)
++  add_library(cpuinfo SHARED IMPORTED GLOBAL)
++  set_target_properties(cpuinfo PROPERTIES
++    IMPORTED_LOCATION "${CPUINFO_LIB}"
++    INTERFACE_INCLUDE_DIRECTORIES "${CPUINFO_INCLUDE}"
+   )
+ endif()
+ 
+ if(EXECUTORCH_BUILD_PTHREADPOOL)
+-  # --- pthreadpool
+-  set(ORIGINAL_CMAKE_POSITION_INDEPENDENT_CODE_FLAG
+-      ${CMAKE_POSITION_INDEPENDENT_CODE}
+-  )
+-  set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+-  set(PTHREADPOOL_SOURCE_DIR "backends/xnnpack/third-party/pthreadpool")
+-  set(PTHREADPOOL_BUILD_TESTS
+-      OFF
+-      CACHE BOOL ""
+-  )
+-  set(PTHREADPOOL_BUILD_BENCHMARKS
+-      OFF
+-      CACHE BOOL ""
+-  )
+-  set(PTHREADPOOL_LIBRARY_TYPE
+-      "static"
+-      CACHE STRING ""
+-  )
+-  set(PTHREADPOOL_ALLOW_DEPRECATED_API
+-      ON
+-      CACHE BOOL ""
+-  )
+-  if(APPLE)
+-    set(PTHREADPOOL_SYNC_PRIMITIVE
+-        "condvar"
+-        CACHE STRING ""
+-    )
+-  endif()
+-  add_subdirectory("${PTHREADPOOL_SOURCE_DIR}")
+-  executorch_move_interface_include_directories_to_build_time_only(pthreadpool)
+-  executorch_move_interface_include_directories_to_build_time_only(
+-    pthreadpool_interface
+-  )
+-
+-  if(APPLE)
+-    # Use hidden visibility for pthreadpool on Apple platforms to avoid issues
+-    # with pthreadpool symbols from libtorch_cpu taking precedence over the ones
+-    # from the pthreadpool library statically linked in _portable_lib. The
+-    # pthreadpool public APIs are marked as weak by default on some Apple
+-    # platforms, so setting to hidden visibility works around this by not
+-    # putting the symbol in the indirection table. See
+-    # https://github.com/pytorch/executorch/issues/14321 for more details.
+-    target_compile_options(pthreadpool PRIVATE -fvisibility=hidden)
+-  endif()
+-
+-  install(
+-    TARGETS pthreadpool pthreadpool_interface fxdiv
+-    EXPORT ExecuTorchTargets
+-    DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-    INCLUDES
+-    DESTINATION ${_common_include_directories}
+-  )
+-  set(CMAKE_POSITION_INDEPENDENT_CODE
+-      ${ORIGINAL_CMAKE_POSITION_INDEPENDENT_CODE_FLAG}
++  find_library(PTHREADPOOL_LIB NAMES pthreadpool REQUIRED)
++  find_path(PTHREADPOOL_INCLUDE NAMES pthreadpool.h REQUIRED)
++  add_library(pthreadpool SHARED IMPORTED GLOBAL)
++  set_target_properties(pthreadpool PROPERTIES
++    IMPORTED_LOCATION "${PTHREADPOOL_LIB}"
++    INTERFACE_INCLUDE_DIRECTORIES "${PTHREADPOOL_INCLUDE}"
+   )
++  add_library(pthreadpool_interface INTERFACE IMPORTED GLOBAL)
++  target_link_libraries(pthreadpool_interface INTERFACE pthreadpool)
+ endif()
+ 
+ if(EXECUTORCH_BUILD_TESTS)
+diff -Nur a/extension/threadpool/CMakeLists.txt b/extension/threadpool/CMakeLists.txt
+--- a/extension/threadpool/CMakeLists.txt
++++ b/extension/threadpool/CMakeLists.txt
+@@ -40,12 +40,7 @@
+ target_include_directories(
+   extension_threadpool PUBLIC ${_common_include_directories}
+ )
+-target_include_directories(
+-  extension_threadpool
+-  PUBLIC
+-    $<BUILD_INTERFACE:${EXECUTORCH_ROOT}/backends/xnnpack/third-party/cpuinfo/include>
+-    $<BUILD_INTERFACE:${EXECUTORCH_ROOT}/backends/xnnpack/third-party/pthreadpool/include>
+-)
++
+ target_compile_definitions(
+   extension_threadpool PUBLIC ET_USE_THREADPOOL ${_threadpool_size_flag}
+ )
+
+
+diff -Nur a/backends/xnnpack/cmake/Dependencies.cmake b/backends/xnnpack/cmake/Dependencies.cmake
+--- a/backends/xnnpack/cmake/Dependencies.cmake	2026-05-30 14:30:56.796601959 -0700
++++ b/backends/xnnpack/cmake/Dependencies.cmake	2026-05-30 14:35:44.300855684 -0700
+@@ -4,98 +4,21 @@
+ # This source code is licensed under the BSD-style license found in the
+ # LICENSE file in the root directory of this source tree.
+ 
+-# The logic is copied from
+-# https://github.com/pytorch/pytorch/blob/main/cmake/Dependencies.cmake
+ set(THIRD_PARTY_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/third-party")
+ 
+-# --- XNNPACK
+-
+-# Setting this global PIC flag for all XNNPACK targets. This is needed for
+-# Object libraries within XNNPACK which must be PIC to successfully link this
+-# static libXNNPACK
+-set(ORIGINAL_CMAKE_POSITION_INDEPENDENT_CODE_FLAG
+-    ${CMAKE_POSITION_INDEPENDENT_CODE}
++# Use system-installed XNNPACK
++find_library(XNNPACK_LIB NAMES XNNPACK REQUIRED)
++find_path(XNNPACK_INCLUDE_DIR NAMES xnnpack.h REQUIRED)
++add_library(XNNPACK SHARED IMPORTED GLOBAL)
++set_target_properties(XNNPACK PROPERTIES
++  IMPORTED_LOCATION "${XNNPACK_LIB}"
++  INTERFACE_INCLUDE_DIRECTORIES "${XNNPACK_INCLUDE_DIR}"
+ )
+-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ 
+-set(XNNPACK_SOURCE_DIR "${THIRD_PARTY_ROOT}/XNNPACK")
+-set(XNNPACK_INCLUDE_DIR "${XNNPACK_SOURCE_DIR}/include")
+-set(XNNPACK_LIBRARY_TYPE
+-    "static"
+-    CACHE STRING ""
+-)
+-set(XNNPACK_BUILD_BENCHMARKS
+-    OFF
+-    CACHE BOOL ""
+-)
+-set(XNNPACK_BUILD_TESTS
+-    OFF
+-    CACHE BOOL ""
+-)
+-set(XNNPACK_ENABLE_AVXVNNI
+-    OFF
+-    CACHE BOOL ""
+-)
+-# Work around observed failure:
+-# https://github.com/pytorch/executorch/pull/10362#issuecomment-2906391232
+-set(XNNPACK_ENABLE_AVX512VNNIGFNI
+-    OFF
+-    CACHE BOOL ""
+-)
+-# Enable ARM SME2 by default. Can be disabled with -DXNNPACK_ENABLE_ARM_SME2=OFF
+-# for Android emulator compatibility, which may crash with SME2 kernels.
+-set(XNNPACK_ENABLE_ARM_SME2
+-    ON
+-    CACHE BOOL ""
++find_library(XNNPACK_MICROKERNELS_LIB NAMES microkernels-prod REQUIRED)
++add_library(xnnpack-microkernels-prod STATIC IMPORTED GLOBAL)
++set_target_properties(xnnpack-microkernels-prod PROPERTIES
++  IMPORTED_LOCATION "${XNNPACK_MICROKERNELS_LIB}"
+ )
+-if(EXECUTORCH_XNNPACK_ENABLE_KLEIDI)
+-  set(XNNPACK_ENABLE_KLEIDIAI
+-      ON
+-      CACHE BOOL ""
+-  )
+-else()
+-  set(XNNPACK_ENABLE_KLEIDIAI
+-      OFF
+-      CACHE BOOL ""
+-  )
+-endif()
+ 
+-if(WIN32)
+-  # These XNNPACK options don't currently build on Windows.
+-  set_overridable_option(XNNPACK_ENABLE_AVX256SKX OFF)
+-  set_overridable_option(XNNPACK_ENABLE_AVX256VNNI OFF)
+-  set_overridable_option(XNNPACK_ENABLE_AVX256VNNIGFNI OFF)
+-  set_overridable_option(XNNPACK_ENABLE_AVX512BF16 OFF)
+-endif()
+-
+-set(XNNPACK_BUILD_ALL_MICROKERNELS
+-    OFF
+-    CACHE BOOL ""
+-)
+-add_subdirectory("${XNNPACK_SOURCE_DIR}")
+-include_directories(SYSTEM ${XNNPACK_INCLUDE_DIR})
+ list(APPEND xnnpack_third_party XNNPACK)
+-install(
+-  TARGETS xnnpack-microkernels-prod
+-  EXPORT ExecuTorchTargets
+-  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-  PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+-)
+-
+-if(EXECUTORCH_XNNPACK_ENABLE_KLEIDI)
+-  if(TARGET kleidiai)
+-    install(
+-      TARGETS kleidiai
+-      EXPORT ExecuTorchTargets
+-      LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-      ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-      PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+-    )
+-  endif()
+-endif()
+-
+-# Revert PIC Flag to what it originally was
+-set(CMAKE_POSITION_INDEPENDENT_CODE
+-    ${ORIGINAL_CMAKE_POSITION_INDEPENDENT_CODE_FLAG}
+-)
+
+diff -Nur a/backends/xnnpack/CMakeLists.txt b/backends/xnnpack/CMakeLists.txt
+--- a/backends/xnnpack/CMakeLists.txt	2026-05-30 14:30:56.797363106 -0700
++++ b/backends/xnnpack/CMakeLists.txt	2026-05-30 14:36:14.317742166 -0700
+@@ -110,14 +110,7 @@
+   xnnpack_backend PUBLIC ${_common_include_directories}
+ )
+ target_include_directories(xnnpack_backend PRIVATE ${XNNPACK_INCLUDE_DIR})
+-target_include_directories(
+-  xnnpack_backend
+-  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/third-party/pthreadpool/include
+-)
+-target_include_directories(
+-  xnnpack_backend
+-  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/third-party/cpuinfo/include
+-)
++
+ target_compile_options(xnnpack_backend PUBLIC ${_common_compile_options})
+ executorch_target_link_options_shared_lib(xnnpack_backend)
+ 
+@@ -135,40 +128,10 @@
+ set_target_properties(XNNPACK PROPERTIES PUBLIC_HEADER "")
+ 
+ set_target_properties(cpuinfo PROPERTIES PUBLIC_HEADER "")
+-executorch_move_interface_include_directories_to_build_time_only(fxdiv)
+ executorch_move_interface_include_directories_to_build_time_only(pthreadpool)
+ executorch_move_interface_include_directories_to_build_time_only(
+   pthreadpool_interface
+ )
+-install(
+-  TARGETS XNNPACK
+-          xnnpack-base
+-          xnnpack-allocator
+-          xnnpack-cache
+-          xnnpack-hardware-config
+-          xnnpack-indirection
+-          xnnpack-memory
+-          xnnpack-microkernel-utils
+-          xnnpack-microparams-init
+-          xnnpack-mutex
+-          xnnpack-normalization
+-          xnnpack-operators
+-          xnnpack-operator-run
+-          xnnpack-operator-delete
+-          xnnpack-operator-utils
+-          xnnpack-pack-lh
+-          xnnpack-packing
+-          xnnpack-sanitizers
+-          xnnpack-subgraph
+-          xnnpack-datatype
+-          xnnpack-fingerprint-id
+-          xnnpack-fingerprint-cache
+-          xnnpack-fingerprint-check
+-          xnnpack-reference-ukernels
+-          xnnpack-logging
+-  EXPORT ExecuTorchTargets
+-  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-)
+ if(BUILD_TESTING)
+   add_subdirectory(test)
+ endif()
+
+
+diff -Nur a/backends/mlx/CMakeLists.txt b/backends/mlx/CMakeLists.txt
+--- a/backends/mlx/CMakeLists.txt	2026-05-30 14:44:14.723288846 -0700
++++ b/backends/mlx/CMakeLists.txt	2026-05-30 14:47:21.314432358 -0700
+@@ -103,142 +103,14 @@
+   mlx_schema
+   INTERFACE
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/runtime>
+-    $<BUILD_INTERFACE:${EXECUTORCH_ROOT}/third-party/flatbuffers/include>
++    $<BUILD_INTERFACE:/usr/include>
+ )
+ 
+ # -----------------------------------------------------------------------------
+-# MLX dependency (from submodule)
++# MLX dependency (system-installed)
+ # -----------------------------------------------------------------------------
+ 
+-set(MLX_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third-party/mlx)
+-
+-# Check that submodule is initialized
+-if(NOT EXISTS "${MLX_SOURCE_DIR}/CMakeLists.txt")
+-  message(
+-    FATAL_ERROR "MLX submodule not initialized.\n"
+-                "Run: git submodule update --init backends/mlx/third-party/mlx"
+-  )
+-endif()
+-
+-# Validate deployment target - MLX requires macOS 14.0+ / iOS 17.0+
+-#
+-# The macOS preset uses ios.toolchain.cmake (with PLATFORM=MAC_ARM64), so
+-# DEPLOYMENT_TARGET is set for both macOS and iOS builds. We check PLATFORM to
+-# distinguish them rather than relying on which variable is set.
+-set(_mlx_deployment_target_ok TRUE)
+-if(PLATFORM AND PLATFORM MATCHES "^MAC")
+-  # macOS build via ios.toolchain.cmake (e.g., MAC_ARM64, MAC_UNIVERSAL)
+-  if(DEPLOYMENT_TARGET)
+-    set(_mlx_dt_value ${DEPLOYMENT_TARGET})
+-  elseif(CMAKE_OSX_DEPLOYMENT_TARGET)
+-    set(_mlx_dt_value ${CMAKE_OSX_DEPLOYMENT_TARGET})
+-  endif()
+-  if(_mlx_dt_value AND _mlx_dt_value VERSION_LESS "14.0")
+-    set(_mlx_deployment_target_ok FALSE)
+-    set(_mlx_deployment_target_value ${_mlx_dt_value})
+-    set(_mlx_deployment_target_min "14.0")
+-  endif()
+-elseif(DEPLOYMENT_TARGET)
+-  # iOS/tvOS/watchOS/visionOS builds via ios.toolchain.cmake
+-  if(DEPLOYMENT_TARGET VERSION_LESS "17.0")
+-    set(_mlx_deployment_target_ok FALSE)
+-    set(_mlx_deployment_target_value ${DEPLOYMENT_TARGET})
+-    set(_mlx_deployment_target_min "17.0")
+-  endif()
+-elseif(CMAKE_OSX_DEPLOYMENT_TARGET)
+-  # Plain macOS build (no ios.toolchain.cmake)
+-  if(CMAKE_OSX_DEPLOYMENT_TARGET VERSION_LESS "14.0")
+-    set(_mlx_deployment_target_ok FALSE)
+-    set(_mlx_deployment_target_value ${CMAKE_OSX_DEPLOYMENT_TARGET})
+-    set(_mlx_deployment_target_min "14.0")
+-  endif()
+-endif()
+-
+-if(NOT _mlx_deployment_target_ok)
+-  message(
+-    FATAL_ERROR
+-      "MLX requires deployment target >= ${_mlx_deployment_target_min}, got ${_mlx_deployment_target_value}.\n"
+-      "Either increase the deployment target or disable MLX with -DEXECUTORCH_BUILD_MLX=OFF"
+-  )
+-endif()
+-
+-# MLX build options - we only need the C++ library with Metal
+-set(MLX_BUILD_PYTHON_BINDINGS
+-    OFF
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_BUILD_TESTS
+-    OFF
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_BUILD_EXAMPLES
+-    OFF
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_BUILD_BENCHMARKS
+-    OFF
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_BUILD_PYTHON_STUBS
+-    OFF
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_BUILD_CUDA
+-    OFF
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_BUILD_CPU
+-    OFF
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_BUILD_METAL
+-    ON
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_BUILD_SHARED_LIBS
+-    OFF
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_BUILD_GGUF
+-    OFF
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_BUILD_SAFETENSORS
+-    OFF
+-    CACHE BOOL "" FORCE
+-)
+-set(MLX_METAL_JIT
+-    ON
+-    CACHE BOOL "Use JIT compiled Metal kernels"
+-)
+-
+-# Auto-apply patches to MLX submodule. Each patch is applied idempotently: `git
+-# apply --check` tests whether the patch is still applicable (i.e. not yet
+-# applied), and only then applies it.
+-set(_mlx_patches "${CMAKE_CURRENT_SOURCE_DIR}/patches/mlx_json.patch")
+-foreach(_patch IN LISTS _mlx_patches)
+-  if(EXISTS "${_patch}" AND EXISTS "${MLX_SOURCE_DIR}")
+-    get_filename_component(_patch_name "${_patch}" NAME)
+-    execute_process(
+-      COMMAND git apply --check "${_patch}"
+-      WORKING_DIRECTORY ${MLX_SOURCE_DIR}
+-      RESULT_VARIABLE _patch_check
+-      OUTPUT_QUIET ERROR_QUIET
+-    )
+-    if(_patch_check EQUAL 0)
+-      execute_process(
+-        COMMAND git apply "${_patch}" WORKING_DIRECTORY ${MLX_SOURCE_DIR}
+-      )
+-      message(STATUS "Applied ${_patch_name} to MLX submodule")
+-    else()
+-      message(STATUS "${_patch_name} already applied or not applicable")
+-    endif()
+-  endif()
+-endforeach()
+-
+-# Add MLX subdirectory
+-message(STATUS "Adding MLX from submodule: ${MLX_SOURCE_DIR}")
+-add_subdirectory(${MLX_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/mlx)
++find_package(MLX REQUIRED)
+ 
+ # -----------------------------------------------------------------------------
+ # MLX Backend library
+@@ -260,6 +132,7 @@
+ )
+ 
+ add_library(mlxdelegate ${_mlx_backend__srcs})
++set_target_properties(mlxdelegate PROPERTIES CXX_STANDARD 20 CXX_STANDARD_REQUIRED ON)
+ 
+ # Ensure schema is generated before compiling
+ add_dependencies(mlxdelegate mlx_schema)
+@@ -299,43 +172,6 @@
+   DESTINATION ${CMAKE_INSTALL_LIBDIR}
+ )
+ 
+-# Install mlx library for downstream consumers
+-install(TARGETS mlx DESTINATION ${CMAKE_INSTALL_LIBDIR})
+-
+-# Install mlx headers for downstream consumers that may need mlx types
+-install(
+-  DIRECTORY ${MLX_SOURCE_DIR}/mlx/
+-  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/mlx
+-  FILES_MATCHING
+-  PATTERN "*.h"
+-)
+-
+-# Install mlx.metallib (Metal GPU kernels) for runtime execution
+-#
+-# MLX searches for metallib in this order (see mlx/backend/metal/device.cpp): 1.
+-# {binary_dir}/mlx.metallib        - colocated with the .so/.dylib 2.
+-# {binary_dir}/Resources/mlx/      - Resources subdirectory 3. SwiftPM bundle -
+-# not applicable for us 4. {binary_dir}/Resources/default/  - Resources
+-# subdirectory 5. METAL_PATH (compile-time)        - hardcoded build path (won't
+-# exist)
+-#
+-# where {binary_dir} is determined at runtime via dladdr() on the library
+-# containing MLX code. When MLX is statically linked into _portable_lib.so, this
+-# is the directory containing _portable_lib.so.
+-#
+-# For the installed library, we put metallib in lib/ alongside libmlx.a
+-install(
+-  FILES ${CMAKE_CURRENT_BINARY_DIR}/mlx/mlx/backend/metal/kernels/mlx.metallib
+-  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-)
+-
+-# Cache the metallib path for pybindings to copy it next to _portable_lib.so
+-# This enables editable installs to work correctly
+-set(MLX_METALLIB_PATH
+-    "${CMAKE_CURRENT_BINARY_DIR}/mlx/mlx/backend/metal/kernels/mlx.metallib"
+-    CACHE INTERNAL "Path to mlx.metallib for pybindings"
+-)
+-
+ # -----------------------------------------------------------------------------
+ # Tests (off by default; CI passes -DEXECUTORCH_BUILD_TESTS=ON)
+ # -----------------------------------------------------------------------------

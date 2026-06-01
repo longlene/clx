@@ -12,9 +12,7 @@ SRC_URI="https://github.com/synrc/bpe/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-erlang/bert-2.4
 	>=dev-erlang/nitro-4.4
@@ -24,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-erlang/kvs
 	>=dev-erlang/syn-1.5.0
 "
-BDEPEND=""

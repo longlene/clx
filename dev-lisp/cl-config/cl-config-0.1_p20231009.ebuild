@@ -15,14 +15,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/xml-emitter
 	dev-lisp/cl-store
 	dev-lisp/cl-cont
 "
-BDEPEND=""
 
 src_prepare() {
 	default

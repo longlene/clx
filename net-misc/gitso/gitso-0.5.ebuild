@@ -7,16 +7,16 @@ HOMEPAGE="http://code.google.com/p/gitso/"
 SRC_URI="http://gitso.googlecode.com/files/${PN}_${PV}_src.tar.bz2"
 
 LICENSE="GPL-3"
+S="${WORKDIR}/${MY_P}"
 KEYWORDS="~x86"
 SLOT="0"
-IUSE=""
 
 RDEPEND="dev-python/wxpython
 	net-misc/tightvnc
 	x11-misc/x11vnc"
 
 MY_P="${PN}_${PV}_src"
-S="${WORKDIR}/${MY_P}"
+
 src_install() {
 	cd "${S}"
 

@@ -12,7 +12,6 @@ SRC_URI="https://github.com/babelouest/ulfius/archive/v${PV}.tar.gz -> ${P}.tar.
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/jansson
@@ -23,4 +22,3 @@ DEPEND="
 	net-misc/curl
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

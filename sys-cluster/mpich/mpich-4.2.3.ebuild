@@ -16,7 +16,7 @@ S="${WORKDIR}"/${PN}-${MY_PV}
 
 LICENSE="mpich2"
 SLOT="0"
-KEYWORDS="amd64 ~arm64 ~hppa ~ppc ppc64 ~riscv x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ppc64 x86 ~amd64-linux ~arm64 ~hppa ~ppc ~riscv ~x86-linux"
 IUSE="+cxx doc fortran mpi-threads +romio threads valgrind"
 REQUIRED_USE="mpi-threads? ( threads )"
 

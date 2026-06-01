@@ -14,7 +14,9 @@ SRC_URI="https://github.com/ninenines/${PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-lang/erlang-17.1"

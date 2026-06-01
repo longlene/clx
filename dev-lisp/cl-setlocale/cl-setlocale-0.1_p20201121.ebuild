@@ -15,12 +15,11 @@ IUSE="test"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+RESTRICT="!test? ( test )"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 "
-BDEPEND=""
 
 src_prepare() {
 	default

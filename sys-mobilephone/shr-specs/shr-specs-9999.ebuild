@@ -5,17 +5,14 @@
 EAPI=8
 inherit git-r3
 
-DESCRIPTION=""
 HOMEPAGE="http://www.shr-project.org"
 EGIT_REPO_URI="http://git.shr-project.org/repo/shr-specs.git"
 EGIT_PROJECT="shr-specs"
 
 LICENSE="CCPL-Attribution-ShareAlike-3.0"
 SLOT="0"
-KEYWORDS="~arm ~x86 ~amd64"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-RDEPEND=""
 DEPEND="
 	dev-libs/libxslt"
 
@@ -26,4 +23,4 @@ src_compile() {
 src_install() {
 	insinto /usr/share/shr/xml
 	doins xml/*
-}	
+}

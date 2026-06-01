@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    litehtml is a fast and lightweight HTML/CSS rendering engine written in C++.
+    It parses HTML and CSS and renders them using a platform-specific container
+    implementation provided by the application.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">litehtml/litehtml</remote-id>
+  </upstream>
+  <use>
+    <flag name="test">Build and run the test suite</flag>
+  </use>
+</pkgmetadata>

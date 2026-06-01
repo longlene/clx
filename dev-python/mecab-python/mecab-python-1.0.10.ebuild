@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1 pypi
 
@@ -19,11 +19,10 @@ SRC_URI="$(pypi_sdist_url --no-normalize 'mecab_python3' ${PV})"
 
 LICENSE="BSD"
 SLOT="3"
+S="${WORKDIR}"/mecab_python3-${PV}
 KEYWORDS="~amd64"
 
 DEPEND="app-text/mecab"
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}"/mecab_python3-${PV}
 
 export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_MECAB_PYTHON3=${PV}

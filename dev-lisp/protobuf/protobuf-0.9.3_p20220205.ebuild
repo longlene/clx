@@ -14,7 +14,9 @@ SRC_URI="https://github.com/brown/protobuf/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="example test"
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	dev-libs/protobuf

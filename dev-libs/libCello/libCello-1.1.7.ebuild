@@ -10,12 +10,10 @@ DESCRIPTION="Higher level programming in C"
 HOMEPAGE="http://libcello.org/"
 SRC_URI="http://libcello.org/static/libCello-${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND="sys-devel/clang"
+DEPEND="llvm-core/clang"
 RDEPEND="${DEPEND}"
 
 src_prepare() {

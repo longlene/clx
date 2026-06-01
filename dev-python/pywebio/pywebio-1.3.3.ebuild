@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/tornado
 	dev-python/user-agents
@@ -32,4 +31,3 @@ RDEPEND="${DEPEND}
 	dev-python/plotly
 	dev-python/pillow
 "
-BDEPEND=""

@@ -11,10 +11,8 @@ SRC_URI="https://github.com/longlene/cl-opencv/tarball/master -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cffi
 dev-lisp/sbcl
@@ -31,5 +29,3 @@ src_install() {
 	common-lisp-symlink-asdf
 	dodoc README.md LICENSE
 }
-
-

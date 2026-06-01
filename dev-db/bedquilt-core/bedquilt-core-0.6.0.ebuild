@@ -11,9 +11,7 @@ SRC_URI="https://github.com/BedquiltDB/bedquilt-core/archive/v${PV}.tar.gz -> ${
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

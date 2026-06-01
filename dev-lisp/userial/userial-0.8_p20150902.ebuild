@@ -15,9 +15,7 @@ SRC_URI="https://github.com/nklein/userial/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/ieee-floats
 	dev-lisp/trivial-utf8

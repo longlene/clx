@@ -8,12 +8,11 @@ SRC_URI="http://popies.net/kissd/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 DEPEND=${RDEPEND}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 }
 
 src_compile() {
@@ -26,10 +25,10 @@ src_install() {
 	dobin kissd-pretrigger
 	dosbin kissd
 	insinto /etc
-	doins ${FILESDIR}/kissd.conf
+	doins "${FILESDIR}"/kissd.conf
 	dodoc CHANGES
 	doman kissd.1
-	newinitd ${FILESDIR}/kissd.init kissd
+	newinitd "${FILESDIR}"/kissd.init kissd
 }
 
 pkg_postinst() {

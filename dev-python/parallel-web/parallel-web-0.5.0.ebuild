@@ -20,6 +20,7 @@ SRC_URI="https://github.com/parallel-web/parallel-sdk-python/archive/refs/tags/v
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -37,5 +38,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}

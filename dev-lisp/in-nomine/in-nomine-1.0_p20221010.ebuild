@@ -15,11 +15,9 @@ LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 "
-BDEPEND=""
 
 src_prepare() {
 	default

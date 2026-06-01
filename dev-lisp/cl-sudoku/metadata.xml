@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Sudoku is a puzzle, we put a number from 1 to 9 so as to satisfy the rules in the square of the 9 × 9. Cl-sudoku is Common Lisp translation of Peter Norvig's sudoku solver, by Takaya Ochiai. Norvig's original code is written in Python.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Sudoku is a puzzle, we put a number from 1 to 9 so as to satisfy the rules in the square of the 9 × 9. Cl-sudoku is Common Lisp translation of Peter Norvig's sudoku solver, by Takaya Ochiai. Norvig's original code is written in Python.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">tkych/cl-sudoku</remote-id>
+  </upstream>
 </pkgmetadata>

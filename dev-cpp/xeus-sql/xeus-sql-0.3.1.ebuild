@@ -22,4 +22,3 @@ DEPEND="
 	>=dev-db/soci-4.0.1
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

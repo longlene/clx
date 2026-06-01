@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/mgl-pax
@@ -24,7 +23,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/osicat
 	dev-lisp/local-time
 "
-BDEPEND=""
 
 src_prepare() {
 	default

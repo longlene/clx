@@ -17,6 +17,7 @@ SRC_URI="https://github.com/NVIDIA/nccl/archive/refs/tags/nccl4py-v${PV}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/nccl-nccl4py-v${PV}/bindings/nccl4py/
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,7 +33,5 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/nccl-nccl4py-v${PV}/bindings/nccl4py/
 
 export CUDA_HOME="/opt/cuda"

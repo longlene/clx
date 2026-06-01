@@ -14,9 +14,10 @@ SRC_URI="https://github.com/mmontone/ten/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="emacs test"
 
-DEPEND=""
+IUSE="emacs test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/access
 	dev-lisp/esrap
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/split-sequence
 	test? ( dev-lisp/fiveam )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

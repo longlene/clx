@@ -20,4 +20,3 @@ DEPEND="
 	dev-python/ipycanvas
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

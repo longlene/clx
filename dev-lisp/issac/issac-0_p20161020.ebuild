@@ -15,9 +15,7 @@ SRC_URI="https://github.com/cbaggers/issac/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/raw-bindings-newton
 	dev-lisp/cffi

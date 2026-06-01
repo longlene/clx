@@ -12,7 +12,6 @@ SRC_URI="https://github.com/bitbouncer/kspp/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-cpp/avro-cpp

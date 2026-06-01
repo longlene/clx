@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    FairScale is a PyTorch extension library for high performance and large
+    scale training. It provides primitives for tensor parallelism, pipeline
+    parallelism, and optimizer state sharding (ZeRO-style).
+  </longdescription>
+  <upstream>
+    <remote-id type="github">facebookresearch/fairscale</remote-id>
+    <remote-id type="pypi">fairscale</remote-id>
+  </upstream>
+</pkgmetadata>

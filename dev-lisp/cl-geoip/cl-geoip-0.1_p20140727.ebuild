@@ -15,9 +15,7 @@ SRC_URI="https://github.com/subtlepath/cl-geoip/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-go/bordeaux-threads
 	dev-go/osicat

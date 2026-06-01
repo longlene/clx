@@ -1,7 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-DESCRIPTION="MintMenu supports filtering, favorites, easy-uninstallation, autosession, and many other features."
+DESCRIPTION="MintMenu supports filtering, favorites, easy-uninstallation, autosession,"
 SRC_URI="http://packages.linuxmint.com/pool/main/m/mintmenu/${PN}_${PV}.tar.gz
 	awn? ( http://ppa.launchpad.net/neelance/awn/ubuntu/pool/main/a/awn-mintmenu/awn-${PN}_1.0-2.tar.gz )"
 MINT_TRANSLATIONS="mint-translations_2011.02.01.tar.gz"
@@ -9,6 +9,7 @@ LANG_URL="http://packages.linuxmint.com/pool/main/m/mint-translations/${MINT_TRA
 HOMEPAGE="http://linuxmint.com
 	https://launchpad.net/~neelance/+archive/awn"
 LICENSE="GPL-2"
+S="${WORKDIR}"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE="portato terminal awn"
@@ -36,8 +37,6 @@ RDEPEND=">=dev-lang/python-2.4.6
 DEPEND="${RDEPEND}
 	sys-apps/sed"
 
-S="${WORKDIR}"
-
 src_install() {
 	dobin mintmenu/usr/bin/mintmenu
 	dodir /usr/lib/linuxmint/mintMenu
@@ -58,10 +57,10 @@ src_install() {
 	done
 
 	if use awn ; then
-		mkdir -p ${D}/usr/share/avant-window-navigator/applets
-		cp awn-mintmenu-1.0/mintmenu.desktop ${D}/usr/share/avant-window-navigator/applets
-		mkdir -p ${D}/usr/lib/linuxmint/mintMenu
-		cp awn-mintmenu-1.0/mintMenuAwn.py ${D}/usr/lib/linuxmint/mintMenu
+		mkdir -p "${D}"/usr/share/avant-window-navigator/applets
+		cp awn-mintmenu-1.0/mintmenu.desktop "${D}"/usr/share/avant-window-navigator/applets
+		mkdir -p "${D}"/usr/lib/linuxmint/mintMenu
+		cp awn-mintmenu-1.0/mintMenuAwn.py "${D}"/usr/lib/linuxmint/mintMenu
 	fi
 }
 
@@ -83,4 +82,3 @@ pkg_preinst() {
 	  sed -i "s/\"show_package_manager\",\ True/\"show_package_manager\",\ False/" ${D}usr/lib/linuxmint/mintMenu/plugins/system_management.py
 	fi
 }
-

@@ -15,7 +15,6 @@ LICENSE="BSD-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-lisp/vellum-1.3.0
 	dev-lisp/chipz
@@ -24,4 +23,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/ieee-floats
 	dev-lisp/cl-conspack
 "
-BDEPEND=""

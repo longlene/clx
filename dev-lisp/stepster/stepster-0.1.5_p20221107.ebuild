@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/dexador
 	dev-lisp/plump
@@ -25,4 +24,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/jonathan
 	dev-lisp/cl-reexport
 "
-BDEPEND=""

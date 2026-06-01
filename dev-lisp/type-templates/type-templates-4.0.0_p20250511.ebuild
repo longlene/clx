@@ -15,10 +15,8 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/alexandria
 	dev-lisp/form-fiddle
 "
-BDEPEND=""

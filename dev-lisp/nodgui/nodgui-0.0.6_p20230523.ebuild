@@ -12,9 +12,7 @@ SRC_URI="https://notabug.org/cage/nodgui/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lang/tk
 	dev-lisp/alexandria
@@ -29,4 +27,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-jpeg
 	dev-lisp/bordeaux-threads
 "
-BDEPEND=""

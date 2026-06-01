@@ -12,11 +12,8 @@ SRC_URI="https://github.com/loli-foundation/loli/archive/${PV}.tar.gz -> ${P}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default
@@ -24,7 +21,7 @@ src_prepare() {
 }
 
 src_install() {
-	dobin ${BUILD_DIR}/loli
-	dolib.so ${BUILD_DIR}/libloli.so
+	dobin "${BUILD_DIR}"/loli
+	dolib.so "${BUILD_DIR}"/libloli.so
 	dodoc README.md
 }

@@ -14,7 +14,6 @@ SRC_URI="https://github.com/kristapsdz/kplot/archive/VERSION_${MY_PV}.tar.gz -> 
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="x11-libs/cairo"
 RDEPEND="${DEPEND}"

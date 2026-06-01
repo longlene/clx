@@ -21,18 +21,19 @@ SRC_URI="https://github.com/crewAIInc/crewAI/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/crewAI-${PV}/lib/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
 	$(python_gen_cond_dep '
-    	>=dev-python/pytube-15.0.0[${PYTHON_USEDEP}]
-    	>=dev-python/requests-2.33.0[${PYTHON_USEDEP}]
-    	>=sci-ml/crewai-1.14.3[${PYTHON_USEDEP}]
-    	>=dev-python/tiktoken-0.8.0[${PYTHON_USEDEP}]
-    	>=dev-python/beautifulsoup4-4.13.4[${PYTHON_USEDEP}]
-    	>=dev-python/python-docx-1.2.0[${PYTHON_USEDEP}]
-    	>=dev-python/youtube-transcript-api-1.2.2[${PYTHON_USEDEP}]
-    	>=dev-python/pymupdf-1.26.6[${PYTHON_USEDEP}]
+		>=dev-python/pytube-15.0.0[${PYTHON_USEDEP}]
+		>=dev-python/requests-2.33.0[${PYTHON_USEDEP}]
+		>=sci-ml/crewai-1.14.3[${PYTHON_USEDEP}]
+		>=dev-python/tiktoken-0.8.0[${PYTHON_USEDEP}]
+		>=dev-python/beautifulsoup4-4.13.4[${PYTHON_USEDEP}]
+		>=dev-python/python-docx-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/youtube-transcript-api-1.2.2[${PYTHON_USEDEP}]
+		>=dev-python/pymupdf-1.26.6[${PYTHON_USEDEP}]
 	')
 "
 #BDEPEND="
@@ -41,5 +42,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/crewAI-${PV}/lib/${PN}

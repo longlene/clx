@@ -15,7 +15,6 @@ SRC_URI="https://github.com/archimag/cl-routes/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 RDEPEND="
 	dev-lisp/iterate
@@ -23,4 +22,3 @@ RDEPEND="
 	dev-lisp/split-sequence
 	dev-lisp/lift
 "
-

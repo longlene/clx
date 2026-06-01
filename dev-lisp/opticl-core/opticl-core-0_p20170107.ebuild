@@ -15,17 +15,13 @@ else
 	SRC_URI="https://github.com/slyrus/opticl-core/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 fi
 
-
 DESCRIPTION="Core classes and pixel access macros from opticl"
 HOMEPAGE="https://github.com/slyrus/opticl-core"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 "
-

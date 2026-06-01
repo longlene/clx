@@ -10,9 +10,7 @@ SRC_URI="https://github.com/dnsimple/erldns/archive/refs/tags/v${PV}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
 || ( dev-util/rebar:3 dev-util/rebar-bin )

@@ -15,7 +15,6 @@ LICENSE="GPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/cl-store
@@ -26,4 +25,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/named-readtables
 	dev-lisp/clon
 "
-BDEPEND=""

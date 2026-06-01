@@ -9,7 +9,7 @@ SRC_URI="${MY_P}.tgz"
 
 LICENSE="cedega"
 SLOT="3"
-KEYWORDS="-* amd64 x86"
+KEYWORDS="amd64 x86 -*"
 IUSE="cups dbus opengl"
 RESTRICT="fetch strip"
 

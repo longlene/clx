@@ -15,9 +15,10 @@ SRC_URI="https://github.com/arielnetworks/cl-pattern/archive/${EGIT_COMMIT}.tar.
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-annot

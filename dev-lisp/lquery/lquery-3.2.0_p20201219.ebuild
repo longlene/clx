@@ -14,9 +14,10 @@ SRC_URI="https://github.com/Shinmera/lquery/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/array-utils
 	dev-lisp/form-fiddle

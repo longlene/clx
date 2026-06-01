@@ -18,6 +18,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}-xpu
 KEYWORDS="~amd64"
 IUSE="sycl"
 
@@ -29,9 +30,6 @@ DEPEND="
 	sci-libs/mkl[llvm-openmp]
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${MY_P}-xpu
 
 IPEX_VERSION="${PV}"
 

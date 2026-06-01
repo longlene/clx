@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~arm ~x86"
 IUSE="qthelp multimedia"
 
 DEPEND="
-	dev-lisp/ecls[threads,unicode]
+	dev-lisp/ecl[threads,unicode]
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
 	dev-qt/qtnetwork:5

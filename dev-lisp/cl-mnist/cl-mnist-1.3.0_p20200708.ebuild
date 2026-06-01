@@ -14,9 +14,7 @@ SRC_URI="https://github.com/hyotang666/cl-mnist/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/dexador
 	dev-lisp/chipz
@@ -24,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/nibbles
 	dev-lisp/slurp
 "
-BDEPEND=""

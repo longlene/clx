@@ -8,16 +8,16 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Wrapper layer for POSIX pthread on common lisp"
 HOMEPAGE="https://github.com/guicho271828/cl-pthread"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/guicho271828/cl-pthread.git"
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 dev-lisp/cffi
 dev-lisp/iolib
@@ -32,4 +32,3 @@ src_install() {
 		common-lisp-install-asdf ${PN}.test.asd
 	fi
 }
-

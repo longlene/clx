@@ -19,6 +19,7 @@ SRC_URI="https://github.com/langchain-ai/langgraph/archive/refs/tags/${MY_PN}==$
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${P}/libs/${MY_PN}-py
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,5 +33,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${P}/libs/${MY_PN}-py

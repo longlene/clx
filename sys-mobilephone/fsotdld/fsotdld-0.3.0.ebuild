@@ -16,4 +16,3 @@ RDEPEND=">=dev-libs/glib-2.22.0
 	>=sys-mobilephone/libfsotransport-0.9.6"
 DEPEND="${RDEPEND}
 	>=dev-lang/vala-0.7.9.1"
-

@@ -14,7 +14,6 @@ SRC_URI="https://github.com/gwkkwg/metatilities-base/archive/${EGIT_COMMIT}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
 
 RDEPEND="dev-lisp/moptilities"
 

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -17,6 +17,7 @@ SRC_URI="https://github.com/mwilliamson/python-mammoth/archive/refs/tags/${PV}.t
 
 LICENSE="BSD-2"
 SLOT="0"
+S="${WORKDIR}"/python-${P}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -28,8 +29,6 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/python-${P}
 
 src_prepare() {
 	default

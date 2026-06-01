@@ -14,9 +14,10 @@ SRC_URI="https://github.com/melisgl/mgl-pax/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/3bmd
 	dev-lisp/alexandria
@@ -34,4 +35,3 @@ src_prepare() {
 	rm -rf test
 	sed -i '/defsystem #:mgl-pax\/test/,$' ${PN}.asd
 }
-

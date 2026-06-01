@@ -16,7 +16,3 @@ SRC_URI="http://github.com/eugeneia/net-telent-date/archive/${EGIT_COMMIT}.tar.g
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-
-RDEPEND=""
-

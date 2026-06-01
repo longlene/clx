@@ -4,16 +4,16 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="Implement minimal boilerplate CLIs derived from type hints and parse from command line, config files and environment variables"
+DESCRIPTION="Implement minimal boilerplate CLIs derived from type hints and parse from"
 HOMEPAGE="
 	https://github.com/omni-us/jsonargparse/
 	https://pypi.org/project/jsonargparse/
 "
-SRC_URI="https://github.com/omni-us/jsonargparse/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/omni-us/jsonargparse/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

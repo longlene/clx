@@ -15,9 +15,7 @@ SRC_URI="https://github.com/mbattyani/cl-email/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-smtp
 	dev-lisp/cl-base64

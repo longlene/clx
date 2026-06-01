@@ -15,4 +15,3 @@ LICENSE="BSD"
 KEYWORDS="~amd64 ~arm ~x86"
 SLOT="0"
 IUSE="doc"
-

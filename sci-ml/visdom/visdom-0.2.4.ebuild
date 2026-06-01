@@ -4,7 +4,7 @@
 EAPI=8
 
 LUA_COMPAT=( luajit )
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1 lua vcs-snapshot
 
 DESCRIPTION="Creating, organizing & sharing visualizations of live, rich data"
@@ -16,7 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="lua"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-python/numpy-1.8[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
@@ -48,4 +47,3 @@ src_install() {
 		doins th/init.lua
 	fi
 }
-

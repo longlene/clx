@@ -20,4 +20,3 @@ DEPEND="
 	>=dev-python/typing-extensions-3.7.4.1
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

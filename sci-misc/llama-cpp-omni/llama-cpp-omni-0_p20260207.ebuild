@@ -15,8 +15,11 @@ SRC_URI="https://github.com/tc-mb/llama.cpp-omni/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/llama.cpp-omni-${EGIT_COMMIT}
 KEYWORDS="~amd64"
+
 IUSE="openblas blis +openmp cuda opencl +openmp rocm -sycl test vulkan flexiblas wmma ssl test"
+RESTRICT="!test? ( test )"
 
 CPU_FLAGS_X86=( avx avx2 f16c )
 
@@ -47,7 +50,6 @@ RDEPEND="${CDEPEND}
 	opencl? ( dev-libs/opencl-icd-loader )
 	vulkan? ( media-libs/vulkan-loader )
 "
-BDEPEND=""
 
 REQUIRED_USE="
 	?? (
@@ -59,8 +61,6 @@ REQUIRED_USE="
 		rocm
 	)
 "
-
-S="${WORKDIR}"/llama.cpp-omni-${EGIT_COMMIT}
 
 pkg_setup() {
 	if use rocm; then
@@ -136,6 +136,6 @@ src_compile() {
 }
 
 src_install() {
-	dobin ${BUILD_DIR}/bin/llama-omni-cli
+	dobin "${BUILD_DIR}"/bin/llama-omni-cli
 	einstalldocs
 }

@@ -13,9 +13,10 @@ SRC_URI="https://github.com/sharplispers/log4cl/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="example test"
 
-DEPEND=""
+IUSE="example test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	test? ( dev-lisp/stefil )

@@ -12,9 +12,10 @@ SRC_URI="https://github.com/carrotflakes/preil/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	test? ( dev-lisp/prove )
 "

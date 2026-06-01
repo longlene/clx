@@ -14,7 +14,6 @@ SRC_URI="https://github.com/redislabsmodules/redis-ml/archive/${EGIT_COMMIT}.tar
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 DEPEND="
 	virtual/cblas

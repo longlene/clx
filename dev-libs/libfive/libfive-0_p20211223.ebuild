@@ -14,7 +14,6 @@ SRC_URI="https://github.com/libfive/libfive/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-cpp/eigen
@@ -25,7 +24,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_install() {
-	dolib.so ${BUILD_DIR}/libfive/src/libfive.so
+	dolib.so "${BUILD_DIR}"/libfive/src/libfive.so
 	insinto /usr/include
 	doins -r libfive/include/libfive{,.h}
 }

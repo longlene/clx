@@ -18,7 +18,6 @@ DEPEND="
 	dev-libs/openssl
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

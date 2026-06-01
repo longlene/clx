@@ -11,12 +11,12 @@ DESCRIPTION="A bridge between Python3 and Lisp"
 HOMEPAGE="https://github.com/snmsts/burgled-batteries3"
 SRC_URI="https://github.com/snmsts/burgled-batteries3/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/alexandria
@@ -25,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-fad
 	test? ( dev-lisp/lift dev-lisp/cl-quickcheck )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -13,6 +13,7 @@ SRC_URI="https://downloads.sourceforge.net/project/imtoolkit/${PV}/Docs%20and%20
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64 ~x86"
 IUSE="lua static-libs"
 
@@ -24,8 +25,6 @@ RDEPEND="${DEPEND}
 	sci-libs/fftw
 	sys-libs/zlib
 "
-
-S="${WORKDIR}"/${PN}
 
 PATCHES=(
 	"${FILESDIR}"/build-fix.patch
@@ -78,4 +77,3 @@ src_install() {
 		lua_foreach_impl lua_src_install
 	fi
 }
-

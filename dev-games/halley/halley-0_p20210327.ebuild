@@ -20,5 +20,3 @@ DEPEND="
 	media-libs/libsdl2
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-

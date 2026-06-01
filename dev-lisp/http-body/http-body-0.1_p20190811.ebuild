@@ -13,10 +13,11 @@ SRC_URI="https://github.com/fukamachi/http-body/archive/${EGIT_COMMIT}.tar.gz ->
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/fast-http
 	dev-lisp/jonathan

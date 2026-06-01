@@ -11,6 +11,7 @@ SRC_URI="https://git.sr.ht/~brocellous/wlrctl/archive/v${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}-v${PV}
 KEYWORDS="~amd64"
 IUSE="doc zsh-completion"
 
@@ -22,8 +23,6 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 	doc? ( app-text/scdoc )
 "
-
-S="${WORKDIR}"/${PN}-v${PV}
 
 src_configure() {
 	local emesonargs=(

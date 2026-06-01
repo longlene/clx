@@ -10,10 +10,8 @@ SRC_URI="https://github.com/mtcp-stack/mtcp/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	net-libs/dpdk
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

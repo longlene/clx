@@ -13,7 +13,6 @@ KEYWORDS="~amd64"
 
 DEPEND="dev-libs/libstrophe"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	dobin xmppipe

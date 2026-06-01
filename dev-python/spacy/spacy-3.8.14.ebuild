@@ -16,8 +16,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 BDEPEND="
 	>=dev-python/cymem-2.0.2[${PYTHON_USEDEP}]
 	>=dev-python/preshed-3.0.2[${PYTHON_USEDEP}]

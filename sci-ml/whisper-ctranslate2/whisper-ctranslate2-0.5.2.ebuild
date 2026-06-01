@@ -5,10 +5,10 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 inherit distutils-r1
 
-DESCRIPTION="Whisper command line client compatible with original OpenAI client based on CTranslate2"
+DESCRIPTION="Whisper command line client compatible with original OpenAI client based on"
 HOMEPAGE="
 	https://github.com/Softcatala/whisper-ctranslate2
 "

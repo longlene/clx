@@ -19,6 +19,7 @@ SRC_URI="https://github.com/zulip/python-zulip-api/archive/refs/tags/${PV}.tar.g
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${MY_PN}-${PV}/zulip_bots
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -36,5 +37,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_PN}-${PV}/zulip_bots

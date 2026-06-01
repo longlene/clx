@@ -18,9 +18,9 @@ SRC_URI="https://github.com/NVIDIA/NeMo-Agent-Toolkit/archive/refs/tags/v${PV}.t
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/NeMo-Agent-Toolkit-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=sci-ml/datasets-4.4[${PYTHON_SINGLE_USEDEP}]
 	>=dev-python/ragas-0.2.14[${PYTHON_SINGLE_USEDEP}]
@@ -32,7 +32,7 @@ RDEPEND="${DEPEND}
 		>=dev-python/expandvars-1.0[${PYTHON_USEDEP}]
 		>=dev-python/fastapi-0.119.0[${PYTHON_USEDEP}]
 		>=dev-python/httpx-0.27[${PYTHON_USEDEP}]
-		>=dev-python/jinja2-3.1[${PYTHON_USEDEP}]
+		>=dev-python/jinja22-3.1[${PYTHON_USEDEP}]
 		>=dev-python/jsonpath-ng-1.7[${PYTHON_USEDEP}]
 		>=dev-python/nest-asyncio2-1.7.1[${PYTHON_USEDEP}]
 		>=dev-python/networkx-3.4[${PYTHON_USEDEP}]
@@ -64,7 +64,5 @@ RDEPEND="${DEPEND}
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/NeMo-Agent-Toolkit-${PV}
 
 export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_NVIDIA_NAT="${PV}"

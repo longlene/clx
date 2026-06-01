@@ -6,14 +6,12 @@ EAPI=8
 inherit common-lisp-3
 
 DESCRIPTION="A set of UI widgets for Reblocks web framework"
-HOMEPAGE=""
 SRC_URI="https://github.com/40ants/reblocks-ui/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/reblocks-parenscript
 	dev-lisp/40ants-doc
@@ -22,7 +20,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/log4cl
 	dev-lisp/quri
 "
-BDEPEND=""
 
 src_prepare() {
 	default

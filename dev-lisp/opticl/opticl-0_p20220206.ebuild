@@ -14,16 +14,13 @@ else
 	SRC_URI="https://github.com/slyrus/opticl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 fi
 
-
 DESCRIPTION="An image processing library for Common Lisp"
 HOMEPAGE="https://github.com/slyrus/opticl"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/retrospectiff

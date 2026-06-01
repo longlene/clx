@@ -17,4 +17,3 @@ DEPEND="
 	dev-erlang/uef
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

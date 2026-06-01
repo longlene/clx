@@ -10,8 +10,7 @@ SRC_URI="http://www.xmailserver.org/coronet-${PV}.tar.gz"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 DEPEND="dev-libs/pcl"
 RDEPEND="${DEPEND}"

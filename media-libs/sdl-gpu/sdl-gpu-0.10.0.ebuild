@@ -11,8 +11,7 @@ SRC_URI="https://github.com/grimfang4/sdl-gpu/archive/v${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
 #TODO add use flags
 

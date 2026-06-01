@@ -14,9 +14,10 @@ SRC_URI="https://github.com/xh4/web-toolkit/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/group-by
@@ -43,7 +44,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-base64
 	test? ( dev-lisp/fiveam )
 "
-BDEPEND=""
 
 src_prepare() {
 	default
@@ -55,4 +55,3 @@ src_prepare() {
 		rm -r test wt.test.asd
 	fi
 }
-

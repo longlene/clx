@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Code from PCL, 
-		http://gigamonkeys.com/book/practical-parsing-binary-files.html
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Code from PCL, 
+    http://gigamonkeys.com/book/practical-parsing-binary-files.html
+  </longdescription>
+  <upstream>
+    <remote-id type="github">gigamonkey/monkeylib-binary-data</remote-id>
+  </upstream>
 </pkgmetadata>

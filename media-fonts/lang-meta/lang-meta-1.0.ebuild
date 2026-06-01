@@ -4,14 +4,11 @@
 
 DESCRIPTION="Meta ebuild to pull in fonts for many languages"
 HOMEPAGE="http://www.gentoo.org"
-SRC_URI=""
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="
 	media-fonts/dejavu
 

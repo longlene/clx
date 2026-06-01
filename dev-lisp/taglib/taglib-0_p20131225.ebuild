@@ -7,16 +7,16 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="7ba5488cf391c6208309277e421a212436593242"
 
-DESCRIPTION=""
 HOMEPAGE="https://github.com/mv2devnul/taglib/"
 SRC_URI="https://github.com/mv2devnul/taglib/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/optima
 	dev-lisp/flexi-streams

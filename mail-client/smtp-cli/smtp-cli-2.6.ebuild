@@ -17,13 +17,13 @@ KEYWORDS="~x86"
 
 IUSE="ipv6"
 
-RDEPEND=">=dev-lang/perl-5.8.8-r6 >=virtual/perl-IO-1.23.01 
-ipv6? ( >=dev-perl/IO-Socket-INET6-2.51 ) 
->=dev-perl/MIME-Lite-3.01 
+RDEPEND=">=dev-lang/perl-5.8.8-r6 >=virtual/perl-IO-1.23.01
+ipv6? ( >=dev-perl/IO-Socket-INET6-2.51 )
+>=dev-perl/MIME-Lite-3.01
 >=dev-perl/File-Type-0.22"
 
 src_unpack() {
-    cp ${DISTDIR}/${P} ${WORKDIR}/${PN}
+	cp "${DISTDIR}"/${P} "${WORKDIR}"/${PN}
 }
 
 src_install() {

@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="General purpose 'deep agent' with sub-agent spawning, todo list capabilities, and mock file system"
+DESCRIPTION="General purpose 'deep agent' with sub-agent spawning, todo list"
 HOMEPAGE="
 	https://pypi.org/project/deepagents/
 	https://github.com/langchain-ai/deepagents
@@ -17,6 +17,7 @@ SRC_URI="https://github.com/langchain-ai/deepagents/archive/refs/tags/deepagents
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/deepagents-${P}/libs/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -34,5 +35,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/deepagents-${P}/libs/${PN}

@@ -12,8 +12,5 @@ SRC_URI="http://beta.quicklisp.org/archive/parse-declarations/2010-10-06/parse-d
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""

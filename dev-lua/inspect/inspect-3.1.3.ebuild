@@ -13,13 +13,10 @@ SRC_URI="https://github.com/kikito/inspect.lua/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}.lua-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}.lua-${PV}
 
 src_compile() {
 	:

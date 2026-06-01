@@ -15,7 +15,6 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi
@@ -26,7 +25,6 @@ RDEPEND="${DEPEND}
 	media-libs/sdl2-ttf
 	media-libs/sdl2-image
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

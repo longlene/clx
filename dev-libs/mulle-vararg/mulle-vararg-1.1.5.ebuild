@@ -12,10 +12,8 @@ SRC_URI="https://github.com/mulle-c/mulle-vararg/archive/${PV}.tar.gz -> ${P}.ta
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/mulle-c11
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

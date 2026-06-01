@@ -6,4 +6,3 @@ DEPEND="dev-plan9/libmemlayer dev-plan9/libmux x11-base/xorg-x11"
 inherit plan9-cmds
 
 KEYWORDS="~x86"
-

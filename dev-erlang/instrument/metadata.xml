@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A fast metrics library for Erlang providing counters, gauges, histograms,
+    and distributed tracing via native C NIFs, with built-in Prometheus and
+    OpenTelemetry (OTLP) exporters.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">benoitc/instrument</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -14,10 +14,8 @@ SRC_URI="https://github.com/private-octopus/picoquic/archive/${EGIT_COMMIT}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/picotls
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

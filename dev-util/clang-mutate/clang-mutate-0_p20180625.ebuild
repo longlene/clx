@@ -14,10 +14,9 @@ SRC_URI="https://github.com/GrammaTech/clang-mutate/archive/${EGIT_COMMIT}.tar.g
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
-	sys-devel/llvm
+	llvm-core/llvm
 	sys-libs/ncurses[tinfo]
 	sys-libs/zlib
 "

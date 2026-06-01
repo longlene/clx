@@ -11,6 +11,7 @@ SRC_URI="https://github.com/rheit/zdoom/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD BUILD DOOM"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64 ~x86"
 # FIXME fmod does not work
 IUSE="asm gtk openal"
@@ -28,8 +29,6 @@ RDEPEND="app-arch/bzip2
 DEPEND="${RDEPEND}
 	asm? ( || ( dev-lang/nasm dev-lang/yasm ) )
 	$(unpacker_src_uri_depends)"
-
-S="${WORKDIR}"
 
 DOCS=( "docs/commands.txt" )
 HTML_DOCS=( "docs/console.{css,html}" )

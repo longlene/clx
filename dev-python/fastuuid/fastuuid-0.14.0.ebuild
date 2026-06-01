@@ -67,7 +67,7 @@ HOMEPAGE="
 	https://github.com/fastuuid/fastuuid
 "
 SRC_URI="
-	https://github.com/fastuuid/fastuuid/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/fastuuid/fastuuid/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz
 	${CARGO_CRATE_URIS}
 "
 
@@ -75,8 +75,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

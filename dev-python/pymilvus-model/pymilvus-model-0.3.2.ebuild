@@ -17,6 +17,7 @@ SRC_URI="https://github.com/milvus-io/milvus-model/archive/refs/tags/v${PV}.tar.
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/milvus-model-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -35,8 +36,6 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/milvus-model-${PV}
 
 PATCHES=(
 	"${FILESDIR}"/build-fix.patch

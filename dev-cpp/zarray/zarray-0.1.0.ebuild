@@ -20,7 +20,6 @@ DEPEND="
 	simd? ( dev-cpp/xsimd )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

@@ -6,5 +6,4 @@ EAPI=8
 PHEADERS="u libc lib9 fcall 9p utf"
 inherit plan9-libs
 
-KEYWORDS="~x86 ~amd64"
-
+KEYWORDS="~amd64 ~x86"

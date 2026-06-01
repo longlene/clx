@@ -15,7 +15,6 @@ LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/trivia
 	dev-lisp/alexandria
@@ -25,7 +24,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/common-html
 	dev-lisp/cl-who
 "
-BDEPEND=""
 
 src_prepare() {
 	default

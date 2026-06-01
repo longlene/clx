@@ -15,13 +15,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/babel
 	dev-lisp/cffi
 	dev-libs/tree-sitter
 "
-BDEPEND=""
 
 src_compile() {
 	emake

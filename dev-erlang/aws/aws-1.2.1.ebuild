@@ -14,6 +14,7 @@ SRC_URI="https://github.com/aws-beam/aws-erlang/archive/refs/tags/${PV}.tar.gz -
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}
 KEYWORDS="~amd64"
 
 DEPEND="
@@ -23,6 +24,3 @@ RDEPEND="${DEPEND}
 	>=dev-erlang/jsx-3.0.0
 	>=dev-erlang/aws_beam_core-1.0.1
 "
-BDEPEND=""
-
-S="${WORKDIR}"/${MY_P}

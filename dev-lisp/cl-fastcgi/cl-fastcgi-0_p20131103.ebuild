@@ -14,9 +14,7 @@ SRC_URI="https://github.com/KDr2/cl-fastcgi/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/usocket
 	dev-lisp/cffi

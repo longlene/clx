@@ -3,11 +3,11 @@
 
 EAPI=8
 
-DESCRIPTION="9vx is a port of the plan 9 operating system to freebsd, linux, and os x, using the vx32 sandboxing library to run user programs. "
+DESCRIPTION="9vx is a port of the plan 9 operating system to freebsd, linux, and os x,"
 HOMEPAGE="http://swtch.com/9vx/"
 LICENSE="Lucent"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 SRC_URI="http://pdos.csail.mit.edu/~rsc/${P}.tar.bz2"
 
 src_install() {

@@ -13,7 +13,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/cffi
@@ -24,4 +23,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/parse-number
 	dev-lisp/split-sequence
 "
-BDEPEND=""

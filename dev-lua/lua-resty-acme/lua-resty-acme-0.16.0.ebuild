@@ -15,13 +15,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lua/lua-resty-http[${LUA_USEDEP}]
 	dev-lua/lua-resty-lrucache[${LUA_USEDEP}]
 	dev-lua/lua-resty-openssl[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 lua_src_install() {
 	insinto $(lua_get_lmod_dir)

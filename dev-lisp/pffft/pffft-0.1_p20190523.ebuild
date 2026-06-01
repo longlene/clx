@@ -14,15 +14,15 @@ SRC_URI="https://github.com/lispnik/pffft/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-garbage
 	test? ( dev-lisp/rt )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

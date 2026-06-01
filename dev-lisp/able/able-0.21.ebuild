@@ -10,12 +10,9 @@ SRC_URI="http://common-lisp.net/project/able/files/able-${PV}.zip"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/ltk
 dev-lisp/trivial-gray-stream
 dev-lisp/cl-fad"
-

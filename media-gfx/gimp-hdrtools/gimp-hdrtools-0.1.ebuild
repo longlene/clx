@@ -2,7 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 EAPI=8
 
-
 DESCRIPTION="Radiance HDR save/load plugin for Gimp 2"
 HOMEPAGE="http://nifelheim.dyndns.org/~cocidius/hdrtools/"
 SRC_URI="http://nifelheim.dyndns.org/~cocidius/files/${P}.tar.bz2"
@@ -10,7 +9,6 @@ SRC_URI="http://nifelheim.dyndns.org/~cocidius/files/${P}.tar.bz2"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="media-gfx/gimp:2"
 DEPEND="${RDEPEND}

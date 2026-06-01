@@ -17,7 +17,6 @@ DEPEND="
 	dev-libs/rapidjson
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(

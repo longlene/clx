@@ -17,6 +17,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 DEPEND="
@@ -26,9 +27,6 @@ DEPEND="
 	net-misc/curl
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 PATCHES=(
 	"${FILESDIR}"/system-deps.patch
@@ -47,6 +45,6 @@ src_configure() {
 
 src_install() {
 	doheader -r include/fastmcpp
-	dolib.a ${BUILD_DIR}/libfastmcpp_core.a
+	dolib.a "${BUILD_DIR}"/libfastmcpp_core.a
 	einstalldocs
 }

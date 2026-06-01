@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/esrap
 	dev-lisp/alexandria
@@ -25,7 +24,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/fare-quasiquote
 	dev-lisp/babel
 "
-BDEPEND=""
 
 src_prepare() {
 	default

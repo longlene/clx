@@ -34,7 +34,6 @@ DEPEND="
 	x11-libs/pixman
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

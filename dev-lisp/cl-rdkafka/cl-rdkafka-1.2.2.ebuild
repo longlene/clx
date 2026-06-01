@@ -12,9 +12,10 @@ SRC_URI="https://github.com/SahilKang/cl-rdkafka/archive/v${PV}.tar.gz -> ${P}.t
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-libs/librdkafka
 	dev-lisp/cffi
@@ -23,7 +24,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/lparallel
 	test? ( dev-lisp/fiveam dev-lisp/babel )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

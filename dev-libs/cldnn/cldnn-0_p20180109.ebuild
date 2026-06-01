@@ -14,9 +14,7 @@ SRC_URI="https://github.com/intel/clDNN/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

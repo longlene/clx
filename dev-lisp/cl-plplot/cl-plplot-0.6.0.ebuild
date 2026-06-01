@@ -8,12 +8,9 @@ SRC_URI="http://common-lisp.net/project/cl-plplot/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/asdf
 dev-lisp/cffi
 sci-libs/plplot"
-

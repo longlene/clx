@@ -15,9 +15,7 @@ SRC_URI="https://github.com/yhirose/cpp-sqlitelib/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-db/sqlite:3
 "

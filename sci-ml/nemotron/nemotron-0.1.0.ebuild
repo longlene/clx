@@ -18,6 +18,7 @@ SRC_URI="https://github.com/NVIDIA-NeMo/Nemotron/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/Nemotron-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -26,9 +27,9 @@ RDEPEND="
 	>=sci-ml/datasets-2.14.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.36.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-    	>=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
-    	>=dev-python/typer-0.12.0[${PYTHON_USEDEP}]
-    	>=dev-python/omegaconf-2.3.0[${PYTHON_USEDEP}]
+		>=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/typer-0.12.0[${PYTHON_USEDEP}]
+		>=dev-python/omegaconf-2.3.0[${PYTHON_USEDEP}]
 		>=dev-python/rich-13.0.0[${PYTHON_USEDEP}]
 		>=dev-python/textual-0.70.0[${PYTHON_USEDEP}]
 		>=dev-python/ray-2.49.2[${PYTHON_USEDEP}]
@@ -40,7 +41,7 @@ RDEPEND="
 		>=dev-python/tomlkit-0.12.0[${PYTHON_USEDEP}]
 		>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
 		>=dev-python/wandb-0.23.1[${PYTHON_USEDEP}]
-		>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/jinja22-3.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pydantic-settings-2.12.0[${PYTHON_USEDEP}]
 	')
 "
@@ -50,5 +51,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/Nemotron-${PV}

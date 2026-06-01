@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="A PyTorch-native inference engine with cache, parallelism, quantization for Diffusion Transformers"
+DESCRIPTION="A PyTorch-native inference engine with cache, parallelism, quantization for"
 HOMEPAGE="
 	https://pypi.org/project/cache-dit/
 	https://github.com/vipshop/cache-dit

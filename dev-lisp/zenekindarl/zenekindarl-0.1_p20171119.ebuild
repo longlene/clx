@@ -14,9 +14,10 @@ SRC_URI="https://github.com/KeenS/zenekindarl/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/anaphora
@@ -29,7 +30,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-annot
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

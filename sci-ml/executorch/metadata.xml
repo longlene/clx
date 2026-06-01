@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="cuda">Enable CUDA acceleration backend via AOTI (AOT Inductor)</flag>
+    <flag name="openvino">Enable OpenVINO inference backend</flag>
+    <flag name="vulkan">Enable Vulkan GPU backend</flag>
+    <flag name="mlx">Enable MLX acceleration backend (requires sci-ml/mlx with CUDA support)</flag>
+    <flag name="xnnpack">Enable XNNPACK neural network acceleration backend</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">pytorch/executorch</remote-id>
+  </upstream>
+</pkgmetadata>

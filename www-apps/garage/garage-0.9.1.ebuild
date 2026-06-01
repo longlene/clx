@@ -419,13 +419,10 @@ SRC_URI="
 
 LICENSE="AGPL-3"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}
 
 src_install() {
 	cargo_src_install --path ./src/garage

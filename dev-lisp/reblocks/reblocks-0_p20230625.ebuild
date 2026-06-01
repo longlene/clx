@@ -15,7 +15,6 @@ LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/clack
 	dev-lisp/cl-strings
@@ -25,7 +24,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/log4cl
 	dev-lisp/ironclad
 "
-BDEPEND=""
 
 src_prepare() {
 	default

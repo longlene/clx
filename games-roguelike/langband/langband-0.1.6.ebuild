@@ -13,9 +13,7 @@ SRC_URI="http://prdownloads.sourceforge.net/langband/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	media-libs/libsdl
 	media-libs/sdl-image

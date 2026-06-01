@@ -19,4 +19,3 @@ DEPEND="
 	x11-libs/gtk+:3
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

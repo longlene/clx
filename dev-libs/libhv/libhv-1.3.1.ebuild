@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-DESCRIPTION="A c/c++ network library for developing TCP/UDP/SSL/HTTP/WebSocket/MQTT client/server"
+DESCRIPTION="A c/c++ network library for developing TCP/UDP/SSL/HTTP/WebSocket/MQTT"
 HOMEPAGE="https://github.com/ithewei/libhv"
 SRC_URI="https://github.com/ithewei/libhv/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -13,9 +13,7 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

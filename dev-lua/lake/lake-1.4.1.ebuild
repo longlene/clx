@@ -10,15 +10,12 @@ SRC_URI="https://github.com/stevedonovan/Lake/archive/${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+S="${WORKDIR}"/Lake-${PV}
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lua/luafilesystem
 "
-
-S="${WORKDIR}"/Lake-${PV}
 
 src_install() {
 	dobin lake

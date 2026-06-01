@@ -13,9 +13,7 @@ SRC_URI="https://github.com/dballard/cl-pack/archive/v${PV}.tar.gz -> ${P}.tar.g
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/ieee-floats
 "

@@ -15,11 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	app-shells/zsh
 "
-BDEPEND=""
 
 src_install() {
 	insinto /usr/share/zsh/site-functions

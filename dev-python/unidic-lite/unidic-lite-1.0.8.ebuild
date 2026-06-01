@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 PYPI_PN=${PN}
 
@@ -19,10 +19,9 @@ SRC_URI="$(pypi_sdist_url --no-normalize "${PN}" "${PV}")"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${P}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -30,5 +29,3 @@ RDEPEND="
 
 #distutils_enable_tests pytest
 RESTRICT="test"
-
-S="${WORKDIR}"/${P}

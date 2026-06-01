@@ -6,18 +6,15 @@ EAPI=8
 
 inherit common-lisp-3 git-r3
 
-DESCRIPTION="An implementation of the syslog protocol that pretty prints the logs received and saves them in an sqlite db"
+DESCRIPTION="An implementation of the syslog protocol that pretty prints the logs"
 HOMEPAGE="https://github.com/fiddlerwoaroof/syslog-server"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/fiddlerwoaroof/syslog-server.git"
 
 LICENSE="MPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cffi

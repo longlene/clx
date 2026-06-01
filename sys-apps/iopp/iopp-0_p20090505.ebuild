@@ -14,13 +14,11 @@ SRC_URI="https://github.com/markwkm/iopp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
-	dobin ${BUILD_DIR}/iopp
+	dobin "${BUILD_DIR}"/iopp
 	doman iopp.8
 	dodoc README
 }

@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="ome utility functions to help myself (and perhaps others) go faster with ML/AI work"
+DESCRIPTION="ome utility functions to help myself (and perhaps others) go faster with"
 HOMEPAGE="
 	https://pypi.org/project/torch-einops-utils/
 	https://github.com/lucidrains/torch-einops-utils

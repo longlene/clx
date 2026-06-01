@@ -6,16 +6,13 @@ inherit git-r3
 
 DESCRIPTION="A tiny HTTP server for static sites"
 HOMEPAGE="https://github.com/dimkr/shus"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/dimkr/shus.git"
 
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

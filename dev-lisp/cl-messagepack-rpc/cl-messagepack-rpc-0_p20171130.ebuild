@@ -14,9 +14,10 @@ SRC_URI="https://github.com/adolenc/cl-messagepack-rpc/archive/${EGIT_COMMIT}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-messagepack
 	dev-lisp/cl-async

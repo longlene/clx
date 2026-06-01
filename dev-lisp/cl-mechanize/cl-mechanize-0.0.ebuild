@@ -9,14 +9,11 @@ SRC_URI="https://github.com/joachifm/cl-mechanize/tarball/0.0 -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/puri
 dev-lisp/drakma
 dev-lisp/closure-html
 dev-lisp/cxml-stp
 dev-lisp/cl-ppcre"
-

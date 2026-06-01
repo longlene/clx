@@ -5,14 +5,13 @@
 EAPI=8
 inherit base git-r3 autotools
 
-DESCRIPTION=""
 HOMEPAGE="http://www.freesmartphone.org"
 EGIT_REPO_URI="git://git.freesmartphone.org/aurora.git"
 EGIT_PROJECT="aurora"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~arm ~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="debug"
 
 RDEPEND=">=dev-libs/glib-2.18.0
@@ -33,7 +32,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	S="${WORKDIR}/${P}/${PN}"
-	cd ${S}
+	cd "${S}"
 	eautoreconf
 }
 

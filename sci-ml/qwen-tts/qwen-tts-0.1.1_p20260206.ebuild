@@ -21,6 +21,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/Qwen3-TTS-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -32,7 +33,7 @@ RDEPEND="
 		dev-python/librosa[${PYTHON_USEDEP}]
 		dev-python/soundfile[${PYTHON_USEDEP}]
 		dev-python/sox[${PYTHON_USEDEP}]
-		sci-libs/onnxruntime[${PYTHON_USEDEP}]
+		sci-ml/onnxruntime[${PYTHON_USEDEP}]
 		dev-python/einops[${PYTHON_USEDEP}]
 	')
 "
@@ -43,5 +44,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/Qwen3-TTS-${EGIT_COMMIT}

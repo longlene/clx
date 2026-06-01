@@ -14,13 +14,13 @@ SRC_URI="https://github.com/ddmcdonald/sparser/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cl-dot
 "
-BDEPEND=""
 
 src_prepare() {
 	default
@@ -29,4 +29,3 @@ src_prepare() {
 		rm -r test
 	fi
 }
-

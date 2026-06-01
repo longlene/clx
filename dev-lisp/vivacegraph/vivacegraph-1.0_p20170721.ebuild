@@ -14,9 +14,7 @@ SRC_URI="https://github.com/kraison/vivace-graph-v3/archive/${EGIT_COMMIT}.tar.g
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/alexandria

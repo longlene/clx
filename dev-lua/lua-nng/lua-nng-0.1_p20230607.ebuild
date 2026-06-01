@@ -15,16 +15,13 @@ SRC_URI="https://cogarr.net/source/cgit.cgi/lua-nng/snapshot/lua-nng-${EGIT_COMM
 
 LICENSE="BSD-2"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 DEPEND="
 	dev-libs/nng
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-
 
 lua_src_compile() {
 	emake \

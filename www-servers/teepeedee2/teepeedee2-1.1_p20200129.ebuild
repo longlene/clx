@@ -14,7 +14,9 @@ SRC_URI="https://github.com/vii/teepeedee2/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	dev-lisp/trivial-garbage
@@ -32,4 +34,3 @@ src_prepare() {
 	default
 	use test || rm -rf ${PN}-test.asd t
 }
-

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/larroy/uvpp/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-libs/libuv
 "

@@ -6,16 +6,14 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="Write your Selenium functional test cases or script your web browser in Common Lisp"
+DESCRIPTION="Write your Selenium functional test cases or script your web browser in"
 HOMEPAGE="https://common-lisp.net/project/cl-selenium/"
 SRC_URI="http://common-lisp.net/project/cl-selenium/releases/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/drakma
 	dev-lisp/split-sequence

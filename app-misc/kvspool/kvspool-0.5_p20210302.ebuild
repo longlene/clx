@@ -19,7 +19,6 @@ DEPEND="
 	dev-libs/shr
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

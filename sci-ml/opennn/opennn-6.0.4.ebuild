@@ -14,7 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="mpi"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_configure() {
@@ -28,6 +27,6 @@ src_configure() {
 src_install() {
 	insinto /usr/include/opennn
 	doins opennn/*.h
-	dolib.so ${BUILD_DIR}/opennn/libopennn.so
+	dolib.so "${BUILD_DIR}"/opennn/libopennn.so
 	einstalldocs
 }

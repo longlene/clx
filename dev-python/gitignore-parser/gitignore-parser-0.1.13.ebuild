@@ -14,14 +14,12 @@ SRC_URI="https://github.com/mherrmann/gitignore_parser/archive/refs/tags/v${PV}.
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/gitignore_parser-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND=""
 #BDEPEND="
 #	test? (
 #	)
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/gitignore_parser-${PV}

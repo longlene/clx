@@ -22,12 +22,12 @@ DEPEND=$RDEPEND
 
 src_install()
 {
-	mkdir -p $D/opt/mBox
-	mkdir -p $D/opt/bin
+	mkdir -p "${D}"/opt/mBox
+	mkdir -p "${D}"/opt/bin
 	mkdir -p ${PORTAGE_BUILDDIR}/image/usr/share/applications/
-	cp -R $WORKDIR/mBox-0.7.2/* $D/opt/mBox
-	ln -s $D/opt/mBox/mbox $D/opt/bin
-	chmod o+x $D/opt/bin/mbox
+	cp -R "${WORKDIR}"/mBox-0.7.2/* "${D}"/opt/mBox
+	ln -s "${D}"/opt/mBox/mbox "${D}"/opt/bin
+	chmod o+x "${D}"/opt/bin/mbox
 	echo '[Desktop Entry]
 Name=mBox
 GenericName=Music oriented file manager

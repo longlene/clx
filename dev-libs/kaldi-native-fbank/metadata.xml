@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">csukuangfj/kaldi-native-fbank</remote-id>
+  </upstream>
+  <longdescription>
+    Kaldi-compatible online feature extraction library providing filterbank
+    (fbank) and MFCC computation using kissfft for FFT. Used as a dependency
+    by speech recognition and TTS systems.
+  </longdescription>
+</pkgmetadata>

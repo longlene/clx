@@ -4,7 +4,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -14,13 +14,12 @@ HOMEPAGE="http://www.funtoo.org/Package:Ego"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="*"
+SRC_URI="https://www.github.com/${GITHUB_USER}/${GITHUB_REPO}/tarball/${GITHUB_TAG} -> ${PN}-${GITHUB_TAG}.tar.gz"
 IUSE="zsh-completion"
 GITHUB_REPO="$PN"
 GITHUB_USER="funtoo"
 GITHUB_TAG="${PVR}"
-SRC_URI="https://www.github.com/${GITHUB_USER}/${GITHUB_REPO}/tarball/${GITHUB_TAG} -> ${PN}-${GITHUB_TAG}.tar.gz"
 
-DEPEND=""
 RDEPEND="$PYTHON_DEPS
 !sys-boot/boot-update"
 PDEPEND="
@@ -38,22 +37,22 @@ src_unpack() {
 
 src_install() {
 	exeinto /usr/share/ego/modules
-	doexe $S/modules/*.ego
-	rm $D/usr/share/ego/modules/upgrade*
+	doexe "${S}"/modules/*.ego
+	rm "${D}"/usr/share/ego/modules/upgrade*
 	insinto /usr/share/ego/modules-info
-	doins $S/modules-info/*
-	rm $D/usr/share/ego/modules-info/upgrade*
+	doins "${S}"/modules-info/*
+	rm "${D}"/usr/share/ego/modules-info/upgrade*
 	insinto /usr/share/ego/python
-	doins -r $S/python/*
-	rm -rf $D/usr/share/ego/python/test
-	dobin $S/ego
+	doins -r "${S}"/python/*
+	rm -rf "${D}"/usr/share/ego/python/test
+	dobin "${S}"/ego
 	dosym ego /usr/bin/epro
 	dosym ego /usr/bin/edoc
 	dosym /usr/bin/ego /sbin/boot-update
 	doman doc/*.[1-8]
 	dodoc doc/*.rst
 	insinto /etc
-	doins $S/etc/*.conf*
+	doins "${S}"/etc/*.conf*
 	if use zsh-completion; then
 		insinto /usr/share/zsh/site-functions
 		doins contrib/completion/zsh/_ego
@@ -61,14 +60,14 @@ src_install() {
 }
 
 pkg_postinst() {
-	if [ ! -e $ROOT/etc/boot.conf ]; then
+	if [ ! -e "${ROOT}"/etc/boot.conf ]; then
 		einfo "Installing default /etc/boot.conf file..."
-		cp -f $ROOT/etc/boot.conf.dist $ROOT/etc/boot.conf
+		cp -f "${ROOT}"/etc/boot.conf.dist "${ROOT}"/etc/boot.conf
 	fi
-	if [ -e $ROOT/usr/share/portage/config/repos.conf ]; then
-		rm -f $ROOT/usr/share/portage/config/repos.conf
+	if [ -e "${ROOT}"/usr/share/portage/config/repos.conf ]; then
+		rm -f "${ROOT}"/usr/share/portage/config/repos.conf
 	fi
-	[ -h $ROOT/usr/sbin/epro ] && rm $ROOT/usr/sbin/epro
+	[ -h "${ROOT}"/usr/sbin/epro ] && rm "${ROOT}"/usr/sbin/epro
 	if [ "$ROOT" = "/" ]; then
 		/usr/bin/ego sync --config-only
 	fi

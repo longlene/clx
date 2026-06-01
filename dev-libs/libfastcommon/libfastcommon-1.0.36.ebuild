@@ -10,9 +10,7 @@ SRC_URI="https://github.com/happyfish100/libfastcommon/archive/V${PV}.tar.gz -> 
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile() {

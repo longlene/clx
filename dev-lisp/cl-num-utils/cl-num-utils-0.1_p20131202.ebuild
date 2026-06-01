@@ -14,9 +14,10 @@ SRC_URI="https://github.com/tpapp/cl-num-utils/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/anaphora
 	dev-lisp/alexandria

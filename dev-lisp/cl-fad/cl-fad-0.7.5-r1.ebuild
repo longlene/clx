@@ -5,16 +5,17 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="CL-FAD is a thin portability layer atop the Common Lisp standard pathname functions."
+DESCRIPTION="CL-FAD is a thin portability layer atop the Common Lisp standard pathname"
 HOMEPAGE="http://weitz.de/cl-fad/"
 SRC_URI="https://github.com/edicl/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~arm"
-IUSE="test"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 
-DEPENDS=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPENDS="${DEPENDS}
 	dev-lisp/bordeaux-threads
 	dev-lisp/alexandria
@@ -27,4 +28,3 @@ src_prepare() {
 		rm -r *.test.lisp
 	fi
 }
-

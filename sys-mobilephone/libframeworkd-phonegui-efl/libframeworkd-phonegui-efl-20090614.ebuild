@@ -12,8 +12,7 @@ HOMEPAGE="http://trac.shr-project.org/trac"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 DOCS="README"
 
 RDEPEND="dev-libs/dbus-glib
@@ -31,7 +30,6 @@ src_unpack() {
 	sed -i -e "s|@E_LIBS@|@E_LIBS@ -lelementary -letk|" src/Makefile.in
 }
 
-
 src_compile() {
 	cd "${S}/${PROJECT_NAME}"
 	econf --with-edje-cc=/usr/bin/edje_cc || die "econf failed"
@@ -44,4 +42,3 @@ src_install() {
         emake DESTDIR="${D}" SUBDIRS="src data" install || die "emake install failed"
         dodoc AUTHORS NEWS README
 }
-

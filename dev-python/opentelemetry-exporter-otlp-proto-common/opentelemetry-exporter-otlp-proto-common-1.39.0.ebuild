@@ -18,6 +18,7 @@ SRC_URI="https://github.com/open-telemetry/opentelemetry-python/archive/refs/tag
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}/exporter/${PN}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,5 +31,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}/exporter/${PN}

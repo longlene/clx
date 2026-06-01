@@ -12,7 +12,6 @@ SRC_URI="https://github.com/gosu/gosu/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	media-libs/openal

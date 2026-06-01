@@ -17,10 +17,9 @@ SRC_URI="https://github.com/mangiucugna/json_repair/archive/refs/tags/v${PV}.tar
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/json_repair-${PV}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -28,5 +27,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/json_repair-${PV}

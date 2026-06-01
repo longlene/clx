@@ -8,13 +8,9 @@ DESCRIPTION="Optimized Pattern Matching Library for Common Lisp"
 HOMEPAGE="https://github.com/m2ym/optima"
 SRC_URI="https://github.com/m2ym/optima/archive/v0.1.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 x86 ~arm"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/alexandria
 dev-lisp/closer-mop"
-

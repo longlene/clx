@@ -12,9 +12,7 @@ SRC_URI="https://github.com/mfiano/gamebox-frame-manager/archive/v${PV}.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/simple-logger

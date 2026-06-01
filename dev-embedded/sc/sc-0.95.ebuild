@@ -4,16 +4,14 @@
 
 EAPI=8
 
-DESCRIPTION="serialconsole (sc) is a minimal terminal program allowing to use one machine to access the serial console of another machine"
+DESCRIPTION="serialconsole (sc) is a minimal terminal program allowing to use one machine"
 HOMEPAGE="http://sourceforge.net/projects/serialconsole/"
 SRC_URI="mirror://sourceforge/serialconsole/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {

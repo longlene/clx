@@ -12,7 +12,6 @@ SRC_URI="https://github.com/jupyter-xeus/xleaflet/archive/${PV}.tar.gz -> ${P}.t
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-cpp/xeus-1.0.0

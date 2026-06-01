@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1
 
-DESCRIPTION="Type annotations and runtime checking for shape and dtype of JAX/NumPy/PyTorch/etc"
+DESCRIPTION="Type annotations and runtime checking for shape and dtype of JAX/NumPy/PyTorc"
 HOMEPAGE="
 	https://pypi.org/project/jaxtyping/
 	https://github.com/patrick-kidger/jaxtyping

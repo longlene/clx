@@ -14,13 +14,13 @@ SRC_URI="https://github.com/mateuszb/reactor/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 "
-BDEPEND=""
 
 src_prepare() {
 	default

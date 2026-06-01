@@ -15,12 +15,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="
 	${DEPEND}
 	${LUA_DEPS}
 "
-BDEPEND=""
 
 lua_src_compile() {
 	$(tc-getCC) $(lua_get_CFLAGS) -fPIC -shared -o pb.so pb.c

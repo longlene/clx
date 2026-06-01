@@ -13,9 +13,10 @@ SRC_URI="https://github.com/gwkkwg/metabang-bind/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	test? ( dev-lisp/lift )
 "
@@ -24,4 +25,3 @@ src_prepare() {
 	default
 	use test || rm -rf ${PN}-test.asd unit-tests
 }
-

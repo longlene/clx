@@ -12,11 +12,9 @@ SRC_URI="https://github.com/travelping/eradius/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	>=dev-erlang/lager-3.5.1
 	>=dev-erlang/exometer_core-1.5.2
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -7,9 +7,9 @@ HOMEPAGE="http://bmeps.sourceforge.net/"
 SRC_URI="mirror://sourceforge/bmeps/${P}.tar.gz"
 LICENSE="LGPL-2"
 
+S=${WORKDIR}/${PN}
 KEYWORDS="~x86"
 SLOT="0"
-S=${WORKDIR}/${PN}
 
 IUSE="jpeg"
 
@@ -19,7 +19,7 @@ DEPEND="sys-libs/zlib
 	media-libs/netpbm"
 
 src_compile() {
-	cd ${S}
+	cd "${S}"
 	econf || die "econf failed"
 	emake || die "Error compiling bmeps executable"
 
@@ -36,4 +36,3 @@ src_install () {
 	dodoc DOCU/bmeps.pdf README
 
 }
-

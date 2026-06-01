@@ -14,12 +14,9 @@ SRC_URI="https://github.com/enaeher/local-time-duration/archive/${EGIT_COMMIT}.t
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/local-time
 	dev-lisp/alexandria
 	dev-lisp/esrap
 "
-BDEPEND=""

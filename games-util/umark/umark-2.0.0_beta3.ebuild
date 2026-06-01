@@ -14,7 +14,6 @@ SRC_URI="mirror://sourceforge/ut2k3botbench/${MY_P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 
 DEPEND="=x11-libs/gtk+-2*"
 RDEPEND="${DEPEND}
@@ -22,7 +21,7 @@ RDEPEND="${DEPEND}
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
-	cp -R data ${D}/usr/share/${PN}
+	cp -R data "${D}"/usr/share/${PN}
 	sed -i "s:echo \"\":cd /usr/share/${PN}:" install_umark_data.sh
 	dobin install_umark_data.sh
 	exeinto /usr/share/${PN}

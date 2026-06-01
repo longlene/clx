@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -16,6 +16,7 @@ SRC_URI="https://github.com/unixtux/tglib/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 
 LICENSE="GPL-3"
 SLOT="0"
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -23,8 +24,5 @@ RDEPEND="
 	>=dev-python/certifi-2023.11.17[${PYTHON_USEDEP}]
 	>=dev-python/ujson-5.9.0[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"
-
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}

@@ -26,7 +26,6 @@ DEPEND="
 	webp? ( media-libs/libwebp )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local x

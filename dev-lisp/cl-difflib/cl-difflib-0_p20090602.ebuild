@@ -12,9 +12,6 @@ SRC_URI="https://github.com/wiseman/cl-difflib/archive/${EGIT_COMMIT}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-

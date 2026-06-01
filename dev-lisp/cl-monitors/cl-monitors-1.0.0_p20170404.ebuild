@@ -7,16 +7,14 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="bb691091cb111231085838b75536b580aca09cd0"
 
-DESCRIPTION="Bindings to libmonitors, allowing the handling of monitor querying and resolution changing"
+DESCRIPTION="Bindings to libmonitors, allowing the handling of monitor querying and"
 HOMEPAGE="https://github.com/Shirakumo/cl-monitors"
 SRC_URI="https://github.com/Shirakumo/cl-monitors/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-features

@@ -14,11 +14,8 @@ SRC_URI="https://github.com/Hexstream/trivial-jumptables/archive/${EGIT_COMMIT}.
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

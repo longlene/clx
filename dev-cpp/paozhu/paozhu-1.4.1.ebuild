@@ -17,4 +17,3 @@ DEPEND="
 	dev-db/mysql-connector-c
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

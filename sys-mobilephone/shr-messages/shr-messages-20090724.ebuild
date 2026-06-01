@@ -9,8 +9,7 @@ HOMEPAGE="http://trac.shr-project.org/trac"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 DOCS="README"
 
 PROJECT_NAME="${PN}"

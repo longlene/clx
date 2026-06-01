@@ -16,6 +16,7 @@ SRC_URI="$(pypi_wheel_url)"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -41,8 +42,6 @@ RDEPEND="
 #distutils_enable_tests pytest
 
 RESTRICT="test"
-
-S="${WORKDIR}"
 
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" \

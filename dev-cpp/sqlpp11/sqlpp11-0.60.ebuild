@@ -13,7 +13,9 @@ SRC_URI="https://github.com/rbock/sqlpp11/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
+
 IUSE="test"
+RESTRICT="!test? ( test )"
 
 DEPEND="dev-cpp/date"
 RDEPEND="${DEPEND}"

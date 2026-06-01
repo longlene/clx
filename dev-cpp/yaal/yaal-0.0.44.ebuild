@@ -18,7 +18,6 @@ DEPEND="
 
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 CMAKE_BUILD_TYPE=release
 
@@ -35,4 +34,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-

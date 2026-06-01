@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
@@ -16,6 +16,7 @@ SRC_URI="https://github.com/intel/neural-compressor/archive/refs/tags/v${PV}.tar
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/neural-compressor-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -40,5 +41,3 @@ RDEPEND="
 #
 #distutils_enable_tests pytest
 RESTRICT="test"
-
-S="${WORKDIR}"/neural-compressor-${PV}

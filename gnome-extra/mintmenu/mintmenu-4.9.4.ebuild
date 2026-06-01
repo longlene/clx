@@ -2,13 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="MintMenu supports filtering, favorites, easy-uninstallation, autosession, and many other features."
+DESCRIPTION="MintMenu supports filtering, favorites, easy-uninstallation, autosession,"
 SRC_URI="http://packages.linuxmint.com/pool/main/m/mintmenu/${PN}_${PV}.tar.gz"
 HOMEPAGE="https://www.linuxmint.com"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE=""
 
 RDEPEND=">=dev-lang/python-2.4.6
 	<dev-lang/python-3.1.1-r1
@@ -17,7 +16,6 @@ RDEPEND=">=dev-lang/python-2.4.6
 	dev-python/pyxdg
 	x11-misc/alacarte
 	"
-	
 
 DEPEND="${RDEPEND}
 	sys-apps/sed
@@ -30,7 +28,7 @@ src_install() {
 	cp "mintmenu/usr/bin/mintmenu" "${D}usr/bin/" || die "Bin failed"
 	mkdir -p ${D}usr/lib/bonobo/servers
 	cp "mintmenu/usr/lib/bonobo/servers/mintMenu.server" "${D}usr/lib/bonobo/servers/" || die "Bonobo failed"
-	
+
 	wget http://outload.net/img/gentoo.png || die "Download failed"
 	cp "gentoo.png" "${D}usr/lib/linuxmint/mintMenu/" || die "Branding failed"
 

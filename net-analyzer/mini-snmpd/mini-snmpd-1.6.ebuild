@@ -12,9 +12,7 @@ SRC_URI="https://github.com/troglobit/mini-snmpd/archive/v${PV}.tar.gz -> ${P}.t
 LICENSE="GPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {

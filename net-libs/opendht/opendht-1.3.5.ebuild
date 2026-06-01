@@ -18,4 +18,3 @@ DEPEND=">=dev-libs/msgpack-1.2
 	>=dev-libs/nettle-3
 	net-libs/gnutls"
 RDEPEND="${DEPEND}"
-

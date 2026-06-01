@@ -4,14 +4,13 @@
 
 inherit distutils
 
-DESCRIPTION="A python applets manager that can be used to create simple user interface for devices with small screen."
+DESCRIPTION="A python applets manager that can be used to create simple user interface"
 HOMEPAGE="http://code.google.com/p/tichy/"
 SRC_URI="http://tichy.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~arm"
-IUSE=""
 
 RDEPEND=">=dev-python/pygame-1.8.0
 	dev-python/python-xlib"

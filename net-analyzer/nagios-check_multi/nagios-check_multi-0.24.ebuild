@@ -9,6 +9,7 @@ SRC_URI="http://my-plugin.de/check_multi/check_multi-stable-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="nrpe"
+S="${WORKDIR}"/check_multi-${PV}
 KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=dev-lang/perl-5.12.2-r4"
@@ -16,14 +17,11 @@ RDEPEND="${DEPEND}
 		>=net-analyzer/nagios-plugins-1.4.14-r2
 		nrpe? ( >=net-analyzer/nagios-nrpe-2.12-r103 )"
 
-
-S="${WORKDIR}"/check_multi-${PV}
-
 src_compile() {
 	econf \
 		--libexecdir=/usr/$(get_libdir)/nagios/plugins \
 		--sysconfdir=/etc/nagios \
-		--with-nagios-group=nagios 
+		--with-nagios-group=nagios
 
 	emake all || die "emake failed"
 }

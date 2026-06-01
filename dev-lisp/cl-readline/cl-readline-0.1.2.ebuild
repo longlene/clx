@@ -11,10 +11,8 @@ SRC_URI="https://github.com/vindarel/cl-readline/archive/${PV}.tar.gz -> ${P}.ta
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 sys-libs/readline
 dev-lisp/alexandria

@@ -11,7 +11,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/polymorphic-functions
 	dev-lisp/alexandria
@@ -19,4 +18,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/introspect-environment
 	dev-lisp/trivial-types
 "
-BDEPEND=""

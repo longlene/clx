@@ -7,4 +7,3 @@ DEPEND="dev-plan9/libmemdraw"
 inherit plan9-libs
 
 KEYWORDS="~x86"
-

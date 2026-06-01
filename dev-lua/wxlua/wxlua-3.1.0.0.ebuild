@@ -19,4 +19,3 @@ DEPEND=">=dev-lang/lua-5.1
 RDEPEND="${DEPEND}"
 
 CMAKE_USE_DIR="${S}/wxLua"
-

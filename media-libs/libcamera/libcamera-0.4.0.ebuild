@@ -11,6 +11,7 @@ SRC_URI="https://gitlab.freedesktop.org/camera/libcamera/-/archive/v${PV}/libcam
 
 LICENSE="LGPL-2.1"
 SLOT="0"
+S="${WORKDIR}"/${PN}-v${PV}
 KEYWORDS="~amd64"
 IUSE="gstreamer python qt6 udev v4l2"
 
@@ -22,9 +23,6 @@ DEPEND="
 	qt6 ( dev-qt/qtbase:6 )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-v${PV}
 
 src_configure() {
 	local emesonargs=(

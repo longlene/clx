@@ -19,4 +19,3 @@ DEPEND="
 	dev-libs/libstrophe
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -26,7 +26,7 @@ RDEPEND="
 	>=dev-python/pillow-10.3.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.25[${PYTHON_USEDEP}]
-    >=dev-python/pydantic-extra-types-2.10.5[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-extra-types-2.10.5[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

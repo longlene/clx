@@ -13,10 +13,3 @@ HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=2332"
 SRC_URI="https://github.com/vimwiki/vimwiki/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
-
-VIM_PLUGIN_HELPFILES=""
-VIM_PLUGIN_HELPTEXT=""
-VIM_PLUGIN_HELPURI=""
-VIM_PLUGIN_MESSAGES=""
-

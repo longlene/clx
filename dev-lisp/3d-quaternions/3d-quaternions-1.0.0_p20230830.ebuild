@@ -15,13 +15,11 @@ LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils
 	dev-lisp/3d-vectors
 	dev-lisp/3d-matrices
 "
-BDEPEND=""
 
 src_prepare() {
 	default

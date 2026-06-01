@@ -21,4 +21,3 @@ DEPEND="
 	dev-cpp/argparse
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

@@ -8,7 +8,6 @@ SRC_URI="http://www.snort.org/users/roesch/code/${P}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="dev-libs/libdnet
 	net-libs/libpcap"

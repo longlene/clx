@@ -13,9 +13,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local emesonargs=(
@@ -28,6 +26,6 @@ src_configure() {
 src_install() {
 	insinto /usr/include
 	doins -r include/novaphysics
-	dolib.a ${BUILD_DIR}/libnova.a
+	dolib.a "${BUILD_DIR}"/libnova.a
 	einstalldocs
 }

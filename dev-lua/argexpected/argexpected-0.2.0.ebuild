@@ -13,15 +13,12 @@ SRC_URI="https://github.com/mah0x211/lua-argexpected/archive/refs/tags/v${PV}.ta
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/lua-${P}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lua/string-format[${LUA_USEDEP}]
 "
-BDEPEND=""
-
-S="${WORKDIR}"/lua-${P}
 
 lua_src_install() {
 	insinto $(lua_get_lmod_dir)

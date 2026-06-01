@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">lahfir/agent-desktop</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Native desktop automation CLI for AI agents. Controls any application
+    through OS accessibility trees with structured JSON output and
+    deterministic element references.
+  </longdescription>
+</pkgmetadata>

@@ -12,9 +12,10 @@ SRC_URI="https://github.com/alex-gutev/static-dispatch/archive/v${PV}.tar.gz -> 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/anaphora
@@ -26,7 +27,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-environments
 	test? ( dev-lisp/prove )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

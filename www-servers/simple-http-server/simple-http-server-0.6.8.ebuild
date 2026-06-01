@@ -192,5 +192,3 @@ KEYWORDS="~amd64"
 
 DEPEND="|| ( >=dev-lang/rust-1.54.0 >=dev-lang/rust-bin-1.54.0 )"
 RDEPEND="${DEPEND}"
-BDEPEND=""
-

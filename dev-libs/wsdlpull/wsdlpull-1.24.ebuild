@@ -9,9 +9,6 @@ SRC_URI="mirror://sourceforge/wsdlpull/wsdlpull-${PV}.tar.gz"
 LICENSE="LGPL"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
-app-doc/doxygen"
-
+app-text/doxygen"

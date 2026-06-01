@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		Websocket Driver
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    Websocket Driver
 
-		This library provides a complete implementation of the WebSocket protocols.
-	</longdescription>
+    This library provides a complete implementation of the WebSocket protocols.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">fukamachi/websocket-driver</remote-id>
+  </upstream>
 </pkgmetadata>

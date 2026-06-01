@@ -11,18 +11,15 @@ SRC_URI="https://github.com/electerm/electerm/releases/download/v${PV}/electerm-
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/electerm-${PV}-linux-x64
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 QA_PRESTRIPPED="
 	/usr/lib/electerm-bin/*
 	/usr/lib/electerm-bin/resources/app.asar.unpacked/node_modules/@serialport/bindings-cpp/prebuilds/linux-x64/node.napi.glibc.node
 "
-
-S="${WORKDIR}"/electerm-${PV}-linux-x64
 
 src_prepare() {
 	default

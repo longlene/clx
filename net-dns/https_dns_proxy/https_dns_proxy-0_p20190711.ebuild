@@ -14,7 +14,6 @@ SRC_URI="https://github.com/aarond10/https_dns_proxy/archive/${EGIT_COMMIT}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-libs/libev
@@ -22,9 +21,8 @@ DEPEND="
 	net-misc/curl
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
-	dobin ${BUILD_DIR}/https_dns_proxy
+	dobin "${BUILD_DIR}"/https_dns_proxy
 	dodoc README.md
 }

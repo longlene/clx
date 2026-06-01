@@ -4,7 +4,7 @@
 
 EAPI=8
 
-DESCRIPTION="patched version of GNU dd to include a number of features useful for computer forensics"
+DESCRIPTION="patched version of GNU dd to include a number of features useful for"
 HOMEPAGE="http://dc3dd.sourceforge.net/"
 SRC_URI="mirror://sourceforge/dc3dd/${P}.tar.bz2"
 
@@ -13,7 +13,6 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="nls"
 
-RDEPEND=""
 DEPEND="nls? ( sys-devel/gettext )"
 
 src_configure() {

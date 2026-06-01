@@ -17,7 +17,6 @@ DEPEND="
 	media-libs/qhull
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 RESTRICT=network-sandbox
 

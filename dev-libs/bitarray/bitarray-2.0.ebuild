@@ -13,13 +13,10 @@ SRC_URI="https://github.com/noporpoise/BitArray/archive/${PV}.tar.gz -> ${P}.tar
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-
 S="${WORKDIR}"/${MY_P}
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND="${DEPEND}"
 
 src_install() {
 	insinto /usr/include

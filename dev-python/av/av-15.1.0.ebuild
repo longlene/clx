@@ -17,13 +17,9 @@ SRC_URI="https://github.com/PyAV-Org/PyAV/archive/refs/tags/v${PV}.tar.gz -> ${M
 
 LICENSE="BSD-3"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}
 KEYWORDS="~amd64"
 
 DEPEND="media-video/ffmpeg"
-RDEPEND=""
-BDEPEND=""
 
 RESTRICT="test"
-
-S="${WORKDIR}"/${MY_P}
-

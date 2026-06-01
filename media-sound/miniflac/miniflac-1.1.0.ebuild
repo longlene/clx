@@ -11,9 +11,7 @@ LICENSE="0BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_compile() {
 	emake libminiflac.so miniflac.h

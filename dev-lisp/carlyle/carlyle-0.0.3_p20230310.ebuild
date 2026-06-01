@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cl-str
 	dev-lisp/clack
@@ -29,4 +28,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/local-time
 "
-BDEPEND=""

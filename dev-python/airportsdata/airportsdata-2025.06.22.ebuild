@@ -11,19 +11,18 @@ inherit distutils-r1
 MY_PV="${PV//./}"
 MY_P=${PN}-${MY_PV}
 
-DESCRIPTION="Extensive database of location and timezone data for nearly every airport and landing strip in the world"
+DESCRIPTION="Extensive database of location and timezone data for nearly every airport"
 HOMEPAGE="
 	https://pypi.org/project/airportsdata/
 	https://github.com/mborsetti/airportsdata/
 "
-SRC_URI="https://github.com/mborsetti/airportsdata/archive/refs/tags/v$MY_PV.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/mborsetti/airportsdata/archive/refs/tags/v$MY_PV.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${MY_P}
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)
@@ -31,5 +30,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${MY_P}

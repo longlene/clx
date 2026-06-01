@@ -14,7 +14,7 @@ LICENSE="LGPL-2.1"
 
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 IUSE="X debug doc gstreamer mplayer python vlc xine"
 
@@ -27,7 +27,7 @@ RDEPEND="X? ( x11-libs/libX11 )
 
 # add build-time dependencies
 DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen )"
+	doc? ( app-text/doxygen )"
 
 #S="${WORKDIR}/${P}"
 

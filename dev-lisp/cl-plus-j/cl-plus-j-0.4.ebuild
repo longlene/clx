@@ -11,6 +11,7 @@ SRC_URI="http://common-lisp.net/project/cl-plus-j/releases/cl+j-${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/cl+j-${PV}
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="example"
 
@@ -21,8 +22,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	>=virtual/jre-1.5
 "
-
-S="${WORKDIR}"/cl+j-${PV}
 
 src_prepare() {
 	eapply_user

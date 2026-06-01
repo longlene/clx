@@ -22,7 +22,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="
 	>=sci-misc/litellm-1.53.9[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/tokenizers-0.21.4[${PYTHON_SINGLE_USEDEP}]
@@ -71,7 +70,7 @@ RDEPEND="
 		>=dev-python/idna-3.10[${PYTHON_USEDEP}]
 		>=dev-python/importlib-metadata-7.2.1[${PYTHON_USEDEP}]
 		>=dev-python/importlib-resources-6.5.2[${PYTHON_USEDEP}]
-		>=dev-python/jinja2-3.1.6[${PYTHON_USEDEP}]
+		>=dev-python/jinja22-3.1.6[${PYTHON_USEDEP}]
 		>=dev-python/jiter-0.10.0[${PYTHON_USEDEP}]
 		>=dev-python/json5-0.12.0[${PYTHON_USEDEP}]
 		>=dev-python/jsonschema-4.25.0[${PYTHON_USEDEP}]
@@ -142,5 +141,3 @@ RDEPEND="
 		>=dev-python/zipp-3.23.0[${PYTHON_USEDEP}]
 	')
 "
-BDEPEND=""
-

@@ -26,13 +26,9 @@ fi
 
 LICENSE="Boost-1.0"
 SLOT="0"
-KEYWORDS="amd64 arm arm64 ~loong ppc ppc64 ~riscv sparc x86"
+KEYWORDS="amd64 arm arm64 ppc ppc64 sparc x86 ~loong ~riscv"
 IUSE="test"
 RESTRICT="!test? ( test )"
-
-BDEPEND=""
-DEPEND=""
-RDEPEND=""
 
 src_unpack() {
 	if [[ "${PV}" == "9999" ]]; then

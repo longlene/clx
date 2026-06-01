@@ -14,9 +14,10 @@ SRC_URI="https://github.com/chaitanyagupta/zorm/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/postmodern
 	dev-lisp/closer-mop
@@ -31,4 +32,3 @@ src_prepare() {
 		rm zorm-test.lisp
 	fi
 }
-BDEPEND=""

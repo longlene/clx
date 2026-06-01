@@ -14,7 +14,6 @@ SRC_URI="https://github.com/bradleyjensen/shcl/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-lisp/cffi

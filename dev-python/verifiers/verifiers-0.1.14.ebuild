@@ -15,7 +15,6 @@ HOMEPAGE="
 "
 SRC_URI="https://github.com/PrimeIntellect-ai/verifiers/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 
@@ -23,7 +22,7 @@ RDEPEND="
 	>=sci-ml/datasets-3.0.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/anthropic-0.78.0[${PYTHON_USEDEP}]
-		>=dev-python/jinja2-3.1.6[${PYTHON_USEDEP}]
+		>=dev-python/jinja22-3.1.6[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		>=dev-python/math-verify-0.8.0[${PYTHON_USEDEP}]
 		>=dev-python/mcp-1.14.1[${PYTHON_USEDEP}]

@@ -19,6 +19,7 @@ SRC_URI="https://github.com/intel/intel-extension-for-pytorch/archive/refs/tags/
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${P}-xpu
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -37,8 +38,6 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${P}-xpu
 
 CMAKE_IN_SOURCE_BUILD=1
 

@@ -8,15 +8,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="Javascript parser written in common lisp"
 HOMEPAGE="https://github.com/gonzojive/js-parser"
-SRC_URI=""
 EGIT_REPO_URI="https://github.com/gonzojive/js-parser.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="+test"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre
 "

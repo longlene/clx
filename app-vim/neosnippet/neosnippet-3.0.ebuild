@@ -10,7 +10,6 @@ HOMEPAGE="https://github.com/Shougo/neosnippet"
 SRC_URI="https://github.com/Shougo/${PN}/tarball/ver.${PV} -> ${P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 RDEPEND="${DEPEND}
 app-vim/vital

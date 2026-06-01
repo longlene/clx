@@ -4,11 +4,11 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14}  )
 
 inherit distutils-r1
 
-DESCRIPTION="Trame lets you weave various components and technologies into a Web Application solely written in Python"
+DESCRIPTION="Trame lets you weave various components and technologies into a Web"
 HOMEPAGE="
 	https://pypi.org/project/trame/
 	https://github.com/Kitware/trame

@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake vcs-snapshot
 
-DESCRIPTION="Cross-platform, efficient, customizable, and robust asynchronous HTTP/WebSocket server C++14 library"
+DESCRIPTION="Cross-platform, efficient, customizable, and robust asynchronous"
 HOMEPAGE="https://github.com/Stiffstream/restinio"
 SRC_URI="https://github.com/Stiffstream/restinio/archive/refs/tags/v.${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -23,7 +23,6 @@ DEPEND="
 	net-libs/http-parser
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 CMAKE_USE_DIR="${S}"/dev
 

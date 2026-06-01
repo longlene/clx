@@ -14,9 +14,7 @@ SRC_URI="https://github.com/BnMcGn/cljwt/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/yason

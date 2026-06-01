@@ -29,6 +29,5 @@ RDEPEND="
 	>=dev-python/tqdm-4[${PYTHON_USEDEP}]
 	>=dev-python/jiter-0.10.0[${PYTHON_USEDEP}]
 "
-BDEPEND=""
 
 RESTRICT="test"

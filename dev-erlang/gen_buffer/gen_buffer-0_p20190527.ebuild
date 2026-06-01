@@ -7,7 +7,7 @@ inherit rebar vcs-snapshot
 
 EGIT_COMMIT="35dbe556f84bc84e10527ecb0c98228815064d9d"
 
-DESCRIPTION="A generic message buffer behaviour with pooling and back-pressure for Erlang/Elixir"
+DESCRIPTION="A generic message buffer behaviour with pooling and back-pressure for"
 HOMEPAGE="https://github.com/cabol/gen_buffer"
 SRC_URI="https://github.com/cabol/gen_buffer/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
@@ -15,8 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-erlang/epocxy
 "
-BDEPEND=""

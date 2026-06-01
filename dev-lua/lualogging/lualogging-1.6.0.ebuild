@@ -15,11 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lua/luasocket
 "
-BDEPEND=""
 
 lua_src_install() {
 	insinto $(lua_get_lmod_dir)

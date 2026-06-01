@@ -15,13 +15,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/trivial-garbage
 	dev-libs/croaring
 "
-BDEPEND=""
 
 src_prepare() {
 	default

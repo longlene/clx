@@ -11,7 +11,8 @@ SRC_URI="https://www.scintilla.org/${PN}${PV//./}.tgz -> ${P}.tgz"
 
 LICENSE="HPND lua? ( MIT )"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~arm-linux ~x86-linux"
+S="${WORKDIR}/${PN}"
+KEYWORDS="~amd64 ~amd64-linux ~arm-linux ~ppc ~x86 ~x86-linux"
 IUSE="lua"
 
 RDEPEND="
@@ -29,14 +30,12 @@ BDEPEND="
 
 DOCS=( README )
 
-S="${WORKDIR}/${PN}"
-
 pkg_pretend() {
 	if tc-is-clang ; then
 		# need c++17 features
 		[[ "${MERGE_TYPE}" != "binary" &&
 		$(clang-major-version) -lt 5 ]] &&
-		die "Sorry, SCiTE uses C++17 Features and needs >sys-devel/clang-5
+		die "Sorry, SCiTE uses C++17 Features and needs >llvm-core/clang-5
 		($(clang-major-version))."
 
 	elif tc-is-gcc; then
@@ -75,4 +74,3 @@ src_install() {
 	doins -r include
 	einstalldocs
 }
-

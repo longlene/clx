@@ -13,16 +13,13 @@ SRC_URI="https://github.com/calio/lua-capnproto/archive/v${PV}-5.tar.gz -> ${P}-
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+S="${WORKDIR}"/${P}-5
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	${LUA_DEPS}
 	dev-libs/capnproto
 "
-
-S="${WORKDIR}"/${P}-5
 
 src_compile() {
 	:
@@ -38,4 +35,3 @@ src_install() {
 	dobin bin/capnpc-lua
 	einstalldocs
 }
-

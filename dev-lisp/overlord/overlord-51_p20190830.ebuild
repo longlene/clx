@@ -14,9 +14,7 @@ SRC_URI="https://github.com/ruricolist/overlord/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/fset
 	dev-lisp/alexandria
@@ -34,7 +32,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/shlex
 "
-BDEPEND=""
 
 src_install() {
 	common-lisp-3_src_install

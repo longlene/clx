@@ -12,11 +12,8 @@ SRC_URI="https://github.com/lpgauth/buoy/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-erlang/foil-0.1.2
 	>=dev-erlang/shackle-0.6.2
 "
-BDEPEND=""

@@ -16,6 +16,7 @@ SRC_URI="https://github.com/langchain-ai/langchain-google/archive/refs/tags/libs
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/langchain-google-libs-genai-v${PV}/libs/genai/
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -30,5 +31,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/langchain-google-libs-genai-v${PV}/libs/genai/

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		CL+ is an Interface on Common Lisp for Rapid Prototyping. The goal of this project is not to create a new lisp dialect, nor to become a new utility collection. Instead, the goal of CL+ is a modern interface on CL for making inefficient ver.1 program, quickly. Removing CL+ layer on CL, we are able to optimize inefficient ver.1 program to efficient ver.2 program.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    CL+ is an Interface on Common Lisp for Rapid Prototyping. The goal of this project is not to create a new lisp dialect, nor to become a new utility collection. Instead, the goal of CL+ is a modern interface on CL for making inefficient ver.1 program, quickly. Removing CL+ layer on CL, we are able to optimize inefficient ver.1 program to efficient ver.2 program.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">tkych/cl-plus</remote-id>
+  </upstream>
 </pkgmetadata>

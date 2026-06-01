@@ -24,7 +24,6 @@ DEPEND="
 	app-arch/zstd
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_configure() {
 	local mycmakeargs=(
@@ -34,4 +33,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-

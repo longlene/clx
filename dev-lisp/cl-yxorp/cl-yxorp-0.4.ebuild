@@ -15,7 +15,6 @@ LICENSE="AGPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/str
 	dev-lisp/usocket
@@ -24,4 +23,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/flexi-streams
 	dev-lisp/trivial-garbage
 "
-BDEPEND=""

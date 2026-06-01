@@ -8,16 +8,13 @@ inherit common-lisp-3 git-r3
 
 DESCRIPTION="An encrypted note/bookmark/data organizer"
 HOMEPAGE="https://turtl.it"
-SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/turtl/api.git"
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/blackbird
 	dev-lisp/cl-async

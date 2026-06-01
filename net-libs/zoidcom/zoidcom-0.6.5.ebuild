@@ -8,15 +8,11 @@ SRC_URI="http://www.zoidcom.com/download/${P}.tar.gz"
 
 LICENSE="free-noncomm"
 SLOT="0"
+S=${WORKDIR}/${PN}
 KEYWORDS="~x86"
 IUSE="doc sample"
 # See README.TXT
 RESTRICT="mirror"
-
-RDEPEND=""
-DEPEND=""
-
-S=${WORKDIR}/${PN}
 
 src_install() {
 	insinto /usr

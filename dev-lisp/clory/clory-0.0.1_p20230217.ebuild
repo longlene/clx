@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/dexador
 	dev-lisp/hu_dwim_defclass-star
@@ -23,4 +22,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/shasht
 	dev-lisp/str
 "
-BDEPEND=""

@@ -11,13 +11,10 @@ SRC_URI="https://github.com/intel/compute-aggregation-layer/archive/refs/tags/${
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/compute-aggregation-layer-${PV}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/compute-aggregation-layer-${PV}
 
 PATCHES=(
 	"${FILESDIR}"/disable-test.patch

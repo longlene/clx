@@ -17,6 +17,7 @@ SRC_URI="https://github.com/AzureAD/microsoft-authentication-extensions-for-pyth
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/microsoft-authentication-extensions-for-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -29,5 +30,3 @@ RDEPEND="
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/microsoft-authentication-extensions-for-python-${PV}

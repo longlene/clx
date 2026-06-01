@@ -7,16 +7,14 @@ inherit common-lisp-3 vcs-snapshot
 
 EGIT_COMMIT="df0c862d0d517a9d6e740382529e253043fb682e"
 
-DESCRIPTION="Common Lisp data analysis library with emphasis on modularity and conceptual clarity"
+DESCRIPTION="Common Lisp data analysis library with emphasis on modularity and conceptual"
 HOMEPAGE="https://github.com/ghollisjr/cl-ana"
 SRC_URI="https://github.com/ghollisjr/cl-ana/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	dev-lisp/antik

@@ -15,7 +15,6 @@ LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/anaphora
 	dev-lisp/hunchentoot
@@ -36,4 +35,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/string-case
 	dev-lisp/cl-tokyo-cabinet
 "
-BDEPEND=""

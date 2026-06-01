@@ -13,11 +13,7 @@ SRC_URI="https://github.com/bel-framework/bel-scan/archive/${EGIT_COMMIT}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/bel-scan-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/bel-scan-${EGIT_COMMIT}
-

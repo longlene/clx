@@ -11,7 +11,6 @@ SRC_URI="https://github.com/trebb/pipeglade/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND=">=x11-libs/gtk+-3.14.6"
 RDEPEND="${DEPEND}"

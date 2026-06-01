@@ -12,7 +12,6 @@ LICENSE="BSD"
 
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
 
 RDEPEND="dev-lisp/kmrcl"
 

@@ -15,9 +15,7 @@ SRC_URI="https://github.com/mmaul/cl-packet/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/cl-annot

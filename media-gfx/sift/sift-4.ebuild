@@ -13,13 +13,11 @@ SRC_URI="http://www.cs.ubc.ca/~lowe/keypoints/${MY_P}.zip"
 
 LICENSE="${PN}"
 SLOT="0"
+S=${WORKDIR}/${MY_P}
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-
-S=${WORKDIR}/${MY_P}
 
 src_compile() {
 	emake CC=$(tc-getCC) CFLAGS="${CFLAGS}" || die

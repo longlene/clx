@@ -20,6 +20,7 @@ SRC_URI="https://github.com/NVIDIA/NeMo-Retriever/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/NeMo-Retriever-${PV}/client
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -42,5 +43,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/NeMo-Retriever-${PV}/client

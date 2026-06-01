@@ -5,16 +5,17 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="Metap provides metaclass propagation along class inheritance structure in Common Lisp"
+DESCRIPTION="Metap provides metaclass propagation along class inheritance structure in"
 HOMEPAGE="https://github.com/hipeta/metap"
 SRC_URI="https://github.com/hipeta/metap/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/closer-mop
 	test? ( dev-lisp/fiveam )

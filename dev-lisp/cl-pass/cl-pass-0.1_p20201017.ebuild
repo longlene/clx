@@ -15,13 +15,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/ironclad
 	dev-lisp/trivial-utf8
 	dev-lisp/split-sequence
 "
-BDEPEND=""
 
 src_prepare() {
 	default

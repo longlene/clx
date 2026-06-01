@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">lightseekorg/smg</remote-id>
+    <remote-id type="pypi">tokenspeed-smg-grpc-proto</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    SMG (Scheduler Multi-GPU) gRPC protocol buffer definitions for
+    SGLang, vLLM, TRT-LLM, and MLX inference backends. Proto stubs
+    are compiled at build time using grpcio-tools.
+  </longdescription>
+</pkgmetadata>

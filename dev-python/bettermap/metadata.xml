@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>Local Overlay</name>
+  </maintainer>
+  <longdescription>
+    Parallelized drop-in replacements for Python's map function, spreading
+    work across all available CPU cores using multiprocessing.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">allenai/bettermap</remote-id>
+    <remote-id type="pypi">bettermap</remote-id>
+  </upstream>
+</pkgmetadata>

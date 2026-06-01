@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..13} )
+PYTHON_COMPAT=( python3_{12..14}  )
 
 inherit distutils-r1
 
@@ -23,8 +23,8 @@ RDEPEND="
 	>=dev-python/aioxmpp-0.13.3[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.10.5[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-jinja2-1.6[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}]
-	>=dev-python/jinja2-time-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/jinja22-3.0.3[${PYTHON_USEDEP}]
+	>=dev-python/jinja22-time-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/timeago-1.0.16[${PYTHON_USEDEP}]
 	>=dev-python/singletonify-0.2.4[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2022.1[${PYTHON_USEDEP}]

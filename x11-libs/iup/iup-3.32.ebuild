@@ -13,10 +13,10 @@ SRC_URI="https://downloads.sourceforge.net/project/iup/${PV}/Docs%20and%20Source
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/${PN}
 KEYWORDS="~amd64 ~x86"
 IUSE="webkit static-libs lua opengl lua motif led"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	x11-libs/pangox-compat
 	webkit? ( net-libs/webkit-gtk )
@@ -24,8 +24,6 @@ RDEPEND="${DEPEND}
 	opengl? ( virtual/glu )
 	lua? ( >=dev-lang/lua-5.1 )
 "
-
-S="${WORKDIR}"/${PN}
 
 src_prepare() {
 	find . -type d -exec chmod 755 {} \;
@@ -44,7 +42,7 @@ src_compile() {
 	if use lua; then
 		local luaver=$(lua -v 2>&1 | cut -d ' ' -f 2 | cut -d . -f1,2 | tr -d .)
 		local cmd="make --no-print-directory -f ../tecmake.mak"
-		cd ${S}/srclua5
+		cd "${S}"/srclua5
 		${cmd} USE_LUA${luaver}=Yes
 		${cmd} MF=iupcd USE_LUA${luaver}=Yes
 		${cmd} MF=iupcontrols USE_LUA${luaver}=Yes
@@ -59,7 +57,7 @@ src_compile() {
 		${cmd} MF=iupimglib USE_LUA${luaver}=Yes
 		${cmd} MF=iuptuio USE_LUA${luaver}=Yes
 
-		cd ${S}/srcconsole
+		cd "${S}"/srcconsole
 		${cmd} USE_LUA${luaver}=Yes
 		${cmd} USE_GTK=Yes
 	fi

@@ -14,13 +14,13 @@ SRC_URI="https://github.com/Ninjacop/cl-ruby/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 "
-BDEPEND=""
 
 src_prepare() {
 	default

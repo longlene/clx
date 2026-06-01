@@ -12,14 +12,11 @@ SRC_URI="https://github.com/Kyorai/cuttlefish/archive/v${PV}.tar.gz -> ${P}.tar.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-erlang/getopt
 	>=dev-erlang/lager-3.6.0
 "
-BDEPEND=""
 
 src_prepare() {
 	default
@@ -30,7 +27,7 @@ src_prepare() {
 #src_compile() {
 #	erebar escriptize
 #}
-#	
+#
 #src_install() {
 #	dobin _build/default/bin/cuttlefish
 #	dodoc README.md

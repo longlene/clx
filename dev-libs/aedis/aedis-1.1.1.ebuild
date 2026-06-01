@@ -15,7 +15,6 @@ DEPEND="
 	dev-libs/boost
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_install() {
 	insinto /usr/include

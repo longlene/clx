@@ -19,8 +19,6 @@ LICENSE="ZPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

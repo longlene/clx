@@ -5,16 +5,17 @@ EAPI=8
 
 inherit common-lisp-3
 
-DESCRIPTION="Parseq is a package for Common Lisp used for parsing sequences such as strings, lists and vectors"
+DESCRIPTION="Parseq is a package for Common Lisp used for parsing sequences such as"
 HOMEPAGE="https://github.com/mrossini-ethz/parseq/"
 SRC_URI="https://github.com/mrossini-ethz/parseq/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}"
 
 src_prepare() {

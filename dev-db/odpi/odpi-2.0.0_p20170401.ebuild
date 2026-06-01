@@ -14,9 +14,7 @@ SRC_URI="https://github.com/oracle/odpi/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-db/oracle-instantclient
 "

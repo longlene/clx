@@ -11,12 +11,11 @@ HOMEPAGE="http://www.microemu.org/"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+S="${WORKDIR}/microemulator-${PV}"
+KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
 RDEPEND=">=virtual/jre-1.4"
-
-S="${WORKDIR}/microemulator-${PV}"
 
 src_unpack() {
 	unpack ${A}
@@ -38,4 +37,3 @@ src_install() {
 	make_desktop_entry '/usr/bin/microemulator' 'MicroEmulator' '' \
 		'Development;Emulator'
 }
-

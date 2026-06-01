@@ -15,6 +15,7 @@ SRC_URI="https://github.com/QuentinFuxa/WhisperLiveKit/archive/refs/tags/${PV}.t
 
 LICENSE="MIT"
 SLOT="0"
+S="${WORKDIR}"/WhisperLiveKit-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -41,5 +42,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/WhisperLiveKit-${PV}

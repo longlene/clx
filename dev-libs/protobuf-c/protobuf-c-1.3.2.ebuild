@@ -15,15 +15,16 @@ SRC_URI="https://github.com/${PN}/${PN}/releases/download/v${MY_PV}/${MY_P}.tar.
 LICENSE="BSD-2"
 # Subslot == SONAME version
 SLOT="0/1.0.0"
+S="${WORKDIR}/${MY_P}"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+
 IUSE="static-libs test"
+RESTRICT="!test? ( test )"
 
 RDEPEND=">=dev-libs/protobuf-2.6.0:0=[${MULTILIB_USEDEP}]"
 DEPEND="${RDEPEND}
 	test? ( ${AUTOTOOLS_DEPEND} )
 	virtual/pkgconfig[${MULTILIB_USEDEP}]"
-
-S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	default

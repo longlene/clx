@@ -5,7 +5,6 @@
 EAPI=8
 inherit base git-2 autotools
 
-DESCRIPTION=""
 HOMEPAGE="http://www.freesmartphone.org"
 EGIT_REPO_URI="git://git.freesmartphone.org/cornucopia.git"
 EGIT_PROJECT="cornucopia"
@@ -13,7 +12,7 @@ EGIT_COMMIT="1f9281ac4320eed66411fde8fe21ea87ee138e78"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~arm ~x86 ~amd64"
+KEYWORDS="~amd64 ~arm ~x86"
 
 RDEPEND=">=dev-libs/glib-2.18.0
 	>=dev-libs/libgee-0.5.0
@@ -25,6 +24,6 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	S="${WORKDIR}/${P}/tools/${PN}"
-	cd ${S}
+	cd "${S}"
 	eautoreconf
 }

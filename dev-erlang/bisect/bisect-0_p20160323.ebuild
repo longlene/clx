@@ -19,4 +19,3 @@ DEPEND="
 	dev-erlang/proper
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""

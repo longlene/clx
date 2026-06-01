@@ -13,7 +13,6 @@ SRC_URI="${HOMEPAGE}${MY_P}.tgz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 
 RDEPEND="net-misc/rdist
 	sys-devel/m4"
@@ -22,8 +21,8 @@ DEPEND="${RDEPEND}
 	dev-util/msrc0"
 
 src_unpack() {
-	unpack ${A} && cd ${S} || die
-	epatch ${FILESDIR}/*.patch
+	unpack ${A} && cd "${S}" || die
+	epatch "${FILESDIR}"/*.patch
 }
 
 src_compile() {

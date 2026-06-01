@@ -17,8 +17,6 @@ LICENSE="LGPL-2.1"
 
 SLOT="0"
 
-KEYWORDS=""
-
 IUSE="debug doc +curl +exif +gcrypt +nfo +xml"
 
 RDEPEND="media-video/ffmpeg
@@ -31,7 +29,7 @@ RDEPEND="media-video/ffmpeg
 
 # add build-time dependencies
 DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen )"
+	doc? ( app-text/doxygen )"
 
 S="${WORKDIR}/${PN}"
 

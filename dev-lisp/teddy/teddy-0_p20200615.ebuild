@@ -14,9 +14,7 @@ SRC_URI="https://github.com/40ants/teddy/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/hu_dwim_def
 	dev-lisp/cl-ascii-table
@@ -27,4 +25,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/eazy-gnuplot
 	dev-lisp/lhstats
 "
-BDEPEND=""

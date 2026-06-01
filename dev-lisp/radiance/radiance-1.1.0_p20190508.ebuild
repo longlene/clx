@@ -14,9 +14,10 @@ SRC_URI="https://github.com/Shirakumo/radiance/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/modularize
 	dev-lisp/modularize-hooks

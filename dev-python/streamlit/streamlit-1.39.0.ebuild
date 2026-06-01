@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_12 )
+PYTHON_COMPAT=( python3_12 python3_13 python3_14  )
 
 inherit distutils-r1 pypi
 
@@ -17,6 +17,7 @@ SRC_URI="https://github.com/streamlit/streamlit/archive/refs/tags/${PV}.tar.gz -
 
 LICENSE="Apache-2.0"
 SLOT="0"
+S="${WORKDIR}"/${P}/lib
 KEYWORDS="~amd64"
 
 RDEPEND="
@@ -43,5 +44,3 @@ RDEPEND="
 #"
 
 distutils_enable_tests pytest
-
-S="${WORKDIR}"/${P}/lib

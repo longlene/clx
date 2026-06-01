@@ -14,17 +14,14 @@ SRC_URI="https://github.com/doujiang24/lua-resty-kafka/archive/refs/tags/v${PV}.
 LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 
-DEPEND=""
 RDEPEND="
 	${LUA_DEPS}
 	www-servers/nginx:*[nginx_modules_http_lua]
 	dev-lua/lua-resty-openssl[${LUA_USEDEP}]
 "
-BDEPEND=""
 
 DOCS=( README.md )
 

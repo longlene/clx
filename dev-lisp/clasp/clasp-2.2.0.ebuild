@@ -5,20 +5,16 @@ EAPI=8
 
 inherit ninja-utils
 
-DESCRIPTION=""
-HOMEPAGE=""
 SRC_URI="https://github.com/clasp-developers/clasp/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="
 	dev-lisp/alexandria
 	dev-lisp/sbcl
-	sys-devel/llvm
-	sys-devel/clang
+	llvm-core/llvm
+	llvm-core/clang
 "
 RDEPEND="${DEPEND}"
 

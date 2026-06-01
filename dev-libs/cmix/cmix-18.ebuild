@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DESCRIPTION="A lossless data compression program aimed at optimizing compression ratio at the cost of high CPU/memory usage"
+DESCRIPTION="A lossless data compression program aimed at optimizing compression ratio at"
 HOMEPAGE="https://github.com/byronknoll/cmix"
 SRC_URI="https://github.com/byronknoll/cmix/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -11,9 +11,7 @@ LICENSE="GPL-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

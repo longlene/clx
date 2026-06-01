@@ -13,9 +13,7 @@ SRC_URI="https://github.com/c42f/tinyformat/archive/Release-${PV}.tar.gz -> ${P}
 LICENSE="Boost-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_compile() {

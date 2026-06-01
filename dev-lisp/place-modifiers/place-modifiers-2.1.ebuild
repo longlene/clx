@@ -12,15 +12,15 @@ SRC_URI="https://github.com/Hexstream/place-modifiers/archive/v${PV}.tar.gz -> $
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/definitions-systems
 	dev-lisp/map-bind
 	test? ( dev-lisp/parachute )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

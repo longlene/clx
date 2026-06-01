@@ -12,10 +12,8 @@ SRC_URI="https://github.com/gigamonkey/toot/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
-IUSE=""
+KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/chunga
@@ -30,4 +28,3 @@ RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads
 	dev-lisp/puri
 	dev-lisp/sbcl"
-

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>longlene@gmail.com</email>
-		<name>loong0</name>
-	</maintainer>
-	<longdescription>
-		CL-INOTIFY - Interface to the Linux inotify(7) API.
-	</longdescription>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription>
+    CL-INOTIFY - Interface to the Linux inotify(7) API.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ralt/cl-inotify</remote-id>
+  </upstream>
 </pkgmetadata>

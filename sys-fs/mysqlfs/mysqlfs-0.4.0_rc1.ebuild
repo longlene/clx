@@ -9,15 +9,13 @@ SRC_URI="mirror://sourceforge/mysqlfs/${MY_P}.tar.bz2"
 HOMEPAGE="http://sourceforge.net/projects/mysqlfs/"
 
 LICENSE="GPL-2"
+S=${WORKDIR}/${MY_P}
 KEYWORDS="~x86"
 SLOT="0"
-IUSE=""
 
 DEPEND="sys-fs/fuse
 	virtual/mysql"
 RDEPEND="${DEPEND}"
-
-S=${WORKDIR}/${MY_P}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake failed"

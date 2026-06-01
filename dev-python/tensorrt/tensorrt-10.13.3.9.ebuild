@@ -8,7 +8,6 @@ PYTHON_COMPAT=( python3_{13..14} )
 
 inherit distutils-r1 pypi
 
-DESCRIPTION=""
 HOMEPAGE="
 	https://pypi.org/project/tensorrt/
 	https://github.com/NVIDIA/TensorRT
@@ -18,8 +17,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-"
 #BDEPEND="
 #	test? (
 #	)

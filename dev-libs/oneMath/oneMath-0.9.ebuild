@@ -22,7 +22,6 @@ DEPEND="
 	tbb? ( dev-cpp/tbb )
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_prepare() {
 	default

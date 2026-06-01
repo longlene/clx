@@ -8,17 +8,16 @@ SRC_URI="ftp://ftp.freeengineer.org/pub/shn2make/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
 
-DEPEND="sys-devel/make"
+DEPEND="dev-build/make"
 RDEPEND="media-sound/vorbis-tools
-         dev-lang/perl
-         sys-devel/make
-         media-sound/shntool
-         app-cdr/cdrtools
-         media-libs/flac
-         media-sound/lame
-         media-sound/bladeenc"
+		 dev-lang/perl
+		 dev-build/make
+		 media-sound/shntool
+		 app-cdr/cdrtools
+		 media-libs/flac
+		 media-sound/lame
+		 media-sound/bladeenc"
 
 src_install() {
 	dodoc README ChangeLog shn2makerc_proto || die

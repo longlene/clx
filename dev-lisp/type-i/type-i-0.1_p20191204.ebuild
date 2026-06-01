@@ -14,9 +14,10 @@ SRC_URI="https://github.com/guicho271828/type-i/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
-DEPEND=""
+IUSE="test"
+RESTRICT="!test? ( test )"
+
 RDEPEND="${DEPEND}
 	dev-lisp/introspect-environment
 	dev-lisp/alexandria
@@ -24,7 +25,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/lisp-namespace
 	test? ( dev-lisp/fiveam )
 "
-BDEPEND=""
 
 src_prepare() {
 	default

@@ -14,9 +14,7 @@ SRC_URI="https://github.com/dardoria/${PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="LLGPL"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
 RDEPEND="
 	dev-lisp/ironclad
 	dev-lisp/trivial-utf8"
-
