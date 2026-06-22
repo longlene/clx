@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -41,7 +41,7 @@ RDEPEND="
 		>=dev-python/tomlkit-0.12.0[${PYTHON_USEDEP}]
 		>=dev-python/colorama-0.4.6[${PYTHON_USEDEP}]
 		>=dev-python/wandb-0.23.1[${PYTHON_USEDEP}]
-		>=dev-python/jinja22-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
 		>=dev-python/pydantic-settings-2.12.0[${PYTHON_USEDEP}]
 	')
 "

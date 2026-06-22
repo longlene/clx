@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -33,7 +33,7 @@ RDEPEND="
 		>=dev-python/tenacity-8.2.3[${PYTHON_USEDEP}]
 		dev-python/pydantic[${PYTHON_USEDEP}]
 		>=dev-python/jiter-0.6.1[${PYTHON_USEDEP}]
-		>=dev-python/jinja22-3.1.4[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.1.4[${PYTHON_USEDEP}]
 		>=dev-python/requests-2.32.3[${PYTHON_USEDEP}]
 		>=dev-python/diskcache-5.6.3[${PYTHON_USEDEP}]
 	')

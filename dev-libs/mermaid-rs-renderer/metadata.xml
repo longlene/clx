@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>0xccef@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="cli">Install the mmdr command-line tool</flag>
+    <flag name="png">Enable PNG output support via resvg/usvg</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">1jehuang/mermaid-rs-renderer</remote-id>
+  </upstream>
+</pkgmetadata>

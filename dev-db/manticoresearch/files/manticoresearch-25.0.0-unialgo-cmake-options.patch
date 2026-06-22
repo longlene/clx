@@ -1,0 +1,35 @@
+--- a/cmake/GetUniAlgo.cmake
++++ b/cmake/GetUniAlgo.cmake
+@@ -14,6 +14,32 @@
+ select_nearest_url ( UNIALGO_PLACE uni-algo ${UNIALGO_BUNDLE} ${UNIALGO_GITHUB} )
+ fetch_and_check ( uni-algo ${UNIALGO_PLACE} ${UNIALGO_SRC_MD5} UNIALGO_SRC )
+
++# Gentoo: uni-algo 0.7.2 uses UNI_ALGO_DISABLE_* only as C preprocessor #ifdefs,
++# not as cmake option() variables.  When passed via -D (as external_build does)
++# they go unread: cmake warns "manually-specified variables not used" and the
++# intended size optimisations silently do nothing.
++# Append option() + target_compile_definitions() to the populated source so
++# cmake considers the variables used and they actually take effect at compile time.
++if ( UNIALGO_SRC AND EXISTS "${UNIALGO_SRC}/CMakeLists.txt"
++		AND NOT EXISTS "${UNIALGO_SRC}/.gentoo_ua_opts_patched" )
++	file ( APPEND "${UNIALGO_SRC}/CMakeLists.txt" [=[
++
++# Forwarded by Gentoo ebuild: declare disable-flags as cmake options so the
++# -D values passed by the parent build propagate to compile definitions.
++if(NOT UNI_ALGO_HEADER_ONLY)
++    foreach(_flag IN ITEMS UNI_ALGO_DISABLE_PROP UNI_ALGO_DISABLE_BREAK_WORD
++                           UNI_ALGO_DISABLE_COLLATE UNI_ALGO_DISABLE_NFKC_NFKD
++                           UNI_ALGO_DISABLE_SHRINK_TO_FIT)
++        option(${_flag} "" OFF)
++        if(${_flag})
++            target_compile_definitions(${PROJECT_NAME} PUBLIC ${_flag})
++        endif()
++    endforeach()
++endif()
++]=] )
++	file ( WRITE "${UNIALGO_SRC}/.gentoo_ua_opts_patched" "" )
++endif ()
++
+ # build external project
+ get_build ( UNIALGO_BUILD uni-algo )
+ external_build ( uni-algo UNIALGO_SRC UNIALGO_BUILD UNI_ALGO_DISABLE_PROP=1 UNI_ALGO_DISABLE_BREAK_WORD=1 UNI_ALGO_DISABLE_COLLATE=1 UNI_ALGO_DISABLE_NFKC_NFKD=1 UNI_ALGO_DISABLE_SHRINK_TO_FIT=1 )

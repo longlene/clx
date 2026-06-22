@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Pre-built binary wheel for the MediaPipe Python package.  Source builds
+    require Bazel and fetch many dependencies from the network at compile time,
+    making them unsuitable for a Gentoo sandbox build.
+  </longdescription>
+</pkgmetadata>

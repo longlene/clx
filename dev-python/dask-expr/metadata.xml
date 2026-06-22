@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    dask-expr provides a high-level expressions layer for Dask, adding
+    query optimization and a more pandas-like API on top of the Dask
+    parallel computing framework.
+  </longdescription>
+  <use>
+    <flag name="analyze">Enable analysis extras (graphviz visualization)</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">dask/dask</remote-id>
+    <remote-id type="pypi">dask-expr</remote-id>
+  </upstream>
+</pkgmetadata>

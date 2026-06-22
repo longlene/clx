@@ -1,0 +1,22 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,6 +1,8 @@
+ cmake_minimum_required(VERSION 3.16)
+ project(speech_core VERSION 0.1.0 LANGUAGES CXX)
+ 
++include(GNUInstallDirs)
++
+ set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_EXTENSIONS OFF)
+@@ -239,8 +241,8 @@
+ 
+ install(TARGETS ${_install_targets}
+     EXPORT speech_core-targets
+-    ARCHIVE DESTINATION lib
+-    LIBRARY DESTINATION lib
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+ )
+ 
+ install(DIRECTORY include/speech_core

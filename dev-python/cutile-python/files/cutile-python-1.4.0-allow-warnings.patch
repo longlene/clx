@@ -1,0 +1,11 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -15,7 +15,7 @@
+
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+-option(ALLOW_WARNINGS "Don't treat warnings as errors" OFF)
++option(ALLOW_WARNINGS "Don't treat warnings as errors" ON)
+ if (NOT ALLOW_WARNINGS)
+     if (MSVC)
+         add_compile_options(/WX)

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    django-admin-data-views adds support for custom data views in the
+    Django admin panel. It allows developers to register arbitrary views
+    that integrate with the admin interface, complete with navigation and
+    breadcrumbs, without needing to create full ModelAdmin instances.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">MrThearMan/django-admin-data-views</remote-id>
+    <remote-id type="pypi">django-admin-data-views</remote-id>
+  </upstream>
+</pkgmetadata>

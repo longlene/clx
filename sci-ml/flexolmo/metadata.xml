@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    FlexOlmo provides code and training scripts for the FlexOlmo family of
+    open language models. It supports flexible training configurations and
+    inference for large language models.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">allenai/FlexOlmo</remote-id>
+  </upstream>
+</pkgmetadata>

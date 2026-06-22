@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    obstore provides Python bindings to the Rust object_store crate, offering
+    a simple, high-throughput interface to Amazon S3, Google Cloud Storage,
+    Azure Blob Storage, and S3-compatible APIs such as Cloudflare R2.
+    Supports both synchronous and asynchronous access via asyncio.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">developmentseed/obstore</remote-id>
+    <remote-id type="pypi">obstore</remote-id>
+  </upstream>
+</pkgmetadata>

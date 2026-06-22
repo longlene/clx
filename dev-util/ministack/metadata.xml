@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="full">Enable full-featured services requiring extra backends
+      (cryptography for TLS/encryption, pymysql for RDS MySQL, asyncssh for
+      EC2 SSH emulation)</flag>
+  </use>
+  <longdescription lang="en">
+    Ministack is a free, open-source local AWS emulator and drop-in replacement
+    for LocalStack. It emulates 55+ AWS services (S3, SQS, DynamoDB, Lambda,
+    RDS, etc.) with real database backends, full Terraform compatibility, and
+    no feature paywalls. Includes the ministack server and the awslocal CLI
+    wrapper that redirects aws commands to the local endpoint.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ministackorg/ministack</remote-id>
+    <remote-id type="pypi">ministack</remote-id>
+  </upstream>
+</pkgmetadata>

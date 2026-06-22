@@ -1,0 +1,27 @@
+--- a/umd/level_zero_driver/api/ze_device.cpp
++++ b/umd/level_zero_driver/api/ze_device.cpp
+@@ -306,7 +306,10 @@ ze_device_dditable_t zeDeviceDdiTable = {
+     .pfnImportExternalSemaphoreExt = nullptr,
+     .pfnReleaseExternalSemaphoreExt = nullptr,
+     .pfnGetVectorWidthPropertiesExt = nullptr,
+     .pfnSynchronize = nullptr,
+-    .pfnGetAggregatedCopyOffloadIncrementValue = nullptr};
++    .pfnGetAggregatedCopyOffloadIncrementValue = nullptr,
++    .pfnGetRuntimeRequirements = nullptr,
++    .pfnGetRuntimeRequirementsKey = nullptr,
++    .pfnValidateRuntimeRequirements = nullptr};
+
+ } // namespace L0
+--- a/umd/level_zero_driver/api/ze_cmdlist.cpp
++++ b/umd/level_zero_driver/api/ze_cmdlist.cpp
+@@ -655,7 +655,10 @@ ze_command_list_dditable_t zeCommandListDdiTable = {
+     .pfnAppendSignalExternalSemaphoreExt = nullptr,
+     .pfnAppendWaitExternalSemaphoreExt = nullptr,
+     .pfnAppendLaunchKernelWithParameters = nullptr,
+-    .pfnAppendLaunchKernelWithArguments = nullptr};
++    .pfnAppendLaunchKernelWithArguments = nullptr,
++    .pfnAppendMemoryCopyWithParameters = nullptr,
++    .pfnAppendMemoryFillWithParameters = nullptr,
++    .pfnImmediateAppendCommandListsWithParameters = nullptr};
+
+ ze_command_list_exp_dditable_t zeCommandListExpDdiTable = {

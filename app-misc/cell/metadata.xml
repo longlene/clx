@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    cell is a fast terminal spreadsheet editor with Vim-style keybindings built
+    on top of the Ratatui TUI framework. It supports CSV import/export and
+    provides a modal editing interface similar to Vim.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">garritfra/cell</remote-id>
+  </upstream>
+</pkgmetadata>

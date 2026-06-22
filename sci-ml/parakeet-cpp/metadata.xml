@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    C++ implementation of the NVIDIA Parakeet ASR (automatic speech
+    recognition) model family using ggml as the tensor backend. Provides
+    both a library and a command-line inference tool.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">mudler/parakeet.cpp</remote-id>
+  </upstream>
+</pkgmetadata>

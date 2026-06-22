@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    knot is a fast non-cryptographic pseudo-random number generator
+    implemented as an Erlang NIF using the wyrand algorithm.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">lpgauth/knot</remote-id>
+  </upstream>
+</pkgmetadata>

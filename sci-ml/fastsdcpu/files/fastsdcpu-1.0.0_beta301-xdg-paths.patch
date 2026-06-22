@@ -1,0 +1,36 @@
+--- a/src/paths.py	2026-06-19 14:41:36.872045953 -0700
++++ b/src/paths.py	2026-06-19 14:41:57.100752054 -0700
+@@ -17,14 +17,28 @@
+ 
+ 
+ def get_app_path() -> str:
+-    app_dir = os.path.dirname(__file__)
+-    work_dir = os.path.dirname(app_dir)
+-    return work_dir
++    return os.environ.get(
++        "FASTSDCPU_HOME",
++        os.path.join(
++            os.environ.get(
++                "XDG_DATA_HOME",
++                os.path.join(os.path.expanduser("~"), ".local", "share"),
++            ),
++            "fastsdcpu",
++        ),
++    )
+ 
+ 
+ def get_configs_path() -> str:
+-    config_path = join_paths(get_app_path(), constants.CONFIG_DIRECTORY)
+-    return config_path
++    user_configs = join_paths(get_app_path(), constants.CONFIG_DIRECTORY)
++    if not os.path.isdir(user_configs):
++        import shutil
++        sys_configs = "/usr/share/fastsdcpu/configs"
++        if os.path.isdir(sys_configs):
++            shutil.copytree(sys_configs, user_configs)
++        else:
++            os.makedirs(user_configs, exist_ok=True)
++    return user_configs
+ 
+ 
+ class FastStableDiffusionPaths:

@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -39,7 +39,7 @@ RDEPEND="
 		dev-python/math-verify[${PYTHON_USEDEP}]
 		dev-python/omegaconf[${PYTHON_USEDEP}]
 		dev-python/nvidia-ml-py[${PYTHON_USEDEP}]
-		dev-python/hydra[${PYTHON_USEDEP}]
+		dev-python/hydra-core[${PYTHON_USEDEP}]
 		dev-python/tiktoken[${PYTHON_USEDEP}]
 		dev-python/blobfile[${PYTHON_USEDEP}]
 		dev-python/debugpy[${PYTHON_USEDEP}]

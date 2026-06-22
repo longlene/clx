@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-python/click[${PYTHON_USEDEP}]
-	dev-python/jinja22[${PYTHON_USEDEP}]
+	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/shellingham[${PYTHON_USEDEP}]
 "
 #BDEPEND="

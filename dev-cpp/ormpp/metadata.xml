@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="mariadb">Enable MariaDB database backend</flag>
+    <flag name="mysql">Enable MySQL database backend</flag>
+    <flag name="postgres">Enable PostgreSQL database backend</flag>
+    <flag name="sqlite">Enable SQLite3 database backend</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">qicosmos/ormpp</remote-id>
+  </upstream>
+</pkgmetadata>

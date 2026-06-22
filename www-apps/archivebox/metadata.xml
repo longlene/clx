@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ArchiveBox is a self-hosted internet archiving solution. It takes
+    URLs, browser history, bookmarks, Pocket/Pinboard exports, and more,
+    and saves HTML, JS, PDFs, media, and other resources for offline
+    viewing and long-term preservation.
+  </longdescription>
+  <use>
+    <flag name="debug">Enable Django debug toolbar and related dev tools</flag>
+    <flag name="ldap">Enable LDAP authentication support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">ArchiveBox/ArchiveBox</remote-id>
+    <remote-id type="pypi">archivebox</remote-id>
+  </upstream>
+</pkgmetadata>

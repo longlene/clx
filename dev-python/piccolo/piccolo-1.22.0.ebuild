@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14}  )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-python/black[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.4.0[${PYTHON_USEDEP}]
-	>=dev-python/jinja22-2.11.0[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-2.11.0[${PYTHON_USEDEP}]
 	>=dev-python/targ-0.3.7[${PYTHON_USEDEP}]
 	>=dev-python/inflection-0.5.1[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}]

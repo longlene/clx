@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    nmaglev is an Erlang implementation of the consistent hashing algorithm
+    used in the MagLev load balancer. It provides stable bucket assignment
+    across a set of nodes with minimal disruption when nodes are added or
+    removed.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">nomasystems/nmaglev</remote-id>
+  </upstream>
+</pkgmetadata>

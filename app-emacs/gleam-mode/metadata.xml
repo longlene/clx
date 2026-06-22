@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    gleam-mode provides a major mode for editing Gleam source files in Emacs,
+    using the built-in tree-sitter support introduced in Emacs 29.1 for syntax
+    highlighting and structural navigation.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">gleam-lang/gleam-mode</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,32 @@
+Guard AVX-512 adam_cpu_2 with #ifdef __AVX512F__ for GCC 14 compatibility.
+
+--- a/csrc/include/adam_cpu.hpp
++++ b/csrc/include/adam_cpu.hpp
+@@ -397,6 +397,7 @@
+     }
+ }
+ 
++#ifdef __AVX512F__
+ static void __attribute__ ((__target__ ("avx512f"))) adam_cpu_2(
+     int64_t n,
+     float* param_fp32_ptr,
+@@ -500,6 +501,7 @@
+         delta_info_ptr[3] = sum_sq_delta;
+     }
+ }
++#endif  /* __AVX512F__ */
+ 
+ void adam_cpu_fp16_launcher(
+     int64_t n,
+@@ -528,7 +530,11 @@
+     }else if(cpu_level == 1){
+         adam_cpu_1(n, param_fp32_ptr, param_fp16_ptr, delta_info_ptr, g_fp16_ptr, m_fp32_ptr, v_fp32_ptr, beta1, beta2, eps, lr, scale, weight_decay, bias_correction1, bias_correction2);
+     }else{
++#ifdef __AVX512F__
+         adam_cpu_2(n, param_fp32_ptr, param_fp16_ptr, delta_info_ptr, g_fp16_ptr, m_fp32_ptr, v_fp32_ptr, beta1, beta2, eps, lr, scale, weight_decay, bias_correction1, bias_correction2);
++#else
++        adam_cpu_1(n, param_fp32_ptr, param_fp16_ptr, delta_info_ptr, g_fp16_ptr, m_fp32_ptr, v_fp32_ptr, beta1, beta2, eps, lr, scale, weight_decay, bias_correction1, bias_correction2);
++#endif
+     }
+ }
+ 

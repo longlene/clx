@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A Python implementation of Bash brace expansion, expanding strings like
+    {a,b}{1..3} into all combinations. Supports sequences, comma-separated
+    alternatives, and nested braces.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">trendels/braceexpand</remote-id>
+    <remote-id type="pypi">braceexpand</remote-id>
+  </upstream>
+</pkgmetadata>

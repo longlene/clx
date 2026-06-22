@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    walrus is a collection of utilities for working with Redis, including
+    autocomplete, caching, full-text search, graph structures, locks,
+    pub/sub helpers, rate limiting, and sorted set operations.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">coleifer/walrus</remote-id>
+  </upstream>
+</pkgmetadata>

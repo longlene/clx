@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    MiMo Code is an AI-powered coding assistant from Xiaomi, distributed as a
+    prebuilt standalone binary.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">XiaomiMiMo/MiMo-Code</remote-id>
+  </upstream>
+</pkgmetadata>

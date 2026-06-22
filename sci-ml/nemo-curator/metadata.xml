@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    NeMo Curator is a scalable data pre-processing and curation toolkit for
+    training large language models (LLMs). It supports text, image, audio,
+    video, and multimodal data pipelines with distributed computing via Ray
+    and GPU acceleration via RAPIDS/cuDF.
+  </longdescription>
+  <use>
+    <flag name="cuda">Enable GPU-accelerated features via nvidia-ml-py</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">NVIDIA-NeMo/Curator</remote-id>
+  </upstream>
+</pkgmetadata>

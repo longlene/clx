@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Impacket is a collection of Python classes for working with network
+    protocols. It provides low-level programmatic access to the packets,
+    and for some protocols (e.g. SMB1-3, MSRPC) the protocol
+    implementation itself. Includes many example scripts for common
+    network tasks and security assessments.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">fortra/impacket</remote-id>
+    <remote-id type="pypi">impacket</remote-id>
+  </upstream>
+</pkgmetadata>

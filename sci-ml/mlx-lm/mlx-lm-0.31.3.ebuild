@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -27,7 +27,7 @@ RDEPEND="
 		sci-ml/sentencepiece[${PYTHON_USEDEP}]
 		dev-python/protobuf[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
-		dev-python/jinja22[${PYTHON_USEDEP}]
+		dev-python/jinja2[${PYTHON_USEDEP}]
 	')
 "
 #BDEPEND="

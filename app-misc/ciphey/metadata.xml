@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Ciphey is an automated decryption tool that can decrypt encryptions
+    without knowing the key or cipher, decode encodings such as base64,
+    and crack hashes. It uses AI and natural language processing to
+    automatically identify and apply the correct decryption method.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">bee-san/Ciphey</remote-id>
+    <remote-id type="pypi">ciphey</remote-id>
+  </upstream>
+</pkgmetadata>

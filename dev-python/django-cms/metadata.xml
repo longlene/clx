@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    django CMS is a lean enterprise content management system built on Django.
+    It provides a hierarchical page tree, a plugin system, multi-site support,
+    multilingual content, and an in-page editing frontend.
+  </longdescription>
+  <use>
+    <flag name="argon2">Use Argon2 password hashing via argon2-cffi</flag>
+    <flag name="bcrypt">Use bcrypt password hashing</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">django-cms/django-cms</remote-id>
+    <remote-id type="pypi">django-cms</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>0xccef@gmail.com</email>
+  </maintainer>
+  <longdescription>
+    ZeroFS serves S3-compatible buckets as POSIX filesystems over NFS and 9P,
+    or as raw block devices over NBD. It uses SlateDB as its storage engine,
+    providing strong consistency and high performance with encryption and
+    compression support.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Barre/ZeroFS</remote-id>
+  </upstream>
+</pkgmetadata>

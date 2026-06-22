@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Braid is an Erlang library that makes it easy to create ad-hoc clusters
+    of Erlang nodes, connect them together, and manage their lifecycle.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">stritzinger/braid</remote-id>
+  </upstream>
+</pkgmetadata>

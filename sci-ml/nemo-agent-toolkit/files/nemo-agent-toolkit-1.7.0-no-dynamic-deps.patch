@@ -1,0 +1,135 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -16,7 +16,7 @@
+
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=64", "setuptools-scm>=8", "setuptools_dynamic_dependencies>=1.0.0"]
++requires = ["setuptools>=64", "setuptools-scm>=8"]
+
+
+ [tool.setuptools.packages.find]
+@@ -31,7 +31,7 @@
+
+ [project]
+ name = "nvidia-nat-core"
+-dynamic = ["version", "dependencies", "optional-dependencies"]
++dynamic = ["version"]
+ requires-python = ">=3.11,<3.14"
+ description = "Core library for NVIDIA NeMo Agent Toolkit"
+ readme = "src/nat/meta/pypi.md"
+@@ -46,73 +46,42 @@
+ authors = [{ name = "NVIDIA Corporation" }]
+ maintainers = [{ name = "NVIDIA Corporation" }]
+
+-[project.urls]
+-documentation = "https://docs.nvidia.com/nemo/agent-toolkit/latest/"
+-source = "https://github.com/NVIDIA/NeMo-Agent-Toolkit"
+-
+-[tool.setuptools_dynamic_dependencies]
+ dependencies = [
+-  # Keep package version constraints as open as possible to avoid conflicts with other packages. Always define a minimum
+-  # version when adding a new package. If unsure, default to using `~=` instead of `==`. When using `~=`, use 2 digits
+-  # of precision in the version specifier. For example, use `~=1.2` instead of `~=1.2.3` and `~=0.1.3` instead of
+-  # `~=0.1.3.5`.
+-  # Keep sorted!!!
+-  "aiofiles~=25.1",
+-  "authlib>=1.7.2,<2.0.0",
+-  "click~=8.1",
+-  "colorama>=0.4.6,<1.0.0",
+-  "expandvars~=1.0",
+-  "fastapi~=0.119",
+-  "httpx~=0.27",
+-  "jinja2~=3.1",
+-  "jsonpath-ng~=1.8",
+-  "nest-asyncio2~=1.7",
+-  "networkx~=3.4",
+-  "nvidia-nat-atif == {version}",
+-  "numpy~=2.3",
+-  "pandas~=2.2",
+-  "pip>=24.3.1",
+-  "pkce==1.0.3",
+-  "pkginfo~=1.12",
+-  "platformdirs~=4.3",
+-  "pydantic~=2.11",
+-  "pyjwt~=2.11",
+-  # Pinning to 2.6.9 to work-around https://github.com/langchain-ai/langchain-milvus/issues/130
+-  "pymilvus==2.6.9",
+-  "python-dotenv>=1.1.1,<2.0.0",
+-  "python-multipart>=0.0.21",
+-  "PyYAML~=6.0",
+-  "rich~=14.0",
+-  "starlette >=0.51,<2.0",
+-  "tabulate~=0.9",
+-  "tzlocal~=5.3",
+-  "uvicorn[standard]~=0.38",
+-  # transitive dependencies
+-  "cryptography>=46.0.6,<47",
+-  "urllib3>=2.6.3,<3.0.0",
++    "aiofiles>=25.1",
++    "authlib>=1.7.2,<2.0.0",
++    "click>=8.1",
++    "colorama>=0.4.6,<1.0.0",
++    "cryptography>=46.0.6,<47",
++    "expandvars>=1.0",
++    "fastapi>=0.119",
++    "httpx>=0.27",
++    "jinja2>=3.1",
++    "jsonpath-ng>=1.8",
++    "nest-asyncio2>=1.7",
++    "networkx>=3.4",
++    "nvidia-nat-atif==1.7.0",
++    "numpy>=2.3",
++    "pandas>=2.2",
++    "pkce==1.0.3",
++    "pkginfo>=1.12",
++    "platformdirs>=4.3",
++    "pydantic>=2.11",
++    "pyjwt>=2.11",
++    "pymilvus==2.6.9",
++    "python-dotenv>=1.1.1,<2.0.0",
++    "python-multipart>=0.0.21",
++    "PyYAML>=6.0",
++    "rich>=14.0",
++    "starlette>=0.51,<2.0",
++    "tabulate>=0.9",
++    "tzlocal>=5.3",
++    "uvicorn[standard]>=0.38",
++    "urllib3>=2.6.3,<3.0.0",
+ ]
+
+-[tool.setuptools_dynamic_dependencies.optional-dependencies]
+-# Optional dependencies are things that users would want to install with NAT core.
+-# Keep sorted!!!
+-async_endpoints = [
+-  "aiosqlite~=0.21",
+-  "dask~=2026.1",
+-  "distributed~=2026.1",
+-  "sqlalchemy[asyncio]~=2.0",
+-]
+-gunicorn = [
+-  "gunicorn~=23.0",
+-]
+-pii-defense = [
+-  "presidio-analyzer",
+-  "presidio-anonymizer"
+-]
+-test = [
+-  "aioboto3>=11.0.0",
+-  "nvidia-nat-eval == {version}",
+-  "nvidia-nat-test == {version}",
+-]
++[project.urls]
++documentation = "https://docs.nvidia.com/nemo/agent-toolkit/latest/"
++source = "https://github.com/NVIDIA/NeMo-Agent-Toolkit"
+
+ [tool.uv.sources]
+ nvidia-nat-atif = { path = "../nvidia_nat_atif", editable = true }
+@@ -154,6 +123,6 @@
+ include-package-data = true
+
+ [tool.uv]
+-build-constraint-dependencies = ["setuptools>=64", "setuptools-scm>=8", "setuptools_dynamic_dependencies>=1.0.0"]
++build-constraint-dependencies = ["setuptools>=64", "setuptools-scm>=8"]
+ managed = true
+ config-settings = { editable_mode = "compat" }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">tarasko/picows</remote-id>
+    <remote-id type="pypi">picows</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    picows is a high-performance Cython-based WebSocket library for asyncio.
+    It provides both client and server implementations optimized for throughput
+    and low latency, using SIMD-accelerated (AVX2/AVX512/SSE2/NEON) masking
+    operations for efficient WebSocket frame processing.
+  </longdescription>
+</pkgmetadata>

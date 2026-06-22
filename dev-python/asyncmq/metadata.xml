@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    AsyncMQ is an async-first task queue and job scheduler for Python,
+    built on asyncio/anyio. It provides background job processing,
+    cron scheduling, rate limiting, retry policies, and dead-letter
+    queues, with backends for Redis, PostgreSQL, MongoDB, and AMQP.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">dymmond/asyncmq</remote-id>
+  </upstream>
+  <use>
+    <flag name="postgres">Enable PostgreSQL backend via dev-python/asyncpg</flag>
+  </use>
+</pkgmetadata>

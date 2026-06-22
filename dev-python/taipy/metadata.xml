@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Taipy is a meta-package that installs the full Taipy platform, pulling
+    together taipy-gui (web frontend) and taipy-rest (REST API backend) to
+    enable building data-driven web applications entirely in Python.
+  </longdescription>
+  <use>
+    <flag name="arrow">Enable Apache Arrow / Parquet data source support</flag>
+    <flag name="image">Enable image-type data node support via python-magic</flag>
+    <flag name="mssql">Enable Microsoft SQL Server data source support</flag>
+    <flag name="ngrok">Enable ngrok tunnel support for remote access</flag>
+    <flag name="rdp">Enable Ramer-Douglas-Peucker data simplification</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">Avaiga/taipy</remote-id>
+    <remote-id type="pypi">taipy</remote-id>
+  </upstream>
+</pkgmetadata>

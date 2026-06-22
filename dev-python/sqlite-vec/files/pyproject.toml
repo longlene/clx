@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqlite-vec"
+dynamic = ["version"]
+description = "Python bindings for the sqlite-vec SQLite vector search extension"
+license = {text = "MIT OR Apache-2.0"}
+
+[tool.setuptools.dynamic]
+version = {file = "VERSION"}
+
+[tool.setuptools.packages.find]
+include = ["sqlite_vec*"]

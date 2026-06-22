@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    tiny-vllm is an educational implementation of a high-performance LLM
+    inference engine in C++ and CUDA, inspired by vLLM. It targets CUDA
+    compute capability 12.0 (NVIDIA Blackwell architecture).
+  </longdescription>
+  <upstream>
+    <remote-id type="github">jmaczan/tiny-vllm</remote-id>
+  </upstream>
+</pkgmetadata>

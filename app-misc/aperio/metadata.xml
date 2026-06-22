@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">aperio-search/aperio</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Aperio is a screamingly fast, ultra-lightweight full-text search engine
+    written in Rust. It exposes an HTTP API for indexing and querying documents.
+  </longdescription>
+</pkgmetadata>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="ui">Enable GUI frontends: Streamlit web UI, PyWebView desktop window, Textual TUI</flag>
+    <flag name="bot">Enable Telegram bot frontend</flag>
+  </use>
+  <longdescription lang="en">
+    GenericAgent is a minimalist self-evolving autonomous agent framework.
+    Starting from a 3.3K-line seed, it grows a skill tree to achieve full
+    system control while using 6x fewer tokens than comparable agents. It
+    supports multiple LLM backends and frontends including a CLI, Streamlit
+    web UI, PyWebView desktop app, Textual TUI, and Telegram bot.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">lsdefine/GenericAgent</remote-id>
+  </upstream>
+</pkgmetadata>

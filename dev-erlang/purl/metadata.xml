@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    purl is an Erlang implementation of the Package URL (purl) specification,
+    which provides a reliable method for identifying and locating software
+    packages using a standard URL format.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">erlef/purl</remote-id>
+  </upstream>
+</pkgmetadata>

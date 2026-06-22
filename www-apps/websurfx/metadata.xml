@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Websurfx is a privacy-respecting, secure, lightning-fast meta search engine
+    that aggregates results from multiple search engines. It is an open-source
+    alternative to Searx with a modern interface and no ads or tracking.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">neon-mmd/websurfx</remote-id>
+  </upstream>
+</pkgmetadata>

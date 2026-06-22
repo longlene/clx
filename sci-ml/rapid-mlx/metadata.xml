@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Rapid-MLX is a high-performance OpenAI-compatible inference server built on
+    Apple MLX. It provides sub-100ms cached time-to-first-token, full tool
+    calling support with 17 parser backends, prompt caching, reasoning
+    separation, and cloud routing. Serves as a drop-in replacement for the
+    OpenAI API and is compatible with Claude Code, Cursor, and Aider.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">raullenchai/Rapid-MLX</remote-id>
+    <remote-id type="pypi">rapid-mlx</remote-id>
+  </upstream>
+</pkgmetadata>

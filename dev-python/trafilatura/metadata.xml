@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">adbar/trafilatura</remote-id>
+    <remote-id type="pypi">trafilatura</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Trafilatura is a Python library and command-line tool for web crawling,
+    scraping, and text extraction from HTML pages. It focuses on extracting
+    the main body text and metadata from web pages while removing boilerplate,
+    and can output in various formats including plain text, CSV, JSON, HTML,
+    Markdown, and TEI-XML.
+  </longdescription>
+  <use>
+    <flag name="curl">Use pycurl as an alternative HTTP backend</flag>
+    <flag name="speed">Enable faster HTTP with brotli decompression and cchardet encoding detection</flag>
+    <flag name="zstd">Enable zstandard decompression support</flag>
+  </use>
+</pkgmetadata>

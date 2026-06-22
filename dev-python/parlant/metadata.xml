@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Parlant is an interaction control harness for building reliable,
+    customer-facing AI agents. It provides controlled, consistent, and
+    predictable LLM interactions with support for multiple LLM backends.
+  </longdescription>
+  <use>
+    <flag name="azure">Enable Azure OpenAI backend via azure-identity</flag>
+    <flag name="gemini">Enable Google Gemini backend</flag>
+    <flag name="mongo">Enable MongoDB storage backend</flag>
+    <flag name="ollama">Enable Ollama local LLM backend</flag>
+    <flag name="qdrant">Enable Qdrant vector database backend</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">emcie-co/parlant</remote-id>
+    <remote-id type="pypi">parlant</remote-id>
+  </upstream>
+</pkgmetadata>

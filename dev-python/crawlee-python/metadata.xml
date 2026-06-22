@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Crawlee is a web scraping and browser automation library for Python.
+    It supports HTTP crawling via Parsel, BeautifulSoup, httpx, and browser
+    automation via Playwright, with built-in proxy rotation and data extraction.
+  </longdescription>
+  <use>
+    <flag name="beautifulsoup">Enable BeautifulSoup4 and html5lib crawling support</flag>
+    <flag name="curl-impersonate">Enable curl-cffi HTTP client with browser impersonation</flag>
+    <flag name="parsel">Enable Parsel (XPath/CSS) crawling support</flag>
+    <flag name="postgres">Enable PostgreSQL storage via asyncpg and SQLAlchemy</flag>
+    <flag name="redis">Enable Redis storage client</flag>
+    <flag name="sqlite">Enable SQLite storage via aiosqlite and SQLAlchemy</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">apify/crawlee-python</remote-id>
+  </upstream>
+</pkgmetadata>

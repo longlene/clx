@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Megatron-Energon is a multi-modal data loading library designed for
+    training large language and vision models with NVIDIA Megatron.
+  </longdescription>
+  <use>
+    <flag name="transforms">Enable torchvision-based image transforms</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">NVIDIA/Megatron-Energon</remote-id>
+  </upstream>
+</pkgmetadata>

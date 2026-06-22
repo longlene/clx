@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    waggle-mail is a full-featured email client for AI agents and automation.
+    It supports sending multipart emails (plain text + HTML) rendered from
+    Markdown via SMTP, and reading, replying, moving, and downloading
+    attachments over IMAP. Designed for use as an MCP tool in AI agent pipelines.
+  </longdescription>
+  <use>
+    <flag name="rich">Enable syntax-highlighted HTML rendering using
+      dev-python/markdown and dev-python/pygments</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">jasonacox-sam/waggle-mail</remote-id>
+    <remote-id type="pypi">waggle-mail</remote-id>
+  </upstream>
+</pkgmetadata>

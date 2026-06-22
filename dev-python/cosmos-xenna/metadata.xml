@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Cosmos-xenna is a Python library for building and running distributed
+    data pipelines using Ray. It features a Rust extension module for
+    performance-critical scheduling and resource management tasks.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">cosmos-xenna</remote-id>
+  </upstream>
+</pkgmetadata>

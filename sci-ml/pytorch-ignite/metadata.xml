@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="tensorboard">Enable TensorBoard logging handler
+      (sci-ml/tensorboard)</flag>
+    <flag name="tqdm">Enable tqdm progress bar logging handler</flag>
+  </use>
+  <longdescription lang="en">
+    PyTorch-Ignite is a high-level library to help with training and
+    evaluating neural networks in PyTorch flexibly and transparently.
+    It provides a simple engine and event system, metrics, and a rich
+    set of logging handlers for TensorBoard, Weights &amp; Biases,
+    MLflow, and others.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">pytorch/ignite</remote-id>
+    <remote-id type="pypi">pytorch-ignite</remote-id>
+  </upstream>
+</pkgmetadata>

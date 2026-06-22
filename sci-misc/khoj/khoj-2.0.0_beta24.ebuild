@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -36,7 +36,7 @@ RDEPEND="
 		>=dev-python/defusedxml-0.7.1[${PYTHON_USEDEP}]
 		>=dev-python/fastapi-0.110.0[${PYTHON_USEDEP}]
 		>=dev-python/python-multipart-0.0.7[${PYTHON_USEDEP}]
-		>=dev-python/jinja22-3.1.6[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.1.6[${PYTHON_USEDEP}]
 		>=dev-python/openai-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/tiktoken-0.3.2[${PYTHON_USEDEP}]
 		>=dev-python/tenacity-9.0.0[${PYTHON_USEDEP}]

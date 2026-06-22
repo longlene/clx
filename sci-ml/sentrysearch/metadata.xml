@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    SentrySearch enables semantic search over video footage using natural
+    language queries, powered by Gemini Embedding 2 for cloud-based inference
+    or Qwen3-VL for local model inference.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ssrajadh/sentrysearch</remote-id>
+  </upstream>
+  <use>
+    <flag name="cloud">Enable Qwen cloud inference via DashScope API</flag>
+  </use>
+</pkgmetadata>

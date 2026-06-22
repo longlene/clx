@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">AnswerDotAI/fasthtml</remote-id>
+    <remote-id type="pypi">python-fasthtml</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    FastHTML is a Python library for building web applications using
+    pure Python with an HTMX-based approach. It provides HTML components
+    as Python objects, server-sent events, WebSocket support via Starlette,
+    and OAuth integration, allowing full-stack web apps without JavaScript.
+  </longdescription>
+</pkgmetadata>

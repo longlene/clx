@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    WebDataset is a high-performance data loading library for deep learning,
+    using POSIX tar archives as sharded datasets. It provides sequential I/O
+    suitable for object storage and large-scale distributed training, and is
+    compatible with PyTorch DataLoader.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">webdataset/webdataset</remote-id>
+    <remote-id type="pypi">webdataset</remote-id>
+  </upstream>
+</pkgmetadata>

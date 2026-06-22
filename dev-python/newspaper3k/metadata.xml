@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    newspaper3k is a Python 3 library for extracting articles, full text, and
+    metadata from news websites. It uses lxml and BeautifulSoup for HTML
+    parsing, NLTK for NLP operations such as keyword extraction and
+    summarization, and supports multi-threaded article downloading. It handles
+    RSS/Atom feeds via feedparser and includes multilingual support.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">codelucas/newspaper</remote-id>
+  </upstream>
+</pkgmetadata>

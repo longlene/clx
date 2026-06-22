@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    py-machineid retrieves the unique hardware machine ID of the host system
+    without requiring administrator or root privileges. Supports Linux
+    (via /etc/machine-id or /var/lib/dbus/machine-id), macOS, and Windows.
+    Provides both plain and HMAC-hashed variants of the machine ID.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">keygen-sh/py-machineid</remote-id>
+    <remote-id type="pypi">py-machineid</remote-id>
+  </upstream>
+</pkgmetadata>

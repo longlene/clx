@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    nrte (Noma Real-Time Events) is an OTP library from Nomasystems that
+    provides real-time event streaming over HTTP connections. It supports
+    both Server-Sent Events (SSE) and WebSocket transports, built on top
+    of the Cowboy HTTP server.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">nomasystems/nrte</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    cysqlite is a Cython-based SQLite3 database driver that provides a
+    DB-API 2.0 compatible interface with additional features including
+    async support, table functions, and full-text search helpers.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">coleifer/cysqlite</remote-id>
+  </upstream>
+</pkgmetadata>

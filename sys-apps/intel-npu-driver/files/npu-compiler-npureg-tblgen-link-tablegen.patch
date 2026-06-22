@@ -1,0 +1,9 @@
+--- a/tools/npureg-tblgen/CMakeLists.txt
++++ b/tools/npureg-tblgen/CMakeLists.txt
+@@ -32,5 +32,6 @@
+     ${PROJECT_BINARY_DIR}/src/vpux_compiler/tblgen)
+ target_link_libraries(${TARGET_NAME} PRIVATE
+     ${llvm_libs}
++    LLVMTableGen
+     npu_core_utils
+     MLIRIR)

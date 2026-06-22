@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="vllm">Enable vLLM inference backend support</flag>
+  </use>
+  <longdescription lang="en">
+    NeMo Export-Deploy is a library for exporting NeMo and Hugging Face models
+    to optimized inference backends (vLLM, TensorRT-LLM, ONNX) and deploying
+    them for efficient querying. It integrates with Megatron-Core,
+    Transformer Engine, and supports distributed inference serving via
+    FastAPI and NVIDIA Triton.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">NVIDIA-NeMo/Export-Deploy</remote-id>
+  </upstream>
+</pkgmetadata>

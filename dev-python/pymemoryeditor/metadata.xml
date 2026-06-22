@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">JeanExtreme002/PyMemoryEditor</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Pure-Python library to inspect, modify and scan the memory of any running
+    process. Supports Cheat Engine-style value scans, pointer chains and
+    array-of-bytes (AOB) pattern search on Windows, Linux and macOS via ctypes
+    with no required C extension. An optional NumPy fast-path (USE=speed) and
+    an optional Qt GUI front-end (USE=app) are also available.
+  </longdescription>
+  <use>
+    <flag name="app">Install the PySide6-based GUI application</flag>
+    <flag name="speed">Pull in numpy for vectorized scan acceleration</flag>
+  </use>
+</pkgmetadata>

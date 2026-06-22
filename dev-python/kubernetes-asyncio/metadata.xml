@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    An async Python client library for the Kubernetes API, based on the
+    official kubernetes-client/python library. Provides asyncio-native
+    access to Kubernetes cluster resources, supporting watch streams,
+    leader election, and dynamic client APIs.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">tomplus/kubernetes_asyncio</remote-id>
+    <remote-id type="pypi">kubernetes-asyncio</remote-id>
+  </upstream>
+</pkgmetadata>

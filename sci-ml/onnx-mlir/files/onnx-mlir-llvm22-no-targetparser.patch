@@ -1,0 +1,24 @@
+LLVMTargetParser was merged into LLVMSupport in LLVM 19 and no longer exists as
+a standalone library in LLVM 22.  Both targets already link LLVMSupport, so
+simply remove the now-obsolete LLVMTargetParser link requirement.
+
+--- a/src/Version/CMakeLists.txt
++++ b/src/Version/CMakeLists.txt
+@@ -59,7 +59,6 @@ add_onnx_mlir_library(OMVersion
+
+   LINK_LIBS PUBLIC
+     LLVMSupport
+-    LLVMTargetParser
+ )
+
+ # Obtain the commit hash of a specific repo. You must specify the path and the variable name.
+--- a/src/Compiler/CMakeLists.txt
++++ b/src/Compiler/CMakeLists.txt
+@@ -63,7 +63,6 @@ add_onnx_mlir_library(OMCompilerUtils
+   LINK_LIBS PUBLIC
+   MLIRIR
+   OMAccelerator
+-  LLVMTargetParser
+   LLVMSupport
+   )
+

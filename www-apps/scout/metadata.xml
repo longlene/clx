@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Scout is a lightweight RESTful search server built on top of SQLite
+    full-text search. It provides a simple HTTP API for indexing and
+    searching documents across multiple indexes.
+  </longdescription>
+  <use>
+    <flag name="gevent">Enable the gevent-based WSGI server (scout_wsgi)</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">coleifer/scout</remote-id>
+  </upstream>
+</pkgmetadata>

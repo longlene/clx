@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    nvidia-nat-atif provides the ATIF (Agent Task Interchange Format) Pydantic
+    schema models used across the NVIDIA NeMo Agent Toolkit. It defines the
+    wire format for agent task data exchange between NAT components.
+  </longdescription>
+  <use>
+    <flag name="full">Enable ATOF-to-ATIF converter and JSON Schema validation
+      (pulls in dev-python/jsonschema)</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">NVIDIA/NeMo-Agent-Toolkit</remote-id>
+    <remote-id type="pypi">nvidia-nat-atif</remote-id>
+  </upstream>
+</pkgmetadata>

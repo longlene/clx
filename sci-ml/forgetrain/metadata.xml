@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ForgeTrain is an LLM pretraining framework built end-to-end by an
+    autonomous AI agent loop. It targets NVIDIA H100 GPUs and delivers
+    44.13% MFU (about 10% above Megatron-LM) for MiniCPM4-0.5B and 8B
+    models. Features include CuTeDSL custom GEMM kernels, a self-built
+    FlashAttention implementation, CUDA Graph support, and Triton fused
+    kernels. This package installs the training-engine-tensor library
+    (MiniCPM4-0.5B variant).
+  </longdescription>
+  <upstream>
+    <remote-id type="github">OpenBMB/ForgeTrain</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,12 @@
+--- a/python/tvm_ffi/libinfo.py
++++ b/python/tvm_ffi/libinfo.py
+@@ -324,6 +324,9 @@ def _find_library_by_basename(
+     else:
+         dll_paths.extend(Path(p) for p in _split_env_var("LD_LIBRARY_PATH", ":"))
+         dll_paths.extend(Path(p) for p in _split_env_var("PATH", ":"))
++        # Case 4. Standard system library directories (for distro packages
++        # that install libraries to /usr/lib64 rather than alongside Python).
++        dll_paths.extend([Path("/usr/lib64"), Path("/usr/lib")])
+
+     # Search for the library in candidate directories
+     for dll_dir in dll_paths:

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Gymnasium is a standard API for single-agent reinforcement learning,
+    with a diverse and growing collection of reference environments that
+    showcase the various capabilities of the API. It is maintained by
+    the Farama Foundation and is the successor to OpenAI Gym.
+  </longdescription>
+  <use>
+    <flag name="classic-control">Enable classic control environments (CartPole,
+      Pendulum, MountainCar, etc.) requiring pygame-ce</flag>
+    <flag name="mujoco">Enable MuJoCo physics simulation environments</flag>
+    <flag name="toy-text">Enable simple text-based environments (FrozenLake,
+      Taxi, etc.) requiring pygame-ce for rendering</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">Farama-Foundation/Gymnasium</remote-id>
+    <remote-id type="pypi">gymnasium</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Rauthy is a production-ready OpenID Connect and OAuth 2 Identity and
+    Access Management server with optional PAM integration. It supports
+    WebAuthn/passkeys, multi-factor authentication, ephemeral clients,
+    and an embedded distributed SQLite cluster via hiqlite.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">sebadob/rauthy</remote-id>
+  </upstream>
+</pkgmetadata>

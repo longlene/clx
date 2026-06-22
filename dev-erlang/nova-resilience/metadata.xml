@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    nova_resilience wraps the seki resilience library as a Nova plugin,
+    adding circuit breakers, bulkheads, and retry policies to Nova
+    controllers and service calls with minimal configuration.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">novaframework/nova_resilience</remote-id>
+  </upstream>
+</pkgmetadata>

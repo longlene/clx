@@ -3,8 +3,9 @@
 
 EAPI=8
 
+DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14}  )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -20,8 +21,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-ml/pytorch[${PYTHON_USEDEP}]
-	>=dev-python/einops-0.6.1[${PYTHON_USEDEP}]
+	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
+	$(python_gen_cond_dep '
+		>=dev-python/einops-0.6.1[${PYTHON_USEDEP}]
+	')
 "
 #BDEPEND="
 #	test? (

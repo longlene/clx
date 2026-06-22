@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ucache is a lightweight, unified caching library for Python with a
+    consistent API across multiple backends including in-process memory,
+    SQLite, Redis, and Memcached (via pylibmc or pymemcache).
+  </longdescription>
+  <use>
+    <flag name="msgpack">Use msgpack for serialization instead of pickle</flag>
+    <flag name="pylibmc">Enable the Memcached backend via pylibmc</flag>
+<flag name="redis">Enable the Redis cache backend</flag>
+    <flag name="sqlite">Enable the SQLite cache backend via peewee</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">coleifer/ucache</remote-id>
+  </upstream>
+</pkgmetadata>

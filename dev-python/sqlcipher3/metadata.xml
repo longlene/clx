@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    sqlcipher3 provides Python 3 DB-API 2.0 bindings for SQLCipher, an
+    encrypted extension of SQLite. It bundles the SQLite amalgamation and
+    compiles it with SQLCipher-compatible macros, linking against the
+    system OpenSSL library for encryption support.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">coleifer/sqlcipher3</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Skyvern is an AI-powered browser automation framework that uses LLMs and
+    computer vision to automate browser-based workflows without fragile CSS
+    selectors or XPaths. It can navigate websites, fill forms, extract data,
+    and interact with complex web UIs through natural language instructions.
+  </longdescription>
+  <use>
+    <flag name="local">Enable local/server mode with full browser automation,
+      database support (PostgreSQL, SQLite), and all AI provider integrations</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">Skyvern-AI/skyvern</remote-id>
+    <remote-id type="pypi">skyvern</remote-id>
+  </upstream>
+</pkgmetadata>

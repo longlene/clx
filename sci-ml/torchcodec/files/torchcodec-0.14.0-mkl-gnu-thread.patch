@@ -1,0 +1,11 @@
+--- a/setup.py
++++ b/setup.py
+@@ -128,6 +128,8 @@ class CMakeBuild(build_ext):
+             f"-DENABLE_CUDA={enable_cuda}",
+             f"-DTORCHCODEC_DISABLE_COMPILE_WARNING_AS_ERROR={torchcodec_disable_compile_warning_as_error}",
+             f"-DTORCHCODEC_DISABLE_HOMEBREW_RPATH={torchcodec_disable_homebrew_rpath}",
++            # Use GNU thread layer: system MKL has libmkl_gnu_thread, not libmkl_intel_thread
++            "-DMKL_THREADING=gnu_thread",
+         ]
+
+         if sys.platform == "win32":

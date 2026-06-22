@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ONNX-MLIR provides tools and libraries for compiling ONNX models
+    using the MLIR compiler infrastructure, enabling deployment on
+    various hardware targets.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">onnx/onnx-mlir</remote-id>
+  </upstream>
+</pkgmetadata>

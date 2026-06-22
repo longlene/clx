@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    modelscope-hub is the official Python client library for the ModelScope
+    Hub, providing programmatic access to model discovery, download, upload,
+    and management. It offers a lightweight alternative to the full modelscope
+    SDK for users who only need Hub connectivity without the heavyweight ML
+    runtime dependencies.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">modelscope/modelscope_hub</remote-id>
+  </upstream>
+</pkgmetadata>

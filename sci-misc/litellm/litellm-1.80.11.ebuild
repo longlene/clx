@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -32,7 +32,7 @@ RDEPEND="
 		>=dev-python/tiktoken-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/importlib-metadata-6.8.0[${PYTHON_USEDEP}]
 		>=dev-python/click-8.1.7[${PYTHON_USEDEP}]
-		>=dev-python/jinja22-3.1.2[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
 		>=dev-python/aiohttp-3.10.0[${PYTHON_USEDEP}]
 		>=dev-python/pydantic-2.5.0[${PYTHON_USEDEP}]
 		>=dev-python/jsonschema-4.23.0[${PYTHON_USEDEP}]

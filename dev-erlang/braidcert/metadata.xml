@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Braidcert is the Public Key Infrastructure (PKI) application for braidnet.
+    It handles generating SSL certificates used for TLS distribution between
+    braidnet and braidnode instances.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">stritzinger/braidcert</remote-id>
+  </upstream>
+</pkgmetadata>

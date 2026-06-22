@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    RAG-Anything is an all-in-one RAG system that supports multimodal
+    document processing including PDFs, images, office files, and web
+    content, powered by LightRAG for graph-based knowledge retrieval.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">HKUDS/RAG-Anything</remote-id>
+  </upstream>
+  <use>
+    <flag name="image">Enable image processing support via Pillow</flag>
+    <flag name="markdown">Enable Markdown to PDF conversion via WeasyPrint</flag>
+    <flag name="text">Enable PDF report generation via ReportLab</flag>
+  </use>
+</pkgmetadata>

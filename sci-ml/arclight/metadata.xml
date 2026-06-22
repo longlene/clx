@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ArcLight is a lightweight LLM inference framework built on the NNML
+    tensor library, supporting x86 (AVX2/F16C) and ARM NEON backends.
+    It provides GGUF model loading and CLI tools for text generation,
+    chat, and perplexity evaluation.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">OpenBMB/ArcLight</remote-id>
+  </upstream>
+  <use>
+    <flag name="numa">Enable NUMA-aware memory allocation via libnuma</flag>
+  </use>
+</pkgmetadata>

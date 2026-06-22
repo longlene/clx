@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ycetl (yce constexpr template library) is a header-only C++20 library
+    providing STL-shaped containers, smart pointers, and multi-type memory
+    machinery that work at both compile time and runtime. Designed for
+    building complex data structures during constant evaluation and carrying
+    the result into runtime as a baked-in constexpr value.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">zokrezyl/ycetl</remote-id>
+  </upstream>
+</pkgmetadata>

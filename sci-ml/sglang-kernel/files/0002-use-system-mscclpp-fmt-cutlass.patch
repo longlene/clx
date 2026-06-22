@@ -1,41 +1,48 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -43,23 +43,7 @@
+@@ -46,21 +46,6 @@
  clear_cuda_arches(CMAKE_FLAG)
  
  # Third Party repos
 -# cutlass
 -FetchContent_Declare(
 -    repo-cutlass
--    GIT_REPOSITORY https://github.com/NVIDIA/cutlass
--    GIT_TAG        57e3cfb47a2d9e0d46eb6335c3dc411498efa198
--    GIT_SHALLOW    OFF
+-    URL      https://${GITHUB_ARTIFACTORY}/NVIDIA/cutlass/archive/57e3cfb47a2d9e0d46eb6335c3dc411498efa198.tar.gz
+-    URL_HASH SHA256=09237099a70f80bff1dc8bb80c843a674bb4fdcb46e43cc6993e711c5ca89bb5
 -)
 -FetchContent_Populate(repo-cutlass)
- 
+-
 -# fmt
 -FetchContent_Declare(
 -    repo-fmt
--    GIT_REPOSITORY https://github.com/fmtlib/fmt
--    GIT_TAG        553ec11ec06fbe0beebfbb45f9dc3c9eabd83d28
--    GIT_SHALLOW    OFF
+-    URL      https://${GITHUB_ARTIFACTORY}/fmtlib/fmt/archive/553ec11ec06fbe0beebfbb45f9dc3c9eabd83d28.tar.gz
+-    URL_HASH SHA256=c314292789d28c3c3b420e75a7b2d1706f685f7fb63289128d46aeaea2c6be71
 -)
 -FetchContent_Populate(repo-fmt)
  
  # Triton kernel
  FetchContent_Declare(
-@@ -88,14 +72,12 @@
+@@ -86,23 +71,12 @@
  )
  FetchContent_Populate(repo-flash-attention)
  
 -# mscclpp
 -FetchContent_Declare(
 -    repo-mscclpp
--    GIT_REPOSITORY https://github.com/microsoft/mscclpp.git
--    GIT_TAG        51eca89d20f0cfb3764ccd764338d7b22cd486a6
--    GIT_SHALLOW    OFF
+-    URL      https://${GITHUB_ARTIFACTORY}/microsoft/mscclpp/archive/51eca89d20f0cfb3764ccd764338d7b22cd486a6.tar.gz
+-    URL_HASH SHA256=b064de701da5253e32f4031d16b01a61d78c369327d585ff7bfb521bbe742677
 -)
 -FetchContent_Populate(repo-mscclpp)
+-
+-# mscclpp's own CMakeLists.txt hardcodes a github.com FetchContent for nlohmann/json.
+-# Patch it to route through GITHUB_ARTIFACTORY so it follows the same mirror as our deps.
+-file(READ "${repo-mscclpp_SOURCE_DIR}/CMakeLists.txt" _mscclpp_cmakelists)
+-string(REPLACE
+-    "https://github.com/nlohmann/json"
+-    "https://${GITHUB_ARTIFACTORY}/nlohmann/json"
+-    _mscclpp_cmakelists "${_mscclpp_cmakelists}")
+-file(WRITE "${repo-mscclpp_SOURCE_DIR}/CMakeLists.txt" "${_mscclpp_cmakelists}")
+-unset(_mscclpp_cmakelists)
 +# Use system dev-libs/cutlass; example headers installed to cutlass/examples/
 +find_package(NvidiaCutlass REQUIRED)
 +get_filename_component(_cutlass_prefix "${NvidiaCutlass_CMAKE_DIR}/../../.." ABSOLUTE)
@@ -45,7 +52,7 @@
  
  # ccache option
  option(ENABLE_CCACHE "Whether to use ccache" ON)
-@@ -317,13 +299,10 @@
+@@ -325,13 +299,10 @@
  )
  
  set(INCLUDES
@@ -61,7 +68,7 @@
      ${repo-flash-attention_SOURCE_DIR}/csrc/flash_attn/src
  )
  
-@@ -371,17 +350,10 @@
+@@ -379,19 +350,10 @@
      set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -D_GLIBCXX_USE_CXX11_ABI=1")
  endif()
  
@@ -69,6 +76,8 @@
 -set(MSCCLPP_USE_CUDA ON)
 -set(MSCCLPP_BYPASS_GPU_CHECK ON)
 -set(MSCCLPP_BUILD_TESTS OFF)
+-set(MSCCLPP_BUILD_PYTHON_BINDINGS OFF)
+-set(MSCCLPP_BUILD_APPS_NCCL OFF)
 -add_subdirectory(
 -    ${repo-mscclpp_SOURCE_DIR}
 -    ${CMAKE_CURRENT_BINARY_DIR}/mscclpp-build
@@ -82,7 +91,7 @@
  
  # sparse flash attention
  target_compile_definitions(common_ops_sm90_build PRIVATE
-@@ -472,10 +444,9 @@
+@@ -482,10 +444,9 @@
  
      target_compile_options(flash_ops PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:${SGL_FLASH_KERNEL_CUDA_FLAGS}>)
      target_include_directories(flash_ops PRIVATE

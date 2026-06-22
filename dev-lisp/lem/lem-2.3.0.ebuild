@@ -14,9 +14,7 @@ SRC_URI="https://github.com/lem-project/lem/archive/refs/tags/v${PV}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	dev-lisp/iterate
 	dev-lisp/closer-mop
@@ -40,7 +38,6 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-charms
 	dev-lisp/cl-setlocale
 "
-BDEPEND=""
 
 src_prepare() {
 	default
@@ -60,4 +57,3 @@ src_install() {
 	#dobin lem
 	einstalldocs
 }
-

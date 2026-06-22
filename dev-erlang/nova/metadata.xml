@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Nova is a web framework for the BEAM (Erlang/Elixir/LFE), built on top of
+    Cowboy and providing a controller/view architecture with ErlydTL templates.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">novaframework/nova</remote-id>
+  </upstream>
+</pkgmetadata>

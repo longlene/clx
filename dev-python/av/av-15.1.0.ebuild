@@ -8,7 +8,7 @@ MY_P=${MY_PN}-${PV}
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{12..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 inherit distutils-r1
 
 DESCRIPTION="Pythonic bindings for FFmpeg's libraries"

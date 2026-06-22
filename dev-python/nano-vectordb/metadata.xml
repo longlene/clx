@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    nano-vectordb is a minimal, hackable vector database implementation
+    that supports storage and similarity search over dense vector embeddings,
+    designed for simplicity and easy customization.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">gusye1234/nano-vectordb</remote-id>
+    <remote-id type="pypi">nano-vectordb</remote-id>
+  </upstream>
+</pkgmetadata>

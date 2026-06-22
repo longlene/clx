@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_EXT=1
-PYTHON_COMPAT=( python3_{12..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 DISTUTILS_USE_PEP517=setuptools
 
 inherit distutils-r1 multiprocessing prefix pypi

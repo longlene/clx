@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    CleanRL provides high-quality, single-file implementations of Deep
+    Reinforcement Learning algorithms (PPO, DQN, C51, DDPG, TD3, SAC, PPG)
+    with research-friendly features such as W&amp;B integration, TensorBoard
+    logging, and reproducibility tools.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">vwxyzjn/cleanrl</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Frappe is a full-stack, metadata-driven low-code web framework for building
+    real-world business applications. It includes an ORM, REST API, background
+    jobs (via RQ), authentication, print/email, and a JavaScript frontend.
+    This package bundles frappe's custom PyPika and gunicorn forks.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">frappe/frappe</remote-id>
+    <remote-id type="pypi">frappe</remote-id>
+  </upstream>
+</pkgmetadata>

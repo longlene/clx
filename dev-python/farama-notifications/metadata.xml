@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A lightweight library that provides update notifications for all
+    packages maintained by the Farama Foundation, including Gymnasium,
+    PettingZoo, SuperSuit, and other RL environment libraries.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Farama-Foundation/Farama-Notifications</remote-id>
+    <remote-id type="pypi">farama-notifications</remote-id>
+  </upstream>
+</pkgmetadata>

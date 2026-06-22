@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>0xccef@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="curl">Enable libCURL for enhanced network communication</flag>
+    <flag name="expat">Enable expat for indexing xmlpipe sources</flag>
+    <flag name="mysql">Enable MySQL source indexing</flag>
+    <flag name="odbc">Enable ODBC source indexing</flag>
+    <flag name="postgres">Enable PostgreSQL source indexing</flag>
+    <flag name="ssl">Enable OpenSSL for encrypted networking</flag>
+    <flag name="zlib">Enable zlib for compressed data and networking</flag>
+    <flag name="zstd">Enable zstd for compressed networking</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">manticoresoftware/manticoresearch</remote-id>
+  </upstream>
+</pkgmetadata>

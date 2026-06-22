@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <longdescription>
+    Fast stable diffusion on CPU using LCM/LCM-LoRA, with OpenVINO acceleration
+    and optional PyQt5 GUI, Gradio web UI, and MCP server interfaces.
+  </longdescription>
+  <use>
+    <flag name="gui">Enable PyQt5 desktop GUI</flag>
+    <flag name="mcp">Enable Model Context Protocol server support</flag>
+    <flag name="webui">Enable Gradio web UI</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">rupeshs/fastsdcpu</remote-id>
+  </upstream>
+</pkgmetadata>

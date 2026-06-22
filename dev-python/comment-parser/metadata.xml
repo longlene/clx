@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    comment_parser is a Python module that can be used to extract comments
+    from various types of source files (C, C++, Java, Python, Shell, XML,
+    HTML, etc.).
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">comment-parser</remote-id>
+    <remote-id type="github">jeanralphaviles/comment_parser</remote-id>
+  </upstream>
+</pkgmetadata>

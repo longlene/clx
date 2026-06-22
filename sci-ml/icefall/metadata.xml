@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Icefall provides speech processing recipes built on top of k2 (GPU-accelerated
+    FSA operations) and Lhotse (audio data loading). It includes training
+    and decoding scripts for automatic speech recognition (ASR) using
+    models such as Conformer, Zipformer, and Transducer variants.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">k2-fsa/icefall</remote-id>
+  </upstream>
+</pkgmetadata>

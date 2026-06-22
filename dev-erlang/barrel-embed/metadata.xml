@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    barrel_embed is an Erlang/Elixir library for generating text embeddings,
+    supporting multiple providers including OpenAI, Cohere, Azure, AWS Bedrock,
+    Mistral, Jina, Voyage, Vertex AI, as well as local models via
+    sentence-transformers, fastembed, ColBERT, SPLADE, and CLIP through an
+    embedded Python port server.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">barrel-db/barrel_embed</remote-id>
+  </upstream>
+</pkgmetadata>

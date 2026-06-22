@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Dirsearch is a mature command-line tool designed to brute force
+    directories and files on web servers. It supports multiple HTTP
+    methods, proxies, authentication schemes, and output formats.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">maurosoria/dirsearch</remote-id>
+  </upstream>
+</pkgmetadata>

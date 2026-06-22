@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>0xccef@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    erlang_masque implements the MASQUE proxying protocol (RFC 9298 / RFC 9484)
+    for Erlang/OTP. It supports UDP and TCP/IP tunnelling over HTTP/3, HTTP/2,
+    and HTTP/1.1, and provides both client and server components.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">benoitc/erlang_masque</remote-id>
+  </upstream>
+</pkgmetadata>

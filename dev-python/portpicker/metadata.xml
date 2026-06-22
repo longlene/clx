@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    portpicker provides an API to find and return an available network port
+    for an application to bind to. Suited for use from unit tests or test
+    harnesses that launch local servers. Also includes an optional portserver
+    for coordinating port allocation across multiple processes on a host.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">google/python_portpicker</remote-id>
+    <remote-id type="pypi">portpicker</remote-id>
+  </upstream>
+</pkgmetadata>

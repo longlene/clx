@@ -1,0 +1,11 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-07-23 15:20:15.000000000 -0700
++++ b/CMakeLists.txt	2025-08-02 03:14:31.558268906 -0700
+@@ -89,7 +89,8 @@
+     set(ONNX_NAMESPACE "onnx2trt_onnx")
+   endif()
+   add_definitions("-DONNX_NAMESPACE=${ONNX_NAMESPACE}")
+-  add_subdirectory(third_party/onnx EXCLUDE_FROM_ALL)
++  find_package(ONNX REQUIRED)
++  add_definitions("-DONNX_ML=1")
+ endif()

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Monkay is a Python library providing lazy imports, a settings
+    manager with optional Pydantic integration, and preload hooks.
+    It is used as a foundation by several dymmond async frameworks.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">devkral/monkay</remote-id>
+    <remote-id type="pypi">monkay</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    PyCryptodome is a self-contained cryptographic library for Python.
+    This package installs the library under the Cryptodome namespace
+    (from Cryptodome.xxx import ...) rather than the Crypto namespace.
+    It is the same codebase as pycryptodome but with a different import path.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">pycryptodomex</remote-id>
+  </upstream>
+</pkgmetadata>

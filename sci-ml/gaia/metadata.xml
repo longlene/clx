@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">amd/gaia</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    GAIA is a lightweight agent framework by AMD for building and running AI agents
+    on edge devices and AI PCs. It supports local LLMs via OpenAI-compatible APIs,
+    RAG, voice, MCP, and a web UI.
+  </longdescription>
+  <use>
+    <flag name="api">Enable the FastAPI REST server (gaia-api)</flag>
+    <flag name="audio">Enable PyTorch-based audio support (torch, torchvision, torchaudio)</flag>
+    <flag name="litellm">Enable LiteLLM provider integration</flag>
+    <flag name="mcp">Enable Model Context Protocol (MCP) bridge</flag>
+    <flag name="rag">Enable RAG (retrieval-augmented generation) with faiss and document parsing</flag>
+    <flag name="talk">Enable voice I/O (sounddevice, soundfile, psutil)</flag>
+    <flag name="telegram">Enable Telegram bot integration</flag>
+    <flag name="ui">Enable the web UI server (requires PyTorch and RAG deps)</flag>
+  </use>
+</pkgmetadata>

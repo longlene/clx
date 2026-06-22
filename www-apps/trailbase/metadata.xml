@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    TrailBase is a single-executable, sub-millisecond open-source Firebase
+    alternative with type-safe REST and realtime APIs, auth, an admin UI, and
+    a WebAssembly runtime. It is built on Rust, SQLite, and Wasmtime.
+    The binary installed is named 'trail'.
+
+    Note: built from upstream's pre-compiled musl static release binary.
+    Source build requires 900+ npm packages for the embedded admin UI and
+    cannot be reproduced in a standard Gentoo network sandbox.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">trailbaseio/trailbase</remote-id>
+  </upstream>
+</pkgmetadata>

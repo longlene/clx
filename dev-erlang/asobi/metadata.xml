@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Asobi is a game backend platform built on Nova/OTP, providing features
+    such as matchmaking, real-time communication, leaderboards, economy,
+    social features, and authentication for multiplayer game backends.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">widgrensit/asobi</remote-id>
+  </upstream>
+</pkgmetadata>

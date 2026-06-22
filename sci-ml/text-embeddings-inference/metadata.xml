@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Text Embeddings Inference (TEI) is a blazing-fast inference server for
+    text embedding models. It supports state-of-the-art models and features
+    dynamic batching, ONNX Runtime, and Candle backends, OpenTelemetry tracing,
+    and a Prometheus metrics endpoint.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">huggingface/text-embeddings-inference</remote-id>
+  </upstream>
+</pkgmetadata>

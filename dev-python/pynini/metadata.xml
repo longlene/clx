@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Pynini is a Python library for weighted finite-state grammar
+    compilation built on OpenFst, used for text normalization and
+    other computational linguistics tasks.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">pynini</remote-id>
+  </upstream>
+</pkgmetadata>

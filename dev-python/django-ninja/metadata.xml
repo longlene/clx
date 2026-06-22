@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Django Ninja is a web framework for building APIs with Django and Python
+    type hints, inspired by FastAPI. It provides automatic OpenAPI/Swagger
+    documentation, Pydantic v2 validation, async support, and Django ORM
+    integration.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">django-ninja</remote-id>
+    <remote-id type="github">vitalik/django-ninja</remote-id>
+  </upstream>
+</pkgmetadata>

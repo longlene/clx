@@ -5,7 +5,12 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="dbus">Enable D-Bus notification support via dev-python/dbus-python</flag>
+    <flag name="mqtt">Enable MQTT broker notification support</flag>
+  </use>
   <upstream>
     <remote-id type="github">caronc/apprise</remote-id>
+    <remote-id type="pypi">apprise</remote-id>
   </upstream>
 </pkgmetadata>

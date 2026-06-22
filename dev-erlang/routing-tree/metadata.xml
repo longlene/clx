@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    routing_tree provides a radix-tree-based URL router for Erlang/OTP
+    applications. It is primarily used by the Nova web framework to dispatch
+    HTTP requests to the correct controller action.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">novaframework/routing_tree</remote-id>
+  </upstream>
+</pkgmetadata>

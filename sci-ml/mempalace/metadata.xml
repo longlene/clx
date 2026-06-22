@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    MemPalace is an open-source AI memory system that provides persistent,
+    semantic memory for AI assistants and agents. It uses ChromaDB for vector
+    storage, supports MCP (Model Context Protocol) server mode, and includes
+    a CLI for mining, storing, and querying memories from various sources.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">MemPalace/mempalace</remote-id>
+  </upstream>
+</pkgmetadata>

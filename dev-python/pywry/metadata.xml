@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    PyWry is a cross-platform application factory, WebView rendering engine
+    and desktop UI toolkit for Python. It wraps the Tauri WebView backend
+    (pytauri) to deliver native desktop windows, inline web widgets, and
+    Jupyter notebook experiences from a single Python API. Ships with
+    bundled Plotly, AG Grid, and Lightweight Charts frontend libraries.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">deeleeramone/PyWry</remote-id>
+  </upstream>
+</pkgmetadata>

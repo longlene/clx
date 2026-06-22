@@ -7,7 +7,7 @@ LLVM_COMPAT=( 22 )
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1 llvm-r2
 

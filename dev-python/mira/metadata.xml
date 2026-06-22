@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Mira is a self-hosted AI code review platform for pull requests. It
+    provides indexed PR reviews, walkthrough generation, vulnerability
+    scanning, dependency graph analysis, custom rule enforcement, and a
+    learning loop for reviewer preferences. Supports GitHub via webhooks
+    and multiple LLM providers.
+  </longdescription>
+  <use>
+    <flag name="serve">Enable the webhook server mode (FastAPI + uvicorn)
+      for receiving GitHub PR events</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">miracodeai/mira</remote-id>
+  </upstream>
+</pkgmetadata>

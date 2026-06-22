@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -32,7 +32,7 @@ RDEPEND="${DEPEND}
 		>=dev-python/expandvars-1.0[${PYTHON_USEDEP}]
 		>=dev-python/fastapi-0.119.0[${PYTHON_USEDEP}]
 		>=dev-python/httpx-0.27[${PYTHON_USEDEP}]
-		>=dev-python/jinja22-3.1[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.1[${PYTHON_USEDEP}]
 		>=dev-python/jsonpath-ng-1.7[${PYTHON_USEDEP}]
 		>=dev-python/nest-asyncio2-1.7.1[${PYTHON_USEDEP}]
 		>=dev-python/networkx-3.4[${PYTHON_USEDEP}]

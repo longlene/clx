@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    PySimpleGUI makes it easy to create GUI applications in Python by
+    wrapping tkinter, Qt (PyQt5/PyQt6), WxPython, and Remi into a
+    simple, consistent API. Requires Python to be built with tk support
+    for the default tkinter backend.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">PySimpleGUI/PySimpleGUI</remote-id>
+    <remote-id type="pypi">pysimplegui</remote-id>
+  </upstream>
+</pkgmetadata>

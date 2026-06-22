@@ -1,0 +1,213 @@
+# Copyright 2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	aho-corasick@1.1.4
+	anstream@1.0.0
+	anstyle-parse@1.0.0
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anstyle@1.0.14
+	anyhow@1.0.102
+	arrayvec@0.7.6
+	assert_matches@1.5.0
+	autocfg@1.5.0
+	bindgen@0.72.1
+	bitflags@1.3.2
+	bitflags@2.11.1
+	byteorder@1.5.0
+	cc@1.2.61
+	cexpr@0.6.0
+	cfg-if@1.0.4
+	cfg_aliases@0.2.1
+	clang-sys@1.8.1
+	clap@4.6.1
+	clap_builder@4.6.0
+	clap_derive@4.6.1
+	clap_lex@1.1.0
+	colorchoice@1.0.5
+	crossbeam-channel@0.5.15
+	crossbeam-utils@0.8.21
+	daemonize@0.5.0
+	either@1.15.0
+	equivalent@1.0.2
+	errno-dragonfly@0.1.2
+	errno@0.2.8
+	errno@0.3.14
+	fastrand@2.4.1
+	filetime@0.2.27
+	find-msvc-tools@0.1.9
+	foldhash@0.1.5
+	fsevent-sys@4.1.0
+	getrandom@0.2.17
+	getrandom@0.4.2
+	glob@0.3.3
+	hashbrown@0.15.5
+	hashbrown@0.17.0
+	heck@0.5.0
+	home@0.5.11
+	id-arena@2.3.0
+	indexmap@2.14.0
+	inotify-sys@0.1.5
+	inotify@0.10.2
+	instant@0.1.13
+	is_terminal_polyfill@1.70.2
+	itertools@0.13.0
+	itoa@1.0.18
+	kqueue-sys@1.1.0
+	kqueue@1.1.1
+	lazy_static@1.5.0
+	leb128fmt@0.1.0
+	libc@0.2.186
+	libloading@0.8.9
+	libproc@0.14.11
+	libredox@0.1.16
+	linux-raw-sys@0.12.1
+	linux-raw-sys@0.4.15
+	lock_api@0.4.14
+	log@0.4.29
+	memchr@2.8.0
+	memoffset@0.9.1
+	minimal-lexical@0.2.1
+	mio@1.2.0
+	motd@0.2.2
+	nix@0.31.2
+	nom@7.1.3
+	notify-types@1.0.1
+	notify@7.0.0
+	ntest@0.9.5
+	ntest_test_cases@0.9.5
+	ntest_timeout@0.9.5
+	num-traits@0.2.19
+	once_cell@1.21.4
+	once_cell_polyfill@1.70.2
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
+	pin-project-lite@0.2.17
+	plain@0.2.3
+	ppv-lite86@0.2.21
+	prettyplease@0.2.37
+	proc-macro-crate@3.5.0
+	proc-macro2@1.0.106
+	quote@1.0.45
+	r-efi@6.0.0
+	rand@0.8.6
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	redox_syscall@0.5.18
+	redox_syscall@0.7.5
+	regex-automata@0.4.14
+	regex-syntax@0.8.10
+	regex@1.12.3
+	rmp-serde@1.3.1
+	rmp@0.8.15
+	rustc-hash@2.1.2
+	rustix@0.38.44
+	rustix@1.1.4
+	same-file@1.0.6
+	scopeguard@1.2.0
+	semver@1.0.28
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.149
+	serde_spanned@0.6.9
+	sharded-slab@0.1.7
+	shell-words@1.1.1
+	shlex@1.3.0
+	shpool-vterm@0.1.0
+	shpool_pty@0.4.0
+	shpool_vt100@0.1.3
+	signal-hook-registry@1.4.8
+	signal-hook@0.3.18
+	smallvec@1.15.1
+	static_assertions@1.1.0
+	strip-ansi-escapes@0.2.1
+	strsim@0.11.1
+	syn@1.0.109
+	syn@2.0.117
+	tempfile@3.27.0
+	termini@1.0.0
+	thread_local@1.1.9
+	toml@0.8.23
+	toml_datetime@0.6.11
+	toml_datetime@1.1.1+spec-1.1.0
+	toml_edit@0.22.27
+	toml_edit@0.25.11+spec-1.1.0
+	toml_parser@1.1.2+spec-1.1.0
+	toml_write@0.1.2
+	tracing-attributes@0.1.31
+	tracing-core@0.1.36
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.23
+	tracing@0.1.44
+	unicode-ident@1.0.24
+	unicode-width@0.1.14
+	unicode-width@0.2.2
+	unicode-xid@0.2.6
+	utf8parse@0.2.2
+	valuable@0.1.1
+	vte@0.14.1
+	vte@0.15.0
+	walkdir@2.5.0
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.1+wasi-0.2.4
+	wasip3@0.4.0+wasi-0.3.0-rc-2026-01-06
+	wasm-encoder@0.244.0
+	wasm-metadata@0.244.0
+	wasmparser@0.244.0
+	which@6.0.3
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.11
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-link@0.2.1
+	windows-sys@0.52.0
+	windows-sys@0.59.0
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	winnow@0.7.15
+	winnow@1.0.2
+	winsafe@0.0.19
+	wit-bindgen-core@0.51.0
+	wit-bindgen-rust-macro@0.51.0
+	wit-bindgen-rust@0.51.0
+	wit-bindgen@0.46.0
+	wit-bindgen@0.51.0
+	wit-component@0.244.0
+	wit-parser@0.244.0
+	zerocopy-derive@0.8.48
+	zerocopy@0.8.48
+	zmij@1.0.21
+"
+
+inherit cargo
+
+DESCRIPTION="Lightweight persistent shell session manager"
+HOMEPAGE="https://github.com/shell-pool/shpool"
+SRC_URI="
+	https://github.com/shell-pool/shpool/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="Apache-2.0"
+# Dependent crate licenses
+LICENSE+=" Apache-2.0 BSD CC0-1.0 ISC MIT Unicode-3.0 ZLIB"
+SLOT="0"
+KEYWORDS="~amd64"
+RUST_MIN_VER="1.87.0"
+
+src_install() {
+	cargo_src_install --path shpool
+	einstalldocs
+}

@@ -1,0 +1,10 @@
+--- a/rebar.config	2025-12-12 02:55:21.000000000 -0800
++++ b/rebar.config	2026-06-08 20:02:20.570409764 -0700
+@@ -15,7 +15,6 @@
+ 
+ {overrides, [{override, backoff, [{plugins, []}]}]}.
+ 
+-{project_plugins, [covertool]}.
+ 
+ {cover_enabled, true}.
+ {cover_opts, [verbose]}.

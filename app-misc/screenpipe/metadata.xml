@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Screenpipe is an open-source AI that records everything you see, say, or
+    hear on your computer — locally and privately.  It continuously captures
+    the screen and audio, runs OCR and speech recognition offline, and stores
+    the results in a local SQLite database that AI models can query.
+  </longdescription>
+  <use>
+    <flag name="pulseaudio">Link against PulseAudio for audio capture in addition to PipeWire</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">screenpipe/screenpipe</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=maturin
-PYTHON_COMPAT=( python3_12 python3_13 python3_14  )
+PYTHON_COMPAT=( python3_{13..15} )
 
 CRATES="
 	autocfg@1.4.0

@@ -6,7 +6,10 @@
     <name>loong0</name>
   </maintainer>
   <upstream>
-    <remote-id type="github">jlowin/fastmcp</remote-id>
+    <remote-id type="github">PrefectHQ/fastmcp</remote-id>
     <remote-id type="pypi">fastmcp</remote-id>
   </upstream>
+  <use>
+    <flag name="tasks">Enable task scheduling support via pydocket</flag>
+  </use>
 </pkgmetadata>

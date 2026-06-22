@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    OmniVoice is a zero-shot text-to-speech system supporting 600+ languages
+    via diffusion language models. It enables high-quality voice cloning from
+    a short audio prompt without fine-tuning, and ships CLI tools for single
+    and batch inference as well as a Gradio demo server.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">k2-fsa/OmniVoice</remote-id>
+  </upstream>
+</pkgmetadata>

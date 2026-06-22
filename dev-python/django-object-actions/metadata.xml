@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    django-object-actions adds custom action buttons to Django's admin change
+    view (individual object detail pages), similar to how Django's built-in
+    admin actions work on the list view. Each action is a method on the
+    ModelAdmin with a response, displayed as a button in the admin interface.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">crccheck/django-object-actions</remote-id>
+    <remote-id type="pypi">django-object-actions</remote-id>
+  </upstream>
+</pkgmetadata>

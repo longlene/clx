@@ -1,0 +1,20 @@
+--- a/src/huggingface_hub/cli/hf.py
++++ b/src/huggingface_hub/cli/hf.py
+@@ -17,6 +17,8 @@ from typing import Annotated
+
+ import typer
+
++import click
++
+ from huggingface_hub import __version__, constants
+ from huggingface_hub.cli._cli_utils import check_cli_update, fallback_typer_group_factory, typer_factory
+ from huggingface_hub.cli._cp import CP_EXAMPLES, make_cp
+@@ -113,6 +115,8 @@ def main():
+
+     try:
+         app()
++    except (typer.Exit, click.exceptions.Exit) as e:
++        sys.exit(e.exit_code)
+     except Exception as e:
+         message = format_known_exception(e)
+         if message:

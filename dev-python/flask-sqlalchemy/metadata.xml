@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="pypi">Flask-SQLAlchemy</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Flask-SQLAlchemy is an extension for Flask that adds support for
+    SQLAlchemy to your application. It simplifies using SQLAlchemy with
+    Flask by setting up common objects and patterns for using those objects,
+    such as a session tied to each web request, models, and engines.
+  </longdescription>
+</pkgmetadata>

@@ -1,0 +1,10 @@
+--- a/src/plugins/intel_gpu/thirdparty/CMakeLists.txt
++++ b/src/plugins/intel_gpu/thirdparty/CMakeLists.txt
+@@ -142,6 +142,7 @@ if(ENABLE_ONEDNN_FOR_GPU)
+                 "-DDNNL_TARGET_ARCH=${ONEDNN_TARGET_ARCH}"
+                 "-DDNNL_CPU_RUNTIME=NONE"
+                 "-DDNNL_GPU_RUNTIME=${ONEDNN_GPU_RT}"
++                "-DCMAKE_INSTALL_LIBDIR=lib"
+                 "-DDNNL_LIBRARY_NAME=${DNNL_GPU_LIBRARY_NAME}"
+                 "-DCMAKE_INSTALL_PREFIX=${ONEDNN_INSTALL_DIR}"
+                 "-DDNNL_ENABLE_CONCURRENT_EXEC=ON"

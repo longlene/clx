@@ -9,4 +9,8 @@
     <remote-id type="github">huggingface/datasets</remote-id>
     <remote-id type="pypi">datasets</remote-id>
   </upstream>
+  <use>
+    <flag name="torch">Enable PyTorch tensor output and torch-dependent features</flag>
+    <flag name="vision">Enable image processing support via Pillow</flag>
+  </use>
 </pkgmetadata>

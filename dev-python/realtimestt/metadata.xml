@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    RealtimeSTT is a robust, low-latency speech-to-text library featuring
+    voice activity detection (WebRTC VAD and Silero VAD), wake word activation
+    (Porcupine and OpenWakeWord), and real-time transcription via multiple
+    backends including faster-whisper, whisper.cpp, and OpenAI Whisper.
+  </longdescription>
+  <use>
+    <flag name="faster-whisper">Enable the faster-whisper CTranslate2 transcription backend</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">KoljaB/RealtimeSTT</remote-id>
+  </upstream>
+</pkgmetadata>

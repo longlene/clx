@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -33,7 +33,7 @@ RDEPEND="
 		dev-python/librosa[${PYTHON_USEDEP}]
 		dev-python/soundfile[${PYTHON_USEDEP}]
 		dev-python/sox[${PYTHON_USEDEP}]
-		sci-ml/onnxruntime[${PYTHON_USEDEP}]
+		sci-libs/onnxruntime[python,${PYTHON_USEDEP}]
 		dev-python/einops[${PYTHON_USEDEP}]
 	')
 "

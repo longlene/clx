@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14}  )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -40,7 +40,7 @@ RDEPEND="
 	>=dev-python/funcy-1.14[${PYTHON_USEDEP}]
 	>=dev-python/grandalf-0.7[${PYTHON_USEDEP}]
 	>=dev-python/gto-1.6.0[${PYTHON_USEDEP}]
-	>=dev-python/hydra-1.1.0[${PYTHON_USEDEP}]
+	>=dev-python/hydra-core-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/iterative-telemetry-0.0.7[${PYTHON_USEDEP}]
 	dev-python/kombu[${PYTHON_USEDEP}]
 	>=dev-python/networkx-2.5[${PYTHON_USEDEP}]

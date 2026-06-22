@@ -1,44 +1,23 @@
 diff -Nur a/CMakeLists.txt b/CMakeLists.txt
---- a/CMakeLists.txt	2026-01-26 21:55:36.000000000 -0800
-+++ b/CMakeLists.txt	2026-04-30 11:36:35.502319209 -0700
-@@ -687,8 +687,8 @@
- add_custom_target(runtime DEPENDS tvm_runtime)
- 
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -666,6 +666,6 @@
  # Installation rules
--install(TARGETS tvm DESTINATION lib${LIB_SUFFIX})
+-install(TARGETS tvm_compiler DESTINATION lib${LIB_SUFFIX})
 -install(TARGETS tvm_runtime DESTINATION lib${LIB_SUFFIX})
-+install(TARGETS tvm EXPORT ${PROJECT_NAME}Targets DESTINATION lib${LIB_SUFFIX})
++install(TARGETS tvm_compiler EXPORT ${PROJECT_NAME}Targets DESTINATION lib${LIB_SUFFIX})
 +install(TARGETS tvm_runtime EXPORT ${PROJECT_NAME}Targets DESTINATION lib${LIB_SUFFIX})
- if(BUILD_FOR_HEXAGON AND DEFINED USE_HEXAGON_GTEST AND EXISTS ${USE_HEXAGON_GTEST})
-   install(TARGETS gtest DESTINATION lib${LIB_SUFFIX})
- endif()
-@@ -699,11 +699,11 @@
-     FILES_MATCHING
-     PATTERN "*.h"
-   )
--  install(
--    DIRECTORY "3rdparty/dmlc-core/include/" DESTINATION "include"
--    FILES_MATCHING
--    PATTERN "*.h"
--    )
-+  #install(
-+  #  DIRECTORY "3rdparty/dmlc-core/include/" DESTINATION "include"
-+  #  FILES_MATCHING
-+  #  PATTERN "*.h"
-+  #  )
- else(INSTALL_DEV)
+
+ if (INSTALL_DEV)
    install(
-     DIRECTORY "include/tvm/runtime/" DESTINATION "include/tvm/runtime"
-@@ -720,9 +720,9 @@
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}Targets.cmake\")")
+@@ -690,7 +690,7 @@
  file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/temp_config_file.cmake" ${PROJECT_CONFIG_CONTENT})
- 
+
 -# install(EXPORT ${PROJECT_NAME}Targets
 -#   NAMESPACE ${PROJECT_NAME}::
 -#   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
 +install(EXPORT ${PROJECT_NAME}Targets
 +  NAMESPACE ${PROJECT_NAME}::
 +  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
- 
+
  # Create config for find_package()
- configure_package_config_file(

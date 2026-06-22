@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    nova_auth adds pluggable authentication to the Nova web framework.
+    It integrates with kura for session and user storage, and seki for
+    resilience. Controllers can declare authentication requirements via
+    the nova_auth behaviour.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">novaframework/nova_auth</remote-id>
+  </upstream>
+</pkgmetadata>

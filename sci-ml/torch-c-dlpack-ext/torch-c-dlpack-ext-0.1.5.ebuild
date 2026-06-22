@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -26,7 +26,7 @@ S="${WORKDIR}"/${MY_P}/addons/torch_c_dlpack_ext
 KEYWORDS="~amd64"
 
 DEPEND+="
-	sci-ml/tvm-ffi[python,${PYTHON_USEDEP}]
+	sci-ml/tvm-ffi[${PYTHON_USEDEP}]
 "
 RDEPEND="${DEPEND}
 "

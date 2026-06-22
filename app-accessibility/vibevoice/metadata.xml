@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    VibeVoice is Microsoft's open-source frontier voice AI system providing
+    automatic speech recognition (ASR), text-to-speech synthesis (TTS), and
+    voice cloning capabilities. It offers a FastAPI/Gradio web interface and
+    includes a vLLM plugin for integration with large language model serving.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">microsoft/VibeVoice</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -5,6 +5,9 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="compiler">Build the NPU compiler from source (requires downloading OpenVINO and npu_compiler sources)</flag>
+  </use>
   <upstream>
     <remote-id type="github">intel/linux-npu-driver</remote-id>
   </upstream>

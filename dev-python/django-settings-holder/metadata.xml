@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    django-settings-holder provides a SettingsHolder object that wraps
+    Django application settings, allowing them to be accessed as object
+    attributes with support for defaults, validation, and type checking.
+    Also ships a pytest plugin with fixtures for overriding settings in tests.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">MrThearMan/django-settings-holder</remote-id>
+    <remote-id type="pypi">django-settings-holder</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="kerberos">Enable Kerberos/GSSAPI authentication support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">MagicStack/asyncpg</remote-id>
+    <remote-id type="pypi">asyncpg</remote-id>
+  </upstream>
+</pkgmetadata>

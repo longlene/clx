@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    sqlite3_rsync synchronizes SQLite3 databases from a client to a server
+    by transferring only changed rows, identified by table ROWIDs.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">unmanarc/sqlite3_rsync</remote-id>
+  </upstream>
+</pkgmetadata>

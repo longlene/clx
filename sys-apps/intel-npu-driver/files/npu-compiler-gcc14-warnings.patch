@@ -1,0 +1,60 @@
+Suppress GCC 14 false-positive diagnostics in npu_compiler sources.
+Each pragma is file-scoped and targets only the specific warning triggered
+by that translation unit.
+
+--- a/src/vpux_compiler/src/dialect/ELF/transforms/passes/update_elf_section_flags.cpp
++++ b/src/vpux_compiler/src/dialect/ELF/transforms/passes/update_elf_section_flags.cpp
+@@ -5,6 +5,9 @@
+
+ //
+
++// GCC 14 false positive from SmallDenseMap copy constructor via clonePass()
++#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
++
+ #include "vpux/compiler/dialect/ELF/IR/dialect.hpp"
+--- a/src/vpux_compiler/src/dialect/VPUIP/IR/ops/sw_kernel.cpp
++++ b/src/vpux_compiler/src/dialect/VPUIP/IR/ops/sw_kernel.cpp
+@@ -3,6 +3,9 @@
+ // SPDX-License-Identifier: Apache-2.0
+ //
+
++// GCC 14 false positive: value_or() temporary lifetime extends through range-for
++#pragma GCC diagnostic ignored "-Wdangling-reference"
++
+ #include "vpux/compiler/core/attributes/stride_reqs.hpp"
+ #include "vpux/compiler/core/bounded_buffer.hpp"
+ #include "vpux/compiler/core/cost_model_utils.hpp"
+--- a/src/vpux_compiler/src/dialect/VPUIP/IR/types/iti_buffer.cpp
++++ b/src/vpux_compiler/src/dialect/VPUIP/IR/types/iti_buffer.cpp
+@@ -3,6 +3,9 @@
+ // SPDX-License-Identifier: Apache-2.0
+ //
+
++// GCC 14 false positive: getValue() temporary lifetime extends through range-for
++#pragma GCC diagnostic ignored "-Wdangling-reference"
++
+ #include "vpux/compiler/core/attributes/shape.hpp"
+ #include "vpux/compiler/core/attributes/stride_reqs.hpp"
+ #include "vpux/compiler/dialect/VPUIP/IR/attributes.hpp"
+--- a/src/vpux_compiler/src/dialect/VPU/utils/nce_sparsity.cpp
++++ b/src/vpux_compiler/src/dialect/VPU/utils/nce_sparsity.cpp
+@@ -2,6 +2,8 @@
+ // Copyright (C) 2022-2026 Intel Corporation
+ // SPDX-License-Identifier: Apache-2.0
+ //
++// GCC 14 false positive: temporary ArrayRef lifetime extends through range-for
++#pragma GCC diagnostic ignored "-Wdangling-reference"
+
+ #include "vpux/compiler/dialect/VPU/utils/nce_sparsity.hpp"
+ #include "vpux/compiler/core/layers.hpp"
+--- a/src/vpux_compiler/src/dialect/const/passes/apply_swizzling.cpp
++++ b/src/vpux_compiler/src/dialect/const/passes/apply_swizzling.cpp
+@@ -2,6 +2,8 @@
+ // Copyright (C) 2024-2026 Intel Corporation
+ // SPDX-License-Identifier: Apache-2.0
+ //
++// GCC 14 false positive: getContentAttr() temporary lifetime extends through range-for
++#pragma GCC diagnostic ignored "-Wdangling-reference"
+
+ #include "vpux/compiler/dialect/VPUIP/utils/swizzling_utils.hpp"
+ #include "vpux/compiler/dialect/config/IR/utils.hpp"

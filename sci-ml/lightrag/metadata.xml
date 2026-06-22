@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    LightRAG is a simple and fast Retrieval-Augmented Generation framework
+    that integrates graph-based knowledge structures with vector retrieval.
+    It supports multiple LLM backends and storage engines for building
+    knowledge-intensive AI applications.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">HKUDS/LightRAG</remote-id>
+  </upstream>
+</pkgmetadata>

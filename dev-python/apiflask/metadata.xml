@@ -9,4 +9,9 @@
     <remote-id type="github">apiflask/apiflask</remote-id>
     <remote-id type="pypi">apiflask</remote-id>
   </upstream>
+  <use>
+    <flag name="async">Enable async support via asgiref</flag>
+    <flag name="dotenv">Load environment variables from .env files via python-dotenv</flag>
+    <flag name="yaml">Enable YAML output format support via pyyaml</flag>
+  </use>
 </pkgmetadata>

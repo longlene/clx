@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">opendatalab/MinerU</remote-id>
+    <remote-id type="pypi">mineru</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    MinerU is a high-quality document parsing tool that converts complex
+    documents (PDF, DOCX, PPTX, XLSX, and images) into LLM-ready Markdown
+    and JSON. It supports multiple backends including VLM-based inference
+    and ONNX pipeline for layout detection and OCR.
+  </longdescription>
+  <use>
+    <flag name="pipeline">Enable ONNX pipeline backend with layout detection and OCR support</flag>
+    <flag name="s3">Enable AWS S3 storage support via boto3</flag>
+    <flag name="vlm">Enable VLM (Vision Language Model) backend via torch and transformers</flag>
+  </use>
+</pkgmetadata>

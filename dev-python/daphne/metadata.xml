@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Daphne is a HTTP, HTTP2, and WebSocket protocol server for ASGI and
+    ASGI-HTTP connections, developed to power Django Channels.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">django/daphne</remote-id>
+    <remote-id type="pypi">daphne</remote-id>
+  </upstream>
+</pkgmetadata>

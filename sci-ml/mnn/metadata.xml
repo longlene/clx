@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="cuda">Enable CUDA GPU backend</flag>
+    <flag name="opencl">Enable OpenCL GPU backend</flag>
+    <flag name="opengl">Enable OpenGL GPU backend</flag>
+    <flag name="openmp">Use OpenMP thread pool implementation</flag>
+    <flag name="vulkan">Enable Vulkan GPU backend</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">alibaba/MNN</remote-id>
+  </upstream>
+</pkgmetadata>

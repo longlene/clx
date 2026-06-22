@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    CosyVoice is a multi-lingual large voice generation model supporting
+    inference, training, and deployment. It provides a full-stack TTS
+    (text-to-speech) ability with support for voice cloning, emotion control,
+    and cross-lingual synthesis. Requires GPU (CUDA) for training/inference.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">FunAudioLLM/CosyVoice</remote-id>
+  </upstream>
+</pkgmetadata>

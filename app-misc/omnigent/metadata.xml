@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>0xccef@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Omnigent is a declarative multi-agent authoring and runtime framework
+    that lets you compose AI agents from YAML manifests, route tasks
+    between them, and expose a FastAPI server with an optional web UI.
+    Built-in harnesses wrap the Claude Code and OpenAI Agents SDKs.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">omnigent-ai/omnigent</remote-id>
+  </upstream>
+</pkgmetadata>

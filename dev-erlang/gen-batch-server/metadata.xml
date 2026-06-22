@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    gen_batch_server is a generic OTP server behaviour for building
+    efficient batch processing pipelines in Erlang and Elixir. It
+    accumulates incoming calls into batches and processes them together
+    to reduce per-request overhead.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">rabbitmq/gen-batch-server</remote-id>
+  </upstream>
+</pkgmetadata>

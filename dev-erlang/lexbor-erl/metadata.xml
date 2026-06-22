@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    lexbor-erl provides Erlang bindings to the Lexbor HTML5 parser and
+    DOM library via an Erlang port, supporting parsing, DOM queries, and
+    CSS selectors.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">f34nk/lexbor_erl</remote-id>
+  </upstream>
+</pkgmetadata>

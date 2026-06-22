@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    cocoindex-code is a lightweight embedded code search engine CLI using
+    AST-based indexing. It exposes an MCP (Model Context Protocol) server so
+    AI coding agents can query codebases efficiently, saving tokens compared
+    to full-file context approaches.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">cocoindex-io/cocoindex-code</remote-id>
+  </upstream>
+</pkgmetadata>

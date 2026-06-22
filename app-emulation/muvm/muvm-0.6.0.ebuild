@@ -153,6 +153,8 @@ SRC_URI="
 	${CARGO_CRATE_URIS}
 "
 
+S="${WORKDIR}"/${PN}-${P}
+
 LICENSE="MIT"
 # Dependent crate licenses
 LICENSE+=" Apache-2.0 BSD MIT Unicode-DFS-2016"
@@ -163,9 +165,6 @@ DEPEND="
 	dev-libs/libkrun
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
-
-S="${WORKDIR}"/${PN}-${P}
 
 src_install() {
 	cargo_src_install --path crates/muvm

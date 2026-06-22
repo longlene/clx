@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    OpenPrompt is an open-source framework for prompt-learning, a paradigm
+    that adapts large pre-trained language models to downstream tasks using
+    natural language prompts. It provides a unified interface for designing
+    and evaluating prompt templates and verbalizers on top of HuggingFace
+    Transformers models.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">thunlp/OpenPrompt</remote-id>
+  </upstream>
+</pkgmetadata>

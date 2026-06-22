@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ChatterBot is a machine learning, conversational dialog engine that
+    generates responses based on collections of known conversations. It
+    uses a selection of machine learning algorithms to produce different
+    types of responses.
+  </longdescription>
+  <use>
+    <flag name="mongodb">Enable MongoDB storage backend via dev-python/pymongo</flag>
+    <flag name="redis">Enable Redis storage backend with vector search support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">gunthercox/ChatterBot</remote-id>
+    <remote-id type="pypi">ChatterBot</remote-id>
+  </upstream>
+</pkgmetadata>

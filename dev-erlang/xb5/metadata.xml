@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    xb5 provides B-trees of order 5 for Erlang/OTP, implementing ordered
+    tree, set, and order-statistic multiset data structures with efficient
+    lookup, insertion, and deletion operations.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">g-andrade/xb5</remote-id>
+  </upstream>
+</pkgmetadata>

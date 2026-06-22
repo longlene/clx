@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14}  )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -26,7 +26,7 @@ RDEPEND="
 		>=sci-ml/vector-quantize-pytorch-1.14.24[${PYTHON_USEDEP}]
 		>=sci-ml/transformers-4.45.2[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.26.4[${PYTHON_USEDEP}]
-		>=dev-python/hydra-1.3.2[${PYTHON_USEDEP}]
+		>=dev-python/hydra-core-1.3.2[${PYTHON_USEDEP}]
 		>=dev-python/natsort-8.4.0[${PYTHON_USEDEP}]
 		>=dev-python/einops-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/librosa-0.10.1[${PYTHON_USEDEP}]

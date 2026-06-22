@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Mesop is a Python UI framework for rapidly building AI-powered web
+    applications. It lets developers define UI pages and components in
+    pure Python, compiling them to an Angular-based web front end without
+    requiring knowledge of HTML or JavaScript.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">mesop-dev/mesop</remote-id>
+    <remote-id type="pypi">mesop</remote-id>
+  </upstream>
+</pkgmetadata>

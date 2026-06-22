@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Presidio Anonymizer replaces analyzed PII text entities with desired
+    values using configurable operators such as replace, redact, mask,
+    hash and encrypt.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">microsoft/presidio</remote-id>
+    <remote-id type="pypi">presidio-anonymizer</remote-id>
+  </upstream>
+</pkgmetadata>

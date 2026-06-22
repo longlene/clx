@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    mlxtend (Machine Learning Extensions) is a Python library providing
+    utility functions and extensions for everyday data science and machine
+    learning tasks, including feature selection, plotting, evaluation metrics,
+    frequent pattern mining, and classifier ensembles.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">rasbt/mlxtend</remote-id>
+    <remote-id type="pypi">mlxtend</remote-id>
+  </upstream>
+</pkgmetadata>

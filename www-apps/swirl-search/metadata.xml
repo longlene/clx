@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    SWIRL is an AI-powered search and retrieval-augmented generation (RAG)
+    platform that federates queries across 100+ data source connectors
+    including databases, cloud storage, REST APIs, and AI models. It is
+    built on Django, Celery, and Django Channels.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">swirlai/swirl-search</remote-id>
+  </upstream>
+  <use>
+    <flag name="elasticsearch">Enable Elasticsearch search backend</flag>
+    <flag name="opensearch">Enable OpenSearch search backend</flag>
+  </use>
+</pkgmetadata>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <longdescription>
+    LangChain integration with OpenVINO GenAI for local inference, supporting
+    LLM, multimodal, embedding, reranker, text-to-speech, and
+    automatic-speech-recognition pipelines.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">11happy/langchain-openvino</remote-id>
+  </upstream>
+</pkgmetadata>

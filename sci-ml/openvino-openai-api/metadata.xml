@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <longdescription>
+    OpenAI-compatible REST API server backed by OpenVINO GenAI for local
+    inference on CPU or GPU.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">fabiomatricardi/openvino-openai-api</remote-id>
+    <remote-id type="pypi">openvino-openai-api</remote-id>
+  </upstream>
+</pkgmetadata>

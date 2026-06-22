@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    kaldi-decoder provides Python bindings to Kaldi's HLG-based speech
+    recognition decoders, including HLG graph construction and lattice
+    generation, using OpenFst under the hood.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">k2-fsa/kaldi-decoder</remote-id>
+    <remote-id type="gitlab">libeigen/eigen</remote-id>
+  </upstream>
+</pkgmetadata>

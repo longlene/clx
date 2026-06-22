@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">liaohch3/claude-tap</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    claude-tap intercepts and inspects API traffic from coding agents such as
+    Claude Code, Codex CLI, Gemini CLI, Cursor, and others via local reverse
+    and forward proxies, then displays the captured requests in a local trace
+    viewer.
+  </longdescription>
+</pkgmetadata>

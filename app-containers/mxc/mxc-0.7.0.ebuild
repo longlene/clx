@@ -1,0 +1,335 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	adler2@2.0.1
+	aes@0.8.4
+	aho-corasick@1.1.4
+	android_system_properties@0.1.5
+	anstream@0.6.21
+	anstyle-parse@0.2.7
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anstyle@1.0.13
+	anyhow@1.0.102
+	arbitrary@1.4.2
+	arrayref@0.3.9
+	arrayvec@0.7.6
+	atomic-waker@1.1.2
+	autocfg@1.5.0
+	base64@0.22.1
+	bitflags@1.3.2
+	bitflags@2.11.1
+	blake3@1.8.5
+	block-buffer@0.10.4
+	bstr@1.12.1
+	built@0.8.0
+	bumpalo@3.20.2
+	bytemuck@1.25.0
+	bytemuck_derive@1.10.2
+	byteorder@1.5.0
+	bytes@1.11.1
+	bzip2-sys@0.1.13+1.0.8
+	bzip2@0.5.2
+	cc@1.2.59
+	cfg-if@1.0.4
+	cfg_aliases@0.2.1
+	chacha20@0.10.0
+	chrono@0.4.44
+	cipher@0.4.4
+	clap@4.5.60
+	clap_builder@4.5.60
+	clap_derive@4.5.55
+	clap_lex@1.0.0
+	colorchoice@1.0.4
+	constant_time_eq@0.3.1
+	constant_time_eq@0.4.2
+	core-foundation-sys@0.8.7
+	cpufeatures@0.2.17
+	cpufeatures@0.3.0
+	crc-catalog@2.4.0
+	crc32fast@1.5.0
+	crc@3.4.0
+	crossbeam-channel@0.5.15
+	crossbeam-utils@0.8.21
+	crypto-common@0.1.7
+	deflate64@0.1.12
+	deranged@0.5.8
+	derive_arbitrary@1.4.2
+	digest@0.10.7
+	dirs-sys@0.5.0
+	dirs@6.0.0
+	displaydoc@0.2.5
+	embed-manifest@1.5.0
+	equivalent@1.0.2
+	errno@0.3.14
+	fastrand@2.3.0
+	filetime@0.2.27
+	find-msvc-tools@0.1.9
+	flatbuffers@25.12.19
+	flate2@1.1.9
+	foldhash@0.1.5
+	form_urlencoded@1.2.2
+	futures-channel@0.3.32
+	futures-core@0.3.32
+	generic-array@0.14.7
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.2
+	git2@0.20.4
+	globset@0.4.18
+	goblin@0.10.5
+	hashbrown@0.15.5
+	hashbrown@0.16.1
+	heck@0.5.0
+	hmac@0.12.1
+	http-body-util@0.1.3
+	http-body@1.0.1
+	http@1.4.0
+	httparse@1.10.1
+	httpdate@1.0.3
+	hyper-util@0.1.20
+	hyper@1.8.1
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.65
+	icu_collections@2.2.0
+	icu_locale_core@2.2.0
+	icu_normalizer@2.2.0
+	icu_normalizer_data@2.2.0
+	icu_properties@2.2.0
+	icu_properties_data@2.2.0
+	icu_provider@2.2.0
+	id-arena@2.3.0
+	idna@1.1.0
+	idna_adapter@1.2.1
+	indexmap@2.13.0
+	inout@0.1.4
+	is_terminal_polyfill@1.70.2
+	itoa@1.0.17
+	jobserver@0.1.34
+	js-sys@0.3.91
+	kvm-bindings@0.14.0
+	kvm-ioctls@0.24.0
+	lazy_static@1.5.0
+	leb128fmt@0.1.0
+	libc@0.2.186
+	libgit2-sys@0.18.3+1.9.2
+	libloading@0.8.9
+	libredox@0.1.16
+	libz-sys@1.1.28
+	linux-raw-sys@0.12.1
+	litemap@0.8.2
+	lock_api@0.4.14
+	log@0.4.29
+	lzma-rs@0.3.0
+	lzma-sys@0.1.20
+	memchr@2.8.0
+	memmap2@0.9.10
+	memoffset@0.9.1
+	metrics@0.24.5
+	miniz_oxide@0.8.9
+	mio@1.1.1
+	mshv-bindings@0.6.8
+	mshv-ioctls@0.6.8
+	nix@0.29.0
+	num-conv@0.2.1
+	num-traits@0.2.19
+	num_enum@0.7.6
+	num_enum_derive@0.7.6
+	once_cell@1.21.3
+	once_cell_polyfill@1.70.2
+	option-ext@0.2.0
+	page_size@0.6.0
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
+	pbkdf2@0.12.2
+	percent-encoding@2.3.2
+	pin-project-lite@0.2.17
+	pin-utils@0.1.0
+	pkg-config@0.3.32
+	plain@0.2.3
+	portable-atomic@1.13.1
+	potential_utf@0.1.5
+	powerfmt@0.2.0
+	prettyplease@0.2.37
+	proc-macro2@1.0.106
+	quote@1.0.45
+	r-efi@5.3.0
+	r-efi@6.0.0
+	rand@0.10.1
+	rand_core@0.10.1
+	rapidhash@4.4.1
+	redox_syscall@0.5.18
+	redox_syscall@0.7.5
+	redox_users@0.5.2
+	regex-automata@0.4.14
+	regex-syntax@0.8.10
+	ring@0.17.14
+	rust-embed-impl@8.11.0
+	rust-embed-utils@8.11.0
+	rust-embed@8.11.0
+	rustc_version@0.4.1
+	rustix@1.1.4
+	rustls-pki-types@1.14.1
+	rustls-webpki@0.103.13
+	rustls@0.23.40
+	rustversion@1.0.22
+	same-file@1.0.6
+	scopeguard@1.2.0
+	scroll@0.13.0
+	scroll_derive@0.13.1
+	semver@1.0.27
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.149
+	sha1@0.10.6
+	sha2@0.10.9
+	shellexpand@3.1.2
+	shlex@1.3.0
+	signal-hook-registry@1.4.8
+	simd-adler32@0.3.9
+	smallvec@1.15.1
+	socket2@0.5.10
+	socket2@0.6.3
+	spin@0.10.0
+	stable_deref_trait@1.2.1
+	strsim@0.11.1
+	subtle@2.6.1
+	syn@2.0.117
+	synstructure@0.13.2
+	tar@0.4.46
+	tempfile@3.27.0
+	termcolor@1.4.1
+	thiserror-impl@2.0.18
+	thiserror@2.0.18
+	time-core@0.1.8
+	time@0.3.47
+	tinystr@0.8.3
+	tokio-macros@2.6.1
+	tokio@1.50.0
+	tracing-attributes@0.1.31
+	tracing-core@0.1.36
+	tracing-log@0.2.0
+	tracing@0.1.44
+	try-lock@0.2.5
+	typenum@1.19.0
+	unicode-ident@1.0.24
+	unicode-xid@0.2.6
+	untrusted@0.9.0
+	ureq-proto@0.6.0
+	ureq@3.3.0
+	url@2.5.8
+	utf8-zero@0.8.1
+	utf8_iter@1.0.4
+	utf8parse@0.2.2
+	uuid@1.23.1
+	valuable@0.1.1
+	vcpkg@0.2.15
+	version_check@0.9.5
+	vmm-sys-util@0.15.0
+	walkdir@2.5.0
+	want@0.3.1
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.2+wasi-0.2.9
+	wasip3@0.4.0+wasi-0.3.0-rc-2026-01-06
+	wasm-bindgen-macro-support@0.2.114
+	wasm-bindgen-macro@0.2.114
+	wasm-bindgen-shared@0.2.114
+	wasm-bindgen@0.2.114
+	wasm-encoder@0.244.0
+	wasm-metadata@0.244.0
+	wasmparser@0.244.0
+	webpki-roots@1.0.7
+	widestring@1.2.1
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.11
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-collections@0.3.2
+	windows-core@0.62.2
+	windows-future@0.3.2
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.2.1
+	windows-numerics@0.3.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.52.0
+	windows-sys@0.59.0
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows-threading@0.2.1
+	windows-version@0.1.7
+	windows@0.62.2
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	winreg@0.55.0
+	winresource@0.1.31
+	wit-bindgen-core@0.51.0
+	wit-bindgen-rust-macro@0.51.0
+	wit-bindgen-rust@0.51.0
+	wit-bindgen@0.51.0
+	wit-component@0.244.0
+	wit-parser@0.244.0
+	writeable@0.6.3
+	xattr@1.6.1
+	xz2@0.1.7
+	yoke-derive@0.8.2
+	yoke@0.8.2
+	zerocopy-derive@0.8.48
+	zerocopy@0.8.48
+	zerofrom-derive@0.1.7
+	zerofrom@0.1.7
+	zeroize@1.8.2
+	zeroize_derive@1.4.3
+	zerotrie@0.2.4
+	zerovec-derive@0.11.3
+	zerovec@0.11.6
+	zip@2.4.2
+	zmij@1.0.21
+	zopfli@0.8.3
+	zstd-safe@7.2.4
+	zstd-sys@2.0.16+zstd.1.5.7
+	zstd@0.13.3
+"
+
+declare -A GIT_CRATES=(
+	[hyperlight-common]='https://github.com/danbugs/hyperlight;5cf37d92262c918e7d633577a6cf946fb1f069bd;hyperlight-%commit%/src/hyperlight_common'
+	[hyperlight-host]='https://github.com/danbugs/hyperlight;5cf37d92262c918e7d633577a6cf946fb1f069bd;hyperlight-%commit%/src/hyperlight_host'
+	[hyperlight-unikraft-host]='https://github.com/hyperlight-dev/hyperlight-unikraft;05c79a72845d88f1b9e5ae4b47e62991235716d4;hyperlight-unikraft-%commit%/host'
+)
+
+inherit cargo
+
+RUST_MIN_VER="1.89"
+
+DESCRIPTION="Policy-driven, layered isolation and containment"
+HOMEPAGE="https://github.com/microsoft/mxc"
+SRC_URI="
+	https://github.com/microsoft/mxc/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+S="${WORKDIR}/mxc-${PV}/src"
+
+LICENSE="MIT Apache-2.0 BSD BSD-2 CDLA-Permissive-2.0 ISC MPL-2.0 Unicode-3.0 ZLIB"
+SLOT="0"
+KEYWORDS="~amd64"
+RESTRICT="test"
+
+src_compile() {
+	cargo_src_compile --bin lxc-exec
+}
+
+src_install() {
+	cargo_src_install --path "${S}/core/lxc" --bin lxc-exec
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="ollama">Enable Ollama local LLM backend</flag>
+    <flag name="vllm">Enable vLLM inference backend</flag>
+  </use>
+  <longdescription lang="en">
+    Fara (Fara-7B) is Microsoft's efficient agentic model for computer use.
+    It provides a multi-agent framework for browser automation using Playwright,
+    supporting web navigation, form filling, and general computer tasks. It
+    exposes a CLI and Python API for integrating LLMs (OpenAI, vLLM, Ollama,
+    LM Studio) with browser-based agents.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">microsoft/fara</remote-id>
+  </upstream>
+</pkgmetadata>

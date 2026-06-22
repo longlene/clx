@@ -1,0 +1,9 @@
+--- a/cmake/pybind11.cmake
++++ b/cmake/pybind11.cmake
+@@ -40,4 +40,5 @@
+   add_subdirectory(${pybind11_SOURCE_DIR} ${pybind11_BINARY_DIR} EXCLUDE_FROM_ALL)
+ endfunction()
+
+-download_pybind11()
++find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
++find_package(pybind11 3.0 CONFIG REQUIRED)

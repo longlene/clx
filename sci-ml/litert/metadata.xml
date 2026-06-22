@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    LiteRT (formerly TensorFlow Lite) is Google's runtime for on-device AI
+    inference. It bundles TFLite and XNNPACK into a self-contained shared
+    library (libLiteRt.so) with C and C++ public APIs.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">google-ai-edge/LiteRT</remote-id>
+    <remote-id type="gitlab">libeigen/eigen</remote-id>
+  </upstream>
+</pkgmetadata>

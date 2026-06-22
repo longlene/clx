@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    seki provides resilience primitives for Erlang/OTP services, including
+    circuit breakers to prevent cascading failures, rate limiters for
+    traffic control, bulkheads for resource isolation, and retry policies
+    with configurable back-off strategies. Instrumented with telemetry.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Taure/seki</remote-id>
+  </upstream>
+</pkgmetadata>

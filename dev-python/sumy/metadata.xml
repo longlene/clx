@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">miso-belica/sumy</remote-id>
+    <remote-id type="pypi">sumy</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Sumy is a Python library for automatic summarization of text documents
+    and HTML pages. It implements several summarization algorithms including
+    Luhn, LSA (Latent Semantic Analysis), TextRank, LexRank, SumBasic,
+    and others. It supports many human languages.
+  </longdescription>
+  <use>
+    <flag name="chinese">Enable Chinese language support via jieba segmenter</flag>
+    <flag name="lsa">Enable LSA and LexRank summarizers that require numpy</flag>
+  </use>
+</pkgmetadata>

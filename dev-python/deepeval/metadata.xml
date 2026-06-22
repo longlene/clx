@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    DeepEval is an open-source LLM evaluation framework that makes it easy
+    to build and iterate on LLM applications by providing a pytest-integrated
+    suite of evaluation metrics for measuring quality, safety, and alignment.
+  </longdescription>
+  <use>
+    <flag name="inspect">Enable the interactive TUI inspector via textual and pyperclip</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">confident-ai/deepeval</remote-id>
+    <remote-id type="pypi">deepeval</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Python bindings for sqlite-vec, providing serialization helpers and
+    a load() function to load the system-installed vec0 SQLite extension
+    into a sqlite3 connection.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">asg017/sqlite-vec</remote-id>
+    <remote-id type="pypi">sqlite-vec</remote-id>
+  </upstream>
+</pkgmetadata>

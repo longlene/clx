@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    sqlite-tid is a SQLite extension providing functions for generating and
+    working with TIDs (Timestamp Identifiers), time-ordered unique identifiers
+    similar to ULIDs or UUIDs v7.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">asg017/sqlite-tid</remote-id>
+  </upstream>
+</pkgmetadata>

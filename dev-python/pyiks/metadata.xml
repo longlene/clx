@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    pyiks provides Python bindings for the iksemel XML/XMPP library,
+    implemented in Rust via PyO3. It supports XMPP stanza parsing and
+    TLS-enabled connections using the iks Rust crate with rustls and
+    aws-lc-rs for cryptography.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">meduketto/iksemel-python</remote-id>
+    <remote-id type="pypi">pyiks</remote-id>
+  </upstream>
+</pkgmetadata>

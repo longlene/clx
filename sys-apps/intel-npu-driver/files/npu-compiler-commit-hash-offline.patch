@@ -1,0 +1,12 @@
+--- a/cmake/compiler_commit_hash.cmake	2026-06-18 09:26:48.359755288 -0700
++++ b/cmake/compiler_commit_hash.cmake	2026-06-18 09:29:02.727608004 -0700
+@@ -13,7 +13,8 @@
+ )
+ 
+ if (NOT ${ERROR_CODE} EQUAL 0)
+-    message(FATAL_ERROR "Failed to capture compiler git commit.")
++    # offline build (tarball) — git is not available
++    set(CURRENT_COMMIT_HASH "unknown")
+ endif()
+ 
+ set(LAST_COMMIT_HASH "")

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    NVIDIA Farm is a job scheduler and orchestration framework for cloud-based
+    workloads. It provides a microservices architecture with controllers for
+    agents, capacity, jobs, logs, results, tasks, and DAG execution, along
+    with a web dashboard for monitoring.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">NVIDIA/farm</remote-id>
+  </upstream>
+</pkgmetadata>

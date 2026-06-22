@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    culsans is a thread-safe async-aware queue for Python, built on top of
+    aiologic. It provides asyncio-compatible queue primitives that can be
+    safely shared across threads and async contexts.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">x42005e1f/culsans</remote-id>
+    <remote-id type="pypi">culsans</remote-id>
+  </upstream>
+</pkgmetadata>

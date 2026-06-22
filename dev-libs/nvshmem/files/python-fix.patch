@@ -1,7 +1,6 @@
-diff -Nur a/nvshmem4py/cmake/buildWheel.cmake b/nvshmem4py/cmake/buildWheel.cmake
---- a/nvshmem4py/cmake/buildWheel.cmake	2026-03-24 09:22:29.000000000 -0700
-+++ b/nvshmem4py/cmake/buildWheel.cmake	2026-05-05 22:15:54.647329092 -0700
-@@ -17,15 +17,15 @@
+--- a/nvshmem4py/cmake/buildWheel.cmake
++++ b/nvshmem4py/cmake/buildWheel.cmake
+@@ -20,15 +20,15 @@
      set(VENV_DIR "${CMAKE_BINARY_DIR}/externals/venv_${PY_VER}")
      set(VENV_PYTHON_EXECUTABLE "${VENV_DIR}/bin/python3")
  
@@ -26,7 +25,7 @@ diff -Nur a/nvshmem4py/cmake/buildWheel.cmake b/nvshmem4py/cmake/buildWheel.cmak
  
  
      set(PYPROJECT_PATH "${CMAKE_SOURCE_DIR}/nvshmem4py/pyproject.toml")
-@@ -45,10 +45,10 @@
+@@ -48,10 +48,10 @@
          COMMAND sed -i -e "s/^name = \"nvshmem4py\"/name = \"${WHEEL_NAME}\"/" ${PYPROJECT_PATH}
          COMMAND sed -i -e "s|requirements.txt|requirements_cuda${CUDA_VER}.txt|" ${SETUP_PATH}
          COMMAND mkdir -p ${BUILD_DIR}
@@ -40,7 +39,7 @@ diff -Nur a/nvshmem4py/cmake/buildWheel.cmake b/nvshmem4py/cmake/buildWheel.cmak
          # Undo patching version numbers
          COMMAND sed -i -e "s/^name = \"${WHEEL_NAME}\"/name = \"nvshmem4py\"/" ${PYPROJECT_PATH}
          COMMAND sed -i -e "s|requirements_cuda${CUDA_VER}.txt|requirements.txt|" ${SETUP_PATH}
-@@ -73,9 +73,9 @@
+@@ -76,9 +76,9 @@
      endif()
  
  
@@ -55,10 +54,9 @@ diff -Nur a/nvshmem4py/cmake/buildWheel.cmake b/nvshmem4py/cmake/buildWheel.cmak
 -endfunction()
 \ No newline at end of file
 +endfunction()
-diff -Nur a/nvshmem4py/CMakeLists.txt b/nvshmem4py/CMakeLists.txt
---- a/nvshmem4py/CMakeLists.txt	2026-03-24 09:22:29.000000000 -0700
-+++ b/nvshmem4py/CMakeLists.txt	2026-05-05 22:53:14.854969551 -0700
-@@ -10,28 +10,28 @@
+--- a/nvshmem4py/CMakeLists.txt
++++ b/nvshmem4py/CMakeLists.txt
+@@ -13,28 +13,28 @@
  # Include the custom module
  include(cmake/buildWheel.cmake)
  
@@ -109,7 +107,7 @@ diff -Nur a/nvshmem4py/CMakeLists.txt b/nvshmem4py/CMakeLists.txt
  
  
  # Additional cleanup to clean the build/externals dir
-@@ -79,17 +79,14 @@
+@@ -82,17 +82,14 @@
  endif()
  
  
@@ -132,7 +130,7 @@ diff -Nur a/nvshmem4py/CMakeLists.txt b/nvshmem4py/CMakeLists.txt
  
  # Used to create the master target
  set(ALL_WHEEL_TARGETS "")
-@@ -100,7 +97,11 @@
+@@ -103,7 +100,11 @@
      list(GET PYTHON_PAIR 0 PY_VER)
      list(GET PYTHON_PAIR 1 PY_EXEC)
      message(STATUS "Found Python3 ${PY_EXEC}")
@@ -145,7 +143,7 @@ diff -Nur a/nvshmem4py/CMakeLists.txt b/nvshmem4py/CMakeLists.txt
  
      foreach(CUDA_VER IN LISTS CUDA_VERSIONS)
          set(WHEEL_TARGET build_nvshmem4py_wheel_cu${CUDA_VER}_${PY_VER})
-@@ -129,13 +130,13 @@
+@@ -132,13 +133,13 @@
      endforeach()
  endforeach()
  

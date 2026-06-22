@@ -1,7 +1,6 @@
-diff -Nur a/cmake_config/NVSHMEMConfig.cmake.in b/cmake_config/NVSHMEMConfig.cmake.in
---- a/cmake_config/NVSHMEMConfig.cmake.in	2026-03-24 09:22:29.000000000 -0700
-+++ b/cmake_config/NVSHMEMConfig.cmake.in	2026-04-30 22:52:16.921079755 -0700
-@@ -48,8 +48,8 @@
+--- a/cmake_config/NVSHMEMConfig.cmake.in
++++ b/cmake_config/NVSHMEMConfig.cmake.in
+@@ -61,8 +61,8 @@
  )
  
  set(LIB_DIRS
@@ -11,17 +10,9 @@ diff -Nur a/cmake_config/NVSHMEMConfig.cmake.in b/cmake_config/NVSHMEMConfig.cma
  )
  
  
-@@ -95,4 +95,4 @@
- 
- # Add the targets file
- include(${CMAKE_CURRENT_LIST_DIR}/NVSHMEMTargets.cmake)
--include(${CMAKE_CURRENT_LIST_DIR}/NVSHMEMDeviceTargets.cmake)
-\ No newline at end of file
-+include(${CMAKE_CURRENT_LIST_DIR}/NVSHMEMDeviceTargets.cmake)
-diff -Nur a/CMakeLists.txt b/CMakeLists.txt
---- a/CMakeLists.txt	2026-03-24 09:22:29.000000000 -0700
-+++ b/CMakeLists.txt	2026-04-30 22:51:10.951077391 -0700
-@@ -156,7 +156,7 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -177,7 +177,7 @@
  configure_file(License.txt License.txt COPYONLY)
  
  set(INCLUDE_INSTALL_DIR include/)
@@ -30,71 +21,3 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
  set(BIN_INSTALL_DIR bin/)
  
  configure_package_config_file(
-diff -Nur a/src/CMakeLists.txt b/src/CMakeLists.txt
---- a/src/CMakeLists.txt	2026-03-24 09:22:29.000000000 -0700
-+++ b/src/CMakeLists.txt	2026-04-30 22:56:05.861087985 -0700
-@@ -930,17 +930,17 @@
- install(
-   EXPORT NVSHMEMTargets
-   NAMESPACE nvshmem::
--  DESTINATION lib/cmake/nvshmem/
-+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/nvshmem/
-   COMPONENT Export
- )
- 
- # ${CMAKE_CURRENT_BINARY_DIR}/NVSHMEMConfig.cmake
- install(FILES ${CMAKE_BINARY_DIR}/NVSHMEMVersion.cmake
--        DESTINATION lib/cmake/nvshmem
-+	DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/nvshmem
- )
- 
- install(FILES ${CMAKE_BINARY_DIR}/NVSHMEMConfig.cmake
--        DESTINATION lib/cmake/nvshmem
-+	DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/nvshmem
- 	)
- 
- export(
-@@ -952,8 +952,8 @@
- install(
- 	TARGETS nvshmem_host nvshmem-info ${ACTIVE_BOOTSTRAPS} ${ACTIVE_TRANSPORTS}
-   EXPORT NVSHMEMTargets
--  LIBRARY DESTINATION lib
--  ARCHIVE DESTINATION lib
-+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-   RUNTIME DESTINATION bin
-   INCLUDES
-   DESTINATION include
-@@ -962,28 +962,28 @@
- 
- install(
-   FILES ${CMAKE_CURRENT_BINARY_DIR}/lib/libnvshmem_device.a
--  DESTINATION lib/
-+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/
-   PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
-               GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
- )
- 
- install(
-   FILES ${CMAKE_BINARY_DIR}/lib/cmake/nvshmem/NVSHMEMDeviceTargets.cmake
--  DESTINATION lib/cmake/nvshmem/
-+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/nvshmem/
-   PERMISSIONS OWNER_READ OWNER_WRITE
-               GROUP_READ WORLD_READ
- )
- 
- install(
-   FILES ${CMAKE_BINARY_DIR}/lib/cmake/nvshmem/NVSHMEMDeviceTargets-$<LOWER_CASE:${CMAKE_BUILD_TYPE}>.cmake
--  DESTINATION lib/cmake/nvshmem/
-+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/nvshmem/
-   PERMISSIONS OWNER_READ OWNER_WRITE
-               GROUP_READ WORLD_READ
- )
- 
- install(
-   DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib/
--  DESTINATION lib
-+  DESTINATION ${CMAKE_INSTALL_LIBDIR}
-   FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
-                    GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
- )

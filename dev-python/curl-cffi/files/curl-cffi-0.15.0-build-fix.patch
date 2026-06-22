@@ -1,0 +1,32 @@
+--- a/scripts/build.py	2026-04-03 02:42:49.000000000 -0700
++++ b/scripts/build.py	2026-06-04 21:34:47.600176299 -0700
+@@ -55,11 +55,7 @@
+                     os.makedirs(tmpdir, exist_ok=True)
+                     arch["libdir"] = tmpdir
+                 else:
+-                    if arch.get("local_libdir"):
+-                        arch["libdir"] = os.path.expanduser(arch["local_libdir"])
+-                    else:
+-                        tmpdir = tempfile.TemporaryDirectory()
+-                        arch["libdir"] = tmpdir.name
++                    arch["libdir"] = os.environ["DOWNLOAD_DIR"]
+             return arch
+     raise Exception(f"Unsupported arch: {uname}")
+ 
+@@ -146,7 +142,7 @@
+ ffibuilder = FFI()
+ system = platform.system()
+ root_dir = Path(__file__).parent.parent
+-download_libcurl()
++#download_libcurl()
+ 
+ # With mega archive, we only have one to link
+ static_libs = get_curl_archives()
+@@ -181,6 +177,7 @@
+         str(root_dir / "include"),
+         str(root_dir / "ffi"),
+         str(libdir / "include"),
++        os.environ['INC_DIR'],
+     ],
+     sources=[
+         str(root_dir / "ffi/shim.c"),

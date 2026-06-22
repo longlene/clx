@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">Pylons/pyramid</remote-id>
+    <remote-id type="pypi">pyramid</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Pyramid is a general-purpose open source Python web framework. It is
+    minimalist, allowing developers to add only what they need. Part of the
+    Pylons Project, it supports URL dispatch and traversal, flexible
+    authentication and authorization, templating, and is WSGI-compatible.
+  </longdescription>
+</pkgmetadata>

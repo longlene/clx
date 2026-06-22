@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">pola-rs/polars</remote-id>
+    <remote-id type="pypi">polars</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Polars is a blazingly fast DataFrame library written in Rust with Python
+    bindings. It provides a lazy evaluation engine, multi-threaded query
+    execution, and a consistent API for working with tabular data. This
+    package contains the pure-Python API layer; the compiled Rust extension
+    (polars-runtime-64 or polars-runtime-compat) must be installed separately.
+  </longdescription>
+  <use>
+    <flag name="numpy">Enable NumPy interoperability</flag>
+    <flag name="pandas">Enable pandas DataFrame conversion support</flag>
+    <flag name="pyarrow">Enable Apache Arrow integration</flag>
+    <flag name="pydantic">Enable Pydantic model integration</flag>
+  </use>
+</pkgmetadata>

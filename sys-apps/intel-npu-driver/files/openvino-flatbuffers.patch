@@ -1,0 +1,42 @@
+Fix system flatbuffers integration for NPU builds: enable the system
+flatbuffers option when ENABLE_INTEL_NPU is set, add the Gentoo lib64
+cmake path to the search list, and add missing unversioned target aliases
+that npu_compiler's cmake scripts expect.
+
+--- a/cmake/features.cmake
++++ b/cmake/features.cmake
+@@ -196,7 +196,7 @@
+ ov_option (ENABLE_SYSTEM_PUGIXML "Enables use of system PugiXML" OFF)
+ # the option is on by default, because we use only flatc compiler and don't use any libraries
+ ov_dependent_option(ENABLE_SYSTEM_FLATBUFFERS "Enables use of system flatbuffers" ${ENABLE_SYSTEM_FLATBUFFERS_DEFAULT}
+-    "ENABLE_OV_TF_LITE_FRONTEND" OFF)
++    "ENABLE_OV_TF_LITE_FRONTEND OR ENABLE_INTEL_NPU" OFF)
+ ov_dependent_option (ENABLE_SYSTEM_OPENCL "Enables use of system OpenCL" ${ENABLE_SYSTEM_LIBS_DEFAULT}
+     "ENABLE_INTEL_GPU" OFF)
+ # the option is turned off by default, because we compile our own static version of protobuf
+--- a/thirdparty/dependencies.cmake
++++ b/thirdparty/dependencies.cmake
+@@ -434,7 +434,8 @@
+
+         # on new Ubuntu versions like 23.04 we have config called FlatBuffersConfig.cmake
+         # so, we need to provide alternative names
+-        find_host_package(Flatbuffers QUIET NAMES Flatbuffers FlatBuffers NO_CMAKE_FIND_ROOT_PATH)
++        find_host_package(Flatbuffers QUIET NAMES flatbuffers Flatbuffers FlatBuffers NO_CMAKE_FIND_ROOT_PATH
++            PATHS /usr/lib64/cmake/flatbuffers)
+
+         ov_cross_compile_define_debian_arch_reset()
+     endif()
+@@ -449,7 +450,13 @@
+         else()
+             message(FATAL_ERROR "Internal error: Failed to detect flatbuffers library target")
+         endif()
+         set(flatbuffers_COMPILER flatbuffers::flatc)
++        if(NOT TARGET flatbuffers)
++            add_library(flatbuffers ALIAS ${flatbuffers_LIBRARY})
++        endif()
++        if(NOT TARGET flatc)
++            add_executable(flatc ALIAS flatbuffers::flatc)
++        endif()
+     else()
+         add_subdirectory(thirdparty/flatbuffers EXCLUDE_FROM_ALL)
+         if(ENABLE_INTEL_NPU)

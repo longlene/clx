@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">MasoniteFramework/masonite</remote-id>
+    <remote-id type="pypi">masonite</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Masonite is a developer-friendly Python web framework following MVC
+    architecture. It includes routing, ORM integration, authentication,
+    mail, queues, caching, storage, notifications, and more out of the box.
+  </longdescription>
+</pkgmetadata>

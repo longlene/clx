@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">apache/airflow</remote-id>
+    <remote-id type="pypi">apache-airflow</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Apache Airflow is a platform to programmatically author, schedule, and
+    monitor workflows. This package is the meta-distribution for Airflow 3.x
+    — it installs apache-airflow-core (the runtime) and apache-airflow-task-sdk
+    (the task authoring API). Provider integrations are separate packages
+    (apache-airflow-providers-*).
+  </longdescription>
+</pkgmetadata>

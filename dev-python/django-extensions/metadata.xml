@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Django Extensions is a collection of custom extensions for the Django
+    framework, including management commands, additional database fields,
+    admin extensions, model mixins, and more.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">django-extensions</remote-id>
+    <remote-id type="github">django-extensions/django-extensions</remote-id>
+  </upstream>
+</pkgmetadata>

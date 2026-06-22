@@ -1,0 +1,19 @@
+--- a/setup.py
++++ b/setup.py
+@@ -264,9 +264,12 @@ if torch_available and torch.version.cuda is not None:
+     cuda_version = ".".join(torch.version.cuda.split('.')[:2])
+     if sys.platform != "win32":
+-        if isinstance(torch.cuda.nccl.version(), int):
+-            # This will break if minor version > 9.
+-            nccl_version = ".".join(str(torch.cuda.nccl.version())[:2])
+-        else:
+-            nccl_version = ".".join(map(str, torch.cuda.nccl.version()[:2]))
++        try:
++            if isinstance(torch.cuda.nccl.version(), int):
++                # This will break if minor version > 9.
++                nccl_version = ".".join(str(torch.cuda.nccl.version())[:2])
++            else:
++                nccl_version = ".".join(map(str, torch.cuda.nccl.version()[:2]))
++        except AttributeError:
++            pass
+     if hasattr(torch.cuda, 'is_bf16_supported') and torch.cuda.is_available():

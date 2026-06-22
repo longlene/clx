@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    nova_auth_oidc integrates OpenID Connect login into Nova applications
+    via the oidcc library. It handles the OIDC authorization code flow,
+    token validation, and session management using nova_auth.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">novaframework/nova_auth_oidc</remote-id>
+  </upstream>
+</pkgmetadata>

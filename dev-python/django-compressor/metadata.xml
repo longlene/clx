@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">django-compressor/django-compressor</remote-id>
+    <remote-id type="pypi">django_compressor</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Django Compressor combines and minifies linked and inline JavaScript
+    and CSS in Django templates. It supports offline compression for fast
+    static file serving and integrates with Django's static files system.
+  </longdescription>
+</pkgmetadata>

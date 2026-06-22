@@ -1,0 +1,23 @@
+--- a/src/core/CMakeLists.txt	2026-03-18 07:56:44.000000000 -0700
++++ b/src/core/CMakeLists.txt	2026-06-18 09:11:43.546100908 -0700
+@@ -50,8 +50,18 @@
+     $<BUILD_INTERFACE:${OpenVINO_SOURCE_DIR}/src/common/transformations/include>
+     $<BUILD_INTERFACE:${OpenVINO_SOURCE_DIR}/src/common/low_precision_transformations/include>)
+ 
+-target_include_directories(openvino_core_dev SYSTEM INTERFACE
+-    $<BUILD_INTERFACE:$<$<TARGET_EXISTS:xbyak::xbyak>:$<TARGET_PROPERTY:xbyak::xbyak,INTERFACE_INCLUDE_DIRECTORIES>>>)
++# system xbyak exports /usr/include as INTERFACE_INCLUDE_DIRECTORIES; adding it
++# (even non-SYSTEM) causes -isystem /usr/include which breaks GCC #include_next
++# in <cstdlib>.  Filter /usr/include out at configure time.
++if(TARGET xbyak::xbyak)
++    get_target_property(_xbyak_incdirs xbyak::xbyak INTERFACE_INCLUDE_DIRECTORIES)
++    if(_xbyak_incdirs)
++        list(FILTER _xbyak_incdirs EXCLUDE REGEX "^/usr/include$")
++        if(_xbyak_incdirs)
++            target_include_directories(openvino_core_dev INTERFACE ${_xbyak_incdirs})
++        endif()
++    endif()
++endif()
+ 
+ target_link_libraries(openvino_core_dev INTERFACE openvino::itt openvino::util)
+ 

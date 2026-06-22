@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">locustio/locust</remote-id>
+    <remote-id type="pypi">locust</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Locust is a scalable load testing framework where test scenarios are
+    written in plain Python code. It supports distributed load generation
+    and provides a real-time web UI for monitoring.
+  </longdescription>
+  <use>
+    <flag name="dns">Enable DNS lookup support via dnspython</flag>
+    <flag name="mqtt">Enable MQTT protocol support via paho-mqtt</flag>
+    <flag name="otel">Enable OpenTelemetry tracing and metrics export</flag>
+  </use>
+</pkgmetadata>

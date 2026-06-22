@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">assafelovic/gpt-researcher</remote-id>
+    <remote-id type="pypi">gpt-researcher</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    GPT Researcher is an autonomous agent designed for comprehensive online
+    research on any given topic. It produces detailed, factual, and unbiased
+    research reports with citations by leveraging LLMs and web search.
+  </longdescription>
+</pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    enif_protobuf is a fast Google Protocol Buffers encoder/decoder for
+    Erlang, implemented as a NIF (Native Implemented Function) in C for
+    high-throughput protobuf encoding and decoding.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">jinganix/enif_protobuf</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Headroom is a context optimization layer for LLM applications. It compresses
+    tool outputs, logs, and RAG chunks before sending them to language models,
+    reducing token usage by 50-90%. The core compression engine is implemented
+    in Rust (via a PyO3 extension module) for high throughput.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">chopratejas/headroom</remote-id>
+  </upstream>
+</pkgmetadata>

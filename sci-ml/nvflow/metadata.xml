@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    NVFlow is NVIDIA's workflow orchestration framework for end-to-end
+    synthetic data generation (SDG), supervised fine-tuning (SFT), and
+    model evaluation pipelines built on the NeMo ecosystem. It provides
+    a CLI for launching multi-stage training and evaluation jobs on
+    Slurm clusters.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">NVIDIA/nvflow</remote-id>
+  </upstream>
+</pkgmetadata>

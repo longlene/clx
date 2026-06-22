@@ -5,6 +5,9 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="cross-builder">Install Windows-targeting builder resource libraries for cross-building TensorRT engine files</flag>
+  </use>
   <upstream>
     <remote-id type="github">NVIDIA/TensorRT</remote-id>
   </upstream>

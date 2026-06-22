@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    CloakBrowser is a stealth Chromium implementation that passes bot
+    detection tests, serving as a drop-in Playwright replacement with
+    source-level fingerprint patches. Note: the patched Chromium binary
+    is downloaded at runtime under a separate proprietary license.
+  </longdescription>
+  <use>
+    <flag name="geoip">Enable GeoIP2 and SOCKS5 proxy support</flag>
+    <flag name="patchright">Enable the Patchright backend integration</flag>
+    <flag name="serve">Enable the HTTP/WebSocket server mode</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">CloakHQ/CloakBrowser</remote-id>
+    <remote-id type="pypi">cloakbrowser</remote-id>
+  </upstream>
+</pkgmetadata>

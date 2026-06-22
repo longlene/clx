@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    mini-sglang is a compact, educational implementation of SGLang that
+    demystifies the complexities of modern LLM serving systems, including
+    continuous batching, KV cache management, and tensor parallelism.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">sgl-project/mini-sglang</remote-id>
+  </upstream>
+</pkgmetadata>

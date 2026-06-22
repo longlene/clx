@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Hiqlite is a highly-available, embeddable database combining raft-based
+    replication with SQLite and an in-memory cache. It can run as a standalone
+    server or be embedded directly in Rust applications.
+  </longdescription>
+  <use>
+    <flag name="jemalloc">Use jemalloc as the memory allocator</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">sebadob/hiqlite</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,13 @@
+Fix unsafe Port variable reuse, rejected by Erlang OTP 26+ compiler.
+
+--- a/src/cryptic_server.erl
++++ b/src/cryptic_server.erl
+@@ -396,7 +396,7 @@
+         true ->
+             MCPPort =
+                 case application:get_env(cryptic, mcp_tcp_port) of
+-                    {ok, Port} -> Port;
++                    {ok, MPort} -> MPort;
+                     undefined -> 8081
+                 end,
+             start_mcp_localhost_tcp(#{port => MCPPort});

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    anchor is a high-performance Erlang client for Memcached, providing
+    asynchronous and synchronous operations over the binary protocol.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">lpgauth/anchor</remote-id>
+  </upstream>
+</pkgmetadata>

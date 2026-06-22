@@ -5,6 +5,11 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="matplotlib">Enable matplotlib chart rendering support</flag>
+    <flag name="plotly">Enable Plotly interactive chart support</flag>
+    <flag name="redis">Enable Redis-based storage backend</flag>
+  </use>
   <upstream>
     <remote-id type="github">zauberzeug/nicegui</remote-id>
   </upstream>

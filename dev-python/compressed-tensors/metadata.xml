@@ -6,7 +6,7 @@
     <name>loong0</name>
   </maintainer>
   <upstream>
-    <remote-id type="github">neuralmagic/compressed-tensors</remote-id>
+    <remote-id type="github">vllm-project/compressed-tensors</remote-id>
     <remote-id type="pypi">compressed-tensors</remote-id>
   </upstream>
 </pkgmetadata>

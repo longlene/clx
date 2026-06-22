@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">google/langextract</remote-id>
+    <remote-id type="pypi">langextract</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    LangExtract is a Python library for extracting structured information
+    from unstructured text using large language models. It provides
+    precise source grounding, interactive visualization, and a plugin
+    architecture for multiple LLM providers (Gemini, OpenAI, Ollama).
+  </longdescription>
+  <use>
+    <flag name="openai">Enable OpenAI LLM provider support</flag>
+  </use>
+</pkgmetadata>

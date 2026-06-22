@@ -1,0 +1,31 @@
+CUDA 13 dropped support for compute capability 6.x (Pascal) and 7.0/7.2
+(Volta), and requires C++17 for generic lambdas used in kernels. Guard the
+affected gencode flags for CUDA < 13.0 and unconditionally enable C++17.
+
+--- a/source/backend/cuda/CMakeLists.txt	2026-06-14 22:31:45.529578992 -0700
++++ b/source/backend/cuda/CMakeLists.txt	2026-06-14 22:31:51.201919608 -0700
+@@ -7,7 +7,7 @@
+ endif()
+ 
+ if(CUDA_FOUND)
+-    set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -D_FORCE_INLINES -Wno-deprecated-gpu-targets -w ${EXTRA_LIBS}")
++    set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -D_FORCE_INLINES -Wno-deprecated-gpu-targets -w --std=c++17 ${EXTRA_LIBS}")
+     if(MNN_SUPPORT_TRANSFORMER_FUSE)    
+         set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} --std=c++17") 
+     endif()
+@@ -36,13 +36,13 @@
+         ENDIF()
+     ENDIF()
+ 
+-    IF ((CUDA_VERSION VERSION_GREATER "8.0") OR (CUDA_VERSION VERSION_EQUAL "8.0"))
++    IF (((CUDA_VERSION VERSION_GREATER "8.0") OR (CUDA_VERSION VERSION_EQUAL "8.0")) AND (CUDA_VERSION VERSION_LESS "13.0"))
+         set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -gencode arch=compute_60,code=sm_60")
+         set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -gencode arch=compute_61,code=sm_61")
+         set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -gencode arch=compute_62,code=sm_62")
+     ENDIF()
+     
+-    IF ((CUDA_VERSION VERSION_GREATER "10.1") OR (CUDA_VERSION VERSION_EQUAL "10.1"))
++    IF (((CUDA_VERSION VERSION_GREATER "10.1") OR (CUDA_VERSION VERSION_EQUAL "10.1")) AND (CUDA_VERSION VERSION_LESS "13.0"))
+         set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -gencode arch=compute_70,code=sm_70")
+         set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -gencode arch=compute_72,code=sm_72")
+     ENDIF()

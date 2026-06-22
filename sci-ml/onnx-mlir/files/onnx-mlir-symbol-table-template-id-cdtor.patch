@@ -1,0 +1,10 @@
+--- a/src/Builder/SymbolTable.hpp
++++ b/src/Builder/SymbolTable.hpp
+@@ -22,7 +22,7 @@ struct VariableScope {
+   /*!
+    * Create a variable scope.
+    * @param identifier name of the variable scope.
+    */
+-  explicit VariableScope<T>(std::string _identifier)
++  explicit VariableScope(std::string _identifier)
+       : identifier(std::move(_identifier)), nameToObject(){};

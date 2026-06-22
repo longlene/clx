@@ -1,0 +1,29 @@
+The system tvm_ffi's ~ObjectDef() registers a ShallowCopy function whose lambda
+takes a raw `const Class*` argument.  Function::FromTyped() needs
+TypeTraits<const Class*>::TypeStr() to generate the signature string, but the
+system headers only specialise TypeTraits for ObjectRef (not raw pointer) types.
+Deleting the copy constructor makes std::is_copy_constructible_v<Class> false so
+the `if constexpr` branch is never instantiated.
+
+--- a/src/ir.cc
++++ b/src/ir.cc
+@@ -219,6 +219,9 @@ class KernelLaunchFrameNode : public TIRFrameNode {
+ public:
+   Array<TIRFrame> frames;
+
++  KernelLaunchFrameNode() = default;
++  KernelLaunchFrameNode(const KernelLaunchFrameNode&) = delete;
++
+   static void RegisterReflection() {
+     namespace refl = reflection;
+     refl::ObjectDef<KernelLaunchFrameNode>().def_ro(
+@@ -339,6 +342,9 @@ class WarpSpecializeFrameNode : public TIRFrameNode {
+ public:
+   Array<TIRFrame> frames;
+
++  WarpSpecializeFrameNode() = default;
++  WarpSpecializeFrameNode(const WarpSpecializeFrameNode&) = delete;
++
+   static void RegisterReflection() {
+     namespace refl = reflection;
+     refl::ObjectDef<WarpSpecializeFrameNode>().def_ro(

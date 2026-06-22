@@ -1,0 +1,9 @@
+--- a/rebar.config
++++ b/rebar.config
+@@ -1,5 +1,5 @@
+ %%-*-Erlang-*-
+-{erl_opts, [debug_info, warnings_as_errors]}.
++{erl_opts, [debug_info, warnings_as_errors, nowarn_deprecated_catch]}.
+
+ {deps, [{opentelemetry_api, "1.4.0"},
+         {enats_msg, "1.0.3"}

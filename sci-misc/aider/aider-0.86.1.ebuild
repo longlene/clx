@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -70,7 +70,7 @@ RDEPEND="
 		>=dev-python/idna-3.10[${PYTHON_USEDEP}]
 		>=dev-python/importlib-metadata-7.2.1[${PYTHON_USEDEP}]
 		>=dev-python/importlib-resources-6.5.2[${PYTHON_USEDEP}]
-		>=dev-python/jinja22-3.1.6[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.1.6[${PYTHON_USEDEP}]
 		>=dev-python/jiter-0.10.0[${PYTHON_USEDEP}]
 		>=dev-python/json5-0.12.0[${PYTHON_USEDEP}]
 		>=dev-python/jsonschema-4.25.0[${PYTHON_USEDEP}]

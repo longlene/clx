@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">chrisguidry/docket</remote-id>
+    <remote-id type="pypi">pydocket</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    A distributed background task system for Python async functions backed
+    by Redis. Tasks can be scheduled immediately, at a future time, or on
+    a cron schedule. Supports OpenTelemetry tracing and Prometheus metrics.
+  </longdescription>
+  <use>
+    <flag name="metrics">Enable OpenTelemetry SDK for metrics export</flag>
+  </use>
+</pkgmetadata>

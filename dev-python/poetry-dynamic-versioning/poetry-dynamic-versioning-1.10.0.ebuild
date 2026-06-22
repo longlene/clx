@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/dunamai-1.25.0[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.4[${PYTHON_USEDEP}]
-	>=dev-python/jinja22-2.11.1[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-2.11.1[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

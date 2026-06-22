@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    CocoIndex is an incremental data indexing engine for AI agents and RAG
+    pipelines. Users declare transformations; CocoIndex creates and maintains
+    an index and keeps derived indices up to date with minimal recomputation.
+    Built with Rust for performance, exposed via Python bindings (pyo3/maturin).
+  </longdescription>
+  <use>
+    <flag name="amazon-s3">Enable Amazon S3 storage backend via aiobotocore</flag>
+    <flag name="google-drive">Enable Google Drive source connector</flag>
+    <flag name="neo4j">Enable Neo4j graph database target</flag>
+    <flag name="postgres">Enable PostgreSQL storage target via asyncpg</flag>
+    <flag name="qdrant">Enable Qdrant vector database target</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">cocoindex-io/cocoindex</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Wifiphisher is a rogue access point framework for conducting red team
+    engagements and Wi-Fi security testing. It can be used for man-in-the-middle
+    attacks against Wi-Fi clients and for capturing credentials via phishing pages.
+    Requires a wireless adapter with AP and monitor mode support.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">wifiphisher/wifiphisher</remote-id>
+  </upstream>
+</pkgmetadata>

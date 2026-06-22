@@ -20,6 +20,7 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="Apache-2.0 NVIDIA-CUDA"
 SLOT="0"
 KEYWORDS="~amd64"
+IUSE="cross-builder"
 RESTRICT="mirror bindist"
 
 DEPEND="
@@ -38,6 +39,11 @@ QA_PREBUILT="
 	usr/lib64/libnvonnxparser.so.*
 	usr/lib64/libnvinfer_builder_resource_*.so.*
 	usr/lib64/libtensorrt_shim.so
+	usr/lib64/tensorrt/stubs/*.so
+"
+# cross-builder USE flag includes win_ variants
+QA_PREBUILT+="
+	usr/lib64/libnvinfer_builder_resource_win_*.so.*
 "
 
 src_configure() {
@@ -46,6 +52,7 @@ src_configure() {
 		-DTRT_LIB_DIR="${WORKDIR}/TensorRT-${PV}/lib"
 		-DCUDA_TOOLKIT_ROOT_DIR="${cuda_root}"
 		-DCUDA_INCLUDE_DIRS="${cuda_root}/include"
+		-DCMAKE_CUDA_ARCHITECTURES="75;80;86;87;89;90;100;103;110;120;121"
 		-DBUILD_PARSERS=OFF
 		-DBUILD_SAMPLES=OFF
 	)
@@ -60,8 +67,9 @@ src_install() {
 	dobin "${binpkg}/bin/trtexec"
 	dobin "${binpkg}/bin/tensorrt_player"
 
-	# Headers
-	doheaders "${binpkg}"/include/Nv*.h
+	# Headers (including impl/ subdirectory)
+	insinto /usr/include
+	doins -r "${binpkg}"/include/.
 
 	# Prebuilt core runtime libraries
 	local lib
@@ -71,11 +79,30 @@ src_install() {
 		dosym "${lib}.so.10" "/usr/lib64/${lib}.so"
 	done
 
-	# Per-architecture builder resource libraries (no plain symlinks)
-	local bres
-	for bres in "${binpkg}"/lib/libnvinfer_builder_resource_{sm,ptx}*.so.${libver}; do
-		[[ -f "${bres}" ]] && dolib.so "${bres}"
+	# Per-architecture builder resource libraries
+	local arch
+	for arch in ptx sm75 sm80 sm86 sm89 sm90 sm100 sm120; do
+		local f="${binpkg}/lib/libnvinfer_builder_resource_${arch}.so.${libver}"
+		[[ -f "${f}" ]] || continue
+		dolib.so "${f}"
+		dosym "libnvinfer_builder_resource_${arch}.so.${libver}" \
+			"/usr/lib64/libnvinfer_builder_resource_${arch}.so.10"
+		dosym "libnvinfer_builder_resource_${arch}.so.10" \
+			"/usr/lib64/libnvinfer_builder_resource_${arch}.so"
 	done
+
+	# Windows cross-builder resource libraries (for generating engine files targeting Windows)
+	if use cross-builder; then
+		for arch in ptx sm75 sm80 sm86 sm89 sm90 sm100 sm120; do
+			local wf="${binpkg}/lib/libnvinfer_builder_resource_win_${arch}.so.${libver}"
+			[[ -f "${wf}" ]] || continue
+			dolib.so "${wf}"
+			dosym "libnvinfer_builder_resource_win_${arch}.so.${libver}" \
+				"/usr/lib64/libnvinfer_builder_resource_win_${arch}.so.10"
+			dosym "libnvinfer_builder_resource_win_${arch}.so.10" \
+				"/usr/lib64/libnvinfer_builder_resource_win_${arch}.so"
+		done
+	fi
 
 	# TensorRT runtime shim (no versioned symlinks)
 	dolib.so "${binpkg}/lib/libtensorrt_shim.so"
@@ -89,5 +116,11 @@ src_install() {
 	dosym "libnvinfer_vc_plugin.so.${libver}" "/usr/lib64/libnvinfer_vc_plugin.so.10"
 	dosym "libnvinfer_vc_plugin.so.10" "/usr/lib64/libnvinfer_vc_plugin.so"
 
-	dodoc "${binpkg}/doc/README.txt"
+	# Link-time stub libraries (for building software that links against TensorRT)
+	insinto /usr/lib64/tensorrt/stubs
+	insopts -m0755
+	doins "${binpkg}"/lib/stubs/libnv*.so
+	insopts -m0644
+
+	dodoc "${binpkg}"/doc/{README,Acknowledgements}.txt
 }

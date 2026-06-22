@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    vigil is a microservices status page that monitors a distributed
+    infrastructure and sends alerts via Slack, SMS, email, XMPP, and more.
+    It exposes a REST API and web dashboard for status tracking.
+  </longdescription>
+  <use>
+    <flag name="xmpp">Enable the XMPP notifier via dev-libs/libstrophe</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">valeriansaliou/vigil</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -30,7 +30,7 @@ RDEPEND="
 		>=dev-python/demjson3-3.0.6[${PYTHON_USEDEP}]
 		>=dev-python/hanziconv-0.3.2[${PYTHON_USEDEP}]
 		>=dev-python/html5lib-1.1[${PYTHON_USEDEP}]
-		>=dev-python/jinja22-3.1.0[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.1.0[${PYTHON_USEDEP}]
 		>=sci-ml/modelscope-1.20.0[${PYTHON_USEDEP}]
 		>=dev-python/markdown-3.6[${PYTHON_USEDEP}]
 		>=dev-python/nltk-3.9.1[${PYTHON_USEDEP}]

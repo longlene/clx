@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    livery_s3 is an S3-compatible object storage client for Erlang,
+    built on the livery HTTP client. It supports standard S3 operations
+    with AWS Signature Version 4 authentication.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">benoitc/livery_s3</remote-id>
+  </upstream>
+</pkgmetadata>

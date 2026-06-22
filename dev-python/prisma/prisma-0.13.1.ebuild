@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14}  )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/httpx-0.19.0[${PYTHON_USEDEP}]
-	>=dev-python/jinja22-2.11.2[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-2.11.2[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-1.10.0[${PYTHON_USEDEP}]
 	>=dev-python/click-7.1.2[${PYTHON_USEDEP}]
 	>=dev-python/python-dotenv-0.12.0[${PYTHON_USEDEP}]

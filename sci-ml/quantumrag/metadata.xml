@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="anthropic">Enable Anthropic Claude LLM backend</flag>
+    <flag name="api">Enable REST API server (fastapi, uvicorn)</flag>
+    <flag name="gemini">Enable Google Gemini LLM backend</flag>
+    <flag name="lancedb">Enable LanceDB vector store backend</flag>
+    <flag name="openai">Enable OpenAI LLM backend</flag>
+  </use>
+  <longdescription lang="en">
+    QuantumRAG is an open-source Retrieval-Augmented Generation engine that
+    pushes expensive computation to indexing time for fast, accurate queries.
+    It supports multiple vector store backends (LanceDB, ChromaDB, FAISS),
+    LLM providers (OpenAI, Anthropic, Google Gemini), and includes a CLI and
+    optional REST API server.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">quantumaikr/quantumrag</remote-id>
+    <remote-id type="pypi">quantumrag</remote-id>
+  </upstream>
+</pkgmetadata>

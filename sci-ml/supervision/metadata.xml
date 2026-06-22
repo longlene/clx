@@ -7,5 +7,9 @@
   </maintainer>
   <upstream>
     <remote-id type="github">roboflow/supervision</remote-id>
+    <remote-id type="pypi">supervision</remote-id>
   </upstream>
+  <use>
+    <flag name="metrics">Enable metrics evaluation support via pandas</flag>
+  </use>
 </pkgmetadata>

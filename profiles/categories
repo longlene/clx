@@ -58,7 +58,6 @@ games-arcade
 games-board
 games-emulation
 games-engines
-games-fps
 games-kids
 games-misc
 games-puzzle
@@ -141,3 +140,5 @@ x11-plugins
 x11-terms
 x11-themes
 x11-wm
+app-finance
+sci-speech

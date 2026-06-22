@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit bash-completion-r1 check-reqs distutils-r1 optfeature
 
@@ -41,7 +41,7 @@ RDEPEND="
 		dev-python/docutils[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-celery-2.0.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-click-2.5.0[${PYTHON_USEDEP}]
-		dev-python/jinja22[${PYTHON_USEDEP}]
+		dev-python/jinja2[${PYTHON_USEDEP}]
 		dev-python/sqlalchemy[${PYTHON_USEDEP}]
 	)
 "

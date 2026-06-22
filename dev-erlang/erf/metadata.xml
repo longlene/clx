@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    erf is a design-first Erlang REST framework. Developers define their API
+    using an OpenAPI 3.0 specification; erf parses the spec and generates an
+    Erlang router with request/response validation powered by the ndto library.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">nomasystems/erf</remote-id>
+  </upstream>
+</pkgmetadata>

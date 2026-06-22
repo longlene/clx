@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">ocrmypdf/OCRmyPDF</remote-id>
+    <remote-id type="pypi">ocrmypdf</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them
+    to be searched or copy-pasted. It produces PDF/A output for
+    long-term archiving, and supports optimization, deskewing, page
+    rotation, and more via a plugin system.
+  </longdescription>
+  <use>
+    <flag name="watcher">Enable the file watcher service for automatic OCR processing</flag>
+    <flag name="webservice">Enable the Streamlit web service interface</flag>
+  </use>
+</pkgmetadata>

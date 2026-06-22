@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    torch-rechub is a lightweight PyTorch recommendation system framework
+    supporting CTR prediction, matching, ranking, and multi-task learning.
+  </longdescription>
+  <use>
+    <flag name="annoy">Enable approximate nearest neighbor search via dev-python/annoy</flag>
+    <flag name="bigdata">Enable large-scale data support via dev-python/pyarrow</flag>
+    <flag name="faiss">Enable FAISS-based vector search</flag>
+    <flag name="generative">Enable LLM/generative AI support (accelerate, transformers)</flag>
+    <flag name="tracking">Enable experiment tracking (wandb, tensorboardX)</flag>
+    <flag name="visualization">Enable model visualization (torchview, graphviz)</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">datawhalechina/torch-rechub</remote-id>
+  </upstream>
+</pkgmetadata>

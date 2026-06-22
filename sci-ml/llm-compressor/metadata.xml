@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    LLM Compressor is a Transformers-compatible library for applying various
+    compression algorithms to large language models for optimized deployment
+    with vLLM. It supports quantization (GPTQ, SmoothQuant, FP8), pruning,
+    and sparsity techniques for both training-aware and post-training
+    compression of PyTorch/HuggingFace models.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">vllm-project/llm-compressor</remote-id>
+    <remote-id type="pypi">llmcompressor</remote-id>
+  </upstream>
+</pkgmetadata>

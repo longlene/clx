@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Lilya is a lightweight ASGI framework and toolkit providing routing,
+    middleware, WebSocket support, static files, sessions, and template
+    rendering. It is designed to be used standalone or embedded in larger
+    frameworks like Esmerald.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">dymmond/lilya</remote-id>
+    <remote-id type="pypi">lilya</remote-id>
+  </upstream>
+  <use>
+    <flag name="jinja2">Enable Jinja2 template engine support</flag>
+    <flag name="sessions">Enable signed session middleware via dev-python/itsdangerous</flag>
+  </use>
+</pkgmetadata>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">AstrBotDevs/AstrBot</remote-id>
+    <remote-id type="pypi">AstrBot</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    AstrBot is an easy-to-use multi-platform LLM chatbot and development
+    framework. It integrates with many IM platforms (Telegram, WeChat,
+    DingTalk, Slack, Discord, QQ) and LLM providers (OpenAI, Anthropic,
+    Google Gemini, DashScope), supporting plugins, tools, and AI agents.
+  </longdescription>
+</pkgmetadata>

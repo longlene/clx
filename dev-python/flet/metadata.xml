@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Flet is a framework that enables you to easily build realtime web, mobile,
+    and desktop apps in Python. No frontend experience required — write Python,
+    and Flet renders Flutter UI. The web extra adds FastAPI/uvicorn web server support.
+  </longdescription>
+  <use>
+    <flag name="web">Enable web server backend via FastAPI and uvicorn</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">flet-dev/flet</remote-id>
+    <remote-id type="pypi">flet</remote-id>
+  </upstream>
+</pkgmetadata>

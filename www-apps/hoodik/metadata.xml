@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Hoodik is a self-hosted encrypted file storage and sharing platform. It
+    provides end-to-end encryption using RSA and AES keys, ensuring files
+    are encrypted client-side before upload. Features include file sharing
+    with other users, REST API access, and a Vue.js web frontend.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">hudikhq/hoodik</remote-id>
+  </upstream>
+</pkgmetadata>

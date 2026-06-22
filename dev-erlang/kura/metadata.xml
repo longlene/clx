@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A database layer for Erlang providing a unified interface for
+    data persistence with telemetry instrumentation.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Taure/kura</remote-id>
+  </upstream>
+</pkgmetadata>

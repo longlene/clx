@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Twinkle is a training workbench for large language models, providing
+    efficient data handling, advanced optimization techniques, and support
+    for transformers, vLLM, and distributed training via Ray.
+  </longdescription>
+  <use>
+    <flag name="ray">Enable distributed training/serving via dev-python/ray</flag>
+    <flag name="train">Pull in sci-ml/pytorch, sci-ml/accelerate and sci-ml/torchvision for GPU training</flag>
+    <flag name="vllm">Enable vLLM-based inference backend</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">modelscope/twinkle</remote-id>
+  </upstream>
+</pkgmetadata>

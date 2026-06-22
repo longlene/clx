@@ -1,0 +1,16 @@
+Include Gentoo MLIR/LLVM shims after include(AddLLVM) so the
+llvm_map_components_to_libnames override is not clobbered by LLVM-Config.cmake
+being re-included from AddLLVM.cmake.
+
+--- a/MLIR.cmake
++++ b/MLIR.cmake
+@@ -30,6 +30,10 @@ else()
+   include(TableGen)
+   include(AddLLVM)
++
++  # Load Gentoo-specific shims after AddLLVM so our function overrides stick
++  include(${CMAKE_CURRENT_LIST_DIR}/gentoo-mlir-shims.cmake OPTIONAL)
++
+   include(AddMLIR)
+
+   include(HandleLLVMOptions)

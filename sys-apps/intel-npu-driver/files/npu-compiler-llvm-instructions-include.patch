@@ -1,0 +1,10 @@
+--- a/src/vpux_compiler/src/utils/llvm_to_binary.cpp
++++ b/src/vpux_compiler/src/utils/llvm_to_binary.cpp
+@@ -12,6 +12,7 @@
+ #include <mlir/Dialect/LLVMIR/LLVMDialect.h>
+ #include <mlir/Target/LLVMIR/ModuleTranslation.h>
+
++#include <llvm/IR/Instructions.h>
+ #include <llvm/ADT/SetVector.h>
+ #include <llvm/Support/FileSystem.h>
+ #include <llvm/Support/Program.h>

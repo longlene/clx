@@ -1,0 +1,13 @@
+Fix type annotation in time-0.3.25 for Rust 1.75+ (use Vec instead of Box<[_]>).
+
+--- a/src/format_description/parse/mod.rs
++++ b/src/format_description/parse/mod.rs
+@@ -82,7 +82,7 @@
+     let format_items = format_item::parse(ast);
+     let items = format_items
+         .map(|res| res.map(Into::into))
+-        .collect::<Result<Box<_>, _>>()?;
++        .collect::<Result<Vec<crate::format_description::OwnedFormatItem>, _>>()?;
+     Ok(items.into())
+ }
+ 

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 inherit cuda distutils-r1 pypi
 
 DESCRIPTION="Python wrapper for NVIDIA CUDA"

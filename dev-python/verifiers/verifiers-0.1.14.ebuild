@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -22,7 +22,7 @@ RDEPEND="
 	>=sci-ml/datasets-3.0.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/anthropic-0.78.0[${PYTHON_USEDEP}]
-		>=dev-python/jinja22-3.1.6[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.1.6[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		>=dev-python/math-verify-0.8.0[${PYTHON_USEDEP}]
 		>=dev-python/mcp-1.14.1[${PYTHON_USEDEP}]

@@ -1,0 +1,9 @@
+--- a/thirdparty/CMakeLists.txt	2026-06-02 23:07:56.402762070 -0700
++++ b/thirdparty/CMakeLists.txt	2026-06-02 23:10:13.766208892 -0700
+@@ -9,5 +9,5 @@
+ elseif(APPLE)
+     add_subdirectory ("glfw")
+ else() #Linux
+-	add_subdirectory ("glfw")
++	find_package(glfw3 REQUIRED)
+ endif()

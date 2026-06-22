@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    DeepSpeed is a deep learning optimization library that makes distributed
+    training and inference easy, efficient, and effective. It supports
+    ZeRO optimization, pipeline parallelism, tensor parallelism, and
+    mixed precision training for large language models.
+  </longdescription>
+  <use>
+    <flag name="triton">Enable the Triton JIT compiler backend for GPU kernels</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">deepspeedai/DeepSpeed</remote-id>
+  </upstream>
+</pkgmetadata>

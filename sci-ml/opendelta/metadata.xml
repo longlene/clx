@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    OpenDelta is a plug-and-play library for parameter-efficient fine-tuning
+    (delta tuning) of large pre-trained language models. It provides a unified
+    interface for applying adapter, prefix-tuning, LoRA, BitFit, and other
+    delta methods on top of HuggingFace Transformers models without modifying
+    the backbone model's parameters.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">thunlp/OpenDelta</remote-id>
+  </upstream>
+</pkgmetadata>

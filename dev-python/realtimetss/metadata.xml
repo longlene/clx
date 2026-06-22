@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    RealtimeTTS converts streamed text to speech in real-time using a pluggable
+    engine architecture. Supported backends include Microsoft Edge TTS, Google
+    TTS, OpenAI TTS, ElevenLabs, Azure Cognitive Services, Kokoro, Coqui, and
+    various local neural TTS engines.
+  </longdescription>
+  <use>
+    <flag name="edge">Enable Microsoft Edge TTS engine via edge-tts</flag>
+    <flag name="gtts">Enable Google Text-to-Speech engine via gTTS</flag>
+    <flag name="openai">Enable OpenAI TTS engine</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">KoljaB/RealtimeTTS</remote-id>
+  </upstream>
+</pkgmetadata>

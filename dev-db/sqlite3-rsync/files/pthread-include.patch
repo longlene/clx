@@ -1,0 +1,10 @@
+--- a/src/xsockets/xsocket_tcp.cpp
++++ b/src/xsockets/xsocket_tcp.cpp
+@@ -1,6 +1,7 @@
+ #include "xsocket_tcp.h"
+ #include <string.h>
+ #include <arpa/inet.h>
++#include <pthread.h>
+ #include <stdio.h>
+
+ #include <sys/types.h>

@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -30,7 +30,7 @@ RDEPEND="
 		>=sci-ml/torchx-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/typer-0.12.3[${PYTHON_USEDEP}]
 		>=dev-python/rich-13.7.1[${PYTHON_USEDEP}]
-		>=dev-python/jinja22-3.1.4[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.1.4[${PYTHON_USEDEP}]
 		>=dev-python/networkx-3.3[${PYTHON_USEDEP}]
 		>=dev-python/omegaconf-2.3.0[${PYTHON_USEDEP}]
 		dev-python/toml[${PYTHON_USEDEP}]

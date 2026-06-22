@@ -1,0 +1,21 @@
+Use CMAKE_INSTALL_LIBDIR for Python extension install destinations so that on
+multilib systems the .so files land in lib64 rather than the hardcoded lib.
+
+--- a/src/Runtime/python/CMakeLists.txt
++++ b/src/Runtime/python/CMakeLists.txt
+@@ -102,7 +102,7 @@
+ llvm_update_compile_flags(PyRuntimeC)
+
+ install(TARGETS PyRuntimeC
+-  DESTINATION lib
++  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+   )
+
+ # Target to prepare om_pyrt package
+@@ -184,6 +184,6 @@
+ llvm_update_compile_flags(PyOMCompileC)
+
+ install(TARGETS PyOMCompileC
+-  DESTINATION lib
++  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+   )

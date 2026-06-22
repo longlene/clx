@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Hummingbot is an open-source framework for building high-frequency crypto
+    trading bots. It supports numerous centralized and decentralized exchanges,
+    includes Cython-compiled performance-critical components, and provides
+    built-in strategies for market making, arbitrage, and liquidity mining.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">hummingbot/hummingbot</remote-id>
+  </upstream>
+</pkgmetadata>

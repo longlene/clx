@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    etsmgr is an Erlang OTP application that acts as a manager for ETS
+    (Erlang Term Storage) tables, ensuring they survive the crash or
+    restart of the owning process by adopting and re-gifting ownership.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">fredyouhanaie/etsmgr</remote-id>
+  </upstream>
+</pkgmetadata>

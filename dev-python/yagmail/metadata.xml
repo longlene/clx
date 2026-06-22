@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">kootenpv/yagmail</remote-id>
+    <remote-id type="pypi">yagmail</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    yagmail is a simple Gmail/SMTP client that removes the boilerplate
+    of Python's smtplib and email modules. It supports HTML content,
+    inline images, file attachments, and optional keyring integration
+    for secure credential storage.
+  </longdescription>
+  <use>
+    <flag name="dkim">Enable DKIM email signing support via dkimpy</flag>
+    <flag name="keyring">Enable secure credential storage via the system keyring</flag>
+  </use>
+</pkgmetadata>

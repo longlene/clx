@@ -1,0 +1,36 @@
+--- a/nnml/include/thread.h
++++ b/nnml/include/thread.h
+@@ -43,7 +43,7 @@
+-#if __has_include(<numa.h>)
++#if !defined(NNML_NO_NUMA) && __has_include(<numa.h>)
+   #include <numa.h>
+   #include <numaif.h>
+   #define NNML_HAS_NUMA 1
+ #else
+   #define NNML_HAS_NUMA 0
+ #endif
+
+--- a/nnml/CMakeLists.txt
++++ b/nnml/CMakeLists.txt
+@@ -87,8 +87,8 @@
+ message(STATUS "NNML_USE_OPENMP = ${NNML_USE_OPENMP}")
+ if(NNML_USE_OPENMP)
+     find_package(OpenMP REQUIRED)
+-    target_link_libraries(backend PUBLIC OpenMP::OpenMP_CXX)
+-    target_compile_definitions(backend PUBLIC NNML_USE_OPENMP)
++    target_link_libraries(nnml PUBLIC OpenMP::OpenMP_CXX)
++    target_compile_definitions(nnml PUBLIC NNML_USE_OPENMP)
+ endif()
+ 
+ 
+--- a/nnml/src/ops/x86/x86.cpp
++++ b/nnml/src/ops/x86/x86.cpp
+@@ -502,7 +502,7 @@
+         sumf += (nnml_float)(NNML_CPU_FP16_TO_FP32(x[i])*NNML_CPU_FP16_TO_FP32(y[i]));
+     }
+     // if you hit this, you are likely running outside the FP range
+-    assert(!isnan(sumf) && !isinf(sumf));
++    assert(!std::isnan(sumf) && !std::isinf(sumf));
+ 
+     *s = sumf;
+ }

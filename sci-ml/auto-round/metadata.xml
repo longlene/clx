@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    AutoRound is an advanced weight-only quantization algorithm designed for
+    low-bit LLM inference. It uses sign gradient descent to fine-tune rounding
+    values and achieve SOTA accuracy for 4-bit, 3-bit, and 2-bit quantization
+    with full compatibility with vLLM, SGLang, and Hugging Face Transformers.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">intel/auto-round</remote-id>
+    <remote-id type="pypi">auto-round</remote-id>
+  </upstream>
+</pkgmetadata>

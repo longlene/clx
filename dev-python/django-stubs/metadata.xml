@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="mypy">Install compatible mypy version</flag>
+    <flag name="oracle">Install oracledb for Oracle database support</flag>
+    <flag name="redis">Install redis and types-redis for Redis support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">typeddjango/django-stubs</remote-id>
+    <remote-id type="pypi">django-stubs</remote-id>
+  </upstream>
+</pkgmetadata>

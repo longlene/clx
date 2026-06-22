@@ -1,0 +1,27 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{13..15} )
+
+MY_PN="types-pyOpenSSL"
+
+inherit distutils-r1
+
+DESCRIPTION="Typing stubs for pyOpenSSL"
+HOMEPAGE="https://github.com/python/typeshed https://pypi.org/project/types-pyOpenSSL/"
+SRC_URI="https://files.pythonhosted.org/packages/93/29/47a346550fd2020dac9a7a6d033ea03fccb92fa47c726056618cc889745e/${MY_PN}-${PV}.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/${MY_PN}-${PV}"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="
+	$(python_gen_cond_dep '
+		>=dev-python/cryptography-35.0.0[${PYTHON_USEDEP}]
+		dev-python/types-cffi[${PYTHON_USEDEP}]
+	')
+"

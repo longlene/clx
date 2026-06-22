@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Sekisho is an LLM gateway for the BEAM. It sits in front of Anthropic,
+    Gemini, and Vertex and provides virtual API keys, a cost ledger, budgets,
+    rate limiting, and a tamper-evident audit log.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Taure/sekisho</remote-id>
+  </upstream>
+</pkgmetadata>

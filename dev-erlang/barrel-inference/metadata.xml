@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    barrel_inference (erllama) is a native Erlang/OTP NIF wrapper around
+    llama.cpp. It provides token-exact tiered KV cache management allowing
+    more warm inference state to be stored than fits in RAM by spilling to
+    disk. The vendored llama.cpp is compiled as static libraries linked
+    into the erllama_nif shared library.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">barrel-platform/barrel_inference</remote-id>
+  </upstream>
+</pkgmetadata>

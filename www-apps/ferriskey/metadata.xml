@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>0xccef@gmail.com</email>
+  </maintainer>
+  <longdescription>
+    FerrisKey is an open-source Identity and Access Management (IAM) solution
+    built for cloud-native environments. It provides features such as
+    authentication, authorization, and user management, implemented in Rust
+    for performance and reliability.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ferriskey/ferriskey</remote-id>
+  </upstream>
+</pkgmetadata>

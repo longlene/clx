@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    workerd is the JavaScript/Wasm runtime that powers Cloudflare Workers.
+    It implements the Workers runtime API including the Web Platform APIs,
+    KV, Durable Objects, and other Cloudflare-specific primitives. This
+    package installs the pre-built Linux x86-64 binary from npm.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">cloudflare/workerd</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,20 @@
+--- a/rebar.config	2026-05-10 12:12:13.000000000 -0700
++++ b/rebar.config	2026-06-08 19:49:47.540303933 -0700
+@@ -5,17 +5,6 @@
+     {esqlite, "~> 0.9"}
+ ]}.
+ 
+-{project_plugins, [
+-    erlfmt,
+-    rebar3_hex,
+-    rebar3_ex_doc,
+-    rebar3_lint,
+-    rebar3_hank,
+-    covertool,
+-    {rebar3_audit, "~> 0.2"},
+-    {rebar3_sbom,
+-        {git, "https://github.com/Taure/rebar3_sbom.git", {branch, "feat/include-otp-components"}}}
+-]}.
+ 
+ {covertool, [{coverdata_files, ["eunit.coverdata"]}]}.
+ 

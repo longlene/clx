@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="arrow">Enable Apache Arrow / PyArrow support for tabular data</flag>
+    <flag name="image">Enable python-magic for MIME type detection on uploaded files</flag>
+    <flag name="ngrok">Enable ngrok tunnel support for remote access</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">Avaiga/taipy</remote-id>
+    <remote-id type="pypi">taipy-gui</remote-id>
+  </upstream>
+</pkgmetadata>

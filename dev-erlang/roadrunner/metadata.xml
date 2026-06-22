@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    roadrunner is a pure-Erlang HTTP server supporting HTTP/1.1, HTTP/2,
+    HTTP/3, and WebSocket. It provides a handler-based routing API
+    and is designed for high-throughput, low-latency workloads.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">arizona-framework/roadrunner</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    DearPyGui is a fast, GPU-accelerated Python GUI framework built on top
+    of Dear ImGui. It provides a rich set of widgets with minimal Python
+    dependencies, using OpenGL and GLFW for rendering on Linux.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">hoffstadt/DearPyGui</remote-id>
+    <remote-id type="pypi">dearpygui</remote-id>
+  </upstream>
+</pkgmetadata>

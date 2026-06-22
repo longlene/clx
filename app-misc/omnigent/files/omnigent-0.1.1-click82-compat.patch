@@ -1,0 +1,14 @@
+Fix compatibility with click >= 8.2, which made Context.protected_args a
+read-only property. Use .clear() to empty the list in-place rather than
+replacing the attribute, which works on both old and new click.
+
+--- a/omnigent/cli.py
++++ b/omnigent/cli.py
+@@ -5058,7 +5058,7 @@ class _HostGroup(click.Group):
+         if leftover:
+             raise click.UsageError(f"Unexpected extra argument(s): {' '.join(leftover)}")
+         ctx.params["server"] = candidate
+-        ctx.protected_args = []
++        ctx.protected_args.clear()
+         ctx.args = []
+         return ctx.args

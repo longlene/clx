@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    NeMo Anonymizer is a PII (Personally Identifiable Information) detection
+    and protection library. It uses context-aware replacement and rewriting
+    to anonymize sensitive data in text, supporting multiple anonymization
+    strategies and LLM-backed rewriting pipelines.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">NVIDIA-NeMo/Anonymizer</remote-id>
+  </upstream>
+</pkgmetadata>

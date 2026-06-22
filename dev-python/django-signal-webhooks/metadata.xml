@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    django-signal-webhooks allows adding outgoing webhooks to a Django project
+    by connecting them to Django signals. Webhooks can be configured via the
+    admin interface or programmatically, with support for HMAC signing and
+    async delivery via HTTPX.
+  </longdescription>
+  <use>
+    <flag name="drf">Enable Django REST Framework integration</flag>
+  </use>
+  <upstream>
+    <remote-id type="pypi">django-signal-webhooks</remote-id>
+    <remote-id type="github">MrThearMan/django-signal-webhooks</remote-id>
+  </upstream>
+</pkgmetadata>

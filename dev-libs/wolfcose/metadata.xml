@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    wolfCOSE is a lightweight implementation of COSE (CBOR Object
+    Signing and Encryption, RFC 8152) and CBOR (RFC 7049) using
+    wolfSSL as the cryptographic backend.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">wolfSSL/wolfCOSE</remote-id>
+  </upstream>
+  <use>
+    <flag name="static-libs">Build and install static library</flag>
+  </use>
+</pkgmetadata>

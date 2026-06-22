@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -33,7 +33,7 @@ BDEPEND="
 	>=dev-python/lark-1.1.9[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/nox-2023.4.22[${PYTHON_USEDEP}]
-		>=dev-python/jinja22-3.1.2[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.1.2[${PYTHON_USEDEP}]
 	)
 "
 

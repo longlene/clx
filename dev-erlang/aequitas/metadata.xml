@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    aequitas is a fairness regulator and rate limiter for Erlang and Elixir.
+    It allows you to define categories of tasks and enforce fair resource
+    sharing across multiple actors within each category.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">g-andrade/aequitas</remote-id>
+  </upstream>
+</pkgmetadata>

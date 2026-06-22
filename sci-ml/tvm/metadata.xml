@@ -8,4 +8,7 @@
   <upstream>
     <remote-id type="github">apache/tvm</remote-id>
   </upstream>
+  <use>
+    <flag name="nccl">Enable NCCL collective communication support (requires CUDA)</flag>
+  </use>
 </pkgmetadata>

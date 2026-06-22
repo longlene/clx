@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    aokit is a lightweight ahead-of-time (AOT) compilation toolkit for
+    PyTorch. It provides utilities for compiling PyTorch models with
+    torch.compile at startup to serve warm inferences immediately,
+    primarily used in ZeroGPU demos on Hugging Face Spaces.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">huggingface/aokit</remote-id>
+  </upstream>
+</pkgmetadata>

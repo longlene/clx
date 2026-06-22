@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Keep is an open-source AIOps and alert management platform. It aggregates
+    alerts from multiple monitoring sources (Grafana, Prometheus, Datadog,
+    CloudWatch, PagerDuty, etc.), correlates and deduplicates them, and
+    provides automated workflows for incident response. It exposes a FastAPI
+    backend and integrates with cloud providers, databases, LLMs, and
+    communication channels.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">keephq/keep</remote-id>
+  </upstream>
+</pkgmetadata>

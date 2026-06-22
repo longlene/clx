@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    json-schema-for-humans generates static HTML, Markdown, or JSON Schema
+    documentation from a JSON schema file, supporting templates and
+    rendering of references, examples, and constraints.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">coveooss/json-schema-for-humans</remote-id>
+  </upstream>
+</pkgmetadata>

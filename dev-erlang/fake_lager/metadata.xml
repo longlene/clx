@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    fake_lager is a drop-in replacement for the lager logging framework.
+    It routes all lager log calls to Erlang/OTP's built-in logger,
+    allowing lager-dependent applications to run without the real lager.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">g-andrade/fake_lager</remote-id>
+  </upstream>
+</pkgmetadata>

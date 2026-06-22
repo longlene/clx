@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="tokenizers">Enable extra tokenizer backends (tiktoken, blobfile, mistral-common)</flag>
+    <flag name="vision">Enable vision dataset support (pillow)</flag>
+  </use>
+  <longdescription lang="en">
+    GuideLLM is a guidance platform for evaluating and optimizing large language
+    model deployments. It benchmarks LLM inference servers (such as vLLM) under
+    realistic workloads, measuring throughput, latency, and token-level
+    performance to help users understand real-world inference behaviour.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">vllm-project/guidellm</remote-id>
+    <remote-id type="pypi">guidellm</remote-id>
+  </upstream>
+</pkgmetadata>

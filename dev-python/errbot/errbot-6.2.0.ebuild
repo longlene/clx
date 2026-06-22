@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{13..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -24,7 +24,7 @@ RDEPEND="
 	>=dev-python/setuptools-78.1.1[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.3.3[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.32.3[${PYTHON_USEDEP}]
-	>=dev-python/jinja22-3.1.6[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.1.6[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-24.3.0[${PYTHON_USEDEP}]
 	>=dev-python/colorlog-6.7.0[${PYTHON_USEDEP}]
 	>=dev-python/markdown-3.4.4[${PYTHON_USEDEP}]

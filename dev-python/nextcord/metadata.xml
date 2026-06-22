@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    nextcord is a modern, easy to use, feature-rich, and async ready API
+    wrapper for Discord, forked from discord.py.
+  </longdescription>
+  <use>
+    <flag name="speed">Enable optional speed dependencies (aiodns, brotli)</flag>
+    <flag name="voice">Enable voice support via PyNaCl</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">nextcord/nextcord</remote-id>
+    <remote-id type="pypi">nextcord</remote-id>
+  </upstream>
+</pkgmetadata>

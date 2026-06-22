@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 DISTUTILS_SINGLE_IMPL=yes
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
 
@@ -26,17 +26,21 @@ RDEPEND="
 	>=dev-libs/cudnn-9:=
 	sci-ml/cudnn-frontend:=
 	dev-libs/cutlass:=
-	dev-python/importlib-metadata[${PYTHON_SINGLE_USEDEP}]
-	dev-python/packaging[${PYTHON_SINGLE_USEDEP}]
-	dev-python/pydantic[${PYTHON_SINGLE_USEDEP}]
+	$(python_gen_cond_dep '
+		dev-python/importlib-metadata[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/pydantic[${PYTHON_USEDEP}]
+	')
 	jax? (
 		>=dev-python/flax-0.7.1[${PYTHON_SINGLE_USEDEP}]
 		dev-python/jax[${PYTHON_SINGLE_USEDEP}]
 	)
 	pytorch? (
 		>=sci-ml/pytorch-2.1[${PYTHON_SINGLE_USEDEP}]
-		dev-python/einops[${PYTHON_SINGLE_USEDEP}]
-		sci-ml/onnx[${PYTHON_SINGLE_USEDEP}]
+		$(python_gen_cond_dep '
+			dev-python/einops[${PYTHON_USEDEP}]
+			sci-ml/onnx[${PYTHON_USEDEP}]
+		')
 	)
 "
 DEPEND="${RDEPEND}"
@@ -44,7 +48,9 @@ BDEPEND="
 	>=dev-util/nvidia-cuda-toolkit-12.1
 	dev-build/cmake
 	dev-build/ninja
-	dev-python/pybind11[${PYTHON_SINGLE_USEDEP}]
+	$(python_gen_cond_dep '
+		dev-python/pybind11[${PYTHON_USEDEP}]
+	')
 "
 
 src_prepare() {

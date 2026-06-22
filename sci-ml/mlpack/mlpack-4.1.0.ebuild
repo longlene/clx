@@ -28,7 +28,7 @@ EGO_SUM=(
 	"rsc.io/pdf v0.1.1/go.mod"
 	)
 GO_OPTIONAL=1
-PYTHON_COMPAT=( python3_{10..14}  )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit cmake flag-o-matic go-module python-single-r1
 

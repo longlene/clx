@@ -4,7 +4,7 @@
 EAPI=8
 
 LUA_COMPAT=( luajit )
-PYTHON_COMPAT=( python3_{11..14}  )
+PYTHON_COMPAT=( python3_{13..15} )
 inherit distutils-r1 lua vcs-snapshot
 
 DESCRIPTION="Creating, organizing & sharing visualizations of live, rich data"

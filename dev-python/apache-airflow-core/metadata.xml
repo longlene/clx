@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="graphviz">Enable DAG graph rendering via graphviz</flag>
+    <flag name="gunicorn">Enable gunicorn WSGI server support</flag>
+    <flag name="statsd">Enable StatsD metrics reporting</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">apache/airflow</remote-id>
+    <remote-id type="pypi">apache-airflow-core</remote-id>
+  </upstream>
+</pkgmetadata>

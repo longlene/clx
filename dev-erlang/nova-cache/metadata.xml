@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    nova_cache is a general-purpose key-value cache library for the Nova
+    web framework ecosystem. It provides a pluggable adapter interface
+    supporting ETS-based caching out of the box, with optional invalidation
+    via process groups.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">novaframework/nova_cache</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Turbovec provides fast vector quantization with 2-4 bit compression and
+    SIMD-accelerated nearest-neighbour search, implemented as a Rust extension
+    for Python via PyO3/maturin.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">turbovec</remote-id>
+    <remote-id type="github">RyanCodrai/turbovec</remote-id>
+  </upstream>
+</pkgmetadata>

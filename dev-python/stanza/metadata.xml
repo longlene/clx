@@ -7,5 +7,10 @@
   </maintainer>
   <upstream>
     <remote-id type="github">stanfordnlp/stanza</remote-id>
+    <remote-id type="pypi">stanza</remote-id>
   </upstream>
+  <use>
+    <flag name="datasets">Enable HuggingFace datasets integration</flag>
+    <flag name="transformers">Enable transformers and PEFT fine-tuning support</flag>
+  </use>
 </pkgmetadata>

@@ -1,0 +1,18 @@
+Append -shared to LDFLAGS rather than conditionally setting it, so the
+portage LDFLAGS environment variable does not suppress the shared flag.
+
+--- a/c_src/Makefile
++++ b/c_src/Makefile
+@@ -28,12 +28,12 @@
+ 	CC ?= cc
+ 	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall -Wmissing-prototypes
+ 	CXXFLAGS ?= -O3 -finline-functions -Wall
+-	LDFLAGS ?= -shared
++	LDFLAGS += -shared
+ else ifeq ($(UNAME_SYS), Linux)
+ 	CC ?= gcc
+ 	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall -Wmissing-prototypes
+ 	CXXFLAGS ?= -O3 -finline-functions -Wall
+-	LDFLAGS ?= -shared
++	LDFLAGS += -shared
+ endif

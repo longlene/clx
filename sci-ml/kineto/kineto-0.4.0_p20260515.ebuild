@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..14} )
+PYTHON_COMPAT=( python3_{13..15} )
 inherit python-any-r1 cmake prefix
 
 CommitId=799b5f4ac268d09a2308e720e04c7dff482eaebf

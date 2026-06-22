@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    match_trie is an Erlang library implementing an MQTT-style topic
+    matching trie backed by ETS tables, supporting wildcard subscriptions
+    with single-level (+) and multi-level (#) wildcards.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">barrel-db/match_trie</remote-id>
+  </upstream>
+</pkgmetadata>
