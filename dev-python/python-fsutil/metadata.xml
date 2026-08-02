@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A library providing high-level file-system operations such as copying,
+    moving, renaming, searching, reading, and writing files and directories.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">fabiocaccamo/python-fsutil</remote-id>
+    <remote-id type="pypi">python-fsutil</remote-id>
+  </upstream>
+</pkgmetadata>

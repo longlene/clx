@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A native C++ inference framework for local audio models (TTS, ASR, and
+    related tasks), built on top of ggml. Provides a CLI, an inference
+    server, and a GGUF conversion tool.
+  </longdescription>
+  <use>
+    <flag name="cuda">Build with CUDA backend support</flag>
+    <flag name="openmp">Build host code with OpenMP support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">0xShug0/audio.cpp</remote-id>
+  </upstream>
+</pkgmetadata>

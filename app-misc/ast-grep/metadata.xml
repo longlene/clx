@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>unused@gentoo.org</email>
+    <name>Gentoo Developer</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">ast-grep/ast-grep</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -13,16 +13,18 @@ DESCRIPTION="A natural language interface for computers"
 HOMEPAGE="
 	http://openinterpreter.com/
 	https://github.com/OpenInterpreter/open-interpreter
-	https://pypi.org/project/html2image/
+	https://pypi.org/project/open-interpreter/
 "
 SRC_URI="https://github.com/OpenInterpreter/open-interpreter/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+
+S="${WORKDIR}"/openinterpreter-${PV}
 
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-misc/litellm-1.41.26[${PYTHON_SINGLE_USEDEP}]
+	>=dev-python/litellm-1.41.26[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/astor-0.8.1[${PYTHON_USEDEP}]
 		>=dev-python/gitpython-1.0.3[${PYTHON_USEDEP}]
@@ -66,5 +68,12 @@ BDEPEND="
 		')
 	)
 "
+
+src_prepare() {
+	# scripts/ is an internal dev helper, not a public Python package;
+	# upstream accidentally includes it in pyproject.toml packages list
+	sed -i '/{include = "scripts"}/d' pyproject.toml || die
+	distutils-r1_src_prepare
+}
 
 distutils_enable_tests pytest

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Python bindings for SimSIMD, providing SIMD-accelerated distance functions,
+    dot products, and matrix operations for scientific computing and ML workloads.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ashvardanian/SimSIMD</remote-id>
+    <remote-id type="pypi">simsimd</remote-id>
+  </upstream>
+</pkgmetadata>

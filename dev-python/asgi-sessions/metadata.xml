@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  asgi-sessions provides signed cookie-based HTTP session management for ASGI
+  applications, with optional Fernet encryption and JWT support.
+  </longdescription>
+  <use>
+    <flag name="fernet">Enable Fernet (symmetric) session encryption via dev-python/cryptography</flag>
+    <flag name="jwt">Enable JWT-based session tokens via dev-python/pyjwt</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">klen/asgi-sessions</remote-id>
+    <remote-id type="pypi">asgi-sessions</remote-id>
+  </upstream>
+</pkgmetadata>

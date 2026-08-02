@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    simple-websocket provides a simple WebSocket server and client for Python,
+    built on top of the wsproto library. It supports both synchronous and
+    gevent-based operation.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">miguelgrinberg/simple-websocket</remote-id>
+    <remote-id type="pypi">simple-websocket</remote-id>
+  </upstream>
+</pkgmetadata>

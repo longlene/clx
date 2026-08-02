@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  muffin-rest provides enhanced support for writing REST APIs with the
+  Muffin ASGI framework, including OpenAPI/Swagger spec generation via
+  apispec, marshmallow serialization, and optional ORM integrations.
+  </longdescription>
+  <use>
+    <flag name="peewee">Enable Peewee ORM integration via muffin-peewee-aio</flag>
+    <flag name="sqlalchemy">Enable SQLAlchemy ORM integration via muffin-databases</flag>
+    <flag name="yaml">Enable YAML support for OpenAPI spec output</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">klen/muffin-rest</remote-id>
+  </upstream>
+</pkgmetadata>

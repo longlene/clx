@@ -1,0 +1,19 @@
+Fix non-constant file-scope __m256i initializer in bundled sqlite-vector.
+GCC (C mode) rejects SIMD intrinsics as constant initializers for static
+storage duration variables; move it into the function as a local.
+
+--- a/thirdparty/sqlite-vector/distance-avx2.c
++++ b/thirdparty/sqlite-vector/distance-avx2.c
+@@ -957,10 +957,9 @@
+
+ // MARK: - BIT -
+
+-// lookup table for popcount of 4-bit values
+-static const __m256i popcount_lut = _mm256_setr_epi8(0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4, 0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4);
+-
+ static inline __m256i popcount_avx2(__m256i v) {
++    // lookup table for popcount of 4-bit values (local to avoid non-constant static initializer)
++    __m256i popcount_lut = _mm256_setr_epi8(0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4, 0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4);
+     __m256i low_mask = _mm256_set1_epi8(0x0f);
+     __m256i lo = _mm256_and_si256(v, low_mask);
+     __m256i hi = _mm256_and_si256(_mm256_srli_epi16(v, 4), low_mask);

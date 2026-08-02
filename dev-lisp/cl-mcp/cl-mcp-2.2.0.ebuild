@@ -1,4 +1,4 @@
-# Copyright 2025 Gentoo Authors
+# Copyright 2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,6 +6,7 @@ EAPI=8
 inherit common-lisp-3
 
 DESCRIPTION="Model Context Protocol server for Common Lisp"
+HOMEPAGE="https://github.com/cl-ai-project/cl-mcp"
 SRC_URI="https://github.com/cl-ai-project/cl-mcp/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"

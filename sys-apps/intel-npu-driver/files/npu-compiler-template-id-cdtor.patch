@@ -4,7 +4,7 @@ redundant template argument from each ctor/dtor name.
 
 --- a/src/vpux_compiler/src/dialect/IE/transforms/passes/adapt_shapes_for_scale_shift.cpp
 +++ b/src/vpux_compiler/src/dialect/IE/transforms/passes/adapt_shapes_for_scale_shift.cpp
-@@ -36,7 +36,7 @@ namespace {
+@@ -36,7 +36,7 @@
  template <typename EltwiseOp>
  class BroadcastEltwiseRewriter final : public mlir::OpRewritePattern<EltwiseOp> {
  public:
@@ -13,7 +13,7 @@ redundant template argument from each ctor/dtor name.
              : mlir::OpRewritePattern<EltwiseOp>(ctx), _log(log) {
          this->setDebugName("BroadcastEltwiseRewriter");
      }
-@@ -205,7 +205,7 @@ namespace {
+@@ -205,7 +205,7 @@
  template <typename EltwiseOp>
  class TransposeEltwiseRewriter final : public mlir::OpRewritePattern<EltwiseOp> {
  public:
@@ -22,7 +22,7 @@ redundant template argument from each ctor/dtor name.
              : mlir::OpRewritePattern<EltwiseOp>(ctx), _log(log) {
          this->setDebugName("TransposeEltwiseRewriter");
      }
-@@ -318,7 +318,7 @@ namespace {
+@@ -318,7 +318,7 @@
  template <typename EltwiseOp>
  class MultiNonTrivialDimEltwiseRewriter final : public mlir::OpRewritePattern<EltwiseOp> {
  public:
@@ -33,17 +33,16 @@ redundant template argument from each ctor/dtor name.
      }
 --- a/src/vpux_compiler/src/dialect/IE/transforms/passes/adjust_fake_qdq_params.cpp
 +++ b/src/vpux_compiler/src/dialect/IE/transforms/passes/adjust_fake_qdq_params.cpp
-@@ -302,16 +302,16 @@ template <>
- class OpParamScaler<IE::FakeQuantizeOp> : public OpParamScalerBase {
+@@ -414,7 +414,7 @@
      mlir::Operation* _updatedOp;
-
+ 
  public:
 -    OpParamScaler<IE::FakeQuantizeOp>(): OpParamScalerBase(), _updatedOp(nullptr) {
 +    OpParamScaler(): OpParamScalerBase(), _updatedOp(nullptr) {
      }
      virtual inline std::pair<mlir::LogicalResult, bool> operator()(mlir::Operation* op, mlir::PatternRewriter& rewriter,
                                                                     mlir::MLIRContext* ctx, TraversalDir traversalDir,
-                                                                    float scale, OpParamdata::ScaleMode) override;
+@@ -422,7 +422,7 @@
      virtual mlir::Operation* updatedOp() override {
          return _updatedOp;
      }
@@ -51,9 +50,10 @@ redundant template argument from each ctor/dtor name.
 +    virtual ~OpParamScaler() {
      }
  };
+ 
 --- a/src/vpux_compiler/src/dialect/IE/transforms/passes/convert_to_scale_shift.cpp
 +++ b/src/vpux_compiler/src/dialect/IE/transforms/passes/convert_to_scale_shift.cpp
-@@ -353,7 +353,7 @@ namespace {
+@@ -342,7 +342,7 @@
  template <typename BiasTypeOp>
  class ConvertBiasToScaleShift final : public mlir::OpRewritePattern<BiasTypeOp> {
  public:
@@ -64,17 +64,18 @@ redundant template argument from each ctor/dtor name.
      }
 --- a/src/vpux_compiler/include/vpux/compiler/conversion/passes/IE2VPU/convert_IE_to_VPU_NCE.hpp
 +++ b/src/vpux_compiler/include/vpux/compiler/conversion/passes/IE2VPU/convert_IE_to_VPU_NCE.hpp
-@@ -126,6 +126,6 @@ namespace {
+@@ -130,7 +130,7 @@
  template <class ConcreteOp>
  class EltwiseToNCE final : public mlir::OpRewritePattern<ConcreteOp> {
  public:
--    EltwiseToNCE<ConcreteOp>(mlir::MLIRContext* ctx, VPU::EltwiseType opType, Logger log)
-+    EltwiseToNCE(mlir::MLIRContext* ctx, VPU::EltwiseType opType, Logger log)
-             : mlir::OpRewritePattern<ConcreteOp>(ctx), _opType(opType), _log(log) {
+-    EltwiseToNCE<ConcreteOp>(mlir::MLIRContext* ctx, VPU::EltwiseType opType, config::ArchKind arch, Logger log)
++    EltwiseToNCE(mlir::MLIRContext* ctx, VPU::EltwiseType opType, config::ArchKind arch, Logger log)
+             : mlir::OpRewritePattern<ConcreteOp>(ctx), _opType(opType), _arch(arch), _log(log) {
      }
---- a/src/vpux_compiler/src/NPU50XX/conversion/passes/convert_IE_to_VPU_NCE_strategy.cpp
-+++ b/src/vpux_compiler/src/NPU50XX/conversion/passes/convert_IE_to_VPU_NCE_strategy.cpp
-@@ -23,6 +23,6 @@ namespace vpux::arch50xx {
+ 
+--- a/src/vpux_compiler/src/NPU50XX/conversion/impl/convert_IE_to_VPU_NCE_strategy.cpp
++++ b/src/vpux_compiler/src/NPU50XX/conversion/impl/convert_IE_to_VPU_NCE_strategy.cpp
+@@ -24,7 +24,7 @@
  template <typename ConcreteOp>
  class ReduceToNCE final : public mlir::OpRewritePattern<ConcreteOp> {
  public:
@@ -82,3 +83,4 @@ redundant template argument from each ctor/dtor name.
 +    ReduceToNCE(mlir::MLIRContext* ctx, VPU::ReduceType opType, config::ArchKind arch, Logger log)
              : mlir::OpRewritePattern<ConcreteOp>(ctx), _opType(opType), _arch(arch), _log(log) {
      }
+ 

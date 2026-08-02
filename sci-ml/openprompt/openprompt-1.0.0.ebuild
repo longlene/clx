@@ -26,7 +26,7 @@ RDEPEND="
 	sci-ml/datasets[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		sci-ml/sentencepiece[python(+),${PYTHON_USEDEP}]
-		sci-ml/tensorboardX[${PYTHON_USEDEP}]
+		sci-ml/tensorboardx[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
 		dev-python/nltk[${PYTHON_USEDEP}]
 		dev-python/yacs[${PYTHON_USEDEP}]

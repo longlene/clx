@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>todo@gentoo.org</email>
+    <name>TODO</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">tanbro/pyyaml-include</remote-id>
+    <remote-id type="pypi">pyyaml-include</remote-id>
+  </upstream>
+</pkgmetadata>

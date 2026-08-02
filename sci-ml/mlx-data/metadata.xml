@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="ffmpeg">Enable video loading via media-video/ffmpeg</flag>
+    <flag name="jpeg">Enable hardware-accelerated JPEG loading via media-libs/libjpeg-turbo</flag>
+    <flag name="samplerate">Enable audio sample rate conversion via media-libs/libsamplerate</flag>
+    <flag name="sndfile">Enable audio loading via media-libs/libsndfile</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">ml-explore/mlx-data</remote-id>
+  </upstream>
+</pkgmetadata>

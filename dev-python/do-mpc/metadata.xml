@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="full">Enable full feature set: OPC-UA (asyncua), ONNX export, Jupyter kernel, and PyTorch integration</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">do-mpc/do-mpc</remote-id>
+    <remote-id type="pypi">do-mpc</remote-id>
+  </upstream>
+</pkgmetadata>

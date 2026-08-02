@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Mixed-precision quantization optimizer for large language models on
+    the MLX framework, searching per-layer bit widths to fit a quality
+    or size target.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">mlx-optiq</remote-id>
+  </upstream>
+</pkgmetadata>

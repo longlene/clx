@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="asyncpg">Enable asyncpg async PostgreSQL driver support</flag>
+    <flag name="pg8000">Enable pg8000 PostgreSQL driver support</flag>
+    <flag name="pymysql">Enable PyMySQL MySQL driver support</flag>
+    <flag name="pytds">Enable python-tds SQL Server driver support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">GoogleCloudPlatform/cloud-sql-python-connector</remote-id>
+    <remote-id type="pypi">cloud-sql-python-connector</remote-id>
+  </upstream>
+</pkgmetadata>

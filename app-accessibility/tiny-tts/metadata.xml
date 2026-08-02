@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Tiny-TTS is an ultra-lightweight English text-to-speech model with only ~9M parameters (~20MB). It is the smallest English TTS model, designed for low-resource deployment scenarios.
+  </longdescription>
+</pkgmetadata>

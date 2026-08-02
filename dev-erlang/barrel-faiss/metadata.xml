@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    barrel_faiss provides Erlang NIF bindings for FAISS (Facebook AI Similarity
+    Search), enabling efficient similarity search and clustering of dense vectors
+    from Erlang applications.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">barrel-db/barrel_faiss</remote-id>
+  </upstream>
+</pkgmetadata>

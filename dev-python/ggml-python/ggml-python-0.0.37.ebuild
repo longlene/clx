@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=scikit-build-core
 PYTHON_COMPAT=( python3_{13..15} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
 
 GGML_COMMIT="b306d6e996ec0ace77118fa5098822cdc7f9c88f"
 
@@ -23,13 +23,16 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/numpy-1.20.0[${PYTHON_USEDEP}]
-	>=dev-python/typing_extensions-4.6.3[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.6.3[${PYTHON_USEDEP}]
 "
 
 #distutils_enable_tests pytest
 
 src_prepare() {
-	default
-	rmdir vendor/ggml && mv "${WORKDIR}"/ggml-${GGML_COMMIT} vendor/ggml
+	rmdir vendor/ggml || die
+	mv "${WORKDIR}/ggml-${GGML_COMMIT}" vendor/ggml || die
+	# CMake 4.x dropped compat with cmake_minimum_required < 3.5
+	sed -i 's/cmake_minimum_required (VERSION 3\.3)/cmake_minimum_required(VERSION 3.5)/' \
+		vendor/ggml/CMakeLists.txt || die
 	distutils-r1_src_prepare
 }

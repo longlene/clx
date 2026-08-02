@@ -1,0 +1,254 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_USE_PEP517=maturin
+DISTUTILS_EXT=1
+PYTHON_COMPAT=( python3_{13..15} )
+
+CRATES="
+	aho-corasick@1.1.4
+	anyhow@1.0.102
+	arrayvec@0.7.6
+	autocfg@1.5.0
+	bindgen@0.65.1
+	bitflags@1.3.2
+	bitflags@2.11.1
+	block@0.1.6
+	bumpalo@3.20.2
+	bytemuck@1.25.0
+	byteorder-lite@0.1.0
+	bytes@1.11.1
+	cc@1.2.61
+	cexpr@0.6.0
+	cfg-if@0.1.10
+	cfg-if@1.0.4
+	clang-sys@1.8.1
+	cocoa-foundation@0.2.1
+	cocoa@0.20.2
+	core-foundation-sys@0.7.0
+	core-foundation-sys@0.8.7
+	core-foundation@0.10.1
+	core-foundation@0.7.0
+	core-graphics-types@0.2.0
+	core-graphics@0.19.2
+	core-media-sys@0.1.2
+	core-video-sys@0.1.4
+	cty@0.2.2
+	dlib@0.5.3
+	downcast-rs@1.2.1
+	dunce@1.0.5
+	either@1.15.0
+	equivalent@1.0.2
+	errno@0.3.14
+	fastrand@2.4.1
+	find-msvc-tools@0.1.9
+	flume@0.11.1
+	foldhash@0.1.5
+	foreign-types-shared@0.1.1
+	foreign-types@0.3.2
+	futures-channel@0.3.32
+	futures-core@0.3.32
+	futures-executor@0.3.32
+	futures-io@0.3.32
+	futures-macro@0.3.32
+	futures-sink@0.3.32
+	futures-task@0.3.32
+	futures-util@0.3.32
+	futures@0.3.32
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.2
+	glob@0.3.3
+	hashbrown@0.15.5
+	hashbrown@0.17.0
+	heck@0.5.0
+	home@0.5.12
+	id-arena@2.3.0
+	image@0.25.10
+	indexmap@2.14.0
+	indoc@2.0.7
+	instant@0.1.13
+	itoa@1.0.18
+	jobserver@0.1.34
+	js-sys@0.3.97
+	lazy_static@1.5.0
+	lazycell@1.3.0
+	leb128fmt@0.1.0
+	libc@0.2.186
+	libloading@0.8.9
+	libredox@0.1.16
+	linux-raw-sys@0.12.1
+	linux-raw-sys@0.4.15
+	lock_api@0.4.14
+	log@0.4.29
+	malloc_buf@0.0.6
+	memchr@2.8.0
+	memoffset@0.6.5
+	memoffset@0.9.1
+	metal@0.18.0
+	minifb@0.25.0
+	minimal-lexical@0.2.1
+	moxcms@0.8.1
+	mozjpeg-sys@2.2.3
+	mozjpeg@0.10.13
+	nanorand@0.7.0
+	nasm-rs@0.3.2
+	nix@0.24.3
+	nom@7.1.3
+	num-traits@0.2.19
+	objc@0.2.7
+	objc_exception@0.1.2
+	once_cell@1.21.4
+	orbclient@0.3.53
+	parking_lot@0.11.2
+	parking_lot@0.12.5
+	parking_lot_core@0.8.6
+	parking_lot_core@0.9.12
+	paste@1.0.15
+	peeking_take_while@0.1.2
+	pin-project-lite@0.2.17
+	pkg-config@0.3.33
+	plain@0.2.3
+	portable-atomic@1.13.1
+	prettyplease@0.2.37
+	proc-macro2@1.0.106
+	pxfm@0.1.29
+	pyo3-build-config@0.23.5
+	pyo3-ffi@0.23.5
+	pyo3-macros-backend@0.23.5
+	pyo3-macros@0.23.5
+	pyo3@0.23.5
+	python3-dll-a@0.2.15
+	quote@1.0.45
+	r-efi@5.3.0
+	r-efi@6.0.0
+	raw-window-handle@0.4.3
+	redox_syscall@0.2.16
+	redox_syscall@0.5.18
+	redox_syscall@0.7.4
+	regex-automata@0.4.14
+	regex-syntax@0.8.10
+	regex@1.12.3
+	rgb@0.8.53
+	rustc-hash@1.1.0
+	rustix@0.38.44
+	rustix@1.1.4
+	rustversion@1.0.22
+	scoped-tls@1.0.1
+	scopeguard@1.2.0
+	sdl2-sys@0.38.0
+	sdl2@0.38.0
+	semver@1.0.28
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.149
+	shlex@1.3.0
+	slab@0.4.12
+	smallvec@1.15.1
+	spin@0.9.8
+	syn@2.0.117
+	target-lexicon@0.12.16
+	tempfile@3.27.0
+	thiserror-impl@2.0.18
+	thiserror@2.0.18
+	unicode-ident@1.0.24
+	unicode-xid@0.2.6
+	unindent@0.2.4
+	v4l2-sys-mit@0.3.0
+	v4l@0.14.0
+	version-compare@0.1.1
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.3+wasi-0.2.9
+	wasip3@0.4.0+wasi-0.3.0-rc-2026-01-06
+	wasm-bindgen-futures@0.4.70
+	wasm-bindgen-macro-support@0.2.120
+	wasm-bindgen-macro@0.2.120
+	wasm-bindgen-shared@0.2.120
+	wasm-bindgen@0.2.120
+	wasm-encoder@0.244.0
+	wasm-metadata@0.244.0
+	wasmparser@0.244.0
+	wayland-client@0.29.5
+	wayland-commons@0.29.5
+	wayland-cursor@0.29.5
+	wayland-protocols@0.29.5
+	wayland-scanner@0.29.5
+	wayland-sys@0.29.5
+	web-sys@0.3.97
+	which@4.4.2
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-collections@0.2.0
+	windows-core@0.61.2
+	windows-future@0.2.1
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.1.3
+	windows-link@0.2.1
+	windows-numerics@0.2.0
+	windows-result@0.3.4
+	windows-strings@0.4.2
+	windows-sys@0.59.0
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows-threading@0.1.0
+	windows@0.61.3
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	wit-bindgen-core@0.51.0
+	wit-bindgen-rust-macro@0.51.0
+	wit-bindgen-rust@0.51.0
+	wit-bindgen@0.51.0
+	wit-bindgen@0.57.1
+	wit-component@0.244.0
+	wit-parser@0.244.0
+	x11-dl@2.21.0
+	xcursor@0.3.10
+	xml-rs@0.8.28
+	zmij@1.0.21
+"
+
+declare -A GIT_CRATES=(
+	[nokhwa-bindings-linux]='https://github.com/maxxgx/nokhwa;3343138ec808a50c9224ea9c2bd1b66d290d67fe;nokhwa-%commit%/nokhwa-bindings-linux'
+	[nokhwa-bindings-macos]='https://github.com/maxxgx/nokhwa;3343138ec808a50c9224ea9c2bd1b66d290d67fe;nokhwa-%commit%/nokhwa-bindings-macos'
+	[nokhwa-bindings-windows]='https://github.com/maxxgx/nokhwa;3343138ec808a50c9224ea9c2bd1b66d290d67fe;nokhwa-%commit%/nokhwa-bindings-windows'
+	[nokhwa-core]='https://github.com/maxxgx/nokhwa;3343138ec808a50c9224ea9c2bd1b66d290d67fe;nokhwa-%commit%/nokhwa-core'
+	[nokhwa]='https://github.com/maxxgx/nokhwa;3343138ec808a50c9224ea9c2bd1b66d290d67fe;nokhwa-%commit%'
+)
+
+RUST_MIN_VER="1.88.0"
+
+inherit cargo distutils-r1
+
+DESCRIPTION="Python camera capture library based on the nokhwa Rust crate"
+HOMEPAGE="https://pypi.org/project/pynokhwa/"
+
+SRC_URI="
+	https://files.pythonhosted.org/packages/source/p/${PN}/${P}.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="MIT"
+LICENSE+=" Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD IJG ISC Unicode-3.0 ZLIB"
+SLOT="0"
+KEYWORDS="~amd64"
+RESTRICT="test"
+
+BDEPEND="
+	llvm-core/clang:=
+	dev-lang/nasm
+"
+
+src_unpack() {
+	cargo_src_unpack
+}

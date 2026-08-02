@@ -1,0 +1,43 @@
+Make RPATH conditional on enabled features so disabled backends
+(whisper.cpp, stable-diffusion.cpp) do not pollute RPATH/RUNPATH.
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -695,9 +695,16 @@
+     )
+
+     # RPATH settings
+-    set(_build_rpath "${LLAMACPP_LIB};${WHISPERCPP_LIB};${SDCPP_LIB}")
+     if(WITH_DYLIB AND LLAMACPP_DYLIB_DIR)
+-        set(_build_rpath "${LLAMACPP_DYLIB_DIR};${_build_rpath}")
++        set(_build_rpath "${LLAMACPP_DYLIB_DIR}")
++    else()
++        set(_build_rpath "${LLAMACPP_LIB}")
++    endif()
++    if(WITH_WHISPER)
++        list(APPEND _build_rpath "${WHISPERCPP_LIB}")
++    endif()
++    if(WITH_STABLEDIFFUSION)
++        list(APPEND _build_rpath "${SDCPP_LIB}")
+     endif()
+
+     # BUILD_RPATH and INSTALL_RPATH both point at the absolute build-tree
+@@ -799,9 +806,16 @@
+     CXX_STANDARD_REQUIRED ON
+ )
+
+-set(_embedded_rpath "${LLAMACPP_LIB};${WHISPERCPP_LIB};${SDCPP_LIB}")
+ if(WITH_DYLIB AND LLAMACPP_DYLIB_DIR)
+-    set(_embedded_rpath "${LLAMACPP_DYLIB_DIR};${_embedded_rpath}")
++    set(_embedded_rpath "${LLAMACPP_DYLIB_DIR}")
++else()
++    set(_embedded_rpath "${LLAMACPP_LIB}")
++endif()
++if(WITH_WHISPER)
++    list(APPEND _embedded_rpath "${WHISPERCPP_LIB}")
++endif()
++if(WITH_STABLEDIFFUSION)
++    list(APPEND _embedded_rpath "${SDCPP_LIB}")
+ endif()
+ set_target_properties(embedded PROPERTIES
+     BUILD_RPATH "${_embedded_rpath}"

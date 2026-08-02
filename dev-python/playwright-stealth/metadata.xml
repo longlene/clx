@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Plugin for Playwright that applies various techniques to make browser
+    automation harder to detect.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Mattwmaster58/playwright_stealth</remote-id>
+    <remote-id type="pypi">playwright-stealth</remote-id>
+  </upstream>
+</pkgmetadata>

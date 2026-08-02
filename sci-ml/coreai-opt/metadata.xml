@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="coreai">Enable coreai-core and coreai-torch integration</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">apple/coreai-optimization</remote-id>
+    <remote-id type="pypi">coreai-opt</remote-id>
+  </upstream>
+</pkgmetadata>

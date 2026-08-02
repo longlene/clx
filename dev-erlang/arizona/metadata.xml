@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Real-time web framework for Erlang/OTP with server-rendered views
+    updated over WebSocket, in the spirit of Phoenix LiveView, served
+    via cowboy.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">arizona-framework/arizona</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  smartmoneyconcepts provides technical analysis indicators based on ICT (Inner
+  Circle Trader) smart money concepts for algorithmic trading, including order
+  blocks, liquidity, fair value gaps, and swing highs/lows detection.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">joshyattridge/smartmoneyconcepts</remote-id>
+    <remote-id type="pypi">smartmoneyconcepts</remote-id>
+  </upstream>
+</pkgmetadata>

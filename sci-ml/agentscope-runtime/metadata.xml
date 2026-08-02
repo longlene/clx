@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>maintainer@agentscope.io</email>
+    <name>AgentScope Team</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="pypi">agentscope-runtime</remote-id>
+  </upstream>
+</pkgmetadata>

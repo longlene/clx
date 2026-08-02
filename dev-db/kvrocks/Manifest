@@ -1,0 +1,5 @@
+# Copyright 1999-2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+DIST kvrocks-2.16.0.gh.tar.gz 1138135 BLAKE2B 1664fe46266d03eb1c34eb3c6ea87c67a1540d19db0fc6c0fbf9a08d12089a47da4e0cac041942d5aeb671b33cdab12ff6f493af805eebbb9ed0e19a6d9bf773 SHA512 b910c0d738409ea30ae842fa3d52573353e174f415d3da85e28fdd6db468b52815b621c24702fde4a19bd9405834fe605b2033df2b9e928b926ccff4f71bd085

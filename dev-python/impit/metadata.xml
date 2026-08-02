@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    impit is a Rust-based Python library for making HTTP requests with browser
+    impersonation support, allowing clients to mimic TLS fingerprints of popular
+    browsers to avoid bot detection.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">apify/impit</remote-id>
+    <remote-id type="pypi">impit</remote-id>
+  </upstream>
+</pkgmetadata>

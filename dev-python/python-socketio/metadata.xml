@@ -5,6 +5,10 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="asyncio-client">Enable async client support via aiohttp/websockets</flag>
+    <flag name="client">Enable sync client support via requests and websocket-client</flag>
+  </use>
   <upstream>
     <remote-id type="github">miguelgrinberg/python-socketio</remote-id>
     <remote-id type="pypi">python-socketio</remote-id>

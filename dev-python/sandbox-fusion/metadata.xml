@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Client package of Sandbox Fusion service.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">sandbox-fusion</remote-id>
+  </upstream>
+</pkgmetadata>

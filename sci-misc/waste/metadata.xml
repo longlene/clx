@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    WASTE (Weight-Aware Streaming Tensor Engine) is a C inference engine for
+    mixture-of-experts models. It keeps the model trunk in memory and streams
+    selected experts directly from disk, using remaining RAM as a bounded
+    expert cache, so models much larger than available RAM can run.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">sqliteai/waste</remote-id>
+  </upstream>
+</pkgmetadata>

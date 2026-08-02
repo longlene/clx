@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    hlc is an Erlang implementation of Hybrid Logical Clocks, providing
+    causally consistent timestamps that combine physical and logical time.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">barrel-db/hlc</remote-id>
+  </upstream>
+</pkgmetadata>

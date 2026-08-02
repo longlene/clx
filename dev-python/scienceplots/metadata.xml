@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    SciencePlots is a Python package for creating scientific-style plots with Matplotlib.
+    It provides styles and formatting options optimized for scientific publications.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">scienceplots</remote-id>
+    <remote-id type="github">garrettj403/SciencePlots</remote-id>
+  </upstream>
+</pkgmetadata>

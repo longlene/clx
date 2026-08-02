@@ -13,19 +13,18 @@ DESCRIPTION="A reimplementation of python Dataclasses supporting true inheritanc
 HOMEPAGE="https://github.com/phenobarbital/python-datamodel/"
 SRC_URI="https://github.com/phenobarbital/python-datamodel/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="BSD-3"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/numpy-1.26.4[${PYTHON_USEDEP}]
 	>=dev-python/uvloop-0.19.0[${PYTHON_USEDEP}]
-	>=dev-python/asyncio-3.4.3[${PYTHON_USEDEP}]
 	>=dev-python/faust-cchardet-2.1.19[${PYTHON_USEDEP}]
 	>=dev-python/ciso8601-2.3.1[${PYTHON_USEDEP}]
 	>=dev-python/objectpath-0.6.1[${PYTHON_USEDEP}]
 	>=dev-python/orjson-3.10.3[${PYTHON_USEDEP}]
-	>=dev-python/typing_extensions-4.9.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.9.0[${PYTHON_USEDEP}]
 	>=dev-python/asyncpg-0.29.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 	>=dev-python/pendulum-3.0.0[${PYTHON_USEDEP}]
@@ -39,5 +38,11 @@ BDEPEND="
 		>=dev-python/pytest-assume-2.4.3[${PYTHON_USEDEP}]
 	)
 "
+
+src_prepare() {
+	# setup.py uses ast.Constant.s which was removed in Python 3.12+
+	sed -i 's/\bv\.s\b/v.value/g' setup.py || die
+	distutils-r1_src_prepare
+}
 
 distutils_enable_tests pytest

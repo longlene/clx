@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  oikb syncs content from various sources (S3, GCS, Azure Blob, Dropbox,
+  Google Drive, local files, web pages, SharePoint) into Open WebUI
+  Knowledge Bases, with support for scheduled and event-driven sync.
+  </longdescription>
+  <use>
+    <flag name="azure">Sync from Azure Blob Storage</flag>
+    <flag name="dropbox">Sync from Dropbox</flag>
+    <flag name="gcs">Sync from Google Cloud Storage</flag>
+    <flag name="gdrive">Sync from Google Drive, Gmail, and Google Sites</flag>
+    <flag name="oracle">Sync from Oracle Cloud Infrastructure Object Storage</flag>
+    <flag name="s3">Sync from AWS S3 and Cloudflare R2</flag>
+    <flag name="sharepoint">Enable SharePoint certificate-based authentication</flag>
+    <flag name="web">Sync from web pages via HTML scraping</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">open-webui/oikb</remote-id>
+  </upstream>
+</pkgmetadata>

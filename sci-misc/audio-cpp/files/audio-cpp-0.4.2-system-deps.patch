@@ -1,0 +1,63 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -137,16 +137,13 @@
+ set(GGML_LLAMAFILE ${ENGINE_ENABLE_LLAMAFILE} CACHE BOOL "Build ggml with llamafile SGEMM support" FORCE)
+ set(GGML_CUDA_GRAPHS ${ENGINE_ENABLE_CUDA_GRAPHS} CACHE BOOL "Enable ggml CUDA graphs support" FORCE)
+ 
+-set(SPM_ENABLE_SHARED OFF CACHE BOOL "Build sentencepiece shared libs" FORCE)
+-set(SPM_BUILD_TEST OFF CACHE BOOL "Do not build sentencepiece tests" FORCE)
+-set(SPM_ENABLE_TCMALLOC OFF CACHE BOOL "Do not probe for tcmalloc" FORCE)
+-
+ if (NOT EXISTS "${AUDIOCPP_GGML_SOURCE_DIR}/CMakeLists.txt")
+     message(FATAL_ERROR "AUDIOCPP_GGML_SOURCE_DIR does not point to a ggml source tree: ${AUDIOCPP_GGML_SOURCE_DIR}")
+ endif()
+ message(STATUS "Using ggml source: ${AUDIOCPP_GGML_SOURCE_DIR}")
+ add_subdirectory("${AUDIOCPP_GGML_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}/ggml")
+-add_subdirectory(external/sentencepiece EXCLUDE_FROM_ALL)
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(SENTENCEPIECE REQUIRED IMPORTED_TARGET sentencepiece)
+ 
+ add_compile_options(
+     $<$<COMPILE_LANG_AND_ID:CXX,GNU,Clang>:-Wall>
+@@ -584,26 +581,7 @@
+     ${CMAKE_CURRENT_SOURCE_DIR}/external/cJSON
+ )
+ 
+-add_library(yaml_vendor STATIC
+-    external/libyaml/src/api.c
+-    external/libyaml/src/reader.c
+-    external/libyaml/src/scanner.c
+-    external/libyaml/src/parser.c
+-    external/libyaml/src/loader.c
+-)
+-
+-target_include_directories(yaml_vendor PUBLIC
+-    ${CMAKE_CURRENT_SOURCE_DIR}/external/libyaml/include
+-)
+-
+-target_compile_definitions(yaml_vendor PUBLIC
+-    _POSIX_C_SOURCE=200809L
+-    YAML_DECLARE_STATIC=1
+-    YAML_VERSION_MAJOR=0
+-    YAML_VERSION_MINOR=2
+-    YAML_VERSION_PATCH=5
+-    YAML_VERSION_STRING=\"0.2.5\"
+-)
++pkg_check_modules(YAML REQUIRED IMPORTED_TARGET yaml-0.1)
+ 
+ target_include_directories(engine_runtime PUBLIC
+     ${CMAKE_CURRENT_SOURCE_DIR}/include
+@@ -611,12 +589,11 @@
+ target_include_directories(engine_runtime PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/generated")
+ 
+ target_include_directories(engine_runtime PRIVATE
+-    ${CMAKE_CURRENT_SOURCE_DIR}/external/sentencepiece/src
+     ${CMAKE_CURRENT_SOURCE_DIR}/external/llama_tokenizer
+ )
+ 
+ target_link_libraries(engine_runtime PUBLIC ggml)
+-target_link_libraries(engine_runtime PRIVATE sentencepiece cjson_vendor yaml_vendor)
++target_link_libraries(engine_runtime PRIVATE PkgConfig::SENTENCEPIECE cjson_vendor PkgConfig::YAML)
+ if (ENGINE_ENABLE_OPENMP)
+     target_link_libraries(engine_runtime PRIVATE OpenMP::OpenMP_CXX)
+     if (MSVC)

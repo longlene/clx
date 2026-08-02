@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">bohonghuang/binstruct</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    binstruct is a powerful defstruct-style binary parser/emitter library for Common Lisp. It allows declarative definition of binary structures and provides efficient reading and writing capabilities.
+  </longdescription>
+</pkgmetadata>

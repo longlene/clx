@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  FunClip is a video clipping tool powered by FunASR speech recognition.
+  It provides transcription, subtitle generation, and LLM-assisted clipping
+  through a Gradio web interface.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">modelscope/FunClip</remote-id>
+  </upstream>
+</pkgmetadata>

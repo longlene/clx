@@ -5,6 +5,10 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="airports">Enable airport IATA code type for structured generation</flag>
+    <flag name="countries">Enable ISO 3166 country code type for structured generation</flag>
+  </use>
   <upstream>
     <remote-id type="github">dottxt-ai/outlines</remote-id>
   </upstream>

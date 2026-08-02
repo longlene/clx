@@ -5,26 +5,25 @@ compiler_source.cmake: when *_EXTERNAL_SRC variables are defined, skip the
 ExternalProject git clone and point SOURCE_DIR at the pre-extracted tree.
 
 npu_compiler_build.cmake: enable ENABLE_SYSTEM_* flags for all bundled
-deps that have Gentoo equivalents, disable Python bindings and test
-targets, and switch the install component to avoid stripping debug info
-during development builds.
+deps that have Gentoo equivalents, and skip stripping debug info during
+the install step (development-build posture).
 
 --- a/compiler/compiler_source.cmake
 +++ b/compiler/compiler_source.cmake
-@@ -29,21 +29,34 @@
- set(OPENVINO_SOURCE_DIR "${CMAKE_CURRENT_BINARY_DIR}/src/openvino")
- file(MAKE_DIRECTORY ${OPENVINO_SOURCE_DIR})
-
--list(APPEND DISABLE_GIT_LFS "filter.lfs.smudge=git-lfs smudge --skip -- %f")
--list(APPEND DISABLE_GIT_LFS "filter.lfs.process=git-lfs filter-process --skip")
--
+@@ -35,21 +35,35 @@
+ list(APPEND DISABLE_GIT_LFS "filter.lfs.smudge=git-lfs smudge --skip -- %f")
+ list(APPEND DISABLE_GIT_LFS "filter.lfs.process=git-lfs filter-process --skip")
+ 
 -ExternalProject_Add(
 -  openvino_source
 -  GIT_REPOSITORY ${OPENVINO_REPOSITORY}
 -  GIT_TAG ${OPENVINO_REVISION}
 -  GIT_CONFIG ${DISABLE_GIT_LFS}
 -  SOURCE_DIR ${OPENVINO_SOURCE_DIR}
--  PATCH_COMMAND ""
+-  PATCH_COMMAND
+-    git -C ${OPENVINO_SOURCE_DIR} reset --hard HEAD &&
+-    git -C ${OPENVINO_SOURCE_DIR} clean -fdx &&
+-    git -C ${OPENVINO_SOURCE_DIR} apply ${OPENVINO_PATCHES}
 -  CONFIGURE_COMMAND ""
 -  BUILD_COMMAND ""
 -  INSTALL_COMMAND ""
@@ -43,28 +42,29 @@ during development builds.
 +    INSTALL_COMMAND ""
 +    UPDATE_DISCONNECTED TRUE)
 +else()
-+  list(APPEND DISABLE_GIT_LFS "filter.lfs.smudge=git-lfs smudge --skip -- %f")
-+  list(APPEND DISABLE_GIT_LFS "filter.lfs.process=git-lfs filter-process --skip")
 +  ExternalProject_Add(
 +    openvino_source
 +    GIT_REPOSITORY ${OPENVINO_REPOSITORY}
 +    GIT_TAG ${OPENVINO_REVISION}
 +    GIT_CONFIG ${DISABLE_GIT_LFS}
 +    SOURCE_DIR ${OPENVINO_SOURCE_DIR}
-+    PATCH_COMMAND ""
++    PATCH_COMMAND
++      git -C ${OPENVINO_SOURCE_DIR} reset --hard HEAD &&
++      git -C ${OPENVINO_SOURCE_DIR} clean -fdx &&
++      git -C ${OPENVINO_SOURCE_DIR} apply ${OPENVINO_PATCHES}
 +    CONFIGURE_COMMAND ""
 +    BUILD_COMMAND ""
 +    INSTALL_COMMAND ""
 +    # Only change the content of source dir in case revision or patch command change
 +    UPDATE_DISCONNECTED TRUE)
 +endif()
-
+ 
  set(NPU_COMPILER_SOURCE_DIR "${CMAKE_CURRENT_BINARY_DIR}/src/npu_compiler")
  file(MAKE_DIRECTORY ${NPU_COMPILER_SOURCE_DIR})
-@@ -54,39 +67,68 @@
-
+@@ -60,39 +74,67 @@
+ 
    set(NPU_COMPILER_BUILD_DEPENDS npu_compiler_openvino_source)
-
+ 
 -  # Copy the local openvino_source and checkout for the compiler the required OpenVINO revision
 +  if(DEFINED NPU_COMPILER_OPENVINO_EXTERNAL_SRC)
 +    set(NPU_COMPILER_OPENVINO_SOURCE_DIR "${NPU_COMPILER_OPENVINO_EXTERNAL_SRC}")
@@ -79,6 +79,7 @@ during development builds.
 +      INSTALL_COMMAND ""
 +      UPDATE_DISCONNECTED TRUE)
 +  else()
++    # Copy the local openvino_source and checkout for the compiler the required OpenVINO revision
 +    ExternalProject_Add(
 +      npu_compiler_openvino_source
 +      DEPENDS openvino_source
@@ -120,8 +121,6 @@ during development builds.
  else()
 -  set(NPU_COMPILER_OPENVINO_SOURCE_DIR ${OPENVINO_SOURCE_DIR})
 -  set(NPU_COMPILER_BUILD_DEPENDS openvino_source)
-+  list(APPEND DISABLE_GIT_LFS "filter.lfs.smudge=git-lfs smudge --skip -- %f")
-+  list(APPEND DISABLE_GIT_LFS "filter.lfs.process=git-lfs filter-process --skip")
 +  ExternalProject_Add(
 +    npu_compiler_source
 +    GIT_REPOSITORY
@@ -160,15 +159,7 @@ during development builds.
 -  UPDATE_DISCONNECTED TRUE)
 --- a/compiler/npu_compiler_build.cmake
 +++ b/compiler/npu_compiler_build.cmake
-@@ -32,7 +32,6 @@
- list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_AUTO=OFF")
- list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_AUTO_BATCH=OFF")
--list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_BLOB_DUMP=OFF")
- list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_FUNCTIONAL_TESTS=OFF")
- list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_HETERO=OFF")
- list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_INTEL_CPU=OFF")
- list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_INTEL_GPU=OFF")
-@@ -60,6 +59,14 @@
+@@ -62,6 +62,13 @@
  list(APPEND NPU_COMPILER_CMAKE_ARGS "-D OPENVINO_EXTRA_MODULES=${NPU_COMPILER_SOURCE_DIR}")
  list(APPEND NPU_COMPILER_CMAKE_ARGS "-D OUTPUT_ROOT=${NPU_COMPILER_BINARY_DIR}")
  list(APPEND NPU_COMPILER_CMAKE_ARGS "-D THREADING=${THREADING}")
@@ -179,15 +170,14 @@ during development builds.
 +list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_SYSTEM_PROTOBUF=ON")
 +list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_SYSTEM_LEVEL_ZERO=ON")
 +list(APPEND NPU_COMPILER_CMAKE_ARGS "-D Protobuf_USE_STATIC_LIBS=OFF")
-+list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_PYTHON=OFF")
-
+ 
  if (NOT BUILD_TYPE_LOWER STREQUAL "release")
      list(APPEND NPU_COMPILER_CMAKE_ARGS "-D ENABLE_DEVELOPER_BUILD=ON")
-@@ -109,12 +116,11 @@
+@@ -115,13 +122,12 @@
    BUILD_COMMAND
      ${CMAKE_COMMAND}
        --build ${NPU_COMPILER_BINARY_DIR}
--      --target compilerTest profilingTest vpuxCompilerL0Test loaderTest openvino_intel_npu_compiler
+-      --target compilerTest profilingTest vpuxCompilerL0Test loaderTest VPUXLoader openvino_intel_npu_compiler openvino_intel_npu_compiler_loader
 +      --target openvino_intel_npu_compiler openvino_intel_npu_compiler_loader
        --parallel ${PARALLEL_PROCESSES}
    INSTALL_COMMAND
@@ -197,3 +187,4 @@ during development builds.
 -      --strip
        --component CiD
    BYPRODUCTS
+     ${NPU_COMPILER_PACKAGE_DIR}/lib/libopenvino_intel_npu_compiler_loader.so

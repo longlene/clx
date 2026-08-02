@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">starfederation/datastar-python</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    Python SDK for Datastar, providing server-sent event helpers and
+    framework integrations (Django, FastAPI, Starlette, Litestar, etc.)
+    for building reactive web UIs without client-side JavaScript frameworks.
+  </longdescription>
+</pkgmetadata>

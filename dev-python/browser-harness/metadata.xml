@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    browser-harness is a self-healing browser automation harness that enables
+    LLMs to complete tasks in a real browser. It provides a thin layer over the
+    Chrome DevTools Protocol (CDP) for agent-driven web interaction and scraping.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">browser-use/browser-harness</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,17 +1,26 @@
-diff -Nur a/CMakeLists.txt b/CMakeLists.txt
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -474,7 +474,7 @@
+@@ -136,7 +136,7 @@
+ # expand to __declspec(dllexport) so that functions defined in extra modules
+ # are properly exported from tvm_runtime_extra.dll.
+ add_library(tvm_runtime_extra_defs INTERFACE)
+-target_link_libraries(tvm_runtime_extra_defs INTERFACE tvm_ffi_header)
++target_link_libraries(tvm_runtime_extra_defs INTERFACE tvm_ffi::header)
+ target_compile_definitions(tvm_runtime_extra_defs
+   INTERFACE TVM_RUNTIME_EXPORTS TVM_FFI_EXPORTS)
+ 
+@@ -543,8 +543,8 @@
+ 
  add_library(tvm_objs OBJECT ${COMPILER_SRCS})
  add_library(tvm_runtime_objs OBJECT ${RUNTIME_SRCS})
 -target_link_libraries(tvm_objs PUBLIC tvm_ffi_header)
 -target_link_libraries(tvm_runtime_objs PUBLIC tvm_ffi_header)
 +target_link_libraries(tvm_objs PUBLIC tvm_ffi::header)
 +target_link_libraries(tvm_runtime_objs PUBLIC tvm_ffi::header)
-
+ 
  include(GNUInstallDirs)
-
-@@ -493,12 +493,12 @@
+ 
+@@ -563,14 +563,14 @@
    string(CONCAT NOTICE ${NOTICE_MULTILINE})
    add_custom_command(TARGET tvm_runtime POST_BUILD
      COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --yellow --bold ${NOTICE})
@@ -26,8 +35,9 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
 -  target_link_libraries(tvm_runtime PUBLIC tvm_ffi_shared)
 +  target_link_libraries(tvm_runtime PUBLIC tvm_ffi::shared)
  endif()
-@@ -520,8 +520,8 @@
- # RTLD_LOCAL so compiler-internal symbols don't leak into the global namespace.
+ 
+ target_include_directories(tvm_runtime PUBLIC "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>")
+@@ -591,7 +591,7 @@
  add_library(tvm_compiler SHARED
    $<TARGET_OBJECTS:tvm_objs>
  )
@@ -36,12 +46,13 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
  target_include_directories(tvm_compiler PUBLIC "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>")
  set_property(TARGET tvm_compiler APPEND PROPERTY LINK_OPTIONS "${TVM_NO_UNDEFINED_SYMBOLS}")
  set_property(TARGET tvm_compiler APPEND PROPERTY LINK_OPTIONS "${TVM_VISIBILITY_FLAG}")
-@@ -570,6 +570,7 @@
+@@ -659,7 +659,8 @@
    add_subdirectory("apps/ios_rpc")
  endif()
-
+ 
 -add_subdirectory(3rdparty/tvm-ffi)
 +#add_subdirectory(3rdparty/tvm-ffi)
 +find_package(tvm_ffi REQUIRED)
-
+ 
  if(TVM_DEBUG_WITH_ABI_CHANGE)
+   message(STATUS "Building with debug code that may cause ABI changes...")

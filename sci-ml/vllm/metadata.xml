@@ -5,8 +5,12 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="cuda">Build CUDA kernels for NVIDIA GPU acceleration</flag>
+    <flag name="rocm">Build ROCm/HIP kernels for AMD GPU acceleration</flag>
+  </use>
   <upstream>
-    <remote-id type="github">triton-lang/triton</remote-id>
+    <remote-id type="github">vllm-project/vllm</remote-id>
     <remote-id type="pypi">vllm</remote-id>
   </upstream>
 </pkgmetadata>

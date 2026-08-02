@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    turbolite is a SQLite Virtual File System (VFS) that enables reading SQLite
+    databases directly from S3 with sub-50ms cold query performance. It provides
+    page-level compression (zstd, lz4, snappy, gzip) and optional encryption,
+    bundling SQLite for a self-contained deployment.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">russellromney/turbolite</remote-id>
+  </upstream>
+</pkgmetadata>

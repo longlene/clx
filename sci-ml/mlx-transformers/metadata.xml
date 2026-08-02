@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    MLX Transformers provides transformer model implementations using Apple's
+    MLX framework, with a HuggingFace Transformers-compatible interface for
+    loading and running models.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ToluClassics/mlx-transformers</remote-id>
+    <remote-id type="pypi">mlx-transformers</remote-id>
+  </upstream>
+</pkgmetadata>

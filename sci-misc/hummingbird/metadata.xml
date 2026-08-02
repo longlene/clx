@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Hummingbird is a zero-dependency C17 runtime intended to run large
+    open-source LLMs, both dense and Mixture-of-Experts, on consumer
+    hardware by unifying SSD, RAM, and VRAM into a single managed memory
+    hierarchy. As of this packaging the project is at an early "Phase 4"
+    scaffolding stage: the build system, CLI, and server frontends exist,
+    but inference, kernels, and model loading are not yet implemented.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">prayangshuuu/hummingbird</remote-id>
+  </upstream>
+  <use>
+    <flag name="benchmarks">Build the benchmark programs</flag>
+    <flag name="examples">Build the example programs</flag>
+    <flag name="tools">Build offline tools (converter, oracle, ...)</flag>
+  </use>
+</pkgmetadata>

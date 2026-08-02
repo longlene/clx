@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    bencoding is a fast, pure-Erlang encoder and decoder for the bencoding
+    serialization format defined in BEP 3 (the BitTorrent protocol
+    specification). It supports encoding and decoding of integers, byte
+    strings, lists, and dictionaries.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ratopi/bencoding</remote-id>
+  </upstream>
+</pkgmetadata>

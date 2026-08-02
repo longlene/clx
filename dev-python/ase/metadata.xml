@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Atomic Simulation Environment - a software framework for running
+    simulations on the atomic scale.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">ase</remote-id>
+    <remote-id type="github">ASE/ase</remote-id>
+  </upstream>
+</pkgmetadata>

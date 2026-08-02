@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ChatTTS is a generative speech model designed for conversational TTS
+    applications. It supports both Chinese and English and is built on top
+    of PyTorch and HuggingFace Transformers.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">2noise/ChatTTS</remote-id>
+    <remote-id type="pypi">chattts</remote-id>
+  </upstream>
+</pkgmetadata>

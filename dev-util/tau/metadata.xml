@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Tau is a small, readable terminal coding-agent harness, a Python
+    implementation inspired by Pi's minimalist agent design. It is meant
+    both as a usable coding agent and as a working example of how such
+    agents are built.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">huggingface/tau</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    fetch-use is a Python client library for the Browser-Use Fetch HTTP service,
+    providing a simple interface for making HTTP requests through a proxy/fetch
+    service with support for async operations.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">browser-use/fetch-use</remote-id>
+    <remote-id type="pypi">fetch-use</remote-id>
+  </upstream>
+</pkgmetadata>

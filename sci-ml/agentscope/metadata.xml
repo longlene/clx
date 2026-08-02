@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="gemini">Enable Google Gemini model support via dev-python/google-genai</flag>
+    <flag name="models">Enable all model provider backends (ollama, gemini, xai)</flag>
+    <flag name="ollama">Enable Ollama local model support</flag>
+    <flag name="service">Enable HTTP service API with FastAPI and APScheduler</flag>
+    <flag name="storage">Enable Redis-backed persistent storage</flag>
+    <flag name="tools">Enable ripgrep search tool integration</flag>
+    <flag name="workspace">Enable Docker and E2B sandbox workspace support</flag>
+    <flag name="xai">Enable xAI (Grok) model support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">agentscope-ai/agentscope</remote-id>
+    <remote-id type="pypi">agentscope</remote-id>
+  </upstream>
+</pkgmetadata>

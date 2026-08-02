@@ -16,9 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="test"
 
-# TODO: dev-python/braceexpand is not yet packaged.
 RDEPEND="
 	$(python_gen_cond_dep '
+		dev-python/braceexpand[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 	')

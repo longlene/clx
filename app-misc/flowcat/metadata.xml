@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Flowcat is a self-hosted, native-Rust runtime for real-time voice
+    agents: one binary providing media transports (WebRTC, WebSocket,
+    SIP/telephony), frame serializers, codecs, and a speech-to-speech
+    pipeline with pluggable STT/TTS/LLM/realtime providers.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">AreevAI/flowcat</remote-id>
+  </upstream>
+</pkgmetadata>

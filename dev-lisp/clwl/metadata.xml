@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    CLWL provides Common Lisp CFFI bindings for Wayland and wlroots. It
+    includes the clwl system (libwayland-server and libwayland-client),
+    clwlr (wlroots 0.19), clwl-util (pixman and xkbcommon utilities),
+    and clwl-tinywl (a tiny Wayland compositor example).
+  </longdescription>
+  <upstream>
+    <remote-id type="github">calsys456/clwl</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    SearXNG Search Engine MCP Server for Agentic AI. Provides both an MCP
+    server and an agent server for integrating SearXNG search capabilities
+    into AI agent workflows.
+  </longdescription>
+  <remote-id id="searxng-mcp" type="pypi"/>
+  <use>
+    <flag name="agent">Include agent server with logfire logging support</flag>
+    <flag name="mcp">Include MCP (Model Context Protocol) server</flag>
+    <flag name="logfire">Enable logfire tracing in agent utilities</flag>
+  </use>
+</pkgmetadata>

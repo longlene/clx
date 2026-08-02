@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  open-terminal provides a FastAPI-based remote terminal API from the
+  open-webui project, allowing HTTP access to shell sessions, file
+  operations, and Jupyter notebook execution.
+  </longdescription>
+  <use>
+    <flag name="mcp">Enable MCP (Model Context Protocol) support via fastmcp</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">open-webui/open-terminal</remote-id>
+  </upstream>
+</pkgmetadata>

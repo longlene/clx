@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Olostep is a Python SDK for the Olostep web data API. It provides
+    scraping, crawling, batch processing, site mapping, search, AI-powered
+    answers, and scheduled monitors via a simple HTTP API client.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">olostep-api/olostep-py</remote-id>
+    <remote-id type="pypi">olostep</remote-id>
+  </upstream>
+</pkgmetadata>

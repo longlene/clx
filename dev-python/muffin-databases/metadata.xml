@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  muffin-databases provides async database support for the Muffin ASGI
+  framework via the databases library, with optional backends for
+  PostgreSQL (asyncpg), MySQL (aiomysql), and SQLite (aiosqlite).
+  </longdescription>
+  <use>
+    <flag name="mysql">Enable MySQL/MariaDB async support via aiomysql</flag>
+    <flag name="postgres">Enable PostgreSQL async support via asyncpg</flag>
+    <flag name="sqlite">Enable SQLite async support via aiosqlite</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">klen/muffin-databases</remote-id>
+    <remote-id type="pypi">muffin-databases</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=standalone
 PYTHON_COMPAT=( python3_{13..15} )
 
 inherit distutils-r1
@@ -19,8 +19,8 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/flask-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typeguard-2.13.3[${PYTHON_USEDEP}]
-	>=dev-python/typing_extensions-4.3.0[${PYTHON_USEDEP}]
-	>=dev-python/typing_inspect-0.9.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.3.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-inspect-0.9.0[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

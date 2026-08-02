@@ -13,8 +13,7 @@
   </longdescription>
   <use>
     <flag name="geoip">Enable GeoIP2 and SOCKS5 proxy support</flag>
-    <flag name="patchright">Enable the Patchright backend integration</flag>
-    <flag name="serve">Enable the HTTP/WebSocket server mode</flag>
+<flag name="serve">Enable the HTTP/WebSocket server mode</flag>
   </use>
   <upstream>
     <remote-id type="github">CloakHQ/CloakBrowser</remote-id>

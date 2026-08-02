@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    livery_grpc is a gRPC implementation for Erlang/OTP built on the livery
+    HTTP/2 stack. It provides a server and client supporting all four gRPC
+    call types: unary, server-streaming, client-streaming, and bidirectional
+    streaming. Includes built-in health checking and gRPC reflection services.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">benoitc/livery_grpc</remote-id>
+  </upstream>
+</pkgmetadata>

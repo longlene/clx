@@ -8,4 +8,7 @@
   <upstream>
     <remote-id type="github">yhirose/cpp-httplib</remote-id>
   </upstream>
+  <use>
+    <flag name="mbedtls">Use MbedTLS instead of OpenSSL for TLS support (requires ssl USE flag)</flag>
+  </use>
 </pkgmetadata>

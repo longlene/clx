@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    omlx is an LLM inference server built on MLX, featuring continuous batching
+    and SSD caching. It supports a wide range of model architectures including
+    language, vision-language, and embedding models, and provides an OpenAI-compatible
+    API server backed by FastAPI and uvicorn.
+  </longdescription>
+  <use>
+    <flag name="audio">Enable audio (TTS/STT/STS) support via mlx-audio</flag>
+    <flag name="grammar">Enable grammar-constrained decoding for structured output via xgrammar</flag>
+    <flag name="mcp">Enable Model Context Protocol server support via mcp</flag>
+    <flag name="modelscope">Enable ModelScope model hub support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">jundot/omlx</remote-id>
+  </upstream>
+</pkgmetadata>

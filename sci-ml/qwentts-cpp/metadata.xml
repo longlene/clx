@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="cuda">Enable CUDA GPU acceleration backend</flag>
+    <flag name="vulkan">Enable Vulkan GPU acceleration backend</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">ServeurpersoCom/qwentts.cpp</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  coincurve provides Python bindings to the libsecp256k1 C library for fast
+  and safe secp256k1 elliptic curve operations, including ECDSA signing and
+  verification, ECDH key exchange, and Schnorr signatures.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ofek/coincurve</remote-id>
+    <remote-id type="pypi">coincurve</remote-id>
+  </upstream>
+</pkgmetadata>

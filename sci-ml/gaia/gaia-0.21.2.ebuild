@@ -27,7 +27,7 @@ RDEPEND="
 		sci-ml/torchaudio[${PYTHON_SINGLE_USEDEP}]
 		sci-ml/torchvision[${PYTHON_SINGLE_USEDEP}]
 	)
-	litellm? ( >=sci-misc/litellm-1.35.0[${PYTHON_SINGLE_USEDEP}] )
+	litellm? ( >=dev-python/litellm-1.35.0[${PYTHON_SINGLE_USEDEP}] )
 	rag? ( sci-ml/sentence-transformers[${PYTHON_SINGLE_USEDEP}] )
 	ui? (
 		>=sci-ml/pytorch-2.0.0[${PYTHON_SINGLE_USEDEP}]

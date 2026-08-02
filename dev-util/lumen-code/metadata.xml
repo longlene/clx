@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>loverboi@163.com</email>
+    <name>Jaydip</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="pypi">lumen-code</remote-id>
+  </upstream>
+  <upstreamdoc>https://pypi.org/project/lumen-code/</upstreamdoc>
+  <longdescription>
+    Lumen is a privacy-first coding harness. Run local LLMs offline, or
+    bring your own OpenRouter key for the full catalogue. Your code never
+    leaves your machine when you don't want it to.
+  </longdescription>
+</pkgmetadata>

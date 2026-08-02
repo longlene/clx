@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  akracer is a fork of py-mini-racer providing a minimal, modern Python bridge
+  to V8, Google's JavaScript engine. It ships pre-built libmini_racer shared
+  libraries for ARM Linux and macOS.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">akfamily/akracer</remote-id>
+    <remote-id type="pypi">akracer</remote-id>
+  </upstream>
+</pkgmetadata>

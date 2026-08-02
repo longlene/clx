@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Alibaba Cloud credentials library for Python. Provides unified credential
+    management including static access keys, STS tokens, ECS instance roles,
+    RAM role assumption, and OIDC-based credential providers for use with
+    Alibaba Cloud services.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">aliyun/credentials-python</remote-id>
+    <remote-id type="pypi">alibabacloud-credentials</remote-id>
+  </upstream>
+</pkgmetadata>

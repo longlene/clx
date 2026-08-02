@@ -6,7 +6,10 @@
     <name>loong0</name>
   </maintainer>
   <upstream>
-    <remote-id type="github">datastax/python-driver</remote-id>
+    <remote-id type="github">apache/cassandra-python-driver</remote-id>
     <remote-id type="pypi">cassandra-driver</remote-id>
   </upstream>
+  <use>
+    <flag name="graph">Enable graph traversal support via dev-python/gremlinpython</flag>
+  </use>
 </pkgmetadata>

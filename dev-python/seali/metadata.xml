@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    seali is a trivial CLI library for Python providing simple argument parsing
+    and command-line interface utilities.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">patrick-kidger/seali</remote-id>
+    <remote-id type="pypi">seali</remote-id>
+  </upstream>
+</pkgmetadata>

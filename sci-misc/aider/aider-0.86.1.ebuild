@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -23,7 +23,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-misc/litellm-1.53.9[${PYTHON_SINGLE_USEDEP}]
+	>=dev-python/litellm-1.53.9[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/tokenizers-0.21.4[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/huggingface_hub-0.34.3[${PYTHON_SINGLE_USEDEP}]
 	>=dev-libs/tree-sitter-c-sharp-0.23.1
@@ -141,3 +141,5 @@ RDEPEND="
 		>=dev-python/zipp-3.23.0[${PYTHON_USEDEP}]
 	')
 "
+
+export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_AIDER_CHAT="${PV}"

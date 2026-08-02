@@ -104,7 +104,7 @@ RDEPEND="${DEPEND}
 		dev-python/tqdm[${PYTHON_USEDEP}]
 		>=dev-python/pycocotools-2.0.4[${PYTHON_USEDEP}]
 		>=dev-python/pyyaml-6.0.2[${PYTHON_USEDEP}]
-		>=dev-python/tensorboardX-1.8[${PYTHON_USEDEP}]
+		>=dev-python/tensorboardx-1.8[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		>=dev-python/pandas-1.4.0[${PYTHON_USEDEP}]

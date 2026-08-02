@@ -1,0 +1,23 @@
+--- a/CMakeLists.txt	2026-06-19 03:16:25.000000000 -0700
++++ b/CMakeLists.txt	2026-06-22 16:43:46.711519856 -0700
+@@ -29,7 +29,8 @@
+ endif()
+ set(GGML_BUILD_TESTS    OFF)
+ set(GGML_BUILD_EXAMPLES OFF)
+-add_subdirectory(ggml)
++find_package(ggml REQUIRED)
++add_library(ggml ALIAS ggml::ggml)
+ 
+ if (PF_FUZZ)
+     if (NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+@@ -85,3 +86,10 @@
+     enable_testing()
+     add_subdirectory(tests)
+ endif()
++
++include(GNUInstallDirs)
++install(TARGETS pf ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
++install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
++if (PF_BUILD_TOOLS)
++    install(TARGETS pf-cli pf-bench RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
++endif()

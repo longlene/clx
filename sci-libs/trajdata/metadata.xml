@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="interaction">Enable interactive map support via lanelet2</flag>
+    <flag name="lyft">Enable Lyft Level 5 dataset support via l5kit</flag>
+    <flag name="nusc">Enable nuScenes dataset support via nuscenes-devkit</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">nvr-avg/trajdata</remote-id>
+    <remote-id type="pypi">trajdata</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    WebSocket relay server (crates/buzz-relay, binary "buzz-relay") for the
+    Buzz hive-mind communication platform. It is a Nostr relay that stores
+    every message, reaction, workflow step, and git event as a signed event
+    in one log, backed by PostgreSQL and Redis. This package builds only
+    the buzz-relay binary out of the buzz cargo workspace; see
+    app-misc/buzz for the CLI client.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">block/buzz</remote-id>
+  </upstream>
+</pkgmetadata>

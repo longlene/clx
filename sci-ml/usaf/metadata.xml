@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Ultra Sparse Adaptive Fine-Tuning (USAF) for Mixture-of-Experts models,
+    targeting consumer hardware with low memory requirements.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">tsuyu122/usaf</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>0xccef@gmail.com</email>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">objectpath</remote-id>
+	</upstream>
+	<longdescription>
+		ObjectPath is an agile query language for semi-structured data such as
+		JSON. It allows traversal of nested data structures using dot notation
+		and filtering expressions.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    tinysearch is a tiny, full-text search engine for static websites. It reads
+    a JSON index file and generates a compact WebAssembly module that can be
+    embedded into any static site to provide fast client-side search without
+    any server-side component.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">tinysearch/tinysearch</remote-id>
+  </upstream>
+</pkgmetadata>

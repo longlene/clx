@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    omnilua is a pure-Rust implementation of Lua 5.1 through 5.5, designed to
+    be portable and embeddable. It passes the official Lua test suite and is
+    compatible with LuaRocks. The omnilua binary provides an interactive REPL
+    and script runner.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ianm199/omnilua</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    The Tea core module of the Alibaba Cloud Python SDK. Provides the base
+    HTTP request/response model, type conversion utilities, and async support
+    used by all Alibaba Cloud service SDKs built on the Tea framework.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">aliyun/tea-python</remote-id>
+    <remote-id type="pypi">alibabacloud-tea</remote-id>
+  </upstream>
+</pkgmetadata>

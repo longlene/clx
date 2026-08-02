@@ -5,6 +5,9 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="ssl">Enable SSL/TLS support for HTTPS servers via <pkg>dev-libs/openssl</pkg></flag>
+  </use>
   <upstream>
     <remote-id type="github">stephenberry/glaze</remote-id>
   </upstream>

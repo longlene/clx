@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    LiteRT CLI provides a command-line interface to streamline LiteRT
+    (TFLite) model workflows including conversion, quantization, compilation,
+    benchmarking, and visualization across CPU, GPU, and NPU hardware.
+  </longdescription>
+  <use>
+    <flag name="asr">Enable automatic speech recognition support (librosa, sounddevice, transformers)</flag>
+    <flag name="convert">Enable model conversion support (torch, transformers, sentencepiece)</flag>
+    <flag name="lm">Enable LiteRT LM inference support</flag>
+    <flag name="quantize">Enable model quantization support</flag>
+    <flag name="visualize">Enable model visualization support via ai-edge-model-explorer</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">google-ai-edge/LiteRT-CLI</remote-id>
+  </upstream>
+</pkgmetadata>

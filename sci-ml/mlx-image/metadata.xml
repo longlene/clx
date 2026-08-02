@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    mlx-image provides image classification and other vision models
+    implemented with Apple's MLX framework, targeting Apple Silicon hardware.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">riccardomusmeci/mlx-image</remote-id>
+    <remote-id type="pypi">mlx-image</remote-id>
+  </upstream>
+</pkgmetadata>

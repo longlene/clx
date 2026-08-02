@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    xllamacpp is a Cython-based Python wrapper for the llama.cpp inference
+    engine. It bundles the llama.cpp server context and exposes it via a Python
+    API, enabling local LLM inference with HTTP server capabilities.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">xorbitsai/xllamacpp</remote-id>
+  </upstream>
+</pkgmetadata>

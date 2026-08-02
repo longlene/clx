@@ -29,7 +29,7 @@ RDEPEND="
 	sci-ml/transformers[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/huggingface_hub[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		sci-ml/flash-attention[${PYTHON_USEDEP}]
+		sci-ml/flash-attn[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/triton[${PYTHON_USEDEP}]
 		dev-python/wandb[${PYTHON_USEDEP}]

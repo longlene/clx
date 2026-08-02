@@ -1,7 +1,17 @@
+--- a/umd/level_zero_driver/api/ze_ddi_tables.cpp
++++ b/umd/level_zero_driver/api/ze_ddi_tables.cpp
+@@ -58,6 +58,8 @@
+     .VirtualMem = &L0::zeVirtualMemDdiTable,
+     .FabricVertexExp = nullptr,
+     .FabricEdgeExp = nullptr,
++    .Graph = nullptr,
++    .ExecutableGraph = nullptr,
+ };
+ 
+ zer_dditable_driver_t runtimeDdiTable = {};
 --- a/umd/level_zero_driver/api/ze_device.cpp
 +++ b/umd/level_zero_driver/api/ze_device.cpp
-@@ -306,7 +306,10 @@ ze_device_dditable_t zeDeviceDdiTable = {
-     .pfnImportExternalSemaphoreExt = nullptr,
+@@ -306,7 +306,11 @@
      .pfnReleaseExternalSemaphoreExt = nullptr,
      .pfnGetVectorWidthPropertiesExt = nullptr,
      .pfnSynchronize = nullptr,
@@ -9,12 +19,40 @@
 +    .pfnGetAggregatedCopyOffloadIncrementValue = nullptr,
 +    .pfnGetRuntimeRequirements = nullptr,
 +    .pfnGetRuntimeRequirementsKey = nullptr,
-+    .pfnValidateRuntimeRequirements = nullptr};
-
++    .pfnValidateRuntimeRequirements = nullptr,
++    .pfnGetCounterBasedEventMaxValue = nullptr};
+ 
  } // namespace L0
+ 
+--- a/umd/level_zero_driver/api/ze_cmdqueue.cpp
++++ b/umd/level_zero_driver/api/ze_cmdqueue.cpp
+@@ -91,7 +91,10 @@
+                                                           zeCommandQueueExecuteCommandLists,
+                                                       .pfnSynchronize = zeCommandQueueSynchronize,
+                                                       .pfnGetOrdinal = nullptr,
+-                                                      .pfnGetIndex = nullptr};
++                                                      .pfnGetIndex = nullptr,
++                                                      .pfnGetFlags = nullptr,
++                                                      .pfnGetMode = nullptr,
++                                                      .pfnGetPriority = nullptr};
+ } // namespace L0
+ 
+ extern "C" {
+--- a/umd/level_zero_driver/api/ze_event.cpp
++++ b/umd/level_zero_driver/api/ze_event.cpp
+@@ -203,7 +203,8 @@
+                                        .pfnCounterBasedGetIpcHandle = nullptr,
+                                        .pfnCounterBasedOpenIpcHandle = nullptr,
+                                        .pfnCounterBasedCloseIpcHandle = nullptr,
+-                                       .pfnCounterBasedGetDeviceAddress = nullptr};
++                                       .pfnCounterBasedGetDeviceAddress = nullptr,
++                                       .pfnGetCounterBasedFlags = nullptr};
+ } // namespace L0
+ 
+ extern "C" {
 --- a/umd/level_zero_driver/api/ze_cmdlist.cpp
 +++ b/umd/level_zero_driver/api/ze_cmdlist.cpp
-@@ -655,7 +655,10 @@ ze_command_list_dditable_t zeCommandListDdiTable = {
+@@ -655,7 +655,21 @@
      .pfnAppendSignalExternalSemaphoreExt = nullptr,
      .pfnAppendWaitExternalSemaphoreExt = nullptr,
      .pfnAppendLaunchKernelWithParameters = nullptr,
@@ -22,6 +60,28 @@
 +    .pfnAppendLaunchKernelWithArguments = nullptr,
 +    .pfnAppendMemoryCopyWithParameters = nullptr,
 +    .pfnAppendMemoryFillWithParameters = nullptr,
-+    .pfnImmediateAppendCommandListsWithParameters = nullptr};
-
++    .pfnImmediateAppendCommandListsWithParameters = nullptr,
++    .pfnGetFlags = nullptr,
++    .pfnImmediateGetFlags = nullptr,
++    .pfnImmediateGetMode = nullptr,
++    .pfnImmediateGetPriority = nullptr,
++    .pfnBeginGraphCaptureExt = nullptr,
++    .pfnBeginCaptureIntoGraphExt = nullptr,
++    .pfnIsGraphCaptureEnabledExt = nullptr,
++    .pfnEndGraphCaptureExt = nullptr,
++    .pfnGetGraphExt = nullptr,
++    .pfnAppendGraphExt = nullptr,
++    .pfnAppendHostFunction = nullptr};
+ 
  ze_command_list_exp_dditable_t zeCommandListExpDdiTable = {
+     .pfnCreateCloneExp = nullptr,
+@@ -665,7 +679,8 @@
+     .pfnUpdateMutableCommandSignalEventExp = nullptr,
+     .pfnUpdateMutableCommandWaitEventsExp = nullptr,
+     .pfnGetNextCommandIdWithKernelsExp = nullptr,
+-    .pfnUpdateMutableCommandKernelsExp = nullptr};
++    .pfnUpdateMutableCommandKernelsExp = nullptr,
++    .pfnIsMutableExp = nullptr};
+ } // namespace L0
+ 
+ extern "C" {

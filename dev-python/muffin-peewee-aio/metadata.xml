@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  muffin-peewee-aio provides async Peewee ORM integration for the Muffin
+  ASGI framework, including connection management, migrations via
+  peewee-migrate, and aio-peewee for asyncio/trio support.
+  </longdescription>
+  <use>
+    <flag name="postgres">Enable PostgreSQL support via psycopg2</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">klen/muffin-peewee</remote-id>
+    <remote-id type="pypi">muffin-peewee-aio</remote-id>
+  </upstream>
+</pkgmetadata>

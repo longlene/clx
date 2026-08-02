@@ -5,19 +5,21 @@ by that translation unit.
 --- a/src/vpux_compiler/src/dialect/ELF/transforms/passes/update_elf_section_flags.cpp
 +++ b/src/vpux_compiler/src/dialect/ELF/transforms/passes/update_elf_section_flags.cpp
 @@ -5,6 +5,9 @@
-
+ 
  //
-
+ 
 +// GCC 14 false positive from SmallDenseMap copy constructor via clonePass()
 +#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
 +
+ #include <llvm/ADT/StringRef.h>
+ #include "vpux/compiler/dialect/ELF/IR/attributes.hpp"
  #include "vpux/compiler/dialect/ELF/IR/dialect.hpp"
 --- a/src/vpux_compiler/src/dialect/VPUIP/IR/ops/sw_kernel.cpp
 +++ b/src/vpux_compiler/src/dialect/VPUIP/IR/ops/sw_kernel.cpp
 @@ -3,6 +3,9 @@
  // SPDX-License-Identifier: Apache-2.0
  //
-
+ 
 +// GCC 14 false positive: value_or() temporary lifetime extends through range-for
 +#pragma GCC diagnostic ignored "-Wdangling-reference"
 +
@@ -29,7 +31,7 @@ by that translation unit.
 @@ -3,6 +3,9 @@
  // SPDX-License-Identifier: Apache-2.0
  //
-
+ 
 +// GCC 14 false positive: getValue() temporary lifetime extends through range-for
 +#pragma GCC diagnostic ignored "-Wdangling-reference"
 +
@@ -44,7 +46,7 @@ by that translation unit.
  //
 +// GCC 14 false positive: temporary ArrayRef lifetime extends through range-for
 +#pragma GCC diagnostic ignored "-Wdangling-reference"
-
+ 
  #include "vpux/compiler/dialect/VPU/utils/nce_sparsity.hpp"
  #include "vpux/compiler/core/layers.hpp"
 --- a/src/vpux_compiler/src/dialect/const/passes/apply_swizzling.cpp
@@ -55,6 +57,6 @@ by that translation unit.
  //
 +// GCC 14 false positive: getContentAttr() temporary lifetime extends through range-for
 +#pragma GCC diagnostic ignored "-Wdangling-reference"
-
+ 
  #include "vpux/compiler/dialect/VPUIP/utils/swizzling_utils.hpp"
  #include "vpux/compiler/dialect/config/IR/utils.hpp"

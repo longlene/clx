@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    opencode is an open source AI coding agent that runs in the terminal,
+    supporting multiple AI providers and Model Context Protocol (MCP) servers.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">sst/opencode</remote-id>
+  </upstream>
+</pkgmetadata>

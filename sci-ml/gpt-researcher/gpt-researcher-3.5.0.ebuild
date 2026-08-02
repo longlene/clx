@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 RESTRICT="test"
 
 RDEPEND="
-	sci-misc/litellm[${PYTHON_SINGLE_USEDEP}]
+	dev-python/litellm[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/huggingface_hub[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/aiofiles[${PYTHON_USEDEP}]

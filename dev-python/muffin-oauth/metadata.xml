@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Muffin-OAuth adds OAuth 1 and 2 support to the Muffin framework,
+    enabling both client-side and server-side authentication flows.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">klen/muffin-oauth</remote-id>
+    <remote-id type="pypi">muffin-oauth</remote-id>
+  </upstream>
+</pkgmetadata>

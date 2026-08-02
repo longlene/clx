@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  TuShare is a Python library for crawling historical and real-time stock
+  market data from China, returning data as pandas DataFrame objects for
+  easy analysis and storage.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">tushare</remote-id>
+  </upstream>
+</pkgmetadata>

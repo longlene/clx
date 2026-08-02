@@ -21,7 +21,7 @@ S="${WORKDIR}"/bolt-python-${PV}
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/slack_sdk-3.25.0[${PYTHON_USEDEP}]
+	>=dev-python/slack-sdk-3.25.0[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest

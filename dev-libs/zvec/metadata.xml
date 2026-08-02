@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    zvec is a vector database engine that combines vector similarity search
+    with full-text search capabilities. It provides HNSW, IVF, DiskAnn, and
+    RaBitQ indexing algorithms along with an SQL-like query interface backed
+    by Apache Arrow and RocksDB.
+  </longdescription>
+  <use>
+    <flag name="openmp">Enable OpenMP multi-threading support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">alibaba/zvec</remote-id>
+  </upstream>
+</pkgmetadata>

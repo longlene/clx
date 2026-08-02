@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Prometheus Metric Exporter for OpenTelemetry. Exports metrics collected
+    by the OpenTelemetry SDK to a Prometheus endpoint.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">open-telemetry/opentelemetry-python</remote-id>
+    <remote-id type="pypi">opentelemetry-exporter-prometheus</remote-id>
+  </upstream>
+</pkgmetadata>

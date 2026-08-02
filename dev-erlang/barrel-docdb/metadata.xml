@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    barrel_docdb is an Erlang document database featuring multi-version
+    concurrency control (MVCC), real-time subscriptions, and peer-to-peer
+    replication. It uses RocksDB as its storage backend and exposes an
+    HTTP API via Cowboy.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">barrel-db/barrel_docdb</remote-id>
+  </upstream>
+</pkgmetadata>

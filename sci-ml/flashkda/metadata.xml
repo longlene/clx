@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    FlashKDA: fused CUDA kernels for Kimi Delta Attention, built on CUTLASS.
+    Requires a Hopper- or Blackwell-class GPU (sm90a/sm100a/sm103a/sm120a).
+  </longdescription>
+  <upstream>
+    <remote-id type="github">MoonshotAI/FlashKDA</remote-id>
+  </upstream>
+</pkgmetadata>

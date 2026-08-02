@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="adbpg">Enable Alibaba AnalyticDB PostgreSQL storage backend</flag>
+    <flag name="livekit">Enable LiveKit video conferencing integration (requires USE=sip)</flag>
+    <flag name="sip">Enable SIP telephony support via DashScope</flag>
+    <flag name="whisper">Enable OpenAI Whisper speech recognition</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">agentscope-ai/QwenPaw</remote-id>
+    <remote-id type="pypi">qwenpaw</remote-id>
+  </upstream>
+</pkgmetadata>

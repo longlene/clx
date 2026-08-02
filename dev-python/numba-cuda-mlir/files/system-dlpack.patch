@@ -1,0 +1,13 @@
+Allow DLPACK_PATH environment variable to bypass FetchContent network access.
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -33,6 +33,10 @@ add_custom_target(devinstall
+             "${CMAKE_SOURCE_DIR}/src/numba_cuda_mlir/$<TARGET_FILE_NAME:_cext>")
+
++if (NOT DLPACK_PATH AND DEFINED ENV{DLPACK_PATH})
++    set(DLPACK_PATH "$ENV{DLPACK_PATH}")
++endif()
++
+ if (DLPACK_PATH)
+     set(dlpack_INCLUDE_DIR "${DLPACK_PATH}/include/dlpack")
+     message(STATUS "Using local dlpack, include path: ${dlpack_INCLUDE_DIR}")

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Implements DeepSeek's DSpark (semi-autoregressive speculative decoding) and
+    z-lab's DFlash (block-diffusion speculative drafting) for LLM inference on
+    Apple Silicon via Apple's MLX framework.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ARahim3/mlx-dspark</remote-id>
+  </upstream>
+</pkgmetadata>

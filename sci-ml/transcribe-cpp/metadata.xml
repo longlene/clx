@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A C/C++ speech-to-text inference library running diverse ASR/STT model
+    families (Whisper, Parakeet, Canary, Moonshine, and more) via GGUF
+    models on the ggml runtime, with Metal, Vulkan, and CUDA backends plus
+    a tinyBLAS-accelerated CPU path.
+  </longdescription>
+  <use>
+    <flag name="blas">Link a system BLAS for the host mel-spectrogram decoder</flag>
+    <flag name="cuda">Build with CUDA backend support</flag>
+    <flag name="openmp">Use OpenMP for ggml's CPU threadpool</flag>
+    <flag name="tools">Build the inspect/quantize command-line tools</flag>
+    <flag name="vulkan">Build with Vulkan backend support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">handy-computer/transcribe.cpp</remote-id>
+  </upstream>
+</pkgmetadata>

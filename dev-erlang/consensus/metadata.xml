@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    consensus is a pure-Erlang library for consensus democracy algorithms,
+    including Condorcet voting methods. It provides modules for defining
+    parties, elections, and computing winners according to various consensus
+    voting rules.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">kbaird/consensus</remote-id>
+  </upstream>
+</pkgmetadata>

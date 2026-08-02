@@ -1,0 +1,13 @@
+--- a/src/qwentts_cpp/_binding.py
++++ b/src/qwentts_cpp/_binding.py
+@@ -337,6 +337,10 @@
+     for name in _library_names():
+         candidates.append(package_lib_dir / name)
+
++    for _sysdir in ("/usr/lib64", "/usr/lib"):
++        for name in _library_names():
++            candidates.append(Path(_sysdir) / name)
++
+     for candidate in candidates:
+         if candidate.is_file():
+             return candidate

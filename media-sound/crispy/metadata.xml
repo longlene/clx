@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Crispy is a free, offline-first desktop application providing AI-powered
+    noise suppression, speech transcription, and meeting recording. Runs
+    entirely locally using whisper.cpp and ONNX Runtime models, with no
+    cloud dependency. Built with Tauri 2, React, and Rust.
+  </longdescription>
+  <use>
+    <flag name="diarization">Enable speaker diarization (who-spoke-when) via
+      in-tree ONNX segmentation and NME-SC spectral clustering</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">sleep3r/crispy</remote-id>
+  </upstream>
+</pkgmetadata>

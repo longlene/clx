@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    DojoZero is a platform for deploying AI agents that process realtime sports
+    data and make predictions about game outcomes. Supports multiple backends
+    and optional cloud integrations.
+  </longdescription>
+  <use>
+    <flag name="alicloud">Enable Alibaba Cloud storage and logging support</flag>
+    <flag name="ray">Enable distributed execution with Ray</flag>
+    <flag name="redis">Enable Redis-backed state storage</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">agentscope-ai/DojoZero</remote-id>
+    <remote-id type="pypi">dojozero</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    inky is an Erlang/OTP-based intelligent agent for home automation, server
+    monitoring, and hardware control. It integrates with Telegram bots via
+    pe4kin and communicates with local LLMs through Ollama, providing a
+    conversational interface for environment control and task automation.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">wmealing/inky</remote-id>
+  </upstream>
+</pkgmetadata>

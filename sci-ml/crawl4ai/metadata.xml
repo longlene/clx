@@ -9,4 +9,9 @@
     <remote-id type="github">unclecode/crawl4ai</remote-id>
     <remote-id type="pypi">crawl4ai</remote-id>
   </upstream>
+  <use>
+    <flag name="pdf">Enable PDF extraction via pypdf</flag>
+    <flag name="torch">Enable PyTorch-based text ranking and scikit-learn integration</flag>
+    <flag name="transformer">Enable transformer-based embeddings via sentence-transformers</flag>
+  </use>
 </pkgmetadata>

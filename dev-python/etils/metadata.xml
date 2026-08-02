@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="eapp">Application utilities (absl-py, simple-parsing)</flag>
+    <flag name="enp">NumPy array utilities (numpy, einops)</flag>
+    <flag name="epath">Filesystem path utilities (fsspec, zipp)</flag>
+    <flag name="etqdm">tqdm progress bar integration</flag>
+    <flag name="etree">Tree structure utilities (implies enp and etqdm)</flag>
+    <flag name="jax">JAX tree utilities</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">google/etils</remote-id>
+    <remote-id type="pypi">etils</remote-id>
+  </upstream>
+</pkgmetadata>

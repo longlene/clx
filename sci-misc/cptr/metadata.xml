@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  cptr (computer) is a web-based computer-use agent from the open-webui
+  project, allowing you to code, manage, and control your machine remotely
+  from a browser interface.
+  </longdescription>
+  <use>
+    <flag name="agents">Enable claude-agent-sdk for agent workflows</flag>
+    <flag name="mcp">Enable MCP (Model Context Protocol) support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">open-webui/computer</remote-id>
+  </upstream>
+</pkgmetadata>

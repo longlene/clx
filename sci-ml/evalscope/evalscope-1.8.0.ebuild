@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=sci-ml/transformers-4.33[${PYTHON_SINGLE_USEDEP}]
-	>=sci-misc/litellm-1.55[${PYTHON_SINGLE_USEDEP}]
+	>=dev-python/litellm-1.55[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/colorlog[${PYTHON_USEDEP}]
 		dev-python/docstring-parser[${PYTHON_USEDEP}]

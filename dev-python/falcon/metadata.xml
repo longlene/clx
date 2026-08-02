@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Falcon is a minimalist ASGI/WSGI framework for building fast data plane
+    APIs and microservices. It emphasizes reliability, correctness, and
+    performance, with optional Cython acceleration of core utilities.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">falconry/falcon</remote-id>
+    <remote-id type="pypi">falcon</remote-id>
+  </upstream>
+</pkgmetadata>

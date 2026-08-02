@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>0xccef@gmail.com</email>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">closeio/ciso8601</remote-id>
+	</upstream>
+	<longdescription>
+		ciso8601 is a fast ISO 8601 date/time parser written in C. It is
+		significantly faster than Python's built-in datetime.fromisoformat()
+		for parsing ISO 8601 strings.
+	</longdescription>
+</pkgmetadata>

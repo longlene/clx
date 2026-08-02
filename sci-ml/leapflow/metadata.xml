@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  LeapFlow is a macOS automation agent framework that enables AI agents to
+  learn and evolve from actual practice using imitation learning techniques.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">modelscope/leapflow</remote-id>
+  </upstream>
+</pkgmetadata>

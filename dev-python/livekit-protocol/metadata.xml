@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Python protocol stubs for LiveKit, the open-source WebRTC infrastructure
+    platform. Provides generated protobuf message classes and type stubs for
+    the LiveKit server protocol, used by livekit-api and livekit SDKs.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">livekit/python-sdks</remote-id>
+    <remote-id type="pypi">livekit-protocol</remote-id>
+  </upstream>
+</pkgmetadata>

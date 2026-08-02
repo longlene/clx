@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>0xccef@gmail.com</email>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">astraw38/pytest-assume</remote-id>
+	</upstream>
+	<longdescription>
+		pytest-assume is a pytest plugin that allows multiple failures per test
+		using the assume() context manager, so that all assertions are checked
+		before the test is reported as failed.
+	</longdescription>
+</pkgmetadata>

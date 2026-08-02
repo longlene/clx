@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Donfig is a Python configuration library inspired by Dask's configuration
+    system. It supports loading configuration from YAML files, environment
+    variables, and Python dictionaries, with hierarchical merging, default
+    values, and context managers for temporary overrides.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">pytroll/donfig</remote-id>
+    <remote-id type="pypi">donfig</remote-id>
+  </upstream>
+</pkgmetadata>

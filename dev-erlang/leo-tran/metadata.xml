@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Erlang library for coordinating data transactions, allowing programs
+    to serialize access to a resource by table and key, part of the
+    LeoFS project.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">leo-project/leo_tran</remote-id>
+  </upstream>
+</pkgmetadata>

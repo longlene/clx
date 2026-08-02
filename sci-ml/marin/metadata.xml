@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Marin is an open-source framework for research and development of
+    foundation models. It provides a modular workspace with components
+    for model training (Levanter/JAX), data processing, distributed
+    inference, and orchestration across cloud and TPU environments.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">marin-community/marin</remote-id>
+    <remote-id type="pypi">marin_core</remote-id>
+  </upstream>
+</pkgmetadata>

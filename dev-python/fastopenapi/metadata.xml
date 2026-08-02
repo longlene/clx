@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    FastOpenAPI generates and integrates OpenAPI 3.x schemas via Pydantic v2
+    models, with router adapters for AioHttp, Django, Falcon, Flask, Quart,
+    Sanic, Starlette, and Tornado.
+  </longdescription>
+  <use>
+    <flag name="aiohttp">Enable AioHttp router integration</flag>
+    <flag name="django">Enable Django router integration</flag>
+    <flag name="falcon">Enable Falcon router integration</flag>
+    <flag name="flask">Enable Flask router integration</flag>
+    <flag name="quart">Enable Quart router integration</flag>
+    <flag name="sanic">Enable Sanic router integration</flag>
+    <flag name="starlette">Enable Starlette router integration</flag>
+    <flag name="tornado">Enable Tornado router integration</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">mr-fatalyst/fastopenapi</remote-id>
+  </upstream>
+</pkgmetadata>

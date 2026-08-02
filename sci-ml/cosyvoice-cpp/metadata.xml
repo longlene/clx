@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">Lourdle/cosyvoice.cpp</remote-id>
+  </upstream>
+  <use>
+    <flag name="frontend">Enable ONNX Runtime frontend for text processing</flag>
+    <flag name="icu">Enable ICU for text normalization</flag>
+    <flag name="ffmpeg">Use FFmpeg as audio backend instead of bundled miniaudio</flag>
+  </use>
+</pkgmetadata>

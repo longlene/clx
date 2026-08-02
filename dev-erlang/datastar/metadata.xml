@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Erlang SDK for the Datastar hypermedia framework (data-star.dev). Provides
+    a server-sent event builder and signal reader with zero runtime dependencies,
+    enabling reactive web UIs driven by SSE from any Erlang web server.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Taure/datastar</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,31 @@
+diff -Nur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2025-02-05 00:18:02.000000000 -0800
++++ b/CMakeLists.txt	2025-02-09 16:04:44.885863153 -0800
+@@ -115,13 +115,14 @@
+ 
+ # deps
+ # Only add ggml if it hasn't been added yet
+-if (NOT TARGET ggml)
++find_package(ggml REQUIRED)
++if (NOT TARGET ggml::ggml)
+     add_subdirectory(ggml)
+ endif()
+ 
+ add_subdirectory(thirdparty)
+ 
+-target_link_libraries(${SD_LIB} PUBLIC ggml zip)
++target_link_libraries(${SD_LIB} PUBLIC ggml::all zip)
+ target_include_directories(${SD_LIB} PUBLIC . thirdparty)
+ target_compile_features(${SD_LIB} PUBLIC cxx_std_11)
+ 
+diff -Nur a/model.cpp b/model.cpp
+--- a/model.cpp	2025-02-05 00:18:02.000000000 -0800
++++ b/model.cpp	2025-02-09 16:10:44.242542491 -0800
+@@ -15,6 +15,7 @@
+ #include "ggml-backend.h"
+ #include "ggml-cpu.h"
+ #include "ggml.h"
++#include "gguf.h"
+ 
+ #include "stable-diffusion.h"
+ 

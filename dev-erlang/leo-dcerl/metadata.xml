@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Disc-backed (SSD-oriented) object cache for Erlang built on a C NIF
+    using leo-project's libcutil, part of the LeoFS project.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">leo-project/leo_dcerl</remote-id>
+  </upstream>
+</pkgmetadata>

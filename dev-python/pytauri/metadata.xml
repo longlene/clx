@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">pytauri/pytauri</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    pytauri provides Python bindings for Tauri through PyO3, enabling Python
+    code to interact with a Tauri application's window management, IPC, menus,
+    and system tray via a plugin that loads a compiled Rust extension module.
+  </longdescription>
+</pkgmetadata>

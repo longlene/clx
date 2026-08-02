@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    NanoBot is a lightweight, open-source personal AI assistant framework that
+    connects LLMs (OpenAI, Anthropic, etc.) to external tools, chat platforms
+    (Telegram, Slack, DingTalk, Discord, Matrix), and custom workflows via MCP.
+    The web UI build is skipped at package build time; use the upstream webui/
+    directory with bun or npm to build it separately if needed.
+  </longdescription>
+  <use>
+    <flag name="api">Enable aiohttp-based async HTTP API server</flag>
+    <flag name="azure">Enable Azure identity authentication</flag>
+    <flag name="discord">Enable Discord bot integration</flag>
+    <flag name="langsmith">Enable LangSmith tracing and observability</flag>
+    <flag name="matrix">Enable Matrix chat protocol support</flag>
+    <flag name="msteams">Enable Microsoft Teams bot integration</flag>
+    <flag name="olostep">Enable Olostep web scraping integration</flag>
+    <flag name="pdf">Enable PDF processing via PyMuPDF</flag>
+    <flag name="wecom">Enable WeCom (企业微信) bot integration</flag>
+    <flag name="weixin">Enable WeChat (微信) QR-code login support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">HKUDS/nanobot</remote-id>
+    <remote-id type="pypi">nanobot-ai</remote-id>
+  </upstream>
+</pkgmetadata>

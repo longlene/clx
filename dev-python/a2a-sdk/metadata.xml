@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>googleapis-packages@google.com</email>
+    <name>Google LLC</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="pypi">a2a-sdk</remote-id>
+    <remote-id type="github">a2aproject/a2a-python</remote-id>
+  </upstream>
+</pkgmetadata>

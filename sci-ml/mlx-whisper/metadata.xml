@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    MLX Whisper is a speech recognition library that runs OpenAI Whisper models
+    on Apple silicon using the MLX framework, with model loading support via
+    the Hugging Face Hub.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">mlx-whisper</remote-id>
+    <remote-id type="github">ml-explore/mlx-examples</remote-id>
+  </upstream>
+</pkgmetadata>

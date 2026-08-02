@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>fillionr@kitware.com</email>
+    <name>Jean-Christophe Fillion-Robin</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">scikit-build/cython-cmake</remote-id>
+  </upstream>
+</pkgmetadata>

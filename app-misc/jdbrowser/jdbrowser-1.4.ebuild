@@ -1,0 +1,227 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	addr2line@0.21.0
+	adler2@2.0.0
+	adler@1.0.2
+	allocator-api2@0.2.21
+	anstream@0.6.18
+	anstyle-parse@0.2.6
+	anstyle-query@1.1.2
+	anstyle-wincon@3.0.7
+	anstyle@1.0.10
+	arboard@3.4.1
+	autocfg@1.4.0
+	backtrace@0.3.71
+	bitflags@1.3.2
+	bitflags@2.8.0
+	block2@0.5.1
+	bytemuck@1.21.0
+	byteorder-lite@0.1.0
+	cassowary@0.3.0
+	castaway@0.2.3
+	cc@1.2.10
+	cfg-if@1.0.0
+	cfg_aliases@0.1.1
+	clap@4.5.27
+	clap_builder@4.5.27
+	clap_derive@4.5.24
+	clap_lex@0.7.4
+	clipboard-win@5.4.0
+	color-eyre@0.6.3
+	color-spantrace@0.2.1
+	colorchoice@1.0.3
+	compact_str@0.8.1
+	core-foundation-sys@0.8.7
+	core-foundation@0.9.4
+	core-graphics-types@0.1.3
+	core-graphics@0.23.2
+	crc32fast@1.4.2
+	crossterm@0.28.1
+	crossterm_winapi@0.9.1
+	darling@0.20.10
+	darling_core@0.20.10
+	darling_macro@0.20.10
+	derive-new@0.6.0
+	downcast-rs@1.2.1
+	either@1.13.0
+	equivalent@1.0.1
+	errno@0.3.10
+	error-code@3.3.1
+	eyre@0.6.12
+	fallible-iterator@0.3.0
+	fallible-streaming-iterator@0.1.9
+	fastrand@2.3.0
+	fdeflate@0.3.7
+	fixedbitset@0.4.2
+	flate2@1.1.0
+	fnv@1.0.7
+	foldhash@0.1.4
+	foreign-types-macros@0.2.3
+	foreign-types-shared@0.3.1
+	foreign-types@0.5.0
+	gethostname@0.4.3
+	getrandom@0.3.1
+	gimli@0.28.1
+	hashbrown@0.15.2
+	hashlink@0.10.0
+	heck@0.5.0
+	ident_case@1.0.1
+	image@0.25.5
+	indenter@0.3.3
+	indexmap@2.7.1
+	indoc@2.0.5
+	instability@0.3.7
+	is_terminal_polyfill@1.70.1
+	itertools@0.13.0
+	itoa@1.0.14
+	jpeg-decoder@0.3.1
+	lazy_static@1.5.0
+	libc@0.2.169
+	libsqlite3-sys@0.31.0
+	linux-raw-sys@0.4.15
+	lock_api@0.4.12
+	log@0.4.25
+	lru@0.12.5
+	memchr@2.7.4
+	minimal-lexical@0.2.1
+	miniz_oxide@0.7.4
+	miniz_oxide@0.8.5
+	mio@1.0.3
+	nix@0.28.0
+	nom@7.1.3
+	num-traits@0.2.19
+	objc-sys@0.3.5
+	objc2-app-kit@0.2.2
+	objc2-core-data@0.2.2
+	objc2-core-image@0.2.2
+	objc2-encode@4.1.0
+	objc2-foundation@0.2.2
+	objc2-metal@0.2.2
+	objc2-quartz-core@0.2.2
+	objc2@0.5.2
+	object@0.32.2
+	once_cell@1.20.2
+	os_pipe@1.2.1
+	owo-colors@3.5.0
+	parking_lot@0.12.3
+	parking_lot_core@0.9.10
+	paste@1.0.15
+	petgraph@0.6.5
+	pin-project-lite@0.2.16
+	pkg-config@0.3.31
+	png@0.17.16
+	proc-macro2@1.0.93
+	psm@0.1.24
+	quick-xml@0.37.2
+	quote@1.0.38
+	ratatui@0.29.0
+	recursive-proc-macro-impl@0.1.1
+	recursive@0.1.1
+	redox_syscall@0.5.8
+	rusqlite@0.33.0
+	rustc-demangle@0.1.24
+	rustix@0.38.44
+	rustversion@1.0.19
+	ryu@1.0.19
+	scopeguard@1.2.0
+	serde@1.0.217
+	serde_derive@1.0.217
+	sharded-slab@0.1.7
+	shlex@1.3.0
+	signal-hook-mio@0.2.4
+	signal-hook-registry@1.4.2
+	signal-hook@0.3.17
+	simd-adler32@0.3.7
+	smallvec@1.13.2
+	sqlparser@0.54.0
+	stacker@0.1.17
+	static_assertions@1.1.0
+	strsim@0.11.1
+	strum@0.26.3
+	strum_macros@0.26.4
+	syn@2.0.96
+	tempfile@3.16.0
+	thiserror-impl@1.0.69
+	thiserror@1.0.69
+	thread_local@1.1.8
+	tiff@0.9.1
+	tracing-core@0.1.33
+	tracing-error@0.2.1
+	tracing-subscriber@0.3.19
+	tracing@0.1.41
+	tree_magic_mini@3.1.6
+	unicode-ident@1.0.16
+	unicode-segmentation@1.12.0
+	unicode-truncate@1.1.0
+	unicode-width@0.1.14
+	unicode-width@0.2.0
+	utf8parse@0.2.2
+	valuable@0.1.1
+	vcpkg@0.2.15
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasi@0.13.3+wasi-0.2.2
+	wayland-backend@0.3.8
+	wayland-client@0.31.8
+	wayland-protocols-wlr@0.2.0
+	wayland-protocols@0.31.2
+	wayland-scanner@0.31.6
+	wayland-sys@0.31.6
+	weezl@0.1.8
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-sys@0.48.0
+	windows-sys@0.52.0
+	windows-sys@0.59.0
+	windows-targets@0.48.5
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.48.5
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.48.5
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.48.5
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.48.5
+	windows_x86_64_msvc@0.52.6
+	wit-bindgen-rt@0.33.0
+	wl-clipboard-rs@0.8.1
+	x11rb-protocol@0.13.1
+	x11rb@0.13.1
+"
+
+inherit cargo
+
+DESCRIPTION="Terminal TUI SQLite database browser"
+HOMEPAGE="https://github.com/Jkeyuk/JDbrowser"
+SRC_URI="
+	https://github.com/Jkeyuk/JDbrowser/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+S="${WORKDIR}/JDbrowser-${PV}"
+
+LICENSE="GPL-3"
+SLOT="0"
+KEYWORDS="~amd64"
+DEPEND="
+	dev-db/sqlite:3=
+"
+RDEPEND="${DEPEND}"
+BDEPEND="
+	virtual/pkgconfig
+"
+
+src_install() {
+	cargo_src_install
+	dodoc readme.md
+}

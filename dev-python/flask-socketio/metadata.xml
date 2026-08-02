@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Flask-SocketIO gives Flask applications access to low latency bi-directional
+    communications between the clients and the server. The client-side
+    application can use the Socket.IO JavaScript library to establish a
+    permanent connection to the server.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">miguelgrinberg/Flask-SocketIO</remote-id>
+    <remote-id type="pypi">Flask-SocketIO</remote-id>
+  </upstream>
+</pkgmetadata>

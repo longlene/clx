@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Python API for MaxMind's GeoIP2 web services and databases, providing
+    country, city, and other geographic lookups by IP address.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">maxmind/GeoIP2-python</remote-id>
+    <remote-id type="pypi">geoip2</remote-id>
+  </upstream>
+</pkgmetadata>

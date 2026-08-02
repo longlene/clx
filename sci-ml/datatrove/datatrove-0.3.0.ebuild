@@ -21,7 +21,7 @@ RDEPEND="
 	$(python_gen_cond_dep '
 		>=dev-python/dill-0.3.0[${PYTHON_USEDEP}]
 		>=dev-python/fsspec-2023.12.2[${PYTHON_USEDEP}]
-		>=dev-python/huggingface-hub-0.17.0[${PYTHON_USEDEP}]
+		>=sci-ml/huggingface_hub-0.17.0[${PYTHON_USEDEP}]
 		dev-python/humanize[${PYTHON_USEDEP}]
 		>=dev-python/loguru-0.7.0[${PYTHON_USEDEP}]
 		dev-python/multiprocess[${PYTHON_USEDEP}]

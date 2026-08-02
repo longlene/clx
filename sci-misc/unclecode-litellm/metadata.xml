@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Minimal, zero-bloat LLM API wrapper that provides a drop-in replacement for
+    litellm, supporting multiple LLM providers via the OpenAI API format.
+  </longdescription>
+  <use>
+    <flag name="aws">Enable AWS Bedrock support via dev-python/boto3</flag>
+    <flag name="gcp">Enable Google Cloud support via dev-python/google-auth</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">unclecode/litellm</remote-id>
+    <remote-id type="pypi">unclecode-litellm</remote-id>
+  </upstream>
+</pkgmetadata>

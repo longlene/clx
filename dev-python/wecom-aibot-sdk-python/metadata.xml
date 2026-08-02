@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    WeCom AI Bot Python SDK that provides WebSocket long connection support
+    for WeCom (企业微信) AI bots. Features include message sending/receiving,
+    streaming replies, template cards, event callbacks, and file download
+    decryption.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">wecom-aibot-sdk-python</remote-id>
+  </upstream>
+</pkgmetadata>

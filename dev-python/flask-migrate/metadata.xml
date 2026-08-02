@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Flask-Migrate is a Flask extension that handles SQLAlchemy database
+    migrations using Alembic. It provides a set of Flask CLI commands
+    to create and apply database schema migrations.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">miguelgrinberg/Flask-Migrate</remote-id>
+    <remote-id type="pypi">Flask-Migrate</remote-id>
+  </upstream>
+</pkgmetadata>

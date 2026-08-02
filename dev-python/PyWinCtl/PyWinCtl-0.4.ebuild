@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/python-xlib-0.21[${PYTHON_USEDEP}]
 	>=dev-python/ewmhlib-0.2[${PYTHON_USEDEP}]
-	>=dev-python/typing_extensions-4.4.0[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]
 	>=dev-python/pywinbox-0.7[${PYTHON_USEDEP}]
 	>=dev-python/pymonctl-0.92[${PYTHON_USEDEP}]
 "

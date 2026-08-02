@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    greenletio bridges asyncio and synchronous code by using greenlets. It
+    allows calling async functions from sync code and vice versa, without
+    needing to restructure entire codebases for async/await.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">miguelgrinberg/greenletio</remote-id>
+    <remote-id type="pypi">greenletio</remote-id>
+  </upstream>
+</pkgmetadata>

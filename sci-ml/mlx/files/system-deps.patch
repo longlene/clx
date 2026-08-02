@@ -1,6 +1,18 @@
 diff -Nur a/CMakeLists.txt b/CMakeLists.txt
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
+@@ -20,6 +20,11 @@
+   LANGUAGES C CXX
+   VERSION ${MLX_PROJECT_VERSION})
+ 
++# Included early: mlx/backend/cuda's install() calls (via add_subdirectory()
++# below) use CMAKE_INSTALL_INCLUDEDIR, but upstream only include()s this near
++# the bottom of the file, after add_subdirectory() has already run.
++include(GNUInstallDirs)
++
+ # ----------------------------- Setup -----------------------------
+ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
+ set(CMAKE_CXX_STANDARD 20)
 @@ -281,25 +281,27 @@
            "${LAPACK_ROOT};$ENV{LAPACK_ROOT};/usr/local/opt/openblas")
      endif()

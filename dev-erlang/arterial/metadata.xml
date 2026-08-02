@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    arterial is a high-performance, low-latency Erlang connection pool
+    library backed by a C NIF for lock-free pool management. It supports
+    TCP, UDP, and TLS transports and provides an optional observability
+    facade for telemetry or Prometheus metrics.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">saleyn/arterial</remote-id>
+  </upstream>
+</pkgmetadata>

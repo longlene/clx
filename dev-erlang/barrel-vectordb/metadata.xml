@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    barrel_vectordb is an embedded Erlang vector database supporting multiple
+    backends including HNSW, FAISS, DiskANN, and BM25. It uses RocksDB for
+    persistence and provides semantic search capabilities with pluggable
+    embedding and reranking support.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">barrel-db/barrel_vectordb</remote-id>
+  </upstream>
+</pkgmetadata>

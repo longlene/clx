@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Agent-first CLI client (crates/buzz-cli, binary "buzz") for the Buzz
+    hive-mind communication platform, a self-hostable Nostr relay-based
+    workspace where humans and AI agents share channels, git repos, and
+    workflows. This package builds only the buzz-cli binary out of the
+    buzz cargo workspace; see app-misc/buzz-relay for the server.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">block/buzz</remote-id>
+  </upstream>
+</pkgmetadata>

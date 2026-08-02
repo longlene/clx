@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    OpenTelemetry instrumentation for system metrics (CPU, memory, disk, network)
+    collected via psutil and exported through the OpenTelemetry metrics API.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">open-telemetry/opentelemetry-python-contrib</remote-id>
+    <remote-id type="pypi">opentelemetry-instrumentation-system-metrics</remote-id>
+  </upstream>
+</pkgmetadata>

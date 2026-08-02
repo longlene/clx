@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    xoscar is an actor framework for Python that supports heterogeneous computing
+    across CPUs and GPUs. It provides distributed actors, remote function calls,
+    and collective communication primitives for building scalable ML workloads.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">xorbitsai/xoscar</remote-id>
+  </upstream>
+</pkgmetadata>

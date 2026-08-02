@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  CCXT is a cryptocurrency trading library that provides a unified API to
+  interact with more than 100 cryptocurrency exchanges in Python, JavaScript,
+  TypeScript, PHP, C#, and Go.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ccxt/ccxt</remote-id>
+    <remote-id type="pypi">ccxt</remote-id>
+  </upstream>
+</pkgmetadata>

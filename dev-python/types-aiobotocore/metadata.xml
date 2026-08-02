@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Type annotations for aiobotocore generated with mypy-boto3-builder.
+    Provides type stubs for static analysis and IDE autocompletion.
+  </longdescription>
+  <use>
+    <flag name="aiobotocore">Pull in dev-python/aiobotocore at runtime</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">youtype/mypy_boto3_builder</remote-id>
+    <remote-id type="pypi">types-aiobotocore</remote-id>
+  </upstream>
+</pkgmetadata>

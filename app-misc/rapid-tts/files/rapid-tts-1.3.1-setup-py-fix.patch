@@ -1,0 +1,50 @@
+--- a/setup.py
++++ b/setup.py
+@@ -1,12 +1,16 @@
+ # -*- encoding: utf-8 -*-
+ # @Author: SWHL
+ # @Contact: liekkaskono@163.com
++import os
+ import sys
+ from pathlib import Path
+ from typing import Dict, List, Optional, Union
+
+ import setuptools
+-from get_pypi_latest_version import GetPyPiLatestVersion
++try:
++    from get_pypi_latest_version import GetPyPiLatestVersion
++except ImportError:
++    GetPyPiLatestVersion = None
+
+
+ def read_txt(txt_path: Union[Path, str]) -> List[str]:
+@@ -57,18 +61,21 @@
+ MELO_REQUIRES = REQUIREMENT_GROUPS["melo"]
+ MOSS_NANO_REQUIRES = REQUIREMENT_GROUPS["moss_nano"]
+
+-obtainer = GetPyPiLatestVersion()
+-try:
+-    latest_version = obtainer(MODULE_NAME)
+-except Exception:
+-    latest_version = "0.0.0"
+-VERSION_NUM = obtainer.version_add_one(latest_version, add_patch=True)
++if GetPyPiLatestVersion is not None:
++    obtainer = GetPyPiLatestVersion()
++    try:
++        latest_version = obtainer(MODULE_NAME)
++    except Exception:
++        latest_version = "0.0.0"
++    VERSION_NUM = obtainer.version_add_one(latest_version, add_patch=True)
++else:
++    VERSION_NUM = os.environ.get("PKG_VER", "0")
+
+-if len(sys.argv) > 2:
++if GetPyPiLatestVersion is not None and len(sys.argv) > 2:
+     match_str = " ".join(sys.argv[2:])
+     matched_versions = obtainer.extract_version(match_str)
+     if matched_versions:
+         VERSION_NUM = matched_versions
+-sys.argv = sys.argv[:2]
++    sys.argv = sys.argv[:2]
+
+ setuptools.setup(

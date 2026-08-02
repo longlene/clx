@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    livery_stripe is an Erlang/OTP Stripe API client built on top of the
+    livery HTTP client. It provides modules for interacting with Stripe
+    resources including customers, products, prices, subscriptions, payment
+    intents, invoices, webhooks, and more.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">benoitc/livery_stripe</remote-id>
+  </upstream>
+</pkgmetadata>

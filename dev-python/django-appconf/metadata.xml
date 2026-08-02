@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A helper class for handling configuration defaults of packaged Django
+    apps gracefully, supporting multiple configuration sources including
+    Django settings, environment variables, and per-app defaults.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">django-compressor/django-appconf</remote-id>
+    <remote-id type="pypi">django-appconf</remote-id>
+  </upstream>
+</pkgmetadata>

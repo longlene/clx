@@ -76,6 +76,17 @@ diff -Nur a/mlx/backend/cuda/CMakeLists.txt b/mlx/backend/cuda/CMakeLists.txt
 +#FetchContent_MakeAvailable(cutlass)
  target_include_directories(
    mlx SYSTEM PRIVATE $<BUILD_INTERFACE:${cutlass_SOURCE_DIR}/include>)
+@@ -292,8 +292,5 @@
+ target_include_directories(
+   mlx SYSTEM PRIVATE $<BUILD_INTERFACE:${cutlass_SOURCE_DIR}/include>)
+ 
+-# Install CUTLASS headers for JIT.
+-install(DIRECTORY ${cutlass_SOURCE_DIR}/include/cute
+-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+-install(DIRECTORY ${cutlass_SOURCE_DIR}/include/cutlass
+-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
++# CUTLASS headers for JIT are provided system-wide by dev-libs/cutlass
++# (already on the default include path); nothing to install here.
 diff -Nur a/mlx/backend/cuda/device/binary_ops.cuh b/mlx/backend/cuda/device/binary_ops.cuh
 --- a/mlx/backend/cuda/device/binary_ops.cuh
 +++ b/mlx/backend/cuda/device/binary_ops.cuh
@@ -336,18 +347,18 @@ diff -Nur a/mlx/backend/cuda/device/unary_ops.cuh b/mlx/backend/cuda/device/unar
    }
  };
  
-diff -Nur a/mlx/backend/cuda/quantized/qmm/qmm_impl_naive.cuh b/mlx/backend/cuda/quantized/qmm/qmm_impl_naive.cuh
---- a/mlx/backend/cuda/quantized/qmm/qmm_impl_naive.cuh
-+++ b/mlx/backend/cuda/quantized/qmm/qmm_impl_naive.cuh
-@@ -71,7 +71,7 @@
-   auto k_residue = shape_K - bK * ceil_div(shape_K, bK);
-   if constexpr (HasKResidue) {
-     A += k_residue * get<1>(dA);
--    B += k_residue * get<1>(dB) * cuda::std::min(8, sizeof_bits_v<Quant>) / 8;
-+    B += k_residue * get<1>(dB) * std::min(8, sizeof_bits_v<Quant>) / 8;
-     S += k_residue * stride<1>(S_layout);
-     Z += k_residue * stride<1>(S_layout);
+diff -Nur a/mlx/backend/cuda/device/qmm_naive.cuh b/mlx/backend/cuda/device/qmm_naive.cuh
+--- a/mlx/backend/cuda/device/qmm_naive.cuh
++++ b/mlx/backend/cuda/device/qmm_naive.cuh
+@@ -39,7 +39,7 @@
+     gB = domain_offset(make_coord(0, k_residue, 0), gB);
+   } else {
+     // TODO: Figure out why domain_offset is not returning wrong offset.
+-    gB.data() = recast_ptr<Quant>(raw_pointer_cast(gB.data()) + gB.layout()(0, k_residue, 0) * cuda::std::min(8, sizeof_bits_v<Quant>) / 8);
++    gB.data() = recast_ptr<Quant>(raw_pointer_cast(gB.data()) + gB.layout()(0, k_residue, 0) * std::min(8, sizeof_bits_v<Quant>) / 8);
    }
+   gS = domain_offset(make_coord(0, k_residue, 0), gS);
+   if constexpr (quant_has_bias_v<Quant>) {
 diff -Nur a/mlx/backend/cuda/quantized/qmm/qmv.cu b/mlx/backend/cuda/quantized/qmm/qmv.cu
 --- a/mlx/backend/cuda/quantized/qmm/qmv.cu
 +++ b/mlx/backend/cuda/quantized/qmm/qmv.cu

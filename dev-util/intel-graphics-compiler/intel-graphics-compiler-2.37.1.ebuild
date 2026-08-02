@@ -4,8 +4,8 @@
 EAPI=8
 
 CMAKE_BUILD_TYPE="Release"
-LLVM_COMPAT=( 16 )
-PYTHON_COMPAT=( python3_{10..14} )
+LLVM_COMPAT=( 17 )
+PYTHON_COMPAT=( python3_{13..15} )
 
 inherit cmake flag-o-matic llvm-r2 python-any-r1
 
@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 IUSE="debug vc"
 
 DEPEND="
-	dev-libs/opencl-clang:16[${LLVM_USEDEP}]
+	dev-libs/opencl-clang:17[${LLVM_USEDEP}]
 	dev-util/spirv-tools
 	$(llvm_gen_dep '
 		llvm-core/lld:${LLVM_SLOT}

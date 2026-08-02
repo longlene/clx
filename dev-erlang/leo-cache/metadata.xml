@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Erlang object caching library layering an in-memory cache (leo_mcerl)
+    over a disc-backed cache (leo_dcerl), part of the LeoFS project.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">leo-project/leo_cache</remote-id>
+  </upstream>
+</pkgmetadata>

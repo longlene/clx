@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>maintainer-needed@gentoo.org</email>
+    <name>Maintainer Needed</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">apache/arrow-erlang</remote-id>
+  </upstream>
+  <longdescription>
+    Official Erlang implementation of Apache Arrow. Provides efficient
+    zero-copy access to Apache Arrow data structures from Erlang.
+  </longdescription>
+</pkgmetadata>

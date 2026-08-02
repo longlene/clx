@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A modified Django FileResponse that returns Content-Range headers, enabling
+    browsers and clients to request specific byte ranges of a file (e.g. for
+    audio/video seeking).
+  </longdescription>
+  <upstream>
+    <remote-id type="github">wearespindle/django-ranged-fileresponse</remote-id>
+    <remote-id type="pypi">django-ranged-response</remote-id>
+  </upstream>
+</pkgmetadata>

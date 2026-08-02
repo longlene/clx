@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    py_webauthn provides a Pythonic interface for the Web Authentication
+    (WebAuthn) standard, supporting registration and authentication ceremony
+    verification for FIDO2 passkeys and security keys.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">duo-labs/py_webauthn</remote-id>
+    <remote-id type="pypi">webauthn</remote-id>
+  </upstream>
+</pkgmetadata>

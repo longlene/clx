@@ -61,7 +61,7 @@ RDEPEND="
 		>=dev-python/google-generativeai-0.8.1[${PYTHON_USEDEP}]
 		>=dev-python/trio-0.29.0[${PYTHON_USEDEP}]
 		>=dev-python/setuptools-75.2.0[${PYTHON_USEDEP}]
-		>=dev-python/huggingface-hub-0.25.0[${PYTHON_USEDEP}]
+		>=sci-ml/huggingface_hub-0.25.0[${PYTHON_USEDEP}]
 	')
 "
 #BDEPEND="

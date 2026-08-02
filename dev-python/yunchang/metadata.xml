@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">feifeibear/long-context-attention</remote-id>
+    <remote-id type="pypi">yunchang</remote-id>
+  </upstream>
+  <use>
+    <flag name="flash-attn">Enable FlashAttention support</flag>
+  </use>
+</pkgmetadata>

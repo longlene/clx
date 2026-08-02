@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="double-precision">Use double-precision floating point for large worlds</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">erincatto/box3d</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Python server-side API SDK for LiveKit, the open-source WebRTC
+    infrastructure platform. Provides token generation, room and
+    participant management, and egress/ingress control via the LiveKit
+    server API and protobuf-based protocol.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">livekit/python-sdks</remote-id>
+    <remote-id type="pypi">livekit-api</remote-id>
+  </upstream>
+</pkgmetadata>

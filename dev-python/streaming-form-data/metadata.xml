@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    streaming-form-data provides a streaming, fast parser for multipart/form-data
+    encoded data, implemented in Cython. It supports multiple target types including
+    file, memory, S3, and CSV targets.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">siddhantgoel/streaming-form-data</remote-id>
+    <remote-id type="pypi">streaming-form-data</remote-id>
+  </upstream>
+</pkgmetadata>

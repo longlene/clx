@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  PyMiniRacer provides a minimal, modern Python bridge to V8, Google's
+  JavaScript engine. It ships a pre-built libmini_racer shared library
+  embedding V8 for use on Linux (glibc and musl variants).
+  </longdescription>
+  <upstream>
+    <remote-id type="github">sqreen/PyMiniRacer</remote-id>
+    <remote-id type="pypi">py-mini-racer</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    OpenTelemetry instrumentation for the httpx HTTP client library. Provides
+    automatic tracing of HTTP requests made with httpx sync and async clients.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">open-telemetry/opentelemetry-python-contrib</remote-id>
+    <remote-id type="pypi">opentelemetry-instrumentation-httpx</remote-id>
+  </upstream>
+</pkgmetadata>

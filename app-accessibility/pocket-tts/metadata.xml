@@ -5,6 +5,10 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="audio">Enable audio file I/O via soundfile</flag>
+    <flag name="quantize">Enable model quantization via torchao</flag>
+  </use>
   <upstream>
     <remote-id type="github">kyutai-labs/pocket-tts</remote-id>
   </upstream>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Merry is a Python library that simplifies error handling using decorators.
+    It allows centralizing exception handling logic outside of business code,
+    making error management cleaner and more reusable.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">miguelgrinberg/merry</remote-id>
+    <remote-id type="pypi">merry</remote-id>
+  </upstream>
+</pkgmetadata>

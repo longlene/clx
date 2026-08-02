@@ -24,7 +24,7 @@ S="${WORKDIR}"/tree-${EGIT_COMMIT}
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/abseil-py-0.6.1[${PYTHON_USEDEP}]
+	>=dev-python/absl-py-0.6.1[${PYTHON_USEDEP}]
 	>=dev-python/attrs-18.2.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.11.2[${PYTHON_USEDEP}]

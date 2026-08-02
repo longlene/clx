@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Vibe-Trading is a personal AI trading agent that uses natural language to
+    drive finance research, strategy backtesting, and live/paper trading across
+    stocks, crypto, and futures markets. It integrates multiple data sources and
+    LLM backends via LangChain/LangGraph.
+  </longdescription>
+  <use>
+    <flag name="ashare">Enable A-share data via BaoStock TCP protocol</flag>
+    <flag name="deepseek">Enable DeepSeek LLM backend via langchain-deepseek</flag>
+    <flag name="harmonic">Enable harmonic pattern analysis via pyharmonics</flag>
+    <flag name="ibkr">Enable Interactive Brokers live trading via ib_async</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">HKUDS/Vibe-Trading</remote-id>
+    <remote-id type="pypi">vibe-trading-ai</remote-id>
+  </upstream>
+</pkgmetadata>

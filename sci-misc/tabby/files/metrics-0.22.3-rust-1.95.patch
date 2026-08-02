@@ -1,0 +1,16 @@
+rust >= 1.95 rejects lifetime-extending raw pointer casts of trait
+objects (https://github.com/rust-lang/rust/issues/141402); erase the
+lifetime explicitly before casting.
+--- a/src/recorder/mod.rs
++++ b/src/recorder/mod.rs
+@@ -72,7 +72,9 @@
+         // SAFETY: While we take a lifetime-less pointer to the given reference, the reference we
+         // derive _from_ the pointer is never given a lifetime that exceeds the lifetime of the
+         // input reference.
+-        let recorder_ptr = unsafe { NonNull::new_unchecked(recorder as *const _ as *mut _) };
++        let recorder: &'static dyn Recorder = unsafe { core::mem::transmute(recorder) };
++        let recorder_ptr =
++            unsafe { NonNull::new_unchecked(recorder as *const dyn Recorder as *mut _) };
+
+         LOCAL_RECORDER.with(|local_recorder| {
+             local_recorder.set(Some(recorder_ptr));

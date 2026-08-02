@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Stem is a Python controller library that allows applications to interact
+    with Tor, providing an interface to Tor's control protocol.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">stem</remote-id>
+  </upstream>
+</pkgmetadata>

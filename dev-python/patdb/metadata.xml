@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    patdb is a TUI debugger for Python built on top of ptpython, providing
+    a snappy and visually appealing debugging experience in the terminal.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">patrick-kidger/patdb</remote-id>
+    <remote-id type="pypi">patdb</remote-id>
+  </upstream>
+</pkgmetadata>

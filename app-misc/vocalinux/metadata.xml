@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">jatinkrmalik/vocalinux</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    A GTK tray application that transcribes speech to text system-wide on
+    Linux via a global hotkey, using offline Vosk or whisper.cpp speech
+    recognition backends with optional GPU-accelerated OpenAI Whisper and
+    ONNX Runtime voice-activity detection.
+  </longdescription>
+  <use>
+    <flag name="dev">Include development tooling (tests, linters)</flag>
+    <flag name="whisper">Add OpenAI Whisper support for additional speech recognition</flag>
+    <flag name="vad">Add voice activity detection via ONNX Runtime</flag>
+  </use>
+</pkgmetadata>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Pon is a JIT and ahead-of-time native compiler and runtime for
+    Python 3.14, implemented in Rust on top of Cranelift.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">can1357/pon</remote-id>
+  </upstream>
+</pkgmetadata>

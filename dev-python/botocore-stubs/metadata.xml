@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Type annotations and code completion stubs for botocore, generated
+    with mypy-boto3-builder. Supports mypy, pyright, and VSCode IntelliSense.
+  </longdescription>
+  <use>
+    <flag name="botocore">Pull in dev-python/botocore at runtime</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">youtype/botocore-stubs</remote-id>
+    <remote-id type="pypi">botocore-stubs</remote-id>
+  </upstream>
+</pkgmetadata>

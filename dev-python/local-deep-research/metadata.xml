@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A self-contained AI research assistant capable of performing deep, iterative
+    analysis on any topic using LLMs and web searches. It features a web UI,
+    MCP server support, and can work with local or cloud LLM providers
+    including Ollama, OpenAI, Anthropic, and others.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">local-deep-research</remote-id>
+    <remote-id type="github">LearningCircuit/local-deep-research</remote-id>
+  </upstream>
+</pkgmetadata>

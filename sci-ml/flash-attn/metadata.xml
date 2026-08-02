@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="cuda">Build CUDA kernels (NVIDIA GPU support)</flag>
+    <flag name="rocm">Build ROCm kernels (AMD GPU support)</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">Dao-AILab/flash-attention</remote-id>
+    <remote-id type="pypi">flash-attn</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -5,6 +5,9 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="uring">Enable io_uring support via <pkg>sys-libs/liburing</pkg></flag>
+  </use>
   <upstream>
     <remote-id type="github">alibaba/yalantinglibs</remote-id>
   </upstream>

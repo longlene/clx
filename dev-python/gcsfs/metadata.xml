@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>maintainer-needed@gentoo.org</email>
+    <name>Maintainer Needed</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="pypi">gcsfs</remote-id>
+    <remote-id type="github">fsspec/gcsfs</remote-id>
+  </upstream>
+  <use>
+    <flag name="crc">Enable CRC validation via <pkg>dev-python/crcmod</pkg></flag>
+  </use>
+</pkgmetadata>

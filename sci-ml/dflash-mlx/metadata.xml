@@ -6,9 +6,9 @@
     <name>loong0</name>
   </maintainer>
   <use>
-    <flag name="charts">Enable benchmark chart generation via dev-python/matplotlib</flag>
+    <flag name="bench">Enable benchmark dependencies via sci-ml/datasets</flag>
   </use>
   <upstream>
-    <remote-id type="github">Aryagm/dflash-mlx</remote-id>
+    <remote-id type="github">bstnxbt/dflash-mlx</remote-id>
   </upstream>
 </pkgmetadata>

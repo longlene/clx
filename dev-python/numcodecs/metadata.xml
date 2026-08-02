@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Numcodecs is a Python package providing buffer compression and
+    transformation codecs for use in data storage and communication. It
+    includes Blosc (with lz4, zstd, zlib), gzip, bz2, lzma, zstd, lz4,
+    fletcher32, crc32c, msgpack, and other codecs, primarily for use with
+    the Zarr array storage library.
+  </longdescription>
+  <use>
+    <flag name="crc32c">Enable crc32c checksum codec via dev-python/crc32c</flag>
+    <flag name="google-crc32c">Enable Google's crc32c implementation</flag>
+    <flag name="msgpack">Enable msgpack serialization codec</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">zarr-developers/numcodecs</remote-id>
+    <remote-id type="pypi">numcodecs</remote-id>
+  </upstream>
+</pkgmetadata>

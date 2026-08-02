@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    xrouter-llm is a prompt-aware LLM routing service that predicts which
+    language models can successfully complete a given request, then selects
+    the cheapest capable model. Uses Item Response Theory (IRT) models
+    trained on benchmark data to make routing decisions.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">xorbitsai/xrouter-llm</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ATLAS is an AI assistant CLI that implements Adaptive Test-time Learning
+    and Autonomous Specialization, providing an interactive REPL interface
+    that communicates with local inference services.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">itigges22/ATLAS</remote-id>
+  </upstream>
+</pkgmetadata>

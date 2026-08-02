@@ -1,0 +1,61 @@
+--- a/cmake/Dependencies.cmake	2026-05-04 07:00:16.000000000 -0700
++++ b/cmake/Dependencies.cmake	2026-06-22 16:38:19.560990693 -0700
+@@ -2,48 +2,17 @@
+ # Dependencies
+ # -----------------------------------------------------------------------------
+ 
+-# 1. PCRE2
+-# We force PCRE2 to be built as a static library regardless of the global BUILD_SHARED_LIBS
+-set(ORIGINAL_BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS})
+-set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build static PCRE2" FORCE)
+-set(PCRE2_BUILD_PCRE2_8 ON CACHE BOOL "Build 8-bit PCRE2" FORCE)
+-set(PCRE2_BUILD_PCRE2_16 ON CACHE BOOL "Build 16-bit PCRE2" FORCE)
+-set(PCRE2_BUILD_TESTS OFF CACHE BOOL "Disable PCRE2 tests" FORCE)
+-set(PCRE2_BUILD_GREP OFF CACHE BOOL "Disable PCRE2 grep" FORCE)
+-set(PCRE2_BUILD_PCRE2GREP OFF CACHE BOOL "Disable pcre2grep executable" FORCE)
+-add_subdirectory(vendor/pcre2)
+-# Restore the global BUILD_SHARED_LIBS setting for subsequent targets (like ggml and cosyvoice)
+-set(BUILD_SHARED_LIBS ${ORIGINAL_BUILD_SHARED_LIBS} CACHE BOOL "Build shared libraries" FORCE)
++# 1. PCRE2 (system)
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(PCRE2_8 REQUIRED IMPORTED_TARGET libpcre2-8)
++pkg_check_modules(PCRE2_16 REQUIRED IMPORTED_TARGET libpcre2-16)
++add_library(pcre2-8 ALIAS PkgConfig::PCRE2_8)
++add_library(pcre2-16 ALIAS PkgConfig::PCRE2_16)
+ 
+-# 2. GGML
+-if(NOT EXISTS "${GGML_SOURCE_DIR}/CMakeLists.txt")
+-    message(STATUS "ggml not found in ${GGML_SOURCE_DIR}. Cloning from https://github.com/ggml-org/ggml.git...")
+-    execute_process(
+-        COMMAND git clone --depth=1 https://github.com/ggml-org/ggml.git "${GGML_SOURCE_DIR}"
+-    )
+-endif()
+-
+-# Apply local patches to ggml (idempotent — skips if already applied).
+-set(GGML_PAD_PATCH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/patches/ggml-metal-pad-beg.patch")
+-if(APPLE AND EXISTS "${GGML_PAD_PATCH}")
+-    execute_process(
+-        COMMAND git apply --check "${GGML_PAD_PATCH}"
+-        WORKING_DIRECTORY "${GGML_SOURCE_DIR}"
+-        RESULT_VARIABLE PATCH_CHECK_RESULT
+-        OUTPUT_QUIET ERROR_QUIET
+-    )
+-    if(PATCH_CHECK_RESULT EQUAL 0)
+-        message(STATUS "Applying ggml-metal PAD beg-padding patch...")
+-        execute_process(
+-            COMMAND git apply "${GGML_PAD_PATCH}"
+-            WORKING_DIRECTORY "${GGML_SOURCE_DIR}"
+-        )
+-    else()
+-        message(STATUS "ggml-metal PAD beg-padding patch already applied or not applicable — skipping.")
+-    endif()
+-endif()
+-
+-add_subdirectory("${GGML_SOURCE_DIR}" "${CMAKE_BINARY_DIR}/_deps/ggml-build")
++# 2. GGML (system)
++find_package(ggml REQUIRED)
++add_library(ggml ALIAS ggml::ggml)
++add_library(ggml-base ALIAS ggml::ggml-base)
+ 
+ function(cosyvoice_fetch_github_latest_tag REPO OUT_TAG)
+   string(REPLACE "/" "_" _repo_id "${REPO}")

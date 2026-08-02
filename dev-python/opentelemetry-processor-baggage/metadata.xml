@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    OpenTelemetry span processor that propagates baggage entries as span
+    attributes, allowing baggage to flow through the trace pipeline.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">open-telemetry/opentelemetry-python-contrib</remote-id>
+    <remote-id type="pypi">opentelemetry-processor-baggage</remote-id>
+  </upstream>
+</pkgmetadata>

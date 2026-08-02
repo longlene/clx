@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    NoneBot2 is a modern, cross-platform asynchronous chatbot framework for
+    Python. It supports multiple messaging protocols via adapters and provides
+    a plugin system, dependency injection, and event-driven architecture.
+  </longdescription>
+  <use>
+    <flag name="aiohttp">Enable the aiohttp HTTP client adapter</flag>
+    <flag name="fastapi">Enable the FastAPI ASGI server adapter</flag>
+<flag name="quart">Enable the Quart ASGI server adapter</flag>
+    <flag name="websockets">Enable the websockets transport adapter</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">nonebot/nonebot2</remote-id>
+    <remote-id type="pypi">nonebot2</remote-id>
+  </upstream>
+</pkgmetadata>

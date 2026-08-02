@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  marshmallow-peewee provides integration between the Peewee ORM and
+  the marshmallow serialization/deserialization library, enabling easy
+  schema generation and data validation for Peewee models.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">klen/marshmallow-peewee</remote-id>
+    <remote-id type="pypi">marshmallow-peewee</remote-id>
+  </upstream>
+</pkgmetadata>

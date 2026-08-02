@@ -20,7 +20,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="test"
 
-# TODO: dev-python/webdataset is not yet packaged.
 RDEPEND="
 	>=sci-ml/pytorch-2.4[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/torchaudio-2.4[${PYTHON_SINGLE_USEDEP}]
@@ -32,6 +31,7 @@ RDEPEND="
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/pydub[${PYTHON_USEDEP}]
 		dev-python/soundfile[${PYTHON_USEDEP}]
-		sci-ml/tensorboardX[${PYTHON_USEDEP}]
+		dev-python/webdataset[${PYTHON_USEDEP}]
+		sci-ml/tensorboardx[${PYTHON_USEDEP}]
 	')
 "

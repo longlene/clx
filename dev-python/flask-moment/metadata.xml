@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Flask-Moment integrates the moment.js library into Flask templates,
+    providing easy formatting of dates and times with timezone support
+    and human-readable relative time display.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">miguelgrinberg/Flask-Moment</remote-id>
+    <remote-id type="pypi">Flask-Moment</remote-id>
+  </upstream>
+</pkgmetadata>

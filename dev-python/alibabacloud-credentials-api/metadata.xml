@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Alibaba Cloud credentials API SPI (Service Provider Interface) library for
+    Python. Provides the abstract interface definitions used by alibabacloud-credentials
+    and Alibaba Cloud gateway SDKs for credential provider implementations.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">aliyun/alibabacloud-gateway</remote-id>
+    <remote-id type="pypi">alibabacloud-credentials-api</remote-id>
+  </upstream>
+</pkgmetadata>

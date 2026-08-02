@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Python Materials Genomics (pymatgen) is a robust materials analysis code
+    that defines core object representations for structures and molecules with
+    support for many electronic structure codes. It is currently the core
+    analysis code powering the Materials Project.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">pymatgen</remote-id>
+    <remote-id type="github">materialsproject/pymatgen</remote-id>
+  </upstream>
+</pkgmetadata>

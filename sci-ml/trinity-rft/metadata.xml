@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Trinity-RFT is a general-purpose, flexible and scalable framework for
+    reinforcement fine-tuning (RFT) of large language models. It supports
+    multiple training backends (verl, megatron), inference engines (vllm,
+    sglang), and integrates with agentscope for multi-agent workflows.
+  </longdescription>
+  <use>
+    <flag name="agent">Enable agentscope multi-agent integration</flag>
+    <flag name="data">Enable data processing with py-data-juicer</flag>
+    <flag name="flash-attn">Enable Flash Attention 2 support</flag>
+    <flag name="megatron">Enable Megatron-Core distributed training backend</flag>
+    <flag name="mm">Enable multimodal (vision-language) support</flag>
+    <flag name="openjudge">Enable OpenJudge code evaluation support</flag>
+    <flag name="sglang">Enable SGLang inference engine backend</flag>
+    <flag name="vllm">Enable vLLM inference engine backend</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">agentscope-ai/Trinity-RFT</remote-id>
+    <remote-id type="pypi">trinity-rft</remote-id>
+  </upstream>
+</pkgmetadata>

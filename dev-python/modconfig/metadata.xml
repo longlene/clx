@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  modconfig is a simple hierarchic configuration manager for Python applications,
+  supporting environment variable overrides and multiple configuration sources.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">klen/modconfig</remote-id>
+    <remote-id type="pypi">modconfig</remote-id>
+  </upstream>
+</pkgmetadata>

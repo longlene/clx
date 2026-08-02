@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    workflow-use is an RPA 2.0 tool built on browser-use that lets you record,
+    edit, and replay deterministic browser workflows. It provides a FastAPI
+    server, MCP server, and CLI interface for managing and running automation
+    workflows with optional AI-assisted fuzzy matching via FAISS.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">browser-use/workflow-use</remote-id>
+  </upstream>
+</pkgmetadata>

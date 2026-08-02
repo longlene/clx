@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    cellium is a text-mode UI library for Erlang/OTP that provides terminal
+    user interface primitives. It enables building interactive TUI applications
+    in Erlang, with support for theming via CSS-style assets.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">wmealing/cellium</remote-id>
+  </upstream>
+</pkgmetadata>

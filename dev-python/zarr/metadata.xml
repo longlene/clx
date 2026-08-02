@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Zarr is a Python package for storing N-dimensional arrays in a chunked,
+    compressed format. It supports multiple storage backends (local filesystem,
+    cloud object stores, zip files, and in-memory), codec pipelines, and is
+    compatible with the Zarr v2 and v3 specifications.
+  </longdescription>
+  <use>
+    <flag name="cli">Install the zarr command-line interface (requires typer)</flag>
+    <flag name="remote">Enable remote storage support via fsspec and obstore</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">zarr-developers/zarr-python</remote-id>
+    <remote-id type="pypi">zarr</remote-id>
+  </upstream>
+</pkgmetadata>

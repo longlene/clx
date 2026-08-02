@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="curio">Enable curio async backend support</flag>
+    <flag name="trio">Enable trio async backend support</flag>
+    <flag name="uvloop">Enable uvloop event loop support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">klen/pytest-aio</remote-id>
+    <remote-id type="pypi">pytest-aio</remote-id>
+  </upstream>
+</pkgmetadata>

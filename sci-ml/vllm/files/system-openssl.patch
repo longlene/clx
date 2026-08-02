@@ -1,0 +1,10 @@
+--- a/tools/build_rust.py
++++ b/tools/build_rust.py
+@@ -21,7 +21,6 @@
+             target="vllm.vllm-rs",
+             path="rust/src/cmd/Cargo.toml",
+             args=["--bin", "vllm-rs"],
+-            features=["native-tls-vendored"],
+             binding=Binding.Exec,
+             optional=optional,
+         ),

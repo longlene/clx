@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+  The Oracle Cloud Infrastructure (OCI) Python SDK provides Python APIs
+  for interacting with OCI services including Compute, Networking, Object
+  Storage, Identity and Access Management, and many more.
+  </longdescription>
+  <use>
+    <flag name="adk">Enable Oracle AI Agent Developer Kit dependencies (pydantic, mcp, rich)</flag>
+  </use>
+  <upstream>
+    <remote-id type="pypi">oci</remote-id>
+  </upstream>
+</pkgmetadata>

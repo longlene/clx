@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="cuda">Build CUDA extension (NVIDIA GPU support)</flag>
+    <flag name="rocm">Build ROCm/HIP extension (AMD GPU support)</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">fzyzcjy/torch_memory_saver</remote-id>
+    <remote-id type="pypi">torch_memory_saver</remote-id>
+  </upstream>
+</pkgmetadata>

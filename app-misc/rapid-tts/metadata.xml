@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    RapidTTS is a lightweight text-to-speech framework for fast and high-quality
+    local speech synthesis. It supports Kokoro ONNX, MeloTTS ONNX, and MOSS Nano
+    ONNX backends, with Chinese, English, and mixed text capabilities.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">RapidAI/RapidTTS</remote-id>
+    <remote-id type="pypi">rapidtts</remote-id>
+  </upstream>
+</pkgmetadata>

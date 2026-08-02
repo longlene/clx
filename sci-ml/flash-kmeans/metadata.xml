@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    flash-kmeans provides fast batched K-Means clustering using Triton GPU
+    kernels, targeting deep learning workloads with PyTorch integration.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">svg-project/flash-kmeans</remote-id>
+    <remote-id type="pypi">flash-kmeans</remote-id>
+  </upstream>
+</pkgmetadata>

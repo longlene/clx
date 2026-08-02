@@ -1,0 +1,91 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -44,58 +44,10 @@
+ set(THREADS_PREFER_PTHREAD_FLAG ON)
+ find_package(Threads REQUIRED)
+ 
+-if (NOT EXISTS "${GGML_PATH}/CMakeLists.txt")
+-    message(FATAL_ERROR "ggml not found at ${GGML_PATH}. Please init submodules.")
+-endif()
+-
+-# Note: Pass options to ggml before adding the directory
+-if (RS_CUDA)
+-    set(GGML_CUDA ON CACHE BOOL "ggml: enable CUDA" FORCE)
+-endif()
+-
+-if (RS_METAL AND APPLE)
+-    set(GGML_METAL ON CACHE BOOL "ggml: enable Metal" FORCE)
+-endif()
+-
+-if (RS_VULKAN)
+-    set(GGML_VULKAN ON CACHE BOOL "ggml: enable Vulkan" FORCE)
+-endif()
+-
+-if (RS_CANN)
+-    set(GGML_CANN ON CACHE BOOL "ggml: enable CANN" FORCE)
+-endif()
+-
+-if (RS_OPENCL)
+-    set(GGML_OPENCL ON CACHE BOOL "ggml: enable OpenCL" FORCE)
+-endif()
+-
+-if (RS_WEBGPU)
+-    set(GGML_WEBGPU ON CACHE BOOL "ggml: enable WebGPU" FORCE)
+-endif()
+-
+-# Override ggml's install directories so all shared libraries end up
+-# in the same directory as the pybind module (required for wheel packaging).
+-# Without this, GNUInstallDirs puts backends in lib/ and the pybind in .
+-if (RS_ENABLE_PYTHON)
+-    set(CMAKE_INSTALL_LIBDIR "." CACHE PATH "lib install dir" FORCE)
+-    set(CMAKE_INSTALL_BINDIR "." CACHE PATH "bin install dir" FORCE)
+-    set(CMAKE_INSTALL_INCLUDEDIR "include" CACHE PATH "header install dir" FORCE)
+-    # Disable library SONAME versioning for Python wheel packaging.
+-    # Versioned sonames (e.g., libfoo.so.1) confuse auditwheel/delocate
+-    # because the symlink .so.1 -> .so.1.0.0 is not preserved in the wheel.
+-    set(GGML_VERSION_MAJOR 0 CACHE STRING "" FORCE)
+-    set(GGML_VERSION_MINOR 10 CACHE STRING "" FORCE)
+-    set(GGML_VERSION_PATCH 0 CACHE STRING "" FORCE)
+-    set(GGML_VERSION "0.10.0" CACHE STRING "" FORCE)
+-    set(CMAKE_PLATFORM_NO_VERSIONED_SONAME ON)
+-
+-    # Python wheels keep all shared libraries next to the extension module.
+-    set(RS_RPATH "${RS_LIBRARY_INSTALL_RPATH}")
+-endif()
+-
+-add_compile_definitions(GGML_MAX_NAME=128)
+-
+-add_subdirectory(${GGML_PATH} ggml)
++# Use installed ggml; GGML_PATH still provides private headers (e.g. ggml-backend-impl.h).
++find_package(ggml REQUIRED)
++add_library(ggml ALIAS ggml::ggml)
++add_library(ggml-base ALIAS ggml::ggml-base)
+ 
+ # Suppress implicit integer-to-enum and pointer-to-id conversion warnings in
+ # third-party ggml Metal code (MTLGPUFamilyMetal*_GGML are defined as integers).
+@@ -428,8 +380,8 @@
+ if (NOT RS_ENABLE_PYTHON)
+     install(TARGETS rapidspeech-core
+             RUNTIME DESTINATION bin
+-            LIBRARY DESTINATION lib
+-            ARCHIVE DESTINATION lib
++            LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++            ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     )
+ endif()
+ 
+@@ -726,3 +678,14 @@
+         endif()
+     endforeach()
+ endif()
++
++message(STATUS "<<< Gentoo configuration >>>
++Build type      ${CMAKE_BUILD_TYPE}
++Install path    ${CMAKE_INSTALL_PREFIX}
++Compiler flags:
++C               ${CMAKE_C_FLAGS}
++C++             ${CMAKE_CXX_FLAGS}
++Linker flags:
++Executable      ${CMAKE_EXE_LINKER_FLAGS}
++Module          ${CMAKE_MODULE_LINKER_FLAGS}
++Shared          ${CMAKE_SHARED_LINKER_FLAGS}\n")

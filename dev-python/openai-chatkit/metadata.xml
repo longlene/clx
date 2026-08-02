@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    chatkit-python is a backend SDK for building ChatKit-powered applications,
+    providing an agent-based framework built on top of OpenAI Agents and
+    FastAPI-compatible server components.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">openai/chatkit-python</remote-id>
+    <remote-id type="pypi">openai-chatkit</remote-id>
+  </upstream>
+</pkgmetadata>

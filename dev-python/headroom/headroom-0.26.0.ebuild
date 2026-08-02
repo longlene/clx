@@ -571,7 +571,7 @@ KEYWORDS="~amd64"
 RESTRICT="test"
 
 RDEPEND="
-	>=sci-misc/litellm-1.86.2[${PYTHON_SINGLE_USEDEP}]
+	>=dev-python/litellm-1.86.2[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/click-8.1.0[${PYTHON_USEDEP}]
 		>=dev-python/opentelemetry-api-1.24.0[${PYTHON_USEDEP}]

@@ -46,7 +46,7 @@ RDEPEND="
 		dev-python/umap-learn[${PYTHON_USEDEP}]
 		>=dev-python/editdistance-0.5.2[${PYTHON_USEDEP}]
 		sci-ml/torch-complex[${PYTHON_USEDEP}]
-		sci-ml/tensorboardX[${PYTHON_USEDEP}]
+		sci-ml/tensorboardx[${PYTHON_USEDEP}]
 		dev-python/oss2[${PYTHON_USEDEP}]
 	')
 "

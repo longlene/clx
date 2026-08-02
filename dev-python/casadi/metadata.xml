@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>loong0@example.com</email>
+    <name>Loong</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">casadi/casadi</remote-id>
+    <remote-id type="pypi">casadi</remote-id>
+  </upstream>
+  <longdescription>
+    CasADi is a symbolic framework for automatic differentiation and numeric
+    optimization. It supports C, C++, Python, MATLAB/Octave, and Julia interfaces.
+  </longdescription>
+</pkgmetadata>

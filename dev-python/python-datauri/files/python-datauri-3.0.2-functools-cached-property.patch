@@ -1,0 +1,17 @@
+--- a/datauri/__init__.py
++++ b/datauri/__init__.py
+@@ -1,6 +1,7 @@
+ import mimetypes
+ import re
+ import sys
++from functools import cached_property
+ import textwrap
+ from base64 import b64decode as decode64
+ from base64 import b64encode as encode64
+@@ -13,8 +14,6 @@ else:
+
+ from urllib.parse import quote, unquote
+
+-from cached_property import cached_property
+-
+ from .exceptions import InvalidCharset, InvalidDataURI, InvalidMimeType

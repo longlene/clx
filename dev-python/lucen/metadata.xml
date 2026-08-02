@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Lucen parallelizes ordinary Python loops marked with a pair of pragma
+    comments, guaranteeing bit-identical results to the sequential version.
+    The pure-Python implementation is complete on its own; an optional
+    PyO3-based Rust extension accelerates write-set audits and reduction
+    folds, falling back transparently to pure Python when absent.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">fcmv/lucen</remote-id>
+  </upstream>
+</pkgmetadata>
