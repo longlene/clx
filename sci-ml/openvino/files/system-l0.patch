@@ -1,3 +1,14 @@
+diff -Nur a/src/plugins/intel_npu/src/utils/src/vm/CMakeLists.txt b/src/plugins/intel_npu/src/utils/src/vm/CMakeLists.txt
+--- a/src/plugins/intel_npu/src/utils/src/vm/CMakeLists.txt	2026-02-18 07:33:17.000000000 -0800
++++ b/src/plugins/intel_npu/src/utils/src/vm/CMakeLists.txt	2026-08-06 15:00:00.000000000 -0700
+@@ -34,4 +34,6 @@
+ # headers are copied into the build directory by prepare_ze_headers; without
+ # this explicit dependency a parallel build may compile ${TARGET_NAME} before
+ # the headers are copied, causing a missing-header error
+-add_dependencies(${TARGET_NAME} prepare_ze_headers)
++if(TARGET prepare_ze_headers)
++    add_dependencies(${TARGET_NAME} prepare_ze_headers)
++endif()
 diff -Nur a/thirdparty/dependencies.cmake b/thirdparty/dependencies.cmake
 --- a/thirdparty/dependencies.cmake	2025-08-26 05:56:24.000000000 -0700
 +++ b/thirdparty/dependencies.cmake	2025-09-05 10:03:17.544223091 -0700

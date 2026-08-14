@@ -1,0 +1,18 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1463,13 +1463,13 @@
+ # inductor templates, and symlink-replacement copies.  Previously handled
+ # by setup.py; now consolidated here for both scikit-build-core and
+ # setuptools builds.
+-include(cmake/FileMirroring.cmake)
++# include(cmake/FileMirroring.cmake) # Gentoo: sci-ml/caffe2 ships libtorch only; the torch Python package (and its generated/mirrored files) is installed by sci-ml/pytorch.
+ 
+ # Package data: install non-Python data files (type stubs, templates,
+ # headers, etc.) into the torch package.  Previously declared via
+ # setup.py package_data; now consolidated here for both scikit-build-core
+ # and setuptools builds.
+-include(cmake/PackageData.cmake)
++# include(cmake/PackageData.cmake) # Gentoo: same as above -- these install non-Python torch package data under CMAKE_INSTALL_PREFIX, unwanted for the libtorch-only build.
+ 
+ include(cmake/PostBuildSteps.cmake)
+ 

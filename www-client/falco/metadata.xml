@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="real-http2">Enable real HTTP/2 support via the h2 crate (multiplexed streams, HPACK)</flag>
+    <flag name="real-tls">Use real TLS certificate validation (rustls + webpki-roots) instead of a stub verifier</flag>
+    <flag name="real-video">Enable H.264 video decoding via openh264</flag>
+    <flag name="real-webgl">Enable WebGL support via an OpenGL context (glow)</flag>
+    <flag name="sandbox">Enable process sandboxing (seccomp-bpf, capabilities)</flag>
+    <flag name="tls">Enable TLS support for outgoing HTTP requests</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">poxk/Falco</remote-id>
+  </upstream>
+</pkgmetadata>

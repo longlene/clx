@@ -1,0 +1,345 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	ab_glyph@0.2.32
+	ab_glyph_rasterizer@0.1.10
+	adler2@2.0.1
+	ahash@0.8.12
+	aligned-vec@0.6.4
+	aligned@0.4.3
+	allocator-api2@0.2.21
+	anyhow@1.0.104
+	arbitrary@1.4.2
+	arg_enum_proc_macro@0.3.4
+	arrayvec@0.7.8
+	as-slice@0.2.1
+	atomic-waker@1.1.2
+	autocfg@1.5.1
+	av-scenechange@0.14.1
+	av1-grain@0.2.5
+	avif-serialize@0.8.9
+	aws-lc-rs@1.17.3
+	aws-lc-sys@0.43.0
+	base64@0.22.1
+	bit_field@0.10.3
+	bitflags@1.3.2
+	bitflags@2.13.1
+	bitstream-io@4.10.0
+	bitvec-nom2@0.2.1
+	bitvec@1.1.1
+	built@0.8.1
+	bumpalo@3.20.3
+	bytemuck@1.25.2
+	byteorder-lite@0.1.0
+	bytes@1.12.1
+	cc@1.4.0
+	cfg-if@1.0.4
+	chrono@0.4.45
+	cmake@0.1.58
+	color_quant@1.1.0
+	crc32fast@1.5.0
+	crossbeam-deque@0.8.7
+	crossbeam-epoch@0.9.20
+	crossbeam-utils@0.8.22
+	crunchy@0.2.4
+	displaydoc@0.2.7
+	dlib@0.5.3
+	downcast-rs@1.2.1
+	dunce@1.0.5
+	either@1.17.0
+	equator-macro@0.4.2
+	equator@0.4.2
+	equivalent@1.0.2
+	errno@0.3.14
+	exr@1.74.2
+	fastrand@2.5.0
+	fax@0.2.7
+	fdeflate@0.3.7
+	find-msvc-tools@0.1.9
+	flate2@1.1.9
+	fnv@1.0.7
+	form_urlencoded@1.2.2
+	fs_extra@1.3.0
+	funty@2.0.0
+	futures-channel@0.3.33
+	futures-core@0.3.33
+	futures-executor@0.3.33
+	futures-io@0.3.33
+	futures-macro@0.3.33
+	futures-sink@0.3.33
+	futures-task@0.3.33
+	futures-util@0.3.33
+	futures@0.3.33
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.3
+	gif@0.14.2
+	glow@0.16.0
+	h2@0.4.15
+	half@2.7.1
+	hashbrown@0.14.5
+	hashbrown@0.17.1
+	heck@0.5.0
+	http@1.5.0
+	icu_collections@2.2.0
+	icu_locale_core@2.2.0
+	icu_normalizer@2.2.0
+	icu_normalizer_data@2.2.0
+	icu_properties@2.2.0
+	icu_properties_data@2.2.0
+	icu_provider@2.2.0
+	idna@1.1.0
+	idna_adapter@1.2.2
+	image-webp@0.2.4
+	image@0.25.10
+	imgref@1.12.2
+	indexmap@2.14.0
+	instant@0.1.13
+	interpolate_name@0.2.4
+	itertools@0.13.0
+	itertools@0.14.0
+	itoa@1.0.18
+	jobserver@0.1.35
+	js-sys@0.3.103
+	lazy_static@1.5.0
+	lebe@0.5.3
+	libc@0.2.189
+	libfuzzer-sys@0.4.13
+	libloading@0.8.9
+	libm@0.2.16
+	libredox@0.1.19
+	linux-raw-sys@0.12.1
+	litemap@0.8.2
+	lock_api@0.4.14
+	log@0.4.33
+	loop9@0.1.5
+	maybe-rayon@0.1.1
+	memchr@2.8.3
+	memoffset@0.6.5
+	minifb@0.27.0
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	mio@1.2.2
+	moxcms@0.8.1
+	nasm-rs@0.3.2
+	new_debug_unreachable@1.0.6
+	nix@0.24.3
+	no_std_io2@0.9.4
+	nom@7.1.3
+	nom@8.0.0
+	noop_proc_macro@0.3.0
+	num-bigint@0.4.8
+	num-complex@0.4.6
+	num-derive@0.4.2
+	num-integer@0.1.46
+	num-rational@0.4.2
+	num-traits@0.2.19
+	once_cell@1.21.4
+	openh264-sys2@0.7.1
+	openh264@0.7.2
+	orbclient@0.3.55
+	owned_ttf_parser@0.25.1
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
+	paste@1.0.15
+	pastey@0.1.1
+	percent-encoding@2.3.2
+	pico-args@0.5.0
+	pin-project-lite@0.2.17
+	pkg-config@0.3.33
+	plain@0.2.3
+	png@0.18.1
+	potential_utf@0.1.5
+	ppv-lite86@0.2.21
+	proc-macro2@1.0.107
+	profiling-procmacros@1.0.18
+	profiling@1.0.18
+	pulp-wasm-simd-flag@0.1.1
+	pulp@0.22.3
+	pxfm@0.1.30
+	quick-error@2.0.1
+	quote@1.0.47
+	r-efi@5.3.0
+	r-efi@6.0.0
+	radium@0.7.0
+	rand@0.8.7
+	rand@0.9.5
+	rand_chacha@0.3.1
+	rand_chacha@0.9.0
+	rand_core@0.6.4
+	rand_core@0.9.5
+	rasn-derive-impl@0.22.2
+	rasn-derive@0.22.2
+	rasn-pkix@0.22.2
+	rasn@0.22.2
+	rav1e@0.8.1
+	ravif@0.13.0
+	raw-cpuid@11.6.0
+	raw-window-handle@0.6.2
+	rayon-core@1.13.0
+	rayon@1.12.0
+	reborrow@0.5.5
+	redox_syscall@0.5.18
+	redox_syscall@0.9.1
+	rgb@0.8.53
+	ring@0.17.14
+	rustix@1.1.4
+	rustls-pki-types@1.15.1
+	rustls-webpki@0.103.13
+	rustls@0.23.43
+	rustversion@1.0.23
+	safe_arch@0.7.4
+	same-file@1.0.6
+	scoped-tls@1.0.1
+	scopeguard@1.2.0
+	sdl2-sys@0.38.0
+	sdl2@0.38.0
+	seccompiler@0.4.0
+	serde@1.0.229
+	serde_core@1.0.229
+	serde_derive@1.0.229
+	serde_json@1.0.151
+	shlex@2.0.1
+	signal-hook-registry@1.4.8
+	simd-adler32@0.3.10
+	simd_helpers@0.1.0
+	slab@0.4.12
+	slotmap@1.1.1
+	smallvec@1.15.2
+	snafu-derive@0.8.9
+	snafu@0.8.9
+	socket2@0.6.5
+	stable_deref_trait@1.2.1
+	subtle@2.6.1
+	syn@2.0.119
+	syn@3.0.3
+	synstructure@0.13.2
+	tap@1.0.1
+	tempfile@3.27.0
+	thiserror-impl@2.0.19
+	thiserror@2.0.19
+	tiff@0.11.3
+	tinystr@0.8.3
+	tokio-macros@2.7.2
+	tokio-rustls@0.26.4
+	tokio-util@0.7.19
+	tokio@1.53.1
+	tower-service@0.3.3
+	tracing-core@0.1.36
+	tracing@0.1.44
+	ttf-parser@0.25.1
+	unicode-ident@1.0.24
+	untrusted@0.9.0
+	ureq@2.12.1
+	url@2.5.8
+	utf8_iter@1.0.4
+	uuid@1.24.0
+	v_frame@0.3.9
+	version-compare@0.1.1
+	version_check@0.9.5
+	walkdir@2.5.0
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.4+wasi-0.2.12
+	wasm-bindgen-futures@0.4.76
+	wasm-bindgen-macro-support@0.2.126
+	wasm-bindgen-macro@0.2.126
+	wasm-bindgen-shared@0.2.126
+	wasm-bindgen@0.2.126
+	wayland-client@0.29.5
+	wayland-commons@0.29.5
+	wayland-cursor@0.29.5
+	wayland-protocols@0.29.5
+	wayland-scanner@0.29.5
+	wayland-sys@0.29.5
+	web-sys@0.3.103
+	webpki-roots@0.26.11
+	webpki-roots@1.0.9
+	weezl@0.1.12
+	wide@0.7.33
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.11
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-link@0.2.1
+	windows-sys@0.52.0
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	wit-bindgen@0.57.1
+	writeable@0.6.3
+	wyz@0.5.1
+	x11-dl@2.21.0
+	xcursor@0.3.11
+	xml-rs@0.8.28
+	y4m@0.8.0
+	yoke-derive@0.8.2
+	yoke@0.8.3
+	zerocopy-derive@0.8.55
+	zerocopy@0.8.55
+	zerofrom-derive@0.1.7
+	zerofrom@0.1.8
+	zeroize@1.9.0
+	zerotrie@0.2.4
+	zerovec-derive@0.11.3
+	zerovec@0.11.6
+	zmij@1.0.23
+	zune-core@0.5.1
+	zune-inflate@0.2.54
+	zune-jpeg@0.5.15
+"
+
+inherit cargo
+
+DESCRIPTION="Tiny browser engine written from scratch in Rust"
+HOMEPAGE="https://github.com/poxk/Falco"
+SRC_URI="
+	https://github.com/poxk/Falco/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+S="${WORKDIR}/Falco-${PV}"
+
+LICENSE="MIT Apache-2.0 BSD BSD-2 CDLA-Permissive-2.0 ISC UoI-NCSA Unicode-3.0 ZLIB"
+SLOT="0"
+KEYWORDS="~amd64"
+
+# real-video (openh264, default) compiles bundled C/asm source via the
+# openh264-sys2 crate's default "source" feature — no network fetch.
+IUSE="+real-tls +real-video +tls real-http2 real-webgl sandbox"
+
+DEPEND="
+	x11-libs/libxkbcommon
+	dev-libs/wayland
+"
+RDEPEND="${DEPEND}"
+BDEPEND="
+	dev-libs/wayland-protocols
+	virtual/pkgconfig
+	real-video? ( dev-lang/nasm )
+"
+
+src_compile() {
+	local myfeatures=(
+		$(usev tls)
+		$(usev real-tls)
+		$(usev real-video)
+		$(usev real-http2)
+		$(usev real-webgl)
+		$(usev sandbox)
+	)
+	cargo_src_compile --no-default-features --features "${myfeatures[*]}"
+}
+
+src_install() {
+	cargo_src_install
+	dodoc README.md
+}

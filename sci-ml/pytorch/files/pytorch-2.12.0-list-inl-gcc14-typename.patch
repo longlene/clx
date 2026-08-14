@@ -1,0 +1,33 @@
+GCC 14.3.1 (verified with CUDA 13.3's nvcc host-compiler invocation building
+sci-ml/sglang-kernel) rejects this line with:
+
+  error: need 'typename' before 'decltype (...)::difference_type' because
+  '...' is a dependent scope
+
+even though `typename` is already present. `impl_` is
+`c10::intrusive_ptr<c10::detail::ListImpl>` (a non-template class), so
+`decltype(impl_->list)` is a fully concrete type (std::vector<IValue>)
+reached through a syntactically-dependent path; GCC 14.3.1 appears to choke
+specifically on extracting a nested type from `decltype(member-expression)`
+here. A minimal, isolated repro (template class, out-of-line method
+definition, smart pointer with overloaded operator->, same construct) did
+NOT reproduce the failure, so this looks context-specific to this call site
+rather than a general GCC decltype bug.
+
+Sidestep it entirely by reaching the same type (identical semantics) via the
+already-established `c10::detail::ListImpl::list_type` alias that every
+other nested-type extraction in this same class already uses (see
+`internal_reference_type`, `iterator`, `size_type` in List.h), instead of
+`decltype(impl_->list)`.
+
+--- a/aten/src/ATen/core/List_inl.h
++++ b/aten/src/ATen/core/List_inl.h
+@@ -198,7 +198,7 @@
+ template<class T>
+ typename List<T>::internal_reference_type List<T>::operator[](size_type pos) {
+   static_cast<void>(impl_->list.at(pos)); // Throw the exception if it is out of range.
+-  return {impl_->list.begin() + static_cast<typename decltype(impl_->list)::difference_type>(pos)};
++  return {impl_->list.begin() + static_cast<typename c10::detail::ListImpl::list_type::difference_type>(pos)};
+ }
+
+ template<class T>

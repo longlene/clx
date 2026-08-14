@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    hfrs is the official command-line interface for the Hugging Face Hub,
+    built on top of the hf-hub Rust crate.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">huggingface/hf-hub</remote-id>
+  </upstream>
+</pkgmetadata>

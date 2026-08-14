@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    eredis_pool provides connection pooling for the eredis Redis client,
+    with consistent hashing support for sharding across multiple Redis
+    servers.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">silviucpp/eredis_pool</remote-id>
+  </upstream>
+</pkgmetadata>

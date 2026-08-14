@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Whitecap is a high-performance Erlang HTTP/1.1 server optimized for the
+    hot path of bidder-style traffic: short-lived requests, high concurrency,
+    and sub-millisecond targets. It is not a fully RFC 7230 conformant server.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">lpgauth/whitecap</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -8,9 +8,9 @@
          )
      else()
        target_include_directories(${TARGET_NAME} SYSTEM PRIVATE
-@@ -498,12 +498,6 @@
-   install(FILES ${extra_libs} DESTINATION ${extra_libs_location} COMPONENT openvino_tokenizers)
- endif()
+@@ -485,12 +485,6 @@
+         RUNTIME DESTINATION ${OPENVINO_TOKENIZERS_INSTALL_BINDIR} COMPONENT openvino_tokenizers)
+ 
  
 -install(FILES "${openvino_tokenizers_SOURCE_DIR}/LICENSE"
 -              "${openvino_tokenizers_SOURCE_DIR}/third-party-programs.txt"
@@ -18,6 +18,6 @@
 -        DESTINATION "docs/openvino_tokenizers"
 -        COMPONENT openvino_tokenizers_docs)
 -
- #
- # Cpack configuration
- #
+ # Install PDBs when building with OpenVINODeveloperPackage (if ov_install_pdb is available).
+ if(OpenVINODeveloperPackage_FOUND AND COMMAND ov_install_pdb)
+   ov_install_pdb(${TARGET_NAME})

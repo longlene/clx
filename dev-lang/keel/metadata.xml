@@ -5,6 +5,9 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="embed">Build with the embedding API for using keel as a library</flag>
+  </use>
   <upstream>
     <remote-id type="github">horacehoff/keel</remote-id>
   </upstream>

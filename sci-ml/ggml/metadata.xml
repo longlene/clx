@@ -5,6 +5,15 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="blis">Use <pkg>sci-libs/blis</pkg> as the BLAS backend</flag>
+    <flag name="flexiblas">Use <pkg>sci-libs/flexiblas</pkg> as the BLAS backend</flag>
+    <flag name="openblas">Use <pkg>sci-libs/openblas</pkg> as the BLAS backend</flag>
+    <flag name="openvino">Enable inference via <pkg>sci-ml/openvino</pkg></flag>
+    <flag name="rocm">Enable the ROCm/HIP GPU backend</flag>
+    <flag name="sycl">Enable the SYCL GPU backend</flag>
+    <flag name="wmma">Enable rocWMMA-accelerated flash attention (requires rocm)</flag>
+  </use>
   <upstream>
     <remote-id type="github">ggerganov/ggml</remote-id>
   </upstream>

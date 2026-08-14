@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Human Preference Score v2 (HPSv2) is a benchmark and scoring model for
+    evaluating how well text-to-image synthesis results match human
+    preferences.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">tgxs002/HPSv2</remote-id>
+    <remote-id type="pypi">hpsv2</remote-id>
+  </upstream>
+</pkgmetadata>

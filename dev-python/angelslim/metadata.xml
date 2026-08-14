@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    AngelSlim is a model compression toolkit for large language models,
+    supporting quantization, pruning, and speculative decoding to make
+    LLM deployment more efficient.
+  </longdescription>
+  <use>
+    <flag name="eval">Enable model evaluation via <pkg>sci-ml/lm-eval</pkg></flag>
+  </use>
+  <upstream>
+    <remote-id type="github">Tencent/AngelSlim</remote-id>
+  </upstream>
+</pkgmetadata>

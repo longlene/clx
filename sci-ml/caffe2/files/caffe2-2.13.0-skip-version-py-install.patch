@@ -1,0 +1,10 @@
+--- a/torch/CMakeLists.txt
++++ b/torch/CMakeLists.txt
+@@ -491,7 +491,7 @@
+ add_dependencies(torch_python gen_torch_version)
+ # version.py is gitignored (generated), so scikit-build-core won't include it
+ # via Python package collection. Install it explicitly via cmake instead.
+-install(FILES "${TORCH_SRC_DIR}/version.py" DESTINATION ".")
++# install(FILES "${TORCH_SRC_DIR}/version.py" DESTINATION ".") # Gentoo: would land at bare /usr/version.py under caffe2's CMAKE_INSTALL_PREFIX=/usr; caffe2's own src_install already copies+installs torch/version.py to the correct site-packages path.
+
+ # Skip building this library under MacOS, since it is currently failing to build on Mac

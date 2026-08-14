@@ -5,6 +5,10 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="l0">Enable the Intel NPU plugin via Level Zero</flag>
+    <flag name="contrib">Build additional plugins from openvino_contrib</flag>
+  </use>
   <upstream>
     <remote-id type="github">openvinotoolkit/openvino</remote-id>
   </upstream>

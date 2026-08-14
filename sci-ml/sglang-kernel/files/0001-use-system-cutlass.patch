@@ -1,0 +1,85 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -46,21 +46,12 @@
+ clear_cuda_arches(CMAKE_FLAG)
+ 
+ # Third Party repos
+-# cutlass
+-FetchContent_Declare(
+-    repo-cutlass
+-    URL      https://${GITHUB_ARTIFACTORY}/NVIDIA/cutlass/archive/57e3cfb47a2d9e0d46eb6335c3dc411498efa198.tar.gz
+-    URL_HASH SHA256=09237099a70f80bff1dc8bb80c843a674bb4fdcb46e43cc6993e711c5ca89bb5
+-)
+-FetchContent_Populate(repo-cutlass)
+ 
+-# fmt
+-FetchContent_Declare(
+-    repo-fmt
+-    URL      https://${GITHUB_ARTIFACTORY}/fmtlib/fmt/archive/553ec11ec06fbe0beebfbb45f9dc3c9eabd83d28.tar.gz
+-    URL_HASH SHA256=c314292789d28c3c3b420e75a7b2d1706f685f7fb63289128d46aeaea2c6be71
+-)
+-FetchContent_Populate(repo-fmt)
++# Use system dev-libs/cutlass; example headers installed to cutlass/examples/
++find_package(NvidiaCutlass REQUIRED)
++get_filename_component(_cutlass_prefix "${NvidiaCutlass_CMAKE_DIR}/../../.." ABSOLUTE)
++set(CUTLASS_EXAMPLES_DIR "${_cutlass_prefix}/include/cutlass/examples")
++unset(_cutlass_prefix)
+ 
+ # Triton kernel
+ FetchContent_Declare(
+@@ -308,12 +299,10 @@
+ )
+ 
+ set(INCLUDES
+-    ${repo-cutlass_SOURCE_DIR}/include
+-    ${repo-cutlass_SOURCE_DIR}/tools/util/include
+     ${repo-flashinfer_SOURCE_DIR}/include
+     ${repo-flashinfer_SOURCE_DIR}/csrc
+-    ${repo-cutlass_SOURCE_DIR}/examples/77_blackwell_fmha
+-    ${repo-cutlass_SOURCE_DIR}/examples/common
++    ${CUTLASS_EXAMPLES_DIR}/77_blackwell_fmha
++    ${CUTLASS_EXAMPLES_DIR}/common
+     ${repo-flash-attention_SOURCE_DIR}/csrc/flash_attn/src
+ )
+ 
+@@ -361,8 +350,8 @@
+     set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -D_GLIBCXX_USE_CXX11_ABI=1")
+ endif()
+ 
+-target_link_libraries(common_ops_sm90_build PRIVATE ${TORCH_LIBRARIES} c10 cuda cublas cublasLt)
+-target_link_libraries(common_ops_sm100_build PRIVATE ${TORCH_LIBRARIES} c10 cuda cublas cublasLt)
++target_link_libraries(common_ops_sm90_build PRIVATE ${TORCH_LIBRARIES} c10 cuda cublas cublasLt nvidia::cutlass::cutlass)
++target_link_libraries(common_ops_sm100_build PRIVATE ${TORCH_LIBRARIES} c10 cuda cublas cublasLt nvidia::cutlass::cutlass)
+ 
+ # sparse flash attention
+ target_compile_definitions(common_ops_sm90_build PRIVATE
+@@ -453,11 +442,9 @@
+ 
+     target_compile_options(flash_ops PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:${SGL_FLASH_KERNEL_CUDA_FLAGS}>)
+     target_include_directories(flash_ops PRIVATE
+-        ${repo-cutlass_SOURCE_DIR}/include
+-        ${repo-cutlass_SOURCE_DIR}/tools/util/include
+         ${repo-flash-attention_SOURCE_DIR}/hopper
+     )
+-    target_link_libraries(flash_ops PRIVATE ${TORCH_LIBRARIES} c10 cuda)
++    target_link_libraries(flash_ops PRIVATE ${TORCH_LIBRARIES} c10 cuda nvidia::cutlass::cutlass)
+ 
+     install(TARGETS flash_ops LIBRARY DESTINATION "sgl_kernel")
+     set(FLASH_OPS_COMPILE_DEFS
+@@ -527,15 +514,13 @@
+ Python_add_library(infllm_ops MODULE WITH_SOABI ${INFLLM_FLASH_SOURCES})
+ target_compile_options(infllm_ops PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:${INFLLM_FLASH_CUDA_FLAGS}>)
+ target_include_directories(infllm_ops PRIVATE
+-    ${repo-cutlass_SOURCE_DIR}/include
+-    ${repo-cutlass_SOURCE_DIR}/tools/util/include
+     ${CMAKE_CURRENT_LIST_DIR}/csrc/infllm_v2/flash_attn
+     ${CMAKE_CURRENT_LIST_DIR}/csrc/infllm_v2/flash_attn/src
+ )
+ # The pybind module binds functions taking at::Generator, which pulls in
+ # THPGeneratorClass from libtorch_python (not part of TORCH_LIBRARIES).
+ find_library(TORCH_PYTHON_LIBRARY torch_python PATHS "${TORCH_INSTALL_PREFIX}/lib" REQUIRED)
+-target_link_libraries(infllm_ops PRIVATE ${TORCH_LIBRARIES} ${TORCH_PYTHON_LIBRARY} c10 cuda)
++target_link_libraries(infllm_ops PRIVATE ${TORCH_LIBRARIES} ${TORCH_PYTHON_LIBRARY} c10 cuda nvidia::cutlass::cutlass)
+ install(TARGETS infllm_ops LIBRARY DESTINATION "sgl_kernel")
+ 
+ # Build spatial_ops as a separate, optional extension for green contexts

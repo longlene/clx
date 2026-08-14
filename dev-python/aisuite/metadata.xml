@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    aisuite provides a uniform Python interface across multiple LLM
+    providers (OpenAI, Anthropic, Gemini, and others), plus tool-calling
+    and agent helpers.
+
+    Packaged as a pinned commit snapshot rather than the latest PyPI
+    release: dev-python/openworker's pyproject.toml requires this exact
+    unreleased commit.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">andrewyng/aisuite</remote-id>
+  </upstream>
+</pkgmetadata>
