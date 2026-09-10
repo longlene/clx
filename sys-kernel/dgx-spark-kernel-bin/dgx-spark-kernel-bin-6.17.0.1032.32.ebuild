@@ -73,6 +73,14 @@ src_install() {
 }
 
 pkg_postinst() {
+	# Modules are copied in verbatim from the Ubuntu deb, not built by
+	# portage's usual kernel-module machinery, so nothing else generates
+	# modules.dep/modules.alias - without this, modprobe can't find modules
+	# that are physically present (silently missing the whole AF_ALG crypto
+	# stack that iwd needs, for example). Always (re)build the index for the
+	# version we just installed, whether or not it's the running kernel.
+	depmod -a "${MY_KVER}-nvidia"
+
 	elog "Installed the stock Ubuntu/NVIDIA signed kernel ${MY_KVER}-nvidia"
 	elog "(same binary DGX OS boots and validates on this hardware) to:"
 	elog "  /boot/vmlinuz-${MY_KVER}-nvidia"
