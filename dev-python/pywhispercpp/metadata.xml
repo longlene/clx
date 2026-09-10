@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Small pybind11-based Python bindings for whisper.cpp, OpenAI's Whisper
+    speech recognition model ported to C/C++. Links against the system
+    app-accessibility/whisper-cpp library rather than the bundled copy
+    upstream vendors as a git submodule.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">absadiki/pywhispercpp</remote-id>
+    <remote-id type="pypi">pywhispercpp</remote-id>
+  </upstream>
+  <use>
+    <flag name="examples">Install deps for the bundled recording/assistant/livestream example scripts</flag>
+    <flag name="gui">Install deps for the bundled Qt GUI example script</flag>
+  </use>
+</pkgmetadata>

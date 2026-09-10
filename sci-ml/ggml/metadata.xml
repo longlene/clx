@@ -12,7 +12,7 @@
     <flag name="openvino">Enable inference via <pkg>sci-ml/openvino</pkg></flag>
     <flag name="rocm">Enable the ROCm/HIP GPU backend</flag>
     <flag name="sycl">Enable the SYCL GPU backend</flag>
-    <flag name="wmma">Enable rocWMMA-accelerated flash attention (requires rocm)</flag>
+    <flag name="wmma">Use <pkg>sci-libs/rocWMMA</pkg> for ROCm flash attention</flag>
   </use>
   <upstream>
     <remote-id type="github">ggerganov/ggml</remote-id>

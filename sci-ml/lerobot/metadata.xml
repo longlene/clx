@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    LeRobot provides models, datasets, and tools for real-world robotics in
+    PyTorch, lowering the barrier to entry for end-to-end robot learning.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">huggingface/lerobot</remote-id>
+  </upstream>
+</pkgmetadata>

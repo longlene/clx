@@ -1,0 +1,283 @@
+#!/usr/bin/env python3
+"""
+Usage: validate EBUILD_PATH [--skip-install] [--skip-deps]
+
+Full validation pipeline for one ebuild:
+  1. `ebuild ... clean install` — the real build test. Builds into the
+     package's image directory; merges nothing to the live system.
+     Full log goes to /tmp/validate-<P>.log.
+  2. Dependency resolution + fetch: `emerge --pretend` runs the real
+     portage resolver over the full dep graph (RDEPEND included — `ebuild
+     install` never checks runtime deps), then `emerge --fetchonly`
+     downloads the distfiles of every dep that would be installed.
+     Runs with ACCEPT_KEYWORDS="~amd64" ACCEPT_LICENSE="*" so only genuine
+     dep-graph problems fail, not local keyword/license policy.
+  3. `pkgcheck scan` on the package directory.
+  4. Every atom reported by NonexistentDeps is checked against local
+     overlays via check-deps (pkgcheck only knows package existence).
+
+Output: one JSON object.
+  install                "pass" | "fail" | "skipped"
+  log_path               full install log
+  log_tail               last 60 lines (only when install failed)
+  image_files            what would be installed (capped at 200 entries)
+  deps_resolve           "ok" | "fail" | "skipped" — resolver verdict
+  deps_pretend           the `[ebuild ...]` lines: what a real emerge
+                         would pull in
+  deps_fetch             "ok" | "fail" | "skipped" — distfile downloads
+  deps_log_tail          last 40 lines when resolve/fetch failed
+  pkgcheck               raw scan output lines
+  missing_deps           atoms confirmed absent everywhere — the ONLY
+                         legitimate source for a "Missing dependencies" report
+  fixable_deps           the package exists but either under a different atom
+                         (see `exists_as`, correct the dep in the ebuild) or
+                         at a lower version (no `exists_as`, needs a bump)
+
+Exit code 1 when install, resolve, or fetch failed, else 0.
+Flags:
+  --skip-install  skip the ebuild clean install step
+  --skip-deps     skip emerge resolve + fetch
+  --json          force JSON output even on a terminal
+  --summary       force human-readable summary even when piped
+"""
+
+import json
+import os
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+SCRIPTS = Path(__file__).resolve().parent
+PORTAGE_TMP = "/var/tmp/portage"
+
+# ANSI helpers (only applied when actually writing a colour summary)
+_G = "\033[32m"   # green
+_R = "\033[31m"   # red
+_Y = "\033[33m"   # yellow
+_B = "\033[1m"    # bold
+_N = "\033[0m"    # reset
+
+
+def _status_str(val, ok_val="pass", skip_val="skipped", colour=True):
+    if val == ok_val or val == "ok":
+        sym = f"{_G}✓{_N}" if colour else "✓"
+        return f"{sym} {val}"
+    if val == skip_val or val == "skipped":
+        sym = f"{_Y}–{_N}" if colour else "–"
+        return f"{sym} {val}"
+    sym = f"{_R}✗{_N}" if colour else "✗"
+    return f"{sym} {val}"
+
+
+def _print_summary(obj, colour=True):
+    pf = Path(obj.get("ebuild", "?")).stem
+    sep = "─" * (len(pf) + 10)
+    bold = _B if colour else ""
+    reset = _N if colour else ""
+    print(f"{bold}─── {pf} {sep}{reset}")
+
+    install = obj.get("install", "?")
+    n_files = obj.get("image_file_count", 0)
+    files_note = f"  ({n_files} files)" if install == "pass" else ""
+    print(f"  install       {_status_str(install, 'pass', colour=colour)}{files_note}")
+
+    dr = obj.get("deps_resolve", "skipped")
+    df = obj.get("deps_fetch", "skipped")
+    print(f"  deps_resolve  {_status_str(dr, 'ok', colour=colour)}")
+    print(f"  deps_fetch    {_status_str(df, 'ok', colour=colour)}")
+
+    pk = obj.get("pkgcheck", [])
+    if pk:
+        sym = f"{_R}✗{_N}" if colour else "✗"
+        print(f"  pkgcheck      {sym} {len(pk)} finding(s)")
+        for line in pk[:10]:
+            print(f"    {line}")
+        if len(pk) > 10:
+            print(f"    … {len(pk) - 10} more")
+    else:
+        sym = f"{_G}✓{_N}" if colour else "✓"
+        print(f"  pkgcheck      {sym} clean")
+
+    miss = obj.get("missing_deps", [])
+    fix  = obj.get("fixable_deps", [])
+    if miss:
+        sym = f"{_R}✗{_N}" if colour else "✗"
+        print(f"  missing_deps  {sym} {len(miss)}")
+        for m in miss:
+            print(f"    {m['atom']}  ({m['needed_by']})")
+    else:
+        print(f"  missing_deps  (none)")
+
+    if fix:
+        sym = f"{_Y}!{_N}" if colour else "!"
+        print(f"  fixable_deps  {sym} {len(fix)}")
+        for m in fix:
+            ea = m.get("exists_as")
+            if ea:
+                print(f"    {m['atom']} → {ea}  ({m['needed_by']})")
+            else:
+                print(f"    {m['atom']}  (exists; version bump needed)  ({m['needed_by']})")
+    else:
+        print(f"  fixable_deps  (none)")
+
+    if "log_tail" in obj:
+        print()
+        print(f"  {bold}── install log (tail) ──{reset}")
+        for line in obj["log_tail"][-20:]:
+            print(f"  {line}")
+
+    if "deps_log_tail" in obj:
+        print()
+        print(f"  {bold}── deps log (tail) ──{reset}")
+        for line in obj["deps_log_tail"][-20:]:
+            print(f"  {line}")
+
+
+def out(obj, code=0, force_json=False, force_summary=False):
+    use_summary = force_summary or (not force_json and sys.stdout.isatty())
+    if use_summary:
+        colour = sys.stdout.isatty()
+        _print_summary(obj, colour=colour)
+    else:
+        print(json.dumps(obj, indent=2))
+    sys.exit(code)
+
+
+def normalize_atom(atom):
+    """'>=dev-python/foo-1.2[extra]' -> 'dev-python/foo' for check-deps."""
+    a = re.sub(r"^[<>=!~]+", "", atom.strip())
+    had_op = a != atom.strip()
+    a = re.sub(r"\[.*$", "", a)
+    a = re.sub(r"::.*$", "", a)
+    a = re.sub(r":[^/]*$", "", a)
+    if had_op:
+        a = re.sub(r"-\d[\w.]*(?:_[a-z]+\d*)?(?:-r\d+)?\*?$", "", a)
+    return a
+
+
+def main():
+    args = sys.argv[1:]
+    if any(a in ("-h", "--help") for a in args):
+        print(__doc__.strip())
+        sys.exit(0)
+    skip_install   = "--skip-install" in args
+    skip_deps      = "--skip-deps"    in args
+    force_json     = "--json"         in args
+    force_summary  = "--summary"      in args
+    args = [a for a in args if not a.startswith("--")]
+    if len(args) != 1:
+        out({"status": "error",
+             "message": "usage: validate EBUILD_PATH [--skip-install] [--skip-deps] [--json] [--summary]"},
+            1, force_json=force_json, force_summary=force_summary)
+    ebuild = Path(args[0]).resolve()
+    if not ebuild.exists():
+        out({"status": "error", "message": f"no such ebuild: {ebuild}"},
+            1, force_json=force_json, force_summary=force_summary)
+
+    pkgdir = ebuild.parent
+    name = pkgdir.name
+    category = pkgdir.parent.name
+    pf = ebuild.stem
+    result = {"status": "ok", "ebuild": str(ebuild)}
+    failed = False
+
+    # 1. Install test
+    if skip_install:
+        result["install"] = "skipped"
+    else:
+        log = Path(f"/tmp/validate-{pf}.log")
+        with log.open("w") as fh:
+            r = subprocess.run(["ebuild", str(ebuild), "clean", "install"],
+                               stdout=fh, stderr=subprocess.STDOUT, text=True)
+        result["log_path"] = str(log)
+        if r.returncode != 0:
+            failed = True
+            result["install"] = "fail"
+            result["log_tail"] = log.read_text().splitlines()[-60:]
+        else:
+            result["install"] = "pass"
+            image = Path(PORTAGE_TMP) / category / pf / "image"
+            files = []
+            for root, _dirs, fnames in os.walk(image):
+                for f in fnames:
+                    files.append(str(Path(root, f).relative_to(image)))
+            files.sort()
+            result["image_file_count"] = len(files)
+            result["image_files"] = files[:200]
+
+    # 2. Dependency resolution + fetch — runtime deps never fail `ebuild install`
+    if skip_deps or result["install"] == "fail":
+        result["deps_resolve"] = result["deps_fetch"] = "skipped"
+    else:
+        atom = f"={category}/{pf}"
+        env = dict(os.environ, ACCEPT_KEYWORDS="~amd64", ACCEPT_LICENSE="*")
+        r = subprocess.run(
+            ["emerge", "--pretend", "--verbose", "--color=n", atom],
+            capture_output=True, text=True, env=env)
+        merged = r.stdout + r.stderr
+        if r.returncode != 0:
+            failed = True
+            result["deps_resolve"] = "fail"
+            result["deps_fetch"] = "skipped"
+            result["deps_log_tail"] = merged.splitlines()[-40:]
+        else:
+            result["deps_resolve"] = "ok"
+            result["deps_pretend"] = [
+                l for l in merged.splitlines() if l.startswith("[")
+            ]
+            fetch_log = Path(f"/tmp/validate-{pf}-fetch.log")
+            # Disable binhost fetching — binary packages require root-writable
+            # /var/cache/binhost; we only care about source distfiles here.
+            env_fetch = dict(env, FEATURES="-getbinpkg")
+            with fetch_log.open("w") as fh:
+                r = subprocess.run(
+                    ["emerge", "--fetchonly", "--color=n", atom],
+                    stdout=fh, stderr=subprocess.STDOUT, text=True, env=env_fetch)
+            if r.returncode != 0:
+                failed = True
+                result["deps_fetch"] = "fail"
+                result["deps_log_path"] = str(fetch_log)
+                result["deps_log_tail"] = fetch_log.read_text().splitlines()[-40:]
+            else:
+                result["deps_fetch"] = "ok"
+
+    # 3. pkgcheck
+    r = subprocess.run(["pkgcheck", "scan", str(pkgdir)],
+                       capture_output=True, text=True)
+    pk_out = (r.stdout + r.stderr).strip()
+    result["pkgcheck"] = pk_out.splitlines()
+
+    # 4. NonexistentDeps -> check-deps
+    atoms = {}
+    for m in re.finditer(
+            r"NonexistentDeps:\s*(?:version [^:]+:\s*)?([A-Z]+DEPEND):\s*"
+            r"(?:nonexistent packages?:\s*)?(.+)", pk_out):
+        cls, rest = m.group(1), m.group(2)
+        for raw in re.split(r",\s*", rest.strip()):
+            raw = raw.strip()
+            if "/" in raw:
+                atoms.setdefault(normalize_atom(raw), (raw, cls))
+
+    missing, fixable = [], []
+    for atom, (raw, cls) in sorted(atoms.items()):
+        r = subprocess.run([str(SCRIPTS / "check-deps"), atom],
+                           capture_output=True, text=True)
+        line = (r.stdout or "").strip() or f"{atom}: check-deps produced no output"
+        entry = {"atom": raw, "needed_by": cls, "check_deps": line}
+        if "NOT FOUND" in line:
+            missing.append(entry)
+        else:
+            m2 = re.search(r"([a-z0-9][\w-]*/[A-Za-z0-9._+-]+)",
+                           line.split(":", 1)[1])
+            if m2 and m2.group(1) != atom:
+                entry["exists_as"] = m2.group(1)
+            fixable.append(entry)
+    result["missing_deps"] = missing
+    result["fixable_deps"] = fixable
+
+    out(result, 1 if failed else 0, force_json=force_json, force_summary=force_summary)
+
+
+if __name__ == "__main__":
+    main()

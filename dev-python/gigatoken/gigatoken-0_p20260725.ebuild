@@ -1,0 +1,336 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{13..15} )
+
+COMMIT="34a1599f0c0ae7d7cd0d1c530e6522320158b360"
+
+CRATES="
+	adler2@2.0.1
+	ahash@0.8.12
+	aho-corasick@1.1.4
+	alloc-no-stdlib@2.0.4
+	alloc-stdlib@0.2.4
+	alloca@0.4.0
+	android_system_properties@0.1.5
+	anes@0.1.6
+	anstyle@1.0.14
+	arrow-array@59.1.0
+	arrow-buffer@59.1.0
+	arrow-data@59.1.0
+	arrow-ipc@59.1.0
+	arrow-schema@59.1.0
+	arrow-select@59.1.0
+	autocfg@1.5.1
+	base64@0.13.1
+	base64@0.22.1
+	bit-set@0.8.0
+	bit-vec@0.8.0
+	bitflags@2.13.1
+	brotli-decompressor@5.0.3
+	brotli@8.0.4
+	bumpalo@3.20.3
+	bytes@1.12.1
+	calendrical_calculations@0.2.4
+	cast@0.3.0
+	cc@1.2.67
+	cfg-if@1.0.4
+	chacha20@0.10.1
+	chrono@0.4.45
+	ciborium-io@0.2.2
+	ciborium-ll@0.2.2
+	ciborium@0.2.2
+	clap@4.6.2
+	clap_builder@4.6.2
+	clap_lex@1.1.0
+	cobs@0.3.0
+	console@0.16.4
+	const-random-macro@0.1.16
+	const-random@0.1.18
+	core-foundation-sys@0.8.7
+	core_maths@0.1.1
+	cpufeatures@0.3.0
+	crc32fast@1.5.0
+	criterion-plot@0.8.2
+	criterion@0.8.2
+	crossbeam-deque@0.8.7
+	crossbeam-epoch@0.9.20
+	crossbeam-utils@0.8.22
+	crunchy@0.2.4
+	dashmap@6.2.1
+	databake-derive@0.2.1
+	databake@0.2.1
+	displaydoc@0.2.6
+	either@1.16.0
+	encode_unicode@1.0.0
+	equivalent@1.0.2
+	erased-serde@0.4.10
+	errno@0.3.14
+	eyre@0.6.12
+	fancy-regex@0.18.0
+	fastrand@2.4.1
+	faststr@0.2.34
+	find-msvc-tools@0.1.9
+	fixed_decimal@0.7.2
+	flatbuffers@25.12.19
+	flate2@1.1.9
+	futures-core@0.3.32
+	futures-task@0.3.32
+	futures-util@0.3.32
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.3
+	half@2.7.1
+	hashbrown@0.14.5
+	hashbrown@0.17.1
+	heck@0.5.0
+	http@1.4.2
+	httparse@1.10.1
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.65
+	icu@2.2.0
+	icu_calendar@2.2.1
+	icu_calendar_data@2.2.0
+	icu_casemap@2.2.0
+	icu_casemap_data@2.2.0
+	icu_collator@2.2.1
+	icu_collator_data@2.2.0
+	icu_collections@2.2.0
+	icu_datetime@2.2.0
+	icu_datetime_data@2.2.0
+	icu_decimal@2.2.0
+	icu_decimal_data@2.2.0
+	icu_experimental@0.5.0
+	icu_experimental_data@0.5.0
+	icu_list@2.2.0
+	icu_list_data@2.2.0
+	icu_locale@2.2.0
+	icu_locale_core@2.2.0
+	icu_locale_data@2.2.0
+	icu_normalizer@2.2.0
+	icu_normalizer_data@2.2.0
+	icu_pattern@0.4.2
+	icu_plurals@2.2.0
+	icu_plurals_data@2.2.0
+	icu_properties@2.2.0
+	icu_properties_data@2.2.0
+	icu_provider@2.2.0
+	icu_provider_registry@2.2.0
+	icu_segmenter@2.2.0
+	icu_segmenter_data@2.2.0
+	icu_time@2.2.0
+	icu_time_data@2.2.1
+	indenter@0.3.4
+	indexmap@2.14.0
+	indicatif@0.18.6
+	itertools@0.13.0
+	itertools@0.15.0
+	itoa@1.0.18
+	ixdtf@0.6.5
+	jobserver@0.1.35
+	js-sys@0.3.103
+	libc@0.2.186
+	libm@0.2.16
+	linux-raw-sys@0.12.1
+	litemap@0.8.2
+	lock_api@0.4.14
+	log@0.4.33
+	lz4_flex@0.13.1
+	matrixmultiply@0.3.11
+	memchr@2.8.3
+	memmap2@0.9.11
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	munge@0.4.7
+	munge_macro@0.4.7
+	ndarray@0.17.2
+	nom@7.1.3
+	num-bigint@0.4.8
+	num-complex@0.4.6
+	num-integer@0.1.46
+	num-rational@0.4.2
+	num-traits@0.2.19
+	numpy@0.29.0
+	once_cell@1.21.4
+	oorandom@11.1.5
+	page_size@0.6.0
+	parking_lot_core@0.9.12
+	parquet@59.1.0
+	paste@1.0.15
+	percent-encoding@2.3.2
+	pin-project-lite@0.2.17
+	pkg-config@0.3.33
+	plotters-backend@0.3.7
+	plotters-svg@0.3.7
+	plotters@0.3.7
+	portable-atomic-util@0.2.7
+	portable-atomic@1.14.0
+	postcard@1.1.3
+	potential_utf@0.1.5
+	priority-queue@2.7.0
+	proc-macro2@1.0.106
+	ptr_meta@0.3.1
+	ptr_meta_derive@0.3.1
+	pyo3-build-config@0.29.0
+	pyo3-ffi@0.29.0
+	pyo3-macros-backend@0.29.0
+	pyo3-macros@0.29.0
+	pyo3@0.29.0
+	quote@1.0.46
+	r-efi@5.3.0
+	r-efi@6.0.0
+	rancor@0.1.2
+	rand@0.10.2
+	rand_core@0.10.1
+	rawpointer@0.2.1
+	rayon-core@1.13.0
+	rayon@1.12.0
+	redox_syscall@0.5.18
+	ref-cast-impl@1.0.25
+	ref-cast@1.0.25
+	regex-automata@0.4.16
+	regex-syntax@0.8.11
+	regex@1.13.1
+	rend@0.5.4
+	ring@0.17.14
+	rkyv@0.8.17
+	rkyv_derive@0.8.17
+	rustc-hash@2.1.3
+	rustc_version@0.4.1
+	rustix@1.1.4
+	rustls-pki-types@1.15.0
+	rustls-webpki@0.103.13
+	rustls@0.23.42
+	rustversion@1.0.23
+	same-file@1.0.6
+	scopeguard@1.2.0
+	semver@1.0.28
+	seq-macro@0.3.6
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.150
+	shlex@2.0.1
+	simd-adler32@0.3.10
+	simdutf8@0.1.5
+	simdutf@0.7.0
+	slab@0.4.12
+	smallvec@1.15.2
+	snap@1.1.2
+	sonic-number@0.1.2
+	sonic-rs@0.5.8
+	sonic-simd@0.1.4
+	spm_precompiled@0.1.4
+	stable_deref_trait@1.2.1
+	subtle@2.6.1
+	syn@2.0.119
+	synstructure@0.13.2
+	target-lexicon@0.13.5
+	tempfile@3.27.0
+	thiserror-impl@2.0.18
+	thiserror@2.0.18
+	tiny-keccak@2.0.2
+	tinystr@0.8.3
+	tinytemplate@1.2.1
+	tinyvec@1.12.0
+	tinyvec_macros@0.1.1
+	twox-hash@2.1.2
+	typeid@1.0.3
+	unicode-ident@1.0.24
+	unicode-segmentation@1.13.3
+	unicode-width@0.2.2
+	unit-prefix@0.5.2
+	untrusted@0.9.0
+	ureq-proto@0.6.0
+	ureq@3.3.0
+	utf16_iter@1.0.5
+	utf8-zero@0.8.1
+	utf8_iter@1.0.4
+	uuid@1.24.0
+	version_check@0.9.5
+	walkdir@2.5.0
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.4+wasi-0.2.12
+	wasm-bindgen-macro-support@0.2.126
+	wasm-bindgen-macro@0.2.126
+	wasm-bindgen-shared@0.2.126
+	wasm-bindgen@0.2.126
+	web-sys@0.3.103
+	web-time@1.1.0
+	webpki-roots@1.0.9
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.11
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-core@0.62.2
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.2.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.52.0
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	winnow@1.0.4
+	wit-bindgen@0.57.1
+	write16@1.0.0
+	writeable@0.6.3
+	yoke-derive@0.8.2
+	yoke@0.8.3
+	zerocopy-derive@0.8.54
+	zerocopy@0.8.54
+	zerofrom-derive@0.1.7
+	zerofrom@0.1.8
+	zeroize@1.9.0
+	zerotrie@0.2.4
+	zerovec-derive@0.11.3
+	zerovec@0.11.6
+	zmij@1.0.23
+	zstd-safe@7.2.4
+	zstd-sys@2.0.16+zstd.1.5.7
+	zstd@0.13.3
+"
+
+inherit cargo distutils-r1
+
+DESCRIPTION="Tokenize your documents at GB/s"
+HOMEPAGE="https://github.com/marcelroed/gigatoken"
+SRC_URI="
+	https://github.com/marcelroed/gigatoken/archive/${COMMIT}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+S="${WORKDIR}/gigatoken-${COMMIT}"
+
+LICENSE="MIT Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 CDLA-Permissive-2.0 ISC Unicode-3.0 || ( LGPL-3+ MPL-2.0 )"
+SLOT="0"
+KEYWORDS="~amd64"
+
+RDEPEND="
+	dev-python/awkward[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/typer[${PYTHON_USEDEP}]
+"
+
+src_prepare() {
+	# [profile.profiling] rustflags requires the unstable profile-rustflags
+	# Cargo feature (nightly-only); it's only used for upstream's local
+	# profiling builds and unneeded here, but its presence makes stable
+	# Cargo refuse to parse the manifest at all.
+	sed -e '/rustflags = \["-C", "force-frame-pointers=yes"\]/d' -i Cargo.toml || die
+
+	distutils-r1_src_prepare
+}
+
+distutils_enable_tests pytest

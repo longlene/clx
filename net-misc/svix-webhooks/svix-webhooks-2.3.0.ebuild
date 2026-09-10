@@ -1,0 +1,815 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	addr2line@0.25.1
+	adler2@2.0.1
+	aead@0.5.2
+	aes@0.8.4
+	ahash@0.8.12
+	aho-corasick@1.1.5
+	aide@0.14.2
+	aide-macros@0.8.0
+	aliasable@0.1.3
+	allocator-api2@0.2.21
+	amq-protocol@10.6.3
+	amq-protocol-tcp@10.6.3
+	amq-protocol-types@10.6.3
+	amq-protocol-uri@10.6.3
+	android_system_properties@0.1.6
+	anstream@1.0.0
+	anstyle@1.0.14
+	anstyle-parse@1.0.0
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anyhow@1.0.104
+	approx@0.5.1
+	arc-swap@1.9.2
+	arrayvec@0.7.8
+	asn1-rs@0.7.2
+	asn1-rs-derive@0.6.0
+	asn1-rs-impl@0.2.0
+	assert-json-diff@2.0.2
+	assert_matches@1.5.0
+	async-channel@2.5.0
+	async-compat@0.2.5
+	async-executor@1.14.0
+	async-global-executor@3.1.0
+	async-lock@3.4.2
+	async-rs@0.8.11
+	async-stream@0.3.6
+	async-stream-impl@0.3.6
+	async-task@4.7.1
+	async-trait@0.1.92
+	atoi@2.0.0
+	atomic@0.6.1
+	atomic-waker@1.1.2
+	autocfg@1.5.1
+	aws-lc-rs@1.18.0
+	aws-lc-sys@0.44.0
+	axum@0.8.9
+	axum-core@0.5.6
+	axum-extra@0.10.3
+	axum-server@0.7.3
+	backon@1.6.0
+	backtrace@0.3.76
+	base16ct@0.2.0
+	base64@0.22.1
+	base64@0.23.1
+	base64ct@1.8.3
+	base-encode@0.3.1
+	bb8@0.9.1
+	bb8-redis@0.24.0
+	bigdecimal@0.4.10
+	bincode@1.3.3
+	binstring@0.1.7
+	bitflags@1.3.2
+	bitflags@2.13.1
+	bit-set@0.5.3
+	bit-set@0.8.0
+	bit-vec@0.6.3
+	bit-vec@0.8.0
+	blake2@0.10.6
+	block2@0.6.2
+	block-buffer@0.10.4
+	blocking@1.6.2
+	block-padding@0.3.3
+	borrow-or-share@0.2.4
+	bumpalo@3.20.3
+	by_address@1.2.1
+	bytecount@0.6.9
+	bytemuck@1.25.2
+	byteorder@1.5.0
+	bytes@1.12.1
+	bytesize@2.7.0
+	castaway@0.2.4
+	cbc@0.1.2
+	cc@1.4.3
+	cfg_aliases@0.2.2
+	cfg-if@1.0.4
+	chacha20@0.10.2
+	chacha20@0.9.1
+	chacha20poly1305@0.10.1
+	chrono@0.4.45
+	cipher@0.4.4
+	clap@4.6.6
+	clap_builder@4.6.6
+	clap_complete@4.6.9
+	clap_derive@4.6.4
+	clap_lex@1.1.0
+	cmake@0.1.58
+	cms@0.2.3
+	coarsetime@0.1.37
+	colorchoice@1.0.5
+	colored_json@5.0.0
+	combine@4.6.7
+	compact_str@0.9.1
+	concolor@0.1.1
+	concolor-clap@0.1.0
+	concolor-query@0.3.3
+	concurrent-queue@2.5.0
+	console@0.16.4
+	const-oid@0.9.6
+	convert_case@0.10.0
+	cookie-factory@0.3.3
+	core-foundation@0.10.1
+	core-foundation@0.9.4
+	core-foundation-sys@0.8.7
+	cpufeatures@0.2.17
+	cpufeatures@0.3.0
+	crc16@0.4.0
+	crc32fast@1.5.0
+	crc@3.4.0
+	crc-catalog@2.5.0
+	critical-section@1.2.0
+	crossbeam-channel@0.5.16
+	crossbeam-epoch@0.9.20
+	crossbeam-queue@0.3.13
+	crossbeam-utils@0.8.22
+	crossterm@0.29.0
+	crossterm_winapi@0.9.1
+	crypto-bigint@0.5.5
+	crypto-common@0.1.7
+	csscolorparser@0.6.2
+	ct-codecs@1.1.7
+	ctor@0.2.9
+	darling@0.20.11
+	darling@0.23.0
+	darling@0.24.0
+	darling_core@0.20.11
+	darling_core@0.23.0
+	darling_core@0.24.0
+	darling_macro@0.20.11
+	darling_macro@0.23.0
+	darling_macro@0.24.0
+	data-encoding@2.11.1
+	deadpool@0.10.0
+	deadpool-runtime@0.1.4
+	debugid@0.8.0
+	deltae@0.3.2
+	der@0.6.1
+	der@0.7.10
+	der@0.8.1
+	deranged@0.5.8
+	der_derive@0.7.3
+	derive_more@2.1.1
+	derive_more-impl@2.1.1
+	der-parser@10.0.0
+	des@0.8.1
+	dialoguer@0.12.0
+	digest@0.10.7
+	dirs@6.0.0
+	dirs-sys@0.5.0
+	dispatch2@0.3.1
+	displaydoc@0.2.7
+	document-features@0.2.12
+	dotenvy@0.15.7
+	dunce@1.0.5
+	dyn-clone@1.0.20
+	ecdsa@0.16.9
+	ed25519-compact@2.4.0
+	either@1.17.0
+	elliptic-curve@0.13.8
+	email_address@0.2.9
+	encode_unicode@1.0.0
+	encoding_rs@0.8.35
+	enum_dispatch@0.3.13
+	equivalent@1.0.2
+	errno@0.3.14
+	etcetera@0.8.0
+	euclid@0.22.14
+	event-listener@5.4.2
+	event-listener-strategy@0.5.4
+	fancy-regex@0.11.0
+	fancy-regex@0.16.2
+	fancy-regex@0.19.0
+	fastrand@2.5.0
+	ff@0.13.1
+	figment@0.10.19
+	filedescriptor@0.8.3
+	find-msvc-tools@0.1.11
+	findshlibs@0.10.2
+	finl_unicode@1.4.0
+	fixedbitset@0.4.2
+	flagset@0.4.7
+	flate2@1.1.9
+	fluent-uri@0.4.1
+	flume@0.11.1
+	flume@0.12.0
+	fnv@1.0.7
+	foldhash@0.1.5
+	foldhash@0.2.0
+	foreign-types@0.3.2
+	foreign-types-shared@0.1.1
+	form_urlencoded@1.2.2
+	fraction@0.16.0
+	fs-err@3.3.1
+	fs_extra@1.3.0
+	futures@0.3.34
+	futures-channel@0.3.34
+	futures-core@0.3.34
+	futures-executor@0.3.34
+	futures-intrusive@0.5.0
+	futures-io@0.3.34
+	futures-lite@2.6.1
+	futures-macro@0.3.34
+	futures-rustls@0.26.0
+	futures-sink@0.3.34
+	futures-task@0.3.34
+	futures-util@0.3.34
+	generic-array@0.14.7
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.3
+	gimli@0.32.3
+	group@0.13.0
+	h2@0.4.16
+	h2@0.4.19
+	hashbrown@0.12.3
+	hashbrown@0.15.5
+	hashbrown@0.16.1
+	hashbrown@0.17.1
+	hashlink@0.10.0
+	headers@0.4.1
+	headers-core@0.3.0
+	heck@0.4.1
+	heck@0.5.0
+	hermit-abi@0.5.2
+	hex@0.4.3
+	hickory-net@0.26.1
+	hickory-proto@0.26.1
+	hickory-resolver@0.26.1
+	hkdf@0.12.4
+	hmac@0.12.1
+	hmac-sha1-compact@1.1.7
+	hmac-sha256@1.1.14
+	hmac-sha512@1.1.12
+	home@0.5.12
+	hostname@0.4.2
+	http@1.5.0
+	httparse@1.10.1
+	http-body@1.1.0
+	http-body-util@0.1.5
+	httpdate@1.0.3
+	hyper@1.11.0
+	hyper-openssl@0.10.2
+	hyper-rustls@0.27.9
+	hyper-timeout@0.5.2
+	hyper-tls@0.6.0
+	hyper-util@0.1.20
+	iana-time-zone@0.1.65
+	iana-time-zone-haiku@0.1.2
+	ident_case@1.0.1
+	idna@1.1.0
+	idna_adapter@1.1.0
+	idna_mapping@1.1.0
+	indexmap@1.9.3
+	indexmap@2.14.0
+	indoc@2.0.7
+	inherent@1.0.14
+	inlinable_string@0.1.15
+	inout@0.1.4
+	instability@0.3.13
+	ipconfig@0.3.4
+	ipnet@2.12.1
+	is-docker@0.2.0
+	is-terminal@0.4.17
+	is_terminal_polyfill@1.70.2
+	is-wsl@0.4.0
+	itertools@0.14.0
+	itertools@0.15.0
+	itoa@1.0.18
+	jni@0.22.4
+	jni-macros@0.22.4
+	jni-sys@0.4.1
+	jni-sys-macros@0.4.1
+	jobserver@0.1.35
+	jsonschema@0.50.0
+	jsonschema-regex@0.50.0
+	jsonschema-value@0.50.0
+	js_option@0.2.0
+	js-sys@0.3.104
+	jwt-simple@0.11.9
+	k256@0.13.4
+	kasuari@0.4.12
+	lab@0.11.0
+	lapin@4.10.0
+	lazy_static@1.5.0
+	libc@0.2.189
+	libm@0.2.16
+	libredox@0.1.20
+	libsqlite3-sys@0.30.1
+	line-clipping@0.3.8
+	linked-hash-map@0.5.6
+	linked_hash_set@0.1.6
+	linux-raw-sys@0.12.1
+	litrs@1.0.0
+	lock_api@0.4.14
+	log@0.4.33
+	lru@0.18.2
+	lru-slab@0.1.2
+	mac_address@1.1.8
+	maplit@1.0.2
+	matchers@0.2.0
+	matchit@0.8.4
+	md-5@0.10.6
+	memchr@2.8.3
+	memmem@0.1.1
+	memoffset@0.9.1
+	micromap@0.3.0
+	mime@0.3.17
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	mio@1.2.2
+	moka@0.12.16
+	native-tls@0.2.18
+	ndk-context@0.1.1
+	nix@0.29.0
+	nix@0.31.3
+	nom@7.1.3
+	nom@8.0.0
+	nu-ansi-term@0.50.3
+	num@0.4.3
+	num-bigint@0.4.8
+	num-bigint-dig@0.8.6
+	num-cmp@0.1.0
+	num-complex@0.4.6
+	num-conv@0.2.2
+	num_cpus@1.17.0
+	num-derive@0.4.2
+	num_enum@0.7.6
+	num_enum_derive@0.7.6
+	num-integer@0.1.47
+	num-iter@0.1.46
+	num-rational@0.4.2
+	num_threads@0.1.7
+	num-traits@0.2.19
+	objc2@0.6.4
+	objc2-cloud-kit@0.3.2
+	objc2-core-data@0.3.2
+	objc2-core-foundation@0.3.2
+	objc2-core-graphics@0.3.2
+	objc2-core-image@0.3.2
+	objc2-core-location@0.3.2
+	objc2-core-text@0.3.2
+	objc2-encode@4.1.0
+	objc2-foundation@0.3.2
+	objc2-io-surface@0.3.2
+	objc2-quartz-core@0.3.2
+	objc2-ui-kit@0.3.2
+	objc2-user-notifications@0.3.2
+	object@0.37.3
+	oid-registry@0.8.1
+	once_cell@1.21.4
+	once_cell_polyfill@1.70.2
+	opaque-debug@0.3.1
+	open@5.4.1
+	openssl@0.10.81
+	openssl-macros@0.1.1
+	openssl-probe@0.2.1
+	openssl-sys@0.9.117
+	opentelemetry@0.32.0
+	opentelemetry-http@0.32.0
+	opentelemetry-otlp@0.32.0
+	opentelemetry-proto@0.32.0
+	opentelemetry_sdk@0.32.1
+	opentelemetry-semantic-conventions@0.32.1
+	option-ext@0.2.0
+	ordered-float@4.6.0
+	os_info@3.15.0
+	ouroboros@0.18.5
+	ouroboros_macro@0.18.5
+	outref@0.5.2
+	p12-keystore@0.2.1
+	p256@0.13.2
+	p384@0.13.1
+	palette@0.7.7
+	palette_derive@0.7.7
+	palette_math@0.7.7
+	parking@2.2.1
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
+	pbkdf2@0.12.2
+	pear@0.2.9
+	pear_codegen@0.2.9
+	pem-rfc7468@0.6.0
+	pem-rfc7468@0.7.0
+	pem-rfc7468@1.0.0
+	percent-encoding@2.3.2
+	pest@2.9.0
+	pest_derive@2.9.0
+	pest_generator@2.9.0
+	pest_meta@2.9.0
+	pgvector@0.4.2
+	phf@0.11.3
+	phf_codegen@0.11.3
+	phf_generator@0.11.3
+	phf_macros@0.11.3
+	phf_shared@0.11.3
+	pin-project@1.1.13
+	pin-project-internal@1.1.13
+	pin-project-lite@0.2.17
+	piper@0.2.5
+	pkcs1@0.4.1
+	pkcs1@0.7.5
+	pkcs12@0.1.0
+	pkcs5@0.7.1
+	pkcs8@0.10.2
+	pkcs8@0.9.0
+	pkg-config@0.3.34
+	plain@0.2.3
+	poly1305@0.8.0
+	portable-atomic@1.15.0
+	powerfmt@0.2.0
+	ppv-lite86@0.2.21
+	prefix-trie@0.8.4
+	primeorder@0.13.6
+	proc-macro2@1.0.107
+	proc-macro2-diagnostics@0.10.1
+	proc-macro-crate@3.5.0
+	proc-macro-error3@3.1.0
+	proc-macro-error-attr3@3.1.0
+	prost@0.14.4
+	prost-derive@0.14.4
+	prost-types@0.14.4
+	quinn@0.11.11
+	quinn-proto@0.11.17
+	quinn-udp@0.5.15
+	quote@1.0.47
+	rand@0.10.2
+	rand@0.8.7
+	rand@0.9.5
+	rand_chacha@0.3.1
+	rand_chacha@0.9.0
+	rand_core@0.10.1
+	rand_core@0.6.4
+	rand_core@0.9.5
+	rand_pcg@0.10.2
+	ratatui@0.30.2
+	ratatui-core@0.1.2
+	ratatui-crossterm@0.1.2
+	ratatui-macros@0.7.2
+	ratatui-termina@0.1.0
+	ratatui-termwiz@0.1.2
+	ratatui-widgets@0.3.2
+	rc2@0.8.1
+	redis@0.32.7
+	redox_syscall@0.5.18
+	redox_syscall@0.9.2
+	redox_users@0.5.2
+	ref-cast@1.0.26
+	ref-cast-impl@1.0.26
+	referencing@0.50.0
+	r-efi@5.3.0
+	r-efi@6.0.0
+	regex@1.13.1
+	regex-automata@0.4.18
+	regex-syntax@0.8.11
+	reqwest@0.13.4
+	resolv-conf@0.7.6
+	rfc6979@0.4.0
+	ring@0.17.14
+	rsa@0.7.2
+	rsa@0.9.10
+	rustc-demangle@0.1.28
+	rustc-hash@2.1.3
+	rustc_version@0.4.1
+	rust_decimal@1.42.1
+	rusticata-macros@4.1.0
+	rustix@1.1.4
+	rustls@0.23.43
+	rustls-connector@0.23.8
+	rustls-native-certs@0.8.4
+	rustls-pki-types@1.15.1
+	rustls-platform-verifier@0.7.0
+	rustls-platform-verifier-android@0.1.1
+	rustls-webpki@0.103.14
+	rustversion@1.0.23
+	ryu@1.0.23
+	salsa20@0.10.2
+	same-file@1.0.6
+	schannel@0.1.29
+	schemars@0.8.22
+	schemars_derive@0.8.22
+	scopeguard@1.2.0
+	scrypt@0.11.0
+	sea-bae@0.2.2
+	sea-orm@1.1.20
+	sea-orm-macros@1.1.20
+	sea-query@0.32.7
+	sea-query-binder@0.7.0
+	sec1@0.7.3
+	security-framework@3.7.0
+	security-framework-sys@2.17.0
+	semver@1.0.28
+	sentry@0.48.5
+	sentry-backtrace@0.48.5
+	sentry-contexts@0.48.5
+	sentry-core@0.48.5
+	sentry-debug-images@0.48.5
+	sentry-panic@0.48.5
+	sentry-tracing@0.48.5
+	sentry-types@0.48.5
+	serde@1.0.229
+	serde_core@1.0.229
+	serde_derive@1.0.229
+	serde_derive_internals@0.29.1
+	serde_json@1.0.151
+	serde_path_to_error@0.1.20
+	serde_qs@0.14.0
+	serde_repr@0.1.21
+	serde_spanned@0.6.9
+	serde_urlencoded@0.7.1
+	sha1@0.10.7
+	sha1_smol@1.0.1
+	sha2@0.10.9
+	sharded-slab@0.1.7
+	shell-words@1.1.1
+	shlex@2.0.1
+	signal-hook@0.3.18
+	signal-hook-mio@0.2.5
+	signal-hook-registry@1.4.8
+	signature@1.6.4
+	signature@2.2.0
+	simd-adler32@0.3.10
+	simd_cesu8@1.2.0
+	simdutf8@0.1.5
+	siphasher@1.0.3
+	slab@0.4.12
+	smallvec@1.15.2
+	socket2@0.6.5
+	socks5-proto@0.4.1
+	spin@0.9.9
+	spki@0.6.0
+	spki@0.7.3
+	sqlx@0.8.6
+	sqlx-core@0.8.6
+	sqlx-macros@0.8.6
+	sqlx-macros-core@0.8.6
+	sqlx-mysql@0.8.6
+	sqlx-postgres@0.8.6
+	sqlx-sqlite@0.8.6
+	static_assertions@1.1.0
+	stringprep@0.1.5
+	strsim@0.11.1
+	strum@0.26.3
+	strum@0.28.0
+	strum_macros@0.28.0
+	subtle@2.6.1
+	svix@2.0.0
+	svix-ksuid@0.10.0
+	syn@1.0.109
+	syn@2.0.119
+	syn@3.0.3
+	sync_wrapper@1.0.2
+	synstructure@0.13.2
+	syntect@5.3.0
+	system-configuration@0.7.0
+	system-configuration-sys@0.6.0
+	tagptr@0.2.0
+	tcp-stream@0.34.14
+	tempfile@3.27.0
+	termina@0.3.3
+	terminfo@0.9.0
+	termios@0.3.3
+	termwiz@0.23.3
+	thiserror@1.0.69
+	thiserror@2.0.20
+	thiserror-impl@1.0.69
+	thiserror-impl@2.0.20
+	thread_local@1.1.10
+	tikv-jemallocator@0.7.0
+	tikv-jemalloc-sys@0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8
+	time@0.3.55
+	time-core@0.1.9
+	time-macros@0.2.32
+	tinyvec@1.12.0
+	tinyvec_macros@0.1.1
+	tokio@1.53.1
+	tokio-macros@2.7.2
+	tokio-native-tls@0.3.1
+	tokio-openssl@0.6.5
+	tokio-rustls@0.26.4
+	tokio-stream@0.1.19
+	tokio-tungstenite@0.29.0
+	tokio-util@0.7.19
+	toml@0.8.23
+	toml_datetime@0.6.11
+	toml_datetime@1.1.1+spec-1.1.0
+	toml_edit@0.22.27
+	toml_edit@0.25.13+spec-1.1.0
+	toml_parser@1.1.3+spec-1.1.0
+	toml_write@0.1.2
+	tonic@0.14.6
+	tonic-prost@0.14.6
+	tonic-types@0.14.6
+	tower@0.5.3
+	tower-http@0.6.11
+	tower-layer@0.3.3
+	tower-service@0.3.3
+	tracing@0.1.44
+	tracing-attributes@0.1.31
+	tracing-core@0.1.36
+	tracing-log@0.2.0
+	tracing-opentelemetry@0.33.0
+	tracing-serde@0.2.0
+	tracing-subscriber@0.3.23
+	try-lock@0.2.5
+	tui-syntax-highlight@0.2.0
+	tungstenite@0.29.0
+	typenum@1.20.1
+	ucd-trie@0.1.7
+	uname@0.1.1
+	uncased@0.9.10
+	unicode-bidi@0.3.18
+	unicode-general-category@1.1.0
+	unicode-ident@1.0.24
+	unicode-joining-type@1.0.0
+	unicode-normalization@0.1.25
+	unicode-properties@0.1.4
+	unicode-segmentation@1.13.3
+	unicode-truncate@2.0.1
+	unicode-width@0.2.2
+	unicode-xid@0.2.6
+	universal-hash@0.5.1
+	untrusted@0.9.0
+	ureq@3.4.0
+	ureq-proto@0.6.1
+	url@2.5.8
+	urlencoding@2.1.3
+	utf8_iter@1.0.4
+	utf8parse@0.2.2
+	utf8-zero@0.8.1
+	uuid@1.24.1
+	uuid-simd@0.8.0
+	validator@0.21.0
+	validator_derive@0.20.1
+	valuable@0.1.1
+	vcpkg@0.2.15
+	version_check@0.9.5
+	vsimd@0.8.0
+	vtparse@0.6.2
+	walkdir@2.5.0
+	want@0.3.1
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.4+wasi-0.2.12
+	wasite@0.1.0
+	wasix@0.13.2
+	wasm-bindgen@0.2.127
+	wasm-bindgen-futures@0.4.77
+	wasm-bindgen-macro@0.2.127
+	wasm-bindgen-macro-support@0.2.127
+	wasm-bindgen-shared@0.2.127
+	webpki-root-certs@1.0.9
+	webpki-roots@0.26.11
+	webpki-roots@1.0.9
+	web-sys@0.3.104
+	web-time@1.1.0
+	wezterm-bidi@0.2.3
+	wezterm-blob-leases@0.1.1
+	wezterm-color-types@0.3.0
+	wezterm-dynamic@0.2.1
+	wezterm-dynamic-derive@0.1.1
+	wezterm-input-types@0.1.0
+	whoami@1.6.1
+	widestring@1.2.1
+	winapi@0.3.9
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.11
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	windows_aarch64_gnullvm@0.42.2
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.42.2
+	windows_aarch64_msvc@0.48.5
+	windows_aarch64_msvc@0.52.6
+	windows-core@0.62.2
+	windows_i686_gnu@0.42.2
+	windows_i686_gnu@0.48.5
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.42.2
+	windows_i686_msvc@0.48.5
+	windows_i686_msvc@0.52.6
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.2.1
+	windows-registry@0.6.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.45.0
+	windows-sys@0.48.0
+	windows-sys@0.52.0
+	windows-sys@0.61.2
+	windows-targets@0.42.2
+	windows-targets@0.48.5
+	windows-targets@0.52.6
+	windows_x86_64_gnu@0.42.2
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.42.2
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.42.2
+	windows_x86_64_msvc@0.48.5
+	windows_x86_64_msvc@0.52.6
+	winnow@0.7.15
+	winnow@1.0.4
+	wiremock@0.6.4
+	wit-bindgen@0.57.1
+	x509-cert@0.2.5
+	x509-parser@0.18.1
+	yansi@1.0.1
+	zerocopy@0.8.56
+	zerocopy-derive@0.8.56
+	zeroize@1.9.0
+	zmij@1.0.23
+"
+
+declare -A GIT_CRATES=(
+	[hyper]='https://github.com/svix/hyper;3874b0d849c3fad5abf01e73d2ed9120ae002863;hyper-%commit%'
+	[omniqueue]='https://github.com/svix/omniqueue-rs;acb40983ed65f6cbebb19c05d590249306674a33;omniqueue-rs-%commit%/omniqueue'
+	[rust-executable-metadata]='https://github.com/svix/rust-executable-metadata;7a32435fbdab53f33e6abab9c1ab500afef0a7a8;rust-executable-metadata-%commit%'
+)
+
+RUST_MIN_VER="1.88"
+
+inherit cargo
+
+DESCRIPTION="The open source and enterprise-ready webhooks service"
+HOMEPAGE="https://github.com/svix/svix-webhooks"
+SRC_URI="
+	https://github.com/svix/svix-webhooks/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="MIT"
+# Dependent crate licenses
+LICENSE+="
+	Apache-2.0 BSD-2 BSD CDLA-Permissive-2.0 EPL-2.0 GPL-3+ ISC MIT
+	MIT-0 MPL-2.0 Unicode-3.0 Unicode-DFS-2016 WTFPL-2 ZLIB
+"
+SLOT="0"
+KEYWORDS="~amd64"
+IUSE="+cli"
+
+DEPEND="dev-libs/openssl:="
+RDEPEND="${DEPEND}"
+
+src_prepare() {
+	default
+
+	# cargo's [patch] mechanism in config.toml fails in offline mode when the
+	# lock file still references the git source. Replace each git dep with
+	# the extracted local path so cargo never tries to reach the network.
+	local hyper_commit="3874b0d849c3fad5abf01e73d2ed9120ae002863"
+	local hyper_git="hyper = { git = \"https://github.com/svix/hyper.git\", rev = \"${hyper_commit}\" }"
+	local hyper_path="hyper = { path = \"${WORKDIR}/hyper-${hyper_commit}\" }"
+	sed -i -e "s|${hyper_git}|${hyper_path}|" server/Cargo.toml \
+		|| die "Failed to patch server/Cargo.toml for hyper"
+
+	local omniqueue_commit="acb40983ed65f6cbebb19c05d590249306674a33"
+	local omniqueue_git="git = \"https://github.com/svix/omniqueue-rs\", rev = \"${omniqueue_commit}\""
+	local omniqueue_path="path = \"${WORKDIR}/omniqueue-rs-${omniqueue_commit}/omniqueue\""
+	sed -i -e "s|${omniqueue_git}|${omniqueue_path}|" server/svix-server/Cargo.toml \
+		|| die "Failed to patch svix-server/Cargo.toml for omniqueue"
+
+	local rem_commit="7a32435fbdab53f33e6abab9c1ab500afef0a7a8"
+	local rem_git="git = \"https://github.com/svix/rust-executable-metadata\", rev = \"${rem_commit}\""
+	local rem_path="path = \"${WORKDIR}/rust-executable-metadata-${rem_commit}\""
+	sed -i -e "s|${rem_git}|${rem_path}|" server/svix-server/Cargo.toml svix-cli/Cargo.toml \
+		|| die "Failed to patch Cargo.toml for rust-executable-metadata"
+
+	# Strip the git source lines from both lock files; path deps carry no
+	# source entry.
+	sed -i \
+		-e '/^source = "git+https:\/\/github\.com\/svix\/hyper\.git/d' \
+		-e '/^source = "git+https:\/\/github\.com\/svix\/omniqueue-rs/d' \
+		-e '/^source = "git+https:\/\/github\.com\/svix\/rust-executable-metadata/d' \
+		server/Cargo.lock || die "Failed to patch server/Cargo.lock"
+	sed -i \
+		-e '/^source = "git+https:\/\/github\.com\/svix\/rust-executable-metadata/d' \
+		svix-cli/Cargo.lock || die "Failed to patch svix-cli/Cargo.lock"
+
+	# svix's hyper fork denies missing_docs crate-wide; a newer rustc than
+	# upstream's own CI uses now flags an undocumented item on this branch.
+	pushd "${WORKDIR}"/hyper-${hyper_commit} > /dev/null || die
+	eapply "${FILESDIR}"/${PN}-2.3.0-hyper-missing-docs.patch
+	popd > /dev/null || die
+}
+
+src_compile() {
+	# $S is the monorepo root (no Cargo.toml of its own); the server and
+	# CLI are independent Cargo projects built and installed together via
+	# cargo_src_install below, so there is nothing to do here.
+	:
+}
+
+src_install() {
+	cargo_src_install --path ./server/svix-server
+	use cli && cargo_src_install --path ./svix-cli
+
+	einstalldocs
+}

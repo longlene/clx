@@ -1,0 +1,124 @@
+#!/usr/bin/env bash
+# Check portage availability for a list of package names.
+# Usage: check-deps PKG1 PKG2 ...
+#   or:  check-deps < file-with-one-pkg-per-line
+#
+# Accepts bare names ("cyclopts"), full category/name ("dev-python/cyclopts"),
+# or atoms with version/extras ("cronsim>=2.6", "qrcode[pil]").
+# Output per line: "pkg: <eix summary>" or "pkg: NOT FOUND"
+#
+# Search order:
+#   1. eix -e CATEGORY/NAME  (if caller supplied a category)
+#   2. eix -e dev-python/NAME
+#   3. eix -e NAME            (bare, catches non-dev-python packages)
+#   4. Direct scan of /var/db/repos/*/*/NAME/*.ebuild
+#      (catches overlays not in the eix database, e.g. guru)
+
+set -euo pipefail
+
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+	sed -n '2,15p' "$0" | sed 's/^# \{0,1\}//'
+	exit 0
+fi
+
+# Run eix and return a non-empty string only when a real match is found.
+# eix prints "No matches found" to stdout on failure — filter it out.
+_eix_query() {
+	eix -e "$1" 2>/dev/null | grep -v '^No matches found' | head -1 || true
+}
+
+# Scan /var/db/repos for CATEGORY/NAME directly.
+_repo_scan() {
+	local category="$1" name="$2"
+	local path
+	path=$(find /var/db/repos -mindepth 3 -maxdepth 3 \
+		-path "*/${category}/${name}" -type d 2>/dev/null | head -1) || true
+	if [[ -n "${path}" ]]; then
+		# Extract the repo name from the path component after /var/db/repos/
+		local repo
+		repo="${path#/var/db/repos/}"
+		repo="${repo%%/*}"
+		echo "(found in ${repo} overlay)"
+	fi
+}
+
+check_one() {
+	local raw="$1"
+
+	# Strip extras like [pil] and version specifiers like >=1.0
+	local atom
+	atom="${raw%%[*}"
+	atom="${atom%%>*}"
+	atom="${atom%%<*}"
+	atom="${atom%%=*}"
+	atom="${atom%%!*}"
+	atom="${atom%%~*}"
+	# Normalise: lowercase, underscores → hyphens
+	atom="${atom//_/-}"
+	atom="${atom,,}"
+
+	# Split into optional category + name
+	local name category
+	if [[ "${atom}" == */* ]]; then
+		category="${atom%%/*}"
+		name="${atom##*/}"
+	else
+		category=""
+		name="${atom}"
+	fi
+
+	local result=""
+
+	# 1. Try exact category/name if caller gave one
+	if [[ -n "${category}" ]]; then
+		result=$(_eix_query "${category}/${name}")
+	fi
+
+	# 2. Try dev-python/name
+	if [[ -z "${result}" ]]; then
+		result=$(_eix_query "dev-python/${name}")
+	fi
+
+	# 2b. Try dev-python/name (no-op if category was already dev-python)
+	# (already done above; skip if we have a result)
+
+	# 3. Try bare name across all categories (catches sci-ml/, sci-libs/, etc.)
+	if [[ -z "${result}" ]]; then
+		result=$(_eix_query "${name}")
+	fi
+
+	# 4. Direct filesystem scan (catches overlays not indexed by eix)
+	if [[ -z "${result}" && -n "${category}" ]]; then
+		result=$(_repo_scan "${category}" "${name}")
+	fi
+	if [[ -z "${result}" && "${category:-}" != "dev-python" ]]; then
+		result=$(_repo_scan "dev-python" "${name}")
+	fi
+	# 4b. All-categories scan — finds packages in sci-ml/, sci-libs/, etc.
+	if [[ -z "${result}" ]]; then
+		local any_path
+		any_path=$(find /var/db/repos -mindepth 3 -maxdepth 3 \
+			-name "${name}" -type d 2>/dev/null | head -1) || true
+		if [[ -n "${any_path}" ]]; then
+			local repo found_cat
+			repo="${any_path#/var/db/repos/}"
+			found_cat="${repo#*/}"
+			found_cat="${found_cat%/*}"
+			repo="${repo%%/*}"
+			result="(found as ${found_cat}/${name} in ${repo} overlay)"
+		fi
+	fi
+
+	echo "${raw}: ${result:-NOT FOUND}"
+}
+
+if [[ $# -gt 0 ]]; then
+	for pkg in "$@"; do
+		check_one "${pkg}"
+	done
+else
+	while IFS= read -r line; do
+		[[ -z "${line}" || "${line}" =~ ^[[:space:]]*# ]] && continue
+		check_one "${line}"
+	done
+fi

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">haydonryan/open-stt-server</remote-id>
+  </upstream>
+  <use>
+    <flag name="cuda">Enable CUDA-accelerated inference via candle</flag>
+    <flag name="flash-attn">Enable FlashAttention-2 kernels (requires cuda)</flag>
+  </use>
+</pkgmetadata>

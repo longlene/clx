@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A Language Server Protocol (LSP) implementation for Makefiles, written
+    in Rust. It provides diagnostics, completions, document symbols,
+    folding ranges, semantic tokens, and more, communicating over
+    stdin/stdout so it can be used from any LSP client.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">jelmer/makefile-lsp</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Kernel sources for the NVIDIA DGX Spark (GB10 Grace-Blackwell), assembled
+    from Ubuntu's linux-nvidia kernel flavour (Launchpad orig tarball plus
+    the Ubuntu/NVIDIA debian diff) with a known-good defconfig contributed
+    from the RageLtd/linux-dgx-spark project. aarch64 only.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">RageLtd/linux-dgx-spark</remote-id>
+    <remote-id type="launchpad">ubuntu</remote-id>
+  </upstream>
+</pkgmetadata>

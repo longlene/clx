@@ -1,0 +1,766 @@
+#!/usr/bin/env python3
+"""
+Usage: route <input>
+
+Classify the input and fetch upstream metadata, returning a JSON object
+with a routing decision. Handles all four input types:
+
+  https://github.com/OWNER/REPO   → new package from GitHub
+  https://pypi.org/project/PKG/   → new package from PyPI (or GitHub if homepage redirects)
+  PKGNAME                          → lookup via eix, then PyPI
+  CATEGORY/PKGNAME                 → version bump check against overlay
+
+Output JSON keys:
+  action          "new" | "bump" | "up_to_date" | "existing" | "error"
+  source          "github" | "pypi"
+  version         Gentoo PV for the new ebuild (e.g. "1.2.3", "0_pre9782", "0_p20260408")
+  tag             GitHub tag (present when source=github and no_tags=false)
+  tag_strip_v     true if tag has a leading "v" that was stripped for PV
+  source_uri      Ready-to-paste SRC_URI line (GitHub only)
+  no_tags         true when using a commit hash (snapshot version)
+  commit          Full commit SHA (when no_tags=true)
+  description     Upstream description (seed for DESCRIPTION in ebuild)
+  language        Primary language reported by GitHub
+  owner / repo    GitHub owner and repo name
+  pypi_name       PyPI package name
+  sdist_url       PyPI sdist tarball URL
+  github_url      Full https://github.com/... URL
+  category        Overlay category (bump/existing only)
+  name            Package name  (bump/existing only)
+  current_version Ebuild PV before bump
+  latest_version  Latest upstream PV
+  ebuild_path     Absolute path to the current ebuild (bump only)
+  message         Human-readable summary of the routing decision
+  note            Extra context (e.g. "homepage is GitHub — using GitHub archive")
+  json_path       Where this JSON was saved (/tmp/route-<package>.json) —
+                  pass it to scaffold; unique per package, never clobbered
+                  by runs for other packages
+"""
+
+import json, sys, re, subprocess, urllib.request, urllib.error
+from pathlib import Path
+
+OVERLAY = "/usr/local/portage"
+
+
+# ---------------------------------------------------------------------------
+# HTTP helpers
+# ---------------------------------------------------------------------------
+
+def _gh_api(path):
+    url = f"https://api.github.com/{path.lstrip('/')}"
+    req = urllib.request.Request(
+        url, headers={"Accept": "application/vnd.github+json"}
+    )
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.load(r)
+
+
+def _pypi_api(name):
+    req = urllib.request.Request(f"https://pypi.org/pypi/{name}/json")
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.load(r)
+
+
+# ---------------------------------------------------------------------------
+# Version helpers  (defined early — used by both GitHub and overlay helpers)
+# ---------------------------------------------------------------------------
+
+def _tag_to_pv(tag, tag_prefix=None):
+    """
+    Convert a GitHub tag to a Gentoo PV.
+    Returns (pv, tag_strip_v).
+
+    tag_prefix (see _tag_prefix_from_ebuild), when given and the tag starts
+    with it, is stripped first — e.g. 'gradio@6.22.0' with prefix 'gradio@'
+    becomes '6.22.0' rather than being treated as an opaque non-numeric tag.
+
+    Rules:
+      v1.2.3     → "1.2.3",   strip_v=True
+      b9782      → "0_pre9782", strip_v=False   (llama.cpp / build-number style)
+      1.2.3      → "1.2.3",   strip_v=False
+      anything else → tag as-is, strip_v=False
+    """
+    if tag_prefix and tag.startswith(tag_prefix):
+        tag = tag[len(tag_prefix):]
+    if re.match(r'^v\d', tag):
+        return tag[1:], True
+    m = re.match(r'^b(\d+)$', tag)
+    if m:
+        return f"0_pre{m.group(1)}", False
+    return tag, False
+
+
+def _pv_key(pv):
+    """
+    Convert Gentoo PV string to a sortable tuple for numeric comparison.
+
+    Snapshots sort below any real release of the same major version:
+      "0_p20260408" → (0, -1, 20260408)   date snapshot
+      "0_pre9782"   → (0, -2, 9782)       build-number snapshot
+      "1.2.3"       → (1, 2, 3)
+      "0.13.0"      → (0, 13, 0)
+
+    The negative second component (-1 / -2) ensures that a snapshot like
+    0_p20260606 always compares as older than a real release 0.1.2, because
+    (0, -1, 20260606) < (0, 1, 2).
+    """
+    m = re.match(r'^(\d+)_p(\d{8})$', pv)
+    if m:
+        return (int(m.group(1)), -1, int(m.group(2)))
+    m = re.match(r'^(\d+)_pre(\d+)$', pv)
+    if m:
+        return (int(m.group(1)), -2, int(m.group(2)))
+    parts = re.split(r'[._-]', pv)
+    try:
+        return tuple(int(x) for x in parts if re.match(r'^\d+$', x))
+    except ValueError:
+        return (0,)
+
+
+def _newer(new_pv, current_pv):
+    """Return True if new_pv is strictly newer than current_pv."""
+    return _pv_key(new_pv) > _pv_key(current_pv)
+
+
+# ---------------------------------------------------------------------------
+# GitHub helpers
+# ---------------------------------------------------------------------------
+
+def _gh_slug(url):
+    """Extract 'owner/repo' from a GitHub URL."""
+    # Allow periods in repo names (e.g. RapidSpeech.cpp, llama.cpp).
+    # Strip trailing .git before matching so the terminator (?:\.git|/|$)
+    # works on both bare slugs and .git-suffixed clone URLs.
+    m = re.search(r'github\.com[/:]([^/\s]+/[^/\s]+?)(?:\.git(?:/|$)|/|$)', url)
+    return m.group(1).rstrip("/") if m else None
+
+
+def _gh_fetch(slug, tag_prefix=None):
+    """
+    Return (repo_meta, best_tag_or_None, commit_info_or_None).
+    Checks both releases/latest and the raw tags list, picking whichever
+    yields the higher version.  This handles repos that push git tags
+    without creating a GitHub Release (releases/latest would miss them).
+    commit_info is a dict {sha, date} only when there are no usable tags.
+
+    tag_prefix, when given (see _tag_prefix_from_ebuild), restricts the
+    search to tags sharing that prefix — required for monorepos where
+    unrelated sub-packages are tagged in the same list (e.g. 'gradio@X'
+    vs 'website@X' in gradio-app/gradio). Falls back to the unrestricted
+    list if nothing matches the prefix, since the tagging scheme may have
+    changed upstream.
+    """
+    meta = _gh_api(f"repos/{slug}")
+
+    # 1. Try releases/latest (only covers tags backed by a GitHub Release).
+    release_tag = None
+    try:
+        rel = _gh_api(f"repos/{slug}/releases/latest")
+        release_tag = rel.get("tag_name")
+    except Exception:
+        pass
+    if release_tag and tag_prefix and not release_tag.startswith(tag_prefix):
+        release_tag = None
+
+    # 1b. For a prefixed (monorepo) search, releases/latest is unreliable —
+    #     it reflects whichever sub-package happened to publish last, not
+    #     necessarily ours. /releases (the list, not /latest) IS reliably
+    #     sorted newest-first by created_at, unlike /tags below, so scan it
+    #     for the first entry matching our prefix instead.
+    if tag_prefix and not release_tag:
+        try:
+            for page in range(1, 6):
+                rels = _gh_api(f"repos/{slug}/releases?per_page=100&page={page}")
+                if not rels:
+                    break
+                match = next(
+                    (r["tag_name"] for r in rels
+                     if r.get("tag_name", "").startswith(tag_prefix)), None
+                )
+                if match:
+                    release_tag = match
+                    break
+        except Exception:
+            pass
+
+    # 2. Always query the raw tags list too — a git tag may exist without a
+    #    corresponding GitHub Release, so releases/latest would miss it.
+    #    Pre-release tags (rc/alpha/beta/...) are excluded: they produce
+    #    invalid Gentoo PVs and must never beat a stable release. If ALL
+    #    tags look like pre-releases, keep them (pre-1.0 projects).
+    #    NOTE: /tags is not reliably time-ordered (unlike /releases) — for
+    #    monorepos with heavy tag volume across sub-packages, a prefix match
+    #    can be many pages deep or entirely absent from what we scan here.
+    #    It's only a supplement to the /releases scan above, not the primary
+    #    source, for exactly that reason.
+    noise = re.compile(r'^(master|main|HEAD)-[0-9a-f]{7}$')
+    prerelease = re.compile(r'(?i)[-._](rc|alpha|beta|preview|pre|dev|nightly)([-._]?\d|$)')
+    try:
+        max_pages = 5 if tag_prefix else 1
+        raw_tags = []
+        for page in range(1, max_pages + 1):
+            tags_data = _gh_api(f"repos/{slug}/tags?per_page=100&page={page}")
+            if not tags_data:
+                break
+            raw_tags.extend(t["name"] for t in tags_data if not noise.match(t["name"]))
+            if tag_prefix and any(t.startswith(tag_prefix) for t in raw_tags):
+                break
+    except Exception:
+        raw_tags = []
+    if tag_prefix:
+        prefixed_tags = [t for t in raw_tags if t.startswith(tag_prefix)]
+        raw_tags = prefixed_tags  # only ever trust prefix-matching tags here
+    stable_tags = [t for t in raw_tags if not prerelease.search(t)]
+    if stable_tags:
+        raw_tags = stable_tags
+    if raw_tags:
+        raw_tags.sort(
+            key=lambda t: _pv_key(_tag_to_pv(t, tag_prefix)[0]), reverse=True
+        )
+    latest_raw_tag = raw_tags[0] if raw_tags else None
+
+    # 3. Pick the higher of the two.
+    if release_tag and latest_raw_tag:
+        pv_rel, _ = _tag_to_pv(release_tag, tag_prefix)
+        pv_raw, _ = _tag_to_pv(latest_raw_tag, tag_prefix)
+        tag = latest_raw_tag if _newer(pv_raw, pv_rel) else release_tag
+    else:
+        tag = release_tag or latest_raw_tag
+
+    # 3b. Nothing matched the prefix anywhere we looked — the tagging
+    #     scheme may have changed upstream (prefix from the old ebuild no
+    #     longer applies). Retry once, fully unrestricted, rather than
+    #     reporting a false "no tags found".
+    if not tag and tag_prefix:
+        return _gh_fetch(slug, tag_prefix=None)
+
+    # 4. No tags at all — use latest commit.
+    commit_info = None
+    if not tag:
+        commits = _gh_api(f"repos/{slug}/commits?per_page=1")
+        if commits:
+            sha = commits[0]["sha"]
+            date = commits[0]["commit"]["committer"]["date"][:10].replace("-", "")
+            commit_info = {"sha": sha, "date": date}
+
+    return meta, tag, commit_info
+
+
+def _source_uri(owner, repo, tag, pv):
+    """Build a ready-to-paste SRC_URI line for a GitHub archive."""
+    return (
+        f"https://github.com/{owner}/{repo}/archive/refs/tags/{tag}.tar.gz"
+        f" -> ${{P}}.gh.tar.gz"
+    )
+
+
+# ---------------------------------------------------------------------------
+# Local overlay helpers
+# ---------------------------------------------------------------------------
+
+def _resolve_overlay_path(arg):
+    """
+    Given 'CATEGORY/NAME', 'CATEGORY/NAME/NAME-VER.ebuild', or an
+    absolute path, return (category, name, ebuild_path) or (None, None, None).
+    The latest ebuild is chosen by parsed version (_pv_key), not lexicographic
+    order, so snapshot versions (0_p*) never shadow real releases.
+    """
+    # Absolute path
+    if arg.startswith("/"):
+        p = Path(arg)
+        if p.suffix == ".ebuild" and p.exists():
+            return p.parent.parent.name, p.parent.name, str(p)
+        if p.is_dir():
+            ebuilds = _sort_ebuilds(list(p.glob("*.ebuild")), p.name)
+            if ebuilds:
+                return p.parent.name, p.name, str(ebuilds[-1])
+        return None, None, None
+
+    parts = arg.rstrip("/").split("/")
+    if len(parts) < 2:
+        return None, None, None
+
+    category, name = parts[0], parts[1]
+    overlay = Path(OVERLAY)
+
+    if len(parts) == 3 and parts[2].endswith(".ebuild"):
+        path = overlay / category / name / parts[2]
+        return (category, name, str(path)) if path.exists() else (None, None, None)
+
+    pkg_dir = overlay / category / name
+    ebuilds = _sort_ebuilds(list(pkg_dir.glob("*.ebuild")), name)
+    if ebuilds:
+        return category, name, str(ebuilds[-1])
+    return None, None, None
+
+
+def _sort_ebuilds(ebuilds, pkg_name):
+    """Sort a list of Path ebuild objects by parsed version ascending."""
+    def _key(p):
+        stem = p.stem
+        prefix = pkg_name + "-"
+        pv = stem[len(prefix):] if stem.startswith(prefix) else "0"
+        return _pv_key(pv)
+    return sorted(ebuilds, key=_key)
+
+
+def _pv_from_ebuild(ebuild_path, name):
+    """Extract PV from 'name-PV.ebuild' filename."""
+    stem = Path(ebuild_path).stem
+    prefix = name + "-"
+    return stem[len(prefix):] if stem.startswith(prefix) else None
+
+
+def _upstream_from_ebuild(ebuild_path):
+    """
+    Return (source_type, url_or_name) by scanning an ebuild for upstream
+    pointers.
+
+    Checks in priority order:
+      1. GitHub URL on the HOMEPAGE= line (most authoritative)
+      2. GitHub URL anywhere in the file (SRC_URI fallback)
+      3. inherit pypi + HOMEPAGE
+      4. pypi remote-id in adjacent metadata.xml
+      5. github remote-id in adjacent metadata.xml
+    """
+    text = Path(ebuild_path).read_text()
+
+    # 1. GitHub URL specifically on the HOMEPAGE line
+    hp_match = re.search(r'^HOMEPAGE=["\s]*(.+)', text, re.MULTILINE)
+    if hp_match:
+        m = re.search(r'https://github\.com/([\w.-]+/[\w.-]+)', hp_match.group(1))
+        if m:
+            return "github", m.group(1).rstrip("/. ")
+
+    # 2. GitHub URL anywhere else in the file (e.g. SRC_URI)
+    m = re.search(r'https://github\.com/([\w.-]+/[\w.-]+)', text)
+    if m:
+        return "github", m.group(1).rstrip("/. ")
+
+    # 3. PyPI via inherit pypi or explicit HOMEPAGE
+    if "inherit" in text and "pypi" in text:
+        m = re.search(r'pypi\.org/project/([\w_-]+)', text)
+        if m:
+            return "pypi", m.group(1)
+        pkg_name = Path(ebuild_path).parent.name
+        return "pypi", pkg_name
+
+    # 4 & 5. metadata.xml adjacent to the ebuild
+    meta = Path(ebuild_path).parent / "metadata.xml"
+    if meta.exists():
+        meta_text = meta.read_text()
+        m = re.search(r'remote-id[^>]*type="github"[^>]*>([^<]+)<', meta_text)
+        if m:
+            return "github", m.group(1).strip()
+        m = re.search(r'remote-id[^>]*type="pypi"[^>]*>([^<]+)<', meta_text)
+        if m:
+            return "pypi", m.group(1).strip()
+
+    return None, None
+
+
+def _tag_prefix_from_ebuild(ebuild_path):
+    """
+    Extract the literal tag prefix this ebuild's SRC_URI uses before its PV
+    variable, e.g. 'gradio@' from '.../refs/tags/gradio@${PV}.tar.gz' or
+    '.../refs/tags/gradio@${MY_PV}.tar.gz' (any *PV variable, since ebuilds
+    commonly rename it to MY_PV/ORIG_PV/etc. when they also need PV itself
+    for the Gentoo-side version). Returns '' from '.../refs/tags/v${PV}...'
+    (the 'v' itself is handled by tag_strip_v, not here).
+
+    Needed for monorepos that tag multiple sub-packages independently from
+    one repo (gradio-app/gradio uses 'gradio@X', 'website@X',
+    '@gradio/core@X', ... all in the same tag list) — without this hint,
+    the highest-version-tag search in _gh_fetch can silently latch onto an
+    unrelated sub-package's tag namespace, since it has no way to tell the
+    tag families apart.
+    """
+    text = Path(ebuild_path).read_text()
+    m = re.search(r'refs/tags/([^$"\s]*)\$\{[A-Z_]*PV\}', text)
+    if m and m.group(1) not in ("", "v"):
+        return m.group(1)
+    return None
+
+
+def _find_existing_in_overlay(github_slug=None, pypi_name=None):
+    """
+    Scan the overlay for a package already tracking the same upstream.
+
+    Checks in order:
+      1. metadata.xml remote-id (exact match)
+      2. HOMEPAGE= line in the latest ebuild contains the GitHub slug
+
+    Returns (category, name, ebuild_path) or (None, None, None).
+    """
+    if not github_slug and not pypi_name:
+        return None, None, None
+
+    slug_lower  = github_slug.lower() if github_slug else None
+    pypi_lower  = pypi_name.lower().replace("-", "_") if pypi_name else None
+
+    overlay = Path(OVERLAY)
+    for pkg_dir in sorted(overlay.glob("*/*")):
+        if not pkg_dir.is_dir():
+            continue
+        ebuilds = _sort_ebuilds(list(pkg_dir.glob("*.ebuild")), pkg_dir.name)
+        if not ebuilds:
+            continue
+
+        # 1. Check metadata.xml remote-id — most reliable
+        meta = pkg_dir / "metadata.xml"
+        if meta.exists():
+            meta_text = meta.read_text()
+            if slug_lower:
+                m = re.search(r'remote-id[^>]*type="github"[^>]*>([^<]+)<', meta_text)
+                if m and m.group(1).strip().lower() == slug_lower:
+                    return pkg_dir.parent.name, pkg_dir.name, str(ebuilds[-1])
+            if pypi_lower:
+                m = re.search(r'remote-id[^>]*type="pypi"[^>]*>([^<]+)<', meta_text)
+                if m and m.group(1).strip().lower().replace("-", "_") == pypi_lower:
+                    return pkg_dir.parent.name, pkg_dir.name, str(ebuilds[-1])
+
+        # 2. Fall back: HOMEPAGE line in the latest ebuild
+        if slug_lower:
+            ebuild_text = ebuilds[-1].read_text()
+            hp = re.search(r'^HOMEPAGE=["\s]*(.+)', ebuild_text, re.MULTILINE)
+            if hp and slug_lower in hp.group(1).lower():
+                return pkg_dir.parent.name, pkg_dir.name, str(ebuilds[-1])
+
+    return None, None, None
+
+
+# ---------------------------------------------------------------------------
+# Four main handlers
+# ---------------------------------------------------------------------------
+
+def handle_github_url(url):
+    slug = _gh_slug(url)
+    if not slug:
+        return {"action": "error", "message": f"Cannot parse GitHub slug from: {url}"}
+
+    # Check if the overlay already has an ebuild tracking this upstream.
+    # If so, route to a bump check rather than returning "new".
+    cat, name, existing_ebuild = _find_existing_in_overlay(github_slug=slug)
+    if cat:
+        result = handle_local_path(f"{cat}/{name}")
+        result["note"] = (
+            result.get("note", "") +
+            f" (found existing overlay package {cat}/{name})"
+        ).strip()
+        return result
+
+    owner, repo = slug.split("/", 1)
+    try:
+        meta, tag, commit_info = _gh_fetch(slug)
+    except Exception as e:
+        return {"action": "error", "message": f"GitHub API error: {e}"}
+
+    base = {
+        "action": "new",
+        "source": "github",
+        "github_url": f"https://github.com/{slug}",
+        "owner": owner,
+        "repo": repo,
+        "description": (meta.get("description") or "")[:80].rstrip(" ."),
+        "language": meta.get("language") or "",
+    }
+
+    if commit_info:
+        pv = f"0_p{commit_info['date']}"
+        return {**base,
+            "version": pv,
+            "no_tags": True,
+            "commit": commit_info["sha"],
+            "source_uri": (
+                f"https://github.com/{slug}/archive/{commit_info['sha']}.tar.gz"
+                f" -> ${{P}}.gh.tar.gz"
+            ),
+        }
+
+    pv, strip_v = _tag_to_pv(tag)
+    return {**base,
+        "version": pv,
+        "tag": tag,
+        "tag_strip_v": strip_v,
+        "no_tags": False,
+        "source_uri": _source_uri(owner, repo, tag, pv),
+    }
+
+
+def handle_pypi(name_or_url):
+    m = re.search(r'pypi\.org/project/([^/]+)', name_or_url)
+    name = m.group(1) if m else name_or_url
+
+    try:
+        d = _pypi_api(name)
+    except urllib.error.HTTPError as e:
+        return {"action": "error", "message": f"PyPI API error for '{name}': {e}"}
+    except Exception as e:
+        return {"action": "error", "message": str(e)}
+
+    i = d["info"]
+    sdist = next((u["url"] for u in d.get("urls", []) if u["packagetype"] == "sdist"), None)
+
+    # Look for a GitHub URL in home_page and all project_urls values
+    all_urls = [i.get("home_page") or ""] + list((i.get("project_urls") or {}).values())
+    slug = next((s for s in (_gh_slug(u) for u in all_urls if u) if s), None)
+
+    # Check if the overlay already tracks this upstream by pypi name only.
+    # Do NOT pass github_slug here: mono-repos (e.g. livekit/python-sdks) host
+    # multiple PyPI packages under one slug, so a slug match would return the
+    # wrong existing package (e.g. livekit instead of livekit-protocol).
+    cat, pkgname, existing_ebuild = _find_existing_in_overlay(pypi_name=name)
+    if cat:
+        result = handle_local_path(f"{cat}/{pkgname}")
+        result["note"] = (
+            result.get("note", "") +
+            f" (found existing overlay package {cat}/{pkgname})"
+        ).strip()
+        return result
+
+    # Follow → GitHub redirect
+    if slug:
+        try:
+            meta, tag, commit_info = _gh_fetch(slug)
+        except Exception:
+            slug = None
+
+    if slug and tag:
+        owner, repo = slug.split("/", 1)
+        pv, strip_v = _tag_to_pv(tag)
+        return {
+            "action": "new",
+            "source": "github",
+            "pypi_name": name,
+            "github_url": f"https://github.com/{slug}",
+            "owner": owner,
+            "repo": repo,
+            "description": (meta.get("description") or i.get("summary") or "")[:80].rstrip(" ."),
+            "language": meta.get("language") or "",
+            "version": pv,
+            "tag": tag,
+            "tag_strip_v": strip_v,
+            "no_tags": False,
+            "source_uri": _source_uri(owner, repo, tag, pv),
+            "sdist_url": sdist,
+            "note": "homepage is GitHub — using GitHub archive as source (.gh.tar.gz)",
+        }
+
+    # Pure PyPI source
+    return {
+        "action": "new",
+        "source": "pypi",
+        "pypi_name": name,
+        "description": (i.get("summary") or "")[:80].rstrip(" ."),
+        "version": i["version"],
+        "license": i.get("license") or "",
+        "sdist_url": sdist,
+        "note": "Use 'inherit pypi' eclass — no explicit SRC_URI needed",
+    }
+
+
+def handle_local_path(arg):
+    category, name, ebuild_path = _resolve_overlay_path(arg)
+    if not ebuild_path:
+        return {"action": "error", "message": f"No ebuild found in overlay for: {arg}"}
+
+    current_pv = _pv_from_ebuild(ebuild_path, name)
+    if not current_pv:
+        return {"action": "error", "message": f"Cannot extract PV from: {ebuild_path}"}
+
+    source_type, upstream_id = _upstream_from_ebuild(ebuild_path)
+    if not source_type:
+        return {
+            "action": "error",
+            "message": f"Cannot determine upstream URL from: {ebuild_path}",
+            "ebuild_path": ebuild_path,
+        }
+
+    base = {
+        "category": category,
+        "name": name,
+        "current_version": current_pv,
+        "ebuild_path": ebuild_path,
+        "source": source_type,
+    }
+
+    if source_type == "github":
+        slug = upstream_id
+        tag_prefix = _tag_prefix_from_ebuild(ebuild_path)
+        try:
+            meta, tag, commit_info = _gh_fetch(slug, tag_prefix)
+        except Exception as e:
+            return {"action": "error", "message": f"GitHub API error: {e}", **base}
+
+        owner, repo = slug.split("/", 1)
+        gh_url = f"https://github.com/{slug}"
+
+        if commit_info:
+            new_pv = f"0_p{commit_info['date']}"
+            up_to_date = not _newer(new_pv, current_pv)
+            return {**base,
+                "action": "up_to_date" if up_to_date else "bump",
+                "github_url": gh_url,
+                "owner": owner,
+                "repo": repo,
+                "latest_version": new_pv,
+                "no_tags": True,
+                "commit": commit_info["sha"],
+                "message": (
+                    f"{category}/{name} is already at latest snapshot {current_pv}"
+                    if up_to_date else
+                    f"New snapshot: {current_pv} → {new_pv}"
+                ),
+                **({"source_uri": (
+                    f"https://github.com/{slug}/archive/{commit_info['sha']}.tar.gz"
+                    f" -> ${{P}}.gh.tar.gz"
+                )} if not up_to_date else {}),
+            }
+
+        if not tag:
+            return {"action": "error", "message": "No tags or commits found upstream", **base}
+
+        new_pv, strip_v = _tag_to_pv(tag, tag_prefix)
+        up_to_date = not _newer(new_pv, current_pv)
+        return {**base,
+            "action": "up_to_date" if up_to_date else "bump",
+            "github_url": gh_url,
+            "owner": owner,
+            "repo": repo,
+            "latest_version": new_pv,
+            "tag": tag,
+            "tag_strip_v": strip_v,
+            "no_tags": False,
+            "message": (
+                f"{category}/{name} is already at latest version {current_pv}"
+                if up_to_date else
+                f"Bump: {current_pv} → {new_pv} (tag: {tag})"
+            ),
+            **({"source_uri": _source_uri(owner, repo, tag, new_pv)} if not up_to_date else {}),
+        }
+
+    if source_type == "pypi":
+        pypi_name = upstream_id
+        try:
+            d = _pypi_api(pypi_name)
+        except Exception as e:
+            return {"action": "error", "message": f"PyPI error: {e}", **base}
+        new_pv = d["info"]["version"]
+        sdist = next(
+            (u["url"] for u in d.get("urls", []) if u["packagetype"] == "sdist"), None
+        )
+        up_to_date = not _newer(new_pv, current_pv)
+        return {**base,
+            "action": "up_to_date" if up_to_date else "bump",
+            "pypi_name": pypi_name,
+            "latest_version": new_pv,
+            "sdist_url": sdist,
+            "message": (
+                f"{category}/{name} is already at latest version {current_pv}"
+                if up_to_date else
+                f"Bump: {current_pv} → {new_pv}"
+            ),
+        }
+
+    return {"action": "error", "message": f"Unsupported source type: {source_type}"}
+
+
+def handle_package_name(name):
+    # 1. Check portage/overlays via eix
+    try:
+        r = subprocess.run(
+            ["eix", "-e", "--", name],
+            capture_output=True, text=True, timeout=10,
+        )
+        if r.returncode == 0:
+            m = re.search(r'^[\[*].*?([\w][\w-]*/[\w][\w.-]+)', r.stdout, re.MULTILINE)
+            atom = m.group(1) if m else name
+            return {
+                "action": "existing",
+                "atom": atom,
+                "message": (
+                    f"'{name}' already exists in portage as {atom}. "
+                    f"Pass '{atom}' to check for a version bump."
+                ),
+            }
+    except (subprocess.TimeoutExpired, FileNotFoundError):
+        pass
+
+    # 2. Direct overlay scan — catches packages eix may miss (e.g. dev-erlang
+    #    packages whose directory name uses underscores instead of hyphens).
+    overlay = Path(OVERLAY)
+    for variant in _name_variants(name):
+        for pkg_dir in overlay.glob(f"*/{variant}"):
+            if pkg_dir.is_dir() and list(pkg_dir.glob("*.ebuild")):
+                cat = pkg_dir.parent.name
+                result = handle_local_path(f"{cat}/{variant}")
+                result["note"] = (
+                    result.get("note", "") +
+                    f" (found in overlay as {cat}/{variant})"
+                ).strip()
+                return result
+
+    # 3. Not found locally — treat as PyPI package name
+    return handle_pypi(name)
+
+
+def _name_variants(name):
+    """Return the name plus hyphen↔underscore variants, deduplicated."""
+    variants = [name, name.replace("-", "_"), name.replace("_", "-")]
+    seen = set()
+    return [v for v in variants if not (v in seen or seen.add(v))]
+
+
+# ---------------------------------------------------------------------------
+# Entry point
+# ---------------------------------------------------------------------------
+
+def main():
+    if any(a in ("-h", "--help") for a in sys.argv[1:]):
+        print(__doc__.strip())
+        sys.exit(0)
+    if len(sys.argv) < 2:
+        print(json.dumps({
+            "action": "error",
+            "message": "Usage: route <github-url | pypi-url | package-name | category/name>",
+        }, indent=2, ensure_ascii=False))
+        sys.exit(1)
+
+    arg = sys.argv[1].strip().rstrip("/")
+
+    try:
+        if re.match(r'https://github\.com/', arg):
+            result = handle_github_url(arg)
+
+        elif re.match(r'https?://pypi\.org/', arg):
+            result = handle_pypi(arg)
+
+        elif re.match(r'^[\w][\w-]*/[\w][\w.-]+(/[\w.-]+\.ebuild)?$', arg) \
+                or arg.startswith("/"):
+            result = handle_local_path(arg)
+
+        else:
+            result = handle_package_name(arg)
+
+    except Exception as e:
+        result = {"action": "error", "message": f"Unexpected error: {e}"}
+
+    # Persist to a per-package file so parallel/successive runs never
+    # clobber each other; scaffold consumes json_path.
+    slug = (result.get("name") or result.get("repo")
+            or result.get("pypi_name")
+            or re.sub(r'[^\w.-]+', '-', arg).strip('-'))
+    json_path = f"/tmp/route-{slug}.json"
+    result["json_path"] = json_path
+    try:
+        Path(json_path).write_text(json.dumps(result, indent=2, ensure_ascii=False))
+    except OSError as e:
+        result["json_path"] = None
+        result.setdefault("note", f"could not write {json_path}: {e}")
+
+    print(json.dumps(result, indent=2, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

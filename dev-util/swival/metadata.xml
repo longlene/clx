@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">Swival/swival</remote-id>
+    <remote-id type="pypi">swival</remote-id>
+  </upstream>
+  <use>
+    <flag name="metaskills">Enable Starlark-based metaskills via starlark-go</flag>
+  </use>
+</pkgmetadata>

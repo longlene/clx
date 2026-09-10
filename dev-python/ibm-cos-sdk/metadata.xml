@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ibm-cos-sdk is IBM's boto3-derived Python SDK for IBM Cloud Object
+    Storage (COS), providing S3-compatible client access.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ibm/ibm-cos-sdk-python</remote-id>
+    <remote-id type="pypi">ibm-cos-sdk</remote-id>
+  </upstream>
+</pkgmetadata>

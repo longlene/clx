@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    chuk-session-manager is a lightweight session manager for A2A (agent to
+    agent) applications, distinct from the newer chuk-ai-session-manager
+    package by the same author.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">chuk-session-manager</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,45 @@
+--- a/CMakeLists.txt	2026-07-03 10:37:32.253998353 -0700
++++ b/CMakeLists.txt	2026-07-03 10:37:32.267462026 -0700
+@@ -93,8 +93,7 @@
+ get_filename_component(TOKENIZERS_CPP_ROOT ${CMAKE_CURRENT_LIST_FILE} DIRECTORY)
+ set(TOKENIZERS_CPP_CARGO_SOURCE_PATH ${TOKENIZERS_CPP_ROOT}/rust)
+ 
+-option(MSGPACK_USE_BOOST "Use Boost libraried" OFF)
+-add_subdirectory(msgpack)
++find_package(msgpack-cxx REQUIRED)
+ 
+ option(MLC_ENABLE_SENTENCEPIECE_TOKENIZER "Enable SentencePiece tokenizer" ON)
+ 
+@@ -146,27 +145,17 @@
+   src/rwkv_world_tokenizer.cc
+ )
+ add_library(tokenizers_cpp STATIC ${TOKENIZER_CPP_SRCS})
+-target_include_directories(tokenizers_cpp PRIVATE sentencepiece/src)
+-target_include_directories(tokenizers_cpp PRIVATE msgpack/include)
+ target_include_directories(tokenizers_cpp PUBLIC ${TOKENIZERS_CPP_INCLUDE})
+ if (MLC_ENABLE_SENTENCEPIECE_TOKENIZER STREQUAL "ON")
+     target_compile_definitions(tokenizers_cpp PUBLIC MLC_ENABLE_SENTENCEPIECE_TOKENIZER)
+ endif ()
+ target_link_libraries(tokenizers_cpp PRIVATE msgpack-cxx)
+ 
+-# sentencepiece config
+-option(SPM_ENABLE_SHARED "override sentence piece config" OFF)
+-option(SPM_ENABLE_TCMALLOC "" OFF)
+-# provide macro if it does not exist in cmake system
+-# it is OK to skip those since we do not provide these apps in the ios
+-# instead just link to the sentencepiece directly
+-if (CMAKE_SYSTEM_NAME STREQUAL "iOS")
+-  macro (set_xcode_property TARGET XCODE_PROPERTY XCODE_VALUE)
+-      set_property (TARGET ${TARGET} PROPERTY
+-          XCODE_ATTRIBUTE_${XCODE_PROPERTY} ${XCODE_VALUE})
+-  endmacro (set_xcode_property)
+-endif()
+-add_subdirectory(sentencepiece sentencepiece EXCLUDE_FROM_ALL)
++# sentencepiece config - use system sentencepiece via pkg-config
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(SENTENCEPIECE REQUIRED IMPORTED_TARGET sentencepiece)
++add_library(sentencepiece-static INTERFACE)
++target_link_libraries(sentencepiece-static INTERFACE PkgConfig::SENTENCEPIECE)
+ 
+ add_library(tokenizers_c INTERFACE ${TOKENIZERS_RUST_LIB})
+ target_link_libraries(tokenizers_c INTERFACE ${TOKENIZERS_RUST_LIB} ${TOKENIZERS_C_LINK_LIBS})

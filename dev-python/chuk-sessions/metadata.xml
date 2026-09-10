@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    chuk-sessions provides a comprehensive, async-first session management
+    system with pluggable in-memory and Redis-backed storage.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">chuk-sessions</remote-id>
+  </upstream>
+</pkgmetadata>

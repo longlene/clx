@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    jsonpath-python is a lightweight and powerful JSONPath implementation
+    for Python, compliant with the JSONPath specification.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">sean2077/jsonpath-python</remote-id>
+    <remote-id type="pypi">jsonpath-python</remote-id>
+  </upstream>
+</pkgmetadata>

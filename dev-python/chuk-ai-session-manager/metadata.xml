@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    chuk-ai-session-manager is a session manager for AI applications,
+    tracking conversation state and tool usage across LLM interactions.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">chuk-ai-session-manager</remote-id>
+  </upstream>
+</pkgmetadata>

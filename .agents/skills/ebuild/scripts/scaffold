@@ -1,0 +1,505 @@
+#!/usr/bin/env python3
+"""
+Usage:
+  scaffold CATEGORY/NAME ROUTE_JSON [--overlay PATH]
+  scaffold --bump ROUTE_JSON [--overlay PATH]
+
+Consumes the JSON produced by `route` (a file path, or "-" for stdin).
+
+New mode (action=new):
+  1. Write a minimal skeleton ebuild (GitHub or PyPI flavour) — skipped if
+     the ebuild file already exists, so re-running is safe.
+  2. `ebuild ... digest` (downloads the tarball).
+  3. `ebuild ... unpack` (extracts to /var/tmp/portage/.../work/).
+  4. Inspect the source: build system, S override, pyproject facts,
+     license files, bundled deps. Auto-inserts the S= line and fixes
+     DISTUTILS_USE_PEP517 in skeletons it wrote itself.
+
+Bump mode (action=bump):
+  1. Rename the old ebuild to the new version.
+  2. Rust: clear CRATES / remove GIT_CRATES (run update-crates afterwards).
+     Snapshot ebuilds: update the COMMIT= variable.
+  3. digest + unpack + inspect, same as new mode.
+
+Output: one JSON object. Key fields:
+  status            "ok" | "error"  (on error see stage + log_tail)
+  ebuild            path of the ebuild to complete
+  srcdir            extracted source root — read all files from here
+  s_line            S= override; "inserted" notes say it is already in place
+  build_systems     all detected; `workflow` is the doc to load for the primary
+  python            pyproject.toml facts (pep517, deps, urls, needs_setuptools_scm)
+  license_files     paths of LICENSE/COPYING files in srcdir
+  bundled           .gitmodules / vendored dirs that need handling
+  crates_pending    true → run update-crates next (Rust)
+  notes             things to verify by hand
+"""
+
+import datetime
+import json
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+DEFAULT_OVERLAY = "/usr/local/portage"
+PORTAGE_TMP = "/var/tmp/portage"
+
+PEP517_MAP = {
+    "hatchling.build": "hatchling",
+    "setuptools.build_meta": "setuptools",
+    "setuptools.build_meta:__legacy__": "setuptools",
+    "pdm.backend": "pdm-backend",
+    "flit_core.buildapi": "flit",
+    "poetry.core.masonry.api": "poetry",
+    "mesonpy": "meson-python",
+    "maturin": "maturin",
+    "uv_build": "uv-build",
+    "scikit_build_core.build": "scikit-build-core",
+}
+
+# (marker file, build system, workflow doc) — first match is primary
+# Use None as marker for glob-based checks (handled in inspect_srcdir)
+BUILD_CHECKS = [
+    ("rebar.config", "erlang", "workflows/erlang.md"),
+    ("pyproject.toml", "python", "workflows/python.md"),
+    ("setup.py", "python", "workflows/python.md"),
+    ("Cargo.toml", "rust", "workflows/rust.md"),
+    ("meson.build", "meson", "workflows/cmake.md"),
+    ("CMakeLists.txt", "cmake", "workflows/cmake.md"),
+    ("configure.ac", "autotools", "workflows/cmake.md"),
+    # Common Lisp detected via glob in inspect_srcdir
+]
+
+VENDOR_DIRS = ["third_party", "third-party", "extern", "external", "vendor", "deps", "subprojects"]
+
+
+def out(obj, code=0):
+    print(json.dumps(obj, indent=2, ensure_ascii=False))
+    sys.exit(code)
+
+
+def err(**kw):
+    out({"status": "error", **kw}, 1)
+
+
+def sh_ebuild(ebuild, *phases):
+    r = subprocess.run(
+        ["ebuild", str(ebuild), *phases], capture_output=True, text=True
+    )
+    return r.returncode, r.stdout + r.stderr
+
+
+def esc(s):
+    """Escape a value for use inside a double-quoted bash string."""
+    s = " ".join(str(s).split())
+    for a, b in (("\\", "\\\\"), ('"', '\\"'), ("$", "\\$"), ("`", "\\`")):
+        s = s.replace(a, b)
+    return s
+
+
+# ---------------------------------------------------------------------------
+# Skeletons
+# ---------------------------------------------------------------------------
+
+def github_skeleton(j, notes):
+    year = datetime.date.today().year
+    desc = esc(j.get("description") or "TODO")[:80].rstrip(" .")
+    homepage = j.get("github_url") or "TODO"
+    src_uri = j.get("source_uri") or "TODO"
+    tag, ver, commit = j.get("tag"), j.get("version"), j.get("commit")
+
+    commit_block = ""
+    if commit:
+        src_uri = src_uri.replace(commit, "${COMMIT}")
+        commit_block = f'COMMIT="{commit}"\n\n'
+    elif tag:
+        if tag == f"v{ver}":
+            src_uri = src_uri.replace(f"/{tag}.tar.gz", "/v${PV}.tar.gz")
+        elif tag == ver:
+            src_uri = src_uri.replace(f"/{tag}.tar.gz", "/${PV}.tar.gz")
+        else:
+            notes.append(
+                f"SRC_URI uses literal tag '{tag}' (PV={ver}); "
+                "parametrize with MY_PV if appropriate"
+            )
+
+    return (
+        f"# Copyright {year} Gentoo Authors\n"
+        "# Distributed under the terms of the GNU General Public License v2\n"
+        "\n"
+        "EAPI=8\n"
+        "\n"
+        f"{commit_block}"
+        f'DESCRIPTION="{desc}"\n'
+        f'HOMEPAGE="{homepage}"\n'
+        f'SRC_URI="{src_uri}"\n'
+        "\n"
+        'LICENSE="TODO"\n'
+        'SLOT="0"\n'
+        'KEYWORDS="~amd64"\n'
+    )
+
+
+def pypi_skeleton(j, name):
+    year = datetime.date.today().year
+    desc = esc(j.get("description") or "TODO")[:80].rstrip(" .")
+    pypi_name = j.get("pypi_name") or name
+    pypi_pn = ""
+    if pypi_name.lower().replace("_", "-") != name:
+        pypi_pn = f'PYPI_PN="{pypi_name}"\n'
+
+    return (
+        f"# Copyright {year} Gentoo Authors\n"
+        "# Distributed under the terms of the GNU General Public License v2\n"
+        "\n"
+        "EAPI=8\n"
+        "\n"
+        "DISTUTILS_USE_PEP517=hatchling\n"
+        "PYTHON_COMPAT=( python3_{13..15} )\n"
+        "\n"
+        f"{pypi_pn}"
+        "inherit distutils-r1 pypi\n"
+        "\n"
+        f'DESCRIPTION="{desc}"\n'
+        f'HOMEPAGE="https://pypi.org/project/{pypi_name}/"\n'
+        "\n"
+        'LICENSE="TODO"\n'
+        'SLOT="0"\n'
+        'KEYWORDS="~amd64"\n'
+    )
+
+
+# ---------------------------------------------------------------------------
+# Source inspection
+# ---------------------------------------------------------------------------
+
+def python_facts(srcdir):
+    pp = srcdir / "pyproject.toml"
+    if not pp.exists():
+        if (srcdir / "setup.py").exists():
+            return {"pep517": "setuptools", "note": "setup.py only, no pyproject.toml"}
+        return None
+    import tomllib
+    try:
+        data = tomllib.loads(pp.read_text())
+    except Exception as e:
+        return {"error": f"pyproject.toml parse failed: {e}"}
+    bs = data.get("build-system", {})
+    backend = bs.get("build-backend", "setuptools.build_meta")
+    requires = bs.get("requires", [])
+    proj = data.get("project", {})
+    return {
+        "build_backend": backend,
+        "pep517": PEP517_MAP.get(backend),
+        "requires_python": proj.get("requires-python"),
+        "urls": proj.get("urls", {}),
+        "dependencies": proj.get("dependencies", []),
+        "optional_dependencies": proj.get("optional-dependencies", {}),
+        "needs_setuptools_scm": any(
+            "setuptools-scm" in r or "setuptools_scm" in r for r in requires
+        ),
+    }
+
+
+def lisp_facts(srcdir):
+    """Extract facts from the primary .asd file."""
+    asd_files = sorted(srcdir.glob("*.asd"))
+    if not asd_files:
+        return None
+    # Prefer non-test .asd as primary
+    primary = next(
+        (f for f in asd_files
+         if not any(f.stem.endswith(s) for s in ("-tests", "-test", "-test-suite"))),
+        asd_files[0],
+    )
+    text = primary.read_text(errors="replace")
+
+    # Extract :depends-on list — handles multi-line
+    depends_on = []
+    m = re.search(r":depends-on\s*\(([^)]*)\)", text, re.DOTALL | re.IGNORECASE)
+    if m:
+        depends_on = re.findall(r'"([^"]+)"', m.group(1))
+
+    # Extract :description and :license
+    desc, license_str = None, None
+    md = re.search(r':description\s+"([^"]+)"', text, re.IGNORECASE)
+    if md:
+        desc = md.group(1)
+    ml = re.search(r':license\s+"([^"]+)"', text, re.IGNORECASE)
+    if ml:
+        license_str = ml.group(1)
+
+    # Detect standalone binary pattern (build.lisp calling save-lisp-and-die)
+    build_lisp = srcdir / "build.lisp"
+    is_binary = (
+        build_lisp.exists()
+        and "save-lisp-and-die" in build_lisp.read_text(errors="replace")
+    )
+
+    return {
+        "asd_file": primary.name,
+        "system_name": primary.stem,
+        "depends_on": depends_on,
+        "description": desc,
+        "license": license_str,
+        "all_asd_files": [f.name for f in asd_files],
+        "is_binary": is_binary,
+    }
+
+
+def inspect_srcdir(srcdir):
+    systems, workflow = [], None
+    for marker, system, wf in BUILD_CHECKS:
+        if (srcdir / marker).exists():
+            systems.append(system)
+            workflow = workflow or wf
+
+    # Common Lisp: any top-level .asd file
+    if list(srcdir.glob("*.asd")):
+        systems.append("common-lisp")
+        workflow = workflow or "workflows/common-lisp.md"
+
+    licenses = sorted(
+        str(p) for p in srcdir.iterdir()
+        if p.is_file() and p.name.upper().startswith(
+            ("LICENSE", "LICENCE", "COPYING", "COPYRIGHT")
+        )
+    )
+    bundled = {}
+    if (srcdir / ".gitmodules").exists():
+        bundled["gitmodules"] = str(srcdir / ".gitmodules")
+    vendored = [d for d in VENDOR_DIRS if (srcdir / d).is_dir()]
+    if vendored:
+        bundled["vendored_dirs"] = vendored
+    return {
+        "build_systems": systems,
+        "workflow": workflow,
+        "python": python_facts(srcdir) if "python" in systems else None,
+        "lisp": lisp_facts(srcdir) if "common-lisp" in systems else None,
+        "license_files": licenses,
+        "bundled": bundled or None,
+    }
+
+
+def suggest_s(srcdir_name, name, version, j):
+    """Return an S= line, or None when the default is correct."""
+    if srcdir_name == f"{name}-{version}":
+        return None
+    s = srcdir_name
+    commit = j.get("commit")
+    if commit and commit in s:
+        s = s.replace(commit, "${COMMIT}")
+    elif version and version in s:
+        s = s.replace(version, "${PV}")
+    return f'S="${{WORKDIR}}/{s}"'
+
+
+def digest_unpack_inspect(ebuild, category, pf, name, version, j, result, notes):
+    """Shared tail of both modes: digest, unpack, pick srcdir, inspect."""
+    rc, log = sh_ebuild(ebuild, "digest")
+    if rc:
+        err(stage="digest", ebuild=str(ebuild), log_tail=log.splitlines()[-40:])
+    rc, log = sh_ebuild(ebuild, "unpack")
+    if rc:
+        err(stage="unpack", ebuild=str(ebuild), log_tail=log.splitlines()[-40:])
+
+    workdir = Path(PORTAGE_TMP) / category / pf / "work"
+    entries = sorted(p.name for p in workdir.iterdir() if p.is_dir())
+    if not entries:
+        err(stage="unpack", message=f"nothing extracted under {workdir}")
+    repo = (j.get("repo") or "").lower()
+    srcdir_name = entries[0]
+    if len(entries) > 1:
+        for e in entries:
+            if name.lower() in e.lower() or (repo and repo in e.lower()):
+                srcdir_name = e
+                break
+        notes.append(f"multiple dirs in workdir: {entries}; picked {srcdir_name}")
+    srcdir = workdir / srcdir_name
+
+    result.update({
+        "workdir": str(workdir),
+        "srcdir": str(srcdir),
+        "srcdir_name": srcdir_name,
+        "s_line": None if j.get("source") == "pypi"
+                  else suggest_s(srcdir_name, name, version, j),
+    })
+    if j.get("source") == "pypi":
+        notes.append("pypi eclass manages SRC_URI and S — no override needed")
+    result.update(inspect_srcdir(srcdir))
+    return srcdir
+
+
+# ---------------------------------------------------------------------------
+# Modes
+# ---------------------------------------------------------------------------
+
+def load_route_json(path):
+    try:
+        raw = sys.stdin.read() if path == "-" else Path(path).read_text()
+        return json.loads(raw)
+    except Exception as e:
+        err(message=f"cannot read route JSON from {path}: {e}")
+
+
+def mode_new(catname, jsonfile, overlay):
+    if "/" not in catname:
+        err(message=f"expected CATEGORY/NAME, got: {catname}")
+    category, name = catname.split("/", 1)
+    j = load_route_json(jsonfile)
+    if j.get("action") != "new":
+        err(message=f"route action is '{j.get('action')}' — new mode needs action=new. "
+                    "For bumps use: scaffold --bump ROUTE_JSON")
+    version = j["version"]
+    pf = f"{name}-{version}"
+    pkgdir = Path(overlay) / category / name
+    pkgdir.mkdir(parents=True, exist_ok=True)
+    ebuild = pkgdir / f"{pf}.ebuild"
+
+    notes = []
+    wrote = not ebuild.exists()
+    if wrote:
+        text = pypi_skeleton(j, name) if j.get("source") == "pypi" \
+            else github_skeleton(j, notes)
+        ebuild.write_text(text)
+    else:
+        notes.append("ebuild already existed — kept as-is, skeleton not rewritten")
+
+    result = {"status": "ok", "action": "new",
+              "package": f"{category}/{pf}", "ebuild": str(ebuild)}
+    digest_unpack_inspect(ebuild, category, pf, name, version, j, result, notes)
+
+    # Post-unpack fixes to skeletons we just wrote
+    if wrote and result.get("s_line"):
+        t = ebuild.read_text()
+        t = re.sub(r"(^SRC_URI=.*$)",
+                   lambda m: m.group(1) + "\n" + result["s_line"],
+                   t, count=1, flags=re.M)
+        ebuild.write_text(t)
+        notes.append("S override inserted into the skeleton")
+    py = result.get("python") or {}
+    if wrote and j.get("source") == "pypi" and py.get("pep517") \
+            and py["pep517"] != "hatchling":
+        t = ebuild.read_text().replace(
+            "DISTUTILS_USE_PEP517=hatchling",
+            f"DISTUTILS_USE_PEP517={py['pep517']}",
+        )
+        ebuild.write_text(t)
+        notes.append(f"DISTUTILS_USE_PEP517 set to {py['pep517']} from pyproject.toml")
+
+    # Common Lisp post-unpack skeleton fixup
+    lisp = result.get("lisp") or {}
+    if wrote and "common-lisp" in result.get("build_systems", []) \
+            and "python" not in result.get("build_systems", []):
+        t = ebuild.read_text()
+        if lisp.get("is_binary"):
+            # Standalone binary: add BDEPEND + src_compile + src_install
+            t += (
+                '\nBDEPEND="\n\tdev-lisp/sbcl\n'
+                + "".join(
+                    f"\tdev-lisp/{dep.replace('/', '-')}\n"
+                    for dep in lisp.get("depends_on", [])
+                    if dep != "sb-posix"
+                )
+                + '"\n\nRDEPEND=""\n'
+                + "\nsrc_compile() {\n\tsbcl --script build.lisp || die\n}\n"
+                + "\nsrc_install() {\n\tdobin bin/${PN}\n}\n"
+            )
+            notes.append(
+                "Common Lisp binary skeleton: BDEPEND + sbcl --script + dobin inserted; "
+                "map depends_on system names to real Gentoo atoms (see workflows/common-lisp.md)"
+            )
+        else:
+            # Library: add inherit common-lisp-3 + RDEPEND
+            t = t.replace("EAPI=8\n\n", "EAPI=8\n\ninherit common-lisp-3\n\n", 1)
+            rdepend = "".join(
+                f"\tdev-lisp/{dep.replace('/', '-')}\n"
+                for dep in lisp.get("depends_on", [])
+            )
+            t += f'\nRDEPEND="\n{rdepend}"\n'
+            notes.append(
+                "Common Lisp library skeleton: inherit common-lisp-3 + RDEPEND inserted; "
+                "map depends_on system names to real Gentoo atoms (see workflows/common-lisp.md)"
+            )
+        if lisp.get("license") and 'LICENSE="TODO"' in t:
+            t = t.replace('LICENSE="TODO"', f'LICENSE="{lisp["license"]}"', 1)
+            notes.append(f"LICENSE set to '{lisp['license']}' from .asd (verify against license-mapping.md)")
+        ebuild.write_text(t)
+
+    result["notes"] = notes
+    out(result)
+
+
+def mode_bump(jsonfile, overlay):
+    j = load_route_json(jsonfile)
+    if j.get("action") != "bump":
+        err(message=f"route action is '{j.get('action')}' — bump mode needs action=bump")
+    category, name = j["category"], j["name"]
+    version = j["latest_version"]
+    pf = f"{name}-{version}"
+    old = Path(j["ebuild_path"])
+    new = old.parent / f"{pf}.ebuild"
+
+    notes = []
+    if old.exists() and old != new:
+        if new.exists():
+            err(message=f"target already exists: {new}")
+        old.rename(new)
+        notes.append(f"renamed {old.name} -> {new.name}")
+    elif not new.exists():
+        err(message=f"neither {old} nor {new} exists")
+
+    text = new.read_text()
+    crates_pending = False
+    if re.search(r'^CRATES="', text, re.M):
+        text = re.sub(r'^CRATES="[^"]*"', 'CRATES=""', text, flags=re.M)
+        text = re.sub(r"^(?:declare -A )?GIT_CRATES=\(.*?^\)\n", "", text,
+                      flags=re.M | re.S)
+        text = re.sub(r"\n{3,}", "\n\n", text)
+        crates_pending = True
+        notes.append("CRATES cleared / GIT_CRATES removed — run update-crates next")
+    if j.get("commit") and re.search(r"^COMMIT=", text, re.M):
+        text = re.sub(r'^COMMIT="[^"]*"', f'COMMIT="{j["commit"]}"', text, flags=re.M)
+        notes.append("COMMIT variable updated to the new snapshot")
+    new.write_text(text)
+
+    result = {"status": "ok", "action": "bump",
+              "package": f"{category}/{pf}", "ebuild": str(new),
+              "previous_version": j.get("current_version"),
+              "crates_pending": crates_pending}
+    digest_unpack_inspect(new, category, pf, name, version, j, result, notes)
+
+    m = re.search(r"^S=.*$", text, re.M)
+    result["s_current"] = m.group(0) if m else None
+    if result.get("s_line") and not m:
+        notes.append("extracted dir does not match ${P} and the ebuild sets no S — "
+                     "add the suggested s_line")
+
+    result["notes"] = notes
+    out(result)
+
+
+def main():
+    args = sys.argv[1:]
+    if any(a in ("-h", "--help") for a in args):
+        print(__doc__.strip())
+        sys.exit(0)
+    overlay = DEFAULT_OVERLAY
+    if "--overlay" in args:
+        i = args.index("--overlay")
+        overlay = args[i + 1]
+        del args[i:i + 2]
+    bump = "--bump" in args
+    args = [a for a in args if a != "--bump"]
+
+    if bump and len(args) == 1:
+        mode_bump(args[0], overlay)
+    elif not bump and len(args) == 2:
+        mode_new(args[0], args[1], overlay)
+    else:
+        err(message="usage: scaffold CATEGORY/NAME ROUTE_JSON [--overlay PATH] | "
+                    "scaffold --bump ROUTE_JSON [--overlay PATH]")
+
+
+if __name__ == "__main__":
+    main()

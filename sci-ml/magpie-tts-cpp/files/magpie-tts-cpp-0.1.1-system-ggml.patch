@@ -1,0 +1,21 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -46,7 +46,8 @@
+     set(GGML_NATIVE ON CACHE BOOL "" FORCE)
+ endif()
+ 
+-add_subdirectory(third_party/ggml)
++#add_subdirectory(third_party/ggml)
++find_package(ggml REQUIRED CONFIG)
+ 
+ set(MAGPIE_SOURCES
+     src/common.cpp
+@@ -71,7 +72,7 @@
+ 
+ target_include_directories(magpie-tts PUBLIC include)
+ target_include_directories(magpie-tts PRIVATE src third_party)
+-target_link_libraries(magpie-tts PUBLIC ggml)
++target_link_libraries(magpie-tts PUBLIC ggml::ggml)
+ target_compile_options(magpie-tts PRIVATE -Wall -Wextra -Wpedantic -Wno-unused-parameter)
+ 
+ # Statically link enabled ggml backends (LocalAI purego consumers need one .so)

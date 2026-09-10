@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    NInfer is a from-scratch C++/CUDA inference engine for explicitly
+    registered Qwen checkpoints on a single NVIDIA GeForce RTX 5090. It runs
+    text, image, and video prompts through a local CLI or OpenAI-/
+    Anthropic-compatible HTTP APIs. The build targets CUDA architecture
+    sm_120a exclusively and rejects any other CUDA_ARCHITECTURES setting.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Neroued/ninfer</remote-id>
+  </upstream>
+</pkgmetadata>

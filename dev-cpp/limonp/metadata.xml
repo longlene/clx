@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A small C++ header-only library providing Python-style convenience
+    utilities (string helpers, logging, argument parsing, etc.). Used by
+    dev-cpp/cppjieba.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">yanyiwu/limonp</remote-id>
+  </upstream>
+</pkgmetadata>

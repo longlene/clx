@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Diseasy is a from-scratch Python library for building Discord bots, a
+    discord.py-inspired alternative with its own API for commands, cogs,
+    embeds, components, and events.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">private09773/diseasy</remote-id>
+  </upstream>
+</pkgmetadata>

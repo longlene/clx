@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    chuk-term is a terminal library providing rich CLI output, prompts, and
+    formatting helpers built on top of click and rich.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">chrishayuk/chuk-term</remote-id>
+    <remote-id type="pypi">chuk-term</remote-id>
+  </upstream>
+</pkgmetadata>

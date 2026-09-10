@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Concord is a feature-rich terminal user interface (TUI) client for
+    Discord, built with ratatui.
+  </longdescription>
+  <use>
+    <flag name="voice-playback">Enable voice call audio playback/capture and global hotkeys</flag>
+    <flag name="stream-broadcast">Enable screen/webcam broadcast during voice calls (implies voice-playback)</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">chojs23/concord</remote-id>
+  </upstream>
+</pkgmetadata>

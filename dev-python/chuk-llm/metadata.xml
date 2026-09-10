@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    chuk-llm is a unified Python library for Large Language Model providers
+    (OpenAI, Anthropic, Google Gemini, Groq, Mistral, Ollama, IBM watsonx,
+    and others) with real-time streaming support.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">chrishayuk/chuk-llm</remote-id>
+    <remote-id type="pypi">chuk-llm</remote-id>
+  </upstream>
+</pkgmetadata>

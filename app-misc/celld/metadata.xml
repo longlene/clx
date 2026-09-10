@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    celld is a self-hosted daemon that runs Cloudflare Workers and Durable
+    Objects on your own machines. Each object is its own SQLite database,
+    replicated to an S3-compatible bucket; nodes coordinate through that
+    bucket alone, with no control plane or consensus service.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">denoland/celld</remote-id>
+  </upstream>
+</pkgmetadata>

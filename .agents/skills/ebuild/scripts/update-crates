@@ -1,0 +1,159 @@
+#!/usr/bin/env python3
+"""
+Usage: update-crates EBUILD [SRCDIR]
+
+Regenerate CRATES / GIT_CRATES from the unpacked source's Cargo.lock and
+splice ONLY those variables into EBUILD — all hand-maintained fields
+(DESCRIPTION, HOMEPAGE, SRC_URI, LICENSE, src_install, ...) survive.
+Never use `pycargoebuild -f -o` on an existing ebuild.
+
+Works for both new packages (inserts CRATES into the skeleton) and version
+bumps (replaces the existing lists). SRCDIR defaults to the directory
+containing Cargo.toml under /var/tmp/portage/<cat>/<P>/work/.
+
+If the ebuild already has `inherit cargo` and ${CARGO_CRATE_URIS} in
+SRC_URI, `ebuild ... digest` runs automatically (downloads the crates).
+Otherwise the JSON lists what to add before digesting.
+
+Output JSON:
+  crates_count      number of crates spliced in
+  git_crates        true if a GIT_CRATES block was spliced in
+  license           LICENSE value pycargoebuild computed (union of crate
+                    licenses) — merge into the ebuild's LICENSE deliberately
+  digest            "ok" | "fail" | "skipped"
+  next              remaining manual steps, when any
+"""
+
+import json
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+PORTAGE_TMP = "/var/tmp/portage"
+
+
+def out(obj, code=0):
+    print(json.dumps(obj, indent=2))
+    sys.exit(code)
+
+
+def err(**kw):
+    out({"status": "error", **kw}, 1)
+
+
+def find_srcdir(category, pf):
+    work = Path(PORTAGE_TMP) / category / pf / "work"
+    if not work.is_dir():
+        err(message=f"workdir missing: {work} — run scaffold (digest+unpack) first")
+    for d in sorted(work.iterdir()):
+        if d.is_dir() and (d / "Cargo.toml").exists():
+            return d
+    err(message=f"no directory with Cargo.toml under {work}")
+
+
+def main():
+    if any(a in ("-h", "--help") for a in sys.argv[1:]):
+        print(__doc__.strip())
+        sys.exit(0)
+    if len(sys.argv) not in (2, 3):
+        err(message="usage: update-crates EBUILD [SRCDIR]")
+    ebuild = Path(sys.argv[1]).resolve()
+    if not ebuild.exists():
+        err(message=f"no such ebuild: {ebuild}")
+    pf = ebuild.stem
+    category = ebuild.parent.parent.name
+    srcdir = Path(sys.argv[2]) if len(sys.argv) == 3 else find_srcdir(category, pf)
+
+    tmp = Path(f"/tmp/crates-{pf}.ebuild")
+    r = subprocess.run(["pycargoebuild", "-o", str(tmp), str(srcdir)],
+                       capture_output=True, text=True)
+    if r.returncode != 0 and "workspace root" in (r.stdout + r.stderr):
+        # Cargo workspace: run in a member instead. The ebuild's
+        # `cargo_src_install --path ./X` names the right one; otherwise
+        # try the conventional crates/ locations.
+        text = Path(ebuild).read_text()
+        name = ebuild.parent.name
+        candidates = re.findall(r"--path\s+\.?/?(\S+)", text)
+        candidates += [f"crates/{name}-cli", f"crates/{name}"]
+        crates_dir = srcdir / "crates"
+        if crates_dir.is_dir():
+            candidates += sorted(
+                str(d.relative_to(srcdir)) for d in crates_dir.iterdir()
+                if (d / "Cargo.toml").exists())
+        for cand in candidates:
+            member = srcdir / cand
+            if (member / "Cargo.toml").exists():
+                r = subprocess.run(
+                    ["pycargoebuild", "-o", str(tmp), str(member)],
+                    capture_output=True, text=True)
+                if r.returncode == 0:
+                    break
+    if r.returncode != 0:
+        err(stage="pycargoebuild",
+            log_tail=(r.stdout + r.stderr).splitlines()[-40:])
+    gen = tmp.read_text()
+
+    m = re.search(r'^CRATES="[^"]*"', gen, re.M)
+    if not m:
+        err(message=f"no CRATES= block in pycargoebuild output {tmp}")
+    crates_block = m.group(0)
+    crates_count = len([l for l in crates_block.splitlines() if "@" in l])
+
+    gm = re.search(r"^(?:declare -A )?GIT_CRATES=\(.*?^\)", gen, re.M | re.S)
+    git_block = gm.group(0) if gm else None
+
+    lics = re.findall(r'^LICENSE\+?="([^"]*)"', gen, re.M | re.S)
+    gen_license = " ".join(" ".join(lics).split()) or None
+
+    text = ebuild.read_text()
+    if re.search(r'^CRATES="', text, re.M):
+        text = re.sub(r'^CRATES="[^"]*"', lambda _: crates_block, text,
+                      count=1, flags=re.M)
+    else:
+        text = re.sub(r"^(EAPI=.*$)",
+                      lambda m: m.group(1) + "\n\n" + crates_block,
+                      text, count=1, flags=re.M)
+
+    has_old_git = re.search(r"^(?:declare -A )?GIT_CRATES=\(.*?^\)\n?", text,
+                            re.M | re.S)
+    if git_block:
+        if has_old_git:
+            text = re.sub(r"^(?:declare -A )?GIT_CRATES=\(.*?^\)",
+                          lambda _: git_block, text, count=1, flags=re.M | re.S)
+        else:
+            text = re.sub(r'^(CRATES="[^"]*")', lambda m: m.group(1) + "\n\n" + git_block,
+                          text, count=1, flags=re.M)
+    elif has_old_git:
+        text = re.sub(r"^(?:declare -A )?GIT_CRATES=\(.*?^\)\n+", "", text,
+                      flags=re.M | re.S)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    ebuild.write_text(text)
+
+    result = {"status": "ok", "ebuild": str(ebuild),
+              "crates_count": crates_count, "git_crates": bool(git_block),
+              "license": gen_license}
+
+    has_cargo = bool(re.search(r"^inherit\b.*\bcargo\b", text, re.M))
+    has_uris = "CARGO_CRATE_URIS" in text
+    if has_cargo and has_uris:
+        r = subprocess.run(["ebuild", str(ebuild), "digest"],
+                           capture_output=True, text=True)
+        if r.returncode != 0:
+            result["digest"] = "fail"
+            result["log_tail"] = (r.stdout + r.stderr).splitlines()[-40:]
+            out(result, 1)
+        result["digest"] = "ok"
+    else:
+        result["digest"] = "skipped"
+        result["next"] = []
+        if not has_cargo:
+            result["next"].append("add `inherit cargo`")
+        if not has_uris:
+            result["next"].append("add ${CARGO_CRATE_URIS} to SRC_URI")
+        result["next"].append("then run: ebuild <EBUILD> digest")
+    out(result)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/home/loong0/.qwen/skills/ebuild/scripts/route *)",
+      "Bash(/home/loong0/.qwen/skills/ebuild/scripts/pypi-info *)",
+      "Bash(/home/loong0/.qwen/skills/ebuild/scripts/validate *)",
+      "Bash(curl *)",
+      "Bash(python3 *)",
+      "Bash(ebuild *)",
+      "Bash(pkgcheck *)",
+      "Read(//var/db/repos/**)",
+      "Bash(cat *)",
+      "Bash(find *)",
+      "Read(//var/tmp/portage/**)",
+      "Bash(equery *)",
+      "Bash(ls *)",
+      "Agent(fork)",
+      "Bash(/home/loong0/.qwen/skills/ebuild/scripts/scaffold *)",
+      "Bash(bash *)",
+      "Bash(/home/loong0/.claude/skills/ebuild/scripts/route *)",
+      "Bash(/home/loong0/.claude/skills/ebuild/scripts/scaffold *)",
+      "Bash(rm *)",
+      "loop_wakeup",
+      "Bash(/home/loong0/.qwen/skills/ebuild/scripts/update-crates *)",
+      "Bash(/home/loong0/.claude/skills/ebuild/scripts/validate *)",
+      "Skill(ebuild)",
+      "Bash(/usr/local/portage/.qwen/skills/ebuild/scripts/route *)",
+      "Read(//home/loong0/.qwen/skills/ebuild/workflows/**)",
+      "Bash(cd *)",
+      "Bash(echo *)",
+      "Bash(head *)",
+      "Bash(grep *)",
+      "Bash(head)",
+      "Bash(git status *)",
+      "Bash(/home/loong0/.claude/skills/ebuild/scripts/update-crates *)",
+      "Read(//home/loong0/.qwen/skills/ebuild/templates/**)",
+      "Bash(sleep *)"
+    ]
+  },
+  "$version": 4
+}

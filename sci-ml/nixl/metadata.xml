@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+<use>
+    <flag name="cuda">Enable CUDA support for GPU-accelerated transfers</flag>
+    <flag name="gds">Enable GPUDirect Storage (GDS) backend plugin</flag>
+    <flag name="mooncake">Enable Mooncake transfer engine backend plugin</flag>
+    <flag name="ucx">Enable UCX networking backend plugin</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">ai-dynamo/nixl</remote-id>
+    <remote-id type="pypi">nixl</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ibm-watsonx-ai is the official Python client for the IBM watsonx.ai
+    platform, providing access to foundation models, deployments, and data
+    services.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">ibm-watsonx-ai</remote-id>
+  </upstream>
+</pkgmetadata>

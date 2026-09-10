@@ -1,0 +1,21 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -44,7 +44,8 @@
+ if(MOSS_TTS_GGML_HIPBLAS)
+     set(GGML_HIPBLAS ON CACHE BOOL "" FORCE)
+ endif()
+-add_subdirectory(third_party/ggml EXCLUDE_FROM_ALL)
++#add_subdirectory(third_party/ggml EXCLUDE_FROM_ALL)
++find_package(ggml REQUIRED CONFIG)
+ 
+ # ---------- libmoss-tts ----------
+ set(MOSS_TTS_SOURCES
+@@ -116,7 +117,7 @@
+         ${CMAKE_CURRENT_SOURCE_DIR}/third_party
+ )
+ 
+-target_link_libraries(moss-tts PUBLIC ggml)
++target_link_libraries(moss-tts PUBLIC ggml::ggml)
+ 
+ # moss::parallel_for (src/parallel.cpp) uses std::thread — link the platform
+ # thread library explicitly rather than relying on it arriving transitively.

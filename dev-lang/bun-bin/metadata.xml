@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Bun is an all-in-one JavaScript runtime and toolkit designed for speed,
+    complete with a bundler, test runner, and Node.js-compatible package
+    manager. This package installs the official prebuilt release binary.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">oven-sh/bun</remote-id>
+  </upstream>
+</pkgmetadata>

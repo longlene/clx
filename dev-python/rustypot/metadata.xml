@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    rustypot is a Rust library, with Python bindings built via PyO3/maturin,
+    for communicating with Dynamixel and Feetech servo motors over serial.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">pollen-robotics/rustypot</remote-id>
+  </upstream>
+</pkgmetadata>

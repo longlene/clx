@@ -1,0 +1,788 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	adler2@2.0.1
+	ahash@0.8.12
+	aho-corasick@1.1.4
+	android_system_properties@0.1.5
+	anes@0.1.6
+	anstream@0.6.21
+	anstream@1.0.0
+	anstyle@1.0.13
+	anstyle-parse@0.2.7
+	anstyle-parse@1.0.0
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anyhow@1.0.102
+	arc-swap@1.9.0
+	arrayref@0.3.9
+	arrayvec@0.7.6
+	asynchronous-codec@0.7.0
+	async-io@2.6.0
+	async-openai@0.33.1
+	async-openai-macros@0.1.1
+	async-trait@0.1.89
+	asynk-strim@0.1.5
+	asynk-strim-attr@0.1.0
+	asynk-strim-attr-macro@0.1.0
+	atomic-waker@1.1.2
+	autocfg@1.5.0
+	auto_enums@0.8.9
+	auto_impl@1.3.0
+	axum@0.8.8
+	axum-core@0.5.6
+	backoff@0.4.0
+	base64@0.13.1
+	base64@0.22.1
+	base64ct@1.8.3
+	bitflags@2.11.0
+	bit-set@0.5.3
+	bit-set@0.8.0
+	bit-vec@0.6.3
+	bit-vec@0.8.0
+	blake3@1.8.5
+	block-buffer@0.10.4
+	bstr@1.12.1
+	bumpalo@3.20.2
+	bytemuck@1.25.0
+	bytemuck_derive@1.10.2
+	byteorder@1.5.0
+	byteorder-lite@0.1.0
+	bytes@1.12.0
+	cast@0.3.0
+	castaway@0.2.4
+	cc@1.2.56
+	cfg-if@1.0.4
+	chrono@0.4.44
+	ciborium@0.2.2
+	ciborium-io@0.2.2
+	ciborium-ll@0.2.2
+	clap@4.5.60
+	clap_builder@4.5.60
+	clap_derive@4.5.55
+	clap_lex@1.0.0
+	colorchoice@1.0.4
+	color_quant@1.1.0
+	compact_str@0.9.0
+	concurrent-queue@2.5.0
+	console@0.16.2
+	constant_time_eq@0.4.2
+	cookie@0.18.1
+	cookie_store@0.22.1
+	core-foundation@0.10.1
+	core-foundation@0.9.4
+	core-foundation-sys@0.8.7
+	cpufeatures@0.2.17
+	cpufeatures@0.3.0
+	crc32fast@1.5.0
+	criterion@0.5.1
+	criterion-plot@0.5.0
+	crossbeam-deque@0.8.6
+	crossbeam-epoch@0.9.18
+	crossbeam-queue@0.3.12
+	crossbeam-utils@0.8.21
+	crunchy@0.2.4
+	crypto-common@0.1.7
+	daachorse@1.0.0
+	darling@0.20.11
+	darling@0.23.0
+	darling_core@0.20.11
+	darling_core@0.23.0
+	darling_macro@0.20.11
+	darling_macro@0.23.0
+	dary_heap@0.3.8
+	der@0.8.1
+	deranged@0.5.8
+	derive_builder@0.20.2
+	derive_builder_core@0.20.2
+	derive_builder_macro@0.20.2
+	derive_more@1.0.0
+	derive_more-impl@1.0.0
+	derive_utils@0.15.1
+	digest@0.10.7
+	dirs@6.0.0
+	dirs-sys@0.5.0
+	displaydoc@0.2.5
+	dissimilar@1.0.11
+	document-features@0.2.12
+	dtoa@1.0.11
+	dyn-clone@1.0.20
+	easy-ext@1.0.3
+	educe@0.6.0
+	either@1.15.0
+	encode_unicode@1.0.0
+	encoding_rs@0.8.35
+	enum-as-inner@0.7.0
+	enum-ordinalize@4.3.2
+	enum-ordinalize-derive@4.3.2
+	env_filter@1.0.1
+	env_logger@0.11.10
+	equivalent@1.0.2
+	errno@0.3.14
+	esaxx-rs@0.1.10
+	eventsource-stream@0.2.3
+	expect-test@1.5.1
+	extended@0.1.0
+	fancy-regex@0.13.0
+	fancy-regex@0.17.0
+	fast_image_resize@6.0.0
+	fastokens@0.2.1
+	fastrand@2.3.0
+	fax@0.2.6
+	fax_derive@0.2.0
+	fdeflate@0.3.7
+	find-msvc-tools@0.1.9
+	fixedbitset@0.5.7
+	flate2@1.1.9
+	fnv@1.0.7
+	foldhash@0.1.5
+	foreign-types@0.3.2
+	foreign-types-shared@0.1.1
+	form_urlencoded@1.2.2
+	fslock@0.2.1
+	futures@0.3.32
+	futures-channel@0.3.32
+	futures-core@0.3.32
+	futures-executor@0.3.32
+	futures-io@0.3.32
+	futures-lite@2.6.1
+	futures-macro@0.3.32
+	futures-sink@0.3.32
+	futures-task@0.3.32
+	futures-timer@3.0.3
+	futures-util@0.3.32
+	generic-array@0.14.7
+	getopts@0.2.24
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.2
+	gif@0.14.2
+	h2@0.4.15
+	half@2.7.1
+	hashbrown@0.12.3
+	hashbrown@0.14.5
+	hashbrown@0.15.5
+	hashbrown@0.16.1
+	heck@0.5.0
+	hermit-abi@0.5.2
+	hex@0.4.3
+	hf-hub@0.5.0
+	hmac@0.12.1
+	hound@3.5.1
+	http@1.4.0
+	httparse@1.10.1
+	http-body@1.0.1
+	http-body-util@0.1.3
+	httpdate@1.0.3
+	hyper@1.10.1
+	hyper-rustls@0.27.7
+	hyper-timeout@0.5.2
+	hyper-tls@0.6.0
+	hyper-util@0.1.20
+	iana-time-zone@0.1.65
+	iana-time-zone-haiku@0.1.2
+	icu_collections@2.1.1
+	icu_locale_core@2.1.1
+	icu_normalizer@2.1.1
+	icu_normalizer_data@2.1.1
+	icu_properties@2.1.2
+	icu_properties_data@2.1.2
+	icu_provider@2.1.1
+	id-arena@2.3.0
+	ident_case@1.0.1
+	idna@1.1.0
+	idna_adapter@1.2.1
+	image@0.25.10
+	image-webp@0.2.4
+	indexmap@1.9.3
+	indexmap@2.13.0
+	indicatif@0.18.4
+	instant@0.1.13
+	ipnet@2.12.0
+	iri-string@0.7.10
+	is-macro@0.3.7
+	is-terminal@0.4.17
+	is_terminal_polyfill@1.70.2
+	itertools@0.10.5
+	itertools@0.11.0
+	itertools@0.14.0
+	itoa@1.0.17
+	jiff@0.2.23
+	jiff-static@0.2.23
+	jobserver@0.1.34
+	js-sys@0.3.91
+	lalrpop-util@0.20.2
+	lazy_static@1.5.0
+	leb128fmt@0.1.0
+	libc@0.2.183
+	libloading@0.8.9
+	libm@0.2.16
+	libmimalloc-sys@0.1.49
+	libredox@0.1.14
+	linux-raw-sys@0.12.1
+	litemap@0.8.1
+	litrs@1.0.0
+	lock_api@0.4.14
+	log@0.4.29
+	macro_rules_attribute@0.2.2
+	macro_rules_attribute-proc_macro@0.2.2
+	malachite@0.4.22
+	malachite-base@0.4.22
+	malachite-bigint@0.2.3
+	malachite-nz@0.4.22
+	malachite-q@0.4.22
+	matchers@0.2.0
+	matchit@0.8.4
+	matrixmultiply@0.3.10
+	memchr@2.8.0
+	memo-map@0.3.3
+	mimalloc@0.1.52
+	mime@0.3.17
+	mime_guess@2.0.5
+	minijinja@2.18.0
+	minijinja-contrib@2.18.0
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	mio@1.2.1
+	monostate@0.1.18
+	monostate-impl@0.1.18
+	moxcms@0.8.1
+	multimap@0.10.1
+	native-tls@0.2.18
+	ndarray@0.16.1
+	ndarray@0.17.2
+	nom@7.1.3
+	nu-ansi-term@0.50.3
+	num-complex@0.4.6
+	num-conv@0.2.0
+	num_cpus@1.17.0
+	num-integer@0.1.46
+	num_threads@0.1.7
+	num-traits@0.2.19
+	once_cell@1.21.4
+	once_cell_polyfill@1.70.2
+	onig@6.5.1
+	onig_sys@69.9.1
+	oorandom@11.1.5
+	openai-protocol@1.6.0
+	openssl@0.10.81
+	openssl-macros@0.1.1
+	openssl-probe@0.2.1
+	openssl-src@300.5.5+3.5.5
+	openssl-sys@0.9.117
+	option-ext@0.2.0
+	parking@2.2.1
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
+	paste@1.0.15
+	pcre2@0.2.11
+	pcre2-sys@0.2.10
+	pem-rfc7468@1.0.0
+	percent-encoding@2.3.2
+	petgraph@0.8.3
+	phf@0.11.3
+	phf_codegen@0.11.3
+	phf_generator@0.11.3
+	phf_shared@0.11.3
+	pin-project@1.1.11
+	pin-project-internal@1.1.11
+	pin-project-lite@0.2.17
+	pkg-config@0.3.32
+	plotters@0.3.7
+	plotters-backend@0.3.7
+	plotters-svg@0.3.7
+	png@0.18.1
+	polling@3.11.0
+	portable-atomic@1.13.1
+	portable-atomic-util@0.2.6
+	potential_utf@0.1.4
+	powerfmt@0.2.0
+	ppv-lite86@0.2.21
+	prettyplease@0.2.37
+	primal-check@0.3.4
+	proc-macro2@1.0.106
+	proc-macro-crate@3.5.0
+	proc-macro-error2@2.0.1
+	proc-macro-error-attr2@2.0.0
+	prometheus-client@0.24.0
+	prometheus-client-derive-encode@0.5.0
+	prost@0.14.3
+	prost-build@0.14.3
+	prost-derive@0.14.3
+	prost-types@0.14.3
+	pulldown-cmark@0.13.3
+	pulldown-cmark-to-cmark@22.0.0
+	pxfm@0.1.29
+	pyo3@0.28.3
+	pyo3-build-config@0.28.3
+	pyo3-ffi@0.28.3
+	pyo3-macros@0.28.3
+	pyo3-macros-backend@0.28.3
+	pythonize@0.28.0
+	quick-error@2.0.1
+	quote@1.0.45
+	rand@0.8.5
+	rand@0.9.2
+	rand_chacha@0.3.1
+	rand_chacha@0.9.0
+	rand_core@0.6.4
+	rand_core@0.9.5
+	rand_distr@0.5.1
+	rawpointer@0.2.1
+	rayon@1.12.0
+	rayon-cond@0.4.0
+	rayon-core@1.13.0
+	realfft@3.5.0
+	redox_syscall@0.5.18
+	redox_users@0.5.2
+	ref-cast@1.0.25
+	ref-cast-impl@1.0.25
+	r-efi@5.3.0
+	r-efi@6.0.0
+	regex@1.12.3
+	regex-automata@0.4.14
+	regex-lite@0.1.9
+	regex-syntax@0.8.10
+	reqwest@0.12.28
+	reqwest@0.13.4
+	reqwest-eventsource@0.6.0
+	ring@0.17.14
+	riptoken@0.3.0
+	rlimit@0.11.0
+	rmp@0.8.15
+	rmp-serde@1.3.1
+	rmpv@1.3.1
+	rubato@0.16.2
+	rustc-hash@1.1.0
+	rustc-hash@2.1.1
+	rustfft@6.4.1
+	rustix@1.1.4
+	rustls@0.23.37
+	rustls-pki-types@1.14.1
+	rustls-webpki@0.103.9
+	rustpython-ast@0.4.0
+	rustpython-parser@0.4.0
+	rustpython-parser-core@0.4.0
+	rustpython-parser-vendored@0.4.0
+	rustversion@1.0.22
+	ryu@1.0.23
+	saa@5.5.0
+	same-file@1.0.6
+	scc@2.4.0
+	scc@3.6.9
+	schannel@0.1.29
+	schemars@0.8.22
+	schemars@0.9.0
+	schemars@1.2.1
+	schemars_derive@0.8.22
+	scopeguard@1.2.0
+	sdd@3.0.10
+	sdd@4.7.3
+	secrecy@0.10.3
+	security-framework@3.7.0
+	security-framework-sys@2.17.0
+	semver@1.0.27
+	serde@1.0.228
+	serde_bytes@0.11.19
+	serde_core@1.0.228
+	serde_default@0.2.0
+	serde_derive@1.0.228
+	serde_derive_internals@0.29.1
+	serde_json@1.0.149
+	serde-json-fmt@0.1.0
+	serde_path_to_error@0.1.20
+	serde_repr@0.1.20
+	serde_tuple@1.1.3
+	serde_tuple_macros@1.1.3
+	serde_urlencoded@0.7.1
+	serde_with@3.18.0
+	serde_with_macros@3.18.0
+	serial_test@3.4.0
+	serial_test_derive@3.4.0
+	sha2@0.10.9
+	sharded-slab@0.1.7
+	shlex@1.3.0
+	signal-hook-registry@1.4.8
+	simd-adler32@0.3.8
+	siphasher@1.0.2
+	slab@0.4.12
+	smallvec@1.15.1
+	smartstring@1.0.1
+	socket2@0.6.3
+	socks@0.3.4
+	spm_precompiled@0.1.4
+	stable_deref_trait@1.2.1
+	static_assertions@1.1.0
+	strength_reduce@0.2.4
+	strsim@0.11.1
+	strum@0.27.2
+	strum_macros@0.27.2
+	subenum@1.1.3
+	subtle@2.6.1
+	symphonia@0.6.0
+	symphonia-bundle-flac@0.6.0
+	symphonia-bundle-mp3@0.6.0
+	symphonia-codec-aac@0.6.0
+	symphonia-codec-adpcm@0.6.0
+	symphonia-codec-alac@0.6.0
+	symphonia-codec-pcm@0.6.0
+	symphonia-codec-vorbis@0.6.0
+	symphonia-common@0.6.0
+	symphonia-core@0.6.0
+	symphonia-format-caf@0.6.0
+	symphonia-format-isomp4@0.6.0
+	symphonia-format-mkv@0.6.0
+	symphonia-format-ogg@0.6.0
+	symphonia-format-riff@0.6.0
+	symphonia-metadata@0.6.0
+	syn@1.0.109
+	syn@2.0.117
+	sync_wrapper@1.0.2
+	synstructure@0.13.2
+	system-configuration@0.7.0
+	system-configuration-sys@0.6.0
+	target-lexicon@0.13.5
+	task-local@0.1.1
+	tekken-rs@0.1.1
+	tempfile@3.27.0
+	thiserror@1.0.69
+	thiserror@2.0.18
+	thiserror-ext@0.3.0
+	thiserror-ext-derive@0.3.0
+	thiserror-impl@1.0.69
+	thiserror-impl@2.0.18
+	thread_local@1.1.9
+	tiff@0.11.3
+	tiktoken-rs@0.7.0
+	tiktoken-rs@0.9.1
+	time@0.3.47
+	time-core@0.1.8
+	time-macros@0.2.27
+	tiny-keccak@2.0.2
+	tinystr@0.8.2
+	tinytemplate@1.2.1
+	tls-listener@0.11.2
+	tokenizers@0.22.2
+	tokio@1.52.3
+	tokio-macros@2.7.0
+	tokio-native-tls@0.3.1
+	tokio-openssl@0.6.5
+	tokio-rustls@0.26.4
+	tokio-stream@0.1.18
+	tokio-tungstenite@0.28.0
+	tokio-util@0.7.18
+	toml_datetime@1.1.1+spec-1.1.0
+	toml_edit@0.25.11+spec-1.1.0
+	toml_parser@1.1.2+spec-1.1.0
+	tonic@0.14.6
+	tonic-build@0.14.6
+	tonic-health@0.14.6
+	tonic-prost@0.14.6
+	tonic-prost-build@0.14.6
+	tool-parser@1.2.0
+	tower@0.5.3
+	tower-http@0.6.8
+	tower-layer@0.3.3
+	tower-service@0.3.3
+	tracing@0.1.44
+	tracing-attributes@0.1.31
+	tracing-core@0.1.36
+	tracing-futures@0.2.5
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.22
+	trait-set@0.3.0
+	transpose@0.2.3
+	try-lock@0.2.5
+	tungstenite@0.28.0
+	typenum@1.19.0
+	unicase@2.9.0
+	unic-char-property@0.9.0
+	unic-char-range@0.9.0
+	unic-common@0.9.0
+	unic-emoji-char@0.9.0
+	unicode_categories@0.1.1
+	unicode-ident@1.0.24
+	unicode_names2@1.3.0
+	unicode_names2_generator@1.3.0
+	unicode-normalization-alignments@0.1.12
+	unicode-segmentation@1.13.1
+	unicode-width@0.2.2
+	unicode-xid@0.2.6
+	unic-ucd-ident@0.9.0
+	unic-ucd-version@0.9.0
+	unit-prefix@0.5.2
+	untrusted@0.9.0
+	ureq@3.3.0
+	ureq-proto@0.6.0
+	url@2.5.8
+	utf16_iter@1.0.5
+	utf-8@0.7.6
+	utf8_iter@1.0.4
+	utf8parse@0.2.2
+	utf8-zero@0.8.1
+	uuid@1.22.0
+	validator@0.20.0
+	validator_derive@0.20.0
+	valuable@0.1.1
+	vcpkg@0.2.15
+	version_check@0.9.5
+	walkdir@2.5.0
+	want@0.3.1
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.2+wasi-0.2.9
+	wasip3@0.4.0+wasi-0.3.0-rc-2026-01-06
+	wasm-bindgen@0.2.114
+	wasm-bindgen-futures@0.4.64
+	wasm-bindgen-macro@0.2.114
+	wasm-bindgen-macro-support@0.2.114
+	wasm-bindgen-shared@0.2.114
+	wasm-encoder@0.244.0
+	wasm-metadata@0.244.0
+	wasmparser@0.244.0
+	wasm-streams@0.4.2
+	wasm-streams@0.5.0
+	webpki-root-certs@1.0.8
+	webpki-roots@1.0.8
+	web-sys@0.3.91
+	web-time@1.1.0
+	weezl@0.1.12
+	winapi@0.3.9
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.11
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows-core@0.62.2
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.2.1
+	windows-registry@0.6.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.52.0
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	winnow@1.0.2
+	win_uds@0.2.2
+	wit-bindgen@0.51.0
+	wit-bindgen-core@0.51.0
+	wit-bindgen-rust@0.51.0
+	wit-bindgen-rust-macro@0.51.0
+	wit-component@0.244.0
+	wit-parser@0.244.0
+	write16@1.0.0
+	writeable@0.6.2
+	xgrammar-structural-tag@0.2.0+xgrammar.0.2.4.dd729e7
+	yoke@0.8.1
+	yoke-derive@0.8.1
+	zerocopy@0.8.42
+	zerocopy-derive@0.8.42
+	zerofrom@0.1.6
+	zerofrom-derive@0.1.6
+	zeroize@1.8.2
+	zeromq@0.6.0
+	zerotrie@0.2.3
+	zerovec@0.11.5
+	zerovec-derive@0.11.2
+	zmij@1.0.21
+	zstd@0.13.3
+	zstd-safe@7.2.4
+	zstd-sys@2.0.16+zstd.1.5.7
+	zune-core@0.5.1
+	zune-jpeg@0.5.15
+"
+
+declare -A GIT_CRATES=(
+	[llm-multimodal]='https://github.com/smg-project/llm-multimodal;15adba5e025d8636ba4a334fb379b1371f6196a1;llm-multimodal-%commit%'
+	[oss-harmony]='https://github.com/oss-harmony/harmony;76e849426cc092f84509e31a17027755f67d662a;harmony-%commit%'
+)
+
+DISTUTILS_EXT=1
+DISTUTILS_SINGLE_IMPL=1
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{13..15} )
+
+RUST_MIN_VER="1.95"
+
+inherit cargo distutils-r1
+
+FLASH_ATTENTION_COMMIT="ed4b7342bc8f0489dd9b649d5288867e35fc6a32"
+FLASHMLA_COMMIT="a8f794d1251cbfd88a5011445dd5582289c727e4"
+TRITON_PV="3.5.1"
+DEEPGEMM_COMMIT="f5a76426fa084087169693fd0cd815223576d6e9"
+QUTLASS_COMMIT="e74319e3405ce6d71965732880f5dc1f52371f64"
+FLASHKDA_COMMIT="a3e42bbbece3bb38f7c426b880315294a336e82f"
+FLASHKDA_CUTLASS_COMMIT="5c149f52a436782210263fb2f19b354443a61c6a"
+MSA_COMMIT="890aaa1a37a598ad17ccff0827fea21540d381fa"
+TML_FA4_COMMIT="b206834606ed5b5f21f8eed6b0683f528ea9cf7d"
+
+DESCRIPTION="Large-scale LLM inference engine"
+HOMEPAGE="
+	https://github.com/dphnAI/sonar
+	https://github.com/aphrodite-engine/aphrodite-engine
+"
+SRC_URI="
+	https://github.com/dphnAI/sonar/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	https://github.com/vllm-project/flash-attention/archive/${FLASH_ATTENTION_COMMIT}.tar.gz
+		-> flash-attention-${FLASH_ATTENTION_COMMIT}.gh.tar.gz
+	https://github.com/vllm-project/FlashMLA/archive/${FLASHMLA_COMMIT}.tar.gz -> flashmla-${FLASHMLA_COMMIT}.tar.gz
+	https://github.com/triton-lang/triton/archive/refs/tags/v${TRITON_PV}.tar.gz -> triton-${TRITON_PV}.gh.tar.gz
+	https://github.com/vllm-project/DeepGEMM/archive/${DEEPGEMM_COMMIT}.tar.gz -> DeepGEMM-${DEEPGEMM_COMMIT}.tar.gz
+	https://github.com/IST-DASLab/qutlass/archive/${QUTLASS_COMMIT}.tar.gz -> qutlass-${QUTLASS_COMMIT}.tar.gz
+	https://github.com/vllm-project/FlashKDA/archive/${FLASHKDA_COMMIT}.tar.gz -> FlashKDA-${FLASHKDA_COMMIT}.tar.gz
+	https://github.com/NVIDIA/cutlass/archive/${FLASHKDA_CUTLASS_COMMIT}.tar.gz
+		-> flashkda-cutlass-${FLASHKDA_CUTLASS_COMMIT}.tar.gz
+	https://github.com/vllm-project/MSA/archive/${MSA_COMMIT}.tar.gz -> MSA-${MSA_COMMIT}.tar.gz
+	https://github.com/vllm-project/tml-fa4/archive/${TML_FA4_COMMIT}.tar.gz -> tml-fa4-${TML_FA4_COMMIT}.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="AGPL-3+"
+# Dependent crate licenses
+LICENSE+="
+	Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0
+	CDLA-Permissive-2.0 ISC LGPL-3 MIT MPL-2.0 Unicode-3.0
+	Unicode-DFS-2016 Unlicense ZLIB
+"
+SLOT="0"
+KEYWORDS="~amd64"
+IUSE="+cuda rocm"
+REQUIRED_USE="|| ( cuda rocm )"
+
+RDEPEND="
+	>=sci-ml/transformers-5.5.3[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/tokenizers-0.21.1[${PYTHON_SINGLE_USEDEP}]
+	~sci-ml/pytorch-2.13.0[cuda?,rocm?,${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/xgrammar-0.2.1[${PYTHON_SINGLE_USEDEP}]
+	~dev-python/compressed-tensors-0.17.0[${PYTHON_SINGLE_USEDEP}]
+	~sci-ml/outlines-core-0.2.14[${PYTHON_SINGLE_USEDEP}]
+	cuda? (
+		~sci-ml/torchaudio-2.11.0[${PYTHON_SINGLE_USEDEP}]
+		~sci-ml/torchvision-0.28.0[${PYTHON_SINGLE_USEDEP}]
+		>=sci-ml/torchcodec-0.14.0[${PYTHON_SINGLE_USEDEP}]
+		~dev-python/nvidia-cutlass-dsl-4.6.0[${PYTHON_SINGLE_USEDEP}]
+		>=sci-ml/quack-kernels-0.6.1[${PYTHON_SINGLE_USEDEP}]
+		~dev-python/numba-0.65.0[${PYTHON_SINGLE_USEDEP}]
+		~dev-python/flashinfer-python-0.6.15_p1[${PYTHON_SINGLE_USEDEP}]
+		~dev-python/flashinfer-cubin-0.6.15_p1[${PYTHON_SINGLE_USEDEP}]
+		~dev-python/apache-tvm-ffi-0.1.11[${PYTHON_SINGLE_USEDEP}]
+		~dev-python/tilelang-0.1.12[${PYTHON_SINGLE_USEDEP}]
+		>=dev-python/nvidia-cudnn-frontend-1.19.1[${PYTHON_SINGLE_USEDEP}]
+		~dev-python/nvtx-0.2.15[${PYTHON_SINGLE_USEDEP}]
+		>=dev-python/fastsafetensors-0.3.2[${PYTHON_SINGLE_USEDEP}]
+		~dev-python/pynvvideocodec-2.0.4[${PYTHON_SINGLE_USEDEP}]
+		~sci-ml/tokenspeed-mla-0.1.8[${PYTHON_SINGLE_USEDEP}]
+		~dev-python/humming-kernels-0.1.10[${PYTHON_SINGLE_USEDEP}]
+	)
+	dev-libs/openssl:0=
+	>=dev-libs/cutlass-4.4.2
+	$(python_gen_cond_dep '
+		dev-python/regex[${PYTHON_USEDEP}]
+		dev-python/cachetools[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		sci-ml/sentencepiece[python(-),${PYTHON_USEDEP}]
+		dev-python/numpy[${PYTHON_USEDEP}]
+		>=dev-python/requests-2.26.0[${PYTHON_USEDEP}]
+		dev-python/tqdm[${PYTHON_USEDEP}]
+		dev-python/blake3[${PYTHON_USEDEP}]
+		dev-python/py-cpuinfo[${PYTHON_USEDEP}]
+		>=dev-python/protobuf-5.29.6[${PYTHON_USEDEP}]
+		>=dev-python/fastapi-0.133.0[${PYTHON_USEDEP}]
+		>=dev-python/starlette-1.0.1[${PYTHON_USEDEP}]
+		>=dev-python/aiohttp-3.13.3[${PYTHON_USEDEP}]
+		>=dev-python/openai-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pydantic-2.12.0[${PYTHON_USEDEP}]
+		>=dev-python/prometheus-client-0.18.0[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+		>=dev-python/prometheus-fastapi-instrumentator-8.0.0[${PYTHON_USEDEP}]
+		>=dev-python/tiktoken-0.6.0[${PYTHON_USEDEP}]
+		~sci-ml/lm-format-enforcer-0.11.3[${PYTHON_USEDEP}]
+		>=sci-ml/llguidance-1.7.0[${PYTHON_USEDEP}]
+		<sci-ml/llguidance-1.8.0[${PYTHON_USEDEP}]
+		~dev-python/lark-1.2.2[${PYTHON_USEDEP}]
+		>=dev-python/typing-extensions-4.10[${PYTHON_USEDEP}]
+		>=dev-python/filelock-3.16.1[${PYTHON_USEDEP}]
+		dev-python/partial-json-parser[${PYTHON_USEDEP}]
+		>=dev-python/jsonschema-4.23.0[${PYTHON_USEDEP}]
+		>=dev-python/pyzmq-25.0.0[${PYTHON_USEDEP}]
+		dev-python/msgspec[${PYTHON_USEDEP}]
+		>=dev-python/mistral-common-1.11.5[${PYTHON_USEDEP}]
+		media-libs/opencv[python,${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+		>=dev-python/six-1.16.0[${PYTHON_USEDEP}]
+		dev-python/einops[${PYTHON_USEDEP}]
+		~dev-python/depyf-0.20.0[${PYTHON_USEDEP}]
+		dev-python/cloudpickle[${PYTHON_USEDEP}]
+		dev-python/watchfiles[${PYTHON_USEDEP}]
+		dev-python/python-json-logger[${PYTHON_USEDEP}]
+		dev-python/ninja[${PYTHON_USEDEP}]
+		dev-python/pybase64[${PYTHON_USEDEP}]
+		dev-python/cbor2[${PYTHON_USEDEP}]
+		dev-python/ijson[${PYTHON_USEDEP}]
+		dev-python/setproctitle[${PYTHON_USEDEP}]
+		>=dev-python/openai-harmony-0.0.3[${PYTHON_USEDEP}]
+		>=dev-python/anthropic-0.71.0[${PYTHON_USEDEP}]
+		>=dev-python/model-hosting-container-standards-0.1.14[${PYTHON_USEDEP}]
+		<dev-python/model-hosting-container-standards-1.0.0[${PYTHON_USEDEP}]
+		dev-python/mcp[${PYTHON_USEDEP}]
+		>=dev-python/opentelemetry-sdk-1.27.0[${PYTHON_USEDEP}]
+		>=dev-python/opentelemetry-api-1.27.0[${PYTHON_USEDEP}]
+		>=dev-python/opentelemetry-exporter-otlp-1.27.0[${PYTHON_USEDEP}]
+		>=dev-python/opentelemetry-semantic-conventions-ai-0.4.1[${PYTHON_USEDEP}]
+	')
+"
+BDEPEND="
+	>=dev-build/cmake-3.26.1
+	virtual/pkgconfig
+	$(python_gen_cond_dep '
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/jinja2[${PYTHON_USEDEP}]
+		dev-python/setuptools-scm[${PYTHON_USEDEP}]
+		dev-python/setuptools-rust[${PYTHON_USEDEP}]
+		dev-python/build[${PYTHON_USEDEP}]
+	')
+"
+
+RESTRICT="test"
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
+
+src_prepare() {
+	eapply "${FILESDIR}"/system-cutlass.patch
+
+	# FlashKDA's cutlass submodule isn't included in a GitHub archive
+	# tarball; drop the separately-fetched cutlass source into place.
+	rmdir "${WORKDIR}"/FlashKDA-${FLASHKDA_COMMIT}/cutlass 2>/dev/null
+	mv "${WORKDIR}"/cutlass-${FLASHKDA_CUTLASS_COMMIT} \
+		"${WORKDIR}"/FlashKDA-${FLASHKDA_COMMIT}/cutlass || die
+
+	distutils-r1_src_prepare
+}
+
+src_configure() {
+	local target_device="cpu"
+	if use cuda ; then
+		target_device="cuda"
+	elif use rocm ; then
+		target_device="rocm"
+	fi
+	export APHRODITE_TARGET_DEVICE="${target_device}"
+	export APHRODITE_FLASH_ATTN_SRC_DIR="${WORKDIR}"/flash-attention-${FLASH_ATTENTION_COMMIT}
+	export FLASH_MLA_SRC_DIR="${WORKDIR}"/FlashMLA-${FLASHMLA_COMMIT}
+	export TRITON_KERNELS_SRC_DIR="${WORKDIR}"/triton-${TRITON_PV}/python/triton_kernels/triton_kernels
+	export DEEPGEMM_SRC_DIR="${WORKDIR}"/DeepGEMM-${DEEPGEMM_COMMIT}
+	export QUTLASS_SRC_DIR="${WORKDIR}"/qutlass-${QUTLASS_COMMIT}
+	export FLASH_KDA_SRC_DIR="${WORKDIR}"/FlashKDA-${FLASHKDA_COMMIT}
+	export FMHA_SM100_SRC_DIR="${WORKDIR}"/MSA-${MSA_COMMIT}
+	export TML_FA4_SRC_DIR="${WORKDIR}"/tml-fa4-${TML_FA4_COMMIT}
+	distutils-r1_src_configure
+}

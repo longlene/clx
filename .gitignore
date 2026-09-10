@@ -1,3 +1,5 @@
 metadata/cache/
 metadata/md5-cache/
 profiles/use.local.desc
+__pycache__/
+.mypy_cache/

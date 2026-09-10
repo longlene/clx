@@ -1,0 +1,198 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=maturin
+PYTHON_COMPAT=( python3_{13..15} )
+
+CRATES="
+	aho-corasick@1.1.4
+	android_system_properties@0.1.5
+	anstream@1.0.0
+	anstyle-parse@1.0.0
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anstyle@1.0.14
+	anyhow@1.0.102
+	arc-swap@1.9.1
+	autocfg@1.5.1
+	bitflags@1.3.2
+	bitflags@2.11.1
+	bumpalo@3.20.3
+	cc@1.2.62
+	cfg-if@1.0.4
+	chrono@0.4.45
+	clap@4.6.1
+	clap_builder@4.6.0
+	clap_derive@4.6.1
+	clap_lex@1.1.0
+	colorchoice@1.0.5
+	core-foundation-sys@0.8.7
+	core-foundation@0.10.1
+	crunchy@0.2.4
+	deranged@0.5.8
+	either@1.16.0
+	env_logger@0.10.2
+	equivalent@1.0.2
+	errno@0.3.14
+	find-msvc-tools@0.1.9
+	futures-core@0.3.32
+	futures-task@0.3.32
+	futures-util@0.3.32
+	getopts@0.2.24
+	getrandom@0.2.17
+	hashbrown@0.17.1
+	heck@0.5.0
+	hermit-abi@0.5.2
+	humantime@2.3.0
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.65
+	indexmap@2.14.0
+	inventory@0.3.24
+	io-kit-sys@0.4.1
+	is-macro@0.3.7
+	is-terminal@0.4.17
+	is_terminal_polyfill@1.70.2
+	itertools@0.11.0
+	itertools@0.14.0
+	itoa@1.0.18
+	js-sys@0.3.99
+	lalrpop-util@0.20.2
+	libc@0.2.186
+	log@0.4.32
+	mach2@0.4.3
+	maplit@1.0.2
+	matrixmultiply@0.3.10
+	memchr@2.8.0
+	ndarray@0.17.2
+	nix@0.26.4
+	num-bigint@0.4.6
+	num-complex@0.4.6
+	num-conv@0.2.2
+	num-integer@0.1.46
+	num-traits@0.2.19
+	num_enum@0.7.6
+	num_enum_derive@0.7.6
+	numpy@0.29.0
+	once_cell@1.21.4
+	once_cell_polyfill@1.70.2
+	ordered-float@5.3.0
+	paste@1.0.15
+	phf@0.11.3
+	phf_codegen@0.11.3
+	phf_generator@0.11.3
+	phf_shared@0.11.3
+	pin-project-lite@0.2.17
+	portable-atomic-util@0.2.7
+	portable-atomic@1.13.1
+	powerfmt@0.2.0
+	ppv-lite86@0.2.21
+	proc-macro-crate@3.5.0
+	proc-macro2@1.0.106
+	pyo3-build-config@0.29.0
+	pyo3-ffi@0.29.0
+	pyo3-log@0.13.4
+	pyo3-macros-backend@0.29.0
+	pyo3-macros@0.29.0
+	pyo3-stub-gen-derive@0.23.0
+	pyo3-stub-gen@0.23.0
+	pyo3@0.29.0
+	quote@1.0.45
+	rand@0.8.6
+	rand_chacha@0.3.1
+	rand_core@0.6.4
+	rawpointer@0.2.1
+	regex-automata@0.4.14
+	regex-syntax@0.8.10
+	regex@1.12.3
+	rustc-hash@1.1.0
+	rustc-hash@2.1.2
+	rustpython-ast@0.4.0
+	rustpython-parser-core@0.4.0
+	rustpython-parser-vendored@0.4.0
+	rustpython-parser@0.4.0
+	rustversion@1.0.22
+	scopeguard@1.2.0
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.150
+	serde_spanned@1.1.1
+	serialport@4.9.0
+	shlex@1.3.0
+	signal-hook-registry@1.4.8
+	signal-hook@0.3.18
+	siphasher@1.0.3
+	slab@0.4.12
+	static_assertions@1.1.0
+	strsim@0.11.1
+	syn@2.0.117
+	target-lexicon@0.13.5
+	termcolor@1.4.1
+	thiserror-impl@2.0.18
+	thiserror@2.0.18
+	time-core@0.1.8
+	time@0.3.47
+	tiny-keccak@2.0.2
+	toml@1.1.2+spec-1.1.0
+	toml_datetime@1.1.1+spec-1.1.0
+	toml_edit@0.25.11+spec-1.1.0
+	toml_parser@1.1.2+spec-1.1.0
+	toml_writer@1.1.1+spec-1.1.0
+	unescaper@0.1.8
+	unic-char-property@0.9.0
+	unic-char-range@0.9.0
+	unic-common@0.9.0
+	unic-emoji-char@0.9.0
+	unic-ucd-ident@0.9.0
+	unic-ucd-version@0.9.0
+	unicode-ident@1.0.24
+	unicode-width@0.2.2
+	unicode_names2@1.3.0
+	unicode_names2_generator@1.3.0
+	utf8parse@0.2.2
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasm-bindgen-macro-support@0.2.122
+	wasm-bindgen-macro@0.2.122
+	wasm-bindgen-shared@0.2.122
+	wasm-bindgen@0.2.122
+	winapi-util@0.1.11
+	windows-core@0.62.2
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.2.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.52.0
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	winnow@1.0.3
+	zerocopy-derive@0.8.48
+	zerocopy@0.8.48
+	zmij@1.0.21
+"
+
+inherit cargo distutils-r1
+
+DESCRIPTION="Communication with Dynamixel like devices"
+HOMEPAGE="https://github.com/pollen-robotics/rustypot"
+SRC_URI="
+	https://github.com/pollen-robotics/rustypot/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 CC0-1.0 MIT MPL-2.0 Unicode-3.0 Unicode-DFS-2016"
+SLOT="0"
+KEYWORDS="~amd64"
+
+distutils_enable_tests pytest

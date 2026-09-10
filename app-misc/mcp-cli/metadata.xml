@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    mcp-cli is a command-line client for the Model Context Protocol (MCP),
+    letting users interact with MCP servers, tools, and LLM providers from
+    the terminal.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">IBM/mcp-cli</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    segments implements Unicode Standard tokenization, plus tokenization
+    and transliteration based on orthography profiles as described by the
+    Cross-Linguistic Data Formats (CLDF) initiative.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">cldf/segments</remote-id>
+    <remote-id type="pypi">segments</remote-id>
+  </upstream>
+</pkgmetadata>

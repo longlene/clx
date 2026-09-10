@@ -1,0 +1,54 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -44,24 +44,25 @@
+ # Apply any in-tree ggml patches (broadcast-fold, etc.) before configuring the
+ # submodule so the patched source is compiled in. Idempotent: already-applied
+ # patches are silently skipped.
+-find_program(BASH_EXECUTABLE bash)
+-if(BASH_EXECUTABLE AND EXISTS "${CMAKE_SOURCE_DIR}/scripts/apply_ggml_patches.sh")
+-  execute_process(
+-    COMMAND "${BASH_EXECUTABLE}" "${CMAKE_SOURCE_DIR}/scripts/apply_ggml_patches.sh"
+-    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+-    RESULT_VARIABLE _patch_result
+-    OUTPUT_VARIABLE _patch_output
+-    ERROR_VARIABLE  _patch_errors
+-  )
+-  if(_patch_output)
+-    message(STATUS "${_patch_output}")
+-  endif()
+-  if(_patch_result)
+-    message(WARNING "apply_ggml_patches.sh returned ${_patch_result}: ${_patch_errors}")
+-  endif()
+-endif()
++#find_program(BASH_EXECUTABLE bash)
++#if(BASH_EXECUTABLE AND EXISTS "${CMAKE_SOURCE_DIR}/scripts/apply_ggml_patches.sh")
++#  execute_process(
++#    COMMAND "${BASH_EXECUTABLE}" "${CMAKE_SOURCE_DIR}/scripts/apply_ggml_patches.sh"
++#    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
++#    RESULT_VARIABLE _patch_result
++#    OUTPUT_VARIABLE _patch_output
++#    ERROR_VARIABLE  _patch_errors
++#  )
++#  if(_patch_output)
++#    message(STATUS "${_patch_output}")
++#  endif()
++#  if(_patch_result)
++#    message(WARNING "apply_ggml_patches.sh returned ${_patch_result}: ${_patch_errors}")
++#  endif()
++#endif()
+
+-add_subdirectory(third_party/ggml)
++#add_subdirectory(third_party/ggml)
++find_package(ggml REQUIRED CONFIG)
+
+ set(PARAKEET_SRC
+     src/parakeet.cpp
+@@ -107,7 +108,7 @@
+ target_include_directories(parakeet PUBLIC include PRIVATE src ${CMAKE_SOURCE_DIR}/third_party)
+ target_compile_definitions(parakeet PUBLIC $<$<CXX_COMPILER_ID:MSVC>:_USE_MATH_DEFINES>)
+ target_compile_definitions(parakeet PRIVATE PARAKEET_VERSION="${PARAKEET_VERSION}")
+-target_link_libraries(parakeet PUBLIC ggml)
++target_link_libraries(parakeet PUBLIC ggml::ggml)
+
+ if(PARAKEET_BUILD_CLI)
+   add_subdirectory(examples/cli)

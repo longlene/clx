@@ -42,7 +42,7 @@ DEPEND="
 	${RDEPEND}
 "
 BDEPEND="
-	dev-libs/cutlass
+	>=dev-libs/cutlass-4.5.2
 	dev-util/nvidia-cuda-toolkit
 "
 

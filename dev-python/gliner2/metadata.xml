@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">fastino-ai/GLiNER2</remote-id>
+    <remote-id type="pypi">gliner2</remote-id>
+  </upstream>
+  <use>
+    <flag name="local">Install torch/transformers/peft for local (non-API) model inference</flag>
+    <flag name="train">Install training dependencies (torch/transformers/peft/PyYAML)</flag>
+  </use>
+</pkgmetadata>

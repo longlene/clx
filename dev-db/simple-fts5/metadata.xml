@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    A SQLite3 FTS5 tokenizer extension that supports Chinese (via jieba
+    word segmentation) and Pinyin search, loadable at runtime into any
+    SQLite3 database.
+  </longdescription>
+  <use>
+    <flag name="jieba">Build Chinese word segmentation support using dev-cpp/cppjieba</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">wangfenjin/simple</remote-id>
+  </upstream>
+</pkgmetadata>

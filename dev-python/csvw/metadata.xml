@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    csvw is a Python library for working with CSV on the Web (CSVW)
+    described tabular data: reading, validating, and converting tabular
+    datasets described by W3C CSVW metadata.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">cldf/csvw</remote-id>
+    <remote-id type="pypi">csvw</remote-id>
+  </upstream>
+</pkgmetadata>

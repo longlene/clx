@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">docling-project/docling</remote-id>
+    <remote-id type="pypi">docling</remote-id>
+  </upstream>
+  <use>
+    <flag name="cli">Install the docling/docling-tools CLI entry points</flag>
+    <flag name="convert-core">Install numpy/pillow/rtree/scipy for document conversion</flag>
+    <flag name="format-office">Support DOCX, PPTX and XLSX input formats</flag>
+    <flag name="format-pdf">Support PDF input via docling-parse and pypdfium2</flag>
+    <flag name="format-web">Support HTML and Markdown input formats</flag>
+  </use>
+</pkgmetadata>

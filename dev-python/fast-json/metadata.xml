@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    fast-json combines the best parts of the standard json module and ujson
+    for fast JSON serialization and deserialization.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">fast-json</remote-id>
+  </upstream>
+</pkgmetadata>

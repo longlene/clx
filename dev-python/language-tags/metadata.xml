@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    language-tags is a Python port of the JavaScript language-tags project
+    for parsing, validating, and comparing IANA language tags (BCP 47).
+  </longdescription>
+  <upstream>
+    <remote-id type="github">OnroerendErfgoed/language-tags</remote-id>
+    <remote-id type="pypi">language-tags</remote-id>
+  </upstream>
+</pkgmetadata>

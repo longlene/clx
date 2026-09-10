@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Prebuilt kernel binary for the NVIDIA DGX Spark (GB10 Grace-Blackwell),
+    repackaged directly from Ubuntu's signed linux-image/linux-modules debs
+    (ports.ubuntu.com, linux-nvidia/linux-signed-nvidia source packages).
+    No compilation: this is the exact kernel NVIDIA ships and validates on
+    this hardware as DGX OS. aarch64 only. See sys-kernel/dgx-spark-sources
+    for a from-source, configurable alternative.
+  </longdescription>
+  <upstream>
+    <remote-id type="launchpad">ubuntu</remote-id>
+  </upstream>
+  <use>
+    <flag name="headers">Also install the matching linux-headers deb to /usr/src, for building out-of-tree modules (e.g. DKMS) against this kernel</flag>
+  </use>
+</pkgmetadata>

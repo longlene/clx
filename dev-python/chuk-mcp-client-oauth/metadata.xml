@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    chuk-mcp-client-oauth is a reusable OAuth 2.0 client library for Model
+    Context Protocol (MCP) servers, with secure token storage via the
+    system keyring.
+  </longdescription>
+  <upstream>
+    <remote-id type="pypi">chuk-mcp-client-oauth</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    sanoTTS is a family of tiny neural text-to-speech voices (745k to 1.8M
+    parameters) with a self-contained, numpy-only Python inference runtime
+    and CLI. Voice packages are downloaded on demand at runtime.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Ampixa/sanoTTS</remote-id>
+  </upstream>
+</pkgmetadata>

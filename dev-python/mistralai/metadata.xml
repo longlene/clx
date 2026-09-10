@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    mistralai is the official Python client library for the Mistral AI
+    platform's chat, embeddings, and agent APIs.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">mistralai/client-python</remote-id>
+    <remote-id type="pypi">mistralai</remote-id>
+  </upstream>
+</pkgmetadata>

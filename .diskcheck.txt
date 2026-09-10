@@ -1,0 +1,3 @@
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            15G  8.1G  7.0G  54% /tmp
+tmpfs            25G   22G  3.1G  88% /var/tmp/portage

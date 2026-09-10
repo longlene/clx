@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    cVisor is an in-process Linux sandbox for untrusted or LLM-generated
+    code, isolating programs by intercepting Linux syscalls from userspace
+    (seccomp user-notifier) instead of using a VM or container.
+  </longdescription>
+  <use>
+    <flag name="daemon">Also build the cvisord gRPC/GraphQL daemon</flag>
+    <flag name="ffi">Install libcvisor.so, the C ABI used by the language SDKs</flag>
+    <flag name="s3">Enable the S3 cache backend</flag>
+    <flag name="zstd">Enable zstd archive compression support</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">tsirysndr/cVisor</remote-id>
+  </upstream>
+</pkgmetadata>

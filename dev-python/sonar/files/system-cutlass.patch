@@ -1,0 +1,12 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -469,7 +469,8 @@
+           GIT_SHALLOW TRUE
+       )
+     endif()
+-    FetchContent_MakeAvailable(cutlass)
++    find_package(NvidiaCutlass REQUIRED)
++    set(CUTLASS_DIR /usr/include/cutlass)
+ 
+     list(APPEND APHRODITE_STABLE_EXT_SRC
+       "csrc/libtorch_stable/cutlass_extensions/common.cpp"

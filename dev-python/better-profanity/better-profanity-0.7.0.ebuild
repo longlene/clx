@@ -1,0 +1,24 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{13..15} )
+
+inherit distutils-r1
+
+DESCRIPTION="Blazingly fast cleaning swear words (and their leetspeak) in strings"
+HOMEPAGE="
+	https://pypi.org/project/better-profanity/
+	https://github.com/snguyenthanh/better_profanity
+"
+SRC_URI="https://github.com/snguyenthanh/better_profanity/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
+S="${WORKDIR}/better_profanity-${PV}"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~amd64"
+
+EPYTEST_PLUGINS=()
+distutils_enable_tests pytest
