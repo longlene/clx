@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+Lightweight framework for managing variables, logging, and a plugin-based
+architecture. Provides common application framework code and utilities used
+by Scitrera's DGX Spark tooling.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">scitrera/python-app-framework</remote-id>
+    <remote-id type="pypi">scitrera-app-framework</remote-id>
+  </upstream>
+</pkgmetadata>

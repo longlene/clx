@@ -4,13 +4,17 @@
 EAPI=8
 
 # ${PV} tracks the Ubuntu kernel package version as <kernelver>.<abi>.<upload>,
-# e.g. 6.17.0.1032.32 <-> linux-image-6.17.0-1032-nvidia 6.17.0-1032.32.
+# e.g. 7.0.0.1016.16 <-> linux-image-7.0.0-1016-nvidia 7.0.0-1016.16~24.04.1.
+# This particular upload is a noble (24.04) backport of the newer 7.0 series
+# - upstream's own version string carries a "~24.04.1" suffix that Gentoo's
+# PV syntax can't represent, so it's appended separately below.
 MY_KV_FULL="${PV%.*.*}"
 MY_UBUNTU_PKG="${PV#${MY_KV_FULL}.}"
 MY_KV_SERIES="${MY_KV_FULL%.*}"
 MY_ABI="${MY_UBUNTU_PKG%.*}"
 MY_KVER="${MY_KV_FULL}-${MY_ABI}"
-MY_FULLVER="${MY_KV_FULL}-${MY_UBUNTU_PKG}"
+MY_BACKPORT="~24.04.1"
+MY_FULLVER="${MY_KV_FULL}-${MY_UBUNTU_PKG}${MY_BACKPORT}"
 
 MY_IMAGE_DEB="linux-image-${MY_KVER}-nvidia_${MY_FULLVER}_arm64.deb"
 MY_MODULES_DEB="linux-modules-${MY_KVER}-nvidia_${MY_FULLVER}_arm64.deb"
@@ -85,9 +89,9 @@ src_install() {
 		cp -a "${hdrcommondir}"/usr/src/. "${D}/usr/src/" || die
 
 		# The raw Makefile's VERSION/PATCHLEVEL/SUBLEVEL reflect whatever
-		# upstream point-release Canonical branched from, not Ubuntu's own
-		# package version (what actually ends up in
-		# include/config/kernel.release and the module vermagic).
+		# upstream point-release Canonical branched from (e.g. 7.0.12), not
+		# Ubuntu's own package version (7.0.0-1016-nvidia, what actually ends
+		# up in include/config/kernel.release and the module vermagic).
 		# linux-info.eclass's get_version() tries to reconcile the two by
 		# checking whether kernel.release starts with the Makefile-derived
 		# version string - since Ubuntu's numbering doesn't share that
@@ -141,7 +145,8 @@ pkg_postinst() {
 	fi
 
 	elog "Installed the stock Ubuntu/NVIDIA signed kernel ${MY_KVER}-nvidia"
-	elog "(same binary DGX OS boots and validates on this hardware) to:"
+	elog "(newer 7.0 series HWE-style backport for 24.04, not yet validated"
+	elog "against GB10-specific hardware-enablement patches) to:"
 	elog "  /boot/vmlinuz-${MY_KVER}-nvidia"
 	elog "  /lib/modules/${MY_KVER}-nvidia/"
 	elog ""
