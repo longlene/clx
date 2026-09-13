@@ -25,7 +25,7 @@ detect_version
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}/${MY_P}"
-KEYWORDS="~arm"
+KEYWORDS="~arm ~arm64"
 
 DEPEND="sys-devel/gcc
 	dev-embedded/u-boot-tools"

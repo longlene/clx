@@ -13,7 +13,7 @@ HOMEPAGE="https://pypi.org/project/uniserde/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/sudolulo/winnow/archive/refs/tags/v${PV}.tar.gz -> $
 
 LICENSE="AGPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/croniter-5.0.2[${PYTHON_USEDEP}]

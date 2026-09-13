@@ -19,7 +19,7 @@ SRC_URI="https://github.com/Syndace/python-xeddsa/archive/refs/tags/v${PV}.tar.g
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/python-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="dev-libs/libxeddsa"
 RDEPEND="

@@ -22,7 +22,7 @@ S="${WORKDIR}/${MY_P}/cuda_bindings"
 
 LICENSE="NVIDIA-2025"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

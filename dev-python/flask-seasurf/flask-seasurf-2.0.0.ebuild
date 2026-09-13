@@ -14,7 +14,7 @@ SRC_URI="https://github.com/maxcountryman/flask-seasurf/archive/refs/tags/${PV}.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/flask[${PYTHON_USEDEP}]

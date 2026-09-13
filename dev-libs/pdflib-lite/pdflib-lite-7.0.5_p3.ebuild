@@ -13,6 +13,6 @@ SRC_URI="http://ponce.cc/slackware/sources/repo/${MY_P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

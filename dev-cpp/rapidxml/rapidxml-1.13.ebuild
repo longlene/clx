@@ -9,7 +9,7 @@ SRC_URI="https://sourceforge.net/projects/rapidxml/files/rapidxml/rapidxml%20${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

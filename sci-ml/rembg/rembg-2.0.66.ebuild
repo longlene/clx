@@ -15,7 +15,7 @@ SRC_URI="https://github.com/danielgatis/rembg/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	$(python_gen_cond_dep '

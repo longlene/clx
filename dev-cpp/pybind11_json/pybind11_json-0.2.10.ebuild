@@ -11,7 +11,7 @@ SRC_URI="https://github.com/pybind/pybind11_json/archive/refs/tags/${PV}.tar.gz 
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-python/pybind11

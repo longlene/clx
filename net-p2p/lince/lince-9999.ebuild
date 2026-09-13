@@ -16,7 +16,7 @@ HOMEPAGE="http://lincetorrent.sourceforge.net"
 LICENSE="GPL-3"
 SLOT="0"
 S=${WORKDIR}/${PN}
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~ppc64 ~x86"
 IUSE="dbus libnotify"
 
 RDEPEND="dev-cpp/gtkmm:2.4

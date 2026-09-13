@@ -17,7 +17,7 @@ SRC_URI="https://github.com/mdomke/python-ulid/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND+="
 	dev-python/hatch-fancy-pypi-readme[${PYTHON_USEDEP}]

@@ -9,6 +9,6 @@ SRC_URI="https://github.com/blt/port_compiler/archive/refs/tags/v${PV}.tar.gz ->
 
 SLOT="0"
 S="${WORKDIR}"/port_compiler-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

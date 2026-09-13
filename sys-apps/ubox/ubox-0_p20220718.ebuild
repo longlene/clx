@@ -13,6 +13,6 @@ SRC_URI="https://git.openwrt.org/?p=project/ubox.git;a=snapshot;h=${EGIT_COMMIT}
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

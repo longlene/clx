@@ -15,7 +15,7 @@ S="${WORKDIR}/dataplicity-lomond-${PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]

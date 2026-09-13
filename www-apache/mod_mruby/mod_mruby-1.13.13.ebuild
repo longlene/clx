@@ -10,7 +10,7 @@ HOMEPAGE="http://mod.mruby.org/"
 SRC_URI="https://github.com/matsumotory/mod_mruby/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 SLOT="0"
 
 APACHE2_MOD_CONF="99_${PN}"

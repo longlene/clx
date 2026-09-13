@@ -14,7 +14,7 @@ SRC_URI="https://github.com/browser-use/browser-harness/archive/refs/tags/v${PV}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

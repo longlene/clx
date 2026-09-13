@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/maxmind/MaxMind-DB-Reader-python https://pypi.org/p
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 DEPEND="dev-libs/libmaxminddb:="

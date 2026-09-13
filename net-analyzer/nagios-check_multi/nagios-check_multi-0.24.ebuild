@@ -10,7 +10,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE="nrpe"
 S="${WORKDIR}"/check_multi-${PV}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND=">=dev-lang/perl-5.12.2-r4"
 RDEPEND="${DEPEND}

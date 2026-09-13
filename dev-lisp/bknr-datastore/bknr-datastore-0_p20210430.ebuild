@@ -13,7 +13,7 @@ SRC_URI="https://github.com/hanshuebner/bknr-datastore/archive/${EGIT_COMMIT}.ta
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-interpol

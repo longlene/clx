@@ -8,7 +8,7 @@ SRC_URI="http://www.larvalstage.com/zinc/files/zinc-1.1rc3.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND=">=dev-lang/python-2.1
 		>=sys-libs/ncurses-5.2"

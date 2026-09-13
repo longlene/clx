@@ -8,7 +8,7 @@ SRC_URI="http://www.hornby.dsl.pipex.com/dateshift/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"

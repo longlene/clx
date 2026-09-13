@@ -12,7 +12,7 @@ EGIT_COMMIT="5cda3952855d6c4273929449339b04509387bdd2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 DOCS="README"
 
 RDEPEND=">=dev-libs/dbus-glib-0.70

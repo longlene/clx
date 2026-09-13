@@ -630,7 +630,7 @@ LICENSE+="
 	Unicode-DFS-2016 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda"
 
 RDEPEND="cuda? ( dev-util/nvidia-cuda-toolkit )"

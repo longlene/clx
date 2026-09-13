@@ -13,7 +13,7 @@ SRC_URI="https://github.com/luarocks/argparse/archive/${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

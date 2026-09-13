@@ -18,7 +18,7 @@ RDEPEND="${DEPEND}"
 LICENSE="Apache"
 SLOT="0"
 S="${WORKDIR}"/${PN}-library-${PV}
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 src_prepare() {
 	eapply_user

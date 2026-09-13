@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/snmsts/burgled-batteries3"
 SRC_URI="https://github.com/snmsts/burgled-batteries3/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

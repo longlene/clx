@@ -7,7 +7,7 @@ HOMEPAGE="https://github.com/nvidia/gdrcopy"
 SRC_URI="https://github.com/NVIDIA/gdrcopy/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

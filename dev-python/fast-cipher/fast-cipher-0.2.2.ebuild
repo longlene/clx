@@ -18,5 +18,5 @@ HOMEPAGE="
 # README all lack one) as of 0.2.2.
 LICENSE="all-rights-reserved"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="mirror"

@@ -11,7 +11,7 @@ S="${WORKDIR}/smallcode"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="mirror strip"
 
 QA_PREBUILT="opt/${PN}/node_modules/better-sqlite3/build/Release/better_sqlite3.node"

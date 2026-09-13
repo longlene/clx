@@ -24,7 +24,7 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/Python-Wrapper-for-World-Vocoder-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]

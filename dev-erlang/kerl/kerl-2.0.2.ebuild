@@ -11,7 +11,7 @@ SRC_URI="https://github.com/kerl/kerl/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="bash-completion zsh-completion"
 
 RDEPEND="${DEPEND}"

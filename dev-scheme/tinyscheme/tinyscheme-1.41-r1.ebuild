@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/tinyscheme/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 #KEYWORDS="~amd64 ~ppc ~x86 ~ppc-macos ~x64-macos"
-KEYWORDS="amd64 ppc x86 ~arm"
+KEYWORDS="amd64 ~arm64 ppc x86 ~arm"
 IUSE="static-libs"
 
 src_prepare() {

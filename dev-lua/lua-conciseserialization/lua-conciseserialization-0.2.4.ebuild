@@ -14,7 +14,7 @@ SRC_URI="https://framagit.org/fperrad/lua-ConciseSerialization/-/archive/${PV}/l
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/lua-ConciseSerialization-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

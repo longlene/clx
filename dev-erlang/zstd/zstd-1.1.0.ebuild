@@ -12,6 +12,6 @@ SRC_URI="https://github.com/AdRoll/zstd-erlang/archive/refs/tags/v${PV}.tar.gz -
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/zstd-erlang-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

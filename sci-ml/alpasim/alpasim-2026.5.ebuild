@@ -15,7 +15,7 @@ SRC_URI="https://github.com/NVlabs/alpasim/archive/refs/tags/v${PV}.tar.gz -> ${
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # Sub-packages built: plugins, grpc, eval, utils, controller, physics, runtime, tools, wizard
 # Excluded: driver (uv_build backend), utils_rs (maturin/Rust), trafficsim (no build-system)

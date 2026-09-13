@@ -11,7 +11,7 @@ SRC_URI="https://gitlab.common-lisp.net/clpm/clpm/-/archive/v${PV}/clpm-v${PV}.t
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

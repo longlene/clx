@@ -17,7 +17,7 @@ SRC_URI="https://github.com/huggingface/optimum-onnx/archive/refs/tags/v${PV}.ta
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-libs/optimum-2.1.0[${PYTHON_SINGLE_USEDEP}]

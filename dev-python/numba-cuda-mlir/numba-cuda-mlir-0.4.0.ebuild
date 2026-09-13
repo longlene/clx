@@ -18,7 +18,7 @@ SRC_URI="https://github.com/NVIDIA/numba-cuda-mlir/archive/refs/tags/v${PV}.tar.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]

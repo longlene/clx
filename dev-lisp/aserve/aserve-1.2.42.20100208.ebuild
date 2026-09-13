@@ -14,7 +14,7 @@ SRC_URI="https://mydebian.googlecode.com/files/cl-portable-aserve_${MY_PV}+cvs.$
 LICENSE="LLGPL-2.1"
 SLOT="0"
 S=${WORKDIR}/cl-portable-aserve-${MY_PV}+cvs.${CVS_PV}-dfsg/aserve
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 =dev-lisp/htmlgen-${PV}

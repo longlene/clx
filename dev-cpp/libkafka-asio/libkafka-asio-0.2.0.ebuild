@@ -10,7 +10,7 @@ SRC_URI="https://github.com/danieljoos/libkafka-asio/archive/v${PV}.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="
 	dev-libs/boost[context,threads]

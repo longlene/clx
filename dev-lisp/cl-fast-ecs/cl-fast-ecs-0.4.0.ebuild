@@ -11,7 +11,7 @@ SRC_URI="https://gitlab.com/lockie/cl-fast-ecs/-/archive/${PV}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

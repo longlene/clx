@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/jhbadger/xlispstat.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	x11-libs/libX11

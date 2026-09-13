@@ -17,7 +17,7 @@ SRC_URI="https://github.com/graphql-python/graphene/archive/refs/tags/v${PV}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/graphql-core-3.1[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/ultralytics/ultralytics/archive/refs/tags/v${PV}.tar
 
 LICENSE="AGPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/torchvision-0.9.0[${PYTHON_SINGLE_USEDEP}]

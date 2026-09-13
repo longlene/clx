@@ -16,7 +16,7 @@ SRC_URI="
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]

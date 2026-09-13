@@ -18,7 +18,7 @@ SRC_URI="https://github.com/fla-org/flash-linear-attention/archive/refs/tags/v${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/pytorch-2.7.0[${PYTHON_SINGLE_USEDEP}]

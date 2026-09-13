@@ -18,7 +18,7 @@ SRC_URI="https://github.com/UKGovernmentBEIS/inspect_ai/archive/refs/tags/${PV}.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/inspect_ai-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aioboto3-13.0.0[${PYTHON_USEDEP}]

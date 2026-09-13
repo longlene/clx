@@ -773,7 +773,7 @@ LICENSE="Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD Boost-1.0
 	CC0-1.0 CDLA-Permissive-2.0 ISC LGPL-3 MIT MPL-2.0 UoI-NCSA openssl
 	Unicode-3.0 Unicode-DFS-2016 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

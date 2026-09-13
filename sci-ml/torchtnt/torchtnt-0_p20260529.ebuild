@@ -18,7 +18,7 @@ S="${WORKDIR}/tnt-${COMMIT}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/pytorch-2.3.0

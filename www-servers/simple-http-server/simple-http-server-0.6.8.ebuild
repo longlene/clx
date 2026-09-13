@@ -188,7 +188,7 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="|| ( >=dev-lang/rust-1.54.0 >=dev-lang/rust-bin-1.54.0 )"
 RDEPEND="${DEPEND}"

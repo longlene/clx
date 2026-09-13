@@ -13,7 +13,7 @@ SRC_URI="https://github.com/cl-fui/subtext/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-cffi-gtk

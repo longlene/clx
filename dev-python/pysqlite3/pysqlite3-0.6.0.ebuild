@@ -15,7 +15,7 @@ SRC_URI="https://github.com/coleifer/pysqlite3/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

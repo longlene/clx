@@ -193,6 +193,6 @@ SRC_URI="
 
 LICENSE="Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 CC0-1.0 MIT MPL-2.0 Unicode-3.0 Unicode-DFS-2016"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 distutils_enable_tests pytest

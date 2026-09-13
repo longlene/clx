@@ -11,7 +11,7 @@ SRC_URI="http://www.notam02.no/arkiv/src/${P}.tar.gz"
 # code from an example that comes with jack, which is GPL-2.
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 DEPEND="media-sound/jack-audio-connection-kit
 	media-libs/libsndfile"
 RDEPEND="${DEPEND}"

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/eschulte/curry-compose-reader-macros/archive/${EGIT_
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

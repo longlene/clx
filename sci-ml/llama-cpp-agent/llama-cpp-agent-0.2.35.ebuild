@@ -16,7 +16,7 @@ SRC_URI="https://github.com/Maximilian-Winter/llama-cpp-agent/archive/refs/tags/
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/llama-cpp-python-0.2.60[${PYTHON_USEDEP}]

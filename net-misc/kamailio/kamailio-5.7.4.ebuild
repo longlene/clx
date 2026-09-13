@@ -13,7 +13,7 @@ SRC_URI="https://github.com/kamailio/kamailio/archive/${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 #Documentation can be found here: http://www.kamailio.org/docs/modules/4.4.x/
 IUSE_KAMAILIO_MODULES="kamailio_modules_acc kamailio_modules_acc_radius kamailio_modules_alias_db kamailio_modules_app_java kamailio_modules_app_lua kamailio_modules_app_mono kamailio_modules_app_perl

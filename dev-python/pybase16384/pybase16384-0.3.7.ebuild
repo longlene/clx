@@ -14,7 +14,7 @@ HOMEPAGE="
 SRC_URI="https://github.com/synodriver/pybase16384/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

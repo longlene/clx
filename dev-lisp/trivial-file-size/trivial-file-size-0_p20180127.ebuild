@@ -13,7 +13,7 @@ SRC_URI="https://github.com/ruricolist/trivial-file-size/archive/${EGIT_COMMIT}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/betodealmeida/python-rison/archive/${EGIT_COMMIT}.ta
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/python-rison-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/six[${PYTHON_USEDEP}]

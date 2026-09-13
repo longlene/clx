@@ -11,6 +11,6 @@ SRC_URI="https://github.com/mpark/variant/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSL-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

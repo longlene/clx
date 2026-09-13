@@ -6,7 +6,7 @@ HOMEPAGE="http://www.over-yonder.net/~fullermd/projects/libcidr/"
 SRC_URI="http://www.over-yonder.net/~fullermd/projects/libcidr/${P}.tar.bz2"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="doc"
 
 DEPEND="${DEPEND}"

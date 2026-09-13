@@ -18,7 +18,7 @@ SRC_URI="https://github.com/Pylons/pyramid/archive/refs/tags/${PV}.tar.gz -> ${P
 # Paste portions: MIT
 LICENSE="BSD-4 BSD MIT ZPL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 # Missing deps not yet in portage:

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/thibaultcha/lua-resty-jit-uuid/archive/refs/tags/${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/fal-ai/fal/archive/refs/tags/fal_client_v${PV}.tar.g
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/fal-fal_client_v${PV}/projects/fal_client
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx-0.21.0[${PYTHON_USEDEP}]

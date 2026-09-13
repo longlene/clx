@@ -11,7 +11,7 @@ SRC_URI="https://github.com/keithj/deoxybyte-systems/archive/refs/tags/${PV}.tar
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-fad

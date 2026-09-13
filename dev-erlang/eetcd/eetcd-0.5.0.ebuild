@@ -11,7 +11,7 @@ SRC_URI="https://github.com/zhongwencool/eetcd/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	>=dev-erlang/gun-2.1.0

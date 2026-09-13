@@ -17,7 +17,7 @@ SRC_URI="https://github.com/willtrnr/pyxlsb/archive/refs/tags/v${PV}.tar.gz -> $
 
 LICENSE="LGPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

@@ -14,7 +14,7 @@ HOMEPAGE="https://pypi.org/project/mlx-optiq/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # mlx-lm and huggingface_hub are single-impl; list at top level without
 # Python USE constraints per the multi/single-impl boundary rule

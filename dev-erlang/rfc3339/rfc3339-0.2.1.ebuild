@@ -11,6 +11,6 @@ SRC_URI="https://github.com/talentdeficit/rfc3339/archive/${PV}.tar.gz -> ${P}.t
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

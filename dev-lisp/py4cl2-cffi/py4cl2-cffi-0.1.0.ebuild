@@ -11,7 +11,7 @@ SRC_URI="https://github.com/digikar99/py4cl2-cffi/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads

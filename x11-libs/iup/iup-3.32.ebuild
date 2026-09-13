@@ -14,7 +14,7 @@ SRC_URI="https://downloads.sourceforge.net/project/iup/${PV}/Docs%20and%20Source
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="webkit static-libs lua opengl lua motif led"
 
 RDEPEND="${DEPEND}

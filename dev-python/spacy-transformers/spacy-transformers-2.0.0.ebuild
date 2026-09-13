@@ -20,7 +20,7 @@ SRC_URI="https://github.com/explosion/spacy-transformers/archive/refs/tags/relea
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/spacy-transformers-release-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/transformers-4.45.0[${PYTHON_SINGLE_USEDEP}]

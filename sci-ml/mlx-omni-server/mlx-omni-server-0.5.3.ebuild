@@ -15,7 +15,7 @@ SRC_URI="https://github.com/madroidmaq/mlx-omni-server/archive/refs/tags/v${PV}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 	#>=sci-ml/outlines-1.0.4[${PYTHON_SINGLE_USEDEP}]

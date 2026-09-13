@@ -13,7 +13,7 @@ SRC_URI="https://github.com/cffi/cffi/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~sparc ~x86"
 
 IUSE="doc example test"
 RESTRICT="!test? ( test )"

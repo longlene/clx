@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/x42005e1f/aiologic https://pypi.org/project/aiologi
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	$(python_gen_cond_dep '

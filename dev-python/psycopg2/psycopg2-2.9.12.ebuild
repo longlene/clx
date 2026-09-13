@@ -15,7 +15,7 @@ SRC_URI="https://github.com/psycopg/psycopg2/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="LGPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 DEPEND="dev-db/postgresql:*"

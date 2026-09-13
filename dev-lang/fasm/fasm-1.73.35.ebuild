@@ -14,7 +14,7 @@ S="${WORKDIR}/${PN}"
 
 LICENSE="fasm"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="libc"
 RESTRICT="strip"
 

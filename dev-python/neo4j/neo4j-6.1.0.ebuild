@@ -21,7 +21,7 @@ SRC_URI="https://github.com/neo4j/neo4j-python-driver/archive/refs/tags/${PV}.ta
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/pytz[${PYTHON_USEDEP}]

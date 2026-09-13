@@ -9,7 +9,7 @@ SRC_URI="http://www.bindshell.net/tools/sslcat/sslcat.tgz"
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}"/$PN
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="dev-libs/openssl"
 

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/mmontone/hunchentoot-errors/archive/${EGIT_COMMIT}.t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/hunchentoot

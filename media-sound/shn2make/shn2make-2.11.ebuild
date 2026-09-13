@@ -7,7 +7,7 @@ SRC_URI="ftp://ftp.freeengineer.org/pub/shn2make/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND="dev-build/make"
 RDEPEND="media-sound/vorbis-tools

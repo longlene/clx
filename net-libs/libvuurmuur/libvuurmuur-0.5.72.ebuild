@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/vuurmuur/${MY_PKG_NAME}-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc ~x86"
+KEYWORDS="~arm64 ~ppc ~x86"
 
 RDEPEND="net-firewall/iptables"
 

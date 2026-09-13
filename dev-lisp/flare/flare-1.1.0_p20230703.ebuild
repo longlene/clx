@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Shinmera/flare/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm"
+KEYWORDS="~amd64 ~arm ~arm ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/lambda-fiddle

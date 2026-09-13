@@ -18,7 +18,7 @@ SRC_URI="https://github.com/marl/pysox/archive/refs/tags/v${PV}.tar.gz -> pysox-
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/pysox-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	media-sound/sox

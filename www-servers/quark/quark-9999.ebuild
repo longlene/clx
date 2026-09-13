@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://git.suckless.org/quark"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

@@ -12,7 +12,7 @@ SRC_URI="https://github.com/m2ym/optima/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

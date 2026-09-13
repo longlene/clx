@@ -14,7 +14,7 @@ S="${WORKDIR}/${MY_P%-2}"
 LICENSE="MIT"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="lto static-libs"
 
 PATCHES=(

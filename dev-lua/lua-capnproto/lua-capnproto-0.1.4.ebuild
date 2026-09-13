@@ -14,7 +14,7 @@ SRC_URI="https://github.com/calio/lua-capnproto/archive/v${PV}-5.tar.gz -> ${P}-
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/${P}-5
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	${LUA_DEPS}

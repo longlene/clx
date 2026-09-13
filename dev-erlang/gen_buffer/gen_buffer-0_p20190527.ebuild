@@ -13,7 +13,7 @@ SRC_URI="https://github.com/cabol/gen_buffer/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-erlang/epocxy

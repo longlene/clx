@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/k3d/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}/${MY_P}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="3ds cgal cuda dbus gmm gnome graphviz gts imagemagick inotify jpeg nls ode openexr perftools png python threads tiff truetype" #TODO collada-dom
 
 RDEPEND="

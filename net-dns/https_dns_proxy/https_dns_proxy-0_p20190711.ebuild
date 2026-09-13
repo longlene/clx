@@ -13,7 +13,7 @@ SRC_URI="https://github.com/aarond10/https_dns_proxy/archive/${EGIT_COMMIT}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-libs/libev

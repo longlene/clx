@@ -11,7 +11,7 @@ HOMEPAGE="https://huggingface.co/ggerganov/whisper.cpp"
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/Avaiga/taipy https://pypi.org/project/taipy-gui/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="arrow image ngrok"
 RESTRICT="test"
 

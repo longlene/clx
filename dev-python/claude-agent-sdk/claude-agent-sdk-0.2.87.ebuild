@@ -22,7 +22,7 @@ S="${WORKDIR}"/${MY_P}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/anyio-4.0.0[${PYTHON_USEDEP}]

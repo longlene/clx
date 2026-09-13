@@ -14,5 +14,5 @@ SRC_URI="https://github.com/scrapy/protego/archive/refs/tags/${PV}.tar.gz -> ${P
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"

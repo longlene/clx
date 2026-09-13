@@ -12,7 +12,7 @@ SRC_URI="http://transmisson-remote-gui.googlecode.com/files/${P}-src.zip"
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}/TransGUI"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RESTRICT="mirror strip"
 

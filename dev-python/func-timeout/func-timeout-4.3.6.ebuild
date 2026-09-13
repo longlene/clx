@@ -15,7 +15,7 @@ SRC_URI="https://github.com/kata198/func_timeout/archive/refs/tags/${PV}.tar.gz 
 LICENSE="LGPL-3.0"
 SLOT="0"
 S="${WORKDIR}"/func_timeout-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

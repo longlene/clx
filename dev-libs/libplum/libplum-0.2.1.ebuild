@@ -11,7 +11,7 @@ SRC_URI="https://github.com/paullouisageneau/libplum/archive/refs/tags/v${PV}.ta
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

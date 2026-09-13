@@ -22,7 +22,7 @@ SRC_URI="
 S="${WORKDIR}/${MY_P}"
 LICENSE="Apache-2.0 NVIDIA-CUDA"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cross-builder"
 RESTRICT="mirror bindist"
 

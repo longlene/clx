@@ -14,7 +14,7 @@ SRC_URI="https://github.com/miguelgrinberg/flask-sock/archive/refs/tags/v${PV}.t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/flask[${PYTHON_USEDEP}]

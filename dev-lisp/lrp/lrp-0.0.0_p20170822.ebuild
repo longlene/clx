@@ -13,7 +13,7 @@ SRC_URI="https://gitlab.com/serenitty/lrp/repository/archive.tar.gz?ref=${EGIT_C
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/gamebox-math

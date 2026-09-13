@@ -361,7 +361,7 @@ SRC_URI="
 
 LICENSE="MPL-2.0 0BSD Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD LGPL-3 MIT Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="xmpp"
 
 DEPEND="

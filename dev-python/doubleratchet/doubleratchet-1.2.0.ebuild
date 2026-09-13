@@ -18,7 +18,7 @@ SRC_URI="https://github.com/Syndace/python-doubleratchet/archive/refs/tags/v${PV
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/python-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/cryptography-3.3.2[${PYTHON_USEDEP}]

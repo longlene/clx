@@ -731,7 +731,7 @@ LICENSE+="
 	MPL-2.0 UoI-NCSA Unicode-3.0 Unicode-DFS-2016 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # alsa-sys links against system ALSA via pkg-config
 DEPEND="media-libs/alsa-lib"

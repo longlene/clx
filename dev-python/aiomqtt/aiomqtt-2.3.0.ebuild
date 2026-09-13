@@ -14,7 +14,7 @@ SRC_URI="https://github.com/sbtinstruments/aiomqtt/archive/refs/tags/v${PV}.tar.
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/paho-mqtt-2.0.0[${PYTHON_USEDEP}]

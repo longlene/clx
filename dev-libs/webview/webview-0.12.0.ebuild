@@ -11,7 +11,7 @@ SRC_URI="https://github.com/webview/webview/archive/refs/tags/${PV}.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	net-libs/webkit-gtk:4

@@ -12,7 +12,7 @@ SRC_URI="http://common-lisp.net/project/cl-plus-j/releases/cl+j-${PV}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/cl+j-${PV}
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="example"
 
 DEPEND=">=virtual/jdk-1.5"

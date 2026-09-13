@@ -13,7 +13,7 @@ SRC_URI="https://github.com/40ants/teddy/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 
 LICENSE="Unlicense"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/hu_dwim_def

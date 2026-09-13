@@ -17,7 +17,7 @@ SRC_URI="https://github.com/hypn0s/AJPy/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/AJPy-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

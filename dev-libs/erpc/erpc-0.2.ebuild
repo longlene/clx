@@ -11,7 +11,7 @@ SRC_URI="https://github.com/erpc-io/eRPC/archive/refs/tags/v${PV}.tar.gz -> ${P}
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	sys-cluster/rdma-core

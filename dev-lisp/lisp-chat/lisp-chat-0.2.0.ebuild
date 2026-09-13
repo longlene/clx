@@ -11,7 +11,7 @@ SRC_URI="https://github.com/ryukinix/lisp-chat/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="
 	dev-lisp/usocket

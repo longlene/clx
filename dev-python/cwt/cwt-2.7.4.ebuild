@@ -15,7 +15,7 @@ SRC_URI="https://github.com/dajiaji/python-cwt/archive/refs/tags/v${PV}.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/python-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/asn1crypto-1.4.0[${PYTHON_USEDEP}]

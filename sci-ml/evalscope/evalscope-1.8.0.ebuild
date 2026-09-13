@@ -18,7 +18,7 @@ SRC_URI="https://github.com/modelscope/evalscope/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/transformers-4.33[${PYTHON_SINGLE_USEDEP}]

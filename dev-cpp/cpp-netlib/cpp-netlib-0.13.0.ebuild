@@ -13,7 +13,7 @@ SRC_URI="http://downloads.cpp-netlib.org/${PV}/${P}-final.tar.gz"
 LICENSE="Boost"
 SLOT="0"
 S="${WORKDIR}"/${P}-final
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="example +ssl test"
 RESTRICT="!test? ( test )"

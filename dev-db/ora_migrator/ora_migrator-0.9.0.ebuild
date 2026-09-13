@@ -13,7 +13,7 @@ SRC_URI="https://github.com/cybertec-postgresql/ora_migrator/archive/ORA_MIGRATO
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="dev-db/postgresql"
 RDEPEND="${DEPEND}

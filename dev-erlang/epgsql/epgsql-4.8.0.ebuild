@@ -9,7 +9,7 @@ DESCRIPTION="Erlang PostgreSQL client library"
 HOMEPAGE="https://github.com/epgsql/epgsql"
 SRC_URI="https://github.com/epgsql/${PN}/archive/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 LICENSE="epgsql"
 SLOT="0"

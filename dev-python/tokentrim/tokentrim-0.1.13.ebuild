@@ -17,7 +17,7 @@ SRC_URI="https://github.com/KillianLucas/tokentrim/archive/refs/tags/v${PV}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/tiktoken-0.4.0[${PYTHON_USEDEP}]

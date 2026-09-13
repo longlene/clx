@@ -9,7 +9,7 @@ HOMEPAGE="http://documentup.com/matt-42/vpp"
 SRC_URI="https://github.com/matt-42/vpp/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-cpp/eigen:3

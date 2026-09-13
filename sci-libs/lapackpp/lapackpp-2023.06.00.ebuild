@@ -11,7 +11,7 @@ SRC_URI="https://github.com/icl-utk-edu/lapackpp/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	sci-libs/blaspp

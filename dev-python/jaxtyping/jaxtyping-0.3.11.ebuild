@@ -17,7 +17,7 @@ SRC_URI="https://github.com/patrick-kidger/jaxtyping/archive/refs/tags/v${PV}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/wadler-lindig-0.1.3[${PYTHON_USEDEP}]

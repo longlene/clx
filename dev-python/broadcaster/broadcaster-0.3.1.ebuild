@@ -17,7 +17,7 @@ SRC_URI="https://github.com/encode/broadcaster/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/anyio-3.4.0[${PYTHON_USEDEP}]

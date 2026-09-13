@@ -13,7 +13,7 @@ HOMEPAGE="https://pypi.org/project/chuk-tool-processor/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/chuk-mcp-0.9[${PYTHON_USEDEP}]

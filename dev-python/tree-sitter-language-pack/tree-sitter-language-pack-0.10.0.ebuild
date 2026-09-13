@@ -16,7 +16,7 @@ SRC_URI="https://github.com/Goldziher/tree-sitter-language-pack/archive/refs/tag
 
 LICENSE="|| ( MIT Apache-2.0 )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/tree-sitter-0.25.2[${PYTHON_USEDEP}]

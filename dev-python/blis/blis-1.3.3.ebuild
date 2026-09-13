@@ -21,7 +21,7 @@ SRC_URI="
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}"/cython-${PN}-release-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	>=dev-python/cython-3.0[${PYTHON_USEDEP}]

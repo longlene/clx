@@ -9,7 +9,7 @@ SRC_URI="http://elceef.itsec.pl/${PN}/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 S=${WORKDIR}/${PN}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND=">=net-libs/libpcap-0.6.0"
 RDEPEND="${DEPEND}"

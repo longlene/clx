@@ -13,7 +13,7 @@ HOMEPAGE="https://pypi.org/project/storage3/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="iceberg"
 RESTRICT="test"
 

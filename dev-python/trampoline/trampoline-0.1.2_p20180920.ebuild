@@ -20,7 +20,7 @@ SRC_URI="https://gitlab.com/ferreum/trampoline/-/archive/${EGIT_COMMIT}/trampoli
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/trampoline-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/lucidrains/x-transformers/archive/refs/tags/${PV}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/pytorch-2.0[${PYTHON_SINGLE_USEDEP}]

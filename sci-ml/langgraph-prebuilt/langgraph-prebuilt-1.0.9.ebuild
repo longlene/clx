@@ -20,7 +20,7 @@ SRC_URI="https://github.com/langchain-ai/langgraph/archive/refs/tags/${MY_PN}==$
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${P}/libs/${MY_PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langgraph-checkpoint-2.1.0[${PYTHON_USEDEP}]

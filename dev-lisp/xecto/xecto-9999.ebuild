@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/pkhuong/Xecto.git"
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="dev-lisp/sbcl"
 RDEPEND="${DEPEND}"

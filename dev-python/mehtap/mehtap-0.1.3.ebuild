@@ -14,7 +14,7 @@ SRC_URI="https://github.com/emreozcan/mehtap/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/lark-1.2.2[${PYTHON_USEDEP}]

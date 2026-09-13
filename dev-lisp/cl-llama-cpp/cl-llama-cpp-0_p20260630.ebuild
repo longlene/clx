@@ -13,4 +13,4 @@ S="${WORKDIR}/${PN}-${MY_COMMIT}"
 
 LICENSE="TODO"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

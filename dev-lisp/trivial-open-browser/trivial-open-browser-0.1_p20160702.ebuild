@@ -13,7 +13,7 @@ SRC_URI="https://github.com/eudoxia0/trivial-open-browser/archive/${EGIT_COMMIT}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

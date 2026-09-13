@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.easysw.com/pub/newsd/test/${MY_P}-source.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 S=${WORKDIR}/${MY_P}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND="sys-apps/groff"
 

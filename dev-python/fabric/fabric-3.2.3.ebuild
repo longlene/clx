@@ -18,7 +18,7 @@ SRC_URI="https://github.com/fabric/fabric/archive/refs/tags/${PV}.tar.gz -> ${P}
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/invoke-3.0[${PYTHON_USEDEP}]

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ArchiveBox/abx-plugins https://pypi.org/project/abx
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 python_prepare_all() {

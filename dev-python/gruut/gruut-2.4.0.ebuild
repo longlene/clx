@@ -17,7 +17,7 @@ SRC_URI="https://github.com/rhasspy/gruut/archive/refs/tags/v${PV}.tar.gz -> ${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/babel-2.8.0[${PYTHON_USEDEP}]

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/confident-ai/deepeval/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="inspect"
 
 RDEPEND="

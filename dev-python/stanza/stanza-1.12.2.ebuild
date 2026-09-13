@@ -13,7 +13,7 @@ SRC_URI="https://github.com/stanfordnlp/stanza/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="datasets transformers"
 # Tests require downloading Stanford NLP models at runtime
 RESTRICT="test"

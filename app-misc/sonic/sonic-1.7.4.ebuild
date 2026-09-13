@@ -323,7 +323,7 @@ SRC_URI="
 
 LICENSE="MPL-2.0 Apache-2.0 BSD BSD-2 CC0-1.0 CDLA-Permissive-2.0 ISC MIT Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_prepare() {
 	default

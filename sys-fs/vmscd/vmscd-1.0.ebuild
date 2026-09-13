@@ -8,7 +8,7 @@ SRC_URI="http://www.suse.de/~kkaempf/vmscd/${P}.tar.bz2"
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 src_install() {
 	make ROOT="${D}" install || die

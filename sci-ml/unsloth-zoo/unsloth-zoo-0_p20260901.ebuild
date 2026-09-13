@@ -18,7 +18,7 @@ S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/pytorch-2.4.0[${PYTHON_SINGLE_USEDEP}]

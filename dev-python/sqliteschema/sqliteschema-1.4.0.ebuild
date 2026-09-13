@@ -16,7 +16,7 @@ SRC_URI="https://github.com/thombashi/sqliteschema/archive/refs/tags/v${PV}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/mbstrdecoder-0.8.3[${PYTHON_USEDEP}]

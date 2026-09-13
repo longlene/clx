@@ -13,7 +13,7 @@ HOMEPAGE="https://pypi.org/project/unicall/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/uniserde-0.3.6[${PYTHON_USEDEP}]

@@ -9,6 +9,6 @@ SRC_URI="https://www.thoughtcrime.us/software/cl-jpl-util/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

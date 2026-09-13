@@ -11,7 +11,7 @@ SRC_URI="https://github.com/slembcke/Chipmunk-Physics/archive/Chipmunk-${PV}.tar
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}/Chipmunk-Physics-Chipmunk-${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 x11-libs/libXmu

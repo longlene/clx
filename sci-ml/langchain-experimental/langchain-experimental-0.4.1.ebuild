@@ -18,7 +18,7 @@ SRC_URI="https://github.com/langchain-ai/langchain-experimental/archive/refs/tag
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/langchain-experimental-libs-experimental-v${PV}/libs/experimental
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langchain-core-1.0.0[${PYTHON_USEDEP}]

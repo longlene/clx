@@ -19,7 +19,7 @@ SRC_URI="https://github.com/irmen/pyminiaudio/archive/refs/tags/v${PV}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/py${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	>=dev-python/cffi-1.12.0[${PYTHON_USEDEP}]

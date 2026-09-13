@@ -6,6 +6,6 @@ EAPI=8
 SRC_URI="http://downloads.mesosphere.com/marathon/v${PV}/${P}.tgz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

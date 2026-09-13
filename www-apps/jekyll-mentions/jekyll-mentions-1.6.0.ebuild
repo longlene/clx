@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/jekyll/jekyll-mentions"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 ruby_add_rdepend ">=dev-ruby/jekyll-3.0"
 ruby_add_rdepend ">=dev-ruby/html-pipeline-2.3"

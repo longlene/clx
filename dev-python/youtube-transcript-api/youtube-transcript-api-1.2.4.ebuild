@@ -17,7 +17,7 @@ SRC_URI="https://github.com/jdepoix/youtube-transcript-api/archive/refs/tags/v${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]

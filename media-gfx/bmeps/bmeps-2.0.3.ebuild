@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 DESCRIPTION="bmeps converts various bitmap picture formats to eps"
 HOMEPAGE="http://bmeps.sourceforge.net/"
 SRC_URI="mirror://sourceforge/bmeps/${P}.tar.gz"

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/kazhala/pfzy/archive/refs/tags/${PV}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

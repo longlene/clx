@@ -14,7 +14,7 @@ SRC_URI="https://codeberg.org/gregburd/lime/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="public-domain"
 SLOT="0"
 S="${WORKDIR}"/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="llvm test"
 RESTRICT="!test? ( test )"
 

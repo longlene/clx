@@ -10,7 +10,7 @@ LICENSE="BSD"
 SLOT="0"
 
 S=${WORKDIR}/${P}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 IUSE="mysql postgres megabit"
 

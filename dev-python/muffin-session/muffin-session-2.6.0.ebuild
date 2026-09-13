@@ -14,7 +14,7 @@ SRC_URI="https://github.com/klen/muffin-session/archive/refs/tags/${PV}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

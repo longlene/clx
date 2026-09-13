@@ -11,7 +11,7 @@ SRC_URI="https://github.com/cl-adams/adams/archive/refs/tags/${P}.tar.gz -> ${P}
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

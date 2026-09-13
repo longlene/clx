@@ -11,7 +11,7 @@ SRC_URI="https://github.com/dnaeon/cl-jwk/archive/refs/tags/v${PV}.tar.gz -> ${P
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

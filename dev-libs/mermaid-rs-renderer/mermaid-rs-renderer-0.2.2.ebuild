@@ -161,7 +161,7 @@ SRC_URI="
 
 LICENSE="MIT Apache-2.0 BSD-2 BSD Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+cli +png"
 
 src_compile() {

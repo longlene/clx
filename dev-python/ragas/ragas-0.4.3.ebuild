@@ -17,7 +17,7 @@ HOMEPAGE="
 SRC_URI="https://github.com/vibrantlabsai/ragas/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/datasets-4.0.0[${PYTHON_SINGLE_USEDEP}]

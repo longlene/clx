@@ -13,7 +13,7 @@ SRC_URI="https://github.com/shamazmazum/similar-images/archive/${EGIT_COMMIT}.ta
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-fad

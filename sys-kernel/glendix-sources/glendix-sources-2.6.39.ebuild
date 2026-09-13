@@ -13,7 +13,7 @@ DESCRIPTION="Patched sources for the Linux kernel with experimental support for 
 HOMEPAGE="http://www.glendix.org http://www.kernel.org"
 SRC_URI="${KERNEL_URI}"
 
-KEYWORDS="x86"
+KEYWORDS="~arm64 x86"
 IUSE="deblob"
 
 src_prepare() {

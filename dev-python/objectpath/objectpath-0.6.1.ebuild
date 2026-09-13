@@ -13,6 +13,6 @@ HOMEPAGE="https://pypi.org/project/objectpath/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 distutils_enable_tests pytest

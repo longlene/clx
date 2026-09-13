@@ -13,7 +13,7 @@ SRC_URI="https://github.com/facebookincubator/katran/archive/${EGIT_COMMIT}.tar.
 
 LICENSE="GPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-libs/libfmt

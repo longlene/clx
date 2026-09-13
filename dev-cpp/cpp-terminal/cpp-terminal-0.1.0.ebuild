@@ -11,6 +11,6 @@ SRC_URI="https://github.com/jupyter-xeus/cpp-terminal/archive/refs/tags/v${PV}.t
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

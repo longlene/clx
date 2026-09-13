@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/gradio-app/hf-gradio"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

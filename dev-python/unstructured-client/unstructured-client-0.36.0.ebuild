@@ -18,7 +18,7 @@ SRC_URI="https://github.com/Unstructured-IO/unstructured-python-client/archive/r
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/unstructured-python-client-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiofiles-24.1.0[${PYTHON_USEDEP}]

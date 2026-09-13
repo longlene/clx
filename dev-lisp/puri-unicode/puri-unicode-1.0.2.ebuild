@@ -11,7 +11,7 @@ SRC_URI="http://github.com/downloads/archimag/puri-unicode/${P}.tar.bz2"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="!dev-lisp/cl-puri
 		!dev-lisp/puri

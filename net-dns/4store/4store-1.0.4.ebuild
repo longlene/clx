@@ -13,7 +13,7 @@ SRC_URI="http://4store.org/download/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 S="${WORKDIR}/${MY_P}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="cluster"
 
 # < http://4store.org/trac/wiki/Dependencies

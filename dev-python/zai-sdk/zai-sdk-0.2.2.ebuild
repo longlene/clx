@@ -18,7 +18,7 @@ SRC_URI="https://github.com/zai-org/z-ai-sdk-python/archive/refs/tags/v${PV}.tar
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/z-ai-sdk-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx-0.23.0[${PYTHON_USEDEP}]

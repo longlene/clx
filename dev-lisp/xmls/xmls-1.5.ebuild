@@ -11,7 +11,7 @@ SRC_URI="http://www.common-lisp.net/project/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ~amd64 ~arm"
+KEYWORDS="~arm64 x86 ~amd64 ~arm"
 
 RDEPEND="!dev-lisp/cl-${PN}"
 

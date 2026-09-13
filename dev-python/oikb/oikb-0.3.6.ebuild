@@ -14,7 +14,7 @@ SRC_URI="https://github.com/open-webui/oikb/archive/refs/tags/v${PV}.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="azure dropbox gcs gdrive oracle s3 sharepoint web"
 RESTRICT="test"
 

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/langchain-ai/langchain-google/archive/refs/tags/libs
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/langchain-google-libs-genai-v${PV}/libs/genai/
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langchain-core-1.2.11[${PYTHON_USEDEP}]

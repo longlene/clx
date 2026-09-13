@@ -18,7 +18,7 @@ SRC_URI="https://github.com/mwilliamson/python-mammoth/archive/refs/tags/${PV}.t
 LICENSE="BSD-2"
 SLOT="0"
 S="${WORKDIR}"/python-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/cobble-0.1.3[${PYTHON_USEDEP}]

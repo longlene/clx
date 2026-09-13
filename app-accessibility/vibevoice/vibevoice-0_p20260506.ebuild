@@ -20,7 +20,7 @@ S="${WORKDIR}/VibeVoice-303b2833e01cff4578ec278bbfe536da54bd19fe"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

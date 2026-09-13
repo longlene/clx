@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/fftv/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1 GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="tcron zlib mmx v4l vorbis oss lirc mp3"
 
 DEPEND=">=x11-libs/gtk+-2

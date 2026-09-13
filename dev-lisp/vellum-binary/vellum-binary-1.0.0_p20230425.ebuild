@@ -13,7 +13,7 @@ SRC_URI="https://github.com/sirherrbatka/vellum-binary/archive/${EGIT_COMMIT}.ta
 
 LICENSE="BSD-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	>=dev-lisp/vellum-1.3.0

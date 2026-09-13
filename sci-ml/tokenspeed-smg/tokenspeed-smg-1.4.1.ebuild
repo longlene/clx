@@ -937,7 +937,7 @@ LICENSE+="
 	Unicode-3.0 Unicode-DFS-2016 Unlicense WTFPL-2 ZLIB BZIP2
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	app-arch/bzip2:=

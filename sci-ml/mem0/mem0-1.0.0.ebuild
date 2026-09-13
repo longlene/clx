@@ -17,7 +17,7 @@ SRC_URI="https://github.com/mem0ai/mem0/archive/refs/tags/v${PV}.tar.gz -> ${P}.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/qdrant-client-1.9.1[${PYTHON_USEDEP}]

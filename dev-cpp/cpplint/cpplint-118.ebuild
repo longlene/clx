@@ -16,7 +16,7 @@ SRC_URI="http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml?${SUBVER
 LICENSE="CC-BY-3.0"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="emacs"
 
 EMACSNAME="google-c-style"

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/lyst/lightfm/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]

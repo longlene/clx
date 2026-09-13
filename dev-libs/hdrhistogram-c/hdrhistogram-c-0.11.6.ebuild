@@ -11,7 +11,7 @@ SRC_URI="https://github.com/HdrHistogram/HdrHistogram_c/archive/${PV}.tar.gz -> 
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	sys-libs/zlib

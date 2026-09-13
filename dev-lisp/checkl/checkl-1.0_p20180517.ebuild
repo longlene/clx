@@ -13,7 +13,7 @@ SRC_URI="https://github.com/rpav/CheckL/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 
 LICENSE="LLGPL BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="doc test"
 RESTRICT="!test? ( test )"

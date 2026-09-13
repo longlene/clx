@@ -16,7 +16,7 @@ SRC_URI="https://github.com/thombashi/tabledata/archive/refs/tags/v${PV}.tar.gz 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/dataproperty-1.0.1[${PYTHON_USEDEP}]

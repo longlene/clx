@@ -18,7 +18,7 @@ SRC_URI="https://github.com/alexmojaki/eval_type_backport/archive/refs/tags/v${P
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/eval_type_backport-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

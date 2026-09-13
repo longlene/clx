@@ -13,7 +13,7 @@ SRC_URI="https://github.com/drdo/do-urlencode/archive/${EGIT_COMMIT}.tar.gz -> $
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

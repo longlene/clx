@@ -18,7 +18,7 @@ SRC_URI="https://github.com/huggingface/Math-Verify/archive/refs/tags/0.8.0.tar.
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/Math-Verify-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/latex2sympy2-extended-1.11.0[${PYTHON_USEDEP}]

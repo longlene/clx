@@ -14,7 +14,7 @@ SRC_URI="https://github.com/materialsproject/pymatgen-core/archive/refs/tags/v${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/bibtexparser[${PYTHON_USEDEP}]

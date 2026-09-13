@@ -7,7 +7,7 @@ HOMEPAGE="http://beast.gtk.org"
 SRC_URI="ftp://beast.gtk.org/pub/beast/v0.7/${P}.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 SLOT="0"
 
 RDEPEND=">=media-libs/alsa-lib-1.0.5

@@ -16,7 +16,7 @@ S="${WORKDIR}"/LlamaFactory-${PV}
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/pytorch-2.4.0[${PYTHON_SINGLE_USEDEP}]

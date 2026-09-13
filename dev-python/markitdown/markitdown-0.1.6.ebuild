@@ -18,7 +18,7 @@ SRC_URI="https://github.com/microsoft/markitdown/archive/refs/tags/v${PV}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 S="${S}"/packages/markitdown
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]

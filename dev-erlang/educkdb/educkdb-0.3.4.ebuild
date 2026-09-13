@@ -11,6 +11,6 @@ SRC_URI="https://github.com/mmzeeman/educkdb/archive/refs/tags/0.3.4.tar.gz -> $
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

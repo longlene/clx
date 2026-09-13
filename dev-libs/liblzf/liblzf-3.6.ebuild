@@ -11,7 +11,7 @@ SRC_URI="http://dist.schmorp.de/liblzf/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 src_prepare() {
 	default

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/shikantaza/pLisp/archive/v0.1.7.tar.gz -> ${P}.tar.g
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-lang/tcc

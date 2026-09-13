@@ -19,7 +19,7 @@ SRC_URI="https://github.com/KittenML/KittenTTS/archive/refs/tags/${PV}.tar.gz ->
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/KittenTTS-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/huggingface_hub[${PYTHON_SINGLE_USEDEP}]

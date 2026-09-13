@@ -9,7 +9,7 @@ SRC_URI="http://savannah.nongnu.org/download/om-synth/${P}.tar.gz"
 
 IUSE="alsa debug dssi gtk ladspa lash patch-loader"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 SLOT="0"
 
 RDEPEND=">=media-libs/liblo-0.22

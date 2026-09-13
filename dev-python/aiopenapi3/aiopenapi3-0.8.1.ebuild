@@ -17,7 +17,7 @@ SRC_URI="https://github.com/commonism/aiopenapi3/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/pyyaml[${PYTHON_USEDEP}]

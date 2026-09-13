@@ -12,7 +12,7 @@ SRC_URI="https://github.com/yunba/erl-${PN}/archive/${PV}.tar.gz -> erl-${P}.tar
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/erl-${P}
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

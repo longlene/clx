@@ -13,7 +13,7 @@ SRC_URI="https://github.com/longlene/cl-emb/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre

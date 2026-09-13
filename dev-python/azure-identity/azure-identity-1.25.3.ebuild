@@ -18,7 +18,7 @@ SRC_URI="https://github.com/Azure/azure-sdk-for-python/archive/refs/tags/${PN}_$
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/azure-sdk-for-python-${PN}_${PV}/sdk/identity/${PN}/
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/azure-core-1.31.0[${PYTHON_USEDEP}]

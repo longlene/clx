@@ -14,7 +14,7 @@ SRC_URI="https://github.com/SIPp/pysipp/archive/refs/tags/${PV}.tar.gz -> ${P}.t
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pluggy-1.0.0[${PYTHON_USEDEP}]

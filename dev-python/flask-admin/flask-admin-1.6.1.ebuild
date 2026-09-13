@@ -14,7 +14,7 @@ SRC_URI="https://github.com/flask-admin/flask-admin/archive/refs/tags/v${PV}.tar
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/flask-0.7[${PYTHON_USEDEP}]

@@ -1359,7 +1359,7 @@ LICENSE+="
 	Unicode-3.0 Unlicense ZLIB BZIP2
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/rany2/edge-tts/archive/refs/tags/${PV}.tar.gz -> ${P
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]

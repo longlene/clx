@@ -13,7 +13,7 @@ SRC_URI="https://github.com/ta2gch/trivial-argv/archive/${EGIT_COMMIT}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

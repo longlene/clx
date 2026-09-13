@@ -19,7 +19,7 @@ SRC_URI="https://github.com/NVIDIA/cuda-python/archive/refs/tags/cuda-core-v${PV
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/cuda-python-cuda-core-v${PV}/cuda_core
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND+="
 	dev-python/cuda-bindings[${PYTHON_USEDEP}]

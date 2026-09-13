@@ -12,7 +12,7 @@ SRC_URI="https://github.com/electerm/electerm/releases/download/v${PV}/electerm-
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/electerm-${PV}-linux-x64
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -13,7 +13,7 @@ S="${WORKDIR}/${MY_PN}3-${PV}/runtime/C"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~x86"
 IUSE="+cpp debug debugger doc"
 
 BDEPEND="doc? ( app-text/doxygen[dot] )"

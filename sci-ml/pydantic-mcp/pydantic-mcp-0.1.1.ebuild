@@ -17,7 +17,7 @@ SRC_URI="https://github.com/rectalogic/pydantic-mcp/archive/refs/tags/${PV}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/mcp-1.0[${PYTHON_USEDEP}]

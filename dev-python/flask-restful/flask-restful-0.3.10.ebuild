@@ -14,7 +14,7 @@ SRC_URI="https://github.com/flask-restful/flask-restful/archive/refs/tags/${PV}.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="$(python_gen_cond_dep '

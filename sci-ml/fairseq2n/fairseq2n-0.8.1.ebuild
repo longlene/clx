@@ -25,7 +25,7 @@ S="${WORKDIR}"/${MY_P}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda python"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 

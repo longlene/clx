@@ -15,7 +15,7 @@ SRC_URI="https://github.com/siddhantgoel/streaming-form-data/archive/refs/tags/v
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/aiofiles[${PYTHON_USEDEP}]

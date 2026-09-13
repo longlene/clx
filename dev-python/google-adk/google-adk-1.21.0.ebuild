@@ -18,7 +18,7 @@ SRC_URI="https://github.com/google/adk-python/archive/refs/tags/v${PV}.tar.gz ->
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/adk-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pyyaml-6.0.2[${PYTHON_USEDEP}]

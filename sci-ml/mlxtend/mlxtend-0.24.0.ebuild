@@ -14,7 +14,7 @@ SRC_URI="https://github.com/rasbt/mlxtend/archive/refs/tags/v${PV}.tar.gz -> ${P
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RESTRICT="test"
 

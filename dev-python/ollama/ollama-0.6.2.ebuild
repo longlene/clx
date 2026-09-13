@@ -19,7 +19,7 @@ SRC_URI="https://github.com/ollama/ollama-python/archive/refs/tags/v${PV}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/ollama-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

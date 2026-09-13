@@ -428,7 +428,7 @@ LICENSE="Apache-2.0"
 # Dependent crate licenses
 LICENSE+=" BSD-2 BSD CDLA-Permissive-2.0 ISC MIT MPL-2.0 Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_install() {
 	cargo_src_install --path hfrs

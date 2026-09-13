@@ -14,7 +14,7 @@ SRC_URI="https://github.com/open-webui/open-terminal/archive/refs/tags/v${PV}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="mcp"
 RESTRICT="test"
 

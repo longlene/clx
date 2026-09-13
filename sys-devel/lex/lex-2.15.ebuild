@@ -9,7 +9,7 @@ SRC_URI="https://github.com/sabotage-linux/lex/archive/v${PV}.tar.gz -> ${P}.tar
 
 LICENSE="CDDL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

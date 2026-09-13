@@ -14,7 +14,7 @@ HOMEPAGE="http://www.gevent.org/ https://github.com/gevent/gevent"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 DEPEND="

@@ -14,7 +14,7 @@ HOMEPAGE="https://pypi.org/project/asyncpg/ https://github.com/MagicStack/asyncp
 
 LICENSE="Apache-2.0 PSF-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="kerberos"
 RESTRICT="test"
 

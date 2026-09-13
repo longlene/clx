@@ -13,7 +13,7 @@ SRC_URI="https://fast.dpdk.org/rel/${P}.tar.xz"
 LICENSE="BSD GPL-2"
 SLOT="0"
 S="${WORKDIR}"/${PN}-stable-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="test"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 # tests require rte_kni module to be loaded

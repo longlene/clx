@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Shirakumo/cl-mpg123/archive/${EGIT_COMMIT}.tar.gz ->
 
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="example"
 
 RDEPEND="${DEPEND}

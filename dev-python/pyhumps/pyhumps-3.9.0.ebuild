@@ -18,7 +18,7 @@ SRC_URI="https://github.com/nficano/humps/archive/refs/tags/v${PV}.tar.gz -> ${P
 LICENSE="Unlicense"
 SLOT="0"
 S="${WORKDIR}"/humps-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

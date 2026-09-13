@@ -13,7 +13,7 @@ S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # Headers include <ytrace/ytrace.hpp>
 RDEPEND="dev-cpp/ytrace"

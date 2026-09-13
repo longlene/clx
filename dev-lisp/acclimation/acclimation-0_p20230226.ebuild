@@ -13,6 +13,6 @@ SRC_URI="https://github.com/robert-strandh/Acclimation/archive/${EGIT_COMMIT}.ta
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

@@ -11,6 +11,6 @@ SRC_URI="https://github.com/miniclip/erl_cbor/archive/refs/tags/${PV}.tar.gz -> 
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

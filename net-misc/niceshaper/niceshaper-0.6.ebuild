@@ -13,7 +13,7 @@ SRC_URI="http://niceshaper.jedwabny.net/files/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 S=${WORKDIR}/${PN}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 RDEPEND="net-firewall/iptables
 	sys-apps/iproute2"

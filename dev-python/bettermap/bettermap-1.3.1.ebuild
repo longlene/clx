@@ -14,7 +14,7 @@ SRC_URI="https://files.pythonhosted.org/packages/80/b4/1d74b7740723c1b85f3ae15d7
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 python_prepare_all() {
 	# setup.py calls parse_requirements_file("requirements.txt") but the sdist

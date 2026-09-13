@@ -13,7 +13,7 @@ SRC_URI="https://www.ldc.upenn.edu/sites/www.ldc.upenn.edu/files/ctools/sph2pipe
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/${PN}_v${PV}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

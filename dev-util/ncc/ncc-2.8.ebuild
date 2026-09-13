@@ -7,7 +7,7 @@ HOMEPAGE="http://students.ceid.upatras.gr/~sxanth/ncc/"
 SRC_URI="http://students.ceid.upatras.gr/~sxanth/ncc/ncc-${PV}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

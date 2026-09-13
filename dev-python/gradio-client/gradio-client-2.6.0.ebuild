@@ -18,7 +18,7 @@ S="${WORKDIR}"/gradio-gradio-${MY_PV}/client/python
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/huggingface_hub-0.19.3[${PYTHON_SINGLE_USEDEP}]

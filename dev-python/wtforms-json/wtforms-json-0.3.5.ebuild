@@ -14,7 +14,7 @@ SRC_URI="https://github.com/kvesteri/wtforms-json/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/wtforms-1.0.5[${PYTHON_USEDEP}]

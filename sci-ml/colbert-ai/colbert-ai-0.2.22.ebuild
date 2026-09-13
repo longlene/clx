@@ -17,7 +17,7 @@ SRC_URI="https://github.com/stanford-futuredata/ColBERT/archive/refs/tags/v${PV}
 
 SLOT="0"
 S="${WORKDIR}"/ColBERT-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/transformers[${PYTHON_SINGLE_USEDEP}]

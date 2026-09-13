@@ -16,7 +16,7 @@ S="${WORKDIR}/Trinity-RFT-${PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="agent data flash-attn megatron mm openjudge sglang vllm"
 RESTRICT="test"
 

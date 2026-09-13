@@ -21,7 +21,7 @@ S="${WORKDIR}"/openinterpreter-${PV}
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/litellm-1.41.26[${PYTHON_SINGLE_USEDEP}]

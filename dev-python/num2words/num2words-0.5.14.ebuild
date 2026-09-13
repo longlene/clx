@@ -17,7 +17,7 @@ SRC_URI="https://github.com/savoirfairelinux/num2words/archive/refs/tags/v${PV}.
 
 LICENSE="|| ( GPL LGPL )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/docopt-0.6.2[${PYTHON_USEDEP}]

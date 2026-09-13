@@ -13,7 +13,7 @@ SRC_URI="https://github.com/hawkir/calispel/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

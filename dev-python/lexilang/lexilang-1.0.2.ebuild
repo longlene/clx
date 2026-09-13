@@ -15,7 +15,7 @@ SRC_URI="https://github.com/LibreTranslate/LexiLang/archive/refs/tags/v${PV}.tar
 LICENSE="AGPL-3.0"
 SLOT="0"
 S="${WORKDIR}"/LexiLang-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

@@ -31,7 +31,7 @@ S="${WORKDIR}"/curl_cffi-${PV}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/cffi-1.12.0[${PYTHON_USEDEP}]

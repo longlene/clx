@@ -18,7 +18,7 @@ SRC_URI="https://github.com/pymc-devs/pytensor/archive/refs/tags/rel-${PV}.tar.g
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}"/${PN}-rel-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/cython[${PYTHON_USEDEP}]

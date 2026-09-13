@@ -11,7 +11,7 @@ SRC_URI="https://github.com/nschum/highlight-parentheses.el/archive/${PV}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}"/"${PN}.el-${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

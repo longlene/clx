@@ -14,7 +14,7 @@ SRC_URI="https://github.com/powturbo/Turbo-Base64/archive/${EGIT_COMMIT}.tar.gz 
 
 LICENSE="GPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

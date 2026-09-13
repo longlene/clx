@@ -11,7 +11,7 @@ SRC_URI="https://github.com/dlowe-net/${PN}/archive/v${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~sparc ~x86"
 IUSE="doc postgres"
 
 DEPEND="sys-apps/texinfo

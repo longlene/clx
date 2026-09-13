@@ -17,7 +17,7 @@ SRC_URI="https://github.com/asweigart/mouseinfo/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="GPL-3"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/python-xlib[${PYTHON_USEDEP}]

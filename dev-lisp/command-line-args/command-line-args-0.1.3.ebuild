@@ -14,7 +14,7 @@ SRC_URI="https://git.sr.ht/~whereiseveryone/command-line-args/archive/v${PV}.tar
 LICENSE="AGPL-3+"
 SLOT="0"
 S="${WORKDIR}"/${PN}-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

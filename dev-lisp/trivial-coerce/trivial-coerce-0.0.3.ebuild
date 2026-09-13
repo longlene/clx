@@ -11,7 +11,7 @@ SRC_URI="https://github.com/digikar99/trivial-coerce/archive/refs/tags/v${PV}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-types

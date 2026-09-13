@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/tarballs-are-good/quickutil.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

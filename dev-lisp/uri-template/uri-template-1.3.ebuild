@@ -9,7 +9,7 @@ SRC_URI="http://common-lisp.net/project/uri-template/release/uri-template-1.3.tg
 
 LICENSE="LLGPLv3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre

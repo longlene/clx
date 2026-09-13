@@ -10,6 +10,6 @@ inherit git-r3 vim-plugin
 DESCRIPTION="vim plugin: Vim Syntax for TOML"
 HOMEPAGE="https://github.com/cespare/vim-toml"
 LICENSE="MIT"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 EGIT_REPO_URI="https://github.com/cespare/vim-toml.git"

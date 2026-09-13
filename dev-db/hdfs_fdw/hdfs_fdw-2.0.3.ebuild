@@ -12,7 +12,7 @@ SRC_URI="https://github.com/EnterpriseDB/hdfs_fdw/archive/v${PV}.tar.gz -> ${P}.
 LICENSE="apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${P}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	>=virtual/jdk-1.6

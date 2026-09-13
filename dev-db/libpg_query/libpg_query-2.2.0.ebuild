@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/pganalyze/libpg_query"
 SRC_URI="https://github.com/pganalyze/libpg_query/archive/refs/tags/13-${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -7,7 +7,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~x86"
 IUSE="gif jpeg tiff"
 
 RDEPEND=">=media-libs/libpng-1.2.7

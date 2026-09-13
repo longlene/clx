@@ -13,7 +13,7 @@ HOMEPAGE="https://airflow.apache.org/ https://github.com/apache/airflow"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 # apache-airflow 3.x is a pure meta-package (no code — packages=[]).

@@ -13,7 +13,7 @@ SRC_URI="https://git.carcosa.net/jmcbray/germinal/archive/${EGIT_COMMIT}.tar.gz 
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

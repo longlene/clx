@@ -11,7 +11,7 @@ SRC_URI="https://github.com/benoitc/instrument/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # hackney is only called at runtime (Erlang resolves inter-module calls lazily)
 RDEPEND="dev-erlang/hackney"

@@ -11,6 +11,6 @@ SRC_URI="https://github.com/Hexstream/enhanced-find-class/archive/refs/tags/v${P
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

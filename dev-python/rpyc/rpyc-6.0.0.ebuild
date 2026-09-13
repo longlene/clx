@@ -14,7 +14,7 @@ SRC_URI="https://github.com/tomerfiliba-org/rpyc/archive/refs/tags/${PV}.tar.gz 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/plumbum[${PYTHON_USEDEP}]

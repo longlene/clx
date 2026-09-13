@@ -13,7 +13,7 @@ SRC_URI="https://github.com/AeroNotix/cl-zk/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="AL2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

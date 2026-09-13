@@ -11,7 +11,7 @@ SRC_URI="https://github.com/ctabin/libzippp/archive/libzippp-v${PV}-1.6.1.tar.gz
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-libs/libzip

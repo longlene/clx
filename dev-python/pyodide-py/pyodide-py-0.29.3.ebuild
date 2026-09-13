@@ -20,7 +20,7 @@ SRC_URI="https://github.com/pyodide/pyodide/archive/refs/tags/${PV}.tar.gz -> ${
 LICENSE="MPL-2.0"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}/src/py
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

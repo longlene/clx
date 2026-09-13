@@ -13,7 +13,7 @@ SRC_URI="https://github.com/fisxoj/clack-static-asset-middleware/archive/${EGIT_
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/moratori/clover/archive/refs/tags/v${PV}.tar.gz -> $
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-cpus

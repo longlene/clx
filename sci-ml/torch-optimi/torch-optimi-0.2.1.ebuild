@@ -19,7 +19,7 @@ SRC_URI="https://github.com/warner-benjamin/optimi/archive/refs/tags/v${PV}.tar.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/optimi-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/pytorch-1.13.0[${PYTHON_SINGLE_USEDEP}]

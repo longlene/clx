@@ -14,7 +14,7 @@ SRC_URI="https://github.com/rehabstudio/fbmessenger/archive/refs/tags/${PV}.tar.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/astroid-1.6.5[${PYTHON_USEDEP}]

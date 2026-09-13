@@ -15,7 +15,7 @@ S="${WORKDIR}/presidio-${PV}/presidio-analyzer"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 # tests require downloading spaCy NLP models
 RESTRICT="test"
 

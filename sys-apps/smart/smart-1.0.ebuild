@@ -17,7 +17,7 @@ IUSE="pygtk rpm deb slack
 	linguas_pt_BR linguas_ru linguas_sv linguas_zh_CN linguas_zh_TW"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 RDEPEND=">virtual/python-2.3
 	pygtk? ( dev-python/pygtk )

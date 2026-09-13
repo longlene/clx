@@ -11,7 +11,7 @@ SRC_URI="https://codeberg.org/Anoxinon_e.V./xmppc/archive/${PV}.tar.gz -> ${P}.t
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	app-crypt/gpgme

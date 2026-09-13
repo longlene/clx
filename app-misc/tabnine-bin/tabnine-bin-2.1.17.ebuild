@@ -13,7 +13,7 @@ SRC_URI="
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

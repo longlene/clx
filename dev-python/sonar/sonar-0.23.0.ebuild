@@ -654,7 +654,7 @@ LICENSE+="
 	Unicode-DFS-2016 Unlicense ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+cuda rocm"
 REQUIRED_USE="|| ( cuda rocm )"
 

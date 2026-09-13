@@ -19,7 +19,7 @@ S="${WORKDIR}/TorchSpec-${COMMIT}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="vllm"
 RESTRICT="test"
 

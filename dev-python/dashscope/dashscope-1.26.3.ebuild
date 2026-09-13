@@ -18,7 +18,7 @@ SRC_URI="https://github.com/dashscope/dashscope-sdk-python/archive/refs/tags/v${
 S="${WORKDIR}"/${PN}-sdk-python-${PV}
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]

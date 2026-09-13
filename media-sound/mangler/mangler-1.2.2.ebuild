@@ -10,7 +10,7 @@ SRC_URI="http://www.mangler.org/downloads/${P}.tar.bz2"
 
 LICENSE="GPL-3 LGPL-2.1 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="+alsa celt espeak g15 +gsm oss pulseaudio static-libs +speex +xosd"
 
 RDEPEND="dev-cpp/gtkmm:2.4

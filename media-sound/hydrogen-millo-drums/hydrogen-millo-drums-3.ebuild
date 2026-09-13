@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/hydrogen/${MY_P}.zip"
 # No mention except on http://www.hydrogen-music.org/?p=drumkits
 LICENSE="freedist"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 RDEPEND="media-sound/hydrogen"
 

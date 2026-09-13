@@ -11,7 +11,7 @@ SRC_URI="https://github.com/xach/vecto/archive/release-${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="
 dev-lisp/cl-vectors

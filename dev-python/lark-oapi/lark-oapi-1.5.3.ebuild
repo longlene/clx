@@ -18,7 +18,7 @@ SRC_URI="https://github.com/larksuite/oapi-sdk-python/archive/refs/tags/v${PV}.t
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/oapi-sdk-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]

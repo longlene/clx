@@ -13,7 +13,7 @@ HOMEPAGE="https://pypi.org/project/lumen-code/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-python/httpx[${PYTHON_USEDEP}]

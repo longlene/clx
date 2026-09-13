@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/cl-sdl/${PN}_${PV}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 S=${WORKDIR}/${PN}
-KEYWORDS="x86 ~amd64 ~arm ~ppc ~sparc"
+KEYWORDS="~arm64 x86 ~amd64 ~arm ~ppc ~sparc"
 DEPEND="dev-lisp/cl-uffi
 	media-libs/libsdl
 	media-libs/sdl-ttf

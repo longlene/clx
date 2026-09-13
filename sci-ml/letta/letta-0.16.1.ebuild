@@ -17,7 +17,7 @@ SRC_URI="https://github.com/letta-ai/letta/archive/refs/tags/${PV}.tar.gz -> ${P
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/typer-0.15.2[${PYTHON_USEDEP}]

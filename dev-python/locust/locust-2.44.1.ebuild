@@ -13,7 +13,7 @@ HOMEPAGE="https://locust.io/ https://github.com/locustio/locust https://pypi.org
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="dns mqtt otel"
 RESTRICT="test"
 

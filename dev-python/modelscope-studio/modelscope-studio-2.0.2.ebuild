@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/modelscope/modelscope-studio"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND=">=dev-python/gradio-6.0[${PYTHON_SINGLE_USEDEP}]"

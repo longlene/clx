@@ -13,7 +13,7 @@ SRC_URI="https://github.com/unum-cloud/ucset/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

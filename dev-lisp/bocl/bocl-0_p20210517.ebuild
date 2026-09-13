@@ -13,7 +13,7 @@ SRC_URI="https://github.com/robert-strandh/Bootstrap-Common-Lisp/archive/${EGIT_
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

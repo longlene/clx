@@ -11,7 +11,7 @@ SRC_URI="https://github.com/wolfSSL/wolfssl/archive/refs/tags/v${PV}-stable.tar.
 
 LICENSE="GPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

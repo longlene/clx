@@ -17,7 +17,7 @@ SRC_URI="https://github.com/pynickle/git-python/archive/refs/tags/v1.1.2.tar.gz 
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/gitpython[${PYTHON_USEDEP}]

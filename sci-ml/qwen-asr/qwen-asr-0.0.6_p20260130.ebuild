@@ -22,7 +22,7 @@ SRC_URI="
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/Qwen3-ASR-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/transformers-4.57.6[${PYTHON_SINGLE_USEDEP}]

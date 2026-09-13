@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/brpc/braft"
 SRC_URI="https://github.com/brpc/braft/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-libs/leveldb

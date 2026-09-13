@@ -12,7 +12,7 @@ SRC_URI="https://github.com/crategus/cl-cffi-gtk/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="amd64 x86 ~arm"
+KEYWORDS="amd64 ~arm64 x86 ~arm"
 
 IUSE="example test"
 RESTRICT="!test? ( test )"

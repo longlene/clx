@@ -15,7 +15,7 @@ SRC_URI="https://github.com/torch/torch7/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="minimal cuda cudnn opencl"
 
 DEPEND="

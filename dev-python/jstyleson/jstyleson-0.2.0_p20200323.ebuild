@@ -20,6 +20,6 @@ SRC_URI="https://github.com/linjackson78/jstyleson/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/jstyleson-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RESTRICT="test"

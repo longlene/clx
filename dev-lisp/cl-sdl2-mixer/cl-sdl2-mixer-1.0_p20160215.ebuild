@@ -14,7 +14,7 @@ SRC_URI="https://github.com/lispgames/cl-sdl2-mixer/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

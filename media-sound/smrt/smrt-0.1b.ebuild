@@ -9,7 +9,7 @@ SRC_URI="http://${PN/b/}.longstair.com/files/${P/b/}.tbz2"
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}/${PN/b/}"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="db"
 
 src_install() {

@@ -10,7 +10,7 @@ SRC_URI="http://git.2f30.org/nausea/snapshot/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="
 	sci-libs/fftw:3.0

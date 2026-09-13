@@ -13,7 +13,7 @@ SRC_URI="https://github.com/ch4xer/fcitx5-Tokyonight/archive/${EGIT_COMMIT}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	app-i18n/fcitx

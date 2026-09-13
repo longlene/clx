@@ -15,7 +15,7 @@ SRC_URI="http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&for
 LICENSE="OFL"
 SLOT="0"
 S="${WORKDIR}/${MY_P}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="doc"
 
 DEPEND="app-arch/unzip"

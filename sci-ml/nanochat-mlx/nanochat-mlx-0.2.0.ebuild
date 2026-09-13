@@ -15,7 +15,7 @@ SRC_URI="https://github.com/scasella/nanochat-mlx/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="convert"
 
 RESTRICT="test"

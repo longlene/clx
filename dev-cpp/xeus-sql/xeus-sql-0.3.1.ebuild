@@ -11,7 +11,7 @@ SRC_URI="https://github.com/jupyter-xeus/xeus-sql/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	>=dev-cpp/xeus-cpp-3.1.1

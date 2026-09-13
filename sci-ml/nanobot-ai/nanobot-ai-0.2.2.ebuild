@@ -16,7 +16,7 @@ S="${WORKDIR}/nanobot-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="api azure discord langsmith matrix msteams olostep pdf wecom weixin"
 RESTRICT="test"
 

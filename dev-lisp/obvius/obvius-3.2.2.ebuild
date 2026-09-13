@@ -11,7 +11,7 @@ SRC_URI="https://github.com/thicksteadTHpp/Obvius/archive/v${PV}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="tiff"
 
 RDEPEND="${DEPEND}

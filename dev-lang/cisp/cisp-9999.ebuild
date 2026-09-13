@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/mattn/cisp.git"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

@@ -14,7 +14,7 @@ S="${WORKDIR}/moss-tts.cpp-${COMMIT}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda test"
 RESTRICT="!test? ( test )"
 

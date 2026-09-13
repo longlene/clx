@@ -13,7 +13,7 @@ SRC_URI="https://github.com/jfmcbrayer/cl-activitypub/archive/${EGIT_COMMIT}.tar
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

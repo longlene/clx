@@ -12,7 +12,7 @@ SRC_URI="https://github.com/guicho271828/trivial-signal/archive/${EGIT_COMMIT}.t
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cffi

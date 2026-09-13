@@ -13,4 +13,4 @@ HOMEPAGE="https://github.com/vim-pandoc/vim-pandoc-syntax"
 SRC_URI="https://github.com/vim-pandoc/vim-pandoc-syntax/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"

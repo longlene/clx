@@ -20,7 +20,7 @@ SRC_URI="https://github.com/saffsd/langid.py/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}"/langid.py-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]

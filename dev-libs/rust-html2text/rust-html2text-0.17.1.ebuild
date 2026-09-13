@@ -122,7 +122,7 @@ S="${WORKDIR}/${PN}-release_${PV}"
 
 LICENSE="MIT Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="dev-libs/oniguruma:="
 RDEPEND="${DEPEND}"

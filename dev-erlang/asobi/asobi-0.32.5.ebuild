@@ -12,7 +12,7 @@ SRC_URI="https://github.com/widgrensit/asobi/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # The following deps are not yet in portage/overlay and must be packaged first:
 #   dev-erlang/nova        (Hex: nova, GitHub: novaframework/nova)

@@ -10,7 +10,7 @@ SRC_URI="https://github.com/Meituan-Dianping/DBProxy/archive/v${PV}.tar.gz -> ${
 LICENSE="GPL-2.0"
 SLOT="0"
 S="${WORKDIR}"/DBProxy-${PV}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	virtual/mysql

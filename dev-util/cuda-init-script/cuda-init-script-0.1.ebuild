@@ -4,7 +4,7 @@ HOMEPAGE="http://www.nvidia.com"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~amd64"
+KEYWORDS="~arm64 x86 ~amd64"
 
 RDEPEND="x11-drivers/nvidia-drivers"
 

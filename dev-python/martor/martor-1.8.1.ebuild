@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/agusmakmun/django-markdown-editor https://pypi.org/
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

@@ -6,6 +6,6 @@ EAPI=8
 SRC_URI="https://github.com/apache/incubator-dubbo/archive/${P}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

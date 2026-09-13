@@ -8,7 +8,7 @@ SRC_URI="https://github.com/renenglish/pb2json/archive/v${PV}.tar.gz -> ${P}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="static"
 
 RDEPEND="${DEPEND}

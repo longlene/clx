@@ -13,7 +13,7 @@ S="${WORKDIR}/${PN}-1.0.0"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 RDEPEND=">=dev-libs/glib-2.4
 	sys-libs/zlib

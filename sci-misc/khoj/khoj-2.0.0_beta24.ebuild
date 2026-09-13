@@ -22,7 +22,7 @@ SRC_URI="https://github.com/khoj-ai/khoj/archive/refs/tags/${MY_PV}.tar.gz -> ${
 LICENSE="AGPL-3.0+"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${MY_PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/sentence-transformers-3.4.1[${PYTHON_SINGLE_USEDEP}]

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/sourcey/libsourcey/archive/${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/lmcinnes/pynndescent/archive/refs/tags/release-${PV}
 LICENSE="BSD-2"
 SLOT="0"
 S="${WORKDIR}"/${PN}-release-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/scikit-learn-0.18[${PYTHON_USEDEP}]

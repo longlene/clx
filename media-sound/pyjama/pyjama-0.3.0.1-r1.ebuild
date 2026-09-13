@@ -11,7 +11,7 @@ SRC_URI="http://launchpad.net/pyjama/trunk/0.3/+download/${P}_all.tar.gz
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="gnome"
 
 RDEPEND="dev-python/pygtk

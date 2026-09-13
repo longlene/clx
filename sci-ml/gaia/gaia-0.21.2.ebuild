@@ -15,7 +15,7 @@ SRC_URI="https://github.com/amd/gaia/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="api audio litellm mcp rag talk telegram ui"
 RESTRICT="test"
 

@@ -11,7 +11,7 @@ SRC_URI="http://download.plt-scheme.org/bundles/${PV}/mz/mz-${PV}-src-unix.tgz"
 LICENSE="LGPL-2"
 SLOT="0"
 S="${WORKDIR}/mz-${PV}/src"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 ~arm64 x86"
 IUSE="perl xft"
 
 DEPEND="perl? ( dev-lang/perl )

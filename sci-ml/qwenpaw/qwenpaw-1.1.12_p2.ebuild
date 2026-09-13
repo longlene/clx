@@ -22,7 +22,7 @@ S="${WORKDIR}/QwenPaw-${MY_PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="sip livekit whisper adbpg"
 
 REQUIRED_USE="livekit? ( sip )"

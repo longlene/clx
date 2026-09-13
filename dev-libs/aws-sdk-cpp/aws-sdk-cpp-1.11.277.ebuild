@@ -13,7 +13,7 @@ SRC_URI="https://github.com/aws/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 MODULES=(
 	access-management apigateway appconfig backup batch budgets chime cloud-desktop cloud-dev cloud-media

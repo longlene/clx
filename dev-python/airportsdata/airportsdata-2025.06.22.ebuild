@@ -21,7 +21,7 @@ SRC_URI="https://github.com/mborsetti/airportsdata/archive/refs/tags/v$MY_PV.tar
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

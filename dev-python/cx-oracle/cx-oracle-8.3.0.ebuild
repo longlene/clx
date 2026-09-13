@@ -13,7 +13,7 @@ SRC_URI="https://github.com/oracle/python-cx_Oracle/archive/${PV}.tar.gz -> ${P}
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="dev-db/oracle-instantclient"
 RDEPEND="${DEPEND}"

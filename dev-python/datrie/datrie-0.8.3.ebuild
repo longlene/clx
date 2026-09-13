@@ -23,7 +23,7 @@ SRC_URI="
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/cython-0.28[${PYTHON_USEDEP}]

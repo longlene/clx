@@ -14,7 +14,7 @@ SRC_URI="https://github.com/librosa/librosa/archive/refs/tags/${PV}.tar.gz -> ${
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/audioread-2.1.9[${PYTHON_USEDEP}]

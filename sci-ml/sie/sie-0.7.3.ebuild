@@ -9,4 +9,4 @@ SRC_URI="https://github.com/superlinked/sie/archive/refs/tags/v${PV}.tar.gz -> $
 
 LICENSE="TODO"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

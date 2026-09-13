@@ -13,7 +13,7 @@ https://github.com/charJe/cl-yxorp/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="AGPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/str

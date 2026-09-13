@@ -14,7 +14,7 @@ SRC_URI="https://github.com/asmjit/${PN}/archive/${CommitId}.tar.gz
 LICENSE="ZLIB"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${CommitId}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="test"
 
 RDEPEND="${DEPEND}"

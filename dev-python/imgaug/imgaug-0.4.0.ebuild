@@ -17,7 +17,7 @@ SRC_URI="https://github.com/aleju/imgaug/archive/refs/tags/${PV}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/imageio[${PYTHON_USEDEP}]

@@ -5,6 +5,6 @@
 DESCRIPTION="Virtual for PURI"
 
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="|| ( ~dev-lisp/puri-unicode-1.0.2 ~dev-lisp/puri-${PV} )"

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/py-pdf/pdfly/archive/refs/tags/${PV}.tar.gz -> ${P}.
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pypdf-5.1.0[${PYTHON_USEDEP}]

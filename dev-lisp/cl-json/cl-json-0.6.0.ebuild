@@ -12,7 +12,7 @@ SRC_URI="https://github.com/sharplispers/cl-json/archive/${PV}.tar.gz -> ${P}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_prepare() {
 	default

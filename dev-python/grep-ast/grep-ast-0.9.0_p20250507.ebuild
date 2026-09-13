@@ -19,7 +19,7 @@ SRC_URI="https://github.com/Aider-AI/grep-ast/archive/${EGIT_COMMIT}.tar.gz -> $
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/tree-sitter-languages-1.8.0[${PYTHON_USEDEP}]

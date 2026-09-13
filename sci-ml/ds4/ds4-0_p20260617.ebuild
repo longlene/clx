@@ -14,7 +14,7 @@ S="${WORKDIR}/ds4-${MY_COMMIT}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda"
 
 DEPEND="cuda? ( dev-util/nvidia-cuda-toolkit )"

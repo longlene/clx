@@ -14,7 +14,7 @@ SRC_URI="https://github.com/Shinmera/file-notify/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="ZLIB"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-features

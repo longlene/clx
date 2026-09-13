@@ -16,7 +16,7 @@ SRC_URI="https://github.com/EleutherAI/lm-evaluation-harness/archive/refs/tags/v
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/lm-evaluation-harness-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/accelerate-0.26.0[${PYTHON_SINGLE_USEDEP}]

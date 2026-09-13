@@ -9,7 +9,7 @@ SRC_URI="mirror://sourceforge/gimp-texturize/texturize-${PV}_src.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 S="$WORKDIR/gimp-texturize"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND=">=media-gfx/gimp-2.3"
 DEPEND="${RDEPEND}"

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/open-rsx/rsbag-cl/archive/release-${PV}.tar.gz -> ${
 
 LICENSE="LGPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

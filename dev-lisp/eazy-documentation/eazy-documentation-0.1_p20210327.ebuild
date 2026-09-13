@@ -13,7 +13,7 @@ SRC_URI="https://github.com/guicho271828/eazy-documentation/archive/${EGIT_COMMI
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/trivia

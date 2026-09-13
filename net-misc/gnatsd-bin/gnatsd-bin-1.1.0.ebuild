@@ -13,7 +13,7 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="!net-misc/gnatsd"
 RDEPEND="${DEPEND}"

@@ -16,7 +16,7 @@ SRC_URI="https://github.com/NeuralVox/OpenPhonemizer/archive/refs/tags/${PV}.tar
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/OpenPhonemizer-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	sci-ml/deep-phonemizer[${PYTHON_SINGLE_USEDEP}]

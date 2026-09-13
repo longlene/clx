@@ -13,7 +13,7 @@ S="${WORKDIR}/inky-c11230ec0649705294a3f7ff61fc33316da48eb4"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-erlang/hackney

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/fcurella/python-datauri/archive/refs/tags/v${PV}.tar
 
 LICENSE="Unlicense"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 PATCHES=( "${FILESDIR}/${P}-functools-cached-property.patch" )
 

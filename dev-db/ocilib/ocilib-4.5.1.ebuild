@@ -9,7 +9,7 @@ SRC_URI="https://github.com/vrogier/ocilib/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-db/oracle-instantclient

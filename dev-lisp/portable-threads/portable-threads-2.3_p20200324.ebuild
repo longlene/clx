@@ -13,7 +13,7 @@ SRC_URI="https://github.com/binghe/portable-threads/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

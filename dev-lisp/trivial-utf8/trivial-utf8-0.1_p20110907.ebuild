@@ -13,7 +13,7 @@ SRC_URI="https://github.com/fukamachi/trivial-utf-8/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~sparc ~x86"
 
 src_prepare() {
 	default

@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/Manchu_Font_2005_${PV}.zip"
 LICENSE="public-domain"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="app-arch/unzip"
 

@@ -12,7 +12,7 @@ SRC_URI="https://github.com/svenvc/s-http-client/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/s-utils

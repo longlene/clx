@@ -13,7 +13,7 @@ SRC_URI="https://github.com/telekons/one-more-re-nightmare/archive/${EGIT_COMMIT
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/trivia

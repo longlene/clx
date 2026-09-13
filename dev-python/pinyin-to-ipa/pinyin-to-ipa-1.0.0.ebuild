@@ -17,7 +17,7 @@ SRC_URI="https://github.com/stefantaubert/pinyin-to-ipa/archive/refs/tags/v${PV}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/ordered-set-4.1.0[${PYTHON_USEDEP}]

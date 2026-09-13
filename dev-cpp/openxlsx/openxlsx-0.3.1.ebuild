@@ -11,7 +11,7 @@ SRC_URI="https://github.com/troldal/OpenXLSX/archive/refs/tags/v0.3.1.tar.gz -> 
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

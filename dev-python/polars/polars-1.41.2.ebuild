@@ -17,7 +17,7 @@ HOMEPAGE="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="numpy pandas pyarrow pydantic"
 # Tests require the polars-runtime-* Rust extension which is not yet packaged
 RESTRICT="test"

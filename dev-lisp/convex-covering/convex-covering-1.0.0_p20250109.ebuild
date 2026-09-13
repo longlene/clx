@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Shirakumo/convex-covering/archive/${EGIT_COMMIT}.tar
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/manifolds

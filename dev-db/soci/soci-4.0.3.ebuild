@@ -11,7 +11,7 @@ SRC_URI="https://github.com/SOCI/soci/archive/refs/tags/v${PV}.tar.gz -> ${P}.ta
 
 LICENSE="BSL-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="firebird mysql odbc postgres"
 
 DEPEND="

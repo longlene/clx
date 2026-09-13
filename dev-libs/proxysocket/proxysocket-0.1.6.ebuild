@@ -9,7 +9,7 @@ SRC_URI="https://github.com/brechtsanders/proxysocket/archive/${PV}.tar.gz -> ${
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="static-libs"
 
 RDEPEND="${DEPEND}"

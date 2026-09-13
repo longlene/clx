@@ -19,7 +19,7 @@ SRC_URI="https://github.com/NVIDIA-NeMo/Nemotron/archive/refs/tags/v${PV}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/Nemotron-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/nemo-run-0.4.0[${PYTHON_SINGLE_USEDEP}]

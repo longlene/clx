@@ -11,6 +11,6 @@ SRC_URI="https://github.com/aeternity/enoise/archive/v${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

@@ -19,7 +19,7 @@ SRC_URI="https://github.com/marcoheisig/cl4py/archive/${EGIT_COMMIT}.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-lisp/sbcl

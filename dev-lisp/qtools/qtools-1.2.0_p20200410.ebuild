@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Shinmera/qtools/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/commonqt

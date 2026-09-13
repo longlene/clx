@@ -12,7 +12,7 @@ SRC_URI="https://gitlab.freedesktop.org/camera/libcamera/-/archive/v${PV}/libcam
 LICENSE="LGPL-2.1"
 SLOT="0"
 S="${WORKDIR}"/${PN}-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="gstreamer python qt6 udev v4l2"
 
 DEPEND="

@@ -16,7 +16,7 @@ S="${WORKDIR}/coreai-optimization-${PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="coreai"
 RESTRICT="test"
 

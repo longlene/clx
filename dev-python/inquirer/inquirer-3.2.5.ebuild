@@ -18,7 +18,7 @@ SRC_URI="https://github.com/magmax/python-inquirer/archive/refs/tags/v${PV}.tar.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/python-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/blessed-1.19.0[${PYTHON_USEDEP}]

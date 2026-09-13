@@ -19,7 +19,7 @@ SRC_URI="https://github.com/NVIDIA/NeMo-Agent-Toolkit/archive/refs/tags/v${PV}.t
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/NeMo-Agent-Toolkit-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	>=sci-ml/datasets-4.4[${PYTHON_SINGLE_USEDEP}]

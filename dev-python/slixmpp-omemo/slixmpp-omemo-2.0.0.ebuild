@@ -14,7 +14,7 @@ SRC_URI="https://github.com/Syndace/slixmpp-omemo/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/slixmpp-1.8.0[${PYTHON_USEDEP}]

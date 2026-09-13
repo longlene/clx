@@ -395,4 +395,4 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/monty-${PV}/crates/monty-cli
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

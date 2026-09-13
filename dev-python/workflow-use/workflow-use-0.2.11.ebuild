@@ -16,7 +16,7 @@ S="${WORKDIR}/workflow-use-${PV}/workflows"
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

@@ -20,7 +20,7 @@ SRC_URI="$(pypi_sdist_url --no-normalize "${PN}" "${PV}")"
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

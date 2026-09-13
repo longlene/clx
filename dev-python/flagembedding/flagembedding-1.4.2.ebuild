@@ -15,7 +15,7 @@ S="${WORKDIR}/FlagEmbedding-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/pytorch-1.6.0

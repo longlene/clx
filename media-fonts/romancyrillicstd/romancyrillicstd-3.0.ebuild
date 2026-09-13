@@ -13,7 +13,7 @@ SRC_URI="http://kodeks.uni-bamberg.de/AKSL/media/${MY_P}.zip"
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}/${MY_P}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="doc"
 
 DEPEND="app-arch/unzip"

@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/awslabs/aws-lambda-cpp"
 SRC_URI="https://github.com/awslabs/aws-lambda-cpp/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	net-misc/curl

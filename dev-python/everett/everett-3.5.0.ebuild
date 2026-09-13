@@ -17,7 +17,7 @@ SRC_URI="https://github.com/willkg/everett/archive/refs/tags/v${PV}.tar.gz -> ${
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

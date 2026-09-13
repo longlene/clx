@@ -15,7 +15,7 @@ SRC_URI="https://github.com/Lightning-AI/utilities/archive/refs/tags/v${PV}.tar.
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/utilities-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/packaging-17.1[${PYTHON_USEDEP}]

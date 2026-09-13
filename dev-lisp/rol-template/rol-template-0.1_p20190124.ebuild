@@ -12,7 +12,7 @@ SRC_URI="https://github.com/RailsOnLisp/rol-template/archive/${EGIT_COMMIT}.tar.
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-str

@@ -12,7 +12,7 @@ HOMEPAGE="http://www.microemu.org/"
 LICENSE="LGPL-2.1"
 SLOT="0"
 S="${WORKDIR}/microemulator-${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="examples"
 
 RDEPEND=">=virtual/jre-1.4"

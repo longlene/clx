@@ -15,4 +15,4 @@ S="${WORKDIR}/types_awscrt-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

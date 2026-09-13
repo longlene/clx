@@ -20,7 +20,7 @@ SRC_URI="https://github.com/harmlessman/g2pkk/archive/${EGIT_COMMIT}.tar.gz -> $
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/jamo[${PYTHON_USEDEP}]

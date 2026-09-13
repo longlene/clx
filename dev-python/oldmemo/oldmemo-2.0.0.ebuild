@@ -18,7 +18,7 @@ SRC_URI="https://github.com/Syndace/python-oldmemo/archive/refs/tags/v${PV}.tar.
 LICENSE="AGPL-3.0"
 SLOT="0"
 S="${WORKDIR}"/python-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/omemo-2.0.0[${PYTHON_USEDEP}]

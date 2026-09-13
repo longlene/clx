@@ -13,7 +13,7 @@ SRC_URI="https://github.com/y2q-actionman/with-c-syntax/archive/${EGIT_COMMIT}.t
 
 LICENSE="WTFPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

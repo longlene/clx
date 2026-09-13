@@ -18,7 +18,7 @@ SRC_URI="https://github.com/modelscope/mcore-bridge/archive/refs/tags/v${PV}.tar
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/megatron-lm-0.15.0[${PYTHON_SINGLE_USEDEP}]

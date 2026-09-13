@@ -12,7 +12,7 @@ SRC_URI="https://github.com/yuce/bert.erl/archive/refs/tags/v${PV}.tar.gz -> ${P
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/bert.erl-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/hubertsiuzdak/snac/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]

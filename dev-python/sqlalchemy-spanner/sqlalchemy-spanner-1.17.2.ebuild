@@ -18,7 +18,7 @@ SRC_URI="https://github.com/googleapis/python-spanner-sqlalchemy/archive/refs/ta
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/python-spanner-sqlalchemy-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/sqlalchemy-1.1.13[${PYTHON_USEDEP}]

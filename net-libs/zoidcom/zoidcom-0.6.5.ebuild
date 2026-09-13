@@ -9,7 +9,7 @@ SRC_URI="http://www.zoidcom.com/download/${P}.tar.gz"
 LICENSE="free-noncomm"
 SLOT="0"
 S=${WORKDIR}/${PN}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="doc sample"
 # See README.TXT
 RESTRICT="mirror"

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/googleapis/python-aiplatform/archive/refs/tags/v${PV
 
 SLOT="0"
 S="${WORKDIR}"/python-aiplatform-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/google-api-core-1.34.1[${PYTHON_USEDEP}]

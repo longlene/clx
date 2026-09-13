@@ -17,7 +17,7 @@ SRC_URI="https://github.com/MyreMylar/pygame_gui/archive/refs/tags/v_${MY_PV}.ta
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/pygame_gui-v_${MY_PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pygame-ce-2.4.0[${PYTHON_USEDEP}]

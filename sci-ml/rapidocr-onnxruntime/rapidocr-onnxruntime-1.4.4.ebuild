@@ -17,7 +17,7 @@ SRC_URI="https://files.pythonhosted.org/packages/ba/12/1e5497183bdbe782dbb91bad1
 LICENSE="Apaache-2.0"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/rapidocr[${PYTHON_USEDEP}]

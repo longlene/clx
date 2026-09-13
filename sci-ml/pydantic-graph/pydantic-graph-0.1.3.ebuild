@@ -21,7 +21,7 @@ SRC_URI="https://github.com/pydantic/pydantic-ai/archive/refs/tags/v${PV}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}/pydantic_graph
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx-0.27[${PYTHON_USEDEP}]

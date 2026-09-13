@@ -11,6 +11,6 @@ SRC_URI="http://beta.quicklisp.org/archive/macroexpand-dammit/2011-12-03/macroex
 LICENSE="public-domain"
 SLOT="0"
 S="${WORKDIR}"/${P}-http
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

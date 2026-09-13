@@ -305,7 +305,7 @@ SRC_URI="
 	$(cargo_crate_uris ${CRATES})"
 LICENSE="MIT Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD BSD-2 ISC Unlicense"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="ssl"
 RESTRICT+=" test"
 

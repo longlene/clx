@@ -17,7 +17,7 @@ SRC_URI="https://github.com/microsoft/LoRA/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/LoRA-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

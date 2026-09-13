@@ -13,7 +13,7 @@ SRC_URI="https://github.com/GrammaTech/clang-mutate/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	llvm-core/llvm

@@ -8,7 +8,7 @@ SRC_URI="http://www.0xdeadbeef.info/code/havoc-0.1d.tgz"
 SLOT="0"
 LICENSE="GPL-2"
 S=${WORKDIR}/${PN}
-KEYWORDS="x86"
+KEYWORDS="~arm64 x86"
 
 DEPEND=">=net-libs/libpcap-0.9.4"
 

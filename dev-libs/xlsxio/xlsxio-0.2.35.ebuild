@@ -11,7 +11,7 @@ SRC_URI="https://github.com/brechtsanders/xlsxio/archive/${PV}.tar.gz -> ${P}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="doc example static-libs tools"
 
 DEPEND="

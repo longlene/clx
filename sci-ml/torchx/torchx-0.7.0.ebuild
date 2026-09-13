@@ -17,7 +17,7 @@ SRC_URI="https://github.com/meta-pytorch/torchx/archive/refs/tags/v${PV}.tar.gz 
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/docstring-parser-0.8.1[${PYTHON_USEDEP}]

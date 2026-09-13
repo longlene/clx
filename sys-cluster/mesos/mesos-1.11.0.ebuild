@@ -8,7 +8,7 @@ HOMEPAGE="http://mesos.apache.org/"
 SRC_URI="http://www.apache.org/dist/mesos/${PV}/${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-cpp/gmock

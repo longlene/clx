@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/luaj/${P}.zip"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND=">=virtual/jre-1.5
   ${COMMON_DEP}"

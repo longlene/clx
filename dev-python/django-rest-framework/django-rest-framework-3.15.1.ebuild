@@ -14,7 +14,7 @@ SRC_URI="https://github.com/encode/django-rest-framework/archive/refs/tags/${PV}
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/django-4.2[${PYTHON_USEDEP}]

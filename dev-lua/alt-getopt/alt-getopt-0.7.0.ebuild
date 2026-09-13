@@ -14,7 +14,7 @@ SRC_URI="mirror://luaforge/${PN}/${PN}/${P}/lua-${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}/lua-${P}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

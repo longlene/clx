@@ -18,7 +18,7 @@ S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="debug demo doc extras jack jucer ladspa"
 REQUIRED_USE="( ${PYTHON_REQUIRED_USE} )"
 

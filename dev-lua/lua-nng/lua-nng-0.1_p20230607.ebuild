@@ -16,7 +16,7 @@ SRC_URI="https://cogarr.net/source/cgit.cgi/lua-nng/snapshot/lua-nng-${EGIT_COMM
 LICENSE="BSD-2"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-libs/nng

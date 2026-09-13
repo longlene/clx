@@ -12,7 +12,7 @@ SRC_URI="https://github.com/nomasystems/nmaglev/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_prepare() {
 	# Remove git-fetched erlfmt plugin and its pre-compile hook

@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://github.com/gigamonkey/monkeylib-macro-utilities.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 CLSYSTEMS="com.gigamonkeys.macro-utilities"
 

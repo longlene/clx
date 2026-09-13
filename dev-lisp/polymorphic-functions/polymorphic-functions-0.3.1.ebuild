@@ -9,7 +9,7 @@ DESCRIPTION="Type based dispatch for Common Lisp"
 SRC_URI="https://github.com/digikar99/polymorphic-functions/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

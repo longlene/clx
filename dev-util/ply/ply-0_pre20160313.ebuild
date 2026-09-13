@@ -13,7 +13,7 @@ SRC_URI="https://github.com/iovisor/ply/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 LICENSE="GPL-2"
 SLOT="0"
 S=${WORKDIR}/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 pkg_pretend() {
 	local CONFIG_CHECK="~BPF ~BPF_SYSCALL ~NET_CLS_BPF ~NET_ACT_BPF

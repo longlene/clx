@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/chrishayuk/chuk-term https://pypi.org/project/chuk-
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]

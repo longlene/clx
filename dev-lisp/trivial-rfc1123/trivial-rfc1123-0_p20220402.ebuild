@@ -13,7 +13,7 @@ SRC_URI="https://github.com/stacksmith/trivial-rfc-1123/archive/${EGIT_COMMIT}.t
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre

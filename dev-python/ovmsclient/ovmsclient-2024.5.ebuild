@@ -18,7 +18,7 @@ SRC_URI="https://github.com/openvinotoolkit/model_server/archive/refs/tags/v${PV
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/model_server-${PV}/client/python/ovmsclient/lib
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/grpcio-1.47.0[${PYTHON_USEDEP}]

@@ -20,7 +20,7 @@ SRC_URI="https://github.com/pytorch/rl/archive/refs/tags/v${PV}.tar.gz -> ${P}.t
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/rl-${PV}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	>=sci-ml/pytorch-2.5.0[${PYTHON_SINGLE_USEDEP}]

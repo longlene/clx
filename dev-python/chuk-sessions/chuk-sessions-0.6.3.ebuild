@@ -13,7 +13,7 @@ HOMEPAGE="https://pypi.org/project/chuk-sessions/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/csrf-0.1_beta1[${PYTHON_USEDEP}]

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/jupyter-xeus/xwidgets/archive/${PV}.tar.gz -> ${P}.t
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	>=dev-python/jupyterlab-widgets-3.0.0

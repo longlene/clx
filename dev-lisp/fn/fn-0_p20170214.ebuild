@@ -13,7 +13,7 @@ SRC_URI="https://github.com/cbaggers/fn/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/macroexpand-dammit

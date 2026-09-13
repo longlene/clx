@@ -5,7 +5,7 @@ EAPI=8
 inherit autotools
 
 S=${WORKDIR}/${MY_P}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 MY_P=${P/pdc/PDC}
 

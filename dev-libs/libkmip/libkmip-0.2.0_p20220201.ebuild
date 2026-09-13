@@ -12,7 +12,7 @@ SRC_URI="https://github.com/OpenKMIP/libkmip/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="|| ( Apache-2.0 BSD-3 )"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

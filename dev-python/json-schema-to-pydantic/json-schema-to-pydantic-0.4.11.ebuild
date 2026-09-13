@@ -14,7 +14,7 @@ SRC_URI="https://github.com/richard-gyiko/json-schema-to-pydantic/archive/refs/t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

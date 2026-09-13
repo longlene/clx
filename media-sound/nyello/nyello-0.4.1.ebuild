@@ -8,7 +8,7 @@ SRC_URI="http://sirius.cine7.net/nyello/releases/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND=">=media-sound/xmms2-0.2
 	sys-libs/readline"

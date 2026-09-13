@@ -14,7 +14,7 @@ SRC_URI="https://github.com/andrewyng/openworker/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/anthropic-0.40[${PYTHON_USEDEP}]

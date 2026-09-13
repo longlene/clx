@@ -13,7 +13,7 @@ SRC_URI="https://github.com/jg513/enif_protobuf/archive/${EGIT_COMMIT}.tar.gz ->
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

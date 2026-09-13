@@ -17,7 +17,7 @@ SRC_URI="https://github.com/fsspec/sshfs/archive/refs/tags/${PV}.tar.gz -> ${P}.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/fsspec-2021.8.1[${PYTHON_USEDEP}]

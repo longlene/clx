@@ -9,7 +9,7 @@ SRC_URI="http://www.bedroomlan.org/~alexios/files/SOFTWARE/evrouter/${PN}_${PV}.
 LICENSE="GPL-2"
 SLOT="0"
 S=${WORKDIR}/${PN}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="X xmms"
 
 # Build-time dependencies, such as

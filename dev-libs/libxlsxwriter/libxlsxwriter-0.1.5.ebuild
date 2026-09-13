@@ -11,7 +11,7 @@ SRC_URI="https://github.com/jmcnamara/libxlsxwriter/archive/RELEASE_${PV}.tar.gz
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}"/${PN}-RELEASE_${PV}
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 sys-libs/zlib[minizip]

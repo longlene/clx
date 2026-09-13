@@ -18,7 +18,7 @@ SRC_URI="https://github.com/e2b-dev/E2B/archive/refs/tags/@e2b/python-sdk@${PV}.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/E2B--e2b-python-sdk-${PV}/packages/python-sdk
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]

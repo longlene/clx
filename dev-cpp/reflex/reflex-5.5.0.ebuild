@@ -15,6 +15,6 @@ SRC_URI="https://github.com/Genivia/RE-flex/archive/refs/tags/v${PV}.tar.gz -> $
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/RE-flex-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

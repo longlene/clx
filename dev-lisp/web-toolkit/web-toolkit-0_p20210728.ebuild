@@ -13,7 +13,7 @@ SRC_URI="https://github.com/xh4/web-toolkit/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

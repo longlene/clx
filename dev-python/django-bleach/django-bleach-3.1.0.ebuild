@@ -14,7 +14,7 @@ SRC_URI="https://github.com/marksweb/django-bleach/archive/refs/tags/${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/bleach-5[${PYTHON_USEDEP}]

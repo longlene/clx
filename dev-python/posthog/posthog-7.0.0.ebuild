@@ -18,7 +18,7 @@ SRC_URI="https://github.com/PostHog/posthog-python/archive/refs/tags/v${PV}.tar.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/requests-2.7[${PYTHON_USEDEP}]

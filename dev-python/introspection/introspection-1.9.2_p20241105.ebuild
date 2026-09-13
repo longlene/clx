@@ -17,7 +17,7 @@ SRC_URI="https://github.com/Aran-Fey/introspection/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/ordered-set[${PYTHON_USEDEP}]

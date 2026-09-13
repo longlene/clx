@@ -14,7 +14,7 @@ SRC_URI="https://github.com/miracle2k/flask-assets/archive/refs/tags/${PV}.tar.g
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/flask-0.8[${PYTHON_USEDEP}]

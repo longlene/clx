@@ -7,7 +7,7 @@ SRC_URI="http://popies.net/kissd/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 DEPEND=${RDEPEND}
 
 src_unpack() {

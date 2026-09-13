@@ -13,7 +13,7 @@ SRC_URI="https://github.com/DanielKeogh/persistent-vector/archive/${EGIT_COMMIT}
 
 LICENSE="EPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

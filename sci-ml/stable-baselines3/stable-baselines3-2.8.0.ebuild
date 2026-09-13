@@ -15,7 +15,7 @@ SRC_URI="https://github.com/DLR-RM/stable-baselines3/archive/refs/tags/v${PV}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

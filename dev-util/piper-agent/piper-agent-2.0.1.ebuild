@@ -10,4 +10,4 @@ S="${WORKDIR}/Piper-Agent-${PV}"
 
 LICENSE="TODO"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

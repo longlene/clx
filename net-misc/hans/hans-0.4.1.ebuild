@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/hanstunnel/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="kernel_FreeBSD kernel_linux"
 
 src_compile() {

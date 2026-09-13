@@ -14,7 +14,7 @@ SRC_URI="https://github.com/django-hijack/django-hijack/archive/refs/tags/${PV}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-python/django-4.2[${PYTHON_USEDEP}]"
 

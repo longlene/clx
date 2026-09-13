@@ -72,7 +72,7 @@ SRC_URI="
 
 LICENSE="BUSL-1.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="search ssl"
 
 DEPEND="

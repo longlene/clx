@@ -89,7 +89,7 @@ SRC_URI="
 
 LICENSE="MIT Apache-2.0 Boost-1.0 ISC Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_compile() {
 	cargo_src_compile --manifest-path crates/lua-cli/Cargo.toml

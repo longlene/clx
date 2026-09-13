@@ -16,7 +16,7 @@ S="${WORKDIR}/flask_sqlalchemy-${PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/flask-2.2.5[${PYTHON_USEDEP}]

@@ -10,7 +10,7 @@ SRC_URI="http://deviousfish.com/Downloads/pianod2/Devel/pianod2-${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="extra"
 
 DEPEND="

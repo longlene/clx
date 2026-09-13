@@ -18,7 +18,7 @@ SRC_URI="https://github.com/klen/peewee_migrate/archive/refs/tags/${PV}.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/peewee_migrate-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/peewee[${PYTHON_USEDEP}]

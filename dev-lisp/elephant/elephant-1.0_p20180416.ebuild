@@ -15,7 +15,7 @@ SRC_URI="
 
 LICENSE="GPL-2 LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="doc postgres sqlite3"
 
 RDEPEND="

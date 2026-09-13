@@ -13,7 +13,7 @@ SRC_URI="https://github.com/ruricolist/cloture/archive/${EGIT_COMMIT}.tar.gz -> 
 
 LICENSE="EPL-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/serapeum

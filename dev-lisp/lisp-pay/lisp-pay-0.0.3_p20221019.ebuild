@@ -12,7 +12,7 @@ SRC_URI="https://github.com/K1D77A/lisp-pay/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/str

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/snok/asgi-correlation-id https://pypi.org/project/a
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="sentry"
 RESTRICT="test"
 

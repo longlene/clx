@@ -11,7 +11,7 @@ SRC_URI="http://plan9port.googlecode.com/files/plan9port-${PV}.tgz"
 LICENSE="PLAN9"
 SLOT="0"
 S="${WORKDIR}/plan9port"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 src_prepare() {
 	sed -i 's/_BSD_SOURCE/_DEFAULT_SOURCE/' src/lib9/utf/utfecpy.c src/cmd/troff/n2.c src/cmd/troff/n7.c src/cmd/grap/main.c include/u.h

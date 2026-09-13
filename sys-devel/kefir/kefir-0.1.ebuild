@@ -9,7 +9,7 @@ SRC_URI="https://github.com/protopopov1122/kefir/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="GPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

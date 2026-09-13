@@ -18,7 +18,7 @@ SRC_URI="https://github.com/streamlit/streamlit/archive/refs/tags/${PV}.tar.gz -
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${P}/lib
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/altair-4.0[${PYTHON_USEDEP}]

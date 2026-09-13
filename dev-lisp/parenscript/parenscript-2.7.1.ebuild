@@ -12,7 +12,7 @@ SRC_URI="https://common-lisp.net/project/parenscript/release/${P}.tgz"
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}/Parenscript-${PV}"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

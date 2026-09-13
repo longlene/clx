@@ -11,6 +11,6 @@ SRC_URI="https://repo.hex.pm/tarballs/${P}.tar"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

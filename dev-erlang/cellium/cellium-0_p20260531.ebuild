@@ -13,7 +13,7 @@ S="${WORKDIR}/cellium-7683d7b9b6905333f05f346bd2ea8decb56af122"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_prepare() {
 	# Remove doc/lint plugins; they would be fetched from hex (no network in sandbox)

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/fossasia/visdom/archive/refs/tags/v${PV}.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="lua"
 
 RDEPEND="${DEPEND}

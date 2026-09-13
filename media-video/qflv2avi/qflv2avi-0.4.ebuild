@@ -9,7 +9,7 @@ SRC_URI="http://www.kde-apps.org/CONTENT/content-files/56717-${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND=">=x11-libs/qt-4
 media-video/ffmpeg"

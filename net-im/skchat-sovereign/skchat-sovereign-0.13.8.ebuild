@@ -15,7 +15,7 @@ S="${WORKDIR}/skchat_sovereign-${PV}"
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 # PGPy (PGP library) is not yet packaged in portage

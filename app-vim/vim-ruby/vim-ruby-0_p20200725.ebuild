@@ -13,4 +13,4 @@ HOMEPAGE="https://github.com/vim-ruby/vim-ruby"
 SRC_URI="https://github.com/vim-ruby/vim-ruby/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"

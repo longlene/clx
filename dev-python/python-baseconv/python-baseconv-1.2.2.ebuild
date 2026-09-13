@@ -14,4 +14,4 @@ SRC_URI="https://github.com/semente/python-baseconv/archive/refs/tags/${PV}.tar.
 
 LICENSE="PSF-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

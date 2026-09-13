@@ -10,7 +10,7 @@ MY_PV="${PV//./-}"
 SRC_URI="https://github.com/karastojko/mailio/archive/version_${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

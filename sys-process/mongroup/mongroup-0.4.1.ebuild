@@ -9,7 +9,7 @@ SRC_URI="https://github.com/jgallen23/mongroup/archive/${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	sys-process/mon

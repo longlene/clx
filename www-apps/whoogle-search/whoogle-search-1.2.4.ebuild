@@ -14,7 +14,7 @@ SRC_URI="https://github.com/benbusby/whoogle-search/archive/refs/tags/v${PV}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

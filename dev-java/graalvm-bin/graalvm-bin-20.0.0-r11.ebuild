@@ -16,7 +16,7 @@ DESCRIPTION="GraalVM prebuild binaries"
 HOMEPAGE="https://www.graalvm.org/"
 LICENSE="GPL-2-with-classpath-exception"
 S=${WORKDIR}/graalvm-ce-java${JVM_VER}-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+gentoo-vm native-image"
 
 RDEPEND=">=sys-libs/glibc-2.2.5:*

@@ -920,7 +920,7 @@ LICENSE="MIT"
 LICENSE+=" Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD Boost-1.0
 	CDLA-Permissive-2.0 ISC MIT MIT-0 MPL-2.0 UoI-NCSA Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

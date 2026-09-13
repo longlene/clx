@@ -14,4 +14,4 @@ SRC_URI="https://files.pythonhosted.org/packages/29/47/5c356456e5dc3ba3f52d88a6b
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

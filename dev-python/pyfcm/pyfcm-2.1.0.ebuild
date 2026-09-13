@@ -15,7 +15,7 @@ SRC_URI="https://github.com/olucurious/pyfcm/archive/refs/tags/${PV}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/PyFCM-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]

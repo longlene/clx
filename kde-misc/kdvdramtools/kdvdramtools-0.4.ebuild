@@ -7,7 +7,7 @@ SRC_URI="http://www.multimedia4linux.de/dvd-ram/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="dolphin d3lphin konqueror doc"
 

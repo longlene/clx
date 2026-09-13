@@ -28,7 +28,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	|| ( sys-libs/zlib sys-libs/zlib-ng[compat(-)] )

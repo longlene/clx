@@ -17,7 +17,7 @@ SRC_URI="https://github.com/daggaz/json-stream/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/json-stream-rs-tokenizer-0.4.17[${PYTHON_USEDEP}]

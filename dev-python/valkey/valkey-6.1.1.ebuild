@@ -21,7 +21,7 @@ SRC_URI="https://github.com/valkey-io/valkey-py/archive/refs/tags/v${PV}.tar.gz 
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

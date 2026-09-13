@@ -13,6 +13,6 @@ EGIT_REPO_URI="http://wukix.com/dist/wu-decimal.git"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

@@ -20,7 +20,7 @@ SRC_URI="$(pypi_sdist_url --no-normalize 'mecab_python3' ${PV})"
 LICENSE="BSD"
 SLOT="3"
 S="${WORKDIR}"/mecab_python3-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="app-text/mecab"
 RDEPEND="${DEPEND}"

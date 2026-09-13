@@ -15,7 +15,7 @@ S="${WORKDIR}/RealtimeTTS-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="edge gtts openai"
 RESTRICT="test"
 

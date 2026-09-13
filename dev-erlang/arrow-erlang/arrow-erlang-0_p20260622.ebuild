@@ -10,7 +10,7 @@ S="${WORKDIR}/arrow-erlang-main"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	dev-lang/rust

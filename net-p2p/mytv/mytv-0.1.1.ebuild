@@ -8,7 +8,7 @@ SRC_URI="http://www.terrysoucy.ca/uploads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	net-p2p/transmission

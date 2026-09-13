@@ -14,7 +14,7 @@ SRC_URI="https://github.com/DisnakeDev/disnake/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiohttp-3.7.0[${PYTHON_USEDEP}]

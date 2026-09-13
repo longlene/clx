@@ -14,7 +14,7 @@ SRC_URI="https://github.com/django-compressor/django-compressor/archive/refs/tag
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 # Missing deps not yet in portage:

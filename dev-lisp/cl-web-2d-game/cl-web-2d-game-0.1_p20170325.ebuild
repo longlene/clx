@@ -13,7 +13,7 @@ SRC_URI="https://github.com/eshamster/cl-web-2d-game/archive/${EGIT_COMMIT}.tar.
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

@@ -13,7 +13,7 @@ SRC_URI="https://gitlab.common-lisp.net/cl-smtp/cl-smtp/repository/archive.tar.g
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="
 	dev-lisp/usocket

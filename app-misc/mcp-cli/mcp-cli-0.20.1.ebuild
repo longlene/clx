@@ -14,7 +14,7 @@ SRC_URI="https://github.com/IBM/mcp-cli/archive/refs/tags/v${PV}.tar.gz -> ${P}.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/chuk-ai-planner[${PYTHON_USEDEP}]

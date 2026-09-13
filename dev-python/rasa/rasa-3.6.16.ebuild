@@ -13,7 +13,7 @@ SRC_URI="https://github.com/RasaHQ/rasa/archive/refs/tags/${PV}.tar.gz -> ${P}.t
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/boto3-1.26.136[${PYTHON_USEDEP}]

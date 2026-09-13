@@ -8,7 +8,7 @@ inherit vim-plugin vcs-snapshot
 DESCRIPTION="vim plugin: Powerful file explorer implemented by Vim script"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id="
 SRC_URI="https://github.com/Shougo/vimfiler.vim/archive/ver.${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 src_configure() {
 	rm autoload/vital.vim

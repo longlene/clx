@@ -11,7 +11,7 @@ SRC_URI="https://git.sr.ht/~shunter/posix-shm/archive/v${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

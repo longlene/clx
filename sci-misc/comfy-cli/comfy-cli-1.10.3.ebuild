@@ -17,7 +17,7 @@ SRC_URI="https://github.com/Comfy-Org/comfy-cli/archive/refs/tags/v${PV}.tar.gz 
 
 LICENSE="GPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/charset-normalizer-3.0.0[${PYTHON_USEDEP}]

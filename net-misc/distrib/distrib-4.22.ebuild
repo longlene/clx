@@ -12,7 +12,7 @@ SRC_URI="${HOMEPAGE}${MY_P}.tgz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 RDEPEND="net-misc/rdist
 	sys-devel/m4"

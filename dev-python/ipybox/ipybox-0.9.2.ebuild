@@ -14,7 +14,7 @@ SRC_URI="https://github.com/gradion-ai/ipybox/archive/refs/tags/${PV}.tar.gz -> 
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/ipykernel-7.1.0[${PYTHON_USEDEP}]

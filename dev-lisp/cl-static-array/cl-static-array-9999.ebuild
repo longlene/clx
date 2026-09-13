@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/mathematical-systems/cl-static-array.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

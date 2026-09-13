@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://github.com/vseloved/nuts.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre

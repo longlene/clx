@@ -18,7 +18,7 @@ S="${WORKDIR}/azure-sdk-for-python-${PN}_${PV}/sdk/cosmos/${PN}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/azure-core-1.30.0[${PYTHON_USEDEP}]

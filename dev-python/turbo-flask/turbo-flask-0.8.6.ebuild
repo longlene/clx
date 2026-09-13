@@ -14,7 +14,7 @@ SRC_URI="https://github.com/miguelgrinberg/turbo-flask/archive/refs/tags/v${PV}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/flask-2.0.0[${PYTHON_USEDEP}]

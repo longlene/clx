@@ -13,7 +13,7 @@ SRC_URI="https://github.com/yitzchak/trivial-stream-column/archive/${EGIT_COMMIT
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/trivial-gray-streams

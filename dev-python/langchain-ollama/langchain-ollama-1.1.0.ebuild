@@ -15,7 +15,7 @@ SRC_URI="https://github.com/langchain-ai/langchain/archive/refs/tags/${PN}==${PV
 S="${WORKDIR}/langchain-${P}/libs/partners/${PN#*-}"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langchain-core-1.2.21[${PYTHON_USEDEP}]

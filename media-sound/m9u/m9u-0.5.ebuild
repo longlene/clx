@@ -8,7 +8,7 @@ HOMEPAGE="http://sqweek.net/code/m9u/"
 SRC_URI="http://sqweek.net/9p/${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	sys-libs/libixp

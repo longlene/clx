@@ -17,7 +17,7 @@ SRC_URI="https://github.com/bdcht/grandalf/archive/refs/tags/v${PV}.tar.gz -> ${
 
 LICENSE="|| ( GPL-2.0 EPL-1 )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/pyparsing[${PYTHON_USEDEP}]

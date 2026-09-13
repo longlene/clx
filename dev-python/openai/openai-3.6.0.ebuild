@@ -18,7 +18,7 @@ S="${WORKDIR}/openai-python-${PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx2-2.7.0[${PYTHON_USEDEP}]

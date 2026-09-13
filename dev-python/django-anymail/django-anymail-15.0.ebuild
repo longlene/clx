@@ -14,7 +14,7 @@ SRC_URI="https://github.com/anymail/django-anymail/archive/refs/tags/v${PV}.tar.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/django-5.0[${PYTHON_USEDEP}]

@@ -15,7 +15,7 @@ S="${WORKDIR}/do_mpc-${PV}"
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="full"
 
 RDEPEND="

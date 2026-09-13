@@ -13,7 +13,7 @@ SRC_URI="https://github.com/jmbr/incf-cl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 
 LICENSE="X11"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/michaelforney/velox/archive/${EGIT_COMMIT}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	x11-libs/pixman

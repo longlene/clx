@@ -11,7 +11,7 @@ SRC_URI="https://github.com/silviucpp/redis_pool/archive/v${PV}.tar.gz -> ${P}.t
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-erlang/eredis

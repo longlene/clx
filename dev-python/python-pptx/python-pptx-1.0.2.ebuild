@@ -17,7 +17,7 @@ SRC_URI="https://github.com/scanny/python-pptx/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pillow-3.3.2[${PYTHON_USEDEP}]

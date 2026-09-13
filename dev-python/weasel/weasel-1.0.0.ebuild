@@ -18,7 +18,7 @@ SRC_URI="https://github.com/explosion/weasel/archive/refs/tags/release-v${PV}.ta
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-release-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/confection-0.0.4[${PYTHON_USEDEP}]

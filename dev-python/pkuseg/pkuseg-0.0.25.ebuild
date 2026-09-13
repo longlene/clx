@@ -19,7 +19,7 @@ SRC_URI="https://github.com/lancopku/pkuseg-python/archive/refs/tags/v${PV}.tar.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/numpy-1.16.0[${PYTHON_USEDEP}]

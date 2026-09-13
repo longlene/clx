@@ -18,7 +18,7 @@ SRC_URI="https://github.com/lucidrains/conformer/archive/refs/tags/${PV}.tar.gz 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]

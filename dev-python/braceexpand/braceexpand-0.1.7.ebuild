@@ -13,6 +13,6 @@ HOMEPAGE="https://github.com/trendels/braceexpand https://pypi.org/project/brace
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 distutils_enable_tests unittest

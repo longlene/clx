@@ -302,7 +302,7 @@ LICENSE+="
 	Apache-2.0 BSD-2 CC0-1.0 MIT MPL-2.0 Unicode-3.0
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-libs/libgit2:=

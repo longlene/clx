@@ -19,7 +19,7 @@ HOMEPAGE="
 #SRC_URI="https://github.com/firecrawl/firecrawl/archive/refs/tags/v${PV}.tar.gz -> ${MY_P}.gh.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]

@@ -13,7 +13,7 @@ HOMEPAGE="http://github.com/discord/erlpack"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/six-1.15[${PYTHON_USEDEP}]

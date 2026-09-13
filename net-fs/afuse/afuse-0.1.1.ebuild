@@ -7,7 +7,7 @@ SRC_URI="mirror://sourceforge/afuse/${P}.tar.gz"
 HOMEPAGE="http://afuse.sourceforge.net/"
 LICENSE="GPL-2"
 DEPEND=">=sys-fs/fuse-2.3"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~arm64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 SLOT="0"
 
 src_install () {

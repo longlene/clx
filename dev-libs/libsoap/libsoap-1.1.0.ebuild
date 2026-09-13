@@ -9,6 +9,6 @@ HOMEPAGE="http://csoap.sourceforge.net"
 SRC_URI="mirror://sourceforge/csoap/${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

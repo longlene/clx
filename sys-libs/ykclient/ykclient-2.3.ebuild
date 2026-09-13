@@ -9,7 +9,7 @@ SRC_URI="http://yubico-c-client.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 ~arm64 x86"
 
 DEPEND="net-misc/curl"
 RDEPEND="${DEPEND}"

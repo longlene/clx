@@ -14,7 +14,7 @@ SRC_URI="https://github.com/explosion/spaCy/archive/refs/tags/v3.2.4.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	>=dev-python/cymem-2.0.2[${PYTHON_USEDEP}]

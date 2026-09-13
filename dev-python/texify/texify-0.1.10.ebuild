@@ -17,7 +17,7 @@ SRC_URI="https://github.com/VikParuchuri/texify/archive/refs/tags/v${PV}.tar.gz 
 
 LICENSE="GPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/transformers-4.36.2[${PYTHON_USEDEP}]

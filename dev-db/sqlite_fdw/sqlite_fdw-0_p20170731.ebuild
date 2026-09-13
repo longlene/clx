@@ -13,7 +13,7 @@ SRC_URI="https://github.com/aganatramoat/sqlite_fdw/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="dev-db/postgresql"
 RDEPEND="${DEPEND}"

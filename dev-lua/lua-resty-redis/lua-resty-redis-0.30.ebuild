@@ -13,7 +13,7 @@ SRC_URI="https://github.com/openresty/lua-resty-redis/archive/v${PV}.tar.gz -> $
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

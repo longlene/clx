@@ -17,7 +17,7 @@ SRC_URI="https://github.com/wenet-e2e/WeTextProcessing/archive/refs/tags/${PV}.t
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pynini-2.1.6[${PYTHON_USEDEP}]

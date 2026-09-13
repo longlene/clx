@@ -14,7 +14,7 @@ SRC_URI="https://github.com/alisaifee/limits/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/deprecated-1.2[${PYTHON_USEDEP}]

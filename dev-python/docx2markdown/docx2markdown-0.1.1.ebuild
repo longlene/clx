@@ -17,7 +17,7 @@ SRC_URI="https://github.com/haesleinhuepf/docx2markdown/archive/refs/tags/${PV}.
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/python-docx[${PYTHON_USEDEP}]

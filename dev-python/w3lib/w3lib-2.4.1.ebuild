@@ -13,7 +13,7 @@ HOMEPAGE="https://scrapy.org/ https://pypi.org/project/w3lib/ https://github.com
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 distutils_enable_tests pytest
 

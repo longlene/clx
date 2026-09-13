@@ -13,7 +13,7 @@ SRC_URI="https://github.com/lem-project/cl-sdl2-ttf/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="example"
 
 RDEPEND="${DEPEND}

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/myshell-ai/MeloTTS/archive/refs/tags/v0.1.2.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/MeloTTS-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]

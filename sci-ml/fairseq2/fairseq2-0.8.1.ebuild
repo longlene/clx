@@ -17,7 +17,7 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	~sci-ml/fairseq2n-${PV}[python,${PYTHON_SINGLE_USEDEP}]

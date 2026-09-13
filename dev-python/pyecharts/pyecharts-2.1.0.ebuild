@@ -18,7 +18,7 @@ SRC_URI="https://github.com/pyecharts/pyecharts/archive/refs/tags/v${PV}.tar.gz 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/jinja2-2.11.3[${PYTHON_USEDEP}]

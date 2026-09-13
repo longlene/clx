@@ -13,7 +13,7 @@ SRC_URI="https://github.com/hyotang666/lambda-meter/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/with-package

@@ -9,7 +9,7 @@ SRC_URI="http://github.com/tuulos/disco/tarball/${PV} -> ${P}.tgz"
 
 LICENSE="nokia"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND=">=dev-lang/erlang-13.2.4
 	>=dev-lang/python-2.6"

@@ -15,7 +15,7 @@ S="${WORKDIR}/cosyvoice.cpp-${MY_TAG}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="ffmpeg frontend icu"
 
 DEPEND="

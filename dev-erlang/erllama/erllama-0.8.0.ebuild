@@ -13,7 +13,7 @@ S="${WORKDIR}/barrel_inference-erllama-v${PV}/apps/barrel_inference"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="dev-build/cmake"
 

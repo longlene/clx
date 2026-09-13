@@ -10,7 +10,7 @@ HOMEPAGE="http://linuxmint.com
 	https://launchpad.net/~neelance/+archive/awn"
 LICENSE="GPL-2"
 S="${WORKDIR}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 SLOT="0"
 IUSE="portato terminal awn"
 

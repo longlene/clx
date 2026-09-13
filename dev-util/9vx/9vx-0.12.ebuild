@@ -7,7 +7,7 @@ DESCRIPTION="9vx is a port of the plan 9 operating system to freebsd, linux, and
 HOMEPAGE="http://swtch.com/9vx/"
 LICENSE="Lucent"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 SRC_URI="http://pdos.csail.mit.edu/~rsc/${P}.tar.bz2"
 
 src_install() {

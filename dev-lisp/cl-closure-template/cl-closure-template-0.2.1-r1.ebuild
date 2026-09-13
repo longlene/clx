@@ -11,7 +11,7 @@ SRC_URI="https://github.com/archimag/cl-closure-template/archive/version-${PV}.t
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 IUSE="doc emacs test"
 RESTRICT="!test? ( test )"

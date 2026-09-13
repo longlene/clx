@@ -17,7 +17,7 @@ SRC_URI="https://github.com/mozillazg/pypinyin-dict/archive/refs/tags/v${PV}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/pypinyin[${PYTHON_USEDEP}]

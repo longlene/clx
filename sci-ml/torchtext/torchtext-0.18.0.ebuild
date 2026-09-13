@@ -22,7 +22,7 @@ SRC_URI="
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/text-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	sci-ml/pytorch[${PYTHON_USEDEP}]

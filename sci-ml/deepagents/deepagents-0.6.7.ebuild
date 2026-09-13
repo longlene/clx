@@ -18,7 +18,7 @@ SRC_URI="https://github.com/langchain-ai/deepagents/archive/refs/tags/deepagents
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/deepagents-${P}/libs/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langchain-core-1.2.27[${PYTHON_USEDEP}]

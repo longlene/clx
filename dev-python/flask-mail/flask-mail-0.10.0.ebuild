@@ -17,7 +17,7 @@ SRC_URI="https://github.com/pallets-eco/flask-mail/archive/refs/tags/${PV}.tar.g
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/flask[${PYTHON_USEDEP}]

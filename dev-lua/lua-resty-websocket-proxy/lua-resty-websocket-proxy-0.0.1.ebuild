@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Kong/lua-resty-websocket-proxy/archive/${PV}.tar.gz 
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	${LUA_DEPS}

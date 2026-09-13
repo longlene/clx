@@ -14,7 +14,7 @@ SRC_URI="https://github.com/aiortc/aioice/archive/refs/tags/${PV}.tar.gz -> ${P}
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/dnspython-2.0.0[${PYTHON_USEDEP}]

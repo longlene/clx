@@ -11,7 +11,7 @@ SRC_URI="https://github.com/githubnext/monaspace/archive/refs/tags/v1.000.tar.gz
 
 LICENSE="OFL-1.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

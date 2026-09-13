@@ -17,7 +17,7 @@ SRC_URI="https://github.com/django-phonenumber-field/django-phonenumber-field/ar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/django-4.2[${PYTHON_USEDEP}]

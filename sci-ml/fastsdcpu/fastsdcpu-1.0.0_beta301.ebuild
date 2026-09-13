@@ -17,7 +17,7 @@ S="${WORKDIR}/${PN}-${MY_TAG#v}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="gui mcp webui"
 RESTRICT="test"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"

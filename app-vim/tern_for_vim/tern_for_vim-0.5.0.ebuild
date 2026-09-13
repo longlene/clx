@@ -11,7 +11,7 @@ DESCRIPTION="vim plugin: "
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id="
 SRC_URI="https://github.com/ternjs/tern_for_vim/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND+="dev-nodejs/tern"
 

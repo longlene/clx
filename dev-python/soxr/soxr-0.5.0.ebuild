@@ -22,7 +22,7 @@ SRC_URI="
 LICENSE="LGPL-2.1"
 SLOT="0"
 S="${WORKDIR}"/python-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/scikit-build-core-0.10[${PYTHON_USEDEP}]

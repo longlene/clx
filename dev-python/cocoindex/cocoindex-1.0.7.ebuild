@@ -511,7 +511,7 @@ SRC_URI="https://github.com/cocoindex-io/cocoindex/archive/refs/tags/v${PV}.tar.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="amazon-s3 google-drive neo4j postgres qdrant"
 RESTRICT="test"
 

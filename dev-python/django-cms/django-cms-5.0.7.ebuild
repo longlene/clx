@@ -14,7 +14,7 @@ SRC_URI="https://github.com/django-cms/django-cms/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="argon2 bcrypt"
 RESTRICT="test"
 

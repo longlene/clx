@@ -21,7 +21,7 @@ SRC_URI="https://github.com/BerriAI/litellm/archive/refs/tags/v${PV}-nightly.tar
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/litellm-${MY_PV}-nightly/enterprise
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

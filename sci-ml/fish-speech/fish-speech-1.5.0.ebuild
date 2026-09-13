@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/fishaudio/fish-speech"
 SRC_URI="https://github.com/fishaudio/fish-speech/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/datasets-2.18.0[${PYTHON_SINGLE_USEDEP}]

@@ -8,6 +8,6 @@ SRC_URI="http://swtch.com/plan9port/unix/libutf.tgz -> ${P}.tgz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

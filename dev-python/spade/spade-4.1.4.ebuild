@@ -14,7 +14,7 @@ SRC_URI="https://github.com/javipalanca/spade/archive/refs/tags/${PV}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 # slixmpp-multiplatform (a multiplatform fork of slixmpp) is not yet packaged

@@ -19,7 +19,7 @@ SRC_URI="https://github.com/rapidfuzz/CyDifflib/archive/refs/tags/v${PV}.tar.gz 
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/CyDifflib-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

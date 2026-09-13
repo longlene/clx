@@ -9,7 +9,7 @@ SRC_URI="http://linux.xulin.de/c/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 src_install() {
 	dobin ${PN} || die

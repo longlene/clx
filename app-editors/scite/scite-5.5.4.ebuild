@@ -14,7 +14,7 @@ SRC_URI="https://www.scintilla.org/${PN}${PV//./}.tgz -> ${P}.tgz"
 LICENSE="HPND lua? ( MIT )"
 SLOT="0"
 S="${WORKDIR}/${PN}/gtk"
-KEYWORDS="amd64 ppc x86 ~amd64-linux ~arm-linux ~riscv ~x86-linux"
+KEYWORDS="amd64 ~arm64 ppc x86 ~amd64-linux ~arm-linux ~riscv ~x86-linux"
 IUSE="lua"
 
 REQUIRED_USE="lua? ( ${LUA_REQUIRED_USE} )"

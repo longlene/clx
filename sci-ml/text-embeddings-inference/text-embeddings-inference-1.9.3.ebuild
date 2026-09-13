@@ -596,7 +596,7 @@ SRC_URI="
 # Crate licenses (intel-mkl-src license applies only when USE=mkl; excluded from default build)
 LICENSE="Apache-2.0 BSD CC0-1.0 CDLA-Permissive-2.0 ISC MIT MPL-2.0 openssl Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="dev-libs/openssl:="
 RDEPEND="${DEPEND}"

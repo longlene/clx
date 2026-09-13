@@ -14,7 +14,7 @@ SRC_URI="https://github.com/aio-libs/aiohttp-jinja2/archive/refs/tags/v${PV}.tar
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiohttp-3.10.8[${PYTHON_USEDEP}]

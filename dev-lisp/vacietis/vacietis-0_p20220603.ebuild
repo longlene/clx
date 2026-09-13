@@ -12,7 +12,7 @@ SRC_URI="https://github.com/vsedach/Vacietis/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/named-readtables

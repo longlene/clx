@@ -15,7 +15,7 @@ SRC_URI="https://github.com/googleapis/google-cloud-python/archive/refs/tags/${P
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/google-cloud-python-${PN}-v${PV}/packages/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/grpcio-1.44.0[${PYTHON_USEDEP}]

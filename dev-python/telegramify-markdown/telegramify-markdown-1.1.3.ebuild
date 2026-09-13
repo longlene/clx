@@ -18,7 +18,7 @@ SRC_URI="https://github.com/sudoskys/telegramify-markdown/archive/refs/tags/pypi
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/telegramify-markdown-pypi_${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pyromark-0.7.0[${PYTHON_USEDEP}]

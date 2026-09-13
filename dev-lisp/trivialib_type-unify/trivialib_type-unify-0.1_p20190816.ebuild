@@ -13,7 +13,7 @@ SRC_URI="https://github.com/guicho271828/trivialib.type-unify/archive/${EGIT_COM
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

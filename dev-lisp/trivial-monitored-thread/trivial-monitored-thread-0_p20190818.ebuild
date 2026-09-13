@@ -13,7 +13,7 @@ SRC_URI="https://gitlab.com/ediethelm/trivial-monitored-thread/repository/archiv
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

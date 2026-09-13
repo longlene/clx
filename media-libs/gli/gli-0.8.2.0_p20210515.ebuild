@@ -13,7 +13,7 @@ SRC_URI="https://github.com/g-truc/gli/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 
 LICENSE="HappyBunny"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="virtual/opengl"
 RDEPEND="${DEPEND}"

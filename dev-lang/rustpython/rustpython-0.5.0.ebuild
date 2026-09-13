@@ -510,7 +510,7 @@ S="${WORKDIR}"/RustPython-${PV}
 
 LICENSE="MIT CC-BY-4.0 Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD BSD-2 Boost-1.0 BZIP2 CC0-1.0 CDLA-Permissive-2.0 ISC LGPL-3 openssl PSF-2 Unicode-3.0 Unicode-DFS-2016 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_install() {
 	cargo_src_install

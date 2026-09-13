@@ -13,7 +13,7 @@ SRC_URI="https://gitlab.common-lisp.net/cungil/xlsx/repository/archive.tar.gz?re
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/zip

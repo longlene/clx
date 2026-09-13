@@ -11,7 +11,7 @@ SRC_URI="https://github.com/renard/cl-cli/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="WTFPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/split-sequence

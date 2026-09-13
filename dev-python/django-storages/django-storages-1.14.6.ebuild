@@ -14,7 +14,7 @@ SRC_URI="https://github.com/jschneier/django-storages/archive/refs/tags/${PV}.ta
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-python/django-3.2[${PYTHON_USEDEP}]"
 

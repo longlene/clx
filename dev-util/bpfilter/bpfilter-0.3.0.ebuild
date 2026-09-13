@@ -11,7 +11,7 @@ SRC_URI="https://github.com/facebook/bpfilter/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="GPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-libs/libbpf

@@ -12,7 +12,7 @@ SRC_URI="https://github.com/sykopomp/squirl/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-games/chipmunk

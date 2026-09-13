@@ -9,7 +9,7 @@ DESCRIPTION="Take a photo from webcam on your shell"
 HOMEPAGE="http://staticwave.ca/source/uvccapture/"
 SRC_URI="http://staticwave.ca/source/${PN}/${P}.tar.bz2"
 
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 ~arm64 x86"
 LICENSE="GPL-2"
 SLOT="0"
 

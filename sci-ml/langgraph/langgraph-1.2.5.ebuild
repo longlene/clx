@@ -18,7 +18,7 @@ SRC_URI="https://github.com/langchain-ai/langgraph/archive/refs/tags/${PV}.tar.g
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${P}/libs/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langchain-core-0.1[${PYTHON_USEDEP}]

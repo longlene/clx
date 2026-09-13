@@ -13,6 +13,6 @@ SRC_URI="https://github.com/cl-stream/cl-stream/archive/${EGIT_COMMIT}.tar.gz ->
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

@@ -23,7 +23,7 @@ S="${WORKDIR}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RESTRICT="binchecks strip test"
 

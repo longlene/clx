@@ -13,7 +13,7 @@ SRC_URI="https://github.com/bluelisp/zip/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="
 	dev-lisp/salza2

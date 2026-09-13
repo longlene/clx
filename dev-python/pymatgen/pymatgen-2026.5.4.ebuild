@@ -15,7 +15,7 @@ SRC_URI="https://github.com/materialsproject/pymatgen/archive/refs/tags/v${PV}.t
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}/pymatgen-${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/pymatgen-core[${PYTHON_USEDEP}]

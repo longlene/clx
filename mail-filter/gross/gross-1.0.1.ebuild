@@ -8,7 +8,7 @@ SRC_URI="http://gross.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND="net-dns/c-ares"
 

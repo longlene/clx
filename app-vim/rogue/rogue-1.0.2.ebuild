@@ -13,4 +13,4 @@ SRC_URI="https://github.com/katono/rogue.vim/archive/${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="MIT"
 S="${WORKDIR}"/${PN}.vim-${PV}
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"

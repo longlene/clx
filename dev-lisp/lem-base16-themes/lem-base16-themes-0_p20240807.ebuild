@@ -13,7 +13,7 @@ SRC_URI="https://github.com/lukpank/lem-base16-themes/archive/${EGIT_COMMIT}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/lem

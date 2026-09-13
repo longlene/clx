@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/Shougo/neocomplete.vim"
 SRC_URI="https://github.com/Shougo/neocomplete.vim/archive/ver.${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="|| (
 >app-editors/vim-7.3.885[lua]

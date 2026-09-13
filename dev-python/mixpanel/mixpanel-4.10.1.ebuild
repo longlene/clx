@@ -18,7 +18,7 @@ SRC_URI="https://github.com/mixpanel/mixpanel-python/archive/refs/tags/v${PV}.ta
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${PN}-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]

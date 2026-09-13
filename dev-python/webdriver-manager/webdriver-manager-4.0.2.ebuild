@@ -15,7 +15,7 @@ SRC_URI="https://github.com/SergeyPirogov/webdriver_manager/archive/refs/tags/v$
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/webdriver_manager-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]

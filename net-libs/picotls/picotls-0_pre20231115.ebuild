@@ -18,7 +18,7 @@ else
 		https://github.com/h2o/picotls/archive/${PTLS_COMMIT}.tar.gz -> ${P}.tar.gz
 		https://github.com/h2o/picotest/archive/${PTLS_TEST_COMMIT}.tar.gz -> ${P}-test.tar.gz
 	"
-	KEYWORDS="~amd64"
+	KEYWORDS="~amd64 ~arm64"
 	S="${WORKDIR}/picotls-${PTLS_COMMIT}"
 fi
 

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/Unstructured-IO/unstructured/archive/refs/tags/${PV}
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/beautifulsoup4-4.13.3[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ S="${WORKDIR}/jat-834b49c0ea28ba27cd7e0283a73b7c4f852ef622"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 python_prepare_all() {

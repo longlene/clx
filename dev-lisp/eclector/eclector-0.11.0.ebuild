@@ -12,7 +12,7 @@ SRC_URI="https://github.com/s-expressionists/Eclector/archive/refs/tags/${PV}.ta
 LICENSE="BSD-2"
 SLOT="0"
 S="${WORKDIR}"/Eclector-${PV}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

@@ -1008,7 +1008,7 @@ LICENSE+="
 	Unlicense ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="pulseaudio"
 
 # alsa-sys, libpulse-sys, libsamplerate-sys, drm-sys, gbm-sys, pipewire-sys,

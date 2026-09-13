@@ -17,7 +17,7 @@ S="${WORKDIR}/enif_protobuf-${MY_COMMIT}"
 
 LICENSE="all-rights-reserved"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="bindist mirror"
 
 src_prepare() {

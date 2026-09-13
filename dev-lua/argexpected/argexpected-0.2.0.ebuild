@@ -14,7 +14,7 @@ SRC_URI="https://github.com/mah0x211/lua-argexpected/archive/refs/tags/v${PV}.ta
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/lua-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lua/string-format[${LUA_USEDEP}]

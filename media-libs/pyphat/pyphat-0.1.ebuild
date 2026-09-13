@@ -8,7 +8,7 @@ SRC_URI="http://download.berlios.de/phat/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND=">=x11-libs/gtk+-2.7
 	>=dev-python/pygtk-2.4

@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/paktype/PakType-Tehreer1.3.zip
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND="app-arch/unzip"
 

@@ -10,7 +10,7 @@ SRC_URI="https://github.com/udp/json-parser/archive/v${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="static-libs"
 
 RDEPEND="${DEPEND}"

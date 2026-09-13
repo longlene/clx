@@ -13,7 +13,7 @@ SRC_URI="https://github.com/HappySeaFox/sail/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+apng avif gif +jpeg +png +tiff +webp"
 
 DEPEND="

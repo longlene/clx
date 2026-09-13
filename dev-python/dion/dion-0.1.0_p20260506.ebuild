@@ -21,7 +21,7 @@ SRC_URI="https://github.com/microsoft/dion/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/pytorch-2.7.1[${PYTHON_SINGLE_USEDEP}]

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/miguelmarco/libhomfly/archive/${EGIT_COMMIT}.tar.gz 
 
 LICENSE="Unlicense"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="dev-libs/boehm-gc"
 RDEPEND="${DEPEND}"

@@ -15,7 +15,7 @@ S="${WORKDIR}/Scrapling-${PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="ai fetchers shell"
 
 REQUIRED_USE="

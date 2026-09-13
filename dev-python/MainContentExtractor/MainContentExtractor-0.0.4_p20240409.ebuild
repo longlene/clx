@@ -20,7 +20,7 @@ SRC_URI="https://github.com/HawkClaws/main_content_extractor/archive/${EGIT_COMM
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/main_content_extractor-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/trafilatura-1.6.2[${PYTHON_USEDEP}]

@@ -15,7 +15,7 @@ SRC_URI="https://github.com/pygame-community/pygame-ce/archive/refs/tags/${PV}.t
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="examples opengl test X"
 
 RESTRICT="!test? ( test )"

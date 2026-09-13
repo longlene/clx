@@ -520,7 +520,7 @@ LICENSE+="
 	Unicode-DFS-2016 WTFPL-2 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	!elibc_musl? ( !elibc_Darwin? ( !elibc_bionic? ( dev-libs/jemalloc:= ) ) )

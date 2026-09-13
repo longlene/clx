@@ -11,7 +11,7 @@ SRC_URI="https://github.com/Hexstream/enhanced-defclass/archive/v${PV}.tar.gz ->
 
 LICENSE="Unlicense"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Shinmera/precise-time/archive/${EGIT_COMMIT}.tar.gz 
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

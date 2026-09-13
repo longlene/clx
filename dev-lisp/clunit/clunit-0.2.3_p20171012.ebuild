@@ -12,6 +12,6 @@ SRC_URI="https://github.com/tgutu/clunit/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 x86 ~arm"
+KEYWORDS="amd64 ~arm64 x86 ~arm"
 
 RDEPEND="${DEPEND}"

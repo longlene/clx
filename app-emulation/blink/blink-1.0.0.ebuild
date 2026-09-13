@@ -9,7 +9,7 @@ SRC_URI="https://github.com/jart/blink/archive/refs/tags/${PV}.tar.gz -> ${P}.ta
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

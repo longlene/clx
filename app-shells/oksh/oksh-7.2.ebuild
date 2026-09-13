@@ -10,7 +10,7 @@ SRC_URI="https://github.com/ibara/oksh/archive/refs/tags/oksh-${PV}.tar.gz -> ${
 LICENSE="public-domain"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

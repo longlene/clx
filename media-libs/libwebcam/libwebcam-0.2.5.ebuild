@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/libwebcam/libwebcam-src-${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="dev-libs/libxml2"
 RDEPEND="${DEPEND}"

@@ -7,7 +7,7 @@ HOMEPAGE="http://code.google.com/p/vimview/"
 SRC_URI="http://vimview.googlecode.com/files/${P}.tbz2"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND=">=x11-libs/gtk+-2 media-libs/imlib2 media-libs/libexif"
 RDEPEND="$DEPEND"

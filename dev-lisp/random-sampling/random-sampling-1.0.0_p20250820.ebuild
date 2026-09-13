@@ -14,7 +14,7 @@ SRC_URI="https://codeberg.org/shinmera/random-sampling/archive/${EGIT_COMMIT}.ta
 LICENSE="ZLIB"
 SLOT="0"
 S="${WORKDIR}"/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils

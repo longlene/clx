@@ -14,7 +14,7 @@ SRC_URI="https://github.com/liuliu/ccv/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/${P}/lib
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="
 	llvm-core/clang

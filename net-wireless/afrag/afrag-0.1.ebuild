@@ -8,7 +8,7 @@ SRC_URI="http://homepages.tu-darmstadt.de/~p_larbig/wlan/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 src_compile() {
 	gcc $CFLAGS -o ${PN} ${PN}.c

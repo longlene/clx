@@ -7,7 +7,7 @@ HOMEPAGE="http://gtksetpwc.spiderou.net"
 SRC_URI="http://gtksetpwc.spiderou.net/files/${P}.tar.bz2"
 LICENSE="CeCILL"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 RDEPEND="media-video/setpwc
 		dev-perl/gtk2-perl"

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/xorbitsai/xrouter-llm/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="Xagent-Source-License"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="mirror"
 
 RDEPEND="

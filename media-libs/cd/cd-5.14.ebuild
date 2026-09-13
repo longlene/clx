@@ -19,7 +19,7 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="lua static-libs"
 
 DEPEND="

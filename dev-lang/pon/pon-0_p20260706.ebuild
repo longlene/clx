@@ -332,7 +332,7 @@ LICENSE+=" Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD Boost-1.0
 	CDLA-Permissive-2.0 ISC MIT MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB
 	BZIP2 || ( CC0-1.0 MIT-0 )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="mirror bindist"
 
 # pon-runtime calls noraw() which lives in libtinfow on Gentoo's split ncurses

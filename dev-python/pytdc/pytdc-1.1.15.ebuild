@@ -13,4 +13,4 @@ HOMEPAGE="https://pypi.org/project/pytdc/"
 
 LICENSE="TODO"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

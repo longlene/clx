@@ -14,6 +14,6 @@ SRC_URI="https://github.com/massung/lexer/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="Apache-2.0"
 
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="dev-lisp/re"

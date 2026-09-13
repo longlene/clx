@@ -14,5 +14,5 @@ SRC_URI="https://github.com/fabfuel/circuitbreaker/archive/refs/tags/${PV}.tar.g
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"

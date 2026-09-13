@@ -8,7 +8,7 @@ SRC_URI="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/SFMT/VERSIONS/ARCHIVES/
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="sse2"
 
 src_compile() {

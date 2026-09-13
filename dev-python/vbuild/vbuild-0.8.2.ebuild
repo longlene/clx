@@ -14,7 +14,7 @@ SRC_URI="https://github.com/manatlan/vbuild/archive/refs/tags/v0.8.2.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pscript-0.7.7[${PYTHON_USEDEP}]

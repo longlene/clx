@@ -14,7 +14,7 @@ SRC_URI="https://github.com/klen/muffin-redis/archive/refs/tags/${PV}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/muffin[${PYTHON_USEDEP}]

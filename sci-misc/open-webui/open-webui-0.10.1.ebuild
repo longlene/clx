@@ -18,7 +18,7 @@ SRC_URI="https://github.com/open-webui/open-webui/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/transformers-5.5.4[${PYTHON_SINGLE_USEDEP}]

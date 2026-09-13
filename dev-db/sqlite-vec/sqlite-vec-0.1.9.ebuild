@@ -14,7 +14,7 @@ SRC_URI="
 
 LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="app-arch/unzip"
 RDEPEND="${DEPEND}"

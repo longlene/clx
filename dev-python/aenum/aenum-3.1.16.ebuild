@@ -17,7 +17,7 @@ SRC_URI="https://github.com/ethanfurman/aenum/archive/refs/tags/${PV}.tar.gz -> 
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

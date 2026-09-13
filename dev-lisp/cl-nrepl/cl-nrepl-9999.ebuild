@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/sjl/cl-nrepl.git"
 
 LICENSE="EPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/bencode

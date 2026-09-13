@@ -16,7 +16,7 @@ SRC_URI="https://github.com/tc-mb/llama.cpp-omni/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/llama.cpp-omni-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="openblas blis +openmp cuda opencl +openmp rocm -sycl test vulkan flexiblas wmma ssl test"
 RESTRICT="!test? ( test )"

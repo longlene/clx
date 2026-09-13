@@ -14,6 +14,6 @@ SRC_URI="https://github.com/Shinmera/piping/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="Artistic-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

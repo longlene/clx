@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}.sdk.${PV}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}/udt4"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -11,7 +11,7 @@ S="${WORKDIR}/mrubyc-release${PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 BDEPEND="dev-lang/ruby"

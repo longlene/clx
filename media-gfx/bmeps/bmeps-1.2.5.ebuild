@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/bmeps/${P}.tar.gz"
 LICENSE="LGPL-2"
 
 S=${WORKDIR}/${PN}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 SLOT="0"
 
 IUSE="jpeg"

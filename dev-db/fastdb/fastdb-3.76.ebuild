@@ -12,7 +12,7 @@ SRC_URI="http://www.garret.ru/fastdb-${PV}.tar.gz"
 
 LICENSE="Apache"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="diskless"
 
 RDEPEND="${DEPEND}"

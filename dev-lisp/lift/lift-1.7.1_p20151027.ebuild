@@ -13,7 +13,7 @@ SRC_URI="https://github.com/gwkkwg/lift/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

@@ -20,7 +20,7 @@ SRC_URI="https://github.com/huggingface/optimum-nvidia/archive/${EGIT_COMMIT}.ta
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-libs/accelerate-0.26.0[${PYTHON_SINGLE_USEDEP}]

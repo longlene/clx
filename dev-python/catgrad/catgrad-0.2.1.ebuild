@@ -15,7 +15,7 @@ SRC_URI="https://github.com/statusfailed/catgrad/archive/refs/tags/pypi-${PV}.ta
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-pypi-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/numpy-1.23.3[${PYTHON_USEDEP}]

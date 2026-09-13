@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/Liutos/cl-github-page"
 EGIT_REPO_URI="https://github.com/Liutos/cl-github-page.git"
 
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 dev-lisp/cl-fad

@@ -12,7 +12,7 @@ SRC_URI="https://github.com/symisc/unqlite/archive/refs/tags/v${PV}.tar.gz -> ${
 LICENSE="BSD-2"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/paullouisageneau/libjuice/archive/refs/tags/v${PV}.t
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="nettle"
 
 DEPEND="

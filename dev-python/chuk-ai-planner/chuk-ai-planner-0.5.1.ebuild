@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/chrishayuk/chuk-ai-planner https://pypi.org/project
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]

@@ -12,7 +12,7 @@ SRC_URI="mirror://apache/brpc/${PV}/apache-${P}-src.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/apache-${P}-src
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="thrift"
 
 DEPEND="

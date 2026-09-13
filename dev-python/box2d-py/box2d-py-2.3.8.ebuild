@@ -13,7 +13,7 @@ SRC_URI="https://github.com/openai/box2d-py/archive/refs/tags/${PV}.tar.gz -> ${
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 BDEPEND="dev-lang/swig"

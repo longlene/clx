@@ -15,7 +15,7 @@ S="${WORKDIR}/tiny-vllm-${MY_COMMIT}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="dev-util/nvidia-cuda-toolkit:="
 RDEPEND="${DEPEND}"

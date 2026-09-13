@@ -11,6 +11,6 @@ SRC_URI="https://github.com/army-cat/trooper/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

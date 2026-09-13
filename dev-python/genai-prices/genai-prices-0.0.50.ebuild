@@ -18,7 +18,7 @@ SRC_URI="https://github.com/pydantic/genai-prices/archive/refs/tags/v${PV}.tar.g
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${P}/packaages/python
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx-0.27[${PYTHON_USEDEP}]

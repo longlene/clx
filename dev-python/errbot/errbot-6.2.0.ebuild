@@ -17,7 +17,7 @@ SRC_URI="https://github.com/errbotio/errbot/archive/refs/tags/${PV}.tar.gz -> ${
 
 LICENSE="GPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/webtest-3.0.0[${PYTHON_USEDEP}]

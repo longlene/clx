@@ -18,7 +18,7 @@ SRC_URI="https://github.com/CMA-ES/pycma/archive/refs/tags/r${PV}.tar.gz -> pycm
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/pycma-r${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]

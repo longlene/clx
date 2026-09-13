@@ -18,7 +18,7 @@ SRC_URI="https://github.com/pgvector/pgvector-python/archive/refs/tags/v${PV}.ta
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/cl-fiveam/fiveam/archive/${MY_PV}.tar.gz -> ${P}.tar
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="!dev-lisp/cl-${PN}
 		!dev-lisp/cl-${PN}-darcs

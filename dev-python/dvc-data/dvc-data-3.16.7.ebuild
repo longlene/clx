@@ -18,7 +18,7 @@ SRC_URI="https://github.com/iterative/dvc-data/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/attrs-21.3.0[${PYTHON_USEDEP}]

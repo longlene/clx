@@ -9,7 +9,7 @@ SRC_URI="http://mesh.dl.sourceforge.net/sourceforge/dxr3player/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="lirc sdl mmx sse 3dnow dxr3"
 
 DEPEND=">=media-libs/libmad-0.15.1b

@@ -19,7 +19,7 @@ SRC_URI="https://github.com/facebookresearch/faiss/archive/refs/tags/v${PV}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda mkl python rocm"
 
 RDEPEND="${DEPEND}

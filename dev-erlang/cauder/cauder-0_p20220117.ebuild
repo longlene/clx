@@ -13,7 +13,7 @@ SRC_URI="https://github.com/mistupv/cauder/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="dev-lang/erlang[wxwidgets]"
 RDEPEND="${DEPEND}"

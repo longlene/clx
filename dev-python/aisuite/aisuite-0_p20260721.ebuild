@@ -17,7 +17,7 @@ S="${WORKDIR}/aisuite-${COMMIT}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/docstring-parser-0.16[${PYTHON_USEDEP}]

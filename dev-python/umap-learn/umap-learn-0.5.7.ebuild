@@ -18,7 +18,7 @@ SRC_URI="https://github.com/lmcinnes/umap/archive/refs/tags/release-${PV}.tar.gz
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/umap-release-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]

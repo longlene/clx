@@ -17,7 +17,7 @@ SRC_URI="https://github.com/kensho-technologies/pyctcdecode/archive/refs/tags/v$
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

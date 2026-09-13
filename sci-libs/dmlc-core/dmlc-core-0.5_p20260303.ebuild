@@ -11,7 +11,7 @@ DESCRIPTION="Common bricks library for building distributed machine learning"
 HOMEPAGE="https://github.com/dmlc/dmlc-core"
 SRC_URI="https://github.com/dmlc/${PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 LICENSE="Apache-2.0"
 SLOT="0"
 

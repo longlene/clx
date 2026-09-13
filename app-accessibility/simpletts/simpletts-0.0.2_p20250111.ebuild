@@ -16,7 +16,7 @@ SRC_URI="https://github.com/fakerybakery/simpletts/archive/${EGIT_COMMIT}.tar.gz
 
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]

@@ -17,6 +17,6 @@ SRC_URI="https://github.com/Publitechs/cl-utilities/archive/${EGIT_COMMIT}.tar.g
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

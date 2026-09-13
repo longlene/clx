@@ -18,7 +18,7 @@ SRC_URI="https://github.com/e2b-dev/code-interpreter/archive/refs/tags/@e2b/code
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/code-interpreter--e2b-code-interpreter-python-${PV}/python
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx-0.20.0[${PYTHON_USEDEP}]

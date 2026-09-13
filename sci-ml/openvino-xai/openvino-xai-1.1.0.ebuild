@@ -18,7 +18,7 @@ SRC_URI="https://github.com/openvinotoolkit/openvino_xai/archive/refs/tags/${PV}
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/openvino_xai-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/openvino-dev-2024.4[${PYTHON_SINGLE_USEDEP}]

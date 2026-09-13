@@ -18,6 +18,6 @@ SRC_URI="https://github.com/dpath-maintainers/dpath-python/archive/refs/tags/v${
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RESTRICT="test"

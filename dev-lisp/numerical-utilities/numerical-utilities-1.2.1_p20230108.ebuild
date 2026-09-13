@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Lisp-Stat/numerical-utilities/archive/${EGIT_COMMIT}
 
 LICENSE="MS-PL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/anaphora

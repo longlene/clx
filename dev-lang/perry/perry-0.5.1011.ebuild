@@ -918,7 +918,7 @@ LICENSE+="
 	UoI-NCSA Unicode-3.0 Unlicense ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -12,7 +12,7 @@ SRC_URI="http://beta.quicklisp.org/archive/iterate/2016-08-25/iterate-20160825-d
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="!dev-lisp/cl-${PN}"
 

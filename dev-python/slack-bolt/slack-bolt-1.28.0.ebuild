@@ -18,7 +18,7 @@ SRC_URI="https://github.com/slackapi/bolt-python/archive/refs/tags/v${PV}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/bolt-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/slack-sdk-3.25.0[${PYTHON_USEDEP}]

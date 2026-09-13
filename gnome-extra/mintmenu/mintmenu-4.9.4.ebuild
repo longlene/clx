@@ -6,7 +6,7 @@ DESCRIPTION="MintMenu supports filtering, favorites, easy-uninstallation, autose
 SRC_URI="http://packages.linuxmint.com/pool/main/m/mintmenu/${PN}_${PV}.tar.gz"
 HOMEPAGE="https://www.linuxmint.com"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 SLOT="0"
 
 RDEPEND=">=dev-lang/python-2.4.6

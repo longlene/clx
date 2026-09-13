@@ -21,7 +21,7 @@ SRC_URI="https://github.com/andimarafioti/nano-parakeet/archive/${EGIT_COMMIT}.t
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]

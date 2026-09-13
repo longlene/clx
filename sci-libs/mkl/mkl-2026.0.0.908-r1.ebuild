@@ -45,7 +45,7 @@ S="${WORKDIR}"
 
 LICENSE="ISSL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="eselect-ldso examples gnu-openmp llvm-openmp static-libs sycl tbb"
 RESTRICT="strip"
 

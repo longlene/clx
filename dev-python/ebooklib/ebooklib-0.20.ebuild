@@ -14,7 +14,7 @@ SRC_URI="https://github.com/aerkalov/ebooklib/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="AGPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/lxml[${PYTHON_USEDEP}]

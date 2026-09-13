@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/coin-or/pulp https://pypi.org/project/PuLP/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 python_install_all() {

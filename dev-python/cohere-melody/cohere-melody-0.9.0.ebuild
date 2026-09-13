@@ -279,7 +279,7 @@ S="${WORKDIR}/melody-${PV}"
 
 LICENSE="MIT Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD CDLA-Permissive-2.0 ISC MPL-2.0 Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="dev-libs/oniguruma:="
 RDEPEND="${DEPEND}"

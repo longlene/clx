@@ -11,7 +11,7 @@ SRC_URI="https://github.com/scymtym/more-conditions/archive/release-${PV}.tar.gz
 
 LICENSE="LLGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

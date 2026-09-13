@@ -15,7 +15,7 @@ SRC_URI="https://github.com/aiortc/aiortc/archive/refs/tags/${PV}.tar.gz -> ${P}
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aioice-0.9.0[${PYTHON_USEDEP}]

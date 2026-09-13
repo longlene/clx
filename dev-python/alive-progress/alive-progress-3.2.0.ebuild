@@ -17,7 +17,7 @@ SRC_URI="https://github.com/rsalmei/alive-progress/archive/refs/tags/v${PV}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/about-time-4.2.1[${PYTHON_USEDEP}]

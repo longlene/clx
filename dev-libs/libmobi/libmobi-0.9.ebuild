@@ -11,7 +11,7 @@ SRC_URI="https://github.com/bfabiszewski/libmobi/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="LGPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -14,7 +14,7 @@ HOMEPAGE="https://pypi.org/project/fast-json/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/ujson[${PYTHON_USEDEP}]

@@ -11,7 +11,7 @@ SRC_URI="https://common-lisp.net/project/clonsigna/files/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/iolib

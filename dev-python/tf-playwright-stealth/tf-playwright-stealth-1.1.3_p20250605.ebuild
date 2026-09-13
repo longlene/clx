@@ -20,7 +20,7 @@ SRC_URI="https://github.com/tinyfish-io/tf-playwright-stealth/archive/${EGIT_COM
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	|| (

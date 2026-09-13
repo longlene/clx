@@ -12,6 +12,6 @@ HOMEPAGE="http://www.vim.org/scripts/script.php?script_id="
 SRC_URI="https://github.com/phongvcao/vim-stardict/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="app-text/sdcv"

@@ -16,7 +16,7 @@ SRC_URI="https://github.com/mwilliamson/python-cobble/archive/refs/tags/${PV}.ta
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

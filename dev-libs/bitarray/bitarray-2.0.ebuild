@@ -14,7 +14,7 @@ SRC_URI="https://github.com/noporpoise/BitArray/archive/${PV}.tar.gz -> ${P}.tar
 LICENSE="public-domain"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

@@ -117,5 +117,5 @@ S="${WORKDIR}/python_calamine-${PV}"
 
 LICENSE="MIT Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"

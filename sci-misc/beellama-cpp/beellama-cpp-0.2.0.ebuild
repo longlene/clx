@@ -16,7 +16,7 @@ SRC_URI="https://github.com/Anbeeld/beellama.cpp/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="blis cuda openblas opencl +openmp openvino rocm -sycl test vulkan flexiblas wmma"
 RESTRICT="!test? ( test )"

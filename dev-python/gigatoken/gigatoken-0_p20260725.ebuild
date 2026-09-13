@@ -315,7 +315,7 @@ S="${WORKDIR}/gigatoken-${COMMIT}"
 
 LICENSE="MIT Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 CDLA-Permissive-2.0 ISC Unicode-3.0 || ( LGPL-3+ MPL-2.0 )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/awkward[${PYTHON_USEDEP}]

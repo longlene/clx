@@ -19,7 +19,7 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/pytorchcv-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]

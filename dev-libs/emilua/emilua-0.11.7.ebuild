@@ -12,7 +12,7 @@ SRC_URI="https://gitlab.com/emilua/emilua/-/archive/v${PV}/emilua-v${PV}.tar.gz 
 LICENSE="Boost"
 SLOT="0"
 S="${WORKDIR}"/${PN}-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="doc"
 
 DEPEND="

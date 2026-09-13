@@ -12,6 +12,6 @@ SRC_URI="https://gitlab.com/barrel-db/erlang-rocksdb/-/archive/${PV}/erlang-rock
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/erlang-${P}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

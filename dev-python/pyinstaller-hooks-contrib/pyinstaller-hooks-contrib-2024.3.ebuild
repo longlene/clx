@@ -14,7 +14,7 @@ SRC_URI="https://github.com/pyinstaller/pyinstaller-hooks-contrib/archive/refs/t
 
 LICENSE="|| ( Apache-2.0 GPL-2 )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]

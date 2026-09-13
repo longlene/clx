@@ -11,7 +11,7 @@ SRC_URI="https://github.com/pgvector/pgvector-cpp/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-libs/libpqxx

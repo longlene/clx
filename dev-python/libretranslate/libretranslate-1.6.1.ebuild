@@ -14,7 +14,7 @@ SRC_URI="https://github.com/LibreTranslate/LibreTranslate/archive/refs/tags/v${P
 LICENSE="AGPL-3.0"
 SLOT="0"
 S="${WORKDIR}"/libretranslate-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-libs/argos-translate-1.9.6[${PYTHON_USEDEP}]

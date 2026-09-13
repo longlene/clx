@@ -13,7 +13,7 @@ SRC_URI="https://github.com/thibaultcha/lua-resty-mlcache/archive/refs/tags/${PV
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	${LUA_DEPS}

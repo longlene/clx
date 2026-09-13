@@ -165,7 +165,7 @@ SRC_URI="
 
 LICENSE="MIT BSD Unicode-DFS-2016 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_prepare() {
 	eapply --directory="${ECARGO_HOME}/gentoo/time-0.3.25" \

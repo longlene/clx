@@ -18,7 +18,7 @@ SRC_URI="https://github.com/shin-/dockerpy-creds/archive/refs/tags/${PV}.tar.gz 
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/dockerpy-creds-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/six-1.4.0[${PYTHON_USEDEP}]

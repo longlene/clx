@@ -10,7 +10,7 @@ HOMEPAGE="http://nifelheim.dyndns.org/~cocidius/dds/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND=">=media-gfx/gimp-2.6"
 

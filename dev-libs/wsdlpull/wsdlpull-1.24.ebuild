@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/wsdlpull/wsdlpull-${PV}.tar.gz"
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 app-text/doxygen"

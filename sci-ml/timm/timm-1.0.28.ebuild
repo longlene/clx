@@ -16,7 +16,7 @@ SRC_URI="https://github.com/huggingface/pytorch-image-models/archive/refs/tags/v
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/pytorch-image-models-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]

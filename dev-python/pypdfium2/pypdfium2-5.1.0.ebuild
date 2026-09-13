@@ -19,7 +19,7 @@ SRC_URI="https://files.pythonhosted.org/packages/2f/74/92f508e71178aa85de3245476
 LICENSE="|| ( BSD-3 Apache-2.0 )"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #	test? (
 #	)

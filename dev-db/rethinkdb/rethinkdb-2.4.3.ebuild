@@ -11,7 +11,7 @@ LICENSE="AGPL-3"
 SLOT="0"
 SRC_URI="https://github.com/rethinkdb/rethinkdb/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="doc +jemalloc tcmalloc"
 
 # TODO: rly need some webui libs ?

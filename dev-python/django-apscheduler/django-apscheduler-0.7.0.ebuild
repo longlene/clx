@@ -17,7 +17,7 @@ SRC_URI="https://github.com/jcass77/django-apscheduler/archive/refs/tags/v${PV}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/django-4.2[${PYTHON_USEDEP}]

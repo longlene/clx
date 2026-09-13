@@ -15,7 +15,7 @@ SRC_URI="https://github.com/dpgaspar/Flask-AppBuilder/archive/refs/tags/v4.5.1.t
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/Flask-AppBuilder-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/apispec-6.0.0[${PYTHON_USEDEP}]

@@ -16,7 +16,7 @@ S="${WORKDIR}/tensorboardX-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	dev-python/setuptools-scm

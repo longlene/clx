@@ -13,7 +13,7 @@ HOMEPAGE="https://ase-lib.org/"
 
 LICENSE="GPL-2.0 LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/matplotlib[${PYTHON_USEDEP}]

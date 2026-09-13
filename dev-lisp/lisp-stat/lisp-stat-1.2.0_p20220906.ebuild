@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Lisp-Stat/lisp-stat/archive/${EGIT_COMMIT}.tar.gz ->
 
 LICENSE="MS-PL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

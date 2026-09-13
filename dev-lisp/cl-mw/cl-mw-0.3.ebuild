@@ -11,7 +11,7 @@ SRC_URI="http://pages.cs.wisc.edu/~psilord/lisp-public/releases/cl-mw/0.3/${P}.t
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="example"
 
 RDEPEND="${DEPEND}

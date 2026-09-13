@@ -9,7 +9,7 @@ SRC_URI="mirror://sourceforge/${PN}/yougrabber-${PV}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 S=${WORKDIR}/yougrabber-${PV}/src
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="net-misc/curl
 		sys-libs/ncurses

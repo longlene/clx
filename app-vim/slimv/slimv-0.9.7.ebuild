@@ -9,7 +9,7 @@ DESCRIPTION="vim plugin: aid Lisp development by providing a SLIME-like Lisp and
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=2531"
 SRC_URI="https://github.com/vim-scripts/${PN}.vim/tarball/${PV} -> ${P}.tar.gz"
 LICENSE="public-domain"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="|| ( app-editors/vim[python] app-editors/gvim[python] )
 	>=dev-lang/python-2.4

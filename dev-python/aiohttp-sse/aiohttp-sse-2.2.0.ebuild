@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/aio-libs/aiohttp-sse"
 SRC_URI="https://github.com/aio-libs/aiohttp-sse/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiohttp-3.0[${PYTHON_USEDEP}]

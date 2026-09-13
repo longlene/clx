@@ -8,6 +8,6 @@ SRC_URI="mirror://sourceforge/hd-idle/${P}.tgz"
 
 SLOT="0"
 S=${WORKDIR}/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

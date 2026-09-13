@@ -15,7 +15,7 @@ SRC_URI="https://github.com/coleifer/sqlcipher3/archive/refs/tags/${PV}.tar.gz -
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="dev-libs/openssl:="
 RDEPEND="${DEPEND}"

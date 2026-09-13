@@ -9,7 +9,7 @@ SRC_URI="http://yubico-pam.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 ~arm64 x86"
 
 DEPEND="sys-auth/pambase
 	sys-libs/pam

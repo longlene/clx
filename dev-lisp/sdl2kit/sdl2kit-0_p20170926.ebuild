@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/lispgames/sdl2kit.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="example"
 
 RDEPEND="${DEPEND}

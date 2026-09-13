@@ -15,7 +15,7 @@ SRC_URI="https://github.com/fastai/fastai/archive/refs/tags/${PV}.tar.gz -> ${P}
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	>=sci-ml/torchvision-0.11[${PYTHON_SINGLE_USEDEP}]

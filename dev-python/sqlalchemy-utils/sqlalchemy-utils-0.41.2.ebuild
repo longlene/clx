@@ -14,7 +14,7 @@ SRC_URI="https://github.com/kvesteri/sqlalchemy-utils/archive/refs/tags/${PV}.ta
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/sqlalchemy-1.4[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/py-pdf/fpdf2/archive/refs/tags/${PV}.tar.gz -> ${P}.
 
 LICENSE="LGPL-3.0+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/defusedxml[${PYTHON_USEDEP}]

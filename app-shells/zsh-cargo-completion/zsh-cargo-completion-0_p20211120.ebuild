@@ -13,7 +13,7 @@ SRC_URI="https://github.com/MenkeTechnologies/zsh-cargo-completion/archive/${EGI
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	app-shells/zsh

@@ -13,4 +13,4 @@ SRC_URI="https://github.com/pcostanza/closer-mop/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"

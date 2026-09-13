@@ -10,7 +10,7 @@ HOMEPAGE="http://sourceforge.net/projects/mysqlfs/"
 
 LICENSE="GPL-2"
 S=${WORKDIR}/${MY_P}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 SLOT="0"
 
 DEPEND="sys-fs/fuse

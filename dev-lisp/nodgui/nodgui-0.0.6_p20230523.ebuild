@@ -11,7 +11,7 @@ SRC_URI="https://notabug.org/cage/nodgui/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lang/tk

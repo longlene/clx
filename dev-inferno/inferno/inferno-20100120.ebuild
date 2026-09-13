@@ -12,7 +12,7 @@ SRC_URI="http://www.vitanuova.com/dist/4e/inferno-20100120.tgz"
 LICENSE="GPL-2"
 SLOT=0
 S="${WORKDIR}/${PN}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="hardened X doc source re2 cjson ipv6"
 
 DEPEND="${RDEPEND}

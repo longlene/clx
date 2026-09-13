@@ -11,6 +11,6 @@ SRC_URI="https://github.com/ShiqiYu/libfacedetection/archive/refs/tags/v${PV}.ta
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

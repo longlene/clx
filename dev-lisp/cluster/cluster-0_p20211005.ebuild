@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/robert-strandh/Cluster"
 SRC_URI="https://github.com/robert-strandh/Cluster/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="as-is"
 
 RDEPEND="${DEPEND}

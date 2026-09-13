@@ -19,7 +19,7 @@ SRC_URI="https://github.com/open-telemetry/opentelemetry-python/archive/refs/tag
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/protobuf-5.0[${PYTHON_USEDEP}]

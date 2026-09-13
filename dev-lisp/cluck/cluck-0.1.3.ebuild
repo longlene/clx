@@ -11,7 +11,7 @@ SRC_URI="http://files.kpe.io/cluck/${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="dev-lisp/kmrcl"
 

@@ -19,7 +19,7 @@ S="${WORKDIR}"/${PN}-${PN}-v${PV}/packages/cli
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]

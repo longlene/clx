@@ -13,7 +13,7 @@ SRC_URI="http://code.matthewwild.co.uk/verse/archive/${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	dev-lua/squish[${LUA_USEDEP}]

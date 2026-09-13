@@ -13,6 +13,6 @@ SRC_URI="https://github.com/tree-sitter-grammars/tree-sitter-toml/archive/refs/t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

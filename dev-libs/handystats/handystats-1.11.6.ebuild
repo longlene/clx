@@ -12,7 +12,7 @@ SRC_URI="https://github.com/yandex/${PN}/archive/${PV}.zip -> ${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="${DEPEND}
 	dev-cpp/gtest

@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/40ants/weblocks-parenscript"
 SRC_URI="https://github.com/40ants/weblocks-parenscript/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/weblocks

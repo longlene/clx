@@ -12,7 +12,7 @@ S="${WORKDIR}/sqlite3_rsync-${MY_COMMIT}"
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="dev-db/sqlite:3"
 RDEPEND="${DEPEND}"

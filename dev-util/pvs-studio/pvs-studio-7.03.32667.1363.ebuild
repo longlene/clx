@@ -12,7 +12,7 @@ SRC_URI="https://files.viva64.com/${P}-x86_64.tgz"
 LICENSE="free-noncomm"
 SLOT="0"
 S="${WORKDIR}/${P}-x86_64"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="bash-completion"
 
 # Binary prebuilt package

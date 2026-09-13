@@ -13,7 +13,7 @@ SRC_URI="https://github.com/tsuru/lua-resty-libjwt/archive/refs/tags/v${PV}.tar.
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	${LUA_DEPS}

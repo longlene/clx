@@ -17,7 +17,7 @@ SRC_URI="https://github.com/unixtux/tglib/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="GPL-3"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiohttp-3.9.1[${PYTHON_USEDEP}]

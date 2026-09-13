@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/pallets-eco/flask-orjson/"
 SRC_URI="https://github.com/pallets-eco/flask-orjson/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/flask[${PYTHON_USEDEP}]

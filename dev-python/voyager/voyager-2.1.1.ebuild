@@ -19,7 +19,7 @@ SRC_URI="https://github.com/spotify/voyager/archive/refs/tags/v${PV}.tar.gz -> $
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${S}"/python
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	dev-python/nanobind[${PYTHON_USEDEP}]

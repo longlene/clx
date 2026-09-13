@@ -19,7 +19,7 @@ SRC_URI="https://github.com/explosion/confection/archive/refs/tags/release-v${PV
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-release-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

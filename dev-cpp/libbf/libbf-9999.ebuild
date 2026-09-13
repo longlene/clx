@@ -13,6 +13,6 @@ EGIT_REPO_URI="https://github.com/mavam/libbf.git"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

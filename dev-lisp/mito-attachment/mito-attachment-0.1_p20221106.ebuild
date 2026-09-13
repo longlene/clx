@@ -13,7 +13,7 @@ SRC_URI="https://github.com/fukamachi/mito-attachment/archive/${EGIT_COMMIT}.tar
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/mito

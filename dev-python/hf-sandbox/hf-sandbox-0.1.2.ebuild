@@ -16,7 +16,7 @@ SRC_URI="https://github.com/huggingface/hf-sandbox/archive/refs/tags/v${PV}.tar.
 # no license file or declaration upstream
 LICENSE="all-rights-reserved"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="server"
 RESTRICT="mirror"
 

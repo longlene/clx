@@ -12,7 +12,7 @@ SRC_URI="https://gitlab.common-lisp.net/antik/antik/repository/archive.tar.gz?re
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/gsll

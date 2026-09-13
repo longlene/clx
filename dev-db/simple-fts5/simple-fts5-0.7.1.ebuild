@@ -12,7 +12,7 @@ S="${WORKDIR}/simple-${PV}"
 
 LICENSE="|| ( MIT GPL-3+ )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+jieba"
 
 DEPEND="

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/chdb-io/chdb/archive/refs/tags/v${PV}.tar.gz -> ${P}
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/chdb-core-26.1.0[${PYTHON_USEDEP}]

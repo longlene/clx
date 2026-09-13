@@ -9,7 +9,7 @@ SRC_URI="http://home.wanadoo.nl/squell/files/id3-${PV}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 S=${WORKDIR}/id3-${PV}
-KEYWORDS="alpha amd64 sparc x86"
+KEYWORDS="alpha amd64 ~arm64 sparc x86"
 
 src_compile() {
 	cd "${S}"

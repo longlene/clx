@@ -9,7 +9,7 @@ HOMEPAGE="http://repo.or.cz/w/cl-v4l2.git"
 EGIT_REPO_URI="http://repo.or.cz/w/cl-v4l2.git"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 dev-lisp/cffi

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Ramarren/cl-parser-combinators/archive/${EGIT_COMMIT
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/pyodide/pyodide-cli/archive/refs/tags/${PV}.tar.gz -
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/click[${PYTHON_USEDEP}]

@@ -15,7 +15,7 @@ SRC_URI="https://github.com/huggingface/trl-jobs/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/huggingface_hub-0.34.4[${PYTHON_SINGLE_USEDEP}]

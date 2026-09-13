@@ -13,7 +13,7 @@ SRC_URI="https://github.com/capnproto/pycapnp/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	dev-libs/capnproto

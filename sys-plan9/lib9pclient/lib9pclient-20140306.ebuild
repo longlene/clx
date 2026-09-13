@@ -8,4 +8,4 @@ PHEADERS="9pclient"
 DEPEND="dev-plan9/lib9"
 inherit plan9-libs
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"

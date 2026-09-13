@@ -12,7 +12,7 @@ SRC_URI="http://registry.gimp.org/files/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}/${MY_P}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="media-gfx/gimp"
 

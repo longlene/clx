@@ -9,7 +9,7 @@ HOMEPAGE="http://www.insanelymac.com/forum/index.php?showtopic=268531"
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}/unlock-all-v110/src"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 ~arm64 x86"
 
 DEPEND="app-arch/unzip"
 

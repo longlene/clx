@@ -9,7 +9,7 @@ SRC_URI="http://download.savannah.nongnu.org/releases/guile-pg/${P}.tar.xz"
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-db/postgresql

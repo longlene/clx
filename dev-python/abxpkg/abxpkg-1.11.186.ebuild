@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ArchiveBox/abxpkg https://pypi.org/project/abxpkg/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="abxbus pyinfra rich"
 RESTRICT="test"
 

@@ -16,7 +16,7 @@ HOMEPAGE="
 SRC_URI="https://github.com/mtkennerly/poetry-dynamic-versioning/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/dunamai-1.25.0[${PYTHON_USEDEP}]

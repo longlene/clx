@@ -11,7 +11,7 @@ SRC_URI="https://github.com/davisp/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.
 
 LICENSE="MIT Apache-2.0 Boost-1.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DOCS=( README.md )
 

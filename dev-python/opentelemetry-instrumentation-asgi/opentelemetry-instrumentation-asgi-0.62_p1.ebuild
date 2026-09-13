@@ -20,7 +20,7 @@ SRC_URI="https://github.com/open-telemetry/opentelemetry-python-contrib/archive/
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}/instrumentation/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/asgiref-3.0[${PYTHON_USEDEP}]

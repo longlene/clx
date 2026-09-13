@@ -14,7 +14,7 @@ SRC_URI="https://github.com/prompt-toolkit/ptpython/archive/refs/tags/${PV}.tar.
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/appdirs[${PYTHON_USEDEP}]

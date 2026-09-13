@@ -17,7 +17,7 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+cuda infiniband rocm static-libs test"
 REQUIRED_USE="^^ ( cuda rocm )"
 RESTRICT="!test? ( test )"

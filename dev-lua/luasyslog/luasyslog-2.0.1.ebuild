@@ -13,7 +13,7 @@ SRC_URI="https://github.com/lunarmodules/luasyslog/archive/refs/tags/${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	>=dev-lua/lualogging-1.3.0

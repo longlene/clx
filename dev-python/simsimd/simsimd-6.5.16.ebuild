@@ -14,5 +14,5 @@ HOMEPAGE="https://github.com/ashvardanian/SimSIMD https://pypi.org/project/simsi
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"

@@ -13,6 +13,6 @@ SRC_URI="https://github.com/Bike/introspect-environment/archive/${EGIT_COMMIT}.t
 
 LICENSE="WTFPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

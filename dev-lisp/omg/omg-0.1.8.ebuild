@@ -11,7 +11,7 @@ SRC_URI="https://github.com/hemml/OMGlib/archive/refs/tags/v${PV}.tar.gz -> ${P}
 
 LICENSE="GPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/clack

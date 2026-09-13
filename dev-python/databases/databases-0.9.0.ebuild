@@ -17,7 +17,7 @@ SRC_URI="https://github.com/encode/databases/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/sqlalchemy-2.0.7[${PYTHON_USEDEP}]

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ArchiveBox/abxbus https://pypi.org/project/abxbus/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="postgres redis"
 RESTRICT="test"
 

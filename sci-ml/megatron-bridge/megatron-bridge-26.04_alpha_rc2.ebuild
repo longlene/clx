@@ -22,7 +22,7 @@ S="${WORKDIR}/Megatron-Bridge-${MY_PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/transformers-5.0.0[${PYTHON_SINGLE_USEDEP}]

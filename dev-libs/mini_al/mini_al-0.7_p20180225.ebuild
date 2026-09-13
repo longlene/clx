@@ -13,7 +13,7 @@ SRC_URI="https://github.com/dr-soft/mini_al/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/Softcatala/whisper-ctranslate2/archive/refs/tags/${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test" # Need some modules, not yet packaged
 
 RDEPEND="

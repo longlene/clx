@@ -18,7 +18,7 @@ SRC_URI="https://github.com/kivy/kivy/archive/refs/tags/${PV}.tar.gz -> ${P}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/cython-0.29.1[${PYTHON_USEDEP}]

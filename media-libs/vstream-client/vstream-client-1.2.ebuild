@@ -11,7 +11,7 @@ SRC_URI="http://armory.nicewarrior.org/mirror.php?path=vstream-client/${P}.tar.g
 # which was forked from mplayer which is licensed under GPL-2...)
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 src_configure() {
 	./configure --prefix=/usr

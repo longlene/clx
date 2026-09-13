@@ -13,7 +13,7 @@ HOMEPAGE="https://a2a-protocol.org/ https://pypi.org/project/a2a-sdk/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/httpx[${PYTHON_USEDEP}]

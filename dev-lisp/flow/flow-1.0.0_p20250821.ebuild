@@ -14,7 +14,7 @@ SRC_URI="https://codeberg.org/shinmera/flow/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="ZLIB"
 SLOT="0"
 S="${WORKDIR}"/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils

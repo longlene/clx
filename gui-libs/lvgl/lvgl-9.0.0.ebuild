@@ -11,7 +11,7 @@ SRC_URI="https://github.com/lvgl/lvgl/archive/refs/tags/v${PV}.tar.gz -> ${P}.ta
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

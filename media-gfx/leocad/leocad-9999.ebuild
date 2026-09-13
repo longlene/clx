@@ -13,7 +13,7 @@ ESVN_REPO_URI="http://svn.gerf.org/${PN}/trunk"
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="jpeg zlib png"
 

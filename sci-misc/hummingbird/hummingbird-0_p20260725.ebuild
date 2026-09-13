@@ -18,7 +18,7 @@ S="${WORKDIR}/hummingbird-${COMMIT}"
 # stated intent; revisit once upstream finalizes it.
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="benchmarks examples test tools"
 RESTRICT="!test? ( test )"

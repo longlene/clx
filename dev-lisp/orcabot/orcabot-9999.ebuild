@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/dlowe-net/orcabot"
 EGIT_REPO_URI="https://github.com/dlowe-net/orcabot.git"
 
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

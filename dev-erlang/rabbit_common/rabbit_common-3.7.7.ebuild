@@ -10,7 +10,7 @@ SRC_URI="https://github.com/rabbitmq/rabbitmq-common/archive/v${PV}.tar.gz -> ${
 LICENSE="ISC"
 SLOT="0"
 S="${WORKDIR}"/rabbitmq-common-${PV}
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

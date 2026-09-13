@@ -17,7 +17,7 @@ SRC_URI="https://github.com/noamgat/lm-format-enforcer/archive/refs/tags/v${PV}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pydantic-1.10.8[${PYTHON_USEDEP}]

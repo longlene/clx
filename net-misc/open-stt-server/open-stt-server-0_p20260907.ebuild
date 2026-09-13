@@ -468,7 +468,7 @@ LICENSE+="
 	Apache-2.0 BSD CDLA-Permissive-2.0 ISC MPL-2.0 Unicode-3.0 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda flash-attn"
 REQUIRED_USE="flash-attn? ( cuda )"
 

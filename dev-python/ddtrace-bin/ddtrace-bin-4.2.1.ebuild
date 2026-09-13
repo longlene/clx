@@ -19,7 +19,7 @@ SRC_URI="https://files.pythonhosted.org/packages/04/5b/02c10b6dfacf501dba90a8daf
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

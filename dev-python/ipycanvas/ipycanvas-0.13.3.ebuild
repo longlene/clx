@@ -17,7 +17,7 @@ SRC_URI="https://github.com/jupyter-widgets-contrib/ipycanvas/archive/refs/tags/
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/jupyterlab-3.0.0[${PYTHON_USEDEP}]

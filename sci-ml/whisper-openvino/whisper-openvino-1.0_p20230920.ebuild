@@ -20,7 +20,7 @@ SRC_URI="https://github.com/zhuzilin/whisper-openvino/archive/${EGIT_COMMIT}.tar
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/transformers-4.19.0[${PYTHON_SINGLE_USEDEP}]

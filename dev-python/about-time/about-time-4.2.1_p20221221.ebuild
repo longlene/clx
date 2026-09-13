@@ -20,7 +20,7 @@ SRC_URI="https://github.com/rsalmei/about-time/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/about-time-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

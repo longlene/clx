@@ -14,6 +14,6 @@ SRC_URI="https://github.com/sean2077/jsonpath-python/archive/refs/tags/${PV}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 distutils_enable_tests pytest

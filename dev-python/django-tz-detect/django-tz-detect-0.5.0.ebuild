@@ -17,7 +17,7 @@ HOMEPAGE="https://github.com/adamcharnock/django-tz-detect"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/django[${PYTHON_USEDEP}]

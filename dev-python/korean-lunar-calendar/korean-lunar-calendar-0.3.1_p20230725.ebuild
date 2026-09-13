@@ -17,6 +17,6 @@ SRC_URI="https://github.com/usingsky/korean_lunar_calendar_py/archive/${EGIT_COM
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/korean_lunar_calendar_py-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 distutils_enable_tests pytest

@@ -20,7 +20,7 @@ SRC_URI="https://github.com/TextArena/TextArena/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/TextArena-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/openai[${PYTHON_USEDEP}]

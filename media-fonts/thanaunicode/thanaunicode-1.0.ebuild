@@ -13,7 +13,7 @@ SRC_URI="http://www.saturn.in/download/14/ -> ${PN}.zip"
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="app-arch/unzip"
 

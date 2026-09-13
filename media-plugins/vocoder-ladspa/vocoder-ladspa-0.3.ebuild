@@ -7,7 +7,7 @@ SRC_URI="http://www.sirlab.de/linux/download/${P}.tgz"
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~arm64 x86"
 
 DEPEND="media-libs/ladspa-sdk"
 

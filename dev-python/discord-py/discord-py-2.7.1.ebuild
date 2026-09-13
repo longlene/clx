@@ -15,7 +15,7 @@ SRC_URI="https://github.com/Rapptz/discord.py/archive/refs/tags/v${PV}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/discord.py-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiohttp-3.7.4[${PYTHON_USEDEP}]

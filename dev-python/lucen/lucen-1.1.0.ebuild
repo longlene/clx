@@ -36,7 +36,7 @@ SRC_URI="
 # Apache-2.0: lucen itself. Rest: dependent Rust crate licenses.
 LICENSE="Apache-2.0 Apache-2.0-with-LLVM-exceptions Unicode-3.0 || ( Apache-2.0 MIT )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	test? (

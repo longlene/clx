@@ -18,7 +18,7 @@ SRC_URI="https://github.com/piskvorky/smart_open/archive/refs/tags/v${PV}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/smart_open-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/wrapt[${PYTHON_USEDEP}]

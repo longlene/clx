@@ -557,7 +557,7 @@ LICENSE+="
 	CDLA-Permissive-2.0 ISC LGPL-3 MIT MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx-0.27.2[${PYTHON_USEDEP}]

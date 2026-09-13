@@ -12,7 +12,7 @@ SRC_URI="https://bitbucket.org/cfyzium/bearlibterminal/get/${PV}.tar.gz -> ${P}.
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="virtual/opengl"
 RDEPEND="${DEPEND}"

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/hyotang666/vivid-colors/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/lambda-fiddle

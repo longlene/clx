@@ -13,7 +13,7 @@ SRC_URI="https://github.com/cl-fui/cl-xcb/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads

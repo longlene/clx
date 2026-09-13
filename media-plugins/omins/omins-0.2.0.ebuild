@@ -8,7 +8,7 @@ SRC_URI="http://savannah.nongnu.org/download/om-synth/${P}.tar.gz"
 
 IUSE="debug"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 SLOT="0"
 
 DEPEND="media-libs/ladspa-sdk"

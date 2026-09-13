@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/QuantStack/xplot"
 SRC_URI="https://github.com/QuantStack/xplot/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	>=dev-cpp/xeus-0.18.1

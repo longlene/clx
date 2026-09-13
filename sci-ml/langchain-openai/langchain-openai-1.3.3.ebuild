@@ -19,7 +19,7 @@ S="${WORKDIR}"/langchain-${P}/libs/partners/openai
 LICENSE="MIT"
 SLOT="0"
 EPYTEST_PLUGINS=( pytest-asyncio )
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langchain-core-1.4.7[${PYTHON_USEDEP}]

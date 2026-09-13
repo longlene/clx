@@ -13,7 +13,7 @@ SRC_URI="https://github.com/miguelfreitas/twister-core/archive/${EGIT_COMMIT}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-libs/openssl:*[-bindist]

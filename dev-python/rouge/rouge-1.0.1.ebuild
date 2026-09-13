@@ -16,7 +16,7 @@ SRC_URI="https://github.com/pltrdy/rouge/archive/refs/tags/${PV}.tar.gz -> ${P}.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/six[${PYTHON_USEDEP}]

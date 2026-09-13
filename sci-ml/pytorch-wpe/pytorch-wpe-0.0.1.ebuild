@@ -17,7 +17,7 @@ SRC_URI="
 
 SLOT="0"
 S="${WORKDIR}"/dnn_wpe-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	$(python_gen_cond_dep '

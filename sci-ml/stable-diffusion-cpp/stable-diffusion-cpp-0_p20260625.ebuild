@@ -19,7 +19,7 @@ S="${WORKDIR}/stable-diffusion.cpp-${MY_TAG}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda rocm vulkan"
 
 DEPEND="

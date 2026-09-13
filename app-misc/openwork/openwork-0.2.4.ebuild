@@ -15,7 +15,7 @@ SRC_URI="https://github.com/different-ai/openwork/releases/download/v0.2.4/OpenW
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-util/opencode

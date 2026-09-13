@@ -16,7 +16,7 @@ SRC_URI="https://github.com/sysid/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/anyio[${PYTHON_USEDEP}]

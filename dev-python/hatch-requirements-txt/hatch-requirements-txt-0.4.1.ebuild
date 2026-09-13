@@ -17,7 +17,7 @@ SRC_URI="https://github.com/repo-helper/hatch-requirements-txt/archive/refs/tags
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/packaging-21.3[${PYTHON_USEDEP}]

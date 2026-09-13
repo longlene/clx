@@ -14,7 +14,7 @@ SRC_URI="https://github.com/butler54/mdformat-frontmatter/archive/refs/tags/v${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

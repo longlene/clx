@@ -12,7 +12,7 @@ SRC_URI="https://github.com/edicl/flexi-streams/archive/v${PV}.tar.gz -> ${P}.ta
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

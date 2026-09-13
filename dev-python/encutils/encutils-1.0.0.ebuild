@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/coherent-oss/encutils https://pypi.org/project/encu
 
 LICENSE="LGPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="$(python_gen_cond_dep '
 	dev-python/chardet[${PYTHON_USEDEP}]

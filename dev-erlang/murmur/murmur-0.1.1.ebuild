@@ -8,6 +8,6 @@ inherit rebar3
 SRC_URI="https://github.com/lpgauth/murmur/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

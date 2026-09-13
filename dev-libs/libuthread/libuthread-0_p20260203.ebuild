@@ -15,7 +15,7 @@ S="${WORKDIR}/libuthread-${MY_COMMIT}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_prepare() {
 	# gcc -print-multiarch returns empty on musl; fall back to CMAKE_SYSTEM_PROCESSOR

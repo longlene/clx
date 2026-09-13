@@ -10,7 +10,7 @@ SRC_URI="http://sidplayer.cebix.net/downloads/${MY_P}.tar.gz"
 LICENSE="GPL"
 SLOT="0"
 S="${WORKDIR}/${MY_P}"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 ~arm64 x86"
 IUSE="sdl"
 
 DEPEND=">=media-libs/libsdl-1.2.10

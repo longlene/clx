@@ -11,6 +11,6 @@ SRC_URI="https://github.com/deadtrickster/ssl_verify_fun.erl/archive/refs/tags/$
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

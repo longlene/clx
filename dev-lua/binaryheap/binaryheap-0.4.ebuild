@@ -16,7 +16,7 @@ SRC_URI="https://github.com/Tieske/binaryheap.lua/archive/refs/tags/version_${MY
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}.lua-version_${MY_PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

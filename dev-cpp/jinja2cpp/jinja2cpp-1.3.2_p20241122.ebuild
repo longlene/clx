@@ -14,7 +14,7 @@ SRC_URI="https://github.com/jinja2cpp/Jinja2Cpp/archive/${EGIT_COMMIT}.tar.gz ->
 LICENSE="MPL-2.0"
 SLOT="0"
 S="${WORKDIR}"/Jinja2Cpp-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-cpp/expected-lite

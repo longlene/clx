@@ -18,7 +18,7 @@ HOMEPAGE="https://github.com/Microsoft/playwright-python"
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}/"
-KEYWORDS="amd64"
+KEYWORDS="amd64 ~arm64"
 
 SRC_URI="
 	amd64? (

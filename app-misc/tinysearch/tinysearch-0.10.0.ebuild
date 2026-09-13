@@ -91,7 +91,7 @@ SRC_URI="
 
 LICENSE="|| ( Apache-2.0 MIT ) BSD MIT Unicode-DFS-2016 || ( Apache-2.0 Boost-1.0 )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_compile() {
 	cargo_src_compile --features=bin

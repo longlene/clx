@@ -16,7 +16,7 @@ SRC_URI="https://github.com/Ezibenroc/PyRoaringBitMap/archive/refs/tags/${PV}.ta
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/PyRoaringBitMap-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	dev-python/cython[${PYTHON_USEDEP}]

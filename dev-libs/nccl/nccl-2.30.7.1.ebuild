@@ -12,7 +12,7 @@ S="${WORKDIR}"/nccl-${MY_PV}
 
 LICENSE="NVIDIA-r2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-util/nvidia-cuda-toolkit

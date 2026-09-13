@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/manrajgrover/py-log-symbols https://pypi.org/projec
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	$(python_gen_cond_dep '

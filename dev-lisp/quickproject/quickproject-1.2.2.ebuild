@@ -9,7 +9,7 @@ SRC_URI="https://github.com/xach/${PN}/archive/release-${PV}.tar.gz -> ${P}.tgz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 dev-lisp/cl-fad

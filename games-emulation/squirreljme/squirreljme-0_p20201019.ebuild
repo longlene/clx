@@ -13,7 +13,7 @@ SRC_URI="https://github.com/XerTheSquirrel/SquirrelJME/archive/${EGIT_COMMIT}.ta
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND=">=virtual/jre-1.7"
 RDEPEND="

@@ -16,7 +16,7 @@ SRC_URI="https://github.com/dmlc/xgboost/archive/refs/tags/v${PV}.tar.gz -> ${P}
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="cuda nccl python"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 

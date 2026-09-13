@@ -13,7 +13,7 @@ SRC_URI="https://code.zash.se/lua-cbor/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 RDEPEND="

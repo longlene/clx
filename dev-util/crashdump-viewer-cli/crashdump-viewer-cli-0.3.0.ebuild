@@ -197,7 +197,7 @@ S="${WORKDIR}/crashdump_viewer_cli-${PV}"
 
 LICENSE="Apache-2.0 BSD MIT Unicode-3.0 || ( Apache-2.0 Boost-1.0 )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_install() {
 	cargo_src_install

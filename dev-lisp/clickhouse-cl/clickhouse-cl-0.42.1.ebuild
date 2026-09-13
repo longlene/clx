@@ -11,7 +11,7 @@ SRC_URI="https://github.com/juliojimenez/clickhouse-cl/archive/refs/tags/${PV}.t
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/boost-json

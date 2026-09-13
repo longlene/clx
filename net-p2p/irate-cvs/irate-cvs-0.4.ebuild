@@ -15,7 +15,7 @@ HOMEPAGE="http://irate.sf.net"
 SLOT="0"
 LICENSE="GPL-2"
 S="${WORKDIR}/irate"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="sys-devel/gcc
 	sys-apps/which"

@@ -13,7 +13,7 @@ HOMEPAGE="https://telepath.im/projects/j2i/ https://pypi.org/project/j2i/"
 
 LICENSE="Unlicense"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

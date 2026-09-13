@@ -9,7 +9,7 @@ SRC_URI="https://github.com/jprjr/miniflac/archive/refs/tags/v${PV}.tar.gz -> ${
 
 LICENSE="0BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -15,7 +15,7 @@ SRC_URI="https://github.com/DinoThor/PyJabber/archive/refs/tags/v${PV}.tar.gz ->
 S="${WORKDIR}/PyJabber-${PV}"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	$(python_gen_cond_dep '

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/HideyoshiNakazone/jambo https://pypi.org/project/ja
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

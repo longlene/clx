@@ -11,7 +11,7 @@ EGIT_REPO_URI="http://repo.or.cz/r/cxml.git"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="!dev-lisp/cl-${PN}
 		>=dev-lisp/closure-common-20081130

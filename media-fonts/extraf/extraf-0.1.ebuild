@@ -10,7 +10,7 @@ SRC_URI="http://slackware.cs.utah.edu/pub/slackware/slackware-13.0/source/a/kbd/
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="amd64 arm ia64 ppc s390 sh sparc x86"
+KEYWORDS="amd64 arm ~arm64 ia64 ppc s390 sh sparc x86"
 
 src_unpack() {
 	dodir "${WORKDIR}"

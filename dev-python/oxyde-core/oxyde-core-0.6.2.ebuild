@@ -322,7 +322,7 @@ S="${WORKDIR}/oxyde-core-v${PV}/crates/oxyde-core-py"
 
 LICENSE="MIT Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD CDLA-Permissive-2.0 ISC Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="dev-db/sqlite:3="
 RDEPEND="${DEPEND}"

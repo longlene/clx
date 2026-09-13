@@ -9,7 +9,7 @@ SRC_URI="http://www.neu.uni-bayreuth.de/de/Uni_Bayreuth/Fakultaeten/1_Mathematik
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~ppc64 ~x86"
 
 #### Remove the following line when moving this ebuild to the main tree!
 RESTRICT="mirror"

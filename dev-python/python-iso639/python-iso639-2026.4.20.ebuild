@@ -18,7 +18,7 @@ SRC_URI="https://github.com/jacksonllee/iso639/archive/refs/tags/v${PV}.tar.gz -
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/iso639-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

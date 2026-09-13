@@ -14,7 +14,7 @@ SRC_URI="https://github.com/pallets-eco/flask-classful/archive/refs/tags/v${PV}.
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/flask-2.0[${PYTHON_USEDEP}]

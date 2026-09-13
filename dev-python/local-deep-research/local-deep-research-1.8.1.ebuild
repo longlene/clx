@@ -17,7 +17,7 @@ SRC_URI="https://github.com/LearningCircuit/local-deep-research/archive/refs/tag
 S="${WORKDIR}/${P}"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	$(python_gen_cond_dep '

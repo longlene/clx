@@ -17,7 +17,7 @@ SRC_URI="https://github.com/intelligent-machine-learning/dlrover/archive/refs/ta
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/psutil[${PYTHON_USEDEP}]

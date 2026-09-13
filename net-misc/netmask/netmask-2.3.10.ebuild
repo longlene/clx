@@ -8,7 +8,7 @@ SRC_URI="http://ftp.de.debian.org/debian/pool/main/n/netmask/${PN}_${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~s390 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~s390 ~sparc ~x86 ~x86-fbsd"
 
 src_compile() {
 	econf || die "Error: configure failed"

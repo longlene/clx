@@ -9,7 +9,7 @@ SRC_URI="ftp://ftp.personalcopy.net/pub/PC51f.sf2.gz"
 LICENSE="as-is"
 SLOT="0"
 S=${WORKDIR}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND="app-admin/eselect-timidity"
 

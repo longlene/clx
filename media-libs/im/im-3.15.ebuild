@@ -14,7 +14,7 @@ SRC_URI="https://downloads.sourceforge.net/project/imtoolkit/${PV}/Docs%20and%20
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="lua static-libs"
 
 DEPEND="

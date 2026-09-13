@@ -9,7 +9,7 @@ SRC_URI="http://www.un4seen.com/files/bassmod20-linux.zip
 
 SLOT="0"
 S=${WORKDIR}
-KEYWORDS="~x86 -*"
+KEYWORDS="~arm64 ~x86 -*"
 IUSE="doc"
 RESTRICT="mirror strip"
 

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/fabiocaccamo/django-maintenance-mode"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/django[${PYTHON_USEDEP}]

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/jrief/django-sass-processor/archive/refs/tags/${PV}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="dev-python/django[${PYTHON_USEDEP}]"
 

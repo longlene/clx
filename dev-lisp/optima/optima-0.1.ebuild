@@ -9,7 +9,7 @@ HOMEPAGE="https://github.com/m2ym/optima"
 SRC_URI="https://github.com/m2ym/optima/archive/v0.1.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="amd64 x86 ~arm"
+KEYWORDS="amd64 ~arm64 x86 ~arm"
 
 RDEPEND="${DEPEND}
 dev-lisp/alexandria

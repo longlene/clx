@@ -15,7 +15,7 @@ S="${WORKDIR}/ClawTeam-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="p2p"
 
 RDEPEND="$(python_gen_cond_dep '

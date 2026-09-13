@@ -15,7 +15,7 @@ SRC_URI="https://github.com/run-llama/llama_index/archive/refs/tags/v${PV}.tar.g
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/llama_index-${PV}/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/sqlalchemy-1.4.49[${PYTHON_USEDEP}]

@@ -223,7 +223,7 @@ S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 LICENSE="MIT"
 LICENSE+=" Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD Unicode-DFS-2016 Unlicense ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

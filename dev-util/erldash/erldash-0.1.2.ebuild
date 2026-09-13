@@ -144,7 +144,7 @@ SRC_URI="
 
 LICENSE="MIT Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	>=virtual/rust-1.31.0

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/gearman/gearmand/archive/${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="debug tcmalloc +memcache drizzle sqlite tokyocabinet postgres"
 
 RDEPEND="dev-libs/libevent

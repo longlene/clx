@@ -13,7 +13,7 @@ SRC_URI="https://gitlab.com/zombie-raptor/zombie-raptor/repository/archive.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

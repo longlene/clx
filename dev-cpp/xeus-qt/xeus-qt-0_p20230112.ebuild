@@ -13,7 +13,7 @@ SRC_URI="https://github.com/jupyter-xeus/xeus-qt/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-cpp/xeus

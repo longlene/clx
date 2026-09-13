@@ -18,7 +18,7 @@ SRC_URI="https://github.com/PrimeIntellect-ai/prime/archive/refs/tags/${PN}-v${P
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/prime-prime-sandboxes-v${PV}/packages/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx-0.25.0[${PYTHON_USEDEP}]

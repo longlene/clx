@@ -18,7 +18,7 @@ SRC_URI="https://github.com/langchain-ai/langchain-nvidia/archive/refs/tags/libs
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/langchain-nvidia-libs-ai-endpoints-v${PV}/libs/ai-endpoints/
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langchain-core-1.2.5[${PYTHON_USEDEP}]

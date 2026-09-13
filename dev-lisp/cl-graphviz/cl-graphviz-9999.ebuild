@@ -13,7 +13,7 @@ EGIT_REPO_URI="git@github.com:necto/cl-graphviz.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="media-gfx/graphviz
 		dev-lisp/cffi

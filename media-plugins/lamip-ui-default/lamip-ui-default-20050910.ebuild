@@ -11,7 +11,7 @@ RESTRICT="nomirror" #as long as it isn't in the official Portage tree
 
 SLOT="0"
 S="${WORKDIR}/controldefault"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="debug shoutcast"
 
 DEPEND="media-sound/lamip-core

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/docling-project/docling/archive/refs/tags/v${PV}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cli convert-core format-office format-pdf format-web"
 
 RDEPEND="

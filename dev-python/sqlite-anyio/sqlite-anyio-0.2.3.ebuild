@@ -16,7 +16,7 @@ HOMEPAGE="
 SRC_URI="https://github.com/davidbrochart/sqlite-anyio/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/anyio-4.0[${PYTHON_USEDEP}]

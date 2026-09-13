@@ -8,7 +8,7 @@ SRC_URI="http://www.netsurf-browser.org/projects/releases/libnsgif-${PV}-src.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 src_compile() {
 emake || die "Make failed"

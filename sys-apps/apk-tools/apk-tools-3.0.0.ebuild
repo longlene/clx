@@ -11,7 +11,7 @@ SRC_URI="https://github.com/alpinelinux/apk-tools/archive/v${PV}.tar.gz -> ${P}.
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="-lua -python zstd"
 
 DEPEND="

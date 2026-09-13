@@ -9,7 +9,7 @@ SRC_URI="https://github.com/matrix-org/purple-matrix/archive/v${PV}.tar.gz -> ${
 
 LICENSE="GPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="
 	dev-libs/json-gli1b

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/georgkrause/langcodes/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/language-data-1.2[${PYTHON_USEDEP}]

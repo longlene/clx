@@ -10,7 +10,7 @@ HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=301"
 SRC_URI="https://github.com/Valloric/xmledit/archive/1.9.4.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 VIM_PLUGIN_HELPFILES="xmledit"
 #VIM_PLUGIN_HELPTEXT=""

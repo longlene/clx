@@ -17,7 +17,7 @@ SRC_URI="https://github.com/csteinmetz1/pyloudnorm/archive/refs/tags/v${PV}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/scipy-1.0.1[${PYTHON_USEDEP}]

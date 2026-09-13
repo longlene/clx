@@ -12,7 +12,7 @@ SRC_URI="https://bellard.org/tinyemu/tinyemu-${MY_PV}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/tinyemu-2019-12-21
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="sdl"
 
 DEPEND="

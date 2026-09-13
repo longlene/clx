@@ -14,7 +14,7 @@ SRC_URI="https://github.com/kootenpv/yagmail/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="dkim keyring"
 RESTRICT="test"
 

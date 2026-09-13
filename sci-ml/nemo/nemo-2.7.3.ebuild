@@ -19,7 +19,7 @@ SRC_URI="https://github.com/NVIDIA-NeMo/NeMo/archive/refs/tags/v${PV}.tar.gz -> 
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/NeMo-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/huggingface_hub-0.24.0[${PYTHON_SINGLE_USEDEP}]

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/hanshuebner/temporary-file/archive/${EGIT_COMMIT}.ta
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

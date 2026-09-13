@@ -17,7 +17,7 @@ SRC_URI="https://github.com/srstevenson/xdg-base-dirs/archive/refs/tags/${PV}.ta
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

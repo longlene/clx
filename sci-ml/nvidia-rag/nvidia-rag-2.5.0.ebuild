@@ -19,7 +19,7 @@ SRC_URI="https://github.com/NVIDIA-AI-Blueprints/rag/archive/refs/tags/v${PV}.ta
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/rag-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pymilvus-model-0.3[${PYTHON_SINGLE_USEDEP}]

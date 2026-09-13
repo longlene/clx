@@ -17,7 +17,7 @@ S="${WORKDIR}/trackio-trackio-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/huggingface_hub-1.10.0[${PYTHON_SINGLE_USEDEP}]

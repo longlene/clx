@@ -16,7 +16,7 @@ S="${WORKDIR}/mlx-code-529a1889803b59ff87b936787db1dc64a937f071"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="extras"
 RESTRICT="test"
 

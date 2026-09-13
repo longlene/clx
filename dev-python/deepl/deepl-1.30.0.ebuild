@@ -15,7 +15,7 @@ S="${WORKDIR}/deepl-python-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND=">=dev-python/requests-2.32.5[${PYTHON_USEDEP}]"
 

@@ -7,7 +7,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="X"
 
 DEPEND="X? ( x11-libs/libX11 )"

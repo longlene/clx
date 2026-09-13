@@ -14,7 +14,7 @@ SRC_URI="https://github.com/jgm/djot.lua/archive/refs/tags/${PV}.tar.gz -> ${P}.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/djot.lua-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

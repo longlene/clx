@@ -1,7 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 DESCRIPTION="GmailFS provides a mountable Linux filesystem which uses your Gmail account"
 HOMEPAGE="http://richard.jones.name/google-hacks/gmail-filesystem/gmail-filesystem.html"
 SRC_URI="http://richard.jones.name/google-hacks/gmail-filesystem/${P}.tar.gz"

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/cpv-project/cpv-cql-driver/archive/${PV}.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-cpp/seastar

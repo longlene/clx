@@ -17,7 +17,7 @@ SRC_URI="https://github.com/dry-python/returns/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}]

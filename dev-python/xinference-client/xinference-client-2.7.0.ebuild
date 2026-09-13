@@ -18,7 +18,7 @@ SRC_URI="https://github.com/xorbitsai/inference-client/archive/refs/tags/v${PV}.
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/inference-client-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]

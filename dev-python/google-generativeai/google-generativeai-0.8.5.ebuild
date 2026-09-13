@@ -17,7 +17,7 @@ SRC_URI="https://files.pythonhosted.org/packages/6e/40/c42ff9ded9f09ec9392879a8e
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/google-ai-generativelanguage-0.6.15[${PYTHON_USEDEP}]

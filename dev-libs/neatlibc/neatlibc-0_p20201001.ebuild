@@ -13,7 +13,7 @@ SRC_URI="http://github.com/aligrudi/neatlibc/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	sys-devel/neatcc

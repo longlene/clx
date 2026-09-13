@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/ndantam/s-protobuf.git"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cffi

@@ -10,7 +10,7 @@ RESTRICT="mirror"
 LICENSE="GPL-2"
 SLOT="0"
 S="${PN}-2.1"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~ppc64 ~sparc ~x86"
 
 DEPEND=">=dev-libs/gmp-4.2.1
 	>=dev-libs/mpfr-2.1.1"

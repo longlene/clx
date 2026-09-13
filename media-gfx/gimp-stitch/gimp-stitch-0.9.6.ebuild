@@ -7,7 +7,7 @@ SRC_URI="mirror://sourceforge/stitchpanorama/stitch_${PV}.py"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="python"
 
 DEPEND=">=media-gfx/gimp-2.2"

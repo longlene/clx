@@ -17,7 +17,7 @@ SRC_URI="https://github.com/jdongian/python-jamo/archive/${EGIT_COMMIT}.tar.gz -
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/python-jamo-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

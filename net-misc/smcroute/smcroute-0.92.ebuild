@@ -1,7 +1,7 @@
 DESCRIPTION="command line tool to manipulate the multicast routes of the Linux kernel"
 SRC_URI="http://www.cschill.de/smcroute/${P}.tgz"
 HOMEPAGE="http://www.cschill.de/smcroute/"
-KEYWORDS="x86"
+KEYWORDS="~arm64 x86"
 LICENSE="GPL"
 SLOT="0"
 

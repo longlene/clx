@@ -17,7 +17,7 @@ SRC_URI="https://github.com/tttapa/py-build-cmake/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/distlib-0.3.5[${PYTHON_USEDEP}]

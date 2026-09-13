@@ -14,7 +14,7 @@ SRC_URI="https://github.com/pavdmyt/yaspin/archive/refs/tags/v${PV}.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/termcolor-2.2.0[${PYTHON_USEDEP}]

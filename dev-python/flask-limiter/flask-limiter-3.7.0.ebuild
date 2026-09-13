@@ -14,7 +14,7 @@ SRC_URI="https://github.com/alisaifee/flask-limiter/archive/refs/tags/${PV}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/flask-2[${PYTHON_USEDEP}]

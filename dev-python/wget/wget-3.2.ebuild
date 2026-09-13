@@ -16,7 +16,7 @@ SRC_URI="https://files.pythonhosted.org/packages/47/6a/62e288da7bcda82b935ff0c6c
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

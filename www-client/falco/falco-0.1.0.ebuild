@@ -310,7 +310,7 @@ S="${WORKDIR}/Falco-${PV}"
 
 LICENSE="MIT Apache-2.0 BSD BSD-2 CDLA-Permissive-2.0 ISC UoI-NCSA Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # real-video (openh264, default) compiles bundled C/asm source via the
 # openh264-sys2 crate's default "source" feature — no network fetch.

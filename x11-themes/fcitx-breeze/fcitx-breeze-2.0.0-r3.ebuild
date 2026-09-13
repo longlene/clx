@@ -10,7 +10,7 @@ SRC_URI="https://github.com/scratch-er/fcitx5-breeze/releases/download/v${PV}/fc
 LICENSE="GPL-3"
 SLOT="5"
 S="${WORKDIR}"/fcitx5-breeze
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	app-i18n/fcitx:5

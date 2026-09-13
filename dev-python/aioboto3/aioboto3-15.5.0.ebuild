@@ -17,7 +17,7 @@ SRC_URI="https://github.com/terricain/aioboto3/archive/refs/tags/v15.5.0.tar.gz 
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiobotocore-2.25.1[${PYTHON_USEDEP}]

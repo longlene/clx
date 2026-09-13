@@ -16,7 +16,7 @@ S="${WORKDIR}/pyVoIP-${PV}"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/audioop-lts[${PYTHON_USEDEP}]

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/rhasspy/gruut/archive/refs/tags/v${PV}.tar.gz -> gru
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/gruut-${PV}/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

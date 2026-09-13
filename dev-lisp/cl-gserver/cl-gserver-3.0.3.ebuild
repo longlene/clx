@@ -11,7 +11,7 @@ SRC_URI="https://github.com/mdbergmann/cl-gserver/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="AGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

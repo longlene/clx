@@ -17,7 +17,7 @@ SRC_URI="https://github.com/mozilla-ai/any-llm/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]

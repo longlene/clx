@@ -15,7 +15,7 @@ S="${WORKDIR}/comment_parser-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="$(python_gen_cond_dep '
 	>=dev-python/python-magic-0.4.27[${PYTHON_USEDEP}]

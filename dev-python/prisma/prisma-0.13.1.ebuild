@@ -14,7 +14,7 @@ SRC_URI="https://github.com/RobertCraigie/prisma-client-py/archive/refs/tags/v${
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx-0.19.0[${PYTHON_USEDEP}]

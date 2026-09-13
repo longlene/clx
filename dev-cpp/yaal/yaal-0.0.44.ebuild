@@ -11,7 +11,7 @@ SRC_URI="https://github.com/AmokHuginnsson/yaal/archive/refs/tags/release-${PV}.
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	sys-libs/gpm

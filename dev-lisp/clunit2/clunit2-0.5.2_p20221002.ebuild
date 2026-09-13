@@ -13,6 +13,6 @@ SRC_URI="https://notabug.org/cage/clunit2/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

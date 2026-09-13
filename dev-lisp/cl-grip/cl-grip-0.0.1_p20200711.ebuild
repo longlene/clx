@@ -13,7 +13,7 @@ SRC_URI="https://github.com/tychoish/cl-grip/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/local-time

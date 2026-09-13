@@ -15,7 +15,7 @@ SRC_URI="https://github.com/albumentations-team/albucore/archive/refs/tags/${PV}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	>=dev-python/numpy-1.24.4[${PYTHON_USEDEP}]

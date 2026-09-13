@@ -21,7 +21,7 @@ SRC_URI="
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/NVTX-${PV}/python
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	dev-python/cython[${PYTHON_USEDEP}]

@@ -12,7 +12,7 @@ SRC_URI="https://github.com/sharplispers/parse-number/archive/${EGIT_COMMIT}.tar
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

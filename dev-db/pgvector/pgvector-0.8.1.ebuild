@@ -9,7 +9,7 @@ SRC_URI="https://github.com/pgvector/pgvector/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-db/postgresql

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/coveooss/json-schema-for-humans/archive/refs/tags/v$
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	$(python_gen_cond_dep '

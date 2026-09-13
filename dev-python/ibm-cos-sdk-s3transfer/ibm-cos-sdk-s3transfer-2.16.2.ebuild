@@ -15,7 +15,7 @@ S="${WORKDIR}/ibm-cos-sdk-python-s3transfer-${PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	~dev-python/ibm-cos-sdk-core-2.16.2[${PYTHON_USEDEP}]

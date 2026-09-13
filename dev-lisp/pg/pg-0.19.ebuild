@@ -12,6 +12,6 @@ SRC_URI="http://emarsden.chez.com/downloads/pg-dot-lisp-${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

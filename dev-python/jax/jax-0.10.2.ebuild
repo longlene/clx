@@ -18,7 +18,7 @@ S="${WORKDIR}/jax-jax-v${PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/jaxlib-${PV}[${PYTHON_USEDEP}]

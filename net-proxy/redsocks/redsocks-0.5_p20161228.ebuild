@@ -12,7 +12,7 @@ HOMEPAGE="http://darkk.net.ru/redsocks/"
 SRC_URI="https://github.com/darkk/${PN}/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0 LGPL-2.1+ ZLIB"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 SLOT="0"
 IUSE="doc"
 RESTRICT="test"

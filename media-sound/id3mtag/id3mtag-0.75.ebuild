@@ -9,7 +9,7 @@ SRC_URI="http://home.wanadoo.nl/squell/files/id3-${PV}.tar.gz"
 
 LICENSE="Cryptix/BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 src_compile() {
 	make CFLAGS="${CFLAGS}" || die

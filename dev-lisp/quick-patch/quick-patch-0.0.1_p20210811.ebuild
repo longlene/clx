@@ -13,7 +13,7 @@ SRC_URI="https://github.com/tdrhq/quick-patch/archive/${EGIT_COMMIT}.tar.gz -> $
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

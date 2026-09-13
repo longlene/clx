@@ -6,4 +6,4 @@ PHEADERS="draw drawfcall event mouse"
 DEPEND="dev-plan9/lib9"
 inherit plan9-libs
 
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"

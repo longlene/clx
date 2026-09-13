@@ -17,7 +17,7 @@ SRC_URI="https://github.com/davidfokkema/textual-hires-canvas/archive/refs/tags/
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/numpy-2.2.1[${PYTHON_USEDEP}]

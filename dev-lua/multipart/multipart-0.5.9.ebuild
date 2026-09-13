@@ -14,7 +14,7 @@ SRC_URI="https://github.com/Kong/lua-multipart/archive/refs/tags/${PV}-1.tar.gz 
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/lua-${P}-1
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

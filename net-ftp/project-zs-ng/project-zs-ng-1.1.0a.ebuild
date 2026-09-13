@@ -12,7 +12,7 @@ SRC_URI="http://www.pzs-ng.com/stable/${DIR}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}/${DIR}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 RESTRICT="nomirror"
 
 RDEPEND="=net-ftp/glftpd-2.01"

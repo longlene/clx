@@ -13,7 +13,7 @@ SRC_URI="https://github.com/stylewarning/cl-algebraic-data-type/archive/${EGIT_C
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

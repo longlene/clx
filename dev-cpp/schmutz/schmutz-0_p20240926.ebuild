@@ -13,7 +13,7 @@ SRC_URI="https://github.com/arximboldi/schmutz/archive/${EGIT_COMMIT}.tar.gz -> 
 
 LICENSE="BSL-1.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-scheme/guile

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/HdrHistogram/hdr_histogram_erl/archive/${EGIT_COMMIT
 
 LICENSE="CC0-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

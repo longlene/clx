@@ -16,7 +16,7 @@ SRC_URI="https://github.com/QuentinFuxa/WhisperLiveKit/archive/refs/tags/${PV}.t
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/WhisperLiveKit-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/faster-whisper[${PYTHON_SINGLE_USEDEP}]

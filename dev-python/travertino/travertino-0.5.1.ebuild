@@ -21,7 +21,7 @@ SRC_URI="https://github.com/beeware/toga/archive/refs/tags/v${PV}.tar.gz -> ${MY
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}/travertino
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

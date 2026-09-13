@@ -11,6 +11,6 @@ SRC_URI="https://github.com/jcomellas/getopt/archive/v${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

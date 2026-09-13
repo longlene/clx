@@ -16,7 +16,7 @@ SRC_URI="https://github.com/kazhala/InquirerPy/archive/refs/tags/${PV}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/InquirerPy-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/prompt-toolkit-3.0.1[${PYTHON_USEDEP}]

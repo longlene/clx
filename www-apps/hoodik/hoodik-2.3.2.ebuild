@@ -682,7 +682,7 @@ S="${WORKDIR}/${P}/hoodik"
 
 LICENSE="CC-BY-NC-4.0 0BSD Apache-2.0 BSD CC0-1.0 CDLA-Permissive-2.0 ISC MIT MPL-2.0 Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="mirror"
 
 DEPEND="dev-db/sqlite:3="

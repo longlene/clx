@@ -15,7 +15,7 @@ SRC_URI="https://github.com/phenobarbital/async-notify/archive/refs/tags/${PV}.t
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 # aiosmtplib and navconfig are not yet packaged in portage

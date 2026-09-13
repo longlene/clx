@@ -13,7 +13,7 @@ SRC_URI="https://github.com/openresty/lua-resty-upstream-healthcheck/archive/v${
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	www-servers/nginx:*[nginx_modules_http_lua,nginx_modules_http_lua_upstream]

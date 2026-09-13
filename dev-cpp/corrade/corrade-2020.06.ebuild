@@ -12,6 +12,6 @@ SRC_URI="https://github.com/mosra/corrade/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-snapshot-${MY_PV}
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

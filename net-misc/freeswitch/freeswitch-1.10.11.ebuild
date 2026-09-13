@@ -11,7 +11,7 @@ SRC_URI="https://github.com/signalwire/freeswitch/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="MPL-1.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-db/postgresql

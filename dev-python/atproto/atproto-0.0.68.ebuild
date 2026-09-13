@@ -14,7 +14,7 @@ SRC_URI="https://github.com/MarshalX/atproto/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx-0.25.0[${PYTHON_USEDEP}]

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/rec/runs/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/xmod[${PYTHON_USEDEP}]

@@ -15,7 +15,7 @@ SRC_URI="https://github.com/phenobarbital/python-datamodel/archive/refs/tags/${P
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/numpy-1.26.4[${PYTHON_USEDEP}]

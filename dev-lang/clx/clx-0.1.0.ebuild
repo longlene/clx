@@ -11,7 +11,7 @@ SRC_URI="https://github.com/samyeyo/clx/archive/refs/tags/v${PV}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_prepare() {
 	# CMakeLists.txt hardcodes /usr/local prefix on non-Windows; cmake eclass overrides

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/ruricolist/defclass-std/archive/${EGIT_COMMIT}.tar.g
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

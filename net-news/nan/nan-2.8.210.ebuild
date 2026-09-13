@@ -4,7 +4,7 @@
 
 SLOT="0"
 LICENSE="BSD mindterm"
-KEYWORDS="ppc sparc x86"
+KEYWORDS="~arm64 ppc sparc x86"
 
 DESCRIPTION="An NNTP news client in Java"
 SRC_URI="http://resume.technoplaza.net/download/java/nan-${PV}-source.tar.bz2"

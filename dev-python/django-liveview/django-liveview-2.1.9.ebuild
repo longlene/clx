@@ -18,7 +18,7 @@ SRC_URI="https://github.com/Django-LiveView/liveview/archive/refs/tags/v${PV}.ta
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/liveview-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/django-4.2[${PYTHON_USEDEP}]

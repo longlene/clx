@@ -12,7 +12,7 @@ SRC_URI="https://github.com/benoitc/erlang-${PN}/archive/${PV}.tar.gz -> erlang-
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/erlang-${P}
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/yyzybb537/libgo/archive/v${PV}-stable.tar.gz -> ${P}
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="+shared"
 
 RDEPEND="${DEPEND}"

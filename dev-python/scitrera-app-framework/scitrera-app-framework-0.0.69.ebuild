@@ -15,7 +15,7 @@ S="${WORKDIR}/python-app-framework-${PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/botwinick-utils-0.0.20[${PYTHON_USEDEP}]

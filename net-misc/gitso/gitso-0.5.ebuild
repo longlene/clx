@@ -8,7 +8,7 @@ SRC_URI="http://gitso.googlecode.com/files/${PN}_${PV}_src.tar.bz2"
 
 LICENSE="GPL-3"
 S="${WORKDIR}/${MY_P}"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 SLOT="0"
 
 RDEPEND="dev-python/wxpython

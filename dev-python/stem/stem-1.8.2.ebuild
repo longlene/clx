@@ -13,5 +13,5 @@ HOMEPAGE="https://stem.torproject.org/ https://pypi.org/project/stem/"
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"

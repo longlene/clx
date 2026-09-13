@@ -47,7 +47,7 @@ S="${WORKDIR}/${PN}-${COMMIT}"
 
 LICENSE="LGPL-3 BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="debug doc go julia openmp profile R source test"
 
 CDEPEND="

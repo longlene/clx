@@ -6,4 +6,4 @@ PHEADERS="mux"
 DEPEND="dev-plan9/libthread"
 inherit plan9-libs
 
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/mishoo/sytes/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+sbcl"
 
 RDEPEND="${DEPEND}

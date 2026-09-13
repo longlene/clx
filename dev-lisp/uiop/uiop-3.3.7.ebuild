@@ -12,7 +12,7 @@ SRC_URI="http://common-lisp.net/project/asdf/archives/asdf-${PV}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}/asdf-${PV}/${PN}"
-KEYWORDS="~amd64 ~amd64-linux ~ppc ~sparc ~x64-macos ~x86 ~x86-linux ~x86-macos ~x86-solaris"
+KEYWORDS="~amd64 ~amd64-linux ~arm64 ~ppc ~sparc ~x64-macos ~x86 ~x86-linux ~x86-macos ~x86-solaris"
 
 RDEPEND="~dev-lisp/asdf-${PV}"
 

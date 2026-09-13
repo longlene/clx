@@ -6,7 +6,7 @@ HOMEPAGE="http://web.mit.edu/tbaran/www/autotalent.html"
 SRC_URI="http://web.mit.edu/tbaran/www/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="amd64 ~arm64 ppc x86"
 
 DEPEND="media-libs/ladspa-sdk"
 RDEPEND="${DEPEND}"

@@ -12,6 +12,6 @@ SRC_URI="https://github.com/kaniini/libucontext/archive/refs/tags/${P}.tar.gz ->
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${P}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

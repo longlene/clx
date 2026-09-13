@@ -11,7 +11,7 @@ SRC_URI="https://github.com/libSDL2pp/libSDL2pp/archive/${PV}.tar.gz -> ${P}.tar
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="
 	media-libs/libsdl2

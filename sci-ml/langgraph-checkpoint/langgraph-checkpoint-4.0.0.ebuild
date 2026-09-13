@@ -18,7 +18,7 @@ SRC_URI="https://github.com/langchain-ai/langgraph/archive/refs/tags/checkpoint=
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${P}/libs/checkpoint
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langchain-core-0.2.38[${PYTHON_USEDEP}]

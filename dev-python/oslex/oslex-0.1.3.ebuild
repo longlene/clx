@@ -18,7 +18,7 @@ SRC_URI="https://github.com/petamas/oslex/archive/refs/tags/release/v${PV}.tar.g
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/oslex-release-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/linkedin/shiv/archive/refs/tags/${PV}.tar.gz -> ${P}
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/click-6.7[${PYTHON_USEDEP}]

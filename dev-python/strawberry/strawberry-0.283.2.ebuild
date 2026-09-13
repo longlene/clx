@@ -17,7 +17,7 @@ SRC_URI="https://github.com/strawberry-graphql/strawberry/archive/refs/tags/${PV
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/graphql-core-3.2.0[${PYTHON_USEDEP}]

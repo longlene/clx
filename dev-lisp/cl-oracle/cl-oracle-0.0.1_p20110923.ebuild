@@ -12,7 +12,7 @@ SRC_URI="https://github.com/archimag/cl-oracle/archive/${EGIT_COMMIT}.tar.gz -> 
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-db/oracle-instantclient

@@ -12,7 +12,7 @@ SRC_URI="https://github.com/libxsmm/libxsmm/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="mkl"
 
 DEPEND="

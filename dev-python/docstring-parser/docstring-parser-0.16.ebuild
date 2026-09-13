@@ -18,7 +18,7 @@ SRC_URI="https://github.com/rr-/docstring_parser/archive/refs/tags/${PV}.tar.gz 
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/docstring_parser-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	test? (

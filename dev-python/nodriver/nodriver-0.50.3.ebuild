@@ -16,7 +16,7 @@ HOMEPAGE="
 
 LICENSE="AGPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/mss[${PYTHON_USEDEP}]

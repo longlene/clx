@@ -10,7 +10,7 @@ SRC_URI="https://bellard.org/TinyGL/TinyGL-${PV}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/TinyGL
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	x11-libs/libX11

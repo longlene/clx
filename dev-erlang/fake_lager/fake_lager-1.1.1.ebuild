@@ -14,7 +14,7 @@ SRC_URI="https://github.com/g-andrade/fake_lager/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_install() {
 	rebar3_install_lib "_build/${REBAR_PROFILE}/lib/lager"

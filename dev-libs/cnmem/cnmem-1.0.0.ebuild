@@ -11,7 +11,7 @@ SRC_URI="https://github.com/NVIDIA/cnmem/archive/refs/tags/v${PV}.tar.gz -> ${P}
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 DEPEND="dev-util/nvidia-cuda-toolkit"

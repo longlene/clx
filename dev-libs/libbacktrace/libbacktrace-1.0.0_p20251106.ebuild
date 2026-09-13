@@ -12,6 +12,6 @@ SRC_URI="https://github.com/ianlancetaylor/libbacktrace/archive/${EGIT_COMMIT}.t
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

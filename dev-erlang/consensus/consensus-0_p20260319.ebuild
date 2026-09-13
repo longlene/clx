@@ -13,7 +13,7 @@ S="${WORKDIR}/consensus-3ca6ef0799e55b71db44513f6c939088947e7272"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_install() {
 	rebar3_src_install

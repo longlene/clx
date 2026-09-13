@@ -495,7 +495,7 @@ SRC_URI="
 
 LICENSE="MIT Apache-2.0 BSD BSD-2 CDLA-Permissive-2.0 ISC MIT-0 Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+rustls http3 native-tls vsock"
 REQUIRED_USE="?? ( rustls native-tls )"
 

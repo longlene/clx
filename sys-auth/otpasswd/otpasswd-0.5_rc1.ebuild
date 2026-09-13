@@ -12,7 +12,7 @@ SRC_URI="http://thera.be/my_public/my_projects/otpasswd/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="virtual/pam dev-libs/gmp"
 DEPEND="${RDEPEND} dev-build/cmake"

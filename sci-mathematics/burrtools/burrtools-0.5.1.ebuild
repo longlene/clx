@@ -9,7 +9,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~alpha ~amd64 ~ppc ~ppc-macos ~ppc64"
+KEYWORDS="~arm64 x86 ~alpha ~amd64 ~ppc ~ppc-macos ~ppc64"
 
 IUSE="pdf"
 

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/Pycord-Development/pycord/archive/refs/tags/v${PV}.t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiohttp-3.13.2[${PYTHON_USEDEP}]

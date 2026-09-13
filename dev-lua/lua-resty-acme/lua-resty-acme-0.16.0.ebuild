@@ -13,7 +13,7 @@ SRC_URI="https://github.com/fffonion/lua-resty-acme/archive/refs/tags/${PV}.tar.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lua/lua-resty-http[${LUA_USEDEP}]

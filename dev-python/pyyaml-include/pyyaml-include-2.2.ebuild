@@ -14,7 +14,7 @@ SRC_URI="https://github.com/tanbro/pyyaml-include/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]

@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://github.com/kevinlynx/restas.file-publisher.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 CLSYSTEMS="restas.file-publisher"
 

@@ -15,7 +15,7 @@ S="${WORKDIR}/${PN}-${PV/_rc/rc}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="aiohttp django falcon flask quart sanic starlette tornado"
 RESTRICT="test"
 

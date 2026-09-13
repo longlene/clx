@@ -16,7 +16,7 @@ S="${WORKDIR}/pyld-${COMMIT}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/cachetools[${PYTHON_USEDEP}]

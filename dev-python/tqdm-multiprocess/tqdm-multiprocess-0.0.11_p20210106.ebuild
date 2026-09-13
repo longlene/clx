@@ -17,7 +17,7 @@ SRC_URI="https://github.com/EleutherAI/tqdm-multiprocess/archive/${EGIT_COMMIT}.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/tqdm[${PYTHON_USEDEP}]

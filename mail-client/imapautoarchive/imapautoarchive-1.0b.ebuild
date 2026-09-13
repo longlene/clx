@@ -8,7 +8,7 @@ HOMEPAGE="http://www.joeshmoe.com/imapautoarchive/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="hppa ia64 ~alpha ~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~arm64 hppa ia64 ~alpha ~amd64 ~ppc ~sparc ~x86"
 
 DEPEND="dev-perl/Mail-IMAPClient"
 

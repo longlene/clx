@@ -20,7 +20,7 @@ SRC_URI="
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/Qwen-Agent-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/dashscope-1.11.0[${PYTHON_USEDEP}]

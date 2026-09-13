@@ -15,7 +15,7 @@ S="${WORKDIR}/lexbor_erl-${PV}"
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="dev-libs/lexbor"
 RDEPEND="${DEPEND}"

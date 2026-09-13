@@ -13,7 +13,7 @@ HOMEPAGE="https://pypi.org/project/mcpygen/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiofiles-25.1.0[${PYTHON_USEDEP}]

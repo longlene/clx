@@ -12,7 +12,7 @@ S="${WORKDIR}/magpie-tts.cpp-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda test"
 RESTRICT="!test? ( test )"
 

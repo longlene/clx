@@ -11,7 +11,7 @@ SRC_URI="https://github.com/QuantStack/xvega/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	>=dev-cpp/nlohmann_json-3.12.0

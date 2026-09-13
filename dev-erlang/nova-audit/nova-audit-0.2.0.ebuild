@@ -13,7 +13,7 @@ S="${WORKDIR}/nova_audit-${PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 REBAR_APP_SRC="apps/nova_audit/src/nova_audit.app.src"
 

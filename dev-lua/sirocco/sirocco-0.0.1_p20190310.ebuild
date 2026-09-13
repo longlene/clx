@@ -15,7 +15,7 @@ SRC_URI="https://github.com/giann/sirocco/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

@@ -11,7 +11,7 @@ SRC_URI="amd64? ( lwper61-x86-linux.tar.gz lwdoc61-x86-linux.tar.gz )"
 LICENSE="as-is"
 SLOT="0"
 S=${WORKDIR}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+doc"
 
 RDEPEND="${DEPEND}"

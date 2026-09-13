@@ -15,7 +15,7 @@ S="${WORKDIR}/django-ranged-fileresponse-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND=">=dev-python/django-2.0[${PYTHON_USEDEP}]"

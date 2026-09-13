@@ -11,7 +11,7 @@ SRC_URI="https://gitlab.com/Rubo/wio/-/archive/${PV}/${P}.tar.gz"
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-libs/wayland

@@ -18,7 +18,7 @@ SRC_URI="
 
 LICENSE="MIT || ( BSD-2 LGPL-2.1+ )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

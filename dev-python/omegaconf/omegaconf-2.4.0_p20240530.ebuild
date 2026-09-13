@@ -17,7 +17,7 @@ SRC_URI="https://github.com/omry/omegaconf/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pyyaml-5.1.0[${PYTHON_USEDEP}]

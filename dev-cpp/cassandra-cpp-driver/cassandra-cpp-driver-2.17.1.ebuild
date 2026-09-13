@@ -12,7 +12,7 @@ SRC_URI="https://github.com/datastax/cpp-driver/archive/refs/tags/${PV}.tar.gz -
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/cpp-driver-${PV}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="ssl"
 
 RDEPEND="

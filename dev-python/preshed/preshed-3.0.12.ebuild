@@ -18,7 +18,7 @@ SRC_URI="https://github.com/explosion/preshed/archive/refs/tags/release-v${PV}.t
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/preshed-release-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	>=dev-python/cython-0.28[${PYTHON_USEDEP}]

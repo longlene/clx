@@ -12,7 +12,7 @@ SRC_URI="http://common-lisp.net/project/clouchdb/clouchdb_${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="example test"
 RESTRICT="!test? ( test )"

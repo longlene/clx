@@ -11,7 +11,7 @@ SRC_URI="https://github.com/martinmoene/jthread-lite/archive/refs/tags/v${PV}.ta
 
 LICENSE="BSL-1.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

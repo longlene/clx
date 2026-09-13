@@ -18,7 +18,7 @@ SRC_URI="https://github.com/thesmallstar/slackify-markdown-python/archive/refs/t
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/slackify-markdown-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/markdown-it-py-3.0.0[${PYTHON_USEDEP}]

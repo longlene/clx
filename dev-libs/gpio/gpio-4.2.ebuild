@@ -11,7 +11,7 @@ SRC_URI="https://github.com/dimitry-ishenko-cpp/gpio/archive/refs/tags/v${PV}.ta
 
 LICENSE="GPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-cpp/asio

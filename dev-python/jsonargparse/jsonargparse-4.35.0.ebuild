@@ -17,7 +17,7 @@ SRC_URI="https://github.com/omni-us/jsonargparse/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pyyaml-3.13.0[${PYTHON_USEDEP}]

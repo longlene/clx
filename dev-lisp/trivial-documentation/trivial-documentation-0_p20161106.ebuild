@@ -13,7 +13,7 @@ SRC_URI="https://github.com/eugeneia/trivial-documentation/archive/${EGIT_COMMIT
 
 LICENSE="AGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

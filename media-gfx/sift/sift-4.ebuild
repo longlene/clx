@@ -14,7 +14,7 @@ SRC_URI="http://www.cs.ubc.ca/~lowe/keypoints/${MY_P}.zip"
 LICENSE="${PN}"
 SLOT="0"
 S=${WORKDIR}/${MY_P}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="examples"
 
 RDEPEND="${DEPEND}"

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/eugeneia/erlangen/archive/${EGIT_COMMIT}.tar.gz -> $
 
 LICENSE="AGPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/trivia

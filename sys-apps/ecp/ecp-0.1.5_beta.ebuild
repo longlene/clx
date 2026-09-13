@@ -13,7 +13,7 @@ SRC_URI="http://download.savannah.nongnu.org/releases/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 src_compile() {
 	cd "${WORKDIR}"/${MY_P}

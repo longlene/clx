@@ -11,7 +11,7 @@ SRC_URI="http://common-lisp.net/project/fucc/files/fucc_0.2.1-alpha-20080624.tar
 
 LICENSE="MIT"
 S=${WORKDIR}/fucc_${PV}
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 SLOT="0"
 DEPEND="virtual/commonlisp"
 

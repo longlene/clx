@@ -13,7 +13,7 @@ HOMEPAGE="https://gitlab.com/Vivern/i-miss-you"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

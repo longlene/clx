@@ -13,7 +13,7 @@ SRC_URI="https://github.com/zeromq/dafka/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	net-libs/czmq

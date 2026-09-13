@@ -11,7 +11,7 @@ SRC_URI="https://github.com/pop-os/cosmic-wallpapers/archive/epoch-${PV}.tar.gz 
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

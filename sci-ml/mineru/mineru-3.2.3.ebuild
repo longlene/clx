@@ -19,7 +19,7 @@ S="${WORKDIR}/MinerU-mineru-${PV}-released"
 
 LICENSE="MinerU-Open-Source-License"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="pipeline s3 vlm"
 RESTRICT="test"
 

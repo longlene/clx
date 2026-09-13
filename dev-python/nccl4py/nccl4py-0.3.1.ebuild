@@ -19,7 +19,7 @@ S="${WORKDIR}"/nccl-nccl4py-v${PV}/bindings/nccl4py/
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/packaging[${PYTHON_USEDEP}]

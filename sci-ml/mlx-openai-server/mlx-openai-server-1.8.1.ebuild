@@ -15,7 +15,7 @@ SRC_URI="https://github.com/cubist38/mlx-openai-server/archive/refs/tags/v${PV}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/sharplispers/clawk/archive/${EGIT_COMMIT}.tar.gz -> 
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

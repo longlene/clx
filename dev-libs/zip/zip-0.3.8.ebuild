@@ -11,7 +11,7 @@ SRC_URI="https://github.com/kuba--/zip/archive/v${PV}.tar.gz -> kuba-${P}.gh.tar
 
 LICENSE="Unlicense"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

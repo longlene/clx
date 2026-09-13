@@ -13,7 +13,7 @@ SRC_URI="https://github.com/yyzybb537/libgonet/archive/v${PV}-stable.tar.gz -> $
 LICENSE="LGPL-3"
 SLOT="0"
 S="${WORKDIR}/${P}-stable"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="ssl"
 
 DEPEND="

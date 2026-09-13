@@ -16,7 +16,7 @@ S="${WORKDIR}/ninfer-${COMMIT}"
 # compiled directly into the binaries.
 LICENSE="Apache-2.0 MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # Upstream hardcodes CMAKE_CUDA_ARCHITECTURES=120a and refuses to configure with
 # any other value; the build target is a single NVIDIA GeForce RTX 5090.

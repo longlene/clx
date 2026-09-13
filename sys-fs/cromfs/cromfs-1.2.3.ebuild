@@ -8,7 +8,7 @@ SRC_URI="http://bisqwit.iki.fi/src/arch/cromfs-1.2.3.tar.bz2"
 
 LICENSE="GPL-1"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="static"
 
 DEPEND=">=sys-fs/fuse-2.5.2"

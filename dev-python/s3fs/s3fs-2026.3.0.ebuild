@@ -17,7 +17,7 @@ SRC_URI="https://github.com/fsspec/s3fs/archive/refs/tags/${PV}.tar.gz -> ${P}.g
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiobotocore-2.19.0[${PYTHON_USEDEP}]

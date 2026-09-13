@@ -23,7 +23,7 @@ RDEPEND="dev-lang/perl
 DEPEND="$RDEPEND
 	sys-apps/sed"
 S=${WORKDIR}/${MY_P}
-KEYWORDS="amd64 x86 ~sparc"
+KEYWORDS="amd64 ~arm64 x86 ~sparc"
 
 pkg_setup() {
 	enewgroup sqlgrey

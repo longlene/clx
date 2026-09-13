@@ -330,7 +330,7 @@ LICENSE="|| ( MIT Apache-2.0 )"
 # Dependent crate licenses
 LICENSE+=" Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD CC0-1.0 ISC MIT Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="$(python_gen_cond_dep '

@@ -9,7 +9,7 @@ SRC_URI="https://github.com/erlang-ls/erlang_ls/archive/${PV}.tar.gz -> ${P}.tar
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-util/rebar:3

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Kong/lua-resty-healthcheck/archive/refs/tags/${PV}.t
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	${LUA_DEPS}

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/web-push-libs/vapid/archive/refs/tags/${PV}.tar.gz -
 LICENSE="MPL-2.0"
 SLOT="0"
 S="${WORKDIR}"/vapid-${PV}/python
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/cryptography-2.5[${PYTHON_USEDEP}]

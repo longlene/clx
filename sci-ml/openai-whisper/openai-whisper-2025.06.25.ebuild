@@ -20,7 +20,7 @@ SRC_URI="https://github.com/openai/whisper/archive/refs/tags/v${MY_PV}.tar.gz ->
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/whisper-${MY_PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]

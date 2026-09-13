@@ -18,7 +18,7 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0/${PV}"
 S="${WORKDIR}/c${P}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="allegro bindings examples freetype glfw glut opengl sdl vulkan"
 
 RDEPEND="

@@ -17,7 +17,7 @@ SRC_URI="https://gitlab.com/mad-moo/revel/-/archive/${EGIT_COMMIT}/revel-${EGIT_
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/blessed-1.20.0[${PYTHON_USEDEP}]

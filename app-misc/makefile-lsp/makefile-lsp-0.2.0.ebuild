@@ -122,7 +122,7 @@ LICENSE="Apache-2.0"
 # Dependent crate licenses
 LICENSE+=" MIT MIT-0 Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 QA_FLAGS_IGNORED="usr/bin/makefile-lsp"
 QA_PRESTRIPPED="usr/bin/makefile-lsp"

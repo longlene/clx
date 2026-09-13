@@ -15,7 +15,7 @@ S="${WORKDIR}/hydra-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 # test deps include pytest-snail, not packaged in Gentoo
 RESTRICT="test"
 

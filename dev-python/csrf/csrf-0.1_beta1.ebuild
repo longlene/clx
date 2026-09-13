@@ -13,4 +13,4 @@ HOMEPAGE="https://pypi.org/project/csrf/ https://github.com/golightlyb/csrf.py"
 
 LICENSE="FSFAP"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

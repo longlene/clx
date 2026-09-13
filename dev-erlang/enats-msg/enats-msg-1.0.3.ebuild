@@ -15,7 +15,7 @@ S="${WORKDIR}/enats_msg-${PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_prepare() {
 	sed -e "s/{vsn, semver}/{vsn, \"${PV}\"}/" -i src/enats_msg.app.src || die

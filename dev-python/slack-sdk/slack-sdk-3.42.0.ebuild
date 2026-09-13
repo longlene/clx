@@ -18,7 +18,7 @@ S="${WORKDIR}/python-slack-sdk-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	test? (

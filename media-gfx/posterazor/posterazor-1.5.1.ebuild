@@ -9,7 +9,7 @@ RESTRICT="primaryuri"
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND=">=x11-libs/fltk-1.1
 	>=media-libs/freeimage-3.10.0

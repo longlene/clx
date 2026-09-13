@@ -14,7 +14,7 @@ SRC_URI="https://github.com/wandb/wandb/archive/refs/tags/v${PV}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/click-8.2.0[${PYTHON_USEDEP}]

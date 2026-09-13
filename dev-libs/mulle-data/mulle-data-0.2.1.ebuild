@@ -9,7 +9,7 @@ SRC_URI="https://github.com/mulle-c/mulle-data/archive/refs/tags/${PV}.tar.gz ->
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-libs/mulle-c11

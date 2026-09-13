@@ -12,7 +12,7 @@ SRC_URI="http://devernay.free.fr/hacks/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_configure() {
 

@@ -14,6 +14,6 @@ SRC_URI="https://github.com/horazont/aiosasl/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RESTRICT="test"

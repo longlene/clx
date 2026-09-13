@@ -17,7 +17,7 @@ SRC_URI="https://github.com/Chaoses-Ib/nest-asyncio2/archive/refs/tags/v${PV}.ta
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

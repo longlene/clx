@@ -579,7 +579,7 @@ LICENSE+="
 	Unicode-DFS-2016 WTFPL-2 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RUST_MIN_VER="1.88.0"
 
 # fuser uses the fusermount3 helper (pure-Rust mount, no libfuse linkage)

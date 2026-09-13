@@ -11,7 +11,7 @@ SRC_URI="https://github.com/IoLanguage/io/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="cgi clutter dbi doc editline google gui http image jabber libffi libxml2
 	lzo md5 ncurses ogg opengl postgres pcre python readline sha1 sndfile sockets
 	sqlite syslog theora threads truetype twitter vorbis zlib"

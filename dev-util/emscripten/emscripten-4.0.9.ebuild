@@ -14,7 +14,7 @@ SRC_URI="https://github.com/emscripten-core/emscripten/archive/${PV}.tar.gz -> $
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="java python llvm_targets_WebAssembly"
 
 REQUIRED_USE="llvm_targets_WebAssembly"

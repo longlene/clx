@@ -14,7 +14,7 @@ SRC_URI="https://github.com/hjson/hjson-py/archive/refs/tags/v${PV}.tar.gz -> ${
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/hjson-py-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RESTRICT="test"
 

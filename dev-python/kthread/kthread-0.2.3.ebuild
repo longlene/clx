@@ -13,5 +13,5 @@ HOMEPAGE="https://github.com/munshigroup/kthread https://pypi.org/project/kthrea
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"

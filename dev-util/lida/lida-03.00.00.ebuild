@@ -9,7 +9,7 @@ SRC_URI="mirror://sourceforge/$PN/$P.tgz
 		 mirror://sourceforge/bastard/libdisasm-0.16.tgz"
 LICENSE="GPL-1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="dev-perl/perl-tk"
 

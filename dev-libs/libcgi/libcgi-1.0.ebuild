@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 # On freshmeat this is marked as LGPL. In the package itself, there is no license text.
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 #RESTRICT="strip"
 # doesn't work in parallel with cgilib
 DEPEND="!dev-libs/cgilib"

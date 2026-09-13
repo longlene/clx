@@ -12,7 +12,7 @@ SRC_URI="https://github.com/intel/libxcam/archive/release_${PV}.tar.gz -> ${P}.t
 LICENSE="Apache-2.0"
 SLOT="0"
 
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="
 	+shared-libs static-libs debug profiling
 	drm

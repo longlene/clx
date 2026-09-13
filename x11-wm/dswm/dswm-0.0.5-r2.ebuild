@@ -10,7 +10,7 @@ DESCRIPTION="DSWM is a tiling, keyboard driven X11 Window Manager written entire
 SRC_URI="http://sourceforge.net/projects/dswm/files/0.0.5r2/dswm-0.0.5r2.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="emacs doc"
 
 CLPACKAGE="dswm"

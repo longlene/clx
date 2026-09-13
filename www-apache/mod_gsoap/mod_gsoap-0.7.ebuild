@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/mod-gsoap/${P}.tar.gz"
 
 LICENSE="GPL-2"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 SLOT="0"
 
 DEPEND="net-libs/gsoap"

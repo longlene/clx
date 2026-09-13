@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nickcoutsos/python-repath https://pypi.org/project/
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	$(python_gen_cond_dep '

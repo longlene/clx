@@ -13,7 +13,7 @@ SRC_URI="https://github.com/fukamachi/smithy-lisp/archive/${EGIT_COMMIT}.tar.gz 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

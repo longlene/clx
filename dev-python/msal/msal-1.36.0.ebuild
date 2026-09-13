@@ -18,7 +18,7 @@ SRC_URI="https://github.com/AzureAD/microsoft-authentication-library-for-python/
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/microsoft-authentication-library-for-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/requests-2.0.0[${PYTHON_USEDEP}]

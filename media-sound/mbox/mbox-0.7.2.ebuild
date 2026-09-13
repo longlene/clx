@@ -10,7 +10,7 @@ SRC_URI="http://www.mbox.wz.cz/src/mbox-0.7.2.tar.bz2"
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="ogg mp3 mplayer -python-optimize"
 
 RDEPEND="dev-python/wxpython

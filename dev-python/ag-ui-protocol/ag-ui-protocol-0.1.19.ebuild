@@ -13,7 +13,7 @@ HOMEPAGE="https://pypi.org/project/ag-ui-protocol/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/pydantic[${PYTHON_USEDEP}]

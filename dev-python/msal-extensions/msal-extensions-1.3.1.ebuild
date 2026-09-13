@@ -18,7 +18,7 @@ SRC_URI="https://github.com/AzureAD/microsoft-authentication-extensions-for-pyth
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/microsoft-authentication-extensions-for-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/msal-1.29.0[${PYTHON_USEDEP}]

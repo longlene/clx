@@ -13,7 +13,7 @@ SRC_URI="https://github.com/bungle/lua-resty-session/archive/refs/tags/v${PV}.ta
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

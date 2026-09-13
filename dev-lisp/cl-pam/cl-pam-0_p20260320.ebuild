@@ -13,7 +13,7 @@ S="${WORKDIR}/${PN}-ab15544333c00b3a359928de760a7f902d56be83"
 
 LICENSE="0BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-lisp/cffi

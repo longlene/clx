@@ -15,7 +15,7 @@ SRC_URI="http://fpdns.googlecode.com/files/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}"/"${MY_P}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND=">=dev-perl/Net-DNS-0.42"
 

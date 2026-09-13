@@ -18,7 +18,7 @@ S="${WORKDIR}/ArchiveBox-${MY_PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="debug ldap"
 RESTRICT="test"
 

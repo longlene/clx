@@ -18,7 +18,7 @@ SRC_URI="https://github.com/hylang/hy/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND+="
 	>=dev-python/funcparserlib-1.0.0[${PYTHON_USEDEP}]

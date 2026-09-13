@@ -17,7 +17,7 @@ SRC_URI="https://github.com/ultralytics/thop/archive/refs/tags/v${PV}.tar.gz -> 
 LICENSE="AGPL-3.0"
 SLOT="0"
 S="${WORKDIR}"/thop-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/pytorch[${PYTHON_USEDEP}]

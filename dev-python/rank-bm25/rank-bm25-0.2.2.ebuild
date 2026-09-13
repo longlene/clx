@@ -18,7 +18,7 @@ SRC_URI="https://github.com/dorianbrown/rank_bm25/archive/refs/tags/${PV}.tar.gz
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/rank_bm25-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]

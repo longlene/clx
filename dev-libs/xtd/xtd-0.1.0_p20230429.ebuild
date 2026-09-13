@@ -13,7 +13,7 @@ SRC_URI="https://github.com/gammasoft71/xtd/archive/${EGIT_COMMIT}.tar.gz -> ${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	media-libs/gsound

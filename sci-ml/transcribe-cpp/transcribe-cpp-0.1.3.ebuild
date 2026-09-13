@@ -12,7 +12,7 @@ S="${WORKDIR}/transcribe.cpp-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+blas cuda openmp test tools vulkan"
 RESTRICT="!test? ( test )"
 

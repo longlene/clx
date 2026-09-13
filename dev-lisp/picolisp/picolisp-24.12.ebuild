@@ -15,7 +15,7 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}/picoLisp"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="bash-completion doc examples src"
 
 QA_PREBUILT="*"

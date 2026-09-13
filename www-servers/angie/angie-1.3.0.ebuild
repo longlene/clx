@@ -11,7 +11,7 @@ SRC_URI="https://github.com/webserver-llc/angie/archive/refs/tags/${PV}.tar.gz -
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 ANGIE_MODULES_STD="access api auth_basic autoindex browser charset empty_gif
 	fastcgi geo grpc gzip limit_conn limit_req map memcached mirror

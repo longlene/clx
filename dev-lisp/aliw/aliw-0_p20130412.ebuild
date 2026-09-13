@@ -13,7 +13,7 @@ SRC_URI="https://github.com/vy/aliw/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-difflib

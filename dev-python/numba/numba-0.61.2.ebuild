@@ -14,6 +14,6 @@ SRC_URI="https://github.com/numba/numba/archive/refs/tags/0.58.1.tar.gz -> ${P}.
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 distutils_enable_tests pytest

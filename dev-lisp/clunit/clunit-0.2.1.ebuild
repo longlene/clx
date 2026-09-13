@@ -10,6 +10,6 @@ SRC_URI="https://github.com/tgutu/clunit/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 x86 ~arm"
+KEYWORDS="amd64 ~arm64 x86 ~arm"
 
 RDEPEND="${DEPEND}"

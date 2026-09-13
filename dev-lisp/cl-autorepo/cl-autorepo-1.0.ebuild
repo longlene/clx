@@ -10,6 +10,6 @@ SRC_URI="https://github.com/billstclair/cl-autorepo/archive/${PV}.tar.gz -> ${P}
 
 LICENSE="Apache"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/atlas-engineer/nclasses/archive/refs/tags/${PV}.tar.
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/moptilities

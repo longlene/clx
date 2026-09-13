@@ -13,7 +13,7 @@ SRC_URI="https://github.com/bungle/lua-resty-validation/archive/refs/tags/v${PV}
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	${DEPEND}

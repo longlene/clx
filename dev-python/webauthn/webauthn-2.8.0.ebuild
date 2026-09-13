@@ -15,7 +15,7 @@ S="${WORKDIR}/py_webauthn-${PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/cbor2[${PYTHON_USEDEP}]

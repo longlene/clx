@@ -8,7 +8,7 @@ HOMEPAGE="http://refocus-it.sf.net/"
 
 SLOT="0"
 LICENSE="GPL"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND=">=media-gfx/gimp-2.0.0
 		>=x11-libs/gtk+-2.2.2"

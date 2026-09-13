@@ -14,7 +14,7 @@ SRC_URI="https://github.com/kontext-security/browser-use-mcp-server/archive/refs
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

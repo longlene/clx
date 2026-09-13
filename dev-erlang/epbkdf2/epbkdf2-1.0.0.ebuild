@@ -9,6 +9,6 @@ SRC_URI="https://github.com/aeternity/epbkdf2/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

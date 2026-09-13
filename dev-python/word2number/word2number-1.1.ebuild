@@ -15,7 +15,7 @@ SRC_URI="https://github.com/akshaynagpal/w2n/archive/refs/tags/${PV}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/w2n-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

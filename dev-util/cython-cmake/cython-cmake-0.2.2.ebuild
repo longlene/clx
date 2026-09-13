@@ -14,7 +14,7 @@ SRC_URI="https://github.com/scikit-build/cython-cmake/archive/refs/tags/v${PV}.t
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/cython[${PYTHON_USEDEP}]

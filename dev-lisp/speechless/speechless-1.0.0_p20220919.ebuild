@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Shirakumo/speechless/archive/${EGIT_COMMIT}.tar.gz -
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-markless

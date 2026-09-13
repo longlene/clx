@@ -11,7 +11,7 @@ SRC_URI="https://github.com/Shirakumo/courier/archive/${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/bordeaux-threads

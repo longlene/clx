@@ -11,7 +11,7 @@ SRC_URI="https://gitea.osmocom.org/osmocom/libosmocore/archive/${PV}.tar.gz -> $
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-libs/libusb

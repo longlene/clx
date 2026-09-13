@@ -19,7 +19,7 @@ S="${WORKDIR}"/PyMuPDF-${PV}
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	app-text/mupdf

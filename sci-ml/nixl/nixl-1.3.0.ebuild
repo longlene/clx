@@ -13,7 +13,7 @@ SRC_URI="https://github.com/ai-dynamo/nixl/archive/refs/tags/v${PV}.tar.gz -> ${
 
 LICENSE="Apache-2.0 MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda gds mooncake test ucx"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"

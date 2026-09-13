@@ -13,6 +13,6 @@ SRC_URI="https://github.com/fukamachi/cl-fluent-logger/archive/${EGIT_COMMIT}.ta
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

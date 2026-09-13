@@ -16,7 +16,7 @@ HOMEPAGE="
 SRC_URI="https://github.com/PrimeIntellect-ai/verifiers/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/datasets-3.0.0[${PYTHON_SINGLE_USEDEP}]

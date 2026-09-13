@@ -10,7 +10,7 @@ SRC_URI="http://tichy.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~arm"
+KEYWORDS="~arm ~arm64"
 
 RDEPEND=">=dev-python/pygame-1.8.0
 	dev-python/python-xlib"

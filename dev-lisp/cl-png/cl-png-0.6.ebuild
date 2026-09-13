@@ -9,7 +9,7 @@ SRC_URI="http://www.ljosa.com/~ljosa/software/cl-png/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND} dev-lisp/cffi"
 

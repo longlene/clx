@@ -13,7 +13,7 @@ SRC_URI="https://github.com/rudolfochrist/cl-change-case/archive/${EGIT_COMMIT}.
 
 LICENSE="LLGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

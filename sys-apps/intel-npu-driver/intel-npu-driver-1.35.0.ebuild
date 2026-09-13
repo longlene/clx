@@ -41,7 +41,7 @@ S="${WORKDIR}"/linux-npu-driver-${PV}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="compiler"
 
 # libopenvino_intel_npu_compiler.so is a CMake MODULE (dlopen-only); SONAME is intentionally absent

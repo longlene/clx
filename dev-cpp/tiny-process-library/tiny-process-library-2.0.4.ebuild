@@ -11,7 +11,7 @@ SRC_URI="https://gitlab.com/eidheim/tiny-process-library/-/archive/v2.0.4/tiny-p
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

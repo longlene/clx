@@ -14,7 +14,7 @@ SRC_URI="https://files.pythonhosted.org/packages/fe/cf/415c76d473bc09f8dd707c9fe
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/pyyaml[${PYTHON_USEDEP}]

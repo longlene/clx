@@ -21,7 +21,7 @@ SRC_URI="
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/SmolVM-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/smolvm-core-${PV}[${PYTHON_USEDEP}]

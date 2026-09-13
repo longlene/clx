@@ -19,7 +19,7 @@ S="${WORKDIR}/Run-${PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/leptonai-0.26.6[${PYTHON_SINGLE_USEDEP}]

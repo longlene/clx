@@ -9,7 +9,7 @@ HOMEPAGE="http://cliki.net/"
 EGIT_REPO_URI="git://github.com/vsedach/cliki2.git"
 LICENSE="AGPLv3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 dev-lisp/alexandria

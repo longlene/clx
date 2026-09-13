@@ -14,7 +14,7 @@ HOMEPAGE="https://gitlab.com/noppo/gevent-websocket https://pypi.org/project/gev
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="$(python_gen_cond_dep '

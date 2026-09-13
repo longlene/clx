@@ -14,7 +14,7 @@ SRC_URI="https://github.com/sdb9696/firebase-messaging/archive/refs/tags/${PV}.t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/protobuf-4.24.3[${PYTHON_USEDEP}]

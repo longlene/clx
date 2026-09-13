@@ -13,6 +13,6 @@ SRC_URI="https://github.com/Dobiasd/FunctionalPlus/archive/${EGIT_COMMIT}.tar.gz
 
 LICENSE="BSL-1.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

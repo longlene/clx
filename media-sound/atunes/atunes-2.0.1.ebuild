@@ -11,7 +11,7 @@ SRC_URI="http://downloads.sourceforge.net/atunes/${MY_PN}-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 S=${WORKDIR}/${MY_PN}-${PV}-SNAPSHOT
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="mplayer mp3 flac ogg"
 # TODO - Package depends on either mplayer or xine.
 # idl0r helped with the current implementation. Hopefully I got it right!

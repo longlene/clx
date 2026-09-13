@@ -11,7 +11,7 @@ SRC_URI="https://github.com/jupyter-xeus/xeus-sqlite/archive/refs/tags/${PV}.tar
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	>=dev-cpp/xeus-zmq-3.0.0

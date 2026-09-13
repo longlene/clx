@@ -14,7 +14,7 @@ SRC_URI="https://github.com/Shookakko/slynk-client/archive/${EGIT_COMMIT}.tar.gz
 LICENSE="GPL-2.0"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	app-emacs/sly

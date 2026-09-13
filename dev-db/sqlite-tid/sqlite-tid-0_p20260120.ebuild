@@ -126,7 +126,7 @@ S="${WORKDIR}/sqlite-tid-${MY_COMMIT}"
 
 LICENSE="|| ( Apache-2.0 MIT ) Apache-2.0 BSD ISC MIT Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # clang-sys@1.8.1 (used by bundled bindgen@0.60.1) supports libclang 3.5–17.0.
 # The system default clang (22) is outside that range and produces opaque bindgen

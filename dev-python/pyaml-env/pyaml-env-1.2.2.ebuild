@@ -18,7 +18,7 @@ SRC_URI="https://github.com/mkaranasou/pyaml_env/archive/refs/tags/v${PV}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/pyaml_env-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pyyaml-5.0[${PYTHON_USEDEP}]

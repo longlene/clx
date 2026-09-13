@@ -21,7 +21,7 @@ SRC_URI="https://github.com/NVIDIA/NeMo-Retriever/archive/refs/tags/${PV}.tar.gz
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/NeMo-Retriever-${PV}/api
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/backoff-2.2.1[${PYTHON_USEDEP}]

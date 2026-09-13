@@ -14,7 +14,7 @@ SRC_URI="https://github.com/absadiki/pywhispercpp/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="examples gui"
 

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/NVIDIA/context-aware-rag/archive/refs/tags/${PV}.tar
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pymilvus-model-0.3.2[${PYTHON_SINGLE_USEDEP}]

@@ -8,7 +8,7 @@ SRC_URI="http://tibleiz.net/download/copper-${PV}-src.tar.gz -> ${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="+llvm"
 
 RDEPEND="${DEPEND}

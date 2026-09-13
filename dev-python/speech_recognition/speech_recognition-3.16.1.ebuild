@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Uberi/speech_recognition/archive/${PV}.tar.gz -> ${P
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-python/typing-extensions[${PYTHON_USEDEP}]

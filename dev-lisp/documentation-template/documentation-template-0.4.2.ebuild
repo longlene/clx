@@ -9,7 +9,7 @@ SRC_URI="http://weitz.de/files/documentation-template.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 		dev-lisp/cl-who"

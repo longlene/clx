@@ -10,7 +10,7 @@ SRC_URI="https://adi.tilde.institute/pp/${P}.tgz"
 LICENSE="ISC"
 SLOT="0"
 S="${WORKDIR}"/${PN}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

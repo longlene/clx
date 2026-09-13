@@ -18,7 +18,7 @@ SRC_URI="https://github.com/LowinLi/transformers-stream-generator/archive/refs/t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/transformers-4.26.1[${PYTHON_SINGLE_USEDEP}]

@@ -12,7 +12,7 @@ SRC_URI="https://github.com/archimag/wiki-parser/archive/version-${PV}.tar.gz ->
 LICENSE="LLGPL-2.1"
 SLOT="0"
 S="${WORKDIR}/${PN}-version-${PV}"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="dev-lisp/alexandria
 dev-lisp/iterate

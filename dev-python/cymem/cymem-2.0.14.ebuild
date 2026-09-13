@@ -16,7 +16,7 @@ SRC_URI="https://github.com/explosion/cymem/archive/refs/tags/release-v${PV}.tar
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-release-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	>=dev-python/cython-0.25[${PYTHON_USEDEP}]

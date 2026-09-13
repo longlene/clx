@@ -13,7 +13,7 @@ SRC_URI="https://github.com/lisp-stat/special-functions/archive/${EGIT_COMMIT}.t
 
 LICENSE="MS-PL"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/numerical-utilities

@@ -12,6 +12,6 @@ SRC_URI="https://github.com/comtihon/bson-erlang/archive/v0.2.2.tar.gz -> ${MY_P
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}/${MY_PN}-${PV}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

@@ -12,6 +12,6 @@ SRC_URI="https://github.com/dermesser/libsocket/archive/v${PV}.tar.gz -> ${P}.ta
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

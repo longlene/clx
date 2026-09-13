@@ -6,4 +6,4 @@ PHEADERS="memlayer"
 DEPEND="dev-plan9/libmemdraw"
 inherit plan9-libs
 
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"

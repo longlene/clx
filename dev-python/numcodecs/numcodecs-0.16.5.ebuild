@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/zarr-developers/numcodecs"
 
 LICENSE="MIT BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="crc32c google-crc32c msgpack"
 RESTRICT="test"
 

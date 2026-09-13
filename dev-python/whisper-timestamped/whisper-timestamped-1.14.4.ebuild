@@ -15,7 +15,7 @@ SRC_URI="https://github.com/linto-ai/whisper-timestamped/archive/refs/tags/v${PV
 LICENSE="AGPL-3.0"
 SLOT="0"
 S="${WORKDIR}"/${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/cython[${PYTHON_USEDEP}]

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/marijnh/Postmodern/archive/v${PV}.tar.gz -> ${P}.tar
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

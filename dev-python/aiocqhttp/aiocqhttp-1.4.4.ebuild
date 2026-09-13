@@ -18,7 +18,7 @@ SRC_URI="https://github.com/nonebot/aiocqhttp/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/quart-0.17[${PYTHON_USEDEP}]

@@ -11,6 +11,6 @@ SRC_URI="https://github.com/luketokheim/lockables/archive/refs/tags/v${PV}.tar.g
 
 LICENSE="BSL-1.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

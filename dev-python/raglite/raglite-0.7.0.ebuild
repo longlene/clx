@@ -17,7 +17,7 @@ SRC_URI="https://github.com/superlinear-ai/raglite/archive/refs/tags/v${PV}.tar.
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/platformdirs-4.0.0[${PYTHON_USEDEP}]

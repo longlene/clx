@@ -18,7 +18,7 @@ SRC_URI="https://github.com/googleapis/python-spanner/archive/refs/tags/v${PV}.t
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/python-spanner-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/google-api-core-1.34.0[${PYTHON_USEDEP}]

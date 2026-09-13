@@ -11,7 +11,7 @@ RESTRICT="userpriv mirror"
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}/${PN}-wot"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 RDEPEND=">=virtual/jdk-1.5
 	|| ( net-p2p/freenet
 	net-p2p/freenet-bin )"

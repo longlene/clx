@@ -14,7 +14,7 @@ SRC_URI="https://github.com/apify/crawlee-python/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="beautifulsoup curl-impersonate parsel postgres redis sqlite"
 RESTRICT="test"
 

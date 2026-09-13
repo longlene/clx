@@ -10,4 +10,4 @@ S="${WORKDIR}/bun-bun-v${PV}"
 
 LICENSE="TODO"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

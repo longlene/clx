@@ -21,7 +21,7 @@ SRC_URI="https://github.com/aliyun/aliyun-openapi-python-sdk/archive/${EGIT_COMM
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${MY_PN}-${EGIT_COMMIT}/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/jmespath-0.9.3[${PYTHON_USEDEP}]

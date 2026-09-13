@@ -17,7 +17,7 @@ SRC_URI="https://github.com/makinacorpus/easydict/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="LGPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

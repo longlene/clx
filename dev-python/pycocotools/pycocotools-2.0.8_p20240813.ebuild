@@ -20,7 +20,7 @@ SRC_URI="https://github.com/ppwwyyxx/cocoapi/archive/${EGIT_COMMIT}.tar.gz -> co
 
 SLOT="0"
 S="${WORKDIR}"/cocoapi-${EGIT_COMMIT}/PythonAPI
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/matplotlib-2.1.0[${PYTHON_USEDEP}]

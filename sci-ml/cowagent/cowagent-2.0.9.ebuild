@@ -16,7 +16,7 @@ S="${WORKDIR}/CowAgent-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="doc feishu plugins tiktoken voice wechat"
 RESTRICT="test"
 

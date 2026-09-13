@@ -12,4 +12,4 @@ SRC_URI="https://github.com/g-andrade/xb5/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

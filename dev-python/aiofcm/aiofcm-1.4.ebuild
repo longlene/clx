@@ -14,7 +14,7 @@ SRC_URI="https://github.com/Fatal1ty/aiofcm/archive/refs/tags/v${PV}.tar.gz -> $
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aioxmpp-0.10[${PYTHON_USEDEP}]

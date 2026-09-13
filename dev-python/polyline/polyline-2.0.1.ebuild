@@ -14,7 +14,7 @@ SRC_URI="https://github.com/frederickjansen/polyline/archive/refs/tags/v2.0.1.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

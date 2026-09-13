@@ -14,7 +14,7 @@ SRC_URI="https://github.com/lasp-lang/partisan/archive/${EGIT_COMMIT}.tar.gz -> 
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	>=dev-erlang/uuid-2.0.5

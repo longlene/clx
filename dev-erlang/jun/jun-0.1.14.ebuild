@@ -11,7 +11,7 @@ SRC_URI="https://github.com/zgbjgg/jun/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	>=dev-erlang/lager-3.6.1

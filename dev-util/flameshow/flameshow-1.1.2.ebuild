@@ -14,7 +14,7 @@ SRC_URI="https://github.com/laixintao/flameshow/archive/refs/tags/v${PV}.tar.gz 
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/typing-extensions-4.7.1[${PYTHON_USEDEP}]

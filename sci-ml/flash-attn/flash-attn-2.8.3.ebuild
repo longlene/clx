@@ -16,7 +16,7 @@ SRC_URI="https://github.com/Dao-AILab/flash-attention/archive/refs/tags/v${PV}.t
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+cuda rocm"
 REQUIRED_USE="|| ( cuda rocm )"
 

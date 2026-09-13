@@ -16,7 +16,7 @@ S="${WORKDIR}/computer-${PV}"
 
 LICENSE="Open-Use-License"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="agents mcp"
 RESTRICT="test"
 

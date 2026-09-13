@@ -13,7 +13,7 @@ SRC_URI="https://gitlab.com/lv2/pugl/-/archive/${EGIT_COMMIT}/pugl-${EGIT_COMMIT
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="cairo doc example opengl test vulkan"
 RESTRICT="!test? ( test )"

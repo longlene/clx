@@ -16,7 +16,7 @@ S="${WORKDIR}/ChatterBot-${PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="mongodb redis"
 
 RDEPEND="

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/langchain-ai/langchain/archive/refs/tags/${PN}==${PV
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/langchain-${P}/libs/text-splitters
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langchain-core-1.2.0[${PYTHON_USEDEP}]

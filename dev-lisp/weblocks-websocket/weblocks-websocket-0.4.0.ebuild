@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/40ants/weblocks-websocket"
 SRC_URI="https://github.com/40ants/weblocks-websocket/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/weblocks

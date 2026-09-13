@@ -18,7 +18,7 @@ SRC_URI="https://github.com/open-dingtalk/dingtalk-stream-sdk-python/archive/ref
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/dingtalk-stream-sdk-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/websockets-11.0.2[${PYTHON_USEDEP}]

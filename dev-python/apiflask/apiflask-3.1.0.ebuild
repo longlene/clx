@@ -18,7 +18,7 @@ SRC_URI="https://github.com/apiflask/apiflask/archive/refs/tags/${PV}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="async dotenv yaml"
 RESTRICT="test"
 

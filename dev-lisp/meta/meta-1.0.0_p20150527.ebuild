@@ -11,7 +11,7 @@ SRC_URI="https://gitlab.common-lisp.net/frideau/meta/repository/archive.tar.gz?r
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/named-readtables

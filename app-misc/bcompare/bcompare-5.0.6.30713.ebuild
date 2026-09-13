@@ -9,7 +9,7 @@ SRC_URI="https://www.scootersoftware.com/bcompare-${PV}.x86_64.tar.gz"
 
 LICENSE="Bcompare"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RESTRICT="bindist"
 

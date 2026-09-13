@@ -18,7 +18,7 @@ SRC_URI="https://github.com/RobertCraigie/pyright-python/archive/refs/tags/v${PV
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/nodeenv-1.6.0[${PYTHON_USEDEP}]

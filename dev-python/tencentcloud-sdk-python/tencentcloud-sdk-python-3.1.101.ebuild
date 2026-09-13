@@ -17,7 +17,7 @@ SRC_URI="https://github.com/TencentCloud/tencentcloud-sdk-python/archive/refs/ta
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/requests-2.16.0[${PYTHON_USEDEP}]

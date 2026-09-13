@@ -654,7 +654,7 @@ LICENSE+="
 "
 S="${WORKDIR}"/${P}/sdks/python
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

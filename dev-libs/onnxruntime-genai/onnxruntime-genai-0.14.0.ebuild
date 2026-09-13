@@ -9,4 +9,4 @@ SRC_URI="https://github.com/microsoft/onnxruntime-genai/archive/refs/tags/v${PV}
 
 LICENSE="TODO"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

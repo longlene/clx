@@ -17,7 +17,7 @@ SRC_URI="https://github.com/laixintao/iredis/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/prompt-toolkit-3[${PYTHON_USEDEP}]

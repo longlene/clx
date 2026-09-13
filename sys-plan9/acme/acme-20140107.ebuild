@@ -7,4 +7,4 @@ dev-plan9/libbio dev-plan9/libcomplete dev-plan9/libmux"
 RDEPEND="dev-plan9/devdraw"
 inherit plan9-cmds
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"

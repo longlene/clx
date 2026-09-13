@@ -18,7 +18,7 @@ SRC_URI="https://github.com/Azure/azure-sdk-for-python/archive/refs/tags/${PN}_$
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/azure-sdk-for-python-${PN}_${PV}/sdk/documentintelligence/${PN}/
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/isodate-0.6.1[${PYTHON_USEDEP}]

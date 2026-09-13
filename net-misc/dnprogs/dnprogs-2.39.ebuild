@@ -7,7 +7,7 @@ SRC_URI="http://easynews.dl.sourceforge.net/sourceforge/linux-decnet/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 IUSE="uselocaldir"
 
 DEPEND=">=sys-apps/sed-4.1.5

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/jeko2000/tiny-routes/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-ppcre

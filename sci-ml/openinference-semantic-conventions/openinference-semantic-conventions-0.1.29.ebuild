@@ -18,7 +18,7 @@ SRC_URI="https://github.com/Arize-ai/openinference/archive/refs/tags/python-open
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/openinference-python-${PN}-v${PV}/python/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

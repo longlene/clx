@@ -22,7 +22,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # <dev-python/pip-26.2[${PYTHON_USEDEP}]: patched out
 RDEPEND="

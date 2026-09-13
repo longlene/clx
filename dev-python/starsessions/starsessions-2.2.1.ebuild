@@ -17,7 +17,7 @@ SRC_URI="https://github.com/alex-oleshkevich/starsessions/archive/refs/tags/v${P
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/starlette[${PYTHON_USEDEP}]

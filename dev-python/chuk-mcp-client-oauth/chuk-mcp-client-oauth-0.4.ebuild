@@ -13,7 +13,7 @@ HOMEPAGE="https://pypi.org/project/chuk-mcp-client-oauth/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/httpx-0.24.0[${PYTHON_USEDEP}]

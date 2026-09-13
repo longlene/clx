@@ -8,7 +8,7 @@ MY_P="${PN}_${PV}"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 LANGS="bg de es fr it no pl sk sv"
 

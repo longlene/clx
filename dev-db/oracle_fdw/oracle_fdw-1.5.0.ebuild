@@ -13,7 +13,7 @@ SRC_URI="https://github.com/laurenz/oracle_fdw/archive/ORACLE_FDW_${MY_PV}.tar.g
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/${PN}-ORACLE_FDW_${MY_PV}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-db/oracle-instantclient

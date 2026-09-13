@@ -9,7 +9,7 @@ SRC_URI="https://github.com/rmyorston/pdpmake/archive/refs/tags/1.4.1.tar.gz -> 
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

@@ -7,7 +7,7 @@ SRC_URI="http://airdownload.adobe.com/air/lin/download/latest/air_1.5_sdk.tbz2"
 
 LICENSE="AdobeAIR"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 RESTRICT="strip"
 

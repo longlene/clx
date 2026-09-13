@@ -14,7 +14,7 @@ SRC_URI="https://github.com/aio-libs/aiohttp-debugtoolbar/archive/refs/tags/v${P
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiohttp-3.9[${PYTHON_USEDEP}]

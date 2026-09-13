@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/aparrish/pronouncingpy/ https://pypi.org/project/pr
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/cmudict[${PYTHON_USEDEP}]

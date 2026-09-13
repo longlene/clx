@@ -11,7 +11,7 @@ SRC_URI="https://github.com/fibjs/fibjs/releases/download/v${PV}/fullsrc.zip -> 
 LICENSE="GPL-3"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="dev-build/cmake"
 RDEPEND="${DEPEND}"

@@ -15,7 +15,7 @@ S="${WORKDIR}/nanollm-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="aws gcp"
 RESTRICT="test"
 

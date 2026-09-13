@@ -9,7 +9,7 @@ DESCRIPTION="vim plugin: Vim bundle, a vim plugin manager"
 HOMEPAGE="http://github.com/gmarik/vundle"
 SRC_URI="https://github.com/gmarik/vundle/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 ~arm64 x86"
 
 RDEPEND="${RDEPEND}
 dev-vcs/git"

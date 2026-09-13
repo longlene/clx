@@ -274,7 +274,7 @@ S="${WORKDIR}/${P}/python"
 
 LICENSE="MIT Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD BSD-2 ISC MPL-2.0 UoI-NCSA Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="media-libs/libsdl2:="

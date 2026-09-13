@@ -17,7 +17,7 @@ SRC_URI="https://github.com/run-llama/llama_index/archive/refs/tags/v${MY_PV}.ta
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/llama_index-${MY_PV}/llama-index-integrations/question_gen/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/llama-index-program-openai-0.3.0[${PYTHON_USEDEP}]

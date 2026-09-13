@@ -10,7 +10,7 @@ SRC_URI="https://github.com/victorfisac/Physac/archive/${PV}.tar.gz -> ${P}.tar.
 LICENSE="as-is"
 SLOT="0"
 S="${WORKDIR}"/Physac-${PV}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-games/physac

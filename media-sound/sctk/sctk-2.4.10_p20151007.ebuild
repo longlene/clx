@@ -15,7 +15,7 @@ SRC_URI="ftp://jaguar.ncsl.nist.gov/pub/${MY_P}-1312Z.tar.bz2"
 LICENSE="public-domain"
 SLOT="0"
 S="${WORKDIR}"/${MY_P}-1312Z/
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

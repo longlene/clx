@@ -19,7 +19,7 @@ S="${WORKDIR}/${PN}-${MY_PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="examples"
 # Tests require a lot of dependencies that are not packaged for Gentoo
 RESTRICT="test"

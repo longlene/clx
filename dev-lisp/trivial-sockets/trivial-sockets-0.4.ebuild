@@ -11,7 +11,7 @@ SRC_URI="https://github.com/usocket/trivial-sockets/archive/v${PV}.tar.gz -> ${P
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~sparc ~x86"
 IUSE="doc"
 
 DEPEND="doc? ( virtual/texi2dvi )"

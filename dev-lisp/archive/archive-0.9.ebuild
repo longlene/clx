@@ -11,7 +11,7 @@ SRC_URI="https://github.com/froydnj/archive/archive/v${PV}.tar.gz -> ${P}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~sparc ~x86"
 
 RDEPEND="${DEPEND}
 dev-lisp/trivial-gray-streams

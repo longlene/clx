@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/linux-diag/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc ~ppc64 ~x86"
+KEYWORDS="~arm64 ~ppc ~ppc64 ~x86"
 
 DEPEND="sys-apps/sg3_utils
 	>=sys-libs/libvpd-1.5.0"

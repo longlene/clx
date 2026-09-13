@@ -7,7 +7,7 @@ HOMEPAGE="http://hamachi-gui.sourceforge.net/"
 SRC_URI="http://downloads.sourceforge.net/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="net-misc/hamachi
 	x11-libs/gtk+"

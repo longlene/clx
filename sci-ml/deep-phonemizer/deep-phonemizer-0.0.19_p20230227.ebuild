@@ -18,7 +18,7 @@ SRC_URI="https://github.com/as-ideas/DeepPhonemizer/archive/${EGIT_COMMIT}.tar.g
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/DeepPhonemizer-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	sci-ml/tensorboard[${PYTHON_SINGLE_USEDEP}]

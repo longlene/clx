@@ -15,7 +15,7 @@ SRC_URI="https://github.com/mherrmann/gitignore_parser/archive/refs/tags/v${PV}.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/gitignore_parser-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

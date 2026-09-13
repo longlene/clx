@@ -20,7 +20,7 @@ SRC_URI="https://github.com/exa-labs/exa-py/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/requests-2.32.3[${PYTHON_USEDEP}]

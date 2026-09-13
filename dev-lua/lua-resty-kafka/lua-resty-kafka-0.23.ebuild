@@ -13,7 +13,7 @@ SRC_URI="https://github.com/doujiang24/lua-resty-kafka/archive/refs/tags/v${PV}.
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

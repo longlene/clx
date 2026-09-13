@@ -17,7 +17,7 @@ SRC_URI="https://github.com/Preston-Landers/concurrent-log-handler/archive/refs/
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/portalocker-1.6.0[${PYTHON_USEDEP}]

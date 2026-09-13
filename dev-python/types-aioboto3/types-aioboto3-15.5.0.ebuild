@@ -15,7 +15,7 @@ S="${WORKDIR}/types_aioboto3-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/botocore-stubs[${PYTHON_USEDEP}]

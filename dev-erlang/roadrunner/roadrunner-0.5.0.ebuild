@@ -12,7 +12,7 @@ SRC_URI="https://github.com/arizona-framework/roadrunner/archive/refs/tags/${PV}
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-erlang/telemetry-1.4.2

@@ -823,7 +823,7 @@ LICENSE+="
 	Unicode-3.0 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # libsqlite3-sys uses system sqlite via pkg-config when bundled feature is absent
 DEPEND="dev-db/sqlite:3="

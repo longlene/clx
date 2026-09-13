@@ -194,7 +194,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0 0BSD BSD ISC MIT Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # aws-lc-sys bundles AWS-LC C library (needs cmake); bindgen needs libclang
 BDEPEND="

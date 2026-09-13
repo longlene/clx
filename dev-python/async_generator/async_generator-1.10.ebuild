@@ -17,7 +17,7 @@ SRC_URI="https://github.com/python-trio/async_generator/archive/refs/tags/v${PV}
 
 LICENSE="|| ( MIT Apache-2.0 )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

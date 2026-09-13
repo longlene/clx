@@ -14,7 +14,7 @@ SRC_URI="https://github.com/ipld/py-ipld-dag/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/cbor2-5.4.0[${PYTHON_USEDEP}]

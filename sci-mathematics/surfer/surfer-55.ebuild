@@ -9,7 +9,7 @@ SRC_URI="http://www.imaginary2008.de/data/surfer-rev-${PV}-source.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 S=${WORKDIR}/surfer-source-rev-${PV}/surfer-rev-${PV}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 RDEPEND="
 	>=dev-cpp/gtkmm-2.12.1

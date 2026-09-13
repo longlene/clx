@@ -13,6 +13,6 @@ SRC_URI="https://github.com/cl-aip/eliza/archive/${EGIT_COMMIT}.tar.gz -> ${P}.t
 
 LICENSE="PAIP"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

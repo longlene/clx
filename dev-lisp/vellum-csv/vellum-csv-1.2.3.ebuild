@@ -11,7 +11,7 @@ SRC_URI="https://github.com/sirherrbatka/vellum-csv/archive/${PV}.tar.gz -> ${P}
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/iterate

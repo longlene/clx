@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/elfio/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~arm64 ~x86 ~x86-fbsd"
 
 src_prepare() {
 	eapply_user

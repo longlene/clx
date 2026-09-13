@@ -18,7 +18,7 @@ SRC_URI="https://github.com/Syndace/python-x3dh/archive/refs/tags/v${PV}.tar.gz 
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/python-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/xeddsa-1.0.0[${PYTHON_USEDEP}]

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Shinmera/random-noise/archive/${EGIT_COMMIT}.tar.gz 
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/documentation-utils

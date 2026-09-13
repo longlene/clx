@@ -12,7 +12,7 @@ SRC_URI="https://github.com/samgaw/${PN}/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DOCS=( CHANGELOG.md README.md )
 

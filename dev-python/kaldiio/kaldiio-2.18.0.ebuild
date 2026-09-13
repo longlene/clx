@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/nttcslab-sp/kaldiio"
 SRC_URI="https://github.com/nttcslab-sp/kaldiio/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]

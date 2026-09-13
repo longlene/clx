@@ -6,7 +6,7 @@ HOMEPAGE="http://scte65scan.sourceforge.net/"
 LICENSE="GPL-3"
 
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~x86"
 
 SRC_URI="http://downloads.sourceforge.net/project/${PN}/${PN}/${PV}/${P}.tgz"
 RESTRICT="nomirror"

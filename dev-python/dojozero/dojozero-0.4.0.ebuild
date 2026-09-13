@@ -16,7 +16,7 @@ S="${WORKDIR}/DojoZero-${PV}/packages/dojozero"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="alicloud ray redis"
 RESTRICT="test"
 

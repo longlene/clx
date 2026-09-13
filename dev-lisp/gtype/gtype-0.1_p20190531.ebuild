@@ -13,7 +13,7 @@ SRC_URI="https://github.com/numcl/gtype/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 IUSE="test"
 RESTRICT="!test? ( test )"

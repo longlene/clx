@@ -14,7 +14,7 @@ SRC_URI="https://github.com/piskvorky/gensim/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="LGPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-python/numpy[${PYTHON_USEDEP}]

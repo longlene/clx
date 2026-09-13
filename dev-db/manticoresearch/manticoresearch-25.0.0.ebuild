@@ -22,7 +22,7 @@ S="${WORKDIR}/manticoresearch-release-${PV}"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="+curl +ssl +zlib +zstd expat mysql odbc postgres"
 

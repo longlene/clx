@@ -11,7 +11,7 @@ SRC_URI="https://github.com/beam-telemetry/telemetry_registry/archive/refs/tags/
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	>=dev-erlang/telemetry-1.0.0

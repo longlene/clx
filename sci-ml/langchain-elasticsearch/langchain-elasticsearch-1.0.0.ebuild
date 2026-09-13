@@ -18,7 +18,7 @@ SRC_URI="https://github.com/langchain-ai/langchain-elastic/archive/refs/tags/lib
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/langchain-elastic-libs-elasticsearch-v${PV}/libs/elasticsearch
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/langchain-core-1.2.5[${PYTHON_USEDEP}]

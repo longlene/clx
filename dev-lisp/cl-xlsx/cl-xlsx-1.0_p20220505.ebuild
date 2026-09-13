@@ -13,7 +13,7 @@ SRC_URI="https://github.com/a1b10/cl-xlsx/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cxml

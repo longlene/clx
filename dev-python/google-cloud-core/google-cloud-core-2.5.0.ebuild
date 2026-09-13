@@ -18,7 +18,7 @@ SRC_URI="https://github.com/googleapis/python-cloud-core/archive/refs/tags/v${PV
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/python-cloud-core-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/google-api-core-1.31.6[${PYTHON_USEDEP}]

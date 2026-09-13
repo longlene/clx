@@ -20,7 +20,7 @@ SRC_URI="https://github.com/promplate/partial-json-parser/archive/${EGIT_COMMIT}
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/fsspec/universal_pathlib/archive/refs/tags/v${PV}.ta
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/universal_pathlib-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/fsspec-2024.5.0[${PYTHON_USEDEP}]

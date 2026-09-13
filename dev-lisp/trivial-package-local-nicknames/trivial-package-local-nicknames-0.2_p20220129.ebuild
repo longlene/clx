@@ -13,6 +13,6 @@ SRC_URI="https://github.com/phoe/trivial-package-local-nicknames/archive/${EGIT_
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

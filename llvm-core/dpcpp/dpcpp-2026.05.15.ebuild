@@ -23,7 +23,7 @@ SRC_URI="
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/llvm-nightly-${MY_PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda +jit l0 rocm"
 
 DEPEND="

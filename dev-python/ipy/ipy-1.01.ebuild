@@ -15,7 +15,7 @@ SRC_URI="https://github.com/autocracy/python-ipy/archive/refs/tags/IPy-${PV}.tar
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}"/python-ipy-IPy-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

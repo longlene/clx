@@ -17,7 +17,7 @@ SRC_URI="https://github.com/edelooff/sqlalchemy-json/archive/refs/tags/v${PV}.ta
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/sqlalchemy-0.7.0[${PYTHON_USEDEP}]

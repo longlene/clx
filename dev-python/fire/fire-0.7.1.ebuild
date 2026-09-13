@@ -14,4 +14,4 @@ SRC_URI="https://github.com/google/python-fire/archive/v${PV}.tar.gz -> ${P}.tar
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/python-${P}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"

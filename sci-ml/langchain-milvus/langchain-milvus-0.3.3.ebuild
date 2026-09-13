@@ -18,7 +18,7 @@ SRC_URI="https://github.com/langchain-ai/langchain-milvus/archive/refs/tags/libs
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/langchain-milvus-libs-milvus-v${PV}/libs/milvus
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pymilvus-2.6.0[${PYTHON_USEDEP}]

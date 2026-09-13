@@ -14,7 +14,7 @@ SRC_URI="https://github.com/thombashi/pytablewriter-altrow-theme/archive/refs/ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pytablewriter-0.59.0[${PYTHON_USEDEP}]

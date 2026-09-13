@@ -8,7 +8,7 @@ SRC_URI="http://funionfs.apiou.org/file/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND=">=sys-fs/fuse-2.5.0"
 RDEPEND="${DEPEND}"

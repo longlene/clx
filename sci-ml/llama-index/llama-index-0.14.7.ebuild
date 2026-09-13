@@ -15,7 +15,7 @@ SRC_URI="https://github.com/run-llama/llama_index/archive/refs/tags/v${PV}.tar.g
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/llama_index-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/llama-index-cli-0.5.0[${PYTHON_USEDEP}]

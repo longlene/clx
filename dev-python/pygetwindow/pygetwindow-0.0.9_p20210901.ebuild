@@ -17,7 +17,7 @@ SRC_URI="https://github.com/asweigart/pygetwindow/archive/${EGIT_COMMIT}.tar.gz 
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}"/PyGetWindow-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/pyrect[${PYTHON_USEDEP}]

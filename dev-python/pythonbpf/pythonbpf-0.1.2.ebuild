@@ -18,7 +18,7 @@ SRC_URI="https://github.com/varun-r-mallya/Python-BPF/archive/refs/tags/v${PV}.t
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/Python-BPF-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/llvmlite[${PYTHON_USEDEP}]

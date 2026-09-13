@@ -8,7 +8,7 @@ SRC_URI="http://ftp.gnu.org/gnu/proxyknife/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND="sys-devel/gettext
 		dev-lang/perl"

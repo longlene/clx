@@ -18,7 +18,7 @@ SRC_URI="https://github.com/Zaczero/pkgs/archive/refs/tags/starlette-compress/${
 LICENSE="BSD"
 SLOT="0"
 S="${WORKDIR}"/pkgs-${P}/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	app-arch/brotli[python,${PYTHON_USEDEP}]

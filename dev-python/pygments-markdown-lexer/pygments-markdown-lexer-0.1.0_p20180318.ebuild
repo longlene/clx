@@ -20,7 +20,7 @@ SRC_URI="https://github.com/jhermann/pygments-markdown-lexer/archive/${EGIT_COMM
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pygments-2.0[${PYTHON_USEDEP}]

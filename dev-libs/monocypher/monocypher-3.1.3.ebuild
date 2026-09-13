@@ -9,7 +9,7 @@ SRC_URI="https://monocypher.org/download/${P}.tar.gz"
 
 LICENSE="CC0-1.0 BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

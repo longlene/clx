@@ -11,7 +11,7 @@ SRC_URI="https://github.com/compiler-research/xeus-cpp/archive/refs/tags/${PV}.t
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-cpp/xeus-zmq

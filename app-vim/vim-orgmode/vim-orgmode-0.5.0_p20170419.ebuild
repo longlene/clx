@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/jceb/vim-orgmode"
 SRC_URI="https://github.com/jceb/vim-orgmode/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 src_prepare() {
 	eapply_user

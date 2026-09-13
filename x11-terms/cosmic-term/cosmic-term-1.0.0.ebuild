@@ -856,7 +856,7 @@ SRC_URI="
 LICENSE="GPL-3"
 SLOT="0"
 S="${WORKDIR}"/${PN}-epoch-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	x11-libs/libxkbcommon

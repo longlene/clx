@@ -15,7 +15,7 @@ SRC_URI="https://github.com/nltk/nltk/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="amd64 x86 ~amd64-linux ~ppc-macos ~ppc64 ~riscv ~x64-macos ~x86-linux"
+KEYWORDS="amd64 ~arm64 x86 ~amd64-linux ~ppc-macos ~ppc64 ~riscv ~x64-macos ~x86-linux"
 IUSE="tk"
 
 RDEPEND="

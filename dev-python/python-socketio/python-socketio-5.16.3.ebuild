@@ -15,7 +15,7 @@ HOMEPAGE="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="client asyncio-client"
 
 RDEPEND="dev-python/bidict[${PYTHON_USEDEP}]

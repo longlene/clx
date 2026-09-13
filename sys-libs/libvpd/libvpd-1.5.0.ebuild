@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/linux-diag/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~ppc ~ppc64 ~x86"
+KEYWORDS="~arm64 ~ppc ~ppc64 ~x86"
 
 DEPEND="dev-build/libtool
 	>=sys-libs/db-4.3.29-r2"

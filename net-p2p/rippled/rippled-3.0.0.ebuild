@@ -8,7 +8,7 @@ inherit cmake
 SRC_URI="https://github.com/XRPLF/rippled/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

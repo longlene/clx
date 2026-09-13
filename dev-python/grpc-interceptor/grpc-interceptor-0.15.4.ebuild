@@ -17,7 +17,7 @@ SRC_URI="https://github.com/d5h-foss/grpc-interceptor/archive/refs/tags/v${PV}.t
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/grpcio-1.49.1[${PYTHON_USEDEP}]

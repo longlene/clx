@@ -16,7 +16,7 @@ HOMEPAGE="
 SRC_URI="https://github.com/open-webui/mcpo/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/click-8.1.8[${PYTHON_USEDEP}]

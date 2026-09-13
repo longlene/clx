@@ -17,7 +17,7 @@ SRC_URI="https://github.com/jitsi/jiwer/archive/refs/tags/v${PV}.tar.gz -> ${P}.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/rapidfuzz-3[${PYTHON_USEDEP}]

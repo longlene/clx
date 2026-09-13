@@ -12,7 +12,7 @@ SRC_URI="http://common-lisp.net/project/cl-ncurses/files/cl-ncurses_${PV}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 S=${WORKDIR}/cl-ncurses_${PV}
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 CLPACKAGE=cl-ncurses
 

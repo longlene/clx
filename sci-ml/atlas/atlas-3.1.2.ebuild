@@ -16,6 +16,6 @@ S="${WORKDIR}/ATLAS-${PV}"
 
 LICENSE="AGPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 distutils_enable_tests pytest

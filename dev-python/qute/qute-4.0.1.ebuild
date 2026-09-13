@@ -13,5 +13,5 @@ HOMEPAGE="https://github.com/mikemalinowski/qute"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"

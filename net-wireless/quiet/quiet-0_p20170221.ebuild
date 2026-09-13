@@ -13,7 +13,7 @@ SRC_URI="https://github.com/quiet/quiet/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="
 	net-libs/liquid-dsp

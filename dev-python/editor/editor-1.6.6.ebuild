@@ -17,7 +17,7 @@ SRC_URI="https://github.com/rec/editor/archive/refs/tags/v${PV}.tar.gz -> ${P}.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/runs[${PYTHON_USEDEP}]

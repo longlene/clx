@@ -20,7 +20,7 @@ SRC_URI="https://github.com/triton-inference-server/client/archive/${EGIT_COMMIT
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/client-${EGIT_COMMIT}/src/python/library
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/numpy-1.19.1[${PYTHON_USEDEP}]

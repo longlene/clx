@@ -14,7 +14,7 @@ SRC_URI="https://github.com/coleifer/ucache/archive/refs/tags/${PV}.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="msgpack pylibmc redis sqlite"
 
 RDEPEND="$(python_gen_cond_dep '

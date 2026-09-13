@@ -65,7 +65,7 @@ S="${WORKDIR}/faster_xml-a522bf920c16ea179a337eae4bd2a6692ba2bf5c"
 
 LICENSE="all-rights-reserved ISC MIT Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_prepare() {
 	rebar3_src_prepare

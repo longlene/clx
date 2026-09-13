@@ -12,7 +12,7 @@ SRC_URI="http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD
 RESTRICT="mirror strip test binchecks"
 LICENSE="HBRL"
 S="${WORKDIR}/opt/real/RealPlayer"
-KEYWORDS="~amd64 ~x86 -*"
+KEYWORDS="~amd64 ~arm64 ~x86 -*"
 SLOT="0"
 IUSE="win32codecs"
 RDEPEND="win32codecs? ( >=media-libs/win32codecs-20071007-r4[real] )

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/openresty/lua-resty-signal/archive/refs/tags/v${PV}.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	${DEPEND}

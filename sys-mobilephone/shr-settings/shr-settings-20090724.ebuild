@@ -13,7 +13,7 @@ EGIT_PROJECT="shr-settings"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="dev-python/dbus-python
 	>=dev-python/python-elementary-20090127-r38808

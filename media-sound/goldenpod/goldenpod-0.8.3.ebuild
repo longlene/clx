@@ -8,7 +8,7 @@ SRC_URI="http://github.com/downloads/zerodogg/GoldenPod/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 RDEPEND="dev-lang/perl
 		|| ( net-misc/curl libwww/perl )"

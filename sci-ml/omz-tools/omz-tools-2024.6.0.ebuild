@@ -20,7 +20,7 @@ SRC_URI="https://github.com/openvinotoolkit/open_model_zoo/archive/refs/tags/${P
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/open_model_zoo-${PV}/tools/model_tools
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/openvino-telemetry-2023.2.1[${PYTHON_SINGLE_USEDEP}]

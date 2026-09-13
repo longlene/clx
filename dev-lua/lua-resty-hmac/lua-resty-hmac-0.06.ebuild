@@ -13,7 +13,7 @@ SRC_URI="https://github.com/jkeys089/lua-resty-hmac/archive/refs/tags/v${PV}.tar
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	${LUA_DEPS}

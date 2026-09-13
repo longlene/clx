@@ -12,7 +12,7 @@ SRC_URI="https://github.com/facebook/hermes/archive/refs/tags/hermes-v${PV}.tar.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/hermes-hermes-v${PV}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-lang/python

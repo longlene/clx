@@ -409,7 +409,7 @@ SRC_URI="
 LICENSE="Apache-2.0"
 LICENSE+=" BSD CDLA-Permissive-2.0 ISC MIT Unicode-3.0 Unlicense ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_install() {
 	cargo_src_install --path flowcat-cli

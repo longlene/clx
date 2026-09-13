@@ -7,7 +7,7 @@ HOMEPAGE="http://hedgehog.oliotalo.fi/"
 SLOT="0"
 LICENSE="LGPL-2.1 BSD"
 S=${WORKDIR}/${PN}-${PV:0:3}
-KEYWORDS="~arm ~x86"
+KEYWORDS="~arm ~arm64 ~x86"
 
 # Documentation can't be built until weblint-perl and html2ps are added to
 # portage.

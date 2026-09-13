@@ -11,7 +11,7 @@ SRC_URI="https://github.com/QuantStack/xtensor-blas/archive/${PV}.tar.gz -> ${P}
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	>=dev-cpp/xtensor-0.27.0

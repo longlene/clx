@@ -14,7 +14,7 @@ MY_SHAREDIR="/usr/share/${PN}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="faac exif mp3 theora vorbis vpx x264 xvid"
 
 RDEPEND=">=dev-python/PyQt4-4.5[webkit]

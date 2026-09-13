@@ -21,7 +21,7 @@ S="${WORKDIR}/crewAI-${PV}/lib/crewai"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/instructor-1.3.3[${PYTHON_SINGLE_USEDEP}]

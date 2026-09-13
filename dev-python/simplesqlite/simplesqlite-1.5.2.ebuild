@@ -18,7 +18,7 @@ SRC_URI="https://github.com/thombashi/SimpleSQLite/archive/refs/tags/v${PV}.tar.
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/SimpleSQLite-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/dataproperty-1.0.1[${PYTHON_USEDEP}]

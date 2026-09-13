@@ -11,7 +11,7 @@ SRC_URI="https://github.com/ggml-org/whisper.cpp/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="blas cuda +models ffmpeg -opencl openvino sdl2 vulkan"
 
 DEPEND="

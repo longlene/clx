@@ -752,7 +752,7 @@ LICENSE+="
 	MIT-0 MPL-2.0 Unicode-3.0 Unicode-DFS-2016 WTFPL-2 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+cli"
 
 DEPEND="dev-libs/openssl:="

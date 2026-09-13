@@ -15,7 +15,7 @@ SRC_URI="https://github.com/torch/argcheck/archive/${EGIT_COMMIT}.tar.gz -> ${P}
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 REQUIRED_USE="${LUA_REQUIRED_USE}"
 

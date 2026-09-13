@@ -15,7 +15,7 @@ HOMEPAGE="https://www.pycryptodome.org/ https://pypi.org/project/pycryptodomex/"
 
 LICENSE="BSD-2 Unlicense"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-libs/gmp:=

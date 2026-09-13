@@ -777,7 +777,7 @@ SRC_URI="
 
 LICENSE="GPL-3 0BSD Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD Boost-1.0 CDLA-Permissive-2.0 ISC MIT MPL-2.0 UoI-NCSA Unicode-3.0 Unicode-DFS-2016 WTFPL-2 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+voice-playback +stream-broadcast"
 REQUIRED_USE="stream-broadcast? ( voice-playback )"
 

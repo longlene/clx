@@ -9,7 +9,7 @@ SRC_URI="http://dse.webonastick.com/${PN}/${PN}-2004-08-02.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 S=${WORKDIR}/${PN}
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND=">=sys-libs/ncurses-5"
 RDEPEND="${DEPEND}"

@@ -17,7 +17,7 @@ SRC_URI="https://github.com/browser-use/browser-use/archive/refs/tags/${PV}.tar.
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/aiohttp-3.13.4[${PYTHON_USEDEP}]

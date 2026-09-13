@@ -13,7 +13,7 @@ SRC_URI="https://github.com/maurosoria/dirsearch/archive/refs/tags/v${PV}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="

@@ -15,7 +15,7 @@ SRC_URI="https://github.com/verl-project/verl/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # NOTE: codetiming is not yet packaged in Gentoo/overlay; ray[default] extras map to
 # optional ray plugins (dashboard etc.) which are handled upstream without USE flags.

@@ -8,7 +8,7 @@ HOMEPAGE="http://www.cs.drexel.edu/~jfo24/projs/saxm2s/"
 SRC_URI="http://linsam.homelinux.com/projs/${P}.tbz2"
 LICENSE="UNKNOWN"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND="dev-python/PyQt
 	x11-libs/qt

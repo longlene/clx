@@ -665,7 +665,7 @@ LICENSE="MIT Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD Boost-1.0
 	CDLA-Permissive-2.0 ISC MPL-2.0 Unicode-3.0 Unicode-DFS-2016
 	WTFPL-2 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_install() {
 	cargo_src_install --path ./llmfit-tui

@@ -19,7 +19,7 @@ SRC_URI="https://github.com/codecobblers/dirtyjson/archive/${EGIT_COMMIT}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

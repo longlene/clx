@@ -11,6 +11,6 @@ SRC_URI="https://github.com/intel/ittapi/archive/refs/tags/v${PV}.tar.gz -> ${P}
 
 LICENSE="|| ( GPL-2 BSD-3 )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

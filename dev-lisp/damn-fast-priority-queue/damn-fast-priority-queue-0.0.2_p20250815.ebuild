@@ -14,7 +14,7 @@ SRC_URI="https://github.com/phoe/damn-fast-priority-queue/archive/${EGTI_COMMIT}
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGTI_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	dev-lisp/alexandria

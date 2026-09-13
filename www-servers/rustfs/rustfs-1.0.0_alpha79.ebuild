@@ -987,7 +987,7 @@ LICENSE+="
 "
 SLOT="0"
 S="${WORKDIR}"/rustfs-${MY_PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	app-arch/zstd

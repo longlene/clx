@@ -11,7 +11,7 @@ SRC_URI="http://www.acme.com/software/thttpd/${P}.tar.gz"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="
 	acct-group/thttpd

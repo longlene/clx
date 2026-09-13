@@ -361,7 +361,7 @@ SRC_URI="
 
 LICENSE="MIT Apache-2.0 BSD CDLA-Permissive-2.0 ISC Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_install() {
 	cargo_src_install

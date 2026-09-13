@@ -13,7 +13,7 @@ HOMEPAGE="https://pypi.org/project/oci/"
 
 LICENSE="|| ( UPL-1.0 Apache-2.0 )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="adk"
 RESTRICT="test"
 

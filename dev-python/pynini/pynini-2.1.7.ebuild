@@ -13,7 +13,7 @@ HOMEPAGE="https://pynini.opengrm.org https://pypi.org/project/pynini/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # upstream: 2.1.7 is compatible with OpenFst 1.8.4 only (see NEWS)
 DEPEND="=sci-misc/openfst-1.8.4*"

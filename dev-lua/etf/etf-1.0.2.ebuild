@@ -14,7 +14,7 @@ SRC_URI="https://github.com/jprjr/lua-etf/archive/refs/tags/v${PV}.tar.gz -> ${P
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/lua-${P}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

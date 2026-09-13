@@ -9,7 +9,7 @@ SRC_URI="http://savannah.nongnu.org/download/${P}/${PSRC}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 S="${WORKDIR}/${PSRC}"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="diet logging"
 
 DEPEND="diet? ( dev-libs/dietlibc )"

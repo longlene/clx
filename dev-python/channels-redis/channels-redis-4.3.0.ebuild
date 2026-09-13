@@ -16,7 +16,7 @@ HOMEPAGE="
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/redis-4.6.0[${PYTHON_USEDEP}]

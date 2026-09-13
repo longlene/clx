@@ -11,6 +11,6 @@ SRC_URI="https://github.com/evgeniums/cpp-validator/archive/v${PV}.tar.gz -> ${P
 
 LICENSE="BSL-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/mulle-c/mulle-utf/archive/2.0.11.tar.gz -> ${P}.tar.
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-libs/mulle-allocator

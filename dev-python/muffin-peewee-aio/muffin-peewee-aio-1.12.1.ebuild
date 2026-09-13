@@ -16,7 +16,7 @@ S="${WORKDIR}/muffin-peewee-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="postgres"
 RESTRICT="test"
 

@@ -18,7 +18,7 @@ SRC_URI="https://github.com/iterative/telemetry-python/archive/refs/tags/${PV}.t
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/telemetry-python-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]

@@ -10,7 +10,7 @@ EGIT_REPO_URI="git://github.com/archimag/cl-libxml2.git"
 
 LICENSE="LLGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="dev-libs/libxml2
 dev-libs/libxslt"

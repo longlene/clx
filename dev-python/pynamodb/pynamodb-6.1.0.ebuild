@@ -18,7 +18,7 @@ SRC_URI="https://github.com/pynamodb/PynamoDB/archive/refs/tags/${PV}.tar.gz -> 
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/PynamoDB-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/botocore-1.12.54[${PYTHON_USEDEP}]

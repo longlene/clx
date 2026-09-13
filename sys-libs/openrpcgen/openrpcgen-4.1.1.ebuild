@@ -6,7 +6,7 @@ HOMEPAGE="http://dev.alpinelinux.org/openrpcgen"
 SRC_URI="http://dev.alpinelinux.org/openrpcgen/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 DEPEND="!sys-libs/glibc"
 RDEPEND="${DEPEND}"
 

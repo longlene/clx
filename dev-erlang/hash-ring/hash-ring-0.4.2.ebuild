@@ -14,7 +14,7 @@ S="${WORKDIR}/hash_ring-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_install() {
 	pushd "_build/${REBAR_PROFILE}" >/dev/null || die

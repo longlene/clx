@@ -11,6 +11,6 @@ SRC_URI="https://github.com/40ants/humanize-duration/archive/refs/tags/v${PV}.ta
 
 LICENSE="Unlicense"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

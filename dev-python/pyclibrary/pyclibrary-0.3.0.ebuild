@@ -17,7 +17,7 @@ SRC_URI="https://github.com/MatthieuDartiailh/pyclibrary/archive/refs/tags/${PV}
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pyparsing-2.3.1[${PYTHON_USEDEP}]

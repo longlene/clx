@@ -18,7 +18,7 @@ SRC_URI="https://github.com/LonamiWebs/Telethon/archive/refs/tags/v${PV}.tar.gz 
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/Telethon-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/pyaes[${PYTHON_USEDEP}]

@@ -13,6 +13,6 @@ SRC_URI="https://github.com/cosmonaut-ok/trivial-timers/archive/${EGIT_COMMIT}.t
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"

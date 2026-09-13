@@ -8,7 +8,7 @@ SRC_URI="http://www.mynetcologne.de/~nc-mayha2/${PN}.py"
 
 LICENSE="GPL-1"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 DEPEND="dev-lang/python"
 

@@ -9,7 +9,7 @@ SRC_URI="https://github.com/jwilk/fbcat/archive/0.5.1.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

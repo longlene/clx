@@ -15,7 +15,7 @@ S="${WORKDIR}/SciencePlots-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/matplotlib[${PYTHON_USEDEP}]

@@ -19,7 +19,7 @@ SRC_URI="https://github.com/Hmbown/Butterfly/archive/refs/tags/v${PV}.tar.gz -> 
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/Butterfly-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/pytorch-2.1.0[${PYTHON_SINGLE_USEDEP}]

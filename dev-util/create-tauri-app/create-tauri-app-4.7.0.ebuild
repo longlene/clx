@@ -121,7 +121,7 @@ SRC_URI="
 LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
 S="${WORKDIR}"/create-tauri-app-create-tauri-app-v${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
 

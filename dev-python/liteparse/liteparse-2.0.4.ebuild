@@ -365,7 +365,7 @@ LICENSE="
 	ISC MIT Unicode-3.0 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="tesseract"
 
 DEPEND="app-text/pdfium-binaries-bin"

@@ -14,7 +14,7 @@ SRC_URI="https://github.com/cenobites/flask-jsonrpc/archive/refs/tags/v${PV}.tar
 
 LICENSE="BSD-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/flask-3.0.0[${PYTHON_USEDEP}]

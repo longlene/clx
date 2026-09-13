@@ -9,7 +9,7 @@ SRC_URI="https://craigbarnes.gitlab.io/dist/dte/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"
 

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/typeddjango/django-stubs https://pypi.org/project/d
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="mypy oracle redis"
 RESTRICT="test"
 

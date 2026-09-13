@@ -19,7 +19,7 @@ SRC_URI="https://github.com/PrimeIntellect-ai/prime/archive/refs/tags/v${PV}.tar
 LICENSE="MIT"
 SLOT="0"
 S="${S}"/packages/${PN}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/verifiers-0.1.14[${PYTHON_SINGLE_USEDEP}]

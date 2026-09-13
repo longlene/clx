@@ -11,7 +11,7 @@ SRC_URI="https://www.thoughtcrime.us/software/jpl-queues/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lisp/cl-jpl-util

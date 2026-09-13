@@ -8,7 +8,7 @@ LICENSE="GPL-2"
 
 SRC_URI="mirror://sourceforge/fprobe/${P}.tar.bz2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~arm64 ~x86"
 
 IUSE="debug messages"
 

@@ -16,7 +16,7 @@ SRC_URI="https://github.com/keephq/keep/archive/refs/tags/v${PV}.tar.gz
 # ee/ directory uses a proprietary enterprise license; standard keep/ code is MIT
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 RDEPEND="

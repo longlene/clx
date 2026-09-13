@@ -9,7 +9,7 @@ SRC_URI="https://github.com/Taywee/args/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="doc"
 
 DEPEND="doc? ( app-text/doxygen )"

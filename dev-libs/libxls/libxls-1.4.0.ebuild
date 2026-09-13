@@ -11,6 +11,6 @@ SRC_URI="mirror://sourceforge/libxls/${P}.zip"
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}"/${PN}
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}"

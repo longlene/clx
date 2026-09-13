@@ -1468,7 +1468,7 @@ LICENSE+="
 	Unicode-DFS-2016 Unlicense ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 # Runtime system library deps from -sys crates

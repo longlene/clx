@@ -17,7 +17,7 @@ SRC_URI="https://github.com/ashvardanian/StringZilla/archive/refs/tags/v${PV}.ta
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/StringZilla-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cuda python"
 
 DEPEND="

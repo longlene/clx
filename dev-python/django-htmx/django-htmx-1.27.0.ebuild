@@ -14,7 +14,7 @@ SRC_URI="https://github.com/adamchainz/django-htmx/archive/refs/tags/${PV}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/asgiref-3.6[${PYTHON_USEDEP}]

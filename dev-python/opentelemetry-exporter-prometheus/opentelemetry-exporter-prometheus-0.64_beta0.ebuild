@@ -17,7 +17,7 @@ S="${WORKDIR}/opentelemetry_exporter_prometheus-${PYPI_PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 # tests require opentelemetry-test-utils which is not packaged
 RESTRICT="test"
 

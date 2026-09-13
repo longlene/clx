@@ -17,7 +17,7 @@ SRC_URI="https://github.com/asweigart/pyrect/archive/${EGIT_COMMIT}.tar.gz -> ${
 LICENSE="BSD-3"
 SLOT="0"
 S="${WORKDIR}"/PyRect-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

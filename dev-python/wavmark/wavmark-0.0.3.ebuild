@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/wavmark/wavmark"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/tqdm[${PYTHON_USEDEP}]

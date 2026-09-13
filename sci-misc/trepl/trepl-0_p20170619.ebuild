@@ -15,7 +15,7 @@ SRC_URI="https://github.com/torch/trepl/archive/${EGIT_COMMIT}.tar.gz -> ${P}.ta
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~arm64"
 
 DEPEND="
 	sys-libs/readline

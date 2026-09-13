@@ -13,7 +13,7 @@ SRC_URI="https://github.com/OpenNMT/OpenNMT-py/archive/refs/tags/v${PV}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	>=sci-ml/pytorch-1.12.1[${PYTHON_USEDEP}]

@@ -15,7 +15,7 @@ SRC_URI="https://github.com/georgkrause/language_data/archive/refs/tags/v${PV}.t
 
 SLOT="0"
 S="${WORKDIR}"/language_data-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/marisa-trie-1.1.0[${PYTHON_USEDEP}]

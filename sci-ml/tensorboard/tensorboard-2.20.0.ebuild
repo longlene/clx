@@ -17,7 +17,7 @@ SRC_URI="$(pypi_wheel_url)"
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/tensorboard-data-server-0.7.0[${PYTHON_SINGLE_USEDEP}]

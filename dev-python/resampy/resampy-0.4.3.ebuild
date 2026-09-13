@@ -14,7 +14,7 @@ SRC_URI="https://github.com/bmcfee/resampy/archive/refs/tags/${PV}.tar.gz -> ${P
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]

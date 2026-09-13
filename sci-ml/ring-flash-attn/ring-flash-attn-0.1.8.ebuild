@@ -15,7 +15,7 @@ SRC_URI="https://github.com/zhuzilin/ring-flash-attention/archive/refs/tags/v${P
 LICENSE="MIT"
 SLOT="0"
 S="${WORKDIR}"/ring-flash-attention-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 #BDEPEND="
 #	test? (

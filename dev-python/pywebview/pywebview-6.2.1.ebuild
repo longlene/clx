@@ -17,7 +17,7 @@ SRC_URI="https://github.com/r0x0r/pywebview/archive/refs/tags/${PV}.tar.gz -> ${
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+gtk qt6 ssl"
 REQUIRED_USE="|| ( gtk qt6 )"
 RESTRICT="test"

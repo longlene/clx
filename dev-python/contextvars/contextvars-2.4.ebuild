@@ -17,7 +17,7 @@ SRC_URI="https://github.com/MagicStack/contextvars/archive/refs/tags/v${PV}.tar.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/immutables-0.9[${PYTHON_USEDEP}]

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/yosh-matsuda/cpp-yyjson/archive/refs/tags/v${PV}.tar
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-libs/yyjson

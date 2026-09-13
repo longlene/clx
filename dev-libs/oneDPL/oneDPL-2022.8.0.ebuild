@@ -12,7 +12,7 @@ SRC_URI="https://github.com/oneapi-src/oneDPL/archive/refs/tags/${P}-release.tar
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${P}-release
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	llvm-core/dpcpp

@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/tomplus/kubernetes_asyncio https://pypi.org/project
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="test"
 
 python_prepare_all() {

@@ -9,7 +9,7 @@ SRC_URI="mirror://sourceforge/reorder-ns/${PN}-${PV}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 S="${WORKDIR}/${PN}"
-KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ia64 ~ppc ~sparc ~x86"
 IUSE="logrotate"
 
 RDEPEND="net-analyzer/nmap

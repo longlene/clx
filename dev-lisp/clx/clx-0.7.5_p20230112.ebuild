@@ -13,7 +13,7 @@ SRC_URI="https://github.com/sharplispers/clx/archive/${EGIT_COMMIT}.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc ~sparc ~x86"
 IUSE="doc"
 
 DEPEND="sys-apps/texinfo

@@ -16,7 +16,7 @@ HOMEPAGE="
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	sci-ml/caffe2[cuda]

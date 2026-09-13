@@ -17,7 +17,7 @@ SRC_URI="https://github.com/intel/neural-compressor/archive/refs/tags/v${PV}.tar
 LICENSE="Apache-2.0"
 SLOT="0"
 S="${WORKDIR}"/neural-compressor-${PV}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/deprecated-1.2.13[${PYTHON_USEDEP}]

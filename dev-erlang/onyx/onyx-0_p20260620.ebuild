@@ -169,7 +169,7 @@ LICENSE+="
 	ISC MIT MPL-2.0 Unicode-3.0 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_unpack() {
 	cargo_src_unpack

@@ -13,7 +13,7 @@ SRC_URI="https://github.com/libvips/pyvips/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="dev-python/cffi[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"

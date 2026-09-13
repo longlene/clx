@@ -13,7 +13,7 @@ SRC_URI="https://gitlab.com/eql/EQL5/repository/archive.tar.gz?ref=${EGIT_COMMIT
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE="qthelp multimedia"
 
 DEPEND="

@@ -11,7 +11,7 @@ SRC_URI="https://github.com/cqerl/cqerl/archive/v2.0.1.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-erlang/lz4

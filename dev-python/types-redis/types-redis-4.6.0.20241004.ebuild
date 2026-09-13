@@ -14,7 +14,7 @@ SRC_URI="https://files.pythonhosted.org/packages/3a/95/c054d3ac940e8bac4ca216470
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	$(python_gen_cond_dep '

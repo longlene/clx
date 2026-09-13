@@ -11,7 +11,7 @@ SRC_URI="https://github.com/kotelnik/plasma-applet-weather-widget/archive/refs/t
 
 LICENSE="GPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	>=kde-plasma/libplasma-5.60.0:5

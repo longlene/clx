@@ -15,7 +15,7 @@ S="${WORKDIR}/django_signal_webhooks-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="drf"
 RESTRICT="test"
 

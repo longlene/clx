@@ -14,7 +14,7 @@ SRC_URI="http://www.sogo.nu/files/downloads/${MY_PN}/Sources/${MY_PN}-${PV}.tar.
 LICENSE="GPL-2"
 SLOT="0"
 S=${WORKDIR}/${MY_PN}-${PV}
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="postgres mysql logrotate"
 DEPEND="gnustep-libs/sope[ldap,mysql?,postgres?]
 	!mysql? ( !postgres? ( dev-db/postgresql-base ) )

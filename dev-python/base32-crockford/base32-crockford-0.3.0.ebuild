@@ -14,4 +14,4 @@ SRC_URI="https://files.pythonhosted.org/packages/a8/e7/868d9b106ffb86ebf1eb87751
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"

@@ -9,7 +9,7 @@ HOMEPAGE="http://common-lisp.net/project/gzip-stream/"
 SRC_URI="https://mydebian.googlecode.com/files/gzip-stream-0.2.8.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 dev-lisp/salza2

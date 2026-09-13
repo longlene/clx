@@ -18,7 +18,7 @@ SRC_URI="https://github.com/NVIDIA/cuda-python/archive/refs/tags/v${PV}.tar.gz -
 LICENSE="NVIDIA"
 SLOT="0"
 S="${WORKDIR}"/${P}/cuda_python
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/cuda-bindings-${PV}[${PYTHON_USEDEP}]

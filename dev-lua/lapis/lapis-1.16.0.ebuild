@@ -13,7 +13,7 @@ SRC_URI="https://github.com/leafo/lapis/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="${LUA_DEPS}"
 RDEPEND="${DEPEND}

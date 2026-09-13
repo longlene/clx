@@ -16,7 +16,7 @@ SRC_URI="https://git.sr.ht/~nicoco/slidge/archive/${EGIT_COMMIT}.tar.gz -> ${P}.
 LICENSE="AGPL-3.0"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/qrcode-7.4.1[${PYTHON_USEDEP}]

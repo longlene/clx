@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/andrewgodwin/urlman"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="dev-python/django[${PYTHON_USEDEP}]"
 

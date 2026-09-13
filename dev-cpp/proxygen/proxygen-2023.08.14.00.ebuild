@@ -11,7 +11,7 @@ SRC_URI="https://github.com/facebook/proxygen/archive/refs/tags/v${PV}.tar.gz ->
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-libs/libfmt

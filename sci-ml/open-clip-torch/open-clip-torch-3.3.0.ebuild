@@ -20,7 +20,7 @@ S="${WORKDIR}/open_clip-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="training"
 
 RDEPEND="

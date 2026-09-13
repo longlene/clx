@@ -20,7 +20,7 @@ SRC_URI="https://github.com/searxng/searxng/archive/${EGIT_COMMIT}.tar.gz -> ${P
 LICENSE="AGPL-3"
 SLOT="0"
 S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/certifi-2020.12.05[${PYTHON_USEDEP}]
