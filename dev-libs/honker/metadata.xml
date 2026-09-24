@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">russellromney/honker</remote-id>
+	</upstream>
+	<longdescription lang="en">
+	SQLite loadable extension (libhonker_ext) implementing
+	Postgres-style NOTIFY/LISTEN semantics on SQLite, with durable
+	queues, streams, pub/sub, and a cron scheduler. Load it into any
+	SQLite client with SELECT load_extension('/usr/lib/honker/libhonker_ext').
+	</longdescription>
+</pkgmetadata>

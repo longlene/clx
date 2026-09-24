@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
-	sci-ml/caffe2[cuda]
+	sci-ml/pytorch[cuda]
 "
 #BDEPEND="
 #	test? (

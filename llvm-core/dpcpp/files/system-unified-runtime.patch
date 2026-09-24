@@ -67,13 +67,11 @@ diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
  
  if (WIN32)
    set(SYCL_RT_LIBS sycl${SYCL_MAJOR_VERSION})
-@@ -495,8 +495,8 @@
+@@ -536,7 +536,7 @@
       sycl-headers-extras
       sycl
       libsycldevice
--     unified-memory-framework
 -     unified-runtime-loader
-+     #unified-memory-framework
 +     #unified-runtime-loader
       ${XPTIFW_LIBS}
       ${SYCL_TOOLCHAIN_DEPS}

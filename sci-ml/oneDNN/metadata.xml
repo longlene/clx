@@ -5,6 +5,10 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="cblas">Build with the system CBLAS backend</flag>
+    <flag name="mkl">Build with the Intel MKL BLAS backend</flag>
+  </use>
   <upstream>
     <remote-id type="github">oneapi-src/oneDNN</remote-id>
   </upstream>

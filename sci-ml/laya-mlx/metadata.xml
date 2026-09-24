@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">mizorewww/laya-mlx</remote-id>
+  </upstream>
+  <longdescription lang="en">
+Native MLX inference runtime for Laya typed decision models. Reimplements
+Laya's DecisionModel (ModernBERT encoder) using Apple's MLX framework for
+local decision-making. Model weights are downloaded separately from the
+Hugging Face hub at runtime and are not shipped with this package.
+  </longdescription>
+</pkgmetadata>

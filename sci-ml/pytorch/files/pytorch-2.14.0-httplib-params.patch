@@ -1,0 +1,30 @@
+--- a/torch/csrc/distributed/c10d/control_plane/WorkerServer.cpp	2026-09-18 14:14:54.820966416 -0700
++++ b/torch/csrc/distributed/c10d/control_plane/WorkerServer.cpp	2026-09-18 14:16:40.348371965 -0700
+@@ -13,19 +13,25 @@
+ namespace {
+ class RequestImpl : public Request {
+  public:
+-  RequestImpl(const httplib::Request& req) : req_(req) {}
++  // cpp-httplib >= 0.52 changed httplib::Params from
++  // std::multimap<std::string, std::string> to an insertion-order-preserving
++  // multimap, so copy the params into a std::multimap (works with both the
++  // old and the new type).
++  RequestImpl(const httplib::Request& req)
++      : req_(req), params_(req.params.begin(), req.params.end()) {}
+ 
+   const std::string& body() const override {
+     return req_.body;
+   }
+ 
+   const std::multimap<std::string, std::string>& params() const override {
+-    return req_.params;
++    return params_;
+   }
+ 
+  private:
+   // NOLINTNEXTLINE(cppcoreguidelines-avoid-const-or-ref-data-members)
+   const httplib::Request& req_;
++  std::multimap<std::string, std::string> params_;
+ };
+ 
+ class ResponseImpl : public Response {

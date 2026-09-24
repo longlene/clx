@@ -1,0 +1,235 @@
+--- a/bin/RegisterTritonDialects.h	2026-09-19 03:55:26.667200986 -0700
++++ b/bin/RegisterTritonDialects.h	2026-09-19 03:55:26.667249711 -0700
+@@ -95,7 +95,6 @@
+   mlir::triton::registerAllocateSharedMemoryNvPass();
+   mlir::registerLLVMDIScope();
+   mlir::LLVM::registerInlinerInterface(registry);
+-  mlir::NVVM::registerInlinerInterface(registry);
+   mlir::registerLLVMDILocalVariable();
+ 
+   // TritonAMDGPUToLLVM passes
+--- a/lib/Target/LLVMIR/LLVMDILocalVariable.cpp	2026-09-19 03:55:26.668107762 -0700
++++ b/lib/Target/LLVMIR/LLVMDILocalVariable.cpp	2026-09-19 03:55:26.668140485 -0700
+@@ -272,10 +272,13 @@
+     StringAttr funcNameAttr = subprogramAttr.getName();
+     LLVM::DISubprogramFlags subprogramFlags =
+         subprogramAttr.getSubprogramFlags();
++    // Upstream MLIR takes ArrayRef<Attribute> for retainedNodes; convert.
++    llvm::SmallVector<mlir::Attribute> retainedNodeAttrs(
++        retainedNodes.begin(), retainedNodes.end());
+     subprogramAttr = LLVM::DISubprogramAttr::get(
+         context, recId, /*isRecSelf=*/false, id, compileUnitAttr, fileAttr,
+         funcNameAttr, funcNameAttr, fileAttr, line, line, subprogramFlags,
+-        subroutineTypeAttr, retainedNodes, /*annotations=*/{});
++        subroutineTypeAttr, retainedNodeAttrs, /*annotations=*/{});
+ 
+     // Now create DbgValueOps with variables scoped to the RESOLVED subprogram.
+     // The isRecSelf=true scope must NOT appear in DbgValueOps because the
+--- a/python/src/gluon_ir.cc	2026-09-19 03:53:11.568779199 -0700
++++ b/python/src/gluon_ir.cc	2026-09-19 03:53:11.568895409 -0700
+@@ -1228,7 +1228,9 @@
+            })
+       .def("create_warp_pipeline_border",
+            [](GluonOpBuilder &self, const std::string &marker, int priority) {
+-             auto border = self.create<ROCDL::SchedBarrier>(0);
++             auto border = self.create<ROCDL::SchedBarrier>(
++                ROCDL::SchedGroupMaskAttr::get(
++                    self.getContext(), ROCDL::SchedGroupMask::none));
+              auto ctx = self.getContext();
+              border->setAttr("triton.warp_pipeline.border",
+                              StringAttr::get(ctx, marker));
+--- a/third_party/amd/lib/TritonAMDGPUToLLVM/LoadStoreOpToLLVM.cpp	2026-09-19 03:55:26.667709139 -0700
++++ b/third_party/amd/lib/TritonAMDGPUToLLVM/LoadStoreOpToLLVM.cpp	2026-09-19 03:55:26.668038121 -0700
+@@ -1049,11 +1049,16 @@
+         mlir::LLVM::AMD::getCtrlBitsForCacheModifierOnTarget(
+             cacheMod, /*isLoad=*/true, targetInfo);
+ 
++    auto i32Ty = rewriter.getIntegerType(32);
+     if (targetInfo.useAsyncMarks()) {
+       // Use the async intrinsic so LLVM tracks these via asyncmark
+       auto asyncLoadOp = ROCDL::GlobalLoadAsyncLDSOp::create(
+-          rewriter, loc, srcPtr, shmemAddr, vecBits / 8,
+-          /*offset=*/0, cacheModifiers, nullptr, nullptr, nullptr);
++          rewriter, loc, srcPtr, shmemAddr,
++          rewriter.getIntegerAttr(i32Ty, vecBits / 8),
++          /*offset=*/rewriter.getIntegerAttr(i32Ty, 0),
++          rewriter.getIntegerAttr(i32Ty, cacheModifiers),
++          /*alias_scopes=*/ArrayAttr(), /*noalias_scopes=*/ArrayAttr(),
++          /*tbaa=*/ArrayAttr());
+       if (targetInfo.requiresAliasInfoForAsyncOps())
+         AMD::addAsyncCopyAliasScope(asyncLoadOp);
+     } else if (targetInfo.getISAFamily() == ISAFamily::GFX1250) {
+@@ -1061,32 +1066,50 @@
+       case 32:
+         if (multicastMask)
+           ROCDL::ClusterLoadAsyncToLDSB32Op::create(
+-              rewriter, loc, srcPtr, shmemAddr, 0, cacheModifiers,
+-              multicastMask, nullptr, nullptr, nullptr);
++              rewriter, loc, srcPtr, shmemAddr,
++              rewriter.getIntegerAttr(i32Ty, 0),
++              rewriter.getIntegerAttr(i32Ty, cacheModifiers), multicastMask,
++              /*alias_scopes=*/ArrayAttr(), /*noalias_scopes=*/ArrayAttr(),
++              /*tbaa=*/ArrayAttr());
+         else
+-          ROCDL::GlobalLoadAsyncToLDSB32Op::create(rewriter, loc, srcPtr,
+-                                                   shmemAddr, 0, cacheModifiers,
+-                                                   nullptr, nullptr, nullptr);
++          ROCDL::GlobalLoadAsyncToLDSB32Op::create(
++              rewriter, loc, srcPtr, shmemAddr,
++              rewriter.getIntegerAttr(i32Ty, 0),
++              rewriter.getIntegerAttr(i32Ty, cacheModifiers),
++              /*alias_scopes=*/ArrayAttr(), /*noalias_scopes=*/ArrayAttr(),
++              /*tbaa=*/ArrayAttr());
+         break;
+       case 64:
+         if (multicastMask)
+           ROCDL::ClusterLoadAsyncToLDSB64Op::create(
+-              rewriter, loc, srcPtr, shmemAddr, 0, cacheModifiers,
+-              multicastMask, nullptr, nullptr, nullptr);
++              rewriter, loc, srcPtr, shmemAddr,
++              rewriter.getIntegerAttr(i32Ty, 0),
++              rewriter.getIntegerAttr(i32Ty, cacheModifiers), multicastMask,
++              /*alias_scopes=*/ArrayAttr(), /*noalias_scopes=*/ArrayAttr(),
++              /*tbaa=*/ArrayAttr());
+         else
+-          ROCDL::GlobalLoadAsyncToLDSB64Op::create(rewriter, loc, srcPtr,
+-                                                   shmemAddr, 0, cacheModifiers,
+-                                                   nullptr, nullptr, nullptr);
++          ROCDL::GlobalLoadAsyncToLDSB64Op::create(
++              rewriter, loc, srcPtr, shmemAddr,
++              rewriter.getIntegerAttr(i32Ty, 0),
++              rewriter.getIntegerAttr(i32Ty, cacheModifiers),
++              /*alias_scopes=*/ArrayAttr(), /*noalias_scopes=*/ArrayAttr(),
++              /*tbaa=*/ArrayAttr());
+         break;
+       case 128:
+         if (multicastMask)
+           ROCDL::ClusterLoadAsyncToLDSB128Op::create(
+-              rewriter, loc, srcPtr, shmemAddr, 0, cacheModifiers,
+-              multicastMask, nullptr, nullptr, nullptr);
++              rewriter, loc, srcPtr, shmemAddr,
++              rewriter.getIntegerAttr(i32Ty, 0),
++              rewriter.getIntegerAttr(i32Ty, cacheModifiers), multicastMask,
++              /*alias_scopes=*/ArrayAttr(), /*noalias_scopes=*/ArrayAttr(),
++              /*tbaa=*/ArrayAttr());
+         else
+           ROCDL::GlobalLoadAsyncToLDSB128Op::create(
+-              rewriter, loc, srcPtr, shmemAddr, 0, cacheModifiers, nullptr,
+-              nullptr, nullptr);
++              rewriter, loc, srcPtr, shmemAddr,
++              rewriter.getIntegerAttr(i32Ty, 0),
++              rewriter.getIntegerAttr(i32Ty, cacheModifiers),
++              /*alias_scopes=*/ArrayAttr(), /*noalias_scopes=*/ArrayAttr(),
++              /*tbaa=*/ArrayAttr());
+         break;
+       default:
+         llvm_unreachable("Unsupported vec size for async load");
+--- a/third_party/amd/lib/TritonAMDGPUTransforms/BlockPingpong.cpp	2026-09-19 03:53:11.569248447 -0700
++++ b/third_party/amd/lib/TritonAMDGPUTransforms/BlockPingpong.cpp	2026-09-19 03:53:11.569383822 -0700
+@@ -427,7 +427,11 @@
+   auto dotLoc = dotOps[0]->getPrevNode();
+   // sched barrier to prevent memory ops from cross but leave other ops to be
+   // scheduled across the barrier.
+-  auto preDotBar = ROCDL::SchedBarrier::create(builder, loc, 1);
++  auto preDotBar = ROCDL::SchedBarrier::create(
++      builder, loc,
++      ROCDL::SchedGroupMaskAttr::get(
++          builder.getContext(),
++          ROCDL::SchedGroupMask::non_mem_non_sideeffect));
+   updateOpInsertion(dotLoc);
+   appendOp(preDotBar);
+ 
+@@ -696,7 +700,10 @@
+   for (auto glop : gLoadOps)
+     moveOpAndPredecessorsUpSameBlock(glop);
+ 
+-  appendOp(ROCDL::SchedBarrier::create(builder, loc, 0));
++  appendOp(ROCDL::SchedBarrier::create(
++      builder, loc,
++      ROCDL::SchedGroupMaskAttr::get(builder.getContext(),
++                                     ROCDL::SchedGroupMask::none)));
+   appendOp(ROCDL::SBarrierOp::create(builder, loc));
+   appendOp(ROCDL::SchedBarrier::create(builder, loc, 0));
+ 
+@@ -930,17 +937,43 @@
+   // The last point we need to guarantee async_copy has been completed.
+   // w0 : local_load 0 - Dot 0                 - local_load 1
+   // w1 :              - local_load 0 (*wait 1)- Dot 0
+-  appendOp(ROCDL::SchedBarrier::create(builder, loc, 0));
++  appendOp(ROCDL::SchedBarrier::create(
++      builder, loc,
++      ROCDL::SchedGroupMaskAttr::get(builder.getContext(),
++                                     ROCDL::SchedGroupMask::none)));
+   appendOp(newAsyncWaitOp);
+-  appendOp(ROCDL::SchedBarrier::create(builder, loc, 0));
++  appendOp(ROCDL::SchedBarrier::create(
++      builder, loc,
++      ROCDL::SchedGroupMaskAttr::get(builder.getContext(),
++                                     ROCDL::SchedGroupMask::none)));
+ 
+   // Give hint to backend so it can interleave instructions better.
+   // This tries to interleave 3 SALU instructions per each MFMA
+-  appendOp(ROCDL::SchedGroupBarrier::create(builder, loc, 8, 1, 0));
+-  appendOp(ROCDL::SchedGroupBarrier::create(builder, loc, 4, 3, 0));
+-  appendOp(ROCDL::SchedGroupBarrier::create(builder, loc, 8, 1, 0));
+-  appendOp(ROCDL::SchedGroupBarrier::create(builder, loc, 4, 3, 0));
+-  appendOp(ROCDL::SchedGroupBarrier::create(builder, loc, 8, 1, 0));
++  appendOp(ROCDL::SchedGroupBarrier::create(
++      builder, loc,
++      ROCDL::SchedGroupMaskAttr::get(builder.getContext(),
++                                     ROCDL::SchedGroupMask::mfma_wmma),
++      builder.getI32IntegerAttr(1), builder.getI32IntegerAttr(0)));
++  appendOp(ROCDL::SchedGroupBarrier::create(
++      builder, loc,
++      ROCDL::SchedGroupMaskAttr::get(builder.getContext(),
++                                     ROCDL::SchedGroupMask::salu),
++      builder.getI32IntegerAttr(3), builder.getI32IntegerAttr(0)));
++  appendOp(ROCDL::SchedGroupBarrier::create(
++      builder, loc,
++      ROCDL::SchedGroupMaskAttr::get(builder.getContext(),
++                                     ROCDL::SchedGroupMask::mfma_wmma),
++      builder.getI32IntegerAttr(1), builder.getI32IntegerAttr(0)));
++  appendOp(ROCDL::SchedGroupBarrier::create(
++      builder, loc,
++      ROCDL::SchedGroupMaskAttr::get(builder.getContext(),
++                                     ROCDL::SchedGroupMask::salu),
++      builder.getI32IntegerAttr(3), builder.getI32IntegerAttr(0)));
++  appendOp(ROCDL::SchedGroupBarrier::create(
++      builder, loc,
++      ROCDL::SchedGroupMaskAttr::get(builder.getContext(),
++                                     ROCDL::SchedGroupMask::mfma_wmma),
++      builder.getI32IntegerAttr(1), builder.getI32IntegerAttr(0)));
+ 
+   appendOp(asyncCopyOps[1]);
+   appendOp(asyncCommitOps[1]);
+--- a/third_party/proton/Dialect/lib/ProtonGPUToLLVM/ProtonAMDGPUToLLVM/AddSchedBarriers.cpp
++++ b/third_party/proton/Dialect/lib/ProtonGPUToLLVM/ProtonAMDGPUToLLVM/AddSchedBarriers.cpp
+@@ -32,14 +32,13 @@
+     auto funcOps = triton::proton::gpu::getTritonFunctions(mod);
+     assert(funcOps.size() == 1 && "Expected exactly one funcOp");
+ 
+-    IntegerAttr zeroAttrValue =
+-        builder.getI32IntegerAttr(static_cast<int32_t>(0));
+-
+     funcOps[0].walk([&](mlir::triton::proton::gpu::ReadCounterOp op) {
+       auto loc = op.getLoc();
+       if (!isa_and_nonnull<ROCDL::SchedBarrier>(op->getPrevNode())) {
+         builder.setInsertionPoint(op);
+-        ROCDL::SchedBarrier::create(builder, loc, zeroAttrValue);
++        ROCDL::SchedBarrier::create(
++            builder, loc,
++            ROCDL::SchedGroupMaskAttr::get(ctx, ROCDL::SchedGroupMask::none));
+       }
+     });
+ 
+@@ -47,7 +46,9 @@
+       auto loc = op.getLoc();
+       if (!isa_and_nonnull<ROCDL::SchedBarrier>(op->getNextNode())) {
+         builder.setInsertionPointAfter(op);
+-        ROCDL::SchedBarrier::create(builder, loc, zeroAttrValue);
++        ROCDL::SchedBarrier::create(
++            builder, loc,
++            ROCDL::SchedGroupMaskAttr::get(ctx, ROCDL::SchedGroupMask::none));
+       }
+     });
+   }

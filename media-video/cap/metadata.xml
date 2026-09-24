@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Cap is an open source Loom alternative for beautiful, shareable screen
+    recordings. This package builds only the standalone CLI (apps/cli) from
+    the upstream monorepo, not the Tauri desktop GUI application.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">CapSoftware/Cap</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -30,7 +30,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 BDEPEND="test? (
-	sci-ml/caffe2[gloo]
+	sci-ml/pytorch[gloo]
 )"
 
 distutils_enable_tests pytest

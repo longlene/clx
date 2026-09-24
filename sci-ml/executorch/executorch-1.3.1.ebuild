@@ -24,7 +24,7 @@ DEPEND="
 	dev-util/flatcc
 	cuda? (
 		dev-util/nvidia-cuda-toolkit
-		sci-ml/caffe2
+		sci-ml/pytorch
 	)
 	vulkan? (
 		dev-util/vulkan-headers

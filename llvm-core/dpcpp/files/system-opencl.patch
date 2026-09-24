@@ -1,6 +1,6 @@
 diff -Nur a/opencl/CMakeLists.txt b/opencl/CMakeLists.txt
---- a/opencl/CMakeLists.txt	2025-12-11 13:30:09.000000000 -0800
-+++ b/opencl/CMakeLists.txt	2025-12-12 13:51:07.694005634 -0800
+--- a/opencl/CMakeLists.txt	2026-09-18 00:00:00.000000000 -0700
++++ b/opencl/CMakeLists.txt	2026-09-18 00:00:00.000000000 -0700
 @@ -17,6 +17,11 @@
  
  list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../unified-runtime/cmake")
@@ -15,20 +15,18 @@ diff -Nur a/opencl/CMakeLists.txt b/opencl/CMakeLists.txt
  
  add_subdirectory(opencl-aot)
 diff -Nur a/sycl/CMakeLists.txt b/sycl/CMakeLists.txt
---- a/sycl/CMakeLists.txt	2025-12-11 13:30:09.000000000 -0800
-+++ b/sycl/CMakeLists.txt	2025-12-12 13:51:55.654007322 -0800
-@@ -156,10 +156,10 @@
-   # e.g. when run LIT tests
-   file(COPY ${OpenCL_INCLUDE_DIR}/CL DESTINATION ${SYCL_INCLUDE_BUILD_DIR})
+--- a/sycl/CMakeLists.txt	2026-09-18 00:00:00.000000000 -0700
++++ b/sycl/CMakeLists.txt	2026-09-18 00:00:00.000000000 -0700
+@@ -170,7 +170,7 @@
+     file(COPY ${OpenCL_INCLUDE_DIR}/CL DESTINATION ${SYCL_INCLUDE_BUILD_DIR})
  
--  # Include OpenCL Headers into final bundle.
--  install(DIRECTORY ${OpenCL_INCLUDE_DIR}/CL
--          DESTINATION ${SYCL_INCLUDE_DIR}
--          COMPONENT OpenCL-Headers)
-+  ## Include OpenCL Headers into final bundle.
-+  #install(DIRECTORY ${OpenCL_INCLUDE_DIR}/CL
-+  #        DESTINATION ${SYCL_INCLUDE_DIR}
-+  #        COMPONENT OpenCL-Headers)
+-    # Include OpenCL Headers into final bundle.
+-    install(DIRECTORY ${OpenCL_INCLUDE_DIR}/CL
+-            DESTINATION ${SYCL_INCLUDE_DIR}
+-            COMPONENT OpenCL-Headers)
++    ## Include OpenCL Headers into final bundle.
++    #install(DIRECTORY ${OpenCL_INCLUDE_DIR}/CL
++    #        DESTINATION ${SYCL_INCLUDE_DIR}
++    #        COMPONENT OpenCL-Headers)
+   endif()
  endif()
- 
- # Option for enabling building the SYCL major release preview library.

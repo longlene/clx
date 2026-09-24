@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Orbit Pi
+Comment=Native workbench GUI for the pi coding agent
+Exec=orbit-pi
+Icon=orbit-pi
+Type=Application
+StartupNotify=true
+Categories=Development;IDE;

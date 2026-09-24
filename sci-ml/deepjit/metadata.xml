@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    DeepJIT is a header-only C++20 JIT runtime for NVIDIA CUDA GPUs and
+    Huawei Ascend NPUs. It gives C++/Python extension authors a shared
+    interface for compiling kernel source at runtime, caching the
+    resulting binaries, loading them onto the device, and launching them
+    with backend-specific options. It is meant to be embedded into a
+    consuming extension's include path rather than used standalone.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">deepseek-ai/DeepJIT</remote-id>
+  </upstream>
+</pkgmetadata>

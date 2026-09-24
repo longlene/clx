@@ -1,0 +1,425 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	adler2@2.0.1
+	aho-corasick@1.1.4
+	alsa-sys@0.4.0
+	alsa@0.11.0
+	anstream@1.0.0
+	anstyle-parse@1.0.0
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anstyle@1.0.14
+	anyhow@1.0.103
+	arrayvec@0.7.8
+	assert_cmd@2.2.1
+	atomic-waker@1.1.2
+	autocfg@1.5.0
+	aws-lc-rs@1.17.0
+	aws-lc-sys@0.41.0
+	axum-core@0.5.6
+	axum@0.8.9
+	base64@0.22.1
+	base64ct@1.8.3
+	bit-set@0.8.0
+	bit-vec@0.8.0
+	bitflags@1.3.2
+	bitflags@2.11.1
+	block-buffer@0.10.4
+	block2@0.6.2
+	block@0.1.6
+	bstr@1.12.1
+	bumpalo@3.20.2
+	bytemuck@1.25.0
+	byteorder@1.5.0
+	bytes@1.11.1
+	cc@1.2.62
+	cesu8@1.1.0
+	cfg-if@1.0.4
+	cfg_aliases@0.2.1
+	clap@4.6.1
+	clap_builder@4.6.0
+	clap_derive@4.6.1
+	clap_lex@1.1.0
+	cmake@0.1.58
+	colorchoice@1.0.5
+	combine@4.6.7
+	console@0.15.11
+	const-oid@0.9.6
+	core-foundation-sys@0.8.7
+	core-foundation@0.10.1
+	core-graphics-types@0.2.0
+	coreaudio-rs@0.14.2
+	cpal@0.17.3
+	cpufeatures@0.2.17
+	crc32fast@1.5.0
+	crossbeam-deque@0.8.6
+	crossbeam-epoch@0.9.20
+	crossbeam-utils@0.8.21
+	crypto-common@0.1.7
+	curve25519-dalek-derive@0.1.1
+	curve25519-dalek@4.1.3
+	dasp_sample@0.11.0
+	data-encoding@2.11.0
+	der@0.7.10
+	deranged@0.5.8
+	difflib@0.4.0
+	digest@0.10.7
+	dispatch2@0.3.1
+	displaydoc@0.2.6
+	dunce@1.0.5
+	ed25519-dalek@2.2.0
+	ed25519@2.2.3
+	either@1.15.0
+	encode_unicode@1.0.0
+	encoding_rs@0.8.35
+	equivalent@1.0.2
+	errno@0.3.14
+	extended@0.1.0
+	fallible-iterator@0.3.0
+	fallible-streaming-iterator@0.1.9
+	fastrand@2.4.1
+	fiat-crypto@0.2.9
+	find-msvc-tools@0.1.9
+	flate2@1.1.9
+	float-cmp@0.10.0
+	fnv@1.0.7
+	foreign-types-macros@0.2.3
+	foreign-types-shared@0.3.1
+	foreign-types@0.5.0
+	form_urlencoded@1.2.2
+	fs_extra@1.3.0
+	futures-channel@0.3.32
+	futures-core@0.3.32
+	futures-io@0.3.32
+	futures-macro@0.3.32
+	futures-sink@0.3.32
+	futures-task@0.3.32
+	futures-util@0.3.32
+	generic-array@0.14.7
+	getrandom@0.2.17
+	getrandom@0.3.4
+	hashbrown@0.17.0
+	heck@0.5.0
+	hound@3.5.1
+	http-body-util@0.1.3
+	http-body@1.0.1
+	http@1.4.0
+	httparse@1.10.1
+	httpdate@1.0.3
+	hyper-rustls@0.27.9
+	hyper-util@0.1.20
+	hyper@1.9.0
+	icu_collections@2.2.0
+	icu_locale_core@2.2.0
+	icu_normalizer@2.2.0
+	icu_normalizer_data@2.2.0
+	icu_properties@2.2.0
+	icu_properties_data@2.2.0
+	icu_provider@2.2.0
+	idna@1.1.0
+	idna_adapter@1.2.2
+	indexmap@2.14.0
+	indicatif@0.17.11
+	ipnet@2.12.0
+	is_terminal_polyfill@1.70.2
+	itoa@1.0.18
+	jni-sys-macros@0.4.1
+	jni-sys@0.3.1
+	jni-sys@0.4.1
+	jni@0.21.1
+	jobserver@0.1.34
+	js-sys@0.3.98
+	lazy_static@1.5.0
+	libc@0.2.186
+	libloading@0.8.9
+	libopus_sys@0.4.0
+	libsqlite3-sys@0.38.1
+	linux-raw-sys@0.12.1
+	litemap@0.8.2
+	log@0.4.29
+	lru-slab@0.1.2
+	mach2@0.5.0
+	malloc_buf@0.0.6
+	matchit@0.8.4
+	matrixmultiply@0.3.10
+	memchr@2.8.0
+	memmap2@0.9.11
+	metal@0.33.0
+	mime@0.3.17
+	miniz_oxide@0.8.9
+	mio@1.2.0
+	multer@3.1.0
+	ndk-context@0.1.1
+	ndk-sys@0.6.0+11769913
+	ndk@0.9.0
+	normalize-line-endings@0.3.0
+	num-complex@0.4.6
+	num-conv@0.2.2
+	num-derive@0.4.2
+	num-integer@0.1.46
+	num-traits@0.2.19
+	num_enum@0.7.6
+	num_enum_derive@0.7.6
+	number_prefix@0.4.0
+	objc2-audio-toolbox@0.3.2
+	objc2-avf-audio@0.3.2
+	objc2-core-audio-types@0.3.2
+	objc2-core-audio@0.3.2
+	objc2-core-foundation@0.3.2
+	objc2-encode@4.1.0
+	objc2-exception-helper@0.1.1
+	objc2-foundation@0.3.2
+	objc2@0.6.4
+	objc@0.2.7
+	once_cell@1.21.4
+	once_cell_polyfill@1.70.2
+	paste@1.0.15
+	pem@3.0.6
+	percent-encoding@2.3.2
+	pin-project-lite@0.2.17
+	pkcs8@0.10.2
+	pkg-config@0.3.33
+	portable-atomic@1.13.1
+	potential_utf@0.1.5
+	powerfmt@0.2.0
+	ppv-lite86@0.2.21
+	predicates-core@1.0.10
+	predicates-tree@1.0.13
+	predicates@3.1.4
+	primal-check@0.3.4
+	proc-macro-crate@3.5.0
+	proc-macro2@1.0.106
+	proptest@1.11.0
+	quick-error@1.2.3
+	quinn-proto@0.11.14
+	quinn-udp@0.5.14
+	quinn@0.11.9
+	quote@1.0.45
+	r-efi@5.3.0
+	rand@0.9.4
+	rand_chacha@0.9.0
+	rand_core@0.6.4
+	rand_core@0.9.5
+	rand_xorshift@0.4.0
+	rawpointer@0.2.1
+	rayon-core@1.13.0
+	rayon@1.12.0
+	rcgen@0.12.1
+	realfft@3.5.0
+	regex-automata@0.4.14
+	regex-syntax@0.8.10
+	regex@1.12.3
+	reqwest@0.12.28
+	ring@0.17.14
+	rubato@0.15.0
+	rusqlite@0.40.1
+	rustc-hash@2.1.2
+	rustc_version@0.4.1
+	rustfft@6.4.1
+	rustix@1.1.4
+	rustls-pki-types@1.14.1
+	rustls-webpki@0.103.13
+	rustls@0.23.40
+	rustversion@1.0.22
+	rusty-fork@0.3.1
+	ryu@1.0.23
+	same-file@1.0.6
+	semver@1.0.28
+	serde@1.0.228
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.149
+	serde_path_to_error@0.1.20
+	serde_spanned@1.1.1
+	serde_urlencoded@0.7.1
+	sha1@0.10.6
+	sha2@0.10.9
+	shlex@1.3.0
+	signal-hook-registry@1.4.8
+	signature@2.2.0
+	simd-adler32@0.3.9
+	slab@0.4.12
+	smallvec@1.15.1
+	socket2@0.6.3
+	spin@0.9.9
+	spki@0.7.3
+	stable_deref_trait@1.2.1
+	strength_reduce@0.2.4
+	strsim@0.11.1
+	subtle@2.6.1
+	symphonia-bundle-flac@0.5.5
+	symphonia-bundle-mp3@0.5.5
+	symphonia-codec-aac@0.5.5
+	symphonia-codec-adpcm@0.5.5
+	symphonia-codec-alac@0.5.5
+	symphonia-codec-pcm@0.5.5
+	symphonia-codec-vorbis@0.5.5
+	symphonia-core@0.5.5
+	symphonia-format-caf@0.5.5
+	symphonia-format-isomp4@0.5.5
+	symphonia-format-mkv@0.5.5
+	symphonia-format-ogg@0.5.5
+	symphonia-format-riff@0.5.5
+	symphonia-metadata@0.5.5
+	symphonia-utils-xiph@0.5.5
+	symphonia@0.5.5
+	syn@2.0.117
+	sync_wrapper@1.0.2
+	synstructure@0.13.2
+	tempfile@3.27.0
+	termcolor@1.4.1
+	termtree@0.5.1
+	thiserror-impl@1.0.69
+	thiserror-impl@2.0.18
+	thiserror@1.0.69
+	thiserror@2.0.18
+	time-core@0.1.8
+	time@0.3.47
+	tinystr@0.8.3
+	tinyvec@1.11.0
+	tinyvec_macros@0.1.1
+	tokio-macros@2.7.0
+	tokio-rustls@0.26.4
+	tokio-stream@0.1.18
+	tokio-tungstenite@0.29.0
+	tokio@1.52.1
+	toml@1.1.2+spec-1.1.0
+	toml_datetime@1.1.1+spec-1.1.0
+	toml_edit@0.25.11+spec-1.1.0
+	toml_parser@1.1.2+spec-1.1.0
+	toml_writer@1.1.1+spec-1.1.0
+	tower-http@0.6.11
+	tower-layer@0.3.3
+	tower-service@0.3.3
+	tower@0.5.3
+	tracing-core@0.1.36
+	tracing@0.1.44
+	transpose@0.2.3
+	try-lock@0.2.5
+	ts-rs-macros@12.0.1
+	ts-rs@12.0.1
+	tungstenite@0.29.0
+	typenum@1.20.0
+	unarray@0.1.4
+	unicode-general-category@1.1.0
+	unicode-ident@1.0.24
+	unicode-width@0.2.2
+	untrusted@0.9.0
+	url@2.5.8
+	utf8_iter@1.0.4
+	utf8parse@0.2.2
+	vcpkg@0.2.15
+	version_check@0.9.5
+	wait-timeout@0.2.1
+	walkdir@2.5.0
+	want@0.3.1
+	wasapi@0.23.0
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.3+wasi-0.2.9
+	wasm-bindgen-futures@0.4.71
+	wasm-bindgen-macro-support@0.2.121
+	wasm-bindgen-macro@0.2.121
+	wasm-bindgen-shared@0.2.121
+	wasm-bindgen@0.2.121
+	web-sys@0.3.98
+	web-time@1.1.0
+	webpki-roots@1.0.7
+	winapi-util@0.1.11
+	windows-collections@0.3.2
+	windows-core@0.62.2
+	windows-future@0.3.2
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.2.1
+	windows-numerics@0.3.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.45.0
+	windows-sys@0.52.0
+	windows-sys@0.59.0
+	windows-sys@0.61.2
+	windows-targets@0.42.2
+	windows-targets@0.52.6
+	windows-threading@0.2.1
+	windows@0.62.2
+	windows_aarch64_gnullvm@0.42.2
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.42.2
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.42.2
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.42.2
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.42.2
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.42.2
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.42.2
+	windows_x86_64_msvc@0.52.6
+	winnow@1.0.2
+	wit-bindgen@0.57.1
+	writeable@0.6.3
+	yasna@0.5.2
+	yoke-derive@0.8.2
+	yoke@0.8.2
+	zerocopy-derive@0.8.48
+	zerocopy@0.8.48
+	zerofrom-derive@0.1.7
+	zerofrom@0.1.8
+	zeroize@1.8.2
+	zerotrie@0.2.4
+	zerovec-derive@0.11.3
+	zerovec@0.11.6
+	zip@0.6.6
+	zmij@1.0.21
+"
+
+# Pinned commit of the openasr-ggml submodule (empty in the GitHub tag archive).
+GGML_SHA="29c187be3b84bbf59c6d5bd1099e883443416d32"
+
+RUST_MIN_VER="1.95"
+
+inherit cargo
+
+DESCRIPTION="Local-first speech-to-text: no cloud, no telemetry, fail-closed by design"
+HOMEPAGE="https://openasr.org https://github.com/QuintinShaw/openasr"
+SRC_URI="
+	https://github.com/QuintinShaw/openasr/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	https://github.com/QuintinShaw/openasr-ggml/archive/${GGML_SHA}.tar.gz -> openasr-ggml-${GGML_SHA}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="Apache-2.0 BSD CDLA-Permissive-2.0 ISC MIT MPL-2.0 Unicode-3.0"
+SLOT="0"
+KEYWORDS="~amd64"
+
+BDEPEND="
+	dev-build/cmake
+	virtual/pkgconfig
+"
+DEPEND="
+	media-libs/alsa-lib
+"
+RDEPEND="${DEPEND}"
+
+src_prepare() {
+	default
+	# The GitHub tag archive leaves the openasr-ggml submodule empty and
+	# build.rs refuses to run without the ggml sources. src_unpack already
+	# extracted the pinned commit at the top level of ${WORKDIR}; move it
+	# into the submodule path.
+	local gdir="${S}/crates/openasr-core/third_party/openasr-ggml"
+	rm -rf "${gdir}"
+	mv "${WORKDIR}/openasr-ggml-${GGML_SHA}" "${gdir}" || die "failed to move openasr-ggml sources"
+	eapply_user
+}
+
+src_install() {
+	cargo_src_install --path crates/openasr-cli
+	dodoc CHANGELOG.md README.md
+}

@@ -26,7 +26,7 @@ RDEPEND="
 	${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}
-	sci-ml/caffe2[cuda,${PYTHON_SINGLE_USEDEP}]
+	sci-ml/pytorch[cuda,${PYTHON_SINGLE_USEDEP}]
 	dev-util/nvidia-cuda-toolkit
 "
 

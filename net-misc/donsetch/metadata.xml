@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Web fetch, search, and crawl tool for AI agents. A single Rust binary with
+    a custom stealthy HTTP/2 transport driven by Chrome's BoringSSL, keyless
+    parallel search backends, PDF extraction, and optional OCR/reranking.
+    The ocr and rerank upstream features are not exposed as USE flags.
+  </longdescription>
+  <use>
+    <flag name="http">Build the MCP HTTP server (axum) for the --http flag</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">dondai44423/donsetch</remote-id>
+  </upstream>
+</pkgmetadata>

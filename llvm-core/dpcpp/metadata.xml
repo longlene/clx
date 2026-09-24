@@ -5,6 +5,11 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <use>
+    <flag name="cuda">build the CUDA backend (sycl-trace CUPTI collector, NVPTX target)</flag>
+    <flag name="l0">build the Level Zero backend</flag>
+    <flag name="rocm">build the HIP/ROCm (AMDGPU) backend</flag>
+  </use>
   <upstream>
     <remote-id type="github">intel/llvm</remote-id>
   </upstream>

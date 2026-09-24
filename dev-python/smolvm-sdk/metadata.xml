@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">smol-machines/smolvm-sdk</remote-id>
+  </upstream>
+  <longdescription lang="en">
+Python SDK for smolVM, a lightweight microVM runtime providing
+sandboxed environments for secure code execution. The client talks
+to a running smolVM server over HTTP (default: http://127.0.0.1:8080)
+and offers an async API for managing machine lifecycles, executing
+commands, running OCI containers, and language presets.
+
+Part of the smolvm-sdk monorepo; this package covers the
+smolvm-python subdirectory.
+  </longdescription>
+</pkgmetadata>

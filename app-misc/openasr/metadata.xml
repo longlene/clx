@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    OpenASR is a local-first speech-to-text tool: transcribe audio entirely
+    on-device with no cloud and no telemetry. It bundles a ggml-based
+    inference engine, a model registry with signed catalogs, an HTTP server
+    with OpenAI-compatible endpoints, and a CLI for transcribing, live
+    capture, model management, and serving.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">QuintinShaw/openasr</remote-id>
+  </upstream>
+</pkgmetadata>

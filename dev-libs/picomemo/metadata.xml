@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">mierenhoop/picomemo</remote-id>
+	</upstream>
+	<longdescription lang="en">
+	Portable OMEMO (XEP-0384) implementation in C. Curve25519 and
+	EdDSA are provided by the bundled HAcl amalgamation; the
+	cryptographic backends use either the system Mbed TLS
+	(default) or OpenSSL (openssl USE flag).
+	</longdescription>
+	<use>
+		<flag name="openssl">Link against dev-libs/openssl instead of
+		dev-libs/mbedtls for the cryptographic backend</flag>
+	</use>
+</pkgmetadata>

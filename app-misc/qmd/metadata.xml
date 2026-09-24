@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    On-device hybrid search engine for markdown files, meeting notes, and
+    knowledge bases, combining BM25 full-text search, vector similarity
+    search, and LLM reranking. Ships as a Node.js CLI with vendored
+    prebuilt native dependencies (better-sqlite3, sqlite-vec, four
+    tree-sitter grammars, and node-llama-cpp's CPU backend); vector
+    embedding and reranking models are downloaded on first use.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">tobi/qmd</remote-id>
+  </upstream>
+</pkgmetadata>

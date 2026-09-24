@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">imrj05/orbit</remote-id>
+  </upstream>
+  <longdescription lang="en">
+Orbit is a native desktop workbench for the pi coding agent: a chat-style
+GPUI (Rust) application that drives pi over its RPC protocol. It provides a
+session sidebar, terminal emulator, workspace explorer and prompt
+management.
+  </longdescription>
+</pkgmetadata>

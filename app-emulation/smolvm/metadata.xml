@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">smol-machines/smolvm</remote-id>
+  </upstream>
+  <longdescription lang="en">
+smolvm is a CLI for branchable computing with portable, lightweight,
+self-contained microVMs. It manages and runs custom Linux virtual machines
+locally with sub-second cold start, cross-platform support (macOS, Linux,
+Windows) and elastic memory usage, and can pack a stateful virtual machine
+into a single .smolmachine file that rehydrates on any supported platform.
+On Linux it dlopens dev-libs/libkrun (KVM backend) at runtime; the prebuilt
+libraries shipped in the upstream tarball are Git-LFS pointers and are not
+used by this package.
+  </longdescription>
+</pkgmetadata>

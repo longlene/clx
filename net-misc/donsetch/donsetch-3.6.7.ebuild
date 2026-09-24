@@ -1,0 +1,574 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+	ab_glyph@0.2.32
+	ab_glyph_rasterizer@0.1.10
+	adler2@2.0.1
+	ahash@0.8.12
+	aho-corasick@1.1.4
+	aligned-vec@0.6.4
+	aligned@0.4.3
+	alloc-no-stdlib@2.0.4
+	alloc-stdlib@0.2.4
+	anstyle@1.0.14
+	anyhow@1.0.104
+	approx@0.5.1
+	arbitrary@1.4.2
+	arg_enum_proc_macro@0.3.4
+	arrayvec@0.7.8
+	as-slice@0.2.1
+	asn1-rs-derive@0.6.0
+	asn1-rs-impl@0.2.0
+	asn1-rs@0.7.2
+	async-compression@0.4.43
+	atomic-waker@1.1.2
+	autocfg@1.5.1
+	av-scenechange@0.14.1
+	av1-grain@0.2.5
+	avif-serialize@0.8.9
+	axum-core@0.5.6
+	axum@0.8.9
+	base64@0.13.1
+	base64@0.22.1
+	base64@0.23.1
+	base64ct@1.8.3
+	bindgen@0.72.1
+	bit-vec@0.9.1
+	bit_field@0.10.3
+	bitflags@2.13.1
+	bitstream-io@4.10.0
+	block-buffer@0.10.4
+	block-buffer@0.12.1
+	boring-sys@5.2.0
+	boring@5.2.0
+	brotli-decompressor@5.0.3
+	brotli@8.0.4
+	built@0.8.1
+	bumpalo@3.20.3
+	bytemuck@1.25.2
+	byteorder-lite@0.1.0
+	byteorder@1.5.0
+	bytes@1.12.1
+	castaway@0.2.4
+	cc@1.4.0
+	cexpr@0.6.0
+	cfg-if@1.0.4
+	cfg_aliases@0.2.2
+	chacha20@0.10.1
+	clang-sys@1.9.1
+	clap@4.6.6
+	clap_builder@4.6.6
+	clap_lex@1.1.0
+	clipper2-rust@1.1.0
+	cmake@0.1.58
+	color_quant@1.1.0
+	compact_str@0.9.1
+	compression-codecs@0.4.38
+	compression-core@0.4.32
+	console@0.16.4
+	const-oid@0.10.2
+	const-oid@0.9.6
+	core-foundation-sys@0.8.7
+	core-foundation@0.10.1
+	cpufeatures@0.2.17
+	cpufeatures@0.3.0
+	crc32fast@1.5.0
+	crossbeam-deque@0.8.7
+	crossbeam-epoch@0.9.20
+	crossbeam-utils@0.8.22
+	crunchy@0.2.4
+	crypto-common@0.1.7
+	crypto-common@0.2.2
+	cssparser-macros@0.7.0
+	cssparser@0.37.0
+	curve25519-dalek-derive@0.1.1
+	curve25519-dalek@4.1.3
+	daachorse@1.0.1
+	darling@0.20.11
+	darling@0.23.0
+	darling_core@0.20.11
+	darling_core@0.23.0
+	darling_macro@0.20.11
+	darling_macro@0.23.0
+	dary_heap@0.3.9
+	data-encoding@2.11.0
+	der-parser@10.0.0
+	der@0.7.10
+	der@0.8.1
+	deranged@0.5.8
+	derive_arbitrary@1.4.2
+	derive_builder@0.20.2
+	derive_builder_core@0.20.2
+	derive_builder_macro@0.20.2
+	derive_more-impl@2.1.1
+	derive_more@2.1.1
+	digest@0.10.7
+	digest@0.11.3
+	dirs-sys@0.5.0
+	dirs@6.0.0
+	displaydoc@0.2.7
+	dtoa-short@0.3.5
+	dtoa@1.0.11
+	ed25519-dalek@2.2.0
+	ed25519@2.2.3
+	ego-tree@0.11.0
+	either@1.17.0
+	encode_unicode@1.0.0
+	encoding_rs@0.8.35
+	equator-macro@0.4.2
+	equator@0.4.2
+	equivalent@1.0.2
+	errno@0.3.14
+	esaxx-rs@0.1.10
+	exr@1.74.2
+	fastrand@2.5.0
+	fax@0.2.7
+	fdeflate@0.3.7
+	fiat-crypto@0.2.9
+	filetime@0.2.29
+	find-msvc-tools@0.1.9
+	flate2@1.1.10
+	fnv@1.0.7
+	foreign-types-macros@0.2.4
+	foreign-types-shared@0.1.1
+	foreign-types-shared@0.3.1
+	foreign-types@0.3.2
+	foreign-types@0.5.0
+	form_urlencoded@1.2.2
+	fs_extra@1.3.0
+	fslock@0.2.1
+	futures-channel@0.3.33
+	futures-core@0.3.34
+	futures-io@0.3.34
+	futures-macro@0.3.34
+	futures-sink@0.3.34
+	futures-task@0.3.34
+	futures-util@0.3.34
+	generic-array@0.14.7
+	getopts@0.2.24
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.3
+	gif@0.14.2
+	glam@0.30.10
+	glam@0.31.1
+	glam@0.32.1
+	glam@0.33.3
+	glob@0.3.4
+	half@2.7.1
+	hashbrown@0.17.1
+	hermit-abi@0.5.2
+	hmac-sha256@1.1.14
+	html5ever@0.39.0
+	http-body-util@0.1.4
+	http-body@1.1.0
+	http@1.5.0
+	httparse@1.10.1
+	httpdate@1.0.3
+	hybrid-array@0.4.14
+	hyper-rustls@0.27.9
+	hyper-util@0.1.20
+	hyper@1.11.0
+	icu_collections@2.2.0
+	icu_locale_core@2.2.0
+	icu_normalizer@2.2.0
+	icu_normalizer_data@2.2.0
+	icu_properties@2.2.0
+	icu_properties_data@2.2.0
+	icu_provider@2.2.0
+	ident_case@1.0.1
+	idna@1.1.0
+	idna_adapter@1.2.2
+	image-webp@0.2.4
+	image@0.25.10
+	imageproc@0.27.0
+	imgref@1.12.2
+	indexmap@2.14.1
+	indicatif@0.18.6
+	interpolate_name@0.2.4
+	ipnet@2.12.0
+	itertools@0.13.0
+	itertools@0.14.0
+	itertools@0.15.0
+	itoa@1.0.18
+	jobserver@0.1.35
+	js-sys@0.3.103
+	lazy_static@1.5.0
+	lebe@0.5.3
+	libc@0.2.189
+	libfuzzer-sys@0.4.13
+	libloading@0.8.9
+	libloading@0.9.0
+	libm@0.2.16
+	libredox@0.1.19
+	linux-raw-sys@0.12.1
+	litemap@0.8.2
+	lock_api@0.4.14
+	log@0.4.33
+	loop9@0.1.5
+	lru-slab@0.1.2
+	lzma-rust2@0.15.8
+	macro_rules_attribute-proc_macro@0.2.3
+	macro_rules_attribute@0.2.3
+	markup5ever@0.39.0
+	matchers@0.2.0
+	matchit@0.8.4
+	matrixmultiply@0.3.11
+	maybe-rayon@0.1.1
+	memchr@2.8.3
+	mime@0.3.17
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	miniz_oxide@0.9.1
+	mio@1.2.2
+	monostate-impl@0.1.18
+	monostate@0.1.18
+	moxcms@0.8.1
+	multiversion-macros@0.8.0
+	multiversion@0.8.0
+	nalgebra-macros@0.3.0
+	nalgebra@0.35.0
+	native-tls@0.2.18
+	ndarray@0.17.2
+	new_debug_unreachable@1.0.6
+	no_std_io2@0.9.4
+	nom@7.1.3
+	nom@8.0.0
+	noop_proc_macro@0.3.0
+	nu-ansi-term@0.50.3
+	num-bigint@0.4.8
+	num-complex@0.4.6
+	num-conv@0.2.2
+	num-derive@0.4.2
+	num-integer@0.1.46
+	num-iter@0.1.46
+	num-rational@0.4.2
+	num-traits@0.2.19
+	num@0.4.3
+	num_cpus@1.17.0
+	oar-ocr-core@0.9.0
+	oar-ocr-derive@0.9.0
+	oar-ocr@0.9.0
+	oid-registry@0.8.1
+	once_cell@1.21.4
+	onig@6.5.3
+	onig_sys@69.9.3
+	openssl-macros@0.1.1
+	openssl-probe@0.2.1
+	openssl-sys@0.9.117
+	openssl@0.10.81
+	option-ext@0.2.0
+	ort-sys@2.0.0-rc.12
+	ort@2.0.0-rc.12
+	owned_ttf_parser@0.25.1
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
+	paste@1.0.15
+	pastey@0.1.1
+	pastey@0.2.3
+	pem-rfc7468@1.0.0
+	pem@4.0.0
+	percent-encoding@2.3.2
+	phf@0.13.1
+	phf_codegen@0.13.1
+	phf_generator@0.13.1
+	phf_macros@0.13.1
+	phf_shared@0.13.1
+	pin-project-lite@0.2.17
+	pkcs8@0.10.2
+	pkg-config@0.3.33
+	png@0.18.1
+	portable-atomic-util@0.2.7
+	portable-atomic@1.14.0
+	potential_utf@0.1.5
+	powerfmt@0.2.0
+	ppv-lite86@0.2.21
+	precomputed-hash@0.1.1
+	primal-check@0.3.4
+	proc-macro2@1.0.107
+	profiling-procmacros@1.0.18
+	profiling@1.0.18
+	psl-types@2.0.11
+	psl@2.1.226
+	pulp-wasm-simd-flag@0.1.1
+	pulp@0.22.3
+	pxfm@0.1.30
+	qoi@0.4.1
+	quick-error@2.0.1
+	quinn-proto@0.11.16
+	quinn-udp@0.5.15
+	quinn@0.11.11
+	quote@1.0.47
+	r-efi@5.3.0
+	r-efi@6.0.0
+	rand@0.10.2
+	rand@0.9.5
+	rand_chacha@0.9.0
+	rand_core@0.10.1
+	rand_core@0.6.4
+	rand_core@0.9.5
+	rand_distr@0.6.0
+	rand_pcg@0.10.2
+	rav1e@0.8.1
+	ravif@0.13.0
+	raw-cpuid@11.6.0
+	rawpointer@0.2.1
+	rayon-cond@0.4.0
+	rayon-core@1.13.0
+	rayon@1.12.0
+	rcgen@0.14.10
+	reborrow@0.5.5
+	redox_syscall@0.5.18
+	redox_users@0.5.2
+	regex-automata@0.4.16
+	regex-syntax@0.8.11
+	regex@1.13.1
+	reqwest@0.12.28
+	rgb@0.8.53
+	ring@0.17.14
+	rustc-hash@2.1.3
+	rustc_version@0.4.1
+	rustdct@0.7.1
+	rustfft@6.4.1
+	rusticata-macros@4.1.0
+	rustix@1.1.4
+	rustls-native-certs@0.8.4
+	rustls-pki-types@1.15.1
+	rustls-webpki@0.103.13
+	rustls@0.23.43
+	rustversion@1.0.23
+	ryu@1.0.23
+	safe_arch@1.1.0
+	schannel@0.1.29
+	scopeguard@1.2.0
+	scraper@0.27.0
+	security-framework-sys@2.17.0
+	security-framework@3.7.0
+	selectors@0.38.0
+	semver@1.0.28
+	serde@1.0.229
+	serde_core@1.0.229
+	serde_derive@1.0.229
+	serde_json@1.0.151
+	serde_path_to_error@0.1.20
+	serde_urlencoded@0.7.1
+	servo_arc@0.4.3
+	sha1@0.11.0
+	sha2@0.10.9
+	sha2@0.11.0
+	sharded-slab@0.1.7
+	shlex@1.3.0
+	shlex@2.0.1
+	signal-hook-registry@1.4.8
+	signature@2.2.0
+	simba@0.10.1
+	simd-adler32@0.3.10
+	simd_helpers@0.1.0
+	siphasher@1.0.3
+	slab@0.4.12
+	smallvec@1.15.2
+	socket2@0.6.5
+	socks@0.3.4
+	spki@0.7.3
+	spm_precompiled@0.1.4
+	stable_deref_trait@1.2.1
+	static_assertions@1.1.0
+	strength_reduce@0.2.4
+	string_cache@0.9.0
+	string_cache_codegen@0.6.1
+	strsim@0.11.1
+	subtle@2.6.1
+	syn@2.0.119
+	syn@3.0.3
+	sync_wrapper@1.0.2
+	synstructure@0.13.2
+	tar@0.4.46
+	target-features@0.1.6
+	tempfile@3.27.0
+	tendril@0.5.1
+	thiserror-impl@2.0.19
+	thiserror@2.0.19
+	thread_local@1.1.10
+	tiff@0.11.3
+	time-core@0.1.9
+	time-macros@0.2.32
+	time@0.3.55
+	tinystr@0.8.3
+	tinyvec@1.12.0
+	tinyvec_macros@0.1.1
+	tokenizers@0.23.1
+	tokio-boring@5.2.0
+	tokio-macros@2.7.2
+	tokio-rustls@0.26.4
+	tokio-tungstenite@0.30.0
+	tokio-util@0.7.19
+	tokio@1.53.1
+	tower-http@0.6.11
+	tower-layer@0.3.3
+	tower-service@0.3.3
+	tower@0.5.3
+	tracing-attributes@0.1.31
+	tracing-core@0.1.36
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.23
+	tracing@0.1.44
+	transpose@0.2.3
+	try-lock@0.2.5
+	ttf-parser@0.25.1
+	tungstenite@0.30.0
+	typenum@1.20.1
+	unicode-bidi@0.3.18
+	unicode-ident@1.0.24
+	unicode-normalization-alignments@0.1.12
+	unicode-segmentation@1.13.3
+	unicode-width@0.2.2
+	unicode_categories@0.1.1
+	unit-prefix@0.5.2
+	untrusted@0.9.0
+	ureq-proto@0.6.0
+	ureq@3.3.0
+	url@2.5.8
+	utf8-zero@0.8.1
+	utf8_iter@1.0.4
+	v_frame@0.3.9
+	valuable@0.1.1
+	vcpkg@0.2.15
+	version_check@0.9.5
+	want@0.3.1
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.4+wasi-0.2.12
+	wasm-bindgen-futures@0.4.76
+	wasm-bindgen-macro-support@0.2.126
+	wasm-bindgen-macro@0.2.126
+	wasm-bindgen-shared@0.2.126
+	wasm-bindgen@0.2.126
+	web-sys@0.3.103
+	web-time@1.1.0
+	web_atoms@0.2.5
+	webpki-root-certs@1.0.9
+	webpki-roots@1.0.9
+	weezl@0.1.12
+	wide@1.6.1
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-link@0.2.1
+	windows-sys@0.52.0
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.52.6
+	winresource@0.1.31
+	wit-bindgen@0.57.1
+	writeable@0.6.3
+	x509-parser@0.18.1
+	xattr@1.6.1
+	y4m@0.8.0
+	yasna@0.6.0
+	yoke-derive@0.8.2
+	yoke@0.8.3
+	zerocopy-derive@0.8.55
+	zerocopy@0.8.55
+	zerofrom-derive@0.1.7
+	zerofrom@0.1.8
+	zeroize@1.9.0
+	zerotrie@0.2.4
+	zerovec-derive@0.11.3
+	zerovec@0.11.6
+	zip@2.4.2
+	zlib-rs@0.6.7
+	zmij@1.0.23
+	zopfli@0.8.3
+	zstd-safe@7.2.4
+	zstd-sys@2.0.16+zstd.1.5.7
+	zstd@0.13.3
+	zune-core@0.5.1
+	zune-inflate@0.2.54
+	zune-jpeg@0.5.15
+"
+inherit cargo
+
+DESCRIPTION="Web fetch, search, and crawl tool for AI agents"
+HOMEPAGE="https://github.com/dondai44423/donsetch"
+BUGS="https://github.com/dondai44423/donsetch/issues"
+# Pinned PDFium static archives (chromium/7809); build.rs would download
+# this exact release from GitHub at build time, so provide it as a distfile
+# and pre-place it in vendor/pdfium to skip that (see src_prepare).
+PDFIUM_URI="https://github.com/kognitos/pdfium-static/releases/download/chromium/7809/pdfium-linux-x64-static.tgz"
+SRC_URI="
+	https://github.com/dondai44423/donsetch/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${PDFIUM_URI} -> pdfium-static-7809-linux-x64.tgz
+	${CARGO_CRATE_URIS}
+"
+
+LICENSE="AGPL-3 Apache-2.0 BSD-2 BSD Boost-1.0 CDLA-Permissive-2.0 ISC MIT MPL-2.0 UoI-NCSA Unicode-3.0 ZLIB"
+SLOT="0"
+KEYWORDS="~amd64"
+# ocr/rerank pull in ONNX Runtime (ort 2.0.0-rc.12, a release candidate) plus
+# prebuilt C++ shared objects downloaded at build time and dlopen'd next to
+# the binary; they are not exposed here (upstream default features are empty).
+IUSE="http"
+
+# build.rs: BoringSSL is compiled from source (cmake + C++ compiler, bindgen
+# for FFI bindings); zstd-sys probes via pkg-config; the LLVM-produced PDFium
+# archives cannot be linked by GNU ld >= 2.44, so build.rs auto-injects
+# -fuse-ld=lld when ld.lld is on PATH.
+BDEPEND="
+	dev-build/cmake
+	dev-vcs/git
+	llvm-core/clang
+	llvm-core/lld
+	virtual/pkgconfig
+"
+
+src_prepare() {
+	default
+	# Pre-place the pinned PDFium release so build.rs skips its own
+	# curl download (it extracts into the same layout).
+	mkdir -p "${S}/vendor/pdfium" || die
+	tar xzf "${DISTDIR}/pdfium-static-7809-linux-x64.tgz" -C "${S}/vendor/pdfium" || die
+}
+
+src_configure() {
+	local -a myfeatures=( $(usev http) )
+	cargo_src_configure
+}
+
+src_compile() {
+	# build.rs probes for ld.lld on PATH (the LLVM-produced PDFium archives
+	# are not linkable by GNU ld >= 2.44); pick it up from an installed
+	# LLVM toolchain when not already available.
+	if ! command -v ld.lld >/dev/null 2>&1; then
+		local d
+		for d in /usr/lib/llvm/*/bin; do
+			[[ -x ${d}/ld.lld ]] && PATH="${d}:${PATH}" && break
+		done
+	fi
+
+	# boring-sys generates FFI bindings with bindgen, which dlopens libclang;
+	# when no standalone libclang (llvm-core/clang) is in the default search
+	# paths, point clang-sys at the newest installed LLVM toolchain.
+	if [[ -z ${LIBCLANG_PATH} ]] && [[ ! -e /usr/$(get_libdir)/libclang.so ]]; then
+		local d
+		for d in $(echo /usr/lib/llvm/*/lib64 /usr/lib/llvm/*/lib | tr ' ' '\n' | sort -rV); do
+			[[ -e ${d}/libclang.so ]] && export LIBCLANG_PATH="${d}" && break
+		done
+	fi
+
+	cargo_src_compile
+}
+
+src_install() {
+	cargo_src_install || die
+	einstalldocs
+	dodoc vendor/pdfium/LICENSE || die
+}

@@ -1,0 +1,14 @@
+--- a/src/huggingface_hub/utils/_detect_agent.py
++++ b/src/huggingface_hub/utils/_detect_agent.py
+@@ -78,6 +78,11 @@
+     against the harness id. The first match wins. When a standard var is set to
+     an unrecognized value, `"unknown"` is returned.
+     """
++    # Gentoo (local overlay) patch: never report which AI coding agent (if any)
++    # invoked this process to the Hub, and never fetch the harness registry to
++    # check in the first place — see sci-ml/huggingface_hub files/ for rationale.
++    return None
++
+     registry = _get_registry()
+     standard_vars = registry.get("standardEnvVars") or []
+     harnesses = registry.get("harnesses") or {}

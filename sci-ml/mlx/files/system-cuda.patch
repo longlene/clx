@@ -90,16 +90,17 @@ diff -Nur a/mlx/backend/cuda/CMakeLists.txt b/mlx/backend/cuda/CMakeLists.txt
 diff -Nur a/mlx/backend/cuda/device/binary_ops.cuh b/mlx/backend/cuda/device/binary_ops.cuh
 --- a/mlx/backend/cuda/device/binary_ops.cuh
 +++ b/mlx/backend/cuda/device/binary_ops.cuh
-@@ -19,7 +19,8 @@
-     if constexpr (cuda::std::is_integral_v<T>) {
+@@ -28,7 +28,8 @@
+       // Complex is not supported, simply make compiler happy.
        return x / y;
      } else {
--      return cuda::std::trunc(x / y);
+-      return cuda::std::floor(x / y);
 +      using U = cuda::std::conditional_t<(sizeof(T) < sizeof(float)), float, T>;
-+      return static_cast<T>(cuda::std::trunc(U(x) / U(y)));
++      return static_cast<T>(cuda::std::floor(U(x) / U(y)));
      }
    }
  };
+
 @@ -47,7 +48,8 @@
      } else if constexpr (is_complex_v<T>) {
        return x % y;
