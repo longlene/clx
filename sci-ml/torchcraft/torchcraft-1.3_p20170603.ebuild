@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
-	sci-libs/torch7
+	sci-ml/torch7
 	dev-lua/penlight
 "
 

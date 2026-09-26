@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
-	>=dev-python/transformers-4.36.2[${PYTHON_USEDEP}]
+	>=sci-ml/transformers-4.36.2[${PYTHON_USEDEP}]
 	>=sci-ml/pytorch-2.1.2[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2.5.2[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-settings-2.1.0[${PYTHON_USEDEP}]

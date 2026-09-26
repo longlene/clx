@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ScyllaDB is a distributed NoSQL database built on the Seastar framework,
+    API-compatible with Apache Cassandra (CQL) and Amazon DynamoDB. Since
+    2025 it is distributed under the proprietary ScyllaDB Software License
+    Agreement; this package builds the server only.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">scylladb/scylladb</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/trivial-backtrace
 	dev-lisp/quri
 	dev-lisp/log4cl
-	test? ( dev-lisp/prove dev-lsip/cl-interpol dev-lisp/mw-qeuiv )
+	test? ( dev-lisp/prove dev-lisp/cl-interpol dev-lisp/mw-qeuiv )
 "
 
 src_prepare() {

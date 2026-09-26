@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    erlang-wasmtime binds the Wasmtime runtime to Erlang: run WebAssembly
+    modules (including WASI) natively and call back into the host from the
+    guest. The C NIF is linked against the pinned Wasmtime C API release
+    (v48.0.1), providing a self-contained wasmtime_nif.so.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">benoitc/erlang-wasmtime</remote-id>
+  </upstream>
+</pkgmetadata>

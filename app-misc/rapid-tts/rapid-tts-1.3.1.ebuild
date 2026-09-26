@@ -25,7 +25,7 @@ RDEPEND="
 	sci-ml/sentencepiece[python(+),${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/onnxruntime[${PYTHON_USEDEP}]
+		sci-libs/onnxruntime[python,${PYTHON_USEDEP}]
 		dev-python/omegaconf[${PYTHON_USEDEP}]
 		dev-python/colorlog[${PYTHON_USEDEP}]
 		dev-python/soundfile[${PYTHON_USEDEP}]

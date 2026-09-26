@@ -10,5 +10,6 @@
   </use>
   <upstream>
     <remote-id type="github">unslothai/unsloth</remote-id>
+    <remote-id type="pypi">unsloth</remote-id>
   </upstream>
 </pkgmetadata>

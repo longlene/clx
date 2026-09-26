@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="
 	dev-lisp/iterate
-	virtual/puri
+	dev-lisp/puri
 	dev-lisp/split-sequence
 	dev-lisp/lift
 "

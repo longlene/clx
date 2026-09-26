@@ -24,7 +24,7 @@ RDEPEND="
 	test? ( dev-lisp/lift )
 	dev-lisp/esrap
 	dev-lisp/closer-mop
-	emacs? ( virtual/emacs )
+	emacs? ( app-editors/emacs )
 "
 SITEFILE="50${PN}-gentoo.el"
 

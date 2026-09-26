@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 DEPEND="
-	|| ( dev-libs/boost[context] dev-libs/asio )
+	|| ( dev-libs/boost[context] dev-cpp/asio )
 "
 RDEPEND="${DEPEND}"
 

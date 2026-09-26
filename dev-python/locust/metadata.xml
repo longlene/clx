@@ -16,7 +16,9 @@
   </longdescription>
   <use>
     <flag name="dns">Enable DNS lookup support via dnspython</flag>
+    <flag name="milvus">Enable the Milvus vector database user via pymilvus</flag>
     <flag name="mqtt">Enable MQTT protocol support via paho-mqtt</flag>
     <flag name="otel">Enable OpenTelemetry tracing and metrics export</flag>
+    <flag name="qdrant">Enable the Qdrant vector database user via qdrant-client</flag>
   </use>
 </pkgmetadata>

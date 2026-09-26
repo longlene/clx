@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Experimental Hugging Face inference server exposing Transformers, Diffusers
+    and Sentence Transformers models over an HTTP API, with compatibility
+    layers for OpenAI, Google Vertex AI, Azure and SageMaker endpoints.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">huggingface/hf-serve</remote-id>
+  </upstream>
+</pkgmetadata>

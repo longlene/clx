@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-cpp/glog
-	sci-libs/torch7
+	sci-ml/torch7
 "
 RDEPEND="${DEPEND}"
 

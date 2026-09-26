@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Velum reimplements the CosyVoice3 text-to-speech pipeline (Qwen2 LLM,
+    flow decoder and HiFT vocoder) natively in C++ on GGML, running without
+    Python. Model weights and frontend features are converted once, offline,
+    with the Python scripts shipped in /usr/share/velum/tools.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">hardenedlinux/velum</remote-id>
+  </upstream>
+</pkgmetadata>

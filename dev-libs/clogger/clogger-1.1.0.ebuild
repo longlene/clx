@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
-dev-libs/libcork
+net-libs/libcork
 dev-libs/check
 "
 

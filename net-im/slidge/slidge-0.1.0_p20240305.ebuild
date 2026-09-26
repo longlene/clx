@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/qrcode-7.4.1[${PYTHON_USEDEP}]
-	>=dev-python/Pillow-10[${PYTHON_USEDEP}]
+	>=dev-python/pillow-10[${PYTHON_USEDEP}]
 	>=dev-python/aiohttp-3.8.3[${PYTHON_USEDEP}]
 	>=dev-python/configargparse-1.5.3[${PYTHON_USEDEP}]
 	>=dev-python/pickle-secure-0.99.9[${PYTHON_USEDEP}]

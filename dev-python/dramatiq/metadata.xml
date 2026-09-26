@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Dramatiq is a fast and reliable background task processing library
+    for Python. It provides an API for dispatching tasks to pluggable
+    message brokers such as RabbitMQ, Redis and Memcached, plus a rich
+    set of middleware for retries, rate limiting and results.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Bogdanp/dramatiq</remote-id>
+    <remote-id type="pypi">dramatiq</remote-id>
+  </upstream>
+</pkgmetadata>

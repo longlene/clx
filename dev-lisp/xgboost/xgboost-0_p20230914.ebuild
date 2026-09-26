@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/cl-autowrap
 	dev-lisp/cl-json
-	sc-libs/xgboost
+	sci-ml/xgboost
 "
 
 src_install() {

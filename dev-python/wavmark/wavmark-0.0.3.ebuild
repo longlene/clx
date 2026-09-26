@@ -19,7 +19,7 @@ RDEPEND="
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	dev-python/librosa[${PYTHON_USEDEP}]
 	dev-python/resampy[${PYTHON_USEDEP}]
-	dev-python/huggingface_hub[${PYTHON_USEDEP}]
+	sci-ml/huggingface_hub[${PYTHON_USEDEP}]
 	sci-ml/pytorch[${PYTHON_USEDEP}]
 "
 

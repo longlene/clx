@@ -1,0 +1,80 @@
+--- /dev/null
++++ b/src/absl_status_builder_compat.h
+@@ -0,0 +1,44 @@
++#pragma once
++// Compatibility shim for abseil >= 2025, which removed StatusBuilder and
++// ABSL_RETURN_IF_ERROR (both formerly in third_party/absl/status/
++// status_macros.h / status_builder.h). Provides the minimal API
++// sentencepiece's error paths rely on.
++#include <sstream>
++#include <string>
++#include "absl/status/status.h"
++
++namespace absl {
++
++class StatusBuilder {
++ public:
++  explicit StatusBuilder(StatusCode code) : code_(code) {}
++
++  template <typename T>
++  StatusBuilder& operator<<(const T& value) {
++    std::ostringstream oss;
++    oss << value;
++    message_ += oss.str();
++    return *this;
++  }
++
++  Status Build() const {
++    if (message_.empty())
++      return code_ == StatusCode::kOk ? OkStatus() : Status(code_, std::string());
++    return Status(code_, message_);
++  }
++
++  operator Status() const { return Build(); }
++
++ private:
++  StatusCode code_;
++  std::string message_;
++};
++
++}  // namespace absl
++
++#define ABSL_RETURN_IF_ERROR(expr)                  \
++  do {                                              \
++    auto _status_or_exit = (expr);                  \
++    if (ABSL_PREDICT_FALSE(!_status_or_exit.ok()))  \
++      return _status_or_exit;                       \
++  } while (false)
++
+--- a/src/common.h	2026-09-20 23:57:30.964934095 -0700
++++ b/src/common.h	2026-09-20 23:57:30.970423036 -0700
+@@ -22,6 +22,7 @@
+ #include "third_party/absl/log/globals.h"
+ #include "third_party/absl/log/log.h"
+ #include "third_party/absl/status/status.h"
++#include "absl_status_builder_compat.h"
+ #include "third_party/absl/strings/string_view.h"
+ 
+ #if defined(_WIN32) && !defined(__CYGWIN__)
+--- a/src/spec_parser.h	2026-09-20 23:40:00.421463494 -0700
++++ b/src/spec_parser.h	2026-09-20 23:57:30.969040718 -0700
+@@ -20,7 +20,7 @@
+ 
+ #include "sentencepiece_processor.h"
+ #include "third_party/absl/status/status.h"
+-#include "third_party/absl/status/status_builder.h"
++#include "absl_status_builder_compat.h"
+ #include "third_party/absl/strings/ascii.h"
+ #include "third_party/absl/strings/numbers.h"
+ #include "third_party/absl/strings/str_split.h"
+--- a/src/util.h	2026-09-20 23:40:00.422209848 -0700
++++ b/src/util.h	2026-09-20 23:57:30.969096719 -0700
+@@ -38,7 +38,7 @@
+ #include "third_party/absl/numeric/bits.h"
+ #include "third_party/absl/random/random.h"
+ #include "third_party/absl/status/status.h"
+-#include "third_party/absl/status/status_builder.h"
++#include "absl_status_builder_compat.h"
+ #include "third_party/absl/strings/ascii.h"
+ #include "third_party/absl/strings/numbers.h"
+ #include "third_party/absl/strings/str_cat.h"

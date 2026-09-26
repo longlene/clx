@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~arm64 ~x86"
 DEPEND="
 	dev-lang/tcc
 	dev-libs/boehm-gc
-	virtual/libffi
+	dev-libs/libffi
 	x11-libs/gtksourceview
 "
 RDEPEND="${DEPEND}"

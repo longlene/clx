@@ -23,14 +23,14 @@ RDEPEND="
 	>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.0.1[${PYTHON_USEDEP}]
-	>=dev-python/pre-commit-2.3.0[${PYTHON_USEDEP}]
+	>=dev-vcs/pre-commit-2.3.0[${PYTHON_USEDEP}]
 	>=dev-python/pygtrie-2.1[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.4.1[${PYTHON_USEDEP}]
-	>=dev-python/sentencepiece-0.1.91[${PYTHON_USEDEP}]
+	>=sci-ml/sentencepiece-0.1.91[${PYTHON_USEDEP}]
 	>=sci-ml/pytorch-1.9.0[${PYTHON_USEDEP}]
-	>=dev-python/torchaudio-1.9.0[${PYTHON_USEDEP}]
+	>=sci-ml/torchaudio-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/tqdm-4.42.0[${PYTHON_USEDEP}]
-	>=dev-python/transformers-4.30.0[${PYTHON_USEDEP}]
+	>=sci-ml/transformers-4.30.0[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

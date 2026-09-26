@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/cl-ansi-term
 	dev-lisp/cl-dbi
 	dev-lisp/fwoar_lispuitils
-	dev-lisp/net_didierverna_clon
+	dev-lisp/net-didierverna-clon
 	dev-lisp/osicat
 	dev-lisp/positional-lambda
 	dev-lisp/serapeum

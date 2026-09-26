@@ -20,12 +20,12 @@ RDEPEND="
 	dev-python/pyzmq[${PYTHON_USEDEP}]
 	dev-python/uvloop[${PYTHON_USEDEP}]
 	dev-python/torch[${PYTHON_USEDEP}]
-	dev-python/transformers[${PYTHON_USEDEP}]
+	sci-ml/transformers[${PYTHON_USEDEP}]
 	dev-python/einops[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/rpyc[${PYTHON_USEDEP}]
 	dev-python/ninja[${PYTHON_USEDEP}]
-	dev-python/safetensors[${PYTHON_USEDEP}]
+	sci-ml/safetensors[${PYTHON_USEDEP}]
 	dev-python/triton[${PYTHON_USEDEP}]
 "
 #BDEPEND="

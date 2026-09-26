@@ -20,11 +20,11 @@ KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
-	sci-libs/accelerate[${PYTHON_SINGLE_USEDEP}]
-	sci-libs/torchaudio[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/accelerate[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/torchaudio[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/transformers[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/datasets[${PYTHON_SINGLE_USEDEP}]
-	sci-libs/openphonemizer[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/openphonemizer[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/cached-path[${PYTHON_USEDEP}]
 		dev-python/pydub[${PYTHON_USEDEP}]

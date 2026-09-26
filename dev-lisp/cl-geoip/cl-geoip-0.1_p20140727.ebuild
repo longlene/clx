@@ -17,10 +17,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
-	dev-go/bordeaux-threads
-	dev-go/osicat
-	dev-go/alexandria
-	dev-go/babel
-	dev-go/iterate
-	dev-go/cl-ppcre
+	dev-lisp/bordeaux-threads
+	dev-lisp/osicat
+	dev-lisp/alexandria
+	dev-lisp/babel
+	dev-lisp/iterate
+	dev-lisp/cl-ppcre
 "

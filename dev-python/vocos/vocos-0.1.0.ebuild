@@ -18,12 +18,12 @@ KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/pytorch[${PYTHON_USEDEP}]
-	sci-libs/torchaudio[${PYTHON_USEDEP}]
+	sci-ml/torchaudio[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 	dev-python/einops[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev-python/huggingface_hub[${PYTHON_USEDEP}]
+	sci-ml/huggingface_hub[${PYTHON_USEDEP}]
 	dev-python/encodec[${PYTHON_USEDEP}]
 "
 

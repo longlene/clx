@@ -22,5 +22,5 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
-	dev-games/raylib
+	media-libs/raylib
 "

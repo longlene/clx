@@ -19,6 +19,6 @@ RESTRICT="!test? ( test )"
 
 DEPEND="
 	dev-db/postgresql
-	test? ( dev-libs/gtest )
+	test? ( dev-cpp/gtest )
 "
 RDEPEND="${DEPEND}"

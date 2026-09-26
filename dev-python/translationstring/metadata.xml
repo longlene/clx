@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    TranslationString is a utility library for i18n relied on by various
+    Repoze and Pyramid packages. It provides a string type that can be
+    marked for translation and localized at runtime.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Pylons/translationstring</remote-id>
+    <remote-id type="pypi">translationstring</remote-id>
+  </upstream>
+</pkgmetadata>

@@ -1,0 +1,35 @@
+--- a/python/build_bundled.sh
++++ b/python/build_bundled.sh
+@@ -23,5 +23,7 @@
+   -DSPM_DISABLE_EMBEDDED_DATA=ON \
+   -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} \
+   -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
++  -DSPM_ABSL_PROVIDER=package \
++  -DCMAKE_CXX_STANDARD=20 \
+   -DCMAKE_CXX_FLAGS="-fPIC -fvisibility=default -ffunction-sections -fdata-sections"
+ cmake --build ${BUILD_DIR} --config Release --target install --parallel $(nproc)
+--- a/python/setup.py
++++ b/python/setup.py
+@@ -70,7 +70,7 @@
+ 
+ def get_cflags_and_libs(root):
+   cflags = [
+-      '-std=c++17',
++      '-std=c++20',
+       '-I' + os.path.normpath(os.path.join(root, 'include')),
+   ] + get_protobuf_includes()
+   libs = []
+@@ -114,6 +114,13 @@
+       abseil_libs = find_abseil_lib('./build/third_party')
+       cflags.extend(find_absl_include(is_msvc=False))
+ 
++    # Link the system abseil shared libraries and make the
++    # third_party/absl symlink (created by the cmake package-provider
++    # configure) resolvable for absl includes.
++    cflags.append('-I../third_party')
++    for abseil_libdir in ('/usr/lib64', '/usr/lib'):
++      abseil_libs.extend(sorted(glob.glob(os.path.join(abseil_libdir, 'libabsl_*.so'))))
++
+     # Fix compile on some versions of Mac OSX
+     # See: https://github.com/neulab/xnmt/issues/199
+     if sys.platform == 'darwin':

@@ -1,0 +1,10 @@
+--- a/src/CMakeLists.txt	2026-09-20 22:59:12.276183264 -0700
++++ b/src/CMakeLists.txt	2026-09-20 22:59:12.278724956 -0700
+@@ -13,7 +13,6 @@
+ # limitations under the License.!
+ 
+ list(APPEND SPM_LIBS absl::status)
+-list(APPEND SPM_LIBS absl::status_builder)
+ list(APPEND SPM_LIBS absl::strings)
+ list(APPEND SPM_LIBS absl::flags)
+ list(APPEND SPM_LIBS absl::flags_parse)

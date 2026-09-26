@@ -32,7 +32,7 @@ RDEPEND="
 		sci-ml/transformers[${PYTHON_USEDEP}]
 	)
 	tracking? (
-		dev-python/tensorboardx[${PYTHON_USEDEP}]
+		sci-ml/tensorboardx[${PYTHON_USEDEP}]
 		dev-python/wandb[${PYTHON_USEDEP}]
 	)
 	visualization? (

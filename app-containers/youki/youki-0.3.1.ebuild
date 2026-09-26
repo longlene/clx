@@ -571,9 +571,6 @@ KEYWORDS="~amd64 ~arm64"
 
 DEPEND="sys-libs/libseccomp"
 RDEPEND="${DEPEND}"
-BDEPEND="
-	>=virtual/rust-1.31.0
-"
 
 QA_PRESTRIPPED="/usr/bin/youki"
 

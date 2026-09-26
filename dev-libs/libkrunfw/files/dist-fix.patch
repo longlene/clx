@@ -1,8 +1,7 @@
-diff -Nur a/Makefile b/Makefile
---- a/Makefile	2026-05-13 06:57:01.000000000 -0700
-+++ b/Makefile	2026-05-24 13:23:21.556396859 -0700
+--- a/Makefile	2026-09-20 23:05:44.874182491 -0700
++++ b/Makefile	2026-09-20 23:05:44.925804236 -0700
 @@ -1,6 +1,6 @@
- KERNEL_VERSION = linux-6.12.87
+ KERNEL_VERSION = linux-6.12.109
  KERNEL_REMOTE = https://cdn.kernel.org/pub/linux/kernel/v6.x/$(KERNEL_VERSION).tar.xz
 -KERNEL_TARBALL = tarballs/$(KERNEL_VERSION).tar.xz
 +KERNEL_TARBALL ?= tarballs/$(KERNEL_VERSION).tar.xz

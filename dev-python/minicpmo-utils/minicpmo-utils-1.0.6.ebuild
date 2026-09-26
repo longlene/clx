@@ -32,8 +32,8 @@ RDEPEND="
 		>=sci-ml/torchaudio-2.3.0
 		sci-ml/transformers
 		$(python_gen_cond_dep '
-			>=dev-python/onnxruntime-1.18.0[${PYTHON_USEDEP}]
-			dev-python/onnx[${PYTHON_USEDEP}]
+			>=sci-libs/onnxruntime-1.18.0[python,${PYTHON_USEDEP}]
+			sci-ml/onnx[${PYTHON_USEDEP}]
 			dev-python/hyperpyyaml[${PYTHON_USEDEP}]
 			>=dev-python/tqdm-4.66.0[${PYTHON_USEDEP}]
 			dev-python/einops[${PYTHON_USEDEP}]

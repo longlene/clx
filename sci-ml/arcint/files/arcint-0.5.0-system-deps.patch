@@ -1,0 +1,15 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -55,8 +55,12 @@
+ endif()
+ 
+ # ------------------------------------------------------------------- vendored
++# httplib and nlohmann/json come from the system (dev-cpp/cpp-httplib,
++# dev-cpp/nlohmann_json); only the locally patched minja stays vendored.
++find_package(httplib REQUIRED)
+ add_library(arcint_vendor INTERFACE)
+ target_include_directories(arcint_vendor SYSTEM INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
++target_link_libraries(arcint_vendor INTERFACE httplib::httplib)
+ 
+ # ----------------------------------------------------------------------- core
+ add_library(arcint_core STATIC

@@ -23,18 +23,18 @@ S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
-	>=sci-libs/accelerate-0.26.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-libs/optimum-1.21.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-libs/tensorrt-llm-0.16.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/accelerate-0.26.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/optimum-1.21.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/tensorrt-llm-0.16.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.45.1[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/datasets-2.14.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=sci-ml/pytorch-2.4.0[${PYTHON_USEDEP}]
 		>=sci-ml/huggingface_hub-0.24.0[${PYTHON_USEDEP}]
-		>=sci-libs/hf-transfer-0.1.6[${PYTHON_USEDEP}]
-		sci-libs/mpi4py[${PYTHON_USEDEP}]
-		>=sci-libs/mpmath-1.3.0[${PYTHON_USEDEP}]
-		>=sci-libs/numpy-1.26.0[${PYTHON_USEDEP}]
+		>=dev-python/hf-transfer-0.1.6[${PYTHON_USEDEP}]
+		dev-python/mpi4py[${PYTHON_USEDEP}]
+		>=dev-python/mpmath-1.3.0[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
 		>=sci-ml/onnx-1.17.0[${PYTHON_USEDEP}]
 		dev-python/pynvml[${PYTHON_USEDEP}]
 	')

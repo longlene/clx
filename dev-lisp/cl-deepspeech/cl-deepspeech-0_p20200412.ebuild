@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
-	sci-libs/deepspeech
+	sci-ml/deepspeech
 	dev-lisp/cffi
 	dev-lisp/trivial-garbage
 "

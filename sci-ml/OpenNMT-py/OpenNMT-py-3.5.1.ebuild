@@ -19,7 +19,7 @@ RDEPEND="${DEPEND}
 	>=sci-ml/pytorch-1.12.1[${PYTHON_USEDEP}]
 	dev-python/configargparse[${PYTHON_USEDEP}]
 	>=sci-ml/ctranslate2-3.2
-	>=dev-python/tensorboard-2.3[${PYTHON_USEDEP}]
+	>=sci-ml/tensorboard-2.3[${PYTHON_USEDEP}]
 	dev-python/flask[${PYTHON_USEDEP}]
 	dev-python/waitress[${PYTHON_USEDEP}]
 	>=dev-python/pyonmttok-1.35[${PYTHON_USEDEP}]

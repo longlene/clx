@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~arm64"
 RDEPEND="
 	dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/dtw-python[${PYTHON_USEDEP}]
-	dev-python/openai-whisper[${PYTHON_USEDEP}]
+	sci-ml/openai-whisper[${PYTHON_USEDEP}]
 "
 
 RESTRICT="test"

@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
-	>=sci-libs/optimum-2.1.0[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/optimum-2.1.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.36.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		sci-ml/onnx[${PYTHON_USEDEP}]

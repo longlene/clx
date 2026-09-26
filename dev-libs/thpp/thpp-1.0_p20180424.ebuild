@@ -18,7 +18,7 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 DEPEND="
-	sci-libs/torch7
+	sci-ml/torch7
 	test? ( dev-cpp/glog )
 "
 RDEPEND="${DEPEND}"

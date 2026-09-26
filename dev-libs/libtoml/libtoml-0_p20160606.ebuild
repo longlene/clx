@@ -15,7 +15,7 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
-DEPEND="dev-utils/ragel"
+DEPEND="dev-util/ragel"
 RDEPEND="${DEPEND}"
 
 CMAKE_IN_SOURCE_BUILD="YES"

@@ -1,0 +1,107 @@
+diff -ruN a/flow/actorcompiler_py/actor_compiler.py b/flow/actorcompiler_py/actor_compiler.py
+--- a/flow/actorcompiler_py/actor_compiler.py	2026-09-25 16:01:54.872801806 -0700
++++ b/flow/actorcompiler_py/actor_compiler.py	2026-09-25 16:01:54.889006860 -0700
+@@ -370,29 +370,16 @@
+         writer.write("public:\n")
+         writer.write(f"\tusing FastAllocated<{self.full_class_name}>::operator new;\n")
+         writer.write(f"\tusing FastAllocated<{self.full_class_name}>::operator delete;\n")
+-        actor_identifier_key = f"{self.source_file}:{self.actor.name}"
+-        uid = self.get_uid_from_string(actor_identifier_key)
+-        self.uid_objects[(uid[0], uid[1])] = actor_identifier_key
+-        writer.write(
+-            f"\tstatic constexpr ActorIdentifier __actorIdentifier = UID({uid[0]}UL, {uid[1]}UL);\n"
+-        )
+-        writer.write("\tActiveActorHelper activeActorHelper;\n")
+         writer.write("#pragma clang diagnostic push\n")
+         writer.write('#pragma clang diagnostic ignored "-Wdelete-non-virtual-dtor"\n')
+         if self.actor.return_type is not None:
+-            writer.write("    void destroy() override {\n")
+-            writer.write("        activeActorHelper.~ActiveActorHelper();\n")
+             writer.write(
+-                f"        static_cast<Actor<{self.actor.return_type}>*>(this)->~Actor();\n"
++                f"\tvoid destroy() override {{ ((Actor<{self.actor.return_type}>*)this)->~Actor(); operator delete(this); }}\n"
+             )
+-            writer.write("        operator delete(this);\n")
+-            writer.write("    }\n")
+         else:
+-            writer.write("    void destroy() {{\n")
+-            writer.write("        activeActorHelper.~ActiveActorHelper();\n")
+-            writer.write("        static_cast<Actor<void>*>(this)->~Actor();\n")
+-            writer.write("        operator delete(this);\n")
+-            writer.write("    }}\n")
++            writer.write(
++                "\tvoid destroy() {{ ((Actor<void>*)this)->~Actor(); operator delete(this); }}\n"
++            )
+         writer.write("#pragma clang diagnostic pop\n")
+         for cb in self.callbacks:
+             writer.write(f"friend struct {cb.type};\n")
+@@ -515,18 +502,6 @@
+                 self.thisAddress,
+                 index,
+             )
+-        block_identifier = self.get_uid_from_string(fun.name)
+-        fun.write_line("#ifdef WITH_ACAC")
+-        fun.write_line(
+-            "static constexpr ActorBlockIdentifier __identifier = UID({0}UL, {1}UL);",
+-            block_identifier[0],
+-            block_identifier[1],
+-        )
+-        fun.write_line(
+-            "ActorExecutionContextHelper __helper(static_cast<{0}*>(this)->activeActorHelper.actorID, __identifier);",
+-            self.class_name,
+-        )
+-        fun.write_line("#endif // WITH_ACAC")
+ 
+     def probe_exit(self, fun: Function, name: str, index: int = -1) -> None:
+         if self.generate_probes:
+@@ -816,12 +791,11 @@
+             )
+         )
+         constructor.write_line(
+-            "   {0}({1}),".format(
++            "   {0}({1})".format(
+                 full_state_class_name,
+                 ", ".join(p.name for p in self.actor.parameters),
+             )
+         )
+-        constructor.write_line("   activeActorHelper(__actorIdentifier)")
+         constructor.indent(-1)
+         constructor.write_line("{")
+         constructor.indent(+1)
+@@ -1531,24 +1505,13 @@
+         for choice in choices:
+             get_func = "pop" if choice["Stmt"].wait.is_wait_next else "get"
+             self.line_numberFunction(cx.target, choice["Stmt"].wait.first_source_line)
+-            if choice["Stmt"].wait.is_wait_next:
+-                cx.target.write_line(
+-                    "auto {0} = {1};",
+-                    choice["Future"],
+-                    choice["Stmt"].wait.future_expression,
+-                )
+-                cx.target.write_line(
+-                    'static_assert(std::is_same<decltype({0}), FutureStream<{1}>>::value || std::is_same<decltype({0}), ThreadFutureStream<{1}>>::value, "invalid type");',
+-                    choice["Future"],
+-                    choice["Stmt"].wait.result.type,
+-                )
+-            else:
+-                cx.target.write_line(
+-                    "StrictFuture<{0}> {1} = {2};",
+-                    choice["Stmt"].wait.result.type,
+-                    choice["Future"],
+-                    choice["Stmt"].wait.future_expression,
+-                )
++            cx.target.write_line(
++                "{2}<{3}> {0} = {1};",
++                choice["Future"],
++                choice["Stmt"].wait.future_expression,
++                "FutureStream" if choice["Stmt"].wait.is_wait_next else "StrictFuture",
++                choice["Stmt"].wait.result.type,
++            )
+             if first_choice:
+                 first_choice = False
+                 self.line_numberFunction(cx.target, stmt.first_source_line)
+Binary files a/flow/actorcompiler_py/__pycache__/actor_compiler.cpython-314.pyc and b/flow/actorcompiler_py/__pycache__/actor_compiler.cpython-314.pyc differ
+Binary files a/flow/actorcompiler_py/__pycache__/actor_parser.cpython-314.pyc and b/flow/actorcompiler_py/__pycache__/actor_parser.cpython-314.pyc differ
+Binary files a/flow/actorcompiler_py/__pycache__/errors.cpython-314.pyc and b/flow/actorcompiler_py/__pycache__/errors.cpython-314.pyc differ
+Binary files a/flow/actorcompiler_py/__pycache__/__main__.cpython-314.pyc and b/flow/actorcompiler_py/__pycache__/__main__.cpython-314.pyc differ
+Binary files a/flow/actorcompiler_py/__pycache__/parse_tree.cpython-314.pyc and b/flow/actorcompiler_py/__pycache__/parse_tree.cpython-314.pyc differ

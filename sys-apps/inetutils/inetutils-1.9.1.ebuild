@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="ipv6 ncurses pam shishi tcpd"
 
 DEPEND="ncurses? ( sys-libs/ncurses )
-		pam? ( virtual/pam )
+		pam? ( sys-libs/pam )
 		shishi? ( app-crypt/shishi )
 		tcpd? ( sys-apps/tcp-wrappers )"
 RDEPEND="${DEPEND}

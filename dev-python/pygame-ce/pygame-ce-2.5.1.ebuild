@@ -29,8 +29,8 @@ RDEPEND="
 	media-libs/sdl2-image
 	media-libs/sdl2-mixer
 	media-libs/sdl2-ttf
-	X? ( media-libs/libsdl2[opengl?,threads,video,X] )
-	!X? ( media-libs/libsdl2[threads] )
+	X? ( media-libs/libsdl2[opengl?,video,X] )
+	!X? ( media-libs/libsdl2 )
 "
 DEPEND="
 	${RDEPEND}

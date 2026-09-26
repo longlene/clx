@@ -42,7 +42,7 @@ RDEPEND="
 		media-libs/opencv[python,${PYTHON_USEDEP}]
 		sci-ml/controlnet-aux[${PYTHON_USEDEP}]
 		sci-ml/onnx[${PYTHON_USEDEP}]
-		dev-python/onnxruntime[${PYTHON_USEDEP}]
+		sci-libs/onnxruntime[python,${PYTHON_USEDEP}]
 	')
 	gui? (
 		$(python_gen_cond_dep 'dev-python/pyqt5[${PYTHON_USEDEP}]')

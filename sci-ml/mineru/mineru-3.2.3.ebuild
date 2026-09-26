@@ -66,7 +66,7 @@ RDEPEND="
 			>=dev-python/ftfy-6.3.1[${PYTHON_USEDEP}]
 			>=dev-python/shapely-2.0.7[${PYTHON_USEDEP}]
 			>=dev-python/pyclipper-1.3.0[${PYTHON_USEDEP}]
-			dev-python/onnxruntime[${PYTHON_USEDEP}]
+			sci-libs/onnxruntime[python,${PYTHON_USEDEP}]
 		)
 		s3? (
 			>=dev-python/boto3-1.28.43[${PYTHON_USEDEP}]

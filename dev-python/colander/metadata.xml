@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Colander is a serialization, deserialization and validation library
+    for strings, mappings and lists. It is used to map between Python
+    data structures and external representations such as web form posts,
+    with schema-based validation and type conversion.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Pylons/colander</remote-id>
+    <remote-id type="pypi">colander</remote-id>
+  </upstream>
+</pkgmetadata>

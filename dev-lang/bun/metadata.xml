@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="system-bootstrap">Bootstrap the build with an installed <pkg>dev-lang/bun</pkg> or <pkg>dev-lang/bun-bin</pkg> instead of the upstream prebuilt binary</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">oven-sh/bun</remote-id>
+  </upstream>
+</pkgmetadata>

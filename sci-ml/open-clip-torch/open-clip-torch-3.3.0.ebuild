@@ -37,7 +37,7 @@ RDEPEND="
 			dev-python/fsspec[${PYTHON_USEDEP}]
 			dev-python/pandas[${PYTHON_USEDEP}]
 			>=dev-python/webdataset-0.2.5[${PYTHON_USEDEP}]
-			dev-python/transformers[${PYTHON_USEDEP}]
+			sci-ml/transformers[${PYTHON_USEDEP}]
 		)
 	')
 "

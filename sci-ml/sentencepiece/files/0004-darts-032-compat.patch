@@ -1,0 +1,140 @@
+--- /dev/null
++++ b/src/darts_compat.h
+@@ -0,0 +1,73 @@
++// Copyright 2016 Google Inc.
++//
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
++// Compatibility shims for the system dev-libs/darts (darts-clone 0.32h),
++// which predates the DoubleArray::copy_array() and DoubleArray::validate()
++// helpers present in the vendored darts clone (third_party/darts_clone).
++// The double-array unit layout is identical between the two, so the same
++// behavior is re-implemented on top of the 0.32h API.
++
++#ifndef DARTS_COMPAT_H_
++#define DARTS_COMPAT_H_
++
++#include <cstddef>
++#include <cstring>
++#include <vector>
++
++#include "darts.h"
++
++namespace sentencepiece {
++
++// Makes an aligned copy of the double-array blob and attaches it to
++// `array`. `buffer` must outlive all subsequent uses of `array`.
++inline void DartsCopyArray(Darts::DoubleArray* array, const void* src,
++                           std::size_t num_bytes,
++                           std::vector<Darts::Details::DoubleArrayUnit>* buffer) {
++  const std::size_t extra_padding =
++      num_bytes % array->unit_size() == 0 ? 0 : 1;
++  buffer->resize(num_bytes / array->unit_size() + extra_padding);
++  std::memcpy(buffer->data(), src, num_bytes);
++  array->set_array(buffer->data(), buffer->size());
++}
++
++// Mirrors DoubleArray::validate(max_value_limit) from the vendored darts
++// clone: every node's derived-unit index must stay within the array and
++// leaf values must stay below max_value_limit (when it is >= 0).
++inline bool DartsValidateArray(const Darts::DoubleArray& array,
++                               int max_value_limit = -1) {
++  const auto* units =
++      static_cast<const Darts::Details::DoubleArrayUnit*>(array.array());
++  const std::size_t size = array.size();
++  if (size == 0 || units == nullptr) {
++    return false;
++  }
++  if (units[0].label() != '\0' || units[0].has_leaf() ||
++      units[0].offset() == 0 || ((0 ^ units[0].offset()) | 0xFF) >= size) {
++    return false;
++  }
++  for (std::size_t i = 1; i < size; ++i) {
++    if (units[i].label() <= 0xFF) {
++      if (((i ^ units[i].offset()) | 0xFF) >= size) {
++        return false;
++      }
++    } else if (max_value_limit >= 0 && units[i].value() >= max_value_limit) {
++      return false;
++    }
++  }
++  return true;
++}
++
++}  // namespace sentencepiece
++
++#endif  // DARTS_COMPAT_H_
+--- a/src/builder.cc
++++ b/src/builder.cc
+@@ -18,6 +18,7 @@
+ #include <functional>
+ #include <utility>
+ 
++#include "darts_compat.h"
+ #include "filesystem.h"
+ #include "third_party/absl/container/flat_hash_map.h"
+ #include "third_party/absl/container/flat_hash_set.h"
+@@ -260,11 +261,11 @@
+                                                         &normalized, &buf));
+ 
+   Darts::DoubleArray trie;
++  std::vector<Darts::Details::DoubleArrayUnit> trie_buffer;
+   // copy array as try_blob may not be 4-byte aligned.
+-  trie.copy_array(reinterpret_cast<const char*>(trie_blob.data()),
+-                  trie_blob.size());
++  DartsCopyArray(&trie, trie_blob.data(), trie_blob.size(), &trie_buffer);
+ 
+-  if (!trie.validate()) {
++  if (!DartsValidateArray(trie)) {
+     return absl::InternalError(
+         "Trie data contains out-of-bounds node references.");
+   }
+--- a/src/normalizer.cc
++++ b/src/normalizer.cc
+@@ -19,6 +19,7 @@
+ #include <vector>
+ 
+ #include "common.h"
++#include "darts_compat.h"
+ #include "third_party/absl/status/status.h"
+ #include "third_party/absl/strings/match.h"
+ #include "third_party/absl/strings/string_view.h"
+@@ -67,11 +68,11 @@
+       trie_->set_array(const_cast<char*>(trie_blob.data()),
+                        trie_blob.size() / trie_->unit_size());
+     } else {
+-      trie_->copy_array(reinterpret_cast<const char*>(trie_blob.data()),
+-                        trie_blob.size());
++      DartsCopyArray(trie_.get(), trie_blob.data(), trie_blob.size(),
++                     &precompiled_charsmap_trie_buffer_);
+     }
+ 
+-    if (!trie_->validate(normalized_.size())) {
++    if (!DartsValidateArray(*trie_, normalized_.size())) {
+       status_ = absl::InternalError("precompiled_charsmap is invalid.");
+       trie_.reset();
+       return;
+--- a/src/normalizer.h
++++ b/src/normalizer.h
+@@ -151,6 +151,11 @@
+   // Stores the blob for TRIE encoded in big-endian.
+   std::string precompiled_charsmap_buffer_;
+ 
++  // Aligned copy of the trie blob, used when the decoded buffer is not
++  // 4-byte aligned (the system darts set_array() requires aligned data).
++  std::vector<Darts::Details::DoubleArrayUnit>
++      precompiled_charsmap_trie_buffer_;
++
+   // Normalizer's status.
+   absl::Status status_;
+ };

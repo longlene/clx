@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Peppercorn is a library for converting a token stream (such as a web
+    form post) into a data structure. It is used together with Colander
+    and Deform for form processing.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Pylons/peppercorn</remote-id>
+    <remote-id type="pypi">peppercorn</remote-id>
+  </upstream>
+</pkgmetadata>

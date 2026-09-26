@@ -45,7 +45,7 @@ RDEPEND="
 		>=dev-python/keyring-25.0.0[${PYTHON_USEDEP}]
 		>=dev-python/openai-2.0.0[${PYTHON_USEDEP}]
 		<=dev-python/openai-2.33.0-r9999[${PYTHON_USEDEP}]
-		<dev-python/onnxruntime-1.24[${PYTHON_USEDEP}]
+		<sci-libs/onnxruntime-1.24[python,${PYTHON_USEDEP}]
 		dev-python/orjson[${PYTHON_USEDEP}]
 		>=dev-python/packaging-24.0[${PYTHON_USEDEP}]
 		>=dev-python/pillow-10.0.0[${PYTHON_USEDEP}]

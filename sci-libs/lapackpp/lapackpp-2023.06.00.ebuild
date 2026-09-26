@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
-	sci-libs/blaspp
+	sci-ml/blaspp
 "
 RDEPEND="${DEPEND}"
 

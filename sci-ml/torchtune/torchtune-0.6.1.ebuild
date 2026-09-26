@@ -27,7 +27,7 @@ RDEPEND="${DEPEND}
 	$(python_gen_cond_dep '
 		sci-ml/safetensors[${PYTHON_USEDEP}]
 		dev-python/kagglehub[${PYTHON_USEDEP}]
-		dev-python/sentencepiece[${PYTHON_USEDEP}]
+		sci-ml/sentencepiece[${PYTHON_USEDEP}]
 		dev-python/tiktoken[${PYTHON_USEDEP}]
 		>=dev-python/blobfile-2[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]

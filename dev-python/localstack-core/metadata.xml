@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    The core library and emulator runtime of LocalStack, which provides local
+    implementations of AWS cloud services. The runtime normally runs inside
+    the LocalStack Docker image; the user-facing CLI is dev-util/localstack.
+  </longdescription>
+  <use>
+    <flag name="runtime">Pull in the dependencies needed to run the emulator directly on the host</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">localstack/localstack</remote-id>
+    <remote-id type="pypi">localstack-core</remote-id>
+  </upstream>
+</pkgmetadata>

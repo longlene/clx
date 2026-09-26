@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	llvm-core/dpcpp
-	dev-libs/tbb
+	dev-cpp/tbb
 "
 RDEPEND="${DEPEND}"
 

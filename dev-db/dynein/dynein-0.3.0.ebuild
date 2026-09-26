@@ -349,9 +349,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}"
-BDEPEND="
-	>=virtual/rust-1.31.0
-"
 
 src_install() {
 	cargo_src_install

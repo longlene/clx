@@ -15,7 +15,7 @@ IUSE="debug gengc threads +unicode"
 
 RDEPEND="${DEPEND}
 dev-libs/gmp
-virtual/libffi
+dev-libs/libffi
 dev-lisp/asdf"
 
 src_prepare() {

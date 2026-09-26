@@ -17,7 +17,7 @@ RDEPEND="${DEPEND}
 dev-lisp/cffi
 dev-lisp/sbcl
 media-libs/opencv
-virtual/libffi"
+dev-libs/libffi"
 
 src_compile() {
 	emake ||  die "Make failed!"

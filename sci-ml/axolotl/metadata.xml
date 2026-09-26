@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Axolotl is a framework for fine-tuning and post-training large language
+    models (LoRA/QLoRA, full fine-tuning, preference tuning, multi-GPU and
+    multi-node training), driven by YAML configuration files.
+  </longdescription>
+  <use>
+    <flag name="deepspeed">Enable DeepSpeed distributed training via <pkg>sci-ml/deepspeed</pkg></flag>
+    <flag name="flash-attn">Enable FlashAttention kernels via <pkg>sci-ml/flash-attn</pkg></flag>
+    <flag name="mlflow">Enable MLflow experiment tracking</flag>
+    <flag name="opentelemetry">Enable OpenTelemetry/Prometheus metrics export</flag>
+    <flag name="ray">Enable Ray Train based distributed training</flag>
+    <flag name="vllm">Enable vLLM-based generation for online RL trainers</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">axolotl-ai-cloud/axolotl</remote-id>
+    <remote-id type="pypi">axolotl</remote-id>
+  </upstream>
+</pkgmetadata>

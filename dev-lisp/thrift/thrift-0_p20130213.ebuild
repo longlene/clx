@@ -15,8 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
-	virtual/puri
+	dev-lisp/puri
 	dev-lisp/usocket
 	dev-lisp/closer-mop
-	dev-lsip/trivial-utf8
+	dev-lisp/trivial-utf8
 "

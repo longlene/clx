@@ -1,0 +1,20 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -501,8 +501,17 @@
+     target_link_libraries(native_expert_parity PRIVATE strata_kernels strata_kernels_cpu strata_artifact CUDA::cudart)
+   endif()
+ endif()
+ 
++
++# Gentoo: the project ships no install rules; install the user-facing
++# binaries (the remaining targets are internal tests and benchmarks).
++install(TARGETS strata-gguf strata-dequant strata-plan RUNTIME DESTINATION bin)
++if(STRATA_ENABLE_CUDA)
++  install(TARGETS strata strata-device strata-load strata-concurrent strata-overlap
++    RUNTIME DESTINATION bin)
++endif()
++
+ if(STRATA_ENABLE_CUDA AND STRATA_BUILD_TESTS)
+   add_executable(hit_cpu_order_parity bench/micro/hit_cpu_order_parity.cu)
+   target_link_libraries(hit_cpu_order_parity PRIVATE strata_kernels strata_kernels_cpu CUDA::cudart)
+ endif()

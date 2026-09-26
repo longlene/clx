@@ -28,7 +28,7 @@ RDEPEND="
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	media-libs/opencv[python,${PYTHON_USEDEP}]
-	dev-python/onnxruntime[${PYTHON_USEDEP}]
+	sci-libs/onnxruntime[python,${PYTHON_USEDEP}]
 	>=sci-ml/openvino-2026.1
 	sci-ml/openvino-tokenizers
 	>=sci-ml/safetensors-0.4.3[${PYTHON_USEDEP}]

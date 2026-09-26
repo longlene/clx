@@ -30,7 +30,7 @@ RDEPEND="
 	>=dev-python/pydantic-2[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	>=dev-python/SQLAlchemy-1.4.1[${PYTHON_USEDEP}]
+	>=dev-python/sqlalchemy-1.4.1[${PYTHON_USEDEP}]
 	>=dev-python/tornado-5.1[${PYTHON_USEDEP}]
 "
 #BDEPEND="

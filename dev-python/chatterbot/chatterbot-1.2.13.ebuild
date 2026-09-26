@@ -31,7 +31,7 @@ RDEPEND="
 			dev-python/redis[${PYTHON_USEDEP}]
 			dev-python/langchain-redis[${PYTHON_USEDEP}]
 			dev-python/langchain-huggingface[${PYTHON_USEDEP}]
-			dev-python/sentence-transformers[${PYTHON_USEDEP}]
+			sci-ml/sentence-transformers[${PYTHON_USEDEP}]
 		)
 	')
 	redis? ( sci-ml/accelerate )

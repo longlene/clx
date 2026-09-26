@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~arm64"
 RDEPEND="
 	>=dev-python/mcp-1.0[${PYTHON_USEDEP}]
 	>=dev-python/pydantic-2.10[${PYTHON_USEDEP}]
-	>=dev-python/pydantic-ai-0.0.35[${PYTHON_USEDEP}]
+	>=sci-ml/pydantic-ai-0.0.35[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.12[${PYTHON_USEDEP}]
 "
 #BDEPEND="

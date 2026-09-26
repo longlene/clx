@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    frp-mini is a lightweight Rust reimplementation of the frp reverse proxy
+    (frpc client / frps server) using about 6 MB of memory. It supports TCP,
+    UDP, HTTP, HTTPS, TCPMux, STCP and SUDP proxies over TCP, yamux or QUIC
+    transports, adds IP allowlists and a web dashboard. Upstream only
+    publishes prebuilt static binaries.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">yangchaoliuyang/frp-mini</remote-id>
+  </upstream>
+</pkgmetadata>

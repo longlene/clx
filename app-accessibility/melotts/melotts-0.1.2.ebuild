@@ -22,9 +22,9 @@ KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="${DEPEND}
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
-	sci-libs/torchaudio[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/torchaudio[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.27.4[${PYTHON_SINGLE_USEDEP}]
-	>=sci-libs/tensorboard-2.16.2[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/tensorboard-2.16.2[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/txtsplit[${PYTHON_USEDEP}]
 		dev-python/cached-path[${PYTHON_USEDEP}]

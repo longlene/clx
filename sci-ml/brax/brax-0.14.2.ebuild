@@ -34,7 +34,7 @@ RDEPEND="
 	>=dev-python/orbax-checkpoint-0.11.22[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
-	dev-python/tensorboardx[${PYTHON_USEDEP}]
+	sci-ml/tensorboardx[${PYTHON_USEDEP}]
 	dev-python/trimesh[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "

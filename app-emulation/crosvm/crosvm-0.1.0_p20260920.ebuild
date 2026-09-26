@@ -1,0 +1,343 @@
+# Copyright 2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+RUST_MIN_VER="1.88.0"
+
+CRATES="
+	addr2line@0.21.0
+	adler@1.0.2
+	ahash@0.8.6
+	aho-corasick@0.7.18
+	android_log-sys@0.3.1
+	anyhow@1.0.58
+	arbitrary@1.1.6
+	argh@0.1.10
+	argh_derive@0.1.10
+	argh_shared@0.1.10
+	ash@0.37.3+1.3.251
+	async-task@4.3.0
+	async-trait@0.1.85
+	atty@0.2.14
+	autocfg@1.1.0
+	backtrace@0.3.69
+	bindgen@0.63.0
+	bindgen@0.68.1
+	bindgen@0.70.1
+	bitflags@1.3.2
+	bitflags@2.4.0
+	bitreader@0.3.6
+	bytemuck@1.14.0
+	bytemuck_derive@1.5.0
+	byteorder@1.4.3
+	bytes@1.2.0
+	cbindgen@0.24.3
+	cc@1.0.90
+	cexpr@0.6.0
+	cfg-if@1.0.0
+	cfg_aliases@0.1.1
+	cfg_aliases@0.2.1
+	chrono@0.4.35
+	ciborium-io@0.2.2
+	ciborium-ll@0.2.2
+	ciborium@0.2.2
+	clang-sys@1.4.0
+	clap@3.2.23
+	clap@4.1.8
+	clap_derive@4.1.8
+	clap_lex@0.2.4
+	clap_lex@0.3.2
+	core-foundation-sys@0.8.6
+	core-foundation@0.9.4
+	core-graphics-types@0.1.3
+	crc32fast@1.3.2
+	cros-codecs@0.0.4
+	cros-libva@0.0.4
+	crossbeam-channel@0.5.8
+	crossbeam-deque@0.8.3
+	crossbeam-epoch@0.9.14
+	crossbeam-queue@0.3.11
+	crossbeam-utils@0.8.19
+	crunchy@0.2.2
+	ctrlc@3.2.5
+	dbus@0.9.7
+	derive-into-owned@0.1.0
+	document-features@0.2.6
+	either@1.7.0
+	enumn@0.1.13
+	env_filter@1.0.0
+	env_logger@0.11.9
+	equivalent@1.0.1
+	errno-dragonfly@0.1.2
+	errno@0.2.8
+	errno@0.3.12
+	euclid@0.22.7
+	fastrand@1.8.0
+	fnv@1.0.7
+	foreign-types-shared@0.1.1
+	foreign-types@0.3.2
+	form_urlencoded@1.1.0
+	futures-channel@0.3.21
+	futures-core@0.3.21
+	futures-executor@0.3.21
+	futures-io@0.3.21
+	futures-macro@0.3.21
+	futures-sink@0.3.21
+	futures-task@0.3.21
+	futures-util@0.3.21
+	futures@0.3.21
+	gdbstub@0.7.0
+	gdbstub_arch@0.3.0
+	getrandom@0.2.7
+	getrandom@0.3.4
+	gimli@0.28.1
+	glob@0.3.0
+	half@2.4.1
+	hashbrown@0.12.3
+	hashbrown@0.15.0
+	heck@0.4.0
+	hermit-abi@0.1.19
+	hermit-abi@0.3.1
+	idna@0.3.0
+	indexmap@1.9.1
+	indexmap@2.6.0
+	instant@0.1.12
+	intrusive-collections@0.10.2
+	io-lifetimes@1.0.5
+	is-terminal@0.4.4
+	itertools@0.12.1
+	itoa@1.0.2
+	jobserver@0.1.24
+	lazy_static@1.4.0
+	lazycell@1.3.0
+	libc@0.2.188
+	libdbus-sys@0.2.5
+	libfuzzer-sys@0.4.4
+	libloading@0.7.3
+	libslirp-sys@4.2.1
+	libtest-mimic@0.6.0
+	linux-raw-sys@0.1.4
+	linux-raw-sys@0.9.4
+	litrs@0.2.3
+	lock_api@0.4.9
+	log@0.4.33
+	lz4_flex@0.11.1
+	magma-gpu@0.1.80
+	malloc_buf@0.0.6
+	managed@0.8.0
+	memchr@2.5.0
+	memoffset@0.8.0
+	memoffset@0.9.1
+	minimal-lexical@0.2.1
+	miniz_oxide@0.7.2
+	mio@0.8.11
+	named-lock@0.3.0
+	nix@0.26.2
+	nix@0.27.1
+	nix@0.28.0
+	nix@0.31.3
+	nom@7.1.1
+	num-traits@0.2.15
+	num_cpus@1.13.1
+	objc@0.2.7
+	object@0.32.2
+	once_cell@1.17.0
+	openssl-macros@0.1.0
+	openssl-sys@0.9.86
+	openssl@0.10.51
+	os_str_bytes@6.4.1
+	p9@0.3.2
+	p9_wire_format_derive@0.3.0
+	parking_lot@0.12.1
+	parking_lot_core@0.9.6
+	paste@1.0.7
+	pcap-file@1.1.1
+	peeking_take_while@0.1.2
+	percent-encoding@2.2.0
+	pin-project-lite@0.2.13
+	pin-utils@0.1.0
+	pkg-config@0.3.31
+	ppv-lite86@0.2.16
+	prettyplease@0.2.22
+	proc-macro-crate@1.3.1
+	proc-macro-error-attr@1.0.4
+	proc-macro-error@1.0.4
+	proc-macro2@1.0.107
+	protobuf-codegen@3.7.2
+	protobuf-parse@3.7.2
+	protobuf-support@3.7.2
+	protobuf@3.7.2
+	quote@0.3.15
+	quote@1.0.36
+	r-efi@5.3.0
+	rand@0.9.2
+	rand_chacha@0.9.0
+	rand_core@0.9.3
+	rayon-core@1.11.0
+	rayon@1.7.0
+	redox_syscall@0.2.15
+	regex-syntax@0.6.27
+	regex@1.6.0
+	remain@0.2.6
+	remove_dir_all@0.5.3
+	rustc-demangle@0.1.23
+	rustc-hash@1.1.0
+	rustix@0.36.8
+	rustix@1.0.7
+	rutabaga_gfx@0.1.80
+	ryu@1.0.10
+	same-file@1.0.6
+	scopeguard@1.1.0
+	scudo-proc-macros@0.1.0
+	scudo-sys@0.2.2
+	scudo@0.1.3
+	serde@1.0.228
+	serde_bytes@0.11.19
+	serde_core@1.0.228
+	serde_derive@1.0.228
+	serde_json@1.0.82
+	shlex@1.3.0
+	slab@0.4.7
+	smallvec@1.9.0
+	socket2@0.4.10
+	static_assertions@1.1.0
+	strsim@0.10.0
+	syn@0.11.11
+	syn@1.0.103
+	syn@2.0.87
+	syn@3.0.2
+	synom@0.11.3
+	tempfile@3.3.0
+	termcolor@1.1.3
+	textwrap@0.16.0
+	thiserror-impl@1.0.38
+	thiserror-impl@2.0.19
+	thiserror@1.0.38
+	thiserror@2.0.19
+	thread_local@1.1.8
+	threadpool@1.8.1
+	tinyvec@1.6.0
+	tinyvec_macros@0.1.0
+	tokio-macros@2.1.0
+	tokio@1.29.1
+	toml@0.5.9
+	toml_datetime@0.6.8
+	toml_edit@0.19.15
+	twox-hash@1.6.3
+	unicode-bidi@0.3.8
+	unicode-ident@1.0.2
+	unicode-normalization@0.1.22
+	unicode-xid@0.0.4
+	url@2.3.1
+	userfaultfd-sys@0.5.0
+	userfaultfd@0.8.1
+	uuid@1.8.0
+	v4l2r@0.0.7
+	vcpkg@0.2.15
+	version_check@0.9.4
+	virtio-media@0.0.8
+	vk-parse@0.8.0
+	vulkano-macros@0.33.0
+	vulkano@0.31.1
+	vulkano@0.33.0
+	walkdir@2.5.0
+	wasi@0.11.0+wasi-snapshot-preview1
+	wasip2@1.0.1+wasi-0.2.4
+	which@4.2.5
+	widestring@1.0.2
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-util@0.1.5
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-collections@0.2.0
+	windows-core@0.61.2
+	windows-future@0.2.1
+	windows-implement@0.60.0
+	windows-interface@0.59.1
+	windows-link@0.1.1
+	windows-numerics@0.2.0
+	windows-result@0.3.4
+	windows-strings@0.4.2
+	windows-sys@0.42.0
+	windows-sys@0.45.0
+	windows-sys@0.48.0
+	windows-sys@0.59.0
+	windows-targets@0.42.1
+	windows-targets@0.48.5
+	windows-targets@0.52.6
+	windows-threading@0.1.0
+	windows@0.61.1
+	windows_aarch64_gnullvm@0.42.1
+	windows_aarch64_gnullvm@0.48.5
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_msvc@0.42.1
+	windows_aarch64_msvc@0.48.5
+	windows_aarch64_msvc@0.52.6
+	windows_i686_gnu@0.42.1
+	windows_i686_gnu@0.48.5
+	windows_i686_gnu@0.52.6
+	windows_i686_gnullvm@0.52.6
+	windows_i686_msvc@0.42.1
+	windows_i686_msvc@0.48.5
+	windows_i686_msvc@0.52.6
+	windows_x86_64_gnu@0.42.1
+	windows_x86_64_gnu@0.48.5
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnullvm@0.42.1
+	windows_x86_64_gnullvm@0.48.5
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_msvc@0.42.1
+	windows_x86_64_msvc@0.48.5
+	windows_x86_64_msvc@0.52.6
+	winnow@0.5.40
+	wio@0.2.2
+	wit-bindgen@0.46.0
+	xml-rs@0.8.19
+	zerocopy-derive@0.7.32
+	zerocopy-derive@0.8.14
+	zerocopy@0.7.32
+	zerocopy@0.8.14
+	zeroize@1.5.7
+	zstd-safe@7.2.1
+	zstd-sys@2.0.13+zstd.1.5.6
+	zstd@0.13.2
+"
+
+inherit cargo
+
+EGIT_COMMIT="f9a804830b422bfc99e0a138e6d782dbbde75e46"
+MINIJAIL_COMMIT="7845d89927a82dbdcdee6276837cd0978f69ba19"
+
+DESCRIPTION="The Chrome OS Virtual Machine Monitor"
+HOMEPAGE="https://crosvm.dev/"
+SRC_URI="
+	https://github.com/google/crosvm/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
+	https://github.com/google/minijail/archive/${MINIJAIL_COMMIT}.tar.gz -> minijail-${MINIJAIL_COMMIT}.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
+
+LICENSE="BSD"
+LICENSE+=" 0BSD Apache-2.0 ISC MIT MPL-2.0 Unicode-DFS-2016"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64"
+
+DEPEND="
+	dev-libs/wayland
+"
+RDEPEND="${DEPEND}"
+BDEPEND="
+	dev-libs/protobuf
+"
+
+src_prepare() {
+	default
+	rmdir third_party/minijail && ln -sv "${WORKDIR}"/minijail-${MINIJAIL_COMMIT} third_party/minijail
+}
+
+src_install() {
+	cargo_src_install
+	einstalldocs
+}

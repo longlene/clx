@@ -26,6 +26,6 @@ RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	sci-ml/huggingface_hub
-	dev-python/onnxruntime
+	sci-libs/onnxruntime[python,${PYTHON_USEDEP}]
 	sci-ml/tokenizers
 "

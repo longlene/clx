@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 RDEPEND="${DEPEND}
 dev-lisp/cl-ppcre
 dev-lisp/closure-html
-virtual/puri
+dev-lisp/puri
 dev-lisp/drakma
 dev-lisp/trivial-timeout
 dev-lisp/alexandria

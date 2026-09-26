@@ -1,13 +1,12 @@
-diff -Nur a/python/setup.py b/python/setup.py
---- a/python/setup.py	2025-08-11 21:55:11.000000000 -0700
-+++ b/python/setup.py	2025-09-05 15:33:05.618275576 -0700
-@@ -103,9 +103,6 @@
+--- a/python/setup.py	2026-09-20 22:35:23.455233746 -0700
++++ b/python/setup.py	2026-09-20 22:35:23.477527254 -0700
+@@ -137,9 +137,6 @@
        if sys.platform == 'aix':
          cflags.append('-Wl,-s')
          libs.append('-Wl,-s')
 -      else:
 -        cflags.append('-Wl,-strip-all')
 -        libs.append('-Wl,-strip-all')
+ 
      if sys.platform == 'linux':
        libs.append('-Wl,-Bsymbolic')
-     if is_gil_disabled():

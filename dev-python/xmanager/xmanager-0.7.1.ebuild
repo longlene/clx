@@ -20,7 +20,7 @@ RESTRICT="test"
 RDEPEND="
 	dev-python/absl-py[${PYTHON_USEDEP}]
 	dev-python/alembic[${PYTHON_USEDEP}]
-	dev-python/async-generator[${PYTHON_USEDEP}]
+	dev-python/async_generator[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/cloud-sql-python-connector[${PYTHON_USEDEP}]
 	dev-python/docker[${PYTHON_USEDEP}]

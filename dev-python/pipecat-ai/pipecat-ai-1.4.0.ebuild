@@ -41,7 +41,7 @@ RDEPEND="
 	>=dev-python/websockets-13.1[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-include-1.4[${PYTHON_USEDEP}]
-	>=dev-python/onnxruntime-1.24.2[${PYTHON_USEDEP}]
+	>=sci-libs/onnxruntime-1.24.2[python,${PYTHON_USEDEP}]
 "
 BDEPEND="
 	>=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]

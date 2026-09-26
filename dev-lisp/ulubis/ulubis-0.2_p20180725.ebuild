@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 RDEPEND="${DEPEND}
 	dev-lisp/cffi
 	dev-lisp/osicat
-	dev-lisp/slime
+	app-emacs/slime
 	dev-lisp/cepl
 	dev-lisp/rtg-math
 	dev-lisp/easing

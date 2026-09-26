@@ -17,7 +17,7 @@ IUSE="blas cuda +models ffmpeg -opencl openvino sdl2 vulkan"
 DEPEND="
 	sci-ml/ggml[cuda?,opencl?,vulkan?]
 	net-misc/curl
-	openvino? ( sci-libs/openvino )
+	openvino? ( sci-ml/openvino )
 	sdl2? ( media-libs/libsdl2 )
 "
 RDEPEND="${DEPEND}

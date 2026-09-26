@@ -17,7 +17,7 @@ S="${WORKDIR}"/libretranslate-${PV}
 KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
-	>=sci-libs/argos-translate-1.9.6[${PYTHON_USEDEP}]
+	>=sci-ml/argos-translate-1.9.6[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.2.5[${PYTHON_USEDEP}]
 	>=dev-python/flask-swagger-0.2.14[${PYTHON_USEDEP}]
 	>=dev-python/flask-swagger-ui-4.11.1[${PYTHON_USEDEP}]

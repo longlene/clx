@@ -43,6 +43,6 @@ RDEPEND="
 			>=sci-ml/pytorch-2.0.0[${PYTHON_SINGLE_USEDEP}]
 			>=sci-ml/torchaudio-2.0.0[${PYTHON_SINGLE_USEDEP}]
 		)
-		vad? ( >=dev-python/onnxruntime-1.16.0[${PYTHON_USEDEP}] )
+		vad? ( >=sci-libs/onnxruntime-1.16.0[python,${PYTHON_USEDEP}] )
 	')
 "

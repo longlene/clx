@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    ERPNext is an open source ERP application (accounting, inventory,
+    manufacturing, CRM, HR, projects) built on the Frappe framework. This
+    package installs the Python app; the front-end assets are built with
+    frappe-bench when the app is added to a bench.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">frappe/erpnext</remote-id>
+  </upstream>
+</pkgmetadata>

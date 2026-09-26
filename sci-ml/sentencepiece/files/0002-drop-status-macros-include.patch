@@ -1,0 +1,10 @@
+--- a/src/common.h	2026-09-20 23:12:30.038923983 -0700
++++ b/src/common.h	2026-09-20 23:12:30.041009133 -0700
+@@ -22,7 +22,6 @@
+ #include "third_party/absl/log/globals.h"
+ #include "third_party/absl/log/log.h"
+ #include "third_party/absl/status/status.h"
+-#include "third_party/absl/status/status_macros.h"
+ #include "third_party/absl/strings/string_view.h"
+ 
+ #if defined(_WIN32) && !defined(__CYGWIN__)

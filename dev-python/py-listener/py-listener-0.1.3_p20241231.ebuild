@@ -25,8 +25,8 @@ KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
-	sci-libs/torchaudio[${PYTHON_SINGLE_USEDEP}]
-	sci-libs/openai-whisper[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/torchaudio[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/openai-whisper[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/sounddevice[${PYTHON_USEDEP}]

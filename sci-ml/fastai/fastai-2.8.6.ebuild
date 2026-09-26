@@ -20,14 +20,14 @@ KEYWORDS="~amd64 ~arm64 ~x86"
 RDEPEND="${DEPEND}
 	>=sci-ml/torchvision-0.11[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
-		>=dev-python/fastdownload-0.0.5[${PYTHON_USEDEP}]
-		>=dev-python/fastcore-1.8.0[${PYTHON_USEDEP}]
+		>=sci-ml/fastdownload-0.0.5[${PYTHON_USEDEP}]
+		>=sci-ml/fastcore-1.8.0[${PYTHON_USEDEP}]
 		>=dev-python/fasttransform-0.0.2[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
-		>=dev-python/fastprogress-0.2.4[${PYTHON_USEDEP}]
+		>=sci-ml/fastprogress-0.2.4[${PYTHON_USEDEP}]
 		>=dev-python/pillow-9.0.0[${PYTHON_USEDEP}]
 		dev-python/scikit-learn[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]

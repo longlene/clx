@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
-	dev-libs/libyuv
+	media-libs/libyuv
 	>=dev-python/pybind11-2.6.0[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 "

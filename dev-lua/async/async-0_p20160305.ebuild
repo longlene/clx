@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
 	dev-lua/lua-cjson[${LUA_USEDEP}]
-	sci-libs/torch7[${LUA_USEDEP}]
+	sci-ml/torch7[${LUA_USEDEP}]
 "
 
 #DOCS=( README.md )

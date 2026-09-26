@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Deform is an HTML form generation and processing library for Python.
+    It is used to build HTML forms with validation (via Colander schemas),
+    and to process and validate form data submitted by users.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Pylons/deform</remote-id>
+    <remote-id type="pypi">deform</remote-id>
+  </upstream>
+</pkgmetadata>

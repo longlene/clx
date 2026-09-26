@@ -1,0 +1,52 @@
+From: clx overlay
+Subject: [PATCH] compat: build sgl-attn hopper/utils.h against cutlass >= 4.7
+
+cutlass 4.7 templatized SM100_MMA_F8F6F4_SS, moving the type/shape/major
+parameters from the MMA_Traits argument list into the atom template itself.
+The old-style signature no longer parses against the new headers
+("argument list for class template is missing").
+
+This overload takes a TiledMMA constructed from the old-style atom, which
+does not exist with cutlass >= 4.7, and has no callers in the sgl-kernel
+build tree (flashinfer provides its own copy in fmha_common.hpp). Make the
+signature version-conditional so it keeps parsing on both old and new
+cutlass; the body is only instantiated if it is ever called.
+
+Neither cute/tensor.hpp nor cutlass/cutlass.h pulls in cutlass/version.h,
+so include it explicitly; CUTLASS_VERSION is only defined under
+CUTLASS_VERSIONS_GENERATED, hence the check uses the unconditionally
+defined CUTLASS_MAJOR/CUTLASS_MINOR macros.
+
+--- a/hopper/utils.h
++++ b/hopper/utils.h
+@@ -19,5 +19,6 @@
+ 
+ #include <cutlass/cutlass.h>
++#include <cutlass/version.h>
+ #include <cutlass/array.h>
+ #include <cutlass/numeric_conversion.h>
+ #include <cutlass/numeric_types.h>
+@@ -415,9 +416,17 @@
+ to_tiled_mma_sm100_ts(
+     TiledMMA<MMA_Atom<
+-      MMA_Traits<SM100_MMA_F8F6F4_SS, a_type, b_type, c_type,
+-                    cute::C<M>, cute::C<N>,
+-                    cute::integral_constant<UMMA::Major, a_major>,
+-                    cute::integral_constant<UMMA::Major, b_major>,
+-                    cute::integral_constant<UMMA::ScaleIn, a_neg>,
+-                    cute::integral_constant<UMMA::ScaleIn, b_neg>>,
++      // cutlass 4.7+ templatizes SM100_MMA_F8F6F4_SS (parameters moved
++      // from the MMA_Traits argument list into the atom template itself);
++      // the old-style atom does not exist there.
++#if (CUTLASS_MAJOR > 4) || (CUTLASS_MAJOR == 4 && CUTLASS_MINOR >= 7)
++      SM100_MMA_F8F6F4_SS<a_type, b_type, c_type,
++                          M, N, a_major, b_major, a_neg, b_neg>,
++#else
++      MMA_Traits<SM100_MMA_F8F6F4_SS, a_type, b_type, c_type,
++                    cute::C<M>, cute::C<N>,
++                    cute::integral_constant<UMMA::Major, a_major>,
++                    cute::integral_constant<UMMA::Major, b_major>,
++                    cute::integral_constant<UMMA::ScaleIn, a_neg>,
++                    cute::integral_constant<UMMA::ScaleIn, b_neg>>,
++#endif
+       TAs...>, TMs...>) {

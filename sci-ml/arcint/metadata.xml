@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">marfrit/arcint</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    A deliberately narrow LLM inference engine for Intel Arc GPUs. arcint
+    runs three Qwen hybrid model families (GatedDeltaNet linear attention
+    with a minority of full-attention layers) on two cards, delegating
+    kernel work to the OpenVINO compiler stack while owning the serving
+    loop, scheduler, KV and recurrent-state memory, prefix caching, and
+    speculative decoding.
+  </longdescription>
+  <use>
+    <flag name="openvino">Build the OpenVINO executor backend for serving models on Intel Arc</flag>
+    <flag name="python">Require a Python interpreter for the shipped export_mtp.py tool</flag>
+    <flag name="test">Build the test binaries and run the device-free ctest gate (requires python)</flag>
+  </use>
+</pkgmetadata>

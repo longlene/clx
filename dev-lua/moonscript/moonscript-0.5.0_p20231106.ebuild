@@ -25,7 +25,7 @@ RDEPEND="
 	dev-lua/luafilesystem[${LUA_USEDEP}]
 "
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 "
 
 lua_src_install() {

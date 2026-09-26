@@ -1,6 +1,0 @@
-# /etc/conf.d/dhcp-fwd: config file for /etc/init.d/dhcp-fwd
-
-CONFIG=/etc/dhcp-fwd.conf
-
-PIDFILE=/var/run/dhcp-fwd.pid
-

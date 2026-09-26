@@ -25,17 +25,17 @@ RDEPEND="
 	>=sci-ml/torchaudio-2.1.2[${PYTHON_USEDEP}]
 	>=sci-ml/transformers-4.43.4[${PYTHON_USEDEP}]
 	>=sci-ml/tokenizers-0.19.1[${PYTHON_USEDEP}]
-	>=dev-python/sentencepiece-0.1.99[${PYTHON_USEDEP}]
+	>=sci-ml/sentencepiece-0.1.99[${PYTHON_USEDEP}]
 	dev-python/shortuuid[${PYTHON_USEDEP}]
 	>=sci-ml/accelerate-0.33.0[${PYTHON_USEDEP}]
 	>=sci-ml/peft-0.11.1[${PYTHON_USEDEP}]
-	>=dev-python/bitsandbytes-0.43.1[${PYTHON_USEDEP}]
+	>=sci-ml/bitsandbytes-0.43.1[${PYTHON_USEDEP}]
 	dev-python/pydantic[${PYTHON_USEDEP}]
 	dev-python/markdown2[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/scikit-learn-1.2.2[${PYTHON_USEDEP}]
 	>=dev-python/gradio-4.43.0[${PYTHON_USEDEP}]
-	>=dev-python/gradio_client-1.3.0[${PYTHON_USEDEP}]
+	>=dev-python/gradio-client-1.3.0[${PYTHON_USEDEP}]
 
 	dev-python/requests[${PYTHON_USEDEP}]
 	>=dev-python/httpx-0.27.2[${PYTHON_USEDEP}]
@@ -45,9 +45,9 @@ RDEPEND="
 
 	>=dev-python/einops-0.6.1[${PYTHON_USEDEP}]
 	>=dev-python/einops-exts-0.0.4[${PYTHON_USEDEP}]
-	>=dev-python/timm-0.6.13[${PYTHON_USEDEP}]
+	>=sci-ml/timm-0.6.13[${PYTHON_USEDEP}]
 
-	dev-python/openai-whisper[${PYTHON_USEDEP}]
+	sci-ml/openai-whisper[${PYTHON_USEDEP}]
 	>=dev-python/omegaconf-2.0.6[${PYTHON_USEDEP}]
 "
 #BDEPEND="

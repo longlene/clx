@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/alexandria
 	dev-lisp/iterate
 	dev-lisp/lisp-namespace
-	dev-lisp/libfixposix
+	sys-libs/libfixposix
 	sci-mathematics/minisat
 	test? ( dev-lisp/fiveam )
 "

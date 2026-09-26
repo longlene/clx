@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}
 	dev-lisp/cxml
 	dev-lisp/ironclad
 	dev-lisp/uuid
-	dev-lisp/sqlite
+	dev-db/sqlite
 	dev-lisp/whatscl
 	dev-lisp/drakma
 	dev-lisp/local-time

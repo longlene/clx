@@ -9,4 +9,7 @@
     <remote-id type="github">anthropics/claude-agent-sdk-python</remote-id>
     <remote-id type="pypi">claude-agent-sdk</remote-id>
   </upstream>
+  <use>
+    <flag name="otel">Enable OpenTelemetry tracing support</flag>
+  </use>
 </pkgmetadata>

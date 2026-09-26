@@ -24,7 +24,7 @@ RDEPEND="
 	>=sci-ml/faster-whisper-1.1.1[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/ctranslate2[${PYTHON_USEDEP}]
+		sci-ml/ctranslate2[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
 		dev-python/sounddevice[${PYTHON_USEDEP}]
 	')

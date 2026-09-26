@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
 RDEPEND="${DEPEND}
-dev-lisp/sqlite
+dev-db/sqlite
 dev-lisp/vom
 dev-lisp/yason
 "

@@ -1,0 +1,23 @@
+--- a/cmake/flashmla.cmake
++++ b/cmake/flashmla.cmake
+@@ -8,13 +8,13 @@
+ FetchContent_Populate(repo-flashmla)
+ 
+ # flashmla submodule pin: NVIDIA/cutlass @ 147f5673d0c1c3dcf66f78d677fd647e4a020219
+-FetchContent_Declare(
+-    repo-flashmla-cutlass
+-    URL      https://${GITHUB_ARTIFACTORY}/NVIDIA/cutlass/archive/147f5673d0c1c3dcf66f78d677fd647e4a020219.tar.gz
+-    URL_HASH SHA256=9f6c53320a85b4a570975e557918cde65168cd311f081920446c238437347dc6
+-    SOURCE_DIR ${repo-flashmla_SOURCE_DIR}/csrc/cutlass
+-)
+-FetchContent_Populate(repo-flashmla-cutlass)
++# Gentoo: no network fetch. The pinned cutlass commit is vendored via
++# SRC_URI and src_prepare extracts it into csrc/cutlass below (the
++# submodule dir in the GitHub archive is empty). The FlashMLA sm100
++# kernels use a cutlass SM100-MMA API that the newer system
++# dev-libs/cutlass (4.7.x) no longer provides, so the pinned commit
++# must be used here (unlike the main cutlass integration, which runs
++# against the system cutlass via 0001/0002).
+ 
+ set(FLASHMLA_CUDA_FLAGS
+     "--expt-relaxed-constexpr"

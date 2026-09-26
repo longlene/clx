@@ -24,7 +24,7 @@ RDEPEND="
 	dev-lisp/swap-bytes
 	dev-lisp/alexandria
 	dev-lisp/split-sequence
-	dev-lisp/libfixposix
+	sys-libs/libfixposix
 	test? ( dev-lisp/fiveam )
 "
 

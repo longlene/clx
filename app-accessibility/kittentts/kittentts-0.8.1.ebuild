@@ -28,7 +28,7 @@ RDEPEND="
 		dev-python/spacy[${PYTHON_USEDEP}]
 		dev-python/espeakng-loader[${PYTHON_USEDEP}]
 		>=dev-python/misaki-0.9.4[${PYTHON_USEDEP}]
-		sci-ml/onnxruntime[${PYTHON_USEDEP}]
+		sci-libs/onnxruntime[python,${PYTHON_USEDEP}]
 		dev-python/soundfile[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 	')

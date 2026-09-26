@@ -15,6 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 
-ruby_add_rdepend ">=dev-ruby/jekyll-3.0"
+ruby_add_rdepend ">=www-apps/jekyll-3.0"
 ruby_add_rdepend ">=dev-ruby/html-pipeline-2.3"
 ruby_add_rdepend ">=dev-ruby/activesupport-4.0"

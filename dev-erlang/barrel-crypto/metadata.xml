@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    barrel_crypto provides the encryption primitives for the Barrel
+    database: AES-256-GCM envelope encryption, offset-addressable CTR mode
+    and HKDF key derivation, with pluggable key providers.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">barrel-db/barrel</remote-id>
+  </upstream>
+</pkgmetadata>

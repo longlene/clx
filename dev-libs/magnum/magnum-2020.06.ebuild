@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
-	dev-libs/corrade
+	dev-cpp/corrade
 	media-libs/openal
 	media-libs/glfw
 	media-libs/libsdl2

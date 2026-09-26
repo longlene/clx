@@ -5,6 +5,11 @@
     <email>longlene@gmail.com</email>
     <name>loong0</name>
   </maintainer>
+  <longdescription lang="en">
+    Pure Erlang QUIC (RFC 9000/9001) and HTTP/3 (RFC 9114) implementation,
+    including QPACK, QUIC-LB load balancer support, and a QUIC-based node
+    distribution layer.
+  </longdescription>
   <upstream>
     <remote-id type="github">benoitc/erlang_quic</remote-id>
   </upstream>

@@ -1,0 +1,59 @@
+diff --git a/src/hackney_ssl.erl b/src/hackney_ssl.erl
+index 544222c..3c0dae7 100644
+--- a/src/hackney_ssl.erl
++++ b/src/hackney_ssl.erl
+@@ -6,7 +6,6 @@
+ %%% Copyright (c) 2011-2012, Loïc Hoguin <essen@ninenines.eu>
+ 
+ -module(hackney_ssl).
+--compile({parse_transform, ct_expand}).
+ 
+ -export([messages/1,
+   connect/3, connect/4,
+@@ -292,19 +291,16 @@ check_hostname_opts(Host0) ->
+ cipher_opts() ->
+     % Workaround for buggy ChaCha cipher in OTP 20, which breaks connectivity sometimes.
+     % See: https://bugs.erlang.org/browse/ERL-538
+-    ct_expand:term(
+-      (fun () ->
+-               % This will be evaluated at compile time
+-               TLSVersionsInfo = ssl:versions(),
+-               {_, SupportedTLSVersions} = lists:keyfind(supported, 1, TLSVersionsInfo),
+-               DefaultCipherSuitesPerTLSVersion = [ssl:cipher_suites(default, TLSVersion)
+-                                                   || TLSVersion <- SupportedTLSVersions],
+-               DefaultCipherSuites = lists:flatten(DefaultCipherSuitesPerTLSVersion),
+-               CipherFilter = fun (Cipher) -> Cipher =/= chacha20_poly1305 end,
+-               Ciphers = ssl:filter_cipher_suites(DefaultCipherSuites, [{cipher, CipherFilter}]),
+-               [{ciphers, Ciphers}]
+-       end)()
+-     ).
++    (fun () ->
++             TLSVersionsInfo = ssl:versions(),
++             {_, SupportedTLSVersions} = lists:keyfind(supported, 1, TLSVersionsInfo),
++             DefaultCipherSuitesPerTLSVersion = [ssl:cipher_suites(default, TLSVersion)
++                                                 || TLSVersion <- SupportedTLSVersions],
++             DefaultCipherSuites = lists:flatten(DefaultCipherSuitesPerTLSVersion),
++             CipherFilter = fun (Cipher) -> Cipher =/= chacha20_poly1305 end,
++             Ciphers = ssl:filter_cipher_suites(DefaultCipherSuites, [{cipher, CipherFilter}]),
++             [{ciphers, Ciphers}]
++     end)().
+ -else.
+ cipher_opts() ->
+     [].
+@@ -346,12 +342,10 @@ partial_chain(Certs) ->
+ 
+ %% instead of parsing every time, compile this list at runtime
+ decoded_cacerts() ->
+-  ct_expand:term(
+-    lists:foldl(fun(Cert, Acc) ->
+-                    Dec = public_key:pkix_decode_cert(Cert, otp),
+-                    [hackney_ssl_certificate:public_key_info(Dec) | Acc]
+-                end, [], certifi:cacerts())
+-   ).
++  lists:foldl(fun(Cert, Acc) ->
++                  Dec = public_key:pkix_decode_cert(Cert, otp),
++                  [hackney_ssl_certificate:public_key_info(Dec) | Acc]
++              end, [], certifi:cacerts()).
+ 
+ 
+ check_cert(CACerts, Cert) ->

@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~arm ~arm64"
 
 DEPEND="
 	sys-libs/readline
-	sci-libs/torch7
+	sci-ml/torch7
 "
 RDEPEND="${DEPEND}"
 

@@ -181,8 +181,8 @@ KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	|| (
-		>=sci-ml/onnxruntime-1.17.0[${PYTHON_USEDEP}]
-		sci-ml/onnxruntime-bin
+		>=sci-libs/onnxruntime-1.17.0[python,${PYTHON_USEDEP}]
+		sci-libs/onnxruntime-bin
 	)
 "
 RDEPEND="
