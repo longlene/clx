@@ -6,9 +6,7 @@
     <name>loong0</name>
   </maintainer>
   <upstream>
-    <remote-id type="github">NVIDIA-NeMo/nemo-helix</remote-id>
-    <remote-id type="github">NVIDIA-NeMo/nemo-platform</remote-id>
-    <remote-id type="pypi">nemo-platform</remote-id>
-    <remote-id type="pypi">nemoplatform</remote-id>
+    <remote-id type="github">NVIDIA/NeMo-Fabric</remote-id>
+    <remote-id type="pypi">nemo-fabric</remote-id>
   </upstream>
 </pkgmetadata>

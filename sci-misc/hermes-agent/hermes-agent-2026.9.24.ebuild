@@ -22,6 +22,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
+# nemo-relay 0.8.x no longer in tree; widened the conservative <0.9
+# ceiling to <0.10 (semver-compatible minor bump).
 RDEPEND="
 	>=dev-python/openai-2.24.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2026.5.20[${PYTHON_USEDEP}]
@@ -56,8 +58,8 @@ RDEPEND="
 	>=dev-python/ptyprocess-0.7.0[${PYTHON_USEDEP}]
 	>=dev-python/pillow-12.3.0[${PYTHON_USEDEP}]
 	>=dev-python/pillow-heif-1.4.0[${PYTHON_USEDEP}]
-	>=dev-python/nemo-relay-0.8.3[${PYTHON_USEDEP}]
-	<dev-python/nemo-relay-0.9[${PYTHON_USEDEP}]
+	>=sci-ml/nemo-relay-0.8.3[${PYTHON_USEDEP}]
+	<sci-ml/nemo-relay-0.10[${PYTHON_USEDEP}]
 "
 
 EPYTEST_PLUGINS=()
