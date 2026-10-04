@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="pypi">laya</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    laya is a fast, non-autoregressive "System 1" decision engine:
+    a small transformer-based model that makes calibrated probabilistic
+    decisions in a single forward pass instead of token-by-token
+    generation. It builds on pytorch, transformers and the
+    huggingface hub model registry, and ships optional integrations
+    (fastapi serving, onnx export, langchain/crewai adapters) as
+    upstream extras.
+  </longdescription>
+</pkgmetadata>

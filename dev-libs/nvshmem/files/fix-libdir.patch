@@ -1,18 +1,19 @@
 --- a/cmake_config/NVSHMEMConfig.cmake.in
 +++ b/cmake_config/NVSHMEMConfig.cmake.in
-@@ -61,8 +61,8 @@
- )
+@@ -70,8 +70,8 @@
  
+ get_filename_component(NVSHMEM_LIB_DIRS "${CMAKE_CURRENT_LIST_DIR}/../.." ABSOLUTE)
  set(LIB_DIRS
 -${PACKAGE_PREFIX_DIR}/lib
- ${CMAKE_CURRENT_LIST_DIR}/../..
+ ${NVSHMEM_LIB_DIRS}
 +${PACKAGE_PREFIX_DIR}/lib
  )
  
  
+
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -177,7 +177,7 @@
+@@ -161,7 +161,7 @@
  configure_file(License.txt License.txt COPYONLY)
  
  set(INCLUDE_INSTALL_DIR include/)

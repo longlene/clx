@@ -1,0 +1,69 @@
+--- a/app/model_store.cpp
++++ b/app/model_store.cpp
+@@ -90,7 +90,7 @@
+ 
+ std::string
+ path_utf8(const fs::path& path) {
+-    return path.u8string();
++    return path.string();
+ }
+ 
+ uint32_t
+@@ -762,7 +762,7 @@
+             "--speed-time",
+             "30",
+             "--output",
+-            destination.u8string()};
++            destination.string()};
+         if (!range.empty()) {
+             arguments.push_back("--range");
+             arguments.push_back(range);
+@@ -774,7 +774,7 @@
+             arguments.push_back("--silent");
+             arguments.push_back("--show-error");
+             arguments.push_back("--stderr");
+-            arguments.push_back(curl_errors.u8string());
++            arguments.push_back(curl_errors.string());
+         } else {
+             arguments.push_back("--progress-bar");
+         }
+--- a/app/model.cpp
++++ b/app/model.cpp
+@@ -26,7 +26,7 @@
+             Value value(Value::Object{});
+             value["repo"] = artifact.repo;
+             value["role"] = artifact.role;
+-            value["path"] = artifact.path.u8string();
++            value["path"] = artifact.path.string();
+             value["cached"] = artifact.cached;
+             values.emplace_back(std::move(value));
+         }
+@@ -36,7 +36,7 @@
+         for (const auto& artifact : artifacts)
+             std::printf(
+                 "%s\t%s\t%s\n", artifact.repo.c_str(), artifact.role.c_str(),
+-                artifact.path.u8string().c_str());
++                artifact.path.string().c_str());
+     }
+     return kCliExitSuccess;
+ }
+--- a/app/doctor.cpp
++++ b/app/doctor.cpp
+@@ -182,7 +182,7 @@
+         const auto downloader = model_downloader_executable();
+         Value model_download(Value::Object{});
+         model_download["available"] = !downloader.empty();
+-        model_download["executable"] = downloader.u8string();
++        model_download["executable"] = downloader.string();
+         result["model_download"] = std::move(model_download);
+         Value::Array runtime_warnings;
+         if (accelerator_compiled && !accelerator_available)
+@@ -215,7 +215,7 @@
+             if (downloader.empty())
+                 std::printf("Model downloads: unavailable (curl not found on PATH)\n");
+             else
+-                std::printf("Model downloads: %s\n", downloader.u8string().c_str());
++                std::printf("Model downloads: %s\n", downloader.string().c_str());
+             for (const auto& warning : result.at("runtime_warnings").array())
+                 std::printf("Runtime warning: %s\n", warning.string().c_str());
+         }

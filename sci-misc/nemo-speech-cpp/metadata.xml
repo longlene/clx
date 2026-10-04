@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">NVIDIA/NeMo-Speech.cpp</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    NeMo-Speech.cpp is a lightweight C++ inference runtime for speech
+    models. It builds automatic speech recognition, diarization,
+    text-to-speech, and (optionally) translation and voice-chat
+    pipelines on top of the vendored ggml/llama.cpp runtime, and can
+    serve them through an HTTP or Riva-compatible gRPC server.
+  </longdescription>
+  <use>
+    <flag name="asr">Build the automatic speech recognition pipeline (libnemo_speech_asr)</flag>
+    <flag name="cli">Build the unified nemo-speech command line tool</flag>
+    <flag name="cuda">Build the ggml CUDA backend (requires nvidia-cuda-toolkit)</flag>
+    <flag name="diar">Build the diarization pipeline</flag>
+    <flag name="text-to-speech">Build the MagpieTTS text-to-speech pipeline</flag>
+    <flag name="flashlight">Build the flashlight-text + KenLM language-model decoder for ASR (vendored, needs asr)</flag>
+    <flag name="grpc">Build the Riva-compatible gRPC adapters (needs asr and text-to-speech)</flag>
+    <flag name="http">Build the HTTP server and local playground</flag>
+    <flag name="mic-capture">Build live microphone capture in the CLI (needs asr and cli)</flag>
+    <flag name="nmt">Build the text translation pipeline (links llama.cpp)</flag>
+    <flag name="s2s">Build the full-duplex Nemotron voicechat pipeline (needs asr)</flag>
+    <flag name="tls">Enable TLS in the HTTP server (needs http)</flag>
+    <flag name="zh">Build the Mandarin MagpieTTS tokenizer (vendored cppjieba)</flag>
+  </use>
+</pkgmetadata>

@@ -1,0 +1,14 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -52,9 +52,9 @@
+ install(FILES LICENSE NOTICE THIRD_PARTY_NOTICES.md
+     DESTINATION "${NEMO_SPEECH_LICENSE_INSTALL_DIR}")
+ install(FILES README.md CONTRIBUTING.md
+-    DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/nemo-speech")
++    DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/nemo-speech-cpp-${PROJECT_VERSION}")
+ install(DIRECTORY docs/
+-    DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/nemo-speech/docs")
++    DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/nemo-speech-cpp-${PROJECT_VERSION}/docs")
+ install(DIRECTORY config/
+     DESTINATION "${CMAKE_INSTALL_DATADIR}/nemo-speech/config")
+ file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/share/nemo-speech")

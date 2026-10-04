@@ -7,5 +7,6 @@
   </maintainer>
   <upstream>
     <remote-id type="github">NVIDIA/NeMo-Retriever</remote-id>
+    <remote-id type="pypi">nemo-retriever</remote-id>
   </upstream>
 </pkgmetadata>

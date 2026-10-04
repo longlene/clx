@@ -24,7 +24,7 @@ KEYWORDS="~amd64 ~arm64"
 RDEPEND="
     dev-python/ml-dtypes[${PYTHON_USEDEP}]
     dev-python/numpy[${PYTHON_USEDEP}]
-    sci-ml/onnx>=1.14.0[${PYTHON_USEDEP}]
+    >=sci-ml/onnx-1.14.0[${PYTHON_USEDEP}]
 "
 #BDEPEND="
 #	test? (

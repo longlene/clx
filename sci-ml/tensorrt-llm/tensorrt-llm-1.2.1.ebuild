@@ -41,15 +41,15 @@ RDEPEND="
 		dev-python/strenum[${PYTHON_USEDEP}]
 		>=sci-ml/sentencepiece-0.1.99[${PYTHON_USEDEP}]
 		>=dev-python/tensorrt-10.8.0[${PYTHON_USEDEP}]
-		>=sci-ml/pytorch-2.5.1[${PYTHON_USEDEP}]
-		sci-ml/torchvision[${PYTHON_USEDEP}]
-		>=dev-python/nvidia-modelopt-0.23.0[${PYTHON_USEDEP}]
-		dev-python/nccl[${PYTHON_USEDEP}]
-		>=sci-ml/transformers-4.47.0[${PYTHON_USEDEP}]
+		>=sci-ml/pytorch-2.5.1[${PYTHON_SINGLE_USEDEP}]
+		sci-ml/torchvision[${PYTHON_SINGLE_USEDEP}]
+		>=dev-python/nvidia-modelopt-0.23.0[${PYTHON_SINGLE_USEDEP}]
+		dev-libs/nccl
+		>=sci-ml/transformers-4.47.0[${PYTHON_SINGLE_USEDEP}]
 		>=dev-python/pydantic-2.9.1[${PYTHON_USEDEP}]
 		>=dev-python/pillow-10.3.0[${PYTHON_USEDEP}]
-		sci-ml/optimum[${PYTHON_USEDEP}]
-		sci-ml/evaluate[${PYTHON_USEDEP}]
+		sci-ml/optimum[${PYTHON_SINGLE_USEDEP}]
+		sci-ml/evaluate[${PYTHON_SINGLE_USEDEP}]
 		>=dev-python/mpmath-1.3.0[${PYTHON_USEDEP}]
 		dev-python/click[${PYTHON_USEDEP}]
 		dev-python/click-option-group[${PYTHON_USEDEP}]
@@ -59,8 +59,7 @@ RDEPEND="
 		dev-python/uvicorn[${PYTHON_USEDEP}]
 		dev-python/httpx[${PYTHON_USEDEP}]
 		dev-python/ordered-set[${PYTHON_USEDEP}]
-		sci-ml/flashinfer[${PYTHON_USEDEP}]
-		dev-python/s2wrapper[${PYTHON_USEDEP}]
+		sci-ml/flashinfer[${PYTHON_SINGLE_USEDEP}]
 	')
 "
 BDEPEND="
