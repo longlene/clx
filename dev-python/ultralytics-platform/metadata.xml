@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+Generated from the Ultralytics Platform OpenAPI spec; provides sync and async clients plus the "ul" CLI for managing datasets, models and training runs on the hosted platform. Optional runtime dependency of sci-ml/ultralytics.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">ultralytics/sdk</remote-id>
+    <remote-id type="pypi">ultralytics-platform</remote-id>
+  </upstream>
+</pkgmetadata>

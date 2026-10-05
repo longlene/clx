@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+Part of Kalmat's window-control family (PyWinCtl, PyWinBox, PyMonCtl, EWMHlib); on Linux it talks to the X server through python-xlib.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Kalmat/PyMonCtl</remote-id>
+    <remote-id type="pypi">pymonctl</remote-id>
+  </upstream>
+</pkgmetadata>

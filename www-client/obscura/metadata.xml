@@ -6,6 +6,7 @@
     <name>loong0</name>
   </maintainer>
   <use>
+    <flag name="render">Enable native rendering (screenshots, live screencast, PDF export) via taffy/tiny-skia/cosmic-text</flag>
     <flag name="stealth">Enable anti-fingerprinting (per-session fingerprint randomization, tracker blocking)</flag>
   </use>
   <upstream>

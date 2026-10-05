@@ -1,0 +1,11 @@
+--- a/python/sglang/srt/rust_extensions/torch_build.py	2026-09-20 21:30:18.118700562 -0700
++++ b/python/sglang/srt/rust_extensions/torch_build.py	2026-09-20 21:30:45.516972244 -0700
+@@ -13,7 +13,7 @@
+ from typing import Mapping
+ 
+ _MIN_SUPPORTED_TORCH = (2, 11)
+-_MAX_SUPPORTED_TORCH = (2, 13)
++_MAX_SUPPORTED_TORCH = (2, 14)  # clx: allow building against system PyTorch 2.14
+ 
+ 
+ @dataclass(frozen=True)

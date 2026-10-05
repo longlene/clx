@@ -3,44 +3,55 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{13..14} )
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{13..15} )
 
-inherit distutils-r1 multibuild
+inherit distutils-r1
+
+MY_PN="cudnn-frontend"
+MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="cuDNN Frontend: Python bindings for the cuDNN C++ frontend API"
 HOMEPAGE="
 	https://github.com/NVIDIA/cudnn-frontend
 	https://pypi.org/project/nvidia-cudnn-frontend/
 "
-# The Python package (nvidia-cudnn-frontend) ships as per-CPython prebuilt
-# manylinux wheels bundling the compiled cudnn-frontend library; the tree's
-# sci-ml/cudnn-frontend builds the C++ library only (bindings disabled).
-# Package the official PyPI wheels for the supported targets.
-SRC_URI="
-	https://files.pythonhosted.org/packages/5e/57/bcaddbc3297eebec989f79d84853c79f39b74b503b9e57253a61ad9192e1/nvidia_cudnn_frontend-${PV}-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
-	https://files.pythonhosted.org/packages/ee/11/d76d9954cc6c1ee0c8fbec0ebfe3232f1653ad9a23ff019fc3c9a4d00b91/nvidia_cudnn_frontend-${PV}-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
-"
-S="${WORKDIR}"
+SRC_URI="https://github.com/NVIDIA/cudnn-frontend/archive/refs/tags/v${PV}.tar.gz -> ${MY_P}.gh.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
+# tests need a GPU
+RESTRICT="test"
 
 RDEPEND="
+	>=dev-libs/cudnn-9.0.0:=
 	>=dev-python/nvidia-cutlass-dsl-4.6.2[${PYTHON_USEDEP}]
 	>=sci-ml/tvm-ffi-0.1.11[${PYTHON_USEDEP}]
 "
+DEPEND="${RDEPEND}
+	>=sci-libs/dlpack-1.3
+"
+BDEPEND="
+	dev-python/pybind11[${PYTHON_USEDEP}]
+"
 
-RESTRICT="test"
+PATCHES=(
+	"${FILESDIR}"/${P}-system-dlpack.patch
+)
+
+src_prepare() {
+	distutils-r1_src_prepare
+
+	# sci-libs/dlpack-1.3 installs a CMake config still versioned 0.6;
+	# the version is enforced by DEPEND instead
+	sed -i -e "s/find_package(dlpack 1.3 REQUIRED)/find_package(dlpack REQUIRED)/" \
+		python/CMakeLists.txt || die
+}
 
 python_compile() {
-	local cp
-	case "${MULTIBUILD_VARIANT}" in
-		python3_13) cp="cp313" ;;
-		python3_14) cp="cp314" ;;
-		*) die "no nvidia-cudnn-frontend wheel for ${MULTIBUILD_VARIANT}" ;;
-	esac
-	local WHL="nvidia_cudnn_frontend-${PV}-${cp}-${cp}-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
-	distutils_wheel_install "${BUILD_DIR}/install" "${DISTDIR}/${WHL}"
+	local -x CUDNN_FRONTEND_USE_SYSTEM_DLPACK=ON
+	distutils-r1_python_compile
 }

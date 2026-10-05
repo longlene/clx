@@ -41,6 +41,7 @@ CRATES="
 	cranelift-wasm@0.111.9
 	crc32fast@1.5.0
 	cxx@1.0.83
+	cxxbridge-cmd@1.0.83
 	cxxbridge-flags@1.0.83
 	cxxbridge-macro@1.0.83
 	dirs-sys@0.3.7
@@ -252,6 +253,10 @@ MY_P="scylladb-scylla-${PV}"
 SEASTAR_COMMIT="ffeb9a3ca4f8339110320d76613613ced23ba984"
 ABSEIL_COMMIT="24b0cb748f3ca62faedab4853030e80d30d6b980"
 ANTLR3_PV="3.5.3"
+# AWS service models used to generate the S3/STS error tables; upstream
+# fetches them from aws-sdk-cpp main at build time
+AWS_SDK_CPP_COMMIT="19b424fcea636b715834945850b8200017896ce4"
+AWS_MODELS=( s3-2006-03-01.normal.json sts-2011-06-15.normal.json )
 
 DESCRIPTION="NoSQL data store compatible with Apache Cassandra and Amazon DynamoDB"
 HOMEPAGE="https://www.scylladb.com/ https://github.com/scylladb/scylladb"
@@ -264,6 +269,11 @@ SRC_URI="
 	https://github.com/antlr/antlr3/archive/${ANTLR3_PV}.tar.gz -> antlr3-${ANTLR3_PV}.tar.gz
 	${CARGO_CRATE_URIS}
 "
+for _m in "${AWS_MODELS[@]}"; do
+	SRC_URI+=" https://raw.githubusercontent.com/aws/aws-sdk-cpp/${AWS_SDK_CPP_COMMIT}/tools/code-generation/api-descriptions/${_m}
+		-> aws-sdk-cpp-${AWS_SDK_CPP_COMMIT:0:10}-${_m}"
+done
+unset _m
 S="${WORKDIR}/${MY_P}"
 
 # ScyllaDB itself; bundled seastar/abseil/antlr3 C++ runtime; rust crates
@@ -274,6 +284,7 @@ LICENSE+="
 "
 SLOT="0"
 KEYWORDS="~amd64"
+IUSE="systemd systemtap"
 RESTRICT="bindist mirror test"
 
 DEPEND="
@@ -304,6 +315,8 @@ DEPEND="
 	sys-process/numactl
 	virtual/zlib:=
 	dev-debug/valgrind
+	systemd? ( sys-apps/systemd:= )
+	systemtap? ( dev-debug/systemtap )
 	sys-fs/xfsprogs
 "
 RDEPEND="
@@ -313,6 +326,7 @@ RDEPEND="
 "
 BDEPEND="
 	${PYTHON_DEPS}
+	$(python_gen_any_dep 'dev-python/pyparsing[${PYTHON_USEDEP}]')
 	$(llvm_gen_dep '
 		llvm-core/clang:${LLVM_SLOT}
 		llvm-core/lld:${LLVM_SLOT}
@@ -331,8 +345,19 @@ pkg_setup() {
 	rust_pkg_setup
 }
 
+python_check_deps() {
+	python_has_version "dev-python/pyparsing[${PYTHON_USEDEP}]"
+}
+
 src_unpack() {
 	cargo_src_unpack
+
+	local m
+	mkdir -p "${WORKDIR}"/aws-models || die
+	for m in "${AWS_MODELS[@]}"; do
+		cp "${DISTDIR}"/aws-sdk-cpp-${AWS_SDK_CPP_COMMIT:0:10}-${m} \
+			"${WORKDIR}"/aws-models/${m} || die
+	done
 }
 
 src_prepare() {
@@ -340,10 +365,101 @@ src_prepare() {
 	mv "${WORKDIR}"/seastar-${SEASTAR_COMMIT} seastar || die
 	mv "${WORKDIR}"/abseil-cpp-${ABSEIL_COMMIT} abseil || die
 
-	# version/release strings normally come from git
-	echo "${PV}-0.gentoo" > version || die
+	# Gentoo slots lua: look for lua5.4 (pkg-config and library names) first
+	sed -i \
+		-e 's/pkg_search_module(PC_lua QUIET lua53 lua)/pkg_search_module(PC_lua QUIET lua5.4 lua53 lua)/' \
+		-e 's/NAMES lua lua5.3 lua53/NAMES lua5.4 lua lua5.3 lua53/' \
+		cmake/FindLua.cmake || die
+	grep -q 'lua5.4 lua53 lua)' cmake/FindLua.cmake || die "FindLua.cmake sed failed"
 
-	# antlr3: the tool is only shipped as a jar, the C++ runtime is header-only
+	# link lz4/zstd dynamically: every API scylla uses (including the
+	# *_STATIC_LINKING_ONLY ones) is exported by the shared libraries
+	sed -i -e 's/NAMES liblz4\.a/NAMES lz4/' cmake/Findlz4.cmake || die
+	sed -i -e 's/NAMES libzstd\.a/NAMES zstd/' cmake/Findzstd.cmake || die
+
+	# kmipc is an optional proprietary library that upstream only ships for
+	# RHEL; report it as not found instead of failing (no KMIP key provider)
+	sed -i -e '/Could not locate kmipc library/c\  set(kmip_FOUND FALSE)\n  return()' \
+		cmake/Findkmip.cmake || die
+
+	# Gentoo's jsoncpp ships only a pkg-config file, no CMake config
+	local shim='find_package(PkgConfig REQUIRED)\n'
+	shim+='pkg_check_modules(jsoncpp REQUIRED IMPORTED_TARGET GLOBAL jsoncpp)\n'
+	shim+='add_library(JsonCpp::JsonCpp ALIAS PkgConfig::jsoncpp)'
+	sed -i -e "/^find_package(jsoncpp REQUIRED)/c\\${shim}" test/CMakeLists.txt || die
+
+	# don't turn warnings from newer compilers/libraries (e.g. protobuf
+	# [[nodiscard]]) into build failures
+	sed -i -e '/^[[:space:]]*"-Werror"$/d' cmake/mode.common.cmake || die
+	sed -i -e 's/set(Seastar_UNUSED_RESULT_ERROR ON/set(Seastar_UNUSED_RESULT_ERROR OFF/' \
+		CMakeLists.txt || die
+	# respect CFLAGS instead of forcing -march=x86-64-v3 (AVX2 code paths are
+	# selected at runtime); keep -mpclmul, which the x86 crc32 code requires
+	sed -i -e '/^  add_compile_options("-march=${target_arch}")$/d' \
+		cmake/mode.common.cmake || die
+	grep -q 'march=${target_arch}' cmake/mode.common.cmake && die "-march sed failed"
+	# stdafx.hh includes antlr3.hpp and lua.hpp; without these the precompiled
+	# header picks up the incompatible dev-libs/antlr-c copy from /usr/include
+	# and misses Gentoo's slotted lua include dir
+	sed -i -e 's|^    zstd::zstd_static)$|&\ntarget_include_directories(scylla-precompiled-header PRIVATE ${ANTLR3_INCLUDE_DIR} ${LUA_INCLUDE_DIR})|' \
+		CMakeLists.txt || die
+	grep -q 'scylla-precompiled-header PRIVATE ${ANTLR3_INCLUDE_DIR}' CMakeLists.txt \
+		|| die "precompiled header include sed failed"
+
+	if ! use systemd; then
+		# sd_notify is only used for readiness/status reporting
+		sed -i -e 's|^#include <systemd/sd-daemon.h>$|static inline int sd_notify(int, const char*) { return 0; }|' \
+			supervisor.hh || die
+		sed -i -e '\|^#include <systemd/sd-daemon.h>$|d' stdafx.hh || die
+		sed -i -e '/^    systemd$/d' CMakeLists.txt || die
+		sed -i -e 's/^    systemd)$/    )/' service/CMakeLists.txt || die
+		grep -q 'static inline int sd_notify' supervisor.hh || die "sd_notify stub sed failed"
+	fi
+
+	if ! use systemtap; then
+		# USDT probes are only used for tracing row cache updates
+		sed -i -e 's|^#include <sys/sdt.h>$|#define STAP_PROBE(p, n)\n#define STAP_PROBE1(p, n, a)|' \
+			db/row_cache.cc || die
+		grep -q '^#define STAP_PROBE1' db/row_cache.cc || die "sdt stub sed failed"
+	fi
+
+	# drop the perf-* benchmark subcommands, which link the whole test/perf
+	# tree into the server binary; "scylla sstable" still needs test-lib
+	sed -i -e '\|^#include "test/perf/entry_point.hh"$|d' \
+		-e '/^        {"perf-[a-z-]*", perf::/d' main.cc || die
+	sed -i -e 's/^    test-perf$/    test-lib/' CMakeLists.txt || die
+	grep -q 'perf::' main.cc && die "perf subcommand sed failed"
+
+	# the p11-kit trust module is only shipped in upstream's relocatable
+	# tarball (libreloc/); skip it so gnutls[pkcs11] is not required
+	perl -0pi -e 's/(\n\s*if \(fs::exists\(trust_module_path\) && p11_trust_paths_from_env\) \{.*?\n    \}\n)/\n#if 0$1#endif\n/s' \
+		main.cc || die
+	grep -q '^#if 0$' main.cc || die "p11-kit sed failed"
+
+	# Gentoo ships rapidxml as rapidxml/rapidxml.hpp, not Fedora's rapidxml.h
+	sed -i -e 's|^#include <rapidxml\.h>$|#include <rapidxml/rapidxml.hpp>|' \
+		ent/encryption/gcp_host.cc ent/encryption/kms_host.cc \
+		utils/s3/credentials_providers/sts_assume_role_credentials_provider.cc || die
+
+	# read the AWS models from WORKDIR instead of the network
+	sed -i \
+		-e "s|\"https://raw.githubusercontent.com/aws/aws-sdk-cpp/main/\"|\"file://${WORKDIR}/aws-models/\"|" \
+		-e 's|"tools/code-generation/api-descriptions/{filename}"|"{filename}"|' \
+		utils/s3/gen_aws_service_errors.py || die
+	grep -q "file://" utils/s3/gen_aws_service_errors.py || die "aws models sed failed"
+
+	# version/release strings normally come from git
+	# (not as "version", which would shadow the C++ <version> header)
+	echo "${PV}-0.gentoo" > scylla-version || die
+	sed -i -e "s/test -f version/test -f scylla-version/" -e "s/cat version/cat scylla-version/" \
+		SCYLLA-VERSION-GEN || die
+
+	# antlr3: the tool is only shipped as a jar, the C++ runtime is header-only;
+	# apply the C++20/gcc-14 header fixes upstream's install-dependencies.sh uses
+	pushd "${WORKDIR}"/antlr3-${ANTLR3_PV} >/dev/null || die
+	eapply "${S}"/tools/antlr3-patches/0006-antlr3memory.hpp-fix-for-C-20-mode.patch \
+		"${S}"/tools/antlr3-patches/0008-unconst-cyclicdfa-gcc-14.patch
+	popd >/dev/null || die
 	mkdir -p "${T}"/bin || die
 	cat > "${T}"/bin/antlr3 <<-EOF || die
 		#!/bin/sh
@@ -367,7 +483,9 @@ src_configure() {
 
 	local mycmakeargs=(
 		-DScylla_ENABLE_LTO=OFF
-		-DScylla_USE_PRECOMPILED_HEADER=OFF
+		-DBUILD_TESTING=OFF
+		# upstream relies on stdafx.hh for missing includes (e.g. maybe_yield.hh)
+		-DCMAKE_DISABLE_PRECOMPILE_HEADERS=OFF
 		-DANTLR3_INCLUDE_DIR="${WORKDIR}/antlr3-${ANTLR3_PV}/runtime/Cpp/include"
 	)
 	cmake_src_configure
@@ -395,7 +513,10 @@ src_install() {
 	systemd_dounit "${T}"/scylla-server.service dist/common/systemd/scylla-server.slice
 
 	keepdir /var/lib/scylla/{data,commitlog,hints,view_hints}
-	fowners -R scylla:scylla /var/lib/scylla
 
 	einstalldocs
+}
+
+pkg_postinst() {
+	chown -R scylla:scylla "${EROOT}"/var/lib/scylla || die
 }

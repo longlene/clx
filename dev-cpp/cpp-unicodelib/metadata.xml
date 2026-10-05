@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">yhirose/cpp-unicodelib</remote-id>
+  </upstream>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    cpp-unicodelib is a C++17 header-only Unicode library. It provides
+    Unicode string handling (unicodelib.h) plus encoding conversion
+    (unicodelib_encodings.h) and code point name lookups
+    (unicodelib_names.h).
+  </longdescription>
+  <use>
+    <flag name="test">Build and run the test suite with dev-cpp/catch</flag>
+  </use>
+</pkgmetadata>

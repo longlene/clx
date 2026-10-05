@@ -61,7 +61,7 @@ RDEPEND="
 		dev-python/nccl4py[${PYTHON_USEDEP}]
 		dev-python/cuda-bindings[${PYTHON_USEDEP}]
 		dev-python/pybase64[${PYTHON_USEDEP}]
-		dev-python/nvidia-cudnn[${PYTHON_USEDEP}]
+		dev-python/nvidia-cudnn-frontend[${PYTHON_USEDEP}]
 		dev-python/tilelang[${PYTHON_USEDEP}]
 		dev-python/transferqueue[${PYTHON_USEDEP}]
 		sci-ml/mooncake-transfer-engine[${PYTHON_USEDEP}]

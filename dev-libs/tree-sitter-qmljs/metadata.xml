@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    tree-sitter-qmljs is a grammar for Qt Declarative (QML) files for the
+    tree-sitter parsing library. It inherits from the TypeScript grammar and
+    adds QML-specific nodes (ui_object_definition, ui_binding, ui_signal,
+    etc.). Install with USE=python for the Python bindings.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">yuja/tree-sitter-qmljs</remote-id>
+  </upstream>
+</pkgmetadata>

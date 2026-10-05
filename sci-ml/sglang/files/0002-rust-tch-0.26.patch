@@ -1,0 +1,13 @@
+diff --git a/rust/sglang-radix-tree/Cargo.toml b/rust/sglang-radix-tree/Cargo.toml
+index 426fe97..6724e91 100644
+--- a/rust/sglang-radix-tree/Cargo.toml
++++ b/rust/sglang-radix-tree/Cargo.toml
+@@ -24,7 +24,7 @@ crate-type = ["cdylib"]
+ hashbrown = "0.16"
+ pyo3 = { version = "0.22", optional = true }
+ sha2 = "0.10"
+-tch = "=0.24.0"
++tch = "=0.26.0"
+ thiserror = "1"
+ 
+ # Hardware SHA extensions; identical digests.

@@ -1,0 +1,34 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -9,8 +9,12 @@
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wshadow")
+ endif()
+ 
++option(BUILD_TESTS "Build the test suite" OFF)
++
+ enable_testing()
+ 
+-add_subdirectory(test)
++if(BUILD_TESTS)
++  add_subdirectory(test)
++endif()
+ 
+ install(FILES unicodelib.h unicodelib_encodings.h unicodelib_names.h DESTINATION include)
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -1,14 +1,7 @@
+ cmake_minimum_required(VERSION 3.14)
+ project(test)
+ 
+-Include(FetchContent)
+-
+-FetchContent_Declare(
+-  Catch2
+-  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+-  GIT_TAG        v3.3.1
+-)
+-FetchContent_MakeAvailable(Catch2)
++find_package(Catch2 3 REQUIRED)
+ 
+ add_executable(test-main test.cpp test2.cpp)
+ 

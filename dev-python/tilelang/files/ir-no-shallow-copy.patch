@@ -5,25 +5,27 @@ system headers only specialise TypeTraits for ObjectRef (not raw pointer) types.
 Deleting the copy constructor makes std::is_copy_constructible_v<Class> false so
 the `if constexpr` branch is never instantiated.
 
---- a/src/ir.cc
-+++ b/src/ir.cc
-@@ -219,6 +219,9 @@ class KernelLaunchFrameNode : public TIRFrameNode {
- public:
-   Array<TIRFrame> frames;
+0.1.15 moved the KernelLaunchFrameNode definition from src/ir.cc to src/ir.h.
 
+--- a/src/ir.h
++++ b/src/ir.h
+@@ -70,6 +70,8 @@
+   Array<tvm::tirx::Var> thread_vars;
+   /*! \brief Requested SIMT thread-block extents, when threads= was given. */
+   Optional<Array<PrimExpr>> thread_extents;
 +  KernelLaunchFrameNode() = default;
 +  KernelLaunchFrameNode(const KernelLaunchFrameNode&) = delete;
-+
+ 
    static void RegisterReflection() {
      namespace refl = reflection;
-     refl::ObjectDef<KernelLaunchFrameNode>().def_ro(
-@@ -339,6 +342,9 @@ class WarpSpecializeFrameNode : public TIRFrameNode {
+--- a/src/ir.cc
++++ b/src/ir.cc
+@@ -290,6 +290,8 @@
+ class WarpSpecializeFrameNode : public TIRFrameNode {
  public:
    Array<TIRFrame> frames;
-
 +  WarpSpecializeFrameNode() = default;
 +  WarpSpecializeFrameNode(const WarpSpecializeFrameNode&) = delete;
-+
+ 
    static void RegisterReflection() {
      namespace refl = reflection;
-     refl::ObjectDef<WarpSpecializeFrameNode>().def_ro(

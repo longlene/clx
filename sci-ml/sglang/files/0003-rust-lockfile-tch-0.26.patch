@@ -1,0 +1,27 @@
+diff --git a/rust/sglang-radix-tree/Cargo.lock b/rust/sglang-radix-tree/Cargo.lock
+--- a/rust/sglang-radix-tree/Cargo.lock
++++ b/rust/sglang-radix-tree/Cargo.lock
+@@ -733,9 +733,9 @@
+ 
+ [[package]]
+ name = "tch"
+-version = "0.24.0"
++version = "0.26.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "0d3f84a069d8ba16dbf720b61e8bf131d90ffb8e958a664eae8e4993c5c2fa6f"
++checksum = "975b1fb3b612ba925f03dd08b56e5c9452bb7102891d5d9f58c19b49a0b2ec1e"
+ dependencies = [
+  "half",
+  "lazy_static",
+@@ -789,9 +789,9 @@
+ 
+ [[package]]
+ name = "torch-sys"
+-version = "0.24.0"
++version = "0.26.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "f4ba78777379cf09aaa79708c63e477cf0f95e021d04360c6821f1a9f56173f7"
++checksum = "5ae60ab95333c42adcc1a9e74057357e4324a1f344c403e48712a144ab731019"
+ dependencies = [
+  "anyhow",
+  "cc",

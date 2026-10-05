@@ -1,6 +1,13 @@
-diff -Nur a/CMakeLists.txt b/CMakeLists.txt
---- a/CMakeLists.txt	2026-04-26 12:31:02.000000000 -0700
-+++ b/CMakeLists.txt	2026-05-08 11:28:59.371785001 -0700
+Do not install the vendored 3rdparty dlpack/libbacktrace source trees and
+the build-system files into the package: dlpack headers come from
+sci-libs/dlpack and backtrace from dev-libs/libbacktrace (see
+gentoo-system-libpath.patch). The cmake config + Utils install is guarded so
+wheel builds (TVM_FFI_BUILD_PYTHON_MODULE=ON) do not ship it. libinfo.py is
+pointed at the system include dirs (the tvm_ffi config module resolves the
+installed header layout at runtime).
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
 @@ -53,10 +53,10 @@
    tvm_ffi_header INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
                             $<INSTALL_INTERFACE:include>
@@ -16,7 +23,7 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
  
  # ######### Target: `tvm_ffi_objs` ##########
  
-@@ -304,32 +304,33 @@
+@@ -337,35 +337,36 @@
    endif ()
    install(TARGETS tvm_ffi_cython DESTINATION .)
  
@@ -40,6 +47,9 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
 -  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/python/tvm_ffi/cython/tvm_ffi_python_helpers.h
 -          DESTINATION include/
 -  )
+-  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/python/tvm_ffi/cython/tvm_ffi_python_object.h
+-          DESTINATION include/
+-  )
 +  # # ######### Installing the source ##########
 +  # install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include/
 +  #         DESTINATION 3rdparty/dlpack/include/
@@ -60,6 +70,9 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
 +  # install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/python/tvm_ffi/cython/tvm_ffi_python_helpers.h
 +  #         DESTINATION include/
 +  # )
++  # install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/python/tvm_ffi/cython/tvm_ffi_python_object.h
++  #         DESTINATION include/
++  # )
  endif ()
  
  # ######### Install the related for normal cmake library ##########
@@ -71,7 +84,7 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
  install(TARGETS tvm_ffi_shared DESTINATION lib)
  # if tvm_ffi_testing is built, we also install it
  if (TARGET tvm_ffi_testing)
-@@ -339,6 +340,11 @@
+@@ -375,6 +376,11 @@
      OPTIONAL
    )
  endif ()
@@ -83,9 +96,8 @@ diff -Nur a/CMakeLists.txt b/CMakeLists.txt
  # ship additional dSYM files for debugging symbols on if available
  if (APPLE)
    install(
-diff -Nur a/python/tvm_ffi/libinfo.py b/python/tvm_ffi/libinfo.py
---- a/python/tvm_ffi/libinfo.py	2026-04-26 12:31:02.000000000 -0700
-+++ b/python/tvm_ffi/libinfo.py	2026-05-08 11:30:48.371709798 -0700
+--- a/python/tvm_ffi/libinfo.py
++++ b/python/tvm_ffi/libinfo.py
 @@ -90,6 +90,7 @@
          paths=[
              _rel_top_directory() / "include",

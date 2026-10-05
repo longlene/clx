@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">wasmerio/anybuild</remote-id>
+  </upstream>
+  <longdescription lang="en">
+  anybuild is a developer tool that detects the type of a project
+  (Rust, Python, Node.js, etc.), builds it with the right toolchain,
+  and can deploy/serve the result. It ships the `anybuild` CLI and
+  the `shipit` convenience wrapper.
+  </longdescription>
+</pkgmetadata>

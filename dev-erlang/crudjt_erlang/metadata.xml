@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">crudjt/crudjt_erlang</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    crudjt_erlang is the Erlang SDK for the crudjt JSON token engine:
+    a B-tree-backed token store for stateful user sessions that
+    provides authentication and authorization across multiple
+    processes, optimized for vertical scaling on a single server.
+    It starts the crudjt Elixir application stack and companion
+    HTTP/gRPC libraries at boot.
+  </longdescription>
+</pkgmetadata>

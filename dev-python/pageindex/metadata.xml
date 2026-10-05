@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    PageIndex builds a hierarchical tree index of long PDF documents using
+    LLM reasoning instead of vector similarity, enabling retrieval-augmented
+    generation without a vector database. Supports OpenAI, Anthropic and
+    local (litellm) backends, plus an MCP server integration.
+  </longdescription>
+  <use>
+    <flag name="anthropic">Add dev-python/anthropic for the Anthropic Claude backend</flag>
+    <flag name="claude">Add dev-python/claude-agent-sdk for Claude agent support</flag>
+  </use>
+</pkgmetadata>

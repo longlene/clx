@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+Computer-Use Interface (CUI) framework from the trycua/cua monorepo, for interacting with macOS/Linux sandboxes over websocket connections.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">trycua/cua</remote-id>
+    <remote-id type="pypi">cua-computer</remote-id>
+  </upstream>
+</pkgmetadata>

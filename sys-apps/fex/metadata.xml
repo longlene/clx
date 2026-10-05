@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">FEX-Emu/FEX</remote-id>
+  </upstream>
+  <longdescription lang="en">
+  FEX is a usermode x86/x86-64 emulator for Arm64 Linux that runs
+  32-bit and 64-bit x86 ELF binaries via dynamic recompilation of
+  the guest code into native AArch64.
+  </longdescription>
+  <use>
+    <flag name="fexconfig">Build the Qt-based FEXConfig GUI configuration tool</flag>
+  </use>
+</pkgmetadata>

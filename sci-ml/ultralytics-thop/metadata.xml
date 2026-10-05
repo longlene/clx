@@ -7,5 +7,6 @@
   </maintainer>
   <upstream>
     <remote-id type="github">ultralytics/thop</remote-id>
+    <remote-id type="pypi">ultralytics-thop</remote-id>
   </upstream>
 </pkgmetadata>

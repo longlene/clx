@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">ada-url/idna</remote-id>
+  </upstream>
+  <use>
+    <flag name="simdutf">Use simdutf for accelerated Unicode transcoding</flag>
+    <flag name="test">Build and run tests</flag>
+  </use>
+  <longdescription lang="en">
+    idna is a C++ library from the ada-url project implementing the
+    IDNA (Internationalizing Domain Names in Applications) functions
+    to_ascii and to_unicode per the Unicode IDNA spec, including
+    punycode, identifier validation and Unicode transcoding
+    (optionally accelerated by simdutf).
+  </longdescription>
+</pkgmetadata>

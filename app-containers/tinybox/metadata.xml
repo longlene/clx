@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">tinyhumansai/tinybox</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    A tiny containerization service allowing a system to run on different
+    boxes. Ships the `tinybox` CLI plus the tinybox-core/host/linux/docker/
+    microvm/ssh/sync/module libraries, with the message-bus module ABI
+    provided by the vendored TinyBus submodule.
+  </longdescription>
+</pkgmetadata>

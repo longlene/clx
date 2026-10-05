@@ -20,11 +20,16 @@
 - **Incomplete deps**: Check configure.in/.ac, CMakeLists.txt, and .spec files for all deps
 - **Omitting deps not yet in Portage**: Always declare ALL upstream deps in RDEPEND/DEPEND, even if the package doesn't exist in Portage yet. `NonexistentDeps` findings are acceptable — the validate script classifies them (fixable atom vs genuinely missing), and they resolve once the dep gets packaged. Never silently drop a dep because validate or pkgcheck reports it missing.
 - **Missing dep triggers new ebuild**: When a new ebuild has a `NonexistentDeps` warning for a missing package, proactively offer to package that dep next (run the ebuild skill on it). This naturally builds up the dependency tree — the current package's unresolved dep becomes the next `/ebuild` invocation.
+- **Exact upstream pins (`==`) and tight caps**: `litellm==1.86.2`, `grpcio==1.78.0`, `fastmcp<3.3.0` would make the package uninstallable against the overlay's versions. Relax to a lower bound (`>=dev-python/litellm-1.86.2`) and add a one-line comment above RDEPEND naming what was relaxed. Keep caps only when the next major is known to break.
+- **`:=` on Python deps**: the slot operator is for packages with subslots (shared libs). `sci-ml/cua-core:=` is meaningless and drops the required `[${PYTHON_USEDEP}]`; write `sci-ml/cua-core[${PYTHON_USEDEP}]`.
+- **Single-impl dep in a multi-impl package**: see `workflows/python.md` Step D — any single-impl runtime dep (pytorch, torchvision, transformers, ultralytics, litellm, gradio…) forces `DISTUTILS_SINGLE_IMPL=1`.
 - **`DeprecatedDep` on `dev-python/httpx` or `dev-python/orjson`**: both are marked deprecated in Gentoo (`profiles/package.deprecated` — httpx: upstream no longer accepts bug reports; orjson: unsafe-Rust concerns) but still exist and are installable. pkgcheck reports `DeprecatedDep` for any package depending on either — this is a known, accepted warning. Do not try to fix or remove these deps; declare them as-is and skip the finding.
 
 ## LICENSE
 - **Vague license**: Write `GPL-2+` not `GPL`; `MIT` not `MIT License`
 - **Wrong license name**: Must exactly match a file in `/var/db/repos/gentoo/licenses/`
+- **SPDX ids copied verbatim**: `AGPL-3.0`, `AGPL-3.0-only`, `GPL-3.0-or-later`, `Apache-2.0-with-…` are SPDX, not Gentoo names (pkgcheck `UnknownLicense`). Translate via `references/license-mapping.md`: `AGPL-3.0(-only)` → `AGPL-3`, `AGPL-3.0-or-later` → `AGPL-3+`, `GPL-3.0-or-later` → `GPL-3+`
+- **Assuming the repo license for every package**: in monorepos each component can differ (trycua/cua is MIT but cua-som is AGPL-3+). Read the component's own `LICENSE`/`PKG-INFO` `License-Expression`, not the repo root
 - **Missing crate licenses**: For Rust, pycargoebuild handles this — don't skip it
 
 ## Bundled Dependencies (git submodules / vendored libs)

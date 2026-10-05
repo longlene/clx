@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    saQut is a procedural, C-flavoured language compiler written in C++ where
+    every internal phase (tokens, AST, IR, symbols, diagnostics) is a
+    first-class, machine-readable output. Includes a MIR-based JIT backend
+    (the MIR compiler is vendored under src/mir/vendor, MIT licensed) and an
+    LSP server.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">saqutlang/saqut</remote-id>
+  </upstream>
+</pkgmetadata>

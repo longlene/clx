@@ -1,0 +1,14 @@
+--- a/rebar.config	2026-09-28 01:22:05.340297564 -0700
++++ b/rebar.config	2026-09-28 01:22:21.343823285 -0700
+@@ -1,11 +1,5 @@
+ {erl_opts, [debug_info]}.
+ 
+-{plugins, [rebar_mix, rebar3_rustler]}.
+-
+-{provider_hooks, [
+-    {post, [{compile, {mix, consolidate_protocols}}]}
+-]}.
+-
+ {deps, [
+     {crudjt, "1.0.0"},
+ 

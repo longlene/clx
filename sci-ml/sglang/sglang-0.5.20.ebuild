@@ -1,0 +1,716 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+CRATES="
+
+	adler2@2.0.1
+	ahash@0.8.12
+	aho-corasick@1.1.4
+	aligned-vec@0.6.4
+	aligned@0.4.3
+	android_system_properties@0.1.5
+	anstream@1.0.0
+	anstyle-parse@1.0.0
+	anstyle-query@1.1.5
+	anstyle-wincon@3.0.11
+	anstyle@1.0.14
+	anyhow@1.0.104
+	arbitrary@1.4.2
+	arc-swap@1.9.2
+	arg_enum_proc_macro@0.3.4
+	arrayref@0.3.9
+	arrayvec@0.7.8
+	as-slice@0.2.1
+	async-openai@0.41.3
+	async-stream-impl@0.3.6
+	async-stream@0.3.6
+	async-trait@0.1.91
+	atomic-waker@1.1.2
+	attribute-derive-macro@0.10.5
+	attribute-derive@0.10.5
+	autocfg@1.5.1
+	av-scenechange@0.14.1
+	av1-grain@0.2.5
+	avif-serialize@0.8.9
+	axum-core@0.4.5
+	axum-core@0.5.6
+	axum@0.7.9
+	axum@0.8.9
+	base64@0.13.1
+	base64@0.22.1
+	basetenkenizer@0.2.8
+	bit-set@0.5.3
+	bit-set@0.8.0
+	bit-vec@0.6.3
+	bit-vec@0.8.0
+	bit_field@0.10.3
+	bitflags@2.13.1
+	bitstream-io@4.10.0
+	blake3@1.8.5
+	block-buffer@0.10.4
+	bs58@0.5.1
+	bstr@1.13.0
+	built@0.8.1
+	bumpalo@3.20.3
+	bytemuck@1.25.2
+	byteorder-lite@0.1.0
+	byteorder@1.5.0
+	bytes@1.12.1
+	castaway@0.2.4
+	cc@1.4.0
+	cfg-if@1.0.4
+	cfg_aliases@0.2.2
+	chacha20@0.10.1
+	chrono@0.4.45
+	clap@4.6.5
+	clap_builder@4.6.5
+	clap_derive@4.6.4
+	clap_lex@1.1.0
+	collection_literals@1.0.3
+	color_quant@1.1.0
+	colorchoice@1.0.5
+	compact_str@0.9.1
+	console@0.15.11
+	constant_time_eq@0.4.2
+	core-foundation-sys@0.8.7
+	core_affinity@0.8.3
+	cpufeatures@0.2.17
+	cpufeatures@0.3.0
+	crc32fast@1.5.0
+	crossbeam-channel@0.5.16
+	crossbeam-deque@0.8.7
+	crossbeam-epoch@0.9.20
+	crossbeam-utils@0.8.22
+	crunchy@0.2.4
+	crypto-common@0.1.7
+	daachorse@1.0.1
+	darling@0.20.11
+	darling@0.23.0
+	darling_core@0.20.11
+	darling_core@0.23.0
+	darling_macro@0.20.11
+	darling_macro@0.23.0
+	dary_heap@0.3.9
+	deranged@0.5.8
+	derive-where@1.6.1
+	derive_builder@0.20.2
+	derive_builder_core@0.20.2
+	derive_builder_macro@0.20.2
+	digest@0.10.7
+	dirs-sys@0.5.0
+	dirs@6.0.0
+	displaydoc@0.2.7
+	dyn-clone@1.0.20
+	dynamo-parsers@7.1.1
+	dynamo-protocols@5.4.3
+	dynamo-renderer@5.1.2
+	dynamo-tokenizers@1.8.1
+	either@1.17.0
+	encode_unicode@1.0.0
+	equator-macro@0.4.2
+	equator@0.4.2
+	equivalent@1.0.2
+	errno@0.3.14
+	esaxx-rs@0.1.10
+	exr@1.74.2
+	fancy-regex@0.13.0
+	fancy-regex@0.17.0
+	fastokens@0.3.1
+	fastrand@2.5.0
+	fax@0.2.7
+	fdeflate@0.3.7
+	find-msvc-tools@0.1.9
+	fixedbitset@0.5.7
+	flate2@1.1.9
+	flume@0.12.0
+	fnv@1.0.7
+	form_urlencoded@1.2.2
+	futures-channel@0.3.33
+	futures-core@0.3.33
+	futures-executor@0.3.33
+	futures-io@0.3.33
+	futures-macro@0.3.33
+	futures-sink@0.3.33
+	futures-task@0.3.33
+	futures-util@0.3.33
+	futures@0.3.33
+	generic-array@0.14.7
+	get-size-derive2@0.7.4
+	get-size2@0.7.4
+	getopts@0.2.24
+	getrandom@0.2.17
+	getrandom@0.3.4
+	getrandom@0.4.3
+	gif@0.14.2
+	h2@0.4.15
+	half@2.7.1
+	hashbrown@0.12.3
+	hashbrown@0.16.1
+	hashbrown@0.17.1
+	heck@0.5.0
+	hermit-abi@0.5.2
+	hex@0.4.3
+	hf-hub@0.4.3
+	http-body-util@0.1.4
+	http-body@1.1.0
+	http@1.5.0
+	httparse@1.10.1
+	httpdate@1.0.3
+	hyper-rustls@0.27.9
+	hyper-timeout@0.5.2
+	hyper-util@0.1.20
+	hyper@1.11.0
+	iana-time-zone-haiku@0.1.2
+	iana-time-zone@0.1.65
+	icu_collections@2.2.0
+	icu_locale_core@2.2.0
+	icu_normalizer@2.2.0
+	icu_normalizer_data@2.2.0
+	icu_properties@2.2.0
+	icu_properties_data@2.2.0
+	icu_provider@2.2.0
+	ident_case@1.0.1
+	idna@1.1.0
+	idna_adapter@1.2.2
+	image-webp@0.2.4
+	image@0.25.10
+	imgref@1.12.2
+	indexmap@1.9.3
+	indexmap@2.14.0
+	indicatif@0.17.11
+	interpolate_name@0.2.4
+	interpolator@0.5.0
+	ipnet@2.12.0
+	is-macro@0.3.7
+	is_terminal_polyfill@1.70.2
+	itertools@0.14.0
+	itoa@1.0.18
+	jobserver@0.1.35
+	js-sys@0.3.103
+	lazy_static@1.5.0
+	lebe@0.5.3
+	libc@0.2.189
+	libfuzzer-sys@0.4.13
+	libm@0.2.16
+	libredox@0.1.18
+	linux-raw-sys@0.12.1
+	litemap@0.8.2
+	lock_api@0.4.14
+	log@0.4.33
+	loop9@0.1.5
+	lru-slab@0.1.2
+	macro_rules_attribute-proc_macro@0.2.3
+	macro_rules_attribute@0.2.3
+	manyhow-macros@0.11.4
+	manyhow@0.11.4
+	matchers@0.2.0
+	matchit@0.7.3
+	matchit@0.8.4
+	matrixmultiply@0.3.11
+	maybe-rayon@0.1.1
+	memchr@2.8.3
+	memo-map@0.3.3
+	mime@0.3.17
+	mime_guess@2.0.5
+	minijinja-contrib@2.24.0
+	minijinja@2.24.0
+	minimal-lexical@0.2.1
+	miniz_oxide@0.8.9
+	mio@1.2.2
+	moka@0.12.15
+	monostate-impl@0.1.18
+	monostate@0.1.18
+	moxcms@0.8.1
+	multimap@0.10.1
+	ndarray@0.17.2
+	new_debug_unreachable@1.0.6
+	no_std_io2@0.9.4
+	nom@7.1.3
+	nom@8.0.0
+	noop_proc_macro@0.3.0
+	nu-ansi-term@0.50.3
+	num-bigint@0.4.8
+	num-complex@0.4.6
+	num-conv@0.2.2
+	num-derive@0.4.2
+	num-integer@0.1.46
+	num-rational@0.4.2
+	num-traits@0.2.19
+	num_cpus@1.17.0
+	number_prefix@0.4.0
+	numpy@0.29.0
+	once_cell@1.21.4
+	once_cell_polyfill@1.70.2
+	onig@6.5.3
+	onig_sys@69.9.3
+	openai-harmony@0.0.8
+	option-ext@0.2.0
+	ordermap@1.2.0
+	parking_lot@0.12.5
+	parking_lot_core@0.9.12
+	paste@1.0.15
+	pastey@0.1.1
+	pastey@0.2.3
+	pcre2-sys@0.2.10
+	pcre2@0.2.11
+	percent-encoding@2.3.2
+	petgraph@0.7.1
+	phf@0.11.3
+	phf_codegen@0.11.3
+	phf_generator@0.11.3
+	phf_shared@0.11.3
+	pin-project-internal@1.1.13
+	pin-project-lite@0.2.17
+	pin-project@1.1.13
+	pkg-config@0.3.33
+	png@0.18.1
+	portable-atomic-util@0.2.7
+	portable-atomic@1.14.0
+	potential_utf@0.1.5
+	powerfmt@0.2.0
+	ppv-lite86@0.2.21
+	prettyplease@0.2.37
+	proc-macro-utils@0.10.0
+	proc-macro2@1.0.107
+	profiling-procmacros@1.0.18
+	profiling@1.0.18
+	prost-build@0.13.5
+	prost-derive@0.13.5
+	prost-types@0.13.5
+	prost@0.13.5
+	protoc-bin-vendored-linux-aarch_64@3.2.0
+	protoc-bin-vendored-linux-ppcle_64@3.2.0
+	protoc-bin-vendored-linux-s390_64@3.2.0
+	protoc-bin-vendored-linux-x86_32@3.2.0
+	protoc-bin-vendored-linux-x86_64@3.2.0
+	protoc-bin-vendored-macos-aarch_64@3.2.0
+	protoc-bin-vendored-macos-x86_64@3.2.0
+	protoc-bin-vendored-win32@3.2.0
+	protoc-bin-vendored@3.2.0
+	pulp-wasm-simd-flag@0.1.1
+	pulp@0.22.3
+	pxfm@0.1.30
+	pyo3-build-config@0.29.0
+	pyo3-ffi@0.29.0
+	pyo3-macros-backend@0.29.0
+	pyo3-macros@0.29.0
+	pyo3@0.29.0
+	qoi@0.4.1
+	quick-error@2.0.1
+	quinn-proto@0.11.16
+	quinn-udp@0.5.15
+	quinn@0.11.11
+	quote-use-macros@0.8.4
+	quote-use@0.8.4
+	quote@1.0.47
+	r-efi@5.3.0
+	r-efi@6.0.0
+	rand@0.10.2
+	rand@0.8.7
+	rand@0.9.5
+	rand_chacha@0.3.1
+	rand_chacha@0.9.0
+	rand_core@0.10.1
+	rand_core@0.6.4
+	rand_core@0.9.5
+	rand_pcg@0.10.2
+	rav1e@0.8.1
+	ravif@0.13.0
+	raw-cpuid@11.6.0
+	rawpointer@0.2.1
+	rayon-cond@0.4.0
+	rayon-core@1.13.0
+	rayon@1.12.0
+	reborrow@0.5.5
+	redox_syscall@0.5.18
+	redox_users@0.5.2
+	ref-cast-impl@1.0.26
+	ref-cast@1.0.26
+	regex-automata@0.4.16
+	regex-syntax@0.8.11
+	regex@1.13.1
+	reqwest@0.12.28
+	rgb@0.8.53
+	ring@0.17.14
+	rmp-serde@1.3.1
+	rmp@0.8.15
+	rmpv@1.3.1
+	rustc-hash@1.1.0
+	rustc-hash@2.1.3
+	rustix@1.1.4
+	rustls-pki-types@1.15.1
+	rustls-webpki@0.103.13
+	rustls@0.23.43
+	rustpython-ruff_python_ast@0.15.8
+	rustpython-ruff_python_parser@0.15.8
+	rustpython-ruff_python_trivia@0.15.8
+	rustpython-ruff_source_file@0.15.8
+	rustpython-ruff_text_size@0.15.8
+	rustversion@1.0.23
+	ryu@1.0.23
+	schemars@0.9.0
+	schemars@1.2.2
+	scopeguard@1.2.0
+	serde@1.0.229
+	serde_bytes@0.11.19
+	serde_core@1.0.229
+	serde_derive@1.0.229
+	serde_json@1.0.151
+	serde_path_to_error@0.1.20
+	serde_urlencoded@0.7.1
+	serde_with@3.21.0
+	serde_with_macros@3.21.0
+	sha1@0.10.7
+	sha2@0.10.9
+	sharded-slab@0.1.7
+	shlex@2.0.1
+	signal-hook-registry@1.4.8
+	simd-adler32@0.3.10
+	simd_helpers@0.1.0
+	siphasher@1.0.3
+	slab@0.4.12
+	smallvec@1.15.2
+	socket2@0.5.10
+	socket2@0.6.5
+	socks@0.3.4
+	spin@0.9.9
+	spm_precompiled@0.1.4
+	stable_deref_trait@1.2.1
+	static_assertions@1.1.0
+	strsim@0.11.1
+	strum@0.27.2
+	strum_macros@0.27.2
+	subtle@2.6.1
+	symlink@0.1.0
+	syn@2.0.119
+	syn@3.0.3
+	sync_wrapper@1.0.2
+	synstructure@0.13.2
+	tagptr@0.2.0
+	target-lexicon@0.13.5
+	tempfile@3.27.0
+	thiserror-impl@2.0.19
+	thiserror@2.0.19
+	thread_local@1.1.10
+	tiff@0.11.3
+	tiktoken-rs@0.9.1
+	time-core@0.1.9
+	time-macros@0.2.32
+	time@0.3.54
+	tinystr@0.8.3
+	tinyvec@1.12.0
+	tinyvec_macros@0.1.1
+	tokenizers@0.21.4
+	tokio-macros@2.7.2
+	tokio-rustls@0.26.4
+	tokio-stream@0.1.19
+	tokio-util@0.7.19
+	tokio@1.53.1
+	tonic-build@0.12.3
+	tonic@0.12.3
+	tower-http@0.6.11
+	tower-layer@0.3.3
+	tower-service@0.3.3
+	tower@0.4.13
+	tower@0.5.3
+	tracing-appender@0.2.5
+	tracing-attributes@0.1.31
+	tracing-core@0.1.36
+	tracing-log@0.2.0
+	tracing-subscriber@0.3.23
+	tracing@0.1.44
+	try-lock@0.2.5
+	typenum@1.20.1
+	unicase@2.9.0
+	unicode-ident@1.0.24
+	unicode-normalization-alignments@0.1.12
+	unicode-normalization@0.1.25
+	unicode-segmentation@1.13.3
+	unicode-width@0.2.2
+	unicode_categories@0.1.1
+	unicode_names2@1.3.0
+	unicode_names2_generator@1.3.0
+	untrusted@0.9.0
+	ureq@2.12.1
+	url@2.5.8
+	utf16_iter@1.0.5
+	utf8_iter@1.0.4
+	utf8parse@0.2.2
+	uuid@1.24.0
+	v_frame@0.3.9
+	valuable@0.1.1
+	version_check@0.9.5
+	want@0.3.1
+	wasi@0.11.1+wasi-snapshot-preview1
+	wasip2@1.0.4+wasi-0.2.12
+	wasm-bindgen-futures@0.4.76
+	wasm-bindgen-macro-support@0.2.126
+	wasm-bindgen-macro@0.2.126
+	wasm-bindgen-shared@0.2.126
+	wasm-bindgen@0.2.126
+	wasm-streams@0.4.2
+	web-sys@0.3.103
+	web-time@1.1.0
+	webpki-roots@0.26.11
+	webpki-roots@1.0.9
+	weezl@0.1.12
+	winapi-i686-pc-windows-gnu@0.4.0
+	winapi-x86_64-pc-windows-gnu@0.4.0
+	winapi@0.3.9
+	windows-core@0.62.2
+	windows-implement@0.60.2
+	windows-interface@0.59.3
+	windows-link@0.2.1
+	windows-result@0.4.1
+	windows-strings@0.5.1
+	windows-sys@0.52.0
+	windows-sys@0.59.0
+	windows-sys@0.60.2
+	windows-sys@0.61.2
+	windows-targets@0.52.6
+	windows-targets@0.53.5
+	windows_aarch64_gnullvm@0.52.6
+	windows_aarch64_gnullvm@0.53.1
+	windows_aarch64_msvc@0.52.6
+	windows_aarch64_msvc@0.53.1
+	windows_i686_gnu@0.52.6
+	windows_i686_gnu@0.53.1
+	windows_i686_gnullvm@0.52.6
+	windows_i686_gnullvm@0.53.1
+	windows_i686_msvc@0.52.6
+	windows_i686_msvc@0.53.1
+	windows_x86_64_gnu@0.52.6
+	windows_x86_64_gnu@0.53.1
+	windows_x86_64_gnullvm@0.52.6
+	windows_x86_64_gnullvm@0.53.1
+	windows_x86_64_msvc@0.52.6
+	windows_x86_64_msvc@0.53.1
+	wit-bindgen@0.57.1
+	write16@1.0.0
+	writeable@0.6.3
+	y4m@0.8.0
+	yoke-derive@0.8.2
+	yoke@0.8.3
+	zerocopy-derive@0.8.55
+	zerocopy@0.8.55
+	zerofrom-derive@0.1.7
+	zerofrom@0.1.8
+	zeroize@1.9.0
+	zerotrie@0.2.4
+	zerovec-derive@0.11.3
+	zerovec@0.11.6
+	zmij@1.0.23
+	zune-core@0.5.1
+	zune-inflate@0.2.54
+	zune-jpeg@0.5.15
+	aes@0.8.4
+	allocator-api2@0.2.21
+	base64ct@1.8.3
+	bzip2-sys@0.1.13+1.0.8
+	bzip2@0.4.4
+	cc@1.4.4
+	cipher@0.4.4
+	constant_time_eq@0.1.5
+	crc32fast@1.5.1
+	find-msvc-tools@0.1.11
+	flate2@1.1.10
+	foldhash@0.2.0
+	hmac@0.12.1
+	indoc@2.0.7
+	inout@0.1.4
+	memoffset@0.9.1
+	miniz_oxide@0.9.1
+	ndarray@0.16.1
+	num-integer@0.1.47
+	password-hash@0.4.2
+	pbkdf2@0.11.0
+	pkg-config@0.3.34
+	portable-atomic@1.15.0
+	pyo3-build-config@0.22.6
+	pyo3-ffi@0.22.6
+	pyo3-macros-backend@0.22.6
+	pyo3-macros@0.22.6
+	pyo3@0.22.6
+	rand@0.8.8
+	safetensors@0.3.3
+	sha2-asm@0.6.4
+	syn@3.0.4
+	target-lexicon@0.12.16
+	tch@0.26.0
+	thiserror-impl@1.0.69
+	thiserror@1.0.69
+	time@0.3.55
+	torch-sys@0.26.0
+	unindent@0.2.4
+	zerocopy-derive@0.8.56
+	zerocopy@0.8.56
+	zip@0.6.6
+	zstd-safe@5.0.2+zstd.1.5.2
+	zstd-sys@2.0.16+zstd.1.5.7
+	zstd@0.11.2+zstd.1.5.2"
+
+RUST_MIN_VER="1.92"
+
+DISTUTILS_EXT=1
+DISTUTILS_SINGLE_IMPL=1
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{13..15} )
+
+inherit cargo distutils-r1
+
+DESCRIPTION="a fast serving framework for large language models and vision language models"
+HOMEPAGE="
+	https://pypi.org/project/sglang
+	https://github.com/sgl-project/sglang/
+"
+SRC_URI="
+	https://github.com/sgl-project/sglang/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	${CARGO_CRATE_URIS}
+"
+
+S="${WORKDIR}"/${P}/python
+
+src_prepare() {
+	distutils-r1_src_prepare
+	# TreeCore (rust radix tree) links against libtorch; upstream only
+	# supports building against 2.11-2.13, but tch's own gate is already
+	# bypassed via LIBTORCH_BYPASS_VERSION_CHECK, so allow 2.14.
+	eapply --directory "${WORKDIR}"/${P} -- "${FILESDIR}"/0001-rust-tree-core-allow-torch-2.14.patch
+	# tch <=0.26 still generates the pre-2.14 C++ API (torch::cholesky,
+	# torch::qr, ...), which PyTorch 2.14 renamed to torch::linalg_*. Bump
+	# tch/torch-sys to 0.26 (last release) and patch the vendored crate to
+	# the 2.14 names (plus the C++20 requirement of the 2.14 headers).
+	eapply --directory "${WORKDIR}"/${P} -- "${FILESDIR}"/0002-rust-tch-0.26.patch
+	eapply --directory "${WORKDIR}"/${P} -- "${FILESDIR}"/0003-rust-lockfile-tch-0.26.patch
+	patch -p1 -d "${ECARGO_VENDOR}/torch-sys-0.26.0" \
+		< "${FILESDIR}"/0004-vendor-torch-sys-0.26-torch-2.14.patch || die
+}
+
+src_compile() {
+		# torch-sys 0.26 expects a libtorch root with include/ and lib/;
+	# system PyTorch keeps headers in /usr/include and libs in
+	# /usr/$(get_libdir), so hand it a stub joining the two (the python
+	# package's own include/ and lib/ dirs are incomplete).
+	local stub="${WORKDIR}/libtorch-stub"
+	mkdir -p "${stub}/lib" || die
+	local so
+	for so in libtorch.so libtorch_cpu.so libtorch_python.so libtorch_global_deps.so; do
+		[[ -f /usr/$(get_libdir)/${so} ]] && ln -sf "/usr/$(get_libdir)/${so}" "${stub}/lib/${so}"
+	done
+	export LIBTORCH_INCLUDE=/usr
+	export LIBTORCH_LIB=${stub}
+	# This portage's 'default' is a no-op for src_compile, so call the
+	# eclass function explicitly.
+	distutils-r1_src_compile
+}
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64"
+
+RDEPEND="
+	sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
+	sci-ml/datasets[${PYTHON_SINGLE_USEDEP}]
+	dev-python/compressed-tensors[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/flashinfer-0.6.12[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/outlines-0.1.11[${PYTHON_SINGLE_USEDEP}]
+	dev-util/py-spy
+	>=sci-ml/quack-kernels-0.4.1[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/sglang-kernel-0.4.7[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/transformers-5.8.1[${PYTHON_SINGLE_USEDEP}]
+	$(python_gen_cond_dep '
+		dev-python/ipython[${PYTHON_USEDEP}]
+		dev-python/aiohttp[${PYTHON_USEDEP}]
+		>=sci-ml/tvm-ffi-0.1.9[${PYTHON_USEDEP}]
+		>=dev-python/anthropic-0.20.0[${PYTHON_USEDEP}]
+		>=dev-python/blobfile-3.0.0[${PYTHON_USEDEP}]
+		dev-python/build[${PYTHON_USEDEP}]
+		>=dev-python/cuda-python-13.0[${PYTHON_USEDEP}]
+		dev-python/distro[${PYTHON_USEDEP}]
+		dev-python/easydict[${PYTHON_USEDEP}]
+		dev-python/einops[${PYTHON_USEDEP}]
+		dev-python/fastapi[${PYTHON_USEDEP}]
+		sci-ml/flash-attention4[${PYTHON_USEDEP}]
+		dev-python/gguf[${PYTHON_USEDEP}]
+		dev-python/interegular[${PYTHON_USEDEP}]
+		>=sci-ml/kernels-0.14.1[${PYTHON_USEDEP}]
+		>=sci-ml/llguidance-0.7.11[${PYTHON_USEDEP}]
+		>=dev-python/mistral-common-1.11.0[${PYTHON_USEDEP}]
+		sci-ml/modelscope[${PYTHON_USEDEP}]
+		dev-python/msgspec[${PYTHON_USEDEP}]
+		dev-python/ninja[${PYTHON_USEDEP}]
+		dev-python/numpy[${PYTHON_USEDEP}]
+		>=dev-python/nvidia-cutlass-dsl-4.5.2[${PYTHON_USEDEP}]
+		dev-python/nvidia-ml-py[${PYTHON_USEDEP}]
+		dev-python/nvshmem4py-cu13[${PYTHON_USEDEP}]
+		>=dev-python/openai-harmony-0.0.4[${PYTHON_USEDEP}]
+		>=dev-python/openai-2.6.1[${PYTHON_USEDEP}]
+		dev-python/orjson[${PYTHON_USEDEP}]
+		dev-python/packaging[${PYTHON_USEDEP}]
+		dev-python/partial-json-parser[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+		>=dev-python/prometheus-client-0.20.0[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		dev-python/pybase64[${PYTHON_USEDEP}]
+		dev-python/pydantic[${PYTHON_USEDEP}]
+		dev-python/python-multipart[${PYTHON_USEDEP}]
+		>=dev-python/pyzmq-25.1.2[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/scipy[${PYTHON_USEDEP}]
+		sci-ml/sentencepiece[${PYTHON_USEDEP}]
+		dev-python/setproctitle[${PYTHON_USEDEP}]
+		>=sci-ml/sgl-deep-gemm-0.2.0[${PYTHON_USEDEP}]
+		>=sci-ml/tokenspeed-smg-grpc-servicer-0.9.0[${PYTHON_USEDEP}]
+		>=dev-python/soundfile-0.13.1[${PYTHON_USEDEP}]
+		dev-python/tiktoken[${PYTHON_USEDEP}]
+		>=dev-python/tilelang-0.1.8[${PYTHON_USEDEP}]
+		>=sci-ml/timm-1.0.16[${PYTHON_USEDEP}]
+		>=sci-ml/tokenspeed-mla-0.1.7[${PYTHON_USEDEP}]
+		>=sci-ml/torch-memory-saver-0.0.9[${PYTHON_USEDEP}]
+		>=sci-ml/pytorch-2.11.0[${PYTHON_USEDEP}]
+		>=sci-ml/torchao-0.17.0[${PYTHON_USEDEP}]
+		>=sci-ml/torchaudio-2.11.0[${PYTHON_USEDEP}]
+		>=sci-ml/torchcodec-0.11.1[${PYTHON_USEDEP}]
+		sci-ml/torchvision[${PYTHON_USEDEP}]
+		dev-python/tqdm[${PYTHON_USEDEP}]
+		dev-python/uvicorn[${PYTHON_USEDEP}]
+		dev-python/uvloop[${PYTHON_USEDEP}]
+		dev-python/watchfiles[${PYTHON_USEDEP}]
+		>=sci-ml/xgrammar-0.2.1[${PYTHON_USEDEP}]
+	')
+"
+#BDEPEND="
+#	test? (
+#	)
+#"
+
+EPYTEST_PLUGINS=()
+distutils_enable_tests pytest
+
+export PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1
+
+python_compile() {
+	distutils-r1_python_compile
+
+	# gpep517 installs the wheel in a venv-like layout: interpreter
+	# symlinks in usr/bin, python-exec wrappers and a pyvenv.cfg in the
+	# install root. The _distutils-r1_post_python_compile hook (run
+	# automatically by distutils-r1 after every python_* phase) dies if
+	# $(python_get_scriptdir) already exists, so strip the venv artifacts
+	# here and let the hook recreate the standard python-exec layout.
+	local root=${BUILD_DIR}/install
+	rm -f "${root}"/usr/bin/python* "${root}"/pyvenv.cfg || die
+	rm -rf "${root}$(python_get_scriptdir)" || die
+}
+
+python_install() {
+	distutils-r1_python_install
+	# the 0.5.19 wheel shipped a tools/ dir that must not be installed;
+	# 0.5.20's wheel no longer contains one, so remove only if present
+	local tools_dir="${D}$(python_get_sitedir)/tools"
+	if [[ -d ${tools_dir} ]]; then
+		rm -r "${tools_dir}" || die
+	fi
+}

@@ -37,8 +37,10 @@ Verify: `ls /var/db/repos/gentoo/licenses/ | grep -i NAME`
 | CC BY-SA 4.0 | `CC-BY-SA-4.0` |
 | CC BY-NC 4.0 | `CC-BY-NC-4.0` |
 | WTFPL | `WTFPL-2` |
-| AGPL v3 | `AGPL-3` |
-| AGPL v3+ | `AGPL-3+` |
+| AGPL v3 / SPDX `AGPL-3.0` / `AGPL-3.0-only` | `AGPL-3` |
+| AGPL v3+ / SPDX `AGPL-3.0-or-later` | `AGPL-3+` |
+| SPDX `GPL-3.0-only` / `GPL-3.0-or-later` | `GPL-3` / `GPL-3+` (same pattern for GPL-2.0, LGPL-*) |
+| HPND-style "Permission to use, copy, modify, and distribute … without fee" | `HPND` |
 | Boost Software License 1.0 | `Boost-1.0` |
 | zlib | `ZLIB` |
 | OpenSSL | `openssl` |

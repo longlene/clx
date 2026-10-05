@@ -60,7 +60,7 @@ RDEPEND="
 		dev-python/openai-harmony[${PYTHON_USEDEP}]
 		>=dev-python/soundfile-0.12.0[${PYTHON_USEDEP}]
 		>=dev-python/mistral-common-1.11.0[${PYTHON_USEDEP}]
-		>=dev-python/onnxruntime-1.17[${PYTHON_USEDEP}]
+		>=sci-libs/onnxruntime-1.17[python,${PYTHON_USEDEP}]
 		>=dev-python/websockets-12.0[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
 		dev-python/jiwer[${PYTHON_USEDEP}]

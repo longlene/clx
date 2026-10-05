@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <maintainer type="person">
-    <email>longlene@gmail.com</email>
-    <name>loong0</name>
-  </maintainer>
-  <upstream>
-    <remote-id type="github">clasp-developers/clasp</remote-id>
-  </upstream>
+	<maintainer type="person">
+		<email>longlene@gmail.com</email>
+		<name>loong0</name>
+	</maintainer>
+	<longdescription>
+		Clasp is a Common Lisp implementation that seamlessly interoperates
+		with C++ libraries and programs, using LLVM for compilation to native
+		code. Building it requires SBCL as the bootstrap host.
+	</longdescription>
+	<use>
+		<flag name="native">Build the kernel and modules as native LLVM code (build-mode :native) instead of bytecode-only (:bytecode, faster to build, slower to run)</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">clasp-developers/clasp</remote-id>
+		<changelog>https://github.com/clasp-developers/clasp/blob/main/RELEASE_NOTES.md</changelog>
+		<doc>https://clasp-developers.github.io/manual.html</doc>
+		<bugs-to>https://github.com/clasp-developers/clasp/issues</bugs-to>
+	</upstream>
 </pkgmetadata>

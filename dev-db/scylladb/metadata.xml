@@ -11,6 +11,9 @@
     2025 it is distributed under the proprietary ScyllaDB Software License
     Agreement; this package builds the server only.
   </longdescription>
+  <use>
+    <flag name="systemtap">Enable SystemTap/USDT static probes via <pkg>dev-debug/systemtap</pkg></flag>
+  </use>
   <upstream>
     <remote-id type="github">scylladb/scylladb</remote-id>
   </upstream>

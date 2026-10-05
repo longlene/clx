@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+Computer-Use Agent (CUA) framework from the trycua/cua monorepo, for running agentic workflows in dedicated sandboxes.
+  </longdescription>
+  <use>
+    <flag name="cli">Add the interactive CLI spinner (<pkg>dev-python/yaspin</pkg>)</flag>
+    <flag name="computer">Drive Cua sandboxes via <pkg>sci-ml/cua-computer</pkg></flag>
+    <flag name="gemini">Add Google Gemini support via <pkg>dev-python/google-genai</pkg></flag>
+    <flag name="hf">Run local Hugging Face models (accelerate, pytorch, transformers)</flag>
+    <flag name="omni">Add OmniParser UI-element detection via <pkg>sci-ml/cua-som</pkg></flag>
+    <flag name="ui">Add the Gradio web UI (<pkg>dev-python/gradio</pkg>)</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">trycua/cua</remote-id>
+    <remote-id type="pypi">cua-agent</remote-id>
+  </upstream>
+</pkgmetadata>

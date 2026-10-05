@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <use>
+    <flag name="fts3">Enable the FTS3 full-text search extension</flag>
+    <flag name="fts4">Enable the FTS4 full-text search extension</flag>
+    <flag name="fts5">Enable the FTS5 full-text search extension</flag>
+    <flag name="geopoly">Enable the GEOPOLY polygon geometry extension</flag>
+    <flag name="rtree">Enable the RTREE spatial index extension</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">tursodatabase/libsql</remote-id>
+  </upstream>
+</pkgmetadata>

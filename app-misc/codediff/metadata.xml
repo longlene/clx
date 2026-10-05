@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">ivankovic/codediff</remote-id>
+  </upstream>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    CodeDiff is a syntax-aware code diffing tool. It parses both sides of a
+    diff with tree-sitter and matches their ASTs, so a change is reported as
+    what it structurally is (an insertion, deletion, update, or move) rather
+    than as whichever lines happened to align. It runs as an interactive
+    terminal UI, a plain-text batch formatter, or a JSON emitter for editor
+    integrations, and works as a git difftool backend and a Jujutsu (jj)
+    diff formatter.
+  </longdescription>
+</pkgmetadata>

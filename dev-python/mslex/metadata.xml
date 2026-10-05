@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+Splits and quotes command lines the way Windows (cmd.exe / CommandLineToArgvW) does, mirroring the shlex API.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">smoofra/mslex</remote-id>
+    <remote-id type="pypi">mslex</remote-id>
+  </upstream>
+</pkgmetadata>

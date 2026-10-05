@@ -1,0 +1,57 @@
+Replace the file-backed dynamic dependency lists with the static set of
+packages the imported module closure (nemo_skills.pipeline.cli,
+pipeline.utils.*, pipeline.nemo_rl.* as consumed by nvflow) actually
+requires. The upstream blanket lists (core/requirements.txt,
+requirements/pipeline.txt) pull in a ~40-package benchmark suite,
+including git-only packages (compute-eval, evalplus, koifeval at the
+time) and hard pins (litellm==1.83.14, click<8.2) that are neither
+imported by the pipeline entry points nor satisfiable against the
+Gentoo tree. The benchmark/model-client deps remain lazy imports and
+must be installed by hand if a benchmark pipeline is run.
+
+The tools/core/pipeline/dev extras were dropped along with the dynamic
+optional-dependencies: they reference the same unresolvable files.
+
+--- a/pyproject.toml	2026-10-04 18:49:21.850055571 -0700
++++ b/pyproject.toml	2026-10-04 18:49:21.871174849 -0700
+@@ -20,14 +20,17 @@
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-dynamic = [
+-    "version",
+-    "dependencies",
+-    "optional-dependencies",
+-]
++dynamic = ["version"]
+ 
+ name = "nemo_skills"
+ description = "NeMo Skills - a project to improve skills of LLMs"
++dependencies = [
++    "nemo-run",
++    "typer>=0.13",
++    "huggingface_hub",
++    "omegaconf",
++    "fabric",
++]
+ readme = "README.md"
+ # license-files = ["LICENSE"]  # causing problems in nemo-aligner container
+ classifiers = [
+@@ -54,17 +57,6 @@
+ 
+ [tool.setuptools.dynamic]
+ version = { attr = "nemo_skills.version.__version__" }
+-dependencies = {file = ["core/requirements.txt", "requirements/pipeline.txt"]}
+-
+-[tool.setuptools.dynamic.optional-dependencies]
+-# Tools: MCP/tool runtime only (ToolManager, DirectPythonTool, built-in tools; no model clients)
+-tools = { file = ["tools/requirements.txt"] }
+-# Core: lightweight runtime only (inference, evaluation, tool calling)
+-core = { file = ["core/requirements.txt"] }
+-# Pipeline: orchestration, cluster management, CLI (adds nemo_run, typer, wandb)
+-pipeline = { file = ["requirements/pipeline.txt"] }
+-# Dev: development and testing tools
+-dev = { file = ["requirements/common-tests.txt", "requirements/common-dev.txt"] }
+ 
+ [tool.uv]
+ # Force resolver-wide overrides to break dependency conflicts that come from

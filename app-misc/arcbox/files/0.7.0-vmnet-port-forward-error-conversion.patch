@@ -1,0 +1,20 @@
+The vmnet port-forwarding fallback (non-macOS) returns the raw NetError
+where the function signature expects CoreError, failing Linux release
+builds (daemon default features gic+vmnet). Convert via the existing
+CoreError::Net variant.
+
+--- a/app/arcbox-core/src/runtime.rs
++++ b/app/arcbox-core/src/runtime.rs
+@@ -1262,11 +1262,11 @@
+             .await;
+         if let Err(error) = result {
+             if let Some(forwarder) = forwarders.get_mut(container_id) {
+                 forwarder.stop().await;
+             }
+             forwarders.remove(container_id);
+-            return Err(error);
++            return Err(CoreError::Net(error));
+         }
+ 
+         Ok(())
+     }

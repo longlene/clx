@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">eteran/nedit-ng</remote-id>
+  </upstream>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    nedit-ng is a Qt5 port of NEdit (the Nirvana Editor), a feature-rich
+    text editor for C/C++, Python, shell and many other languages, with
+    syntax highlighting, bookmarks, macros and a built-in command
+    interpreter.
+  </longdescription>
+  <use>
+    <flag name="test">Build and run the Regex unit tests</flag>
+  </use>
+</pkgmetadata>

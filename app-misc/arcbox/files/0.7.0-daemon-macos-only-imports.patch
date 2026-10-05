@@ -1,0 +1,68 @@
+The daemon imports two macOS-target-only dependencies (macos-resolver,
+libproc) unconditionally, which fails Linux builds. Gate the imports and
+provide minimal non-macOS equivalents:
+
+- to_env_prefix() is a pure string transform (uppercase, - -> _), so a
+  local copy is behavior-identical for the DNS_PORT/DNS_DOMAIN env lookups.
+- check_resolver_installed() only inspects macOS /etc/resolver files; it is
+  a no-op on other platforms.
+- is_arcbox_daemon() on non-macOS checks /proc/<pid>/comm instead of the
+  libproc pid path.
+
+--- a/app/arcbox-daemon/src/startup/mod.rs
++++ b/app/arcbox-daemon/src/startup/mod.rs
+@@ -22,5 +22,6 @@
+ use arcbox_helper::validate::Domain;
+-use macos_resolver::to_env_prefix;
++#[cfg(target_os = "macos")]
++use macos_resolver::to_env_prefix;
+ use tracing::info;
+ 
+ use crate::DaemonArgs;
+@@ -27,5 +28,10 @@
+ use crate::context::{DaemonContext, EarlyContext, StartupHandles, VmArgs};
+ 
++#[cfg(not(target_os = "macos"))]
++fn to_env_prefix(prefix: &str) -> String {
++    prefix.to_uppercase().replace('-', "_")
++}
++
+ const DNS_PREFIX: &str = "arcbox";
+ pub const DEFAULT_DNS_DOMAIN: &str = "arcbox.local";
+ /// Canonical production DNS port. Isolated instances may request port 0 and
+--- a/app/arcbox-daemon/src/startup/pipeline.rs
++++ b/app/arcbox-daemon/src/startup/pipeline.rs
+@@ -12,3 +12,4 @@
+ use arcbox_core::Runtime;
+-use macos_resolver::FileResolver;
++#[cfg(target_os = "macos")]
++use macos_resolver::FileResolver;
+ use tracing::{info, warn};
+@@ -214,6 +215,10 @@
++#[cfg(target_os = "macos")]
+ fn check_resolver_installed(domain: &str) {
+     let resolver = FileResolver::new("arcbox");
+     if !resolver.is_registered(domain) {
+         println!("Hint: Run 'sudo abctl dns install' to enable *.{domain} DNS resolution.");
+     }
+ }
++
++#[cfg(not(target_os = "macos"))]
++fn check_resolver_installed(_domain: &str) {}
+--- a/app/arcbox-daemon/src/startup/cleanup.rs
++++ b/app/arcbox-daemon/src/startup/cleanup.rs
+@@ -51,6 +51,14 @@
++#[cfg(target_os = "macos")]
+ pub(super) fn is_arcbox_daemon(pid: i32) -> bool {
+     match libproc::proc_pid::pidpath(pid) {
+         Ok(path) => path.contains("arcbox-daemon") || path.contains("arcboxlabs.desktop.daemon"),
+         Err(_) => false,
+     }
+ }
++
++#[cfg(not(target_os = "macos"))]
++pub(super) fn is_arcbox_daemon(pid: i32) -> bool {
++    std::fs::read_to_string(format!("/proc/{pid}/comm"))
++        .map(|comm| comm.trim().contains("arcbox-daemon"))
++        .unwrap_or(false)
++}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">tinyhumansai/openhuman</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    OpenHuman is an open-source agent harness from TinyHumans. Ships the
+    `openhuman-core` binary (agent engine, JSON-RPC server) and the
+    `openhuman-tui` terminal client, built from the workspace's default
+    (contributor) feature set: media, skills, flows, mcp, channels,
+    http-server, scheduler-gate, file-logging, modules. First-party
+    submodules (tinyagents, tinybus, tinymemory, tinymcp, ...) are checked
+    out via git submodules and wired in through the workspace's [patch]
+    tables.
+  </longdescription>
+</pkgmetadata>

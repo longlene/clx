@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+Cross-platform toolkit to query and control application windows (move, resize, activate, minimize) on X11, macOS and Windows.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Kalmat/PyWinCtl</remote-id>
+    <remote-id type="pypi">PyWinCtl</remote-id>
+  </upstream>
+</pkgmetadata>

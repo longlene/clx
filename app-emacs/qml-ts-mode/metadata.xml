@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    qml-ts-mode provides a major mode for editing Qt Declarative (QML) files
+    in Emacs, built on the tree-sitter support introduced in Emacs 29.1 for
+    syntax highlighting, indentation and structural navigation. It requires
+    the tree-sitter-qmljs grammar and tree-sitter-language-provider to
+    register it.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">xhcoding/qml-ts-mode</remote-id>
+  </upstream>
+</pkgmetadata>

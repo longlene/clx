@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+Core functionality for the Cua (Computer Use Agent) monorepo. Provides the telemetry client and shared utilities used by the other Cua libraries.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">trycua/cua</remote-id>
+    <remote-id type="pypi">cua-core</remote-id>
+  </upstream>
+</pkgmetadata>

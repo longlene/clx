@@ -30,6 +30,8 @@ The JSON is also saved to a per-package file — pass its `json_path` value to s
 | `existing` | Already in portage — report `message`, confirm with user |
 | `error` | Read `message`. Unsupported host (GitLab/Codeberg/SourceForge/…) → hand-write the route JSON and continue the pipeline: `references/complex-cases.md` |
 
+**Sanity-check route's `version`/`tag` against PyPI** when the GitHub repo is a monorepo (several packages under `libs/`, `packages/`, per-component tags like `core-v0.3.1`): route picks the repo's newest tag, which belongs to another component. Take the version from `https://pypi.org/pypi/NAME/json` and use `inherit pypi` — see `workflows/python.md` Step F "Exception — monorepos".
+
 ## Step 2 — Choose category/name (judgment)
 
 Python → `dev-python` · C/C++ libs → `dev-libs`/`dev-cpp` · Rust CLI → `app-misc` or by function (`sys-apps`, `net-misc`) · Rust libs → `dev-libs` · Erlang → `dev-erlang` · system tools → `sys-apps`. Use route's `language`/`description` to decide. Name: lowercase, hyphens not underscores, no leading digit.
