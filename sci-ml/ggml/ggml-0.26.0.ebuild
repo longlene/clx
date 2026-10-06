@@ -37,7 +37,6 @@ REQUIRED_USE="rocm? ( ${ROCM_REQUIRED_USE} )"
 
 RESTRICT="!test? ( test )"
 
-
 CDEPEND="
 	cuda? ( dev-util/nvidia-cuda-toolkit:= )
 	openvino? (
