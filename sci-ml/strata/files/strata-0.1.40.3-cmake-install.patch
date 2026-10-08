@@ -1,7 +1,6 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -501,8 +501,17 @@
-     target_link_libraries(native_expert_parity PRIVATE strata_kernels strata_kernels_cpu strata_artifact CUDA::cudart)
+@@ -1428,6 +1428,15 @@
    endif()
  endif()
  
@@ -14,7 +13,6 @@
 +    RUNTIME DESTINATION bin)
 +endif()
 +
- if(STRATA_ENABLE_CUDA AND STRATA_BUILD_TESTS)
+ if(STRATA_ENABLE_CUDA AND STRATA_BUILD_TESTS AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/bench/micro/hit_cpu_order_parity.cu")
    add_executable(hit_cpu_order_parity bench/micro/hit_cpu_order_parity.cu)
-   target_link_libraries(hit_cpu_order_parity PRIVATE strata_kernels strata_kernels_cpu CUDA::cudart)
- endif()
+   target_link_libraries(hit_cpu_order_parity PRIVATE strata_kernels strata_kernels_cpu ${_strata_gpu_runtime_target})

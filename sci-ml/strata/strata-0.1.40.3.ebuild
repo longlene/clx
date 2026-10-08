@@ -3,29 +3,35 @@
 
 EAPI=8
 
-DESCRIPTION="Inference engine for Qwen3.8-Flash-Next 125B MoE on 12-24 GB NVIDIA GPUs"
+DESCRIPTION="Run a 125B-parameter MoE model on a 12 GB+ NVIDIA or AMD GPU"
 HOMEPAGE="
 	https://github.com/Niko1221/Strata
 "
-SRC_URI="https://github.com/Niko1221/Strata/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+# ggml is pinned to a llama.cpp commit (third_party/ggml/VERSION.txt);
+# upstream FetchContent-clones it, we take the same snapshot offline.
+SRC_URI="
+	https://github.com/Niko1221/Strata/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	https://github.com/ggml-org/llama.cpp/archive/3cf03257f219afbe7334045ff7c6a06ac68c627d.tar.gz
+	-> llama.cpp-3cf03257.tar.gz
+"
 
 S="${WORKDIR}/Strata-${PV}"
 
-# The project ships no license file (all rights reserved); the vendored
-# ggml-common.h under third_party/ is MIT.
-LICENSE="all-rights-reserved"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="cuda"
-# No license to mirror under; the ctest suite needs a real NVIDIA GPU and
-# the published tree omits tests/ anyway.
-RESTRICT="mirror test"
+# The ctest suite needs a real GPU (parity oracles, VRAM); the CUDA targets
+# also build internal parity/bench executables that need the toolkit.
+RESTRICT="test"
 
 RDEPEND="
-	>=sci-ml/ggml-0.24.0:=
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	dev-python/jinja2
+	dev-python/jsonschema
 	dev-python/numpy
+	dev-python/pillow
+	dev-python/psutil
 	dev-python/regex
 "
 DEPEND="
@@ -38,21 +44,27 @@ BDEPEND="
 
 inherit cmake
 
+src_unpack() {
+	default
+	# The commit archive extracts to llama.cpp-<full-sha>/.
+	mv "${WORKDIR}/llama.cpp-3cf03257f219afbe7334045ff7c6a06ac68c627d" \
+		"${WORKDIR}/llama.cpp-3cf03257" || die
+}
+
 src_prepare() {
 	cmake_src_prepare
 	# The project ships no install rules; add them for the user-facing
 	# binaries (this slim portage does not auto-apply files/*.patch).
 	eapply "${FILESDIR}/${P}-cmake-install.patch"
-	# Link the system sci-ml/ggml (ggml-cpu + ggml-base) instead of building
-	# a private static copy from a pinned llama.cpp checkout.
-	eapply "${FILESDIR}/${P}-system-ggml.patch"
 }
 
 src_configure() {
 	local mycmakeargs=(
 		-DSTRATA_ENABLE_CUDA=$(usex cuda)
 		-DSTRATA_NATIVE_EXPERTS=ON
-		-DSTRATA_USE_SYSTEM_GGML=ON
+		# Take ggml (CPU native experts + the ggml-cuda MMQ sources) from the
+		# pinned llama.cpp commit instead of a build-time git clone.
+		-DSTRATA_GGML_DIR="${WORKDIR}/llama.cpp-3cf03257"
 	)
 	# Developed on sm_120 (RTX 50); the CMake arch guard accepts >= 80
 	# (RTX 30/40/50 series).
