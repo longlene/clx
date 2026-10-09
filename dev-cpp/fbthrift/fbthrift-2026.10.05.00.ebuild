@@ -15,6 +15,10 @@ KEYWORDS="~amd64 ~arm64"
 IUSE="benchmark"
 RESTRICT="test"
 
+# The new compiler installs /usr/bin/thrift, which upstream Apache Thrift
+# provides as well; the two are not API-compatible, pick one.
+CONFLICT="dev-libs/thrift"
+
 # The RPC transport stack (fizz/wangle/mvfst) is on by default upstream and
 # the compiler+lib are the point of the package; benchmarks are opt-in.
 DEPEND="
