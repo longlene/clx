@@ -18,17 +18,17 @@ RESTRICT="test"
 # The RPC transport stack (fizz/wangle/mvfst) is on by default upstream and
 # the compiler+lib are the point of the package; benchmarks are opt-in.
 DEPEND="
-	dev-cpp/benchmark? ( dev-cpp/benchmark )
-	dev-cpp/fizz
-	dev-cpp/folly
+	benchmark? ( dev-cpp/benchmark )
+	~dev-cpp/fizz-${PV}:=
+	~dev-cpp/folly-${PV}:=
 	dev-cpp/gflags
 	dev-cpp/glog
-	dev-cpp/mvfst
-	dev-cpp/wangle
+	~dev-cpp/mvfst-${PV}:=
+	~dev-cpp/wangle-${PV}:=
 	dev-libs/boost
 	dev-libs/openssl
 	dev-libs/xxhash
-	sys-libs/zlib
+	virtual/zlib
 	app-arch/zstd
 "
 RDEPEND="${DEPEND}"
