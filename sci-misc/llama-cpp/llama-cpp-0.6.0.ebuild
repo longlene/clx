@@ -7,7 +7,7 @@ inherit cmake vcs-snapshot
 
 # v${PV} stable releases ship no UI bundle of their own; the release's
 # nightly-tag.txt asset points at the nightly build whose UI to use.
-MY_UI_TAG="b11146"
+MY_UI_TAG="b11429"
 
 DESCRIPTION="Port of Facebook's LLaMA model in C/C++"
 HOMEPAGE="https://github.com/ggml-org/llama.cpp"
@@ -24,7 +24,7 @@ IUSE="ssl test"
 RESTRICT="!test? ( test )"
 
 DEPEND="
-	>=sci-ml/ggml-0.25.3
+	>=sci-ml/ggml-0.26.0
 	ssl? ( dev-libs/openssl )
 "
 RDEPEND="${DEPEND}"
