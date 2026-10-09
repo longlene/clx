@@ -1,0 +1,11 @@
+--- a/fizz/CMakeLists.txt
++++ b/fizz/CMakeLists.txt
+@@ -495,7 +495,7 @@
+     DESTINATION ${BIN_INSTALL_DIR}
+   )
+   add_executable(EncryptedRecordBench record/test/EncryptedRecordBench.cpp)
+-  target_link_libraries(EncryptedRecordBench fizz Folly::folly_benchmark)
++  target_link_libraries(EncryptedRecordBench fizz Folly::follybenchmark)
+   set_target_properties(
+     EncryptedRecordBench PROPERTIES OUTPUT_NAME fizz-encryptedrecordbench
+   )

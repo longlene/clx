@@ -33,6 +33,10 @@ DEPEND="
 
 CMAKE_USE_DIR="${S}/fizz"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-follybenchmark-name.patch
+)
+
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_DIR="$(get_libdir)/cmake/${PN}"
