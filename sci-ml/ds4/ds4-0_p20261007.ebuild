@@ -8,7 +8,7 @@ inherit flag-o-matic toolchain-funcs
 DESCRIPTION="Small native inference engine for DeepSeek V4 Flash models"
 HOMEPAGE="https://github.com/antirez/ds4"
 
-MY_COMMIT="bd66c402070042bf0a79ad6ece8242de4c93680c"
+MY_COMMIT="fc80bd695da76ee14bcb86820bf900a5cdfda806"
 SRC_URI="https://github.com/antirez/ds4/archive/${MY_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 S="${WORKDIR}/ds4-${MY_COMMIT}"
 
