@@ -1,0 +1,31 @@
+--- a/folly/hash/CMakeLists.txt	2026-04-26 23:51:04.000000000 -0700
++++ b/folly/hash/CMakeLists.txt	2026-10-09 09:32:37.982472298 -0700
+@@ -138,5 +138,11 @@
+   EXPORTED_DEPS
+     folly_container_span
+ )
++# UniqueHashKey.cpp uses blake3 when the header is present (__has_include)
++# but CMake never records a link dependency; add it when blake3 is installed.
++find_package(BLAKE3 CONFIG QUIET)
++if(BLAKE3_FOUND)
++  target_link_libraries(folly_hash_unique_hash_key_obj PUBLIC BLAKE3::blake3)
++endif()
+ 
+ add_subdirectory(detail)
+--- a/CMake/FollyFunctions.cmake	2026-04-26 23:51:04.000000000 -0700
++++ b/CMake/FollyFunctions.cmake	2026-10-09 09:32:37.982585010 -0700
+@@ -711,6 +711,14 @@
+ 
+   target_link_libraries(folly PUBLIC folly_deps)
+ 
++  # UniqueHashKey.cpp (folly/hash) uses blake3 when the header is present
++  # (__has_include) but no link dependency is ever recorded; link it when
++  # blake3 is installed so the monolithic library resolves blake3_* symbols.
++  find_package(BLAKE3 CONFIG QUIET)
++  if(BLAKE3_FOUND)
++    target_link_libraries(folly PRIVATE BLAKE3::blake3)
++  endif()
++
+   # Link all external dependencies that were tracked from component targets
+   get_property(_external_deps GLOBAL PROPERTY FOLLY_MONOLITHIC_EXTERNAL_DEPS)
+   if(_external_deps)

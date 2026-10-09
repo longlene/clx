@@ -36,6 +36,7 @@ RDEPEND="
 	dev-cpp/glog:=[gflags]
 	>=dev-libs/boost-1.71:=[context]
 	dev-libs/double-conversion:=
+	dev-libs/blake3:=
 	dev-libs/libaio
 	dev-libs/libevent:=
 	dev-libs/libfmt:=
@@ -55,6 +56,8 @@ DEPEND="
 PATCHES=(
 	"${FILESDIR}"/${PN}-2024.11.04.00-musl-fix.patch
 	"${FILESDIR}"/${PN}-2025.04.14.00-gcc16-workaround.patch
+	# UniqueHashKey.cpp uses blake3 via __has_include but CMake never links it
+	"${FILESDIR}"/${P}-blake3-link.patch
 )
 
 src_unpack() {
