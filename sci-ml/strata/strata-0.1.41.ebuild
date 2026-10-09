@@ -66,10 +66,10 @@ src_configure() {
 		# pinned llama.cpp commit instead of a build-time git clone.
 		-DSTRATA_GGML_DIR="${WORKDIR}/llama.cpp-3cf03257"
 	)
-	# Developed on sm_120 (RTX 50); the CMake arch guard accepts >= 80
-	# (RTX 30/40/50 series).
+	# Developed on sm_120 (RTX 50); the CMake arch guard accepts >= 75
+	# (RTX 20/30/40/50 series; sm_60/70 need STRATA_EXPERIMENTAL_SM60).
 	if use cuda; then
-		mycmakeargs+=( -DCMAKE_CUDA_ARCHITECTURES="80;86;89;120" )
+		mycmakeargs+=( -DCMAKE_CUDA_ARCHITECTURES="75;80;86;89;120" )
 	fi
 	cmake_src_configure
 }
