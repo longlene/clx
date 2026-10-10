@@ -3,14 +3,21 @@
 
 EAPI=8
 
+# Superset of Cargo.lock: -Zbuild-std compiles the vendored nightly's own
+# std/proc_macro/test crates, whose manifests pull registry crates bun's
+# lock no longer pins — newer versions (hashbrown 0.17.1, rustc-demangle
+# 0.1.28, libc 0.2.189, getopts, ...) plus std's per-target deps (wasip1/2/3,
+# r-efi, dlmalloc, moto-rt, hermit-abi, vex-sdk, ...) at the versions the
+# nightly's own library/Cargo.lock pins.
 CRATES="
+	addr2line@0.25.1
+	addr2line@0.27.1
+	adler2@2.0.1
 	aho-corasick@1.1.4
 	allocator-api2@0.2.21
 	anes@0.1.6
 	anstyle@1.0.14
 	anyhow@1.0.102
-	addr2line@0.25.1
-	adler2@2.0.1
 	arrayref@0.3.9
 	arrayvec@0.7.6
 	autocfg@1.5.0
@@ -27,56 +34,60 @@ CRATES="
 	byteorder@1.5.0
 	cast@0.3.0
 	cc@1.2.0
+	cc@1.4.3
 	cfg-if@1.0.4
+	find-msvc-tools@0.1.11
+	ciborium@0.2.2
 	ciborium-io@0.2.2
 	ciborium-ll@0.2.2
-	ciborium@0.2.2
 	cipher@0.4.4
 	clap@4.6.1
 	clap_builder@4.6.0
 	clap_lex@1.1.0
+	constant_time_eq@0.4.2
 	const_format@0.2.36
 	const_format_proc_macros@0.2.34
-	constant_time_eq@0.4.2
 	cpufeatures@0.2.17
-	criterion-plot@0.5.0
 	criterion@0.5.1
+	criterion-plot@0.5.0
 	crossbeam-deque@0.8.6
 	crossbeam-epoch@0.9.18
 	crossbeam-utils@0.8.21
 	crunchy@0.2.4
 	crypto-common@0.1.7
-	cssparser-macros@0.6.1
 	cssparser@0.36.0
+	cssparser-macros@0.6.1
 	darling@0.21.3
 	darling_core@0.21.3
 	darling_macro@0.21.3
-	derive_more-impl@2.1.1
 	derive_more@2.1.1
+	derive_more-impl@2.1.1
 	digest@0.10.7
 	dlmalloc@0.2.13
-	dtoa-short@0.3.5
+	dlmalloc@0.2.14
 	dtoa@1.0.11
+	dtoa-short@0.3.5
 	either@1.15.0
 	encoding_rs@0.8.35
-	enum-map-derive@0.17.0
 	enum-map@2.7.3
+	enum-map-derive@0.17.0
 	enumset@1.1.10
 	enumset_derive@0.14.0
 	equivalent@1.0.2
 	errno@0.3.14
-	fortanix-sgx-abi@0.6.1
-	getopts@0.2.24
-	gimli@0.32.3
 	fastrand@2.4.1
 	fnv@1.0.7
 	foldhash@0.1.5
 	foldhash@0.2.0
+	fortanix-sgx-abi@0.6.1
 	futures-core@0.3.32
 	futures-task@0.3.32
 	futures-util@0.3.32
 	generic-array@0.14.7
+	getopts@0.2.24
 	getrandom@0.4.2
+	gimli@0.32.3
+	gimli@0.34.0
 	half@2.7.1
 	hashbrown@0.15.5
 	hashbrown@0.16.1
@@ -84,6 +95,7 @@ CRATES="
 	hashbrown@0.17.1
 	heck@0.5.0
 	hermit-abi@0.5.2
+	hermit-abi@0.5.3
 	id-arena@2.3.0
 	ident_case@1.0.1
 	indexmap@2.14.0
@@ -97,18 +109,25 @@ CRATES="
 	konst_macro_rules@0.2.19
 	leb128fmt@0.1.0
 	libc@0.2.185
-	moto-rt@0.16.0
 	libc@0.2.186
+	libc@0.2.189
 	linux-raw-sys@0.4.15
 	log@0.4.29
 	memchr@2.7.6
 	memchr@2.8.0
-	miniz_oxide@0.8.9
+	memchr@2.8.3
 	mime@0.3.17
+	miniz_oxide@0.8.9
+	miniz_oxide@0.9.1
+	moto-rt@0.16.0
+	moto-rt@0.17.4
 	new_debug_unreachable@1.0.6
 	num-traits@0.2.19
-	once_cell@1.21.4
 	object@0.37.3
+	object@0.39.1
+	r-efi@5.3.0
+	r-efi-alloc@2.1.0
+	once_cell@1.21.4
 	oorandom@11.1.5
 	paste@1.0.15
 	phf@0.13.1
@@ -117,31 +136,34 @@ CRATES="
 	phf_macros@0.13.1
 	phf_shared@0.13.1
 	pin-project-lite@0.2.17
+	plotters@0.3.7
 	plotters-backend@0.3.7
 	plotters-svg@0.3.7
-	plotters@0.3.7
 	precomputed-hash@0.1.1
 	prettyplease@0.2.37
 	proc-macro2@1.0.106
 	quick-xml@0.38.4
 	quote@1.0.45
-	r-efi-alloc@2.0.0
-	r-efi-alloc@2.1.0
+	rand@0.9.2
+	rand@0.9.5
+	rand_core@0.9.3
+	rand_core@0.9.5
+	rand_xorshift@0.4.0
+	rayon@1.12.0
+	rayon-core@1.13.0
 	r-efi@5.2.0
 	r-efi@5.3.0
 	r-efi@6.0.0
-	rand@0.9.2
-	rand_core@0.9.3
-	rand_xorshift@0.4.0
-	rustc-literal-escaper@0.0.8
-	rayon-core@1.13.0
-	rayon@1.12.0
+	r-efi-alloc@2.0.0
+	r-efi-alloc@2.1.0
+	regex@1.12.3
 	regex-automata@0.4.14
 	regex-syntax@0.8.10
-	regex@1.12.3
 	roxmltree@0.20.0
 	rustc-demangle@0.1.27
+	rustc-demangle@0.1.28
 	rustc-hash@2.1.2
+	rustc-literal-escaper@0.0.8
 	rustc_version@0.4.1
 	rustix@0.38.44
 	rustversion@1.0.22
@@ -156,6 +178,7 @@ CRATES="
 	servo_arc@0.4.3
 	sha3@0.10.9
 	shlex@1.3.0
+	shlex@2.0.1
 	siphasher@1.0.3
 	slab@0.4.12
 	smallvec@1.15.1
@@ -164,14 +187,15 @@ CRATES="
 	strum_macros@0.26.4
 	subtle@2.6.1
 	syn@2.0.117
-	thiserror-impl@2.0.18
 	thiserror@2.0.18
+	thiserror-impl@2.0.18
 	tinytemplate@1.2.1
 	typed-arena@2.0.2
 	typenum@1.20.0
 	unicode-ident@1.0.24
 	unicode-xid@0.2.6
 	unwinding@0.2.8
+	unwinding@0.2.10
 	version_check@0.9.5
 	vex-sdk@0.27.0
 	vex-sdk@0.27.1
@@ -179,39 +203,42 @@ CRATES="
 	wasip1@1.0.0
 	wasip2@1.0.3+wasi-0.2.9
 	wasip2@1.0.4+wasi-0.2.12
+	wasip2@2.0.0+wasi-0.2.12
 	wasip3@0.4.0+wasi-0.3.0-rc-2026-01-06
 	wasip3@0.6.0+wasi-0.3.0-rc-2026-03-15
-	wasm-bindgen-macro-support@0.2.121
-	wasm-bindgen-macro@0.2.121
-	wasm-bindgen-shared@0.2.121
+	wasip3@0.8.0+wasi-0.3.0
 	wasm-bindgen@0.2.121
+	wasm-bindgen-macro@0.2.121
+	wasm-bindgen-macro-support@0.2.121
+	wasm-bindgen-shared@0.2.121
 	wasm-encoder@0.244.0
 	wasm-metadata@0.244.0
 	wasmparser@0.244.0
 	web-sys@0.3.98
 	winapi-util@0.1.11
-	windows-link@0.2.1
-	windows-sys@0.59.0
-	windows-sys@0.61.2
-	windows-targets@0.52.6
 	windows_aarch64_gnullvm@0.52.6
 	windows_aarch64_msvc@0.52.6
 	windows_i686_gnu@0.52.6
 	windows_i686_gnullvm@0.52.6
 	windows_i686_msvc@0.52.6
+	windows-link@0.2.1
+	windows-sys@0.59.0
+	windows-sys@0.61.2
+	windows-targets@0.52.6
 	windows_x86_64_gnu@0.52.6
 	windows_x86_64_gnullvm@0.52.6
 	windows_x86_64_msvc@0.52.6
-	wit-bindgen-core@0.51.0
-	wit-bindgen-rust-macro@0.51.0
-	wit-bindgen-rust@0.51.0
 	wit-bindgen@0.51.0
 	wit-bindgen@0.57.1
+	wit-bindgen@0.61.1
+	wit-bindgen-core@0.51.0
+	wit-bindgen-rust@0.51.0
+	wit-bindgen-rust-macro@0.51.0
 	wit-component@0.244.0
 	wit-parser@0.244.0
 	xml-rs@0.8.29
-	zerocopy-derive@0.8.48
 	zerocopy@0.8.48
+	zerocopy-derive@0.8.48
 	zeroize@1.8.2
 	zmij@1.0.21
 "
@@ -226,32 +253,43 @@ HOMEPAGE="https://github.com/oven-sh/bun"
 # build time; we fetch them as normal Gentoo distfiles instead and satisfy
 # bun's own fetch-stamp mechanism in src_prepare (see vendor_c_deps below) so
 # ninja never touches the network.
-PICOHTTPPARSER_COMMIT="066d2b1e9ab820703db0837a7255d92d30f0c9f5"
+PICOHTTPPARSER_COMMIT="f4d94b48b31e0abae029ebeafcfd9ca0680ede58"
 ZLIB_COMMIT="12731092979c6d07f42da27da673a9f6c7b13586"
 ZSTD_COMMIT="f8745da6ff1ad1e7bab384bd1f9d742439278e99"
-BROTLI_COMMIT="v1.1.0"
-LIBDEFLATE_COMMIT="c8c56a20f8f621e6a966b716b31f1dedab6a41e3"
-LIBARCHIVE_COMMIT="ded82291ab41d5e355831b96b0e1ff49e24d8939"
-LIBJPEG_TURBO_COMMIT="e352b02f794f701407b39af08576035ba3360d60"
+BROTLI_COMMIT="028fb5a23661f123017c060daa546b55cf4bde29" # v1.2.0
+LIBDEFLATE_COMMIT="92e6a0db9fa848d742f9eb286c92afc60f2c3dda"
+LIBARCHIVE_COMMIT="27cbc7827172698143e440801fc0ba39ccb4f1f5"
+LIBJPEG_TURBO_COMMIT="c85e6b905bf237038faa936dab160ebfc5da0344" # 3.2.0
 LIBSPNG_COMMIT="fb768002d4288590083a476af628e51c3f1d47cd"
 LIBWEBP_COMMIT="b7e29b9d75bd31422b00c2a446d49d7af06c328d"
 CARES_COMMIT="c7a3138dcfe3bb0eaaf10c0c24c36dc66dc790ab"
-HDRHISTOGRAM_COMMIT="be60a9987ee48d0abf0d7b6a175bad8d6c1585d1"
+HDRHISTOGRAM_COMMIT="18c7a324383dded1451d15621cd018b0048057d0"
 HIGHWAY_COMMIT="2607d3b5b0113992fe84d3848859eae13b3b52c1"
 LIBUV_COMMIT="8023581113b276e7c1aee3f82da57ca0893faab1"
 LOLHTML_COMMIT="725ce499aa9b71e38b7a2d0a9fbb6d7294a4079e"
 RUST_ARGON2_COMMIT="ed81866f163f0c7026aa6fd8388adf37242eb32a"
-LSHPACK_COMMIT="8905c024b6d052f083a3d11d0a169b3c2735c8a1"
-LSQPACK_COMMIT="1e9c5b8e59f8161c54f168a570c8bfdc59ded0c3"
-MIMALLOC_COMMIT="6a64e1ba7f5b2130d4efccb67ec87fd0003f0f6a"
+LSHPACK_COMMIT="cf0f70dd10b352194c97448eb5d00b4aa484f531"
+LSQPACK_COMMIT="91567706c41c0d97ab8dc576873ecd472d7869fa"
+MIMALLOC_COMMIT="92ef6587c57b262f6e6abf513f7776a2f8d12aeb"
 TINYCC_COMMIT="05f0fafaa3be31e31d7b4b5c17dc60f62c991171"
 BORINGSSL_COMMIT="41bf9b59c2ebf277a7aa427e1ecad5cc80dd4d4f"
-LSQUIC_COMMIT="3181911301b1aa4f54c1ed690901abc674ee08fb"
+LSQUIC_COMMIT="f812ceb9529e26717df78c6064a2ff648b949f3e"
 
 # WebKit (JavaScriptCore) prebuilt — scripts/build/deps/webkit.ts
-WEBKIT_COMMIT="2e2aa2290fac856d6f451ceacb58f7f5b44dd057"
+WEBKIT_COMMIT="0c06faadf65bf8e8c8ad3a5a8aca83e1e9ed653f"
 # Node.js headers (N-API) — scripts/build/deps/nodejs-headers.ts
 NODEJS_HEADERS_VERSION="26.3.0"
+# oven-sh/ninja build driver (pins.bunNinja tag in scripts/build/ci-images/spec.ts)
+BUN_NINJA_SHA="5ecd8831"
+# Pinned Rust nightly (rust-toolchain.toml channel) — 1.4.3 needs nightly-only
+# std APIs (core::alloc::AllocatorClone) the oldest supported system rustc
+# lacks, so the toolchain itself is vendored; scripts/build/tools.ts honors
+# BUN_TOOLCHAIN_RUST (bin/{rustc,cargo} dir) without consulting rustup.
+# The dist tarball ships every preview tool + docs (~4G unpacked); keep
+# only rustc/cargo/rust-std (+ rust-src for -Zbuild-std). The .dist
+# suffix suppresses portage's auto-unpack; vendor_rust_toolchain does a
+# selective extract and hardlinks the components into one prefix.
+RUST_NIGHTLY_DATE="2026-09-15"
 
 SRC_URI="
 	https://github.com/oven-sh/bun/archive/refs/tags/bun-v${PV}.tar.gz -> ${P}.gh.tar.gz
@@ -280,6 +318,12 @@ SRC_URI="
 
 	amd64? ( https://github.com/oven-sh/WebKit/releases/download/autobuild-${WEBKIT_COMMIT}/bun-webkit-linux-amd64.tar.gz -> bun-webkit-linux-amd64-${WEBKIT_COMMIT}.tar.gz )
 	arm64? ( https://github.com/oven-sh/WebKit/releases/download/autobuild-${WEBKIT_COMMIT}/bun-webkit-linux-arm64.tar.gz -> bun-webkit-linux-arm64-${WEBKIT_COMMIT}.tar.gz )
+	amd64? ( https://github.com/oven-sh/ninja/releases/download/bun-ninja-${BUN_NINJA_SHA}/bun-ninja-linux-x64.zip -> bun-ninja-linux-x64-${BUN_NINJA_SHA}.zip )
+	arm64? ( https://github.com/oven-sh/ninja/releases/download/bun-ninja-${BUN_NINJA_SHA}/bun-ninja-linux-aarch64.zip -> bun-ninja-linux-aarch64-${BUN_NINJA_SHA}.zip )
+
+	amd64? ( https://static.rust-lang.org/dist/${RUST_NIGHTLY_DATE}/rust-nightly-x86_64-unknown-linux-gnu.tar.gz -> rust-nightly-x86_64-unknown-linux-gnu.tar.gz.dist )
+	arm64? ( https://static.rust-lang.org/dist/${RUST_NIGHTLY_DATE}/rust-nightly-aarch64-unknown-linux-gnu.tar.gz -> rust-nightly-aarch64-unknown-linux-gnu.tar.gz.dist )
+	https://static.rust-lang.org/dist/${RUST_NIGHTLY_DATE}/rust-src-nightly.tar.gz -> rust-src-nightly.tar.gz.dist
 	https://nodejs.org/dist/v${NODEJS_HEADERS_VERSION}/node-v${NODEJS_HEADERS_VERSION}-headers.tar.gz
 
 	${CARGO_CRATE_URIS}
@@ -419,17 +463,19 @@ KEYWORDS="~amd64 ~arm64"
 IUSE="system-bootstrap"
 
 # The workspace requires nightly-only features (allocator_api,
-# adt_const_params, generic_const_exprs, ...); allow stable rustc to accept them.
+# adt_const_params, generic_const_exprs, ...). The build runs on the
+# vendored pinned nightly (vendor_rust_toolchain); RUSTC_BOOTSTRAP only
+# guards against a system stable rustc sneaking in.
 RUSTC_BOOTSTRAP=1
 
 BDEPEND="
-	!system-bootstrap? ( app-arch/unzip )
+	app-arch/unzip
 	system-bootstrap? ( || ( dev-lang/bun dev-lang/bun-bin ) )
 	dev-build/cmake
 	dev-build/ninja
 	dev-vcs/git
-	llvm-core/clang:21
-	llvm-core/lld:21
+	llvm-core/clang:23
+	llvm-core/lld:23
 	>=net-libs/nodejs-25
 "
 # both install /usr/bin/bun
@@ -444,27 +490,27 @@ RDEPEND="!dev-lang/bun-bin"
 # and force a real network re-fetch.
 _bun_c_deps() {
 	cat <<-EOF
-	picohttpparser h2o/picohttpparser ${PICOHTTPPARSER_COMMIT}
+	picohttpparser h2o/picohttpparser ${PICOHTTPPARSER_COMMIT} patches/picohttpparser/chunked-decoder.patch
 	zlib zlib-ng/zlib-ng ${ZLIB_COMMIT} patches/zlib/clang-cl-arm64.patch
-	zstd facebook/zstd ${ZSTD_COMMIT}
+	zstd facebook/zstd ${ZSTD_COMMIT} patches/zstd/bmi2-probe-once.patch
 	brotli google/brotli ${BROTLI_COMMIT}
 	libdeflate ebiggers/libdeflate ${LIBDEFLATE_COMMIT}
 	libarchive libarchive/libarchive ${LIBARCHIVE_COMMIT} patches/libarchive/archive_write_add_filter_gzip.c.patch,patches/libarchive/select-registered-only.patch,patches/libarchive/nonblocking-read.patch,patches/libarchive/archive_string-codepage-cache.patch
-	libjpeg-turbo libjpeg-turbo/libjpeg-turbo ${LIBJPEG_TURBO_COMMIT} patches/libjpeg-turbo/8bit-only.patch,patches/libjpeg-turbo/jbun_stubs.c
+	libjpeg-turbo libjpeg-turbo/libjpeg-turbo ${LIBJPEG_TURBO_COMMIT} patches/libjpeg-turbo/8bit-only.patch,patches/libjpeg-turbo/fatal-clears-warning.patch,patches/libjpeg-turbo/jbun_stubs.c
 	libspng randy408/libspng ${LIBSPNG_COMMIT}
 	libwebp webmproject/libwebp ${LIBWEBP_COMMIT}
 	cares c-ares/c-ares ${CARES_COMMIT} patches/cares/accept-rdata-compression.patch
-	hdrhistogram HdrHistogram/HdrHistogram_c ${HDRHISTOGRAM_COMMIT} patches/hdrhistogram/bitscan-type.patch
+	hdrhistogram HdrHistogram/HdrHistogram_c ${HDRHISTOGRAM_COMMIT} patches/hdrhistogram/bitscan-type.patch,patches/hdrhistogram/no-avx2-dispatch.patch
 	highway google/highway ${HIGHWAY_COMMIT} patches/highway/silence-warnings.patch
 	libuv oven-sh/libuv ${LIBUV_COMMIT} patches/libuv/win-poll-rearm-before-callback.patch,patches/libuv/win-poll-abort-with-disconnect.patch
 	lolhtml oven-sh/lol-html ${LOLHTML_COMMIT}
 	rust-argon2 sru-systems/rust-argon2 ${RUST_ARGON2_COMMIT} patches/rust-argon2/legacy-low-memory.patch
-	lshpack litespeedtech/ls-hpack ${LSHPACK_COMMIT} patches/lshpack/bss-huff-tables.patch,patches/lshpack/no-name-trim.patch
+	lshpack litespeedtech/ls-hpack ${LSHPACK_COMMIT} patches/lshpack/bss-huff-tables.patch
 	lsqpack litespeedtech/ls-qpack ${LSQPACK_COMMIT} patches/lsqpack/bss-huff-tables.patch
 	mimalloc oven-sh/mimalloc ${MIMALLOC_COMMIT}
 	tinycc oven-sh/tinycc ${TINYCC_COMMIT} patches/tinycc/tcc.h.patch
 	boringssl oven-sh/boringssl ${BORINGSSL_COMMIT}
-	lsquic litespeedtech/lsquic ${LSQUIC_COMMIT} patches/lsquic/versions-to-string.patch,patches/lsquic/allow-no-sni.patch,patches/lsquic/skip-priority-walk.patch,patches/lsquic/hash-nested-iter.patch,patches/lsquic/abort-error-tickable.patch,patches/lsquic/disable-gquic.patch,patches/lsquic/requeue-unsent-coalesced.patch,patches/lsquic/node-quic-accessors.patch,patches/lsquic/coalesce-batch-drop.patch,patches/lsquic/connection-close-pns.patch
+	lsquic litespeedtech/lsquic ${LSQUIC_COMMIT} patches/lsquic/versions-to-string.patch,patches/lsquic/allow-no-sni.patch,patches/lsquic/skip-priority-walk.patch,patches/lsquic/hash-nested-iter.patch,patches/lsquic/abort-error-tickable.patch,patches/lsquic/disable-gquic.patch,patches/lsquic/requeue-unsent-coalesced.patch,patches/lsquic/node-quic-accessors.patch,patches/lsquic/coalesce-batch-drop.patch,patches/lsquic/connection-close-pns.patch,patches/lsquic/goaway-accept-uni-streams.patch
 	EOF
 }
 
@@ -472,6 +518,15 @@ _bun_c_deps() {
 # in the same order/keys as _bun_c_deps — used to find the extracted archive
 # dir under ${WORKDIR} (unpack() leaves the GH-archive top-level dir named
 # <repo-basename>-<commit>).
+# rust toolchain host triple (the rust dist naming scheme).
+_rust_arch() {
+	if use amd64; then
+		echo "x86_64-unknown-linux-gnu"
+	else
+		echo "aarch64-unknown-linux-gnu"
+	fi
+}
+
 _bun_archive_dirname() {
 	local repo=$1 commit=$2
 	# GitHub strips a leading "v" from tag refs (but not commit shas) when
@@ -568,6 +623,55 @@ vendor_prebuilt_deps() {
 	tar -xzf "${DISTDIR}/node-v${NODEJS_HEADERS_VERSION}-headers.tar.gz" --strip-components=1 -C "${nh_dest}" || die
 	rm -rf "${nh_dest}/include/node/openssl" "${nh_dest}/include/node/uv" "${nh_dest}/include/node/uv.h" || die
 	printf '%s\n' "${NODEJS_HEADERS_VERSION}" > "${nh_dest}/.identity" || die
+
+	# bun-ninja — scripts/build/ninja-release.ts: the pinned oven-sh/ninja is
+	# looked up at <cacheDir>/ninja/<tag>/ninja (baked CI path or a one-off
+	# network fetch); a PATH ninja is only the fallback. Pre-place it from the
+	# distfile so configure never touches the network.
+	local ninja_tag="bun-ninja-${BUN_NINJA_SHA}"
+	local ninja_dir="${WORKDIR}/bun-cache/ninja/${ninja_tag}"
+	local ninja_zip
+	if use amd64; then
+		ninja_zip="${DISTDIR}/bun-ninja-linux-x64-${BUN_NINJA_SHA}.zip"
+	else
+		ninja_zip="${DISTDIR}/bun-ninja-linux-aarch64-${BUN_NINJA_SHA}.zip"
+	fi
+	[[ -f ${ninja_zip} ]] || die "vendor_prebuilt_deps: missing ${ninja_zip}"
+	rm -rf "${ninja_dir}" || die
+	mkdir -p "${ninja_dir}" || die
+	unzip -o "${ninja_zip}" -d "${ninja_dir}" || die
+	chmod +x "${ninja_dir}/ninja" || die
+}
+
+# Merge the vendored nightly's dist components (rustc, cargo, rust-std,
+# rust-src) into one toolchain prefix, rustup-less. rustc reads its channel
+# from <sysroot>/version, so that file comes along. Components are
+# hardlinked into the prefix to keep the tmpfs workdir small; -Zbuild-std
+# then compiles std from rust-src inside the same prefix.
+vendor_rust_toolchain() {
+	local rust_arch main tc src comp
+	rust_arch=$(_rust_arch)
+	main="${WORKDIR}/rust-nightly-${rust_arch}"
+	tc="${WORKDIR}/rust-toolchain-${rust_arch}"
+	src="${WORKDIR}/rust-src-nightly"
+
+	# Member names are relative to the archive's own top dir, so extract into
+	# ${WORKDIR} (the parent) and keep the top dir as the component base.
+	tar -xzf "${DISTDIR}/rust-nightly-${rust_arch}.tar.gz.dist" \
+		-C "${WORKDIR}" \
+		"rust-nightly-${rust_arch}/rustc" \
+		"rust-nightly-${rust_arch}/cargo" \
+		"rust-nightly-${rust_arch}/rust-std-${rust_arch}" \
+		"rust-nightly-${rust_arch}/version" || die
+	tar -xzf "${DISTDIR}/rust-src-nightly.tar.gz.dist" \
+		-C "${WORKDIR}" "rust-src-nightly/rust-src" || die
+
+	rm -rf "${tc}" || die
+	mkdir -p "${tc}" || die
+	for comp in rustc cargo "rust-std-${rust_arch}"; do
+		cp -al "${main}/${comp}/." "${tc}/" || die
+	done
+	cp -al "${src}/rust-src/." "${tc}/" || die
 }
 
 # npm placement table: "<tree-relative node_modules path>" "<distfile
@@ -781,6 +885,7 @@ src_prepare() {
 	# every other entry in vendor_c_deps.
 	vendor_c_deps
 	vendor_prebuilt_deps
+	vendor_rust_toolchain
 	vendor_npm
 	patch_codegen_skip_install
 
@@ -794,15 +899,16 @@ src_configure() {
 	# scripts/build/tools.ts: BUN_TOOLCHAIN_LLVM points resolveLlvmToolchain()
 	# at a single bin/ dir instead of searching PATH/known distro layouts
 	# (which don't include Gentoo's /usr/lib/llvm/<slot>/bin), and disables
-	# its clang version-range check (bun pins LLVM_MAJOR=21 exactly).
-	export BUN_TOOLCHAIN_LLVM="/usr/lib/llvm/21"
+	# its clang version-range check (bun pins LLVM 23.1.x exactly).
+	# The build hard-requires clang's LLVM major == the rustc's LLVM major
+	# (config.ts: the link reads LLVM bitcode from both): the vendored
+	# nightly is LLVM 23.1.1, so slot 23's clang (23.1.x).
+	export BUN_TOOLCHAIN_LLVM="/usr/lib/llvm/23"
 
-	# BUN_TOOLCHAIN_RUST points at the sysroot dir containing bin/{rustc,cargo}
-	# (scripts/build/tools.ts resolveToolchain()) — derived from whatever
-	# rustc eselect currently has active rather than hardcoding a version.
-	local rustc_real
-	rustc_real="$(readlink -f "$(command -v rustc)")" || die
-	export BUN_TOOLCHAIN_RUST="$(dirname "$(dirname "${rustc_real}")")"
+	# BUN_TOOLCHAIN_RUST is the vendored pinned nightly (rust-toolchain.toml);
+	# cargo is taken from the same prefix (BUN_TOOLCHAIN_CARGO default).
+	# With it set, tools.ts never consults rustup or rust-toolchain.toml.
+	export BUN_TOOLCHAIN_RUST="${WORKDIR}/rust-toolchain-$(_rust_arch)"
 }
 
 src_compile() {
@@ -814,12 +920,16 @@ src_compile() {
 	# ebuild-shell -> bun -> ninja -> cargo process chain).
 	export RUSTC_BOOTSTRAP=1
 
+	# Keep the vendored toolchain ahead of any system rust on PATH for
+	# anything the build spawns by name.
+	export PATH="${WORKDIR}/rust-toolchain-$(_rust_arch)/bin:${PATH}"
+
 	# The GitHub tarball has no .git, so scripts/build/config.ts
 	# getGitRevision() falls back to the literal string "unknown" (7 chars),
 	# which makes bun_core's const-eval `const_str_slice(SHA, 0, 9)` panic
 	# (E0080 mid > len). getGitRevision() honours BUILDKITE_COMMIT /
 	# GITHUB_SHA / GIT_SHA env first, so pin the real bun-v${PV} tag commit.
-	export GIT_SHA="744846f844374847c902b5e7fd59b4342a51ef99"
+	export GIT_SHA="c6da4a4d3010e5553438c60f6bd76d981976867c"
 
 	# Resolve the bootstrap `bun` that executes the *.ts build scripts,
 	# and put it first in PATH for anything the build spawns by name.
@@ -843,19 +953,19 @@ src_compile() {
 	"${bootstrap_bun}" scripts/build.ts \
 		--profile=release \
 		--cache-dir="${WORKDIR}/bun-cache" \
-		--build-dir="${WORKDIR}/build" \
+		--build-dir="${S}/build" \
 		-j"${jobs}" \
 		|| die "bun build failed"
 }
 
 src_install() {
 	local exe
-	if [[ -x "${WORKDIR}/build/bun" ]]; then
-		exe="${WORKDIR}/build/bun"
-	elif [[ -x "${WORKDIR}/build/bun-profile" ]]; then
-		exe="${WORKDIR}/build/bun-profile"
+	if [[ -x "${S}/build/bun" ]]; then
+		exe="${S}/build/bun"
+	elif [[ -x "${S}/build/bun-profile" ]]; then
+		exe="${S}/build/bun-profile"
 	else
-		die "src_install: no built bun executable found under ${WORKDIR}/build"
+		die "src_install: no built bun executable found under ${S}/build"
 	fi
 
 	dobin "${exe}"
