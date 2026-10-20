@@ -1,0 +1,21 @@
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -1109,13 +1109,11 @@
+ ifeq ($(ENABLE_SHARED_CLI),1)
+ 	strip --strip-unneeded ../lib/release/libmadc.so
+ endif
+-ifeq ($(WITH_FOREST),embedded)
+-	cd .. && bash scripts/forest_pack.sh $(PACK_IMAGE_ARG) bin/madc-release
+-else ifeq ($(WITH_FOREST),sidecar)
+-	cd .. && bash scripts/forest_pack.sh --sidecar $(PACK_IMAGE_ARG) bin/madc-release
+-else ifeq ($(WITH_FOREST),none)
+-	cd .. && bash scripts/forest_pack.sh --dialect-only $(PACK_IMAGE_ARG) bin/madc-release
+-endif
++# Forest pack skipped on Gentoo: the carrier enumeration relies on dpkg/rpm
++# package ownership (absent on Gentoo) and the dialect freeze does not parse
++# GCC 15's libstdc++ (__bfloat16_t). Install the unpacked release artifacts;
++# madc live-parses the on-disk system headers instead.
++	@true
+ 
+ # Install the release artifacts under $(PREFIX) (DESTDIR-aware). Same layout
+ # as the distribution packages (scripts/package_release.sh): the stripped

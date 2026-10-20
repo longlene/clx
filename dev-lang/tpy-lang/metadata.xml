@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    TurboPython (tpy) is a Python-to-C++ compiler. It translates typed Python
+    into C++23 and builds native binaries with no Python runtime, no garbage
+    collector and no GIL. Provides the tpy and tpyc commands.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">trozen/tpy-lang</remote-id>
+    <bugs-to>https://github.com/trozen/tpy-lang/issues</bugs-to>
+    <changelog>https://github.com/trozen/tpy-lang/blob/master/RELEASE_NOTES.md</changelog>
+  </upstream>
+</pkgmetadata>

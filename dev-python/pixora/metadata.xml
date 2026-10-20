@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">sepandhaghighi/pixora</remote-id>
+  </upstream>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+Pixora is a lightweight Python library and command-line tool for converting
+ordinary images into retro-style pixel art. Built on top of Pillow, it
+provides a simple API for pixelizing images with customizable pixel sizes
+while supporting both file paths and in-memory objects.
+  </longdescription>
+</pkgmetadata>

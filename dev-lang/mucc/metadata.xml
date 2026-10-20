@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Mucc is a small, fast, self-hosting C compiler for x86-64 and ARM64
+    Linux. It includes its own preprocessor, assembler, linker and
+    archiver, and can link programs statically against a bundled musl or
+    against the system C library. C17 is the default, C23 with -std=c23.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">Dom-Yan/Mucc</remote-id>
+  </upstream>
+  <use>
+    <flag name="test">Run the test suite</flag>
+  </use>
+</pkgmetadata>

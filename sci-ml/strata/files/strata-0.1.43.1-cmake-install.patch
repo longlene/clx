@@ -1,0 +1,19 @@
+--- a/CMakeLists.txt	2026-10-12 23:44:44.317959362 -0700
++++ CMakeLists.txt	2026-10-12 23:44:44.374276567 -0700
+@@ -1535,6 +1535,16 @@
+   endif()
+ endif()
+ 
++
++
++# Gentoo: the project ships no install rules; install the user-facing
++# binaries (the remaining targets are internal tests and benchmarks).
++install(TARGETS strata-gguf strata-dequant strata-plan RUNTIME DESTINATION bin)
++if(STRATA_ENABLE_CUDA)
++  install(TARGETS strata strata-device strata-load strata-concurrent strata-overlap
++    RUNTIME DESTINATION bin)
++endif()
++
+ if(STRATA_ENABLE_CUDA AND STRATA_BUILD_TESTS AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/bench/micro/hit_cpu_order_parity.cu")
+   add_executable(hit_cpu_order_parity bench/micro/hit_cpu_order_parity.cu)
+   target_link_libraries(hit_cpu_order_parity PRIVATE strata_kernels strata_kernels_cpu ${_strata_gpu_runtime_target})

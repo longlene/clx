@@ -1,5 +1,5 @@
---- a/Makefile	2026-09-20 23:05:44.874182491 -0700
-+++ b/Makefile	2026-09-20 23:05:44.925804236 -0700
+--- a/Makefile	2026-10-12 00:28:11.766804668 -0700
++++ Makefile	2026-10-12 00:28:11.779684689 -0700
 @@ -1,6 +1,6 @@
  KERNEL_VERSION = linux-6.12.109
  KERNEL_REMOTE = https://cdn.kernel.org/pub/linux/kernel/v6.x/$(KERNEL_VERSION).tar.xz
@@ -8,16 +8,7 @@
  KERNEL_SOURCES = $(KERNEL_VERSION)
  KERNEL_PATCHES = $(shell find patches/ -name "0*.patch" | sort)
  KERNEL_C_BUNDLE = kernel.c
-@@ -28,7 +28,7 @@
- else
-     OS := $(shell uname -s)
- endif
--ifeq ($(ARCH),)
-+ifeq ($(ARCH),x86)
- 	GUESTARCH := $(HOSTARCH)
- 	STRIP := strip
- else ifeq ($(ARCH),arm64)
-@@ -146,9 +146,9 @@
+@@ -205,9 +205,9 @@
  	$(CC) -shared -DABI_VERSION=$(ABI_VERSION) -O2 -o $@ $(KERNEL_C_BUNDLE) $(QBOOT_C_BUNDLE) $(INITRD_C_BUNDLE) -Wl,--kill-at -Wl,--nxcompat
  else
  	$(CC) -fPIC -DABI_VERSION=$(ABI_VERSION) -shared $(SONAME_$(OS)) -o $@ $(KERNEL_C_BUNDLE) $(QBOOT_C_BUNDLE) $(INITRD_C_BUNDLE)

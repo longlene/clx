@@ -1,0 +1,36 @@
+--- a/src/cli/main.cpp	2026-10-19 21:25:57.176474345 -0700
++++ b/src/cli/main.cpp	2026-10-19 21:25:57.150018852 -0700
+@@ -30,13 +30,13 @@
+   std::string text;
+   std::string text_file;       // --text-file: read `text` from a file ("-" = stdin)
+   std::string segments_file;   // --segments-file: JSON array of {text, instruct}
+-  std::string prompt_dir = "build/prompt";
++  std::string prompt_dir = "/usr/share/velum/prompt";
+   std::string llm_gguf = "models/llm.gguf";
+   std::string flow_gguf = "models/flow.gguf";
+   std::string hift_gguf = "models/hift.gguf";
+   std::string hift_source = "build/hift_source.bin";
+   std::string flow_noise = "build/flow_noise.bin";
+-  std::string tokenizer_dir = "build/tokenizer";
++  std::string tokenizer_dir = "/usr/share/velum/tokenizer";
+   std::string out_wav;
+   std::string dump_tokens;
+   std::string dump_mel;
+@@ -62,7 +62,7 @@
+     "                         trailing silence (else --segment-gap-ms). Segments\n"
+     "                         are synthesized into one wav with silence between.\n"
+     "\n"
+-    "  --prompt-dir <dir>   pre-extracted prompt bundle (default build/prompt):\n"
++    "  --prompt-dir <dir>   pre-extracted prompt bundle (default /usr/share/velum/prompt):\n"
+     "                         prompt_tokens.i32  (P int32 speech tokens)\n"
+     "                         prompt_feat.f32    (mel_len1*80 matcha mel)\n"
+     "                         spk_embedding.f32  (192 campplus embedding)\n"
+@@ -83,7 +83,7 @@
+     "                       that grows fastest with audio length) so it stays safe\n"
+     "                       on an 8 GiB card.\n"
+     "  --flow-noise <bin>   CFM noise asset (default build/flow_noise.bin)\n"
+-    "  --tokenizer-dir <dir>              (default build/tokenizer)\n"
++    "  --tokenizer-dir <dir>              (default /usr/share/velum/tokenizer)\n"
+     "  --dump-tokens <i32>  also write generated speech tokens (int32)\n"
+     "  --dump-mel <f32>     also write the Flow mel (80*OUT_FRAMES float32)\n"
+     "  --dump-audio <f32>   also write the raw PCM (L_s float32, before 16-bit\n"

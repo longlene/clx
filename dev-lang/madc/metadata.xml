@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">derekbsnider/madc</remote-id>
+  </upstream>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+madc is a self-contained C and C++ compiler: it compiles standard C (C89
+through C23) and C++ (C++98 through C++20) with its own front end and code
+generator, runs programs straight from source, writes native objects and
+executables, and opens an interactive REPL. No GCC, Clang or LLVM, no linker,
+no headers on disk: the C, POSIX and C++ standard-library headers ship
+inside madc.
+  </longdescription>
+  <use>
+    <flag name="bdb">Build the Berkeley DB storage backend</flag>
+    <flag name="gdbm">Build the GDBM storage backend</flag>
+    <flag name="qdbm">Build the QDBM storage backend</flag>
+    <flag name="sqlite">Build the SQLite3 storage backend</flag>
+    <flag name="xqdbm">Build the XQDBM C++ wrapper storage backend</flag>
+  </use>
+</pkgmetadata>
