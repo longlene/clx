@@ -29,6 +29,10 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-qwen4exp-dflash.patch
+)
+
 src_prepare() {
 	cmake_src_prepare
 	# Seed tools/ui/dist from the release UI tarball so ui-assets.cmake
