@@ -62,43 +62,83 @@ the dependency chain: `sci-ml/pytorch` → `sci-ml/ultralytics-thop` →
 `sci-ml/ultralytics` → `sci-ml/cua-som` → `sci-ml/cua-agent[omni]` are all
 single-impl for that reason. Otherwise default to multi-impl.
 
-Never write `sci-ml/pytorch[${PYTHON_USEDEP}]` in a multi-impl package: a
-single-impl package has no `PYTHON_TARGETS`, so the dep is unsatisfiable
-(pkgcheck `NonsolvableDeps*` with `sci-ml/pytorch[python_targets_…(-)]`).
-A bare dep resolves but leaves the torch target unaligned — also wrong.
+### The one rule: the DEP's style picks the USE-dep form, not yours
 
-Known **single-impl** (PYTHON_SINGLE_TARGET): `sci-ml/pytorch`,
-`sci-ml/torchvision`, `sci-ml/transformers`, `sci-ml/huggingface_hub`,
-`sci-ml/tokenizers`, `sci-ml/tensorboard`, `sci-ml/accelerate`,
-`sci-ml/ultralytics`, `sci-ml/ultralytics-thop`, `sci-ml/cua-som`,
-`dev-python/litellm`, `dev-python/gradio`.
-Known **multi-impl** (PYTHON_TARGETS): most `dev-python/*`,
-`media-libs/opencv`, `sci-ml/safetensors`, `sci-ml/torcheval`,
-`sci-ml/torchtnt`, `sci-ml/easyocr`, `sci-ml/supervision`.
+Each Python package exposes exactly one flag interface:
+- multi-impl dep → only `python_targets_*` → reached via `[${PYTHON_USEDEP}]`
+- single-impl dep → only `python_single_target_*` → reached via `[${PYTHON_SINGLE_USEDEP}]`
 
-For an unfamiliar dep, check its ebuild (do this for EVERY dep before choosing
-the impl mode — it is a structural decision, not an existence check):
-`grep -lE 'DISTUTILS_SINGLE_IMPL|python-single-r1' <its ebuild>` → single-impl.
+Your own mode only decides *where* the line goes:
 
-**Dep placement — multi-impl package (no single-impl deps at all):**
-- All deps → top level with `[${PYTHON_USEDEP}]`, no `python_gen_cond_dep`.
+| you ↓ / dep → | dep is **single-impl** | dep is **multi-impl** |
+|---|---|---|
+| **multi-impl** | impossible — switch yourself to `DISTUTILS_SINGLE_IMPL=1` | top level, `foo[${PYTHON_USEDEP}]` |
+| **single-impl** | top level, `foo[${PYTHON_SINGLE_USEDEP}]` | inside `$(python_gen_cond_dep '…')`, `foo[${PYTHON_USEDEP}]` |
 
-**Dep placement — single-impl package (`DISTUTILS_SINGLE_IMPL=1`):**
-- Single-impl deps → top level with `[${PYTHON_SINGLE_USEDEP}]` (never bare).
-- Multi-impl deps → inside `python_gen_cond_dep` (no target filter), including
-  USE-conditional ones (`foo? ( ... )` goes inside the quoted block):
-  ```ebuild
-  RDEPEND="
-      sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]
-      $(python_gen_cond_dep '
-          dev-python/numpy[${PYTHON_USEDEP}]
-      ')
-  "
-  ```
+`python_gen_cond_dep` is the bridge that turns your single target into the
+matching `python_targets_*` flag on a multi-impl dep. It is NOT optional
+there, and `${PYTHON_USEDEP}` outside it is not defined in single-impl ebuilds.
 
-`python_gen_cond_dep` is ONLY for: (1) single-impl package needing
-multi-impl deps, (2) a dep restricted to a subset of Python targets, e.g.
-`$(python_gen_cond_dep '...[${PYTHON_USEDEP}]' python3_13)`.
+```ebuild
+# single-impl package
+RDEPEND="
+    sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]        # pytorch is single-impl
+    $(python_gen_cond_dep '
+        dev-python/numpy[${PYTHON_USEDEP}]         # numpy is multi-impl
+        sci-ml/tokenizers[${PYTHON_USEDEP}]        # multi-impl since 0.23.3-r1
+        cuda? ( dev-python/cupy[${PYTHON_USEDEP}] )  # USE-conditionals go inside too
+    ')
+"
+```
+
+Never write a bare Python dep (`sci-ml/foo` with no USE dep) to dodge a style
+mismatch — it resolves, but the dep may be built for a different Python.
+
+### Determine the dep's style from the version that will be picked
+
+Do this for EVERY Python dep — it's a structural decision, not an existence
+check, and **it can change between versions** (gentoo `sci-ml/tokenizers`
+was single-impl through 0.23.2 and is multi-impl from 0.23.3-r1; transformers
+5.18.0 switched its tokenizers dep accordingly). Check the ebuild Portage
+would actually select, not the overlay copy or a remembered list:
+
+```bash
+f=$(equery -q which sci-ml/tokenizers)
+grep -qE '^DISTUTILS_SINGLE_IMPL|python-single-r1' "$f" && echo single || echo multi
+```
+
+Hints only (snapshot 2026-10, verify anyway). Single-impl: `sci-ml/pytorch`,
+`torchvision`, `transformers`, `huggingface_hub`, `datasets`, `tensorboard`,
+`accelerate`, `ultralytics(-thop)`, `cua-som`, `dev-python/gradio`.
+Multi-impl: most `dev-python/*`, `sci-ml/tokenizers`, `sci-ml/safetensors`,
+`sci-ml/sentencepiece`, `dev-python/litellm`, `media-libs/opencv`,
+`sci-ml/torcheval`, `sci-ml/torchtnt`, `sci-ml/easyocr`, `sci-ml/supervision`.
+
+### Reading the failure
+
+- pkgcheck `NonsolvableDeps*` showing `foo[python_single_target_…]` → foo is
+  multi-impl; move it into `python_gen_cond_dep` with `[${PYTHON_USEDEP}]`.
+- showing `foo[python_targets_…]` → foo is single-impl; take it out of
+  `python_gen_cond_dep` and use `[${PYTHON_SINGLE_USEDEP}]` (or, in a
+  multi-impl package, go single-impl).
+- emerge slot conflict where your package's dep can only be met by an
+  *older* version or an overlay copy, while another installed package wants
+  the newer one → your USE-dep style is wrong for the current version. Fix
+  your ebuild. Don't conclude that upstream is inconsistent, and don't pin
+  the old version.
+
+### Overlay copies of gentoo Python packages
+
+Many clx copies of gentoo packages exist only to add `~arm64`. When gentoo
+changes a package's impl style, the clx copy goes stale and becomes a trap.
+Bump it: copy the new gentoo ebuild, add `~arm64`, set
+`PYTHON_COMPAT=( python3_{13..15} )`, digest. Then update the overlay
+reverse-deps to the new style
+(`grep -rl 'sci-ml/foo' --include='*.ebuild' /usr/local/portage`).
+
+`python_gen_cond_dep` has exactly two uses: (1) a single-impl package
+depending on multi-impl deps (above), (2) a dep restricted to a subset of
+Python targets, e.g. `$(python_gen_cond_dep '…[${PYTHON_USEDEP}]' python3_13)`.
 
 ## Step E: Tests
 

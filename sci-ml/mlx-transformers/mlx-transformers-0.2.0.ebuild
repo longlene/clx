@@ -21,7 +21,6 @@ RESTRICT="test"
 RDEPEND="
 	>=sci-ml/datasets-2.19.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/huggingface_hub-0.22.2[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/tokenizers-0.19.1[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/pytorch-2.2.2[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.57.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
@@ -32,5 +31,6 @@ RDEPEND="
 		>=sci-ml/mlx-0.31.0[${PYTHON_USEDEP}]
 		>=sci-ml/safetensors-0.4.3[${PYTHON_USEDEP}]
 		sci-ml/sentencepiece[python(+),${PYTHON_USEDEP}]
+		>=sci-ml/tokenizers-0.19.1[${PYTHON_USEDEP}]
 	')
 "

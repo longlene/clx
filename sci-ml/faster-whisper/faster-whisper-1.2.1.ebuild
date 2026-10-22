@@ -18,13 +18,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
-	>=sci-ml/tokenizers-0.13[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/huggingface_hub-0.13[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=sci-ml/ctranslate2-4.0.0[${PYTHON_USEDEP}]
 		>=sci-libs/onnxruntime-1.14.0[python,${PYTHON_USEDEP}]
 		>=dev-python/av-11.0.0[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
+		>=sci-ml/tokenizers-0.13[${PYTHON_USEDEP}]
 	')
 "
 BDEPEND="

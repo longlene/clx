@@ -25,7 +25,6 @@ KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=sci-ml/instructor-1.3.3[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/tokenizers-0.21.0[${PYTHON_SINGLE_USEDEP}]
 	>=dev-python/uv-0.11.6
 	$(python_gen_cond_dep '
 		>=dev-python/pydantic-2.11.9[${PYTHON_USEDEP}]
@@ -55,6 +54,7 @@ RDEPEND="
 		>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
 		>=dev-python/aiofiles-24.1.0[${PYTHON_USEDEP}]
 		>=dev-python/lancedb-0.29.2[${PYTHON_USEDEP}]
+		>=sci-ml/tokenizers-0.21.0[${PYTHON_USEDEP}]
 	')
 "
 

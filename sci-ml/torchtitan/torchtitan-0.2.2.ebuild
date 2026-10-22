@@ -22,7 +22,6 @@ KEYWORDS="~amd64 ~arm64 ~x86"
 RDEPEND="${DEPEND}
 	>=sci-ml/torchdata-0.8.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/datasets-3.6.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/tokenizers-0.15.0[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/tensorboard[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		sci-ml/safetensors[${PYTHON_USEDEP}]
@@ -31,6 +30,7 @@ RDEPEND="${DEPEND}
 		dev-python/wandb[${PYTHON_USEDEP}]
 		dev-python/einops[${PYTHON_USEDEP}]
 		dev-python/pillow[${PYTHON_USEDEP}]
+		>=sci-ml/tokenizers-0.15.0[${PYTHON_USEDEP}]
 	')
 "
 

@@ -26,8 +26,6 @@ RESTRICT="test"
 RDEPEND="
 	>=sci-ml/huggingface_hub-1.5.0[${PYTHON_SINGLE_USEDEP}]
 	<sci-ml/huggingface_hub-2.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/tokenizers-0.23.1[${PYTHON_SINGLE_USEDEP}]
-	<sci-ml/tokenizers-0.24.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/filelock[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
@@ -37,6 +35,8 @@ RDEPEND="
 		>=dev-python/tqdm-4.60[${PYTHON_USEDEP}]
 		dev-python/typer[${PYTHON_USEDEP}]
 		>=sci-ml/safetensors-0.8.0[${PYTHON_USEDEP}]
+		>=sci-ml/tokenizers-0.23.1[${PYTHON_USEDEP}]
+		<sci-ml/tokenizers-0.24.0[${PYTHON_USEDEP}]
 	')
 	torch? (
 		>=sci-ml/accelerate-1.1.0[${PYTHON_SINGLE_USEDEP}]

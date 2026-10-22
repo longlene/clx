@@ -25,7 +25,6 @@ RDEPEND="
 	>=sci-ml/mlx-lm-0.31.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-5.0.0[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/huggingface_hub[${PYTHON_SINGLE_USEDEP}]
-	sci-ml/tokenizers[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		sci-ml/mlx[python,${PYTHON_USEDEP}]
 		dev-python/argcomplete[${PYTHON_USEDEP}]
@@ -41,5 +40,6 @@ RDEPEND="
 		dev-python/tqdm[${PYTHON_USEDEP}]
 		dev-python/uvicorn[${PYTHON_USEDEP}]
 		dev-python/websockets[${PYTHON_USEDEP}]
+		sci-ml/tokenizers[${PYTHON_USEDEP}]
 	')
 "

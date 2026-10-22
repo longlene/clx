@@ -29,7 +29,6 @@ RDEPEND="
 	>=sci-ml/datasets-4.0.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/kernels-0.11.7[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/pytorch-2.9.1[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/tokenizers-0.22.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/fastapi-0.117.1[${PYTHON_USEDEP}]
 		>=dev-python/psutil-7.1.0[${PYTHON_USEDEP}]
@@ -37,6 +36,7 @@ RDEPEND="
 		>=dev-python/tiktoken-0.11.0[${PYTHON_USEDEP}]
 		>=dev-python/uvicorn-0.36.0[${PYTHON_USEDEP}]
 		>=dev-python/wandb-0.21.3[${PYTHON_USEDEP}]
+		>=sci-ml/tokenizers-0.22.0[${PYTHON_USEDEP}]
 	')
 "
 BDEPEND="$(python_gen_cond_dep 'dev-python/setuptools[${PYTHON_USEDEP}]')"

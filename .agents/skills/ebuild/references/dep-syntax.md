@@ -109,8 +109,14 @@ RDEPEND="
     ' 3.10)
 "
 
-# For DISTUTILS_SINGLE_IMPL packages:
-RDEPEND="$(python_gen_dep 'dev-python/foo[${PYTHON_SINGLE_USEDEP}]')"
+# For DISTUTILS_SINGLE_IMPL packages: style of the DEP decides the form
+# (see workflows/python.md Step D)
+RDEPEND="
+    sci-ml/pytorch[${PYTHON_SINGLE_USEDEP}]      # dep is single-impl: top level
+    $(python_gen_cond_dep '
+        dev-python/requests[${PYTHON_USEDEP}]    # dep is multi-impl: inside
+    ')
+"
 ```
 
 ## Common BDEPEND entries

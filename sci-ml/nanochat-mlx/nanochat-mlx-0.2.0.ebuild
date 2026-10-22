@@ -36,7 +36,6 @@ src_prepare() {
 
 RDEPEND="
 	sci-ml/huggingface_hub[${PYTHON_SINGLE_USEDEP}]
-	sci-ml/tokenizers[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.36.0[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/datasets[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
@@ -52,5 +51,6 @@ RDEPEND="
 		dev-python/tiktoken[${PYTHON_USEDEP}]
 		dev-python/uvicorn[${PYTHON_USEDEP}]
 		convert? ( sci-ml/pytorch[${PYTHON_USEDEP}] )
+		sci-ml/tokenizers[${PYTHON_USEDEP}]
 	')
 "

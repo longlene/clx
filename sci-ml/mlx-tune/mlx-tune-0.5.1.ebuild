@@ -22,11 +22,10 @@ RESTRICT="test"
 RDEPEND="
 	$(python_gen_cond_dep '
 		>=sci-ml/mlx-0.31.0[${PYTHON_USEDEP}]
-	')
-	>=sci-ml/mlx-lm-0.31.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/mlx-vlm-0.4.3[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/transformers-4.36.0[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/tokenizers-0.15.0[${PYTHON_SINGLE_USEDEP}]
+		>=sci-ml/tokenizers-0.15.0[${PYTHON_USEDEP}]
+		>=sci-ml/tokenizers-0.15.0[${PYTHON_USEDEP}]
+		>=sci-ml/tokenizers-0.15.0[${PYTHON_USEDEP}]
+		>=sci-ml/tokenizers-0.15.0[${PYTHON_USEDEP}]
 	>=sci-ml/datasets-2.14.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/mlx-embeddings-0.1.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/huggingface_hub-0.20.0[${PYTHON_SINGLE_USEDEP}]
@@ -39,5 +38,6 @@ RDEPEND="
 		>=dev-python/librosa-0.10.0[${PYTHON_USEDEP}]
 		>=dev-python/mistral-common-1.8.0[${PYTHON_USEDEP}]
 	)
+		>=sci-ml/tokenizers-0.15.0[${PYTHON_USEDEP}]
 	')
 "
