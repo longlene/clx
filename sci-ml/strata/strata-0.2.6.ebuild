@@ -28,11 +28,13 @@ RESTRICT="test"
 RDEPEND="
 	cuda? ( dev-util/nvidia-cuda-toolkit )
 	dev-python/jinja2
-	dev-python/jsonschema
 	dev-python/numpy
 	dev-python/pillow
 	dev-python/psutil
 	dev-python/regex
+	dev-python/requests
+	dev-python/tqdm
+	dev-python/pyyaml
 "
 DEPEND="
 	${RDEPEND}
@@ -77,11 +79,19 @@ src_configure() {
 src_install() {
 	cmake_src_install
 
-	# The model-prep tools, the API server and the chat client (Python);
-	# the CMake project ships no install rules for them.
+	# The terminal (launcher + CLI + control packages), the API server, the
+	# chat client and the model-prep tools (Python); the CMake project ships
+	# no install rules for them. The launcher lives in the share tree (the
+	# C++ engine binary owns /usr/bin/strata): it follows its own symlink
+	# to find strata.py one directory up.
+	insinto /usr/share/strata/bin
+	doins bin/strata
+	# doins drops the exec bit
+	fperms +x usr/share/strata/bin/strata
 	insinto /usr/share/strata
-	doins chat.py setup.py
-	doins -r data tools serve
+	doins strata.py chat.py setup.py
+	doins -r strata_cli strata_control data tools serve
+	dosym ../share/strata/bin/strata /usr/bin/strata-terminal
 	dodoc README.md
 	# docs/ (incl. the paper/ subdir); this slim portage has no
 	# doinstalldocs, dodoc -r covers it.

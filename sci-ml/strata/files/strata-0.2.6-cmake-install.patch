@@ -1,0 +1,18 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -2401,3 +2401,15 @@
+ Executable      ${CMAKE_EXE_LINKER_FLAGS}
+ Module          ${CMAKE_MODULE_LINKER_FLAGS}
+ Shared          ${CMAKE_SHARED_LINKER_FLAGS}\n")
++
++# Gentoo: the project ships no install rules; install the user-facing
++# binaries (the remaining targets are internal tests and benchmarks).
++install(TARGETS strata-gguf strata-dequant strata-plan RUNTIME DESTINATION bin)
++if(STRATA_ENABLE_CUDA OR STRATA_ENABLE_HIP)
++  install(TARGETS strata strata-device strata-load strata-concurrent strata-overlap
++          RUNTIME DESTINATION bin)
++  install(TARGETS strata-q36ref RUNTIME DESTINATION bin)
++  if(NOT STRATA_HIP_GFX906)
++    install(TARGETS strata-q36 RUNTIME DESTINATION bin)
++  endif()
++endif()

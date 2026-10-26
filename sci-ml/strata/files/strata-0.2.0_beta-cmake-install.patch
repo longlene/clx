@@ -1,0 +1,20 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -2173,6 +2173,17 @@
+   target_link_libraries(gfx906_qsa_query_swizzle_probe PRIVATE strata_kernels ${_strata_gpu_runtime_target})
+ endif()
+ 
++# Gentoo: the project ships no install rules; install the user-facing
++# binaries (the remaining targets are internal tests and benchmarks).
++install(TARGETS strata-gguf strata-dequant strata-plan RUNTIME DESTINATION bin)
++if(STRATA_ENABLE_CUDA OR STRATA_ENABLE_HIP)
++  install(TARGETS strata strata-device strata-load strata-concurrent strata-overlap
++          RUNTIME DESTINATION bin)
++endif()
++if(STRATA_ENABLE_CUDA)
++  install(TARGETS strata-q36ref strata-q36 RUNTIME DESTINATION bin)
++endif()
++
+ message(STATUS "<<< Gentoo configuration >>>
+ Build type      ${CMAKE_BUILD_TYPE}
+ Install path    ${CMAKE_INSTALL_PREFIX}
