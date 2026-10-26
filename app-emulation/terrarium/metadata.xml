@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <remote-id type="github">terrarium-sh/terrarium</remote-id>
+  </upstream>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Terrarium runs agents and development tools in lightweight virtual
+    machines ("boxes"), each with its own kernel and disk, exposed through a
+    single `terra` CLI. The static binary embeds a pinned guest Linux kernel,
+    an Alpine rootfs, the bubblewrap launcher and precompiled AOT device
+    components; Linux hosts need /dev/kvm.
+  </longdescription>
+</pkgmetadata>

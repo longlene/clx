@@ -1,0 +1,72 @@
+--- a/Makefile
++++ b/Makefile
+@@ -157,7 +157,7 @@
+ else
+ $(KERNEL_TARBALL):
+ 	mkdir -p $(BUILD)
+-	curl -fsSL $(KERNEL_URL) -o $@.tmp
++	[ -s "$@" ] || curl -fsSL $(KERNEL_URL) -o $@.tmp
+ 	echo '$(KERNEL_SHA256)  $@.tmp' | sha256sum -c -
+ 	mv $@.tmp $@
+ 
+@@ -197,7 +197,7 @@
+ $(MKE2FS): $(PIN_STAMP)
+ 	$(MAKE) check-zig
+ 	mkdir -p $(BUILD)
+-	curl -fsSL $(E2FSPROGS_URL) -o $(BUILD)/e2fsprogs.tar.gz
++	[ -s "$(BUILD)/e2fsprogs.tar.gz" ] || curl -fsSL $(E2FSPROGS_URL) -o $(BUILD)/e2fsprogs.tar.gz
+ 	echo "$(E2FSPROGS_SHA256)  $(BUILD)/e2fsprogs.tar.gz" | sha256sum -c -
+ 	rm -rf $(E2FSPROGS_SRC)
+ 	tar -xzf $(BUILD)/e2fsprogs.tar.gz -C $(BUILD)
+@@ -219,7 +219,7 @@
+ 
+ $(LIBCAP_TARBALL): pins.mk
+ 	mkdir -p $(BUILD)
+-	curl -fsSL '$(LIBCAP_URL)' -o $@.tmp
++	[ -s "$@" ] || curl -fsSL '$(LIBCAP_URL)' -o $@.tmp
+ 	echo '$(LIBCAP_SHA256)  $@.tmp' | sha256sum -c -
+ 	mv $@.tmp $@
+ 
+@@ -276,7 +276,7 @@
+ ## linker for its LD_PRELOAD to hook.
+ $(ROOTFS_IMG): $(MKE2FS) $(DEBUGFS) $(PIN_STAMP) $(ROOTFS_IDENTITY_INPUTS)
+ 	mkdir -p $(ROOTFS_TREE)
+-	curl -fsSL $(ALPINE_URL) -o $(BUILD)/alpine-minirootfs.tar.gz
++	[ -s "$(BUILD)/alpine-minirootfs.tar.gz" ] || curl -fsSL $(ALPINE_URL) -o $(BUILD)/alpine-minirootfs.tar.gz
+ 	echo "$(ALPINE_SHA256)  $(BUILD)/alpine-minirootfs.tar.gz" | sha256sum -c -
+ 	# -p keeps the archive's modes (notably /tmp's 1777); without it tar applies
+ 	# the caller's umask and a non-root workload cannot write /tmp.
+@@ -284,9 +284,9 @@
+ 	tar -p --no-same-owner -xzf $(BUILD)/alpine-minirootfs.tar.gz -C $(ROOTFS_TREE)
+ 	# doas (setuid) + the sudo shim; -p keeps the setuid bit, and building the
+ 	# image in a user namespace makes it setuid *root*.
+-	curl -fsSL $(ALPINE_PKG_URL)/$(DOAS_APK) -o $(BUILD)/$(DOAS_APK)
++	[ -s "$(BUILD)/$(DOAS_APK)" ] || curl -fsSL $(ALPINE_PKG_URL)/$(DOAS_APK) -o $(BUILD)/$(DOAS_APK)
+ 	echo "$(DOAS_SHA256)  $(BUILD)/$(DOAS_APK)" | sha256sum -c -
+-	curl -fsSL $(ALPINE_PKG_URL)/$(DOAS_SHIM_APK) -o $(BUILD)/$(DOAS_SHIM_APK)
++	[ -s "$(BUILD)/$(DOAS_SHIM_APK)" ] || curl -fsSL $(ALPINE_PKG_URL)/$(DOAS_SHIM_APK) -o $(BUILD)/$(DOAS_SHIM_APK)
+ 	echo "$(DOAS_SHIM_SHA256)  $(BUILD)/$(DOAS_SHIM_APK)" | sha256sum -c -
+ 	tar -pxzf $(BUILD)/$(DOAS_APK) -C $(ROOTFS_TREE) usr etc
+ 	tar -pxzf $(BUILD)/$(DOAS_SHIM_APK) -C $(ROOTFS_TREE) usr
+--- a/scripts/kernel/kernel-container.sh
++++ b/scripts/kernel/kernel-container.sh
+@@ -1,15 +1,6 @@
+ #!/bin/sh
++# Gentoo: build the kernel natively on the host instead of in a podman
++# container (the container wrapper exists for upstream CI; portage has no
++# podman and the x86_64/aarch64 recipes use plain gcc).
+ set -eu
+-
+-kernel_repo=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)
+-kernel_recipe_hash=$(sha256sum "$kernel_repo/kernel/Containerfile" | cut -d' ' -f1)
+-kernel_builder="localhost/terra-kernel-builder:$kernel_recipe_hash"
+-if ! podman image exists "$kernel_builder"; then
+-    podman build --tag "$kernel_builder" --file "$kernel_repo/kernel/Containerfile" "$kernel_repo/kernel"
+-fi
+-mkdir -p "$kernel_repo/build"
+-exec podman run --rm --network=none --userns=keep-id --user "$(id -u):$(id -g)" \
+-    --cap-drop=all --security-opt=no-new-privileges --security-opt=label=disable \
+-    --volume "$kernel_repo:$kernel_repo:ro" \
+-    --volume "$kernel_repo/build:$kernel_repo/build:rw" \
+-    --workdir "$kernel_repo" --entrypoint /usr/bin/env "$kernel_builder" "$@"
++exec "$@"
