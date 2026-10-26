@@ -7,9 +7,12 @@ inherit unpacker systemd tmpfiles
 
 DESCRIPTION="Cloudflare Tunnel client (formerly Argo Tunnel)"
 HOMEPAGE="https://github.com/cloudflare/cloudflared"
+CF_RELEASE="https://github.com/cloudflare/cloudflared/releases/download"
 SRC_URI="
-	amd64? ( https://github.com/cloudflare/cloudflared/releases/download/${PV}/cloudflared-linux-amd64.deb -> cloudflared-${PV}-linux-amd64.deb )
-	arm64? ( https://github.com/cloudflare/cloudflared/releases/download/${PV}/cloudflared-linux-arm64.deb -> cloudflared-${PV}-linux-arm64.deb )
+	amd64? ( ${CF_RELEASE}/${PV}/cloudflared-linux-amd64.deb
+		-> cloudflared-${PV}-linux-amd64.deb )
+	arm64? ( ${CF_RELEASE}/${PV}/cloudflared-linux-arm64.deb
+		-> cloudflared-${PV}-linux-arm64.deb )
 "
 S=${WORKDIR}
 
