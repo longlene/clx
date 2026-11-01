@@ -1,0 +1,22 @@
+Report the real release version in MSLK_PYTHON_ONLY builds
+
+The python-only branch of setup.py hardcodes version 0.0.0 (that is what the
+PyPI name-reservation wheel carries).  Building the GitHub archive with
+MSLK_PYTHON_ONLY=1 would therefore install a package that reports
+0.0.0 through mslk.__version__ and importlib.metadata.  Read the version from
+the environment instead, keeping the upstream default when it is unset.
+
+--- a/setup.py
++++ b/setup.py
+@@ -587,7 +587,10 @@
+     if _PYTHON_ONLY:
+         print("[SETUP.PY] MSLK_PYTHON_ONLY=1 — skipping C++/CUDA build")
+         package_name = "mslk"
+-        package_version = "0.0.0"
++        # Gentoo: this is a GitHub archive without git metadata and the
++        # package version is not derived from it here, so let the ebuild
++        # tell us which release we are installing.  Upstream default kept.
++        package_version = os.environ.get("MSLK_VERSION", "0.0.0")
+         _write_version_file(package_version, "default", "python_only")
+ 
+     else:

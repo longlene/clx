@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="github">meta-pytorch/mslk</remote-id>
+    <remote-id type="pypi">mslk</remote-id>
+  </upstream>
+  <longdescription lang="en">
+    MSLK (Meta Superintelligence Labs Kernels) is a collection of PyTorch GPU
+    operators for MoE, GEMM, attention and quantization. This package builds
+    the Python side only (MSLK_PYTHON_ONLY=1); the native libmslk.so kernel
+    library is not built.
+  </longdescription>
+</pkgmetadata>

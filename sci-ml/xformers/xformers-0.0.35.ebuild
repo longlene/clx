@@ -28,11 +28,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
+# xformers 0.0.35 needs nothing but torch and numpy upstream; the mslk dep
+# that used to be here matches neither its wheel metadata nor any import in
+# the source tree.
 RDEPEND="
 	>=sci-ml/pytorch-2.10.0[${PYTHON_SINGLE_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/mslk[${PYTHON_USEDEP}]
 	')
 "
 #BDEPEND="
