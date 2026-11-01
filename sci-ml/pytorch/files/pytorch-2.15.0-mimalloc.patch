@@ -1,0 +1,22 @@
+Link the system dev-libs/mimalloc instead of the vendored mimalloc-static
+target (the ebuild drops third_party/mimalloc's add_subdirectory).
+
+The 2.14-era companion hunk that dropped the forced `set(USE_MIMALLOC ON)` on
+WIN32/AArch64 is obsolete: upstream turned it into USE_MIMALLOC_DEFAULT, which
+only feeds the option() default and is therefore overridden by the
+-DUSE_MIMALLOC the ebuild passes.
+
+--- a/c10/CMakeLists.txt
++++ b/c10/CMakeLists.txt
+@@ -164,8 +164,9 @@
+   endif()
+ 
+   if(USE_MIMALLOC)
+-    target_link_libraries(c10 PRIVATE "mimalloc-static")
+-    add_dependencies(c10 mimalloc-static)
++    find_package(mimalloc REQUIRED)
++    target_link_libraries(c10 PRIVATE "mimalloc")
++    add_dependencies(c10 mimalloc)
+   endif()
+ 
+   if(LINUX)

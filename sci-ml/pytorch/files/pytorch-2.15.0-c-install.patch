@@ -1,0 +1,31 @@
+Install torch._C for plain (non scikit-build-core) cmake installs
+
+Upstream moved the install(TARGETS _C ...) rule behind if(SKBUILD) when the
+extension module stopped being built by setuptools. A conventional
+`cmake --install` with a normal prefix then produces no torch/_C module at
+all, i.e. `import torch` fails with "No module named 'torch._C" even though
+everything else installed fine.
+
+Keep the wheel behaviour untouched and add the pre-2.15 branch back for
+non-SKBUILD builds: install to the prefix root, which is where the ebuild's
+src_install() picks the module up and moves it into site-packages/torch/
+(next to the torch/lib/libtorch_python.so symlink its $ORIGIN/lib RPATH
+resolves through).
+
+--- a/torch/CMakeLists.txt
++++ b/torch/CMakeLists.txt
+@@ -473,6 +473,14 @@
+       RUNTIME DESTINATION "${SKBUILD_PLATLIB_DIR}/torch"
+       LIBRARY DESTINATION "${SKBUILD_PLATLIB_DIR}/torch"
+     )
++  else()
++    # Gentoo: plain cmake --install with a conventional prefix has no
++    # SKBUILD_PLATLIB_DIR; install to the prefix root, where the ebuild's
++    # src_install relocates the module into site-packages/torch/.
++    install(TARGETS _C
++      RUNTIME DESTINATION "."
++      LIBRARY DESTINATION "."
++    )
+   endif()
+ 
+   # ---[ NCCL EP extension (torch._nccl_ep)

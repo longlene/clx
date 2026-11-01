@@ -39,8 +39,10 @@ SRC_URI="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
+# opencl USE flag dropped upstream in 2.15 (the ATen OpenCL backend and its
+# USE_OPENCL option are gone from the tree).
 IUSE="cuda cusparselt distributed fbgemm flash gloo kineto memefficient
-	mimalloc mkl mpi nccl nnpack +numpy onednn openblas opencl openmp qnnpack
+	mimalloc mkl mpi nccl nnpack +numpy onednn openblas openmp qnnpack
 	rocm xnnpack"
 RESTRICT="test"
 REQUIRED_USE="
@@ -78,7 +80,7 @@ RDEPEND="
 	)
 	fbgemm? ( >=sci-ml/FBGEMM-1.4 )
 	gloo? ( >=sci-ml/gloo-2025.06.04[cuda?,rocm?] )
-	kineto? ( ~sci-ml/kineto-0.4.0_p20260323 )
+	kineto? ( ~sci-ml/kineto-0.4.0_p20260515 )
 	mimalloc? ( dev-libs/mimalloc )
 	mpi? ( virtual/mpi )
 	nnpack? (
@@ -89,7 +91,6 @@ RDEPEND="
 		dev-python/numpy[${PYTHON_USEDEP}]
 	') )
 	onednn? ( sci-ml/oneDNN )
-	opencl? ( virtual/opencl )
 	qnnpack? (
 		!sci-libs/QNNPACK
 		sci-ml/gemmlowp
@@ -156,18 +157,18 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-2.4.0-cpp-httplib.patch
 	"${FILESDIR}"/${PN}-2.14.0-httplib-params.patch
 	"${FILESDIR}"/${PN}-2.5.1-glog-0.6.0.patch
-	"${FILESDIR}"/${P}-rocm-fix-std-cpp17.patch
+	"${FILESDIR}"/${PN}-2.14.0-rocm-fix-std-cpp17.patch
 	"${FILESDIR}"/${PN}-2.7.0-glog-0.7.1.patch
-	"${FILESDIR}"/${P}-glog.patch
+	"${FILESDIR}"/${PN}-2.14.0-glog.patch
 	"${FILESDIR}"/${PN}-2.7.1-aotriton-fixes.patch
 	"${FILESDIR}"/${PN}-2.8.0-rocm-minus-flash.patch
 	"${FILESDIR}"/${PN}-2.9.1-torch_cpu.patch
 	"${FILESDIR}"/${PN}-2.10.0-gentoo.patch
-	"${FILESDIR}"/${P}-mimalloc.patch
-	"${FILESDIR}"/${P}-removekineto-pr178960.patch
-	"${FILESDIR}"/${P}-cuda-link.patch
-	"${FILESDIR}"/${P}-destdir-wrap_headers.patch
-	"${FILESDIR}"/${P}-skip-version-py-install.patch
+	"${FILESDIR}"/${PN}-2.15.0-mimalloc.patch
+	"${FILESDIR}"/${PN}-2.14.0-removekineto-pr178960.patch
+	"${FILESDIR}"/${PN}-2.14.0-cuda-link.patch
+	"${FILESDIR}"/${PN}-2.14.0-destdir-wrap_headers.patch
+	"${FILESDIR}"/${PN}-2.15.0-c-install.patch
 	"${FILESDIR}"/${PN}-2.10.0-cpp-extension-multilib.patch
 )
 
@@ -200,13 +201,16 @@ src_prepare() {
 		|| die
 
 	# PackageData.cmake installs package data (type stubs, inductor
-	# templates, ...) at the bare install-prefix root, relying on the
-	# wheel's install-dir="torch" to relocate it; under our DESTDIR-based
-	# cmake --install that scatters torch/ subdirs across /usr (its
-	# type-stub DIRECTORY rule even materializes the entire torch/ dir
-	# tree there as empty skeleton dirs). python_install()'s rsync already
-	# ships all of this data from the source tree, so drop the module.
-	sed -i -e '/^include(cmake\/PackageData\.cmake)$/d' CMakeLists.txt || die
+	# templates, ...) into the torch package; when it ran for us it placed
+	# them at the bare install-prefix root, relying on the wheel's
+	# install-dir="torch" to relocate them, which scattered torch/ subdirs
+	# across /usr under our DESTDIR-based cmake --install. python_install()'s
+	# rsync already ships all of this data from the source tree, so drop the
+	# module. (2.15 moved this include -- and FileMirroring.cmake next to it,
+	# see the mirroring step in src_install -- under if(SKBUILD), so this is
+	# belt-and-braces; keep it indentation-tolerant so it still bites if the
+	# guard ever goes away again.)
+	sed -i -e '/^[[:space:]]*include(cmake\/PackageData\.cmake)$/d' CMakeLists.txt || die
 
 	# We deliberately build with an (almost) empty third_party directory
 	# (everything is unbundled to system libs), so the upstream submodule
@@ -244,11 +248,14 @@ src_prepare() {
 	# Noisy warnings from Logging.h
 	sed -i 's/-Wextra-semi//' cmake/public/utils.cmake || die
 
-	# Replace placeholder added by cpp-extension-multilib.patch
+	cmake_src_prepare
+
+	# Replace placeholder added by cpp-extension-multilib.patch -- has to run
+	# after cmake_src_prepare, i.e. after PATCHES are applied; running it
+	# before left a literal %LIB_DIR% in the installed cpp_extension.py.
 	sed -e "s|%LIB_DIR%|$(get_libdir)|g" \
 		-i torch/utils/cpp_extension.py || die
 
-	cmake_src_prepare
 	pushd torch/csrc/jit/serialization > /dev/null || die
 	flatc --cpp --gen-mutable --scoped-enums mobile_bytecode.fbs || die
 	popd > /dev/null || die
@@ -339,7 +346,6 @@ src_configure() {
 		-DUSE_NNPACK=$(usex nnpack)
 		-DUSE_NUMA=OFF
 		-DUSE_NUMPY=$(usex numpy)
-		-DUSE_OPENCL=$(usex opencl)
 		-DUSE_OPENMP=$(usex openmp)
 		-DUSE_PYTORCH_QNNPACK=$(usex qnnpack)
 		-DUSE_PYTORCH_METAL=OFF
@@ -523,16 +529,21 @@ python_install() {
 	[[ -n ${torch_ver} ]] || die "could not determine torch version from torch/version.py"
 	local distinfo="${D}$(python_get_sitedir)/torch-${torch_ver}.dist-info"
 	mkdir -p "${distinfo}" || die
+	# pyproject.toml's [project] license expression (kept wrapped for the
+	# 120-column limit).
+	local license="Apache-2.0 AND Apache-2.0 WITH LLVM-exception"
+	license+=" AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0"
+	license+=" AND ISC AND MIT AND Zlib"
 	cat <<-EOF > "${distinfo}"/METADATA || die
 		Metadata-Version: 2.1
 		Name: torch
 		Version: ${torch_ver}
 		Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
 		Home-page: https://pytorch.org/
-		License: Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND MIT
+		License: ${license}
 		Author: PyTorch Team
 		Author-email: packages@pytorch.org
-		Requires-Python: >=3.10
+		Requires-Python: >=3.11
 	EOF
 	echo "gentoo" > "${distinfo}"/INSTALLER || die
 	echo "torch" > "${distinfo}"/top_level.txt || die
@@ -596,6 +607,35 @@ src_install() {
 	# get flagged by portage QA as runtime-created paths. Nothing in this
 	# package belongs under ${D}/var, so drop the tree entirely.
 	rm -rf "${D}/var" || die
+
+	# cmake/FileMirroring.cmake stages torchgen/packaged/, the CuTeDSL
+	# inductor template and the valgrind headers into the package, but is
+	# only included under if(SKBUILD) -- a plain cmake build never runs it,
+	# so python_install()'s rsync would ship a torchgen without packaged/
+	# (torch/_custom_op, torch/_functorch, torch/_library and friends import
+	# torchgen at runtime) and an incomplete vendored_templates/.
+	(
+		cd "${S}" || die
+		mkdir -p torchgen/packaged/ATen/native torchgen/packaged/ATen/templates || die
+		mkdir -p torchgen/packaged/autograd || die
+		cp aten/src/ATen/native/native_functions.yaml \
+			aten/src/ATen/native/tags.yaml torchgen/packaged/ATen/native/ || die
+		cp -RL aten/src/ATen/templates/. torchgen/packaged/ATen/templates/ || die
+		rsync -a --exclude='BUILD.bazel' --exclude='*.bzl' tools/autograd/ \
+			torchgen/packaged/autograd/ || die
+		cp third_party/valgrind-headers/callgrind.h \
+			third_party/valgrind-headers/valgrind.h \
+			torch/utils/benchmark/utils/valgrind_wrapper/ || die
+		# Reachable through the /usr/share/cutlass symlink from src_prepare;
+		# FileMirroring.cmake installs the same file under this name.
+		local cutedsl=third_party/cutlass/examples/python/CuTeDSL/cute/blackwell/kernel/grouped_gemm/grouped_gemm.py
+		if [[ -f ${cutedsl} ]]; then
+			mkdir -p torch/_inductor/kernel/vendored_templates/cutedsl/kernels || die
+			cp "${cutedsl}" \
+				torch/_inductor/kernel/vendored_templates/cutedsl/kernels/cutedsl_grouped_gemm.py || die
+			: > torch/_inductor/kernel/vendored_templates/cutedsl/kernels/__init__.py || die
+		fi
+	)
 
 	python_install
 
