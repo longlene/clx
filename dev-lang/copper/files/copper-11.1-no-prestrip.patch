@@ -1,0 +1,21 @@
+Do not strip the compilers on install
+
+install-copper used "install -s", so the image shipped pre-stripped binaries
+and portage complained "QA Notice: Pre-stripped files found".  Let portage do
+the stripping so its splitdebug/strip handling applies.
+
+--- a/Makefile
++++ b/Makefile
+@@ -143,9 +143,9 @@
+ install-copper:
+ 	$(INSTALL) -d $(DESTDIR)$(bindir)
+ 	$(INSTALL) -m 755 scripts/copper $(DESTDIR)$(bindir)
+-	$(INSTALL) -s $(OUTDIR)/copper-elf64 $(DESTDIR)$(bindir)
+-	$(INSTALL) -s $(OUTDIR)/copper-llvm $(DESTDIR)$(bindir)
+-	$(INSTALL) -s $(OUTDIR)/copper-c $(DESTDIR)$(bindir)
++	$(INSTALL) $(OUTDIR)/copper-elf64 $(DESTDIR)$(bindir)
++	$(INSTALL) $(OUTDIR)/copper-llvm $(DESTDIR)$(bindir)
++	$(INSTALL) $(OUTDIR)/copper-c $(DESTDIR)$(bindir)
+ 
+ install-std:
+ 	$(MAKE) OUTDIR=$(OUTDIR) -C lib/std install

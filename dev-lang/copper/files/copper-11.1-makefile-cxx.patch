@@ -1,0 +1,25 @@
+Use $(CXX) for linking the LLVM backend instead of a hardcoded g++
+
+The LLVM backend is linked with the C++ driver; hardcoding g++ ignores the
+toolchain selected by the ebuild (tc-getCXX).  Keep g++ as the default so
+building by hand is unaffected.
+
+--- a/Makefile
++++ b/Makefile
+@@ -36,6 +36,7 @@
+ LFLAGS=-no-pie $(COPPER_LIBRARY)
+ OS=unix
+ INSTALL=install
++CXX=g++
+ LLVMCONFIG=llvm-config
+ LIBSTD=$(OUTDIR)/libcopper-std.a
+ 
+@@ -117,7 +118,7 @@
+ 
+ link-with-llvm:
+ 	@echo Linking...
+-	g++ $(LFLAGS) `$(LLVMCONFIG) --ldflags` $(OUTDIR)/copper.o `$(LLVMCONFIG) --libs` -lpthread -lffi -ltinfo -ldl -lm -o $(OUTDIR)/copper-$(BACKEND) $(LIBSTD)
++	$(CXX) $(LFLAGS) `$(LLVMCONFIG) --ldflags` $(OUTDIR)/copper.o `$(LLVMCONFIG) --libs` -lpthread -lffi -ltinfo -ldl -lm -o $(OUTDIR)/copper-$(BACKEND) $(LIBSTD)
+ 
+ obj:
+ 	@echo Compiling...

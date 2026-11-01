@@ -1,0 +1,37 @@
+Use the environment's C compiler and C17 for generated code
+
+Two problems when using this driver as installed on Gentoo:
+
+1. CC and LINKER were hardcoded to gcc, so the toolchain selected by the
+   ebuild (and any non-gcc default system compiler) was ignored.
+
+2. Copper emits identifiers named "true" and "false" (see e.g. the
+   identifiers struct in the generated output).  Those are keywords in C23,
+   which GCC 15 defaults to, so compiling any generated C file failed with
+   "expected identifier or '(' before 'true'".  Request C17 explicitly,
+   matching what the out-of-tree boot compile uses.
+
+--- a/scripts/copper
++++ b/scripts/copper
+@@ -59,8 +59,8 @@
+ COPPER=
+ BACKEND=elf64
+ LLC=llc
+-CC=gcc
+-LINKER=gcc
++CC=${CC:-cc}
++LINKER=${LINKER:-cc}
+ INPUT=
+ OUT=main
+ LINK=1
+@@ -221,7 +221,9 @@
+ elif  [[ ${BACKEND} == "c" ]]; then
+ 
+ 	run ${COPPER} -o ${OUT_C} ${COPPER_FLAGS} ${INPUT}
+-	run ${CC} -c -fshort-wchar ${OUT_C} -o ${OUT_OBJ}
++	# Copper emits identifiers called 'true'/'false', which are keywords in
++	# C23 (the default since GCC 15), so ask for C17 explicitly.
++	run ${CC} -std=gnu17 -c -fshort-wchar ${OUT_C} -o ${OUT_OBJ}
+ 	rm ${OUT_C}
+ 
+ fi

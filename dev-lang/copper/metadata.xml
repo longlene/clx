@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    Copper is a small self-hosting imperative language from
+    https://tibleiz.net/copper.  Three backends are built and installed: a
+    native x86-64 ELF writer (copper-elf64), an LLVM backend (copper-llvm,
+    needs llc from the matching LLVM slot when it is used) and a C backend
+    (copper-c).  The copper shell script drives them and links programs
+    against the bundled libcopper-std.a and the standard library installed
+    under /usr/share/copper/include.
+  </longdescription>
+</pkgmetadata>
