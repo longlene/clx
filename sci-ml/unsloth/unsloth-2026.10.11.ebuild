@@ -24,13 +24,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 IUSE="studio"
 
-# upstream caps torch <2.13, transformers <=5.5, trl <=0.24 and datasets <4.4;
-# not enforced, only newer versions are available here
+# upstream caps torch <2.15, transformers <=5.17, trl <=1.15 and datasets <5.0
+# (4.4.*/4.5.0 excluded); not enforced, only newer versions are available here
 RDEPEND="
-	>=sci-ml/unsloth-zoo-2026.9.7[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/unsloth-zoo-2026.10.11[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/pytorch-2.4.0[${PYTHON_SINGLE_USEDEP}]
 	sci-ml/torchvision[${PYTHON_SINGLE_USEDEP}]
-	>=sci-ml/transformers-4.51.3[${PYTHON_SINGLE_USEDEP}]
+	>=sci-ml/transformers-4.52.4[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/trl-0.18.2[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/peft-0.18.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/accelerate-0.34.1[${PYTHON_SINGLE_USEDEP}]
@@ -50,7 +50,9 @@ RDEPEND="
 		dev-python/tyro[${PYTHON_USEDEP}]
 		dev-python/protobuf[${PYTHON_USEDEP}]
 		dev-python/hf-transfer[${PYTHON_USEDEP}]
-		>=dev-python/typer-0.12.0[${PYTHON_USEDEP}]
+		>=dev-python/typer-0.19.0[${PYTHON_USEDEP}]
+		>=dev-python/json5-0.9.25[${PYTHON_USEDEP}]
+		>=dev-python/certifi-2026.10.19[${PYTHON_USEDEP}]
 		dev-python/pydantic[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 		dev-python/nest-asyncio[${PYTHON_USEDEP}]

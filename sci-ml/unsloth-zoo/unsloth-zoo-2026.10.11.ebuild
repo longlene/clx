@@ -19,11 +19,12 @@ LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
-# upstream caps transformers <=5.17, trl <=1.13 and datasets <4.4;
-# not enforced, only newer versions are available here
+# upstream caps torch <2.16, transformers <=5.17, trl <=1.15 and datasets <5.0
+# (the latter excludes 4.4.*/4.5.0 only); not enforced, only newer versions are
+# available here
 RDEPEND="
 	>=sci-ml/pytorch-2.4.0[${PYTHON_SINGLE_USEDEP}]
-	<sci-ml/pytorch-2.15.0[${PYTHON_SINGLE_USEDEP}]
+	<sci-ml/pytorch-2.16.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/torchao-0.13.0[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/transformers-4.52.4[${PYTHON_SINGLE_USEDEP}]
 	>=sci-ml/datasets-3.4.1[${PYTHON_SINGLE_USEDEP}]
@@ -35,7 +36,9 @@ RDEPEND="
 	$(python_gen_cond_dep '
 		>=dev-python/triton-3.0.0[${PYTHON_USEDEP}]
 		>=dev-python/packaging-24.1[${PYTHON_USEDEP}]
-		dev-python/tyro[${PYTHON_USEDEP}]
+		dev-python/einops[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		>=dev-python/certifi-2026.10.19[${PYTHON_USEDEP}]
 		>=sci-ml/sentencepiece-0.2.0[python(+),${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
 		dev-python/psutil[${PYTHON_USEDEP}]
