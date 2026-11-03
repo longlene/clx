@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>longlene@gmail.com</email>
+    <name>loong0</name>
+  </maintainer>
+  <longdescription lang="en">
+    OpenIDEA is an open-source IDE built around a Rust backend and a Tauri
+    desktop shell, with an IntelliJ IDEA style keymap, tool windows, debugger,
+    database and VCS integrations. Not affiliated with JetBrains.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">l0ng-ai/openidea</remote-id>
+  </upstream>
+</pkgmetadata>
