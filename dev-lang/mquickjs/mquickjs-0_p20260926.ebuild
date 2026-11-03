@@ -3,18 +3,26 @@
 
 EAPI=8
 
-EGIT_COMMIT="84d793e0a98703c8c31d4e85cfe4d85839cb0f85"
+EGIT_COMMIT="6d4d7eb6b99011d5aab6e88a9b99e8fd4d86c6e9"
 
 DESCRIPTION="Micro QuickJS Javascript Engine"
 HOMEPAGE="https://github.com/bellard/mquickjs"
 SRC_URI="https://github.com/bellard/mquickjs/archive/${EGIT_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 
+S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
+
 LICENSE="MIT"
 SLOT="0"
-S="${WORKDIR}"/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64 ~arm64"
+IUSE="test"
+
+RESTRICT="!test? ( test )"
 
 RDEPEND="${DEPEND}"
+
+src_test() {
+	emake test
+}
 
 src_install() {
 	dobin mqjs
