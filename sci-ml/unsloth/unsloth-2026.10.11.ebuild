@@ -19,6 +19,12 @@ HOMEPAGE="
 SRC_URI="$(pypi_wheel_url)"
 S=${WORKDIR}
 
+# distutils-r1 defaults BUILD_DIR to ${S}_${EPYTHON}; since ${S} is the top-level
+# work directory here, that escapes it (portage only cleans ${WORKDIR}, so the
+# directory survives between runs with the ownership of whoever built it first and
+# FEATURES-userpriv builds then die with EACCES on the stale directory).
+BUILD_DIR=${WORKDIR}/build
+
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
