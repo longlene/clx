@@ -51,8 +51,9 @@ src_install() {
 	insinto /usr/include/Luau
 	doins ./CodeGen/include/luacodegen.h
 	doins ./Compiler/include/luacode.h
+	doins ./Inliner/include/luajitinliner.h
 	doins ./VM/include/*.h
-	doins ./{Config,Common,Compiler,CodeGen,Ast,Analysis,Bytecode,Require}/include/Luau/*.h
+	doins ./{Analysis,Ast,Bytecode,CLI,CodeGen,Common,Compiler,Config,Inliner,Require}/include/Luau/*.h
 
 	if use static-libs ; then
 		dolib.a "${BUILD_DIR}"/libLuau.*.a
